@@ -1,0 +1,764 @@
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>商情信息-海商网-全国领先的B2B电子商务交易平台</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=7" />
+		<link type="image/x-icon" rel="Shortcut icon" href="http://style.cn.hisupplier.com/img/ico/hisupplier.ico" />
+		<link type="image/x-icon" rel="Bookmark" href="http://style.cn.hisupplier.com/img/ico/hisupplier.ico" />
+		<script type="text/javascript">
+			var HI_DOMAIN = "hisupplier.com";
+		</script>
+		<link href="/assets/main.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="http://style.cn.hisupplier.com/js/??lib/jquery.js,lib/jquery.select.js,lib/jquery.lazyload.js,lib/jquery.bgiframe.js,util.js"></script>
+		<script type="text/javascript" src="/assets/main.js"></script>
+		
+		
+		<meta name="keywords" content="产品供应，求购，中国产品供应，求购，海量供应，求购信息" />
+		<meta name="description" content="海商网产品商情信息库汇集海量供应，求购信息，包括各种批发及零售产品，库存产品信息，OEM代加工信息，代理产品信息，是商人信赖的销售产品、拓展市场及网络推广的首选网站。" />
+		<link href="/css/offer.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="/js/inquiry.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(".button2").bind("click",function(){
+		 			inquiryAll('hs_basket_trade',0,'false')
+				});
+				$(".button1").bind("click",function(){
+		 			addBasket('hs_basket_trade','false')
+				})	
+			});
+		</script>
+	
+	</head>
+	<body id="home">
+		
+
+<div id="header">
+    <div class="topTips">
+        <ul class="quickLink">
+            <li><a onclick="Util.setHome();" class="f3" href="#position" rel="nofollow">设为主页</a></li>
+            <li><a href="#position" onclick="Util.addBookMark()" rel="nofollow">添加收藏</a></li>
+            <li><a href="/sitemap.html">网站导航</a></li>
+            <li class="hiService" id="hiService">
+            	<a href="#" rel="nofollow">海商服务</a>
+                <div class="serviceList" id="hiServiceChildren" style="display:none;">
+                	<a href="http://www.hisupplier.com/exporter/index.html" target="_blank" rel="nofollow">出口服务</a><br />
+                    <a href="http://account.cn.hisupplier.com/user/post_buy_lead.htm" target="_blank" rel="nofollow">免费发布求购</a><br />
+                    <a href="http://account.cn.hisupplier.com/user/trade_alert_step1.htm" target="_blank" rel="nofollow">订阅商情信息</a>
+				</div>
+            </li>
+        </ul>
+        <ul class="quickMenu">
+            <li class="english"><a  href="http://www.hisupplier.com" target="_blank">国际贸易</a></li>
+			
+	            <li><a  href="http://account.cn.hisupplier.com" rel="nofollow">登录</a></li>
+	            <li><a  href="http://account.cn.hisupplier.com/user/join.htm" rel="nofollow">免费注册</a></li>
+			
+            <li id="inquiry_basket_li">
+				
+					询盘篮		
+				
+			</li>
+            <li><a  href="http://help.cn.hisupplier.com" target="_blank" rel="nofollow">帮助中心</a></li>
+        </ul>
+    </div>
+    <div class="topToolBar">
+        <div class="topLogo" style="width:434px;"><a href="/">
+        	<img border="0" src="/img/logo/logo-r.jpg" alt="海商网" /></a>
+        	<img src="/img/logo/hi_logo.png" border="0" usemap="#Map" alt="海商网"/>
+        	<map name="Map" id="Map">
+                <area shape="rect" coords="10,50,50,65" href="http://cn.hisupplier.com" />
+                <area shape="rect" coords="51,50,88,70" href=http://big5.hisupplier.com />
+            </map>
+        </div>
+        <form action="" method="get" id="topSearchForm" name="searchForm" autocomplete="off" >
+	        <div class="searchBox">
+	            <div class="l"></div>
+	            <div class="r"></div>
+	            <div class="formBox">
+	                <div id="searchDiv" class="dropdown">
+	                    <select id="topQueryBy">
+							<option value="product" >产品库</option>
+							<option value="sell" >供应库</option>
+							<option value="buy" >求购库</option>
+							<option value="company" >公司库</option>
+							<!-- ‘展会信息’、‘培训信息’如果修改，需相应修改search.js中的changeSearchType方法 -->
+							<option value="tradeshow">展会信息</option>
+	                    </select>
+	                </div>
+	                <script type="text/javascript">
+	                	$("#searchDiv").sSelect();
+	                </script>
+	            </div>
+	            <div class="formBox formBox2">
+					<label id="tipText" for="topQueryText"></label>
+	                <input autocomplete="off" type="text" id="topQueryText" name="queryText" value="" />
+	            </div>
+	            <div class="formBox">
+	                <input type="submit" class="submit" value="找一下"/>
+	            </div>
+
+        	</div>
+        </form>
+    </div>
+    <div class="hiMenu">
+        <div class="l"></div>
+        <div class="r"></div>
+        <ul>
+            <li ><a href="/">首页</a></li>
+            <li class="chinaPro " id="chinaPro"><a href="/product/">中国产品目录</a>
+               
+            </li>
+            <li ><a href="/company/">找公司</a></li>
+            <li class="current"><a href="/trade-list/">找商机</a></li>
+            <li><a rel="nofollow" href="http://tradeshow.cn.hisupplier.com">找展会</a></li>
+
+            <li class="myHi"><a rel="nofollow" href="http://account.cn.hisupplier.com"><img width="88px" height="27px" border="0" src="/img/bg/homeBg_16.gif" alt="myHi"/></a></li>
+        </ul>
+    </div>
+</div>
+
+		<!--产品列表部分-->
+		<div class="area">
+			<div class="mainNav"><span class="T">您正在浏览：</span><a href='/' rel='nofollow'>首页</a>&nbsp;&gt;&nbsp;<span>商情库</span></div>
+			<div class="banner1"> <img width="970px" height="140px" src="/img/banner/banner_01.png" border="0" usemap="#Map2" alt="免费发布求购免费发布供应" />
+				<map name="Map2" id="Map2">
+					<area shape="rect" coords="254,60,386,82" href="http://account.cn.hisupplier.com/user/post_buy_lead.htm?proType=2" target="_blank" />
+					<area shape="rect" coords="252,88,386,112" href="http://account.cn.hisupplier.com/trade/trade_add.htm?proType=1" target="_blank"/>
+					<area shape="rect" coords="833,91,946,128" href="http://account.cn.hisupplier.com/user/join.htm" target="_blank"/>
+				</map>
+			</div>
+			<div class="blank4"></div>
+			<div class="leftSide">
+				<div class="OfferTag">
+					<ul>
+						<li class="current"><a rel="nofollow" href="/trade-list/">最新商情</a></li>
+						<li><a href="/trade/">按目录浏览</a></li>
+					</ul>
+				</div>
+				<div class="listBatchWithBg">
+					<div class="listBatchTop">
+						<div class="batchSelect"><input name="ckAll" type="checkbox" onclick="Util.checkAll(this, 'hs_basket_trade');checkAllToggle(this)" /> 批量选择</div>
+						<div class="buttonBox">
+						<span class="button2"></span>
+						<span class="button1"></span>
+					</div>
+					 
+				</div>
+				<div class="listBatchBottom">
+					
+						
+							
+							
+								<font color="#ff6600">以下&nbsp<strong>11</strong>&nbsp条供应商情来自于“武汉市怡蓝经贸有限公司”</font>
+							
+							
+						
+				</div>
+				</div>
+				<div class="blank3"></div>
+				<div class="titleTab">
+					<table border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td width="46">类型</td>
+							<td width="340">商情主题及描述</td>
+							<td width="162">公司信息</td>
+							<td width="130">联系方式</td>
+						</tr>
+					</table>
+				</div>
+				<div class="blank5"></div>
+				
+				<form name="singleInquiryForm" method="post">
+					<input type="hidden" name="hs_basket_trade" />
+					<input type="hidden" name="get_item_method" />
+					<input type="hidden" name="fromSite" value="1"/>
+					<input type="hidden" name="tradeAlertInfoType" value="trade" />
+				</form>	
+				<form action="/inquiry" name="inquiryForm" method="post">
+					<input type="hidden" name="get_item_method" />
+					<input type="hidden" name="fromSite" value="1" />
+					
+						<div class="offerItemBox offerItemBoxBg">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406764-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406764.html" title="纯碱" target="_blank">纯碱</a><span>2013-07-15 </span></div>
+								<div class="describe">纯碱
+中文名称：碳酸钠，俗名苏打、纯碱，英文名称：Sodium Carbonate ，CAS：497-19-8
+用途：基本化工原料，广泛用于医药、造纸、冶金、玻璃、纺织、染料等工业,用作食品工业发酵剂
+含量：99%
+包装：50公斤/袋
+产地：湖北</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406764-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox ">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406766-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406766.html" title="工业氯化铵" target="_blank">工业氯化铵</a><span>2013-07-15 </span></div>
+								<div class="describe">工业氯化铵
+氯化铵分子式：NH4CL，分子量：53.49
+CAS No.: 12125-02-9，PH：5~6，执行标准：GB/T2946-2008
+含量:氮含量25.4%，氯化铵含量99.5%
+包装：50公斤/袋，中英文包装。
+产地：湖北双环
+用途：主要用于选矿和鞣革，农用肥料</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406766-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox offerItemBoxBg">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406841-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406841.html" title="碳酸钡" target="_blank">碳酸钡</a><span>2013-07-15 </span></div>
+								<div class="describe">碳酸钡
+英文名称： Barium carbonate，CAS号：513-77-9，分子式：BaCO3，分子量：197.34 
+含量：99.2%，包装：内塑外编中性包装，25公斤/袋，产地：湖南/河北
+用途：用于钡盐、颜料、光学玻璃、油化、陶瓷及无线电原件等的原料。</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406841-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox ">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406848-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406848.html" title="元明粉" target="_blank">元明粉</a><span>2013-07-15 </span></div>
+								<div class="describe">元明粉
+CAS:7757-82-6，密度：2.68g/cm，
+分子式：Na2SO4
+产品用途：于制造硫化钠, 硅酸钠等,也用于造纸，玻璃 ,印染,合成纤维,制革等工业
+包装：50公斤/袋
+含量：99%
+产地：湖北双环</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406848-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox offerItemBoxBg">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406851-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406851.html" title="小苏打" target="_blank">小苏打</a><span>2013-07-15 </span></div>
+								<div class="describe">小苏打
+CAS：144-55-8，分子式：NaHCO3
+中文名称: 碳酸氢钠，密度：2.159 g/cm3
+执行标准：GB1887-2007</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406851-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox ">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406854-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406854.html" title="片碱" target="_blank">片碱</a><span>2013-07-15 </span></div>
+								<div class="describe">片碱
+产品别名： 氢氧化钠;苛性碱;火碱;苛性钠  ，片碱 
+ 分子式：NaOH  
+产品用途：基本化工原料;广泛用于化工,  冶金,  造纸,  石油,  纺织以及日用化工等部门 
+ CAS号：1310-73-2  
+含量：99%
+包装：25公斤/袋，产地：新疆</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406854-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox offerItemBoxBg">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406855-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406855.html" title="六偏磷酸钠" target="_blank">六偏磷酸钠</a><span>2013-07-15 </span></div>
+								<div class="describe">六偏磷酸钠
+英文名称：Sodium hexametaphosphate，分子式：(NaPO3)6，分子量：611.82， CAS No: 10124-56-8
+PH：5.8-7.3，目数：60-80目</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406855-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox ">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406857-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406857.html" title="氟硅酸钠" target="_blank">氟硅酸钠</a><span>2013-07-15 </span></div>
+								<div class="describe">氟硅酸钠
+别名：六氟合硅酸钠，英文名：Sodium Fluosilicate
+分子式:Na2SiF6
+CAS：16893-85-9，符合国标（HG/T3252-2000）一级品指标要求 
+含量：99%
+包装：25公斤/袋</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406857-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox offerItemBoxBg">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1406860-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1406860.html" title="玉米淀粉" target="_blank">玉米淀粉</a><span>2013-07-15 </span></div>
+								<div class="describe">玉米淀粉
+玉米淀粉又称玉蜀淀粉，俗称六谷粉。
+特性：白色微带淡黄色的粉末，密度为1.499-1.513，有吸湿性。
+标准：GB/T 8885-2008，CAS No.： 9005-25-8</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1406860-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox ">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1460843-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1460843.html" title="纯碱" target="_blank">纯碱</a><span>2013-07-15 </span></div>
+								<div class="describe">纯碱
+中文名称：碳酸钠，俗名苏打、纯碱，英文名称：Sodium Carbonate 
+分子式：Na2CO3，分子量：105.99，CAS No.：497-19-8
+含量：99%
+包装：50公斤/袋
+产地：湖北
+</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1460843-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+							<div class="offerLine"></div>
+						
+					
+						<div class="offerItemBox offerItemBoxBg">
+							<div name="cb_inquiry" class="sellbox1">
+								
+								
+									<input type="checkbox" name="hs_basket_trade" value="1729287-128373" />
+								
+								<br/>供应
+							</div>
+							<div class="box2">
+								<div class="partName"><a href="http://cn.hisupplier.com/sell/detail-1729287.html" title="食品级小苏打" target="_blank">食品级小苏打</a><span>2013-07-15 </span></div>
+								<div class="describe">小苏打
+CAS：144-55-8，分子式：NaHCO3，英文名称：Sodium bicarbonate
+中文名称: 碳酸氢钠，密度：2.159 g/cm3
+执行标准：GB1887-2007
+包装：25公斤/袋，产地：湖北双环，含量：99%</div>
+								
+							</div>
+							
+							<div class="box4">
+								
+								<span>武汉市怡蓝经贸有限公司</span>
+								<br />
+								
+									[湖北省 武汉市]
+								
+								<br />
+								
+							</div>
+							<div class="box5">
+								<span class="span1"><a rel="nofollow" href="javascript:inquirySingle('hs_basket_trade','1729287-128373','false')">邮件咨询</a></span>
+								
+							</div>
+							<div class="blank21"></div>
+						</div>
+						
+					
+				</form>
+				<div class="listBatchBottom">
+					<div class="box">
+						<div class="batchSelectF"><input name="ckAll" type="checkbox" onclick="Util.checkAll(this, 'hs_basket_trade');checkAllToggle(this)" /> 批量选择</div>
+						<div class="buttonBoxF">
+							<span class="button2"></span>
+							<span class="button1"></span>
+						</div>
+					</div>
+				</div>
+				<div class="blank6"></div>
+				
+				<div class="footerTips">
+					找不到您需要的供应/求购信息，<a rel="nofollow" href="http://account.cn.hisupplier.com/user/post_buy_lead.htm?proType=2" target="_blank">免费发布求购信息</a>/<a rel="nofollow" href="http://account.cn.hisupplier.com/trade/trade_add.htm?proType=1" target="_blank">免费发布供应信息</a>让机会主动找上门！
+					<div>您在搜索卖家/买家信息过程中，有任何问题和建议？<a rel="nofollow" href="http://account.cn.hisupplier.com/user/contact_us.htm" target="_blank">点此反馈</a></div>
+					
+				</div>
+			</div>
+				
+
+
+
+
+<script type="text/javascript">
+<!--
+	$(function(){
+		// 搜索文字框自动显示
+		var tradeAlertEmailTitle = $("#tradeAlertEmail").attr("title");
+		$("#tradeAlertEmail").blur(function(){
+			if($(this).val() == ""){
+				$(this).val(tradeAlertEmailTitle);
+			}
+		}).focus(function(){
+			if($(this).val() == tradeAlertEmailTitle){
+				$(this).val("");
+			}
+		});
+	
+		$("#tradeAlertForm").submit(function(){
+			if($("#tradeAlertEmail").val() == tradeAlertEmailTitle){
+				$("#tradeAlertEmail").val("");
+			}
+		});
+	});
+//-->
+</script>
+
+<div class="rightSide">
+		<div class="releaseOfferR">
+			<div class="h1">免费发布新商情</div>
+			<div class="rsc">发布的商情信息将出现在左侧最新商情列表，选择下列商情类别赶紧发布吧！
+				<div class="option">
+					<input type="radio" name="proType" value="1" onclick="window.location.href = 'http://account.cn.hisupplier.com/trade/trade_add.htm'"/> 供应
+					<input type="radio" name="proType" value="2" onclick="window.location.href = 'http://account.cn.hisupplier.com/user/post_buy_lead.htm'"/> 求购
+				</div>
+			</div>
+			<div class="rsb"></div>
+		</div>
+		<div class="blank4"></div>
+		<div class="releaseOfferR">
+			<div class="h1">订阅商情信息</div>
+			<div class="rsc">输入您的邮箱订阅商情信息，系统将根据您订阅的类型定期发送信息至您指定的邮箱。<br />
+				
+				
+				<form action="http://account.cn.hisupplier.com/user/trade_alert_step1.htm" name="tradeAlertForm" id="tradeAlertForm" method="get">
+					<input type="hidden" name="keyword" value="">
+					<input type="hidden" name="catIds" value="">
+					<input type="hidden" name="product" value="false">
+					<input type="hidden" name="company" value="false">
+					<input type="hidden" name="buy" value="false">
+					<input type="hidden" name="sell" value="false">
+					
+					<input type="text" id="tradeAlertEmail" name="email" title="请输入您的邮箱地址" value="请输入您的邮箱地址" style="width:135px; margin:3px auto 6px auto;color:#666666"/>
+					
+					<table><tr><td>
+					<input type="submit" value="订阅" class="button" /></td>
+					<td><span class="ico1" style="height:22px;margin-left:6px"><a rel="nofollow" href="javascript:Util.openWindow('http://account.cn.hisupplier.com/user/trade_alert_sample.htm',750,600);" style="background: url('/img/ico/ico_01.gif') no-repeat; padding-left: 20px; ">商机模板</a></span></td>
+					</table>
+					<div class="lin"></div>
+					<a rel="nofollow" href="http://account.cn.hisupplier.com/alert/trade_alert_list.htm">管理我的订阅信息</a>
+				</form>
+			</div>
+			<div class="rsb"></div>
+		</div>
+		<div class="blank4"></div>
+		
+		
+			
+		
+ 	
+
+
+
+ 	
+</div>
+		</div>
+	
+<div class="blank2"></div>
+	
+
+
+
+	
+<div id="footer">
+	<a href="http://about.hisupplier.com/" target="_blank" rel="nofollow">关于海商</a> | 
+	<a href="http://www.hisupplier.com/" target="_blank">国际站</a> | 
+	<a href="http://about.hisupplier.com/joinus" target="_blank" rel="nofollow">诚聘英才</a> | 
+	<a href="http://cn.hisupplier.com/outer_link.htm?url=http://about.hisupplier.com/partner/439" target="_blank" rel="nofollow">战略合作</a> | 
+	<a href="http://cn.hisupplier.com/friend_link.html" target="_blank">友情链接</a> | 
+	<a href="http://cn.hisupplier.com/comment.html" target="_blank" rel="nofollow">诚信报告</a> | 
+	<a href="http://about.hisupplier.com/agent" target="_blank" rel="nofollow">诚征代理</a> | 
+	<a href="http://about.hisupplier.com/hi/44" target="_blank" rel="nofollow">分支机构</a> | 
+	<a href="http://about.hisupplier.com/contactus" target="_blank" rel="nofollow">联系海商</a> | 
+	<a href="http://help.cn.hisupplier.com/" target="_blank" rel="nofollow">帮助中心</a>
+	<table cellspacing="0" style="margin: 10px auto;">
+        <tr>
+           <td align="center" valign="middle">
+				<script language="javaScript" src="http://zjnet.zjaic.gov.cn/nbqybswj/3302270000948466.js"></script>
+           </td>
+           <td align="center" valign="middle" style="padding:0 20px;">
+           		<a rel="nofollow" href="http://www.nbnetcop.gov.cn/" target="_blank"><img src="/img/ico/ico_13.gif" border="0" alt="宁波市网络警察" /></a>
+           </td>
+           <td align="center" valign="middle"><a rel="nofollow" href="http://zjnet.zjaic.gov.cn/index.action" target="_blank"><img src="/img/ico/ico_12.gif" border="0" alt="浙江省网络经济服务监管网" /></a></td>
+           <td  align="left" style="padding-left:20px;">总机：0574-27702770 客服热线：0574-27901060（工作时间） 传真：0574-28822992、27718667 <br/>
+             	版权所有<span style="font-family: Arial;">&copy;</span>&nbsp;<a href="http://cn.hisupplier.com" title="中国海商网" target="_blank">海商网</a>&nbsp;&nbsp;<a rel="nofollow" href="http://www.miibeian.gov.cn/" target="_blank">浙B2-20090145</a> 
+		   </td>
+        </tr>
+	</table>
+</div>
+
+	
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', 'UA-5167365-8', 'hisupplier.com');
+	  ga('send', 'pageview');
+	
+	</script>
+
+	
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F14a76938ad6846c6cb7ebea488c2d7fb' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
+

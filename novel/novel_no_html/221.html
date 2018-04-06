@@ -1,0 +1,1974 @@
+<HTML>
+<HEAD>
+<TITLE>中国烟草学报</TITLE>
+	<META http-equiv=Content-Type content="text/html; charset=utf-8">
+	<link href="../../images/css.css" type="text/css" rel="stylesheet">
+	<META content="MSHTML 6.00.2900.3157" name=GENERATOR>
+	<SCRIPT language=javascript src="../../images/OPENWIN.JS"></SCRIPT>
+	
+   <SCRIPT language=javascript>
+		function Maximize()
+		{
+			self.moveTo(0,0);
+			self.resizeTo(screen.availWidth,screen.availHeight);
+		}
+		
+		function clearall()
+		{
+			var the_box = window.document.all('pid');
+			for(var i=0;i< the_box.length;i++)
+			{
+				the_box[i].checked = false;
+			}
+		}
+		
+		function isready1(form)
+		{
+			var blnAlert = 0;
+			var str_article = "";
+			if (typeof(AbstractList.pid.length)=="undefined") 
+			{  
+				if(AbstractList.pid.checked==true)
+				{
+					blnAlert = blnAlert+1;
+					str_article = str_article + AbstractList.pid.value+",";
+				}
+			} 
+			else 
+			{
+				for (i=0;i<AbstractList.pid.length;i++) 
+				{
+			  	if(AbstractList.item("pid",i).checked==true)
+			  	{  
+						blnAlert = blnAlert+1;
+						str_article = str_article + AbstractList.item("pid",i).value+",";
+					}
+			  } 
+			}
+			if (blnAlert==0)
+			{
+				alert("请您先选中文章！");
+				return  false;
+			}
+			//alert(str_article);
+			form.action="../article/uniteZhaiYao.do?uniteId="+str_article;
+			form.submit;
+		}
+		
+		function set_abs()
+		{
+			abst.style.display = "block";
+		}
+		
+		function showArticleFile(url,attachType,articleId){
+	var viewAttach = url+"/CN/article/showArticleFile.do?attachType="+attachType+"&id="+articleId;
+	window.open(viewAttach,"下载文件","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizeable=no,copyhistory=no,width=520,height=200,left=88,top=88");
+} 
+		 function hidead()
+{document.getElementById("ad").style.display="none";}
+	</SCRIPT>
+
+
+</HEAD>
+   
+   
+
+<!--鏈〉鎵�墽琛岀殑鍔熻兘宸茬粡鍐欏叆杩囨护鍣紝浣嗗緢澶歷m璋冪敤姝ら〉锛屽洜鏈椤垫殏涓嶈兘鍒犻櫎 -->
+	
+	 
+<BODY LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+    <TABLE border=0 cellSpacing=0 cellPadding=0 width=1002 align=center>
+		<!--头部-->
+		<TR>
+		<TD valign=top>
+				<HTML>
+<HEAD>
+<TITLE>中国烟草学报</TITLE>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="../../images/css.css" type="text/css" rel="stylesheet">
+	<META content="MSHTML 6.00.2900.3157" name=GENERATOR>
+
+<SCRIPT language=JavaScript>
+ var h;
+ var w;
+ var l;
+ var t;
+ var topMar = 3;
+ var leftMar = -10;
+ var space = 2;
+ var isvisible;
+ var MENU_SHADOW_COLOR='#FFA500';
+ var global = window.document
+ global.fo_currentMenu = null
+ global.fo_shadows = new Array
+
+function HideMenu() 
+{
+ var mX;
+ var mY;
+ var vDiv;
+ var mDiv;
+	if (isvisible == true)
+{
+		vDiv = document.all("menuDiv");
+		mX = window.event.clientX + document.body.scrollLeft;
+		mY = window.event.clientY + document.body.scrollTop;
+		if ((mX < parseInt(vDiv.style.left)) || (mX > parseInt(vDiv.style.left)+vDiv.offsetWidth) || (mY < parseInt(vDiv.style.top)-h) || (mY > parseInt(vDiv.style.top)+vDiv.offsetHeight)){
+			vDiv.style.visibility = "hidden";
+			isvisible = false;
+		}
+}
+}
+
+function ShowMenu(vMnuCode,tWidth) {
+	vSrc = window.event.srcElement;
+	vMnuCode = "<table id='submenu' cellspacing=1 cellpadding=3 style='width:"+tWidth+"' class=tableborder1 onmouseout='HideMenu()'><tr height=23><td nowrap align=left class=tablebody1>" + vMnuCode + "</td></tr></table>";
+
+	h = vSrc.offsetHeight;
+	w = vSrc.offsetWidth;
+	l = vSrc.offsetLeft + leftMar+4;
+	t = vSrc.offsetTop + topMar + h + space-2;
+	vParent = vSrc.offsetParent;
+	while (vParent.tagName.toUpperCase() != "BODY")
+	{
+		l += vParent.offsetLeft;
+		t += vParent.offsetTop;
+		vParent = vParent.offsetParent;
+	}
+
+	menuDiv.innerHTML = vMnuCode;
+	menuDiv.style.top = t;
+	menuDiv.style.left = l;
+	menuDiv.style.visibility = "visible";
+	isvisible = true;
+    makeRectangularDropShadow(submenu, MENU_SHADOW_COLOR, 3)
+}
+
+function makeRectangularDropShadow(el, color, size)
+{
+	var i;
+	for (i=size; i>0; i--)
+	{
+		var rect = document.createElement('div');
+		var rs = rect.style
+		rs.position = 'absolute';
+		rs.left = (el.style.posLeft + i) + 'px';
+		rs.top = (el.style.posTop + i) + 'px';
+		rs.width = el.offsetWidth + 'px';
+		rs.height = el.offsetHeight + 'px';
+		rs.zIndex = el.style.zIndex - i;
+		rs.backgroundColor = color;
+		var opacity = 1 - i / (i + 1);
+		rs.filter = 'alpha(opacity=' + (100 * opacity) + ')';
+		el.insertAdjacentElement('afterEnd', rect);
+		global.fo_shadows[global.fo_shadows.length] = rect;
+	}
+}
+var About= '&nbsp;<a style=font-size:9pt;line-height:14pt; href=\"../../CN/column/column1.shtml\">基本信息</a>&nbsp;<br>&nbsp;<a style=font-size:9pt;line-height:14pt; href=\"../../CN/column/column2.shtml\">期刊介绍</a>&nbsp;<br>&nbsp;<a style=font-size:9pt;line-height:14pt; href=\"../../CN/column/column3.shtml\">刊物历史</a>&nbsp;<br>&nbsp;<a style=font-size:9pt;line-height:14pt; href=\"../../CN/column/column4.shtml\">获奖情况</a>&nbsp;<br>&nbsp;<a style=font-size:9pt;line-height:14pt; href=\"../../CN/column/column5.shtml\">被收录情况</a>&nbsp;<br>&nbsp;<a style=font-size:9pt;line-height:14pt; href=\"../../CN/column/column6.shtml\">文献计量学指标</a>&nbsp;<br>&nbsp;<a style=font-size:9pt;line-height:14pt; href=\"../../CN/column/column7.shtml\">获基金资助情况</a>&nbsp;'
+</SCRIPT>
+
+
+</HEAD>
+
+<BODY LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<TABLE border=0 cellSpacing=0 cellPadding=0 width=1002 align=center>
+        <TBODY>
+        <TR>
+          <TD bgColor=#ffffff>
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width=1002 
+              align=center><TBODY>
+              <TR>
+                <TD bgColor=#ffffff height=170 
+                background=../../images/banner.jpg align=right>
+                  <OBJECT 
+                  codeBase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" 
+                  classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000 width=848 
+                  height=163>
+                    <PARAM NAME="movie" VALUE="../../images/111.swf"><PARAM NAME="quality" VALUE="high"><PARAM NAME="wmode" VALUE="transparent">
+                      <embed 
+                  src="../../images/111.swf" width="848" height="163" 
+                  quality="high" 
+                  pluginspage="http://www.macromedia.com/go/getflashplayer" 
+                  type="application/x-shockwave-flash" 
+                  wmode="transparent"></embed>          </OBJECT></TD></TR>
+              <TR>
+                <TD bgColor=#ffffff height=4></TD></TR>
+              <TR>
+                <TD height=30 background=../../images/top.jpg>
+                  <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%" 
+                  align=center>
+                    <TBODY>
+                    <TR vAlign=center>
+                      <TD class=txt_bs height=22 vAlign=center width="212" 
+                      align=center><FONT color=#ffffff>
+                        <SCRIPT>
+	var mydate = new Date(); 
+	var year = mydate.getFullYear(); 
+	if (year < 1000) 
+		year+=1900; 
+	var day = mydate.getDay(); 
+	var month = mydate.getMonth()+1; 
+	if (month<10) 
+		month="0"+month; 
+	var daym = mydate.getDate(); 
+	if (daym<10) 
+		daym = "0"+daym;
+	var dayarray=new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+	document.write(year+"年"+month+"月"+daym+"日"+" "+dayarray[day]);
+	                    </SCRIPT>
+                      </FONT></TD>
+                      <TD class=txt_bs><A class=txt_bs href="../volumn/home.shtml">首页</A>&nbsp; | &nbsp;<A class=txt_bs href="../column/column105.shtml">关于期刊</A>&nbsp; | &nbsp;<A class=txt_bs href="../column/column106.shtml">编 委 会</A>&nbsp; | &nbsp;<A class=txt_bs href="../column/column107.shtml">收录情况</A>&nbsp; | &nbsp;<A class=txt_bs href="../column/column108.shtml">期刊订阅</A>&nbsp; | &nbsp;<A class=txt_bs href="../column/column143.shtml">联系我们</A>&nbsp; | &nbsp;<A class=txt_bs href="../../EN/volumn/home.shtml">English</A></TD>
+                    </TR></TBODY></TABLE></TD></TR>
+              <TR>
+                <TD bgColor=#ffffff 
+      height=8></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+</body>
+</html>
+		 </TD>
+		</TR>
+    </table>		
+    
+		<!--中间--> 		
+    <TABLE width=1002 height="100%" border=0 align=center cellPadding=0 cellSpacing=0 bgcolor="#ffffff">
+    
+    <TR>
+		<!--中间. 左部-->    
+    <TD width=170 height="100%" vAlign=top bgcolor="#ffffff">
+	<table width="220" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="38" background="../../images/t.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="10%" height="21">&nbsp;</td>
+                        <td width="90%" height="30" valign="bottom"><span class="STYLE8">文章快速检索</span></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td background="../../images/x.jpg"><table width="208" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="208" align="center"><table height="50" cellspacing="0" cellpadding="0" 
+                                width="90%" align="center" border="0">
+                            <tbody>
+                              <tr>
+                                <form 
+                                action="../article/searchArticle.do" method="post" name="frm_ks" id="frm_ks">
+                                  <td width="83%" height="30"><input size="20" name="ks_keyword" /></td>
+                                  <td width="17%"><input type="submit" value="GO" name="Submit2" /></td>
+                                </form>
+                              </tr>
+                              <tr>
+                                <td height="20" colspan="2" align="left"><a 
+                                href="../article/advSearchArticle.do" class="STYLE18">高级检索</a></td>
+                              </tr>
+                            </tbody>
+                        </table></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td><img src="../../images/d.jpg" width="208" height="8" /></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <TD height="15"></TD>
+            </tr>
+            <tr>
+              <td><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="38" background="../../images/t.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="10%" height="21">&nbsp;</td>
+                          <td width="90%" height="30" valign="bottom"><span class="STYLE8">特别推荐</span></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td background="../../images/x.jpg"><table width="208" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="208" height="84" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td height="5"></td>
+                              </tr>
+                            </table>
+                          <iframe id="hot" border="0" src="../article/showHotArticleSimple.do" width="96%" height="200" scrolling="No" frameborder="0" hspace="0" vspace="0" allowtransparency="true"></iframe></td>
+                        </tr>
+                        <tr>
+                          <td align="right" background="../../images/x.jpg"><span class="STYLE10"><a href="../article/showHotArticle.do">更多</a>&gt;&gt;</span>&nbsp;&nbsp;</td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../images/d.jpg" width="208" height="8" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <td height="15"></td>
+            </tr>
+            <tr>
+              <td><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="38" background="../../images/t.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="10%" height="21">&nbsp;</td>
+                        <td width="90%" height="30" valign="bottom"><a href="../article/showBrowseTopList.do"><span class="STYLE8">点击排行</span></a></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td><img src="../../images/d.jpg" width="208" height="8" /></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <TD height="15"></TD>
+            </tr>
+            <tr>
+              <td><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="38" background="../../images/t.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="10%" height="21">&nbsp;</td>
+                          <td width="90%" height="30" valign="bottom"><a href="../article/showDownloadTopList.do"><span class="STYLE8">下载排行</span></a></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../images/d.jpg" width="208" height="8" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <TD height="15"></TD>
+            </tr>
+            <tr>
+              <td>
+			   <TABLE border="1" cellSpacing="0" borderColor="#a8dba8" cellPadding="0" width="97%" bgColor="#A8DBA8" align="center">
+                <TBODY>
+                  <TR>
+                    <TD align="center"><TABLE border="0" cellSpacing="0" cellPadding="0" width="97%" height="5">
+                      <TBODY>
+                        <TR>
+                          <TD height="2"></TD>
+                        </TR>
+                      </TBODY>
+                    </TABLE>
+                      <span class="txt_ct">中国烟草学报</span><br>
+                      ZHONGGUO YANCAO   XUEBAO<br>
+                      （双月刊）<br>
+                        1992年创刊                     
+                      <TABLE border="0" cellSpacing="0" cellPadding="0" width="97%" height="5">
+                            <TBODY>
+                              <TR>
+                                <TD height="2"></TD>
+                              </TR>
+                            </TBODY>
+                      </TABLE></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+                <TABLE border="0" cellSpacing="0" cellPadding="0" width="97%">
+                  <TBODY>
+                    <TR>
+                      <TD height="2"></TD>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+                <TABLE border="1" cellSpacing="4" borderColor="#a8dba8" cellPadding="0" width="97%" bgColor="#e0efe7" align="center">
+                  <TBODY>
+                    <TR>
+                      <TD height="95" borderColor="#e0efe7"><p align="left">主　　管：中国科学技术协会<BR>
+                        主　　办：中国烟草学会 <BR>
+                        名誉主编：朱尊权<BR>
+                        主　　编：袁行思<BR>
+                        副 主 编：张　辉　杨传德　潘必兴<br>
+                        　 　 　　苏德成　谢剑平 <BR>
+                        责任编辑：哈君利　艾继涛  <BR>
+                        英文编辑：赵百东　姜泓海　肖博学<BR>
+                        编辑出版：《中国烟草学报》编辑部 <BR>
+                        地址：北京市西城区月坛南街55号 <BR>
+                        邮编：100045<BR>
+                        电话：(010)63605768<BR>
+                        　　　　　   
+                        63605769<BR>
+                        传真：(010)63605760<BR>
+                        电子信箱：xh-bj@tobacco.gov.cn<BR>
+                        标准刊号：<BR>
+                        ISSN   1004-5708<BR>
+                        CN 11-2985/TS<BR>
+                        国内邮发代号：80-504<BR>
+                        定价：10.00元人民币</p></TD>
+                    </TR>
+                  </TBODY>
+                </TABLE></td>
+            </tr>
+          </table>
+	</TD>
+	
+	<TD width=8  bgcolor="#ffffff"></TD>
+	
+		<!--中间. 中间--> 	
+	<TD align="center" vAlign=top  bgcolor="#ffffff"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="td41">
+        
+        <tr>
+          <td height="5"></td>
+        </tr>
+        <tr>
+          <td height="30" align="center">
+          
+          
+          <FORM name=AbstractList onSubmit="return isready1(this)" action="../article/uniteZhaiYao.do" method=post target=_blank>
+                    <TABLE height=156 width="98%" align=center border=0>
+                    <TR>
+                    <TD>
+                    <TABLE height=122 cellSpacing=0 cellPadding=0 width="100%" border=0>
+                      <TR>
+                        <TD vAlign=top align=left width=1>&nbsp;</TD>
+                        <TD vAlign=top align=left>
+						<TABLE border=0 cellSpacing=0 cellPadding=0 
+width="100%">
+                          <TBODY>
+                          <TR vAlign=top align=left>
+                            <TD width=209 height=150 align=center valign="middle"><table width="80%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td height="5"></td>
+                              </tr>
+                            </table>
+                               <IMG src="../../fileup/COVER/20140814152358.jpg" width=138  height=188 style="border: 1px solid #cccccc;">  </TD>
+                            <TD width=21 align=middle></TD>
+                            <TD vAlign=top width=371 align=left><TABLE border="0" cellSpacing="0" cellPadding="0" width="100%">
+                              <TBODY>
+                                <TR vAlign="center" align="left">
+                                  <TD><span class="STYLE36"><strong>2014年&nbsp;20卷&nbsp;6期<br>
+                                    刊出日期：2014-12-31</strong></span></TD>
+                                  <TD></TD>
+                                </TR>
+                                <TR vAlign="center" align="left">
+                                  <TD height="5" colSpan="3"><HR SIZE="1">
+                                  </TD>
+                                </TR>
+                                <TR vAlign="center" align="left">
+                                  <TD colSpan="2" valign="top">  <A href="#烟草和烟气化学">烟草和烟气化学</A><br>
+                                     <A href="#制造技术">制造技术</A><br>
+                                     <A href="#农艺与调制">农艺与调制</A><br>
+                                     <A href="#植物保护">植物保护</A><br>
+                                     <A href="#经济与管理">经济与管理</A><br>
+                                     <A href="#生物技术">生物技术</A><br>
+                                     <A href="#综述">综述</A><br>
+                                     </TD>
+                                </TR>
+                              </TBODY>
+                            </TABLE></TD></TR>
+                          <TR>
+                            <TD height=5></TD></TR>
+                          <TR vAlign=top align=left>
+                            <TD colSpan=3 align="left"><table width="200" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td align="right"><a href=
+
+
+
+
+
+
+	volumn_60.shtml
+
+	><IMG src="../../images/btn_previous.gif" border=0></a></td>
+                                <td width="10" align="center">&nbsp;</td>
+                                <td align="left"><a href=
+
+
+
+
+	#
+
+	
+	
+	
+	 ><IMG src="../../images/btn_next.gif" border=0></a></td>
+                              </tr>
+                            </table>
+                            </TD>
+                            </TR></TBODY></TABLE>
+						 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="1"><HR SIZE=1></td>
+                          </tr>
+                        </table>
+						</TD>
+                      </TR>
+                    </TABLE>
+	                	                	                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                      <TR>
+                        <TD height=20></TD>
+                        <TD height="30" align=left vAlign=top>
+						<table width="80%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="5"></td>
+                          </tr>
+                        </table>
+						<TABLE width="100%" height=24 border=0 cellpadding="0" cellspacing="0">
+                          <TBODY>
+                          <TR>
+                            <TD height="30" background="../../images/lanmubj.jpg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A name=#烟草和烟气化学></A><strong><FONT 
+                              color=#000>烟草和烟气化学</FONT></strong></TD>
+                          </TR></TBODY></TABLE>
+						</TD>
+                        <TD vAlign=top align=left></TD>
+                      </TR>
+                      <TR>
+                        <TD width=10></TD>
+                        <TD vAlign=top align=left>
+                                                                                                
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">王家俊 者为 刘言 蔡文生 邵学广</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>基于拓展光谱的近红外光谱模型转移方法</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;1-5 
+                                                        [<a href="../abstract/abstract782.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+33
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=782"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+179
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">许峰 叶鸿宇</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>有机-无机杂化介孔膦酸钛材料降低卷烟烟气有害成分</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;6-11 
+                                                        [<a href="../abstract/abstract781.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+21
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=781"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+134
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">曹毅 朱怀远 刘献军 周瑜 朱莹 庄亚东 沈晓晨 林炜罡 熊晓敏 朱建华</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>自成型复合材料的制备及其对卷烟主流烟气中巴豆醛的选择性吸附</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;12-20 
+                                                        [<a href="../abstract/abstract780.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+12
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=780"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+122
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">冒德寿 刘强</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>基于味觉活力值的烤烟主流烟气关键酸味物质的研究</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;21-27 
+                                                        [<a href="../abstract/abstract784.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+20
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=784"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+140
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">张毅 李强 王政 张一扬 周冀衡</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>基于分类-回归决策树烤烟化学指标识别模型的建立与验证</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;28-33 
+                                                        [<a href="../abstract/abstract783.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+18
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=783"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+175
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              </TD>
+                          
+                          <TD width=11></TD>
+                          </TR>
+                        </TABLE>
+                        	                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                      <TR>
+                        <TD height=20></TD>
+                        <TD height="30" align=left vAlign=top>
+						<table width="80%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="5"></td>
+                          </tr>
+                        </table>
+						<TABLE width="100%" height=24 border=0 cellpadding="0" cellspacing="0">
+                          <TBODY>
+                          <TR>
+                            <TD height="30" background="../../images/lanmubj.jpg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A name=#制造技术></A><strong><FONT 
+                              color=#000>制造技术</FONT></strong></TD>
+                          </TR></TBODY></TABLE>
+						</TD>
+                        <TD vAlign=top align=left></TD>
+                      </TR>
+                      <TR>
+                        <TD width=10></TD>
+                        <TD vAlign=top align=left>
+                                                                                                                                                                                                                                                                                                                                                          
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">黄锋 陈清 王乐 窦家宇 王苏红 李斌</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>片烟增湿与干燥的薄层模型及动力学研究</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;34-40 
+                                                        [<a href="../abstract/abstract765.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+31
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=765"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+156
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">陈宸 高韬 余赞 王晓辉 王涛 陈连芳</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>新型涂布内衬纸的性能与应用分析</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;41-48 
+                                                        [<a href="../abstract/abstract766.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+42
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=766"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+165
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">楼佳颖 张乾 王兵 沙云菲 吴达 刘百战</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>不同卷烟原料物理保润机理研究</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;49-55 
+                                                        [<a href="../abstract/abstract764.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+29
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=764"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+160
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">聂铭 周冀衡</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>基于MIV-SVM的烤烟评吸质量预测模型</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;56-62 
+                                                        [<a href="../abstract/abstract767.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+27
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=767"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+592
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      </TD>
+                          
+                          <TD width=11></TD>
+                          </TR>
+                        </TABLE>
+                        	                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                      <TR>
+                        <TD height=20></TD>
+                        <TD height="30" align=left vAlign=top>
+						<table width="80%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="5"></td>
+                          </tr>
+                        </table>
+						<TABLE width="100%" height=24 border=0 cellpadding="0" cellspacing="0">
+                          <TBODY>
+                          <TR>
+                            <TD height="30" background="../../images/lanmubj.jpg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A name=#农艺与调制></A><strong><FONT 
+                              color=#000>农艺与调制</FONT></strong></TD>
+                          </TR></TBODY></TABLE>
+						</TD>
+                        <TD vAlign=top align=left></TD>
+                      </TR>
+                      <TR>
+                        <TD width=10></TD>
+                        <TD vAlign=top align=left>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">王冬 孙九哲 彭玉富 张小全 李丽华 宋洋洋 杨铁钊</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>不同品种（系）烤烟西柏三烯二醇代谢差异及其对香气品质的影响</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;63-69 
+                                                        [<a href="../abstract/abstract775.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+29
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=775"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+163
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">蔡长春</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>烤烟生育期相关性状的初步遗传分析</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;70-77 
+                                                        [<a href="../abstract/abstract779.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+19
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=779"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+145
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">范幸龙 周冀衡</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>云南高海拔地区不同烤烟品种生长对夜间增温的响应研究</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;78-84 
+                                                        [<a href="../abstract/abstract776.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+34
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=776"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+138
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">孙晓伟</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>毕节不同海拔条件对烤烟风格的响应</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;85-89 
+                                                        [<a href="../abstract/abstract774.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+52
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=774"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+234
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">李瑞丽 张保林 王建民 杜阅光 孙意然</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>河南烤烟综合物理特性的因子分析及规律性研究</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;90-96 
+                                                        [<a href="../abstract/abstract777.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+18
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=777"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+127
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">贺帆</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>烘烤过程中烟叶颜色变化与主要化学成分的关系</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;97-102 
+                                                        [<a href="../abstract/abstract773.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+22
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=773"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+154
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">徐秀红 许家来 杨永花 刘莉 郝贤伟 付秋娟</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>烤烟烘烤性状与烟叶化学成分的相关性</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;103-106 
+                                                        [<a href="../abstract/abstract778.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+24
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=778"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+217
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </TD>
+                          
+                          <TD width=11></TD>
+                          </TR>
+                        </TABLE>
+                        	                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                      <TR>
+                        <TD height=20></TD>
+                        <TD height="30" align=left vAlign=top>
+						<table width="80%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="5"></td>
+                          </tr>
+                        </table>
+						<TABLE width="100%" height=24 border=0 cellpadding="0" cellspacing="0">
+                          <TBODY>
+                          <TR>
+                            <TD height="30" background="../../images/lanmubj.jpg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A name=#植物保护></A><strong><FONT 
+                              color=#000>植物保护</FONT></strong></TD>
+                          </TR></TBODY></TABLE>
+						</TD>
+                        <TD vAlign=top align=left></TD>
+                      </TR>
+                      <TR>
+                        <TD width=10></TD>
+                        <TD vAlign=top align=left>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">周荣金 袁高庆</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>烟草灰霉病复合生防细菌的筛选</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;107-112 
+                                                        [<a href="../abstract/abstract771.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+12
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=771"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+103
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">刘晓姣 丁伟 李永平</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>吡虫啉拌种对烟蚜防效及烟草生长的影响</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;113-118 
+                                                        [<a href="../abstract/abstract772.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+12
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=772"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+127
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </TD>
+                          
+                          <TD width=11></TD>
+                          </TR>
+                        </TABLE>
+                        	                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                      <TR>
+                        <TD height=20></TD>
+                        <TD height="30" align=left vAlign=top>
+						<table width="80%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="5"></td>
+                          </tr>
+                        </table>
+						<TABLE width="100%" height=24 border=0 cellpadding="0" cellspacing="0">
+                          <TBODY>
+                          <TR>
+                            <TD height="30" background="../../images/lanmubj.jpg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A name=#经济与管理></A><strong><FONT 
+                              color=#000>经济与管理</FONT></strong></TD>
+                          </TR></TBODY></TABLE>
+						</TD>
+                        <TD vAlign=top align=left></TD>
+                      </TR>
+                      <TR>
+                        <TD width=10></TD>
+                        <TD vAlign=top align=left>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">韩宏稳</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>层次分析与聚类分析、 判别分析在卷烟零售户分类中的应用</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;119-126 
+                                                        [<a href="../abstract/abstract785.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+43
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=785"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+168
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">朱卫东 孙宜博 吴勇 李矿 杜承勇</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>基于神经网络的烟草零售户销售假烟行为的预警模型研究</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;127-132 
+                                                        [<a href="../abstract/abstract786.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+25
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=786"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+151
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">吴述毅</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>关于烟草专卖零售许可利害关系人法律及实践问题的探讨</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;133-137 
+                                                        [<a href="../abstract/abstract787.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+14
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=787"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+121
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                                                                                                                                                              </TD>
+                          
+                          <TD width=11></TD>
+                          </TR>
+                        </TABLE>
+                        	                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                      <TR>
+                        <TD height=20></TD>
+                        <TD height="30" align=left vAlign=top>
+						<table width="80%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="5"></td>
+                          </tr>
+                        </table>
+						<TABLE width="100%" height=24 border=0 cellpadding="0" cellspacing="0">
+                          <TBODY>
+                          <TR>
+                            <TD height="30" background="../../images/lanmubj.jpg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A name=#生物技术></A><strong><FONT 
+                              color=#000>生物技术</FONT></strong></TD>
+                          </TR></TBODY></TABLE>
+						</TD>
+                        <TD vAlign=top align=left></TD>
+                      </TR>
+                      <TR>
+                        <TD width=10></TD>
+                        <TD vAlign=top align=left>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">史艳梅 王燃 杨军 罗朝鹏 李锋 武明珠 魏春阳 林福呈 屈凌波 魏攀</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>烟草类胡萝卜素异构酶基因的克隆及功能研究</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;138-143 
+                                                        [<a href="../abstract/abstract769.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+13
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=769"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+143
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">王根洪</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>栽培烟草抗逆相关WRKY转录因子的表达特征分析</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;144-149 
+                                                        [<a href="../abstract/abstract768.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+18
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=768"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+137
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                                                                          </TD>
+                          
+                          <TD width=11></TD>
+                          </TR>
+                        </TABLE>
+                        	                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                      <TR>
+                        <TD height=20></TD>
+                        <TD height="30" align=left vAlign=top>
+						<table width="80%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="5"></td>
+                          </tr>
+                        </table>
+						<TABLE width="100%" height=24 border=0 cellpadding="0" cellspacing="0">
+                          <TBODY>
+                          <TR>
+                            <TD height="30" background="../../images/lanmubj.jpg" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A name=#综述></A><strong><FONT 
+                              color=#000>综述</FONT></strong></TD>
+                          </TR></TBODY></TABLE>
+						</TD>
+                        <TD vAlign=top align=left></TD>
+                      </TR>
+                      <TR>
+                        <TD width=10></TD>
+                        <TD vAlign=top align=left>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                          <table width="100%" border="0" cellpadding="5" cellspacing="0" class=td4>
+                                            <tr>
+                                              <td valign="top">                                                 <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                    <tr>
+                                                      <td height="22">韩锦峰</td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22"><b>关于烤烟香型表征的思考</b> </td>
+                                                    </tr>
+                                                    <tr>
+                                                      <td height="22">2014&nbsp;Vol. 20&nbsp;(6):&nbsp;150-154 
+                                                        [<a href="../abstract/abstract770.shtml" target="_blank">摘要</a>] 
+                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+49
+                                          </FONT> ) 
+                                                        
+                                                        [																																													<A class="txt_zhaiyao1" href="../article/downloadArticleFile.do?attachType=PDF&id=770"><U>PDF</U></A>
+																																										                                                        ( <FONT color=red>
+                                          
+
+
+
+
+
+238
+
+
+                                        </FONT> ) | <A title=CopyIndex onClick="javascript:Copylist('.<br>.')" href="#">引用本文</a></td>
+                                                    </tr>
+                                                </table></td>
+                                              </tr>
+                                          </table>
+                                                                                                        </TD>
+                          
+                          <TD width=11></TD>
+                          </TR>
+                        </TABLE>
+                                              </TD>
+                      
+	                  </TR>
+	                    
+              </TABLE>
+      </FORM>
+      
+      		             <FORM name=articleFile target="_blank">
+		             <input type=hidden name="attachType" value="pdf">
+		             <input type="hidden" name="id"  value="">
+		             </form>
+      
+      </td>
+        </tr>
+        <tr>
+          <td height="5"></td>
+        </tr>
+      </table>
+	              </td> 
+          
+		        <TD width=8  bgcolor="#ffffff"></TD>
+		<!--中间. 右部--> 			        
+		        <TD width=170 valign="top" bgColor=#FFFFFF>
+					<table width="220" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td height="5" background="../../images/t.jpg"></td>
+                </tr>
+                <tr>
+                  <td background="../../images/x.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td height="5"></td>
+                    </tr>
+                  </table>
+                    <table width="87%" border="0" align="center" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td height="42"><a href="http://ycxb.tobacco.org.cn/journalx_zgycxb/expertLogOn.action?mag_Id=1" target="_blank"><img src="../../images/zjsg.jpg" width="180" height="36" border="0" /></a></td>
+                      </tr>
+                      <tr>
+                        <td height="42"><a href="http://ycxb.tobacco.org.cn/journalx_zgycxb/editorCommitteeLogOn.action?mag_Id=1" target="_blank"><img src="../../images/bwsg.jpg" width="180" height="36" border="0" /></a></td>
+                      </tr>
+                      <tr>
+                        <td height="42"><a href="http://ycxb.tobacco.org.cn/journalx_zgycxb/editorLogOn.action?mag_Id=1" target="_blank"><img src="../../images/bjbg.jpg" width="180" height="36" border="0"></a></td>
+                      </tr>
+                      <tr>
+                        <td height="42"><a href="http://ycxb.tobacco.org.cn/journalx_zgycxb/editorInChiefLogOn.action?mag_Id=1" target="_blank"><img src="../../images/zbbg.jpg" width="180" height="36" border="0" /></a></td>
+                      </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td><img src="../../images/d.jpg" width="208" height="8" /></td>
+                </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <TD height="15"></TD>
+            </tr>
+            <tr>
+              <td><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="38" background="../../images/t.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="8%" height="21">&nbsp;</td>
+                          <td width="92%" height="30" valign="bottom"><span style="color: #FFFFFF; font-family:'黑体'; font-size: 16px; font-weight: bold">作者中心</span></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td background="../../images/x.jpg"><table width="208" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="208" height="40" align="center"><table border="0" cellspacing="0" cellpadding="0" 
+                                width="89%" align="center">
+                              <tbody>
+                                <tr>
+                                  <td height="3" ></td>
+                                </tr>
+                                <tr>
+                                  <td height="24" align="left" 
+                                valign="center"><font face="宋体">·</font><a href="http://ycxb.tobacco.org.cn/journalx_zgycxb/authorLogOn.action?mag_Id=1" target="_blank" style="color:#0a7302"><b>在线投稿</b></a></td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+                                <tr>
+                                  <td height="24" align="left" 
+                                valign="center"><font face="宋体">·</font><a href="http://ycxb.tobacco.org.cn/journalx_zgycxb/authorLogOn.action?mag_Id=1" target="_blank">在线查稿</a></td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+                                <tr>
+                                  <td height="24" align="left" 
+                                valign="center"><font face="宋体">·</font><a href="../column/column338.shtml">投稿须知</a></td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+                                <tr>
+                                  <td height="24" align="left" 
+                                valign="center"><font face="宋体">·</font><a href="../column/column4320.shtml">版权转让协议</a></td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+								<tr>
+                                  <td height="24" align="left" 
+                                valign="center"><font face="宋体">·</font><a href="../column/column4321.shtml">论文模版</a></td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+								<tr>
+                                  <td height="24" align="left" 
+                                valign="center"><font face="宋体">·</font><a href="../column/column4323.shtml">行业标准</a></td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+								<tr>
+                                  <td height="24" align="left" 
+                                valign="center"><font face="宋体">·</font><a href="../column/column110.shtml">其他下载</a></td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+                              </tbody>
+                          </table></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../images/d.jpg" width="208" height="8" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <TD height="15"></TD>
+            </tr>
+            <tr>
+              <td><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="38" background="../../images/t.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="10%" height="21">&nbsp;</td>
+                          <td width="90%" height="30" valign="bottom"><span class="STYLE8">最新录用</span></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td background="../../images/x.jpg"><table width="208" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="208" height="57" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="5"></td>
+                            </tr>
+                          </table>
+                            <iframe id="hot" border="0" src="../article/zxly.do" width="96%" height="200" scrolling="No" frameborder="0" hspace="0" vspace="0" allowtransparency="true"></iframe>
+                            <table border="0" cellspacing="0" cellpadding="0" 
+                                width="89%" align="center">
+                              <tbody>
+
+
+                                <tr>
+                                  <td height="22" align="right" 
+                                valign="center"><span class="STYLE10"><a href="../article/showNewArticle.do">更多</a>&gt;&gt;</span>&nbsp;&nbsp;</td>
+                                </tr>
+                              </tbody>
+                          </table></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../images/d.jpg" width="208" height="8" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+            <tr>
+              <TD height="10"></TD>
+            </tr>
+            <tr>
+              <td><table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td height="38" background="../../images/t.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="8%" height="21">&nbsp;</td>
+                          <td width="92%" height="30" valign="bottom"><p class="STYLE8">相关链接</p></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td background="../../images/x.jpg"><table width="208" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="208" height="40" align="center"><table border="0" cellspacing="0" cellpadding="0" 
+                                width="89%" align="center">
+                              <tbody>
+                                <tr>
+                                  <td height="3" ></td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+								<tr>
+                                  <td height="23" align="left" 
+                                valign="center">
+								                                                						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td width="10%" align="center" valign="top"><SPAN class=txt1><font face="宋体">·</font></SPAN></td>
+                                                  <td width="0" valign="top"><a href="http://www.tobaccoinfo.com.cn/issue/yckj/index.shtml" target='_blank'>《烟草科技》</a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td height="3"></td>
+                                                  <td></td>
+                                                </tr>
+                          </table>
+                                                                        						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td width="10%" align="center" valign="top"><SPAN class=txt1><font face="宋体">·</font></SPAN></td>
+                                                  <td width="0" valign="top"><a href="http://www.zgyckx.com.cn/CN/current.shtml" target='_blank'>《中国烟草科学》</a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td height="3"></td>
+                                                  <td></td>
+                                                </tr>
+                          </table>
+                                                                        						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td width="10%" align="center" valign="top"><SPAN class=txt1><font face="宋体">·</font></SPAN></td>
+                                                  <td width="0" valign="top"><a href="http://www.cnki.net/default.htm" target='_blank'>中国知网CNKI</a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td height="3"></td>
+                                                  <td></td>
+                                                </tr>
+                          </table>
+                                                                        						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td width="10%" align="center" valign="top"><SPAN class=txt1><font face="宋体">·</font></SPAN></td>
+                                                  <td width="0" valign="top"><a href="http://www.tobaccoinfo.com.cn/" target='_blank'>烟草科教网</a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td height="3"></td>
+                                                  <td></td>
+                                                </tr>
+                          </table>
+                                                                        						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td width="10%" align="center" valign="top"><SPAN class=txt1><font face="宋体">·</font></SPAN></td>
+                                                  <td width="0" valign="top"><a href="http://www.echinatobacco.com/" target='_blank'>中国烟草资讯网</a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td height="3"></td>
+                                                  <td></td>
+                                                </tr>
+                          </table>
+                                                                        						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td width="10%" align="center" valign="top"><SPAN class=txt1><font face="宋体">·</font></SPAN></td>
+                                                  <td width="0" valign="top"><a href="http://www.elsevier.com/online-tools/engineering-village" target='_blank'>Ei village</a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td height="3"></td>
+                                                  <td></td>
+                                                </tr>
+                          </table>
+                                                                        						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td width="10%" align="center" valign="top"><SPAN class=txt1><font face="宋体">·</font></SPAN></td>
+                                                  <td width="0" valign="top"><a href="http://emuch.net/bbs/" target='_blank'>小木虫</a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td height="3"></td>
+                                                  <td></td>
+                                                </tr>
+                          </table>
+                                                                        						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                  <td width="10%" align="center" valign="top"><SPAN class=txt1><font face="宋体">·</font></SPAN></td>
+                                                  <td width="0" valign="top"><a href="http://www.jkzgr.net/" target='_blank'>健康中国人</a></td>
+                                                </tr>
+                                                <tr>
+                                                  <td height="3"></td>
+                                                  <td></td>
+                                                </tr>
+                          </table>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                								</td>
+                                </tr>
+                                <tr>
+                                  <td height="3" 
+                                background="../../images/z_bg.gif"></td>
+                                </tr>
+                               
+                                <tr>
+                                  <td height="24" align="right" 
+                                valign="center"><span class="STYLE10"><a href="../column/column111.shtml">更多</a>&gt;&gt;</span>&nbsp;&nbsp;</td>
+                                </tr>
+                              </tbody>
+                          </table></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../images/d.jpg" width="208" height="8" /></td>
+                  </tr>
+              </table></td>
+            </tr>
+          </table>
+				</TD>
+		        
+		        
+      </TR>
+</TABLE>
+
+
+		
+	 <!--底部-->
+<TABLE border=0 cellSpacing=0 cellPadding=0 width=1002 align=center>
+		<TR>
+			<TD valign=top>
+			      <TABLE border=0 cellSpacing=0 cellPadding=0 width=1002 align=center>
+        <TBODY>
+        <TR>
+          <TD align=middle>
+            <TABLE border=0 cellSpacing=0 cellPadding=0 width="100%">
+              <TBODY>
+              <TR>
+                <TD height="8" align=middle bgcolor="#FFFFFF"></TD>
+              </TR>
+              <TR>
+                <TD background=../../images/bottom.jpg align=middle>
+                  <TABLE border=0 cellSpacing=0 cellPadding=0 width="99%" 
+                  align=center>
+                    <TBODY>
+                    <TR>
+                      <TD height=70 width="72%" align=center>版权所有 &copy; 《中国烟草学报》编辑部<br>
+                          本系统由<A href="http://www.magtech.com.cn" target="_blank">北京玛格泰克科技发展有限公司</A>设计开发 ?技术支持：<A href="mailto:support@magtech.com.cn" target="_blank">support@magtech.com.cn</A>
+                          </TD>
+                    </TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+			</TD>
+		</TR>
+</TABLE>
+
+</BODY>
+</HTML>
+

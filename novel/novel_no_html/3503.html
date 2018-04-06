@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>【孔桦】的安康空间-展示最新的孔桦近况打造专属个人资料和孔桦照片- 安康家园 </title>
+<meta name="description" content="欢迎来到孔桦的安康空间，这里展示最新的孔桦个人资料、孔桦照片等包括日记、照片、视频幼儿园班级最新近况。" />
+<meta name="keywords" content="孔桦,孔桦近况,孔桦个人资料,个人日记,照片，个人视频,安康家园" />
+<link rel="stylesheet" type="text/css" href="/www/static/public/css/base.css"/>
+<link rel="stylesheet" type="text/css" href="/www/static/public/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="/www/static/public/css/userSkin/skin_0.css" id="skinCss" mv="0"/>
+<link rel="stylesheet" type="text/css" href="/www/static/baby/css/page.css"/>
+<link rel="stylesheet" type="text/css" href="/www/static/public/css/boxy.css">
+<script src="/www/static/public/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="/www/static/public/js/jquery.boxy.js" type="text/javascript"></script>
+<script src="/www/static/public/js/tab_jquery.js" type="text/javascript"></script>
+<script src="/www/static/public/js/imgzoom.js" type="text/javascript"></script>
+<script src="/www/static/public/js/show_zj.js" type="text/javascript"></script>
+<script src="/www/static/user/js/user_index.js" type="text/javascript"></script>
+<script type="text/javascript" src="/www/static/floater/js/floater_image.js"></script>
+</head>
+
+<body class="body_bg">
+  <div class="browserVersion hide" style="top:40px;">
+    	<div class="browserVersion_inner">
+            <font class="left">系统检测您的</font>
+            <font class="color_black1 left">浏览器版本较低</font>
+            <font class="left">，可能会影响网页功能的使用，</font>
+            <font class="color_gray2 left">请点击右侧图标，升级或下载其他浏览器：</font>
+            <a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank" class="left browserIco"><img src="/www/static/public/images/ieBrowser.png"/></a>
+            <a href="http://d.union.ijinshan.com/liebao/link/ksbinstaller_s_66_58866.exe" target="_blank" class="left browserIco"><img src="/www/static/public/images/liebaoBrowser.png"/></a>
+            <a href="http://www.google.cn/chrome/eula.html?hl=zh-CN&platform=win" target="_blank" class="left browserIco"><img src="/www/static/public/images/chromeBrowser.png"/></a>
+            <span class="close_btn" onclick="closeBrowser()">关闭</span>
+   		</div>
+    </div>
+    <div class="topfixed1">
+        <div class="topfixed1_inner">
+            <a href="http://www.ankang06.org" class="left a2 xz">首页</a>
+            <span class="left">&nbsp;</span>
+            <a href="/activity/topic/achievement" class="left a2">信息化研究成果</a>
+			<a href="#" class="left a2">安康师训</a>
+            <a href="http://edu.ankang06.org/" target="_blank" class="left a2">数字幼儿园</a>
+            <a href="http://2532707.blog.ankang06.org/blog/?album_id=1238712" class="left a2">会议活动</a>
+            <a href="/activity/topic/join" class="left a2">合作专区</a>
+            <a href="/activity/topic/channel" class="left a2">地方频道</a>
+            <a href="/uc/search" target="_blank" class="left a2">幼儿园查询</a>
+            <a href="#" class="left a2">专家委员会</a>
+            <a href="/activity/topic/insurance"  target="_blank" class="left a2">团体幼儿保险</a>
+            
+            <a href="http://211.103.152.135:8800/hdwiki/index.php?category-view-3" target="_blank" class="right a1 ml10" rel="external nofollow">帮助</a>
+            <a href="/uc/register" class="right registered_btn1" rel="external nofollow">注册</a>
+            <a href="/uc/login" class="right login_btn1" rel="external nofollow">登录</a>
+        </div>
+    </div>
+
+<script type="text/javascript">
+$(function(){
+
+	/**判断浏览器版本并提示  开始**/
+	var Sys = {};
+	var ua = navigator.userAgent.toLowerCase();
+	var s;
+	(s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+	(s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+	(s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+	(s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+	(s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+	
+	if(Sys.ie<7){
+		$(".browserVersion").slideDown(500);
+	}
+	/**判断浏览器版本并提示  结束**/
+		
+	/**判断浏览器分辨率 开始**/
+	if(screen.width<=800){
+		$(".topfixed1_inner").css("width","auto");
+	}
+	/**判断浏览器分辨率 结束**/	
+		
+});
+$('.close_btn').click(function(){
+
+	$('.browserVersion').hide();
+})
+/**登录注册-导航条选中特效  开始**/
+$(".topfixed1_inner .a1").mouseover(function(){
+	var icoClass =$(this).find("span").attr("class");
+	$(this).find("span").attr("class",icoClass+"_selected");
+	$(this).css("color","#7ca404");
+}).mouseout(function(){
+	var icoClass1 = $(this).find("span").attr("class");
+	var icoClass2 = icoClass1.substring(0,icoClass1.lastIndexOf('_'));
+	$(this).find("span").attr("class",icoClass2);
+	$(this).css("color","#333333");
+});
+/**登录注册-导航条1选中特效  结束**/
+
+/**其他页面-导航条特效  开始**/
+function close_mailMessageTip(){
+	$(".mailMessage_tip").hide();
+}
+
+$(".setManage").mouseenter(function(){
+	$(this).find(".a3").css({"height":"35px","background":"#9dd100","margin-top":"5px","border-radius":"4px 4px 0 0"});	
+	var icoClass =$(this).find("span").attr("class");
+	$(this).find("span").attr("class",icoClass+"_selected");
+	$(".userManageMenu").hide();
+	$(".userManage_btn2").attr("class","userManage_btn1");
+	$(".setManagemenu").show();
+}).mouseleave(function(){
+	$(this).find(".a3").css({"height":"40px","background":"none","margin-top":"0px"});
+	var icoClass1 = $(this).find("span").attr("class");
+	var icoClass2 = icoClass1.substring(0,icoClass1.lastIndexOf('_'));
+	$(this).find("span").attr("class",icoClass2);
+	$(".setManagemenu").hide();
+});
+
+
+$(".userName span").mouseover(function(){
+	var userManage_btn = $(this).attr("class");
+	if(userManage_btn=="userManage_btn1"){
+		$(".userManageMenu").show();
+		$(this).attr("class","userManage_btn2");
+	}else if(userManage_btn=="userManage_btn2"){
+		$(".userManageMenu").hide();
+		$(this).attr("class","userManage_btn1");
+	}
+});
+
+$(".userManageMenu").mouseleave(function(){
+	$(".userManageMenu").hide();
+	$(".userName").find("span").attr("class","userManage_btn1");
+});
+/**其他页面-导航条特效  结束**/
+
+/**班级管理-选择班级 班级选中效果 开始**/
+function chooseClass_select(className){
+	var name = $(className).attr("class");
+	if(name==""){
+		$(className).attr("class","li1");
+		$(className).siblings().attr("class","");
+	}else if(name=="li1"){
+		$(className).attr("class","");
+	}
+	$('#confirm_class').attr("value",$(className).attr("value"));	
+}
+/**班级管理-选择班级 班级选中效果 开始
+
+/* 管理班级列表 */
+function manageClassList(isfront){
+	var chooseClass_title = '选择班级';
+	var chooseClass_content = '<div class="chooseClass_boxy f14 left"><div class="chooseClass_boxy_content left"><ul id="myClassList" class="chooseClass_list left"></ul></div><div class="chooseClass_boxy_operation left" style="margin-top:10px;"><span class="cancel_btn1 right mr10" onclick="promptDialog_box_remove();">取消</span><span id="confirm_class" class="confirm_btn1 right mr10">确定</span></div></div>';
+	promptDialog_box(chooseClass_title,chooseClass_content);
+	$.getJSON('/ajax/code/myClassList',{stamp:Math.random()},function(data){
+		if(data){
+			$.each(data,function(i,v) {
+				$('#myClassList').append('<li value="'+v.class_id+'" onclick="chooseClass_select(this)">'+v.classname+'</li>');
+			});
+		}else{
+			$('.chooseClass_boxy_content').html('<div class="noClass_tip1 left"><div style="display:inline-block;"><span class="f14 color_gray1 mr10 left">您目前没有班级管理权限！</span><a href="/admin/class"><span class="addClass_btn ml10" style="float:left;"><img src="/www/static/admin/images/add_ico.png" class="left"/><font class="left">添加班级</font></span></a></div>');
+		}
+		$('#confirm_class').attr('isfront',isfront);
+	});
+}
+
+/* 选中要管理的班级 */
+$('#confirm_class').live('click',function(){
+	var classid = $('#confirm_class').attr("value");
+	if(classid==undefined){
+		promptDialog_box_remove();
+	}else{
+		if($('#confirm_class').attr("isfront")==1){
+			window.location="http://"+classid+".class.ankang06.org/";
+		}else{
+			window.location='http://www.ankang06.org/class/index/?classid='+classid;
+		}
+	}
+});
+
+function clickNum(type){
+	$.getJSON('/uc/login/clickNum',{'type':type},function(msg){
+		location.replace(location.href);
+	});
+}
+</script>
+    <div>
+       <div class="userShow_title">
+	<a class="userShow_userHead left"><img src="/www/static/uc/images/user_head.png" width="120" height="120"/></a>
+	<div class="userShow_titleContent left">
+		<p class="p1 mt20">
+			<font class="spaceName color_black_1 left webName_color">孔桦的空间</font>
+			<span class="user_titleTip left ml5"></span>
+			<!--<span class="user_level">Lv10</span>-->
+		</p>
+		<p class="f12 mt20">
+						<font class="webUrl_color left color_black_1">
+						
+			网址: http://107066.blog.ankang06.org			</font>
+			<!--<a class="no_unl left font_color1 ml20" href="#">[发送给朋友]</a>-->
+			<a class="no_unl left font_color1 ml10" href="javascript:;" onclick='copyToClipBoard()'>[复制]</a>
+			<input name=text type='hidden' id="text" class="lj_text left" value="http://.blog.ankang06.org"/>
+			<a class="no_unl left font_color1 ml10" onclick="addMark('安康家园-孔桦的空间', 'http://.blog.ankang06.org')"  href="javascript:;">[收藏]</a>
+		</p>
+		<div class="classIntegral left mt20 mr20"><span class="classIntegral_btn f14 fb">0</span></div>
+		<a target="_blank" href="/user/creditrule" class="left f12 mt20 ml20 fb guize"><span class="guize-img mr5"></span>积分规则</a>
+		<p class="mt20" id="showFriend">
+			
+		</p>
+		<div class="left mt20 ml20 conversation"></div>
+		
+	</div>
+	<div class="userInformation">
+		<div class="userInformation_content left">
+			<p><font class="left">孔桦</font><font class="left ml5">女宝</font><font class="left ml5">14岁</font></p>
+			<p><font class="left">在安康20年4个月</font><font class="left ml5"></font><font class="left ml5">大7班</font></p>
+			<!--<div class="separated1 left"></div>-->
+			<!--<p><span class="heart_ico left"></span><font class="left ml5">已有19人喜欢</font></p>-->
+			<div class="user_title_arrow"></div>
+		</div>
+	</div>
+</div>
+<div class="user_menu">
+	<ul class="left">
+		<li  class="xz"><a href="http://107066.blog.ankang06.org/">首页</a></li>
+		<li ><a href="http://107066.blog.ankang06.org/blog/">日记</a></li>
+		<li ><a href="http://107066.blog.ankang06.org/photo/">照片</a></li>
+		<li ><a href="http://107066.blog.ankang06.org/video/">视频</a></li>
+		<li >
+                            <a href="http://13339.class.ankang06.org/">班级</a>
+                    </li>
+		<li ><font class="color_gray1">已毕业</font></li>
+		<li ><a href="http://107066.blog.ankang06.org/book/">留言板</a></li>
+		<li class="bg_sing"><font class="left mr5">音乐开关:</font><embed class="left" src="/www/static/public/images/musicPlay.swf?file=&amp;width=25&amp;songVolume=100&amp;backColor=000000&amp;frontColor=ffffff&amp;autoStart=true&amp;repeatPlay=true&amp;showDownload=true&amp;2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="24" height="20"></embed></li>
+	</ul>
+</div>
+<!--漂浮物-->
+<div id="fixContent">
+	<div style="position:absolute; left:0px; top:0px;" id="floatContain">
+	</div>
+	<script type="text/javascript">addFloaterImage("",'/www/static/floater/images/');</script> 
+</div>
+<script>
+
+function UserClassList(uid){
+	var chooseClass_title = '选择班级';
+	var chooseClass_content = '<div class="chooseClass_boxy f14 left"><div class="chooseClass_boxy_content left"><ul id="myClassList" class="chooseClass_list left"></ul></div><div class="chooseClass_boxy_operation left" style="margin-top:10px;"><span class="cancel_btn1 right mr10" onclick="promptDialog_box_remove();">取消</span><span id="confirm_class" isfront="1" class="confirm_btn1 right mr10">确定</span></div></div>';
+	promptDialog_box(chooseClass_title,chooseClass_content);
+	$.getJSON('/ajax/code/UserClassList',{'uid':uid},function(data){
+		if(data){
+			$.each(data,function(i,v) {
+				$('#myClassList').append('<li value="'+v.class_id+'" onclick="chooseClass_select(this)">'+v.classname+'</li>');
+			});
+		}
+		
+	});
+}
+
+ function copyToClipBoard(){
+        var clipBoardContent="";
+        clipBoardContent= document.getElementById("text").value;
+        if(window.clipboardData){
+                window.clipboardData.clearData();
+                window.clipboardData.setData("Text", clipBoardContent);
+        }else if(navigator.userAgent.indexOf("Opera") != -1){
+                window.location = clipBoardContent;
+        }else if (window.netscape){
+                try{
+                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }catch (e){
+                        alert("您的当前浏览器设置已关闭此功能！请按以下步骤开启此功能！\n新开一个浏览器，在浏览器地址栏输入'about:config'并回车。\n然后找到'signed.applets.codebase_principal_support'项，双击后设置为'true'。\n声明：本功能不会危极您计算机或数据的安全！");
+                }
+                var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+                if (!clip) return;
+                var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+                if (!trans) return;
+                trans.addDataFlavor('text/unicode');
+                var str = new Object();
+                var len = new Object();
+                var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+                var copytext = clipBoardContent;
+                str.data = copytext;
+                trans.setTransferData("text/unicode",str,copytext.length*2);
+                var clipid = Components.interfaces.nsIClipboard;
+                if (!clip) return false;
+                clip.setData(trans,null,clipid.kGlobalClipboard);
+        }
+        alert("已成功复制！");
+        return true;
+}
+
+
+function addMark(title, url) {
+    try {
+        if (window.sidebar) { window.sidebar.addPanel(title, url, ""); }
+        else if (document.all) { if(navigator.userAgent.toLowerCase().indexOf("msie 8")>-1) external.AddToFavoritesBar(url,title,''); else window.external.AddFavorite(url, title); }
+        else if (window.opera && window.print) { return true; }
+    } catch (e) { alert("您的浏览器安全设置不允许该项操作,请使用Ctrl+D进行添加."); }
+}
+function appayfriend(fuid){
+	$.post("/fd/find/applayFriend",{'fuid':fuid},
+	  function(data){
+	      var json = jQuery.parseJSON(data);
+		  // Boxy.alert(json.msg);
+		  if (json.success == 0)
+		  {	
+				Boxy.alert(json.msg);
+				$("#showFriend").html("<span class=\"user_addFriends\" onclick=\"appayfriend(107066)\"><font class=\"f20 fb left mr5\">+</font><font class=\"left\" id=\"Friendvalue\">加好友</font></span>");
+		  }
+		  if (json.success == 1)
+		  {		
+				$("#showFriend").html("<span class=\"user_addFriends\" ><font class=\"f20 fb left mr5\">+</font><font class=\"left\" id=\"Friendvalue\">等待认证</font></span>");
+		  }
+		  
+    }); 
+
+}
+$(function() {
+	//好友按钮
+	$.get("/user/index/isfriend",{'fuid':107066},
+		function(s){
+		if (s == 1)
+		{
+			$("#showFriend").html('');
+		}
+		else if(s == 2){
+			$("#showFriend").html("<span class=\"user_addFriends\" ><font class=\"f20 fb left mr5\">+</font><font class=\"left\" id=\"Friendvalue\">等待认证</font></span>");
+		}
+		else if(s == 3){
+						$("#showFriend").html("<span class=\"user_addFriends\" onclick=\"appayfriend(107066)\"><font class=\"f20 fb left mr5\">+</font><font class=\"left\" id=\"Friendvalue\">加好友</font></span>");
+					}
+		
+	}); 
+
+});	
+
+</script>
+
+<script>
+//照片背景加载用
+function changePhotoBg(imageurl){
+	$(".webName_color").css("color","#DFDEDD");
+	$(".webUrl_color").css("color","#DFDEDD");
+	$(".body_bg").css({"background-image":"url("+imageurl+")","background-repeat":"no-repeat","background-position":"top center"});
+};
+</script>
+        <div class="userContent color_black_1" style="padding:0px;">
+        	<div class="userContent1 whiteBg1  left">
+                <div class="tab_userArticle left">
+                	<ul class="tab_menu tabMenu_userArticle">
+                        <li class="current">我的动态</li>    
+                    </ul>
+					<div class="tabMenuOr2 left" style="width:750px;">
+                        <div class="tabMenuOr2 left" style="width:50px;">
+						<!--<span class="refresh_btn"></span>--> 
+                        </div>
+                    </div>
+                    <div class="tab_box tabBox_userArticle" >
+                    	<div id="refresh_id">
+                        	<ul class="userNew_list left">
+                        	  
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>         
+			<div class="userContent2 whiteBg1 left ml10">
+			<div class="whoLookMe_title left f16 ml20 mt20 fb">今日访问量 <strong class="fb f18">1</strong></div>
+			<div class="separated1 left"></div>
+			<div class="whoLookMe left">
+		<div class="whoLookMe_title left f14 fb">谁看过我</div>
+		<ul class="whoLookMe_list left">
+						
+		</ul>
+	<!--<div class="whoLookMe left">
+		<div class="whoLookMe_title left f14 fb">礼物</div>
+		<ul class="sendGift_list left mt10">
+			<li>
+				<a class="left" href="#"><img width="60" height="60" src="/www/static/public/images/user_head.png"></a>
+				<div class="sendGift_content left f12">
+					<p><a class="fb font_color1 no_unl" href="#">刘佳美惠</a></p>
+					<p><font class="color_gray1">1天后生日</font></p>
+					<p><span class="sendGift_btn left">送礼物</span></p>
+				</div>
+			</li>
+			<li>
+				<a class="left" href="#"><img width="60" height="60" src="/www/static/public/images/user_head.png"></a>
+				<div class="sendGift_content left f12">
+					<p><a class="fb font_color1 no_unl" href="#">刘佳美惠</a></p>
+					<p><font class="color_gray1">1天后生日</font></p>
+					<p><span class="sendGift_btn left">送礼物</span></p>
+				</div>
+			</li>
+		</ul>
+		<div class="sendGift_operating left f12"><a class="no_unl color_gray3 left" href="#">换一组</a><a class="no_unl color_gray3 left ml10" href="#">祝福全部生日朋友</a></div>
+	</div>-->
+</div>
+	<div class="separated1 left"></div>
+	<div class="whoLookMe left">
+		<div class="whoLookMe_title left f14 fb">热门话题</div>
+		<ul class="hotTopic_list left mt5">
+			<!--  <li><a href="http://www.ankang06.org/user/blog/view/?uid=1269121&album_id=235389&blog_id=21724139">2013金口才故事大王大赛</a></li>-->
+			<li><a href="http://www.ankang06.org/user/blog/view/?uid=2030319&album_id=324726&blog_id=20998826">如何塑造孩子良好性格</a></li>
+			<li><a href="http://www.ankang06.org/user/blog/view/?uid=2183197&blog_id=21483970">做男孩的父母的路很长</a></li>
+			<li><a href="http://www.ankang06.org/baby/index/">2013我与清华有个约会</a></li>
+			<li><a href="http://ankang06.org/user/blog/view/?blog_id=21724661&uid=1269121">安康家园官方微信正式开通</a></li>
+			<li><a href="http://ankang06.org/user/blog/view/?uid=2030319&blog_id=20182146">快乐宝宝家教方法</a></li>
+			<li><a href="http://2030319.blog.ankang06.org/blog/19729061.html">动起来，让宝宝远离肥胖</a></li>
+		</ul>
+		<div class="left hotTopic_operating f12 mt5 mb10"><a class="no_unl color_gray3 right" href="#">更多</a></div>
+	</div>
+        <div class="userShow_advertising left">
+       <!-- <a href="http://www.ankang06.org/activity/designContest/" target="_blank"><img width="190" src="/www/static/public/images/advertising_img4.jpg" /></a>-->
+        <a href="http://www.ankang06.org/activity/voice/infos" target="_blank"><img width="190" src="/www/static/public/images/zmsys.jpg" /></a>
+    </div>
+    
+<script>
+function delvr(vrid) {
+	$.post('/user/index/delvr',{'vr_id':vrid,'uid':107066},function(data){	
+		if (data)
+		{
+			$('.whoLookMe_list').html(data);
+		}
+	
+	});	
+}
+</script>            <div class="clear h0 f0"></div>
+        </div>
+		          <div class="clear h0 f0"></div>
+    </div>
+		  <link rel="stylesheet" type="text/css" href="/www/static/public/css/login.css"/>
+  
+  
+  <div id="fix" style="width:200px; height:150px; position:fixed; right:5px; bottom:0;">
+	<p style="cursor:pointer; padding-left:170px; width:50px;">关闭</p>
+    <div style="width:200px; height:200px;"><a href="/activity/voice/infos" target="_blank"><img src="/www/static/public/images/zmsys.jpg" width="200" height="130" /></a></div>
+</div>
+<script type="text/javascript">
+	$(function(){
+			$("#fix p").bind("click",function(){
+				$("#fix").hide();
+				});
+		});
+</script>
+  
+  
+  <div class="foot left">
+  	<div class="footer">
+      	<p class="mt30">
+          	<a href="/about/about_ankang/index.htm" target="_blank">关于安康</a>
+              <span>|</span>
+              <a href="/about/ankang_lianxi/index.htm" target="_blank">联系我们</a>
+              <span>|</span>
+              <a href="/about/ankang_buiness/index.htm" target="_blank">商务合作</a>
+              <span>|</span>
+              <a href="/about/ankang_wellcome/index.htm" target="_blank">邀您加入</a>
+              <span>|</span>
+              <a href="/about/ankang_map/index.htm" target="_blank">网站地图</a>
+              <span>|</span>
+              <a href="http://help.ankang06.org/" target="_blank">帮助中心</a>
+          </p>
+            <p>服务热线：400-810-9668<span>&nbsp;|&nbsp;</span>传真：010-82525228<span>&nbsp;|&nbsp;</span>E-mail：support@mail.ankang06.org
+</p>
+
+            <p class="mb20">Copyright©2005-2013 安康家园 All right Reserved 京ICP证080296号 <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备06025078号</a>  北京市公安局海淀分局备案编号:110108002072
+            </p>
+      </div>
+  </div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40482724-1', 'ankang06.org');
+  ga('send', 'pageview');
+
+</script>
+<script>
+/**修复导航条丢失BUG 开始**/
+if($('.topfixed1').length==0){
+	$.get('/ajax/code/fixTopMiss',function(data){
+		$('body').prepend(data);	
+	});
+}
+/**修复导航条丢失BUG 结束**/
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F12f8d73e79a0ad8d165778e83ce201c9' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+<script type="text/javascript">
+$("img:[src='http://eiv.baidu.com/hmt/icon/21.gif']").parent().hide();
+</script>
+<div style="margin:0 auto;text-align:center">
+<script>
+var host = window.location.host;
+RegExp('ntxtyey').test(host)&& document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/11/182/0000/60445123/CA111820000604451230001.js' type='text/javascript'%3E%3C/script%3E"));
+RegExp('jzsyyey').test(host)&& document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/08/143/0512/40571674/CA081430512405716740001.js' type='text/javascript'%3E%3C/script%3E"));
+RegExp('xinxing').test(host)&& document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/11/184/0000/60400122/CA111840000604001220002.js' type='text/javascript'%3E%3C/script%3E"));
+RegExp('zjhyey').test(host)&& document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/11/182/0000/60445197/CA111820000604451970002.js' type='text/javascript'%3E%3C/script%3E"));
+RegExp('chunya').test(host)&& document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/11/182/0000/60445368/CA111820000604453680001.js' type='text/javascript'%3E%3C/script%3E"));
+RegExp('xwbaby').test(host)&& document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/11/181/1324/60455523/CA111811324604555230002.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>		
+</body>
+</html>
+
+<script type="text/javascript">
+$(function(){
+	$('.tab_userArticle').Tabs({
+		event:'click'
+	});
+	
+	/**谁看过我-删除按钮显示隐藏操作**/
+	$(".whoLookMe_list li").mouseover(function(){
+		$(this).find(".whoLookMe_closeBtn").show();
+	}).mouseout(function(){
+		$(this).find(".whoLookMe_closeBtn").hide();
+	});
+	
+	/**鼠标移到头像上个人信息显示隐藏效果**/
+	$(".userShow_userHead").mouseover(function(){
+		$(".userInformation").show();
+	}).mouseout(function(){
+		$(".userInformation").hide();
+	});
+	$(".user_titleTip").mouseover(function(){
+		$(".userInformation").show();
+	}).mouseout(function(){
+		$(".userInformation").hide();
+	});
+});
+
+/**文章列表-评论框显示**/
+function Comments_show(show){
+	var display=$(show).parent().next().css("display");
+	if(display=="none"){
+		$(show).css({background:"url(/www/static/public/images/userSkin/skin_01/tabMenu_userArticle_bg.png) no-repeat",color:"#FFF"});
+		$(show).parent().next().show();
+	}else if(display=="block"){
+		$(show).css({background:"none",color:"#F56991"});
+		$(show).parent().next().hide();
+	}
+}
+
+/**文章列表-分页-页码选择效果**/
+$(".pageNumber").mouseover(function(){
+	$(this).find(".pageNumber_list").show();
+}).mouseout(function(){
+	$(this).find(".pageNumber_list").hide();
+});
+/**回复评y**/
+function addComments (object_id,type){
+	if($('#rpcomment_'+object_id).val() == ''){ Boxy.alert('评论内容不能为空');return false;}
+	$.post('/school/index/addcomment',{'type':type,'object_id':object_id,'content':$('#rpcomment_'+object_id).val()},function(data){
+		if(data==1){
+			window.location.reload();
+			//Boxy.alert('评论成功！');
+		}else{
+			Boxy.alert('评论失败！');
+		}
+	});	
+
+}
+/**文章列表-回复框显示**/
+function replyComments_show(show){
+	if($(show).parent().next().css('display') == 'none')
+	{
+		$(show).parent().next().show();
+	}
+	else{
+		$(show).parent().next().hide();
+	}
+}
+
+/**新鲜事删除**/
+function delFN(rdkey){
+	if(rdkey == undefined){ Boxy.alert('删除失败');return false; }
+	$.getJSON('/user/index/delFN/',{'uid':"107066",'rdkey':rdkey},function(data){
+		Boxy.alert(data.msg);
+	});	
+}
+
+
+var replacementSkin_title    = '选择空间风格和装饰';
+var replacementSkin_content  = '<div class="replacementSkinBoxy left"><div class="tab_replacementSkinBoxy left"><ul class="tab_menu tabMenu_replacementSkinBoxy left"><li id="pifuli" onclick="changeli(1);" class="current">空间模板</li><li id="photoli" onclick="changeli(2);">照片背景</li><li id="floatimageli" onclick="changeli(3);">漂浮物</li><li id="musicli" onclick="changeli(4);">背景音乐</li></ul><div class="replacementSkin_tip left"><span class="f12">当前主页布局是默认布局，<a href="#">点击切换其它布局>></a></span></div><div class="tab_box tabBox_replacementSkinBoxy left"><div id="pifu"><ul class="replacementSkin_templateList left"><li id="skin_0" onclick="changeSkin(this);"><a class="a1"><img src="/www/static/public/images/userSkin/skin_0/skin_0.png"/></a><a class="a2 f14 fb">粉色小熊</a></li><li id="skin_1" onclick="changeSkin(this);"><a class="a1"><img src="/www/static/public/images/userSkin/skin_1/skin_1.png"/></a><a class="a2 f14 fb">好朋友</a></li><li id="skin_2" onclick="changeSkin(this);"><a class="a1"><img src="/www/static/public/images/userSkin/skin_2/skin_2.png"/></a><a class="a2 f14 fb">欢乐泡泡</a></li><li id="skin_3" onclick="changeSkin(this);"><a class="a1"><img src="/www/static/public/images/userSkin/skin_3/skin_3.png"/></a><a class="a2 f14 fb">幸福斑马</a></li></ul><div class="replacementSkin_paging left"><!--<a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>--></div><div class="replacementSkinBoxy_operation left" style="margin-top:10px;"><font class="right f12">设置之后，别忘了保存。</font><span class="confirm_btn2 right mr10" onclick="barter();Boxy.get(this).hide();">保存</span></div></div><div class="hide" id="photo"><p class="left f12 ml10 mt10 color_red1">照片背景照片取至默认相册，在默认相册添加照片可在此显示</p><ul class="photosSkin_templateList left" style="height:296px;overflow-y:scroll;overflow-x:hidden;" id="photo_list"></ul><div class="replacementSkin_paging left"><!--<a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>--></div><div class="replacementSkinBoxy_operation left"style="margin-top:10px;"><!--<font class="right f12">设置之后，别忘了保存。</font>--><span class="confirm_btn2 right mr10" onclick="window.location.reload();">保存</span></div></div><div id="floatimage" class="hide"><ul class="floatsSkin_templateList left"><li id="0" onclick="floater(this);"><a><img src="/www/static/floater/images/0.png"width="88"height="88"/></a></li><li id="1_4.gif" onclick="floater(this);"><a><img src="/www/static/floater/images/1.gif"width="88"height="88"/></a></li><li id="2_2.gif" onclick="floater(this);"><a><img src="/www/static/floater/images/2.gif"width="88"height="88"/></a></li><li id="3_3.gif" onclick="floater(this);"><a><img src="/www/static/floater/images/3.gif"width="88"height="88"/></a></li></ul><div class="replacementSkin_paging left"><!--<a href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>--></div><div class="replacementSkinBoxy_operation left"style="margin-top:10px;"><!--<font class="right f12">设置之后，别忘了保存。</font><span class="confirm_btn2 right mr10">保存</span>--></div></div><div id="music" class="hide"><div class="music_content left"><p><label class="left">输入音乐名称:</label><input type="text" id="musictitle" class="music_text left"/></p><p><label class="left">输入音乐链接地址:</label><input type="text" id="musicurl" class="music_text left"/><a href="#" class="music_addbtn left" onclick="addmusic();">添加</a></p><div id="music_list"></div></div><div class="replacementSkinBoxy_operation left"style="margin-top:10px;"><font class="right f12">设置之后，别忘了保存。</font><span class="confirm_btn2 right mr10" onclick="setmusic();">保存</span><font class="right f12">添加背景音乐帮助，<a href="http://211.103.152.135:8800/hdwiki/index.php?doc-view-98" target="_blank" >点击查看。</a></font></div></div></div></div></div>';
+
+/**照片背景鼠标点击效果 结束**/
+
+function changeSkin(thisId){
+	$("#"+thisId.id).addClass("selected").siblings().removeClass("selected");
+	$('#skinCss').attr("href","/www/static/public/css/userSkin/"+(thisId.id)+".css");
+	$('#skinCss').attr("href","/www/static/public/css/userSkin/"+(thisId.id)+".css");
+	$('#skinCss').attr("mv",thisId.id.substr(5,1));
+}
+/**保存当前模板**/
+function barter(){
+	var skin = $('#skinCss').attr("mv");
+	$.get("/ajax/skin/barter",{'skin':skin,'type':1},
+	  function(data){
+		  var json = jQuery.parseJSON(data);
+		  alert (json.msg);
+	  }); 
+}
+/**漂浮物鼠标点击效果并保存 ↓**/
+
+function floater(thisId){
+
+	$.get("/ajax/skin/floater",{'image':thisId.id,'type':2,'object_id':},
+	  function(data){
+		  var json = jQuery.parseJSON(data);
+		  alert (json.msg);
+	  }); 
+}
+
+//美化选项卡
+function changeli(type){
+	switch (type)
+	{
+	case 1:
+		$('.tab_replacementSkinBoxy ul li').removeClass('current');	
+		$('#pifuli').addClass('current');
+		$('.tabBox_replacementSkinBoxy>div').hide();
+		$('#pifu').show();
+		break;
+	case 2:
+		getphoto();
+		$('.tab_replacementSkinBoxy ul li').removeClass('current');	
+		$('#photoli').addClass('current');
+		$('.tabBox_replacementSkinBoxy>div').hide();
+		$('#photo').show();
+		break;
+	case 3:
+		$('.tab_replacementSkinBoxy ul li').removeClass('current');	
+		$('#floatimageli').addClass('current');
+		$('.tabBox_replacementSkinBoxy>div').hide();
+		$('#floatimage').show();	
+		break;
+	default:
+		$('.tab_replacementSkinBoxy ul li').removeClass('current');	
+		$('#musicli').addClass('current');
+		$('.tabBox_replacementSkinBoxy>div').hide();
+		$('#music').show();
+		getschoolmusic();
+		break;
+	}
+	return 0;
+}
+
+//获取背景图片
+function getphoto(){
+	$.post("/ajax/skin/getphoto",{'type':2,'object_id':},
+	  function(data){
+		  $('#photo_list').html(data);
+		  return 0;
+	  }); 
+
+}
+
+//设置背景图片
+function setphoto(image){
+	$.post("/ajax/skin/setphoto",{'type':2,'object_id':,'image':image},
+	  function(data){
+		  var json = jQuery.parseJSON(data);
+		  alert (json.msg);
+	  }); 
+
+}
+//添加音乐
+function addmusic(){
+	var musictitle = $("#musictitle").val();
+	var musicurl = $("#musicurl").val();
+	if (musictitle=='' || musicurl=='')
+	{
+		alert ("音乐名称和音乐链接地址不能为空");
+		return 0;
+	}
+	$.post("/ajax/skin/music",{'title':musictitle,'url':musicurl,'type':2,'object_id':},
+	  function(data){
+		  getschoolmusic();
+		  var json = jQuery.parseJSON(data);
+		  alert (json.msg);
+	  }); 
+	
+}
+
+//删除背景音乐
+function delmusic(music_id){
+	$.post("/ajax/skin/delmusic",{'music_id':music_id},
+	  function(data){
+		  var json = jQuery.parseJSON(data);
+		  getschoolmusic(); // 更新背景音乐列表
+		  alert (json.msg);
+	  }); 
+	
+}
+
+//获取班级背景音乐
+function getschoolmusic(type){
+	$.post("/ajax/skin/getmusic",{'type':2,'object_id':},
+	  function(data){
+		  $('#music_list').html(data);
+		  return 0;
+	  }); 
+
+}
+//保存背景音乐
+function setmusic(music_id){
+	var music_id = $('input[name="music_id"]:checked').val();
+	$.post("/ajax/skin/setmusic",{'music_id':music_id,'type':2,'object_id':},
+	  function(data){
+		  var json = jQuery.parseJSON(data);
+		  alert (json.msg);
+	  }); 
+
+}
+</script>
+
+

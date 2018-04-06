@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="baidu-site-verification" content="O72tn7kniC">
+    <meta name="google-site-verification" content="ZPZFS1qLYw-yvmtPVzjHBWDq73PM3ldVD4GnuCfn7zc">
+    <title>万方医学网-医学杂志-医学期刊-医学论文-中华医学会期刊-中国医师协会期刊-医学外文文献</title>
+    <link href="/Content/Css/style_v5.css" rel="stylesheet" type="text/css">
+    <link href="/Content/favicon.ico" rel="shortcut icon">
+    <link href="/Content/themes/base/jquery-ui.css" rel="stylesheet" type="text/css">
+    <script src="/Scripts/jquery-1.9.0.min.js"></script>
+    <script src="/Scripts/jquery.watermark-3.1.3.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="xTop">
+        <style>
+.xTop{  width:1000px !important;width:993px; padding-left:0px !important; padding-left:7px; margin:0 auto !important; position:relative; 
+        background:url(http://login.med.wanfangdata.com.cn/images/home/searchBg.jpg) 30px 25px no-repeat; background-color:#FFF; }
+.xmTMsg{ float:right; color:#777; padding-top:8px; margin-right:10px}
+.xmTMsg a{ color:#555; text-decoration:none}
+.fRi{float:right; display:inline}
+.cle{clear:both;}
+</style>
+<div class="xmTMsg fRi" id="divUserLogin">
+    <a href="http://login.med.wanfangdata.com.cn/Account/LogOn?ReturnUrl=http%3A%2F%2Fmed.wanfangdata.com.cn%2FAuthor%2FGeneral%2FA000537083" id="loginUrl">登录</a>&nbsp;|&nbsp;
+    <a href="http://login.med.wanfangdata.com.cn/Account/Register?ReturnUrl=http%3A%2F%2Fmed.wanfangdata.com.cn%2FAuthor%2FGeneral%2FA000537083" id="regUrl">注册</a>&nbsp;|&nbsp;
+    <a href="http://login.med.wanfangdata.com.cn/Account/ForgetPassword">忘记密码</a>&nbsp;|&nbsp;
+    <a href="http://tran.med.wanfangdata.com.cn/Home/BuyCards" title="购卡"><font color="red">购卡</font></a>&nbsp;|&nbsp;
+    <a href="http://www.wanfang.com.cn" title="公司首页" target="_blank">公司首页</a>
+</div>
+<div class="xmTMsg fRi" id="divUserLogout" style="display:none">
+    <img src="http://med.wanfangdata.com.cn/Content/Images/Home/ico_psn.gif" alt="" align="absmiddle">
+    <b id="loginUserNameContainer"></b>&nbsp; 
+	<a class="aM" href="http://med.wanfangdata.com.cn/Home/PersonCenter" title="会员中心">会员中心</a>&nbsp;|&nbsp;
+	<a href="http://login.med.wanfangdata.com.cn/Account/LogOut" title="安全退出系统">退出</a>&nbsp;|&nbsp;
+	<a href="http://tran.med.wanfangdata.com.cn/ChargeCard/Charge" title="个人充值">充值</a>&nbsp;|&nbsp;
+	<a href="http://tran.med.wanfangdata.com.cn/Home/BuyCards" title="购卡"><font color="red">购卡</font></a>&nbsp;|&nbsp;
+        <a href="http://www.wanfang.com.cn" title="公司首页" target="_blank">公司首页</a>
+</div>
+<script>
+    function GetAuthContext() {
+        var context = null;
+        var cookieArray = document.cookie.split("; ");
+        $(cookieArray).each(function () {
+            var arr = this.split("=");
+            if (arr[0] == "WFMed.Auth")
+                context = eval("(" + decodeURIComponent(arr[1]) + ")");
+        });
+        return context;
+    }
+
+    function GetDisplayName(context, accountIdStr) {
+        for (var i = 0; i < context.Data.length; i++) {
+            if (context.Data[i].Key === (accountIdStr + ".DisplayName") && context.Data[i].Value.length > 0)
+                return decodeURIComponent(context.Data[i].Value);
+        }
+        return GetAccountIdObj(accountIdStr).Key;
+    }
+    function GetAccountIdObj(accountIdStr) {
+        var accountId = { AccountType: '', Key: '' },
+            index = accountIdStr.indexOf(".");
+        if (index === -1) {
+            accountId.AccountType = accountIdStr;
+        } else {
+            accountId.AccountType = accountIdStr.substring(0, index);
+            accountId.Key = accountIdStr.substring(index + 1);
+        }
+        return accountId;
+    }
+
+    $(function () {
+        var id = "";
+        var authContext = GetAuthContext();
+        if (authContext == null || authContext.Context.AccountIds.length == 0) {
+            $("#divUserLogout").hide();
+            $("#divUserLogin").show();
+            var retUrl = document.location.href.toLocaleLowerCase().indexOf("returnurl") != -1 ? "" : '?ReturnUrl=' + encodeURIComponent(document.location.href);
+            $("#loginUrl").attr("href", $("#loginUrl").attr("href") + retUrl);
+            $("#regUrl").attr("href", $("#regUrl").attr("href") + retUrl);
+            return;
+        }
+
+        $("#divUserLogin").hide();
+
+        $(authContext.Context.AccountIds).each(function () {
+            if (this.indexOf("MedGroupAdmin") >= 0) {
+                id = this;
+                return false;
+            }
+            if (this.indexOf("MedPerson") >= 0) {
+                id = this;
+                return false;
+            }
+            if (this.indexOf("MedGroup") >= 0) {
+                id = this;
+            }
+            return true;
+        });//each		  
+        var displayName = GetDisplayName(authContext.Context, id);
+        $("#loginUserNameContainer").html(displayName);
+        $("#divUserLogout").show();
+    });
+</script>
+        <style>
+.Lang{ margin-left:10px; padding-top:8px; height:98px}
+.Lang a{ color:#555; text-decoration:none;}
+.fLe{float:left; display:inline}
+</style>
+<div class="Lang fLe">
+<a href="#" id="zh-CN" name="multiLanguageSwitch">简体</a>&nbsp;&nbsp;
+<a href="#" id="zh-TW" name="multiLanguageSwitch">繁體</a>&nbsp;&nbsp;
+<a href="http://eng.med.wanfangdata.com.cn">English</a>
+<script>    
+    $(function() {         
+        $("a[name='multiLanguageSwitch']").click(function() {
+            var date = new Date();
+            date.setTime(date.getTime() + parseInt(expires) * 24 * 60 * 60 * 1000);
+            var expires = date.toUTCString();
+
+            var cookieValue = "PreferredCulture=" + escape(this.id);
+            cookieValue += ";expires="+expires;        
+            cookieValue += ";path=/;domain=.wanfangdata.com.cn";
+            cookieValue += ";true";
+            document.cookie = cookieValue;
+            
+//保持原站点简繁体cookie
+var lng = this.id == "zh-CN" ? "zh_cn" : (this.id=="zh-TW" ? "zh_TW" : this.id);
+cookieValue = "lng=" + escape(lng);
+            cookieValue += ";expires="+expires;        
+            cookieValue += ";path=/;domain=med.wanfangdata.com.cn";
+            cookieValue += ";true";
+            document.cookie = cookieValue;
+
+            window.location.href = document.location.protocol + "//" + document.location.host + document.location.pathname + document.location.search;
+        });
+    })
+</script>
+</div>
+        <style>
+.xmSrh{ position:absolute; top:31px; left:300px; padding-top:3px;}
+.xmSrhGud{ float:left; width:517px; margin-left:5px}
+.xmSrhGud li{ float:left; display:inline}
+.xmSrhGud li.s1{ width:48px; height:20px; line-height:20px}
+.xmSrhGud li.s1 a{ display:block; width:48px; height:20px; line-height:20px; color:#666; text-align:center; text-decoration:underline}
+.xmSrhGud li.s1 a:hover{ background-image:url(http://login.med.wanfangdata.com.cn/images/home/srhGudBtn.gif)!important; color:#666; text-decoration:none!important; text-decoration:none;}
+.xmSrhGud li.s1 a.on,.xmSrhGud li.s1 a.on:hover{ background-image:url(http://login.med.wanfangdata.com.cn/images/home/srhGudBtn.gif)!important; color:#ff870b; text-decoration:none!important}
+.xmSrhGud li.s2{ width:14px; height:20px; line-height:20px; text-align:center; font-size:10px; color:#CCC}
+.xmSrhGud li.s3 a{ line-height:18px;}
+.xmSrhMain{ float:left;}
+.xmSrhMain .p1{width:448px; height:27px; background-image:url(http://login.med.wanfangdata.com.cn/images/home/srh_bg.gif); background-repeat:no-repeat; float:left; overflow:hidden; border:4px solid #dce8f2}
+.xmSrhMain .p1 .s1{width:332px; height:27px; float:left; display:inline; margin-top:0px\9\0; margin:6px 0 0 27px; border:0; background-color:transparent; font-family:Verdana;
+                    color:#999;margin-top:0px; /* FF,OP支持 */
+                    margin-top:6px\9; /* 所有IE浏览器(ie6+)支持 ；但是IE8不能识别"*"和"_"的css hack；所以我们可以这样写hack */
+                    *margin-top:6px; /* IE7支持 */
+                     _margin-top:6px; /* IE6支持 */}
+.xmSrhMain .p1 .s2{width:82px; height:27px; float:right; display:inline; margin:0 0 0 0; border:0; background-color:transparent; font-size:14px; font-weight:bold; letter-spacing:1px; cursor:pointer; color:#FFF;}
+.xmSrhMain .p2{ float:left; color:#609F66;  margin:11px 0 0 10px; text-decoration:underline}
+.xLogo{ position:absolute; top:50px; left:18px;padding-left:0px !important; padding-left:18px; }
+</style>
+<div class="xmSrh">
+    <ul class="xmSrhGud">
+        <li class="s1"><a href="javascript:void(0);" id="headCol1" class="">论文</a></li>
+        <li class="s2">|</li>
+        <li class="s1"><a href="javascript:void(0);" id="headCol2">期刊</a></li>
+        <li class="s2">|</li>
+        <li class="s1"><a href="javascript:void(0);" id="headCol3">关键词</a></li>
+        <li class="s2">|</li>
+        <li class="s1"><a class="on" href="javascript:void(0);" id="headCol4">作者</a></li>
+        <li class="s2">|</li>
+        <li class="s1"><a href="javascript:void(0);" id="headCol5">机构</a></li>
+        <li class="s2">|</li>
+        <li class="s1"><a href="javascript:void(0);" id="headCol6">基金</a></li>
+        <li class="s2">|</li>
+        <li class="s1 s3"><a href="javascript:void(0);" id="headCol7">DOI</a></li>
+    </ul>
+    <div class="xmSrhMain">
+        <div class="p1">
+            <input value="在1000多万篇论文中搜索" class="s1" id="headSearchInput" name="headSearchInput" onkeypress="if(event.keyCode==13){homeSearch();return false;}" type="text">
+            <input class="s2" value="搜索" onclick="homeSearch();" type="button">
+        </div>
+        <a href="http://med.wanfangdata.com.cn/Paper" class="p2">高级搜索</a>
+    </div>
+</div>
+<script>
+    var arrayInfo = ["在1000多万篇论文中搜索", "在5000多种中外期刊中搜索", "在2000多万关键词中搜索", "在300多万位作者中搜索", "在39000多家机构中搜索", "在22000多项基金中搜索", "通过DOI直达所需文献资源"];
+    function searchChange(id) {
+        $(".xmSrhGud li a").each(function (index, domEle) {
+            $(domEle).removeClass("on");
+        });
+        $("#headCol" + id).addClass("on");
+        $("#headSearchInput").val(arrayInfo[id - 1]);
+    }
+    function navChange() {
+        $(".xNavGud li a span").each(function (index, domEle) {
+            $(domEle).removeClass("on");
+        });
+        var id = parseInt($("#navChange").val());
+        $("#headNav" + id).addClass("on");
+        switch (id) {
+            case 3:
+            case 12:
+                searchChange(2);
+                break;
+            case 6:
+                searchChange(3);
+                break;
+            case 13:
+                searchChange(4);
+                break;
+            case 14:
+                searchChange(5);
+                break;
+            case 7:
+                searchChange(6);
+                break;
+            default:
+                break;
+        }
+    }
+
+    function isInArray(strValue) {
+        for (var i = 0; i < arrayInfo.length; i++) {
+            if (strValue == arrayInfo[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    function homeSearch() {
+        var id = parseInt($(".xmSrhGud li a[class='on']").attr("id").replace("headCol", ""));
+        var searchStr = $.trim($("#headSearchInput").val());
+        if (searchStr == "" || isInArray(searchStr)) {
+            alert("请输入搜索关键词");
+            $("#headSearchInput").focus();
+            return false;
+        }
+        else {
+            switch (id) {
+                case 1:
+                    window.location.href = "http://med.wanfangdata.com.cn/Paper/Search?q=" + encodeURIComponent(searchStr);
+                    break;
+                case 2:
+                    window.location.href = 'http://med.wanfangdata.com.cn/Periodical/Search?q=' + encodeURIComponent(searchStr);
+                    break;
+                case 3:
+                    window.location.href = 'http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=' + encodeURIComponent(searchStr);
+                    break;
+                case 4:
+                    window.location.href = 'http://med.wanfangdata.com.cn/Author/Search?version=General&AuthorName=' + encodeURIComponent(searchStr);
+                    break;
+                case 5:
+                    window.location.href = 'http://med.wanfangdata.com.cn/Organization/Search?version=General&organizationName=' + encodeURIComponent(searchStr);
+                    break;
+                case 6:
+                    window.location.href = "http://fund.med.wanfangdata.com.cn/List/Search?Name=" + encodeURIComponent(searchStr);
+                    break;
+                case 7:
+                    window.location.href = "http://doi.med.wanfangdata.com.cn/DOI.aspx?doi=" + searchStr;
+                    break;
+
+            }
+        }
+    }
+
+
+    $(function () {
+        navChange();
+        $(".xmSrhGud li a").click(function () {
+            $(".xmSrhGud li a").each(function (index, domEle) {
+                $(domEle).removeClass("on");
+            });
+            $(this).addClass("on");
+            var id = parseInt($(this).attr("id").replace("headCol", ""));
+            if (isInArray($.trim($("#headSearchInput").val()))) {
+                $("#headSearchInput").val(arrayInfo[id - 1]);
+            }
+        });
+        $("#headSearchInput").focus(function () {
+            var strValue = $.trim($(this).val());
+            if (isInArray(strValue)) {
+                $(this).css("color", "black");
+                $(this).val("");
+            }
+        }).blur(function () {
+            if ($.trim($(this).val()) == "") {
+                var id = parseInt($(".xmSrhGud li a[class='on']").attr("id").replace("headCol", ""));
+                $(this).val(arrayInfo[id - 1]);
+                $(this).css("color", "#999");
+            }
+        });
+    });
+</script>
+<!--search end-->
+
+        <div class="cle"></div>
+        <style>
+.xNav{ background:url(http://login.med.wanfangdata.com.cn/images/home/navBg.jpg) no-repeat; width:990px; margin:0 0 0 6px !important; margin-left:0px; padding-left:0px!important; padding-left:0px;}
+.xNavGud{ float:left; width:980px;  margin:4px 0;margin-left:15px!important; margin-left:5px;}
+.xNavGud li{ float:left; display:inline; font-size:14px;}
+.xNavGud li.s4{ position:relative;}
+.xNavGud li.s4 img{ position:absolute; left:117px; top:2px;}
+.xNavGud li.s1{ width:95px; height:30px; line-height:30px; font-weight:bold; color:#FFF;}
+.xNavGud li.s1 a{ display:block; width:95px; height:30px; line-height:30px; color:#FFF; text-align:left; font-size:14px; padding-left:0px; text-decoration:none; overflow:hidden}
+.xNavGud li.s1 a span{ font-size:14px; display:block; padding:0 10px; height:22px; line-height:22px; margin-top:5px; float:left; cursor:pointer;}
+.xNavGud li.s1 a span.on{ color:#ff870b; background:url(http://login.med.wanfangdata.com.cn/images/home/xNavOn.jpg) no-repeat center center}
+.xNavGud li.s2{ width:140px; height:30px; line-height:30px; font-weight:bold; color:#FFF;}
+.xNavGud li.s2 a{ display:block; width:150px; height:30px; line-height:30px; color:#FFF; text-align:left; font-size:14px; padding-left:0px; text-decoration:none; overflow:hidden}
+.xNavGud li.s2 a span{ font-size:14px; display:block; padding:0 15px; height:22px; line-height:22px; margin-top:5px; float:left; cursor:pointer;}
+.xNavGud li.s2 a span.on{ color:#ff870b; background:url(http://login.med.wanfangdata.com.cn/images/home/xNavOn.jpg) no-repeat center center}
+		
+.xNavGud li.s4{ position:relative;}/*120920*/
+.xNavGud li.s4 img{ position:absolute; left:117px; top:2px;}/*120920*/
+.xNavGud li.s5{ position:relative;}/*120920*/
+.xNavGud li.s5 img{ position:absolute; left:77px; top:2px;}/*120920*/
+		
+.xNavGud li.s3{ width:105px; height:30px; line-height:30px; font-weight:bold; color:#FFF;}
+.xNavGud li.s3 a{ display:block; width:105px; height:30px; line-height:30px; color:#FFF; text-align:left; font-size:14px; padding-left:0px; text-decoration:none; overflow:hidden}
+.xNavGud li.s3 a span{ font-size:14px; display:block; padding:0 15px; height:22px; line-height:22px; margin-top:5px; float:left; cursor:pointer;}
+.xNavGud li.s3 a span.on{ color:#ff870b; background:url(http://login.med.wanfangdata.com.cn/images/home/xNavOn.jpg) no-repeat center center}
+.xNavGud li.s1 a:hover,.xNavGud li.s2 a:hover,.xNavGud li.s3 a:hover{ color:#ff870b;}
+</style>
+<a href="http://med.wanfangdata.com.cn/" class="xLogo"><img src="http://med.wanfangdata.com.cn/Content/Images/Home/logo.gif" alt="万方医学网"></a>
+    <div class="xNav">
+        <ul class="xNavGud">
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/"><span id="headNav1">首页</span></a></li>
+            <li class="s3"><a href="http://med.wanfangdata.com.cn/Paper/Index"><span id="headNav2">论文检索</span></a></li>
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/Periodical"><span id="headNav3">期刊导航</span></a></li>
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/Thesis"><span id="headNav4">学位导航</span></a></li>
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/Conference"><span id="headNav5">会议导航</span></a></li>
+            <li class="s1"><a href="http://old.med.wanfangdata.com.cn/KeyWords/Index.aspx"><span id="headNav6">关键词导航</span></a></li>
+            <li class="s1"><a href="http://fund.med.wanfangdata.com.cn/"><span id="headNav7">基金信息</span></a></li>
+            <li class="s2"><a href="http://med.wanfangdata.com.cn/MedicalAssociation/Cma"><span id="headNav8">中华医学会专区</span></a></li>
+            <li class="s2"><a href="http://med.wanfangdata.com.cn/MedicalAssociation/Cmda"><span id="headNav9">中国医师协会专区</span></a></li>
+            <li class="s1"><a href="http://news.med.wanfangdata.com.cn/Topic"><span id="headNav10">专题&amp;活动</span></a></li>
+            <li class="s3"><a href="http://old.med.wanfangdata.com.cn/Mesh/Mesh.aspx"><span id="headNav11">MeSH检索</span></a></li>
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/Home/SCI"><span id="headNav12">期刊评价</span></a></li>
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/Author/General"><span class="on" id="headNav13">作者空间</span></a></li>
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/Organization/General"><span id="headNav14">机构空间</span></a></li>
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/Home/TCM"><span id="headNav15">中医药系统</span></a></li>
+            <li class="s1"><a href="http://med.wanfangdata.com.cn/Home/Video"><span id="headNav16">视频数据库</span></a></li>
+            <li class="s2 s4"><a href="http://lczl.med.wanfangdata.com.cn/"><span>临床诊疗知识库</span></a></li>
+            <li class="s2 s5"><a href="http://book.med.wanfangdata.com.cn/"><span id="headNav18">医学图书</span></a></li>
+        </ul>
+        <div class="cle"></div>
+    </div>
+    </div>
+    
+<div class="main">
+    <div class="gM gM2">
+        <div class="gMLe1" style="padding-top: 10px">
+            <script src="/Scripts/favourite-1.3.js"></script>
+<div class="iSet3" style="margin-bottom: 5px">
+    <h3>
+        <p class="t1">作者名</p>
+    </h3>
+    <div class="bdy" style="padding: 5px">
+        <p style="margin: 15px 10px">
+            <b class="f16">张丹彤</b>
+            <span class="f9992">ID:A000537083</span>
+        </p>
+        <p class="f999" style="margin: 0 5px 10px 5px;">
+            <!-- 添加到收藏start-->
+            <input id="authorId" value="A000537083" type="hidden">
+            <input id="authorQuery" value="AuthorID exact A000537083 and DBID=WF_QK sortby Date" type="hidden">
+            <img src="/Content/Images/ico/ico_fav.gif" align="absmiddle">
+            <a href="#" class="udl" id="saveAuthor">收藏该作者</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" class="udl" id="subscribeAuthor">订阅该作者</a>
+        </p>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("#AllArticle,#FirstArticle").click(function () {
+            var $this = $(this);
+            if ($this.hasClass("on")) {
+                return;
+            }
+            $this.addClass("on").siblings().removeClass("on");
+            $("#" + $this.attr("paperListType")).show().siblings().hide();
+        });
+
+        
+        $('#saveAuthor').click(function () {
+                alert('您还没有登录！');
+        });
+
+        
+        $('#subscribeAuthor').click(function () {
+                alert('您还没有登录！');
+        });
+    });
+</script>
+
+            
+<div class="iSet3" style="margin-bottom: 5px">
+    <h3>
+        <p class="t1">作者机构</p>
+    </h3>
+    <div class="bdy" style="padding: 5px">
+        <ul class="nlst2">
+            <li>
+                <a href="http://med.wanfangdata.com.cn/Organization/General/O000000471" title="厦门大学附属中山医院">
+                    厦门大学附属中山医院
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+            <script src="/Scripts/timenumbar-1.1.js"></script>
+<div class="iSet3" style="margin-bottom: 5px">
+    <h3>
+        <p class="t1">各年发文数目</p>
+    </h3>
+    <div class="bdy" style="padding: 0 5px">
+        <div class="tsGud">
+            <a id="authorArticleCount_all" countlisttype="ulAuthorArticleCount" href="javascript:void(0)" class="on">全部发文</a>
+            <a id="firstAuthorArticleCount_first" countlisttype="ulFirstAuthorArticleCount" href="javascript:void(0)">第一作者发文</a>
+        </div>
+        <div>
+            <ul class="nlst3" id="ulAuthorArticleCount">
+                    <li>
+                        <a href="/Paper/Search?q=%E4%BD%9C%E8%80%85ID%3AA000537083%20%E5%B9%B4%E4%BB%BD%3A2009" target="_blank">2009年度</a>
+                        <b name="BnumBar" class="numBar" style="width: 100px;"></b>
+                        <span class="AuthorArticleCount">2</span>
+                    </li>
+                    <li>
+                        <a href="/Paper/Search?q=%E4%BD%9C%E8%80%85ID%3AA000537083%20%E5%B9%B4%E4%BB%BD%3A2004" target="_blank">2004年度</a>
+                        <b name="BnumBar" class="numBar" style="width: 50px;"></b>
+                        <span class="AuthorArticleCount">1</span>
+                    </li>
+                    <li>
+                        <a href="/Paper/Search?q=%E4%BD%9C%E8%80%85ID%3AA000537083%20%E5%B9%B4%E4%BB%BD%3A2003" target="_blank">2003年度</a>
+                        <b name="BnumBar" class="numBar" style="width: 50px;"></b>
+                        <span class="AuthorArticleCount">1</span>
+                    </li>
+                    <li>
+                        <a href="/Paper/Search?q=%E4%BD%9C%E8%80%85ID%3AA000537083%20%E5%B9%B4%E4%BB%BD%3A2002" target="_blank">2002年度</a>
+                        <b name="BnumBar" class="numBar" style="width: 50px;"></b>
+                        <span class="AuthorArticleCount">1</span>
+                    </li>
+            </ul>
+            <ul class="nlst3" id="ulFirstAuthorArticleCount" style="display: none">
+                    <li>
+                        <a href="/Paper/Search?q=%E7%AC%AC%E4%B8%80%E4%BD%9C%E8%80%85ID%3AA000537083%20%E5%B9%B4%E4%BB%BD%3A2009" target="_blank">2009年度</a>
+                        <b name="BnumBar" class="numBar" style="width: 90px"></b>
+                        <span class="FirstAuthorArticleCount">1</span>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        buildCountBar("AuthorArticleCount");
+        $("#authorArticleCount_all,#firstAuthorArticleCount_first").click(function () {
+            var $this = $(this);
+            if ($this.hasClass("on"))
+                return;
+
+            $this.addClass("on").siblings().removeClass("on");
+            $("#" + $this.attr("countListType")).show().siblings().hide();
+            if ($this.attr("id") == "firstAuthorArticleCount_first")
+                buildCountBar("FirstAuthorArticleCount");
+        })
+    });
+
+    function buildCountBar(countSpanClass) {
+        $("." + countSpanClass).each(function () {
+            AddCount(Number($(this).text()));
+        });
+        DrawLen();
+    }
+</script>
+
+                <div class="iSet3" style="margin-bottom: 5px">
+        <h3>
+            <p class="t1">相关关键词</p>
+        </h3>
+        <div class="bdy" style="padding: 5px">
+            <div class="tagArea">
+<a class="lnk1" href="/Paper/Search?q=%E5%85%B3%E9%94%AE%E8%AF%8D%3A%E4%BD%93%E5%B1%82%E6%91%84%E5%BD%B1%E6%9C%AF%2CX%E7%BA%BF%E8%AE%A1%E7%AE%97%E6%9C%BA">体层摄影术,X线计算机</a><a class="lnk1" href="/Paper/Search?q=%E5%85%B3%E9%94%AE%E8%AF%8D%3A%E4%B8%8B%E8%82%A2%E5%8A%A8%E8%84%89%E7%96%BE%E7%97%85">下肢动脉疾病</a><a class="lnk1" href="/Paper/Search?q=%E5%85%B3%E9%94%AE%E8%AF%8D%3A%E8%9E%BA%E6%97%8BCT">螺旋CT</a><a class="lnk1" href="/Paper/Search?q=%E5%85%B3%E9%94%AE%E8%AF%8D%3A%E7%A3%81%E5%85%B1%E6%8C%AF%E6%88%90%E5%83%8F">磁共振成像</a><a class="lnk1" href="/Paper/Search?q=%E5%85%B3%E9%94%AE%E8%AF%8D%3A%E7%A3%81%E5%85%B1%E6%8C%AF%E5%8A%9F%E8%83%BD%E6%88%90%E5%83%8F">磁共振功能成像</a>            </div>
+        </div>
+    </div>
+
+        </div>
+        <div class="gMLe2">
+            <div class="iSet3b paySys" style="margin: 10px 0 0 0">
+                <h3>
+                    <span class="t1">最新论文列表</span>
+                    <div class="tab tab2" style="margin-right: 30px">
+                        <a id="AllArticle" href="javascript:void(0)" paperlisttype="authorPaper" class="on">全部发文</a>
+                        <a id="FirstArticle" href="javascript:void(0)" paperlisttype="firstAuthorPaper">第一作者发文</a>
+                    </div>
+                </h3>
+                <div>
+                    <div id="authorPaper">
+                        
+<div id="statisticsPaperList" class="s1Ri s1Rib" style="width:540px">
+        <div style="margin-top: 5px" class="page">
+            
+        </div>
+
+
+
+<div class="r">
+    <h5>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?Id=PeriodicalPaper_fjzyy200902028" target="_blank">
+                    <img src="/Content/Images/download.gif" style="margin-top:-10px;" alt="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" title="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" align="absmiddle"></a>
+            </div>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?inline=True&amp;id=PeriodicalPaper_fjzyy200902028" target="_blank">
+                    <img src="/Content/Images/online.gif" style="padding-right:2px;margin-top:-10px;" align="absmiddle"></a>
+            </div>
+        <input style="display: none;" name="chk_export" value="fjzyy200902028" type="checkbox">
+        
+         1.
+<a href="http://med.wanfangdata.com.cn/Paper/Detail/PeriodicalPaper_fjzyy200902028" target="_blank">磁共振功能成像探析"面口合谷收"的神经中枢机制</a>    </h5>
+    <div class="bdy">
+        <div>
+            <b>[期刊论文]</b>&nbsp;
+<a href="http://med.wanfangdata.com.cn/Author/General/A000563385">唐劲松</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000870695">姜勇</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000537083">张丹彤</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000969107">翁国盛</a><span>&nbsp;</span>
+            <br>
+            <a href="http://med.wanfangdata.com.cn/Periodical/fjzyy" target="_blank">福建中医药</a>
+            <a href="http://med.wanfangdata.com.cn/Periodical/Issue?id=fjzyy&amp;year=2009&amp;issue=02">2009年40卷02期</a>
+56-57页                                        <span>被引: 3</span>
+        </div>
+        <p>
+                <b>关键词:&nbsp;</b>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e7%a3%81%e5%85%b1%e6%8c%af%e5%8a%9f%e8%83%bd%e6%88%90%e5%83%8f" target="_blank">磁共振功能成像</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e7%a5%9e%e7%bb%8f%e4%b8%ad%e6%9e%a2" target="_blank">神经中枢</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e5%90%88%e8%b0%b7" target="_blank">合谷</a><span>;</span>
+        </p>
+        <p>
+                <b>摘要:&nbsp;</b>
+&lt;篇首&gt; 磁共振功能成像是利用脑神经活动与血流动力学间存在密切关系.生理刺激下使脑区神经元活动增强,该脑区血氧饱和度发生变化.在T2WI或T2*WI上相应区信号强度增加,经过适当处理后可将这种代表神经元兴...        </p>
+    </div>
+</div>
+
+
+
+<div class="r">
+    <h5>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?Id=PeriodicalPaper_fjyyzz200906064" target="_blank">
+                    <img src="/Content/Images/download.gif" style="margin-top:-10px;" alt="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" title="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" align="absmiddle"></a>
+            </div>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?inline=True&amp;id=PeriodicalPaper_fjyyzz200906064" target="_blank">
+                    <img src="/Content/Images/online.gif" style="padding-right:2px;margin-top:-10px;" align="absmiddle"></a>
+            </div>
+        <input style="display: none;" name="chk_export" value="fjyyzz200906064" type="checkbox">
+        
+         2.
+<a href="http://med.wanfangdata.com.cn/Paper/Detail/PeriodicalPaper_fjyyzz200906064" target="_blank">下肢动脉64排螺旋CT血管造影技术及临床应用(附85例分析)</a>    </h5>
+    <div class="bdy">
+        <div>
+            <b>[期刊论文]</b>&nbsp;
+<a href="http://med.wanfangdata.com.cn/Author/General/A000537083">张丹彤</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000976714">张平</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000040706">段少银</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000078404">康江河</a><span>&nbsp;</span>
+            <br>
+            <a href="http://med.wanfangdata.com.cn/Periodical/fjyyzz" target="_blank">福建医药杂志</a>
+            <a href="http://med.wanfangdata.com.cn/Periodical/Issue?id=fjyyzz&amp;year=2009&amp;issue=06">2009年31卷06期</a>
+107-110页            <img alt="美国《化学文摘》（Chemical Abstracts）收录" src="/Content/Images/IsCoreCA.gif" title="美国《化学文摘》（Chemical Abstracts）收录" align="absmiddle">                            <span>被引: 0</span>
+        </div>
+        <p>
+                <b>关键词:&nbsp;</b>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e4%b8%8b%e8%82%a2%e5%8a%a8%e8%84%89%e7%96%be%e7%97%85" target="_blank">下肢动脉疾病</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e4%b8%89%e7%bb%b4%e8%a1%80%e7%ae%a1%e6%88%90%e5%83%8f" target="_blank">三维血管成像</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e4%bd%93%e5%b1%82%e6%91%84%e5%bd%b1%e6%9c%af" target="_blank">体层摄影术</a><span>;</span>
+        </p>
+        <p>
+                <b>摘要:&nbsp;</b>
+目的 探讨下肢动脉64层螺旋CT血管造影(64-MSCTA)技术及方法,评价其临床应用价值.方法 85例临床疑有下肢动脉病变患者行64-MSCTA检查,扫描范围下腹部至足尖,层厚1.25 mm,螺距1...        </p>
+    </div>
+</div>
+
+
+
+<div class="r">
+    <h5>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?Id=PeriodicalPaper_yxzdyjrfsx200403017" target="_blank">
+                    <img src="/Content/Images/download.gif" style="margin-top:-10px;" alt="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" title="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" align="absmiddle"></a>
+            </div>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?inline=True&amp;id=PeriodicalPaper_yxzdyjrfsx200403017" target="_blank">
+                    <img src="/Content/Images/online.gif" style="padding-right:2px;margin-top:-10px;" align="absmiddle"></a>
+            </div>
+        <input style="display: none;" name="chk_export" value="yxzdyjrfsx200403017" type="checkbox">
+        <img src="/Content/Images/ico/ico_dj.gif" align="absmiddle">
+         3.
+<a href="http://med.wanfangdata.com.cn/Paper/Detail/PeriodicalPaper_yxzdyjrfsx200403017" target="_blank">螺旋CT胆道造影及其三维重建技术的临床应用</a>    </h5>
+    <div class="bdy">
+        <div>
+            <b>[期刊论文]</b>&nbsp;
+<a href="http://med.wanfangdata.com.cn/Author/General/A000159056">梁昆如</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000078404">康江河</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000537083">张丹彤</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A001310437">叶峰</a><span>&nbsp;</span>
+            <br>
+            <a href="http://med.wanfangdata.com.cn/Periodical/yxzdyjrfsx" target="_blank">影像诊断与介入放射学</a>
+            <a href="http://med.wanfangdata.com.cn/Periodical/Issue?id=yxzdyjrfsx&amp;year=2004&amp;issue=03">2004年13卷03期</a>
+184-186页            <img alt="中国科技论文统计源期刊（中国科技核心期刊）收录" src="/Content/Images/IsCoreISTIC.gif" title="中国科技论文统计源期刊（中国科技核心期刊）收录" align="absmiddle">                            <span>被引: 0</span>
+        </div>
+        <p>
+                <b>关键词:&nbsp;</b>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e8%9e%ba%e6%97%8bCT" target="_blank">螺旋CT</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e8%83%86%e7%ae%a1%e9%80%a0%e5%bd%b1" target="_blank">胆管造影</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=X%e7%ba%bf%e8%ae%a1%e7%ae%97%e6%9c%ba" target="_blank">X线计算机</a><span>;</span>
+        </p>
+        <p>
+                <b>摘要:&nbsp;</b>
+目的探讨螺旋CT胆道造影(SCTC)及三维重建技术的临床应用价值.方法23例临床拟诊胆系疾病患者做螺旋CT胆道造影,图像用3D最大强度投影(MIP)及表面遮盖法(SSD)后处理.结果23例患者共有29...        </p>
+    </div>
+</div>
+
+
+
+<div class="r">
+    <h5>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?Id=PeriodicalPaper_fsxsj200311008" target="_blank">
+                    <img src="/Content/Images/download.gif" style="margin-top:-10px;" alt="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" title="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" align="absmiddle"></a>
+            </div>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?inline=True&amp;id=PeriodicalPaper_fsxsj200311008" target="_blank">
+                    <img src="/Content/Images/online.gif" style="padding-right:2px;margin-top:-10px;" align="absmiddle"></a>
+            </div>
+        <input style="display: none;" name="chk_export" value="fsxsj200311008" type="checkbox">
+        
+         4.
+<a href="http://med.wanfangdata.com.cn/Paper/Detail/PeriodicalPaper_fsxsj200311008" target="_blank">脑干梗死的MRI和MRA征象</a>    </h5>
+    <div class="bdy">
+        <div>
+            <b>[期刊论文]</b>&nbsp;
+<a href="http://med.wanfangdata.com.cn/Author/General/A000517479">张有彬</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000537083">张丹彤</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000078404">康江河</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000258979">林清池</a><span>&nbsp;</span>
+            <br>
+            <a href="http://med.wanfangdata.com.cn/Periodical/fsxsj" target="_blank">放射学实践</a>
+            <a href="http://med.wanfangdata.com.cn/Periodical/Issue?id=fsxsj&amp;year=2003&amp;issue=11">2003年18卷11期</a>
+796-797页            <img alt="中国科技论文统计源期刊（中国科技核心期刊）收录" src="/Content/Images/IsCoreISTIC.gif" title="中国科技论文统计源期刊（中国科技核心期刊）收录" align="absmiddle">                            <span>被引: 4</span>
+        </div>
+        <p>
+                <b>关键词:&nbsp;</b>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e6%a2%97%e6%ad%bb%2c%e8%84%91%e5%b9%b2" target="_blank">梗死,脑干</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e7%a3%81%e5%85%b1%e6%8c%af%e6%88%90%e5%83%8f" target="_blank">磁共振成像</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e7%a3%81%e5%85%b1%e6%8c%af%e8%a1%80%e7%ae%a1%e9%80%a0%e5%bd%b1" target="_blank">磁共振血管造影</a><span>;</span>
+        </p>
+        <p>
+                <b>摘要:&nbsp;</b>
+目的:探讨脑干梗死的MRI和MRA征象特点.方法:搜集我院1998年～2002年49例经MRI和MRA检查并经临床治疗证实的脑干梗死病例,其中21例行Gd-DTPA增强扫描,对比临床症状进行分析.结果...        </p>
+    </div>
+</div>
+
+
+
+<div class="r">
+    <h5>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?Id=PeriodicalPaper_zhfsx200202022" target="_blank">
+                    <img src="/Content/Images/download.gif" style="margin-top:-10px;" alt="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" title="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" align="absmiddle"></a>
+            </div>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?inline=True&amp;id=PeriodicalPaper_zhfsx200202022" target="_blank">
+                    <img src="/Content/Images/online.gif" style="padding-right:2px;margin-top:-10px;" align="absmiddle"></a>
+            </div>
+        <input style="display: none;" name="chk_export" value="zhfsx200202022" type="checkbox">
+        <img src="/Content/Images/ico/ico_dj.gif" align="absmiddle">
+         5.
+<a href="http://med.wanfangdata.com.cn/Paper/Detail/PeriodicalPaper_zhfsx200202022" target="_blank">容积重建法CT脑血管造影的临床应用</a>    </h5>
+    <div class="bdy">
+        <div>
+            <b>[期刊论文]</b>&nbsp;
+<a href="http://med.wanfangdata.com.cn/Author/General/A000040706">段少银</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000211815">黄锡恩</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000078404">康江河</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000537083">张丹彤</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000258979">林清池</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000353724">蔡国祥</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000328541">许美心</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000018690">庞瑞麟</a><span>&nbsp;</span>
+            <br>
+            <a href="http://med.wanfangdata.com.cn/Periodical/zhfsx" target="_blank">中华放射学杂志</a>
+            <a href="http://med.wanfangdata.com.cn/Periodical/Issue?id=zhfsx&amp;year=2002&amp;issue=02">2002年36卷02期</a>
+167-170页            <img alt="美国《化学文摘》（Chemical Abstracts）收录" src="/Content/Images/IsCoreCA.gif" title="美国《化学文摘》（Chemical Abstracts）收录" align="absmiddle"><img alt="中国科技论文统计源期刊（中国科技核心期刊）收录" src="/Content/Images/IsCoreISTIC.gif" title="中国科技论文统计源期刊（中国科技核心期刊）收录" align="absmiddle"><img alt="中文核心期刊要目总览（北大核心期刊）收录" src="/Content/Images/IsCorePKU.gif" title="中文核心期刊要目总览（北大核心期刊）收录" align="absmiddle">                            <span>被引: 21</span>
+        </div>
+        <p>
+                <b>关键词:&nbsp;</b>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e4%bd%93%e5%b1%82%e6%91%84%e5%bd%b1%e6%9c%af%2cX%e7%ba%bf%e8%ae%a1%e7%ae%97%e6%9c%ba" target="_blank">体层摄影术,X线计算机</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e5%9b%be%e5%83%8f%e5%a4%84%e7%90%86%2c%e8%ae%a1%e7%ae%97%e6%9c%ba%e8%be%85%e5%8a%a9" target="_blank">图像处理,计算机辅助</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e8%84%91%e8%a1%80%e7%ae%a1%e9%80%a0%e5%bd%b1%e6%9c%af" target="_blank">脑血管造影术</a><span>;</span>
+        </p>
+        <p>
+                <b>摘要:&nbsp;</b>
+目的 探讨CT三维容积重建(volume rendering,VR)脑血管造影的成像方法,评价其临床价值.方法分析62例CT三维容积重建法脑血管造影的图像,三维观察正常血管及血管病变显示情况,同时与表...        </p>
+    </div>
+</div>
+                <div style="margin-top: 5px" class="page">
+            
+        </div>
+</div>
+
+                    </div>
+                    <div id="firstAuthorPaper" style="display: none;">
+                        
+<div id="statisticsPaperList" class="s1Ri s1Rib" style="width:540px">
+        <div style="margin-top: 5px" class="page">
+            
+        </div>
+
+
+
+<div class="r">
+    <h5>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?Id=PeriodicalPaper_fjyyzz200906064" target="_blank">
+                    <img src="/Content/Images/download.gif" style="margin-top:-10px;" alt="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" title="友情提醒：请您避免使用旧版迅雷或FlashGet等下载工具下载全文，建议您直接使用浏览器下载全文" align="absmiddle"></a>
+            </div>
+            <div class="fRi">
+                <a href="http://f.med.wanfangdata.com.cn/Fulltext?inline=True&amp;id=PeriodicalPaper_fjyyzz200906064" target="_blank">
+                    <img src="/Content/Images/online.gif" style="padding-right:2px;margin-top:-10px;" align="absmiddle"></a>
+            </div>
+        <input style="display: none;" name="chk_export" value="fjyyzz200906064" type="checkbox">
+        
+         1.
+<a href="http://med.wanfangdata.com.cn/Paper/Detail/PeriodicalPaper_fjyyzz200906064" target="_blank">下肢动脉64排螺旋CT血管造影技术及临床应用(附85例分析)</a>    </h5>
+    <div class="bdy">
+        <div>
+            <b>[期刊论文]</b>&nbsp;
+<a href="http://med.wanfangdata.com.cn/Author/General/A000537083">张丹彤</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000976714">张平</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000040706">段少银</a><span>&nbsp;</span>
+<a href="http://med.wanfangdata.com.cn/Author/General/A000078404">康江河</a><span>&nbsp;</span>
+            <br>
+            <a href="http://med.wanfangdata.com.cn/Periodical/fjyyzz" target="_blank">福建医药杂志</a>
+            <a href="http://med.wanfangdata.com.cn/Periodical/Issue?id=fjyyzz&amp;year=2009&amp;issue=06">2009年31卷06期</a>
+107-110页            <img alt="美国《化学文摘》（Chemical Abstracts）收录" src="/Content/Images/IsCoreCA.gif" title="美国《化学文摘》（Chemical Abstracts）收录" align="absmiddle">                            <span>被引: 0</span>
+        </div>
+        <p>
+                <b>关键词:&nbsp;</b>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e4%b8%8b%e8%82%a2%e5%8a%a8%e8%84%89%e7%96%be%e7%97%85" target="_blank">下肢动脉疾病</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e4%b8%89%e7%bb%b4%e8%a1%80%e7%ae%a1%e6%88%90%e5%83%8f" target="_blank">三维血管成像</a><span>;</span>
+<a href="http://old.med.wanfangdata.com.cn/KeyWords/Info_KWD.aspx?KWDS=%e4%bd%93%e5%b1%82%e6%91%84%e5%bd%b1%e6%9c%af" target="_blank">体层摄影术</a><span>;</span>
+        </p>
+        <p>
+                <b>摘要:&nbsp;</b>
+目的 探讨下肢动脉64层螺旋CT血管造影(64-MSCTA)技术及方法,评价其临床应用价值.方法 85例临床疑有下肢动脉病变患者行64-MSCTA检查,扫描范围下腹部至足尖,层厚1.25 mm,螺距1...        </p>
+    </div>
+</div>
+                <div style="margin-top: 5px" class="page">
+            
+        </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gMRi" style="padding-top: 10px">
+            <div class="iSet3">
+                <a href="http://book.med.wanfangdata.com.cn/home/list/search/2/10/0/0/%E5%BC%A0%E4%B8%B9%E5%BD%A4" target="_blank">
+                    <img src="/Content/Images/zzts.gif"></a>
+            </div>
+            <div class="iSet3">
+    <h3>
+        <p class="t1">作者空间普通版</p>
+    </h3>
+    <div class="bdy">
+        <div style="padding: 20px 0; color: #666; text-align: center">
+            更多服务请进入<br>
+            <span style="cursor:pointer" class="ProfessionalUrl"><b class="f14 udl" style="color: #CE2222">作者空间专业版»</b></span>
+        </div>
+    </div>
+</div>
+
+            <div class="iSet3">
+                <h3>
+                    <p class="t1">科研合作关系分析</p>
+                </h3>
+                <div class="bdy" style="padding: 5px">
+                    <a href="/Author/Professional/A000537083">
+                        <img src="/Content/Images/zuozhe2.jpg">
+                    </a>
+                </div>
+            </div>
+            
+<div class="iSet3">
+    <h3><p class="t1">相关合作作者</p></h3>
+    <div class="bdy" style="padding:5px">
+        <div class="tagArea">
+<a class="lnk1" href="/Author/General/A000976714">张平</a><a class="lnk1" href="/Author/General/A000870695">姜勇</a><a class="lnk1" href="/Author/General/A000969107">翁国盛</a><a class="lnk1" href="/Author/General/A001310437">叶峰</a><a class="lnk1" href="/Author/General/A000563385">唐劲松</a>        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="clear1"></div>
+        <input id="navChange" name="navChange" value="13" type="hidden">
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $("input[name='chk_export']").hide();
+        $("#AllArticle,#FirstArticle").click(function () {
+            var $this = $(this);
+            if ($this.hasClass("on")) {
+                return;
+            }
+            $this.addClass("on").siblings().removeClass("on");
+            $("#" + $this.attr("paperListType")).show().siblings().hide();
+        });
+
+        $(".ProfessionalUrl").click(gotoProfessional);
+    });
+
+    function GoToPage(pageIndex) {
+        var papersTab = $("#AllArticle").hasClass("on") ? "authorPaper" : "firstAuthorPaper";
+        $.post("/Author/GetPaperList", { "authorId": "A000537083", "papersTab": papersTab, "p": pageIndex }, function(html) {
+            $("#" + papersTab).html(html);
+            if (papersTab == "firstAuthorPaper")
+                $("#divFirstArticle").show();
+            $("input[name='chk_export']").hide();
+        }).error(function(ex) { console.log(ex); });
+    }
+
+
+    function gotoProfessional() {
+        var url = window.location.href.replace("General", "Professional");
+        window.location.href = url;
+    }
+</script>
+
+    <style>
+.xBottom{ width:1000px; margin:0 auto; border-top:3px solid #EEE; height:265px; background:url(http://login.med.wanfangdata.com.cn/images/home/xBottomBg.jpg) repeat-x bottom; clear:both; }
+.xNoticeBottom{ background-color:#F2F2F2; color:#999; padding-left:10px; line-height:25px; height:24px;}
+.fLe{float:left; display:inline}
+.xBottomZ1{ width:208px; height:220px; padding-left:40px; padding-top:18px; background:url(http://login.med.wanfangdata.com.cn/images/home/xBottomLine.jpg) no-repeat 210px;}
+.xBottomZ1 img{ margin-bottom:5px;}
+.xBottomZ1 a{ color:#999; text-decoration:none;}
+.xBottomZ1 p{ margin-top:5px;}
+.xBottomZ2{ width:428px; height:220px; padding-top:20px; font-size:13px;background:url(http://login.med.wanfangdata.com.cn/images/home/xBottomLine.jpg) no-repeat 400px;}
+.xBottomZ2 a{ color:#333; text-decoration:none;font-size:13px;}
+.xBottomZ2 p{ margin-bottom:8px; }
+.xBZ2A1{ color:#666; font-size:13px;}
+.xBZ2A1Plus{ margin-top:30px;}
+.fPink{ color:#d8033e; font-size:13px}
+.xBottomZ3{ width:300px; height:220px; padding-top:20px;}
+.xBottomZ3 p{ margin-bottom:5px; color:#666; font-size:13px;}
+.xBottomZ3 a{ color:#333; text-decoration:none;font-size:13px;}
+</style>
+<div class="xBottom">
+    <p class="xNoticeBottom">
+        特别提示：本网站仅提供医学学术资源服务，不销售任何药品和器械，有关药品和器械的销售信息，请查阅其他相关网站。</p>
+    <div class="fLe xBottomZ1">
+        <p>
+            <a href="http://med.wanfangdata.com.cn/" target="_blank">
+                <img src="http://login.med.wanfangdata.com.cn/images/home/wfyLogo.gif"></a></p>
+        <p>
+            <a href="http://www.wanfangdata.com.cn" target="_blank">
+                <img src="http://login.med.wanfangdata.com.cn/images/home/wfLogo.gif"></a></p>
+        <p>
+            <a href="http://www.wanfangdata.com.cn" target="_blank">北京万方数据股份有限公司</a></p>
+        <p>
+            <a href="http://www.wanfangdata.com.cn" target="_blank">万方数据电子出版社</a></p>
+    </div>
+    <div class="fLe xBottomZ2">
+        <p>
+            <a href="http://med.wanfangdata.com.cn/Home/AboutUs" target="_blank">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://med.wanfangdata.com.cn/Home/Contact" target="_blank">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="http://med.wanfangdata.com.cn/Home/Sitemap" target="_blank">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+	    <a href="http://med.wanfangdata.com.cn/Home/Products" target="_blank">主要产品</a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+	    <a href="http://med.wanfangdata.com.cn/Home/Services" target="_blank">主要服务</a>
+        </p>
+        <p>
+            <a href="http://med.wanfangdata.com.cn/Home/FAQ?type=helpdocument" target="_blank"><span class="fPink">使用帮助</span></a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+	    <a href="http://med.wanfangdata.com.cn/Home/Commitment" target="_blank">服务承诺</a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+	    <a href="http://med.wanfangdata.com.cn/Home/Recruitment" target="_blank">诚聘英才</a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+	    <a href="http://med.wanfangdata.com.cn/Home/Links" target="_blank">友情链接</a>&nbsp;&nbsp;|&nbsp;&nbsp; 
+	    <a href="http://med.wanfangdata.com.cn/Home/Statement" target="_blank">知识产权</a>
+        </p>
+        <p class="xBZ2A1 xBZ2A1Plus">
+            客服热线：<strong class="fPink">4000-115-888 转3</strong> (周一至周五：8:00至17:00)</p>
+        <p class="xBZ2A1">
+            客服邮箱：yiyao@wanfangdata.com.cn</p>
+        <p class="xBZ2A1">
+            充值卡购卡热线：<strong class="fPink">400-667-1808</strong></p>
+    </div>
+    <div class="fLe xBottomZ3">
+        <p>
+            <a href="http://med.wanfangdata.com.cn/licence.html" target="_blank">互联网出版许可证 新出网证(京)字042号</a></p>
+        <p>
+            <a href="http://med.wanfangdata.com.cn/hlwypxxfw.htm" target="_blank">互联网药品信息服务资格证书号：(京)-经营性-2011-0017</a></p>
+        <p>
+            <a href="http://med.wanfangdata.com.cn/VideoLicence.html" target="_blank">信息网络传播视听节目许可证</a></p>
+        <p>
+            <a href="#" target="_blank">北京市公安局海淀分局备案号：110109081585</a></p>
+        <p>
+            <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证010071号</a></p>
+    </div>
+</div>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Faf200f4e2bd61323503aebc2689d62cb' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="%20http://hm.baidu.com/h.js?af200f4e2bd61323503aebc2689d62cb" type="text/javascript"></script>
+
+
+</body></html>

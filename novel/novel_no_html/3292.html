@@ -1,0 +1,544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>上海邯钢/日照热轧卷7.5*1500现货资源_上海知晰物资有限公司</title>
+<meta name="description" content="上海知晰物资有限公司供应 上海邯钢/日照热轧卷现货资源。" />
+<meta name="keywords" content="上海知晰物资有限公司,上海邯钢/日照热轧卷7.5*1500">
+<link type="text/css" rel="stylesheet" href="http://a.mysteelcdn.com/e/4.0/person.css">
+<script type="text/javascript" src="http://b.mysteelcdn.com/mall/common/mootools.js"></script>
+<script type="text/javascript" src="http://a.mysteelcdn.com/e/3.0/js/s/common.js"></script>
+<script type="text/javascript" src="http://b.mysteelcdn.com/mall/common/swfobject2.js"></script>
+<script type="text/javascript" src="http://a.mysteelcdn.com/e/3.0/js/cart/topcart.js?v=201301051700"></script>
+<script type="text/javascript" src="http://www.sososteel.com/js/cartCookieslocal.js"></script>
+<script type="text/javascript">
+window.addEvent('domready', function(){
+	new Request({
+		url : '/base/follow/check.shtml',
+		data : 'id=123909',
+		onSuccess : function(responseText){
+			if(responseText == 1)
+            {
+                    var str = '<span class="perGuanzhuCancel">已关注| <a href="javascript:void(0);" class="blue" onclick="cancelFollowUser();">取消</a></span>';
+                    $("followDiv").innerHTML = str;
+            }
+            else
+            {
+                    var str = '<input type="button" class="perGuanzhu" name="input" onclick="follow();">';
+                    $("followDiv").innerHTML = str;
+            }
+		}
+	}).send();
+});
+
+	var ids = '123909-1,123909-2,123909-3,123909-4,123909-5,123909-6,123909-7,123909-8,123909-9,123909-10,123909-11,123909-12,123909-13,123909-14,123909-15,123909-16,123909-17,123909-18,123909-19,123909-20,123909-21,123909-22,123909-23,123909-24,123909-25,123909-26,123909-27,123909-28,123909-29,123909-30,123909-31,123909-32,123909-33,123909-34,123909-35,123909-36,123909-37,123909-38,123909-39,123909-40,123909-41,123909-42,123909-43,123909-44,123909-45,123909-46,123909-47,123909-48,123909-49,123909-50,123909-51,123909-52,123909-53,123909-54'.split(',');
+
+function getCookieByName(name)
+{
+	var start=document.cookie.indexOf(name+"=");
+	var len=start+name.length+1;
+	var end=document.cookie.indexOf(";",len);
+	if((!start)&&(name!=document.cookie.substring(0,name.length)))
+	{
+		return null;
+	}
+	if(start==-1)
+	{
+		return null;
+	}
+	
+	end=document.cookie.indexOf(";",len);
+	if (end==-1)
+	{
+		end=document.cookie.length;
+	}
+	
+	return unescape(document.cookie.substring(len,end));
+}
+var sCookieValue= getCookieByName('_login_token');
+function isLogin()
+{
+	var t = sCookieValue != null && sCookieValue != '' && sCookieValue != '""';
+
+	return t;
+}
+
+var cartSpace;
+var writeCartCookie = function()
+{
+	var object = saveCart.loadData("cartBrowse");
+	var arr = new Array();
+	if (object != undefined)
+	{
+		object.each(function(item, index)
+    	{
+    		arr.push(new Cart({resourceId : item.resourceId,
+    				shopId : item.shopId,
+    				shopName : item.shopName,
+    				title : item.title,
+    				breed : item.breed,
+    				properties : item.properties,
+    				price : item.price,
+					bn : item.bn, 
+    				quantityUnit : item.quantityUnit, 
+    				count : item.count,
+    				stock : item.stock,
+					contract: item.contract,
+					bales : item.bales}));
+    	});
+	}
+	
+	cartSpace = new CartSpace('gwcContent', {array : arr,
+					subUrl : '/cartConfirm.html'}, isLogin());
+					
+	republish('');
+var pObj = $('aTime');
+pObj.addEvent('click',linkOther);				
+}
+function beian(){
+	var timeObj = $('sxTime');
+	timeObj.innerHTML = '(您尚无操作权限)';
+}
+function shuaxin(time,sMemberId){
+	var timeGap = parseInt(time);
+	
+	if(sMemberId == 367590 || sMemberId == 316296 || sMemberId == 237678)
+	{
+		var timeObj = $('sxTime');
+		var pObj = $('aTime');
+		pObj.removeEvents('click');
+    	pObj.addEvent('click',function(){
+    		republish('sososteel');
+    	});
+	}
+	else
+	{
+		setTimeout(function(){
+			var timeObj = $('sxTime');
+			var pObj = $('aTime');
+			var timer = setInterval(function(){
+					if(timeGap > 0 )
+					{
+						timeObj.innerHTML = '(离下次刷新剩'+timeGap+'秒)';
+					}
+					else if(sMemberId != 1104 && sMemberId != 248174)
+					{
+						$clear(timer);
+						timeObj.innerHTML = '(<font color="red">您可以刷新资源了！</font>)';
+						pObj.removeEvents('click');
+						pObj.addEvent('click',function(){
+							republish('sososteel');
+						});
+					}
+					timeGap--;
+				},1000);
+		},1000);
+	}
+}
+var linkOther = function()
+{
+	location.href = 'http://member1.sososteel.com/base/resource/index.shtml';
+};
+var republish = function(messages)
+{
+	if (isLogin()){
+    	if (!this.ifream)
+    	{
+    		this.ifream = new Element('div', {
+    			'id' : 'consult_form_ifream',
+    			'html' : '<iframe id="consult_frame" name="consult_frame" width="1px" height="1px" style="display:none"></iframe>'
+    		});
+    	}
+    	this.ifream.inject(document.body, 'top');
+    	
+    	if (!this.form)
+    	{
+        	this.form = new Element('form', {
+        			'action' : 'http://member1.sososteel.com/base/resource/topPublish.shtml',
+    				'method' : 'post',
+    				'html' : '<input type="hidden" name="messages" value="' + messages + '">'
+        		});
+    	}
+    	else
+    	{
+    		this.form.set('html', '<input type="hidden" name="messages" value="' + messages + '">');
+    	}
+    	document.domain='sososteel.com';
+    	
+    	$('reDiv').adopt(this.form);
+    	this.form.set('target', 'consult_frame');
+    	this.form.submit();
+	}
+}
+function follow()
+{
+	if(isLogin())
+	{
+		new Request({
+			url : '/base/follow/add.shtml',
+			data : 'fdto.followId=' + 123909 + "&fdto.type=1",
+			onSuccess : function(responseText){
+				var responseText = responseText.replace('\n','').replace('\r','');
+				if(responseText == 0)
+				{
+					alert('恭喜您，关注成功');
+					location=location;
+				}
+				else if (responseText == -1)
+				{
+					alert('对不起，不能关注自己');
+				}
+				else if (responseText > 200)
+				{
+					alert('对不起，关注人数不能超过200个');
+				}
+				else
+				{
+					alert('对不起，你已关注！');
+				}
+			}
+		}).send();
+	}
+	else
+	{
+		alert("对不起，请您先登陆！");
+	}
+}
+function cancelFollowUser()
+{
+	if(isLogin())
+	{
+		new Request({
+			url : '/base/follow/deleteById.shtml',
+			data : 'id=' + 123909,
+			onSuccess : function(responseText){
+				var responseText = responseText.replace('\n','').replace('\r','');
+				if(responseText == 1)
+				{
+					alert('恭喜您，取消关注成功');
+					location=location;
+				}
+			}
+		}).send();
+	}
+	else
+	{
+		alert("对不起，请您先登陆！");
+	}
+}
+</script>
+<script type="text/javascript" src="http://a.mysteelcdn.com/e/3.0/js/cart/cartCookieslocal.js"></script>
+</head>
+<body>
+<div id="topBar">
+<div id="topbarOut">
+	<div id="tbar"> 
+		<div id="topnav">
+			<div></div>
+			<ul>
+				<li class="phoneLink nt"><a href="http://www.steelphone.com/" target="_blank" id="phoneLink">手机Mysteel</a></li>
+				<li class="nt">
+					<div class="gwc" id="gwcNav" onMouseOver="this.className='gwchover'; document.getElementById('gwcContent').style.display=''" onMouseOut="this.className='gwc'; document.getElementById('gwcContent').style.display='none'"><a href="http://mall.sososteel.com/cart.html" target="_blank" class="navArrow"><span>购物车<strong id="gwcCount" style="color:#FF0000">0</strong>件</span></a></div>
+					<div id="gwcContent" style="display:none" onMouseOver="document.getElementById('gwcNav').className='gwchover'; document.getElementById('gwcContent').style.display=''" onMouseOut="document.getElementById('gwcNav').className='gwc';document.getElementById('gwcContent').style.display='none'">
+						
+					</div>
+				</li>
+				<li class="nt">
+					<div class="arrow" id="memberNav" onMouseOver="this.className='arrowhover'; document.getElementById('memberContent').style.display=''" onMouseOut="this.className='arrow';document.getElementById('memberContent').style.display='none'"><a href="http://member1.mysteel.com?site=www.sososteel.com" target="_blank" class="navArrow">会员中心</a></div>
+					<div id="memberContent" style="display:none" onMouseOver="document.getElementById('memberNav').className='arrowhover'; document.getElementById('memberContent').style.display=''" onMouseOut="document.getElementById('memberNav').className='arrow';document.getElementById('memberContent').style.display='none'">
+						<div class="memberTitle">常用操作</div>
+						<dl class="srcAdmin">
+							<dt class="xhgl"><a href="#">现货资源</a></dt>
+							<dd><a href="http://member1.sososteel.com/base/resource/index.shtml" target="_blank">修改发布</a><a href="#" id="aTime" class="refresh">不变刷新<span id="sxTime">(对不起，您还未登入)</span></a><a href="http://member1.sososteel.com/base/quotation/toUpload.shtml" target="_blank">上传报价单</a><div class="clear"></div></dd>
+						</dl>
+						<dl>
+							<dt>供求信息</dt>
+							<dd><a href="http://member1.sososteel.com/base/supply/index.shtml" target="_blank">发布供求</a><a href="http://member1.sososteel.com/base/supply/list-p1-s2-c0.shtml" target="_blank">管理供求</a></dd>
+						</dl>
+						<dl>
+							<dt>钢铁商城</dt>
+							<dd><a href="http://member.sososteel.com/mall/goods/list.shtml" target="_blank">挂牌销售</a><a href="http://member.sososteel.com/index.shtml" target="_blank">管理商城</a><a href="http://member.sososteel.com/mall/order/shop/recent.shtml" target="_blank">我的订单</a></dd>
+						</dl>						
+					</div>
+				</li>
+				<li class="nt">
+					<div class="arrow" id="serverNav" onMouseOver="this.className='arrowhover'; document.getElementById('serverContent').style.display=''" onMouseOut="this.className='arrow';document.getElementById('serverContent').style.display='none'"><a href="http://gxt.mysteel.com/" target="_blank" class="navArrow">会员服务</a></div>
+					<div id="serverContent" style="display:none"  onmouseover="document.getElementById('serverNav').className='arrowhover'; document.getElementById('serverContent').style.display=''" onMouseOut="document.getElementById('serverNav').className='arrow';document.getElementById('serverContent').style.display='none'">
+					<ul>
+					<li><a href="http://gxt.mysteel.com/" target="_blank">钢信通</a></li>
+					<li><a href="http://mall.sososteel.com/" target="_blank">搜搜钢商城</a></li>
+					<li><a href="http://network.mysteel.com.cn/" target="_blank">平台搭建</a></li>
+					<li><a href="http://top100.mysteel.com/" target="_blank">百强榜</a></li>
+					<li><a href="http://www.sososteel.com/baojia/" target="_blank">大户报价</a></li>
+					<li><a href="http://help.mysteel.com/map.shtml" target="_blank" title="客服电话：021-26093608">纸媒业务</a></li>
+					<li><a href="http://www.steelphone.com/" target="_blank">钢联无线</a></li>
+					<li><a href="http://dianping.sososteel.com/" target="_blank">大宗点评</a></li>
+					</ul>
+					</div>
+				</li>
+				<li class="nt ntp"><a href="http://www.mysteel.com/" target="_blank">我的钢铁</a></li>
+				<li class="nt ntp"><a href="http://mall.sososteel.com/" target="_blank">商城</a></li>
+				<li class="nt ntp last"><a href="http://help.mysteel.com/" target="_blank">客服中心</a></li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="http://a.mysteelcdn.com/member/3.1/login/sososteel_login2.js?v=201301161130"></script>
+      
+	</div>
+</div>
+<div id="reDiv" style="display: none;"></div>
+</div>
+
+<div id="searchBar">
+<div id="searchBarOut">
+	<div class="searchBox">
+    	<form onsubmit="" action="http://list.sososteel.com/res/search.html" method="get">
+        <input type="text" x-webkit-speech="" size="28" class="personSearInput" name="kw" id="" >
+        <button class="personSearSubmit" type="submit"></button>
+        </form>
+    </div>
+	<a href="http://www.sososteel.com/"><img src="http://a.mysteelcdn.com/e/4.0/personLogo.jpg" width="148" height="62"></a>
+</div>
+</div>
+
+<div class="personWarp">
+	<div class="personImgBor">
+					<img src="http://a.mysteelcdn.com/e/4.0/male.jpg" width="160" height="150">
+			</div>
+    <div class="personRight">
+		<div class="personNameCol">
+        	<div class="perName"><a href="http://i.sososteel.com/123909" >黄先生 </a></div>
+            <div class="perMes">先生&nbsp;&nbsp;上海知晰物资有限公司&nbsp;&nbsp;业务 </div>
+        </div>
+      <div class="personAdressCol">
+		<div class="perAdress">所在地：<span class="gray">中山北一路1230号柏树大厦A区707-709</span></div>
+		<div id="followDiv"></div>
+      </div>
+      <div class="personUserCol">
+			手机：<span class="gray">15001132960</span><br>
+			电 话：<span class="gray">55510556-55510897-15001132960</span>
+		</div>
+		<div class="personUserCol">
+			邮编：<span class="gray">200437</span><br>
+			传真：<span class="gray"> 55510897</span>
+        </div>
+    </div>
+</div>
+<div class="warp">
+<div class="leftCol">
+		<div class="breedBar">热轧卷&nbsp;</div>
+    <div class="leftInfo">
+    <!--<div class="leftZst"><img src="images/xhDetialZst.png" width="300" height="165"></div>-->
+    <ul class="leftInfoList">
+      <li>当 前 价：<b class="f16 red">在途</b>&nbsp;<!--<img src="http://a.mysteelcdn.com/e/3.0/images/icon_ckbj.gif" width="17" height="14" align="absmiddle" /> <a href="$">查看价格走势</a>--></li>
+	  <li>供货总量：  </li>
+	  <li>发 布 期： 2013-07-29 14:05</li>
+	  <li>所 在 地：   上海</li>
+      <li>
+		<div style="position:absolute;display:none">
+          <div class="xunjiaPop">
+              <div class="xunjiaPopTitle">
+    			<a href="javascript:void(0);" onclick="this.getParent().getParent().getParent().style.display='none';"><img width="14" vspace="5" height="15" class="right" src="http://a.mysteelcdn.com/e/4.0/close.jpg"></a>填写留言内容</div>
+    			<form action="http://www.sososteel.com/qg/message.html" method="post" onsubmit="return checkMessage();">
+    			<table width="95%" cellspacing="0" cellpadding="0" border="0">
+    				<tbody>
+						<input id="" type="hidden" value="100" name="type">
+    				<tr>
+                        <td height="30" align="right">内 容：</td>
+                        <td>
+    						<textarea name="content" cols="20" rows="5" style="width:270px; font-size:12px;">
+求购————
+品名：热轧卷
+规格：7.5*1500，材质：Q235B
+钢厂：邯钢/日照，仓库：宝山
+							</textarea>
+    					</td>
+    				</tr>
+					<tr>
+                        <td width="15%" height="30" align="right">电话：</td>
+                        <td width="85%"><input style="width:274px" size="40" id="telephone" name="telephone" value=""></td>
+                  	</tr>
+    				<tr>
+    					<td height="30" align="right">&nbsp;</td>
+    					<td>
+    						<input type="submit" name="submit" class="xunjiaSubmit" value="">
+    						<input type="reset" name="reset" class="xunjiaRest" value="">
+    					</td>
+                  	</tr>
+                	</tbody>
+    			</table>
+    			</form>
+              </div>
+          </div>
+		<input type="button" type="button" onClick="this.getPrevious().style.display='';" value="" class="askPriceBtn" name="Input">
+		<div class="moreProduct">查看<a href="http://list.sososteel.com/res/76.html" target="_blank">普热轧板卷</a> 类似产品</div>
+	  </li>
+      <div class="clear"></div>
+    </ul>
+    </div>
+<!--
+	<div class="cpPage" style="height:40px">
+		<input type="button" class="frontImg" id="preImg1">
+		<input type="button" class="nextImg" id="nextImg1">
+		<br/>
+		<span id="keyBoardTip2" style="color:#ff7300">[按键盘 ← → 键可翻页]</span>
+    </div>
+-->
+    <div class="pageinfo">该用户共有<strong class="red"><script type="text/javascript">document.write(ids.length);</script></strong>条资源商机 <a href="http://i.sososteel.com/123909" class="blue">点此查看</a></div>
+    <div class="leftTitle">
+    <div class="leftMenuon">详细信息</div>
+    </div>
+    <div class="leftTable">
+    <table width="100%" cellspacing="1" cellpadding="3" border="0" bgcolor="#CCCCCC">
+				<tbody>
+					<tr>
+						<td width="100" bgcolor="#F3F3F3"><strong>&nbsp;规格</strong></td>
+						<td width="400" bgcolor="#FFFFFF">&nbsp;7.5*1500</td>
+    					<td width="100" bgcolor="#F3F3F3"><strong>&nbsp;材质</strong></td>
+    					<td width="400" bgcolor="#FFFFFF">&nbsp;Q235B</td>
+					</tr>
+					<tr>
+						<td width="100" bgcolor="#F3F3F3"><strong>&nbsp;城市</strong></td>
+						<td width="400" bgcolor="#FFFFFF">&nbsp; 上海</td>
+    					<td width="100" bgcolor="#F3F3F3"><strong>&nbsp;钢厂</strong></td>
+    					<td width="400" bgcolor="#FFFFFF">&nbsp;邯钢/日照</td>
+					</tr>
+					<tr>
+						<td width="100" bgcolor="#F3F3F3"><strong>&nbsp;仓库</strong></td>
+						<td width="400" bgcolor="#FFFFFF">&nbsp; 宝山</td>
+    					<td width="100" bgcolor="#F3F3F3"><strong>&nbsp;数量</strong></td>
+    					<td width="400" bgcolor="#FFFFFF">&nbsp;不限</td>
+					</tr>
+				</tbody>
+			</table>
+            <div class="text "> </div>
+       </div>
+       <div class="leftlist">
+       <div class="lefthead"><span class="more"><a href="http://list.sososteel.com/res/p-10----------153903---------------------1.html" target="_blank">查看更多</a></span>本公司其他最新“热轧卷”推荐</div>
+	        	                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <th width="16%" align="left"><div style="padding-left:10px">品种</div></th>
+                    <th width="13%">材质</th>
+                    <th width="18%">规格</th>
+                    <th width="11%">城市</th>
+                    <th width="10%">钢厂</th>
+                    <th width="11%">价格(元）</th>
+                    <th width="8%">数量</th>
+                    <th width="13%">仓库</th>
+                  </tr>
+				  					<tr>
+						<td align="left"><div style="padding-left:10px"><a href="p123909-48.html" class="blue">热轧卷</a></div></td>
+                        <td align="center">Q235B</td>
+                        <td align="center">4.75*1500</td>
+                        <td align="center">上海</td>
+                        <td align="center">邯钢/日照</td>
+                        <td align="center" class="f14 bold red" >在途</td>
+                        <td align="center">不限</td>
+                        <td align="center">宝山</td>
+					</tr>
+            						<tr>
+						<td align="left"><div style="padding-left:10px"><a href="p123909-49.html" class="blue">热轧卷</a></div></td>
+                        <td align="center">Q235B</td>
+                        <td align="center">5.5*1500</td>
+                        <td align="center">上海</td>
+                        <td align="center">邯钢/日照</td>
+                        <td align="center" class="f14 bold red" >在途</td>
+                        <td align="center">不限</td>
+                        <td align="center">宝山</td>
+					</tr>
+            						<tr>
+						<td align="left"><div style="padding-left:10px"><a href="p123909-51.html" class="blue">热轧卷</a></div></td>
+                        <td align="center">Q235B</td>
+                        <td align="center">9.5*1500</td>
+                        <td align="center">上海</td>
+                        <td align="center">邯钢/日照</td>
+                        <td align="center" class="f14 bold red" >在途</td>
+                        <td align="center">不限</td>
+                        <td align="center">宝山</td>
+					</tr>
+            						<tr>
+						<td align="left"><div style="padding-left:10px"><a href="p123909-52.html" class="blue">热轧卷</a></div></td>
+                        <td align="center">Q235B</td>
+                        <td align="center">5.5*1800</td>
+                        <td align="center">上海</td>
+                        <td align="center">邯钢/日照</td>
+                        <td align="center" class="f14 bold red" >在途</td>
+                        <td align="center">不限</td>
+                        <td align="center">宝山</td>
+					</tr>
+            	           </table>
+    	   	          </div>
+    <div id="remind"> 免责声明：以上所展示的信息由会员自行提供，内容的真实性、准确性和合法性由发布会员负责。我的钢铁对此不承担任何责任。<br>
+    友情提醒：为规避购买风险，建议您在购买相关产品前务必确认供应商资质及产品质量。<br>
+   </div>
+</div>
+<div class="rightCol">
+<h2>公司档案</h2>
+<div class="rightBox">
+	<div class="rCompany">上海知晰物资有限公司 </div>
+    <div class="rGxtYear">
+			<div class="rzImg2">普通会员</div>
+		</div>
+    <ul  class="rightInfo" >
+    <!--<li><div class="rGuanzhuBtn"></div></li>
+    <li>联系人：     </li>--> 
+	<li>主营：热轧，线材，螺纹，硅钢片</li>
+			<li>工商注册信息：未经过专业认证机构的认证 </li>	
+	    <li>
+		<a href="http://153903.b2b.mysteel.com/website/res.html" class="blue">最新资源</a> <a href="http://153903.b2b.mysteel.com/website/gy.html" class="blue">最新供应</a> <a href="http://153903.b2b.mysteel.com/website/gxt.html" class="blue">钢信通档案</a> <a href="http://153903.b2b.mysteel.com/website/intro.html" class="blue">公司介绍</a>
+	</li>
+</ul>    <input type="button" name="Input" class="rEnterCompany" value="" onClick="window.open('http://153903.b2b.mysteel.com/website/index.html')">
+</div>
+<h2>你可能喜欢的</h2>
+<div class="rightLike">
+        <table width="256" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th width="81" align="left"><div style="padding-left:5px">品种</div></th>
+        <th width="131">材质/规格</th>
+        <th width="44">城市</th>
+      </tr>
+          </table>
+	</div>
+<h2>免费注册</h2>
+<div class="rRegistBox">
+<div class="dash">
+欢迎注册钢联资讯会员，您可以申请成为大宗商品网、我的钢铁网、我的不锈钢网、我的有色网、搜搜钢电子商务网会员。
+</div>
+<input type="button" onClick="window.open('http://passport.mysteel.com/join.jsp?site=www.sososteel.com')" value="" class="rRegistBtn" name="Input">
+</div>
+<div class="rHelpBox">
+<strong>找不到合适的信息？</strong><br>
+留下您的采购意愿，我们将推荐<br>诚信供应商！
+<div class="rTuijianBtn"><a href="http://www.sososteel.com/qg/jjqgcs.html" target="_blank">快速发布采购需求</a></div>
+</div>
+</div>
+</div>
+<div id="bottom">
+<a target="_blank" href="http://www.sososteel.com/about/index.html">关于搜搜钢</a> - <a target="_blank" href="http://www.sososteel.com/about/contact.html">联系方式</a> - <a target="_blank" href="http://passport.mysteel.com/join.jsp?site=www.sososteel.com">会员注册</a> - <a target="_blank" href="http://www.sososteel.com/about/service.html">服务报价</a> - <a target="_blank" href="http://www.sososteel.com/about/ad.html">广告计划</a> - <a target="_blank" href="http://www.sososteel.com/about/law.html">法律声明</a> - <a target="_blank" href="http://web.mysteel.com.cn/">技术支持</a><br>
+ 
+钢联旗下网站：<a target="_blank" href="http://www.mybulkstock.com/">大宗商品网</a> | <a target="_blank" href="http://www.sososteel.com/">搜搜钢</a>  | <a target="_blank" href="http://www.mysteel.com">我的钢铁网</a> | <a target="_blank" href="http://www.myyouse.com/">我的有色网</a> | <a target="_blank" href="http://www.mybxg.com/">我的不锈钢网</a> | <a target="_blank" href="http://www.mysteel.net/">English</a> | <a target="_blank" href="http://www.mysteelresearch.com/">研究中心</a><br>
+ 
+&copy; 2007-2011 Sososteel.com, All Rights Reserved.<br>
+上海钢联电子商务股份有限公司 版权所有 增值电信业务经营许可证沪B2-20090056 &nbsp;&nbsp;<a target="_blank" href="http://www.miibeian.gov.cn/">沪ICP证010350</a>
+</div>
+<script type="text/javascript">
+//	if (ids.toString())
+//	{
+//		var dataIdMap = new Hash();
+//		for(var i in ids) { dataIdMap.put(parseInt(i) + 1, ids[i]); }
+//    	showPagination('123909-50', dataIdMap, 'preImg1', 'nextImg1');
+//    	//showPagination('123909-50', dataIdMap, 'preImg2', 'nextImg2');
+//	}
+
+//	if (!ids.toString() || ids.length == 1)
+//	{
+//		CssUtils.hide('preImg1', 'preImg2', 'nextImg1', 'nextImg2', 'keyBoardTip1', 'keyBoardTip2', 'companySameDiv1', 'companySameDiv2');
+//	}
+</script>
+<script type="text/javascript" src="http://stats.mysteel.com/stats"></script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fbad0157f4ae2af7969456a4370331963' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>
+

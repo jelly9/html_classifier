@@ -1,0 +1,1738 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>二手设备_二手工程机械网</title>
+<meta name="keywords" content="中国二手挖掘机网 www.2wj.cn 【小松KOMATSU 卡特CAT 日立HITACHI 神钢KOBELCO 住友 现代HYUNDAI 大宇 日本进口挖掘机  香港 深圳凤凰城 红绿灯 Used Excavator】" />
+<meta name="description" content="中国二手挖掘机网 www.2wj.cn 【小松KOMATSU 卡特CAT 日立HITACHI 神钢KOBELCO 住友 现代HYUNDAI 大宇 日本进口挖掘机  香港 深圳凤凰城 红绿灯 Used Excavator】" />
+<script type="text/javascript" src="http://www.2wj.cn/js/common.js"></script>
+<script type="text/javascript" src="http://www.2wj.cn/js/layer/layer.min.js"></script>
+<script type="text/javascript">
+jBoxConfig.defaults = {top: '30%'}
+$.jBox.setDefaults(jBoxConfig);
+g_user = {
+	domain:'http://www.2wj.cn',
+	hostname: /localhost/.test(location.hostname) ? "localhost": "zhxm.com",
+	id:0,
+	login:false
+}
+
+function login_reg(){
+	var submit = function (v, h, f) {
+		if (v == true){
+			gotoLogin();
+		}else{
+			gotoReg();
+		}
+		return true;
+	};
+	$.jBox.confirm('请先登录，才能继续操作', '提示', submit,{ buttons: { '登陆': true, '注册': false} });
+}
+
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link type="text/css" rel="stylesheet" href="http://www.2wj.cn/css/common.css" />
+<!-- 
+<link href="/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/css/index.css" rel="stylesheet" type="text/css" />
+ -->
+<script type="text/javascript">
+</script>
+
+</head>
+<body>
+<!--头部、导航-->
+<div class="top">
+	<div class="Layout">
+		<div class="fl"><a href="http://www.2wj.cn/">网站首页</a><span> | </span></div>
+		<div class="fl" style="margin-left:5px;"><a href="http://www.d1cm.com">第一工程机械网</a></div>
+		<div class="login fr">
+			<label class="name">登录账户:</label>
+			<input id="loginname" class="text mr10 gray" type="text" maxlength="100" tabindex="1" name="loginname" sta="0" onblur="if(this.value==''){this.value='邮箱或手机'}" onclick="if(this.value=='邮箱或手机'){this.value=''}" value="邮箱或手机">
+			<label class="name">登录密码:</label>
+			<input id="loginpass" class="text mr10 gray" type="password" maxlength="100" tabindex="1" name="loginpass" sta="0" value="">
+			<a id="toploginbtn" href="javascript:void(0);" class="name mr10">登录</a> <a href="javascript:void(0);" onclick="gotoReg();" class="name">[注册]</a>
+			</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	if($("#toploginbtn").length>0){
+		//alert('存在登录');
+		
+		$("#toploginbtn").click(function (){
+		
+			var _this = $(this);
+		
+			var loginname = $.trim($('#loginname').val());
+			var loginpass = $.trim($('#loginpass').val());
+			
+			if(loginname=='' || loginname=='邮箱或手机'){
+				//alert('手机或邮箱不能为空');
+				$('#loginname').focus();
+				return false;
+			}
+			if(loginpass==''){
+				//alert('密码不能为空');
+				$('#loginpass').focus();
+				return false;
+			}
+			
+			//alert('000');
+			$(this).html('登录中...');
+			//$(this).unbind('click');
+			
+			$.ajax({
+				type:"post",
+				dataType: "json",
+				cache: false,
+				url: "/login/logincheck.action?username="+encodeURIComponent(loginname)+"&password="+loginpass+"",
+				success: function(data){
+					//alert(data.status);
+					if(data.status=='y'){
+						//alert('删除成功');
+						window.location.href=window.location.href;
+					}else{
+						if("update"==data.info){
+							var msg = "欢迎您使用二手工程机械网，为了给您提供更好的服务，请您先完善您的资料";
+							$.jBox.prompt(msg, '提示', 'info', {
+								closed: function (){
+									window.location.href = '/login/fir_update.action';
+								}
+							});
+							_this.html('登录');
+						}else{
+							alert(data.info);
+							_this.html('登录');
+						}
+					}
+				}
+			});
+			
+		});
+		
+	}
+	
+});
+</script>
+<div class="Layout">
+	<script type="text/javascript">
+function gotoMenuShow(id){
+	
+	$("#leftMenu").css("top","45px");
+	$("#imgsign").addClass("img01");
+	$("#imgsign").removeClass("img02");
+	document.getElementById("leftMenu").style.display="block";
+	
+}
+
+function gotoMenuHide(id){
+	
+	$("#imgsign").addClass("img02");
+	$("#imgsign").removeClass("img01");
+	document.getElementById("leftMenu").style.display="none";
+	
+}
+
+function gotoFirShow(id){
+	$("#leftMenu > ul > li").each(function(){
+		if($(this).attr("data-id")==id){
+			$(this).addClass("hover");
+		}
+	});
+	document.getElementById("class_"+id).style.display="block";
+}
+
+function gotoFirHide(id){
+	$("#leftMenu > ul > li").each(function(){
+		if($(this).attr("data-id")==id){
+			$(this).removeClass("hover");
+		}
+	});
+	document.getElementById("class_"+id).style.display="none";
+}
+
+/* 全文搜索 */
+function topSearch(){
+	var top_search_txt = $.trim($("#top_search_txt").val());
+	//alert(top_search_txt);
+	if(top_search_txt!='请输入搜索文字'){
+		window.location.href = 'http://search.2wj.cn/shebei.action?skey='+encodeURIComponent(top_search_txt)+'';
+	}else{
+		$("#top_search_txt").focus();
+	}
+}
+</script>
+<div id="header">
+	<div class="Logo fl"><img src="/images/ersjlogo.jpg" height="60" width="300"/></div>
+	<div class="search">
+		<div class="search-combobox-input-wrap">
+			<input id="top_search_txt" class="search-combobox-input" value="请输入搜索文字" onfocus="this.value=''" 
+			onblur="if(this.value==''){this.value='请输入搜索文字'}" />
+		</div>
+		<div class="search-button">
+			<button class="btn-search" type="button" onclick="topSearch();">搜索</button>
+		</div>
+	</div>
+	<div class="tel">
+		<span>客服电话：</span>
+		<b>010-64882853</b>
+		<img src="/images/telephone.png" style="float:left;margin-top:10px;margin-left:12px;" />
+		<div style="margin-left:45px;font-family:'微软雅黑'; font-weight:bold;">
+			帮您解决设备出售、求购、资讯等问题
+		</div>
+	</div>
+	<div class="cl"></div>
+	<div class="mainNav">
+		<ul class="submenu" onmouseover="gotoMenuShow();" onmouseout="gotoMenuHide();">
+			<span class="submenu_title">
+				<span class="name">产品分类</span>
+				<span class="img02" id="imgsign"></span>
+			</span>
+			<div id="leftMenu" class="leftMenu fl hide" >
+				<ul>
+					<li class="firm" data-id="1000" onmouseover="gotoFirShow(1000);" 
+					onmouseout="gotoFirHide(1000);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|1" data-firid="1000">挖掘机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1000" 
+						onmouseover="gotoFirShow(1000);" onmouseout="gotoFirHide(1000);">
+							<div class="subitem">
+								<dl class="fore1">
+									<dt><a href="/equipment/0-14-0-0-0-0-0-0-0|0,0,0,0,0|1" data-subid="100001">履带挖掘机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">吨级:</em>
+											<em><a href="/equipment/0-14-0-0-0-0-0-1,225-0|0,0,0,0,0|1" data-vid="225" data-vtype="0">6吨以下</a></em>
+											<em><a href="/equipment/0-14-0-0-0-0-0-1,226-0|0,0,0,0,0|1" data-vid="226" data-vtype="0">6-7吨</a></em>
+											<em><a href="/equipment/0-14-0-0-0-0-0-1,227-0|0,0,0,0,0|1" data-vid="227" data-vtype="0">10-16吨</a></em>
+											<em><a href="/equipment/0-14-0-0-0-0-0-1,228-0|0,0,0,0,0|1" data-vid="228" data-vtype="0">20-22吨</a></em>
+											<em><a href="/equipment/0-14-0-0-0-0-0-1,229-0|0,0,0,0,0|1" data-vid="229" data-vtype="0">24-27吨</a></em>
+											<em><a href="/equipment/0-14-0-0-0-0-0-1,230-0|0,0,0,0,0|1" data-vid="230" data-vtype="0">30-39吨</a></em>
+											<em><a href="/equipment/0-14-0-0-0-0-0-1,231-0|0,0,0,0,0|1" data-vid="231" data-vtype="0">40-49吨</a></em>
+											<em><a href="/equipment/0-14-0-0-0-0-0-1,232-0|0,0,0,0,0|1" data-vid="232" data-vtype="0">50吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore2">
+									<dt><a href="/equipment/0-15-0-0-0-0-0-0-0|0,0,0,0,0|1" data-subid="100002">轮式挖掘机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">吨级:</em>
+											<em><a href="/equipment/0-15-0-0-0-0-0-2,6-0|0,0,0,0,0|1" data-vid="6" data-vtype="0">10-20吨</a></em>
+											<em><a href="/equipment/0-15-0-0-0-0-0-2,7-0|0,0,0,0,0|1" data-vid="7" data-vtype="0">20-30吨</a></em>
+											<em><a href="/equipment/0-15-0-0-0-0-0-2,8-0|0,0,0,0,0|1" data-vid="8" data-vtype="0">30吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore3">
+									<dt><a href="/equipment/0-16-0-0-0-0-0-0-0|0,0,0,0,0|1" data-subid="100003">正铲挖掘机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore4">
+									<dt><a href="/equipment/0-17-0-0-0-0-0-0-0|0,0,0,0,0|1" data-subid="100004">挖掘装载机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore5">
+									<dt><a href="/equipment/0-18-0-0-0-0-0-0-0|0,0,0,0,0|1" data-subid="100005">抓钢机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1001" onmouseover="gotoFirShow(1001);" 
+					onmouseout="gotoFirHide(1001);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|2" data-firid="1001">铲土运输机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1001" 
+						onmouseover="gotoFirShow(1001);" onmouseout="gotoFirHide(1001);">
+							<div class="subitem">
+								<dl class="fore6">
+									<dt><a href="/equipment/0-19-0-0-0-0-0-0-0|0,0,0,0,0|2" data-subid="100101">轮式装载机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">吨级:</em>
+											<em><a href="/equipment/0-19-0-0-0-0-0-8,49-0|0,0,0,0,0|2" data-vid="49" data-vtype="0">3吨以下</a></em>
+											<em><a href="/equipment/0-19-0-0-0-0-0-8,50-0|0,0,0,0,0|2" data-vid="50" data-vtype="0">3-5吨</a></em>
+											<em><a href="/equipment/0-19-0-0-0-0-0-8,51-0|0,0,0,0,0|2" data-vid="51" data-vtype="0">5吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore7">
+									<dt><a href="/equipment/0-20-0-0-0-0-0-0-0|0,0,0,0,0|2" data-subid="100102">滑移装载机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">吨级:</em>
+											<em><a href="/equipment/0-20-0-0-0-0-0-10,60-0|0,0,0,0,0|2" data-vid="60" data-vtype="0">0.8吨以下</a></em>
+											<em><a href="/equipment/0-20-0-0-0-0-0-10,61-0|0,0,0,0,0|2" data-vid="61" data-vtype="0">0.8-1吨</a></em>
+											<em><a href="/equipment/0-20-0-0-0-0-0-10,62-0|0,0,0,0,0|2" data-vid="62" data-vtype="0">1吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore8">
+									<dt><a href="/equipment/0-21-0-0-0-0-0-0-0|0,0,0,0,0|2" data-subid="100103">推土机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">马力:</em>
+											<em><a href="/equipment/0-21-0-0-0-0-0-12,71-0|0,0,0,0,0|2" data-vid="71" data-vtype="0">150马力以下</a></em>
+											<em><a href="/equipment/0-21-0-0-0-0-0-12,72-0|0,0,0,0,0|2" data-vid="72" data-vtype="0">150-200马力</a></em>
+											<em><a href="/equipment/0-21-0-0-0-0-0-12,73-0|0,0,0,0,0|2" data-vid="73" data-vtype="0">201-300马力</a></em>
+											<em><a href="/equipment/0-21-0-0-0-0-0-12,74-0|0,0,0,0,0|2" data-vid="74" data-vtype="0">300马力以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore9">
+									<dt><a href="/equipment/0-22-0-0-0-0-0-0-0|0,0,0,0,0|2" data-subid="100104">平地机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">马力:</em>
+											<em><a href="/equipment/0-22-0-0-0-0-0-14,83-0|0,0,0,0,0|2" data-vid="83" data-vtype="0">150马力以下</a></em>
+											<em><a href="/equipment/0-22-0-0-0-0-0-14,84-0|0,0,0,0,0|2" data-vid="84" data-vtype="0">150-180马力</a></em>
+											<em><a href="/equipment/0-22-0-0-0-0-0-14,85-0|0,0,0,0,0|2" data-vid="85" data-vtype="0">181-250马力</a></em>
+											<em><a href="/equipment/0-22-0-0-0-0-0-14,86-0|0,0,0,0,0|2" data-vid="86" data-vtype="0">250马力以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore10">
+									<dt><a href="/equipment/0-23-0-0-0-0-0-0-0|0,0,0,0,0|2" data-subid="100105">铲运机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">斗容:</em>
+											<em><a href="/equipment/0-23-0-0-0-0-0-16,96-0|0,0,0,0,0|2" data-vid="96" data-vtype="0">20立方米以下</a></em>
+											<em><a href="/equipment/0-23-0-0-0-0-0-16,97-0|0,0,0,0,0|2" data-vid="97" data-vtype="0">20-30立方米</a></em>
+											<em><a href="/equipment/0-23-0-0-0-0-0-16,98-0|0,0,0,0,0|2" data-vid="98" data-vtype="0">30立方米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore11">
+									<dt><a href="/equipment/0-24-0-0-0-0-0-0-0|0,0,0,0,0|2" data-subid="100106">吊管机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore12">
+									<dt><a href="/equipment/0-25-0-0-0-0-0-0-0|0,0,0,0,0|2" data-subid="100107">矿用自卸车</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">载荷:</em>
+											<em><a href="/equipment/0-25-0-0-0-0-0-18,99-0|0,0,0,0,0|2" data-vid="99" data-vtype="0">50吨以下</a></em>
+											<em><a href="/equipment/0-25-0-0-0-0-0-18,100-0|0,0,0,0,0|2" data-vid="100" data-vtype="0">50-100吨</a></em>
+											<em><a href="/equipment/0-25-0-0-0-0-0-18,101-0|0,0,0,0,0|2" data-vid="101" data-vtype="0">101-200吨</a></em>
+											<em><a href="/equipment/0-25-0-0-0-0-0-18,102-0|0,0,0,0,0|2" data-vid="102" data-vtype="0">200吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore13">
+									<dt><a href="/equipment/0-26-0-0-0-0-0-0-0|0,0,0,0,0|2" data-subid="100108">铰接式卡车</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">装载容量:</em>
+											<em><a href="/equipment/0-26-0-0-0-0-0-20,112-0|0,0,0,0,0|2" data-vid="112" data-vtype="0">16立方米以下</a></em>
+											<em><a href="/equipment/0-26-0-0-0-0-0-20,113-0|0,0,0,0,0|2" data-vid="113" data-vtype="0">16-20立方米</a></em>
+											<em><a href="/equipment/0-26-0-0-0-0-0-20,114-0|0,0,0,0,0|2" data-vid="114" data-vtype="0">20立方米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1002" onmouseover="gotoFirShow(1002);" 
+					onmouseout="gotoFirHide(1002);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|3" data-firid="1002">筑养路机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1002" 
+						onmouseover="gotoFirShow(1002);" onmouseout="gotoFirHide(1002);">
+							<div class="subitem">
+								<dl class="fore14">
+									<dt><a href="/equipment/0-27-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100201">沥青摊铺机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">行走方式:</em>
+											<em><a href="/equipment/0-27-0-0-0-0-0-23,126-0|0,0,0,0,0|3" data-vid="126" data-vtype="0">轮式沥青摊铺机</a></em>
+											<em><a href="/equipment/0-27-0-0-0-0-0-23,127-0|0,0,0,0,0|3" data-vid="127" data-vtype="0">履带式沥青摊铺机</a></em>
+											</p>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">熨平板长度:</em>
+											<em><a href="/equipment/0-27-0-0-0-0-0-22,123-0|0,0,0,0,0|3" data-vid="123" data-vtype="1">6米以下</a></em>
+											<em><a href="/equipment/0-27-0-0-0-0-0-22,124-0|0,0,0,0,0|3" data-vid="124" data-vtype="1">6-9米</a></em>
+											<em><a href="/equipment/0-27-0-0-0-0-0-22,125-0|0,0,0,0,0|3" data-vid="125" data-vtype="1">9米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore15">
+									<dt><a href="/equipment/0-28-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100202">混凝土摊铺机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">行走方式:</em>
+											<em><a href="/equipment/0-28-0-0-0-0-0-24,128-0|0,0,0,0,0|3" data-vid="128" data-vtype="0">固定模板式</a></em>
+											<em><a href="/equipment/0-28-0-0-0-0-0-24,129-0|0,0,0,0,0|3" data-vid="129" data-vtype="0">滑膜式</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore16">
+									<dt><a href="/equipment/0-29-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100203">路面铣刨机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">铣刨宽度:</em>
+											<em><a href="/equipment/0-29-0-0-0-0-0-25,130-0|0,0,0,0,0|3" data-vid="130" data-vtype="0">1米以下</a></em>
+											<em><a href="/equipment/0-29-0-0-0-0-0-25,131-0|0,0,0,0,0|3" data-vid="131" data-vtype="0">1-2米</a></em>
+											<em><a href="/equipment/0-29-0-0-0-0-0-25,132-0|0,0,0,0,0|3" data-vid="132" data-vtype="0">2米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore17">
+									<dt><a href="/equipment/0-30-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100204">稀浆封层车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore18">
+									<dt><a href="/equipment/0-31-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100205">沥青洒布车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore19">
+									<dt><a href="/equipment/0-32-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100206">沥青碎石同步封层车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore20">
+									<dt><a href="/equipment/0-33-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100207">沥青混合料搅拌设备</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore21">
+									<dt><a href="/equipment/0-34-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100208">稳定土拌和机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore22">
+									<dt><a href="/equipment/0-35-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100209">稳定土厂拌设备</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore23">
+									<dt><a href="/equipment/0-36-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100210">路面冷再生机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore24">
+									<dt><a href="/equipment/0-37-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100211">路面综合养护车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore25">
+									<dt><a href="/equipment/0-38-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100212">抹光机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore26">
+									<dt><a href="/equipment/0-39-0-0-0-0-0-0-0|0,0,0,0,0|3" data-subid="100213">沥青路面养护车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1003" onmouseover="gotoFirShow(1003);" 
+					onmouseout="gotoFirHide(1003);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|4" data-firid="1003">压实机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1003" 
+						onmouseover="gotoFirShow(1003);" onmouseout="gotoFirHide(1003);">
+							<div class="subitem">
+								<dl class="fore27">
+									<dt><a href="/equipment/0-40-0-0-0-0-0-0-0|0,0,0,0,0|4" data-subid="100301">单钢轮压路机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">操作重量:</em>
+											<em><a href="/equipment/0-40-0-0-0-0-0-26,133-0|0,0,0,0,0|4" data-vid="133" data-vtype="0">6吨以下</a></em>
+											<em><a href="/equipment/0-40-0-0-0-0-0-26,134-0|0,0,0,0,0|4" data-vid="134" data-vtype="0">6-10吨</a></em>
+											<em><a href="/equipment/0-40-0-0-0-0-0-26,135-0|0,0,0,0,0|4" data-vid="135" data-vtype="0">11-15吨</a></em>
+											<em><a href="/equipment/0-40-0-0-0-0-0-26,136-0|0,0,0,0,0|4" data-vid="136" data-vtype="0">16-20吨</a></em>
+											<em><a href="/equipment/0-40-0-0-0-0-0-26,137-0|0,0,0,0,0|4" data-vid="137" data-vtype="0">20吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore28">
+									<dt><a href="/equipment/0-41-0-0-0-0-0-0-0|0,0,0,0,0|4" data-subid="100302">双钢轮压路机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">操作重量:</em>
+											<em><a href="/equipment/0-41-0-0-0-0-0-27,138-0|0,0,0,0,0|4" data-vid="138" data-vtype="0">6吨以下</a></em>
+											<em><a href="/equipment/0-41-0-0-0-0-0-27,139-0|0,0,0,0,0|4" data-vid="139" data-vtype="0">6-10吨</a></em>
+											<em><a href="/equipment/0-41-0-0-0-0-0-27,140-0|0,0,0,0,0|4" data-vid="140" data-vtype="0">11-15吨</a></em>
+											<em><a href="/equipment/0-41-0-0-0-0-0-27,141-0|0,0,0,0,0|4" data-vid="141" data-vtype="0">16-20吨</a></em>
+											<em><a href="/equipment/0-41-0-0-0-0-0-27,142-0|0,0,0,0,0|4" data-vid="142" data-vtype="0">20吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore29">
+									<dt><a href="/equipment/0-42-0-0-0-0-0-0-0|0,0,0,0,0|4" data-subid="100303">轮胎压路机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">操作重量:</em>
+											<em><a href="/equipment/0-42-0-0-0-0-0-28,143-0|0,0,0,0,0|4" data-vid="143" data-vtype="0">6吨以下</a></em>
+											<em><a href="/equipment/0-42-0-0-0-0-0-28,144-0|0,0,0,0,0|4" data-vid="144" data-vtype="0">6-10吨</a></em>
+											<em><a href="/equipment/0-42-0-0-0-0-0-28,145-0|0,0,0,0,0|4" data-vid="145" data-vtype="0">11-15吨</a></em>
+											<em><a href="/equipment/0-42-0-0-0-0-0-28,146-0|0,0,0,0,0|4" data-vid="146" data-vtype="0">16-20吨</a></em>
+											<em><a href="/equipment/0-42-0-0-0-0-0-28,147-0|0,0,0,0,0|4" data-vid="147" data-vtype="0">20吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore30">
+									<dt><a href="/equipment/0-43-0-0-0-0-0-0-0|0,0,0,0,0|4" data-subid="100304">静碾压路机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">操作重量:</em>
+											<em><a href="/equipment/0-43-0-0-0-0-0-29,148-0|0,0,0,0,0|4" data-vid="148" data-vtype="0">6吨以下</a></em>
+											<em><a href="/equipment/0-43-0-0-0-0-0-29,149-0|0,0,0,0,0|4" data-vid="149" data-vtype="0">6-10吨</a></em>
+											<em><a href="/equipment/0-43-0-0-0-0-0-29,150-0|0,0,0,0,0|4" data-vid="150" data-vtype="0">11-15吨</a></em>
+											<em><a href="/equipment/0-43-0-0-0-0-0-29,151-0|0,0,0,0,0|4" data-vid="151" data-vtype="0">16-20吨</a></em>
+											<em><a href="/equipment/0-43-0-0-0-0-0-29,152-0|0,0,0,0,0|4" data-vid="152" data-vtype="0">20吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore31">
+									<dt><a href="/equipment/0-44-0-0-0-0-0-0-0|0,0,0,0,0|4" data-subid="100305">垃圾压实机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore32">
+									<dt><a href="/equipment/0-45-0-0-0-0-0-0-0|0,0,0,0,0|4" data-subid="100306">冲击夯</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore33">
+									<dt><a href="/equipment/0-46-0-0-0-0-0-0-0|0,0,0,0,0|4" data-subid="100307">平板夯</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1004" onmouseover="gotoFirShow(1004);" 
+					onmouseout="gotoFirHide(1004);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|5" data-firid="1004">起重机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1004" 
+						onmouseover="gotoFirShow(1004);" onmouseout="gotoFirHide(1004);">
+							<div class="subitem">
+								<dl class="fore34">
+									<dt><a href="/equipment/0-47-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100401">汽车起重机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">最大起重量:</em>
+											<em><a href="/equipment/0-47-0-0-0-0-0-30,153-0|0,0,0,0,0|5" data-vid="153" data-vtype="0">45吨以下</a></em>
+											<em><a href="/equipment/0-47-0-0-0-0-0-30,154-0|0,0,0,0,0|5" data-vid="154" data-vtype="0">45-90吨</a></em>
+											<em><a href="/equipment/0-47-0-0-0-0-0-30,155-0|0,0,0,0,0|5" data-vid="155" data-vtype="0">91-180吨</a></em>
+											<em><a href="/equipment/0-47-0-0-0-0-0-30,156-0|0,0,0,0,0|5" data-vid="156" data-vtype="0">181-300吨</a></em>
+											<em><a href="/equipment/0-47-0-0-0-0-0-30,157-0|0,0,0,0,0|5" data-vid="157" data-vtype="0">301-400吨</a></em>
+											<em><a href="/equipment/0-47-0-0-0-0-0-30,158-0|0,0,0,0,0|5" data-vid="158" data-vtype="0">400吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore35">
+									<dt><a href="/equipment/0-48-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100402">全地面起重机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">最大起重量:</em>
+											<em><a href="/equipment/0-48-0-0-0-0-0-31,159-0|0,0,0,0,0|5" data-vid="159" data-vtype="0">45吨以下</a></em>
+											<em><a href="/equipment/0-48-0-0-0-0-0-31,160-0|0,0,0,0,0|5" data-vid="160" data-vtype="0">45-90吨</a></em>
+											<em><a href="/equipment/0-48-0-0-0-0-0-31,161-0|0,0,0,0,0|5" data-vid="161" data-vtype="0">91-180吨</a></em>
+											<em><a href="/equipment/0-48-0-0-0-0-0-31,162-0|0,0,0,0,0|5" data-vid="162" data-vtype="0">181-300吨</a></em>
+											<em><a href="/equipment/0-48-0-0-0-0-0-31,163-0|0,0,0,0,0|5" data-vid="163" data-vtype="0">301-400吨</a></em>
+											<em><a href="/equipment/0-48-0-0-0-0-0-31,164-0|0,0,0,0,0|5" data-vid="164" data-vtype="0">400吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore36">
+									<dt><a href="/equipment/0-49-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100403">履带式起重机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">最大起重量:</em>
+											<em><a href="/equipment/0-49-0-0-0-0-0-32,177-0|0,0,0,0,0|5" data-vid="177" data-vtype="0">45吨以下</a></em>
+											<em><a href="/equipment/0-49-0-0-0-0-0-32,178-0|0,0,0,0,0|5" data-vid="178" data-vtype="0">45-90吨</a></em>
+											<em><a href="/equipment/0-49-0-0-0-0-0-32,179-0|0,0,0,0,0|5" data-vid="179" data-vtype="0">91-180吨</a></em>
+											<em><a href="/equipment/0-49-0-0-0-0-0-32,180-0|0,0,0,0,0|5" data-vid="180" data-vtype="0">181-300吨</a></em>
+											<em><a href="/equipment/0-49-0-0-0-0-0-32,181-0|0,0,0,0,0|5" data-vid="181" data-vtype="0">301-400吨</a></em>
+											<em><a href="/equipment/0-49-0-0-0-0-0-32,182-0|0,0,0,0,0|5" data-vid="182" data-vtype="0">400吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore37">
+									<dt><a href="/equipment/0-50-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100404">随车起重机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">最大起重量:</em>
+											<em><a href="/equipment/0-50-0-0-0-0-0-33,165-0|0,0,0,0,0|5" data-vid="165" data-vtype="0">45吨以下</a></em>
+											<em><a href="/equipment/0-50-0-0-0-0-0-33,166-0|0,0,0,0,0|5" data-vid="166" data-vtype="0">45-90吨</a></em>
+											<em><a href="/equipment/0-50-0-0-0-0-0-33,167-0|0,0,0,0,0|5" data-vid="167" data-vtype="0">91-180吨</a></em>
+											<em><a href="/equipment/0-50-0-0-0-0-0-33,168-0|0,0,0,0,0|5" data-vid="168" data-vtype="0">181-300吨</a></em>
+											<em><a href="/equipment/0-50-0-0-0-0-0-33,169-0|0,0,0,0,0|5" data-vid="169" data-vtype="0">301-400吨</a></em>
+											<em><a href="/equipment/0-50-0-0-0-0-0-33,170-0|0,0,0,0,0|5" data-vid="170" data-vtype="0">400吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore38">
+									<dt><a href="/equipment/0-51-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100405">门式起重机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">最大起重量:</em>
+											<em><a href="/equipment/0-51-0-0-0-0-0-34,171-0|0,0,0,0,0|5" data-vid="171" data-vtype="0">45吨以下</a></em>
+											<em><a href="/equipment/0-51-0-0-0-0-0-34,172-0|0,0,0,0,0|5" data-vid="172" data-vtype="0">45-90吨</a></em>
+											<em><a href="/equipment/0-51-0-0-0-0-0-34,173-0|0,0,0,0,0|5" data-vid="173" data-vtype="0">91-180吨</a></em>
+											<em><a href="/equipment/0-51-0-0-0-0-0-34,174-0|0,0,0,0,0|5" data-vid="174" data-vtype="0">181-300吨</a></em>
+											<em><a href="/equipment/0-51-0-0-0-0-0-34,175-0|0,0,0,0,0|5" data-vid="175" data-vtype="0">301-400吨</a></em>
+											<em><a href="/equipment/0-51-0-0-0-0-0-34,176-0|0,0,0,0,0|5" data-vid="176" data-vtype="0">400吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore39">
+									<dt><a href="/equipment/0-52-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100406">塔式起重机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">最大起重量:</em>
+											<em><a href="/equipment/0-52-0-0-0-0-0-35,183-0|0,0,0,0,0|5" data-vid="183" data-vtype="0">45吨以下</a></em>
+											<em><a href="/equipment/0-52-0-0-0-0-0-35,184-0|0,0,0,0,0|5" data-vid="184" data-vtype="0">45-90吨</a></em>
+											<em><a href="/equipment/0-52-0-0-0-0-0-35,185-0|0,0,0,0,0|5" data-vid="185" data-vtype="0">91-180吨</a></em>
+											<em><a href="/equipment/0-52-0-0-0-0-0-35,186-0|0,0,0,0,0|5" data-vid="186" data-vtype="0">181-300吨</a></em>
+											<em><a href="/equipment/0-52-0-0-0-0-0-35,187-0|0,0,0,0,0|5" data-vid="187" data-vtype="0">301-400吨</a></em>
+											<em><a href="/equipment/0-52-0-0-0-0-0-35,188-0|0,0,0,0,0|5" data-vid="188" data-vtype="0">400吨以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore40">
+									<dt><a href="/equipment/0-53-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100407">施工升降机</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">作业高度:</em>
+											<em><a href="/equipment/0-53-0-0-0-0-0-36,189-0|0,0,0,0,0|5" data-vid="189" data-vtype="0">10米以下</a></em>
+											<em><a href="/equipment/0-53-0-0-0-0-0-36,190-0|0,0,0,0,0|5" data-vid="190" data-vtype="0">10-20米</a></em>
+											<em><a href="/equipment/0-53-0-0-0-0-0-36,191-0|0,0,0,0,0|5" data-vid="191" data-vtype="0">21-30米</a></em>
+											<em><a href="/equipment/0-53-0-0-0-0-0-36,192-0|0,0,0,0,0|5" data-vid="192" data-vtype="0">30米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore41">
+									<dt><a href="/equipment/0-54-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100408">自行臂架式高空作业平台</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">作业高度:</em>
+											<em><a href="/equipment/0-54-0-0-0-0-0-37,193-0|0,0,0,0,0|5" data-vid="193" data-vtype="0">10米以下</a></em>
+											<em><a href="/equipment/0-54-0-0-0-0-0-37,194-0|0,0,0,0,0|5" data-vid="194" data-vtype="0">10-20米</a></em>
+											<em><a href="/equipment/0-54-0-0-0-0-0-37,195-0|0,0,0,0,0|5" data-vid="195" data-vtype="0">21-30米</a></em>
+											<em><a href="/equipment/0-54-0-0-0-0-0-37,196-0|0,0,0,0,0|5" data-vid="196" data-vtype="0">30米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore42">
+									<dt><a href="/equipment/0-55-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100409">剪叉式高空作业平台</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">作业高度:</em>
+											<em><a href="/equipment/0-55-0-0-0-0-0-38,197-0|0,0,0,0,0|5" data-vid="197" data-vtype="0">10米以下</a></em>
+											<em><a href="/equipment/0-55-0-0-0-0-0-38,198-0|0,0,0,0,0|5" data-vid="198" data-vtype="0">10-20米</a></em>
+											<em><a href="/equipment/0-55-0-0-0-0-0-38,199-0|0,0,0,0,0|5" data-vid="199" data-vtype="0">21-30米</a></em>
+											<em><a href="/equipment/0-55-0-0-0-0-0-38,200-0|0,0,0,0,0|5" data-vid="200" data-vtype="0">30米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore43">
+									<dt><a href="/equipment/0-56-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100410">伸缩柱式高空作业平台</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">作业高度:</em>
+											<em><a href="/equipment/0-56-0-0-0-0-0-39,201-0|0,0,0,0,0|5" data-vid="201" data-vtype="0">10米以下</a></em>
+											<em><a href="/equipment/0-56-0-0-0-0-0-39,202-0|0,0,0,0,0|5" data-vid="202" data-vtype="0">10-20米</a></em>
+											<em><a href="/equipment/0-56-0-0-0-0-0-39,203-0|0,0,0,0,0|5" data-vid="203" data-vtype="0">21-30米</a></em>
+											<em><a href="/equipment/0-56-0-0-0-0-0-39,204-0|0,0,0,0,0|5" data-vid="204" data-vtype="0">30米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore44">
+									<dt><a href="/equipment/0-57-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100411">臂架式高空作业平台</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">作业高度:</em>
+											<em><a href="/equipment/0-57-0-0-0-0-0-40,205-0|0,0,0,0,0|5" data-vid="205" data-vtype="0">10米以下</a></em>
+											<em><a href="/equipment/0-57-0-0-0-0-0-40,206-0|0,0,0,0,0|5" data-vid="206" data-vtype="0">10-20米</a></em>
+											<em><a href="/equipment/0-57-0-0-0-0-0-40,207-0|0,0,0,0,0|5" data-vid="207" data-vtype="0">21-30米</a></em>
+											<em><a href="/equipment/0-57-0-0-0-0-0-40,208-0|0,0,0,0,0|5" data-vid="208" data-vtype="0">30米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore45">
+									<dt><a href="/equipment/0-58-0-0-0-0-0-0-0|0,0,0,0,0|5" data-subid="100412">高空作业车</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">作业高度:</em>
+											<em><a href="/equipment/0-58-0-0-0-0-0-41,209-0|0,0,0,0,0|5" data-vid="209" data-vtype="0">10米以下</a></em>
+											<em><a href="/equipment/0-58-0-0-0-0-0-41,210-0|0,0,0,0,0|5" data-vid="210" data-vtype="0">10-20米</a></em>
+											<em><a href="/equipment/0-58-0-0-0-0-0-41,211-0|0,0,0,0,0|5" data-vid="211" data-vtype="0">21-30米</a></em>
+											<em><a href="/equipment/0-58-0-0-0-0-0-41,212-0|0,0,0,0,0|5" data-vid="212" data-vtype="0">30米以上</a></em>
+											</p>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1005" onmouseover="gotoFirShow(1005);" 
+					onmouseout="gotoFirHide(1005);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|6" data-firid="1005">混凝土机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1005" 
+						onmouseover="gotoFirShow(1005);" onmouseout="gotoFirHide(1005);">
+							<div class="subitem">
+								<dl class="fore46">
+									<dt><a href="/equipment/0-59-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100501">混凝土拖泵</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">最大输送量:</em>
+											<em><a href="/equipment/0-59-0-0-0-0-0-42,213-0|0,0,0,0,0|6" data-vid="213" data-vtype="0">40+</a></em>
+											<em><a href="/equipment/0-59-0-0-0-0-0-42,214-0|0,0,0,0,0|6" data-vid="214" data-vtype="0">60+</a></em>
+											<em><a href="/equipment/0-59-0-0-0-0-0-42,215-0|0,0,0,0,0|6" data-vid="215" data-vtype="0">80+</a></em>
+											<em><a href="/equipment/0-59-0-0-0-0-0-42,216-0|0,0,0,0,0|6" data-vid="216" data-vtype="0">100+</a></em>
+											<em><a href="/equipment/0-59-0-0-0-0-0-42,217-0|0,0,0,0,0|6" data-vid="217" data-vtype="0">120+</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore47">
+									<dt><a href="/equipment/0-60-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100502">车载泵</a></dt>
+									<dd>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">泵送压力MPa:</em>
+											<em><a href="/equipment/0-60-0-0-0-0-0-45,222-0|0,0,0,0,0|6" data-vid="222" data-vtype="0">14+</a></em>
+											<em><a href="/equipment/0-60-0-0-0-0-0-45,223-0|0,0,0,0,0|6" data-vid="223" data-vtype="0">16+</a></em>
+											<em><a href="/equipment/0-60-0-0-0-0-0-45,224-0|0,0,0,0,0|6" data-vid="224" data-vtype="0">18+</a></em>
+											</p>
+										<p class="attribute mb10">
+											<em class="mr10 noborderr tit">最大输送量:</em>
+											<em><a href="/equipment/0-60-0-0-0-0-0-43,218-0|0,0,0,0,0|6" data-vid="218" data-vtype="1">60+</a></em>
+											<em><a href="/equipment/0-60-0-0-0-0-0-43,219-0|0,0,0,0,0|6" data-vid="219" data-vtype="1">80+</a></em>
+											<em><a href="/equipment/0-60-0-0-0-0-0-43,220-0|0,0,0,0,0|6" data-vid="220" data-vtype="1">90+</a></em>
+											<em><a href="/equipment/0-60-0-0-0-0-0-43,221-0|0,0,0,0,0|6" data-vid="221" data-vtype="1">100+</a></em>
+											</p>
+										</dd>
+								</dl>
+								<dl class="fore48">
+									<dt><a href="/equipment/0-61-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100503">混凝土搅拌站</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore49">
+									<dt><a href="/equipment/0-62-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100504">混凝土搅拌机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore50">
+									<dt><a href="/equipment/0-63-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100505">干混砂浆搅拌站（楼）</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore51">
+									<dt><a href="/equipment/0-64-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100506">混凝土布料机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore52">
+									<dt><a href="/equipment/0-65-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100507">搅拌运输车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore53">
+									<dt><a href="/equipment/0-66-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100508">混凝土泵车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore54">
+									<dt><a href="/equipment/0-67-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100509">沥青砂浆车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore55">
+									<dt><a href="/equipment/0-68-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100510">干混砂浆运输车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore56">
+									<dt><a href="/equipment/0-69-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100511">背罐车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore57">
+									<dt><a href="/equipment/0-70-0-0-0-0-0-0-0|0,0,0,0,0|6" data-subid="100512">混凝土喷射机械手</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1006" onmouseover="gotoFirShow(1006);" 
+					onmouseout="gotoFirHide(1006);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|7" data-firid="1006">桩工机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1006" 
+						onmouseover="gotoFirShow(1006);" onmouseout="gotoFirHide(1006);">
+							<div class="subitem">
+								<dl class="fore58">
+									<dt><a href="/equipment/0-71-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100601">旋挖钻机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore59">
+									<dt><a href="/equipment/0-72-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100602">长螺旋钻机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore60">
+									<dt><a href="/equipment/0-73-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100603">静力压桩机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore61">
+									<dt><a href="/equipment/0-74-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100604">筒式柴油打桩锤</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore62">
+									<dt><a href="/equipment/0-75-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100605">水平定向钻</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore63">
+									<dt><a href="/equipment/0-76-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100606">连续墙抓斗</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore64">
+									<dt><a href="/equipment/0-77-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100607">振动打拔桩锤</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore65">
+									<dt><a href="/equipment/0-78-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100608">液压打桩锤</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore66">
+									<dt><a href="/equipment/0-79-0-0-0-0-0-0-0|0,0,0,0,0|7" data-subid="100609">强夯机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1007" onmouseover="gotoFirShow(1007);" 
+					onmouseout="gotoFirHide(1007);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|8" data-firid="1007">工业车辆</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1007" 
+						onmouseover="gotoFirShow(1007);" onmouseout="gotoFirHide(1007);">
+							<div class="subitem">
+								<dl class="fore67">
+									<dt><a href="/equipment/0-80-0-0-0-0-0-0-0|0,0,0,0,0|8" data-subid="100701">叉车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore68">
+									<dt><a href="/equipment/0-81-0-0-0-0-0-0-0|0,0,0,0,0|8" data-subid="100702">手动搬运车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore69">
+									<dt><a href="/equipment/0-82-0-0-0-0-0-0-0|0,0,0,0,0|8" data-subid="100704">伸缩臂叉装车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore70">
+									<dt><a href="/equipment/0-83-0-0-0-0-0-0-0|0,0,0,0,0|8" data-subid="100705">牵引车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1008" onmouseover="gotoFirShow(1008);" 
+					onmouseout="gotoFirHide(1008);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|9" data-firid="1008">矿山机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1008" 
+						onmouseover="gotoFirShow(1008);" onmouseout="gotoFirHide(1008);">
+							<div class="subitem">
+								<dl class="fore71">
+									<dt><a href="/equipment/0-84-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100801">潜孔钻机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore72">
+									<dt><a href="/equipment/0-85-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100802">凿岩机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore73">
+									<dt><a href="/equipment/0-86-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100803">鄂式破碎机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore74">
+									<dt><a href="/equipment/0-87-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100804">反击式破碎机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore75">
+									<dt><a href="/equipment/0-88-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100805">圆锥破碎机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore76">
+									<dt><a href="/equipment/0-89-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100806">立轴式冲击破碎机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore77">
+									<dt><a href="/equipment/0-90-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100807">锤式破碎机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore78">
+									<dt><a href="/equipment/0-91-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100808">振动给料机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore79">
+									<dt><a href="/equipment/0-92-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100809">振动筛</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore80">
+									<dt><a href="/equipment/0-93-0-0-0-0-0-0-0|0,0,0,0,0|9" data-subid="100810">非公路卡车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					<li class="firm" data-id="1009" onmouseover="gotoFirShow(1009);" 
+					onmouseout="gotoFirHide(1009);">
+						<span class="leftMenu_span">
+							<a href="/equipment/0-0-0-0-0-0-0-0-0|0,0,0,0,0|10" data-firid="1009">桥梁机械</a>
+							<i class="fr"></i>
+						</span>
+						<!--弹出层 begin-->
+						<div class="i-mc" style="display:none;" id="class_1009" 
+						onmouseover="gotoFirShow(1009);" onmouseout="gotoFirHide(1009);">
+							<div class="subitem">
+								<dl class="fore81">
+									<dt><a href="/equipment/0-94-0-0-0-0-0-0-0|0,0,0,0,0|10" data-subid="100901">提梁机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore82">
+									<dt><a href="/equipment/0-95-0-0-0-0-0-0-0|0,0,0,0,0|10" data-subid="100902">运梁车</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								<dl class="fore83">
+									<dt><a href="/equipment/0-96-0-0-0-0-0-0-0|0,0,0,0,0|10" data-subid="100903">架桥机</a></dt>
+									<dd>
+										</dd>
+								</dl>
+								</div>
+						</div>
+						<!--弹出层 end-->
+					</li>
+					</ul>
+			</div>
+		</ul>
+		<ul class="menu">
+			<li class=""><a href="/index.html">首页</a></li>
+			<li class="bg"><a href="/equipment/">买车</a></li>
+			<li class="">
+				<a href="javascript:;" onclick="login_reg();">卖车</a></li>
+				</li>
+			<li class=""><a href="/buy/">求购</a></li>
+			<li class=""><a href="/news.html">购车宝典</a></li>
+			<li class=""><a href="/website.html">自助建站</a></li>
+			<li class="">
+				<img src="/images/phone.png" style="float:left; padding-left: 5px;"/>
+				<a href="/secondhand.html">掌上二手车</a>
+			</li>
+			<li class="">
+				<img src="/images/phone.png" style="float:left; padding-left: 5px;"/>
+				<a href="/assess.html">快估</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<!--导航 end--> <div class="dangqian">
+		<span>当前位置：</span>
+		<a href="/">二手工程机械网</a> &gt; 二手设备
+	</div>
+	<div class="LayoutLeft890 fl">
+		<div class="select">
+			<div class="select_nav">
+				<span class="tit2">您已经选择：</span>
+				<input type="hidden" name="my_search" id="my_search" value="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5" />
+				<span id="yes_sel_html"></span>
+				<a class="btn btn60 fr" onclick="gotoMySearch()">保存</a>
+			</div>
+			<div class="propAttrs">
+				<div class="attr">
+					<div class="attrKey">所在地区：</div>
+					<div class="attrValues">
+						<ul class="av-collapse" id="ul-province">
+							<li><a class="curr" id="province_0" href="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5">不限</a></li>
+							<li><a id="province_862" href="862-0-173-0-0-5-17-0-0|0,0,0,0,0|5">上海市</a></li>
+							<li><a id="province_2144" href="2144-0-173-0-0-5-17-0-0|0,0,0,0,0|5">广东省</a></li>
+							<li><a id="province_882" href="882-0-173-0-0-5-17-0-0|0,0,0,0,0|5">江苏省</a></li>
+							<li><a id="province_37" href="37-0-173-0-0-5-17-0-0|0,0,0,0,0|5">河北省</a></li>
+							<li><a id="province_1494" href="1494-0-173-0-0-5-17-0-0|0,0,0,0,0|5">山东省</a></li>
+							<li><a id="province_1267" href="1267-0-173-0-0-5-17-0-0|0,0,0,0,0|5">福建省</a></li>
+							<li><a id="province_3590" href="3590-0-173-0-0-5-17-0-0|0,0,0,0,0|5">香港</a></li>
+							<li><a id="province_1" href="1-0-173-0-0-5-17-0-0|0,0,0,0,0|5">北京市</a></li>
+							<li><a id="province_19" href="19-0-173-0-0-5-17-0-0|0,0,0,0,0|5">天津市</a></li>
+							<li><a id="province_1014" href="1014-0-173-0-0-5-17-0-0|0,0,0,0,0|5">浙江省</a></li>
+							<li><a id="province_2518" href="2518-0-173-0-0-5-17-0-0|0,0,0,0,0|5">四川省</a></li>
+							<li><a id="province_1669" href="1669-0-173-0-0-5-17-0-0|0,0,0,0,0|5">河南省</a></li>
+							<li><a id="province_2476" href="2476-0-173-0-0-5-17-0-0|0,0,0,0,0|5">重庆市</a></li>
+							<li><a id="province_626" href="626-0-173-0-0-5-17-0-0|0,0,0,0,0|5">吉林省</a></li>
+							<li><a id="province_497" href="497-0-173-0-0-5-17-0-0|0,0,0,0,0|5">辽宁省</a></li>
+							<li><a id="province_1127" href="1127-0-173-0-0-5-17-0-0|0,0,0,0,0|5">安徽省</a></li>
+							<li><a id="province_1994" href="1994-0-173-0-0-5-17-0-0|0,0,0,0,0|5">湖南省</a></li>
+							<li><a id="province_1864" href="1864-0-173-0-0-5-17-0-0|0,0,0,0,0|5">湖北省</a></li>
+							<li><a id="province_232" href="232-0-173-0-0-5-17-0-0|0,0,0,0,0|5">山西省</a></li>
+							<li><a id="province_3204" href="3204-0-173-0-0-5-17-0-0|0,0,0,0,0|5">甘肃省</a></li>
+							<li><a id="province_1371" href="1371-0-173-0-0-5-17-0-0|0,0,0,0,0|5">江西省</a></li>
+							<li><a id="province_374" href="374-0-173-0-0-5-17-0-0|0,0,0,0,0|5">内蒙古</a></li>
+							<li><a id="province_2308" href="2308-0-173-0-0-5-17-0-0|0,0,0,0,0|5">广西</a></li>
+							<li><a id="province_3317" href="3317-0-173-0-0-5-17-0-0|0,0,0,0,0|5">青海省</a></li>
+							<li><a id="province_2840" href="2840-0-173-0-0-5-17-0-0|0,0,0,0,0|5">云南省</a></li>
+							<li><a id="province_704" href="704-0-173-0-0-5-17-0-0|0,0,0,0,0|5">黑龙江省</a></li>
+							<li><a id="province_3076" href="3076-0-173-0-0-5-17-0-0|0,0,0,0,0|5">陕西省</a></li>
+							<li><a id="province_2739" href="2739-0-173-0-0-5-17-0-0|0,0,0,0,0|5">贵州省</a></li>
+							<li><a id="province_2447" href="2447-0-173-0-0-5-17-0-0|0,0,0,0,0|5">海南省</a></li>
+							<li><a id="province_2994" href="2994-0-173-0-0-5-17-0-0|0,0,0,0,0|5">西藏</a></li>
+							<li><a id="province_3370" href="3370-0-173-0-0-5-17-0-0|0,0,0,0,0|5">宁夏</a></li>
+							<li><a id="province_3403" href="3403-0-173-0-0-5-17-0-0|0,0,0,0,0|5">新疆</a></li>
+							<li><a id="province_3519" href="3519-0-173-0-0-5-17-0-0|0,0,0,0,0|5">台湾</a></li>
+							<li><a id="province_3612" href="3612-0-173-0-0-5-17-0-0|0,0,0,0,0|5">澳门</a></li>
+							</ul>
+						<div class="av-options">
+							<a class="ui-more" href="javascript:;">更多<i class="drop-arrow"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="attr hide">
+					<div class="attrKey">设备大类：</div>
+					<div class="attrValues">
+						<ul class="av-collapse">
+							<li><a class="curr" id="bigcategory_0" href="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5">不限</a></li>
+							<li><a id="bigcategory_1" href="0-1-173-0-0-5-17-0-0|0,0,0,0,0|5">挖掘机械</a></li>
+							<li><a id="bigcategory_2" href="0-2-173-0-0-5-17-0-0|0,0,0,0,0|5">铲土运输机械</a></li>
+							<li><a id="bigcategory_3" href="0-3-173-0-0-5-17-0-0|0,0,0,0,0|5">筑养路机械</a></li>
+							<li><a id="bigcategory_5" href="0-5-173-0-0-5-17-0-0|0,0,0,0,0|5">起重机械</a></li>
+							<li><a id="bigcategory_9" href="0-9-173-0-0-5-17-0-0|0,0,0,0,0|5">矿山机械</a></li>
+							<li><a id="bigcategory_4" href="0-4-173-0-0-5-17-0-0|0,0,0,0,0|5">压实机械</a></li>
+							<li><a id="bigcategory_6" href="0-6-173-0-0-5-17-0-0|0,0,0,0,0|5">混凝土机械</a></li>
+							<li><a id="bigcategory_10" href="0-10-173-0-0-5-17-0-0|0,0,0,0,0|5">桥梁机械</a></li>
+							<li><a id="bigcategory_12" href="0-12-173-0-0-5-17-0-0|0,0,0,0,0|5">市政环卫机械</a></li>
+							<li><a id="bigcategory_13" href="0-13-173-0-0-5-17-0-0|0,0,0,0,0|5">预应力机械</a></li>
+							<li><a id="bigcategory_11" href="0-11-173-0-0-5-17-0-0|0,0,0,0,0|5">港口机械</a></li>
+							<li><a id="bigcategory_7" href="0-7-173-0-0-5-17-0-0|0,0,0,0,0|5">桩工机械</a></li>
+							<li><a id="bigcategory_8" href="0-8-173-0-0-5-17-0-0|0,0,0,0,0|5">工业车辆</a></li>
+							</ul>
+						<div class="av-options">
+							<a class="ui-more" href="javascript:;">更多<i class="drop-arrow"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="attr">
+					<div class="attrKey">设备类型：</div>
+					<div class="attrValues">
+						<ul class="av-collapse">
+							<li><a class="curr" id="category_0" href="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5">不限</a></li>
+							<li><a id="category_14" href="0-14-173-0-0-5-17-0-0|0,0,0,0,0|5">履带挖掘机</a></li>
+							<li><a id="category_19" href="0-19-173-0-0-5-17-0-0|0,0,0,0,0|5">轮式装载机</a></li>
+							<li><a id="category_27" href="0-27-173-0-0-5-17-0-0|0,0,0,0,0|5">沥青摊铺机</a></li>
+							<li><a id="category_15" href="0-15-173-0-0-5-17-0-0|0,0,0,0,0|5">轮式挖掘机</a></li>
+							<li><a id="category_21" href="0-21-173-0-0-5-17-0-0|0,0,0,0,0|5">推土机</a></li>
+							<li><a id="category_47" href="0-47-173-0-0-5-17-0-0|0,0,0,0,0|5">汽车起重机</a></li>
+							<li><a id="category_90" href="0-90-173-0-0-5-17-0-0|0,0,0,0,0|5">锤式破碎机</a></li>
+							<li><a id="category_85" href="0-85-173-0-0-5-17-0-0|0,0,0,0,0|5">凿岩机</a></li>
+							<li><a id="category_99" href="0-99-173-0-0-5-17-0-0|0,0,0,0,0|5">清洗车</a></li>
+							<li><a id="category_96" href="0-96-173-0-0-5-17-0-0|0,0,0,0,0|5">架桥机</a></li>
+							<li><a id="category_58" href="0-58-173-0-0-5-17-0-0|0,0,0,0,0|5">高空作业车</a></li>
+							<li><a id="category_59" href="0-59-173-0-0-5-17-0-0|0,0,0,0,0|5">混凝土拖泵</a></li>
+							<li><a id="category_54" href="0-54-173-0-0-5-17-0-0|0,0,0,0,0|5">自行臂架式高空作业平台</a></li>
+							<li><a id="category_56" href="0-56-173-0-0-5-17-0-0|0,0,0,0,0|5">伸缩柱式高空作业平台</a></li>
+							<li><a id="category_40" href="0-40-173-0-0-5-17-0-0|0,0,0,0,0|5">单钢轮压路机</a></li>
+							<li><a id="category_41" href="0-41-173-0-0-5-17-0-0|0,0,0,0,0|5">双钢轮压路机</a></li>
+							<li><a id="category_16" href="0-16-173-0-0-5-17-0-0|0,0,0,0,0|5">正铲挖掘机</a></li>
+							<li><a id="category_29" href="0-29-173-0-0-5-17-0-0|0,0,0,0,0|5">路面铣刨机</a></li>
+							<li><a id="category_30" href="0-30-173-0-0-5-17-0-0|0,0,0,0,0|5">稀浆封层车</a></li>
+							<li><a id="category_31" href="0-31-173-0-0-5-17-0-0|0,0,0,0,0|5">沥青洒布车</a></li>
+							<li><a id="category_32" href="0-32-173-0-0-5-17-0-0|0,0,0,0,0|5">沥青碎石同步封层车</a></li>
+							<li><a id="category_33" href="0-33-173-0-0-5-17-0-0|0,0,0,0,0|5">沥青混合料搅拌设备</a></li>
+							<li><a id="category_34" href="0-34-173-0-0-5-17-0-0|0,0,0,0,0|5">稳定土拌和机</a></li>
+							<li><a id="category_35" href="0-35-173-0-0-5-17-0-0|0,0,0,0,0|5">稳定土厂拌设备</a></li>
+							<li><a id="category_36" href="0-36-173-0-0-5-17-0-0|0,0,0,0,0|5">路面冷再生机</a></li>
+							<li><a id="category_37" href="0-37-173-0-0-5-17-0-0|0,0,0,0,0|5">路面综合养护车</a></li>
+							<li><a id="category_38" href="0-38-173-0-0-5-17-0-0|0,0,0,0,0|5">抹光机</a></li>
+							<li><a id="category_39" href="0-39-173-0-0-5-17-0-0|0,0,0,0,0|5">沥青路面养护车</a></li>
+							<li><a id="category_17" href="0-17-173-0-0-5-17-0-0|0,0,0,0,0|5">挖掘装载机</a></li>
+							<li><a id="category_18" href="0-18-173-0-0-5-17-0-0|0,0,0,0,0|5">抓钢机</a></li>
+							<li><a id="category_22" href="0-22-173-0-0-5-17-0-0|0,0,0,0,0|5">平地机</a></li>
+							<li><a id="category_23" href="0-23-173-0-0-5-17-0-0|0,0,0,0,0|5">铲运机</a></li>
+							<li><a id="category_24" href="0-24-173-0-0-5-17-0-0|0,0,0,0,0|5">吊管机</a></li>
+							<li><a id="category_25" href="0-25-173-0-0-5-17-0-0|0,0,0,0,0|5">矿用自卸车</a></li>
+							<li><a id="category_26" href="0-26-173-0-0-5-17-0-0|0,0,0,0,0|5">铰接式卡车</a></li>
+							<li><a id="category_42" href="0-42-173-0-0-5-17-0-0|0,0,0,0,0|5">轮胎压路机</a></li>
+							<li><a id="category_43" href="0-43-173-0-0-5-17-0-0|0,0,0,0,0|5">静碾压路机</a></li>
+							<li><a id="category_44" href="0-44-173-0-0-5-17-0-0|0,0,0,0,0|5">垃圾压实机</a></li>
+							<li><a id="category_45" href="0-45-173-0-0-5-17-0-0|0,0,0,0,0|5">冲击夯</a></li>
+							<li><a id="category_46" href="0-46-173-0-0-5-17-0-0|0,0,0,0,0|5">平板夯</a></li>
+							<li><a id="category_28" href="0-28-173-0-0-5-17-0-0|0,0,0,0,0|5">混凝土摊铺机</a></li>
+							<li><a id="category_20" href="0-20-173-0-0-5-17-0-0|0,0,0,0,0|5">滑移装载机</a></li>
+							<li><a id="category_57" href="0-57-173-0-0-5-17-0-0|0,0,0,0,0|5">臂架式高空作业平台</a></li>
+							<li><a id="category_55" href="0-55-173-0-0-5-17-0-0|0,0,0,0,0|5">剪叉式高空作业平台</a></li>
+							<li><a id="category_48" href="0-48-173-0-0-5-17-0-0|0,0,0,0,0|5">全地面起重机</a></li>
+							<li><a id="category_49" href="0-49-173-0-0-5-17-0-0|0,0,0,0,0|5">履带式起重机</a></li>
+							<li><a id="category_50" href="0-50-173-0-0-5-17-0-0|0,0,0,0,0|5">随车起重机</a></li>
+							<li><a id="category_51" href="0-51-173-0-0-5-17-0-0|0,0,0,0,0|5">门式起重机</a></li>
+							<li><a id="category_52" href="0-52-173-0-0-5-17-0-0|0,0,0,0,0|5">塔式起重机</a></li>
+							<li><a id="category_53" href="0-53-173-0-0-5-17-0-0|0,0,0,0,0|5">施工升降机</a></li>
+							<li><a id="category_60" href="0-60-173-0-0-5-17-0-0|0,0,0,0,0|5">车载泵</a></li>
+							<li><a id="category_61" href="0-61-173-0-0-5-17-0-0|0,0,0,0,0|5">混凝土搅拌站</a></li>
+							<li><a id="category_62" href="0-62-173-0-0-5-17-0-0|0,0,0,0,0|5">混凝土搅拌机</a></li>
+							<li><a id="category_63" href="0-63-173-0-0-5-17-0-0|0,0,0,0,0|5">干混砂浆搅拌站（楼）</a></li>
+							<li><a id="category_64" href="0-64-173-0-0-5-17-0-0|0,0,0,0,0|5">混凝土布料机</a></li>
+							<li><a id="category_65" href="0-65-173-0-0-5-17-0-0|0,0,0,0,0|5">搅拌运输车</a></li>
+							<li><a id="category_66" href="0-66-173-0-0-5-17-0-0|0,0,0,0,0|5">混凝土泵车</a></li>
+							<li><a id="category_67" href="0-67-173-0-0-5-17-0-0|0,0,0,0,0|5">沥青砂浆车</a></li>
+							<li><a id="category_68" href="0-68-173-0-0-5-17-0-0|0,0,0,0,0|5">干混砂浆运输车</a></li>
+							<li><a id="category_69" href="0-69-173-0-0-5-17-0-0|0,0,0,0,0|5">背罐车</a></li>
+							<li><a id="category_70" href="0-70-173-0-0-5-17-0-0|0,0,0,0,0|5">混凝土喷射机械手</a></li>
+							<li><a id="category_71" href="0-71-173-0-0-5-17-0-0|0,0,0,0,0|5">旋挖钻机</a></li>
+							<li><a id="category_72" href="0-72-173-0-0-5-17-0-0|0,0,0,0,0|5">长螺旋钻机</a></li>
+							<li><a id="category_73" href="0-73-173-0-0-5-17-0-0|0,0,0,0,0|5">静力压桩机</a></li>
+							<li><a id="category_74" href="0-74-173-0-0-5-17-0-0|0,0,0,0,0|5">筒式柴油打桩锤</a></li>
+							<li><a id="category_75" href="0-75-173-0-0-5-17-0-0|0,0,0,0,0|5">水平定向钻</a></li>
+							<li><a id="category_76" href="0-76-173-0-0-5-17-0-0|0,0,0,0,0|5">连续墙抓斗</a></li>
+							<li><a id="category_77" href="0-77-173-0-0-5-17-0-0|0,0,0,0,0|5">振动打拔桩锤</a></li>
+							<li><a id="category_78" href="0-78-173-0-0-5-17-0-0|0,0,0,0,0|5">液压打桩锤</a></li>
+							<li><a id="category_79" href="0-79-173-0-0-5-17-0-0|0,0,0,0,0|5">强夯机</a></li>
+							<li><a id="category_80" href="0-80-173-0-0-5-17-0-0|0,0,0,0,0|5">叉车</a></li>
+							<li><a id="category_81" href="0-81-173-0-0-5-17-0-0|0,0,0,0,0|5">手动搬运车</a></li>
+							<li><a id="category_82" href="0-82-173-0-0-5-17-0-0|0,0,0,0,0|5">伸缩臂叉装车</a></li>
+							<li><a id="category_83" href="0-83-173-0-0-5-17-0-0|0,0,0,0,0|5">牵引车</a></li>
+							<li><a id="category_84" href="0-84-173-0-0-5-17-0-0|0,0,0,0,0|5">潜孔钻机</a></li>
+							<li><a id="category_97" href="0-97-173-0-0-5-17-0-0|0,0,0,0,0|5">正面吊</a></li>
+							<li><a id="category_98" href="0-98-173-0-0-5-17-0-0|0,0,0,0,0|5">堆垛机</a></li>
+							<li><a id="category_100" href="0-100-173-0-0-5-17-0-0|0,0,0,0,0|5">垃圾压缩及转运车 </a></li>
+							<li><a id="category_101" href="0-101-173-0-0-5-17-0-0|0,0,0,0,0|5">扫路车</a></li>
+							<li><a id="category_102" href="0-102-173-0-0-5-17-0-0|0,0,0,0,0|5">除雪车</a></li>
+							<li><a id="category_103" href="0-103-173-0-0-5-17-0-0|0,0,0,0,0|5">道路清障车</a></li>
+							<li><a id="category_104" href="0-104-173-0-0-5-17-0-0|0,0,0,0,0|5">钢筋调直切断机</a></li>
+							<li><a id="category_105" href="0-105-173-0-0-5-17-0-0|0,0,0,0,0|5">数控弯箍机</a></li>
+							<li><a id="category_86" href="0-86-173-0-0-5-17-0-0|0,0,0,0,0|5">鄂式破碎机</a></li>
+							<li><a id="category_87" href="0-87-173-0-0-5-17-0-0|0,0,0,0,0|5">反击式破碎机</a></li>
+							<li><a id="category_88" href="0-88-173-0-0-5-17-0-0|0,0,0,0,0|5">圆锥破碎机</a></li>
+							<li><a id="category_89" href="0-89-173-0-0-5-17-0-0|0,0,0,0,0|5">立轴式冲击破碎机</a></li>
+							<li><a id="category_91" href="0-91-173-0-0-5-17-0-0|0,0,0,0,0|5">振动给料机</a></li>
+							<li><a id="category_92" href="0-92-173-0-0-5-17-0-0|0,0,0,0,0|5">振动筛</a></li>
+							<li><a id="category_93" href="0-93-173-0-0-5-17-0-0|0,0,0,0,0|5">非公路卡车</a></li>
+							<li><a id="category_94" href="0-94-173-0-0-5-17-0-0|0,0,0,0,0|5">提梁机</a></li>
+							<li><a id="category_95" href="0-95-173-0-0-5-17-0-0|0,0,0,0,0|5">运梁车</a></li>
+							</ul>
+						<div class="av-options">
+							<a class="ui-more" href="javascript:;">更多<i class="drop-arrow"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="attr">
+					<div class="attrKey">设备品牌：</div>
+					<div class="attrValues">
+						<ul class="av-collapse">
+							<li><a class="curr" id="brand_0" href="0-0-0-0-0-5-17-0-0|0,0,0,0,0|5">不限</a></li>
+							<li><a id="brand_40" href="0-0-40-0-0-5-17-0-0|0,0,0,0,0|5">小松</a></li>
+							<li><a id="brand_32" href="0-0-32-0-0-5-17-0-0|0,0,0,0,0|5">日立建机</a></li>
+							<li><a id="brand_87" href="0-0-87-0-0-5-17-0-0|0,0,0,0,0|5">卡特彼勒</a></li>
+							<li><a id="brand_135" href="0-0-135-0-0-5-17-0-0|0,0,0,0,0|5">神钢</a></li>
+							<li><a id="brand_75" href="0-0-75-0-0-5-17-0-0|0,0,0,0,0|5">住友</a></li>
+							<li><a id="brand_50" href="0-0-50-0-0-5-17-0-0|0,0,0,0,0|5">现代</a></li>
+							<li><a id="brand_13" href="0-0-13-0-0-5-17-0-0|0,0,0,0,0|5">斗山</a></li>
+							<li><a id="brand_58" href="0-0-58-0-0-5-17-0-0|0,0,0,0,0|5">加藤</a></li>
+							<li><a id="brand_70" href="0-0-70-0-0-5-17-0-0|0,0,0,0,0|5">山河智能</a></li>
+							<li><a id="brand_10" href="0-0-10-0-0-5-17-0-0|0,0,0,0,0|5">常林</a></li>
+							<li><a id="brand_20" href="0-0-20-0-0-5-17-0-0|0,0,0,0,0|5">沃尔沃</a></li>
+							<li><a id="brand_37" href="0-0-37-0-0-5-17-0-0|0,0,0,0,0|5">徐工</a></li>
+							<li><a id="brand_170" href="0-0-170-0-0-5-17-0-0|0,0,0,0,0|5">国机重工</a></li>
+							<li><a id="brand_59" href="0-0-59-0-0-5-17-0-0|0,0,0,0,0|5">玉柴重工</a></li>
+							<li><a id="brand_137" href="0-0-137-0-0-5-17-0-0|0,0,0,0,0|5">石川岛</a></li>
+							<li><a id="brand_51" href="0-0-51-0-0-5-17-0-0|0,0,0,0,0|5">久保田</a></li>
+							<li><a id="brand_156" href="0-0-156-0-0-5-17-0-0|0,0,0,0,0|5">洋马</a></li>
+							<li><a id="brand_60" href="0-0-60-0-0-5-17-0-0|0,0,0,0,0|5">三一</a></li>
+							<li><a id="brand_84" href="0-0-84-0-0-5-17-0-0|0,0,0,0,0|5">鼎盛天工</a></li>
+							<li><a id="brand_88" href="0-0-88-0-0-5-17-0-0|0,0,0,0,0|5">凯斯</a></li>
+							<li><a id="brand_94" href="0-0-94-0-0-5-17-0-0|0,0,0,0,0|5">柳工</a></li>
+							<li><a id="brand_14" href="0-0-14-0-0-5-17-0-0|0,0,0,0,0|5">戴纳派克</a></li>
+							<li><a id="brand_71" href="0-0-71-0-0-5-17-0-0|0,0,0,0,0|5">竹内</a></li>
+							<li><a id="brand_89" href="0-0-89-0-0-5-17-0-0|0,0,0,0,0|5">卡特重工</a></li>
+							<li><a id="brand_1" href="0-0-1-0-0-5-17-0-0|0,0,0,0,0|5">阿特拉斯·科普柯</a></li>
+							<li><a id="brand_3" href="0-0-3-0-0-5-17-0-0|0,0,0,0,0|5">阿特拉斯</a></li>
+							<li><a id="brand_140" href="0-0-140-0-0-5-17-0-0|0,0,0,0,0|5">山重建机</a></li>
+							<li><a id="brand_152" href="0-0-152-0-0-5-17-0-0|0,0,0,0,0|5">特雷克斯</a></li>
+							<li><a id="brand_166" href="0-0-166-0-0-5-17-0-0|0,0,0,0,0|5">山猫</a></li>
+							<li><a id="brand_157" href="0-0-157-0-0-5-17-0-0|0,0,0,0,0|5">临工</a></li>
+							<li><a id="brand_176" href="0-0-176-0-0-5-17-0-0|0,0,0,0,0|5">新源</a></li>
+							<li><a id="brand_151" href="0-0-151-0-0-5-17-0-0|0,0,0,0,0|5">中国现代</a></li>
+							<li><a id="brand_136" href="0-0-136-0-0-5-17-0-0|0,0,0,0,0|5">山推</a></li>
+							<li><a id="brand_142" href="0-0-142-0-0-5-17-0-0|0,0,0,0,0|5">长江</a></li>
+							<li><a id="brand_96" href="0-0-96-0-0-5-17-0-0|0,0,0,0,0|5">龙工</a></li>
+							<li><a id="brand_68" href="0-0-68-0-0-5-17-0-0|0,0,0,0,0|5">中联</a></li>
+							<li><a id="brand_101" href="0-0-101-0-0-5-17-0-0|0,0,0,0,0|5">力士德</a></li>
+							<li><a id="brand_5" href="0-0-5-0-0-5-17-0-0|0,0,0,0,0|5">宝峨</a></li>
+							<li><a id="brand_6" href="0-0-6-0-0-5-17-0-0|0,0,0,0,0|5">北起多田野</a></li>
+							<li><a id="brand_15" href="0-0-15-0-0-5-17-0-0|0,0,0,0,0|5">德马格</a></li>
+							<li><a id="brand_11" href="0-0-11-0-0-5-17-0-0|0,0,0,0,0|5">成工</a></li>
+							<li><a id="brand_18" href="0-0-18-0-0-5-17-0-0|0,0,0,0,0|5">普茨迈斯特</a></li>
+							<li><a id="brand_52" href="0-0-52-0-0-5-17-0-0|0,0,0,0,0|5">新筑</a></li>
+							<li><a id="brand_55" href="0-0-55-0-0-5-17-0-0|0,0,0,0,0|5">杰西博</a></li>
+							<li><a id="brand_36" href="0-0-36-0-0-5-17-0-0|0,0,0,0,0|5">浣熊</a></li>
+							<li><a id="brand_57" href="0-0-57-0-0-5-17-0-0|0,0,0,0,0|5">宇通重工</a></li>
+							<li><a id="brand_42" href="0-0-42-0-0-5-17-0-0|0,0,0,0,0|5">厦工</a></li>
+							<li><a id="brand_46" href="0-0-46-0-0-5-17-0-0|0,0,0,0,0|5">宣工</a></li>
+							<li><a id="brand_47" href="0-0-47-0-0-5-17-0-0|0,0,0,0,0|5">恒润高科</a></li>
+							<li><a id="brand_48" href="0-0-48-0-0-5-17-0-0|0,0,0,0,0|5">星马</a></li>
+							<li><a id="brand_49" href="0-0-49-0-0-5-17-0-0|0,0,0,0,0|5">杭叉</a></li>
+							<li><a id="brand_43" href="0-0-43-0-0-5-17-0-0|0,0,0,0,0|5">华建</a></li>
+							<li><a id="brand_44" href="0-0-44-0-0-5-17-0-0|0,0,0,0,0|5">华强京工</a></li>
+							<li><a id="brand_45" href="0-0-45-0-0-5-17-0-0|0,0,0,0,0|5">爱知</a></li>
+							<li><a id="brand_56" href="0-0-56-0-0-5-17-0-0|0,0,0,0,0|5">京城重工</a></li>
+							<li><a id="brand_53" href="0-0-53-0-0-5-17-0-0|0,0,0,0,0|5">晋工</a></li>
+							<li><a id="brand_54" href="0-0-54-0-0-5-17-0-0|0,0,0,0,0|5">一拖</a></li>
+							<li><a id="brand_61" href="0-0-61-0-0-5-17-0-0|0,0,0,0,0|5">酒井</a></li>
+							<li><a id="brand_62" href="0-0-62-0-0-5-17-0-0|0,0,0,0,0|5">百灵</a></li>
+							<li><a id="brand_63" href="0-0-63-0-0-5-17-0-0|0,0,0,0,0|5">江淮重工</a></li>
+							<li><a id="brand_64" href="0-0-64-0-0-5-17-0-0|0,0,0,0,0|5">玛连尼</a></li>
+							<li><a id="brand_65" href="0-0-65-0-0-5-17-0-0|0,0,0,0,0|5">吉公</a></li>
+							<li><a id="brand_66" href="0-0-66-0-0-5-17-0-0|0,0,0,0,0|5">愚公</a></li>
+							<li><a id="brand_67" href="0-0-67-0-0-5-17-0-0|0,0,0,0,0|5">江麓机电</a></li>
+							<li><a id="brand_76" href="0-0-76-0-0-5-17-0-0|0,0,0,0,0|5">詹阳</a></li>
+							<li><a id="brand_77" href="0-0-77-0-0-5-17-0-0|0,0,0,0,0|5">博纳地</a></li>
+							<li><a id="brand_78" href="0-0-78-0-0-5-17-0-0|0,0,0,0,0|5">勤牛</a></li>
+							<li><a id="brand_79" href="0-0-79-0-0-5-17-0-0|0,0,0,0,0|5">郴筑</a></li>
+							<li><a id="brand_80" href="0-0-80-0-0-5-17-0-0|0,0,0,0,0|5">西筑</a></li>
+							<li><a id="brand_81" href="0-0-81-0-0-5-17-0-0|0,0,0,0,0|5">骏马</a></li>
+							<li><a id="brand_82" href="0-0-82-0-0-5-17-0-0|0,0,0,0,0|5">江苏路通</a></li>
+							<li><a id="brand_83" href="0-0-83-0-0-5-17-0-0|0,0,0,0,0|5">亚龙</a></li>
+							<li><a id="brand_19" href="0-0-19-0-0-5-17-0-0|0,0,0,0,0|5">普什重机</a></li>
+							<li><a id="brand_12" href="0-0-12-0-0-5-17-0-0|0,0,0,0,0|5">朝工</a></li>
+							<li><a id="brand_16" href="0-0-16-0-0-5-17-0-0|0,0,0,0,0|5">德工</a></li>
+							<li><a id="brand_17" href="0-0-17-0-0-5-17-0-0|0,0,0,0,0|5">德尔重工</a></li>
+							<li><a id="brand_7" href="0-0-7-0-0-5-17-0-0|0,0,0,0,0|5">北方重工</a></li>
+							<li><a id="brand_8" href="0-0-8-0-0-5-17-0-0|0,0,0,0,0|5">北方交通</a></li>
+							<li><a id="brand_9" href="0-0-9-0-0-5-17-0-0|0,0,0,0,0|5">邦立重机</a></li>
+							<li><a id="brand_4" href="0-0-4-0-0-5-17-0-0|0,0,0,0,0|5">奥泰重工</a></li>
+							<li><a id="brand_2" href="0-0-2-0-0-5-17-0-0|0,0,0,0,0|5">宝马格</a></li>
+							<li><a id="brand_38" href="0-0-38-0-0-5-17-0-0|0,0,0,0,0|5">海州机械</a></li>
+							<li><a id="brand_39" href="0-0-39-0-0-5-17-0-0|0,0,0,0,0|5">永林</a></li>
+							<li><a id="brand_41" href="0-0-41-0-0-5-17-0-0|0,0,0,0,0|5">海诺</a></li>
+							<li><a id="brand_33" href="0-0-33-0-0-5-17-0-0|0,0,0,0,0|5">华威桩工</a></li>
+							<li><a id="brand_34" href="0-0-34-0-0-5-17-0-0|0,0,0,0,0|5">威猛</a></li>
+							<li><a id="brand_35" href="0-0-35-0-0-5-17-0-0|0,0,0,0,0|5">日工</a></li>
+							<li><a id="brand_21" href="0-0-21-0-0-5-17-0-0|0,0,0,0,0|5">恒特</a></li>
+							<li><a id="brand_22" href="0-0-22-0-0-5-17-0-0|0,0,0,0,0|5">彭浦</a></li>
+							<li><a id="brand_23" href="0-0-23-0-0-5-17-0-0|0,0,0,0,0|5">合力</a></li>
+							<li><a id="brand_24" href="0-0-24-0-0-5-17-0-0|0,0,0,0,0|5">沃得</a></li>
+							<li><a id="brand_25" href="0-0-25-0-0-5-17-0-0|0,0,0,0,0|5">全进重工</a></li>
+							<li><a id="brand_26" href="0-0-26-0-0-5-17-0-0|0,0,0,0,0|5">鸿得利</a></li>
+							<li><a id="brand_27" href="0-0-27-0-0-5-17-0-0|0,0,0,0,0|5">维特根</a></li>
+							<li><a id="brand_28" href="0-0-28-0-0-5-17-0-0|0,0,0,0,0|5">悍马</a></li>
+							<li><a id="brand_29" href="0-0-29-0-0-5-17-0-0|0,0,0,0,0|5">泉筑</a></li>
+							<li><a id="brand_30" href="0-0-30-0-0-5-17-0-0|0,0,0,0,0|5">华力重工</a></li>
+							<li><a id="brand_31" href="0-0-31-0-0-5-17-0-0|0,0,0,0,0|5">万邦股份</a></li>
+							<li><a id="brand_102" href="0-0-102-0-0-5-17-0-0|0,0,0,0,0|5">东方之星</a></li>
+							<li><a id="brand_103" href="0-0-103-0-0-5-17-0-0|0,0,0,0,0|5">陆德筑机</a></li>
+							<li><a id="brand_104" href="0-0-104-0-0-5-17-0-0|0,0,0,0,0|5">威克特</a></li>
+							<li><a id="brand_105" href="0-0-105-0-0-5-17-0-0|0,0,0,0,0|5">辽筑</a></li>
+							<li><a id="brand_106" href="0-0-106-0-0-5-17-0-0|0,0,0,0,0|5">无锡华通</a></li>
+							<li><a id="brand_107" href="0-0-107-0-0-5-17-0-0|0,0,0,0,0|5">利勃海尔</a></li>
+							<li><a id="brand_108" href="0-0-108-0-0-5-17-0-0|0,0,0,0,0|5">雷奥科技</a></li>
+							<li><a id="brand_109" href="0-0-109-0-0-5-17-0-0|0,0,0,0,0|5">威肯</a></li>
+							<li><a id="brand_110" href="0-0-110-0-0-5-17-0-0|0,0,0,0,0|5">路阳</a></li>
+							<li><a id="brand_111" href="0-0-111-0-0-5-17-0-0|0,0,0,0,0|5">德基</a></li>
+							<li><a id="brand_112" href="0-0-112-0-0-5-17-0-0|0,0,0,0,0|5">犀牛</a></li>
+							<li><a id="brand_113" href="0-0-113-0-0-5-17-0-0|0,0,0,0,0|5">林德</a></li>
+							<li><a id="brand_114" href="0-0-114-0-0-5-17-0-0|0,0,0,0,0|5">路星</a></li>
+							<li><a id="brand_115" href="0-0-115-0-0-5-17-0-0|0,0,0,0,0|5">达刚</a></li>
+							<li><a id="brand_116" href="0-0-116-0-0-5-17-0-0|0,0,0,0,0|5">路虹</a></li>
+							<li><a id="brand_117" href="0-0-117-0-0-5-17-0-0|0,0,0,0,0|5">抚挖</a></li>
+							<li><a id="brand_118" href="0-0-118-0-0-5-17-0-0|0,0,0,0,0|5">犀牛重工</a></li>
+							<li><a id="brand_119" href="0-0-119-0-0-5-17-0-0|0,0,0,0,0|5">马尼托瓦克</a></li>
+							<li><a id="brand_120" href="0-0-120-0-0-5-17-0-0|0,0,0,0,0|5">福格勒</a></li>
+							<li><a id="brand_121" href="0-0-121-0-0-5-17-0-0|0,0,0,0,0|5">银锚建机</a></li>
+							<li><a id="brand_122" href="0-0-122-0-0-5-17-0-0|0,0,0,0,0|5">美通</a></li>
+							<li><a id="brand_123" href="0-0-123-0-0-5-17-0-0|0,0,0,0,0|5">南方路机</a></li>
+							<li><a id="brand_124" href="0-0-124-0-0-5-17-0-0|0,0,0,0,0|5">南特</a></li>
+							<li><a id="brand_125" href="0-0-125-0-0-5-17-0-0|0,0,0,0,0|5">方圆</a></li>
+							<li><a id="brand_126" href="0-0-126-0-0-5-17-0-0|0,0,0,0,0|5">新大方</a></li>
+							<li><a id="brand_127" href="0-0-127-0-0-5-17-0-0|0,0,0,0,0|5">南车</a></li>
+							<li><a id="brand_128" href="0-0-128-0-0-5-17-0-0|0,0,0,0,0|5">福临</a></li>
+							<li><a id="brand_129" href="0-0-129-0-0-5-17-0-0|0,0,0,0,0|5">振中</a></li>
+							<li><a id="brand_130" href="0-0-130-0-0-5-17-0-0|0,0,0,0,0|5">富岛</a></li>
+							<li><a id="brand_131" href="0-0-131-0-0-5-17-0-0|0,0,0,0,0|5">法亚</a></li>
+							<li><a id="brand_132" href="0-0-132-0-0-5-17-0-0|0,0,0,0,0|5">开元智富</a></li>
+							<li><a id="brand_133" href="0-0-133-0-0-5-17-0-0|0,0,0,0,0|5">格瑞德</a></li>
+							<li><a id="brand_134" href="0-0-134-0-0-5-17-0-0|0,0,0,0,0|5">高远圣工</a></li>
+							<li><a id="brand_69" href="0-0-69-0-0-5-17-0-0|0,0,0,0,0|5">金泰</a></li>
+							<li><a id="brand_85" href="0-0-85-0-0-5-17-0-0|0,0,0,0,0|5">烟工</a></li>
+							<li><a id="brand_86" href="0-0-86-0-0-5-17-0-0|0,0,0,0,0|5">移山</a></li>
+							<li><a id="brand_72" href="0-0-72-0-0-5-17-0-0|0,0,0,0,0|5">军联</a></li>
+							<li><a id="brand_73" href="0-0-73-0-0-5-17-0-0|0,0,0,0,0|5">雷沃</a></li>
+							<li><a id="brand_74" href="0-0-74-0-0-5-17-0-0|0,0,0,0,0|5">建研</a></li>
+							<li><a id="brand_97" href="0-0-97-0-0-5-17-0-0|0,0,0,0,0|5">厦盛</a></li>
+							<li><a id="brand_98" href="0-0-98-0-0-5-17-0-0|0,0,0,0,0|5">大信重工</a></li>
+							<li><a id="brand_99" href="0-0-99-0-0-5-17-0-0|0,0,0,0,0|5">大地</a></li>
+							<li><a id="brand_100" href="0-0-100-0-0-5-17-0-0|0,0,0,0,0|5">锡通科技</a></li>
+							<li><a id="brand_90" href="0-0-90-0-0-5-17-0-0|0,0,0,0,0|5">凯莫尔</a></li>
+							<li><a id="brand_91" href="0-0-91-0-0-5-17-0-0|0,0,0,0,0|5">鑫天地重工</a></li>
+							<li><a id="brand_92" href="0-0-92-0-0-5-17-0-0|0,0,0,0,0|5">科泰重工</a></li>
+							<li><a id="brand_93" href="0-0-93-0-0-5-17-0-0|0,0,0,0,0|5">辛美来亚</a></li>
+							<li><a id="brand_143" href="0-0-143-0-0-5-17-0-0|0,0,0,0,0|5">山工机械</a></li>
+							<li><a id="brand_144" href="0-0-144-0-0-5-17-0-0|0,0,0,0,0|5">石煤</a></li>
+							<li><a id="brand_145" href="0-0-145-0-0-5-17-0-0|0,0,0,0,0|5">森田重机</a></li>
+							<li><a id="brand_146" href="0-0-146-0-0-5-17-0-0|0,0,0,0,0|5">盛隆机械</a></li>
+							<li><a id="brand_147" href="0-0-147-0-0-5-17-0-0|0,0,0,0,0|5">陕建</a></li>
+							<li><a id="brand_148" href="0-0-148-0-0-5-17-0-0|0,0,0,0,0|5">双箭</a></li>
+							<li><a id="brand_149" href="0-0-149-0-0-5-17-0-0|0,0,0,0,0|5">山特维克</a></li>
+							<li><a id="brand_150" href="0-0-150-0-0-5-17-0-0|0,0,0,0,0|5">山宝</a></li>
+							<li><a id="brand_95" href="0-0-95-0-0-5-17-0-0|0,0,0,0,0|5">厦装</a></li>
+							<li><a id="brand_141" href="0-0-141-0-0-5-17-0-0|0,0,0,0,0|5">常林重科</a></li>
+							<li><a id="brand_138" href="0-0-138-0-0-5-17-0-0|0,0,0,0,0|5">雪桃</a></li>
+							<li><a id="brand_139" href="0-0-139-0-0-5-17-0-0|0,0,0,0,0|5">施维英</a></li>
+							<li><a id="brand_171" href="0-0-171-0-0-5-17-0-0|0,0,0,0,0|5">同力重工</a></li>
+							<li><a id="brand_172" href="0-0-172-0-0-5-17-0-0|0,0,0,0,0|5">永茂建机</a></li>
+							<li><a id="brand_173" href="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5">奇瑞迪凯重科</a></li>
+							<li><a id="brand_174" href="0-0-174-0-0-5-17-0-0|0,0,0,0,0|5">欣融</a></li>
+							<li><a id="brand_175" href="0-0-175-0-0-5-17-0-0|0,0,0,0,0|5">星邦</a></li>
+							<li><a id="brand_177" href="0-0-177-0-0-5-17-0-0|0,0,0,0,0|5">八达重工</a></li>
+							<li><a id="brand_178" href="0-0-178-0-0-5-17-0-0|0,0,0,0,0|5">海龙重工</a></li>
+							<li><a id="brand_179" href="0-0-179-0-0-5-17-0-0|0,0,0,0,0|5">捷尔杰</a></li>
+							<li><a id="brand_180" href="0-0-180-0-0-5-17-0-0|0,0,0,0,0|5">加隆</a></li>
+							<li><a id="brand_181" href="0-0-181-0-0-5-17-0-0|0,0,0,0,0|5">约翰迪尔</a></li>
+							<li><a id="brand_182" href="0-0-182-0-0-5-17-0-0|0,0,0,0,0|5">航天重工</a></li>
+							<li><a id="brand_183" href="0-0-183-0-0-5-17-0-0|0,0,0,0,0|5">江河起重</a></li>
+							<li><a id="brand_184" href="0-0-184-0-0-5-17-0-0|0,0,0,0,0|5">恒天九五</a></li>
+							<li><a id="brand_185" href="0-0-185-0-0-5-17-0-0|0,0,0,0,0|5">威克诺森</a></li>
+							<li><a id="brand_186" href="0-0-186-0-0-5-17-0-0|0,0,0,0,0|5">北车</a></li>
+							<li><a id="brand_187" href="0-0-187-0-0-5-17-0-0|0,0,0,0,0|5">中集</a></li>
+							<li><a id="brand_188" href="0-0-188-0-0-5-17-0-0|0,0,0,0,0|5">鼎力机械</a></li>
+							<li><a id="brand_189" href="0-0-189-0-0-5-17-0-0|0,0,0,0,0|5">新宏昌</a></li>
+							<li><a id="brand_190" href="0-0-190-0-0-5-17-0-0|0,0,0,0,0|5">一拖洛建</a></li>
+							<li><a id="brand_191" href="0-0-191-0-0-5-17-0-0|0,0,0,0,0|5">孔山重工</a></li>
+							<li><a id="brand_192" href="0-0-192-0-0-5-17-0-0|0,0,0,0,0|5">原装日立</a></li>
+							<li><a id="brand_193" href="0-0-193-0-0-5-17-0-0|0,0,0,0,0|5">吉尼</a></li>
+							<li><a id="brand_158" href="0-0-158-0-0-5-17-0-0|0,0,0,0,0|5">宜工</a></li>
+							<li><a id="brand_159" href="0-0-159-0-0-5-17-0-0|0,0,0,0,0|5">熔盛重工</a></li>
+							<li><a id="brand_160" href="0-0-160-0-0-5-17-0-0|0,0,0,0,0|5">美卓</a></li>
+							<li><a id="brand_161" href="0-0-161-0-0-5-17-0-0|0,0,0,0,0|5">龙阳</a></li>
+							<li><a id="brand_162" href="0-0-162-0-0-5-17-0-0|0,0,0,0,0|5">惊天液压</a></li>
+							<li><a id="brand_163" href="0-0-163-0-0-5-17-0-0|0,0,0,0,0|5">太原重工</a></li>
+							<li><a id="brand_164" href="0-0-164-0-0-5-17-0-0|0,0,0,0,0|5">东岳重工</a></li>
+							<li><a id="brand_165" href="0-0-165-0-0-5-17-0-0|0,0,0,0,0|5">福田雷萨</a></li>
+							<li><a id="brand_167" href="0-0-167-0-0-5-17-0-0|0,0,0,0,0|5">凯博</a></li>
+							<li><a id="brand_168" href="0-0-168-0-0-5-17-0-0|0,0,0,0,0|5">华通</a></li>
+							<li><a id="brand_169" href="0-0-169-0-0-5-17-0-0|0,0,0,0,0|5">英轩</a></li>
+							<li><a id="brand_153" href="0-0-153-0-0-5-17-0-0|0,0,0,0,0|5">铁拓机械</a></li>
+							<li><a id="brand_154" href="0-0-154-0-0-5-17-0-0|0,0,0,0,0|5">拓能重机</a></li>
+							<li><a id="brand_155" href="0-0-155-0-0-5-17-0-0|0,0,0,0,0|5">铁力士</a></li>
+							</ul>
+						<div class="av-options">
+							<a class="ui-more" href="javascript:;">更多<i class="drop-arrow"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="attr">
+					<div class="attrKey">出厂年份：</div>
+					<div class="attrValues">
+						<ul class="av-collapse">
+							<li><a class="curr" id="year_0" href="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5">不限</a></li>
+							<li><a id="year_1" href="0-0-173-1-0-5-17-0-0|0,0,0,0,0|5">2015</a></li>
+							<li><a id="year_2" href="0-0-173-2-0-5-17-0-0|0,0,0,0,0|5">2014</a></li>
+							<li><a id="year_3" href="0-0-173-3-0-5-17-0-0|0,0,0,0,0|5">2013</a></li>
+							<li><a id="year_4" href="0-0-173-4-0-5-17-0-0|0,0,0,0,0|5">2012</a></li>
+							<li><a id="year_5" href="0-0-173-5-0-5-17-0-0|0,0,0,0,0|5">2011</a></li>
+							<li><a id="year_6" href="0-0-173-6-0-5-17-0-0|0,0,0,0,0|5">2010</a></li>
+							<li><a id="year_7" href="0-0-173-7-0-5-17-0-0|0,0,0,0,0|5">2009</a></li>
+							<li><a id="year_8" href="0-0-173-8-0-5-17-0-0|0,0,0,0,0|5">2008</a></li>
+							<li><a id="year_9" href="0-0-173-9-0-5-17-0-0|0,0,0,0,0|5">2007</a></li>
+							<li><a id="year_10" href="0-0-173-10-0-5-17-0-0|0,0,0,0,0|5">2006</a></li>
+							<li><a id="year_11" href="0-0-173-11-0-5-17-0-0|0,0,0,0,0|5">2005</a></li>
+							<li><a id="year_12" href="0-0-173-12-0-5-17-0-0|0,0,0,0,0|5">2004</a></li>
+							<li><a id="year_13" href="0-0-173-13-0-5-17-0-0|0,0,0,0,0|5">2003</a></li>
+							<li><a id="year_14" href="0-0-173-14-0-5-17-0-0|0,0,0,0,0|5">2002</a></li>
+							<li><a id="year_15" href="0-0-173-15-0-5-17-0-0|0,0,0,0,0|5">2001年以前</a></li>
+							</ul>
+					</div>
+				</div>
+				<div class="attr">
+					<div class="attrKey">工作小时：</div>
+					<div class="attrValues">
+						<ul class="av-collapse">
+							<li><a class="curr" id="hour_0" href="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5">不限</a></li>
+							<li><a id="hour_1" href="0-0-173-0-1-5-17-0-0|0,0,0,0,0|5">3000小时以下</a></li>
+							<li><a id="hour_2" href="0-0-173-0-2-5-17-0-0|0,0,0,0,0|5">3000-4000小时</a></li>
+							<li><a id="hour_3" href="0-0-173-0-3-5-17-0-0|0,0,0,0,0|5">4000-5000小时</a></li>
+							<li><a id="hour_4" href="0-0-173-0-4-5-17-0-0|0,0,0,0,0|5">5000-6000小时</a></li>
+							<li><a id="hour_5" href="0-0-173-0-5-5-17-0-0|0,0,0,0,0|5">6000-7000小时</a></li>
+							<li><a id="hour_6" href="0-0-173-0-6-5-17-0-0|0,0,0,0,0|5">7000-8000小时</a></li>
+							<li><a id="hour_7" href="0-0-173-0-7-5-17-0-0|0,0,0,0,0|5">8000小时以上</a></li>
+							</ul>
+					</div>
+				</div>
+				<div class="attr">
+					<div class="attrKey">价格范围：</div>
+					<div class="attrValues">
+						<ul class="av-collapse">
+							<li><a class="curr" id="price_0" href="0-0-173-0-0-0-17-0-0|0,0,0,0,0|5">不限</a></li>
+							<li><a id="price_1" href="0-0-173-0-0-1-17-0-0|0,0,0,0,0|5">30万以下</a></li>
+							<li><a id="price_2" href="0-0-173-0-0-2-17-0-0|0,0,0,0,0|5">30万-40万</a></li>
+							<li><a id="price_3" href="0-0-173-0-0-3-17-0-0|0,0,0,0,0|5">40万-50万</a></li>
+							<li><a id="price_4" href="0-0-173-0-0-4-17-0-0|0,0,0,0,0|5">50万-60万</a></li>
+							<li><a id="price_5" href="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5">60万-70万</a></li>
+							<li><a id="price_6" href="0-0-173-0-0-6-17-0-0|0,0,0,0,0|5">70万-80万</a></li>
+							<li><a id="price_7" href="0-0-173-0-0-7-17-0-0|0,0,0,0,0|5">80万-90万</a></li>
+							<li><a id="price_8" href="0-0-173-0-0-8-17-0-0|0,0,0,0,0|5">90万以上</a></li>
+							</ul>
+					</div>
+				</div>
+				<div class="attr">
+					<div class="attrKey">设备标签：</div>
+					<div class="attrValues">
+						<ul class="av-collapse">
+							<li><a class="curr" id="label_0" href="0-0-173-0-0-5-0-0-0|0,0,0,0,0|5">不限</a></li>
+							<li><a id="label_19" href="0-0-173-0-0-5-19-0-0|0,0,0,0,0|5">土方工况</a></li>
+							<li><a id="label_18" href="0-0-173-0-0-5-18-0-0|0,0,0,0,0|5">纯正二手</a></li>
+							<li><a id="label_17" href="0-0-173-0-0-5-17-0-0|0,0,0,0,0|5">超静音</a></li>
+							<li><a id="label_16" href="0-0-173-0-0-5-16-0-0|0,0,0,0,0|5">原装漆</a></li>
+							<li><a id="label_15" href="0-0-173-0-0-5-15-0-0|0,0,0,0,0|5">发动机无大修</a></li>
+							<li><a id="label_13" href="0-0-173-0-0-5-13-0-0|0,0,0,0,0|5">原装漆</a></li>
+							<li><a id="label_12" href="0-0-173-0-0-5-12-0-0|0,0,0,0,0|5">正铲</a></li>
+							<li><a id="label_11" href="0-0-173-0-0-5-11-0-0|0,0,0,0,0|5">无尾</a></li>
+							<li><a id="label_10" href="0-0-173-0-0-5-10-0-0|0,0,0,0,0|5">履带</a></li>
+							<li><a id="label_9" href="0-0-173-0-0-5-9-0-0|0,0,0,0,0|5">加宽履带</a></li>
+							<li><a id="label_7" href="0-0-173-0-0-5-7-0-0|0,0,0,0,0|5">橡胶履带</a></li>
+							<li><a id="label_4" href="0-0-173-0-0-5-4-0-0|0,0,0,0,0|5">轮挖</a></li>
+							<li><a id="label_3" href="0-0-173-0-0-5-3-0-0|0,0,0,0,0|5">破碎器配管</a></li>
+							<li><a id="label_1" href="0-0-173-0-0-5-1-0-0|0,0,0,0,0|5">加强斗杆</a></li>
+							</ul>
+						<div class="av-options">
+							<a class="ui-more" href="javascript:;">更多<i class="drop-arrow"></i></a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- 特性数据 -->
+				</div>
+		</div>
+		<div class="blank8"></div>
+		<div id="list">
+			<div class="ListQH">
+				<ul id="menu1">
+					<li>
+						<a href="javascript:;"class="red">二手设备</a>
+						<div class="tab-arrow" style="left: 0px; top:25px;"><b></b></div>
+					</li>
+					<li>
+						<a href="/shop/" onmouseover="setTab(1,1)">二手网店</a>
+					</li>
+					<div class="cl"></div>
+				</ul>
+				<div class="L">共有二手机<span class="total">0</span>台</div>
+			</div>
+			<div class="m-filter">
+				<div class="filter-inner">
+					<div class="top-border"></div>
+					<div class="filter-wrapper clearfix">
+						<div id="box_order">
+							<a href="javascript:;" data-order="0" class="sort active"><span class="text">默认排序</span></a>
+							<a href="javascript:;" data-order="1" class="sort desc"><span class="text">发布日期</span><i class="arrow"></i></a>
+							<a href="javascript:;" data-order="2" class="sort desc"><span class="text">价格</span><i class="arrow"></i></a>
+							<a href="javascript:;" data-order="3" class="sort desc"><span class="text">工作小时</span><i class="arrow"></i></a>
+							<a href="javascript:;" data-order="4" class="sort desc"><span class="text">出厂年份</span><i class="arrow"></i></a>
+						</div>
+						<div class="styles" style="display:none;">
+							<a href="javascript:;" data-showtype="0" class="style-icon selected noborderr">
+								<span class="icon icon-grid "></span>大图
+							</a> 
+							<a href="javascript:;" data-showtype="1" class="style-icon">
+								<span class="icon icon-list"></span>列表
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- 随机提供选项 -->
+				<div class="conditions cl">
+					<ul>
+						<li>
+							<input id="provides1" type="checkbox" name="provides" >
+							<label for="provides1">评估报告</label>
+						</li>
+						<li>
+							<input id="provides2" type="checkbox" name="provides" >
+							<label for="provides2">性能检测表</label>
+						</li>
+						<li>
+							<input id="provides3" type="checkbox" name="provides" >
+							<label for="provides3">发票、合格证、进口关单复印件</label>
+						</li>
+						<li>
+							<input id="provides4" type="checkbox" name="provides" >
+							<label for="provides4">买卖合同</label>
+						</li>
+						<li>
+							<input id="provides5" type="checkbox" name="provides" >
+							<label for="provides5">质保协议</label>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="blank8"></div>
+			<!--大图展示-->
+			<div class="complist_right">
+				<ul class="cl">
+					</ul>
+			</div>
+			<div class="cl"></div>
+			<!--列表展示-->
+			<div class="listbox hide">
+				<ul class="cl">
+					</ul>
+			</div>
+			<div class="cl"></div>
+			<div style="text-align: center; overflow: hidden;"><ul style="text-align: center;" class="pagination"></ul>
+</div>		
+		</div>
+	</div>
+	<div class="LayoutRight202 fr">
+		<a href="javascript:void(0);" onclick="alert('请先在顶部登录');">
+<div class="message_box icon_bg1"> <em class="message_icon message_icon_1"></em> <span class="message_text">免费发布设备</span> </div>
+<div class="message_box icon_bg2"> <em class="message_icon message_icon_2"></em> <span class="message_text">求购二手车</span> </div>
+</a>
+<div class="LayoutRight">
+	<div class="module_nav22">
+		<div class="tit">推荐二手机</div>
+	</div>
+	<div>
+		<div class="prolisttj">
+			<dl>
+				<dd >
+					<p class="list_img">
+						<a href="/equipment/8981.html">
+						<img src="http://www.2wj.cn/upload/equ/201503/03/2015030315552587892822-small.jpg" height="138" width="184" onerror="this.src='/images/no.jpg'" /></a>
+						<i>8</i>
+		            	</p>
+					<p class="list_p"><span class="fl red">10008981</span><span class="list_price">面议</span></p>
+					<p class="list_p"><span class="bold">小松</span>&nbsp;&nbsp;<span class="bold">PC70-8</span></p>
+					<p class="list_p"><span>2012年</span>&nbsp;&nbsp;<span>3600小时</span>&nbsp;&nbsp;<span class="grey" title="上海市">上海</span></p>
+				</dd>
+				<dd >
+					<p class="list_img">
+						<a href="/equipment/8966.html">
+						<img src="http://www.2wj.cn/upload/equ/201503/03/2015030314402336347965-small.jpg" height="138" width="184" onerror="this.src='/images/no.jpg'" /></a>
+						<i>8</i>
+		            	</p>
+					<p class="list_p"><span class="fl red">10008966</span><span class="list_price">￥52.0万元</span></p>
+					<p class="list_p"><span class="bold">卡特彼勒</span>&nbsp;&nbsp;<span class="bold">320D</span></p>
+					<p class="list_p"><span>2012年</span>&nbsp;&nbsp;<span>3094小时</span>&nbsp;&nbsp;<span class="grey" title="上海市">上海</span></p>
+				</dd>
+				<dd class="noborderb">
+					<p class="list_img">
+						<a href="/equipment/8962.html">
+						<img src="http://www.2wj.cn/upload/equ/201503/03/2015030309465175351835-small.jpg" height="138" width="184" onerror="this.src='/images/no.jpg'" /></a>
+						<i>11</i>
+		            	</p>
+					<p class="list_p"><span class="fl red">10008962</span><span class="list_price">￥45.0万元</span></p>
+					<p class="list_p"><span class="bold">卡特彼勒</span>&nbsp;&nbsp;<span class="bold">320D</span></p>
+					<p class="list_p"><span>2012年</span>&nbsp;&nbsp;<span>40000小时</span>&nbsp;&nbsp;<span class="grey" title="上海市">上海</span></p>
+				</dd>
+				</dl>
+		</div>
+	</div>
+</div>
+<div class="blank8"></div>
+<div class="LayoutRight">
+	<div class="module_nav22">
+		<div class="tit">最近浏览</div>
+	</div>
+	<div>
+		<div class="prolisttj">
+			<dl>
+				<span id="machineHistory">暂无记录</span>
+			</dl>
+		</div>
+	</div>
+</div></div>
+</div>
+
+<!-- 我的搜索开始 -->
+<div id="SearchBox" class="ComparBox" style="display:none; position: absolute;">
+	<div class="ComparBox_nav">
+		<span class="ComparBox_title">我的搜索</span>
+		<div id="close" class="close">
+			<img width="16" height="16" src="/images/title_close.gif" onclick="box_hide('SearchBox');">
+		</div>
+	</div>
+	<div class="Comparmain">
+		<ul id="SearchList" >
+			</ul>
+	</div>
+	<div id="SearchBt" class="ComparBt"></div>
+</div>
+<!-- 我的搜索结束 -->
+<script src="/js/page/machine_oper.js"></script>
+
+<!-- 底部导航 -->
+<div class="Layout">
+  <div id="mintbar" class="BottomNav nextpage hide">
+    <ul class="menu">
+	  <li class="menu02"><a href="/index.html">首页</a></li>
+      <li class="menu03"><a href="/equipment/">买车</a></li>
+      <li class="menu04"><a href="/login/login.jsp?returnUrl=/member/?addflag=vehicle">卖车</a></li>
+      <li class="menu05" style="width:80px;"><a href="/buy/">求购信息</a></li>
+      <li class="menu06" style="width:80px;"><a href="/news.html">购车宝典</a></li>
+      <li class="menu07" style="width:80px;"><a href="/website.html">自助建站</a></li>
+      <li class="menu08" style="width:80px;"><a href="/secondhand.html">掌上二手车</a></li>
+      <li class="menu09" style="width:80px;"><a href="/assess.html">二手车评估</a></li>
+    </ul>
+    <ul class="login">
+      <li><a href="javascript:void(0);" onclick="gotoLogin();">登录</a></li>
+      <li><a href="javascript:void(0);" onclick="gotoReg();">免费注册</a></li>
+      <a id="toolToolbarClosebtn" href="javascript:void(0);" style="padding-top:9px; float:right;"><img src="/images/list_03.jpg"></a>
+    </ul>
+  </div>
+</div>
+<!-- 版权所有 -->
+<div id="copyright">
+  <div class="Layout" style="text-align:center; font-family:Arial">
+  	版权所有 &copy; 2006-2014 中国二手挖掘机网 <a href="http://www.miibeian.gov.cn/" target="_blank">冀ICP备09028608号</a> ICP经营许可证：冀B2-20060335
+  </div>
+</div>
+<!--右侧 begin-->
+<div bx-path="components/sidebar/" bx-name="sidebar" class="tb-side" id="brix_brick_28" bx-behavior="true">
+    <ul>
+        <li class="gotop" style="display: none;" id="toolBackTop">
+            <a href="javascript:void(0)" trace="toolBarTohead" onclick="window.scrollTo(0,0);return false;">
+                <span class="bg">回到顶部</span>
+                <b></b>
+            </a>
+        </li>
+        <li class="next show" id="toolToolbar">
+            <a href="javascript:void(0)" trace="toolbarPagedown">
+                <span class="bg">底部导航</span>
+                <b></b>
+            </a>
+        </li>
+        <li class="advice advise-side-suggest">
+            <a target="_blank" href="/servey.html">
+                <span class="bg">用户反馈</span>
+                <b></b>
+            </a>
+        </li>
+        <li class="help hide">
+            <a href="javascript:void(0)" trace="toolbarSearchhelp" >
+                <span class="bg">搜索帮助</span>
+                <b></b>
+            </a>
+        </li>
+        <li class="compare"> <a href="javascript:void(0)" trace="toolBarTohead"><span class="bg">对比栏</span> <b></b> </a> </li>
+    </ul>
+</div>
+<!-- 对比列表 begin -->
+<div class="Layout">
+	<div class="pop-compare" id="pop-compare" style="bottom: 0px;">
+		<div class="pop-wrap">
+			<p class="pop-compare-tips"></p>
+			<div data-widget="tabs" class="pop-inner">
+				<div class="diff-hd">
+					<ul class="tab-btns clearfix">
+						<li data-widget="tab-item" class="current"><a href="javascript:;">对比栏</a></li>
+					</ul>
+					<div class="operate"><a class="hide-me" href="javascript:;">隐藏</a></div>
+				</div>
+				<div class="diff-bd tab-cons">
+					<div class="tab-con" style="display: block;">
+						<div class="diff-items clearfix" id="diff-items">
+							<dl class="item-empty">
+								<dt>1</dt>
+								<dd>您还可以继续添加</dd>
+							</dl>
+							<dl class="item-empty">
+								<dt>2</dt>
+								<dd>您还可以继续添加</dd>
+							</dl>
+							<dl class="item-empty">
+								<dt>3</dt>
+								<dd>您还可以继续添加</dd>
+							</dl>
+							<dl class="item-empty">
+								<dt>4</dt>
+								<dd>您还可以继续添加</dd>
+							</dl>
+						</div>
+						<div class="diff-operate">
+							<a class="btn-compare-b compare-active" href="#none" id="goto-contrast" target="_blank">对比</a>
+							<a class="del-items">清空对比栏</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 对比列表 end -->
+<script src="http://www.2wj.cn/js/used_bottom.js"></script>
+<script src="http://www.2wj.cn/js/used_compare.js"></script></body>
+</html>

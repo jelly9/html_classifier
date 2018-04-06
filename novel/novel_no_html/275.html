@@ -1,0 +1,1559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>计算机业(IT)类_网站策划_招聘列表—E滁州人才网</title>
+
+<link type="text/css" href="/stylesheets/jquery-ui/theme.css" rel="stylesheet" />
+<link type="text/css" href="/javascripts/lib/jquery.datetimepicker.css" rel="stylesheet" />
+<style>
+<!--
+#web_ajax_login_dialog {}
+#web_ajax_login_dialog form label {font-weight:bold;font-size:14px;margin-right:10px;}
+#web_ajax_login_dialog form .password,.username {font-size:12px;line-height:180%;width:200px;}
+#web_ajax_login_dialog form p {line-height:30px;}
+.formErrors p {line-height:25px;}
+.formErrors i {font-style:normal;color:red;margin-left:5px;}
+-->
+</style>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+var LOGIN_URL = 'http://my.0550.com/login';
+var LOGOUT_URL = 'http://my.0550.com/logout';
+var REGISTER_URL = 'http://my.0550.com/register';
+</script>
+<script type="text/javascript" src="/javascripts/lib/jquery.js?1425109674.77"></script>
+	<script type="text/javascript" src="/javascripts/lib/jquery-ui.js?1425109674.77"></script>
+	<script type="text/javascript" src="/javascripts/lib/jquery.ui.datepicker-zh-CN.js?1425109674.77"></script>
+	<script type="text/javascript" src="/javascripts/lib/jquery.datetimepicker.js?1425109674.77"></script>
+	<script type="text/javascript" src="/javascripts/lib/jquery.cookie.js?1425109674.77"></script>
+	<script type="text/javascript" src="/javascripts/lib/tmpl.js?1425109674.77"></script>
+	<script type="text/javascript" src="/javascripts/lib/jquery.qrcode.min.js?1425109674.77"></script>
+	<script type="text/javascript" src="/javascripts/web.js?1425109674.77"></script>
+	
+<link href="/images/job/style.css" rel="stylesheet" type="text/css" />
+<link href="/images/job/menustyle.css" rel="stylesheet" type="text/css" />
+<link href="/images/job/nav.css" rel="stylesheet" media="screen">
+<link href="/images/v3/style.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+	<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+
+<!-- 频道导航 -->
+
+ <div id="eczBanner">
+            <div class="bannerTop" style="position:relative;">
+                  <img src="/images/job/ec_20.png"/>
+                  <!-- 广告位：求职招聘_logo右侧广告 -->
+                  <div style="width:355px; height:60px; display:block; position:absolute; left: 230px; top: 15px;">
+						<script type="text/javascript">BAIDU_CLB_fillSlot("1019939");</script>
+                  </div>
+                  <div id="bannerSearch">
+                          <div class="searchbox">
+	                            <DIV class=tel>
+				                    <A>人才服务热线：0550-7120550</A>&nbsp;&nbsp;
+									<A href="http://wpa.qq.com/msgrd?v=3&amp;uin=8008000550&amp;site=qq&amp;menu=yes" target=_blank>客服QQ：8008000550</A>
+			                    </DIV>
+                         </div><!--searchbox end-->
+                  </div><!--bannerSearch end-->
+				  <div class="clear" style="clear:both; height:0;"></div>
+            </div><!--bannerTop end-->
+            <div class="job_blue_nav">
+                 <ul>
+				     <li><a href="http://job.0550.com/">首页</a></li>
+				     <li><a href="http://job.0550.com/all">职位搜索</a></li>
+				     <li><a href="http://job.0550.com/resume">简历中心 </a></li>
+				     <li><a href="http://job.0550.com/all?work_type=2&iscompany=0&keyword=">找兼职</a></li>
+					 <li><a href="http://bbs.0550.com/t-754783-1-1.html" target="_blank" >招聘会</a></li>
+					 <li><a href="http://bbs.0550.com/">论坛</a></li>
+					 <li><a href="http://bbs.0550.com/f-163-1.html">工作学习</a></li>
+					 <li><a href="http://www.0550.com/jobnews/qqgroup" target="_blank">职场交流群</a></li>
+			      </ul>
+            </div>
+       </div><!--eczBanner end-->
+<!-- /频道导航 -->
+
+<!-- 内容主体 -->
+<div class="mainwrap">
+	<!-- 搜索条 -->
+	<div Class="CX_Search">
+		<form id="search_form" action="http://job.0550.com/all" method="get"
+	onsubmit="if(this.keyword.value=='请输入职位名称或公司名称')this.keyword.value='';">
+	<div id="CX_Search_Content">
+		<div id="CX_Search_Content_1">
+			<img src="/images/job/search_f.gif" />
+		</div>
+		<div id="CX_Search_Content_2">
+			<input type="text" name="keyword" class="search_input" id="keyword"
+				
+						onFocus="if(this.value=='请输入职位名称或公司名称') this.value='';"
+				onBlur="if(this.value=='') this.value='请输入职位名称或公司名称';"
+				value="请输入职位名称或公司名称" 
+						/>
+			<div
+				style="float: left; margin-top: 3px; margin-left: 5px; margin-right: 5px;">
+				<input type="radio" name="iscompany" value="0"
+					onchange="$('#search_form').attr('action','http://job.0550.com/all');"
+					id="t_job" checked="checked" /><label for="t_job">职位</label>
+				
+				<input type="radio" name="iscompany" value="1"
+					onchange="$('#search_form').attr('action','http://job.0550.com/all');"
+					id="t_company" /><label for="t_company">企业</label>
+				
+				<input type="radio" name="iscompany" value="0"
+					onchange="$('#search_form').attr('action','http://job.0550.com/resume');"
+					id="t_resume" /><label for="t_resume">简历</label>
+			</div>
+
+			<input type="submit" class="Search_an" value="" />
+		</div>
+		<div id="CX_Search_Content_3">
+			<a href="http://i.0550.com/job/recruit/info/new" target="_blank"
+				style="margin-right: 10px;"><img
+				src="/images/job/search_an01.gif" /></a> <a
+				href="http://job.0550.com/resume/edit" target="_blank"
+				style="margin-right: 10px;"><img
+				src="/images/job/search_an02.gif" /></a> <a
+				href="http://i.0550.com/job" target="_blank"><img
+				src="/images/job/search_an02sa.gif" /></a>
+		</div>
+	</div>
+</form>
+	</div>
+	<!-- /搜索条 -->
+</div>
+    <!--通用网站头部--> 
+    <script>
+$(function(){
+	//bootstrap hover 插件造成 点击与hover 下拉菜单 冲突，加入取消默认事件的功能。并且放过点击登录事件。
+	$('.navbar li.dropdown.test').click(function(){return false;});
+	//reutrn false ;后会造成 内部 a 标签无法使用，用JS 打开新链接
+	$('.navbar ul.dropdown-menu a').click(function(){window.open($(this).attr('href'))});
+});
+</script>
+<div class="navbar navbar-default navbar-fixed-top top-navbar navbar-bj" style="box-sizing: content-box; font-family:微软雅黑 !important" role="navigation">
+	<div class="container" style="width:1170px; margin: 0px auto; box-sizing: content-box;">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-navbar">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="http://www.0550.com/" style="padding-right:40px;">E滁州</a>
+	</div>
+	<div class="collapse navbar-collapse" id="top-navbar">
+		<ul class="nav navbar-nav">
+           <li class="dropdown test">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">频道 <b class="caret"></b></a>
+				<ul class="dropdown-menu dropdown-ecmenu">
+		        	<li><a href="http://house.0550.com/" target="_blank">房产</a></li>
+					<li><a href="http://www.0550.com/jiaju" target="_blank">家居</a></li>
+					<li><a href="http://auto.0550.com/" target="_blank">汽车</a></li>
+					<li><a href="http://jiehun.0550.com/" target="_blank">结婚</a></li>	
+					<li><a href="http://bbs.0550.com/love.html" target="_blank">交友</a></li>
+					<li><a href="http://bbs.0550.com/f-146-1.html" target="_blank">亲子</a></li> 
+                    <li><a href="http://www.0550.com/money" target="_blank">理财</a></li>
+                    <li><a href="http://www.0550.com/news" target="_blank">资讯</a></li>
+                    <li><a href="javascript:void(0)" target="_blank">旅游</a></li>
+                    <li><a href="javascript:void(0)" target="_blank">教育</a></li>
+                    <li><a href="http://www.0550.com/food" target="_blank">吃喝玩乐</a></li>
+                    
+		        </ul>
+			</li>
+			<li class="dropdown dropdown-spacing test">
+				<a href="http://f.0550.com/ershou.html" class="dropdown-toggle" data-toggle="dropdown">分类信息 <b class="caret"></b></a>
+				<ul class="dropdown-menu dropdown-ecmenu">
+		          <li><a href="http://hy.0550.com/" target="_blank">黄页</a></li>
+		          <li><a href="http://f.0550.com/shenghuo/wupinzulin.html" target="_blank">租赁</a></li>
+		          <li><a href="http://job.0550.com/" target="_blank">求职招聘</a></li>
+		          <li><a href="http://fang.0550.com/" target="_blank">房屋租售</a></li>
+		          <li><a href="http://f.0550.com/ershou/cheliang.html" target="_blank">二手车辆</a></li>
+				  <li><a href="http://f.0550.com/ershou/lipin.html" target="_blank">二手物品</a></li>
+		        </ul>
+			</li>
+            <li><a href="http://bbs.0550.com/plugin.php?id=dzapp_shop" target="_blank" style="margin-right:25px">来司卡</a></li>
+			<li><a href="http://bbs.0550.com" target="_blank">论坛</a></li>
+            <li class="dropdown" style="margin-right:25px;">
+				<a href="http://weibo.com/u/3465566344" target="_blank" class="dropdown-toggle weibo-one sitenavico-one" style="padding-left:60px" rel="nofollow">
+					官方微博
+				</a>
+			</li>
+            <li class="dropdown" style="margin-right:25px;">
+				<a href="javascript:void(0);" target="_blank" class="dropdown-toggle weixin-one sitenavico-one" style="padding-left:40px;" rel="nofollow">
+					官方微信
+				</a>
+				<ul class="dropdown-menu dropdown-menuone">
+		          <li><h5 class="text-center" style="color:#666; margin-left:45px; font-family:微软雅黑; font-size:14px; padding-bottom:8px; padding-top:8px;">打开微信扫一扫</h5></li>
+		          <li><img src="http://house.0550.com/images/v3/weixin0550.png" style="padding:0px 10px 5px 10px;"/></li>
+		        </ul>
+			</li>
+            <li class="dropdown" style="margin-right:25px;">
+				<a href="http://www.0550.com/app" target="_blank" class="dropdown-toggle client-one sitenavico-one" style="padding-left:30px" rel="nofollow">
+					手机版
+				</a>
+			</li>
+		</ul>
+		<script type="text/javascript" src="http://my.0550.com/account.js"></script>
+		<div style="clear:both"></div>
+	</div><!--/nav-collapse -->
+	</div>
+</div>
+    <!--通用网站头部 end--> 
+
+	<!-- 内容主体 -->
+	<div class="mainwrap">
+		<!-- 宽幅960广告一 -->
+		
+		<!-- 招聘类目 -->
+		<div class="chuzu_item mt10" style="width: 960px; margin: 0 auto;">
+			<div class="chuzu_item_bg">
+				<span class="f14 fl">
+					<a href="http://job.0550.com/">首页</a> &nbsp; &gt; &nbsp;
+					<a href="http://job.0550.com/all">招聘</a>
+					 &nbsp; &gt; &nbsp; <a href="http://job.0550.com/it">计算机业(IT)类</a>
+					 &nbsp; &gt; &nbsp; <a href="http://job.0550.com/it/wangzhancehua">网站策划</a>
+				</span>
+				<span class="fr">
+					<span class="fl" style="margin: 3px 10px;">今日新增岗位数：<b class="forange f14">13,059</b>
+					总岗位数：<b class="forange f14">21,681</b></span>
+					<a onclick="javascript:window.external.AddFavorite('http://job.0550.com/','E滁网招聘');"
+					rel="sidebar" class="keepOn" style="padding: 0 0 0 20px; margin: 5px 10px; cursor: hand;">添加到浏览器收藏夹</a>
+				</span>
+			</div>
+			<div class="chuzu_item_box">
+			<form method="get" name="search" action="">
+				<dl>
+					<dt>分 类：</dt>
+					<dd>
+						<a href="http://job.0550.com/all?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">不限</a>
+						
+						<a href="http://job.0550.com/xiaoshou?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">销售类</a>
+						
+						<a href="http://job.0550.com/fuwu?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">客户服务类</a>
+						
+						<a href="http://job.0550.com/house?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">房地产/建筑施工类</a>
+						
+						<a href="http://job.0550.com/caikuai?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">金融/保险/证券类</a>
+						
+						<a href="http://job.0550.com/binguan?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">宾馆饭店/餐饮旅游类</a>
+						
+						<a href="http://job.0550.com/xiaofei?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">物流/贸易类</a>
+						
+						<a href="http://job.0550.com/shishang?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">广告(装潢、包装)设计类</a>
+						
+						<a href="http://job.0550.com/yiyao?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">能源动力类</a>
+						
+						<a href="http://job.0550.com/guanli?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">行政/人事类</a>
+						
+						<a href="http://job.0550.com/falv?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">法律专业人员类</a>
+						
+						<a href="http://job.0550.com/it?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=" class="on">计算机业(IT)类</a>
+						
+						<a href="http://job.0550.com/jiguan?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">企业文职类</a>
+						
+						<a href="http://job.0550.com/yingxiao?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">市场营销/公关类</a>
+						
+						<a href="http://job.0550.com/jingying?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">经营/管理类</a>
+						
+						<a href="http://job.0550.com/caiwu?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">财务/审(统)计类</a>
+						
+						<a href="http://job.0550.com/gongye?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">工业/工厂类</a>
+						
+						<a href="http://job.0550.com/dianzi?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">电子通讯/电气(器)类</a>
+						
+						<a href="http://job.0550.com/wenti?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">文体/教育/培训类</a>
+						
+						<a href="http://job.0550.com/weishen?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">卫生医疗/美容保健类</a>
+						
+						<a href="http://job.0550.com/huagong?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">化工/制药类</a>
+						
+						<a href="http://job.0550.com/qiche?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">机械(电)/仪表类</a>
+						
+						<a href="http://job.0550.com/shangdian?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">商店/零售服务类</a>
+						
+						<a href="http://job.0550.com/jigong?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">技工/普工类</a>
+						
+						<a href="http://job.0550.com/qinggong?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">轻工类</a>
+						
+						<a href="http://job.0550.com/houqin?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">后勤保障类</a>
+						
+						<a href="http://job.0550.com/fanyi?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">翻译类</a>
+						
+						<a href="http://job.0550.com/guwen?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">咨询/顾问类</a>
+						
+						<a href="http://job.0550.com/yingshi?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">影视/摄影专业类</a>
+						
+						<a href="http://job.0550.com/bianji?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">编辑/发行类</a>
+						
+						<a href="http://job.0550.com/qita?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">其他类</a>
+						
+					</dd>
+				</dl>
+				
+				<dl>
+					<dt>职 位：</dt>
+					<dd>
+						<a href="http://job.0550.com/it?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">不限</a>
+						
+						<a href="http://job.0550.com/it/shuojukukaifa?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">数据库开发与管理(DBA)</a>
+						
+						<a href="http://job.0550.com/it/xitongfenxiyuan?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">系统分析员</a>
+						
+						<a href="http://job.0550.com/it/ruanjiangongchengshi?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">软件工程师</a>
+						
+						<a href="http://job.0550.com/it/diannao?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">电脑美工</a>
+						
+						<a href="http://job.0550.com/it/wangyeshejishi?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">网页设计师</a>
+						
+						<a href="http://job.0550.com/it/wangzhancehua?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=" class="on">网站策划</a>
+						
+						<a href="http://job.0550.com/it/wangzhanbianji?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">网站编辑</a>
+						
+						<a href="http://job.0550.com/it/wangluogongchengshi?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">网络工程师</a>
+						
+						<a href="http://job.0550.com/it/lanmuzhuchiren?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">栏目主持人</a>
+						
+						<a href="http://job.0550.com/it/web?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">INTERNET/WEB/电子商务</a>
+						
+						<a href="http://job.0550.com/it/ceshigongchengshi?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">测试工程师</a>
+						
+						<a href="http://job.0550.com/it/sap?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">MRP/ERP/SAP实施工程师</a>
+						
+						<a href="http://job.0550.com/it/xitongjicheng?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">系统集成/技术支持</a>
+						
+						<a href="http://job.0550.com/it/yingjiangongchengshi?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">硬件工程师</a>
+						
+						<a href="http://job.0550.com/it/xitongweihuyuan?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">系统维护员</a>
+						
+						<a href="http://job.0550.com/it/jisuanjifuzhu?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">计算机辅助设计与绘图</a>
+						
+						<a href="http://job.0550.com/it/shejiyukaifa?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">多媒体设计与开发</a>
+						
+						<a href="http://job.0550.com/it/wangluoguanliyuan?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">网络管理员</a>
+						
+						<a href="http://job.0550.com/it/qita?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">其它相关职位</a>
+						
+					</dd>
+				</dl>
+				
+				<dl>
+					<dt>区 域：</dt>
+					<dd><a href="?salary=4&info_...=&region=0&work_type=2&info_type=4&predays=3&nbsp=">不限</a>
+	<a href="?salary=4&info_...=&region=1&work_type=2&info_type=4&predays=3&nbsp=">滁州市</a>
+	<a href="?salary=4&info_...=&region=2&work_type=2&info_type=4&predays=3&nbsp=">滁州市周边</a>
+	<a href="?salary=4&info_...=&region=3&work_type=2&info_type=4&predays=3&nbsp=">来安</a>
+	<a href="?salary=4&info_...=&region=4&work_type=2&info_type=4&predays=3&nbsp=">全椒</a>
+	<a href="?salary=4&info_...=&region=5&work_type=2&info_type=4&predays=3&nbsp=">定远</a>
+	<a href="?salary=4&info_...=&region=6&work_type=2&info_type=4&predays=3&nbsp=">凤阳</a>
+	<a href="?salary=4&info_...=&region=7&work_type=2&info_type=4&predays=3&nbsp=">天长</a>
+	<a href="?salary=4&info_...=&region=8&work_type=2&info_type=4&predays=3&nbsp=">明光</a>
+	<a href="?salary=4&info_...=&region=9&work_type=2&info_type=4&predays=3&nbsp=">南京</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=" class="on">合肥</a>
+	<a href="?salary=4&info_...=&region=-1&work_type=2&info_type=4&predays=3&nbsp=">外地</a>
+	
+	<input type="hidden" name="region" value="10" />
+</dd>
+				</dl>
+				<dl>
+					<dt>月薪范围：</dt>
+					<dd><a href="?salary=0&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">不限</a>
+	<a href="?salary=1&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">1千元以下</a>
+	<a href="?salary=2&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">1千-2千元</a>
+	<a href="?salary=3&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">2千-3千元</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=" class="on">3千-5千元</a>
+	<a href="?salary=5&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">5千-8千元</a>
+	<a href="?salary=6&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">8千-1.2万元</a>
+	<a href="?salary=7&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">1.2万-2万元</a>
+	<a href="?salary=8&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">2万元以上</a>
+	<a href="?salary=-1&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=">面议</a>
+	
+	<input type="hidden" name="salary" value="4" />
+</dd>
+				</dl>
+				<dl>
+					<dt>发布时间：</dt>
+					<dd><a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=0&nbsp=">不限</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=1&nbsp=">今天</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=" class="on">三天内</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=7&nbsp=">一周内</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=30&nbsp=">一个月内</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=90&nbsp=">三个月内</a>
+	
+	<input type="hidden" name="predays" value="3" />
+</dd>
+				</dl>
+				<dl>
+					<dt>全职兼职：</dt>
+					<dd><a href="?salary=4&info_...=&region=10&work_type=0&info_type=4&predays=3&nbsp=">不限</a>
+	<a href="?salary=4&info_...=&region=10&work_type=1&info_type=4&predays=3&nbsp=">全职</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=" class="on">兼职</a>
+	
+	<input type="hidden" name="work_type" value="2" />
+</dd>
+				</dl>
+				<dl class="fl">
+					<dt>招聘性质：</dt>
+					<dd><a href="?salary=4&info_...=&region=10&work_type=2&info_type=0&predays=3&nbsp=">不限</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=1&predays=3&nbsp=">个人</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=2&predays=3&nbsp=">企业</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=4&predays=3&nbsp=" class="on">商家</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=3&predays=3&nbsp=">协会社团</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=9000&predays=3&nbsp=">政府机关</a>
+	<a href="?salary=4&info_...=&region=10&work_type=2&info_type=9001&predays=3&nbsp=">事业单位</a>
+	
+	<input type="hidden" name="info_type" value="4" />
+</dd>
+				</dl>
+				<div class="chuzu_item_s">
+						<input type="text" name="keyword" id="keyword"
+							class="chuzu_search mr10 gray"
+							
+								onFocus="if(this.value=='输入您想应聘的职位') this.value='';"
+								onBlur="if(this.value=='') this.value='输入您想应聘的职位';"
+								value="输入您想应聘的职位"
+							
+							/> <input type="submit"
+							class="chuzu_button" value="搜   索"
+							style="display: inline; font-weight: normal; margin: 0 5px;" />
+				</div>
+				<div class="clear"></div>
+				<div class="c"></div>
+			</form>
+			</div>
+		</div>
+		<!-- /招聘类目 -->
+		<div class="clear"></div>
+		<div class="listmain_Z">
+			<!--列表-->
+			<div class="cc mt10">
+				<div class="tabA">
+					<div class="tabA_l">
+						<strong>已选条件：</strong>
+						
+							
+							
+								
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											<span>合肥</span>
+										
+									
+										
+									
+								
+							
+								
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+											<span>3千-5千元</span>
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+										
+									
+								
+							
+								
+									
+										
+									
+										
+									
+										
+											<span>三天内</span>
+										
+									
+										
+									
+										
+									
+										
+									
+								
+							
+								
+									
+										
+									
+										
+									
+										
+											<span>兼职</span>
+										
+									
+								
+							
+								
+									
+										
+									
+										
+									
+										
+									
+										
+											<span>商家</span>
+										
+									
+										
+									
+										
+									
+										
+									
+								
+							
+						
+						
+						
+							<a href="?">所有</a>
+						
+					</div>
+					<div class="tabA_r">
+						过滤后今日新增岗位数：<span class="b">0</span> &nbsp; &nbsp;
+						总岗位数：<span class="b">0</span>
+					</div>
+				</div>
+				<!-- 列表开始 -->
+				<div id="ajaxtable">
+					<div class="z">
+						<table width="100%" class="chuzu_list">
+							<tbody id="threadlist">
+							
+							
+								
+								
+								
+							
+						
+							
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>1</b>楼</span>
+										<a href="http://job.0550.com/87736.html" target="_blank" class="subject_t forange">辉永劳务:爱沃富光电高薪诚聘</a>
+										<a href="http://job.0550.com/dianzi/bandaoti" target="_blank" class="gray f12">半导体技术</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/481282" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州辉永劳务有限公司</a></span>
+										<span class="isuser">劳务公司</span>
+									
+									</td>
+									<td align="center">不限</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>2</b>楼</span>
+										<a href="http://job.0550.com/86074.html" target="_blank" class="subject_t forange">网络营销底薪2000+提成</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/559479" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市星辰投资咨询有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>3</b>楼</span>
+										<a href="http://job.0550.com/86114.html" target="_blank" class="subject_t forange">销售底薪2000+高额提成</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/559479" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市星辰投资咨询有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>4</b>楼</span>
+										<a href="http://job.0550.com/89797.html" target="_blank" class="subject_t forange">保洁、服务员（底薪2000起）</a>
+										<a href="http://job.0550.com/binguan/fuwuyuan" target="_blank" class="gray f12">服务员/侍者/门童</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/642814" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州味享佳源餐饮文化管理有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>5</b>楼</span>
+										<a href="http://job.0550.com/80746.html" target="_blank" class="subject_t forange">招聘领班/服务员</a>
+										<a href="http://job.0550.com/binguan/jioudianguanli" target="_blank" class="gray f12">酒店管理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/591151" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州小海鲜餐饮管理有限公司 </a></span>
+										
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>6</b>楼</span>
+										<a href="http://job.0550.com/89147.html" target="_blank" class="subject_t forange">玉林串串香火锅店招聘信息</a>
+										<a href="http://job.0550.com/binguan/fuwuyuan" target="_blank" class="gray f12">服务员/侍者/门童</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/367509" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">玉林串串香火锅店</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">1千-2千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>7</b>楼</span>
+										<a href="http://job.0550.com/63020.html" target="_blank" class="subject_t forange">时光隧道南湖店招聘演艺人员、服务员、营销经理、保安</a>
+										<a href="http://job.0550.com/binguan/fuwuyuan" target="_blank" class="gray f12">服务员/侍者/门童</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/306328" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">时光隧道休闲娱乐广场</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>8</b>楼</span>
+										<a href="http://job.0550.com/89115.html" target="_blank" class="subject_t forange">良子足浴(国际连锁)招聘：主管、收银员、保洁员、技师、男.女学员(薪资4500-8000元)</a>
+										<a href="http://job.0550.com/jiguan/qiantaiweiyuan" target="_blank" class="gray f12">前台接待</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/125002" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">良子足浴(国际连锁)养生会所(宋城店)</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">5千-8千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>9</b>楼</span>
+										<a href="http://job.0550.com/89403.html" target="_blank" class="subject_t forange">高薪招聘TMK</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshouzhuli" target="_blank" class="gray f12">销售助理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/642518" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">卓越教育集团</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>10</b>楼</span>
+										<a href="http://job.0550.com/89397.html" target="_blank" class="subject_t forange">初高中数学\物理\化学\英语老师</a>
+										<a href="http://job.0550.com/wenti/zhongjijiaoyu" target="_blank" class="gray f12">中级教育</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/642518" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">卓越教育集团</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>11</b>楼</span>
+										<a href="http://job.0550.com/89396.html" target="_blank" class="subject_t forange">教育顾问\课程顾问\销售代表</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoudaibiao" target="_blank" class="gray f12">销售代表</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/642518" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">卓越教育集团</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>12</b>楼</span>
+										<a href="http://job.0550.com/89395.html" target="_blank" class="subject_t forange">班主任\学习管理师</a>
+										<a href="http://job.0550.com/fuwu/kehuguanxi" target="_blank" class="gray f12">客户关系管理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/642518" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">卓越教育集团</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>13</b>楼</span>
+										<a href="http://job.0550.com/89671.html" target="_blank" class="subject_t forange">滁州市琅琊区星新电子产品销售中心</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoudaibiao" target="_blank" class="gray f12">销售代表</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/643188" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市琅琊区星新电子产品销售中心</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">5千-8千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>14</b>楼</span>
+										<a href="http://job.0550.com/87025.html" target="_blank" class="subject_t forange">淘宝客服</a>
+										<a href="http://job.0550.com/fuwu/kehuzixun" target="_blank" class="gray f12">客户咨询</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/576644" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州睿思网伊信息技术有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>15</b>楼</span>
+										<a href="http://job.0550.com/89507.html" target="_blank" class="subject_t forange">设计师、主案设计、业务经理等</a>
+										<a href="http://job.0550.com/shishang/pingmiansheji" target="_blank" class="gray f12">平面设计</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/642817" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">红顶天装饰有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>16</b>楼</span>
+										<a href="http://job.0550.com/88921.html" target="_blank" class="subject_t forange">汽车美容/改装技师、汽车美容学徒、洗车工、前台接待、销售</a>
+										<a href="http://job.0550.com/jigong/qita" target="_blank" class="gray f12">其它相关职位</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/416377" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州宝通汽车用品中心</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>17</b>楼</span>
+										<a href="http://job.0550.com/89524.html" target="_blank" class="subject_t forange">产品师、文案策划、客服、销售专员</a>
+										<a href="http://job.0550.com/shishang/changpinbaozhuang" target="_blank" class="gray f12">产品包装设计</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/635611" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">安徽徽娘农副产品公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>18</b>楼</span>
+										<a href="http://job.0550.com/88885.html" target="_blank" class="subject_t forange">创业路--绣花工</a>
+										<a href="http://job.0550.com/gongye/qita" target="_blank" class="gray f12">其它相关职位</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/394951" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">景天电脑绣花</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>19</b>楼</span>
+										<a href="http://job.0550.com/85053.html" target="_blank" class="subject_t forange">滁州星辰投资诚聘业务精英</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/559479" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市星辰投资咨询有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>20</b>楼</span>
+										<a href="http://job.0550.com/86114.html" target="_blank" class="subject_t forange">销售底薪2000+高额提成</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/559479" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市星辰投资咨询有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>21</b>楼</span>
+										<a href="http://job.0550.com/88451.html" target="_blank" class="subject_t forange">诚聘数控车工、铣工、钳工、加工中心编程、机械加工类检验员</a>
+										<a href="http://job.0550.com/jigong/che" target="_blank" class="gray f12">车、铣、刨、磨</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/120318" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市宏捷金属加工有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>22</b>楼</span>
+										<a href="http://job.0550.com/87433.html" target="_blank" class="subject_t forange">居然之家CBD招聘店面导购、销售代表</a>
+										<a href="http://job.0550.com/xiaoshou/tuixiaoyuan" target="_blank" class="gray f12">推（营、促）销员</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/633520" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市居然之家CBD家居旗舰店</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>23</b>楼</span>
+										<a href="http://job.0550.com/86398.html" target="_blank" class="subject_t forange">设计师</a>
+										<a href="http://job.0550.com/shishang/zhuanghuangsheji" target="_blank" class="gray f12">室内(外)装修/装潢设计</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/387257" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州居然之家爱家伯爵衣柜移门旗舰店</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>24</b>楼</span>
+										<a href="http://job.0550.com/89296.html" target="_blank" class="subject_t forange">导购员、面包师、包装工</a>
+										<a href="http://job.0550.com/shangdian/qita" target="_blank" class="gray f12">其它相关职位</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/211183" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州好滋味蛋糕店</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>25</b>楼</span>
+										<a href="http://job.0550.com/86936.html" target="_blank" class="subject_t forange">店员/送货业务员</a>
+										<a href="http://job.0550.com/xiaoshou/tuixiaoyuan" target="_blank" class="gray f12">推（营、促）销员</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/616222" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">天能电池滁州总代理（李三电动车配件）</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>26</b>楼</span>
+										<a href="http://job.0550.com/77541.html" target="_blank" class="subject_t forange">婚庆门市</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/580705" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">柏拉图私人婚礼定制会馆</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>27</b>楼</span>
+										<a href="http://job.0550.com/89745.html" target="_blank" class="subject_t forange">销售经理、明光办事处：业务管理</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/579310" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">安徽日环消防科技有限公司滁州分公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>28</b>楼</span>
+										<a href="http://job.0550.com/87242.html" target="_blank" class="subject_t forange">韩丽橱柜招聘</a>
+										<a href="http://job.0550.com/yingxiao/qita" target="_blank" class="gray f12">其它相关职位</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/18994" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">韩丽橱柜</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>29</b>楼</span>
+										<a href="http://job.0550.com/89738.html" target="_blank" class="subject_t forange">可诺丹婷诚聘美容学员/经理助理/推广员/美容师</a>
+										<a href="http://job.0550.com/weishen/meirong" target="_blank" class="gray f12">美容/美发</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/643134" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">香港可诺丹婷美颜美体连锁机构</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>30</b>楼</span>
+										<a href="http://job.0550.com/89711.html" target="_blank" class="subject_t forange">销售代表</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/132591" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">英伦美家软装设计中心</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>31</b>楼</span>
+										<a href="http://job.0550.com/89691.html" target="_blank" class="subject_t forange">施工现场管理、实习设计师、销售业务员</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/175936" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市万维装饰工程公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>32</b>楼</span>
+										<a href="http://job.0550.com/86385.html" target="_blank" class="subject_t forange">左右沙发：导购员10名、销售业务员8名、售后</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoudaibiao" target="_blank" class="gray f12">销售代表</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/42059" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市南谯区尚美家居经销中心</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>33</b>楼</span>
+										<a href="http://job.0550.com/86181.html" target="_blank" class="subject_t forange">E滁州汽车频道诚聘销售经理</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/148691" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">安徽开锐捷网络科技有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>34</b>楼</span>
+										<a href="http://job.0550.com/82685.html" target="_blank" class="subject_t forange">武媚娘遇见了李世民，而我遇见了你 ——我在菲凡等你</a>
+										<a href="http://job.0550.com/shishang/chuangyicehua" target="_blank" class="gray f12">广告设计/创意策划</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/365586" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">菲凡婚礼顾问中心</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>35</b>楼</span>
+										<a href="http://job.0550.com/89140.html" target="_blank" class="subject_t forange">市场部经理（储备）</a>
+										<a href="http://job.0550.com/yingxiao/shichangyingxiaojingli" target="_blank" class="gray f12">市场/营销经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/314618" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州格锐矿业有限责任公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>36</b>楼</span>
+										<a href="http://job.0550.com/89013.html" target="_blank" class="subject_t forange">售前售后服务/内勤</a>
+										<a href="http://job.0550.com/fuwu/shouqianzhichi" target="_blank" class="gray f12">售前/售后支持</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/256310" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">安徽中金安防技术有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>37</b>楼</span>
+										<a href="http://job.0550.com/68869.html" target="_blank" class="subject_t forange">美乐乐家居滁州体验馆家居顾问</a>
+										<a href="http://job.0550.com/shangdian/qita" target="_blank" class="gray f12">其它相关职位</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/562256" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">美乐乐家居</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>38</b>楼</span>
+										<a href="http://job.0550.com/85976.html" target="_blank" class="subject_t forange">销售经理（3000-5000）</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoudaibiao" target="_blank" class="gray f12">销售代表</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/623433" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市燊烨咨询有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>39</b>楼</span>
+										<a href="http://job.0550.com/82054.html" target="_blank" class="subject_t forange">招聘收银员</a>
+										<a href="http://job.0550.com/binguan/qiantaijiedai" target="_blank" class="gray f12">前台接待/礼仪/接线生</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/591151" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州小海鲜餐饮管理有限公司 </a></span>
+										
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>40</b>楼</span>
+										<a href="http://job.0550.com/87223.html" target="_blank" class="subject_t forange">汉釜宫招聘店长/领班/前台服务人员/后厨/洗碗保洁/厨师长</a>
+										<a href="http://job.0550.com/binguan/qita" target="_blank" class="gray f12">其它相关职位</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/632661" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">汉釜宫自助烧烤九九广场店</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>41</b>楼</span>
+										<a href="http://job.0550.com/81924.html" target="_blank" class="subject_t forange">金仕堡健身会所招聘    1912店火爆招聘中</a>
+										<a href="http://job.0550.com/xiaoshou/tuixiaoyuan" target="_blank" class="gray f12">推（营、促）销员</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/309774" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">金仕堡健身会所</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>42</b>楼</span>
+										<a href="http://job.0550.com/70036.html" target="_blank" class="subject_t forange">E滁州诚聘销售专员</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoudaibiao" target="_blank" class="gray f12">销售代表</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/384275" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州人才人力资源有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>43</b>楼</span>
+										<a href="http://job.0550.com/89605.html" target="_blank" class="subject_t forange">设计师/实习设计师</a>
+										<a href="http://job.0550.com/shishang/zhuanghuangsheji" target="_blank" class="gray f12">室内(外)装修/装潢设计</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/9084" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州雅居装饰工程有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>44</b>楼</span>
+										<a href="http://job.0550.com/89586.html" target="_blank" class="subject_t forange">发型师/技师/学徒工</a>
+										<a href="http://job.0550.com/weishen/meirong" target="_blank" class="gray f12">美容/美发</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/118701" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市开发区雅姿理发店</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">3千-5千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>45</b>楼</span>
+										<a href="http://job.0550.com/62947.html" target="_blank" class="subject_t forange">前台接待</a>
+										<a href="http://job.0550.com/binguan/qiantaijiedai" target="_blank" class="gray f12">前台接待/礼仪/接线生</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/159590" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">九天峰度假村</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>46</b>楼</span>
+										<a href="http://job.0550.com/59476.html" target="_blank" class="subject_t forange">营销经理</a>
+										<a href="http://job.0550.com/binguan/qita" target="_blank" class="gray f12">其它相关职位</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/159590" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">九天峰度假村</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>47</b>楼</span>
+										<a href="http://job.0550.com/87444.html" target="_blank" class="subject_t forange">销售业务经理</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/497997" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州市阿郎商贸有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">5千-8千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>48</b>楼</span>
+										<a href="http://job.0550.com/88487.html" target="_blank" class="subject_t forange">网站销售业务员、美工</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshoujingli" target="_blank" class="gray f12">销售经理</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/638865" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州三清乐购网</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>49</b>楼</span>
+										<a href="http://job.0550.com/16365.html" target="_blank" class="subject_t forange">水石影城招聘全职影务专员</a>
+										<a href="http://job.0550.com/fuwu/kehufuwu" target="_blank" class="gray f12">客户服务</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/171223" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">安徽电影集团有限责任公司滁州水石影城</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>50</b>楼</span>
+										<a href="http://job.0550.com/85550.html" target="_blank" class="subject_t forange">钳工</a>
+										<a href="http://job.0550.com/jigong/chong" target="_blank" class="gray f12">钳、钣、铆、冲、焊、铸</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/137795" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">滁州现代模具制造有限公司</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>51</b>楼</span>
+										<a href="http://job.0550.com/74140.html" target="_blank" class="subject_t forange">店长/导购员/业务员</a>
+										<a href="http://job.0550.com/xiaoshou/xiaoshouzhuguan" target="_blank" class="gray f12">销售主管</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/573947" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">史丹利衣柜、格莱美壁纸 </a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3 onbg">
+									<td class="subject"><span class="topdata"><b>52</b>楼</span>
+										<a href="http://job.0550.com/89502.html" target="_blank" class="subject_t forange">服务员/传菜员</a>
+										<a href="http://job.0550.com/binguan/fuwuyuan" target="_blank" class="gray f12">服务员/侍者/门童</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/629051" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">小米餐厅滁州1912店</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">2千-3千元</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+								
+								<tr class="tr3">
+									<td class="subject"><span class="topdata"><b>53</b>楼</span>
+										<a href="http://job.0550.com/88942.html" target="_blank" class="subject_t forange">设计师/资深设计师/电话销售/项目经理</a>
+										<a href="http://job.0550.com/shishang/zhuanghuangsheji" target="_blank" class="gray f12">室内(外)装修/装潢设计</a>
+										</td>
+									<td>
+									
+										<span class="f12"><a href="http://job.0550.com/company/641099" target="_blank" style="width:190px; overflow:hidden; height:20px;float:left;display:inline-block;">亚成装饰</a></span>
+										<span class="isuser">认证</span>
+									
+									</td>
+									<td align="center">滁州市</td>
+									<td align="center"><b class="s2">面议</b></td>
+									<td align="center"><span class="s6"><a href="#" rel="nofollow" class="istop2" title="推广">推广</a></span></td>
+								</tr>
+							
+							
+						
+								<tr class="tr4">
+									<td>信息主题</td>
+									<td width="240">公司名称</td>
+									<td width="80" align="center">区域</td>
+									<td width="120" align="center">待遇</td>
+									<td width="90" align="center">发布时间</td>
+								</tr>
+							
+							
+							
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- 列表结束 -->
+				<!-- 分页 -->
+				<div class="mt10 cc">
+					<span class="fr">没有合适的工作？创建份简历让工作来找你吧！<a href="http://job.0550.com/resume/edit">开始创建&gt;&gt;</a></span>
+					<div style="padding-top: 6px;">
+						<div class="newpages ">
+							<a href="#" class="disabled prev">&lsaquo;&lsaquo; 上一页</a>&nbsp;<b>1</b>&nbsp;<a href="#" class="disabled next">下一页 &rsaquo;&rsaquo;</a>&nbsp;
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /分页 -->
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="/images/job/gotop.js"></script>
+<style type="text/css">
+#eczfooter2{width:960px; margin:0 auto 0; padding:10px 0px; border-top:#ddd solid 1px; margin-top:20px;}
+#eczfooter2 *{margin:0; padding:0;}
+#eczfooter2 .top{width:100%; height:30px;}
+#eczfooter2 .top ul{ list-style:none; display:block; border:red solid 0px;width:70%; height:30px; margin:0 auto 0;}
+#eczfooter2 .top ul li{ list-style:none; float:left; display:inline; font-size:12px; color:#999; padding:0px 4px;}
+#eczfooter2 .top ul li a{ text-decoration:none; color:#999; line-height:30px;}
+#eczfooter2 .top ul li a:hover{color:#F00;}
+#eczfooter2 .top .shugang{width:15px; background:url(images/shugang.png) no-repeat 11px 9px; height:30px;}
+#eczfooter2 .center{width:100%; height:30px;}
+#eczfooter2 .center ul{ list-style:none; width:66%; height:30px; border:red solid 0px; margin:0 auto 0;}
+#eczfooter2 .center ul li{ list-style:none; float:left; display:inline; font-size:12px; color:#999; padding:0px 6px;  line-height:30px; padding:0px 7px;}
+#eczfooter2 .center ul li a{ text-decoration:none; color:#999;}
+#eczfooter2 .center ul li a:hover{color:#F00;}
+#eczfooter2 .center .phone code{color:#F60;}
+#eczfooter2 .center .serve a{color:#F60; text-decoration:none; font-weight:700; padding-left:20px; background:url(images/qqlogo.jpg) no-repeat 2px -1px;}
+.clear{clear:both; height:0px;}
+</style>
+<div class="clear"></div>
+ <div id="eczfooter2">
+        <div class="top">
+            <ul>
+				<li style="margin-left:6px;"><a href="http://www.0550.com/kairuijie/about">关于我们</a></li>
+				<li class="shugang"></li>
+				<li><a href="http://www.0550.com/kairuijie/about?tab=3">联系我们</a></li>
+				<li class="shugang"></li>
+				<li><a href="http://www.0550.com/kairuijie/ggbj">广告服务</a></li>
+				<li class="shugang"></li>
+				<li><a href="http://www.0550.com/kairuijie/yqlj">友情链接</a></li>
+				<li class="shugang"></li>
+				<li><a href="http://www.0550.com/kairuijie/about?tab=2">诚聘英才</a></li>
+				<li class="shugang"></li>
+				<li><a href="http://www.0550.com/help/protocal">免责声明</a></li>
+				<li class="shugang"></li>
+				<li><a href="http://www.0550.com/55921.html">帮助中心</a></li>
+				<li class="shugang"></li>
+				<li><a onclick="window.open(this.href+'?url='+location.href);return false;" href="http://report.0550.com/report" style="color:red;">投诉与建议</a></li> 
+            </ul>
+			<div class="clear"></div>
+        </div>
+        <div class="center">
+             <ul>    
+                <li>版权所有：滁州人才人力资源有限公司 & E滁州</li>
+                <li><font class="phone">E滁州服务热线：<code>0550-3075050</code></font></li>
+                <li><font class="serve">E滁州客服<a href="http://wpa.qq.com/msgrd?v=3&uin=8008000550&site=qq&menu=yes" target="_blank" >:8008000550</a></font></li>
+		     </ul>
+			 <div class="clear">
+
+	<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1d56fda4d31c6d82c010cefa9fb251fa' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript" src="http://tajs.qq.com/stats?sId=23663007" charset="UTF-8"></script>
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000004140'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/q_stat.php%3Fid%3D1000004140' type='text/javascript'%3E%3C/script%3E"));</script>
+
+</div>
+        </div>
+    </div>
+</body>
+</html>

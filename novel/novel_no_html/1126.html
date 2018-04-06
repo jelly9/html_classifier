@@ -1,0 +1,410 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <title id="title">Irrlicht引擎源码剖析——第九天</title>
+    <meta name="keywords" content="Irrlicht引擎源码剖析——第九天" />
+    <meta name="description" content="今天首先看ISceneNode.h文件，这个文件内容相比以前丰富多了。实现了场景结点的接口。对于一个场景结点，定义了结点名字、各转换矩阵、父结点指针、子结点存储链表、结点动画存储链表、结点id、结点能否访问等属性。并根据这些成员实现了一些方法，设置、获取成员变量的&#20540;，渲染前后的操作等。
+
+接着看IAnimatedMeshSceneNode.h，在这个文件里实现了继承自Iscene" />
+    <link rel="canonical" href="http://www.fx114.net/qa-92-63792.aspx" />
+    <link href="css/gray.css" rel="stylesheet" type="text/css" />
+    <link href="css/shcode.css" rel="stylesheet" type="text/css" />
+    <script type='text/javascript' src='js/m.js'></script>
+    <script type="text/javascript">
+    /*120*270，创建于2013-9-11*/
+var cpro_id = "u1366293";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/f.js" type="text/javascript"></script>
+<meta http-equiv="Cache-Control" content="no-siteapp" /> 
+<script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script>
+<script type="text/javascript">uaredirect("http://m.fx114.net/qa-92-63792.aspx", "http://www.fx114.net/qa-92-63792.aspx");</script>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=39140335" charset="UTF-8"></script>
+</head>
+<body>
+    <ul class="header">
+        <li>
+            <h1 id="h1value">Irrlicht引擎源码剖析——第九天</h1>
+            <span style="float: right;"><a href="http://m.fx114.net/qa-92-63792.aspx">手机版</a></span>
+        </li>
+    </ul>
+    <div class="header_c">
+        <div class="logo">
+            <a href="http://www.fx114.net">
+                <img src="images/logo.png" alt="分享查询网" /></a></div>
+        <!--end标志-->
+        <div class="h_adv">
+            <script type="text/javascript">
+    /*728*90，创建于2014-5-10*/
+    var cpro_id = "u1550609";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+        </div>
+        <!--end广告条-->
+    </div>
+    <!--end头文件中-->
+    <ul class="nav">
+        <li id="nav_hover01"><a href="/">首页</a></li>
+        <li id="nav_hover02"><a href="Portal-1.aspx">.Net技术</a></li>
+        <li id="nav_hover03"><a href="Portal-15.aspx">Web开发</a></li>
+        <li id="nav_hover04"><a href="Portal-7.aspx">Java开发</a></li>
+        <li id="nav_hover05"><a href="Portal-11.aspx">PHP编程</a></li>
+        <li id="nav_hover06"><a href="List-2-68-1.aspx">ASP编程</a></li>
+        <li id="nav_hover07"><a href="Portal-28.aspx">移动平台</a></li>
+        <li id="nav_hover08"><a href="Portal-31.aspx">云计算</a></li>
+        <li id="nav_hover11"><a href="Portal-17.aspx">程序生涯</a></li>
+        <li id="nav_hover09"><a href="Portal-8.aspx">Linux技术</a></li>
+        <li id="nav_hover10"><a href="List-2-251-1.aspx">Mysql数据库</a></li>
+        <li id="nav_hover12"><a href="Portal-9.aspx">SQL数据库</a></li>
+    </ul>
+    <!--end导航-->
+    <ul class="nav_d">
+        <li><font color="gray">分类导航：</font>
+            
+                    <a href="List-2-86-1.aspx" title="移动开发其他问题">
+                        移动开发其他问题</a>|&nbsp;
+                
+                    <a href="List-2-95-1.aspx" title="Qt">
+                        Qt</a>|&nbsp;
+                
+                    <a href="List-2-91-1.aspx" title="英特尔架构的Android开发">
+                        英特尔架构的Android开发</a>|&nbsp;
+                
+                    <a href="List-2-93-1.aspx" title="Symbian">
+                        Symbian</a>|&nbsp;
+                
+                    <a href="List-2-97-1.aspx" title="BlackBerry">
+                        BlackBerry</a>|&nbsp;
+                
+                    <a href="List-2-89-1.aspx" title="Brew">
+                        Brew</a>|&nbsp;
+                
+                    <a href="List-2-94-1.aspx" title="非技术区">
+                        非技术区</a>|&nbsp;
+                
+                    <a href="List-2-90-1.aspx" title="Android">
+                        Android</a>|&nbsp;
+                
+                    <a href="List-2-92-1.aspx" title="百度开放云移动论坛">
+                        百度开放云移动论坛</a>|&nbsp;
+                
+        </li>
+    </ul>
+    <div class="clear_div adv_w">
+       <script type="text/javascript">
+    /*960*90 创建于 2014-09-10*/
+    var cpro_id = "u1709408";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+    </div>
+    <!--end广告条-->
+    <div class="clear_div h_one">
+        <div class="i_left">
+            <div class="clear_div blue_border display_box">
+                <dl class="l_site blue_link">
+                    <dd id="ddNav">当前位置：<a href="http://www.fx114.net/" title="分享查询网">分享查询网</a>&nbsp;>&nbsp;<a href="Portal-28.aspx" title="移动平台">移动平台</a>&nbsp;>&nbsp;<a href="List-2-92-1.aspx" title="百度开放云移动论坛">百度开放云移动论坛</a> ><a href="http://www.fx114.net/qa-92-63792.aspx" title="Irrlicht引擎源码剖析——第九天">Irrlicht引擎源码剖析——第九天</a></dd>
+                </dl>                
+                <dl class="clear_div display_th">
+                    <dt>                    
+                        <h2 id="h2value">Irrlicht引擎源码剖析——第九天</h2>
+                    </dt>
+                    <dd>
+                        <span id="spanAddTime">发布时间：2014-10-25 20:17:07</span><span>编辑：www.fx114.net <a href="http://www.fx114.net"
+                            title="分享查询网">分享查询网</a></span><span><a href="#pinglun" title="我要评论">我要评论</a></span></dd></dl>
+                <div class="clear_div display_wen">
+                    <div id="divSummary" class="summary">本篇文章主要介绍了"Irrlicht引擎源码剖析——第九天"，主要涉及到Irrlicht引擎源码剖析——第九天方面的内容，对于Irrlicht引擎源码剖析——第九天感兴趣的同学可以参考一下。</div>
+                    <div id="con_all">
+                        <div id="con_ad1">
+                            <script type="text/javascript">
+    /*300*250，创建于2014-2-2 qacontent*/
+    var cpro_id = "u1464132";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                        </div>
+                        <div id="con_ad8">
+                           <script type="text/javascript">
+    /*300*250，创建于2014-2-2 qacontent*/
+    var cpro_id = "u1464132";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                        </div>
+                        <div class="bk24" style="padding-top: 20px;padding-bottom:10px">
+                            <script type="text/javascript">
+    /*468*15，创建于2014-2-21*/
+    var cpro_id = "u1473701";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                        </div>
+                    </div>
+                    <div id="zth_content">
+                        <p id="pContent">今天首先看ISceneNode.h文件，这个文件内容相比以前丰富多了。实现了场景结点的接口。对于一个场景结点，定义了结点名字、各转换矩阵、父结点指针、子结点存储链表、结点动画存储链表、结点id、结点能否访问等属性。并根据这些成员实现了一些方法，设置、获取成员变量的&#20540;，渲染前后的操作等。
+&nbsp;
+接着看IAnimatedMeshSceneNode.h，在这个文件里实现了继承自IsceneNode类的IAnimatedMeshNode接口类。该类声明了几个方法：设置当前动画帧数、设置动画循环之间的帧数、设置动画的显示速度等。
+&nbsp;
+在IBillboardSceneNode.h中，完成了广告牌类。广告牌的最大特点在于：进行观察时，不管处于哪个方向，观察到的网&#26684;都面向摄像机的正面。它通常被用于爆炸，火焰，耀光，粒子，等类&#20284;效果上。
+&nbsp;
+在IBspTreeSceneNode.h中，实现了一个二叉空间分割书（BSP树）。使用该类的方法将使渲染速度达到最快。不过引擎作者在该0.1版引擎中注释：该bsp树还有一些小问题未解决，需要注意。
+&nbsp;
+在ICameraSceneNode.h中，声明了摄像机类。该类声明了有关摄像机的各种操作方法。在该文件里定义了一个结构体——平截头体，用来裁定有效视野的范围。
+&nbsp;
+在ILightSceneNode.h中，实现了一个描述光源的场景结点类。你可以通过使结点可见或不见属性来变换光源的开和关，通过普通场景结点动画发生器让它成为动画。
+&nbsp;
+经过之前的各个文件的实现，集合而成的ISceneManager.h中，实现了场景结点管理器。这个场景管理器管理场景结点、网&#26684;资源、摄像机等其他东西。只有在这里才能创建所有场景结点。有许多用途的场景结点：
+——室内渲染场景结点OctTree(addOctTreeSceneNode())，
+——BspTree(addBspTreeSceneNode())，
+——不同的摄像机场景结点(addCameraSceneNode(),addCameraSceneNodeMaya())，
+——场景结点(addLightSceneNode())，
+——广告牌(addBillboardSceneNode())等等。一个场景结点是一个在阶层场景图里的结点。每个场景结点都可能有子结点即其他场景结点。子结点相对于他们的父结点的位置移动。如果父结点是一个不可见的结点，那么它的子结点同样不可见。在这个方法里，它可以轻松给一辆移动的汽车易附上一盏灯，或在行进的舰船上的一个移动的平台上放置行走的字符等等等等。还定义了一个描述渲染时间的枚举类型变量。
+&nbsp;
+至此include\scene下的文件全部搞定。
+&nbsp;
+OVER！今天解决7个代码文件，还剩120个。</p>
+                        <br />
+                        <div id="farticle" style="display:none;">
+                            <h4>
+                                我们提供的服务：</h4>
+                            <ul>
+                                <li><a target="_blank" href="http://www.99nic.com/">快速仿站服务 联系QQ：444758708 手机：186-4117-7624
+                                    联系人：李小冲</a></li>
+                                <li><a target="_blank" href="http://www.99nic.com/"><font color="red">数据采集服务 联系QQ：444758708
+                                    手机：186-4117-7624 联系人：李小冲</font></a></li>
+                                <li><a target="_blank" href="http://www.99nic.com/"><font color="green">企业网站制作服务 联系QQ：444758708
+                                    手机：186-4117-7624 联系人：李小冲</font></a></li>
+                                <li><a target="_blank" href="http://www.99nic.com/"><font color="purple">企业网站检测服务 联系QQ：444758708
+                                    手机：186-4117-7624 联系人：李小冲</font></a></li>
+                                <li><a target="_blank" href="http://www.99nic.com/">企业邮箱安全检测服务 联系QQ：444758708 手机：186-4117-7624
+                                    联系人：李小冲</a></li>
+                            </ul>
+                        </div>
+                        <div class="clear_div page">
+                        </div>
+                        <!--end页码-->
+                    </div>
+                    <div class="contentBottomAd">
+                        <script type="text/javascript">
+    /*336*280 创建于 2014-09-10*/
+    var cpro_id = "u1709423";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+                    </div>
+                </div>
+                <!--end正文-->
+                <ul class="clear_div share">
+                    <li>
+                        <div class="bdsharebuttonbox">
+                            <a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"
+                                title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">
+                            </a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren"
+                                data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin"
+                                    title="分享到微信"></a><a href="#" class="bds_mshare" data-cmd="mshare" title="分享到一键分享">
+                            </a><a href="#" class="bds_bdysc" data-cmd="bdysc" title="分享到百度云收藏"></a><a href="#"
+                                class="bds_bdxc" data-cmd="bdxc" title="分享到百度相册"></a><a href="#" class="bds_tieba"
+                                    data-cmd="tieba" title="分享到百度贴吧"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友">
+                                    </a><a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+                            <a href="#" class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页"></a>
+                        </div>
+
+                        <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"32"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin","mshare","bdysc","bdxc","tieba","sqq","douban","bdhome"],"viewText":"分享到：","viewSize":"32"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin","mshare","bdysc","bdxc","tieba","sqq","douban","bdhome"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+                    </li>
+                </ul>
+            </div>
+            <!--end边框-->
+            <dl class="clear_div other_news">
+                <dt id="dtPreQA"><b>上一篇:</b><a href='qa-92-63791.aspx' title="2012.8.1总结">2012.8.1总结</a></dt>
+                <dd id="ddNextQA"><b>下一篇:</b><a href='qa-92-63793.aspx' title="简介">简介</a></dd>
+            </dl>
+            <dl class="h_th">
+                <dd>
+                    <h4>
+                        相关文章</h4>
+                </dd>
+            </dl>
+            <ul class="clear_div h_list blue_related">
+
+                <script>document.write(unescape('%3Cdiv id="hm_t_20717"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://crs.baidu.com/t.js?siteId=b668ac6874ec0621a52a5dfe1df0700b&planId=20717&async=0&referer=') + encodeURIComponent(document.referrer) + '&title=' + encodeURIComponent(document.title) + '&rnd=' + (+new Date) + unescape('"%3E%3C/script%3E'));</script>
+
+            </ul>
+            <div class="clear_div list_t">
+                <script type="text/javascript">
+    /*640*60 创建于 2014-09-10*/
+    var cpro_id = "u1709418";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+            </div>
+            <!--end广告条-->
+            <div class="clear_div sky_border list_o">
+                <div class="l_hot clear_div">
+                    关键词： <strong><a class="info_tags" href="http://www.fx114.net/qa-92-63792.aspx" target="_blank">
+                        Irrlicht引擎源码剖析——第九天</a></strong></div>
+                <!--end热门搜索-->
+            </div>
+            <!--end边框-->
+            <div class="clear_div gray_border list_d" id="pinglun" name="pinglun">
+                <h4 class="gray_th">
+                    相关评论</h4>
+                <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+                <div id="SOHUCS">
+                </div>
+
+                <script>
+  (function(){
+    var appid = 'cyrmob3yB',
+    conf = 'prod_354f65081484dc989208cb6678334b6d';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    window.SCS_NO_IFRAME = true;
+  })()
+</script>
+
+            </div>
+            <!--end相关评论-->
+            <div class="clear_div gray_border list_o">
+                <ul class="l_text clear_div">
+                    <li><b>本文标题：</b><a href="http://www.fx114.net/qa-92-63792.aspx">Irrlicht引擎源码剖析——第九天</a></li>
+                    <li><b>本页链接：</b><a href="http://www.fx114.net/qa-92-63792.aspx">http://www.fx114.net/qa-92-63792.aspx</a></li>
+                </ul>
+            </div>
+            <!--end边框-->
+        </div>
+        <!--end左边-->
+        <div class="i_right">
+            <div id="ss" style="border-bottom: 1px solid #02598e; padding-bottom: 5px;">
+            <script type="text/javascript">                document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E%3Cscript charset="utf-8" src="http://znsv.baidu.com/customer_search/api/js?sid=5712359222851038195') + '&plate_url=' + (encodeURIComponent(window.location.href)) + '&t=' + (Math.ceil(new Date() / 3600000)) + unescape('"%3E%3C/script%3E'));</script>
+            </div>
+            <div class="clear_div list_o">
+                <script type="text/javascript">
+    /*300*250，创建于2014-2-2 qacontent*/
+    var cpro_id = "u1464132";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+            </div>
+<div class="clear_div list_o"><a href="http://bangbaotao.taobao.com/?leexiaochong" target="blank" rel="nofollow"><img src="images/bangbaotao.jpg" /></a></div>
+            <!--end广告条-->
+            <div class="clear_div list_o gray_border">
+                <h3 class="h_r_th">
+                    最近更新</h3>
+                <ul class="clear_div h_news">
+                    
+                            <li><a href="qa-92-72515.aspx" title="cocos2d-x IOS适配 一种不改变你图片品质的适配原理">
+                                cocos2d-x IOS适配 一种不改变你图片品质的适配原理</a></li>
+                        
+                            <li><a href="qa-92-72514.aspx" title="web前端性能分析--原理篇 .">
+                                web前端性能分析--原理篇 .</a></li>
+                        
+                            <li><a href="qa-92-72513.aspx" title="人脸识别SDK">
+                                人脸识别SDK</a></li>
+                        
+                            <li><a href="qa-92-72512.aspx" title="字符gbk转换为utf-8的sublime插件">
+                                字符gbk转换为utf-8的sublime插件</a></li>
+                        
+                            <li><a href="qa-92-72511.aspx" title="SilkTest入门快打7-异常处理">
+                                SilkTest入门快打7-异常处理</a></li>
+                        
+                            <li><a href="qa-92-72510.aspx" title="Oracle中INSTR函数与SQL Server中CHARINDEX函数">
+                                Oracle中INSTR函数与SQL Server中CHARINDEX函数</a></li>
+                        
+                            <li><a href="qa-92-72509.aspx" title="禁止用户远程登录方法方法">
+                                禁止用户远程登录方法方法</a></li>
+                        
+                            <li><a href="qa-92-72508.aspx" title="svn在linux下的使用（svn命令）">
+                                svn在linux下的使用（svn命令）</a></li>
+                        
+                            <li><a href="qa-92-72507.aspx" title="EAPOL协议">
+                                EAPOL协议</a></li>
+                        
+                            <li><a href="qa-92-72506.aspx" title="J2EE 无法载入web.xml信息">
+                                J2EE 无法载入web.xml信息</a></li>
+                        
+                            <li><a href="qa-92-72505.aspx" title="JAVA设计模式——备忘录模式">
+                                JAVA设计模式——备忘录模式</a></li>
+                        
+                            <li><a href="qa-92-72504.aspx" title="Java log code example">
+                                Java log code example</a></li>
+                        
+                            <li><a href="qa-92-72503.aspx" title="BMP头文件格式以及C语言读取头文件">
+                                BMP头文件格式以及C语言读取头文件</a></li>
+                        
+                            <li><a href="qa-92-72502.aspx" title="60个开发者不容错过的免费资源库">
+                                60个开发者不容错过的免费资源库</a></li>
+                        
+                            <li><a href="qa-92-72501.aspx" title="Windows Server 8：截图1">
+                                Windows Server 8：截图1</a></li>
+                        
+                            <li><a href="qa-92-72500.aspx" title="JSon SuperObject 研究">
+                                JSon SuperObject 研究</a></li>
+                        
+                            <li><a href="qa-92-72499.aspx" title="javascript中处理时间">
+                                javascript中处理时间</a></li>
+                        
+                            <li><a href="qa-92-72498.aspx" title="xcode自动完成代码 Code Snippet Library">
+                                xcode自动完成代码 Code Snippet Library</a></li>
+                        
+                            <li><a href="qa-92-72497.aspx" title="repo 服务器环境搭建及客户端使用">
+                                repo 服务器环境搭建及客户端使用</a></li>
+                        
+                            <li><a href="qa-92-72496.aspx" title="javascript控制文本框中输入的只能为数字">
+                                javascript控制文本框中输入的只能为数字</a></li>
+                        
+                </ul>
+            </div>
+            <!--end最近更新-->
+            <div class="clear_div list_o">
+               <a href='http://www.haodai.com/?ref=hd_1103134_0201_1' rel="nofollow" target='_blank'><img src='http://www.haodai.com/src/i/lianmeng/ad/1_300x250.jpg' alt='好贷网好贷款'/></a>
+            </div>
+            <!--end广告位-->
+            <div id="xtad" class="clear_div list_o xtad">
+               <script type="text/javascript">
+    /*300*250，创建于2014-2-2 qacontent*/
+    var cpro_id = "u1464132";
+</script>
+<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+            </div>
+            <!--end广告条-->
+        </div>
+        <!--end右边-->
+    </div>
+    <!--end中间区域-->
+    <dl class="clear_div2 footer">
+        <dt><a href="About.aspx" rel="nofollow">关于本站</a> | <a href="Ad.aspx" rel="nofollow">
+            广告合作</a> | <a href="Contact.aspx" rel="nofollow">联系我们</a> | <a href="Tougao.aspx"
+                rel="nofollow">投稿说明</a> | <a href="ShengMing.aspx" rel="nofollow">网站声明</a> |
+            <script language="javascript" type="text/javascript" src="http://js.users.51.la/3156989.js"></script>
+
+            <noscript>
+                <a href="http://www.51.la/?3156989" target="_blank">
+                    <img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/3156989.asp"
+                        style="border: none" /></a></noscript>
+        </dt>
+        <dd>
+            <p>
+                CopyRight &copy; 2009-2014 <a href="http://www.fx114.net"><strong>分享查询网</strong></a>
+                Fx114.Net , All Rights Reserved. <a class="icp" rel="nofollow" href="http://www.miibeian.gov.cn">辽ICP备14015563号-1</a></p>
+        </dd>
+    </dl>
+    <!--end文件底-->
+    <div class="tongji">
+
+        <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fb668ac6874ec0621a52a5dfe1df0700b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="js/global.js"></script>
+
+</body>
+</html>
+

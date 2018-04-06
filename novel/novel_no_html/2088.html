@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gbk">
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>阜昌重宝-吕氏古钱币珍品店-中国收藏网</title>
+    <link href="/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/css/shop.css" rel="stylesheet" type="text/css" />
+    <link href="/Scripts/jui/jquery-ui.css" rel="stylesheet" type="text/css" />
+  <link href="/Scripts/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+
+    <script src="/Scripts/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/Scripts/jquery.boxy.js" type="text/javascript"></script>
+    <script src="/Scripts/common.js" type="text/javascript"></script>
+    <script src="/Scripts/CommonAjax.js" type="text/javascript"></script>
+  <script src="/Scripts/json2.js" type="text/javascript"> </script>
+  <script src="/Scripts/jquery.cookie.js" type="text/javascript"> </script>
+  <script src="/Scripts/jquery.marquee.js" type="text/javascript"> </script>
+  <script src="/Scripts/fancybox/jquery.fancybox-1.3.4.js" type="text/javascript"> </script>
+  <script type="text/javascript">
+    $(function() {
+      var islogin = false;
+
+      $('#goodsnav').addClass('current');
+
+      $('#goodsinfo .menu-btn').click(function() {
+        $('#goodsinfo .menu-btn').removeClass('on');
+        $('#goodsinfo .disable').removeClass('active');
+        $(this).addClass('on');
+        var content = '#goodsinfo .ginfo' + $(this).attr('data');
+        $(content).addClass('active');
+      });
+
+      $('#goods-img-show .small-photo').marquee({ showNum: 4 });
+      $('#goods-img-show .slide:first').addClass('on');
+      $('#goods-img-show .big-photo img').attr('src', $('#goods-img-show .slide img:first').attr('src'));
+
+      $('#goods-img-show .slide').live('click', function() {
+        $('#goods-img-show .slide').removeClass('on');
+        $(this).addClass('on');
+        $('#goods-img-show .big-photo img').attr('src', $(this).find('img').attr('src'));
+      });
+
+      $('#quote').click(function() {
+        var price = $('#myprice').val();
+        if ('' == price) {
+          $.Alert('请输入您的报价！');
+          return;
+        }
+        if (isNaN(price)) {
+          $.Alert('报价只能是数字！');
+          return;
+        }
+        if (parseInt(price) < 1) {
+          $.Alert('报价不能小于0');
+          return;
+        }
+
+        $.post('/goods/quote?t=' + new Date().getTime(), { ProductId: 29597, Price: price }, function(msg) {
+          if ('-1' == msg) {
+            window.location = '/users/login';
+          } else if ('0' == msg) {
+            $.Alert('报价成功！');
+          } else {
+            $.Alert(msg);
+          }
+        });
+      });
+
+      $('#buynow').click(function() {
+        if (confirm('您确定以一口价购买此藏品么？')) {
+          window.location = '/Goods/BuyNow/29597';
+        }
+        return false;
+      });
+
+      $('#btnShowReport').click(function() {
+        if (islogin) {
+          $.fancybox({
+            'href': '#ReportWindow',
+            'titlePosition': 'inside',
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'showCloseButton': false,
+            'modal': true
+          });
+          return false;
+        } else {
+          $.Alert('请先登录！');
+          new Timer(function() {
+            window.location = '/users/login';
+          }, 1500);
+          return false;
+        }
+      });
+
+      $('#btnAddReport').click(function() {
+        var title = $('#ReportTitle').val();
+        var rType = $('#ReportType').val();
+        var summary = $('#ReportSummary').val();
+
+        if ('' == title) {
+          $.Alert('请输入举报标题！');
+          return;
+        }
+
+        if ('' == summary) {
+          $.Alert('请输入举证描述！');
+          return;
+        }
+
+        AddReport(29597, title, 2, rType, summary, function() {
+          $.fancybox.close();
+          $('#ReportTitle').val('');
+          $('#ReportType').val('0');
+          $('#ReportSummary').val('');
+        });
+
+      });
+
+      //开始浏览历史
+      var jsonstr = $.cookie('Socang.TradeViewHistory');
+      //alert(decodeURIComponent(jsonstr));
+      var json = JSON2.parse(decodeURIComponent(jsonstr));
+      //alert(json.length);
+      if (0 < json.length) {
+        var html = '';
+        $.each(json, function(i, item) {
+          html += '<li><a href="' + item.Url + '"><img src="' + item.ImgPath + '"></a>';
+          html += '<h5><a href="' + item.Url + '">' + item.Title.substring(0, item.Title.length > 7 ? 7 : item.Title.length - 1) + '</a></h5>';
+          html += '<p class="price"><em>' + item.Price + '</em></p></li>';
+        });
+        $('#ViewHistory').html(html);
+      } else {
+        $('#ViewHistory').html('<li>暂无浏览记录</li>');
+      }
+
+      //浏览历史结束
+    });
+  </script>
+
+    <script type="text/javascript">
+      function RefreshCode() {
+        $('#codeimg').attr('src', '/SecurityCode?t=' + new Date().getTime());
+      }
+      $(function () {
+        $('#quickSearch .searchbtn').click(function () {
+          $('#quickSearch .searchbtn').removeClass('on');
+          $(this).addClass('on');
+        });
+
+        $('#shopqq').append('<a target="_blank" href="tencent://message/?uin=1615538342&Site=中国收藏网&Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=1:1615538342:8" alt="点击这里给我发消息"></a>');
+        $('#shopwangwang').append('店主未设置旺旺');
+
+        $('#btnLeftSearch').click(function () {
+          window.location = '/shop-645/goods?k=' + $('#leftSearchKeyword').val();
+        });
+
+        $("#dialog-form").dialog({
+          autoOpen: false,
+          width: 400,
+          modal: true,
+          buttons: [
+				  {
+				    text: "发 送",
+				    click: function () {
+				      var $this = $(this);
+
+				      var receiver = $('#MsgUsername').val();
+				      var title = $('#MsgTitle').val();
+				      var content = $('#MsgContent').val();
+				      var code = $('#MsgSecurityCode').val();
+
+				      if ('' == title) {
+				        $.Alert('消息标题不能为空！');
+				        return;
+				      }
+
+				      if ('' == content) {
+				        $.Alert('消息内容不能为空！');
+				        return;
+				      }
+
+				      if ('' == code) {
+				        $.Alert('请填写验证码！');
+				        return;
+				      }
+
+				      $.post('/My/Message/SendMessageById.json?t=' + new Date().getTime(), { Receiver: receiver, Title: title, Content: content, SecurityCode: code },
+              function (msg) {
+                $this.dialog("close");
+                $('#MsgSecurityCode').val('');
+                RefreshCode();
+                if ('-1' == msg) {
+                  $.Alert('登录超时，请刷新页面后重试。');
+                  Timer(function () { window.location.reload(); }, 1500);
+                  return;
+                }
+                if ('0' == msg) {
+                  $.Alert('发送成功！！');
+                  return;
+                }
+                $.Alert(msg);
+              });
+				    }
+				  },
+				  {
+				    text: "取 消",
+				    click: function () {
+				      $(this).dialog("close");
+				    }
+				  }
+			  ]
+        });
+
+        $('#SendMsg2Shopkeeper').click(function () {
+          RefreshCode();
+          $("#dialog-form").dialog("open");
+        });
+      });
+        
+    </script>
+</head>
+<body>
+    <div id="tiptop">
+    <div class="container">
+      <div class="login_info">
+        <span>您好：</span>
+          <span class="blue2">游客</span> <span>欢迎来到中国收藏网！</span><a href="/users/login">登录</a>  
+      </div>
+      <ul class="quick_menu">
+        <li><a href="http://www.socang.com/" title="中国收藏网首页">收藏网首页</a></li>
+        <li class="line"></li>
+        <li><a href="/" title="中国收藏网-交易首页">交易首页</a></li>
+        <li class="line"></li>
+        <li><a href="/Auction" title="中国收藏网-在线竞拍">在线竞拍</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ez-wr container">
+    <div id="header" class="ez-box">
+      <div class="logo">
+        <a href="http://www.socang.com">
+          <img src="/images/logo.gif" alt="中国收藏网" /></a>
+      </div>
+      <div id="quickSearch">
+        <div class="buttons">
+          <ul>
+            <li class="searchbtn on">古玩城</li>
+            <li class="searchbtn">拍卖</li>
+            <li class="searchbtn">店铺</li>
+            <li class="searchbtn">地摊</li>
+            <li class="searchbtn">艺术家</li>
+            <li class="searchbtn">资讯</li>
+            <li class="searchbtn">视频</li>
+          </ul>
+        </div>
+        <div>
+          <input class="keyword">
+          <input type="button" style="cursor: hand;" class="btnSearch">
+        </div>
+      </div>
+      <div class="goAdvanceSearch">
+        <ul>
+          <li><a href="javascript:;">高级搜索</a></li>
+          <li><a href="javascript:;">使用帮助</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="shop_banner" class="ez-box mt5">
+      <ul class="shop_nav">
+        <li><a href="/Shop-645" id="indexnav"><span><i>店铺首页<u>店铺首页</u></i></span></a></li>
+        <li><a href="/Shop-645/Goods" id="goodsnav"><span><i>店铺藏品<u>店铺藏品</u></i></span></a></li>
+        <li><a href="/Shop-645/Auctions" id="auctionnav"><span><i>店主拍品<u>店主拍品</u></i></span></a></li>
+        <li><a href="/Shop-645/Credit" id="creditnav"><span><i>信用评价<u>信用评价</u></i></span></a></li>
+        <li><a href="/Shop-645/Message" id="messagenav"><span><i>留言评论<u>留言评论</u></i></span></a></li>
+        <li><a href="/My/Shop"><span><i>店铺管理<u>店铺管理</u></i></span></a></li>
+      </ul>
+      <a href="javascript:AddShopFavorite(645);" class="shop-favorite"><img src="/images/btnShopFavorite.gif"></a>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="maincontent" class="ez-wr mt5">
+      <div class="ez-fl ez-negmr ez-25">
+        <div class="ez-box">
+          <div id="shopInfo" class="module module_3 alpha">
+            <h3>
+              <span>店铺信息</span></h3>
+            <div class="modulebody">
+              <ul>
+                <li>店铺名：吕氏古钱币珍品店</li>
+                <li>店主：<a href="http://passport.socang.com/User-24346.html" target="_blank">proflt</a></li>
+                <li>所在地：</li>
+              </ul>
+              <h4>店铺信誉</h4>
+              <ul>
+                <li>店铺等级：普通店铺</li>
+                <li>卖家信誉：
+                </li>
+                <li>好评率：</li>
+              </ul>
+              <h4>联系方式</h4>
+              <ul>
+                <li><a id="SendMsg2Shopkeeper" class="msg" href="javascript:;">给ta发送站内信</a></li>
+                <li>QQ：<span id="shopqq"></span></li>
+                <li>旺旺：<span id="shopwangwang"></span></li>
+              </ul>
+              <h4>店铺公告</h4>
+              <p>本人花费几十年心血收藏的和祖传的珍罕古钱币，其中有古钱50大珍的一部分，有部分仅见品、大名誉品和数枚出谱品。现因极其特殊的原因拟转让。有意者可来电来函联系。无诚意者勿扰！本人诚实守信，希望泉界有识之士、古泉收藏研究者和泉商前来联系，品行不端者拒访。吕先生本人电话13856411047（短信）吕先生本人电子信箱:circle550@sohu.com★拍卖品在有人出价前可议价。★钱币照片均已更新。</p>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div id="LeftSearch" class="module module_3 mt10 alpha">
+            <h3>
+              <span>店铺搜索</span></h3>
+            <div class="modulebody">
+              <ul>
+                <li>关键字：<input id="leftSearchKeyword" type="text" value="" style="width:90px;" /></li>
+                <li><input id="btnLeftSearch" type="button" value="搜索" /></li>
+              </ul>
+            </div>
+          </div>
+          
+  <div class="clear"></div>
+  <div id="LeftSearch" class="module module_3 mt10 alpha">
+  <h3>
+      <span>本店其它藏品</span>
+  </h3>
+  <div class="modulebody">
+    <ul class="goodslist3">
+      <li>
+        <a href="/GoodsDetails-138183"><img src="http://img.socang.com/TradeGoods/201109/29/6512cbf1-e584-4b06-8a08-6d3b4470e844_r.jpg"></a><h5>
+        <a href="/GoodsDetails-138183">咸丰通（重）宝</a></h5>
+        <p class="price"><em>&#165;0</em></p>
+      </li>
+      <li>
+        <a href="/GoodsDetails-138182"><img src="http://img.socang.com/TradeGoods/201109/29/cef95f45-ed48-4f9d-b324-0ed833fb9461_r.jpg"></a><h5>
+        <a href="/GoodsDetails-138182">咸丰元（重）宝</a></h5>
+        <p class="price"><em>&#165;0</em></p>
+      </li>
+      <li>
+        <a href="/GoodsDetails-32937"><img src="http://img.socang.com/TradeGoods/201009/13/643f0a0b-f7bf-4372-8ef6-c250f4aaaf69_r.jpg"></a><h5>
+        <a href="/GoodsDetails-32937">壮泉四十</a></h5>
+        <p class="price"><em>&#165;16,000</em></p>
+      </li>
+      <li>
+        <a href="/GoodsDetails-32935"><img src="http://img.socang.com/TradeGoods/201009/13/61d93286-5aad-4c27-b77e-28b11f47e48a_r.jpg"></a><h5>
+        <a href="/GoodsDetails-32935">中泉三十</a></h5>
+        <p class="price"><em>&#165;8,000</em></p>
+      </li>
+      <li>
+        <a href="/GoodsDetails-32933"><img src="http://img.socang.com/TradeGoods/201009/13/889944b8-48d8-44d1-ba8a-cf5d53a74c7f_r.jpg"></a><h5>
+        <a href="/GoodsDetails-32933">幼泉二十</a></h5>
+        <p class="price"><em>&#165;5,000</em></p>
+      </li>
+      <li>
+        <a href="/GoodsDetails-32932"><img src="http://img.socang.com/TradeGoods/201009/13/15b22d2c-3595-4e17-83f5-0c43df59afbc_r.jpg"></a><h5>
+        <a href="/GoodsDetails-32932">幺泉一十</a></h5>
+        <p class="price"><em>&#165;4,000</em></p>
+      </li>
+      <li>
+        <a href="/GoodsDetails-30506"><img src="http://img.socang.com/TradeGoods/201009/13/fe307d55-6c65-4d93-88dd-f7319bcd6c32_r.jpg"></a><h5>
+        <a href="/GoodsDetails-30506">嘉靖通宝背三钱</a></h5>
+        <p class="price"><em>&#165;0</em></p>
+      </li>
+      <li>
+        <a href="/GoodsDetails-30501"><img src="http://img.socang.com/TradeGoods/201009/13/f06d583f-5b46-4eb6-a1ad-3bb28cf1559a_r.jpg"></a><h5>
+        <a href="/GoodsDetails-30501">天命通宝（天启</a></h5>
+        <p class="price"><em>&#165;0</em></p>
+      </li>
+    </ul>
+  </div>
+</div>
+  <div id="LeftSearch" class="module module_3 mt10 alpha">
+    <h3>
+      <span>最近浏览</span></h3>
+    <div class="modulebody">
+      <ul id="ViewHistory" class="goodslist3">
+                  
+      </ul>
+    </div>
+  </div>
+
+        </div>
+      </div>
+      <div class="ez-last ez-oh">
+        
+
+
+<div class="dp_path"><a href="http://www.socang.com">首页</a>》<a href="/">交易</a>》<a href="/shop">店铺</a>》<a href="/Goods/5">古币钱币</a></div>
+<div class="goodsdetails  module_9">
+  <div class="goodsdetails-title">
+    <h2>阜昌重宝</h2>
+  </div>
+  <div class="ez-wr">
+    <div class="ez-fl ez-negmr ez-46">
+      <div id="goods-img-show" class="ez-box">
+        <div class="big-photo">
+          <img width="308" src="/images/default-goods.png" onload=" DrawImage(this, 308, 308, true) " />
+        </div>
+        <div class="clear"></div>
+        <div class="small-photo mt5 alpha">
+          <div class="slides_container ">
+              <div class="slide wrap">
+                <div class="hack">
+                  <div class="cnt">
+                    <img src="http://img.socang.com/TradeGoods/201009/13/d8a97a47-1dfb-4512-b381-5d545d1579ac_t.jpg" width="65" onload=" DrawImage(this, 65, 65) "/>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <a class="prev" href="javascript:;"><img src="/images/slider-left-btn.gif"></a>
+          <a class="next" href="javascript:;"><img src="/images/slider-right-btn.gif"></a>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="ez-last ez-oh">
+      <div class="ez-box">
+        <div class="meta">
+          <table class="table-info">
+            <tbody>
+              <tr>
+                <td>
+                    <span class="t">一口价格：</span>
+                    <span id="sellerPrice" class="red" >议价</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="t">发布时间：</span><span class="red">2012-09-04 13:33</span>
+                </td>
+              </tr>
+              <tr class="bg_color">
+                <td>
+                    <span>发货运费：</span>
+                    <span>卖家承担</span>
+                    <span style="color: #3B3B3B;">（只针对中国大陆地区买家包邮）</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <div class="myprice mt10">
+            请输入您的出价：<input id="myprice" type="text" value="" maxlength="8"  style="color: #FF0000; font-size: 14px; font-weight: bold; height: 25px; width: 80px;">
+          </div>
+        <div class="auctionbid">
+            <a id="quote" href="javascript:;" class="btn"><span>我要出价</span></a>
+        </div>
+        <div>
+          <table class="table-info">
+            <tbody>
+              
+              <tr class="bg_color">
+                <td width="50%"><span class="t">藏品年代：</span>不清楚</td>
+                <td><span class="t">藏品类别：</span>纸币</td>
+              </tr>
+              <tr>
+                <td>
+                  退货承诺：不承诺包退
+                </td>
+                <td class="br_no">
+                  退货运费：<span id="s2" position="s" mytitle="">买家承担</span>
+                </td>
+              </tr>
+              <tr class="bg_color">
+                <td colspan="2">
+                  浏览次数：<font id="browseTimes">42
+                         次</font>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="operate mt15">
+          <a href="javascript:AddGoodsFavorite(29597);"><img src="/images/good-favorite-btn.png" /></a>
+          <a id="btnShowReport" href="javascript:;"><img src="/images/goods-report-btn.png" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clear">
+</div>
+<div id="goodsinfo" class="module_9 mt20">
+  <ul class="goodsinfo-nav">
+    <li><a href="javascript:;" data="1" class="menu-btn on"><span>商品详情</span></a></li>
+    
+    <li><a href="javascript:;" data="3" class="menu-btn"><span>留言咨询</span></a></li>
+    <li><a href="javascript:;" data="4" class="menu-btn"><span>支付方式</span></a></li>
+    <li><a href="javascript:;" data="5" class="menu-btn"><span>交易流程</span></a></li>
+  </ul>
+  <div class="clear">
+  </div>
+  <div class="ginfo1 disable active"><!--商品详情-->
+    <div class="summary mt10">
+      古泉珍品。钱文真书、清晰，书法精妙绝伦，历来倍受藏家青睐，实为难得之品。金代。本人花费几十年心血收藏的和祖传的珍罕古钱币，其中有古钱50大珍的一部分，有部分仅见品、大名誉品和数枚出谱品。现因极其特殊的原因拟转让。有意者可来电来函联系。无诚意者勿扰！;本人诚实守信，希望泉界有识之士、古泉收藏研究者和泉商前来联系，品行不端者拒访。;;;;吕先生本人电话：13856411047（短信）吕先生本人电子信箱:circle550@sohu.com;
+    </div>
+    <div class="clear"></div>
+      <ul class="mt10">
+          <li class="mt10"><div style="width: 695px;"><img src="http://img.socang.com/TradeGoods/201009/13/d8a97a47-1dfb-4512-b381-5d545d1579ac.jpg" onload=" DrawImage(this, 695, 696) "/></div></li>
+      </ul>
+  </div>
+  
+  <div class="ginfo3 disable"><!--留言咨询-->
+    暂无留言
+  </div>
+  <div class="ginfo4 disable"><!--支付方式-->
+    支付方式
+  </div>
+  <div class="ginfo5 disable"><!--交易流程-->
+    <table>
+      <tr>
+        <td>
+          <table width="100%" style="text-align: center;">
+            <tbody>
+              <tr>
+                <td>
+                  &nbsp;<strong>第一部分：卖家操作流程图示</strong>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <span class="liuc">卖家<font color="#DE5521"><strong>上传</strong></font>(地摊、商店、拍卖)</span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  ↓
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <span class="liuc">卖家<font color="#DE5521"><strong>宣传推广</strong></font>,等待买家<strong>下</strong>单报价</span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  ↓
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <span class="liuc">卖家与买家讨价还价,并<font color="#DE5521"><strong>确认最终报价</strong></font></span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  ↓
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <span class="liuc">买家付款后,卖家打包并<font color="#DE5521"><strong>发货</strong></font>,等待买家确认收货</span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <table width="100%">
+                    <tbody>
+                      <tr>
+                        <td align="center">
+                          ↓
+                        </td>
+                        <td align="center">
+                          ↓
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center">
+                          <div class="liuc">
+                            买家满意,<font color="#DE5521"><strong>交易成功</strong></font>,评价打分<br />(买家确认收货后系统自动打款给卖家)</div>
+                        </td>
+                        <td align="center">
+                          <div class="liuc">
+                            买家不满意,<font color="#DE5521"><strong>交易失败</strong></font>,评价打分<br />(卖家配合买家退货,退货到货确认,款返给买家)</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+        <td>
+          <table width="100%">
+            <tbody>
+              <tr>
+                <td>
+                  &nbsp;<strong>第二部分：买家操作流程图示</strong>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <span class="liuc">买家<font color="#DE5521"><strong>看图浏览</strong></font>、与卖家交流</span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  ↓
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <span class="liuc">买家下单<font color="#DE5521"><strong>出价</strong></font>并等待卖家确认价格</span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  ↓
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <span class="liuc">卖家确定价格后，买家<font color="#DE5521"><strong>存款付款</strong></font></span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  ↓
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <span class="liuc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font
+                                                                                                                           color="#DE5521"><strong>买家收货</strong></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                </td>
+              </tr>
+              <tr>
+                <td align="center">
+                  <table width="100%">
+                    <tbody>
+                      <tr>
+                        <td align="center">
+                          ↓
+                        </td>
+                        <td align="center">
+                          ↓
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="50%" align="center">
+                          <div class="liuc">
+                            满意,<font color="#DE5521"><strong>交易成功</strong></font>,评价打分<br />
+                            (系统自动扣款给卖家)</div>
+                        </td>
+                        <td width="50%" align="center">
+                          <div class="liuc">
+                            不满意,<font color="#DE5521"><strong>交易失败</strong></font>,评价打分<br />(到货7天内无理由退货,卖家货到确认后返款)</div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div style="display: none;">
+  <div id="ReportWindow" style="height: 380px; overflow: auto; width: 582px;">
+    <table class="table-info" style="width: 580px;">
+      <thead>
+        <tr><th colspan="2"  style="height: 37px; line-height: 37px;" >
+              <img src="/images/cost.png" style="float: left;" /><h3 style="float: left; margin-left: 10px;" >举报</h3></th></tr>
+      </thead>
+      <tbody>
+        <tr class="bg_color">
+          <td class="t" style="width: 25%">
+            相关藏品：
+          </td>
+          <td>
+            <span>阜昌重宝</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="t">
+            举报标题：
+          </td>
+          <td>
+            <input type="text" id="ReportTitle" style="width: 220px;" />
+          </td>
+        </tr>
+        <tr class="bg_color">
+          <td class="t">
+            举报类型：
+          </td>
+          <td>
+            <select id="ReportType">
+              <option value="0">虚假信息</option>
+              <option value="2">藏品无货</option>
+              <option value="4">盗用图片</option>
+              <option value="6">重复发布</option>
+              <option value="8">私下交易</option>
+              <option value="10">其它</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="t">
+            举证描述：
+          </td>
+          <td>
+            <textarea rows="5" id="ReportSummary" cols="50"></textarea>
+          </td>
+        </tr>
+        
+        <tr class="bg_color">
+          <td></td>
+          <td><a id="btnAddReport" href="javascript:;" class="btn"><span>举 报</span></a>&nbsp;&nbsp;<a href="javascript:;" onclick=" javascript:$.fancybox.close(); " class="btn"><span>取 消</span></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+      </div>
+      <!--end render body-->
+    </div>
+    <div id="footer" class="ez-box mt10">
+      <p class="mt10">
+        <a href="http://www.socang.com/about/sevice_gywm.html" target="_blank">关于我们</a>&#12288;|&#12288;
+        <a href="http://www.socang.com/about/sevice_kgfw.html" target="_blank">广告服务</a>&#12288;|&#12288;
+        <a href="http://www.socang.com/about/sevice_fwtk.html" target="_blank">服务条款</a>&#12288;|&#12288;
+        <a href="http://www.socang.com/about/sevice_flsm.html" target="_blank">法律声明</a>&#12288;|&#12288;
+        <a href="http://www.socang.com/about/sevice_yssm.html" target="_blank">隐私声明</a>&#12288;|&#12288;
+        <a href="http://www.socang.com/about/sevice_cpyc.html" target="_blank">诚聘英才</a>&#12288;|&#12288;
+        <a href="http://www.socang.com/about/sevice_yqlj.html" target="_blank">友情链接</a>&#12288;|&#12288;
+        <a href="http://www.socang.com/about/sevice_lxwm.html" target="_blank">联系我们</a>&#12288;|&#12288;
+        <a href="http://www.socang.com/service/help.aspx" target="_blank">帮助中心</a>
+      </p>
+      <p class="copyright mt5">
+        <span>版权所有&#12288;浙江中收网络科技有限公司&#12288;&copy;2002-2015&#12288;网络文化经营许可证：<a target="_blank" href="http://www.socang.com/about/images/wl.jpg">浙网文[2012]0457-048</a>&#12288;<a target="_blank" href="http://www.miibeian.gov.cn/">浙B2-20080195</a>&#12288;E-mail：<a href="mailto:web@socang.com">web@socang.com</a></span></p>
+    </div>
+  </div>
+  <div id="dialog-form" title="发送消息" style="z-index:2;">
+  <form>
+  <fieldset>
+    <label for="Receiver">接收人：<span id="Receiver">proflt</span></label>
+    <div class="mt5"></div>
+    <label for="Title">标  题:</label>
+    <input type="text" id="MsgTitle" style="width:295px;" value="" />
+    <div class="mt5"></div>
+    <label for="Message">消息内容：</label>
+    <div class="mt5"></div>
+    <textarea cols="55" rows="5" id="MsgContent"  class="text ui-widget-content ui-corner-all"></textarea>
+    <div class="mt5"></div>
+    <label for="Title">验证码:</label>
+    <input type="text" id="MsgSecurityCode" style="width:80px;" value="" />
+    <a href="javascript:;" title="点击刷新验证码" onclick="javascript:RefreshCode();return false;" >
+      <img style="border:none;padding:0;margin-bottom:-6px;" alt="点击刷新验证码" id="codeimg" src=""/>
+    </a>
+    <div class="mt5"></div>
+    <input id="MsgUsername" type="hidden" value="24346" />
+  </fieldset>
+  </form>
+  </div>
+  <script type="text/javascript">$(function(){  }); </script>
+</body>
+</html>
+

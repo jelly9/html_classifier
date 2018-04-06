@@ -1,0 +1,241 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<LINK href="http://www.pudn.com/inc/html.css" type=text/css rel=stylesheet>
+<LINK href="http://www.pudn.com/style.css" type=text/css rel=stylesheet>
+<title>ele4 基于汇编语言的电子琴设计（4）.运 实现! 这是3的继续! Windows Develop 182万源代码下载- www.pudn.com</title>
+<script language="JavaScript">
+function checkinput()
+{
+	if (document.form1.keyword.value=="")
+	 {
+		alert("请输入想查询的内容！");
+		document.form1.keyword.focus();
+		return false;
+	 }
+	 return true;
+}
+function openwin(keyword, se_type)
+{
+if(se_type =='pudn')
+  window.open('/search_db.asp?keyword=' + keyword, 'search');
+else
+  window.open('http://www.google.com/custom?domains=pudn.com&q=' + keyword +'&sitesearch=pudn.com&client=pub-8055710228382273&forid=1&ie=GB2312&oe=GB2312&safe=active&cof=GALT%3A%23008000%3BGL%3A1%3BDIV%3A%23336699%3BVLC%3A663399%3BAH%3Acenter%3BBGC%3AFFFFFF%3BLBGC%3A336699%3BALC%3A0000FF%3BLC%3A0000FF%3BT%3A000000%3BGFNT%3A0000FF%3BGIMP%3A0000FF%3BFORID%3A1&hl=zh-CN', 'search');
+}
+function favor_add(t, id, n)
+{
+  window.open('/favor_add.asp?e=' + id +'&t=' + t +'&n=' + n, '添加收藏');
+}
+function fcomment_q(id, grade)
+{
+  window.open('/fcomment_q.asp?id=' + id + '&grade=' + grade, '评论');
+}
+function SetIFrameHeight(iframe_id, add_y)
+{
+  var bobo=document.getElementById(iframe_id);
+   if (bobo && !window.opera)
+   {
+    if (bobo.contentDocument && bobo.contentDocument.body.offsetHeight){
+     bobo.height = bobo.contentDocument.body.offsetHeight+add_y;
+    }else if(bobo.Document && bobo.Document.body.scrollHeight){
+     bobo.height = bobo.Document.body.scrollHeight+add_y;
+    }
+   }
+}
+function addrow(tbobj,frm){
+ var row = tbobj.insertRow(1);
+ var col = row.insertCell(0);
+ col.innerHTML = '请输入留言或评论：<input type=text name=content size=45> <input name=sbt type=submit value=提交>';
+ frm.content.focus();
+ return false;
+}
+var down_id=200787;
+var type_id=5;
+var nav_info=" &gt; <a href='/download1.html'>Downloads</a> &gt; <a href='/sourcecode/download2.html'>源码/资料</a> &gt; <a href=/sourcecode/windows/download5.html>Windows Develop</a> &gt; <B>ele4</B>";
+var user_email='';
+var en_url="http://en.pudn.com/downloads57/sourcecode/windows/detail200787_en.html";
+</script>
+</head>
+<body style='overflow-x:hidden;'>
+<div class="wrapper">
+<script language="JavaScript" type="text/javascript" src="/inc/detail.js"></script>
+   <div class="pagebody2">
+    <div id="detail_fname">
+      &nbsp;文件名称: <B>ele4</B><a href="/dl.asp?id=200787" target="_blank" rel="nofollow" title="下载文件. 不支持迅雷等多线程工具"><IMG src="http://www.pudn.com/images/d_download.gif" border=0>下载</a>
+&nbsp; <a href=# onclick="javascript:favor_add('3', '200787', 'ele4 - 基于汇编语言的电子琴设计（4）.运用汇编语言实现!!!!!!这是3的继续!');" rel="nofollow">收藏√</a>&nbsp; [<a href=# onclick="javascript:fcomment_q('200787', '100');" rel="nofollow"><img src=http://www.pudn.com/images/thumbs_up.gif border=0 align="middle" alt="投票：非常好"></a>
+&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '100');" title="投票：非常好" rel="nofollow">5</a> &nbsp;<a href=# onclick="javascript:fcomment_q('200787', '85');" title="投票：还不错" rel="nofollow">4</a> &nbsp;<a href=# onclick="javascript:fcomment_q('200787', '75');" title="投票：一般，勉强可用" rel="nofollow">3</a> &nbsp;<a href=# onclick="javascript:fcomment_q('200787', '50');" title="投票：很一般" rel="nofollow">2</a> &nbsp;<a href=# onclick="javascript:fcomment_q('200787', '3');" title="投票：太差了" rel="nofollow">1</a>&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '3');" rel="nofollow"><img src=http://www.pudn.com/images/thumbs_down.gif border=0 align="middle" alt="投票：太差了"></a>]    </div>
+    <div id="detail_info">
+      <div id="detail_gg">
+<script language="JavaScript">
+show_ad("ad_detail_b");
+</script>
+      </div>
+      <div id="detail_list">
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;所属分类: <a href="/sourcecode/windows/download5.html"><B>Windows Develop</B></a>
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;开发工具: <B>Windows_Unix</B>
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;文件大小: 2 KB
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;上传时间: 2006-07-04
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;下载次数: 13
+        </div>
+        <div class="detail_listnamevalue">
+        &nbsp;&nbsp;提 供 者: <a href=http://s.pudn.com/upload_log.asp?e=571040 target=_blank>辜负感</a>
+        </div>
+      </div>
+    </div>
+    <div class="detail_line">
+&nbsp;详细说明：<B>基于汇编语言的电子琴设计（4）.运用汇编语言实现!!!!!!这是3的继续!-on assembly language, the flower design (4). The use assembly language to achieve !!!!!! This is a continuation of three!</B><div id="clogin"></div>
+    </div>
+    <div class="detail_line">
+      <B>文件列表(日期：2006010416)</B>(点击判断是否您需要的文件，如果是垃圾请在下面评价投诉): <BR>
+&nbsp;&nbsp;基于汇编语言的电子琴设计（4）.txt<BR>    </div>
+    <div id="detail_line">
+<TABLE id=tb1 style="TABLE-LAYOUT: fixed; WORD-BREAK: break-all" cellSpacing=0 cellPadding=0 width="100%" border=0>
+<TBODY>
+<TR bgcolor=#F1F1F1>
+<TD>
+请<font color=red>评价</font>：<a href=# onclick="javascript:fcomment_q('200787', '100');" rel="nofollow">推荐↑</a>
+&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '75');" rel="nofollow">一般</a>&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '5');" rel="nofollow">有密码</a>&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '40');" rel="nofollow">和说明不符</a>&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '10');" rel="nofollow">不是源码或资料</a>&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '20');" rel="nofollow">文件不全</a>
+&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '0');" rel="nofollow">不能解压</a>&nbsp;<a href=# onclick="javascript:fcomment_q('200787', '3');" rel="nofollow">纯粹是垃圾</a>
+&nbsp;<a href=# onclick="javascript:addrow(tb1, addform); return false;" rel="nofollow">留言</a>
+</TD>
+</TR>
+<FORM action=/fcomment_q.asp method=get name=addform target=_blank>
+<input type=hidden name=id value=200787>
+<TR>
+</FORM>
+<TD>
+</TD>
+</tr>
+<tr height=10><td></td></tr>
+</tbody>
+</table>
+    </div>
+    <div class="detail_line">
+&nbsp;<B>近期下载过的用户:</B>
+&nbsp;<a href=http://s.pudn.com/upload_log.asp?e=3569239 target=_blank>chen</a>&nbsp;[<a href=http://s.pudn.com/upload_log.asp?e=571040 target=_blank>查看上载者<B>辜负感</B>的更多信息</a>]
+    </div>
+    <div class="detail_line">
+&nbsp;<B>相关搜索</B>:
+<a href=# onclick="javascript:openwin('电子琴 汇编','pudn')" rel="nofollow">电子琴 汇编</a>&nbsp;<a href=# onclick="javascript:openwin('电子琴','pudn')" rel="nofollow">电子琴</a>&nbsp;<a href=# onclick="javascript:openwin('电子琴设计','pudn')" rel="nofollow">电子琴设计</a>&nbsp;
+    </div>
+<form name=frm_search2 action=/search_db.asp method=get>
+    <div class="detail_line">
+&nbsp;输入关键字，在本站182万海量源码库中尽情搜索：<INPUT maxLength=50 size=20 name=keyword value="电子琴">
+<input  type=submit value="搜 索" name=_search2>&nbsp;<a href=/search_help.htm target=_blank>帮助</a>
+    </div>
+</form>
+    <div class="detail_line">
+&nbsp;[<a href="/downloads57/sourcecode/windows/detail200786.html" target=_blank>ele3.rar</a>] - 基于汇编语言的<font color=#CC0033>电子琴</font>设计（3）.运用汇编语言实现<BR>
+&nbsp;[<a href="/downloads38/sourcecode/windows/other/detail130236.html" target=_blank><font color=#CC0033>电子琴</font>模块.rar</a>] - 汇编语言的<font color=#CC0033>电子琴</font>木快设计程序，有兴趣者可以<BR>
+&nbsp;[<a href="/downloads32/sourcecode/windows/other/detail102472.html" target=_blank>跑动的小猫.zip</a>] - 这是一个简单的汇编动画程序. 运行的结果是一只小猫在奔跑.<BR>
+<script language="JavaScript">
+show_ad('ad_detail_c');
+</script>
+<BR>
+&nbsp;[<a href="/downloads57/sourcecode/windows/detail200788.html" target=_blank>dianziqin12345.rar</a>] - 基于汇编语言的<font color=#CC0033>电子琴</font>设计.运用汇编语言实现!是完整的程序,有许多功能!<BR>
+&nbsp;[<a href="/downloads72/sourcecode/asm/detail263702.html" target=_blank>eleorgan.rar</a>] - 利用汇编程序MASM6.0制作的<font color=#CC0033>电子琴</font>程序，带有人机界面，高低音转换，内置音乐播放等内容。是一个简单实用的程序。<BR>
+&nbsp;[<a href="/downloads11/ebook/detail48218.html" target=_blank><font color=#CC0033>电子琴</font>.rar</a>] - <font color=#CC0033>电子琴</font>程序,硬件 p2.6经过两个三极管9013放大 接上一块小喇叭<BR>
+&nbsp;[<a href="/downloads55/sourcecode/asm/detail190926.html" target=_blank>keyboard_band.rar</a>] - 这是一个<font color=#CC0033>电子琴</font>的力度键盘程序，每个键有两个点，程序的要求就是测试出两个点之间的时间差,并转换成音量数值(0-7f，转换表未附)。请注意，这个程序是有版权的。请勿使用于商业用途。
+<BR>
+&nbsp;[<a href="/downloads41/sourcecode/java/detail143363.html" target=_blank>杜宇的作业.rar</a>] - 给同学写的JAVA的期末考试题,主要的功能是用JAVA实现数据库的连接<BR>
+&nbsp;[<a href="/downloads105/sourcecode/asm/detail433046.html" target=_blank>2.rar</a>] - 用汇编语言来使键盘成为一个演奏音乐的<font color=#CC0033>电子琴</font>。高音依次1,2,3,4,5,6,7 。中音依次为q,w,e,r,t,y,u 。低音依次为a,s,d,f,g,h,j <BR>
+&nbsp;[<a href="/downloads118/sourcecode/asm/detail500417.html" target=_blank>CRT.rar</a>] - 用汇编语言实现在屏幕上模拟开门关门动画。<BR>
+    </div>
+  </div>
+<div id="rightSideBar">
+<div class="dirList">
+<TABLE cellSpacing=0 cellPadding=1 width=175 border=0 bgcolor=#F9F9F9>
+<TBODY>
+<TR bgColor=#D0D0D0><TD colSpan=2 height=1></TD></TR>
+<TR bgcolor=#F0F0F0><TD height=22 colspan=2><div class=malign><img src=http://www.pudn.com/images/folderopen.gif> Windows Develop</div></TD></TR>
+<TR bgColor=#D0D0D0><TD colSpan=2 height=1></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/GUI-Control/download6.html" target=_parent>界面编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/system/download13.html" target=_parent>系统编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/network/download14.html" target=_parent>网络编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/device-driver/download22.html" target=_parent>驱动编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/GDI/download12.html" target=_parent>GDI/图象编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/database/download8.html" target=_parent>数据库编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/CSharp/download122.html" target=_parent>C#编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/dotnet/download194.html" target=_parent>.net编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/multimedia/download9.html" target=_parent>多媒体编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/comm/download16.html" target=_parent>通讯编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/shell/download18.html" target=_parent>Shell编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/ActiveX/download7.html" target=_parent>ActiveX/DCOM/ATL</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/ime/download11.html" target=_parent>输入法编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/internet/download15.html" target=_parent>Internet/IE编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/APIHook/download19.html" target=_parent>钩子与API截获</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/screensaver/download17.html" target=_parent>屏幕保护</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/DirectX/download83.html" target=_parent>DirextX编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/IPC/download94.html" target=_parent>进程与线程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/console/download128.html" target=_parent>控制台编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/File/download127.html" target=_parent>文件操作</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/printing/download21.html" target=_parent>打印编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/mulmon/download20.html" target=_parent>多显示器编程</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/DNA/download84.html" target=_parent>DNA</A></div></TD></TR>
+<TR><TD><div class=malign>&nbsp;<img src=http://www.pudn.com/images/page.gif><A href="/sourcecode/windows/other/download23.html" target=_parent>其他小程序</A></div></TD></TR>
+<TR bgColor=#D0D0D0><TD colSpan=2 height=1></TD></TR>
+<TR bgcolor=#F0F0F0><TD height=22 colspan=2><div class=malign><img src=http://www.pudn.com/images/folderopen.gif> 相关类别</div></TD></TR>
+<TR bgColor=#D0D0D0><TD colSpan=2 height=1></TD></TR>
+</table>
+</div>
+<div class="sidebar">
+<p>
+·<A href="/downloads514/ebook/detail2133050.html" target=_blank>Lua 本身是以简单优雅为本，着眼于</A><BR>
+·<A href="/downloads514/sourcecode/windows/console/detail2133029.html" target=_blank>在 Vista 和Windows 7 系统中默认是</A><BR>
+·<A href="/downloads514/sourcecode/windows/freedic/detail2133312.html" target=_blank>EXE复活程序，让结束的程序死灰复燃</A><BR>
+·<A href="/downloads514/ebook/detail2134838.html" target=_blank>this is book for c s and it is ve</A><BR>
+·<A href="/downloads514/sourcecode/windows/detail2134126.html" target=_blank>又一个在C++中进行简体中文（GB2312</A><BR>
+·<A href="/downloads513/sourcecode/hack/crack/detail2132031.html" target=_blank>亿家申请QQ5.0自动申请，一天能搞个</A><BR>
+·<A href="/downloads513/sourcecode/embedded/detail2131751.html" target=_blank>《C语言趣味程序百例精解》，一本提</A><BR>
+·<A href="/downloads513/sourcecode/windows/detail2131862.html" target=_blank>使用win32 api编写的字处理程序，能</A><BR>
+·<A href="/downloads515/sourcecode/windows/detail2138845.html" target=_blank>实用的同城交友网站   狂赚美金   </A><BR>
+·<A href="/downloads513/ebook/detail2130012.html" target=_blank>   手机应用开发，Hello,Andorid De</A><BR>
+·<A href="/downloads513/ebook/detail2131343.html" target=_blank>this is for the use of the</A><BR>
+·<A href="/downloads514/sourcecode/windows/detail2137271.html" target=_blank>非常出色的游戏修改器,SpoilerAL重</A><BR>
+·<A href="/downloads513/doc/comm/detail2129995.html" target=_blank>Gets mastes part2 super mister</A><BR>
+·<A href="/downloads515/sourcecode/windows/detail2138858.html" target=_blank>机器狗2012，非常牛逼机器狗2012，</A><BR>
+·<A href="/downloads515/sourcecode/windows/detail2138861.html" target=_blank>你加密文件，加密电脑，加密记事本</A><BR>
+·<A href="/downloads515/sourcecode/windows/detail2138103.html" target=_blank>俄罗斯方块的完整 可以实现 俄罗斯</A><BR>
+·<A href="/downloads515/sourcecode/windows/detail2138122.html" target=_blank>穿会员卡无敌，穿还原卡，无敌牛逼</A><BR>
+·<A href="/downloads515/sourcecode/windows/detail2138924.html" target=_blank>内涵VB从最简单的界面开始一步步深</A><BR>
+·<A href="/downloads515/sourcecode/windows/detail2137156.html" target=_blank>包括EXCEL系统介绍 、EXCEL公司信息</A><BR>
+·<A href="/downloads515/sourcecode/windows/detail2137158.html" target=_blank>零钱总数：50元的10张，20元的20张</A><BR>
+·<A href="/downloads38/sourcecode/windows/detail129796.html" target=_blank>车牌识别的源代码，原来是在这里下</A><BR>
+·<A href="/downloads/sourcecode/windows/ddj/detail46.html" target=_blank>Dr.dobb开发杂志里的源码，里面的源</A><BR>
+·<A href="/downloads79/sourcecode/windows/detail305323.html" target=_blank>图像拼接！！此为本人的毕业设计源</A><BR>
+·<A href="/downloads35/sourcecode/windows/detail109564.html" target=_blank>矩阵的转置、行列式、秩，逆矩阵求</A><BR>
+·<A href="/downloads/sourcecode/windows/misc/detail69.html" target=_blank>得到所有进程列表的程序</A><BR>
+·<A href="/downloads99/sourcecode/app/detail405248.html" target=_blank>oa酷源智能办公平台安装程序 酷源智</A><BR>
+·<A href="/downloads94/sourcecode/windows/detail373607.html" target=_blank>强烈推荐vc++环境下的实时曲线程序</A><BR>
+·<A href="/downloads3/sourcecode/windows/detail248345.html" target=_blank>微软windows2000操作系统的泄露的部</A><BR>
+·<A href="/downloads/sourcecode/windows/detail2.html" target=_blank>虚拟桌面程序</A><BR>
+·<A href="/downloads/sourcecode/windows/misc/detail63.html" target=_blank>透明窗口</A><BR>
+·<A href="/downloads37/sourcecode/windows/detail118123.html" target=_blank>OpenCV基于隐马尔可夫模型（HMM）的</A><BR>
+·<A href="/downloads8/sourcecode/windows/detail28753.html" target=_blank>串口调试助手源程序及编程详细过程</A><BR>
+·<A href="/downloads/sourcecode/windows/misc/detail67.html" target=_blank>运行一个程序并等待它运行结束</A><BR>
+·<A href="/downloads27/sourcecode/windows/detail86495.html" target=_blank>vc6.0编程助手最新版，比6.0好用的</A><BR>
+·<A href="/downloads/sourcecode/windows/misc/detail68.html" target=_blank>根据一个窗口句柄得到运行程序名的</A><BR>
+·<A href="/downloads37/sourcecode/windows/detail124181.html" target=_blank>ACM中常用的算法思想与常用算法,是</A><BR>
+·<A href="/downloads/sourcecode/windows/detail53.html" target=_blank>将标准输出重定向到一管道</A><BR>
+·<A href="/downloads292/sourcecode/windows/vxd/detail1310994.html" target=_blank>WM9713 audio codec driver for SMD</A><BR>
+·<A href="/downloads/sourcecode/windows/misc/detail70.html" target=_blank>WinFinder控件测试例子</A><BR>
+·<A href="/downloads/sourcecode/windows/misc/detail66.html" target=_blank>另一个获取版本信息的程序</A><BR>
+</TBODY></TABLE>
+</p>
+</div></div>
+<div class="footer" align="center">
+<a href=mailto:programsalon@hotmail.com>联系站长</a> · <a href=/comment.asp?type_id=1010 target=_blank rel="nofollow">版权投诉</a> · <a href=/comment.asp?type_id=1010 target=_blank rel="nofollow">网站修改建议</a><br>
+</span>  &copy; 2004-2010 <a href=http://www.pudn.com><font color=red>pudn.com</font></a> 湘ICP备07000446<br>
+<script src="http://s117.cnzz.com/stat.php?id=1236358&web_id=1236358&show=pic" language="JavaScript" charset="gb2312"></script>
+<script src="http://www.pudn.com/inc/tail.js" language="JavaScript"></script>
+</body>
+</html>
+

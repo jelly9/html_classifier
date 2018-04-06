@@ -1,0 +1,877 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	
+</title><meta id="pagekey" name="keywords" /><meta id="pagedesc" name="description" /><link id="linkcss" rel="stylesheet" type="text/css" href="../style/default/css/newslist.css" />
+
+
+
+    <script src="../js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery.kinMaxShow-1.0.min.js" type="text/javascript"></script>
+
+
+     
+  <script type="text/javascript" src="../js/jquery.imageScroller.js"></script>
+<script src="../js/slider.js" type="text/javascript"></script>
+<script src="../js/JsTY.js" type="text/javascript"></script>
+
+
+<script type="text/javascript" src="../js/Fun.js"></script
+<script src="../js/Control_SplitPageBar.js" type="text/javascript"></script>
+
+
+
+<script type="text/javascript">
+$(function(){ 
+    $('#yzm').click(function(){
+        $('#yzm').attr("src","../Code.aspx?"+Math.random());
+    });
+    $('#yzm').click();
+    
+    $("#ImageButton1").click(function(){
+        if($("#evatxt").val()=="")
+        {
+            alert("评论内容不可为空！");
+            return false;
+        }
+        
+        if($("#evacode").val()=="")
+        {
+            alert("请输入验证码！");
+            return false;
+        }
+        else if($("#evacode").val().toUpperCase()!=GetCookie("CheckCode",""))
+        {
+            alert("输入的验证码错误！");
+            $("#yzm").click();
+            return false;
+        }
+        return true;     
+    });
+});
+
+
+
+</script>    
+</head>
+<body>
+    <form method="post" action="/(A(1l13wfpI0AEkAAAAZGVlMTNkMjItYmNmMy00NGMzLTgyZjktNzJlNmYzZDA2OGZiey3R_fSucdcoOKRy_vfJLQ96tmI1))/cn/newslist.aspx?s=79" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTgyMjU2MjYxMw8WAh4PU2VhcmNoQ29uZGl0aW9uMtsBAAEAAAD/////AQAAAAAAAAAMAgAAAEdBcHBfV2ViX2xsamxmNXJyLCBWZXJzaW9uPTAuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49bnVsbAUBAAAAG2NuX25ld3NsaXN0K1NlYXJjaENvbmRpdGlvbgMAAAAEQ29uZAhQYWdlU2l6ZQlQYWdlSW5kZXgBAAAICAIAAAAGAwAAACggYW5kIChic29ydD03OSBvciBic29ydGt6IGxpa2UgJyUsNzksJScpIAAAAAEAAAALFgQCAQ9kFgYCAQ8WAh4HY29udGVudGRkAgIPFgIfAWRkAgMPFgIeBGhyZWYFIS4uL3N0eWxlL2RlZmF1bHQvY3NzL25ld3NsaXN0LmNzc2QCAw9kFhACBQ9kFgICBQ8PFgIeCEltYWdlVXJsBSIvc3R5bGUvZGVmYXVsdC9pbWFnZXMvc2Vhcl9idXQuanBnZGQCBw8WAh4EVGV4dAUsPGEgaHJlZj0ibmV3c2xpc3RfNzkuaHRtbCI+5LiT5a626KeG54K5PC9hPiBkAgkPFgIeC18hSXRlbUNvdW50AhMWJmYPZBYCZg8VA0ZocmVmPSJodHRwOi8vd3d3LnZpc2Fkdmlzb3IuY29tL2NuL25ld3N2aWV3XzIzNDguaHRtbCIgdGFyZ2V0PSJfYmxhbmsiIue+juWbvUVCLTXmipXotYTnp7vmsJHmtqjku7flnKjljbMKMjAxMy0xMS0yN2QCAQ9kFgJmDxUDRmhyZWY9Imh0dHA6Ly93d3cudmlzYWR2aXNvci5jb20vY24vbmV3c3ZpZXdfMjIxNy5odG1sIiB0YXJnZXQ9Il9ibGFuayIgRUItNeWuoeaJuee8k+aFoiDnp7vnvo7opoHotoHml6kKMjAxMy0wOC0yMWQCAg9kFgJmDxUDKWhyZWY9Im5ld3N2aWV3XzE5ODkuaHRtbCIgdGFyZ2V0PSJfYmxhbmsiJOWmguS9leeUhOmAiee+juWbveaKlei1hOenu+awkemhueebrgoyMDEzLTA0LTE3ZAIDD2QWAmYPFQMpaHJlZj0ibmV3c3ZpZXdfMTk4Ny5odG1sIiB0YXJnZXQ9Il9ibGFuayIh5ouo5byA6L+3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Zy9jbnMvY3VycmVuY3kvY29udmVydGVyLwzmsYfnjoflhZHmjaJkAgEPFQIxaHR0cDovL3d3dy5vYW5kYS5jb20vbGFuZy9jbnMvY3VycmVuY3kvY29udmVydGVyLwzmsYfnjoflhZHmjaJkAgYPZBYEZg8VAjRodHRwOi8vd3d3LmFpcmNoaW5hLmNvbS5jbi8/Y2lkPWdvb2dsZS1zLTExNzI3MDE0NTEzDOiIquePreafpeivomQCAQ8VAjRodHRwOi8vd3d3LmFpcmNoaW5hLmNvbS5jbi8/Y2lkPWdvb2dsZS1zLTExNzI3MDE0NTEzDOiIquePreafpeivomQCBw9kFgRmDxUCJmh0dHA6Ly93d3cuY2ljLmdjLmNhL2VuZ2xpc2gvaW5kZXguYXNwEuWKoOaLv+Wkp+enu+awkeWxgGQCAQ8VAiZodHRwOi8vd3d3LmNpYy5nYy5jYS9lbmdsaXNoL2luZGV4LmFzcBLliqDmi7/lpKfnp7vmsJHlsYBkAggPZBYEZg8VAk1odHRwOi8vd3d3LmNhbmFkYWludGVybmF0aW9uYWwuZ2MuY2EvY2hpbmEtY2hpbmUvaW5kZXguYXNweD9sYW5nPXpoLWNuJnZpZXc9ZBLliqDmi7/lpKflpKfkvb/ppoZkAgEPFQJNaHR0cDovL3d3dy5jYW5hZGFpbnRlcm5hdGlvbmFsLmdjLmNhL2NoaW5hLWNoaW5lL2luZGV4LmFzcHg/bGFuZz16aC1jbiZ2aWV3PWQS5Yqg5ou/5aSn5aSn5L2/6aaGZAIJD2QWBGYPFQI2aHR0cDovL3d3dy5pbW1pZ3JhdGlvbi1xdWViZWMuZ291di5xYy5jYS9mci9pbmRleC5odG1sG+WKoOaLv+Wkp+mtgeWMl+WFi+enu+awkeWxgGQCAQ8VAjZodHRwOi8vd3d3LmltbWlncmF0aW9uLXF1ZWJlYy5nb3V2LnFjLmNhL2ZyL2luZGV4Lmh0bWwb5Yqg5ou/5aSn6a2B5YyX5YWL56e75rCR5bGAZAIKD2QWBGYPFQI5aHR0cDovL3d3dzUuaHJzZGMuZ2MuY2EvTk9DL0VuZ2xpc2gvTk9DLzIwMTEvV2VsY29tZS5hc3B4GOWKoOaLv+Wkp+iBjOS4mk5PQ+afpeivomQCAQ8VAjlodHRwOi8vd3d3NS5ocnNkYy5nYy5jYS9OT0MvRW5nbGlzaC9OT0MvMjAxMS9XZWxjb21lLmFzcHgY5Yqg5ou/5aSn6IGM5LiaTk9D5p+l6K+iZAILD2QWBGYPFQI9aHR0cDovL3d3dy5uZXdjb21lcnN1Y2Nlc3MuY2EvaW5kZXgucGhwL2Fib3V0LWNpaXA/bGFuZz1lbi1HQhXliqDmi7/lpKflsLHkuJrljY/liqlkAgEPFQI9aHR0cDovL3d3dy5uZXdjb21lcnN1Y2Nlc3MuY2EvaW5kZXgucGhwL2Fib3V0LWNpaXA/bGFuZz1lbi1HQhXliqDmi7/lpKflsLHkuJrljY/liqlkAgwPZBYEZg8VAhxodHRwOi8vaWVsdHMuZXRlc3QubmV0LmNuL2NuDOmbheaAnemihOe6pmQCAQ8VAhxodHRwOi8vaWVsdHMuZXRlc3QubmV0LmNuL2NuDOmbheaAnemihOe6pmQCDQ9kFgRmDxUCHGh0dHA6Ly93d3cuY2hzaS5jb20uY24veGxjeC8M5a2m5L2N6K+E5LywZAIBDxUCHGh0dHA6Ly93d3cuY2hzaS5jb20uY24veGxjeC8M5a2m5L2N6K+E5LywZAIOD2QWBGYPFQIYaHR0cDovL3d3dy5jZGdkYy5lZHUuY24vGOS4reWbveWtpuS9jeiupOivgeS4reW/g2QCAQ8VAhhodHRwOi8vd3d3LmNkZ2RjLmVkdS5jbi8Y5Lit5Zu95a2m5L2N6K6k6K+B5Lit5b+DZAIPD2QWBGYPFQIXaHR0cDovL3d3dy5pbW1pLmdvdi5hdS8V5r6z5aSn5Yip5Lqa56e75rCR5bGAZAIBDxUCF2h0dHA6Ly93d3cuaW1taS5nb3YuYXUvFea+s+Wkp+WIqeS6muenu+awkeWxgGQCEA9kFgRmDxUCGmh0dHA6Ly93d3cuYXVzdGVtYi5vcmcuY24vFea+s+Wkp+WIqeS6muWkp+S9v+mmhmQCAQ8VAhpodHRwOi8vd3d3LmF1c3RlbWIub3JnLmNuLxXmvrPlpKfliKnkuprlpKfkvb/ppoZkAhEPZBYEZg8VAhZodHRwOi8vd3d3LmF0by5nb3YuYXUvD+a+s+a0sueojuWKoeWxgGQCAQ8VAhZodHRwOi8vd3d3LmF0by5nb3YuYXUvD+a+s+a0sueojuWKoeWxgGQCEg9kFgRmDxUCIWh0dHA6Ly93d3cubWZhLmdvdi5zZy9iZWlqaW5nY2hpLxLmlrDliqDlnaHlpKfkvb/ppoZkAgEPFQIhaHR0cDovL3d3dy5tZmEuZ292LnNnL2JlaWppbmdjaGkvEuaWsOWKoOWdoeWkp+S9v+mmhmQCEw9kFgRmDxUCIGh0dHA6Ly93d3cuYm9jLmNuL3NvdXJjZWRiL3docGovDOWkluaxh+eJjOS7t2QCAQ8VAiBodHRwOi8vd3d3LmJvYy5jbi9zb3VyY2VkYi93aHBqLwzlpJbmsYfniYzku7dkAhQPZBYEZg8VAiNodHRwOi8vd3d3LnN0YW5kYXJkY2hhcnRlcmVkLmNvbS5jbgzmuKPmiZPpk7booYxkAgEPFQIjaHR0cDovL3d3dy5zdGFuZGFyZGNoYXJ0ZXJlZC5jb20uY24M5rij5omT6ZO26KGMZAIVD2QWBGYPFQISaHR0cDovL3d3dy5ib2MuY24vDOS4reWbvemTtuihjGQCAQ8VAhJodHRwOi8vd3d3LmJvYy5jbi8M5Lit5Zu96ZO26KGMZAIWD2QWBGYPFQIgaHR0cDovL2hhaXdhaS5ob3VzZS5zaW5hLmNvbS5jbi8S5paw5rWq5rW35aSW5Zyw5LqnZAIBDxUCIGh0dHA6Ly9oYWl3YWkuaG91c2Uuc2luYS5jb20uY24vEuaWsOa1qua1t+WkluWcsOS6p2QCFw9kFgRmDxUCFmh0dHA6Ly93d3cud3p0aWdvLmNvbS8J5LqU5rSy6YCaZAIBDxUCFmh0dHA6Ly93d3cud3p0aWdvLmNvbS8J5LqU5rSy6YCaZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAQUSc2VhcjEkSW1hZ2VCdXR0b24xsJCSIESPniHNMQSH1Q1wXHyLcyk=" />
+
+
+<script src="/WebResource.axd?d=8GR7x8EYfsyiB61xHvZT1RsjSpUbJk3KIs_cAr_VsTdyAAVg_331ATs8m9c9BcEK0&amp;t=634461471560000000" type="text/javascript"></script>
+
+    <!--------top start------->
+    
+   <script type="text/javascript" src="../js/head.js"></script>
+<style type="text/css">
+#U1 li{float:right; list-style-type:none; width:70px; border:0px solid red; text-align:right}
+#U2 li{float:left; border:0px solid red;list-style-type:none; height:30px}    
+
+#div1{display:inline;}
+</style>
+<script src="" type="text/javascript"></script><script type="text/javascript">uaredirect("siteapp.baidu.com/site/www.visadvisor.com","http://www.visadvisor.com");</script>
+
+<script type="text/javascript">
+    function movesoure(name) {
+
+        var newname = name + '_p'
+        document.getElementById(name).src = "../Images/NewHome/" + newname + ".jpg";
+
+    }
+
+    function moveout(name) {
+        var newname = name + '_b'
+        document.getElementById(name).src = "../Images/NewHome/" + newname + ".jpg";
+    }
+</script>
+
+
+<!------------------------设为主页js-------------------->
+
+<script language="javascript">
+    var u, i
+    u = "";
+    var showThank = false;
+    try {
+        for (i = 1; i <= 5; i++) {
+            if (hp.isHomePage(u)) {
+                break;
+            }
+            else {
+                hp.setHomePage(u);
+                if (!hp.isHomePage(u)) {
+                    alert("方便下次光临本站，请点 是(Y) ,就不再弹了!");
+                }
+                else {
+                    showThank = true;
+                }
+            }
+        }
+        if (showThank) {
+            alert("谢谢您的支持.");
+        }
+    }
+    catch (e) {
+    }
+    finally {
+    }
+    //location.href=u;
+</script>
+
+<!---------------------设为主页js结束---------------------------->
+
+<!-------加入收藏js-------->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#favorites").click(function () {
+            var ctrl = (navigator.userAgent.toLowerCase()).indexOf('mac') != -1 ? 'Command/Cmd' : 'CTRL';
+            if (document.all) {
+                window.external.addFavorite('http://www.visadvisor.com/', '国服移民');
+            }
+            else if (window.sidebar) {
+                window.sidebar.addPanel('国服移民', 'http://www.visadvisor.com/', "");
+            }
+            else { alert('您可以通过快捷键' + ctrl + ' + D 加入到收藏夹'); }
+        })
+
+    })
+</script>
+
+
+<div style="width:100%; height:142px; background:url(../Images/NewHome/bg.jpg); margin-top:2px; ">
+<div style="width:960px; height:20px; margin:0px auto; text-align:right;font-size:12px;color:#666666 padding-right:20px;" >
+<a  href="http://e.weibo.com/visadvisor?ref=http%3A%2F%2Fwww.visadvisor.com%2Fcn%2F" style="text-decoration:none; color:#666666;" target="_blank">企业微博</a>&nbsp;&nbsp 
+<a href="http://weibo.com/336729299" style="text-decoration:none; color:#666666" target="_blank">专家微博</a>&nbsp;&nbsp 
+<a href="edm.aspx" style="text-decoration:none; color:#666666" target="_blank">电子杂志</a>&nbsp;&nbsp 
+
+<a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.visadvisor.com/');" style="text-decoration:none; color:#666666; font-weight:bold">+设为主页</a>&nbsp;&nbsp 
+<a href="#" id="favorites" style="text-decoration:none; color:#666666; font-weight:bold">+收藏我们</a>
+</div>
+
+<!--nav1--->
+<div style="width:960px; height:84px; border:0px solid #C0C0C0; margin:0px auto; overflow:hidden; ">
+ <div style="float:left; padding-left:10px; width:280px"><a href="index.aspx"><img alt="" src="../Images/logo.jpg" /></a></div>  
+ <div style="float:right; height:84px; width:650px;">
+   <div style="width:648px; height:60px; text-align:right; "><img src="../Images/NewHome/tel.jpg" style="padding-top:15px" /></div>
+   <div style="width:648px; height:24px; ">   
+     <ul id="U1" style="height:20px;">
+      <li style="cursor:pointer"><a href="about.html" target="_blank"><img id="nav_01_gywm" onmousemove="movesoure('nav_01_gywm')"  onmouseout="moveout('nav_01_gywm')"; alt=""  src="../Images/NewHome/nav_01_gywm_b.jpg"/></a>&nbsp;</li>
+      <li style="cursor:pointer"><a  href="searview.aspx?id=466" target="_blank"><img alt="" id="nav_01_ajfw" onmousemove="movesoure('nav_01_ajfw')"  onmouseout="moveout('nav_01_ajfw')";   src="../Images/NewHome/nav_01_ajfw_b.jpg"/></a></li>
+      <li style="cursor:pointer; border:0px solid red"><a href="http://www.justinfo.com.cn/" target="_blank"><img id="nav_01_hwkc" onmousemove="movesoure('nav_01_hwkc')"  onmouseout="moveout('nav_01_hwkc')";  alt=""  src="../Images/NewHome/nav_01_hwkc_b.jpg"/></a></li>
+      <li style="cursor:pointer; border:0px solid red"><a href="http://www.visadvisor.com/eb5/licheng.aspx" target="_blank"><img id="nav_01_hwyx" onmousemove="movesoure('nav_01_hwyx')"  onmouseout="moveout('nav_01_hwyx')";  alt=""  src="../Images/NewHome/nav_01_hwyx_b.jpg"/></a></li>
+      <li style="cursor:pointer"><a href="http://www.visadvisor.com/project/study.aspx" target="_blank"><img onmousemove="movesoure('nav_01_xsqz')"  onmouseout="moveout('nav_01_xsqz')";  alt=""  id="nav_01_xsqz" src="../Images/NewHome/nav_01_xsqz_b.jpg"/> </a></li>
+      <li style="cursor:pointer"><a href="http://www.justinfo.com.cn/" target="_blank"><img alt=""  src="../Images/NewHome/nav_01_cfgh_b.jpg" id="nav_01_cfgh" onmousemove="movesoure('nav_01_cfgh')"  onmouseout="moveout('nav_01_cfgh')"; /> </a></li>
+      <li style="cursor:pointer"><a href="http://house.justinfo.com.cn/" target="_blank"><img alt="" id="nav_01_qqfc" onmousemove="movesoure('nav_01_qqfc')"  onmouseout="moveout('nav_01_qqfc')";   src="../Images/NewHome/nav_01_qqfc_b.jpg"/></a></li>
+      <li style="cursor:pointer"><a href="case.aspx" target="_blank"><img alt="" id="nav_01_cgal" onmousemove="movesoure('nav_01_cgal')"  onmouseout="moveout('nav_01_cgal')";  src="../Images/NewHome/nav_01_cgal_b.jpg"/></a></li>
+      <li style="cursor:pointer"><a href="index.aspx" target="_blank"><img alt="" id="nav_01_home" onmousemove="movesoure('nav_01_home')"  onmouseout="moveout('nav_01_home')";  src="../Images/NewHome/nav_01_home_b.jpg"/></a></li>   
+     </ul>
+   </div>
+ </div>
+</div>
+
+
+ <div class="head">   
+    <ul class="nav">
+    <li class="nav01"> 
+         <a href="America.html" target="_blank">
+            <img src="http://www.visadvisor.com/style/default/images/head/01_1.jpg"/></a>
+              <div> 
+                <ul>
+                    <li><b><a href="http://www.visadvisor.com/cn/America.html" target="_blank">美国EB-5投资移民</a></b></li>
+                    <li>·<a href="http://www.visadvisor.com/cn/newsview.aspx?id=2593" target="_blank">申请条件及申请流程</a></li> 
+                    <li>·<a href="http://www.visadvisor.com/eb5/licheng.aspx" target="_blank">美国投资移民成功历程</a></li> 
+                    <li>·<a href="http://www.visadvisor.com/cn/projlist.aspx?s=18" target="_blank">美国EB-5投资移民项目</a></li>                
+                    <li><b><a href="http://www.visadvisor.com/cn/americainfo.html" target="_blank">美国移民新闻资讯</a></b></li>
+                </ul>
+             </div>  
+    
+    </li> 
+<li class="nav02">
+    <a href="Canada.html" target="_blank">
+        <img src="http://www.visadvisor.com/style/default/images/head/02_1.jpg" /></a>
+              <div> 
+                <ul>
+                    <li><b><a href="projlist_60.html" target="_blank">加拿大投资移民项目222</a></b></li>
+                    <li>·<a href="Project_186.html" target="_blank">加拿大企业家移民</a></li>
+                    <li>·<a href="Project_8.html" target="_blank">加拿大魁北克投资移民</a></li>
+                    <li>·<a href="Project_41.html" target="_blank">加拿大萨省投资移民</a></li>
+                    <li>·<a href="Project_114.html" target="_blank">加拿大爱德华王子岛(PEI)省提名</a></li>
+                    <li>·<a href="Project_143.html" target="_blank">加拿大创业移民(经济移民)</a></li>
+                    <li><b><a href="projlist_61.html" target="_blank">加拿大技术移民项目</a></b></li>
+                    <li>·<a href="Project_44.html" target="_blank">加拿大联邦技术移民</a></li>
+                    <li>·<a href="Project_43.html" target="_blank">加拿大魁北克技术移民</a></li>
+                    <li><b><a href="canadainfo.html" target="_blank">加拿大移民最新资讯</a></b></li>
+                    <li><b><a href="caset.aspx?a=c" target="_blank">国服移民成功案例</a></b></li>
+                </ul>
+             </div>   
+    </li>
+ 
+
+  
+
+    <li class="nav03">
+        <a href="Australia.html" target="_blank">
+            <img src="http://www.visadvisor.com/style/default/images/head/03_1.jpg" alt="" /></a>
+              <div > 
+                <ul>
+                    <li><b><a href="projlist_22.html" target="_blank">澳洲商业移民</a></b></li>
+                    <li>·<a href="Project_120.html" target="_blank">188商业创新类（原163）</a></li>
+                    <li>·<a href="Project_115.html" target="_blank">188商业投资类（原165）</a></li>
+                    <li>·<a href="Project_134.html" target="_blank">澳洲重大投资移民签证</a></li>
+                    <li><b><a href="projlist_23.html" target="_blank">澳洲技术移民</a></b></li>
+                    <li>·<a href="Project_18.html" target="_blank">189独立技术移民</a></li>
+                    <li>·<a href="Project_26.html" target="_blank">190亲属担保/州担保独立技术移民</a></li>
+                    <li>·<a href="Project_52.html" target="_blank">489亲属担保/边远地区州担保独立技术移民</a></li>
+                    <li><b><a href="australiainfo.html" target="_blank">澳洲移民最新资讯</a></b></li>
+                    <li><b><a href="caset.aspx?a=c" target="_blank">国服移民成功案例</a></b></li>
+                </ul>
+             </div>   
+    </li>
+    <li class="nav04"><a href="http://www.visadvisor.com/europe/Portugal.aspx" target="_blank"><img src="http://www.visadvisor.com/style/default/images/head/04_1.jpg" /></a> </li>
+    <li class="nav05"><a href="Hk.aspx" target="_blank"><img src="http://www.visadvisor.com/style/default/images/head/05_1.jpg" /></a> </li>
+    <li class="nav06"><a href="Britain_Area.aspx" target="_blank"><img src="http://www.visadvisor.com/style/default/images/head/06_1.jpg" /></a></li>
+    <li class="nav07"><a href="StKitts.aspx" target="_blank"><img src="http://www.visadvisor.com/style/default/images/head/07_1.jpg" /></a></li>
+    <li class="nav08"><a href="http://www.visadvisor.com/europe/greece.aspx" target="_blank"><img alt="" src="http://www.visadvisor.com/style/default/images/head/08_1.jpg" /></a></li>
+  
+   <li class="nav09"><a href="http://www.visadvisor.com/europe/hungary.aspx" target="_blank"> <img src="http://www.visadvisor.com/style/default/images/head/09_1.jpg" /></a></li>
+        <li class="nav10">
+            <a href="Other.aspx" target="_blank"><img src="http://www.visadvisor.com/style/default/images/head/10_1.jpg" /></a>
+              <div style="left:16px;"> 
+                <ul>
+                    <li><b><a>买房移民</a></b></li>
+                    <li><a href="http://www.visadvisor.com/europe/greece.aspx" target="_blank">希腊</a></li>
+                    <li><a href="http://www.visadvisor.com/project/antigua.aspx" target="_blank">安提瓜</a></li>
+                    <li><a href="http://www.visadvisor.com/europe/spain.aspx" target="_blank">西班牙</a></li>
+                    <li><b><a>其它国家移民</a></b></li>
+                    <li><a href="http://www.visadvisor.com/europe/hungary.aspx" target="_blank">匈牙利</a></li>
+                    <li><a href="Project_36.html" target="_blank">荷兰</a></li>
+                    <li><a href="Project_73.html" target="_blank">新加坡</a></li>
+                    <li><a href="Project_35.html" target="_blank">比利时</a></li>
+                    <li><a href="Project_38.html" target="_blank">德国</a></li>
+                    <li><a href="Project_37.html" target="_blank">法国</a></li>
+                    <li><b><a href="infolist.aspx?p=other" target="_blank">其它国家最新资讯</a></b></li>
+                    <li><b><a href="case.aspx?a=o" target="_blank">其它国家成功案例</a></b></li>                  
+                </ul>
+             </div>   
+        </li>
+
+</li>
+</ul> 
+</div>
+
+</div>
+
+
+<div style="width:960px; height:9px; background:url(../Images/NewHome/nav_foot.jpg); margin:0px auto;"></div>
+    <!--------top end---------->
+ 
+    <!---banner start------>   
+   
+<script type="text/javascript">
+    $(function () {
+        $("#kinMaxShow").kinMaxShow({
+            //设置焦点图高度(单位:像素) 必须设置 否则使用默认值 500    
+            height:300,
+            //设置焦点图 按钮效果
+            button: {
+                //设置焦点图切换方式为mouseover 鼠标经过按钮切换图片, 默认为 click， 可选 click[鼠标点击切换]或mouseover[鼠标滑过切换]        
+                switchEvent: 'mouseover',
+                //设置显示 索引数字  true 显示， 默认为 false 不显示            
+                showIndex: false,
+                //按钮常规下 样式设置 ，css写法，类似jQuery的 $('xxx').css({key:value,……})中css写法。            
+                //【友情提示：可以设置透明度哦 不用区分浏览器 统一为 opacity，CSS3属性也支持哦 如：设置按钮圆角、投影等，只不过IE8及以下不支持】            
+                normal: { width: '15px', height: '15px', lineHeight: '15px', right: '20px', bottom: '5px', fontSize: '12px', opacity: 0.8, background: "#ccc", border: "1px solid #ccc", marginRight: '6px'},
+                //当前焦点图按钮样式 设置，写法同上            
+                focus: { background: "#fff", border: "1px solid #fff", color: "#000"}
+            }
+        });
+    });
+</script>
+<style type="text/css">
+     /* 设置焦点图父级宽度 */    
+    #show{width:960px; margin:0 auto; height:300px}
+    #kinMaxShow{display:none;}
+</style>
+<div id="show">
+     <!--焦点图HTML 结构-->
+    <div id="kinMaxShow">
+
+       <div><a href='http://www.visadvisor.com/cn/newsview_2805.html' target='_blank'><img src= '../UploadImg/20141213214847984434.jpg'></a></div><div><a href='http://www.visadvisor.com/cn/newsview.aspx?id=2794' target='_blank'><img src= '../UploadImg/20141129194307234815.jpg'></a></div><div><a href='http://www.visadvisor.com/cn/newsview_2775.html' target='_blank'><img src= '../UploadImg/20141124111504218707.jpg'></a></div><div><a href='http://www.visadvisor.com/cn/newsview_2790.html' target='_blank'><img src= '../UploadImg/20141128094150046265.jpg'></a></div><div><a href='http://www.visadvisor.com/eb5/mountsnow.aspx' target='_blank'><img src= '../UploadImg/20141107155554745426.jpg'></a></div><div><a href='http://www.visadvisor.com/cn/Project_40.html' target='_blank'><img src= '../UploadImg/20141209185510484625.jpg'></a></div><div><a href='http://www.visadvisor.com/cn/newsview.aspx?id=2727' target='_blank'><img src= '../UploadImg/20141124173210265709.jpg'></a></div><div><a href='http://www.visadvisor.com/cn/newsview_2715.html' target='_blank'><img src= '../UploadImg/20141124173658578431.jpg'></a></div><div><a href='http://www.visadvisor.com/project/study.aspx' target='_blank'><img src= '../UploadImg/20141107160231385951.jpg'></a></div><div><a href='http://www.visadvisor.com/eb5/yimin.aspx' target='_blank'><img src= '../UploadImg/20141209154108765402.jpg'></a></div><div><a href='http://www.visadvisor.com/europe/spain01.aspx' target='_blank'><img src= '../UploadImg/20141203100523562262.jpg'></a></div><div><a href='http://www.visadvisor.com/cn/newsview_2699.html' target='_blank'><img src= '../UploadImg/20141124173941015562.jpg'></a></div><div><a href='http://www.visadvisor.com/europe/spain.aspx' target='_blank'><img src= '../UploadImg/20141107160720885502.jpg'></a></div><div><a href='http://www.visadvisor.com/eb5/symphony.aspx' target='_blank'><img src= '../UploadImg/20141124174519187020.jpg'></a></div><div><a href='http://www.visadvisor.com/cn/Australia.html' target='_blank'><img src= '../UploadImg/20140210142625083331.jpg'></a></div>
+	       
+    </div>
+</div>
+
+
+    <!-----banner end------->
+
+
+
+
+<div class="bodys" style="font-size:13px">
+	<div class="bodys_l">
+        <!--sear-->
+        
+    	<div class="seardiv">
+        	<p class="seartxt">
+                <select name="sear1$ssort" id="sear1_ssort">
+	<option value="news">资讯</option>
+	<option value="proj">项目</option>
+
+</select>
+                <input name="sear1$stxt" type="text" id="sear1_stxt" class="stxt" /></p>
+            <p class="searbut">
+                <input type="image" name="sear1$ImageButton1" id="sear1_ImageButton1" src="/style/default/images/sear_but.jpg" /></p>
+            <p class="hotkey">
+            <span class="hotkey_tit">　热门关键词：</span>
+            <span class="hotkey_txt"><a href="newslist.aspx?t=移民"></a><a href="newslist.aspx?t=美国移民">美国移民</a> | <a href="projlist.aspx?s=18">EB-5项目</a> | <a href="newslist.aspx?t=澳洲移民">澳洲移民</a> | <a href="newslist.aspx?t=加拿大移民">加拿大移民</a></span>
+            </p>
+        </div>
+
+        <!--sear-->
+        
+        <div style="width:700px; padding-top:15px; float:left;">
+            <ul><li class="mbx">当前位置：<a href="../cn/">首页</a> > 
+                <a href="newslist_79.html">专家视点</a> </li></ul>
+            <ul class="proj_bg">
+                <li class="proj_top">
+                
+                </li>
+                <li class="proj_bod">
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="http://www.visadvisor.com/cn/newsview_2348.html" target="_blank"> 美国EB-5投资移民涨价在即 </a>
+                    </span>
+                    <span class="proj_date">[2013-11-27]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="http://www.visadvisor.com/cn/newsview_2217.html" target="_blank"> EB-5审批缓慢 移美要趁早 </a>
+                    </span>
+                    <span class="proj_date">[2013-08-21]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1989.html" target="_blank"> 如何甄选美国投资移民项目 </a>
+                    </span>
+                    <span class="proj_date">[2013-04-17]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1987.html" target="_blank"> 拨开迷雾看美国投资移民 </a>
+                    </span>
+                    <span class="proj_date">[2013-01-25]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="http://www.visadvisor.com/cn/newsview_1831.html" target="_blank"> 美国移民首席律师详解EB-5 </a>
+                    </span>
+                    <span class="proj_date">[2013-01-16]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1982.html" target="_blank"> 新浪高端访谈解析美国移民 </a>
+                    </span>
+                    <span class="proj_date">[2012-12-28]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1713.html" target="_blank"> 美投中就业人数的界定 </a>
+                    </span>
+                    <span class="proj_date">[2012-07-19]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1712.html" target="_blank"> 澳洲技术移民职业列表更新 </a>
+                    </span>
+                    <span class="proj_date">[2012-07-03]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1711.html" target="_blank"> 美国投资移民趋势解析 </a>
+                    </span>
+                    <span class="proj_date">[2012-06-20]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1710.html" target="_blank"> EB-5项目最新动向解析 </a>
+                    </span>
+                    <span class="proj_date">[2012-06-07]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1709.html" target="_blank"> 英国投资移民优势凸显 </a>
+                    </span>
+                    <span class="proj_date">[2012-06-04]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1708.html" target="_blank"> 7月1日澳洲移民新政 </a>
+                    </span>
+                    <span class="proj_date">[2012-05-28]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_1014.html" target="_blank"style=" color:#ff0000;"> 美国移民简单与复杂性 </a>
+                    </span>
+                    <span class="proj_date">[2012-01-12]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_736.html" target="_blank"> 各国移民条件对比 </a>
+                    </span>
+                    <span class="proj_date">[2011-11-30]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_735.html" target="_blank"> 美国投资移民政策即将到期 </a>
+                    </span>
+                    <span class="proj_date">[2011-11-30]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_727.html" target="_blank"> 如何有效规避美国投资移民风险 </a>
+                    </span>
+                    <span class="proj_date">[2011-11-29]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_733.html" target="_blank"> 如何降低投资风险 </a>
+                    </span>
+                    <span class="proj_date">[2011-10-26]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_734.html" target="_blank"> 加拿大投资移民面试技巧 </a>
+                    </span>
+                    <span class="proj_date">[2011-05-30]</span></p>
+                    
+                    
+                    
+                    <p class="dashed"><span class="proj_tit">·<a href="newsview_732.html" target="_blank"> 美国投资移民解析 </a>
+                    </span>
+                    <span class="proj_date">[2009-11-17]</span></p>
+                    
+                    
+                    
+                
+                </li>
+
+
+
+
+            </ul>
+            <ul style="float:left; width:100%; padding:10px 10px 0 0;">
+                <li class="pages">
+                
+                
+                <?xml namespace="" prefix="HX" ?>
+                <span id="spb01"><span class="pcount">共有 19 家门店　当前第 1 页 / 共 1 页</span>
+<span class="ppage"><span>分页：</span><span class="pnums">
+<a href="#" class="psel">1</a></span><span class="pfpage">
+首页
+上一页
+下一页
+尾页
+</span></span>
+</span>
+                
+                </li>
+            </ul>    
+            
+        </div>
+        
+        
+ 
+    </div>
+
+    <div class="bodys_r">
+    
+     <div>
+<style  type="text/css">
+    
+    #Rightweb a{text-decoration:none; color:#292421}
+    #Rightweb a:hover{color:#e88019; cursor:pointer;}
+
+</style>
+
+
+<div style="background:url(../style/default/images/jind_sear.jpg); width:238px;height:370px;" id="Rightweb">
+ <div style="height:140px; width:238px"><a href="http://www.visadvisor.com/user/reg.aspx" target="_blank">
+  <img src="../style/default/images/jind_sear_01.jpg" />
+ </a></div>
+
+
+  <div style="height:230px; width:238px;">
+  <div style="padding-top:30px;width:238px; height:45px">
+   <div style="width:62px; height:33px;float:left; padding-top:12px; padding-left:48px"><a target="_blank" href="http://www.visadvisor.com/cn/asked.aspx">有问必答</a></div>
+   <div style="width:62px; height:33px;float:left; padding-top:12px; padding-left:48px"><a href="exact.aspx" target="_blank">资料索取</a></div>
+  </div>
+  <div style="width:238px; height:45px">
+   <div style="width:62px; height:33px;float:left; padding-top:17px; padding-left:48px"><a href="MigrationAssessment.aspx" target="_blank">移民评估</a></div>
+   <div style="width:62px; height:33px;float:left; padding-top:17px; padding-left:48px"><a href="http://www.visadvisor.com/user/reg.aspx" target="_blank">进度查询</a></div>
+  </div>
+  </div>
+</div>
+</div>
+        <!--进度查询-->
+    
+        <!--进度查询End-->
+        
+        <!--专家在线-->
+      
+        <!--专家在线End-->
+        
+        <!--在线评估-->
+       
+        <!--在线评估End-->
+        
+        <!--精英团队-->
+        
+        <div class="r_foum">
+            <ul class="r_foum_ul">
+                <li class="r_team_top"><p class="r_more"><a href="teamlist.aspx"><img src="../style/default/images/more2.jpg" /></a></p></li>
+                <li id="prve2" style="display:none;"><a href="javascript:void(0)"><<</a></li>
+                <li class="r_team_cont">
+                    <div id="viewerFrame2">
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20140621101447530817.jpg" /><span>     Kevin Wright<br />美国经济师</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20140621101346748063.jpg" /><span>     Frank Wang<br />美国金融投资专家</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20140621101019170484.jpg" /><span>     Cletus M.Weber<br />移民律师</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20130124113600843324.jpg" /><span>     Jason Blatt<br />移民律师</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20140621100923014964.jpg" /><span>     Nicolas Laurin<br />移民律师</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20140621100828858688.jpg" /><span>     Elizabeth Peng<br />移民律师</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20110803220337376644.jpg" /><span>     Robert Lubin<br />移民律师</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20140621095509780028.jpg" /><span>     Emmanuelle Norc<br />移民律师</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20111122131257274656.jpg" /><span>     Jean-Bernard Di<br />加拿大移民律师</span></p>
+                        </div>
+                        
+                        <div class="r_team_bg">
+                        <p class="r_team_cont_p"><img class="r_team_photo" src="../UploadImg/20111122130943161173.jpg" /><span>     Vincent Lalonde<br />加拿大首席律师</span></p>
+                        </div>
+                        
+                    </div> 
+                </li>
+                <li id="next2" style="display:none;"><a href="javascript:void(0)">>></a></li>
+            </ul>
+        </div>
+
+        <!--精英团队End-->
+        
+        <!--专家答疑-->
+        
+        <div class="r_foum">
+            <ul class="r_foum_ul">
+                <li class="r_dayi_top"><p class="r_more"><a href="newslist.aspx?s=79"><img src="../style/default/images/more2.jpg" /></a></p></li>
+                <li class="r_dayi_cont">
+                    
+                    
+                <p class="r_dayi_photo"><a href="http://www.visadvisor.com/cn/newsview_2348.html" target="_blank"><img src="../UploadImg/20131017115441348161.jpg" /></a></p>
+                <p class="r_dayi_txt">
+                    据悉，美国日前传出风声，EB-5投资移民的投资额很有可能将从50万美元提高到80万美元。美国EB-5投资移民一向以...<a href="http://www.visadvisor.com/cn/newsview_2348.html" target="_blank">更多>></a>                
+                </p>
+                
+                    
+                <p class="r_dayi_list"><span class="r_dayi_tit"><a href="http://www.visadvisor.com/cn/newsview_2217.html" target="_blank">EB-5审批缓慢 移美要趁早</a></span></p>
+                    
+                    
+                <p class="r_dayi_list"><span class="r_dayi_tit"><a href="newsview_1989.html" target="_blank">如何甄选美国投资移民项目</a></span></p>
+                    
+                    
+                <p class="r_dayi_list"><span class="r_dayi_tit"><a href="newsview_1987.html" target="_blank">拨开迷雾看美国投资移民</a></span></p>
+                    
+                    
+                <p class="r_dayi_list"><span class="r_dayi_tit"><a href="http://www.visadvisor.com/cn/newsview_1831.html" target="_blank">美国移民首席律师详解EB-5</a></span></p>
+                    
+                    
+                <p class="r_dayi_list"><span class="r_dayi_tit"><a href="newsview_1982.html" target="_blank">新浪高端访谈解析美国移民</a></span></p>
+                    
+                
+
+                </li>
+            </ul>
+        </div>
+
+        <!--专家答疑End-->
+        
+        <!--活动照片-->
+        
+        <div class="r_foum">
+            <ul class="r_foum_ul">
+                <li class="r_activ_top"><p class="r_more"><a href="hplist.aspx"><img src="../style/default/images/more2.jpg" /></a></p></li>
+                <li class="r_activ_cont">
+                    <p id="prve" class="r_activ_cont_l"><a href="javascript:void(0)"><<</a></p>
+                    <div class="r_activ_cont_c">
+                        <div id="viewerFrame">
+                            
+                            <p><img src="../UploadImg/20140515142549203165.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515142454015334.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515142312500609.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515142214234544.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515142102718475.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515141942625924.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515141835250004.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515141719468195.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515141557484362.jpg" style="width:91px; height:66px;" /></p>
+                            
+                            <p><img src="../UploadImg/20140515141415781018.jpg" style="width:91px; height:66px;" /></p>
+                            
+                        </div>
+                    </div>
+                    <p id="next" class="r_activ_cont_r"><a href="javascript:void(0)">>></a></p>
+                </li>
+            </ul>
+        </div>
+
+        <!--活动照片End-->
+    
+    
+    </div>
+
+</div>
+
+
+<div class="bot"><div style="display:none;"><a href="http://www.usahome.cn">美国留学</a><a href="http://www.jhlife.net">江海生活网</a></div>
+<p class="link"><span class="linktit" style="#000">友情链接</span><br><br><span class="linktxt">
+    
+    
+        <a rel=nofollow href="http://www.uscis.gov/eb-5centers" target="_blank">美国移民局</a> 
+        
+    
+        <a rel=nofollow href="http://beijing.usembassy-china.org.cn/" target="_blank">美国大使馆</a> 
+        
+    
+        <a rel=nofollow href="http://www.ssa.gov/" target="_blank">美国社安局</a> 
+        
+    
+        <a rel=nofollow href="http://www.dol.gov/" target="_blank">美国联邦劳工部</a> 
+        
+    
+        <a rel=nofollow href="http://ukinchina.fco.gov.uk/zh/" target="_blank">英国驻华使馆</a> 
+        
+    
+        <a rel=nofollow href="http://www.oanda.com/lang/cns/currency/converter/" target="_blank">汇率兑换</a> 
+        
+    
+        <a rel=nofollow href="http://www.airchina.com.cn/?cid=google-s-11727014513" target="_blank">航班查询</a> 
+        
+    
+        <a rel=nofollow href="http://www.cic.gc.ca/english/index.asp" target="_blank">加拿大移民局</a> 
+        
+    
+        <a rel=nofollow href="http://www.canadainternational.gc.ca/china-chine/index.aspx?lang=zh-cn&view=d" target="_blank">加拿大大使馆</a> 
+        
+    
+        <a rel=nofollow href="http://www.immigration-quebec.gouv.qc.ca/fr/index.html" target="_blank">加拿大魁北克移民局</a> 
+        
+    
+        <a rel=nofollow href="http://www5.hrsdc.gc.ca/NOC/English/NOC/2011/Welcome.aspx" target="_blank">加拿大职业NOC查询</a> 
+        
+    
+        <a rel=nofollow href="http://www.newcomersuccess.ca/index.php/about-ciip?lang=en-GB" target="_blank">加拿大就业协助</a> 
+        
+    
+        <a rel=nofollow href="http://ielts.etest.net.cn/cn" target="_blank">雅思预约</a> 
+        
+    
+        <a rel=nofollow href="http://www.chsi.com.cn/xlcx/" target="_blank">学位评估</a> 
+        
+    
+        <a rel=nofollow href="http://www.cdgdc.edu.cn/" target="_blank">中国学位认证中心</a> 
+        
+    
+        <a rel=nofollow href="http://www.immi.gov.au/" target="_blank">澳大利亚移民局</a> 
+        
+    
+        <a rel=nofollow href="http://www.austemb.org.cn/" target="_blank">澳大利亚大使馆</a> 
+        
+    
+        <a rel=nofollow href="http://www.ato.gov.au/" target="_blank">澳洲税务局</a> 
+        
+    
+        <a rel=nofollow href="http://www.mfa.gov.sg/beijingchi/" target="_blank">新加坡大使馆</a> 
+        
+    
+        <a rel=nofollow href="http://www.boc.cn/sourcedb/whpj/" target="_blank">外汇牌价</a> 
+        
+    
+        <a rel=nofollow href="http://www.standardchartered.com.cn" target="_blank">渣打银行</a> 
+        
+    
+        <a rel=nofollow href="http://www.boc.cn/" target="_blank">中国银行</a> 
+        
+    
+        <a rel=nofollow href="http://haiwai.house.sina.com.cn/" target="_blank">新浪海外地产</a> 
+        
+    
+        <a rel=nofollow href="http://www.wztigo.com/" target="_blank">五洲通</a> 
+        
+</span></p>
+
+<p style="text-align:center; color:Gray; padding-top:5px; position:relative;">
+                       版权所有2011澳捷集团-国服移民 沪ICP备09086528号-1  沪公境准字[2002]0017<br /><br />
+                       上海国际服务贸易集团因私出入境服务有限公司 全国服务热线：400-700-0355 总经理专用客户投诉邮箱：Gmc@visadvisor.com<br /><br />
+地址：上海市静安区南京西路1468号中欣大厦32楼 邮政编码：200040  电话：021-62899133  传真：021-62899123
+<span style="position:absolute; right:0px; top:0px;">
+<a href='http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=20120516135018434'><img src='/Images/icon.gif' border=0></a>
+</span>
+</p>
+<p class="foot"><a href="index.aspx">[返回首页]</a>　　<a href="about.aspx?t=3">[联系我们]</a>　　<a href="#">[网站地图]</a></p>
+
+</div>
+<script type="text/javascript"> 
+<!--
+    lastScrollY = 0;
+    function heartBeat() {
+        var diffY;
+        if (document.documentElement && document.documentElement.scrollTop)
+            diffY = document.documentElement.scrollTop;
+        else if (document.body)
+            diffY = document.body.scrollTop
+        else
+        { /*Netscape stuff*/ }
+        //alert(diffY);
+        percent = .1 * (diffY - lastScrollY);
+        if (percent > 0) percent = Math.ceil(percent);
+        else percent = Math.floor(percent);
+        document.getElementById("leftDiv").style.top = parseInt(document.getElementById("leftDiv").style.top) + percent + "px";
+        lastScrollY = lastScrollY + percent;
+        //alert(lastScrollY);
+    }
+    function hide() {
+        document.getElementById("code").style.visibility = "hidden";
+    }
+    //window.setInterval("heartBeat()", 1);
+//-->
+</script><style type="text/css">
+
+#leftDiv{
+   width:142px;
+   height:190px;
+   position:absolute;
+}
+
+/*左边固定样式添加*/
+*html{background-image:url(about:blank);background-attachment:fixed;}/*解决IE6下滚动抖动的问题*/
+/*解决IE6下不兼容 position:fixed 的问题
+#code,#code_hover,#gotop{ width:36px; height:48px; background:url(../images/icon.png) no-repeat; position:fixed; right:50px; cursor:pointer;
+_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}*/
+
+#code,#code_hover,#gotop{ width:36px; height:48px;  position:fixed; right:50px; cursor:pointer;
+_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)));
+}
+#code{ background-position:-276px -258px; bottom:120px; _margin-bottom:120px;}
+#code_hover{ background-position:-316px -258px; bottom:120px; _margin-bottom:120px;}
+#gotop{ background-position:-276px -310px; bottom:67px; _margin-bottom:67px;} 
+
+#code_img{ width:270px; height:355px; background:url(../images/icon.png) -4px -3px no-repeat; position:fixed; right:90px; bottom:67px; cursor:pointer; display:none;
+_position:absolute;_bottom:auto;_top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))); _margin-bottom:67px;}
+
+</style>
+
+<div id="code" style="top:153px; left:17px; _left:0px;">
+
+	<div style=" width:121px; height:389px; overflow:hidden; clear:both;">
+	  <img  src="http://www.visadvisor.com/project/images/shangqiao.gif" alt="" width="121" height="389" border="0" usemap="#Map" style=" border:none;" />
+	  <map name="Map" id="Map">
+	    <area shape="rect" coords="70,276,71,277" href="#" />
+	    <area shape="rect" coords="55,363,56,364" href="#" />
+        <area shape="rect" coords="72,368,73,369" href="#" />
+        <area shape="rect" coords="123,421,124,423" href="#" />
+        <area shape="rect" coords="52,418,54,420" href="#" />
+        <area shape="rect" coords="3,163,119,201" href="http://www.visadvisor.com/cn/MigrationAssessment.aspx" target="_blank" />
+	    <area shape="rect" coords="3,200,119,238" href="http://www.visadvisor.com/cn/asked.aspx" target="_blank" />
+	    <area shape="rect" coords="3,238,119,274" href="http://qiao.baidu.com/v3/?module=default&amp;controller=webim&amp;action=index&amp;siteid=1385875&amp;lastsubid=996330&amp;from=%E4%B8%8A%E6%B5%B7%E9%9D%99%E5%AE%89&amp;bid=59ef4b3361daafef1a3224a4&amp;chattype=1&amp;ref=http%3A%2F%2Fwww.visadvisor.com%2Fcn%2F" target="_blank" />
+	    <area shape="rect" coords="3,275,119,312" href="http://qiao.baidu.com/v3/?module=default&amp;controller=webim&amp;action=index&amp;siteid=1385875&amp;lastsubid=996330&amp;from=%E4%B8%8A%E6%B5%B7%E9%9D%99%E5%AE%89&amp;bid=59ef4b3361daafef1a3224a4&amp;chattype=1&amp;ref=http%3A%2F%2Fwww.visadvisor.com%2Fcn%2F" target="_blank" />
+	  </map>
+	</div>
+
+<!-- visadvisor.com Baidu tongji analytics -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffa18c85237a60ab178552c582a0e483b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+                      <script type="text/javascript">
+<!--
+                          (function (d) {
+                              window.bd_cpro_rtid = "rjD4njn";
+                              var s = d.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = location.protocol + "//cpro.baidu.com/cpro/ui/rt.js";
+                              var s0 = d.getElementsByTagName("script")[0]; s0.parentNode.insertBefore(s, s0);
+                          })(document);
+
+                          //alert('123');
+//-->
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-16450632-1']);
+  _gaq.push(['_trackPageview']);
+  
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<!-- Google Code for Justinfo & Associates Remarketing List -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1028708252;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "666666";
+var google_conversion_label = "x1IrCLTezgEQnK_D6gM";
+var google_conversion_value = 0;
+/* ]]> */
+</script>
+<script type="text/javascript" src="http://www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="http://www.googleadservices.com/pagead/conversion/1028708252/?label=x1IrCLTezgEQnK_D6gM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+
+    </form><div style="display: none"><script language="javascript" type="text/javascript" src="http://js.users.51.la/14782309.js"></script>
+<noscript><a href="http://www.51.la/?14782309" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/14782309.asp" style="border:none" /></a></noscript></div>
+<div style="display:none"><script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ffa18c85237a60ab178552c582a0e483b' type='text/javascript'%3E%3C/script%3E")); </script></div></body>
+</html>
+

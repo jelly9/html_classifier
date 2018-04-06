@@ -1,0 +1,613 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	双飞燕 血手幽灵 TL7 终结者激光游戏鼠 电竞游戏鼠标 有线游戏鼠标-冰美人潮流服饰
+</title><link rel="Shortcut Icon" href="../../favicon.ico" /><link rel="Bookmark" href="../../favicon.ico" /><link href="../../css/global.css" rel="stylesheet" type="text/css" /><link href="../../css/index.css" rel="stylesheet" type="text/css" />
+    <!--QQ客服-->
+    <link rel="stylesheet" type="text/css" href="/css/common.css" /><link href="/home/css/css.css" rel="stylesheet" type="text/css" /><link href="/home/css/q.css" rel="stylesheet" type="text/css" />
+    <script src="/js/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/kefu.js"></script>
+    <script type="text/javascript">
+        var jQuery = $; //重命名jq函数 防止jquery与prototype冲突
+        $(document).ready(function () {
+            $("#txtsword").focus(function () {
+                if ($("#txtsword").val() == "请输入产品名称或品牌名") {
+                    $("#txtsword").val("");
+                }
+            });
+        });
+        function submitForm() {
+            if (document.getElementById("txtsword").value == "" || document.getElementById("txtsword").value == "请输入产品名称或品牌名") {
+                document.getElementById("txtsword").value = "请输入产品名称或品牌名";
+            }
+            else if (document.getElementById("txtsword").value.length > 15) {
+                alert("搜索关键词不能超过15个字符!");
+            }
+            else {
+                window.location.href = "/web/search.html?s=" + encodeURI(document.getElementById("txtsword").value);
+            }
+            return false;
+        }
+
+    </script>
+    <style type="text/css">
+        #stipContent
+        {
+            border: 1px solid #999;
+            background: #f9f9f9;
+            display: none;
+            position: absolute;
+            text-align: left;
+        }
+        #stipContent a
+        {
+            cursor: default;
+            font-size: 12px;
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 2px 6px;
+        }
+        #stipContent a:hover
+        {
+            background: #006B9F;
+            color: #fff;
+            cursor: default;
+        }
+        #stipContent a .searchp
+        {
+            color: #408080;
+        }
+        #stipContent a:hover .searchp
+        {
+            color: #fff;
+        }
+        
+        #PurchaseRecords
+        {
+            width: 1340px;
+            background-color: #A51491;
+            color: White;
+            height: 20px;
+            margin: auto;
+        }
+        #PurchaseRecords a
+        {
+            color: #fff;
+        }
+    </style>
+    
+    <meta name="keywords" content="双飞燕 血手幽灵 TL7 终结者激光游戏鼠 电竞游戏鼠标 有线游戏鼠标-冰美人潮流服饰">
+    <meta name="description" content="双飞燕 血手幽灵 TL7 终结者激光游戏鼠 电竞游戏鼠标 有线游戏鼠标-冰美人潮流服饰">
+    <script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+    <script src="/js/Product.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript" src="/js/jquery.JNMagnifier.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#img_product>a").each(function () {
+                $(this).click(function () {
+                    $("#img_product>a").each(function () {
+                        $(this).removeClass("hov");
+                    });
+                    $(this).addClass("hov");
+                    var src = $(this).find("img:first").attr("src");
+                    src = src.replace("small", "big");
+                    $("#product_big_img").attr("src", src);
+                });
+
+            });
+            $('.sidelist').mousemove(function () {
+                $(this).find('.i-list').show();
+                $(this).find('h3').addClass('hover');
+            });
+            $('.sidelist').mouseleave(function () {
+                $(this).find('.i-list').hide();
+                $(this).find('h3').removeClass('hover');
+            });
+
+            //选择属性..
+
+            $(".SX>span").each(function () {
+                $(this).hover(function () {
+                    $(this).addClass("selectover")
+                }, function () {
+                    $(this).removeClass("selectover")
+                }
+            );
+            });
+
+
+        });
+
+
+
+
+
+
+
+        var obj = {
+            sx_1: "",
+            sx_2: "",
+            sx_3: "",
+            sx_4: ""
+        };
+        function change(span) {
+            $('span[name="' + $(span).attr('name') + '"]').each(function () {
+                if (this.checked && this != span) {
+                    this.className = "unchecked";
+                    this.checked = false;
+                }
+            });
+            obj[$(span).attr('name')] = span.innerHTML;
+            span.className = "checked";
+            span.checked = true;
+            select();
+        }
+        function select() {
+            var html = '';
+            var property = '';
+            for (var i in obj) {
+                if (obj[i] != '') {
+                    html += '<font color=red>"' + obj[i] + '"</font> ，';
+                    property += obj[i] + ','
+                }
+            }
+            html = '已选择： ' + html.slice(0, html.length - 1);
+            $("#ctl00_ContentPlaceHolder1_Hidproperty").val(property);
+            $('#resultSpan').html(html);
+        }
+
+
+
+
+
+
+
+
+        function addcart() {
+            var nowcount = parseInt($("#ctl00_ContentPlaceHolder1_txtCount").val());
+            var Inventory = parseInt($("#ctl00_ContentPlaceHolder1_HidInventory").val());
+            var property = $("#ctl00_ContentPlaceHolder1_Hidproperty").val();
+            var isproperty = parseInt($("#ctl00_ContentPlaceHolder1_Hidisproperty").val());
+
+            if (nowcount > Inventory) {
+                alert("对不起，库存没有这么多");
+                return false;
+            }
+
+            var property_arr = property.split(",");
+
+
+            if (isproperty != property_arr.length - 1) {
+                alert("请选择商品属性");
+                return false;
+            }
+
+        }
+        function addcart2() {
+            var nowcount = parseInt($("#ctl00_ContentPlaceHolder1_txtCount").val());
+            var Inventory = parseInt($("#ctl00_ContentPlaceHolder1_HidInventory").val());
+            var property = $("#ctl00_ContentPlaceHolder1_Hidproperty").val();
+            var isproperty = parseInt($("#ctl00_ContentPlaceHolder1_Hidisproperty").val());
+
+            if (nowcount > Inventory) {
+                alert("对不起，库存没有这么多");
+                return false;
+            }
+
+        }
+
+    </script>
+    <style>
+        .SX
+        {
+            width: 350px;
+            display: block;
+            float: left;
+            margin-bottom: 5px;
+        }
+        .SX b
+        {
+            font-size: 12px;
+            float: left;
+            line-height: 24px;
+            height: 24px;
+        }
+        .SX span
+        {
+            width: auto;
+            line-height: 24px;
+            height: 24px;
+            display: block;
+            float: left;
+            padding: 0;
+            margin: 0 10px 0 0;
+            cursor: pointer;
+        }
+        .SX span.unchecked
+        {
+            border: 1px solid #CECECE;
+            padding: 1px 7px 1px 7px;
+        }
+        .SX span.checked
+        {
+            border: 2px solid #db7226;
+            padding: 0px 6px 0px 6px;
+            background: url(/home/images/j.gif) no-repeat right bottom;
+        }
+        .SX span.selectover
+        {
+            border: 1px solid #db7226;
+            padding: 1px 7px 1px 7px;
+            background-color: #fff;
+        }
+        
+        /**产品评论 */
+        
+        .star span
+        {
+            background: url('/img/star.gif') no-repeat;
+            display: block;
+            width: 15px;
+            height: 15px;
+            float: left;
+            cursor: hand;
+        }
+        
+        .star span.choice
+        {
+            background: url('/img/star-color.jpg') no-repeat;
+            height: 15px;
+        }
+        .rankstar
+        {
+            float: left;
+            padding-top: 5px;
+        }
+        .rankstar a
+        {
+            margin: 0 5px;
+            color: #cc0066;
+            padding: 2px 2px;
+        }
+        .rankstar a:hover
+        {
+            color: #fff;
+            background: #cc0066;
+        }
+    </style>
+    <style type="text/css">
+#ShowPictureBox { width:400px; height:400px;overflow:hidden; }
+</style>
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="/web/product/474018.html?star=1" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4MjUzOTk2MjFkGAEFHl9fQ29udHJvbHNSZXF1aXJlUG9zdEJhY2tLZXlfXxYCBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGJ0bkdvU2hvcHBpbmcFKGN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkYnRuQWRkU2hvcENhcnT9HYc/jI5Y4puLdZcrAE9xrfzflHa77ElB6207e93ESA==" />
+</div>
+
+    
+    <div class="login">
+        <div class="login_cen">
+            <p>
+                <a href="/Member/Login.html">[登录]</a>  <a href="/Member/Reg.html">&nbsp;&nbsp;[注册]</a>
+                <img src="/images/login_qq.gif" />
+                <a href="http://login.2198.com/qqlogin.aspx?siteurl=binmeiren.com">QQ号</a>
+                <img src="/images/login_sina.gif" />
+                <a href="http://login.2198.com/sinalogin.aspx?siteurl=binmeiren.com">新浪微博</a>
+                <img src="/images/login_taobao.gif" />
+                <a href="http://login.2198.com/taobaologin.aspx?siteurl=binmeiren.com">淘宝账户</a>
+            </p>
+            <span>
+                <img src="/images/login_zh.gif" /><a href="/Member/Login.html">我的账户</a>
+                <img src="/images/login_buy.gif" />
+                <a href="/web/shopcart.html">我的购物车0件</a>
+                <img src="/images/login_phone.gif" />
+                <a href="#">服务热线:<b>400-099-2198</b></a></span>
+        </div>
+    </div>
+    <div class="top">
+        <div class="logo">
+            <a href="/default.aspx">
+                <img src="http://config3.2198.com/Jimage/logo/b48dcc94d7ddff01c7673e0795c615d8.jpg" /></a></div>
+        <div class="search">
+            <p>
+                热词：<a href='/web/search.html?s=%e5%a5%b3%e8%a3%85' target='_blank'>女装</a>&nbsp;&nbsp;<a href='/web/search.html?s=%e6%83%85%e4%be%a3' target='_blank'>情侣</a>&nbsp;&nbsp;<a href='/web/search.html?s=%e7%94%b7%e8%a3%85' target='_blank'>男装</a>&nbsp;&nbsp;<a href='/web/search.html?s=%e5%86%85%e8%a1%a3' target='_blank'>内衣</a>&nbsp;&nbsp;<a href='/web/search.html?s=%e8%bf%90%e5%8a%a8' target='_blank'>运动</a>&nbsp;&nbsp;</p>
+            <input name="" type="text" class="input" value="请输入产品名称或品牌名" id="txtsword" onkeydown="if(event.keyCode==13) {return submitForm();}" />
+            <input name="" type="button" class="anniu" onclick=" return submitForm();" />
+        </div>
+    </div>
+    <!--头部菜单标志-->
+    <div class="nav">
+        <div class="nav_cen">
+            <ul>
+                <li>
+                    <p>
+                        <a href="/">首 页</a></p>
+                </li>
+                <li><p><a href="/web/productlist/580/index.html ">精品男装</a></p></li><li><p><a href="/web/productlist/1114/index.html ">精致内衣</a></p></li><li><p><a href="/web/productlist/716/index.html ">品牌女装</a></p></li><li><p><a href="/web/productlist/591/index.html ">运动装</a></p></li><li><p><a href="/web/productlist/3485/index.html ">情侣装</a></p></li><li><p><a href="/web/productlist/964/index.html ">服饰配件</a></p></li><li><p><a href="/web/ProductList/Recommend.html">店长推荐</a></p></li>
+                <!--<li>
+                    <p>
+                        <a href="">秒杀</a></p>
+                </li>
+               <li>
+                    <p>
+                        <a href="/site/Recommend.aspx">店长推荐</a></p>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+        function ShowFLT(i) {
+            for (var j = 1; j < 5; j++) {
+                $("#LM" + j).css("display", "none");
+                $("#a" + j).removeClass("kuai");
+            }
+            $("#LM" + i).css("display", "");
+            $("#a" + i).addClass("kuai");
+        }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ShowPictureBox").JNMagnifier({
+                renderTo: "#ShowBigPictureBox"
+            });
+        });
+</script>
+    <div class="main">
+        <div class="dq">
+            <span>您当前的位置：</span><a href='/'>首页</a> <small>&raquo;</small> <a href='/web/productlist/586/index.html'>电脑周边</a> <small>&raquo;</small> <a href='/web/productlist/766/index.html'>鼠标</a></div>
+        <div class="main">
+        <div id="ShowBigPictureBox" style=" position:absolute; top:20px; left:585px; overflow:hidden; display:none; border:3px solid #ccc; padding:5px; background-repeat:no-repeat; background-color:#fff; width:300px; height:300px;">
+	    
+	    </div>
+	  
+            <div class="GProducts">
+                <span>
+                <div id="ShowPictureBox">
+                    <img id='product_big_img' src='http://newimg.2198.com/productimages/575/big/38479042036_0.jpg'  onerror="this.onerror=null;this.src='http://vip.391.com/ProductImages/575/Small/38479042036_0.jpg' " width='400' height='400' /></div></span>
+                <p id="img_product">
+                    <a href='#'><img src='http://newimg.2198.com/productimages/575/small/38479042036_1.jpg' onerror="this.onerror=null;this.src='http://vip.391.com/ProductImages/575/Small/38479042036_0.jpg' " width='50' height='50' border='0' /></a><a href='#'><img src='http://newimg.2198.com/productimages/575/small/38479042036_2.jpg' onerror="this.onerror=null;this.src='http://vip.391.com/ProductImages/575/Small/38479042036_0.jpg' " width='50' height='50' border='0' /></a><a href='#'><img src='http://newimg.2198.com/productimages/575/small/38479042036_3.jpg' onerror="this.onerror=null;this.src='http://vip.391.com/ProductImages/575/Small/38479042036_0.jpg' " width='50' height='50' border='0' /></a></p>
+            </div>
+            <div class="Gxx">
+                <h1>
+                    双飞燕 血手幽灵 TL7 终结者激光游戏鼠 电竞游戏鼠标 有线游戏鼠标</h1>
+                <p>
+                    市场价格：￥389</p>
+                <p>
+                    商城价格：<em>￥</em><strong>259</strong></p>
+                <p>
+                    商品编号：38479042036
+                </p>
+                <p>
+                    浏览次数：442
+                </p>
+                <div class="xz">
+                    <div class="SX">
+<b>颜色：</b><span class='unchecked' name='sx_1' checked='false' onclick='change(this);'>皮革黑</span></div>
+                    <p style="font-size: 12px;">
+                        <label id='resultSpan' style="float: left">
+                        </label>
+                    </p>
+                    <div class="sl">
+                        <span>数量：</span>
+                        <input name="ctl00$ContentPlaceHolder1$txtCount" type="text" value="1" id="ctl00_ContentPlaceHolder1_txtCount" class="input2" onKeyUp="this.value=this.value.replace(/[^0-9]/g, &#39;&#39;);if(this.value==&#39;&#39; || this.value==&#39;0&#39;){this.value=1}" style="text-align: center;" />件 (库存<em>345</em>件)
+                    </div>
+                </div>
+                <div class="ann">
+                    <input type="image" name="ctl00$ContentPlaceHolder1$btnGoShopping" id="ctl00_ContentPlaceHolder1_btnGoShopping" src="/home/images/botton01.jpg" onclick=" return addcart();" style="border-width:0px;height:42px;width:134px;" />
+                    <input type="image" name="ctl00$ContentPlaceHolder1$btnAddShopCart" id="ctl00_ContentPlaceHolder1_btnAddShopCart" src="/home/images/botton02.jpg" onclick=" return addcart();" style="border-width:0px;height:42px;width:134px;" />
+                    
+                </div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="floatl">
+        <div class="bt">
+            <ul>
+                <li id="a1" onclick="javascript:ShowFLT(1)" class="kuai">产品介绍</li>
+                <li id="a2" onclick="javascript:ShowFLT(2)" style="display: block">买家评论</li>
+                <li id="a3" onclick="javascript:ShowFLT(3)">产品问答</li>
+                
+                <li id="a4" onclick="javascript:ShowFLT(4)">购买记录</li>
+                
+            </ul>
+        </div>
+        <div class="lr01" id="LM1">
+            <table width=100%   style="padding:10px 10px 10px 10px;"  border=0 bgcolor=#f9f9f9 cellpadding=2 cellspacing=2 ><tr><td ><b>毛重:</b>&nbsp;297g</td><td ><b>颜色分类:</b>&nbsp;军绿色</td><td ><b>接口类型:</b>&nbsp;USB</td><td ><b>售后服务:</b>&nbsp;全国联保</td></tr><tr><td ><b>光学分辨率:</b>&nbsp;8200dpi</td><td ><b>成色:</b>&nbsp;全新</td><td ><b>品牌:</b>&nbsp;双飞燕</td><td ><b>按键数:</b>&nbsp;9个</td></tr><tr><td ><b>是否支持人体工程学:</b>&nbsp;支持</td><td ><b>双飞燕有线型号:</b>&nbsp;血手幽灵TL7</td><td ><b>工作方式:</b>&nbsp;激光</td><td colspan=1></td></tr></table><br/><p>
+	<img  onload="changeBigImg(this)"  align="absmiddle" src="http://img04.taobaocdn.com/imgextra/i4/341878768/T2U5OqXF0XXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img02.taobaocdn.com/imgextra/i2/341878768/T2jx5oXIlaXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img01.taobaocdn.com/imgextra/i1/341878768/T27wOpXPBXXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img04.taobaocdn.com/imgextra/i4/341878768/T2wG1oXLJaXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img04.taobaocdn.com/imgextra/i4/341878768/T2aEGoXU4XXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img01.taobaocdn.com/imgextra/i1/341878768/T2s.OoXUVXXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img03.taobaocdn.com/imgextra/i3/341878768/T26oapXKtXXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img02.taobaocdn.com/imgextra/i2/341878768/T2xm5oXFVaXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img04.taobaocdn.com/imgextra/i4/341878768/T2rjmpXONXXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img04.taobaocdn.com/imgextra/i4/341878768/T2xuyqXJXXXXXXXXXX-341878768.jpg" /><img  onload="changeBigImg(this)"  align="absmiddle" src="http://img03.taobaocdn.com/imgextra/i3/341878768/T2YH1qXJBXXXXXXXXX-341878768.jpg" /></p>
+
+        </div>
+        <div class="lr01" id="LM2" style="display: none; width: 980px;">
+            <table width="100%" style="background-image: url(/img/bg_title.png);">
+                <tr>
+                    <td class="rankstar">
+                        <a href="?star=0">全部0条评论 </a>&nbsp; &nbsp;
+                        |&nbsp;<a href="?star=5">五星评论</a> &nbsp; |&nbsp;<a href="?star=4">四星评论</a> &nbsp;
+                        |&nbsp; <a href="?star=3">三星评论</a> &nbsp; |&nbsp;<a href="?star=2">二星评论</a> &nbsp;
+                        |&nbsp; <a href="?star=1">一星评论</a>
+                    </td>
+                    <td align="right">
+                        <a href="#" onclick=" return AddProducLeaveBook()">
+                            <img src="/img/Comment.gif" /></a>
+                    </td>
+                </tr>
+                <tr id="trComment" style="display: none;">
+                    <td colspan="2">
+                        <table width="100%" style="background: #fff8f8;">
+                            <tr>
+                                <td style="font-weight: bold; color: Red; text-align: center; width: 70px;">
+                                    推荐指数
+                                </td>
+                                <td>
+                                    <div class="star">
+                                        <span id="star1" onmouseover="star(1)">&nbsp;</span> <span id="star2" onmouseover="star(2)">
+                                            &nbsp;</span> <span id="star3" onmouseover="star(3)">&nbsp;</span> <span id="star4"
+                                                onmouseover="star(4)">&nbsp;</span> <span id="star5" onmouseover="star(5)">&nbsp;</span>
+                                        <input type="hidden" name="ctl00$ContentPlaceHolder1$starcount" id="ctl00_ContentPlaceHolder1_starcount" value="0" />
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; color: Red; text-align: center; width: 70px;">
+                                    我的评价
+                                </td>
+                                <td>
+                                    <textarea name="ctl00$ContentPlaceHolder1$txtComment" rows="2" cols="20" id="ctl00_ContentPlaceHolder1_txtComment" style="width: 500px;
+                                        height: 70px; float: left; border: #f4c6c5 1px solid; font-size: 12px;">
+</textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmitCM" value="提交" onclick="return submitCM(false,474018);" id="ctl00_ContentPlaceHolder1_btnSubmitCM" style="BORDER-RIGHT: #7b9ebd 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7b9ebd 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); BORDER-LEFT: #7b9ebd 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #7b9ebd 1px solid;" />
+                                    如果没用过，请不要发表评论，否则会被删除。
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <li >
+该商品还没有评论</li>
+        </div>
+        <div class="lr01" id="LM3" style="display: none">
+            <!-- 添加留言 !-->
+            <table width="100%">
+                <tr>
+                    <td>
+                        你所提的问题客服将在24小时内为你解答，客服电话:400-0818-391
+                    </td>
+                    <td align="right">
+                        <a href="#" onclick=" return AddProducAsk()">
+                            <img src="/img/question.jpg" /></a>
+                    </td>
+                </tr>
+                <tr id="trProductAsk" style="display: none;">
+                    <td colspan="2">
+                        <table width="100%" style="background: #fff8f8;">
+                            <tr>
+                                <td style="font-weight: bold; color: Red; text-align: center; width: 70px;">
+                                    <!-- 咨询内容-->
+                                </td>
+                                <td>
+                                    <textarea name="ctl00$ContentPlaceHolder1$txtAskComment" rows="2" cols="20" id="ctl00_ContentPlaceHolder1_txtAskComment" style="width: 500px;
+                                        height: 70px; float: left; border: #f4c6c5 1px solid; font-size: 12px;">
+</textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                    <input type="submit" name="ctl00$ContentPlaceHolder1$btnSubmitAsk" value="提交" onclick="return submitASK(false,474018);" id="ctl00_ContentPlaceHolder1_btnSubmitAsk" style="BORDER-RIGHT: #7b9ebd 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #7b9ebd 1px solid; PADDING-LEFT: 2px; FONT-SIZE: 12px; FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde); BORDER-LEFT: #7b9ebd 1px solid; CURSOR: hand; COLOR: black; PADDING-TOP: 2px; BORDER-BOTTOM: #7b9ebd 1px solid;" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            该商品暂时没有买家咨询
+        </div>
+        <div class="lr01" id="LM4" style="display: none">
+                <table width="80%" border="0" align="center" cellpadding="5" cellspacing="5">
+                    <tr><th >购买人</th><th>会员级别</th><th>购买数量</th><th>成交时间</th></tr>
+                </table>
+            </div>
+    </div>
+    <!---->
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$HidInventory" id="ctl00_ContentPlaceHolder1_HidInventory" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$Hidproperty" id="ctl00_ContentPlaceHolder1_Hidproperty" />
+    <input type="hidden" name="ctl00$ContentPlaceHolder1$Hidisproperty" id="ctl00_ContentPlaceHolder1_Hidisproperty" value="1" />
+
+    <!--版权-->
+    <div id="foot">
+        <div class="footC">
+            <img src="/images/foot_1.gif" /><img src="/images/foot_2.gif" /><img src="/images/foot_3.gif" /><img
+                src="/images/foot_4.gif" /></div>
+    </div>
+    <div class="buy">
+        <div class="buyC">
+            <div class="buyC_left">
+                <img src="/images/phone.jpg" /></div>
+            <div class="buyC_right">
+                <dl>
+                    <dt><b>会员服务</b></dt>
+                    <dd><a href="/web/Article/36.html" target="_blank">购物流程</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/34.html" target="_blank">常见问题</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/33.html" target="_blank">如何付款</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/21.html" target="_blank">购物咨询</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd>
+                </dl>
+                <dl>
+                    <dt><b>购物指南</b></dt>
+                    <dd><a href="/web/Article/57.html" target="_blank">积分说明</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/56.html" target="_blank">代金券</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergenc</a></dd><dd><a href="/web/Article/42.html" target="_blank">用户协议</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/41.html" target="_blank">VIP制度</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emerge</a></dd>
+                </dl>
+                <dl>
+                    <dt><b>配送方式</b></dt>
+                    <dd><a href="/web/Article/39.html" target="_blank">品质保证</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/38.html" target="_blank">退货政策</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/37.html" target="_blank">退货流程</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/19.html" target="_blank">办理退款</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd>
+                </dl>
+                <dl>
+                    <dt><b>售后服务</b></dt>
+                    <dd><a href="/web/Article/32.html" target="_blank">送货方式</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/14.html" target="_blank">配送时间</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/13.html" target="_blank">快递资费</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd><dd><a href="/web/Article/8.html" target="_blank">签收须知</title><style>.a7lp{position:absolute;clip:rect(450px,auto,auto,467px);}</style><div class=a7lp>Be careful about all <a href=http://paydayloansforliver.com >200 payday loans</a> often for emergen</a></dd>
+                </dl>
+                <dl>
+                    <dt><b>二维码扫描</b></dt>
+                    <dd>
+                        <img src="http://qr.liantu.com/api.php?text=http://www.binmeiren.com" alt=""
+                            width="110px">
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div class="foot_images" >
+        <a href="http://trust.360.cn/" target="_blank">
+            <img src="/images/1.png" /></a> <a href="/html/chengxin.html" target="_blank">
+                <img src="/images/111111.jpg" /></a> <a href="http://net.china.com.cn/index.htm"
+                    target="_blank">
+                    <img src="/images/3.png" /></a> <a href="http://www.ectrustprc.org.cn/certificate.id/certificateb.php?id=20075625"
+                        target="_blank">
+                        <img src="/images/4.png" /></a> <a href="http://www.daja.net.cn/" target="_blank">
+                            <img src="/images/calogo.gif" /></a> <a href="http://www.bcpcn.com/" target="_blank">
+                                <img src="/images/6.png" /></a> <a href="http://www.315online.com.cn/" target="_blank">
+                                    <img src="/images/7.png" /></a> <a href="http://www.360.cn/wanggoubaobiao/" target="_blank">
+                                        <img src="/images/10.png" /></a> <a href="http://www.360.cn/wanggoubaobiao/" target="_blank">
+                                            <img src="/images/11.png" /></a> <a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1771388293"
+                                                target="_blank">
+                                                <img src="/images/12.png" /></a> <a href="http://www.chinabank.com.cn/" target="_blank">
+                                                    <img src="/images/13.png" /></a> <a href="http://www.gdnet110.gov.cn/" target="_blank">
+                                                        <img src="/images/14.png" /></a>
+        <a href="http://www.beianbeian.com/search/2198.com" target="_blank">
+            <img src="/images/beian.jpg" /></a>
+    </div>
+    <div class="copyright">
+        <p>
+            <a href="/buttom/about.aspx">公司介绍</a>| <a href="/buttom/supplier.aspx">成为供应商</a>
+            | <a href="/buttom/friendlink.aspx">友情链接</a> | <a href="/buttom/aboutus.aspx">联系我们</a>
+            | <a href="/buttom/help.aspx">帮助中心</a>
+        </p>
+        <p>
+           广州诺德科技有限公司 版权所有 Copyright 2008 - 2013</p>
+        <p>
+            冰美人潮流服饰  binmeiren.com  版权所有
+        </p>
+        <p>
+            &nbsp;
+        </p>
+    </div>
+    </form>
+    
+    <script src="/js/Search.js" type="text/javascript"></script>
+ 
+<SCRIPT type=text/javascript src="/js/scroll.js"></SCRIPT>
+  <script type='text/javascript' src='http://tb.53kf.com/kf.php?arg=10060264&style=1'></script>
+
+</body>
+</html>
+

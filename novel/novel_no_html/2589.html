@@ -1,0 +1,695 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class=""> <!--<![endif]-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-language" content="zh-CN" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="robots" content="all" />
+<meta name="save" content="history" />
+<meta name="author" content="jun.qiu@thinksaas.cn" />
+<meta name="Copyright" content="ThinkSAAS" />
+<title>反色 shader_小组_ThinkSAAS</title>
+<meta name="keywords" content="反色 shader" /> <meta name="description" content=" kernel NewFilter  {  input image4 src; output pixel4 dst; void evaluatePixel() { dst  sampleNearest..." /> <link rel="shortcut icon" href="/favicon.ico" />
+
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="/public/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" type="text/css" href="/theme/sample/base.css" />
+<link rel="stylesheet" type="text/css" href="/theme/sample/style.css" id="tsTheme" />
+<link rel="stylesheet" type="text/css" href="/app/group/skins/default/style.css">
+
+
+<!--[if lt IE 8]>
+  <link href="/public/js/oldie.css" rel="stylesheet">
+<![endif]-->
+	<!--[if lt IE 9]>
+<script src="/public/js/html5shiv.js"></script>
+<![endif]-->
+
+<!--[if IE 8]>
+<script src="/public/js/respond.min.js"></script>
+<![endif]-->
+
+
+<script>var siteUrl = '/'; //网站网址</script>
+<script src="/public/js/jquery-1.8.0.min.js" type="text/javascript"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="/public/bootstrap/js/bootstrap.min.js"></script>
+
+<style>
+</style>
+<link href="/plugins/pubs/customer/style.css" rel="stylesheet" type="text/css" /><style>.feedback-box {
+    background-color: #83ACC6;
+    border-right: 1px solid #D3E3F0;
+    bottom: 60%;
+    opacity: 0.6;
+    padding: 1px 0;
+    position: fixed;
+    right: 0;
+    width: 20px;
+}
+.feedback-box:hover {
+    background-color: #558BC6;
+    border-right: 1px solid #BFD6E6;
+    opacity: 1;
+}
+.feedback-box:hover a {
+    border-left-color: #558BC6;
+}
+.feedback-box a {
+    background: url("/plugins/pubs/feedback/feed-back.png") no-repeat 3px 70px;
+    border-left: 1px solid #83ACC6;
+    color: #FFFFFF !important;
+    display: block;
+    margin-left: -1px;
+    padding: 4px 4px 24px;
+    text-decoration: none;
+}</style><link href="/plugins/group/relatedtopics/style.css" rel="stylesheet" type="text/css" /></head>
+<body>
+
+
+
+
+<nav class="navbar navbar-blue header" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+	
+	
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-user">
+        <span class="sr-only">用户信息/登录等</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  
+	  
+      <a class="navbar-brand" href="/"><img title="ThinkSAAS" src="/uploadfile/logo/logo.gif" alt="ThinkSAAS" width="190" height="40" /></a>
+	  
+	  
+    </div>
+
+
+	
+	
+	
+      <ul class="nav navbar-nav hidden-xs">
+        <li class="active"><a href="/">首页</a></li>
+<li class="mainlevel"><a href="http://www.thinksaas.cn/group/show/102/">应用汇</a></li><li class="mainlevel"><a href="http://www.thinksaas.cn/service/">服务</a></li><li class="mainlevel"><a href="http://www.thinksaas.cn/service/down/">下载</a></li><li class="mainlevel"><a href="http://www.thinksaas.cn/service/doc/">文档</a></li>
+      </ul>
+      <form class="navbar-form navbar-left hidden-xs" role="search" method="get" action="/index.php">
+        <div class="form-group">
+<input type="hidden" name="app" value="search" />
+<input type="hidden" name="ac" value="s" />
+          <input type="text" class="form-control" name="kw" placeholder="小组 话题 文章">
+        </div>
+        <button type="submit" class="btn btn-default">搜索</button>
+      </form>
+	  
+
+
+
+
+      <ul class="nav navbar-nav navbar-right navbar-collapse collapse" id="header-user">
+	  
+	  
+<li><a href="/user/login/">登录</a></li>
+<li><a href="/user/register/">注册</a></li>
+		
+      </ul>
+	  
+	  
+ 
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="appnav">
+ <div class="container" style="position: relative;">
+<ul>
+<li ><a href="/">首页</a></li>
+<li class="select"><a href="/group/">小组</a></li>
+<li ><a href="/user/">用户</a></li>
+<li ><a href="/event/">活动</a></li>
+<li ><a href="/photo/">相册</a></li>
+<li ><a href="/article/">文章</a></li>
+<li ><a href="/market/">市场</a></li>
+<li ><a href="/ask/">问答</a></li>
+<li ><a href="/pay/">支付</a></li>
+<li ><a href="/study/">课程</a></li>
+<li ><a href="/feed/">动态</a></li>
+<li ><a href="/weibo/">微博</a></li>
+<li ><a href="/attach/">资料</a></li>
+<li ><a href="/vote/">投票</a></li>
+<li ><a href="/redeem/">积分兑换</a></li>
+<li ><a href="/location/">同城</a></li>
+<li ><a href="/favorite/">网络收藏夹</a></li>
+</ul>
+
+<div class="tougao" style="position: absolute;right: 15px;top: 10px;">
+<a class="btn btn-danger" href="/service/tougao/">我要投稿</a>
+</div>
+
+</div>
+</div>
+
+<div class="container hidden-xs" style="margin-bottom: 10px;"><a target="_blank" href="http://www.tst3.com"><img src="http://785i2b.com1.z0.glb.clouddn.com/tst3.png" /></a></div><div class="container">
+
+<ol class="breadcrumb">
+  <li><a href="/">首页</a></li>
+  <li><a href="/group/">小组</a></li>
+  <li><a href="/group/show/367/">Java</a></li>
+  <li class="active">反色 shader</li>
+</ol>
+
+<div class="row">
+
+<div class="col-md-8">
+<div class="bbox">
+
+<div class="bc">
+<h1>反色 shader</h1>
+
+
+<div class="media mb20">
+<a class="pull-left" href="/user/space/10001/"><img class="media-object img-circle" title="开源中国" alt="开源中国" src="/cache/user/0/10/120/10001.png" width="48" height="48"></a>
+<div class="media-body">
+<h4 class="media-heading"><a href="/user/space/10001/">开源中国</a></h4>
+<div class="c9">发表于 2014-08-28 20:56:07</div>
+</div>
+</div>
+
+
+<div class="topic-content">
+ 
+<div class="topic-view">
+
+
+<p>&lt;languageVersion : 1.0;&gt; 
+ 
+kernel NewFilter 
+&lt;   namespace :"Your Namespace"; 
+    vendor :"Your Vendor"; 
+    version : 1; 
+    description :"your description"; 
+&gt; 
+{ 
+</p><pre class="java"> input image4 src;
+ output pixel4 dst;
+
+void
+evaluatePixel()
+{
+ dst = sampleNearest(src,outCoord());
+ dst.rgb = float3(1.0) - dst.rgb;
+}</pre> 
+}
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- qiniao自适应 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2537995169374061"
+     data-ad-slot="7141245630"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+</div>
+<div class="clear"></div>
+
+<div class="tar pd100">
+
+<a class="btn btn-default" href="">0评论</a>
+</div>
+
+<div class="clear"></div>
+
+
+<div class="tags">
+
+</div>
+</div>
+</div>
+
+<div class="bbox">
+<div class="btitle">用户评论(0)</div>
+<div class="bc">
+<ul class="comment">
+</ul>
+<div class="page"></div>
+
+
+<div class="commentform">
+<div class="tac pd20">
+<a href="/user/login/">登录</a> | <a href="/user/register/">注册</a>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="bbox">
+<div class="btitle">推荐帖子</div>
+<div class="bc">
+
+<div class="topic_recommend">
+<ul>
+<li><a href="/group/topic/326696/">SNS开源社区系统不断更新中</a></li>
+<li><a href="/group/topic/326695/">开源网站系统不断更新中</a></li>
+<li><a href="/group/topic/161631/">CentOS 计划任务</a></li>
+<li><a href="/group/topic/106307/">saas是什么意思</a></li>
+<li><a href="/group/topic/106306/">IaaS, PaaS和SaaS公司都做些什么</a></li>
+<li><a href="/group/topic/34536/">angularjs跨域post解决方案</a></li>
+<li><a href="/group/topic/33785/">jquery复制文本到剪贴板（兼容各大浏览器）</a></li>
+<li><a href="/group/topic/33507/">wget: command not found的两种解决方案</a></li>
+<li><a href="/group/topic/18649/">PHP计算百分比（%）</a></li>
+<li><a href="/group/topic/11664/">独立网站为什么要使用图片服务器？</a></li>
+<li><a href="/group/topic/3910/">让PHP程序永远在后台运行</a></li>
+<li><a href="/group/topic/115/">ob_get_contents()函数的用法</a></li>
+<li><a href="/group/topic/33/">apache+php+mysql常见集成环境安装包</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+
+</div>
+
+<div class="col-md-4">
+
+
+<a target="_blank" href="http://www.lagou.com/"><img src="/images/lagou.png" /></a>
+<div class="bbox">
+<div class="btitle">最新帖子</div>
+<div class="bc commlist">
+<ul>
+<li>
+<a href="/group/topic/350239/"> Ruby Shanghai 2014年终聚会总结</a> 
+</li>
+<li>
+<a href="/group/topic/350238/">两篇文章帮你入门Django(下)</a> 
+</li>
+<li>
+<a href="/group/topic/350237/">TextGrocery，更好用的文本分类Python库</a> 
+</li>
+<li>
+<a href="/group/topic/350236/"> nodejs 中的 NODE_PATH</a> 
+</li>
+<li>
+<a href="/group/topic/350235/">思源湖计划</a> 
+</li>
+<li>
+<a href="/group/topic/350234/"> 2014 年度小结（Node.js 与 单元测试）</a> 
+</li>
+<li>
+<a href="/group/topic/350233/">关于Web前后端分离的体验</a> 
+</li>
+<li>
+<a href="/group/topic/350232/"> NGINX的奇淫技巧 —— 1. 字符串截断</a> 
+</li>
+<li>
+<a href="/group/topic/350231/"> NGINX的奇淫技巧 —— 2. IF AND 和 OR</a> 
+</li>
+<li>
+<a href="/group/topic/350230/">绝对彰显前端攻城师逼格的Javascript“整型数据趋向”操作符</a> 
+</li>
+</ul>
+</div>
+</div>
+
+<div class="bbox"><div class="btitle">热门帖子</div>
+
+<div class="bc commlist">
+<ul>
+<li><a href="/group/topic/350239/"> Ruby Shanghai 2014年终聚会总结</a></li>
+<li><a href="/group/topic/350238/">两篇文章帮你入门Django(下)</a></li>
+<li><a href="/group/topic/350237/">TextGrocery，更好用的文本分类Python库</a></li>
+<li><a href="/group/topic/350236/"> nodejs 中的 NODE_PATH</a></li>
+<li><a href="/group/topic/350235/">思源湖计划</a></li>
+<li><a href="/group/topic/350234/"> 2014 年度小结（Node.js 与 单元测试）</a></li>
+<li><a href="/group/topic/350233/">关于Web前后端分离的体验</a></li>
+<li><a href="/group/topic/350232/"> NGINX的奇淫技巧 —— 1. 字符串截断</a></li>
+<li><a href="/group/topic/350231/"> NGINX的奇淫技巧 —— 2. IF AND 和 OR</a></li>
+<li><a href="/group/topic/350230/">绝对彰显前端攻城师逼格的Javascript“整型数据趋向”操作符</a></li>
+</ul>
+</div>
+
+</div>
+
+
+
+<div class="clear"></div>
+<!--广告位-->
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- qiniao自适应 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2537995169374061"
+     data-ad-slot="7141245630"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+</div>
+</div>
+<div class="container">
+<div class="bbox"><div class="btitle">开发技术学习小组列表</div><div class="bc">
+<dl class="dl-horizontal">
+<dt>开发语言</dt><dd>
+<a target="_blank" href="/group/show/2/">PHP小组</a> 
+<a target="_blank" href="/group/show/367/">Java论坛</a> 
+<a target="_blank" href="/group/show/368/">Python社区</a> 
+<a target="_blank" href="/group/show/377/">Ruby社区</a> 
+<a target="_blank" href="/group/show/619/">Asp编程开发</a> 
+<a target="_blank" href="/group/show/621/">Asp.net学习</a> 
+<a target="_blank" href="/group/show/622/">Jsp编程</a> 
+<a target="_blank" href="/group/show/623/">Flex技术</a> 
+<a target="_blank" href="/group/show/641/">delphi开发</a> 
+<a target="_blank" href="/group/show/644/">XML开发</a> 
+<a target="_blank" href="/group/show/649/">go语言</a> 
+<a target="_blank" href="/group/show/637/">Perl学习</a> 
+<a target="_blank" href="/group/show/638/">Ruby学习</a> 
+<a target="_blank" href="/group/show/639/">C#教程</a> 
+<a target="_blank" href="/group/show/640/">C++C语言</a> 
+<a target="_blank" href="/group/show/648/">lua</a> 
+<a target="_blank" href="/group/show/647/">groovy</a> 
+<a target="_blank" href="/group/show/646/">Scala</a> 
+<a target="_blank" href="/group/show/633/">vbs,vbscript</a> 
+<a target="_blank" href="/group/show/635/">hta学习</a> 
+<a target="_blank" href="/group/show/636/">htc学习</a> 
+</dd>
+
+<dt>PHP开发框架</dt><dd>
+
+<a target="_blank" href="/group/show/283/">Yii论坛</a> 
+
+</dd>
+
+<dt>数据库</dt><dd>
+
+<a target="_blank" href="/group/show/4/">MySQL小组</a> 
+<a target="_blank" href="/group/show/624/">MsSQL数据库</a> 
+<a target="_blank" href="/group/show/625/">Access学习</a> 
+<a target="_blank" href="/group/show/626/">Oracle数据库</a> 
+<a target="_blank" href="/group/show/627/">Db2数据库</a> 
+<a target="_blank" href="/group/show/628/">sqlite数据库</a> 
+<a target="_blank" href="/group/show/629/">postgresql数据库</a> 
+<a target="_blank" href="/group/show/630/">mongodb数据库</a> 
+<a target="_blank" href="/group/show/631/">redis学习</a> 
+
+</dd>
+<dt>缓存</dt><dd>Memcache </dd>
+<dt>手机开发</dt><dd>
+
+<a target="_blank" href="/group/show/162/">Android论坛</a> 
+<a target="_blank" href="/group/show/375/">IOS开发社区</a> 
+<a target="_blank" href="/group/show/376/">Windows Phone开发社区</a> 
+<a target="_blank" href="/group/show/598/">Cordova</a> 
+<a target="_blank" href="/group/show/657/">phonegap</a> 
+<a target="_blank" href="/group/show/663/">swift</a> 
+
+</dd>
+<dt>web前端</dt><dd>
+
+<a target="_blank" href="/group/show/3/">Jquery小组</a> 
+<a target="_blank" href="/group/show/132/">Html5小组</a> 
+<a target="_blank" href="/group/show/136/">Javascript论坛</a> 
+<a target="_blank" href="/group/show/369/">CSS社区</a> 
+<a target="_blank" href="/group/show/599/">Angularjs</a> 
+<a target="_blank" href="/group/show/421/">Ajax开发学习</a> 
+<a target="_blank" href="/group/show/655/">dojo</a> 
+<a target="_blank" href="/group/show/684/">nodejs</a> 
+<a target="_blank" href="/group/show/689/">ionic</a> 
+
+</dd>
+<dt>模板引擎</dt><dd>
+
+<a target="_blank" href="/group/show/6/">Smarty小组</a> 
+
+</dd>
+
+<dt>开发工具</dt><dd>
+
+<a target="_blank" href="/group/show/676/">Eclipse</a> 
+<a target="_blank" href="/group/show/666/">zend studio</a> 
+<a target="_blank" href="/group/show/669/">git</a> 
+
+</dd>
+
+<dt>服务器环境</dt><dd>
+
+<a target="_blank" href="/group/show/5/">Apache小组</a> 
+<a target="_blank" href="/group/show/550/">Nginx</a> 
+
+</dd>
+
+<dt>网站建设</dt><dd>
+<a target="_blank" href="/group/show/46/">SEO小组</a> 
+</dd>
+
+<dt>操作系统</dt><dd>
+<a target="_blank" href="/group/show/153/">Linux论坛</a> 
+<a target="_blank" href="/group/show/656/">centos</a> 
+<a target="_blank" href="/group/show/662/">Windows</a> 
+<a target="_blank" href="/group/show/691/">IOS</a> 
+</dd>
+
+<dt>其他</dt><dd>
+<a target="_blank" href="/group/show/632/">数据库</a> 
+<a target="_blank" href="/group/show/634/">dos,bat</a> 
+<a target="_blank" href="/group/show/650/">Shell/批处理</a> 
+<a target="_blank" href="/group/show/645/">黑客安全</a> 
+<a target="_blank" href="/group/show/643/">程序员</a> 
+<a target="_blank" href="/home/sitemap/ts/topic/">帖子索引</a> 
+<a target="_blank" href="/home/sitemap/ts/article/">文章索引</a> 
+</dd>
+
+</dl>
+</div>
+</div></div>
+
+<div class="footer">
+<p>
+<a href="/home/info/key/about/">关于我们</a> | <a href="/home/info/key/contact/">联系我们</a> | <a href="/home/info/key/agreement/">用户条款</a> | <a href="/home/info/key/privacy/">隐私申明</a>
+ | <a href="/home/info/key/job/">加入我们</a>
+</p>
+<p>Powered by <a target="_blank" class="softname" title="开源社区" href="http://www.thinksaas.cn/">ThinkSAAS</a> 2.3 & <a target="_blank" href="http://www.qiniao.com/" title="奇鸟软件（北京）有限公司">QINIAO INC.</a>  Copyright ©  2011 - 2014   <a target="_blank" href="/">ThinkSAAS</a> 京ICP备09050100号</p><p><span style="font-size:0.83em;">Processed in 0.007646 second(s)</span></p></div>
+
+<!--弹出窗口-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/public/js/common.js" type="text/javascript"></script>
+<script src="/app/group/js/extend.func.js" type="text/javascript"></script>
+<script type="text/javascript" src="/plugins/pubs/gotop/jquery.goToTop.js"></script>
+<script type="text/javascript">
+$(function(){
+	//document.execCommand("BackgroundImageCache", false, true);
+	$(".go-top").goToTop({});
+	$(window).bind("scroll resize",function(){
+		$(".go-top").goToTop({});
+	});
+});
+</script><div style="display:none;"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253449553'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s6.cnzz.com/stat.php%3Fid%3D1253449553' type='text/javascript'%3E%3C/script%3E"));</script></div><script>
+$(document).ready(function(){
+	$('.chat_f1_expr').animate({height:'175px'}, 1000 );
+	$('#close').click(function(){
+		$('#chat_f1').hide();
+		$('#chat_f2').show();
+	})
+	$('#chat_f2').click(function(){
+		$(this).hide();
+		$('#chat_f1').show();
+	})
+	$('.name').hover(function(){
+		$(this).children('.detail').show();
+		$(this).children('.arrow').css('color','#a00');
+		},function(){
+		$(this).children('.detail').hide();	
+		$(this).children('.arrow').css('color','#fff');
+	})
+})
+</script>
+<!--代码开始-->
+<div id="chat_f1" class="hidden-xs">
+	<div id="chat_f1_main">
+		<div id="close"></div>
+		<a target="_blank" title="点击在线咨询" href="http://wpa.qq.com/msgrd?v=3&uin=1078700473&site=qq&menu=yes" class="a_kf">在线咨询</a>
+		<a target="_blank" title="点击技术支持" href="http://wpa.qq.com/msgrd?v=3&uin=1078700473&site=qq&menu=yes" class="a_sh">技术支持</a>
+	</div>
+	<div class="chat_f1_expr">
+		<div class="list">
+			<div class="name">
+				<span class="arrow">&bull;</span><a title="购买授权" href="http://www.thinksaas.cn/service/">购买授权</a>
+				<div class="detail">
+					<div class="border"></div>
+					<div class="mt"><strong>ThinkSAAS商业授权：</strong></div>
+					<div class="mt">
+					
+					￥3000.00
+					
+					</div>
+					<div class="mt mt5">
+						<a href="http://www.thinksaas.cn/service/" class="ovl">查看详细&raquo;</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="list">
+			<div class="name">
+				<span class="arrow">&bull;</span><a title="定制开发" href="http://www.thinksaas.cn/service/custom/">定制开发</a>
+				<div class="detail">
+					<div class="border"></div>
+					<div class="mt"><strong>定制开发</strong></div>
+					<div class="mt">ThinkSAAS为用户提供有偿个性定制开发服务</div>
+					<div class="mt mt5">
+						<a href="http://www.thinksaas.cn/service/custom/" class="ovl">查看详细&raquo;</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="list">
+			<div class="name">
+				<span class="arrow">&bull;</span><a title="二次开发" href="">二次开发</a>
+				<div class="detail">
+					<div class="border"></div>
+					<div class="mt"><strong>二次开发</strong></div>
+					<div class="mt">ThinkSAAS将为商业授权用户提供二次开发指导和技术支持</div>
+					<div class="mt mt5">
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="list">
+			<div class="name">
+				<span class="arrow">&bull;</span><a title="手机客户端" href="">手机客户端</a>
+				<div class="detail">
+					<div class="border"></div>
+					<div class="mt"><strong>手机客户端</strong></div>
+					<div class="mt">ThinkSAAS接收任何功能的Iphone(IOS)和Android手机的客户端定制开发服务</div>
+					<div class="mt mt5">
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="list">
+			<div class="name">
+				<span class="arrow">&bull;</span><a title="联系我们" href="">联系我们</a>
+				<div class="detail">
+					<div class="border"></div>
+					<div class="mt"><strong>联系我们</strong></div>
+					<div class="mt">
+					<strong>QQ：</strong>1078700473 <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1078700473&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1078700473:41" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>
+					<br />
+					<strong>Email：</strong>qiujun@thinksaas.cn
+
+					
+					</div>
+					<div class="mt mt5">
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="list">
+			<div class="name">
+				<span class="arrow">&bull;</span><a title="联系我们" href="">官方QQ群</a>
+				<div class="detail">
+					<div class="border"></div>
+					<div class="mt"><strong>官方QQ群</strong></div>
+					<div class="mt">
+					<strong>官方1群：</strong><a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=95013e0b2ccc1222bbcb696068a2b2495f1342fa7a9f3ad6cb8aca2aca272e45"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="ThinkSAAS官方QQ总群" title="ThinkSAAS官方QQ总群"></a>
+					<br />
+					<strong>官方2群：</strong><a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=ebbc4ba26e6b7e753670228e3b124278a55fdcb968f5ec4ecd3cfd137f6fcd16"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="ThinkSAAS官方2群" title="ThinkSAAS官方2群"></a>
+					<br />
+					<strong>官方3群：</strong><a target="_blank" href="http://wp.qq.com/wpa/qunwpa?idkey=cb834824517e285c48edf8e6e67794ad7828de6ac7aa84602301c41fe662afa6"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="ThinkSAAS官方用户3群" title="ThinkSAAS官方用户3群"></a></a>
+					
+					</div>
+					<div class="mt mt5">
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="list">
+			<div class="name">
+				<span class="arrow">&bull;</span><a title="建议反馈" href="http://www.thinksaas.cn/group/topic/92/">建议反馈</a>
+				<div class="detail">
+					<div class="border"></div>
+					<div class="mt"><strong>建议反馈</strong></div>
+					<div class="mt">让ThinkSAAS更好，把建议拿来。</div>
+					<div class="mt mt5">
+						<a href="http://www.thinksaas.cn/group/topic/92/" class="ovl">我有建议&raquo;</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		</div>
+		
+		
+		<div class="weixin">
+		<img src="http://apps.tst3.com/uploadfile/png/1.png" width="80" height="80" title="ThinkSAAS官方微信公众号" alt="ThinkSAAS官方微信公众号" />
+		<p style="text-align:center;">iphone扫码下载客户端</p>
+		</div>
+		
+		
+</div>
+<div id="chat_f2" style="display:none;">我要咨询</div>
+<!--代码结束--><div class="feedback-box">
+<a href="http://www.thinksaas.cn/group/topic/92/" target="_blank">意见反馈</a>
+</div><style>
+	.footertip{position: fixed;
+	z-index: 200;
+	padding: 10px 0;
+	width: 100%;
+	background-color: #333;
+	background-color: rgba(0,0,0,0.75);
+	color: #FFF;
+	font-size: 18px;text-align:center;bottom: 0;font-family: 微软雅黑;}
+	</style><div class="footertip">ThinkSAAS开源社区——知识=积累+学习+分享。<a href="/user/register/" class="btn btn-info">加入一起学习</a></div></body>
+</html>
+

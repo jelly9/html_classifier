@@ -1,0 +1,2182 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <title>
+        【tecman/泰克曼超声检测仪】_超声检测仪报价_NEW丰熹谷工业品商城超声检测仪批发</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="description" content="NEW丰熹谷工业品商城超声检测仪频道提供tecman/泰克曼超声检测仪全面同类产品信息对比，包含tecman/泰克曼超声检测仪报价、图片、咨询等，让您方便的全面了解tecman/泰克曼超声检测仪。" />
+    <meta name="keywords" content="tecman/泰克曼超声检测仪报价,tecman/泰克曼超声检测仪批发,最新tecman/泰克曼超声检测仪价格" />
+    <link rel="apple-touch-icon" href="/img/favicon.ico" />
+    <link rel="Shortcut Icon" href="/img/favicon.ico" />
+    <link href="../../css/classlist.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/details.css" rel="stylesheet" type="text/css" />
+    <script src="/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script src="/js/layer/layer.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="/inc/main.css" />
+    <link rel="stylesheet" href="/inc/oneclass.css" />
+    <link rel="stylesheet" href="/inc/flexslider.css" />
+    <link rel="Stylesheet" type="text/css" href="/inc/title-new.css" />
+    <script type="text/javascript" src="/js-new/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/js-new/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="/js-new/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="/js-new/main.js"></script>
+    <script language="javascript" type="text/javascript">
+        $(function () {
+            //控制价格只能输入数字
+            $(".txtprice").keyup(function () {
+                var t = $(this).val();
+                var re = /^[0-9]*$/;
+                if (!(re.test(t))) {
+                    $(this).val("");
+                }
+            });
+
+
+            //隐藏显示更多分类
+            $("[name='li_class_hi']").each(function () {
+                $(this).hide();
+            });
+
+            $("#class_a").click(function () {
+                var content = $(this).html();
+                if (content.indexOf('更多') == -1) {
+                    $(this).html("<b></b>更多");
+                    $("[name='li_class_hi']").each(function () {
+                        $(this).hide();
+                    });
+                    $("#div_searchClass").hide();
+                } else {
+                    $(this).html("<i></i>隐藏");
+                    $("[name='li_class_hi']").each(function () {
+                        $(this).show();
+                    });
+                    $("#div_searchClass").show();
+                }
+            });
+
+            //隐藏显示更多品牌
+            $("[name='li_brand_hi']").each(function () {
+                $(this).hide();
+            });
+
+            $("#brand_a").click(function () {
+                var content = $(this).html();
+                if (content.indexOf('更多') == -1) {
+                    $(this).html("<b></b>更多");
+                    $("[name='li_brand_hi']").each(function () {
+                        $(this).hide();
+                    });
+                    $("#div_searchBrand").hide();
+
+                } else {
+                    $(this).html("<i></i>隐藏");
+                    $("[name='li_brand_hi']").each(function () {
+                        $(this).show();
+                    });
+                    $("#div_searchBrand").show();
+                }
+            });
+
+            var aa = 0;
+            $(".brands li b").click(function () {
+                aa++;
+                if (aa % 2 == 0) {
+                    $(this).attr("class", "dd");
+                } else {
+                    $(this).attr("class", "ii");
+                }
+            });
+
+            //搜索分类
+            $("#txt_class").click(function () {
+                $("#txt_class").val("");
+            });
+            $("#txt_class").keyup(function () {
+                if ($("#txt_class").val() != "只搜索当前条件下的分类") {
+                    var className = $("#txt_class").val();
+                    if (className != null && className.length > 0) {
+                        $("[tag='className']").each(function () {
+                            var cName = $(this).attr("cName");
+                            if (cName.indexOf(className) != -1) {
+                                $(this).show();
+                            }
+                            else {
+                                $(this).hide();
+                            }
+                        });
+                    }
+                    else {
+                        $("[tag='className']").each(function () {
+                            $(this).show();
+                        });
+                    }
+                }
+            });
+
+            //搜索品牌
+            $("#txt_brand").click(function () {
+                $("#txt_brand").val("");
+            });
+            $("#txt_brand").keyup(function () {
+                if ($("#txt_brand").val() != "只搜索当前条件下的品牌") {
+                    var brandName = $("#txt_brand").val().toUpperCase();
+                    if (brandName != null && brandName.length > 0) {
+                        $("[tag='brandName']").each(function () {
+                            var bName = $(this).attr("bName").toUpperCase();
+                            if (bName.indexOf(brandName) != -1) {
+                                $(this).show();
+                            }
+                            else {
+                                $(this).hide();
+                            }
+                        });
+                    }
+                    else {
+                        $("[tag='brandName']").each(function () {
+                            $(this).show();
+                        });
+                    }
+                }
+            });
+
+            //图标样式（大图，列表）
+            var sType = $("#hiSType").val();
+            //大图
+            if (sType == "sheet") {
+                $("#list").attr("class", "l");
+                $("#sheet").attr("class", "d lie");
+                $("#pcon").attr("class", "bra ptable");
+
+            }
+            //列表
+            else if (sType == "plist") {
+                $("#list").attr("class", "l lie");
+                $("#sheet").attr("class", "seet");
+                $("#pcon").attr("class", "bra plist");
+
+            }
+            else {
+                $("#list").attr("class", "l");
+                $("#sheet").attr("class", "d");
+                $("#pcon").attr("class", "bra ptable");
+            }
+
+            //按价格排序
+            var pOrder = $("#hiOrder1").val();
+
+            if (pOrder == "pnext") {
+                $("#order_p").attr("class", "priceh");
+            }
+            else {
+                $("#order_p").attr("class", "price");
+            }
+
+            //按时间排序
+            var dOrder = $("#hiOrder2").val();
+            if (dOrder == "tnext") {
+                $("#order_d").attr("class", "priceh");
+            }
+            else {
+                $("#order_d").attr("class", "price");
+            }
+
+
+            //点击价格搜索
+            var isLongURL = $("#hiIsLOngURL").val();
+            var hiSort = $("#hiSort").val();
+            var hiSType = $("#hiSType").val();
+            var hiFid = $("#hiFid").val();
+            var hiCid = $("#hiCid").val();
+            var hiPage = $("#hiPage").val();
+            var hiSType = $("#hiSType").val();
+            var sort = $("#hiIsLOngURL").val();
+            var hiBrandid = $("#hiBrandid").val();
+            var minPrice = $("#txtminpricel").val();
+            var maxPrice = $("#txtmaxpricel").val();
+            var hiPSize = $("#hiPSize").val();
+            var himinPrice = $("#minprice").val();
+            var himaxPrice = $("#maxprice").val();
+
+            $("#btn_price").click(function () {
+                var price1 = $("#txtminpricel").val();
+                var price2 = $("#txtmaxpricel").val();
+                if (isLongURL != null && isLongURL == "true") {
+                    window.location = "/category-" + hiFid + "-" + hiCid + "-" + hiBrandid + "-" + hiPage + "-" + hiSort + "-" + minPrice + "-" + maxPrice + "-" + hiPSize + "-" + hiSType + ".html";
+                }
+                else {
+                    window.location = "/category-" + hiFid + "/" + hiCid + "-" + hiBrandid + "-" + price1 + "-" + price2 + ".html";
+                }
+            });
+
+            //搜索品牌
+            $("#txt_searchPName").click(function () {
+                $("#txt_searchPName").val("");
+            });
+
+            //输入产品名称搜索
+            $("#btn_searchPro").click(function () {
+                var pName = $("#txt_searchPName").val();
+                if (pName != "搜当前分类下产品") {
+                    var pUrl = window.location.href;
+                    if (pUrl.indexOf('?') > 0) {
+                        pUrl = pUrl.substring(0, pUrl.indexOf('?'));
+                    }
+                    window.location = pUrl + "?pName=" + escape(pName);
+                }
+            });
+
+            if (hiBrandid != null && hiBrandid != "0") {
+                var brandContent = $("#a_b_" + hiBrandid + "").html();
+                $("#a_b_" + hiBrandid + "").attr("class", "Selected");
+                $("#a_b_" + hiBrandid + "").html(brandContent + "<b id='b_closeBrand_" + hiBrandid + "'></b>");
+                //如果该品牌默认为隐藏状态，则让所有品牌都显示
+                var brandIsHidden = $("#a_b_" + hiBrandid + "").is(":hidden");
+                if (brandIsHidden == true) {
+                    $("#brand_a").html("<i></i>隐藏");
+                    $("[name='li_brand_hi']").each(function () {
+                        $(this).show();
+                    });
+
+                    $("#div_searchBrand").show();
+                }
+
+                var newUrl = "";
+                var thisUrl = $("#a_b_" + hiBrandid + "").attr("href");
+                var strData = thisUrl.split('-');
+                if (strData.length > 0) {
+                    if (strData.length == 5) {
+                        newUrl = strData[0] + "-" + strData[1] + "-" + "0" + "-" + strData[3] + "-" + strData[4];
+                    }
+                    if (strData.length == 10) {
+                        newUrl = strData[0] + "-" + strData[1] + "-" + "0" + "-" + strData[3] + "-" + strData[4] + "-" + strData[5] + "-" + strData[6] + "-" + strData[7] + "-" + strData[8] + "-" + strData[9];
+                    }
+                    $("#a_b_" + hiBrandid + "").attr("href", newUrl);
+                }
+
+            }
+
+
+        });
+
+      
+    </script>
+</head>
+<body>
+    <input type="hidden" id="hiPSize" value='90' />
+    <input type="hidden" id="hiSType" value='sheet' />
+    <input type="hidden" id="hiOrder1" value='pup' />
+    <input type="hidden" id="hiOrder2" value='tup' />
+    <input type="hidden" id="hiIsLOngURL" value='True' />
+    <input type="hidden" id="hiFid" value='31227' />
+    <input type="hidden" id="hiCid" value='31246' />
+    <input type="hidden" id="hiPage" value='1' />
+    <input type="hidden" id="hiSort" value='pnext' />
+    <input type="hidden" id="hiBrandid" value='5861' />
+    
+<script src="/js/FixedKF.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/topnew.js"></script>
+
+<script type='text/javascript' src='http://tb.53kf.com/kf.php?arg=10092042&style=1'> </script>
+<script type="text/javascript">
+    window.pageConfig = {
+        compatible: true,
+        navId: "home"
+    };
+</script>
+
+<script language="javascript" type="text/javascript">
+    $(function () {
+        $.ajax({
+            url: "/base/GetIsSalesLogin",
+            success: function (data) {
+                if (data == "true") {
+                    $("#sales_search").show();
+                }
+            }
+        });
+
+        $.ajax({
+            url: "/base/GetHotSearhKeyWords",
+            success: function (data) {
+                if (data != "") {
+                    $("#hotKeywordDiv").html(data);
+                }
+            }
+        });
+
+        $("#txt_search").keyup(function (event) {
+            var searchKey = $.trim($("#txt_search").val());
+            var li = $(".hover");
+            switch (event.keyCode) {
+                //键盘向上键    
+                case 38:
+                    if (li.length > 0 && li.length != 10) {
+                        var liIdUp = li.attr("id");
+                        if (typeof (liIdUp) != "undefined" && liIdUp.length > 0 && liIdUp.length != 10 && liIdUp != "") {
+                            var idIndex = parseInt(liIdUp.substring(12)) - 1;
+                            if (idIndex == 0) {
+                                $("#li_searchkey1").attr("class", "");
+                                $("#li_searchkey10").attr("class", "hover");
+                                var searchText = $("[name='li_search']").eq(9).text();
+                                $("#txt_search").val(searchText);
+                            }
+                            else {
+                                $("#" + liIdUp + "").attr("class", "");
+                                $("#li_searchkey" + idIndex + "").attr("class", "hover");
+                                var searchText = $("[name='li_search']").eq(idIndex - 1).text();
+                                $("#txt_search").val(searchText);
+                            }
+                        }
+                        else {
+                            $("#li_searchkey10").attr("class", "hover");
+                            var searchText = $("[name='li_search']").eq(9).text();
+                            $("#txt_search").val(searchText);
+                        }
+                    }
+                    else {
+                        $("#li_searchkey10").attr("class", "hover");
+                        var searchText = $("[name='li_search']").eq(9).text();
+                        $("#txt_search").val(searchText);
+                    }
+                    break;
+                //键盘向下键                                     
+                case 40:
+                    if (li.length > 0 && li.length != 10) {
+                        var liIdUp = li.attr("id");
+                        if (typeof (liIdUp) != "undefined" && liIdUp.length > 0 && liIdUp.length != 10 && liIdUp != "") {
+                            var idIndex = parseInt(liIdUp.substring(12)) + 1;
+
+                            if (idIndex == 11) {
+                                $("#li_searchkey10").attr("class", "");
+                                $("#li_searchkey1").attr("class", "hover");
+                                var searchText = $("[name='li_search']").eq(0).text();
+                                $("#txt_search").val(searchText);
+                            }
+                            else {
+                                $("#" + liIdUp + "").attr("class", "");
+                                $("#li_searchkey" + idIndex + "").attr("class", "hover");
+                                var searchText = $("[name='li_search']").eq(idIndex - 1).text();
+                                $("#txt_search").val(searchText);
+                            }
+                        }
+                        else {
+                            $("#li_searchkey1").attr("class", "hover");
+                            var searchText = $("[name='li_search']").eq(0).text();
+                            $("#txt_search").val(searchText);
+                        }
+                    }
+                    else {
+                        $("#li_searchkey1").attr("class", "hover");
+                        var searchText = $("[name='li_search']").eq(0).text();
+                        $("#txt_search").val(searchText);
+                    }
+                    break;
+                default:
+                    $.ajax({
+                        url: "/base/GetSearchHtml",
+                        data: { key: searchKey },
+                        cache: false,
+                        success: function (data) {
+                            if (data != "false") {
+                                $("#div_searchHtml").show();
+                                $("#ul_searchHtml").html(data);
+                            }
+                            else {
+                                $("#div_searchHtml").hide();
+                            }
+                        }
+                    });
+                    break;
+            }
+        });
+    });
+
+    function SearchContent(content) {
+
+        var key = content.replace(/(^\s*)|(\s*$)/g, "");
+        if (key != "丰熹谷-让企业采购变的更简单" && key != "") {
+            key = encodeURI(key);
+            window.location = "/Search?SearchKey=" + escape(key);
+        }
+    }
+
+    function SearchMouserOver(id) {
+        $(".hover").each(function () {
+            $(this).attr("class", "");
+        });
+        $("#" + id + "").attr("class", "hover");
+
+        $('#txt_search').unbind("blur");
+    }
+
+    function SearchMouserOut(id) {
+        $("#" + id + "").attr("class", "");
+        $('#txt_search').bind("blur", function () {
+            $("#div_searchHtml").hide();
+        });
+    }
+
+    function SearchBlur() {
+        $("#div_searchHtml").hide();
+    }
+
+</script>
+
+
+<script type="text/javascript" src="/js/base.js"></script>
+<script type="text/javascript">
+    window.pageConfig = {
+        compatible: true,
+        navId: "home"
+    };
+ </script>
+<div class="custom">
+    <div class="foleft">
+        <p class="p1">
+            
+            <a href="javascript:OpenKF();" title="在线资询">在线资询</a>
+        </p>
+        <p class="p2">
+            400-992-0855</p>
+        <p class="p3">
+            admin@fengxigu.com</p>
+    </div>
+</div>
+<div id="top-1" class="top-1">
+    <div class="topcen">
+        <div class="topcentleft">
+            <span id="LiUserName"></span>
+            <span id="jibie"></span>
+            <span class="toprig"><a>您好，欢迎来到丰熹谷</a></span> 
+            <span id="LiLogin">
+            <span class="toprig">
+                <a href="javascript:LoginFunction()" rel="nofollow">请登录</a>
+            </span> 
+                <span class="toprig">
+                    <a id="LiRegistration" href="/Member/RegistPersonal">免费注册</a>
+                </span> 
+            </span>
+            <span id="MemberOrderList" style="display: none;">[<a href="/InfoCentre/OrderList">个人中心</a>]&nbsp;[<a
+                rel="nofollow" href="javascript:LogOut()">注销</a>] </span>
+        </div>
+        <div class="topcentright">
+            <span class="toprig1" style="border:none;"><a href="/InfoCentre/OrderList">我的丰熹谷</a></span>
+            <span class="toprig1"><a href="/InfoCentre/OrderList">订单管理</a></span>
+            <span class="toprig1"><a href="/inquirybar/inquirybarone">我的询价车</a></span>
+            <span class="toprig1"><a href="/InfoCentre/ProductFavorite">我的收藏夹</a></span>
+            <span class="toprig1"><a href="/InfoCentre/MyIntegral">我的积分</a></span>
+            <span class="toprig1"><a href="/ReceiptGoods/Receipt">收货信息</a></span>
+            <span class="toprig1"><a href="/InfoCentre/MessageList">消息通知</a></span>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="clearboth"></div>
+<div id="head-1" class="topnav-1">
+
+    	<div class="navcon-1">
+        	<div class="topleft-1">
+            	<a href="/"><img src="/../images/FXGLOGO.png"/></a>
+            </div>
+            <div class="cent-1">
+                <p>
+                    
+                </p>
+            	<div class="border-1">
+                	<div class="bord-1">
+                    	<input type="text" class="txtsea-1"  value="" id="txt_search" />
+                        <img src="/../../images/search2.png" class="btnsech-1" id="headSearch"/>
+                    </div>
+                </div>
+                <div class="s-con-1" id="div_searchHtml" style="display: none;">
+                    <ul class="s-list-1" id="ul_searchHtml" >
+                    </ul>
+                </div>
+                <p id="hotKeywordDiv">
+                </p>
+            </div>
+            <div class="topright-1">
+            	<div class="tr1">
+                    <dl>
+                        <dt><a href="/InfoCentre/OrderList">我的丰熹谷</a><img style="vertical-align:0%" src="/../../images/down.png" /></dt>
+                        <dd>
+                            <div class="prompt1"><div id="noLogin"><span class="fl">您好,请<a href="javascript:LoginFunction();">登录</a></span><span class="fr"></span></div>
+                                <div id="LoginIn" style="display:none;"><span class="fl">[<a href="/InfoCentre/OrderList">个人中心</a>]&nbsp;[<a
+                rel="nofollow" href="javascript:LogOut()">注销</a>]</span><span class="fr"></span></div>
+                            </div>
+                            <div class="ulList-1">
+                                <ul>
+                                    <li><a href="/InfoCentre/OrderList">订单管理</a></li>
+                                    <li><a href="/inquirybar/inquirybarone">我的询价车</a></li>
+                                    <li><a href="/InfoCentre/ProductFavorite">我的收藏夹</a></li>
+                                    <li><a href="/InfoCentre/MyIntegral">我的积分</a></li>
+                                    <li><a href="/ReceiptGoods/Receipt">收货信息</a></li>
+                                    <li><a href="/InfoCentre/MessageList">消息通知</a></li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="tr2">
+                   <dl>
+                        <dt><a href="#">我的购物车</a><img style="vertical-align:0%" src="/../../images/down.png" /></dt>
+                        <dd>
+                            <div class="proList"><span class="fl">购物车中还没有商品！感觉去选购吧！！！</span></div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="clearboth"></div>
+
+
+
+
+<div class="new_menu-1">
+     <div id="menu-categorys">
+       <div class="menu_left-1">
+           <h2><a id="" href="/ProductsClass/ProductsClass">全部商品分类</a></h2>
+       </div>
+           
+                <script type="text/javascript">
+                    $(function () {
+                        $("#menu-categorys").bind("mouseover", function () {
+                            $("#AllClass").show();
+                        });
+                        $("#menu-categorys").mouseout(function () {
+                            $("#AllClass").hide();
+                        });
+                    });
+                </script>
+              <div id="AllClass" class="banner_left-1" style="display: none;">
+               
+
+	        <ul>
+
+
+			    <li><span class="title_left-1" ><a href="/z15.html">工业耗材、流体、标准件</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/z15/43069.html">工业用油、车间化学品</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43070.html">车间化学品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-27304.html">工业用油</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/z15/43075.html">轴承、紧固件</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42828.html">轴承</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42923.html">紧固件</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/z15/43076.html">管件、风机、压缩机</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43078.html">压缩机</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42064.html">风机/压缩机</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26710.html">管件类</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/z15/42659.html">泵、阀</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-26715.html">阀门</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26880.html">泵</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/z15/27217.html">工业用纸/胶带、化工原料</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42510.html">工业用纸/胶带</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42541.html">化工原料</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl6">
+                                <dt>
+                                   <a target="_blank" href="/z15/42926.html">传动件、密封件</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42924.html">密封件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26442.html">传动件</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/hardware.html">五金、工具、切割焊接</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/hardware/43050.html">五金</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43063.html">磨具磨料</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42293.html">保险器材</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26316.html">锁具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/hardware/42366.html">润滑保养类</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43263.html">机油壶</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26580.html">黄油泵</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26586.html">润滑工具辅件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-17268.html">黄油枪</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/hardware/17135.html">手动工具</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43056.html">剪刀、刀具类</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43057.html">钻具、锤子、螺丝批</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43058.html">凿、斧头、打气筒</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43059.html">工具车、工具箱包</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43223.html">泥木工工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42544.html">管道工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42890.html">扳手/套筒/手工具组套</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42891.html">钳类工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-34157.html">打包器、防爆手工具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/hardware/42607.html">电动、液压、防静电工具</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42798.html">防静电工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42601.html">电动工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26944.html">液压工具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/hardware/42849.html">切割焊接</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43048.html">切割</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-27658.html">焊接</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl6">
+                                <dt>
+                                   <a target="_blank" href="/hardware/17273.html">气动、风动工具</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42542.html">风动工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-17205.html">气动工具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl7">
+                                <dt>
+                                   <a target="_blank" href="/hardware/17222.html">金属加工器具</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-26409.html">机床附件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-17294.html">金属加工刀具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl8">
+                                <dt>
+                                   <a target="_blank" href="/hardware/42791.html">工具耗材及附件</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42824.html">工具附件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-17242.html">工具耗材</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/safety.html">安全防护、柜子系列</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/safety/42675.html">头部防护</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42676.html">头顶防护</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42677.html">眼\脸\耳部防护</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42680.html">呼吸防护</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/safety/42682.html">身体防护</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42745.html">绝缘及静电产品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-17088.html">焊接防护</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-17120.html">辐射及化工防护</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/safety/42734.html">四肢防护</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42683.html">手部防护</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-17126.html">足、腿部防护</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/safety/25980.html">防爆、防化</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42287.html">化学品处理</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-25981.html">防爆产品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26144.html">化学品储运</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/safety/42208.html">消防救援</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42233.html">救援器材</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42722.html">消防材料</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42723.html">消防设施及系统</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42724.html">救援工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42725.html">救援设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26911.html">消防器具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl6">
+                                <dt>
+                                   <a target="_blank" href="/safety/42290.html">柜子系列</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43051.html">保险柜系列</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43052.html">储藏柜系列</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43053.html">消毒柜系列</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-27046.html">安全柜系列</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl7">
+                                <dt>
+                                   <a target="_blank" href="/safety/42714.html">道路管理</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42715.html">道路交通隔离设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42716.html">安全标识及吊牌</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42717.html">交通常用设施及系统</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42718.html">交通电器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42720.html">反光发光服装及信号</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl8">
+                                <dt>
+                                   <a target="_blank" href="/safety/42202.html">防滑/防坠/潜水/无尘</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42746.html">防静电/无尘产品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26771.html">潜水装备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26900.html">防坠产品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26161.html">防滑产品</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/electronic.html">照明、电子电气、动力源</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/electronic/43126.html">开关、电源、电池</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43127.html">开关</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-27385.html">电源</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-32063.html">电池</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/electronic/43128.html">继电器、充电器、断路器</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43129.html">继电器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43130.html">断路器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42146.html">充电器 </a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/electronic/43136.html">配电、电线电缆</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43137.html">配电装置</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26646.html">电线电缆</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/electronic/27373.html">照明电器</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42563.html">LED照明</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42566.html">灯具类</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42567.html">光源制造</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/electronic/42138.html">电子元器件</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42733.html">其它电子电气</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26514.html">低压电器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26621.html">高压电器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26787.html">IT及通讯器件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26799.html">电子器件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26969.html">电子元件</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl6">
+                                <dt>
+                                   <a target="_blank" href="/electronic/42713.html">工控电器</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42795.html">控制系统</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42796.html">控制设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42413.html">控制器具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl7">
+                                <dt>
+                                   <a target="_blank" href="/electronic/26513.html">电工专用设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42721.html">输变电专用器材</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl8">
+                                <dt>
+                                   <a target="_blank" href="/electronic/30369.html">波形/集成电路</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43021.html">波形参数测量</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43022.html">集成电路测量</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl9">
+                                <dt>
+                                   <a target="_blank" href="/electronic/42655.html">动力源</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42665.html">动力附件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26639.html">电机</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26640.html">发电机</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26643.html">电动机</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26644.html">发动机</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/industry.html">酒店餐饮、物流、文化办公</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/industry/42323.html">酒店、餐饮设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43170.html">酒店用品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42836.html">制热器具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-28013.html">厨房设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-28180.html">制冷设备</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/industry/42905.html">文化办公</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42761.html">办公室常用设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42913.html">邮政专用/印刷设备</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/industry/42054.html">物料搬运、物流仓储</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-26125.html">物料搬运</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26274.html">物流仓储设备</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/sanitationgarden.html">环卫园林、汽车配件</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/sanitationgarden/42239.html">园林机械</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42839.html">园林其他机械</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42770.html">园林工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42771.html">园林常用机械</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/sanitationgarden/42240.html">公共环卫</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42730.html">公共环卫设施</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42731.html">环卫清洁工具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/sanitationgarden/42728.html">清洁设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42837.html">空气净化</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42766.html">清洁卫生设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-27624.html">清洁卫生器具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/sanitationgarden/42920.html">环境治理</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42732.html">污染防治</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42256.html">环保水处理</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/sanitationgarden/42919.html">林木管理</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-26096.html">耕整管理</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26188.html">木材加工及集装机械</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26205.html">种植施肥机械</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-26223.html">收获机械</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl6">
+                                <dt>
+                                   <a target="_blank" href="/sanitationgarden/42727.html">汽车工具及配件</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43141.html">汽车维修工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-27004.html">汽车配件</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/experimental.html">实验室耗材</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/experimental/43026.html">塑料/橡胶乳胶制品</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30238.html">塑料制品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30279.html">橡胶乳胶制品</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/experimental/43028.html">纸质/棉质耗材</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30233.html">棉质制品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43029.html">纸质制品</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/experimental/42072.html">实验室容器/实验气体</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42852.html">实验气体</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30300.html">四氟制品/冻存器具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29957.html">皿管类</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43015.html">瓶类</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/experimental/42850.html">组织学/分子生物学耗材</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30290.html">分子生物学耗材</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43031.html">组织学耗材</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/experimental/43025.html">金属/陶瓷/石英制品</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30255.html">金属制品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29995.html">石英制品</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl6">
+                                <dt>
+                                   <a target="_blank" href="/experimental/43017.html">灯类/烧器类</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42814.html">灯类</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43018.html">烧器类</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl7">
+                                <dt>
+                                   <a target="_blank" href="/experimental/42981.html">试剂</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42982.html">生化试剂</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42983.html">环保试剂</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42984.html">高纯试剂</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42985.html">精细化工</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42776.html">PCR类</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl8">
+                                <dt>
+                                   <a target="_blank" href="/experimental/43040.html">过滤/纯化耗材</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42797.html">过滤产品</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43044.html">纯化耗材</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/reagent.html">物性检测</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/reagent/29410.html">机械量仪表</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-31188.html">物质属性指数测量仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30533.html">大地测量仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30009.html">真空/动力/惯量</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29778.html">物性测试仪配件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30048.html">振动监测装置</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/reagent/29889.html">表界面物性测试仪器</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43079.html">吸附仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43080.html">表面/接触测试</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43081.html">痕迹测试仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43084.html">孔径/隙度分析仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43086.html">膜/泡沫/可焊性测试仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43096.html">粗糙度测量</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/reagent/42062.html">温度/压力/流量监测</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-29358.html">温度仪表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29377.html">压力仪表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29392.html">流量仪表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29866.html">热分析仪</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/reagent/29911.html">无损检测/无损探伤</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43099.html">密度测量</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43100.html">物理特性检测分析</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43101.html">探伤检测分析</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29919.html">金属检测</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/reagent/29878.html">粒度/颗粒/粉末分析仪</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43061.html">粒度/颗粒测量</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43062.html">分样/筛分器具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43066.html">粉末分析测量</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl6">
+                                <dt>
+                                   <a target="_blank" href="/reagent/29832.html">射线式分析仪器</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43060.html">X射线分析测试仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42808.html">紫外分析</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30602.html">红外仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30945.html">核子及核辐射测量仪器</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/environmentalmonitoring.html">环境检测仪器仪表</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/environmentalmonitoring/42246.html">环境检测</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-29813.html">环保检测装置及配件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30699.html">海洋/气象/水文/天文</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30714.html">大气及废气监测分析仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30795.html">水质检测</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30855.html">噪音/风速/照度仪器</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/environmentalmonitoring/42989.html">农、林、牧、渔检测</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30096.html">昆虫/植物/生物工程</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30615.html">粮油类检测分析</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30982.html">行业包装专用</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/environmentalmonitoring/42229.html">公安/司法/军队/安全</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30666.html">安全仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30956.html">船舶专用仪器仪表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31150.html">公安/司法/军队专用仪器</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/environmentalmonitoring/42163.html">显示/控制/校验及相关</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-29425.html">显示仪表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29471.html">控制仪表及装置</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29495.html">校验仪表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29515.html">其他自动化仪表及系统</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/environmentalmonitoring/42252.html">油墨/烟草/纺织</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30773.html">油墨检测</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30969.html">纺织监测分析</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31160.html">烟草专用仪器</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/laboratoryequipment.html">实验室设备</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/laboratoryequipment/42068.html">净化安全设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42889.html">实验室箱体</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30141.html">清洗/消毒设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30213.html">氮气发生器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30016.html">试验箱</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/laboratoryequipment/42943.html">温控设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42955.html">恒温设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42956.html">干燥设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42957.html">水浴/冷却/制冷设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29464.html">加热设备</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/laboratoryequipment/42944.html">反应设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30149.html">制样/消解/催化</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30163.html">分离/萃取设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30184.html">纯化设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30198.html">合成/反应设备</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/laboratoryequipment/42945.html">混合/分散设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42946.html">混合设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30192.html">分散设备</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/Instruments.html">建筑工程仪器</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/Instruments/42219.html">煤炭/地质勘探钻采检测</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30645.html">地质勘探钻采及地震仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30869.html">煤炭检测</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31001.html">石油性分析</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31168.html">地质/冶金</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31295.html">钻井检测仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31405.html">工程/地质隧道勘测仪器 </a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/Instruments/42364.html">路桥工程检测</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30680.html">大坝观测仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31227.html">公路道路桥梁桩基仪器设备 </a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31253.html">能源/交通/运输工程检测仪器设备 </a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/Instruments/42384.html">工程试验机/工程质量检测</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-29946.html">建筑工程试验机</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31324.html">建筑工程质量无损检测仪器 </a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/Instruments/42382.html">土木/岩土工程测试仪</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-31300.html">土木工程测试仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31542.html">土壤/岩石分析</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/z12.html">电子电力仪器仪表</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/z12/31584.html">电工仪器仪表</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43011.html">变送器/镇流器/变压器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29435.html">气动单元组合仪表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30330.html">数字仪表及装置</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31586.html">电流表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31589.html">电压表</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31602.html">万用表</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/z12/30332.html">电阻/电容/介质材料参数测量</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43006.html">电容参数测量</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43007.html">电阻参数测量</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29524.html">双参数多参数分析仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30340.html">介质材料测量仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31612.html">交直流仪器仪表</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/z12/43020.html">电力数字/电能计量管理</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43008.html">电力数字</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29478.html">工控</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30908.html">教学相关仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31648.html">电能计量管理</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/z12/31665.html">扩大量程/非电量/电气安检装置</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-43106.html">非电量/电气安检装置</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-43023.html">扩大量程仪表及装置</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/z11.html">无线广电</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/z11/42835.html">广播电视设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30397.html">电视发射/场强干扰及接收仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30474.html">电视系统配套设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31948.html">广播电视及维修设备</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-32130.html">公共广播系统</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/z11/31935.html">无线电/通讯设备</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-31678.html">GPS/测速仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29509.html">执行器/衰减器/信号装置</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30381.html">网线/网络特性测量</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30430.html">雷达/导航/通讯测试</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30507.html">有线电/电话/电声测试</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31811.html">电流</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31833.html">磁特性/时间频率/电离辐射计量</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31985.html">电缆/光缆传输分配</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+
+			    <li><span class="title_left-1" ><a href="/Z100.html">计量/分析仪器及相关配件</a></span><span class="title_icon-1">></span>
+                    <div class="title_towClass">
+                        <div class="tc_it">
+                           
+                            <dl class="dl1">
+                                <dt>
+                                   <a target="_blank" href="/Z100/42335.html">理化分析仪器</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42979.html">成分测试仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29569.html">元素分析仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29650.html">化学实验分析</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30082.html">生化/分子分析</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29797.html">元素分析仪配件</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl2">
+                                <dt>
+                                   <a target="_blank" href="/Z100/31715.html">计量/测量仪器</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42939.html">力学仪器及配件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42841.html">计量标准器具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31203.html">钟/表及定时仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31717.html">量具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31783.html">转速装置</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31888.html">天平/衡具</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl3">
+                                <dt>
+                                   <a target="_blank" href="/Z100/42142.html">光学仪器及配件</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-30527.html">观察/观测工具</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30545.html">光学计量仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30559.html">物理光学仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30574.html">光学分析/测试仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30607.html">激光仪器</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl4">
+                                <dt>
+                                   <a target="_blank" href="/Z100/42250.html">电化学分析仪器及配件</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-42276.html">电化学分析仪器</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-42288.html">电化学分析仪配件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29757.html">电化学配件</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29779.html">电镜耗材</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl5">
+                                <dt>
+                                   <a target="_blank" href="/Z100/42431.html">光谱/质谱/波谱</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-29580.html">质谱/波谱</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29598.html">色谱</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-29712.html">光谱</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30594.html">光谱遥感仪器</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            <dl class="dl6">
+                                <dt>
+                                   <a target="_blank" href="/Z100/42478.html">声学仪器及配件</a>
+                                </dt>
+                                <dd>
+                                
+                                    <em> <a target="_blank" href="/category-29927.html">声振分析仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-30491.html">声振测量仪</a></em>
+                                        
+                                    <em> <a target="_blank" href="/category-31852.html">声学计量</a></em>
+                                        
+                                </dd>
+                            </dl>
+                            
+                            
+
+                        </div>
+                    </div>
+			    </li>
+                
+			</ul>
+	   </div>
+       </div>
+	   <div class="clearboth"></div>
+	   <div class="menu_right-1">
+	        <a id="menuIndex" href="/">首&nbsp;&nbsp;页</a>
+			 <a href="/Shop/FreeShop" target="_blank">免费开店</a>
+	         <a href="/dsm/index">大甩卖</a>
+	   </div>
+<div class="clearboth"></div>
+</div>
+<div class="clearboth"></div>
+
+
+    
+    <div class="commall">
+        <div class="sealist">
+            <a href="allclass.html" target="_blank">所有分类</a> <a  href='/instruments.html' title='建筑工程仪器'>建筑工程仪器</a><label style='font-size:13px;'>></label><a  href='/instruments/42364.html' title='路桥工程检测'>路桥工程检测</a><label style='font-size:13px;'>></label><a  href='/category-31227.html' title='公路道路桥梁桩基仪器设备 '>公路道路桥梁桩基仪器设备 </a><label style='font-size:13px;'>></label><a  href='/category-31227/31246.html' title='超声检测仪'>超声检测仪</a><label style='font-size:13px;'>></label><span class="txtgo"><input type="text" class="txtlab" value="在结果中查询" placeholder="在结果中查询"/><input type="button" value="" class="btnlab"/></span>共找到<em>1</em>个产品组
+        </div>
+        <div class="allclass">       
+            <div class="bright">
+                
+                <div class="clalitit">
+                <h1><em>超声检测仪</em> - 商品筛选</h1>
+                    <div class="tittwo">
+                        
+                        <div class="ces">
+                            <div class="lileft">
+                                品牌</div>
+                            <div class="coon">
+                                
+                                <div class="licenter">
+                                    <ul class="brands">
+                                        
+                                        <li tag="brandName" bname="tecman/泰克曼"><a id="a_b_5861" href="/category-31227-31246-5861-1-pnext-0-0-90-sheet.html">
+                                            tecman/泰克曼</a>(1) </li>
+                                        
+                                        <li tag="brandName" bname="暂无"><a id="a_b_10720" href="/category-31227-31246-10720-1-pnext-0-0-90-sheet.html">
+                                            暂无</a>(4) </li>
+                                        
+                                        <li tag="brandName" bname="智博联"><a id="a_b_7352" href="/category-31227-31246-7352-1-pnext-0-0-90-sheet.html">
+                                            智博联</a>(2) </li>
+                                        
+                                        <li tag="brandName" bname="中岩"><a id="a_b_6254" href="/category-31227-31246-6254-1-pnext-0-0-90-sheet.html">
+                                            中岩</a>(3) </li>
+                                        
+                                    </ul>
+                                    <input type="hidden" id="numn" value="0" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="ces">
+                            
+                            <div class="lileft">
+                                价格</div>
+                            <div class="coon">
+                                <div class="licenter scroll">
+                                    
+                                    <!--
+                                <a href="/category-31227-31246-5861-1-pnext-0-0-90-sheet.html" class="Selected">不限</a>
+                                -->
+                                    
+                                    <a href="/category-31227/31246-5861-0-32000.html" class="">
+                                        0-32000<b id="price_0-32000"></b></a>
+                                    <a href="/category-31227/31246-5861-32000-64000.html" class="">
+                                        32000-64000<b id="price_32000-64000"></b></a>
+                                    <a href="/category-31227/31246-5861-64000-96000.html" class="">
+                                        64000-96000<b id="price_64000-96000"></b></a>
+                                    <a href="/category-31227/31246-5861-96000-128000.html" class="">
+                                        96000-128000<b id="price_96000-128000"></b></a>
+                                    
+                                    <input type="text" id="txtminpricel" class="txtprice" value="0" />
+                                    <label>
+                                        -</label>
+                                    <input type="text" id="txtmaxpricel" class="txtprice" value="0" />
+                                    <input type="button" value="确定" class="btnprice" id="btn_price" />
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product">
+                <div class="righttwo">
+                    <div class="head">
+                        <div class="order">
+                            排序</div>
+                        <div id="order_p" class="price">
+                            <a href="/category-31227-31246-5861-1-pup-0-0-90-sheet.html"
+                                class="pprice">价格</a><b></b></div>
+                        <div id="order_d" class="price">
+                            <a href="/category-31227-31246-5861-1-tup-0-0-90-sheet.html"
+                                class="uptime">上架时间</a><b></b></div>
+                        <div class="slstyle">
+                            <span class="kan">查看方式</span> <a href="/category-31227-31246-5861-1-pnext-0-0-90-plist.html">
+                                <span id="list"></span></a><a href="/category-31227-31246-5861-1-pnext-0-0-90-sheet.html">
+                                    <span id="sheet"></span></a>
+                        </div>
+                        <div class="num">
+                            每页显示： <a href="/category-31227-31246-5861-1-pnext-0-0-30-sheet.html"
+                                id="onePageSize" class=''>30</a>
+                            <a href="/category-31227-31246-5861-1-pnext-0-0-60-sheet.html"
+                                id="twoPageSize" class=''>
+                                60</a> <a href="/category-31227-31246-5861-1-pnext-0-0-90-sheet.html"
+                                    id="threePageSize" class='select'>90</a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="pager">
+                    <span class="page">
+                        
+                    </span>
+                </div>
+                
+                <ul class="bra ptable" id="pcon">
+                    
+                    <li>
+                        <p class="var">
+                            1种产品</p>
+                        <a title="非金属超声波检测仪" target="_blank" href="/category-31246/product-307479.html" class="pic">
+                            <img alt="非金属超声波检测仪" src="http://crm.fengxigu.com/upload1/201203/201233116518.jpg">
+                        </a>
+                        <p class="ti">
+                            <a title="非金属超声波检测仪" target="_blank" href="/category-31246/product-307479.html">
+                                非金属超声波检测仪</a></p>
+                        <p>
+                            品牌：tecman/泰克曼
+                        </p>
+                        <p class="cha">
+                            特点：泰克曼NM4A，非金属超声波检测仪|超声检测仪</p>
+                        <p class="price">
+                            <em>
+                                <a style='color:#f60;' rel="nofollow" href="javascript:OpenKF();">在线咨询</a></em></p>
+                    </li>
+                    
+                </ul>
+                
+                <div class="pager">
+                    <span class="page">
+                        
+                    </span>
+                </div>
+             
+            </div>
+        </div>
+    </div>
+    
+            <script type='text/javascript' src='http://chat.53kf.com/kf.php?arg=jwfu2012&style=1'></script>
+    
+    <div id="footer" class="footer"> 
+        
+
+<div class="fo1">
+    <div class="foleft">
+        <p class="p1">
+        
+        <a href="javascript:OpenKF();" title="在线资询">在线资询</a>
+        </p>
+        <p class="p2">400-992-0855</p>
+        <p class="p3">admin@fengxigu.com</p>
+    </div>
+
+    <div class="forig">
+    
+
+    </div>
+
+    
+</div>
+        
+
+
+ 
+
+        
+        
+
+<p class="text2">按排行字母分类：<a href="/product-A-1.html">A</a><a href="/product-B-1.html">B</a><a href="/product-C-1.html">C</a><a href="/product-D-1.html">D</a><a href="/product-E-1.html">E</a><a href="/product-F-1.html">F</a><a href="/product-G-1.html">G</a><a href="/product-H-1.html">H</a><a href="/product-I-1.html">I</a><a href="/product-J-1.html">J</a><a href="/product-K-1.html">K</a><a href="/product-L-1.html">L</a><a href="/product-M-1.html">M</a><a href="/product-N-1.html">N</a><a href="/product-O-1.html">O</a><a href="/product-P-1.html">P</a><a href="/product-Q-1.html">Q</a><a href="/product-R-1.html">R</a><a href="/product-S-1.html">S</a><a href="/product-T-1.html">T</a><a href="/product-U-1.html">U</a><a href="/product-V-1.html">V</a><a href="/product-W-1.html">W</a><a href="/product-X-1.html">X</a><a href="/product-Y-1.html">Y</a><a href="/product-Z-1.html">Z</a></p>
+<p class="text2">ICP备案编号：沪ICP备14045106 工商注册号：310110000564620 </p>
+
+<p class="text2">
+<a target="_blank" href="/category-17205.html" title="气动工具">气动工具</a>/<a target="_blank" href="/category-29377.html" title="压力仪表">压力仪表</a>/<a target="_blank" href="/electronic/42138.html" title="电子元器件">电子元器件</a>/<a target="_blank" href="/experimental.html" title="实验室耗材">实验室耗材</a>/<a target="_blank" href="/machine/26014.html" title="五金工具">五金工具</a>/<a target="_blank" href="/zt/" title="产品专题">产品专题</a>/<a rel="nofollow" target="_blank" href="/Approve/index" title="添加供应商">添加供应商</a>/
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/17548624.js"></script>
+</p>
+<noscript><a href="http://www.51.la/?17548624" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/17548624.asp" style="border:none" /></a></noscript>
+
+
+
+   
+    </div> 
+     
+    
+<script language="javascript" type="text/javascript">
+    //获得底连接
+    $.ajax({
+        url: "/msg/GetFootLinkHtml",
+        success: function (data) {
+            $(".forig").append(data);
+        }
+    });
+</script>
+ 
+    <script type="text/javascript"> 
+    var _bdhmProtocol =
+    (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript
+    src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fc96755c944fdda9306b2fc6142a08b6e'
+    type='text/javascript'%3E%3C/script%3E")); </script> <!--% if (this.Model.LoginKFType)
+    {%--> <!--script type='text/javascript' src='http://chat.53kf.com/kf.php?arg=jwfu2012&style=1'></script-->
+    <!--%} %-->
+</body>
+</html>

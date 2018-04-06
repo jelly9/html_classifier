@@ -1,0 +1,563 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>券商机构晚间推荐10只潜力股-股迅网</title>
+<meta name="keywords" content="股票行情,股票行情查询">
+<meta name="description" content="股票行情第一站：股迅网(www.gux.com.cn) 提供全球全方位24小时股票行情、股市动态、股票行情动态播报、今日股票行情查询、股票大行情直播、股票大盘播报、沪深股市股票大盘走势图查看等等最准确、快捷的行情服务。">
+<link href="/templets/article_css/spage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/templets/article_css/newpage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.gux.com.cn/templets/list_css/spage.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.gux.com.cn/templets/list_css/newpage.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="http://www.gux.com.cn/include/dedeajax2.js"></script>
+<SCRIPT language=javascript src="http://www.gux.com.cn/templets/images/index.js" type=text/javascript></SCRIPT>
+<script src="/images/js/j.js" language="javascript" type="text/javascript"></script>
+<script language="javascript" type="text/javascript">
+
+<!--
+
+	function CheckLogin(){
+
+	  var taget_obj = document.getElementById('_ajax_feedback');
+
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+
+	  myajax.SendGet2("http://www.gux.com.cn/member/ajax_feedback.php");
+
+	  DedeXHTTP = null;
+
+	}
+
+	function checkSubmit(){
+
+		if(document.feedback.msg.value!='') document.feedback.submit();
+
+		else alert("评论内容不能为空！");
+
+	}
+
+function postBadGood(ftype,fid)
+
+{
+
+	var taget_obj = document.getElementById(ftype+fid);
+
+	var saveid = GetCookie('badgoodid');
+
+	if(saveid != null)
+
+	{
+
+		var saveids = saveid.split(',');
+
+		var hasid = false;
+
+		saveid = '';
+
+		j = 1;
+
+		for(i=saveids.length-1;i>=0;i--)
+
+		{
+
+			if(saveids[i]==fid && hasid) continue;
+
+			else {
+
+				if(saveids[i]==fid && !hasid) hasid = true;
+
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+
+				j++;
+
+				if(j==10 && hasid) break;
+
+				if(j==9 && !hasid) break;
+
+			}
+
+		}
+
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+
+		else saveid += ','+fid;
+
+		SetCookie('badgoodid',saveid,1);
+
+	}
+
+	else
+
+	{
+
+		SetCookie('badgoodid',fid,1);
+
+	}
+
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+
+	myajax.SendGet2("http://www.gux.com.cn/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+
+	DedeXHTTP = null;
+
+}
+
+function postDigg(ftype,aid)
+
+{
+
+	var taget_obj = document.getElementById('newdigg');
+
+	var saveid = GetCookie('diggid');
+
+	if(saveid != null)
+
+	{
+
+		var saveids = saveid.split(',');
+
+		var hasid = false;
+
+		saveid = '';
+
+		j = 1;
+
+		for(i=saveids.length-1;i>=0;i--)
+
+		{
+
+			if(saveids[i]==aid && hasid) continue;
+
+			else {
+
+				if(saveids[i]==aid && !hasid) hasid = true;
+
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+
+				j++;
+
+				if(j==20 && hasid) break;
+
+				if(j==19 && !hasid) break;
+
+			}
+
+		}
+
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+
+		else saveid += ','+aid;
+
+		SetCookie('diggid',saveid,1);
+
+	}
+
+	else
+
+	{
+
+		SetCookie('diggid',aid,1);
+
+	}
+
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+
+	var url = "http://www.gux.com.cn/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+
+	myajax.SendGet2(url);
+
+	DedeXHTTP = null;
+
+}
+
+function getDigg(aid)
+
+{
+
+	var taget_obj = document.getElementById('newdigg');
+
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+
+	myajax.SendGet2("http://www.gux.com.cn/plus/digg_ajax.php?id="+aid);
+
+	DedeXHTTP = null;
+
+}
+
+
+
+-->
+
+</script>
+
+<style type="text/css">
+<!--
+#upmaina {
+	height: 175px;
+	width: 620px;
+	text-align: left;
+	margin-left:18px;
+}
+#upmain {
+	height: 175px;
+	width: 285px;
+	float: left;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #9AB6E8;
+	border-bottom-color: #9AB6E8;
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: #9AB6E8;
+}
+#upright {
+	float: left;
+	height: 175px;
+	width: 316px;
+	border: 1px solid #9AB6E8;}
+#upleft {
+	font-size: 13px;
+	line-height: 28px;
+	font-weight: bold;
+	
+	background-repeat: repeat-x;
+	height: 28px;
+	width: auto;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #9AB6E8;
+}
+#xiawzxs {
+	font-size: 12px;
+	line-height: 22px;
+	text-indent: 11px;
+	height: 20px;
+	width: auto;
+	margin-left: 6px;
+	
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+#yzsm {
+	background-color: #FFFFFF;
+	height: auto;
+	width: auto;
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	margin-left: 20px;
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #000000;
+	border-bottom-color: #000000;
+	padding: 10px;
+	text-align: left;
+	font-size: 12px;
+	line-height: 20px;
+	color: #666666;
+}
+
+-->
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<div class="tool">
+<div class="l">
+股票行情第一站 - <a href="http://www.gux.com.cn" target="_blank" title="股迅网">股迅网</a> - 50万股民的共同选择！          </div>	
+<div class="r">
+<a href="http://www.gux.com.cn/stock/" target="_blank" style="color:#ff0000">（新）个股行情</a>
+|
+<a href="http://www.gux.com.cn/member/index_do.php?fmdo=user&dopost=regnew" target="_blank">免费注册</a>
+|
+<a href="http://gux.com.cn/member/login.php" target="_blank">马上登陆</a> | </div>
+</div>
+    <div class="top w960 center">
+      <div class="title">
+       <h1> <a href="http://www.gux.com.cn"><img src="/templets/images/toplogo.gif" /></a> </h1>
+     </div>
+      <!-- /title -->
+         <div class="banner">
+		 <script src='/templets/js/index_top_lo_1.js' language='javascript'></script>
+</div>
+
+      <!-- /banner -->
+      <div class="rlink">
+<script src='/templets/js/index_top_lo_2.js' language='javascript'></script>
+      </div>
+ <DIV class=index_nav>
+<UL>
+ &nbsp;<a href="http://www.gux.com.cn/" target=_blank>股迅首页</a> | 
+   <a href="http://www.gux.com.cn/jujiao/index.html" target=_blank>股市聚焦</a> | 
+  <a href="http://www.gux.com.cn/yaowen/index.html" target=_blank>财经要闻</a>  | 
+  <a href="http://www.gux.com.cn/fenxi/index.html" target=_blank>板块分析</a>  | 
+  <a href="http://www.gux.com.cn/yanjiu/index.html" target=_blank>行业研究</a>  | 
+ <a href="http://www.gux.com.cn/binggou/index.html" target=_blank>重组资讯</a> |
+  <a href="http://www.gux.com.cn/tuijian/index.html" target=_blank>黑马推荐</a> | 
+  <a href="http://www.gux.com.cn/jiepan/index.html" target=_blank>实时解盘</a> | 
+  <a href="http://www.gux.com.cn/quanzheng/index.html" target=_blank>权证专题</a> | 
+  <a href="http://www.gux.com.cn/wanxiang/index.html" target=_blank>股市万象</a>  | 
+  <a href="http://www.gux.com.cn/gushi/index.html" target=_blank>亚洲股市</a> | 
+  <a href="/xingqing" target=_blank>股票行情</a>  | 
+    <a href="/shichang" target=_blank>股票市场</a>  | 
+  <a href="/shikuang" target=_blank>股票市况</a>  | 
+</UL>
+<UL> &nbsp;<a href="http://www.gux.com.cn/tishi/index.html" target=_blank>交易提示</a> | 
+  <a href="http://www.gux.com.cn/shuju/index.html" target=_blank>主力数据</a> | 
+  <a href="http://www.gux.com.cn/faxing/index.html" target=_blank>新股发行</a> | 
+  <a href="/dfenxi" target=_blank>大盘分析</a> | 
+  <a href="http://www.gux.com.cn/shichang/index.html" target=_blank>期货市场</a> | 
+  <a href="http://www.gux.com.cn/yuce/index.html" target=_blank>后市预测</a> | 
+   <a href="http://www.gux.com.cn/stock/index.php" target=_blank>个股行情</a> | 
+  <a href="http://www.gux.com.cn/guandian/index.html" target=_blank>机构动态</a> | 
+  <a href="http://www.gux.com.cn/dongtai/index.html" target=_blank>基金动向</a> | 
+  <a href="http://www.gux.com.cn/binggou/index.html" target=_blank>并购重组</a> | 
+  <a href="http://www.gux.com.cn/jiaocheng/index.html" target=_blank>实战教程</a> | 
+  <a href="http://www.gux.com.cn/xuexiao/index.html" target=_blank>股民学校</a> | 
+  <a href="http://www.gux.com.cn/yanjiu/index.html" target=_blank>公司研究</a> | 
+  <a href="/tags.php" target=_blank>热点推荐</a> | 
+ 
+</UL>
+</DIV>
+  </div>
+  <DIV style=" MARGIN: 5px auto 0px;  WIDTH: 950px; COLOR: #999; LINE-HEIGHT: 25px; TEXT-ALIGN: center">
+<script src="/templets/js/index_g.js" type="text/javascript"></script>
+</DIV>
+<div style="width:948px; margin:0px auto">
+<DIV class=index_nav style="float:left; margin:0px auto; width:948px;">
+<script src="/templets/js/wenzigg.js" type="text/javascript"></script></DIV>
+</div>
+<DIV class=hqzs_nr><IFRAME src="http://www.gux.com.cn/stock/hq.php" frameBorder=0 width="98%" scrolling=no height=12 allowTransparency></IFRAME></DIV>
+</DIV>
+</DIV>
+
+
+
+<div class="mainbox">
+
+<div class="mainleft">
+
+<div class="newsview">
+
+<div class="placenav">当前位置:<a href='http://www.gux.com.cn/'>股迅网</a> > <a href='http://www.gux.com.cn/tuijian/'>黑马推荐</a> > 正文</div>
+
+<div class="atitle"><h1>券商机构晚间推荐10只潜力股</h1></div>
+
+<div class="info">股票行情第一站　2011年09月08日&nbsp;&nbsp;<a href="http://www.gux.com.cn"  target="_blank">www.gux.com.cn</a></div>
+
+<div style="border:1px solid #ececec; width:600px; padding-left:8px; padding-top:10px; padding-bottom:5px; margin-top:5px; background:#C8D8F2; margin-left:10px; line-height:25px;">
+	<div class="intro">&nbsp;&nbsp;&nbsp;&nbsp;今日沪深两市受外围市场大跌影响，双双大幅低开，之后股指一路下行，沪指跌至2490点附近才有所企稳，开始横盘整理走势。从目前情况来看，由于缺乏做多预期成交量大幅萎缩，股指保持弱势整理，并下破2500点强支撑。针对今日市场走势，我们对十家实力机构的荐股......</div>
+</div>
+<div class="content" style="text-indent:2em;">
+
+           今日沪深两市受外围市场大跌影响，双双大幅低开，之后<a href='http://www.guzhiyi.com/' target='_blank'>股指</a>一路下行，沪指跌至2490点附近才有所企稳，开始横盘整理走势。从目前情况来看，由于缺乏做多预期成交量大幅萎缩，股指保持弱势整理，并下破2500点强支撑。针对今日市场走势，我们对十家实力机构的<a href='http://www.gpjia.com/' target='_blank'>荐股</a>做了汇总，供广大<a href='http://www.cjcheng.com/' target='_blank'>投资者</a>参考。<BR><BR>　　锦江股份：酒店扩张提速 给予“推荐”评级<BR><BR>　　事件：<BR><BR>　　8月30日锦江股份公布11年中报：公司实现营业收入9.6 亿元，同比减少12.8 %；实现利润总额2.2亿元，同比减少20.4%；归属于母公司所有者的净利润1.93亿，同比减少16.5%；每股收益为0.32元。若剔除去年同期的臵出资产营业收入，则公司营业收入、归属于<a href='http://www.companys.cc/' target='_blank'>上市公司</a>股东的净利润分别同比增长15.67%、0.63%，略低于预期。<BR><BR>　　评论：<BR><BR>　　积极因素：<BR><BR>　　经济型酒店扩张加速，经营稳健。经济型酒店业务实现营业收入8.6亿元，同比增加17.46%。其中，首次加盟费收入为2303 万元，同比增长18.73%；持续加盟费收入为4,020 万元，同比增长14.77%。实现归属于经济型酒店业务分部的净利润8755万元，同比增长24.98%。<BR><BR>　　该业绩增长主要来自于开业酒店数量的大幅增加以及入住率的小幅上升。上半年公司经济型酒店签约数量为682家，增速由29%提高至35%；其中开业酒店占酒店总数的71%，增速为31%。在单间客房收入方面，公司酒店RevPar为148.30元，同比下降1.81%，主要是受平均房价下跌的影响，但入住率略微上升，保持在84%以上。<BR><BR>　　渠道费征收于上半年启动。4月1日公司开始根据合同约定，向部分经济型酒店加盟商征收渠道费，实现渠道费收入297万元。渠道费由无到有的过程，充分说明了公司在经济型酒店管理方面的品牌价值已逐渐显现。另一方面，随着中央订房系统预订比例的不断提高，以及加盟店的加速扩张，预订渠道费有望在未来几年内呈现快速增长之势。<BR><BR>　　轻资产扩张为主，加盟店比例持续提高。上半年公司加盟店数量增加到326家，占比开业酒店总数的67%，同比提高3个百分点，且在区域布局上，逐渐向二三线城市渗透。<BR><BR>　　<BR>
+
+			
+
+
+
+</li></span>
+
+      </div>
+
+            <div class="cupage">
+
+			<ul>
+
+				
+
+			  </ul>
+
+          </div>
+
+ <div style="float:left; margin-left:3px;" >Tag热点标签：
+</div>
+
+	</div>
+
+
+
+     <div id="upmaina" style="background:#F5F8FD; margin-top:10px;">    <div id="upmain" >
+      <div id="upleft">&nbsp;&nbsp;<a href="/tiicai/guonacaishi" target="_blank" class="biaotit">最新发布</a></div>
+	   <div id="xiawzxs"><a title="券商机构晚间推荐10只潜力股" href="http://www.gux.com.cn/tuijian/200168.html" target="_blank" class="xinwen">券商机构晚间推荐10只潜力股</a></div>
+<div id="xiawzxs"><a title="本周股评家最看好的个股（附股）" href="http://www.gux.com.cn/tuijian/200148.html" target="_blank" class="xinwen">本周股评家最看好的个股（附股）</a></div>
+<div id="xiawzxs"><a title="机构荐6股:有意延伸产业链 增长潜力待释放" href="http://www.gux.com.cn/tuijian/200142.html" target="_blank" class="xinwen">机构荐6股:有意延伸产业链 增长潜力待释放</a></div>
+<div id="xiawzxs"><a title="明日展望：重点布局十板块潜质股" href="http://www.gux.com.cn/tuijian/200008.html" target="_blank" class="xinwen">明日展望：重点布局十板块潜质股</a></div>
+<div id="xiawzxs"><a title="券商机构晚间推荐10只潜力股(名单)" href="http://www.gux.com.cn/tuijian/200001.html" target="_blank" class="xinwen">券商机构晚间推荐10只潜力股(名单)</a></div>
+<div id="xiawzxs"><a title="水泥行业：仍蕴含投资机会" href="http://www.gux.com.cn/tuijian/197761.html" target="_blank" class="xinwen">水泥行业：仍蕴含投资机会</a></div>
+<div id="xiawzxs"><a title="研报精选 两股成长路径清晰" href="http://www.gux.com.cn/tuijian/197755.html" target="_blank" class="xinwen">研报精选 两股成长路径清晰</a></div>
+
+	  
+	  
+	  
+	  
+    </div><div id="upright"> <div id="upleft">&nbsp;&nbsp;<a href="/zucai/huanqiu" target="_blank" class="biaotit">最热推荐</a></div>
+	   
+	   <div id="xiawzxs"><a title="银监会否认强制定出信贷额度 计划仍由银行" href="http://www.gux.com.cn/tuijian/38184.html" target="_blank" class="xinwen">银监会否认强制定出信贷额度 计划仍由银行</a></div>
+<div id="xiawzxs"><a title="达沃斯推敲退出路线图" href="http://www.gux.com.cn/tuijian/41022.html" target="_blank" class="xinwen">达沃斯推敲退出路线图</a></div>
+<div id="xiawzxs"><a title="新审计法条例6看点 公布上市公司结果应提前" href="http://www.gux.com.cn/tuijian/44551.html" target="_blank" class="xinwen">新审计法条例6看点 公布上市公司结果应提前</a></div>
+<div id="xiawzxs"><a title="社保基金“心理定价”：今年上半年沪指到36" href="http://www.gux.com.cn/tuijian/51019.html" target="_blank" class="xinwen">社保基金“心理定价”：今年上半年沪指到36</a></div>
+<div id="xiawzxs"><a title="城商行再冲刺上市 化解股权结构难题各显神" href="http://www.gux.com.cn/tuijian/80619.html" target="_blank" class="xinwen">城商行再冲刺上市 化解股权结构难题各显神</a></div>
+<div id="xiawzxs"><a title="亚太指数跌0.9% 因中国进口、房价增速减缓" href="http://www.gux.com.cn/tuijian/83105.html" target="_blank" class="xinwen">亚太指数跌0.9% 因中国进口、房价增速减缓</a></div>
+<div id="xiawzxs"><a title="收评：周四市场或有较弱的反弹" href="http://www.gux.com.cn/tuijian/87479.html" target="_blank" class="xinwen">收评：周四市场或有较弱的反弹</a></div>
+
+	  
+    </div>
+    </div>
+
+<div class="bdss">
+
+</div>
+
+
+
+</div>
+
+<div class="mainright">
+<!-- <div class="hot mt1">-->
+
+			<dl class="tbox">
+
+				<dt><strong>热点内容</strong></dt>
+
+				<dd>
+
+					<ul class="c1 ico2">
+
+<li><a href="http://www.gux.com.cn/jujiao/200067.html" target="_blank">六度调整首次下调 三季度航空业盈利或超预</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/200056.html" target="_blank">煤炭股季节性行情临近</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/200047.html" target="_blank">保险股估值引多空争议</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/200041.html" target="_blank">地理信息全产业链迎来投资良机</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/200032.html" target="_blank">估值已低于1661点水平 A股已成低价股“天堂</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/200031.html" target="_blank">磷矿稀缺或成下一个稀土 10家公司最值得关</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/200013.html" target="_blank">社保卡将推一卡通 智能卡芯片企业受益(附股</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/199466.html" target="_blank">捷通华声HCI技术舒展强劲动力</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/197605.html" target="_blank">ST股弱市狂欢 超级牛散豪赌掘金(附股)</a></li>
+<li><a href="http://www.gux.com.cn/jujiao/197595.html" target="_blank">医药流通板块或成强势股摇篮</a></li>
+
+
+					</ul>
+
+				</dd>
+
+			</dl>
+
+<!--		</div>-->
+		<div class="hot mt1">
+
+			<dl class="tbox">
+
+				<dt><strong>股市万象</strong></dt>
+
+				<dd>
+
+					<ul class="c1 ico2">
+
+<li><a href="http://www.gux.com.cn/wanxiang/199995.html" target="_blank">上市钢企陷“增产减收”怪圈</a></li>
+<li><a href="http://www.gux.com.cn/wanxiang/199994.html" target="_blank">电企请求支援发改委如何“还愿”</a></li>
+<li><a href="http://www.gux.com.cn/wanxiang/199993.html" target="_blank">皮海洲：券商在IPO中介利益链上疯狂赚钱</a></li>
+<li><a href="http://www.gux.com.cn/wanxiang/199992.html" target="_blank">减少对中国的依赖 欧盟开始储备稀土</a></li>
+<li><a href="http://www.gux.com.cn/wanxiang/199988.html" target="_blank">时寒冰：九月的棋局</a></li>
+<li><a href="http://www.gux.com.cn/wanxiang/199986.html" target="_blank">钮文新：外汇占款正在打劫中国</a></li>
+<li><a href="http://www.gux.com.cn/wanxiang/199985.html" target="_blank">周子勋：抗通胀着力点移向了财政政策</a></li>
+
+
+					</ul>
+
+				</dd>
+
+			</dl>
+
+		</div>
+		<div class="hot mt1">
+
+			<dl class="tbox">
+
+				<dt><strong>行业研究</strong></dt>
+
+				<dd>
+
+					<ul class="c1 ico2">
+
+<li><a href="http://www.gux.com.cn/yanjiu/200131.html" target="_blank">创新型产业潜力更佳</a></li>
+<li><a href="http://www.gux.com.cn/yanjiu/200129.html" target="_blank">触底反弹氟化工行业静候景气回升</a></li>
+<li><a href="http://www.gux.com.cn/yanjiu/200127.html" target="_blank">放涨价风便于经销商囤货？</a></li>
+<li><a href="http://www.gux.com.cn/yanjiu/200123.html" target="_blank">国内电子化学品市场容量2015年估计超过400</a></li>
+<li><a href="http://www.gux.com.cn/yanjiu/200120.html" target="_blank">避险意愿上升黄金概念股受青睐</a></li>
+<li><a href="http://www.gux.com.cn/yanjiu/200115.html" target="_blank">影响股价变化行业资讯一览(9.7)</a></li>
+<li><a href="http://www.gux.com.cn/yanjiu/200108.html" target="_blank">黄金发光金股能否酝酿修复行情？</a></li>
+
+
+					</ul>
+
+				</dd>
+
+			</dl>
+
+		</div>
+		<div class="hot mt1">
+
+			<dl class="tbox">
+
+				<dt><strong>板块分析</strong></dt>
+
+				<dd>
+
+					<ul class="c1 ico2">
+
+<li><a href="http://www.gux.com.cn/fenxi/200083.html" target="_blank">WTI原油上涨2美元，至88.02美元/桶</a></li>
+<li><a href="http://www.gux.com.cn/fenxi/200081.html" target="_blank">钯金技术分析：如期维持区间震荡，后市走势</a></li>
+<li><a href="http://www.gux.com.cn/fenxi/200076.html" target="_blank">伦敦现货黄金周三早盘定盘价为1844.00美元/</a></li>
+<li><a href="http://www.gux.com.cn/fenxi/200063.html" target="_blank">现货黄金刷新日内低点1822.70美元/盎司</a></li>
+<li><a href="http://www.gux.com.cn/fenxi/200062.html" target="_blank">铂金技术分析：大幅下挫，后市或将测试1800</a></li>
+<li><a href="http://www.gux.com.cn/fenxi/200043.html" target="_blank">黄金价格暴跌逾2%，长期涨势仍未变</a></li>
+<li><a href="http://www.gux.com.cn/fenxi/200040.html" target="_blank">伦敦现货白银周三早盘定盘价为40.98美元/盎</a></li>
+
+
+					</ul>
+
+				</dd>
+
+			</dl>
+
+		</div>
+
+</div>
+</div>
+
+<div class="MainBottom"></div>
+<hr style="width:955px; height:0px;" />
+
+<div class="footer w960 center clear">
+<p><a href="/server/jianjie.htm" target="_blank">关于我们</a> | <a href="/server/jianjie.htm" target="_blank">联系我们</a> | <a href="/server/jianjie.htm#1121" target="_blank">广告服务</a> | <a href="http://www.gux.com.cn/data/rssmap.html" target="_blank">RSS</a> | <A href="/tags.php" target="_blank">TAG标签</A> | <a href="/data/sitemap.html" target="_blank">网站地图</a> </p>
+ <p> 股票行情 - <a href="http://www.gux.com.cn/" target="_blank">股迅网</a> 版权所有 Power By <span style="color:#FF0000"><a href="http://gux.com.cn">Gux.com.cn</a></span></p>
+<p> Copyright &copy; 2006-2010 <a href="http://www.gux.com.cn" target="_blank">Gux.com.cn</a> All rights reserved</p>
+ <p><A href="http://www.miibeian.gov.cn/" target=_blank>黑ICP备09094858号</A>&nbsp;&nbsp;联系方式<a href="http://www.11ui.com" target="_blank">:</a>QQ <A href="tencent://message/?uin=1139265484&Site=QQ&Menu=yes" target="_blank">1139265484</A></p>
+ <p><div style="display:none">
+      <script src="http://s175.cnzz.com/stat.php?id=1758480&web_id=1758480" language="JavaScript" charset="gb2312"></script>
+	 
+     </div>
+</p>
+</div>
+
+
+
+
+
+
+<script src="/js/compr.js" type="text/javascript"></script>
+<script src="/js/info.js" type="text/javascript"></script>
+<script src="/js/about.js" type="text/javascript"></script>
+
+</body>
+
+</html>
+
+
+

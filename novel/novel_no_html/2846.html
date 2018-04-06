@@ -1,0 +1,1443 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+       <script type="text/javascript" language="javascript">
+           function setCookie(name, value, option) { var str = name + '=' + escape(value); if (option) { if (option.expireHours) { var d = new Date(); d.setTime(d.getTime() + option.expireHours * 3600 * 1000); str += '; expires=' + d.toGMTString(); } if (option.path) str += '; path=' + option.path; else str += '; path=/'; if (option.domain) str += '; domain=' + option.domain; if (option.secure) str += '; true'; } document.cookie = str; }
+           function getCookie(name, defaultValue) { var re = new RegExp(name + '=([^;]*);?', 'gi'); var v = typeof defaultValue == "undefined" ? null : defaultValue; var r = re.exec(document.cookie) || []; return (r.length > 1 ? unescape(r[1]) : v) };
+           /* 返回跳转的url链接 部分列表页面可以跳，部分不能跳 */
+           function GetJumpUrl(url) { var reg1 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\//, reg2 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([a-z0-9]+)\//, reg3 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([a-z0-9]+)\/s(\d+)\//, reg4 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([0-9.]+)_([0-9.]+)\//, reg5 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([0-9.]+)_([0-9.]+)\//, reg6 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([a-z0-9]+)\/([0-9.]+)_([0-9.]+)\//, reg7 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([a-z0-9]+)\/s(\d+)\/([0-9.]+)_([0-9.]+)\//, reg8 = /a([0-9]*)_([0-9]*)m([0-9]{0,2})s([0-9]{0,1})d([0-9.]{0,3})g([0-9]{0,1})s([0-9]{0,1})c([0-9]{0,2})nc([0-1]{0,1})gp([0-1]{0,1})i([0-1]{0,1})lt([0-1]{0,1})o([0-9]{0,1})c([0-9]{0,})s([0-1]{0,1})p([0-9]{0,5})ex(\w*)/;var num=url.split('/').length;var isMore=reg8.test(url);if(reg1.test(url)&&num==6&&!isMore){return url;}else if(reg2.test(url)&&num==7&&!isMore){return url;}else if(reg3.test(url)&&num==8&&!isMore){return url;}else if(reg4.test(url)&&num==6&&!isMore){return url;}else if(reg5.test(url)&&num==7&&!isMore){return url;}else if(reg6.test(url)&&num==8&&!isMore){return url;}else if(reg7.test(url)&&num==9&&!isMore){return url;}else{return'';}};
+
+           /* 智能机浏览器版本信息 */
+           var browser = { versions: function () { var u = navigator.userAgent, app = navigator.appVersion; return { trident: u.indexOf('Trident') > -1, presto: u.indexOf('Presto') > -1, webKit: u.indexOf('AppleWebKit') > -1, gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, iPad: u.indexOf('iPad') > -1, webApp: u.indexOf('Safari') == -1, QQbrw: u.indexOf('MQQBrowser') > -1, ucLowEnd: u.indexOf('UCWEB7.') > -1, ucSpecial: u.indexOf('rv:1.2.3.4') > -1, ucweb: function () { try { return parseFloat(u.match(/ucweb\d+\.\d+/gi).toString().match(/\d+\.\d+/).toString()) >= 8.2 } catch (e) { if (u.indexOf('UC') > -1) { return true; } else { return false; } } }(), Symbian: u.indexOf('Symbian') > -1, ucSB: u.indexOf('Firefox/1.') > -1 }; }() }
+           var _gaq = _gaq || []; (function (win, browser, undefined) {
+               var rf = document.referrer;
+               if (rf === "" || rf.toLocaleLowerCase().indexOf(".che168.com") === -1) {
+                   var defaultJumpDomain = getCookie("defaultJumpDomain", "");
+                   if (defaultJumpDomain == "www") {
+                       return;
+                   }
+                   else if (defaultJumpDomain == "m") {
+                       var url = location.href,
+                       curUrl = GetJumpUrl(url);
+                       window.location.href = curUrl.replace('http://www', 'http://m'); return;
+                   }
+                   else if (screen == undefined || screen.width < 810) {
+                       if (browser.versions.iPad == true) { return; }
+                       if (browser.versions.webKit == true || browser.versions.mobile == true || browser.versions.ios == true || browser.versions.iPhone == true || browser.versions.ucweb == true || browser.versions.ucSpecial == true) { win.location.href = "http://m.che168.com/tzh.html?from=pc"; return; }
+                   }
+               }
+           })(window, browser);
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="x-ua-compatible" content="ie=emulateie7" />
+    <title>
+        全国_二手凯美瑞 2012款 200G 经典豪华版_1-3年_3-6万公里_二手车之家</title>
+    <meta name="description" content="二手车之家全国二手车,提供全国二手凯美瑞 2012款 200G 经典豪华版车源信息,1-3年,3-6万公里,信息完善,选车便捷,买车放心,买卖二手车就上二手车之家" />
+    
+    <link href="/css/UsedCarListNew_V2.css?v2.1" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <!--迷你导航开始-->
+<style type="text/css">
+  /*迷你top*/
+  body{font-size:12px;}
+  /*背景图*/
+  .lrlink1,.lrlink2,.applink { background:url(http://www.autoimg.cn/che168_2sc/images/201207/pic_bg_new.png) no-repeat;}
+  .minitop{ width:100%; border-bottom:1px solid #e6e6e6; background:repeat-x #f8f8f8;}
+  .minibo{ border:1px solid #FFFFFF;}
+  .con_mini{ width:960px; height:22px; line-height:23px; margin:0 auto;}
+  .con_mini a:link,.con_mini a:visited{ color:#6a6a6a;}
+  .con_mini a:hover{ color:#f36d1d;}
+  .con_mini .fl{ color:#333333;}
+  .con_mini .fl span{ color:#D8D8D8;}
+  .con_mini .fr{ color:#d8d8d8;}
+  .con_mini .fr a{ display:inline-block;}
+  .applink{ padding-left:18px; background-position:-706px -353px;}
+  .lrarea{ width:40px; margin-left:2px; display:inline-block; position:relative;}
+  .lrarea a{ outline:none;}
+  .lrlink1,.lrlink2{ display:inline-block; padding:0 10px 0 3px; background-position:29px -344px; position:relative; left:2px; z-index:5;}
+  .lrlink2{ background-position:29px -366px;}
+  .ldrop{ width:38px; padding-top:20px; text-align:center; background-color:#FFFFFF; border:1px solid #e6e6e6; position:absolute; left:0; top:1px;}
+  .ldrop a{ display:block; height:20px; line-height:20px; overflow:hidden;}
+  .fl{ float:left;}
+  .fr{ float:right;}
+
+  a:link,a:visited{ color:#01439a; text-decoration:none;}
+  a:hover{ color:#f36d1d; text-decoration:none;}
+  .my-icon{ background:url(http://www.autoimg.cn/2scimg/web/website/201309/headericonNew.png) no-repeat;}
+  .my-icon {background-position: -320px -131px;height: 20px;padding-left: 20px;}
+</style>
+<style type="text/css">
+        /***头部提示***/
+.point{ height:26px; line-height:27px; overflow:hidden; background-color:#ffffc7;font-size:12px;margin:0;}
+.point p{ width:960px; margin:0 auto; text-align:center; color:#d60107; background-color:#ffffc7;}
+.point a:link{ color:#0000ff; text-decoration:underline;}
+.point a:visited{ color:#0000ff; text-decoration:underline;}
+.point a:hover{ color:#0000ff; text-decoration:none;}
+.point a:active{ color:#0000ff; text-decoration:underline;}
+.po_clo{ display:block; width:8px; height:7px; cursor:pointer; background:url(/images/pic_bg.png) no-repeat -197px -472px; position:absolute; top:8px; right:10px;}
+    </style>
+<div class="minitop">
+  <div class="minibo">
+    <div class="con_mini" id="login">
+    </div>
+  </div>
+</div>
+<!--迷你导航结束--><!--头部+导航开始-->
+
+<style type="text/css">
+ /*背景图*/
+ .cho_city1,.cho_city2,.txt_sou,.btn_sou,.nav ul li.cur a{ background:url(http://www.autoimg.cn/che168_2sc/images/201207/pic_bg_new.png) no-repeat;}
+ 
+ /*头部*/
+.header{ width:960px; height:90px; margin:0 auto;}
+.logo{ width:155px; height:55px; float:left; padding:17px 20px 0 15px;}
+.logo img{border:0px;}
+/*切换省份*/
+.citydd{ width:132px; height:50px; float:left; padding-left:18px; border-left:1px solid #c3c3c3; margin-top:20px;}
+.nowcity{ display:block; line-height:25px; font-weight:bold; font-size:14px; margin-bottom:7px;}
+.cho_city1,.cho_city2{ display:inline-block; font-size:14px; padding-right:25px; background-position:-466px -274px;}
+.cho_city2{ background-position:-466px -300px;}
+.chcities{ width:430px; overflow:hidden; border:1px solid #dfdfdf; background-color:#FFFFFF; font-size:14px; position:absolute; *margin:15px 0 0 -89px; z-index:5000;}
+.chcities a{ height:23px; line-height:23px; padding:0 4px 0 5px; white-space:nowrap; float:left;}
+.chcities a:link,.chcities a:visited{ color:#333333;}
+.chcities a:hover{ color:#FFFFFF; background-color:#2e86e0;}
+.hot_city{ width:410px; height:26px; overflow:hidden; margin:7px auto 5px auto; border-bottom:1px dotted #b2b2b2;}
+.chcities dl{ width:420px; margin:0 auto; padding-bottom:5px; overflow:hidden;}
+.chcities dt{ width:17px; padding:4px 3px 0 0; text-align:right; float:left; color:#d60000; font-family:Arial, Helvetica, sans-serif;}
+.chcities dd{ width:190px; float:left; word-break:break-all;}
+/*搜索*/
+.searcharea{ float:right; padding-top:30px; position:relative; z-index:100;}
+.txt_sou{ width:380px; height:34px; line-height:34px; padding-left:30px; border:1px solid #d8d8d8; border-right:0; color:#6a6a6a; float:left; background-position:0 -228px;}
+.btn_sou{ width:133px; height:36px; display:inline-block; background-color:#e85f0f; float:left; outline:none;}
+.btn_sou:link,.btn_sou:visited{ background-position:0 -265px;}
+.btn_sou:active{ background-position:0 -304px;}
+
+.slt_lxc{width:409px; line-height:22px;font-size:14px;border:solid 1px #CBDCEA;background-color:#FFFFFF;position:absolute;z-index:100; left:0; top:65px;}
+.slt_lxc ul{line-height:22px;}
+.slt_lxc ul li{height:22px;line-height:22px;}
+.slt_lxc ul li a{ width:399px; display:block;padding:0 5px;}
+.slt_lxc ul li a:link,.slt_lxc ul li a:visited{ color:#404040;}
+.slt_lxc ul li a:hover{ color:#ffffff; background-color:#0c78d0;}
+/*导航*/
+div.nav{ width:960px; height:38px; margin:0 auto; background-color:#0d78d0;}
+div.nav ul{ float:left; border-right:1px solid #2d8ada;}
+div.nav ul li{ width:115px; height:38px; line-height:42px; overflow:hidden; text-align:center; float:left; border-left:1px solid #2d8ada; border-right:1px solid #174fbc; font-size:16px; font-weight:bold;}
+div.nav ul li a:link,div.nav ul li a:visited{ display:block; color:#FFFFFF;}
+div.nav ul li a:hover{ display:block; color:#FFFFFF; background-color:#095ec2;}
+div.nav ul li.cur a:link,div.nav ul li.cur a:visited,div.nav ul li.cur a:hover{ display:block; color:#0055b9; background-color:#FFFFFF; background-position:-480px -228px;}
+</style>
+<div class="header">
+    <div class="logo">
+        <a href="/">
+            <img src="http://www.autoimg.cn/che168_2sc/images/logo.png" width="155" height="55"
+                alt="二手车之家,www.che168.com" /></a></div>
+    <div class="citydd" id="divSelectProvince" style="">
+        
+        <span class="nowcity"><a href="javascript:void(0);" id="aCurrArea"></a></span>
+        <div id="showhedd" style="width: 81px;">
+            <a id="aTabProvince" href="javascript:void(0);" class="cho_city1">切换省份</a>
+            <div id="divTabProvince" class="chcities" style="display: none;">
+                <div id="hotCity" class="hot_city">
+                    <a href="/china/">全国</a> <a href="/beijing/">北京</a> <a href="/shanghai/">上海</a>
+                    <a href="/guangdong/">广东</a> <a href="/jiangsu/">江苏</a> <a href="/zhejiang/">浙江</a>
+                    <a href="/sichuan/">四川</a> <a href="/henan/">河南</a> <a href="/liaoning/">辽宁</a>
+                    <a href="/shandong/">山东</a> <a href="/hebei/">河北</a> <a href="/anhui/">安徽</a> <a
+                        href="/chongqing/">重庆</a>
+                </div>
+            <dl id="dlAllProvince">
+                    <dt>A</dt>
+                    <dd>
+                        <a href="/anhui/">安徽</a></dd>
+                    <dt>L</dt>
+                    <dd>
+                        <a href="/liaoning/">辽宁</a></dd>
+                    <dt>B</dt>
+                    <dd>
+                        <a href="/beijing/">北京</a></dd>
+                    <dt>N</dt>
+                    <dd>
+                        <a href="/namenggu/">内蒙古</a><a href="/ningxia/list/">宁夏</a></dd>
+                    <dt>C</dt>
+                    <dd>
+                        <a href="/chongqing/">重庆</a></dd>
+                    <dt>Q</dt>
+                    <dd>
+                        <a href="/qinghai/list/">青海</a></dd>
+                    <dt>F</dt>
+                    <dd>
+                        <a href="/fujian/">福建</a></dd>
+                    <dt>S</dt>
+                    <dd>
+                        <a href="/shan_xi/">陕西</a><a href="/sichuan/">四川</a><a href="/shanghai/">上海</a><a href="/shanxi/list/">山西</a><a href="/shandong/">山东</a></dd>
+                    <dt>G</dt>
+                    <dd>
+                        <a href="/guangdong/">广东</a><a href="/guangxi/">广西</a><a href="/guizhou/list/">贵州</a><a href="/gansu/list/">甘肃</a></dd>
+                    <dt>T</dt>
+                    <dd>
+                        <a href="/tianjin/">天津</a></dd>
+                    <dt>H</dt>
+                    <dd>
+                        <a href="/hainan/list/">海南</a><a href="/henan/">河南</a><a href="/hubei/">湖北</a><a href="/hunan/">湖南</a><a href="/hebei/">河北</a><a href="/heilongjiang/">黑龙江</a></dd>
+                    <dt>X</dt>
+                    <dd>
+                        <a href="/xizang/list/">西藏</a><a href="/xinjiang/list/">新疆</a></dd>
+                    <dt>Y</dt>
+                    <dd>
+                        <a href="/yunnan/list/">云南</a></dd>
+                    <dt>J</dt>
+                    <dd>
+                        <a href="/jiangsu/">江苏</a><a href="/jiangxi/">江西</a><a href="/jilin/">吉林</a></dd>
+                    
+                    <dt>Z</dt>
+                    <dd>
+                        <a href="/zhejiang/">浙江</a></dd>
+                </dl>
+            </div>
+        </div>
+        
+    </div>
+    <div class="searcharea">
+        <form id="souform" name="soform" action="/Handler/Search.ashx" target='_self'>
+        <input type="text" class="txt_sou" id="search2sc" name="search2sc" value="" autocomplete="off" maxlength="30" />
+        <a href="#" id="btnKeyword" class="btn_sou" hidefocus="true" title="搜索"></a>
+        <input type="hidden" id="py" name="py" value="china" />
+        <input type="hidden" value="0" name="IsBigPic" id="IsBigPic" />
+        </form>
+        <div class="slt_lxc" style="display: none;" id="autocomplateTip">
+        </div>
+    </div>
+</div>
+<div class="nav" id="top_nav">
+    <ul>
+        <li class=""><a href="/" id="top_nav_index">首页</a></li>
+        <li class="cur"><a href="/china/list/" id="top_nav_buy">
+            买二手车</a></li>
+        <li class=""><a id="sltPubilcCar" href="/SelectRelease.aspx" >
+            卖二手车</a></li>
+        <li class=""><a href="/pinggu/" >
+            评估</a></li>
+        <li class=""><a href="/china/BuyList------p.html"
+            id="top_nav_qiugou">求购信息</a></li>
+        <li class=""><a href="/list/news.html"
+            id="A1">买车必看</a></li>
+    </ul>
+    <input type="hidden" id="hiddenHeaderStyle" value="2" />
+</div>
+<!--头部结束-->
+
+<script type="text/javascript" src="/js/HeaderNew.js?201402111006"></script>
+<script type="text/javascript">
+    /* 搜索 */
+    (function () {
+        var search2scObj = document.getElementById('search2sc');
+        if (search2scObj.value == '') {
+            search2scObj.value = '请输入车辆名称 如:凯越';
+        }
+        C.bind('search2sc', 'focus', function () {
+            if (search2scObj.value == '请输入车辆名称 如:凯越') search2scObj.value = '';
+        });
+        C.bind('search2sc', 'blur', function () {
+            if (document.activeElement.id != "btnKeyword") {
+                if (search2scObj.value == '') search2scObj.value = '请输入车辆名称 如:凯越';
+            }
+        });
+        C.bind('btnKeyword', 'click', searchSumbit);
+    })();
+    /* 智能搜索 */
+    function onSearch() {
+        var val = document.getElementById("souform").getElementsByTagName("input")[0].value;
+        val = val.replace(/(^\s*)(\s*$)/g, "");
+        val = val.replace(/(<|>)/g, "");
+        document.getElementById("autocomplateTip").style.display = "none";
+        document.getElementById("souform").getElementsByTagName("input")[0].value = val;
+        document.getElementById("souform").submit();
+    };
+    function acOnFocus() {
+        var script = document.createElement("script");
+        script.src = "http://sou.autohome.com.cn/js/autocomplate_2scInputThink.js?v10";
+        script.onreadystatechange = script.onload = function () {
+            if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+                if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete")
+                    Sou.Autocomplate.AddAutocomplate(document.getElementById("souform").getElementsByTagName("input")[0]);
+            }
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+        document.getElementById("souform").getElementsByTagName("input")[0].onfocus = "";
+    };
+    document.getElementById("souform").getElementsByTagName("input")[0].onfocus = acOnFocus;
+
+    /* 搜索提交 */
+    function searchSumbit() {
+        var search2scObj = document.getElementById('search2sc');
+        //if (search2scObj.value == '请输入车辆名称 如凯越' || search2scObj.value == '') return false;
+        if (search2scObj.value == '请输入车辆名称 如:凯越') search2scObj.value = '';
+        onSearch();
+    };
+
+    /* 根据省ID读取拼音 */
+    function GetPinYinNAV(ID) {
+        ProvincePinYin = 'china';
+        for (var i = 0, len = ProvinceJSON.options.length; i < len; i++) {
+            if (ProvinceJSON.options[i].V == ID) {
+                ProvincePinYin = ProvinceJSON.options[i].P;
+            }
+        }
+        return ProvincePinYin;
+    };
+
+    /* 更新导航栏的连接中的省市拼音 */
+    function UpdateNavLink(CurrentPinYin) {
+        if (document.getElementById("top_nav_index") != null) {
+            document.getElementById("top_nav_index").setAttribute("href", "/" + CurrentPinYin + "/");
+        }
+
+        if (document.getElementById("top_nav_buy") != null) {
+            document.getElementById("top_nav_buy").setAttribute("href", "/" + CurrentPinYin + "/list/");
+        }
+
+        if (document.getElementById("top_nav_tejia") != null) {
+            document.getElementById("top_nav_tejia").setAttribute("href", "/" + CurrentPinYin + "/a_msdgscncgpiltocs1pex/");
+        }
+
+        if (document.getElementById("top_nav_qiugou") != null) {
+            document.getElementById("top_nav_qiugou").setAttribute("href", "/" + CurrentPinYin + "/BuyList------p.html");
+        }
+    };
+    /* 如果当前页传拼音了就不用JS更新直接用 */
+    if ((tools.isExist('py')) && typeof (ProvinceJSON) != 'undefined') {
+        var SearchPinYin = document.getElementById('py');
+        var CurrentProvinceValue = GetPinYinNAV(C.getCookie('userarea'));
+        if (SearchPinYin.value == '') {
+            document.getElementById('py').value = CurrentProvinceValue;
+        }
+        UpdateNavLink(CurrentProvinceValue);
+    }
+
+    /*判断是否加载渠道选择链接*/
+    function setSltPublicCarUrl() {
+        var curArea = C.getCookie('userarea');
+        var dealerId = C.getCookie('2scDealerId');
+        if (dealerId==''||dealerId==null) {
+            if (curArea == 0) curArea = C.getCookie('area');
+            if (curArea >= 110000 && curArea <= 110199) {
+                document.getElementById('sltPubilcCar').href = '/sell/2.html';
+            }
+        }
+    }
+    setSltPublicCarUrl();
+
+
+</script>
+
+    <div class="con168">
+        <div id="ad_960_01" style="margin-top: 8px; display:none; "></div>
+        <div class="path">
+            <a href="/2sc/whole/list-0-0-1-1-1-1-0-0-0-0-0-0-0.html" target="_blank" class="fr fw">去二手车大全&gt;&gt;</a>当前位置：<a href="/">二手车之家</a><span>&gt;</span><a href="/picture/">全国二手车</a><span>&gt;</span><a href="/picture/fengtian/">丰田</a><span>&gt;</span>凯美瑞</div>
+        <div class="list_left">
+            
+
+<div class="carfilter" >
+    <div class="condition"><span class="fl">您已选择：</span><span class="ch_cond tealign">全 国</span><span class="ch_cond">日本<a href="/picture/a1_3m3s3dgscncgpilto1cspex/" class="remove"></a></span><span class="ch_cond">丰田<a href="/picture/a1_3m3s3dgscncgpilto1cspexc3/" class="remove"></a></span><span class="ch_cond">凯美瑞<a href="/picture/fengtian/a1_3m3s3dgscncgpilto1cspexc3/" class="remove"></a></span><span class="ch_cond">2012款 200G 经典豪华版<a href="/picture/fengtian/kaimeirui/a1_3m3s3dgscncgpilto1cspexc3/" class="remove"></a></span><span class="ch_cond">1-3年<a href="/picture/fengtian/kaimeirui/s12544/a_m3s3dgscncgpilto1cspex/" class="remove"></a></span><span class="ch_cond">3-6万公里<a href="/picture/fengtian/kaimeirui/s12544/a1_3ms3dgscncgpilto1cspex/" class="remove"></a></span><a class="adis" href="/china/a_ms3dgscncgpiltocspex/">清除全部条件</a></div>
+    <dl class="carf_dl">
+        <dt ><span class="fbg">地&nbsp;区：</span></dt>
+        <dd >
+            <div>
+                <div id="divSelectArea" onclick="ShowProvinceHtml()" class="sel_fcar">选择地区</div>
+                <span class="pa_r20"></span><a href="/jingjinji/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">京津冀</a><a href="/jiangzhehu/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">江浙沪</a><a href="/guangshen/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">广深</a><a href="/yunguichuan/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">云贵川</a><a href="/guangdong/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">广东</a><a href="/shandong/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">山东</a><a href="/zhejiang/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">浙江</a><a href="/jiangsu/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">江苏</a><a href="/hebei/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">河北</a>
+                <div class="pop_fu" style="display: none;" id="divProvinceHtml">
+                    <dl class="popfu_dl">
+                        <dt><a href="/china/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">全国</a></dt>
+                        <dd>
+                            <ul class="fubra_car2">
+                                <li><a href="/jingjinji/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">京津冀</a></li>
+                                <li><a href="/jiangzhehu/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">江浙沪</a></li>
+                                <li><a href="/guangshen/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">广深</a></li>
+                                <li><a href="/yunguichuan/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">云贵川</a></li>
+                                <li><a href="/shanghai/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">上海</a></li>
+                                <li><a href="/beijing/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">北京</a></li>
+                                <li><a href="/tianjin/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">天津</a></li>
+                                <li><a href="/chongqing/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">重庆</a></li>
+                                <li><a href="/shenzhen/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">深圳</a></li>
+                            </ul>
+                        </dd>
+                        <dd class="line"></dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">A</span>
+                                <li><a href="/anhui/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">安徽</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">B</span>
+                                <li><a href="/beijing/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">北京</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">C</span>
+                                <li><a href="/chongqing/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">重庆</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">F</span>
+                                <li><a href="/fujian/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">福建</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">G</span>
+                                <li><a href="/guangdong/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">广东</a></li>
+                                <li><a href="/guangxi/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">广西</a></li>
+                                <li><a href="/gansu/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">甘肃</a></li>
+                                <li><a href="/guizhou/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">贵州</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">H</span>
+                                <li><a href="/hainan/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">海南</a></li>
+                                <li><a href="/henan/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">河南</a></li>
+                                <li><a href="/hubei/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">湖北</a></li>
+                                <li><a href="/hunan/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">湖南</a></li>
+                                <li><a href="/hebei/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">河北</a></li>
+                                <li><a href="/heilongjiang/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">黑龙江</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">J</span>
+                                <li><a href="/jiangsu/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">江苏</a></li>
+                                <li><a href="/jiangxi/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">江西</a></li>
+                                <li><a href="/jilin/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">吉林</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">L</span>
+                                <li><a href="/liaoning/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">辽宁</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">N</span>
+                                <li><a href="/namenggu/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">内蒙古</a></li>
+                                <li><a href="/ningxia/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">宁夏</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">Q</span>
+                                <li><a href="/qinghai/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">青海</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">S</span>
+                                <li><a href="/shan_xi/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">陕西</a></li>
+                                <li><a href="/sichuan/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">四川</a></li>
+                                <li><a href="/shanghai/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">上海</a></li>
+                                <li><a href="/shanxi/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">山西</a></li>
+                                <li><a href="/shandong/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">山东</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">T</span>
+                                <li><a href="/tianjin/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">天津</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">X</span>
+                                <li><a href="/xizang/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">西藏</a></li>
+                                <li><a href="/xinjiang/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">新疆</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">Y</span>
+                                <li><a href="/yunnan/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">云南</a></li>
+                            </ul>
+                        </dd>
+                        <dd>
+                            <ul class="fubra_car">
+                                <span class="bra_let">Z</span>
+                                <li><a href="/zhejiang/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">浙江</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </dd>
+        <dt ><span class="fbg">车&nbsp;辆：</span></dt>
+        <dd class=" forpop2">
+            <div  id='divBrand'  ><div onclick="ShowListBrand(1);"  id="divSelectBrand"  class="sel_fcar">丰田</div><div id="divListBrand"    class="pop_bra"   ><dl  class="pbra_dl"><dd><span class="bra_let">A</span><ul class="bra_car"><li><a href="/picture/aodi/a1_3m3s3dgscncgpilto1cspex/">奥迪</a></li></ul></dd><dd><span class="bra_let">B</span><ul class="bra_car"><li><a href="/picture/benchi/a1_3m3s3dgscncgpilto1cspex/">奔驰</a></li><li><a href="/picture/bieke/a1_3m3s3dgscncgpilto1cspex/">别克</a></li><li><a href="/picture/baoshijie/a1_3m3s3dgscncgpilto1cspex/">保时捷</a></li><li><a href="/picture/biyadi/a1_3m3s3dgscncgpilto1cspex/">比亚迪</a></li><li><a href="/picture/benteng/a1_3m3s3dgscncgpilto1cspex/">奔腾</a></li><li><a href="/picture/biaozhi/a1_3m3s3dgscncgpilto1cspex/">标致</a></li><li><a href="/picture/bentian/a1_3m3s3dgscncgpilto1cspex/">本田</a></li><li><a href="/picture/baoma/a1_3m3s3dgscncgpilto1cspex/">宝马</a></li><li><a href="/picture/beijingqiche/a1_3m3s3dgscncgpilto1cspex/">北京汽车</a></li><li><a href="/picture/baojun/a1_3m3s3dgscncgpilto1cspex/">宝骏</a></li><li><a href="/picture/beiqizhizao/a1_3m3s3dgscncgpilto1cspex/">北汽制造</a></li></ul></dd><dd><span class="bra_let">C</span><ul class="bra_car"><li><a href="/picture/changanshangyong/a1_3m3s3dgscncgpilto1cspex/">长安商用</a></li><li><a href="/picture/changhe/a1_3m3s3dgscncgpilto1cspex/">昌河</a></li><li><a href="/picture/changan/a1_3m3s3dgscncgpilto1cspex/">长安</a></li><li><a href="/picture/changcheng/a1_3m3s3dgscncgpilto1cspex/">长城</a></li></ul></dd><dd><span class="bra_let">D</span><ul class="bra_car"><li><a href="/picture/dongnan/a1_3m3s3dgscncgpilto1cspex/">东南</a></li><li><a href="/picture/daoqi/a1_3m3s3dgscncgpilto1cspex/">道奇</a></li><li><a href="/picture/dazhong/a1_3m3s3dgscncgpilto1cspex/">大众</a></li><li><a href="/picture/dongfengfengxing/a1_3m3s3dgscncgpilto1cspex/">东风风行</a></li><li><a href="/picture/dongfengfengdu/a1_3m3s3dgscncgpilto1cspex/">东风风度</a></li><li><a href="/picture/dongfengxiaokang/a1_3m3s3dgscncgpilto1cspex/">东风小康</a></li><li><a href="/picture/dongfengfengshen/a1_3m3s3dgscncgpilto1cspex/">东风风神</a></li></ul></dd><dd><span class="bra_let">F</span><ul class="bra_car"><li><a href="/picture/fengtian/a1_3m3s3dgscncgpilto1cspex/">丰田</a></li><li><a href="/picture/fute/a1_3m3s3dgscncgpilto1cspex/">福特</a></li><li><a href="/picture/feiyate/a1_3m3s3dgscncgpilto1cspex/">菲亚特</a></li></ul></dd><dd><span class="bra_let">G</span><ul class="bra_car"><li><a href="/picture/guangqichuanzuo/a1_3m3s3dgscncgpilto1cspex/">广汽传祺</a></li></ul></dd><dd><span class="bra_let">H</span><ul class="bra_car"><li><a href="/picture/hafu/a1_3m3s3dgscncgpilto1cspex/">哈弗</a></li><li><a href="/picture/hanma/a1_3m3s3dgscncgpilto1cspex/">悍马</a></li><li><a href="/picture/haima/a1_3m3s3dgscncgpilto1cspex/">海马</a></li><li><a href="/picture/huatai/a1_3m3s3dgscncgpilto1cspex/">华泰</a></li><li><a href="/picture/hafei/a1_3m3s3dgscncgpilto1cspex/">哈飞</a></li></ul></dd><dd><span class="bra_let">J</span><ul class="bra_car"><li><a href="/picture/jeep/a1_3m3s3dgscncgpilto1cspex/">Jeep</a></li><li><a href="/picture/jiebao/a1_3m3s3dgscncgpilto1cspex/">捷豹</a></li><li><a href="/picture/jinbei/a1_3m3s3dgscncgpilto1cspex/">金杯</a></li><li><a href="/picture/jianghuai/a1_3m3s3dgscncgpilto1cspex/">江淮</a></li><li><a href="/picture/jiliquanqiuying/a1_3m3s3dgscncgpilto1cspex/">吉利全球鹰</a></li><li><a href="/picture/jilidihao/a1_3m3s3dgscncgpilto1cspex/">吉利帝豪</a></li><li><a href="/picture/jiliyinglun/a1_3m3s3dgscncgpilto1cspex/">吉利英伦</a></li></ul></dd><dd><span class="bra_let">K</span><ul class="bra_car"><li><a href="/picture/kairui/a1_3m3s3dgscncgpilto1cspex/">开瑞</a></li><li><a href="/picture/kaidilake/a1_3m3s3dgscncgpilto1cspex/">凯迪拉克</a></li></ul></dd><dd><span class="bra_let">L</span><ul class="bra_car"><li><a href="/picture/leinuo/a1_3m3s3dgscncgpilto1cspex/">雷诺</a></li><li><a href="/picture/luhu/a1_3m3s3dgscncgpilto1cspex/">路虎</a></li><li><a href="/picture/leikesasi/a1_3m3s3dgscncgpilto1cspex/">雷克萨斯</a></li><li><a href="/picture/lingmu/a1_3m3s3dgscncgpilto1cspex/">铃木</a></li><li><a href="/picture/lianhuaqiche/a1_3m3s3dgscncgpilto1cspex/">莲花汽车</a></li><li><a href="/picture/lifan/a1_3m3s3dgscncgpilto1cspex/">力帆</a></li><li><a href="/picture/liebaoqiche/a1_3m3s3dgscncgpilto1cspex/">猎豹汽车</a></li><li><a href="/picture/linian/a1_3m3s3dgscncgpilto1cspex/">理念</a></li></ul></dd><dd><span class="bra_let">M</span><ul class="bra_car"><li><a href="/picture/mini/a1_3m3s3dgscncgpilto1cspex/">MINI</a></li><li><a href="/picture/mazida/a1_3m3s3dgscncgpilto1cspex/">马自达</a></li><li><a href="/picture/mg/a1_3m3s3dgscncgpilto1cspex/">MG</a></li></ul></dd><dd><span class="bra_let">N</span><ul class="bra_car"><li><a href="/picture/nazhijie/a1_3m3s3dgscncgpilto1cspex/">纳智捷</a></li></ul></dd><dd><span class="bra_let">O</span><ul class="bra_car"><li><a href="/picture/oubao/a1_3m3s3dgscncgpilto1cspex/">欧宝</a></li></ul></dd><dd><span class="bra_let">Q</span><ul class="bra_car"><li><a href="/picture/qiya/a1_3m3s3dgscncgpilto1cspex/">起亚</a></li><li><a href="/picture/qirui/a1_3m3s3dgscncgpilto1cspex/">奇瑞</a></li><li><a href="/picture/qichen/a1_3m3s3dgscncgpilto1cspex/">启辰</a></li></ul></dd><dd><span class="bra_let">R</span><ul class="bra_car"><li><a href="/picture/ruizuo/a1_3m3s3dgscncgpilto1cspex/">瑞麒</a></li><li><a href="/picture/rongwei/a1_3m3s3dgscncgpilto1cspex/">荣威</a></li><li><a href="/picture/richan/a1_3m3s3dgscncgpilto1cspex/">日产</a></li></ul></dd><dd><span class="bra_let">S</span><ul class="bra_car"><li><a href="/picture/sibalu/a1_3m3s3dgscncgpilto1cspex/">斯巴鲁</a></li><li><a href="/picture/sikeda/a1_3m3s3dgscncgpilto1cspex/">斯柯达</a></li><li><a href="/picture/sanling/a1_3m3s3dgscncgpilto1cspex/">三菱</a></li><li><a href="/picture/smart/a1_3m3s3dgscncgpilto1cspex/">smart</a></li><li><a href="/picture/shuanghuan/a1_3m3s3dgscncgpilto1cspex/">双环</a></li><li><a href="/picture/siming/a1_3m3s3dgscncgpilto1cspex/">思铭</a></li></ul></dd><dd><span class="bra_let">W</span><ul class="bra_car"><li><a href="/picture/wulingqiche/a1_3m3s3dgscncgpilto1cspex/">五菱汽车</a></li><li><a href="/picture/weizuo/a1_3m3s3dgscncgpilto1cspex/">威麟</a></li><li><a href="/picture/woerwo/a1_3m3s3dgscncgpilto1cspex/">沃尔沃</a></li></ul></dd><dd><span class="bra_let">X</span><ul class="bra_car"><li><a href="/picture/xuefolan/a1_3m3s3dgscncgpilto1cspex/">雪佛兰</a></li><li><a href="/picture/xuetielong/a1_3m3s3dgscncgpilto1cspex/">雪铁龙</a></li><li><a href="/picture/xiandai/a1_3m3s3dgscncgpilto1cspex/">现代</a></li></ul></dd><dd><span class="bra_let">Y</span><ul class="bra_car"><li><a href="/picture/yiqi/a1_3m3s3dgscncgpilto1cspex/">一汽</a></li><li><a href="/picture/yongyuan/a1_3m3s3dgscncgpilto1cspex/">永源</a></li><li><a href="/picture/yingfeinidi/a1_3m3s3dgscncgpilto1cspex/">英菲尼迪</a></li></ul></dd><dd><span class="bra_let">Z</span><ul class="bra_car"><li><a href="/picture/zhonghua/a1_3m3s3dgscncgpilto1cspex/">中华</a></li><li><a href="/picture/zhongtai/a1_3m3s3dgscncgpilto1cspex/">众泰</a></li></ul></dd></dl></div></div>
+            <div id="divListSeries"  ><div id="divSelectSeries" onclick="ShowSeries()"  class="sel_fcar" >凯美瑞</div><div id="divSeries" class="pop_bra pop_cars" ><dl class="cars_dl"><dt>广汽丰田</dt><dd><ul class="bra_car"><li><a href="/picture/fengtian/hanlanda/a1_3m3s3dgscncgpilto1cspex/">汉兰达</a></li><li><a href="/picture/fengtian/kaimeirui/a1_3m3s3dgscncgpilto1cspex/">凯美瑞</a></li><li><a href="/picture/fengtian/yalishi/a1_3m3s3dgscncgpilto1cspex/">雅力士</a></li><li><a href="/picture/fengtian/yizhi/a1_3m3s3dgscncgpilto1cspex/">逸致</a></li></ul></dd><dt>一汽丰田</dt><dd><ul class="bra_car"><li><a href="/picture/fengtian/fengtianrav4/a1_3m3s3dgscncgpilto1cspex/">丰田RAV4</a></li><li><a href="/picture/fengtian/huangguan/a1_3m3s3dgscncgpilto1cspex/">皇冠</a></li><li><a href="/picture/fengtian/huaguan/a1_3m3s3dgscncgpilto1cspex/">花冠</a></li><li><a href="/picture/fengtian/kaluola/a1_3m3s3dgscncgpilto1cspex/">卡罗拉</a></li><li><a href="/picture/fengtian/landekuluze/a1_3m3s3dgscncgpilto1cspex/">兰德酷路泽</a></li><li><a href="/picture/fengtian/puladuo/a1_3m3s3dgscncgpilto1cspex/">普拉多</a></li><li><a href="/picture/fengtian/ruizhi/a1_3m3s3dgscncgpilto1cspex/">锐志</a></li><li><a href="/picture/fengtian/weichi/a1_3m3s3dgscncgpilto1cspex/">威驰</a></li></ul></dd><dt>丰田(进口)</dt><dd><ul class="bra_car"><li><a href="/picture/fengtian/hiace/a1_3m3s3dgscncgpilto1cspex/">HIACE</a></li><li><a href="/picture/fengtian/puruiweiya/a1_3m3s3dgscncgpilto1cspex/">普瑞维亚</a></li><li><a href="/picture/fengtian/puladuojinkou/a1_3m3s3dgscncgpilto1cspex/">普拉多(进口)</a></li></ul></dd></dl></div></div>
+            <div id="divListSpec" ><div onclick="ShowSpec()" class="sel_fcar sel_fcarlong">2012款 200G 经典豪华版</div><div id="divSpec" style="width:224px;" class="pop_cartype"><dl class="barpop"><dt>2012款</dt><dd><a href="/picture/fengtian/kaimeirui/s11244/a1_3m3s3dgscncgpilto1cspex/" >2012款 2.0G 豪华版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s11257/a1_3m3s3dgscncgpilto1cspex/" >2012款 2.5G 豪华版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s11260/a1_3m3s3dgscncgpilto1cspex/" >2012款 骏瑞 2.0S 耀动版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s11504/a1_3m3s3dgscncgpilto1cspex/" >2012款 2.5G 豪华导航版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s11505/a1_3m3s3dgscncgpilto1cspex/" >2012款 2.0G 豪华导航版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/" >2012款 200G 经典豪华版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s12552/a1_3m3s3dgscncgpilto1cspex/" >2012款 200E 经典精英版</a></dd><dt>2011款</dt><dd><a href="/picture/fengtian/kaimeirui/s10052/a1_3m3s3dgscncgpilto1cspex/" >2011款 200G 经典周年纪念版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s10053/a1_3m3s3dgscncgpilto1cspex/" >2011款 200E 精英天窗版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s10054/a1_3m3s3dgscncgpilto1cspex/" >2011款 200G 豪华周年纪念版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s10055/a1_3m3s3dgscncgpilto1cspex/" >2011款 240G 经典周年纪念版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s10056/a1_3m3s3dgscncgpilto1cspex/" >2011款 240G 豪华周年纪念版</a></dd><dt>2010款</dt><dd><a href="/picture/fengtian/kaimeirui/s5416/a1_3m3s3dgscncgpilto1cspex/" >2010款 240HG 豪华版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s7181/a1_3m3s3dgscncgpilto1cspex/" >2010款 200E 精英版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s7182/a1_3m3s3dgscncgpilto1cspex/" >2010款 200G 经典版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s7183/a1_3m3s3dgscncgpilto1cspex/" >2010款 200G 豪华版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s7186/a1_3m3s3dgscncgpilto1cspex/" >2010款 240G 经典版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s7187/a1_3m3s3dgscncgpilto1cspex/" >2010款 240G 豪华版</a></dd><dd><a href="/picture/fengtian/kaimeirui/s7188/a1_3m3s3dgscncgpilto1cspex/" >2010款 240G NAVI豪华导航版</a></dd><dt>2009款</dt><dd><a href="/picture/fengtian/kaimeirui/s4950/a1_3m3s3dgscncgpilto1cspex/" >2009款 200G 豪华版</a></dd><dt>2008款</dt><dd><a href="/picture/fengtian/kaimeirui/s3629/a1_3m3s3dgscncgpilto1cspex/" >2008款 200E 精英真皮版</a></dd><dt>2007款</dt><dd><a href="/picture/fengtian/kaimeirui/s3232/a1_3m3s3dgscncgpilto1cspex/" >2007款 200G 豪华版</a></dd></dl></div></div>
+        </dd>
+        <dt><span class="fbg">品&nbsp;牌：</span></dt><dd><a href="/picture/bentian/a1_3m3s3dgscncgpilto1cspex/">本田</a><a href="/picture/aodi/a1_3m3s3dgscncgpilto1cspex/">奥迪</a><a href="/picture/baoma/a1_3m3s3dgscncgpilto1cspex/">宝马</a><a href="/picture/benchi/a1_3m3s3dgscncgpilto1cspex/">奔驰</a><a href="/picture/richan/a1_3m3s3dgscncgpilto1cspex/">日产</a><a href="/picture/bieke/a1_3m3s3dgscncgpilto1cspex/">别克</a><a href="/picture/xiandai/a1_3m3s3dgscncgpilto1cspex/">现代</a><a href="/picture/fute/a1_3m3s3dgscncgpilto1cspex/">福特</a><div class="pop_prcus" style=" z-index:25;" ><a class="all-brand" onclick="showAllBrand()" href="javascript:void(0)">全部品牌&gt;&gt;</a><div id='divMostConditionBrnad' class="pop_bra pop_bracus" style="display:none;"></div></dd>
+        <dt class="last_dt"><span class="fbg">车&nbsp;系：</span></dt><dd class="last_dd"><a href="/picture/fengtian/ruizhi/a1_3m3s3dgscncgpilto1cspex/">锐志</a><a href="/picture/richan/tianzuo/a1_3m3s3dgscncgpilto1cspex/">天籁</a><a href="/picture/bieke/junwei/a1_3m3s3dgscncgpilto1cspex/">君威</a><a href="/picture/dazhong/maiteng/a1_3m3s3dgscncgpilto1cspex/">迈腾</a><a href="/picture/fengtian/huangguan/a1_3m3s3dgscncgpilto1cspex/">皇冠</a><a href="/picture/bieke/junyue/a1_3m3s3dgscncgpilto1cspex/">君越</a><a href="/picture/bentian/bentiancrv/a1_3m3s3dgscncgpilto1cspex/">本田CR-V</a></dd>
+        
+        
+        
+    </dl>
+</div>
+
+
+<script type="text/javascript">
+    IE = function () {
+        if (/msie (\d+\.\d)/i.test(navigator.userAgent)) {
+            return document.documentMode || parseFloat(RegExp.$1);
+        }
+        return 0;
+    }
+    var divMostAge = C.$("divMostConditionAge");
+    var divMostPrice = C.$("divMostConditionPrice");
+    var divMostBrnad = C.$("divMostConditionBrnad");
+    var divMostProvince = C.$("divProvinceHtml");
+    var divMoreCity = C.$("divMoreCity");
+    var divBrandList = C.$('divBrand');
+    var divListSeries = C.$('divListSeries');
+    var divListSpec = C.$('divListSpec');
+    /*显示其它城市*/
+    function ShowMoreCity(obj) {
+        var div = C.$('divMoreCity');
+        var a = C.$("aMoreCity");
+        if (a.className == "fmore") {
+            a.className = "fmore2";
+            div.style.display = "none";
+        }
+        else {
+            a.className = "fmore";
+            div.style.display = "";
+            exclusionHide.add(div, function () {
+                a.className = "fmore2";
+                div.style.display = "none";
+            });
+        }
+    }
+    /*显示所有省份*/
+    function ShowProvinceHtml() {
+        if (divMostProvince.style.display == "") {
+            divMostProvince.style.display = "none";
+        }
+        else {
+            divMostProvince.style.display = "";
+            exclusionHide.add(divMostProvince, function () {
+                divMostProvince.style.display = "none";
+            });
+        }
+    }
+    /*显示品牌*/
+    function ShowListBrand(isClose) {
+
+        if (isClose == 0) {
+            divBrandList.className = "";
+        }
+        else {
+            if (divBrandList.className == "") {
+                divBrandList.className = "sel_cur";
+            }
+            else {
+                divBrandList.className = "";
+            }
+
+            exclusionHide.add(C.$("divListBrand"), function () {
+                ShowListBrand(0)
+            });
+        }
+
+    }
+    /*显示车系*/
+    function ShowSeries() {
+        if (divListSeries.className == "sel_cur") {
+            divListSeries.className = "";
+        }
+        else {
+            divListSeries.className = "sel_cur";
+            exclusionHide.add(C.$("divSeries"), function () {
+                divListSeries.className = "";
+            });
+        }
+    }
+    /*显示车型*/
+    function ShowSpec() {
+        if (divListSpec.className == "sel_cur") {
+            divListSpec.className = "";
+        }
+        else {
+            divListSpec.className = "sel_cur";
+            exclusionHide.add(C.$("divSpec"), function () {
+                divListSpec.className = "";
+            });
+        }
+    }
+
+    /*显示全部品牌*/
+    function showAllBrand() {
+        if (divMostBrnad.style.display == "block") {
+            divMostBrnad.style.display = "none";
+        }
+        else {
+            divMostBrnad.innerHTML = document.getElementById("divListBrand").innerHTML;
+            divMostBrnad.style.display = "block";
+            exclusionHide.add(divMostBrnad, function () {
+                divMostBrnad.style.display = "none";
+            });
+        }
+    }
+    /*显示其它级别*/
+    function ShowOtherLevel(isColse) {
+        var div = C.$("divOtherLevel");
+        var a = C.$("aOtherLevel");
+        if (div.style.display == "") {
+            div.style.display = "none";
+            a.className = 'else'
+        }
+        else {
+            div.style.display = "";
+            a.className = 'else else-hover'
+            exclusionHide.add(div, function () {
+                div.style.display = "none";
+                a.className = 'else'
+            });
+        }
+    }
+    /*显示其它国别*/
+    function ShowOtherCountry() {
+        var div = C.$("divOtherCountry");
+        var a = C.$("aOtherCountry");
+        if (div.style.display == "") {
+            div.style.display = "none";
+            a.className = 'else'
+        }
+        else {
+            div.style.display = "";
+            a.className = 'else else-hover'
+            exclusionHide.add(div, function () {
+                div.style.display = "none";
+                a.className = 'else'
+            });
+        }
+    }
+    /*自定义车龄浮层*/
+    function showMostAge() {
+        divMostAge.style.display = '';
+        exclusionHide.add(divMostAge, function () {
+            divMostAge.style.display = 'none';
+        });
+
+    }
+    /*自定义价格浮层*/
+    function showMostPrice() {
+        divMostPrice.style.display = '';
+        exclusionHide.add(divMostPrice, function () {
+            divMostPrice.style.display = 'none';
+        });
+    }
+    /*自定义价格*/
+    function searchPrice(val) {
+        var maxPrice = C.$("txtMaxPrice").value;
+        var minPrice = C.$("txtMinPrice").value;
+
+        if (maxPrice == "") {
+            maxPrice = 0;
+        }
+        if (minPrice == "") {
+            minPrice = 0;
+        }
+        var reg = /^[0-9]\d*$/;
+        if (!reg.test(maxPrice) || !reg.test(minPrice)) {
+            alert("价格必须是整数");
+            return false;
+        }
+        if (parseInt(minPrice) == parseInt(maxPrice)) {
+            if (parseInt(minPrice) <= 0) {
+                alert("价格不允许同时为0");
+                return false;
+            }
+        }
+        if (parseInt(minPrice) > parseInt(maxPrice)) {
+            var temp = minPrice;
+            minPrice = maxPrice;
+            maxPrice = temp;
+        }
+        if (parseInt(minPrice) > 999 || parseInt(maxPrice) > 999) {
+            alert("价格必须小于1000");
+            return false;
+        }
+        var price = "/" + minPrice + "_" + maxPrice + "/";
+        var url = val.replace("/1_1/", price);
+        location.href = url;
+    }
+    /*自定义车龄*/
+    function searchRegisteAge(val) {
+        var minRegisteAge = C.$("txtMinRegisteAge").value;
+        var maxRegisteAge = C.$("txtMaxRegisteAge").value;
+
+        if (maxRegisteAge == "") {
+            maxRegisteAge = 0;
+        }
+        if (minRegisteAge == "") {
+            minRegisteAge = 0;
+        }
+        var reg = /^[0-9]\d*$/;
+        if (!reg.test(maxRegisteAge) || !reg.test(minRegisteAge)) {
+            alert("车龄必须是整数");
+            return false;
+        }
+        if (parseInt(minRegisteAge) == parseInt(maxRegisteAge)) {
+            if (parseInt(minRegisteAge) <= 0) {
+                alert("车龄不允许同时为0");
+                return false;
+            }
+        }
+        if (parseInt(minRegisteAge) > parseInt(maxRegisteAge)) {
+            var temp = minRegisteAge;
+            minRegisteAge = maxRegisteAge;
+            maxRegisteAge = temp;
+        }
+        if (parseInt(minRegisteAge) > 99 || parseInt(maxRegisteAge) > 99) {
+            alert("车龄必须小于100");
+            return false;
+        }
+        var age = "a" + minRegisteAge + "_" + maxRegisteAge + "m";
+        var url = val.replace("a1_1m", age);
+        location.href = url;
+    }
+</script>
+
+            <div class="carresult">
+                <div class="rtab_area">
+                    <ul>
+                        <li class="fli"><a  href="/picture/fengtian/kaimeirui/s12544/a1_3m3sdgscncgpilto1cspex/">全部二手车</a></li><li><a  href="/picture/fengtian/kaimeirui/s12544/a1_3m3s2dgscncgpilto1cspex/">商家</a></li><li><a  href="/picture/fengtian/kaimeirui/s12544/a1_3m3s1dgscncgpilto1cspex/">个人</a></li><li class="fli"><a class="cur" href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1cspex/">品牌二手车</a></li>
+                    </ul>
+                    <span class="fr">
+                        共3辆二手车　1/1页</span>
+                </div>
+                <div class="certified_areaok"><ul><li  ><a href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1c1spex/"><img src="http://www.autoimg.cn/2scimg/Credit/ec04_e4dbe9af_e4dbe9af.jpg" /></a></li><li  ><a href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1c41spex/"><img src="http://www.autoimg.cn/2scimg/Credit/1384_d007f6b7_d007f6b7.jpg" /></a></li><li  ><a href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1c45spex/"><img src="http://www.autoimg.cn/2scimg/Credit/e420_64a0d44a_64a0d44a.jpg" /></a></li> </ul></div>
+                <div class="hfilter_bar">
+                    <span class="fl">高级筛选：</span>
+                    <div onmouseover="this.className='fil_cur'" onmouseout="this.className=''">
+                        <div class="sel_filter sel_filterno">1.7-2.0L</div>
+                    </div>
+                    <div onmouseover="this.className='fil_cur'" onmouseout="this.className=''">
+                        <div class="sel_filter sel_filterno">自动</div>
+                    </div>
+                    <div onmouseover="this.className='fil_cur'" onmouseout="this.className=''">
+                        <div class="sel_filter sel_filterno">三厢车</div>
+                    </div>
+                    <div onmouseover="this.className='fil_cur'" onmouseout="this.className=''">
+                        <div class="sel_filter sel_filterno"><span class="fi_col" style="background-color:#000000;"></span>黑色</div>
+                    </div>
+                    <div class="chk_bar">
+                        <label><input type="checkbox"  onclick="javascript:location.href='/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscnc1gpilto1cspex/'" class="chk"  />准新车</label><label><input type="checkbox"  onclick="javascript:location.href='/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgp1ilto1cspex/'" class="chk"  />有质保</label><label><input type="checkbox"  onclick="javascript:location.href='/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpi1lto1cspex/'" class="chk"  />只看在售</label></div>
+                    <div class="res_tab2"><a  href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilt1o1csp1ex/">列表</a><a class="cur"  href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto1csp1ex/">大图</a></div>
+                </div>
+                <div class="rankbar" id="divRankBar" style="width: 748px; z-index: 11;">
+                    <span class="fl">
+                        <a class="fi_mo " href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpiltocspex/">默认排序</a><a class="fi_price2 cur" href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto2cspex/">价格</a><a class="fi_info1" href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto3cspex/">完整信息度</a><a class="fi_age1" href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto4cspex/">车龄</a><a class="fi_mile1" href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto5cspex/">里程</a><a class="fi_date1" href="/picture/fengtian/kaimeirui/s12544/a1_3m3s3dgscncgpilto6cspex/">发布日期</a></span>
+                </div>
+                <div class="pic_carlist" id="divCarList">
+                    <ul class="piclist_ul"><li onmouseover="this.className='hovercolor'" onmouseout="this.className=''"><div class="pcar_pic"><a  target="_blank" href="/dealer/85869/2348769.html"><img alt="凯美瑞 2012款 200G 经典豪华版" width="240px" height="180px" src="http://www.autoimg.cn/2scimg/2014/3/26/t_5038413216086544099.jpg" onerror="javascript:this.src='http://www.autoimg.cn/che168_2sc/images/nopic/errorPic240X180.jpg';" /></a><span  class="sh_cli" id="Car2348769"><a  href="javascript:void(0);" onclick="Compare.addCompare(2348769)">加入对比</a></span><span  class="sh_bg"></span></div> <div class="fortiti"><a class="font14" target="_blank" href="/dealer/85869/2348769.html">凯美瑞 2012款 200G 经典豪华版</a></div> <div class="pcar_grey"><div><span class="pcar_price"><span class="fl"><span class="rmb">&yen;</span><span class="font18abred">13.30</span><span class="font12song">万</span></span></span><span class="fr gray99">四川 成都</span></div><div><span class="fl gray99"><span><span class="fontw">5.9</span><span class="ml05">万公里</span></span><span class="ml05">2011年</span></span></div> <div><span class="fl"><a target="_blank" href="/dealer/85869.html">成都百得利奥迪</a></span><span class="fr"><span title="资料完整度" class="schedule2"><span class="bg" style="width:50%;"></span><span class="schcol2">完整度50%</span></span></span></div></div></li><li onmouseover="this.className='hovercolor'" onmouseout="this.className=''"><div class="pcar_pic"><a  target="_blank" href="/dealer/122188/2370450.html"><img alt="凯美瑞 2012款 200G 经典豪华版" width="240px" height="180px" src="http://www.autoimg.cn/2scimg/2014/3/29/t_4649788969061807778.jpg" onerror="javascript:this.src='http://www.autoimg.cn/che168_2sc/images/nopic/errorPic240X180.jpg';" /><span class="sellout">2014年04月05日卖出</span><span class="sellout_bg"></span></a><span style="display:none;" class="sh_cli" id="Car2370450"><a  href="javascript:void(0);" onclick="Compare.addCompare(2370450)">加入对比</a></span><span style="display:none;" class="sh_bg"></span></div> <div class="fortiti"><a class="font14" target="_blank" href="/dealer/122188/2370450.html">凯美瑞 2012款 200G 经典豪华版</a></div> <div class="pcar_grey"><div><span class="pcar_price"><span class="fl"><span class="rmb">&yen;</span><span class="font18gray"><del class="fontw">13.88万</del></span><span class="fontw">(已售)</span></span></span><span class="fr gray99">山东 青岛</span></div><div><span class="fl gray99"><span><span class="fontw">4.0</span><span class="ml05">万公里</span></span><span class="ml05">2011年</span></span><span class="fr"><i title="商家提供售后质保服务" class="quality-icon q-itwo" ></i></span></div> <div><span class="fl"><a target="_blank" href="/dealer/122188.html">青岛鸿发森岳汽车</a></span><span class="fr"><span title="资料完整度" class="schedule2"><span class="bg" style="width:58%;"></span><span class="schcol2">完整度58%</span></span></span></div></div></li><li onmouseover="this.className='hovercolor'" onmouseout="this.className=''"><div class="pcar_pic"><a  target="_blank" href="/dealer/70179/1943964.html"><img alt="凯美瑞 2012款 200G 经典豪华版" width="240px" height="180px" src="http://www.autoimg.cn/2scimg/2014/1/11/t_4698751324153623731.jpg" onerror="javascript:this.src='http://www.autoimg.cn/che168_2sc/images/nopic/errorPic240X180.jpg';" /><span class="sellout">2014年03月04日卖出</span><span class="sellout_bg"></span></a><span style="display:none;" class="sh_cli" id="Car1943964"><a  href="javascript:void(0);" onclick="Compare.addCompare(1943964)">加入对比</a></span><span style="display:none;" class="sh_bg"></span></div> <div class="fortiti"><a class="font14" target="_blank" href="/dealer/70179/1943964.html">凯美瑞 2012款 200G 经典豪华版</a></div> <div class="pcar_grey"><div><span class="pcar_price"><span class="fl"><span class="rmb">&yen;</span><span class="font18gray"><del class="fontw">14.68万</del></span><span class="fontw">(已售)</span></span></span><span class="fr gray99">河南 郑州</span></div><div><span class="fl gray99"><span><span class="fontw">4.0</span><span class="ml05">万公里</span></span><span class="ml05">2013年</span></span></div> <div><span class="fl"><a target="_blank" href="/dealer/70179.html">河南骏驰广汽丰田</a></span><span class="fr"><span title="资料完整度" class="schedule2"><span class="bg" style="width:55%;"></span><span class="schcol2">完整度55%</span></span></span></div></div></li></ul>
+                    <div class="list_page">
+                        <span>共1页</span> </div>
+                    <input type="hidden" value="" id="hdIsListPic" />
+                </div>
+            </div>
+        </div>
+        <div class="list_right">
+            <a class="free_rele" hidefocus="true" href="javascript:void(0);" onclick="OpenSellCar(2);">
+            </a>
+            <a class="btn_frsell" href="/UserCenter/FreeCar/FreeCarMangae.aspx?pvareaid=100397" target="_blank" hidefocus="true"></a>
+            <div id="ad_170_01" style="margin: 8px 0pt;">
+            </div>
+            <!--最受关注-->
+            
+
+<div class="rarea" id="divRecommendCar" style="display:none;" ></div>
+<script type="text/javascript">
+    var py='picture';
+    var PId=0;
+    var CId=0;
+    var BId=3;
+    var SId=110;
+    var JBId=0;
+    var Max=0;
+    var Min=0;
+
+    function LoadRecommendCar(sessionSeries)    {
+        var session=sessionSeries;
+        if(session=="")
+              session= readCookie("SessionSeries");    
+        var url="/handler/CarList/RecommendCar.ashx";
+        var ie=IE();
+        C.ajax({async:false,url: url, data:'ie='+ie+'&session='+session+ '&py=' + py + '&PId=' + PId+ '&CId=' + CId+ '&BId=' + BId+ '&SId=' + SId+ '&JBId=' + JBId+ '&Max=' + Max+ '&Min=' + Min, success: function (data) {
+            if(data!="")
+            {        
+                var carName="",name="", url="";
+                var val = eval(data); var strHtml = "<h3>您可能感兴趣</h3><ul class=\"attent_ul\">";
+                for (var i = 0; i < val.length; i++) {
+                    if (i == val.length - 1)
+                        strHtml+="<li class=\"last_li\">";
+                    else
+                        strHtml+="<li>";                
+                    carName=val[i].carname;
+                    name=val[i].name;
+                    url=val[i].url;
+                    strHtml+="<a href=\""+url+"\" title=\""+carName+"\" target=\"_blank\"><img alt=\""+carName+"\" src=\""+val[i].pic+"\" style=\"width:120px;height:90px;\" /></a>";
+                    strHtml+="<div class=\"pcar_price\"><span class=\"rmb\">&yen;</span><span class=\"font14abred\">"+val[i].price+"万</span></div>";
+                    strHtml+="<div><a href=\""+url+"\" title=\""+carName+"\" target=\"_blank\">"+name+"</a></div>";
+                    strHtml+="<div>"+val[i].area+"</div>";
+                    strHtml+="</li>";
+                }
+                strHtml+="</ul>";
+                document.getElementById("divRecommendCar").innerHTML=strHtml;
+                document.getElementById("divRecommendCar").style.display="";
+
+            }
+        }
+        });
+    }
+</script>
+            <!--推荐商家-->
+            <div class="rarea"><h3><span class="fl">推荐商家</span><a class="rother" href="/FlatCenter/DealerApply.aspx" target="_blank">注册商家&gt;&gt;</a></h3><ul class="bus_ul"><li><div class="titbus"><a href="/dealer/50248.html" target="_blank" title="宁波嘉和汇名车桑田店">宁波嘉和汇名车桑田店</a></div><div>共有151辆二手车</div><div>浙江 宁波</div></li><li><div class="titbus"><a href="/dealer/70363.html" target="_blank" title="深圳鹏宸二手车">深圳鹏宸二手车</a></div><div>共有33辆二手车</div><div>广东 深圳</div></li><li><div class="titbus"><a href="/dealer/84614.html" target="_blank" title="深圳桃源二手车市场">深圳桃源二手车市场</a></div><div>共有1057辆二手车</div><div>广东 深圳</div></li><li><div class="titbus"><a href="/dealer/50290.html" target="_blank" title="北京卓杰行二手车">北京卓杰行二手车</a></div><div>共有709辆二手车</div><div>北京</div></li><li class="last_li"><div class="titbus"><a href="/dealer/130157.html" target="_blank" title="深圳市品选行二手车">深圳市品选行二手车</a></div><div>共有309辆二手车</div><div>广东 深圳</div></li></ul></div>
+
+            <div id="ad_170_02" style="margin: 8px 0;">
+            </div>
+            <!--求购信息-->
+            <div class="rarea"><h3><span class="fl">求购信息</span><a class="rother" href="/UserCenter/Buy/BuyAdd.aspx" target="_blank" title="我要求购">我要求购&gt;&gt;</a></h3><ul class="buyinfo_ul"><li><a target="_blank" href="/personal/Buy_82163.html" title="长安悦翔">长安悦翔</a></li><li><a target="_blank" href="/personal/Buy_82162.html" title="利亚纳">利亚纳</a></li><li><a target="_blank" href="/personal/Buy_82161.html" title="大众3000">大众3000</a></li><li><a target="_blank" href="/personal/Buy_82160.html" title="求购起亚K3">求购起亚K3</a></li><li><a target="_blank" href="/personal/Buy_82159.html" title="求购比亚迪l3白色">求购比亚迪l3白色</a></li><li><a target="_blank" href="/personal/Buy_82158.html" title="求购车况佳的帕萨特领域">求购车况佳的帕萨特领域</a></li><li><a target="_blank" href="/personal/Buy_82157.html" title="求购比亚迪S6 非诚勿扰">求购比亚迪S6 非诚勿扰</a></li><li><a target="_blank" href="/personal/Buy_82156.html" title="求购日产风度一辆 要03新款旧款不要">求购日产风度一辆 要03</a></li><li><a target="_blank" href="/personal/Buy_82154.html" title="求购二手面包车">求购二手面包车</a></li><li><a target="_blank" href="/personal/Buy_82153.html" title="五菱荣光小卡双排">五菱荣光小卡双排</a></li></ul></div>
+            <!--您浏览过的二手车-->
+            <div class="rarea" style="display: none;" id="viewHistory">
+                <h3>
+                    您浏览过的二手车</h3>
+                <dl class="viewed_dl" id="prompt">
+                </dl>
+            </div>
+            <div class="rarea" id="hotCapital"><h3>热门城市</h3><dl class="hotcity"><a title="广州二手车" href="/guangzhou/list/">广州</a><a title="济南二手车" href="/jinan/list/">济南</a><a title="杭州二手车" href="/hangzhou/list/">杭州</a><a title="南京二手车" href="/nanjing/list/">南京</a><a title="石家庄二手车" href="/shijiazhuang/list/">石家庄</a><a title="郑州二手车" href="/zhengzhou/list/">郑州</a><a title="沈阳二手车" href="/shenyang/list/">沈阳</a><a title="合肥二手车" href="/hefei/list/">合肥</a></dl></div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div id="divFeedBack" class="pop_view">
+        <a target="_blank" href="http://www.che168.com/FeedBack.aspx" class="view"></a>
+    </div>
+    <style>
+.station{ width:948px; line-height:22px; margin:10px auto 0 auto; padding-left:10px; overflow:hidden; border-left:1px solid #d8d8d8; border-right:1px solid #d8d8d8; background-position:0 -435px; background-repeat:repeat-x;}
+.station dl{ width:215px; float:left; padding:15px 10px; color:#6a6a6a;}
+.station dl dt{ height:22px; border-bottom:2px solid #efefef; font-size:14px; font-weight:bold; margin-bottom:10px;}
+.station dl dd{ height:22px; padding-left:15px; background-position:-711px -398px;}
+.iphone_ic,.android_ic{ width:14px; height:16px; display:block; float:left; margin-right:4px; position:relative; left:-1px; top:2px; background-position:-25px -354px;}
+.android_ic{ background-position:-25px -387px;}
+.station a:link,.station a:visited,.model_outside2 ul li a:link,.model_outside2 ul li a:visited,.pub_nt a:link,.pub_nt a:visited{ color:#6a6a6a; text-decoration:none;}
+.station a:hover,.model_outside2 ul li a:hover,.pub_nt a:hover{ color:#6a6a6a; text-decoration:underline;}
+ </style>
+    <div class="station">
+        <dl>
+            <dt>关于我们</dt>
+            <dd>
+                <a href="/Nindex.html" target="_blank">关于二手车之家</a></dd>
+            <dd>
+                <a href="/nlianxi.html" target="_blank">联系我们</a></dd>
+            <dd>
+              <a href="http://weibo.com/che168che" target="_blank">关注我们</a>
+              <a href="http://weibo.com/che168che" target="_blank" style="position:absolute; margin:3px 0 0 5px; *margin:-2px 0 0 0;"><img src="http://www.autoimg.cn/che168_2sc/images/201207/weibo_ic.jpg" alt="欢迎关注二手车之家微博" loaded="loaded" /></a>
+            </dd>
+            <dd>
+                <a href="/2sc/whole/list-0-0-1-0-1-1-0-0-0-0-0-0-0.html" target="_blank">二手车大全</a></dd>
+        </dl>
+        <dl>
+            <dt>手机版</dt>
+            <dd>
+                <span class="iphone_ic"></span><a href="http://www.autohome.com.cn/apps/4.html" target="_blank">iPhone版</a></dd>
+            <dd>
+                <span class="android_ic"></span><a href="http://www.autohome.com.cn/apps/5.html" target="_blank">Android版</a></dd>
+        </dl>
+        <dl>
+            <dt>商家服务</dt>
+            <dd>
+                <a href="http://dealer.che168.com/DealerApply.aspx" target="_blank">申请商家</a></dd>
+            <dd>
+                <a href="http://dealer.che168.com/Manager/SalesCar.aspx" target="_blank">
+                    发布车源</a></dd>
+            <dd>
+                <a href="http://dealer.che168.com/Manager/DealerCarList.aspx" target="_blank">车源管理</a></dd>
+        </dl>
+        <dl>
+            <dt>答疑解惑</dt>
+            <dd>
+                <a href="/FeedBack.aspx" target="_blank">建议或投诉</a></dd>
+            <dd>
+                <a href="/FeedBack.aspx" target="_blank">问二手车相关问题</a></dd>
+        </dl>
+    </div><div class="clear"></div><div class="model_outside2"><ul><li><a target="_blank"  title="全国二手车" href="/china/">全国二手车</a></li>   <li><a target="_blank"  title="北京二手车" href="/beijing/">北京二手车</a></li><li><a target="_blank"  title="上海二手车" href="/shanghai/">上海二手车</a></li>   <li><a target="_blank"  title="广东二手车" href="/guangdong/">广东二手车</a></li><li><a target="_blank"  title="江苏二手车" href="/jiangsu/">江苏二手车</a></li>   <li><a target="_blank"  title="浙江二手车" href="/zhejiang/">浙江二手车</a></li><li><a target="_blank" class="noborder" title="四川二手车" href="/sichuan/">四川二手车</a></li><li><a target="_blank"  title="河南二手车" href="/henan/">河南二手车</a></li>   <li><a target="_blank"  title="辽宁二手车" href="/liaoning/">辽宁二手车</a></li><li><a target="_blank"  title="山东二手车" href="/shandong/">山东二手车</a></li>   <li><a target="_blank"  title="河北二手车" href="/hebei/">河北二手车</a></li><li><a target="_blank"  title="安徽二手车" href="/anhui/">安徽二手车</a></li>   <li><a target="_blank"  title="重庆二手车" href="/chongqing/">重庆二手车</a></li><li><a target="_blank" class="noborder" title="福建二手车" href="/fujian/">福建二手车</a></li>   <li><a target="_blank"  title="甘肃二手车" href="/gansu/list/">甘肃二手车</a></li><li><a target="_blank"  title="广西二手车" href="/guangxi/">广西二手车</a></li>   <li><a target="_blank"  title="贵州二手车" href="/guizhou/list/">贵州二手车</a></li><li><a target="_blank"  title="海南二手车" href="/hainan/list/">海南二手车</a></li>   <li><a target="_blank"  title="黑龙江二手车" href="/heilongjiang/">黑龙江二手车</a></li><li><a target="_blank"  title="湖北二手车" href="/hubei/">湖北二手车</a></li>   <li><a target="_blank" class="noborder" title="湖南二手车" href="/hunan/">湖南二手车</a></li><li><a target="_blank"  title="吉林二手车" href="/jilin/">吉林二手车</a></li>   <li><a target="_blank"  title="江苏二手车" href="/jiangsu/">江苏二手车</a></li><li><a target="_blank"  title="江西二手车" href="/jiangxi/">江西二手车</a></li>   <li><a target="_blank"  title="内蒙古二手车" href="/namenggu/">内蒙古二手车</a></li><li><a target="_blank"  title="宁夏二手车" href="/ningxia/list/">宁夏二手车</a></li>   <li><a target="_blank"  title="青海二手车" href="/qinghai/list/">青海二手车</a></li><li><a target="_blank" class="noborder" title="山东二手车" href="/shandong/">山东二手车</a></li>   <li><a target="_blank"  title="山西二手车" href="/shanxi/list/">山西二手车</a></li><li><a target="_blank"  title="陕西二手车" href="/shan_xi/">陕西二手车</a></li>   <li><a target="_blank"  title="天津二手车" href="/tianjin/">天津二手车</a></li><li><a target="_blank"  title="云南二手车" href="/yunnan/list/">云南二手车</a></li></ul><div class="clear"></div></div>
+    
+    <div class="public_footer" id="div_FriendLink">
+        <div class="pub_nt">
+            <div class="pub_ntf">
+                推荐网站：</div>
+            <div class="pub_ntr">
+                <a href="http://www.it168.com/" target="_blank">IT168</a> | <a href="http://www.pcpop.com/"
+                    target="_blank">泡泡网</a> | <a href="http://www.chinaunix.net/" target="_blank">CHINAUNIX</a>
+                | <a href="http://www.ixpub.net/" target="_blank">IXPUB</a> | <a href="http://www.itpub.net/"
+                    target="_blank">ITPUB</a> | <a href="http://www.autohome.com.cn/" target="_blank">汽车之家</a>
+                | <a href="http://www.qudao168.com/" target="_blank">渠道168</a> | <a href="http://www.che168.com/"
+                    target="_blank">二手车之家</a> | <a href="http://www.app111.com/" target="_blank">苹果园</a>
+                | <a href="http://www.jimi168.com/" target="_blank">安卓之家</a></div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="pub_nt">
+            <div class="pub_ntf">
+                友情链接：</div>
+            <div class="pub_ntr">
+                <a href="http://car.autohome.com.cn/" target="_blank">汽车报价</a> | <a href="http://www.autohome.com.cn/"
+                    target="_blank">汽车</a> | <a href="http://www.taoche.com/" target="_blank">淘车网</a>
+                | <a href="http://www.feelcars.com/" target="_blank">汽车探索网</a> | <a href="http://auto.msn.com.cn/"
+                    target="_blank">MSN汽车</a> | <a href="http://www.autofan.com.cn/" target="_blank">汽车之友</a>
+                | <a href="http://auto.people.com.cn/" target="_blank">人民网汽车</a> | <a href="http://auto.ifeng.com/"
+                    target="_blank">凤凰网汽车</a> | <a href="http://auto.ynet.com/" target="_blank">北青网汽车</a>
+                | <a href="http://auto.163.com/" target="_blank">网易汽车</a> | <a href="http://auto.sina.com.cn/"
+                    target="_blank">新浪汽车</a> | <a href="http://topic.pcpop.com/game2/link/index_5_2.html"
+                        style="color: rgb(2, 87, 174);" target="_blank">申请链接</a></div>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="pub_nt">
+            <div class="pub_ntf">
+                特别鸣谢：</div>
+            <div class="pub_ntr">
+                <a href="http://www.hao123.com" target="_blank">hao123网址之家</a> | <a href="http://www.265dh.com/"
+                    target="_blank">265网址导航</a> | <a href="http://hao.360.cn/" target="_blank">360安全网址导航</a>
+                | <a href="http://www.2345.com/" target="_blank">2345网址导航</a> | <a href="http://123.sogou.com/"
+                    target="_blank">搜狗网址导航</a></div>
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    
+    <style type="text/css">#footer{width:960px;height:90px;margin:0px auto; padding-top:8px;text-align:center;color:#6a6a6a;}#footer p{padding-bottom:15px;}#footer p a:link,#footer p a:visited {color: #01439A;text-decoration: none;}#footer p a:hover {color: #D60000;text-decoration: none;}.picrz{ position:absolute; right:60px; top:0px;}p.pic_p{ height:40px; line-height:40px; width:840px; padding:0 60px; position:relative; text-align:left;}</style>
+<div id="footer">
+    <p class="pic_p" style="padding:0 60px 8px 60px;">二手车之家 版权所有&nbsp;<a href="http://www.che168.com/Nindex.html" target="_blank" >公司介绍</a>&nbsp;|&nbsp;<a href="http://www.che168.com/nlianxi.html" target="_blank" >联系我们</a>&nbsp;|&nbsp;<a href="http://www.che168.com/Navigation.html" target="_blank" >网站导航</a>&nbsp;<a style="color:#6a6a6a;" href="http://www.che168.com/license3.html" target="_blank" >【广播电视节目制作经营许可证：（京）字第1338号】</a>&nbsp;<a style="color:#6a6a6a;" href="http://www.che168.com/license4.html" target="_blank" >【乙测资字11005061】</a>
+	<span class="picrz"><a href="https://search.szfw.org/cert/l/CX20111226001271001315" target="_blank"><img src="http://www.autoimg.cn/che168_2sc/images/footer/Integrity.gif" alt=""/></a></span>
+	</p>
+    <p><a target="_blank" style="color:#6a6a6a;" href="http://www.miitbeian.gov.cn/">京ICP备11003899号-1</a>&nbsp;|&nbsp;北京市公安局海淀分局网监中心备案编号：1101082002&nbsp;|&nbsp;<a href="http://www.che168.com/license2.html" style="color:#6a6a6a;" target="_blank" >中国互联网协会会员单位</a>&nbsp;|&nbsp;<a href="http://www.che168.com/license1.html" style="color:#6a6a6a;" target="_blank" >电信与信息服务业务经营许可证：京ICP证110115号</a></p>
+</div>
+
+
+    <!--对比层开始-->
+    <div class="fipop_cont" id="divShowCarCompare">
+        <div id="closebtn" class="fiaway" style="display: none;"  >
+            收起</div>
+        <div id="openbtn" style="display: none;" class="fiopen">
+            展开</div>
+        <div class="ficont" id="cmpContainer" style="display: none;">
+            <h3>
+                车型对比</h3>
+            <div class="ficin">
+                <ul id="cmpContent">
+                </ul>
+                <a class="btn_cont" id="sCmpBtn" href="javascript:void(0)" onclick="submitCompare();">
+                    开始对比</a><a class="empty" id="clearbtn" href="javascript:void(0);">清空</a>
+            </div>
+        </div>
+    </div>
+    <!--对比层结束-->
+    <script type="text/javascript">
+        var addEvent = (function () {
+            return window.addEventListener ? function (type, elem, fn) {
+                elem.addEventListener(type, fn, false);
+            } : function (type, elem, fn) {
+                elem.attachEvent('on' + type, fn);
+            };
+        })();
+
+        var removeEvent = (function () {
+            return window.removeEventListener ? function (type, elem, fn) {
+                elem.removeEventListener(type, fn, false);
+            } : function (type, elem, fn) {
+                elem.detachEvent('on' + type, fn);
+            };
+        })();
+        GetObjPoint = function (o) {
+            var x = y = 0;
+            do {
+                x += o.offsetLeft || 0;
+                y += o.offsetTop || 0;
+                o = o.offsetParent;
+            } while (o);
+
+            return { 'x': x, 'y': y };
+        }
+        /*说说我的感受浮云div，滑动过程*/
+        function SetFloatDiv() {
+            if (IE() == 6) {
+                window.setInterval("setFeedBackDiv()", 100);
+            }
+            if (C.$("divRankBar"))
+                C.$("divRankBar").style.position = "relative";
+        };
+        /*开始设置浮动div*/
+        function setFeedBackDiv() {
+            var Div_FeedBackFloat = C.$("divFeedBack");
+            var top = 145;
+            var wtop = document.documentElement.scrollTop;
+
+            Div_FeedBackFloat.style.top = (top + wtop) + "px";
+        };
+        SetFloatDiv();
+        var Scroll = function () {
+
+            /***** 表头 ******/
+            var oDiv = C.$("divRankBar");
+            var divTop = GetObjPoint(C.$("divCarList")).y;
+            var dTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (divTop - dTop < 34) {
+                if (IE() == 6) {
+                    oDiv.style.position = "absolute";
+                    oDiv.style.top = dTop + "px";
+                }
+                else {
+                    oDiv.style.position = "fixed";
+                    oDiv.style.top = "0px";
+                }
+            }
+            else {
+                oDiv.style.position = "relative";
+
+                if (IE() == 6) {
+                    oDiv.style.top = 0;
+                }
+            }
+            /***** 浏览过二手车 ******/
+            var infoid = readCookie("UsedCarBrowseHistory");
+            if (infoid != "" && infoid != null) {
+                oDiv = C.$("viewHistory");
+                oDiv.style.display = "";
+                var dt = oDiv.getElementsByTagName("dt");
+                if (dt == null || dt.length == 0) {
+                    var doc = document.documentElement,
+				body = document.body,
+				sy = (doc && doc.scrollTop || body && body.scrollTop || 0) - (doc && doc.clientTop || body && body.clientTop || 0),
+				ny = GetObjPoint(C.$("viewHistory")).y;
+                    wy = doc && doc.clientHeight || body && body.clientHeight;
+                    if (Math.abs(ny - sy) < wy) {
+                        ReadHistoryOfBrowse();
+                    }
+                }
+            }
+
+        }
+        if (window.addEventListener) {
+            window.addEventListener("scroll", Scroll, false);
+        } else if (window.attachEvent) {
+            window.attachEvent("onscroll", Scroll);
+        }
+        /***** 浮层 ******/
+        var exclusionHide = {
+            _cache: {},
+            bodyClick: function (e, obj, fn) {
+                e = e || window.evnt;
+                var elem = e.target || e.srcElement,
+                    flag = true;
+                while (elem) {
+                    if (obj == elem) {
+                        flag = false;
+                        break;
+                    }
+                    elem = elem.parentNode;
+                }
+                if (flag) {
+                    fn && fn();
+                    this.remove(this._cache[obj.id]);
+                }
+            },
+            add: function (obj, fn) {
+                var that = this;
+                var _bodyClick = function () { };
+                if (that._cache[obj.id]) {
+                    _bodyClick = that._cache[obj.id];
+                    that.remove(_bodyClick);
+                }
+                else {
+                    _bodyClick = (that._cache[obj.id] = that.bind(that, that.bodyClick, [obj, fn]));
+                }
+                setTimeout(function () {
+                    addEvent('click', document, _bodyClick);
+                }, 0);
+            },
+            remove: function (fn) {
+                removeEvent('click', document, fn);
+            },
+            bind: function (obj, fn, data) {
+                return function () {
+                    return fn.apply(obj, [].slice.call(arguments).concat(data));
+                };
+            }
+        };
+
+        /*根据个人sessionId取关注车系*/
+        if (!readCookie("SessionSeries")) {
+            var sessionId = readCookie("sessionid");
+            if (!sessionId) {
+                sessionId = "";
+            }
+            C.ajax({
+                async: false, url: "/handler/CarList/GetSeriesBySessionId.ashx", data: 'session=' + sessionId, success: function (data) {
+                    C.setCookie("SessionSeries", data, 43200, null, ".che168.com");
+                    LoadRecommendCar(data);
+                }
+            });
+        }
+        else {
+            LoadRecommendCar("");
+        }
+    </script>
+    <script type="text/javascript">
+        var addListener = function (e, n, o, u) {
+            if (e.addEventListener) {
+                e.addEventListener(n, o, u);
+                return true;
+            } else if (e.attachEvent) {
+                e['e' + n + o] = o;
+                e[n + o] = function () {
+                    e['e' + n + o](window.event);
+                };
+                e.attachEvent('on' + n, e[n + o]);
+                return true;
+            }
+            return false;
+        }
+        var isBigPicList = document.getElementById("IsBigPic").value;
+        var lazyload = function (img) {
+            if (img.complete || img.readyState && (img.readyState == 'loaded' || img.readyState == 'complete')) {
+                return false;
+            }
+
+            img.setAttribute('_src', img.src);
+            if (isBigPicList == 0)
+                img.src = "http://www.autoimg.cn/che168_2sc/images/picloading240_180.jpg";
+            else
+                img.src = "http://www.autoimg.cn/che168_2sc/images/picloading120_90.jpg";
+
+            var action = function (img) {//响应操作
+                if (img.getAttribute('loaded')) {//判断是否loaded了
+                    clearInterval(img.timer);
+                    return;
+                }
+                var doc = document.documentElement,
+				body = document.body,
+				sy = (doc && doc.scrollTop || body && body.scrollTop || 0) - (doc && doc.clientTop || body && body.clientTop || 0),
+				np = GetObjPoint(img),
+				ny = np.y,
+				wy = doc && doc.clientHeight || body && body.clientHeight;
+                if (Math.abs(ny - sy) < wy) {
+                    img.setAttribute('loaded', 'loaded');
+                    img.src = img.getAttribute('_src');
+                    img.removeAttribute("_src");
+                    img.onerror = function () {
+                        if (isBigPicList == 0)
+                            img.src = 'http://www.autoimg.cn/che168_2sc/images/nopic/errorPic240X180.jpg';
+                        else
+                            img.src = 'http://www.autoimg.cn/che168_2sc/images/nopic/errorPic120X90.jpg';
+                    };
+                    img.onload = img.onreadystatechange = function () {
+                        if (img && img.readyState && img.readyState != 'loaded' && img.readyState != 'complete') {
+                            return false;
+                        }
+                        img.onload = img.onreadystatechange = img.onerror = null;
+                        var animat = function (el) {
+                            var s = 0,
+							timer = setInterval(function () {
+							    el.style.opacity = s;
+							    el.style.filter = ('opacity=' + (s * 100));
+							    s += 0.05;
+							    if (s > 1) clearInterval(timer);
+							}, 30)
+                        }
+                        animat(img);
+                    };
+                }
+            }
+            action(img);
+            if (IE() && IE() < 9) {
+                img.timer = setInterval(function () { action(img) }, 1000);
+            } else {
+                addListener(window, 'scroll', function () { action(img) }, false);
+            }
+        }
+        var imgs = document.getElementById("divCarList").getElementsByTagName("img");
+        for (var i = 0, j = imgs.length; i < j; i++) {
+            lazyload(imgs[i]);
+        }
+
+    </script>
+    <script type="text/javascript">
+        //替代 Inc/history.inc
+        if (!window.XMLHttpRequest) {
+            window.XMLHttpRequest = function () {
+                var progIDs = ['MSXML2.XMLHTTP.4.0', 'MSXML2.XMLHTTP.3.0', 'MSXML2.XMLHTTP.2.6', 'Msxml2.XMLHTTP', 'Microsoft.XMLHTTP', 'MSXML.XMLHTTP']; for (var i = 0; i < progIDs.length; i++) {
+                    try { return new ActiveXObject(progIDs[i]); }
+                    catch (ex) { }
+                }
+                return null;
+            }
+        }
+        Function.createDelegate = function (instance, method) { return function () { return method.apply(instance, arguments); } }
+        Request = function (_url, _body) {
+            this._xmlHttpRequest; this.url = _url; this.body = _body; this.onCompleted = function () { return false; }
+            this.send = function () { this._xmlHttpRequest = new XMLHttpRequest(); this._xmlHttpRequest.open("POST", this.url, true); this._xmlHttpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8'); this._xmlHttpRequest.onreadystatechange = Function.createDelegate(this, this._completed); this._xmlHttpRequest.send(this.body); }
+            this._completed = function () { if (this._xmlHttpRequest == null) return; if (this._xmlHttpRequest.readyState == 4) { this.onCompleted(this._xmlHttpRequest); } }
+        }
+        Comment = function (posturl, para, method) {
+            this.load = function () { var r = new Request(posturl, para); r.onCompleted = Function.createDelegate(this, this._load); r.send(); }
+            this._load = function (request) { eval(method); }
+        }
+        function Cookie() {
+            var av = Cookie.arguments, ac = Cookie.arguments.length; var CookiesName = ac > 0 ? av[0] : 'Jiaboo'; this.SetCookie = function (name, value) {
+                var expdate = new Date(); var argv = arguments; var argc = arguments.length; var expires = (argc > 2) ? argv[2] : null; var path = (argc > 3) ? argv[3] : '/'; var domain = (argc > 4) ? argv[4] : null; var secure = (argc > 5) ? argv[5] : false; if (expires != null) expdate.setTime(expdate.getTime() + (expires * 1000)); document.cookie = name + "=" + escape(value) + ((expires == null) ? "" : ("; expires=" + expdate.toGMTString()))
++ ((path == null) ? "" : ("; path=" + path)) + ((domain == null) ? "" : ("; domain=" + domain))
++ ((secure == true) ? "; secure" : "");
+            }; this.DelCookie = function (name) { var exp = new Date(); exp.setTime(exp.getTime() - 1); var cval = this.GetCookie(name); document.cookie = name + "=" + cval + "; path=/; expires=" + exp.toGMTString(); }; this.GetCookie = function (name) {
+                var arg = name + "="; var alen = arg.length; var clen = document.cookie.length; var i = 0; while (i < clen) {
+                    var j = i + alen; if (document.cookie.substring(i, j) == arg)
+                        return this.GetCookieVal(j); i = document.cookie.indexOf(" ", i) + 1; if (i == 0) break;
+                }
+                return null;
+            }; this.GetCookieVal = function (offset) {
+                var endstr = document.cookie.indexOf(";", offset); if (endstr == -1)
+                    endstr = document.cookie.length; return unescape(document.cookie.substring(offset, endstr));
+            }; this.GetUrlCookie = function (CookieName) { var CookieName; var CookiesString = this.GetCookie(CookiesName); if (CookiesString == null) CookiesString = ''; return GetUrlStrVar(CookiesString, CookieName); };
+        }
+        function WriteHistoryOfBrowse(infoid) {
+            var cookie = new Cookie(); var historys = cookie.GetCookie("UsedCarBrowseHistory"); if (historys != null) {
+                var temp = historys.split(","); var num = temp.length; var str1 = "," + historys + ","; var str2 = "," + infoid + ","; if (str1.indexOf(str2) < 0) {
+                    if (num < 10) { historys = infoid + "," + historys; }
+                    else { var i = 1; historys = infoid; while (i < 10) { historys = historys + "," + temp[i - 1]; i++; } }
+                    historys = historys.replace(/(^,)|(,$)/gi, ""); var days = 30; cookie.SetCookie("UsedCarBrowseHistory", historys, days * 24 * 60 * 60);
+                }
+            }
+            else { cookie.SetCookie("UsedCarBrowseHistory", infoid); }
+        }
+        var isReadHistoryOfBrowse = true;
+        function ReadHistoryOfBrowse() {
+            if (isReadHistoryOfBrowse) {
+                isReadHistoryOfBrowse = false;
+                var cookie = new Cookie(); var infoid = cookie.GetCookie("UsedCarBrowseHistory"); if (infoid != "" && infoid != null) { var url = "/Handler/GetCarInfo.ashx?infoid=" + infoid; var comment = new Comment(url, "", "show(request.responseText)"); comment.load(); }
+                else
+                { document.getElementById("prompt").innerHTML = "暂无数据"; document.getElementById("viewHistory").style.display = "none"; }
+            }
+        }
+    </script>
+    <script type="text/javascript">
+        /*省浮层URL*/
+        function setAreaProvinceUrl() {
+            if (C.$("hdIsListPic").value == 1) {
+                var div = C.$("divAreaProvince");
+                if (div) {
+                    var alist = div.getElementsByTagName("a");
+                    var url = "";
+                    for (var i = 0; i < alist.length; i++) {
+                        url = alist[i].href;
+                        alist[i].href = url.replace("/list/", "/a_msdgscncgpilt1ocspex/");
+                    }
+                }
+            }
+        }
+        setAreaProvinceUrl()
+        /*分页跳转*/
+        function GoPage(url, allPage) {
+            var p = C.$("txtGoPage").value;
+            p = p > allPage ? allPage : p;
+            location.href = url.replace("{0}", p);
+        }
+        /*显示大图*/
+        function showBigPic(obj) {
+            if (IE()) {
+                if (!obj.loaded || obj.loaded != "loaded") {
+                    return false;
+                }
+            }
+            if (obj.src.indexOf("/noPic120X90.gif") > 0)
+                return false;
+            var div = C.$("divCarList");
+            var img = div.getElementsByTagName("img");
+            for (var i = 0; i < img.length; i++) {
+                if (img[i] != obj && img[i].width == 120) {
+                    closeBigPic(img[i])
+                }
+            }
+            if (obj && obj.parentNode) {
+                var pObj = obj.parentNode.parentNode;
+                if (pObj.childNodes.length == 1) {
+                    var html = pObj.innerHTML;
+
+                    pObj.innerHTML = html
+
+                    if (obj.src.indexOf("/s_") > 0)
+                        pObj.innerHTML += "<div class=\"clist_bpic\"><span class=\"tjt1\">◆</span><span class=\"tjt2\">◆</span><img src=\"" + obj.src.replace("/s_", "/t_") + "\" /></div>";
+                    curObj = obj;
+                }
+            }
+        }
+        /*隐藏大图*/
+        function closeBigPic(obj) {
+
+            if (obj && obj.parentNode) {
+                var pObj = obj.parentNode.parentNode;
+                var pc = null;
+                var span = "<span class=\"c_specar\"></span>";
+                if (pObj && pObj.childNodes.length > 1) {
+                    var html = pObj.childNodes[0].innerHTML;
+                    var cObj = pObj.childNodes[pObj.childNodes.length - 1];
+                    if (cObj.className == "c_specar") {
+                        html += "<span class=\"c_specar\"></span>";
+                    }
+                    pc = pObj.childNodes[0];
+                    pObj.innerHTML = "";
+                    pObj.appendChild(pc);
+                    pObj.childNodes[0].innerHTML = html;
+                }
+            }
+        }
+
+        //用于处理浏览过的车源
+        function show(obj) {
+            if (obj == "") {
+                C.$("viewHistory").style.display = "none";
+                C.$("prompt").innerHTML = "暂无数据";
+            }
+            else {
+                //处理返回数据
+                var data = eval(obj);
+                var str = "";
+                var dataCount = data.length;
+                if (dataCount > 4)
+                    dataCount = 4;
+                for (var i = 0; i < dataCount; i++) {
+                    var href = "/personal/" + data[i].infoid + ".html";
+                    if (data[i].companyid != "0")
+                        href = "/dealer/" + data[i].companyid + "/" + data[i].infoid + ".html";
+
+                    str += "<dt><a target=\"_blank\"  href=\"" + href + "\" title=\"" + data[i].name + "\">" + countCharacters(data[i].name, 30) + "</a></dt>";
+                    str += "<dd><span class=\"rmb\">&yen;</span><span class=\"fontred\">" + data[i].price + "万</span></dd>";
+                }
+                C.$("viewHistory").style.display = "block";
+                C.$("prompt").innerHTML = str;
+            }
+        }
+
+        function countCharacters(str, size) {
+            var totalCount = 0;
+            var newStr = "";
+            for (var i = 0; i < str.length; i++) {
+                var c = str.charCodeAt(i);
+                if ((c >= 0x0001 && c <= 0x007e) || (0xff60 <= c && c <= 0xff9f)) {
+                    totalCount++;
+                } else {
+                    totalCount += 2;
+                }
+                if (totalCount < size) {
+                    newStr = str.substring(0, i + 1);
+                } else {
+                    return newStr;
+                }
+            }
+            return newStr;
+        }
+
+
+    </script>
+    <script type="text/javascript" src="/js/ComparePg.js"></script>
+    <script type='text/javascript' src='http://x.autoimg.cn/che168/pv/js/pv1_2.js'></script>
+<script type='text/javascript'>
+function sendPV(){
+var pvTrack = new PVTrack();
+pvTrack.page=2003000;pvTrack.series=110;pvTrack.spec=12544;pvTrack.track();}
+sendPV();
+</script>
+
+    <script type="text/javascript">
+        var dtADNow = new Date();
+        document.write('<script src="http://33.autohome.com.cn/njs/10321.js?v=' + dtADNow.getFullYear() + dtADNow.getMonth() + dtADNow.getDate() + dtADNow.getHours() + parseInt(dtADNow.getMinutes() / 10) + '"></scr' + 'ipt>');
+
+        function Ad_Function(name) {
+            if (tools.isExist(name)) {
+                var obj = C.$(name);
+                /* 如果内容不为空，则把子DIV层级设置成0，否则隐藏广告显示层 */
+                if (obj.innerHTML.length > 5) {
+                    if (obj.getElementsByTagName('div').length > 0) {
+                        obj.getElementsByTagName('div')[0].style.zIndex = '0';
+                    }
+                    obj.style.zIndex = '0';
+                }
+                else
+                    obj.style.display = 'none';
+            }
+        }
+        /*广告标签*/
+        Ad_Function('ad_960_01');
+        Ad_Function('ad_170_01');
+
+    </script>
+</body>
+</html>
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-26038105-1']);
+    _gaq.push(['_trackPageview']);
+    (function () {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5a373383174a999f435969fc84eef6ec' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<SCRIPT language=javascript type=text/javascript>
+function getCookie(objName) {
+	var arrStr = document.cookie.split("; ");
+	for ( var i = 0; i < arrStr.length; i++) {
+		var temp = arrStr[i].split("=");
+		if (temp[0] == objName) return unescape(temp[1]);
+	}
+}
+function re_cookie(value, ext_time, domain) {
+	var exp = new Date();
+	exp.setTime(exp.getTime() + ext_time * 3600000);
+	document.cookie = "tagid=" + value + ";expires=" + exp.toGMTString() + ";domain=" + domain + ";path=/";
+}
+function sendRequest(pub_id, userid, ext_time, domain) {
+	var url_stats = [];
+	url_stats.push('http://t.advuser.com/cookie_conn.php?callback=re_cookie&sessionid=');
+	url_stats.push(userid);
+	url_stats.push('&pid=');
+	url_stats.push(pub_id);
+	url_stats.push('&time=');
+	url_stats.push(ext_time);
+	url_stats.push('&domain=');
+	url_stats.push(domain);
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src = url_stats.join('');
+	document.body.appendChild(script);
+}
+function cookieMapping(pub_id, cookie_name, ext_time, delay_time, domain) {
+	if (getCookie('tagid')) return;
+	setTimeout(function() {
+    var userid = getCookie(cookie_name);
+	if (!userid) return;
+		sendRequest(pub_id, userid, ext_time, domain);
+	}, delay_time * 1000);
+}
+cookieMapping('2', 'sessionid', 87600, 1,'.che168.com');
+</SCRIPT>

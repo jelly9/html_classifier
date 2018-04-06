@@ -1,0 +1,474 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+    			
+    			
+    				<title>上海金属废料回炉边料，上海金属废料回炉边料价格,回炉边料报价价格走势,回炉边料报价价格走势图- 长江有色金属网</title>
+	            	<meta name="Keywords" content="上海金属废料回炉边料价,上海金属废料回炉边料价格,回炉边料报价价格走势,回炉边料报价价格走势图" />
+					<meta name="Description" content="长江有色金属网(ccmn.cn)有色金属上海金属废料304回炉边料价格走势频道,提供最新上海金属废料304回炉边料价格走势，上海金属废料304回炉边料价格走势图，上海金属废料锌价格行情信息。"/>
+    			
+	           <link href="/css/sub/ChartDisplay.css" type="text/css" rel="stylesheet"/>
+	           <link href="/css/pub/homehead.css" type="text/css" rel="stylesheet"/>
+	           <script type="text/javascript" src="/js/jquery-1.3.2.min.js;jsessionid=172A29FBD5970D8AAD5D8F4C84B78BE2.tomcat1"></script>
+	           <script type="text/javascript" src="/js/zDialog/zDialog.js"></script>
+			   <link href="/css/pub/foot.css" type="text/css" rel="stylesheet" />
+	           <script type="text/javascript">
+			
+				function getpricelistbydateandname(obj){
+	        		if(obj!=null && obj==1){
+	        			Dialog.alert("查看该走势需会员登录!");
+	        			return false;
+	        		}
+	        	}
+			//更改页面样式
+				function chartbydate(a){
+					removespanclass();
+					if(a=='1'){
+						$("#1").removeClass();
+						$("#1").addClass("tab_element current");
+						
+						$("#chartiframe").attr("src","/jsp/ccmnsite/toWeekHistoryChart.action?wintype=2&sortid=40288092327f216a01327f524df90828&marketid=402880923271575301327161310b0008");
+					}else{
+						var islogin=$("#islogin").val();
+						
+						if(islogin==0){
+							alert("查看该走势需会员登录!");
+							$("#1").removeClass();
+						$("#1").addClass("tab_element current");
+						$("#chartiframe").attr("src","/jsp/ccmnsite/toWeekHistoryChart.action?wintype=2&sortid=40288092327f216a01327f524df90828&marketid=402880923271575301327161310b0008");
+						}else if(islogin==1){
+							if(a=='2'){
+								$("#2").removeClass();
+								$("#2").addClass("tab_element current");
+								$("#chartiframe").attr("src","/jsp/ccmnsite/toMonthHistoryChart.action?wintype=2&sortid=40288092327f216a01327f524df90828&marketid=402880923271575301327161310b0008");
+							}
+							if(a=='3'){
+								$("#3").removeClass();
+								$("#3").addClass("tab_element current");
+								$("#chartiframe").attr("src","/jsp/ccmnsite/toSeasonHistoryChart.action?wintype=2&sortid=40288092327f216a01327f524df90828&marketid=402880923271575301327161310b0008");
+							}
+							if(a=='4'){
+								$("#4").removeClass();
+								$("#4").addClass("tab_element current");
+								$("#chartiframe").attr("src","/jsp/ccmnsite/toYearHistoryChart.action?wintype=2&sortid=40288092327f216a01327f524df90828&marketid=402880923271575301327161310b0008");
+							}
+						}
+					}
+					
+				}
+				//清除span的class
+				function removespanclass(){
+					$("#1").removeClass();
+					$("#1").addClass("tab_element");
+					$("#2").removeClass();
+					$("#2").addClass("tab_element");
+					$("#3").removeClass();
+					$("#3").addClass("tab_element");
+					$("#4").removeClass();
+					$("#4").addClass("tab_element");
+				}
+				
+				function chartweek(){
+					$("#chartiframe").attr("src","/jsp/ccmnsite/toWeekHistoryChart.action?wintype=2&sortid=40288092327f216a01327f524df90828&marketid=402880923271575301327161310b0008");
+				}
+			</script>
+		
+	  <script type="text/javascript">
+	  	
+		function tosearch(){
+		      var keyword= $(".sotextinput").val();
+		      	if(keyword=='' || keyword==null){
+						window.open("http://www.cjys.cn");
+					}else{
+						if(keyword.length>38){
+								var kds = keyword.substring(0,38);
+								window.open("http://so.ccmn.cn/sup/list/?keyword="+encodeURI(encodeURI(kds)));
+						}else{
+								window.open("http://so.ccmn.cn/sup/list/?keyword="+encodeURI(encodeURI(keyword)));
+					    }
+					}
+	     }
+		
+		function totgsearch(obj){
+			window.open("http://so.ccmn.cn/sup/list/?keyword="+encodeURI(encodeURI(obj)));
+		}
+			
+	  </script>
+	  <style type="text/css">
+	  	#sososearch {
+		height: 46px;
+		width: 160px;
+		padding: 0;
+		margin-right:4px;
+		background-repeat: no-repeat;
+		}
+		#sososearch {
+		background-repeat: no-repeat;
+		background-image: url(/img/sososearch2.png);
+		_background-image:none;
+		}
+		* #sososearch {filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=scale, src="/img/sososearch2.png")
+		}
+	  </style>
+	
+	</head>
+	<body onload="chartweek()" onkeydown="soSoKeyDown();">
+	        <div class="head clearfix">
+	               	
+
+
+    <script type="text/javascript">
+				function soSoKeyDown() 
+					{ 
+						if (event.keyCode == 13) 
+						{ 
+							event.returnValue=false; 
+							event.cancel = true; 
+							tobtnkeysearch();
+						} 
+					} 
+				function tobtnkeysearch(){
+				      var keyword= $(".txtSearch").val();
+				      	if(keyword=='' || keyword==null){
+				      			$(".txtSearch").focus();
+								return;
+							}else{
+								if(keyword.length>38){
+										var kds = keyword.substring(0,38);
+										window.open("http://www.ccmn.cn/sells/?keysword="+encodeURI(encodeURI(kds)));
+								}else{
+										window.open("http://www.ccmn.cn/sells/?keysword="+encodeURI(encodeURI(keyword)));
+							    }
+							}
+			     }
+	</script>
+	
+	 <div class="head clearfix" style="margin-bottom: 5px;">
+		
+		<div class="i_nav mauto" style="width:100%;">
+			              <iframe src="/jsp/ccmnsite/thomeheadtop.jsp" frameborder="0" scrolling="no" style="height:35px;width:100%;z-index: 100; position: fixed;zoom: 1; opacity: 1000; top: 0;left: 0px;"></iframe>
+		</div>
+		
+		 <div class="i_nav2 mauto" style="margin-top:30px;">
+	     		<a href="http://www.ccmn.cn"  style="cursor: hand;"> <img src="http://www.ccmn.cn/img/default_logo.jpg" style="width:228px;height:67px;float:left;padding-bottom:5px;"/> </a>
+	             <div class="i_nav_2"> 
+				       <div class="searchTool">
+						            <input class="txtSearch" id="search_input" name="keywords"   type="text" placeholder="请输入产品名称" />
+						            <div class="btnSearch"> 
+							            <a href="javascript:void(0);" onclick="tobtnkeysearch()">
+							            	搜索
+							            </a> 
+						            </div>
+					            <div class="clear"></div>
+				        </div>
+		        	<div class="right"> <a target="_blank"  href="http://www.ccmn.cn/user.html" class="img1"></a> <a target="_blank" href="http://www.ccmn.cn/user.html" class="img2"></a> </div>
+		        	<div class="clear"></div>
+		         </div>
+			      <div class="clear"></div>
+	      </div>
+	      
+		<div class="i_navtop mauto">
+	              <div class="i_nav_top">
+	              				  <ul> 
+								        <li><a href="http://www.ccmn.cn" target="_parent" >首&nbsp;页</a></li>
+										<li></li>
+								  </ul>
+								  <div class="spite"></div>
+								  <ul> 
+									    <li>
+									        <a style="font-weight:bold;"  href="http://www.ccmn.cn/supplys/" target="_parent">供应</a>&nbsp;
+									        <a  href="http://www.ccmn.cn/products/" target="_parent">产品</a>&nbsp;
+									        <a  href="http://www.ccmn.cn/buys.html" target="_parent">求购</a>&nbsp;
+									        <a  href="http://www.ccmn.cn/quote/" target="_parent">报价</a>&nbsp;
+									        <a  href="http://www.ccmn.cn/corp/" target="_parent">公司</a>&nbsp;
+									         <a href="http://www.ccmn.cn/shop/" target="_parent">商城</a>&nbsp;
+									    </li>
+									    <li>
+											<a class="movecurrent" href="http://copper.ccmn.cn" target="_blank" >铜</a>&nbsp;
+											<a  href="http://copper.ccmn.cn/copperprice/" target="_blank">铜价</a>
+											<a  href="http://copper.ccmn.cn/coppersupply/" target="_blank">铜供求</a>&nbsp;&nbsp;
+											<a class="movecurrent" href="http://alu.ccmn.cn/" target="_blank">铝</a>&nbsp;
+									        <a  href="http://alu.ccmn.cn/aluprice/" target="_blank">铝价</a>
+									        <a  href="http://alu.ccmn.cn/alusupply/" target="_blank">铝供求</a>
+										</li>
+								   </ul>
+								    <div class="spite"></div>
+								  <ul> 
+									    <li>
+									        <a style="font-weight:bold;" href="http://www.ccmn.cn/priceinfo/" target="_parent" >行情</a>&nbsp;
+									        <a href="http://www.ccmn.cn/historyprice/cjxh_1/" target="_parent">长江</a>&nbsp;
+								   			<a href="http://www.ccmn.cn/shsc/" target="_parent">上海</a>&nbsp;
+		                                    <a href="http://www.ccmn.cn/gdsc/" target="_parent">广东</a>&nbsp;
+		                                    <a href="http://www.ccmn.cn/zjsc/" target="_parent">浙江</a>&nbsp;
+		                                    <a href="http://futures.ccmn.cn/"  target="_parent">期货</a>&nbsp;
+									    </li>
+									    <li>
+											<a  class="movecurrent" href="http://zn.ccmn.cn/" target="_blank">锌</a>&nbsp;
+								        	<a  href="http://zn.ccmn.cn/znprice/" target="_blank">锌价</a>
+								        	<a  href="http://zn.ccmn.cn/znprice/" target="_blank">锌供求</a>&nbsp;&nbsp;
+								        	<a  class="movecurrent"  href="http://pb.ccmn.cn/"  target="_blank">铅</a>&nbsp;
+											<a  href="http://pb.ccmn.cn/pbprice/" target="_blank">铅价</a>
+											<a  href="http://pb.ccmn.cn/pbsupply/" target="_blank">铅供求</a>
+										</li>
+								   </ul>
+								    <div class="spite"></div>
+								   <ul> 
+								   		<li>
+								   				<a style="color: #fff;background: #FF7300;" href="http://www.ccmn.cn/historyprice/" target="_parent">历史数据</a>&nbsp;
+									       		<a href="http://www.ccmn.cn/metalquote/" target="_parent">历史走势</a>
+									       		<a style="font-weight:bold;" href="http://www.ccmn.cn/news/" target="_parent">新闻资讯</a>
+									       		<a href="http://www.ccmn.cn/news/cjkc/" target="_parent">分析</a>
+									    </li>
+									    <li>
+								   			 <a  class="movecurrent"  href="http://sn.ccmn.cn/"  target="_blank">锡</a>&nbsp;
+											 <a   href="http://sn.ccmn.cn/snprice/" target="_blank">锡价</a>
+											 <a   href="http://sn.ccmn.cn/snsupply/" target="_blank">锡供应</a>
+											 <a  class="movecurrent"  href="http://ni.ccmn.cn/"  target="_blank">镍</a>&nbsp;
+										     <a  href="http://ni.ccmn.cn/niprice/" target="_blank">镍价</a>&nbsp;
+										     <a  href="http://ni.ccmn.cn/nisupply/" target="_blank">镍供应</a>
+									    </li>
+								   </ul>
+								    <div class="spite"></div>
+								       <ul> 
+								   		<li>
+								   				 <a href="http://www.ccmn.cn/guijinshu/" target="_parent">贵金属</a>&nbsp;
+										         <a href="http://www.ccmn.cn/priceinfo/xjs/" target="_parent">小金属</a>&nbsp;
+										         <a href="http://www.ccmn.cn/priceinfo/xtjs/" target="_parent">稀土金属</a>&nbsp;
+										         <a href="http://www.ccmn.cn/show/" target="_parent">展会</a>&nbsp;
+									   			 <a href="http://www.ccmn.cn/knowledge/" target="_parent">知识</a>&nbsp;
+									   			 <a href="http://www.ccmn.cn/rczp/" target="_parent">招聘</a>
+									   		</li>
+									    <li>
+								   			<a  class="movecurrent" href="http://fjjs.ccmn.cn" target="_blank">废金属</a>&nbsp;
+								   			<a  href="http://copper.ccmn.cn/feitong/" target="_blank">废铜</a>
+								   			<a  href="http://alu.ccmn.cn/feilv/" target="_blank">废铝</a>
+								   			<a  href="http://zn.ccmn.cn/feixin/" target="_blank">废锌</a>&nbsp;
+								   			<a  href="http://pb.ccmn.cn/feiqian/" target="_blank">废铅</a>
+								   			<a  href="http://sn.ccmn.cn/feixi/" target="_blank">废锡</a>
+								   			<a  style="color: #fff;background: #FF7300;" href="http://www.ccmn.cn/scenter/" target="_blank">服务中心</a>
+								   		</li>
+								   </ul>
+	              </div>
+ 		 </div>
+	</div>
+	
+	
+	
+	
+	        </div>
+			
+			 
+			  	<input type="hidden" name="islogin" value="0" id="islogin"/>
+			  
+			<div class="body mauto clearfix" style="margin-top: 8px;">
+			     <div id="Chart">
+				       <h1>上海金属废料304回炉边料价格走势图</h1>
+					   <div id="detail">[<span>均价 ：9010</span>  <span>涨跌：+123 </span> ]</div>
+					   <ul class="tab">
+					        <li class="tit"> 
+					            <span class="tab_element current" style="cursor: pointer;" onclick="chartbydate('1')" id="1">
+							         <span class="b_l"></span> <span class="b_c">一周</span> <span class="b_r"></span>
+						        </span>
+						        <span class="tab_element" id="2" style="cursor: pointer;" onclick="chartbydate('2')">
+							         <span class="b_l"></span> <span class="b_c">一个月</span> <span class="b_r"></span>
+						        </span>
+							    <span class="tab_element" id="3" style="cursor: pointer;" onclick="chartbydate('3')">
+							         <span class="b_l"></span> <span class="b_c">一季度</span> <span class="b_r"></span>
+						        </span>
+							    <span class="tab_element" id="4" style="cursor: pointer;" onclick="chartbydate('4')">
+							         <span class="b_l"></span> <span class="b_c">一整年</span> <span class="b_r"></span>
+						        </span>
+					        </li>
+							<li>
+							     <div class="chart" >
+								     <iframe id="chartiframe" src="" width="100%" height="350" frameborder="0" scrolling="no"></iframe>
+								 </div>   
+							</li>   
+					 
+					    </ul>
+			     </div>
+				 
+				 <div id="Others">
+				       <h1>相关行情</h1>
+					   <div class="content">
+					     <table>
+					     	
+					     	
+							
+								<tr> <th>品名</th> <th>价格区间</th> <th>涨跌</th> <th>单位</th> <th>发布日期</th> <th>走势</th> </tr>
+					   		
+					   		
+					   		
+					   		<tr> 
+					   			<td>304回炉边料 </td> 
+					   			<td>8950-9150</td> 
+					   			<td>0</td> 
+					   			<td>元/吨</td> 
+					   			<td>04-18</td>
+					   		 	<td><a href="/pricechart/5ecc569c456f1a89014572e5da290634_2.html"><img alt="查看走势" src="/img/k.gif" /></a></td> 
+					   		 </tr>
+					   		 
+					   		
+					   		<tr> 
+					   			<td>304回炉边料 </td> 
+					   			<td>8950-9150</td> 
+					   			<td>100</td> 
+					   			<td>元/吨</td> 
+					   			<td>04-17</td>
+					   		 	<td><a href="/pricechart/5ecc569c4555624001456dc10ec025bc_2.html"><img alt="查看走势" src="/img/k.gif" /></a></td> 
+					   		 </tr>
+					   		 
+					   		
+					   		<tr> 
+					   			<td>304回炉边料 </td> 
+					   			<td>8850-9050</td> 
+					   			<td>-50</td> 
+					   			<td>元/吨</td> 
+					   			<td>04-16</td>
+					   		 	<td><a href="/pricechart/5ecc569c455562400145689ee2631a82_2.html"><img alt="查看走势" src="/img/k.gif" /></a></td> 
+					   		 </tr>
+					   		 
+					   		
+					   		<tr> 
+					   			<td>304回炉边料 </td> 
+					   			<td>8900-9100</td> 
+					   			<td>0</td> 
+					   			<td>元/吨</td> 
+					   			<td>04-15</td>
+					   		 	<td><a href="/pricechart/5ecc569c455562400145637c4ac9110e_2.html"><img alt="查看走势" src="/img/k.gif" /></a></td> 
+					   		 </tr>
+					   		 
+					   		
+					   		<tr> 
+					   			<td>304回炉边料 </td> 
+					   			<td>8900-9100</td> 
+					   			<td>50</td> 
+					   			<td>元/吨</td> 
+					   			<td>04-14</td>
+					   		 	<td><a href="/pricechart/5ecc569c4555624001455e58c07505ac_2.html"><img alt="查看走势" src="/img/k.gif" /></a></td> 
+					   		 </tr>
+					   		 
+					   		 
+									
+					   		 <tr> 
+					   			<td>&nbsp;</td> 
+					   			<td>&nbsp;</td> 
+					   			<td>&nbsp;</td> 
+								<td>&nbsp;</td> 
+					   			<td>&nbsp;</td> 
+					   			<td>&nbsp;</td> 
+					   			<td>&nbsp;</td>
+					   			<td>&nbsp;</td>  
+					   			<td>&nbsp;</td>
+					   		 	<td>&nbsp;</td> 
+					   		 </tr>
+					   		 
+							
+						 </table>
+					  </div>
+				 </div>	
+				 <div style="margin-top: 3px;">
+				 	 <script type="text/javascript" charset="utf-8">
+						(function(){
+						  var _w = 106 , _h = 24;
+						  var param = {
+						    url:location.href,
+						    type:'5',
+						    count:'', /**是否显示分享数，1显示(可选)*/
+						    appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
+						    title:'', /**分享的文字内容(可选，默认为所在页面的title)*/
+						    pic:'', /**分享图片的路径(可选)*/
+						    ralateUid:'3180133695', /**关联用户的UID，分享微博会@该用户(可选)*/
+							language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
+						    rnd:new Date().valueOf()
+						  }
+						  var temp = [];
+						  for( var p in param ){
+						    temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
+						  }
+						  document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
+						})()
+						</script>  
+				 </div>
+			</div>
+		   
+			<div >
+	              
+
+
+   <div class="foot clearfix">
+	       <div class="foot_nav ">
+		            <ul>
+					     <li>
+						      <a href="http://www.ccmn.cn" target="_blank">首 页</a> | 
+							  <a href="http://www.ccmn.cn/about.html" target="_blank">关于我们</a> | 
+							  <a href="http://www.ccmn.cn/contact.html" target="_blank">联系我们</a> |
+							  <a href="http://www.ccmn.cn/scenter/" target="_blank">服务中心</a> |  
+							  <a href="http://www.ccmn.cn/ad.html" target="_blank">广告服务</a> | 
+							  <a href="http://www.ccmn.cn/joinus.html" target="_blank">合作加盟</a> | 
+							  <a href="http://www.ccmn.cn/suggest.html" target="_blank">建议意见</a> | 
+							
+							  <a href="http://m.ccmn.cn/" target="_blank">手机长江有色网</a> | 
+							  <a href="http://www.ccmn.cn/corpright.html" target="_blank">著作权申明</a> | 
+							  <a href="http://www.ccmn.cn/openapp.html" target="_blank">开放平台</a> | 
+							  <a href="http://www.ccmn.cn/exemption.html" rel="nofollow" target="_blank">免责条款</a> |
+							  <a href="http://www.ccmn.cn/keyword/" target="_blank">热门关键字</a> | 
+							  <a href="http://www.ccmn.cn/zhuanti/" target="_blank">热门专题</a>  | 
+							  <a href="http://www.ccmn.cn/mailsub.html" target="_blank">邮件订阅</a>
+						 </li>
+					</ul>
+		   </div>
+		   <div class="foot_text mauto">
+		          <ul>
+				         <li>
+						     旗下网站：<a href="http://www.ccmn.cn" target="_blank" >长江有色金属网</a> | 
+							 <a href="http://www.ysteel.cn" target="_blank" >长江钢铁网</a> | 
+							 <a href="http://www.cjys.cn" target="_blank" >有色金属搜索网</a> | 
+							 <a href="http://sms.ccmn.cn" target="_blank" >长江有色金属手机网</a> |
+							 <a href="http://m.ccmn.cn" target="_blank" >手机有色网</a><br/>
+							 <a href="http://copper.ccmn.cn" target="_blank" >长江有色金属网铜价</a> | 
+							 <a href="http://alu.ccmn.cn" target="_blank" >长江有色金属网铝价</a> | 
+							 <a href="http://zn.ccmn.cn" target="_blank" >长江有色金属网锌价</a> | 
+							 <a href="http://pb.ccmn.cn" target="_blank" >长江有色金属网铅价</a> | 
+							 <a href="http://sn.ccmn.cn" target="_blank" >长江有色金属网锡价</a> | 
+							 <a href="http://ni.ccmn.cn" target="_blank" >长江有色金属网镍价</a> 
+						 </li>
+						 <li>
+						     Copyright&copy;<a href="http://www.ccmn.cn">长江有色金属网</a>  大长江（厦门）信息科技有限公司 All Rights Reserved 版权所有 复制 必究   
+						   
+						   <script>
+							  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+							  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+							  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+							  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+							
+							  ga('create', 'UA-32391935-1', 'ccmn.cn');
+							  ga('send', 'pageview');
+							
+							</script>
+						  
+						 </li>
+						
+						 <li>
+						    闽ICP备09004021  全国统一免费服务热线：0592-5668838   传真：0592-5663800  总部地址：中国·厦门  嘉禾路810号5F
+						 </li>
+						 <li>
+							<a href="http://si.trustutn.org/info?sn=343130811000058325233" target="_blank">
+							  	<img src="http://www.ccmn.cn//images/ceaia-logo.jpg" style="width: 120px;height: 50px;"/>
+						  	</a>
+							&nbsp;
+							<script type="text/javascript" src="http://222.76.242.83:8080/scripts/businessLicense.js?id=40288a85403348b901403d24680b0027"></script>
+							&nbsp;
+							<script src="http://www.anquan.org/static/outer/js/anquan_authen_124x47.js"></script>
+						 </li>
+				  </ul>
+		   </div>
+	   
+	 </div>
+	        </div>
+	</body>
+</html>

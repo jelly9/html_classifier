@@ -1,0 +1,840 @@
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <base href="http://www.1peixun.net/">
+    <title>
+    	[2011年河北石家庄公共英语三级学位英-外语培训-最权威的培训分类信息门户
+    </title>
+    <meta name="baidu_union_verify" content="2dbc86a196d0348f2b764bac4fa62055">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">   
+	<meta name="keywords" content=",电脑培训 英语培训">
+	<meta name="description"  content=",培训分类信息发布">
+	<script type="text/javascript" src="/js/jquery-1.6.1.min.js"></script>
+	<link href="/css/web/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+ 	
+ 	 	
+	
+	
+    <div id="regsiter-box">
+	  <div id="regsiter">
+	    <ul>
+	      <li class="left"><a href="javascript:void(0);" id="cityShow">全部</a></li>
+	      <li class="left"><a href=" /city/list.jsp" id="cityShow" class="littleA">[切换省市]</a></li>
+	      <li class="right"><a href="javascript:void(0);" onclick="window.external.AddFavorite('http://www.1peixun.net','最权威的培训分类信息门户');">收藏</a></li>
+	      <li class="right"><a href="javascript:void(0);" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.1peixun.net/');">设为主页</a></li>
+	     
+	         
+	      	
+	      		<li class="right">
+		      	   <a href="/school/login.jsp">登录</a>
+		        </li>
+		        <li class="right"><a href="/school/reg.jsp">注册</a></li>
+	      	
+	      	
+	      
+	        
+	      <li class="right"><label>您好，欢迎回到1培训！</label></li>
+	   
+	      <div class="cle"></div>
+	    </ul>
+	  </div>
+    </div>
+   <div id="header">
+     <div class="left" id="logo"><a href="http://www.1peixun.net"><img src="/images/webimage/logo.gif" width="240" height="42" border="0" /></a></div>
+  <div id="topsearch" class="left">
+      <div class="searchtab">
+	      <a  href="javascript:void(0)" class="active" >课程</a>
+	      <a href="javascript:void(0)">学校</a>
+		  <a href="javascript:void(0)">红包</a>
+	  </div>
+	<form action="" method="get">
+		
+		<div class="textbox"><input name="searchTxt" id="searchTxt" value=""/></div>
+		<div class="search"><input type="button" name="searchBtn" id="searchBtn" value="搜索" /></div>
+	</form>
+	<div class="searchnav cle" id="searchKeyWords">
+		
+	
+	<a href="javascript:void(0)">电脑</a>
+	
+	<a href="javascript:void(0)">计算机</a>
+	
+	<a href="javascript:void(0)">软件</a>
+	
+	<a href="javascript:void(0)">JavaEE</a>
+	
+	<a href="javascript:void(0)">英语</a>
+	
+	<a href="javascript:void(0)">技能</a>
+		 
+   </div>
+	<div class="cle"></div>
+  </div>
+  <div id="join" class="right"><a href="/courseInfo/insert.jsp">免费发布信息</a></div>
+  <div class="cle"></div>
+	  <div id="nav" class="cle">
+	    <ul>
+	      <li><a id="theindex"  href="/index.jsp">首页</a></li>
+	      
+	      	  <li id="3"><a  href="/courseInfo/list.jsp?bigTypeId=3">电脑培训</a></li>
+	      
+	      	  <li id="13"><a  href="/courseInfo/list.jsp?bigTypeId=13">才艺培训</a></li>
+	      
+	      	  <li id="1"><a class="active" href="/courseInfo/list.jsp?bigTypeId=1">外语培训</a></li>
+	      
+	      	  <li id="11"><a  href="/courseInfo/list.jsp?bigTypeId=11">管理培训</a></li>
+	      
+	      	  <li id="15"><a  href="/courseInfo/list.jsp?bigTypeId=15">学历教育</a></li>
+	      
+	      	  <li id="14"><a  href="/courseInfo/list.jsp?bigTypeId=14">职业资格</a></li>
+	      
+	      <li><a  href="/articleInfo/list.jsp">新闻资讯</a></li>
+	      <li><a  href="/school/list.jsp">培训机构</a></li>
+	    
+	    </ul>
+	  </div>
+   </div>
+<script type="text/javascript">
+
+function getCookie(name){
+	 var str=document.cookie.split(";");
+	 for(var i=0;i<str.length;i++){
+	 var str2=str[i].split("=");
+	  if(str2[0]==name)return unescape(str2[1]);
+	 }
+}
+$(document).ready(function(){
+	
+	//点击学校或者红包等搜索类别时切换效果
+	$("div.searchtab>a").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	});
+	
+	//根据当前请求的路径判断请求的是课程列表则搜索类别设为课程，以此类推
+	 var path = "/courseInfo/detail.jsp";
+	 if((path=="/" ||path.indexOf("/index")!=-1) && false)
+	{
+		$("#theindex").addClass("active").siblings().removeClass("active");
+	}
+	
+	if(path.indexOf("/courseInfo/")!=-1)
+	{
+		$("div.searchtab>a:contains('课程')").addClass("active").siblings().removeClass("active");
+	} 
+	else if(path.indexOf("/school/")!=-1)
+	{
+		$("div.searchtab>a:contains('学校')").addClass("active").siblings().removeClass("active");
+	}
+	else if(path.indexOf("/redPacket/")!=-1)
+	{
+		$("div.searchtab>a:contains('红包')").addClass("active").siblings().removeClass("active");
+	}
+	
+	//指定搜索按钮的点击事件
+	$("#searchBtn").click(searchFun);
+	
+	//点击热门搜索关键字时进行搜索
+	$("#searchKeyWords a").click(function(){
+		$("#searchTxt").val($(this).text());
+		$("#searchBtn").click();
+	});
+});
+
+
+function searchFun()
+{
+	var searchType = $("div.searchtab>a[class='active']").text();	
+	var str = $("#searchTxt").val();
+
+		var re;
+	    var s = "id=4265&bigTypeId=1";
+	    var queryString="";
+	    
+	   re = /pid=(\d)+/
+	   if(s.match(re)!=null)
+	   {
+			queryString += "&"+s.substring(RegExp.index,RegExp.lastIndex);   
+		}
+	   re=/cid=(\d)+/
+	    if(s.match(re)!=null)
+	   {
+			queryString += "&"+s.substring(RegExp.index,RegExp.lastIndex);   
+		}
+	   if(str!="")
+		{
+		   queryString+="&str="+escape(encodeURIComponent(str));
+		}
+	   
+	    if(queryString!="")
+	    {
+			queryString="?"+queryString.substring(1);   
+		}
+	   
+		if(searchType=="课程")
+		{
+			
+			window.location.href="/courseInfo/list.jsp"+queryString;
+		}
+		else if(searchType=="学校")
+		{
+			window.location.href="/school/list.jsp"+queryString;
+		}
+		else if(searchType=="红包")
+		{
+			window.location.href="/redPacket/list.jsp"+queryString;
+		}	
+}
+</script>
+
+<div id="wrapper">
+  <div class="width700 left">
+    <div id="main">
+     <div class="top">
+         <h1>[2011年河北石家庄公共英语三级学位英</h1>  
+        
+              
+        <div class="cle"></div>
+      </div>
+    
+      <div id="mainlist">        
+         <div class="guild">
+          <div class="width160 left">
+          	
+           	
+           		<IMG src="/images/webimage/logo-sclool.gif" width="150" height="100">
+           	
+          </div>	
+          <div class="width490 right">
+            <ul>
+              <li style="clear:both;"><label>类别：</label><span>外语培训-口译培训</span></li>
+              <li style="clear:both;"><label>价格：</label><span>电询
+              </span></li>              
+              <li style="clear:both;"><label>学校：</label><span>[河北科技大学]</span></li>              
+              <li style="clear:both;"><label>咨询：</label><span> []
+              
+              <a  target="blank" href="http://wpa.qq.com/msgrd?V=1&amp;Uin=2361521765&amp;Site=1培训&amp;Menu=yes"><img alt="1培训" border="0" src="http://wpa.qq.com/pa?p=9:2361521765:9" /></a>
+              </span></li>       
+              
+            </ul>
+              <div class="cle"></div>
+             <div class="link left" style="margin-left:25px;">  
+             <div class="submit"><input type="button" value="我要报名" title="点击去报名" onclick="window.open('/studentInfo/reg.jsp?courseInfoId=4265','_blank')" style="color:white;cursor: pointer;"/></div>
+             
+			 <div class="submit_no"><input type="button" value="查看地图" title="暂无地图信息"  style="color:white;cursor: pointer;"/></div>
+		   	
+          </div>
+          </div>
+		  <div class="cle"></div>
+		  招生简章[</b>：
+联系方式；杜老师15350599400QQ；1787799154<br>
+<br>
+郑重承诺——公共英语三级保过，不过全额退款.　　　<br>
+公共英语三级考试时间：<br>
+PETS-3上半年：每年3月的第2个周六、周日<br>
+下半年：每年9月的第2个周六、周日<br>
+公共英语三级优势：<br>
+1、可代替网络
+5、可用于
+6、可参与评定学位，可申请学士学位。<br>
+
+<br>
+<br>
+石家庄学位英语（保过）<br>
+&#8226;;;;;;;学位英语考试简介：学士学位英语统一考试是高等教育自学考试本科学生和成人高等教育本科学生获得学士学位的必要条件，为了帮助广大考生顺利通过学位英语考试，获得学士学位证书，我中心特开设学位英语考前保过班，我中心有多年的学位英语
+<br>
+<br>
+现场报名根据我方安排另行通知。<br>
+报名须知：报名时请携带本人身份证复印件2张、蓝色背景1寸照片2张。<br>
+名额有限、欲报从速、详情来电咨询<br>
+<br>
+<br>
+联系方式：杜老师15350599400QQ：1787799154<br>
+<spanid=cop></span><bR>欢迎您报名参加：<b>2011年河北石家庄公共英语三级学位英语报名</b><br>]              
+      </div>
+	
+
+
+
+
+
+
+
+
+<style type="text/css">
+	#mainlist form ol li textarea{ float:left; border:1px solid #dcdcdc; margin:0px 0; padding:3px 2px; background:#f5f5f5; display:block; }
+</style>
+<div id="main">
+	<form id="formone" action="/webservlet/StudentInfoWebServlet?action=signup" method="post">
+		<input name="pid" id="pid" type="hidden" value="">
+       	<input name="cid" id="cid" type="hidden" value="">
+	  	<input type="hidden" id="schoolId" name="schoolId" value=""/>
+	  	<input type="hidden" id="courseInfoId" name="courseInfoId" value="4265"/>
+	  	<input type="hidden" id="provinceId" name="provinceId" value=""/>
+	  	<input type="hidden" id="cityId" name="cityId" value=""/>
+	  	<input type="hidden" id="bityTypeId" name="bityTypeId" value=""/>
+		<ol>
+			<h2>快速报名</h2>
+			<li>
+				<label>姓  名：</label>
+				<div class="width50">
+					<input id="name" name="name" onblur="nameValidate()"/>
+				</div>
+				<span id="span_name" class="red span">*</span> 
+			</li>
+			<li>
+				<label>电  话：</label>
+				<div class="width50">
+					<input id="phone" name="phone" onblur="phoneValidate()" maxlength="50"/>
+				</div>
+				<span id="span_phone" class="red span">*</span>
+			</li>
+			<li>
+				<label>QQ号码：</label>
+				<div class="width50">
+					<input id="qq" name="qq" onblur="qqValidate()" maxlength="50"/>
+				</div>
+				<span id="span_qq" class="red span">*</span>
+			</li>
+			<li style="height: 60px;">
+				<label>补充信息：</label> 
+				<div class="width50" style="width:400px;">
+					<textarea style="width:400px; height:60px;" id="info" name="info" onblur="infoValidate()" onblur="infoValidate()">请尽快与我联系!</textarea>
+				</div>
+				<span id="span_info" class="red span"></span>
+			</li>
+			<li>
+				<label>验证码：</label>
+				<div class="width50">
+					<input id="code" name="code" onblur="codeValidate()" maxlength="4"/>
+				</div>
+				<img id="myCodeImg" src="/webservlet/CheckCodeWebServlet?action=create" width="95" height="26" />
+				<a class="a" href="javascript:changeImg()">更换验证码</a>
+				<span id="span_code" class="red span"></span>
+		  	</li>
+			<li class="buttons">
+				<label>&nbsp;</label>
+				<div class="submit">
+					<input name="imageField2" class="submit" type="button" value="立即报名" onclick="submitSignup()" style="color:white;cursor: pointer;"/>
+				</div>
+				<div class="reset">
+					<input name="reset" class="reset" type="button" value="重置" onclick="resetfunc()" style="color:white;cursor: pointer;"/>
+				</div>
+				<div class="cle"></div>
+			</li>
+		</ol>
+	</form>
+</div>
+	  <script type="text/javascript">
+		var nameOk=false;
+		var phoneOk=false;
+		var qqOk=false;
+		var infoOk=false;
+		var codeOk=false;
+	  	function changeImg()//←点击刷新验证图片
+		{
+			var myCodeImg = document.getElementById("myCodeImg");
+		    myCodeImg.src="/webservlet/CheckCodeWebServlet?action=create&"+Math.random();
+		}
+	  	function nameValidate()//←姓名验证
+	  	{
+	  		var re=RegExp(/^[\u4e00-\u9fa5,\w]*$/);
+	  		var name=$("#name").val();
+	  		
+	  		if(name=="")
+	  		{
+	  			$("#span_name").html("<img src='/images/webimage/chahao.png' style='width:20px;height:20px;'/><span>姓名为必填项</sapn>");
+	 			nameOk=false;
+	  		}
+	  		else if(name.length<2||name.length>8)
+	  		{
+	  			$("#span_name").html("<img src='/images/webimage/chahao.png' style='width:20px;height:20px;'/><span>长度不正确,姓名应为2~8位</sapn>");
+	 			nameOk=false;
+	 		}
+	 		else if(re.exec(name)==null)
+	 		{
+	 			$("#span_name").html("<img src='/images/webimage/chahao.png' style='width:20px;height:20px;'/><span>姓名中含有非法字符</sapn>");
+	 			nameOk=false;
+	 		}
+	 		else
+	 		{
+	 			$("#span_name").html("<img src='/images/webimage/duihao.png' style='width:20px;height:20px;'/><span>格式正确</sapn>");
+	 			nameOk=true;
+	 		}
+	 		
+	 	}
+	 	function phoneValidate()//←手机验证
+	 	{
+	 		var phone=$("#phone").val();
+	 		if(phone=="")
+	 		{
+	 			$("#span_phone").html("*");
+	 			phoneOk=true;
+	 		}
+	 		else
+	 		{
+	 			$("#span_phone").html("<img src='/images/webimage/duihao.png' style='width:20px;height:20px;'/><span>已完善</sapn>");
+	 			phoneOk=true;
+	 		}
+	 	}
+	 	function qqValidate()//←QQ验证
+	 	{
+	 		var qq=$("#qq").val();
+	 		if(qq=="")
+	 		{
+	 			$("#span_qq").html("*");
+	 			qqOk=true;
+	 		}
+	 		else
+	 		{
+	 			$("#span_qq").html("<img src='/images/webimage/duihao.png' style='width:20px;height:20px;'/><span>已完善</sapn>");
+	 			qqOk=true;
+	 		}
+	 	}
+	 	function infoValidate()//←信息的验证
+		{
+			var info=$("#info").val();
+			if(info.length>100)
+			{
+				$("#span_info").html("<img src='/images/webimage/chahao.png' style='width:20px;height:20px;'/><span>补充信息不可超过100字</sapn>");
+				infoOk=false;
+			}
+			else
+			{
+				$("#span_info").empty();
+				infoOk=true;
+			}
+		}
+	 	
+	 	function codeValidate()//←验证码验证
+	 	{
+	 		var codeValue = $("#code").val();
+	     	$.ajax({
+	     		 	
+	     		dataType:"html",
+	     		type:"get",
+	     		url:"/webservlet/CheckCodeWebServlet?action=check&code="+codeValue,
+	     		success: function(msg) {	     			
+					if (msg==0)
+					{
+						$("#span_code").html("<img src='/images/webimage/chahao.png' style='width:20px;height:20px;'/><span>验证码不正确</sapn>");
+				        codeOk = false;
+				    } 
+				    else
+			    	{
+				    	$("#span_code").empty();
+			   	 		codeOk = true;				   	 
+				    }
+				}
+	     	});
+	 	}
+	 	
+	 	//提交时验证
+	 	function submitForm()//←验证码验证
+	 	{
+	 		var codeValue = $("#code").val();
+	     	$.ajax({	     		 	
+	     		dataType:"html",
+	     		type:"get",
+	     		url:"/webservlet/CheckCodeWebServlet?action=check&code="+codeValue,
+	     		success: function(msg) {	     	
+					if (msg==0)
+					{
+						$("#span_code").html("<img src='/images/webimage/chahao.png' style='width:20px;height:20px;'/><span>验证码不正确</sapn>");
+				        codeOk = false;
+				    } 
+				    else
+			    	{
+				    	$("#span_code").empty();
+			   	 		codeOk = true;
+				   	 	var phone=$("#phone").val();
+				 		var qq=$("#qq").val();
+				 		if(qq=="" && phone=="")//
+				 		{
+				 			phoneOk=false;
+				 			qqOk=false;
+				 			$("#span_qq").html("<img src='/images/webimage/chahao.png' style='width:20px;height:20px;'/><span>至少填写一种有效的联系方式</sapn>");
+				 			
+				 		}
+				 		if(nameOk && phoneOk && qqOk  && infoOk && codeOk)
+				 		{
+				 			$("#formone").submit();
+				 		}
+				    }
+				}
+	     	});
+	 	}
+	 	function submitSignup()//←点击提交报名
+	 	{
+	 		nameValidate();//←调用验证姓名
+	 		phoneValidate();//←调用手机验证
+	 		qqValidate();//←调用QQ验证
+	 		infoValidate();//←调用信息验证
+	 		submitForm();//←调用验证码验证并提交
+	 	
+	 	}
+	 	function resetfunc()//←点击重置
+	 	{
+	 		$("#name").val("");
+	 		$("#phone").val("");
+	 		$("#qq").val("");
+	 		$("#info").val("请尽快与我联系!");
+	 		$("#code").val("");
+	 		$("#span_name").html("*");
+	 		$("#span_phone").html("*");
+	 		$("#span_qq").html("*");
+	 		$("#span_info").empty();
+	 		$("#span_code").empty();
+	 		changeImg();//调用刷新验证的图片
+	 	}
+	  </script>
+
+    </div>
+  </div>
+  </div>
+  
+<div class="width250 right">
+	<div id="sidebar">
+		
+
+
+
+
+
+<link href="/css/web/style.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+      <div class="news">
+        <div class="newstop">
+        
+			        
+			<h2>推荐学校</h2>        
+			        
+			        
+            
+		  <label><a href="/school/list.jsp"    target="_blank">更多</a></label>
+          <div class="cle"></div>
+        </div>
+        <ul>
+        
+          <li><a href="/school/detail.jsp?id=758"    target="_blank">
+          
+          	
+          	 [济南市乐训培训学校]
+          
+         
+          </a></li>
+
+          
+          <li><a href="/school/detail.jsp?id=652"    target="_blank">
+          
+          	
+          	 [厦门新大陆外语学校]
+          
+         
+          </a></li>
+
+          
+          <li><a href="/school/detail.jsp?id=651"    target="_blank">
+          
+          	
+          		[厦门朗纳芳草地教育咨询有限公...
+          	
+          	
+          
+         
+          </a></li>
+
+          
+          <li><a href="/school/detail.jsp?id=650"    target="_blank">
+          
+          	
+          	 [厦门南方语言培训学校]
+          
+         
+          </a></li>
+
+          
+          <li><a href="/school/detail.jsp?id=649"    target="_blank">
+          
+          	
+          	 [厦门八天英语教育培训中心]
+          
+         
+          </a></li>
+
+          
+        </ul>
+      </div>
+
+
+		 <div class="ad250">
+
+
+
+<div>
+<div class="ad" style="width:250px;height:250px;"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 要培训首页250 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:250px;height:250px"
+     data-ad-client="ca-pub-6307930268345207"
+     data-ad-slot="0332766055"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+</div>
+</div>    
+		
+
+
+
+
+
+<link href="/css/web/style.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+      <div class="news">
+        <div class="newstop">
+        
+			        
+			        
+			        
+			<h2>最新学校</h2>        
+            
+		  <label><a href="/school/list.jsp"    target="_blank">更多</a></label>
+          <div class="cle"></div>
+        </div>
+        <ul>
+        
+          <li><a href="/school/detail.jsp?id=1159"    target="_blank">
+          
+          	
+          	 韶唯英语
+          
+         
+          </a></li>
+
+          
+          <li><a href="/school/detail.jsp?id=1036"    target="_blank">
+          
+          	
+          	 爱贝国际少儿英语潍坊中心
+          
+         
+          </a></li>
+
+          
+          <li><a href="/school/detail.jsp?id=1030"    target="_blank">
+          
+          	
+          	 青鸟
+          
+         
+          </a></li>
+
+          
+          <li><a href="/school/detail.jsp?id=1022"    target="_blank">
+          
+          	
+          	 要培训
+          
+         
+          </a></li>
+
+          
+          <li><a href="/school/detail.jsp?id=1014"    target="_blank">
+          
+          	
+          	 青岛赛思外语学校
+          
+         
+          </a></li>
+
+          
+        </ul>
+      </div>
+
+		    
+       <div class="ad250">
+
+
+
+<div>
+<div class="ad" style="width:250px;height:250px;"><a data-type="3" data-tmpl="250x250" data-tmplid="185" data-rd="2" data-style="2" data-border="1" href="#"></a></div>
+
+</div>
+</div>	
+       
+
+
+
+
+
+
+
+<link href="/css/web/style.css" rel="stylesheet" type="text/css" />
+
+      <div class="news">
+        <div class="newstop">
+        
+			        
+			<h2>推荐课程</h2>        
+			        
+			        
+                 
+		  <label><a href="/courseInfo/list.jsp"    target="_blank">更多</a></label>
+          <div class="cle"></div>
+        </div>
+        <ul>
+        
+          <li><a href="/courseInfo/detail.jsp?id=12257"    target="_blank">
+          
+          	
+          		英语培训，英语培训那个好？要多...
+          	
+          	
+                   
+          </a></li>
+          
+          <li><a href="/courseInfo/detail.jsp?id=12256"    target="_blank">
+          
+          	
+          		海淀英语培训、海淀英语培训哪家...
+          	
+          	
+                   
+          </a></li>
+          
+          <li><a href="/courseInfo/detail.jsp?id=12009"    target="_blank">
+          
+          	
+          	 新概念英语学习班——知金培训
+                   
+          </a></li>
+          
+          <li><a href="/courseInfo/detail.jsp?id=11996"    target="_blank">
+          
+          	
+          	 深圳日语培训班 
+                   
+          </a></li>
+          
+          <li><a href="/courseInfo/detail.jsp?id=11995"    target="_blank">
+          
+          	
+          	 深圳英语培训班
+                   
+          </a></li>
+          
+        </ul>
+      </div>
+
+ 
+	</div>
+</div>	
+<div class="cle">  </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <div id="bottomAd"> -->
+<div class="adbox">
+<div class="ad950X90">
+
+
+
+
+<div>
+<div class="ad" style="width:960px;height:90px;"><script type="text/javascript">
+     document.write('<a style="display:none!important" id="tanx-a-mm_15070544_2632992_9611620"></a>');
+     tanx_s = document.createElement("script");
+     tanx_s.type = "text/javascript";
+     tanx_s.charset = "gbk";
+     tanx_s.id = "tanx-s-mm_15070544_2632992_9611620";
+     tanx_s.async = true;
+     tanx_s.src = "http://p.tanx.com/ex?i=mm_15070544_2632992_9611620";
+     tanx_h = document.getElementsByTagName("head")[0];
+     if(tanx_h)tanx_h.insertBefore(tanx_s,tanx_h.firstChild);
+</script>
+                    </div>
+
+</div>
+
+</div>
+</div>
+<div id="friendlink">
+  <label><b>友情链接:</b></label>
+  
+  	<label><a href="http://www.ceiaec.org" target="_blank">工业和信息化部教育考试中心</a></label>
+  
+  	<label><a href="http://www.mohrss.gov.cn" target="_blank">人力资源和社会保障部</a></label>
+  
+  	<label><a href="http://www.miit.gov.cn" target="_blank">中华人民共和国工信部</a></label>
+  
+  	<label><a href="http://www.neea.edu.cn" target="_blank">中国教育考试网</a></label>
+  
+  	<label><a href="http://www.hr.com.cn" target="_blank">中国人力资源网</a></label>
+  
+  	<label><a href="http://www.gjgwy.org" target="_blank">公务员考试网</a></label>
+  
+  	<label><a href="http://www.sdzs.gov.cn" target="_blank">山东省教育招生考试院</a></label>
+  
+  	<label><a href="http://www.cettic.cn" target="_blank">中国职业培训与技能鉴定服务网</a></label>
+  
+  	<label><a href="http://www.sdosta.org.cn" target="_blank">山东省职业技能鉴定中心</a></label>
+  
+  	<label><a href="http://classad.sina.com.cn" target="_blank">新浪分类信息</a></label>
+  
+  	<label><a href="http://ganji.com" target="_blank">赶集网</a></label>
+  
+  	<label><a href="http://58.com" target="_blank">58同城</a></label>
+  
+  	<label><a href="http://www.gaokao.com" target="_blank">高考网</a></label>
+  
+  <div class="cle"></div>
+</div>
+
+
+   <div id="footer">
+  <div class="botomanv"><a href="#">返回顶部</a> | <a href="#">网站地图</a> | <a href="#">联系方式</a> | <a href="#">版权说明</a>|服务邮箱:<a href="mailto:service@1peixun.net">service@1peixun.net</a></div>
+  <div class="copyright">
+  <p>
+    copyright 2011 1peixun.net<br />
+     网站服务：<a href="http://www.1peixun.net" target="_blank">1peixun.net</a>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1694517.js"></script>
+<noscript><a href="http://www.51.la/?1694517" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/1694517.asp" style="border:none" /></a></noscript>
+<script type="text/javascript" src="http://js.tongji.linezing.com/2740231/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/2740231/tongji.gif"/></a></noscript>  
+     
+  </p>
+  </div>
+  
+  <div class="cle"></div>
+</div>
+<script type="text/javascript"> (function(win,doc){ var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0]; if (!win.alimamatk_show) { s.charset = "gbk"; s.async = true; s.src = "http://a.alimama.cn/tkapi.js"; h.insertBefore(s, h.firstChild); }; var o = { pid: "mm_15070544_2632992_15604292",/*推广单元ID，用于区分不同的推广渠道*/ appkey: "",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/ unid: ""/*自定义统计字段*/ }; win.alimamatk_onload = win.alimamatk_onload || []; win.alimamatk_onload.push(o); })(window,document);</script>
+
+  </body>
+</html>
+
+

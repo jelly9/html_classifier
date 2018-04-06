@@ -1,0 +1,323 @@
+		<html>
+<head>
+	<meta chatset="utf-8">
+	<title></title>
+	<meta type="keywords" content="合作企业 , 长江职业学院,继续教育学院,汽车精英工程">
+	<meta type="description" content="合作企业 , 长江职业学院,继续教育学院,汽车精英工程">
+	<link href="/Public/Home/images/44.png" type="image/x-icon" rel="shortcut icon">
+	<link rel="stylesheet" type="text/css" href="/Public/Home/css/public.css">
+	<link rel="stylesheet" type="text/css" href="/Public/Home/css/index.css">
+	<script src="/Public/Home/js/jquery.js"></script>	
+<!--[if IE 6]>
+<script src="./Public/Home/js/DD_belatedPNG_0.0.8a.js"></script>
+<script type="text/javascript">
+   DD_belatedPNG.fix('#wh_div');
+</script>
+<![endif]-->
+</head>
+<body>
+
+
+
+<div class="top c">
+</div>
+<div class="bann c9 ">
+	<div class="nav">
+		<ul class="mleft20">
+			<li><a href="/">网站首页</a></li>
+			<li><a href='/index/about/cid/1.html'>学院概况</a><ul><li><a href='/index/about/cid/30.html'>学院简介</a></li><li><a href='/index/about/cid/31.html'>专业特色</a></li><li><a href='/index/about/cid/32.html'>办学特色</a></li></ul></li><li><a href='/index/news/cid/2.html'>招生指南</a><ul><li><a href='/index/news/cid/9.html'>招生快讯</a></li><li><a href='/index/news/cid/10.html'>招生政策</a></li></ul></li><li><a href='/index/about/cid/3.html'>教学管理</a><ul><li><a href='/index/about/cid/33.html'>教学特色</a></li><li><a href='/index/about/cid/34.html'>师资力量</a></li><li><a href='/index/about/cid/35.html'>奖励政策</a></li></ul></li><li><a href='/index/about/cid/4.html'>专业设置</a><ul><li><a href='/index/about/cid/40.html'>汽车检测与维修方向</a></li><li><a href='/index/about/cid/41.html'>汽车整形与美容方向</a></li><li><a href='/index/about/cid/42.html'>汽车会展与营销方向</a></li></ul></li><li><a href='/index/news/cid/5.html'>实训就业</a><ul><li><a href='/index/news/cid/11.html'>实训基地</a></li><li><a href='/index/news/cid/12.html'>就业保障</a></li><li><a href='/index/news/cid/29.html'>合作企业</a></li></ul></li><li><a href='/index/adv/cid/6.html'>实训设备</a></li><li><a href='/index/about/cid/7.html'>联系我们</a></li><li><a href='/index/adv/cid/8.html'>网上报名</a></li>		</ul>
+		<script>
+		$(".nav ul li").hover(function(){
+			$(this).find("ul").css({'display':'block'});
+		},function(){
+			$(this).find("ul").css({'display':'none'});
+		});
+		</script>
+	</div>
+	<div class="ma ov" style="width:1000px;height:315px;">
+		
+
+<style type="text/css">
+* {margin:0; padding:0;}
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.clearfix {zoom:1;}
+
+.wrapper {width:1000px; margin:0 auto; height:315px;}
+
+
+.shuoming {margin-top:20px; border:1px solid #ccc; padding-bottom:10px;}
+.shuoming dt {height:30px; line-height:30px; font-weight:bold; text-indent:10px;}
+.shuoming dd {line-height:20px; padding:5px 20px;}
+
+/* qqshop focus */
+#focus {width:1000px; height:315px; overflow:hidden; position:relative;}
+#focus ul {height:315px; position:absolute;left:0;}
+#focus ul li {float:left; width:1000px; height:315px; overflow:hidden; position:relative; background:#000;}
+#focus ul li div {position:absolute; overflow:hidden;}
+#focus .btn {position:absolute; width:980px; padding:2px 10px 10px; right:0; bottom:0; text-align:right;}
+#focus .btn span {display:inline-block; _display:inline; _zoom:1; width:20px; height:10px; _font-size:0; margin-left:10px; cursor:pointer; background:#fff;}
+#focus .btn span.on {background:#0b61ba;}
+#focus .preNext { display:none;width:45px; height:100px; position:absolute; top:90px; background:url(img/sprite.png) no-repeat 0 0; cursor:pointer;}
+#focus .pre {left:0;}
+#focus .next {right:0; display:none; background-position:right top;}
+</style>
+
+
+<script type="text/javascript">
+$(function() {
+	var sWidth = $("#focus").width(); //  ȡ      Ŀ      ʾ      
+	var len = $("#focus ul li").length; //  ȡ         
+	var index = 0;
+	var picTimer;
+	
+	//                  ť Ͱ ť   İ              һҳ    һҳ      ť
+	//var btn = "<div class='btn'>";
+	//for(var i=0; i < len; i++) {
+	//	btn += "<span></span>";
+	//}
+//	btn += "</div><div class='preNext pre'></div><div class='preNext next'></div>";
+//	$("#focus").append(btn);
+//	$("#focus .btnBg").css("opacity",0.1);
+
+	//ΪС  ť       껬            ʾ  Ӧ       
+	$("#focus .btn span").mouseenter(function() {
+		index = $("#focus .btn span").index(this);
+		showPics(index);
+	}).eq(0).trigger("mouseenter");
+
+	//  һҳ    һҳ  ť͸   ȴ   
+	$("#focus .preNext").css("opacity",0.2).hover(function() {
+		$(this).stop(true,false).animate({"opacity":"0.5"},300);
+	},function() {
+		$(this).stop(true,false).animate({"opacity":"0.2"},300);
+	});
+
+	//  һҳ  ť
+	$("#focus .pre").click(function() {
+		index -= 1;
+		if(index == -1) {index = len - 1;}
+		showPics(index);
+	});
+
+	//  һҳ  ť
+	$("#focus .next").click(function() {
+		index += 1;
+		if(index == len) {index = 0;}
+		showPics(index);
+	});
+
+	//    Ϊ                liԪ        ͬһ                      Ҫ       ΧulԪ   Ŀ  
+	$("#focus ul").css("width",sWidth * (len));
+	
+	//   껬       ʱֹͣ       ţ     ʱ  ʼ         
+	$("#focus").hover(function() {
+		clearInterval(picTimer);
+	},function() {
+		picTimer = setInterval(function() {
+			showPics(index);
+			index++;
+			if(index == len) {index = 0;}
+		},3500); //   000          ŵļ      λ       	}).trigger("mouseleave");
+	
+	//  ʾͼƬ         ݽ  յ  ndexֵ  ʾ  Ӧ       
+	function showPics(index) { //  ͨ    
+		var nowLeft = -index*sWidth; //     ndexֵ     Ԫ     eftֵ
+		$("#focus ul").stop(true,false).animate({"left":nowLeft},700); //ͨ  animate()    ulԪ                osition
+		//$("#focus .btn span").removeClass("on").eq(index).addClass("on"); //Ϊ  ǰ İ ť      ѡ        
+		$("#focus .btn span").stop(true,false).css({'background':'#fff'}).eq(index).stop(true,false).css({'background':'#0b61ba'}); //Ϊ  ǰ İ ť      ѡ        
+	}
+});
+
+</script>
+<div class="wrapper">
+
+	<div id="focus">
+		<ul>
+		<li><a href=""><img src="/Public/Upload/image/20140720/20140720013906_89725.jpg" width="1000" height="315" /></a></li><li><a href=""><img src="/Public/Upload/image/20140720/20140720013805_53052.jpg" width="1000" height="315" /></a></li><li><a href=""><img src="/Public/Upload/image/20140720/20140720013721_94226.jpg" width="1000" height="315" /></a></li>			
+		</ul>
+		<div class="btn">
+<span style="background: none repeat scroll 0% 0% rgb(11, 97, 186);"></span>
+<span style="background: none repeat scroll 0% 0% rgb(255, 255, 255);"></span>
+<span style="background: none repeat scroll 0% 0% rgb(255, 255, 255);"></span>
+</div>
+	</div>
+</div><!-- wrapper end -->
+	
+	</div>
+	<div class="div10"></div>
+	
+</div>
+<div class="c9">
+	<div class="p_left fl ">
+				<div class="s1_top">
+			<div class="div40"><span></span></div>
+			<div class="mleft5">
+				<div class="s1_con">
+					<span>全国咨询电话：</span>
+					<span class="call">027-50461172</span>
+					<span class="call">15387156636</span>
+					<span>咨询QQ：</span>
+					<a href="http://wpa.qq.com/msgrd?v=3&uin=2119377189&site=qq&menu=yes" target="_blank"><img title="点击这里给我发消息" alt="点击这里给我发消息" src="http://wpa.qq.com/pa?p=2:2119377189:41" border="0" /></a>
+					<a href="http://wpa.qq.com/msgrd?v=3&uin=2361369074&site=qq&menu=yes" target="_blank"><img title="点击这里给我发消息" alt="点击这里给我发消息" src="http://wpa.qq.com/pa?p=2:2361369074:41" border="0" /></a>
+				</div>
+				<div class="mtop15 mleft5">
+				<a href="/index/adv/cid/8.html"><img src="/Public/Home/images/q4.jpg" alt=""></a>
+					<a href="/index/about/cid/50.html"><img src="/Public/Home/images/q3.gif" alt=""></a>
+					
+				</div>
+			</div>
+		</div>
+		<div class="s1_x mtop10 bor">
+			<div class="s1_x_t">
+				专业设置
+			</div>
+			<a href="/index/about/cid/40.html" class="b0"><span>汽车技术服务与营销<br/>(汽车检测与维修方向)</span></a>
+			<a href="/index/about/cid/41.html" class="b1"><span>汽车技术服务与营销<br/>(汽车整形与美容方向)</span></a>
+			<a href="/index/about/cid/42.html" class="b2"><span>汽车技术服务与营销<br/>(汽车会展与营销方向)</span></a>
+		</div>
+	</div>
+
+
+	<div class="pic_right fr ">
+		<div>
+			<div class="p_top  ov">
+				<span class="fr mright10  p_a">
+					当前位置：
+					<a href="/">首页</a> &gt;
+					<a href="/index/news/cid/29.html">合作企业</a> &gt;
+					正文
+				</span>
+				<div class=" fon16 b wblue mtop5 mleft10 st2">合作企业</div>
+			</div>
+		</div>
+		<div class="mleft20 mright20 mtop20">
+				<div class="div40 txtCenter fon18 b"></div>
+				<div class="div30 mbottom10  txtCenter date_new">
+					&nbsp;&nbsp;
+						<span>日期：</span>&nbsp;&nbsp;&nbsp;&nbsp;
+						<span>来源：</span>&nbsp;&nbsp;&nbsp;&nbsp;
+						<span>浏览量：</span>&nbsp;&nbsp;
+					
+				</div>
+				<div class="li2">
+									</div>
+				﻿<div class="li2">
+<div class="div10"></div>
+<div class='div40'><b>上一篇：</b>已是第一篇</div><div class='div40'><b>下一篇：</b>已是最后一篇</div></div>
+
+<!-- Baidu Button BEGIN -->
+ <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<span class="bds_more">一键分享</span>
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<a class="shareCount"></a>
+</div> 
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=959954" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script> 
+<!-- Baidu Button END -->
+	
+
+				<div class="divc"></div>
+<div class=" li30 mright20">
+<div class="div30 b fond4">相关阅读:</div>
+<ul>
+<li class="bor_bottom">
+			<span class="fr"></span>
+			<a style="color:#0053BE;" href="/index/zdnews/cid/38/id/21.html">汽修专业人才未来发展前景</a>
+		</li>
+	</post><li class="bor_bottom">
+			<span class="fr"></span>
+			<a style="color:#0053BE;" href="/index/zdnews/cid/26/id/47.html">关于2014年劳动节放假的通知</a>
+		</li>
+	</post><li class="bor_bottom">
+			<span class="fr"></span>
+			<a style="color:#0053BE;" href="/index/zdnews/cid/36/id/72.html">平行志愿如何填报</a>
+		</li>
+	</post><li class="bor_bottom">
+			<span class="fr"></span>
+			<a style="color:#0053BE;" href="/index/zdnews/cid/38/id/77.html">最具发展潜力的行业之一：汽车</a>
+		</li>
+	</post><li class="bor_bottom">
+			<span class="fr"></span>
+			<a style="color:#0053BE;" href="/index/zdnews/cid/10/id/152.html">2014年湖北普通高校招生录取时间安排</a>
+		</li>
+	</post></ul>
+</div>
+
+			<div class="div10c"></div>
+		</div>
+	</div>
+	<div class="divc"></div>
+</div>
+
+<!-- <div class="div35  c links bor">
+  <span class="fon14 b mleft10">友情链接:</span>
+  		</div> -->
+<div class="div10"></div>
+<div class="bot c txtCenter">
+  <div class="div5"></div>
+  <div class="fnav">
+  	<ul>
+  		<li><a href="/">网站首页</a></li>
+  		<li>|<a href='/index/about/cid/1.html'>学院概况</a></li><li>|<a href='/index/news/cid/2.html'>招生指南</a></li><li>|<a href='/index/about/cid/3.html'>教学管理</a></li><li>|<a href='/index/about/cid/4.html'>专业设置</a></li><li>|<a href='/index/news/cid/5.html'>实训就业</a></li><li>|<a href='/index/adv/cid/6.html'>实训设备</a></li><li>|<a href='/index/about/cid/7.html'>联系我们</a></li><li>|<a href='/index/adv/cid/8.html'>网上报名</a></li>  	</ul>
+  	<div class="clear"></div>
+  </div>
+  <div class="bor_tops"></div>
+  <div class="footer">
+      <span style="line-height:30px;">版权所有 长江职业学院 地址：<span style="line-height:30px;">湖北省武汉市东湖高新技术开发区光谷一路流芳园路</span></span> 技术支持：<a target="_blank" href="http://www.hbsem.com/">天下互通</a><br />
+<span style="line-height:30px;">办公电话：027-50461172&nbsp; 邮编：432000</span>  </div>
+</div>
+<DIV id="floatTools" class="float0831">
+  <DIV class=floatL><A style="DISPLAY: none" id=aFloatTools_Show class=btnOpen 
+title=查看在线客服 
+onclick="javascript:$('#divFloatToolsView').animate({width: 'show', opacity: 'show'}, 'normal',function(){ $('#divFloatToolsView').show(); });$('#aFloatTools_Show').attr('style','display:none');$('#aFloatTools_Hide').attr('style','display:block');" 
+href="javascript:void(0);">展开</A> <A id=aFloatTools_Hide class=btnCtn 
+title=关闭在线客服 
+onclick="javascript:$('#divFloatToolsView').animate({width: 'hide', opacity: 'hide'}, 'normal',function(){ $('#divFloatToolsView').hide(); });$('#aFloatTools_Show').attr('style','display:block');$('#aFloatTools_Hide').attr('style','display:none');" 
+href="javascript:void(0);">收缩</A> </DIV>
+  <DIV id=divFloatToolsView class=floatR>
+    <DIV class=tp></DIV>
+    <DIV class=cn>
+      <UL>
+        <LI class=tops>
+          <H3 class=titZx>QQ咨询</H3>
+        </LI>
+        <LI><SPAN class=icoZx>在线咨询</SPAN> </LI> 
+        
+    <LI><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2119377189&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2119377189:4" alt="点击这里给我发消息" title="点击这里给我发消息">&nbsp;&nbsp;张老师</a></LI>
+    
+    <LI><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2361369074&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2361369074:4" alt="点击这里给我发消息" title="点击这里给我发消息">&nbsp;&nbsp;杨老师</a></LI>
+    
+      </UL>
+      <UL>
+        <LI>
+          <H3 class=titDh>咨询电话</H3>
+        </LI>
+        
+        <LI><SPAN class=icoTl>027-50461172</SPAN> </LI>
+        <LI class=bots>
+          <H3 class=titDc><A href="/index/adv/cid/8.html" target="_blank">在线报名</A></H3>
+        </LI>
+      </UL>
+    </DIV>
+  </DIV>
+</DIV>
+<script language="javascript" type="text/javascript">
+	var MarginTop = 100;     //浮动层离浏览器顶部的距离高度
+window.onscroll=function()
+{
+    document.getElementById("floatTools").style.top = document.body.scrollTop + MarginTop;
+}
+</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F24867bb81b63ce74caffee348b389bfa' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</body>
+</html>

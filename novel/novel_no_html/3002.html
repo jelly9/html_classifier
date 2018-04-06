@@ -1,0 +1,934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="SHORTCUT ICON" href="/favicon.ico" />
+<title>无缝钢管、友诚管业、热口无缝钢管,河北 沧州市地区不锈钢管供应-际通宝</title>
+<meta name="Keywords" content="无缝钢管、友诚管业、热口无缝钢管,不锈钢管" />
+<meta name="description" content="沧州友诚管业有限公司产品无缝钢管、友诚管业、热口无缝钢管，，公司经营模式为生产加工 ，本产品供应联系电话:0317-8377707" />
+<link href="http://style.china.gtobal.com/css/style0220.css" rel="stylesheet"/>
+<link href="http://style.china.gtobal.com/css/boutique/boutique.css?v=20130813" rel="stylesheet"/>
+<link href="http://style.china.gtobal.com/css/voteClass.css?v=20131022" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="http://style.china.gtobal.com/js/jquery.js"></script>
+<script type="text/javascript" src="http://style.china.gtobal.com/js/register/jquery.cookie.js"></script>
+<script type="text/javascript" language="javascript" src="http://style.china.gtobal.com/js/voteClass_n.js?v=20130620"></script>
+
+<link href="http://style.china.gtobal.com/css/detail/details_0305.css" rel="stylesheet" type="text/css" />
+<link href="http://style.china.gtobal.com/js/tanchu/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="http://style.china.gtobal.com/js/details_0305.js"></script>
+<script type="text/javascript" language="javascript" src="http://style.china.gtobal.com/js/tanchu/jquery.XYTipsWindow.min.2.8.js"></script>
+<script type="text/javascript" src="http://style.china.gtobal.com/js/admin/jquery.validate.js"></script>
+<script type="text/javascript" src="http://style.china.gtobal.com/js/admin/jquery.metadata.js"></script>
+<script type="text/javascript" src="http://style.china.gtobal.com/js/common/pop.js"></script>
+<script type="text/javascript" src="http://style.china.gtobal.com/js/common/jquery.form.js"></script>
+<script type="text/javascript" language="javascript" src="http://style.china.gtobal.com/js/CompTemplate/template1/picShow.js"></script>
+<script type="text/javascript" src="http://cbjs.baidu.com/js/m.js"></script>
+<script type="text/javascript">
+BAIDU_CLB_preloadSlots("395567","395566","395565","395564","440459");
+</script>
+
+<script type="text/javascript">
+ $(document).ready(function() {
+  var validator = $('#linkapply_form').validate({
+        submitHandler: function(){
+            $('#linkapply_form').ajaxSubmit(submit_options);
+			return false;
+        }
+    });
+	$("#qubao_id").click(function(){
+		$.XYTipsWindow({
+			___title:"我要举报",
+			___content:"id:extra",
+			___boxBdColor:"#666",
+			___boxBdOpacity:"0.5",
+			___width:"600",
+			___height:"600",
+			___drag:"___boxTitle",
+			___boxWrapBdColor:"#ABABAB"
+		});
+		});
+	})
+
+function modiP(){
+    var b=Math.floor(Math.random() * 1000);
+    var picRel=$('#buqing').attr('rel')+'&'+b;
+    $('#spic').attr('src',picRel);
+}
+
+var submit_options = {
+    dataType: 'json',
+    beforeSubmit : function(){
+        $("#code_id").hide();
+        //login.show('succDiv');moveit('succDiv');
+
+    },
+    success : function(data){
+		message = "<p><font color='red' align='center'>"+data.message+"</font></p>";
+        if(!data.flag){
+			alert(data.message);
+			//$('#linkapply_form').resetForm();
+			modiP();
+			$("#code_id").show();
+        }else{
+			alert("您举报成功！");
+		    $.XYTipsWindow.removeBox();
+		}
+        //login.hide('succDiv');
+
+    }
+};
+
+$(function(){
+	//提交之前先进行验证，验证通过进行提交
+
+
+	$("#from_id .textClass").focus(function(){
+	  $(this).addClass("curr");
+	}).blur(function(){
+	  $(this).removeClass("curr");
+	})
+	$("#from_id .textareaClass").focus(function(){
+	  $(this).addClass("curr");
+	  if($(this).val()=="请输入您的举报内容或线索，若您所举报账号存在其他违规行为，请在此补充")
+	  {$(this).val("");}
+	}).blur(function(){
+	  $(this).removeClass("curr");
+	  if($(this).val()=="")
+	  {$(this).val("请输入您的举报内容或线索，若您所举报账号存在其他违规行为，请在此补充");$(this).css("color","#666");}
+	  else{$(this).css("color","#333");}
+	})
+
+});
+
+
+// var commSub = '';
+
+function getByClass(oParent, sClass){
+  var aEle=oParent.getElementsByTagName('*');
+  var aResult=[];
+  for(var i=0;i<aEle.length;i++){
+    if(aEle[i].className==sClass){
+      aResult.push(aEle[i]);
+    }
+  }
+  return aResult;
+}
+$(function(){
+  var iHeight=document.body.clientHeight || document.documentElement.clientHeight,iWidth=document.body.clientWidth || document.documentElement.clientWidth;
+  var moodlist=document.getElementById("moodlist");
+  var oP=moodlist.getElementsByTagName("p");
+  var dataTxt=getByClass(moodlist,"show_center");
+  var commSub = '';
+  for(var i=0,len=oP.length;i<len;i++){
+    oP[i].index=i;
+
+    oP[i].onclick=function(){
+      var knave=document.getElementById("knave");
+      knave.style.display="none";
+      if(commSub == 'no') {
+        alert('请改天再来发表您的感受!');
+      } else {
+        var msg=dataTxt[this.index].getAttribute('data_txt');
+        var n=this.index+1;
+        sampleDetail_Btn.onclick=function(){
+          if($('#intercepted1').val() == '请输入您的疑问') {
+            alert('请输入评论后，再提交!');
+          } else {
+            $('#sampleDetail_Btn').attr('disabled', 'disabled');
+            var pis = 'no';
+            if($('#intercepted1').val() != msg) {
+              pis = 'yes';
+            }
+            get_vote(n, $('#intercepted1').val(), pis);
+            $('#sampleDetail_Btn').attr('disabled', false);
+          }
+        }
+
+
+        intercepted1.value=msg;
+        layout_bg.style.cssText="_width:auto;height:"+iHeight+"px;display:block";
+        startMove(layout_bg,{opacity:30});
+        sampleDetail_msg.style.display="block";
+        sampleDetail_msg.style.marginTop=-sampleDetail_msg.offsetHeight/2+"px";
+        moveEnd($(sampleDetail_msg).find('textarea')[0]);
+      }
+    }
+  }
+  sampleDetail_close.onclick=function(){
+    startMove(layout_bg,{height:0});
+    sampleDetail_msg.style.display="none";
+  }
+});
+
+</script>	
+</head>
+<body>
+<script type="text/javascript">BAIDU_CLB_fillSlot("395564");</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-20432900-3', 'auto');
+  ga('send', 'pageview');
+</script>
+<!--<div class="w950">
+<script language="javascript" src="http://www.gtobal.com/?m=api&c=ad&a=pic&bd=&code=all_banner&type=1"></script>
+</div>
+<div class="height10"></div>-->
+<div id="top">
+  <div class="w950">
+    <div class="fl">
+		<script language="javascript" src="http://www.gtobal.com/?m=api&c=jsload&a=head"></script>
+       <ul id="top_member">
+          <li>
+            <span><a rel="nofollow" href="http://member.gtobal.com/" class="a0065CD">我的会员中心</a></span>
+            <div class="more">
+               <em><a rel="nofollow" target="_blank" href="http://member.gtobal.com/sell" class="a666">发布供应信息</a></em>
+               <em><a rel="nofollow" target="_blank" href="http://member.gtobal.com/buy" class="a666">发布求购信息</a></em>
+               <em><a rel="nofollow" target="_blank" href="http://member.gtobal.com/trade_invest/add" class="a666">发布招商信息</a></em>
+               <em><a rel="nofollow" target="_blank" href="http://member.gtobal.com/trade_agent/add" class="a666">发布加盟信息</a></em>
+			   <em><a rel="nofollow" target="_blank" href="http://member.gtobal.com/company_product/add" class="a666">发布样品信息</a></em>
+             </div>
+          </li>
+       </ul>
+       <span><a rel="nofollow" target="_blank" class="af60" href="http://www.jitongtianxia.com/product-butler.html">[建立官方商城]</a> <a rel="nofollow" class="af60" target="_blank" href="http://www.jitongtianxia.com/product-industry.html">[运营行业门户]</a></span>
+    </div>
+    <!--<iframe width="136" height="24" class="fr" style="margin-top:2px;" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1443216242&style=2&btn=light&dpc=1"></iframe>-->
+
+    <div class="fr">
+    	<!--<html xmlns:wb=“http://open.weibo.com/wb”>
+		<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>-->
+    	<span style="float:right;margin:2px 0px 0px 0px;padding:0px;"><wb:follow-button uid="1443216242" type="gray_2" width="65" height="24" ></wb:follow-button></span>
+       <span><a target="_blank" href="http://www.gtobal.com/map.html">网站地图</a> |</span><span><a rel="nofollow" target="_blank" href="http://www.gtobal.com/help/index.html">帮助中心</a> |</span><span><a rel="nofollow" target="_blank" href="http://www.gtobal.com/data/">行业数据</a></span>
+    </div>
+  </div>
+</div>
+
+
+
+<script language="javascript">
+var action_arr = ['http://www.gtobal.com/sell/so.html?t=92','http://www.gtobal.com/sell/so.html?t=93','http://www.gtobal.com/sell/so.html?t=4','http://www.gtobal.com/company/so.html','http://www.gtobal.com/info/so.html','http://www.gtobal.com/expo/so.html','http://www.gtobal.com/sell/so.html?t=6','http://www.gtobal.com/sell/so.html?t=7','http://www.gtobal.com/sell/so.html?t=8','http://www.gtobal.com/sell/so.html?t=9','http://www.gtobal.com/sell/so.html?t=10',];
+var inputText = '请输入供应信息关键词';
+var inText = '请输入供应信息关键词';
+</script>
+<script type="text/javascript" language="javascript" src="http://style.china.gtobal.com/js/menu.js?v=009"></script>
+<div id="header" class="w950">
+  <div id="logo">
+  	<span>际通天下旗下</span>
+     <a href="http://www.gtobal.com"><img src="http://style.china.gtobal.com/images/index09-21/logo.jpg" alt="电子商务" /></a>
+	 
+             <p><b>供应信息</b></p>               </div>
+  <div id="search">
+     <ul>
+         <li onClick="searchTab(this,'请输入供应信息关键词', 0)" class="curr"><b>供应</b></li>
+         <li>|</li>
+		 <li onclick="searchTab(this,'请输入样品信息关键词', 10)" ><b>样品</b><img class="new_ico" src="http://style.china.gtobal.com/images/index03-11/new_1.gif"></li>
+         <li>|</li>
+         <li onClick="searchTab(this,'请输入求购信息关键词', 1)" ><b>求购</b></li>
+         <li>|</li>
+         <li onClick="searchTab(this,'请输入资讯信息关键词', 4)" ><b>资讯</b></li>         
+         <li>|</li>
+         <li onClick="searchTab(this,'请输入企业名称', 3)" ><b>企业</b></li>
+         <li>|</li>
+         <li onClick="searchTab(this,'请输入招商信息关键词', 2)" ><b>招商</b></li>
+         <li>|</li>
+         <li onClick="searchTab(this,'请输入会展信息关键词', 5)" ><b>会展</b></li>
+     </ul>
+     <div class="inputClass">
+	  <form action="http://www.gtobal.com/sell/so.html?t=92" method="post" id="SearchformID">
+        <div class="textClass textClass_1"><i class="iconBg"></i><input type="text"  name="k" id="keyword" class="textinput" value="请输入供应信息关键词" /></div>
+        <div class="set_class " id="set_id_0">
+          <b>
+		  产品供应		  </b>
+          <ul>	
+			<li class="curr"><a rel="nofollow" href="javascript:void(0);" onClick="searchSwitchAction(this,'请输入供应信息关键词', 0)">产品供应</a></li>
+            <li ><a rel="nofollow" href="javascript:void(0);" onClick="searchSwitchAction(this,'请输入精品信息关键词', 6)">精品信息</a></li>
+            <li ><a rel="nofollow" href="javascript:void(0);" onClick="searchSwitchAction(this,'请输入加工信息关键词', 7)">加工信息</a></li>
+            <li ><a rel="nofollow" href="javascript:void(0);" onClick="searchSwitchAction(this,'请输入服务信息关键词', 8)">服务信息</a></li>
+          </ul>                   
+        </div>
+        <div class="set_class disNone" id="set_id_1">
+          <b>
+		  产品求购		  </b>
+          <ul>
+            <li class="curr"><a rel="nofollow" href="javascript:void(0);" onClick="searchSwitchAction(this,'请输入求购信息关键词', 1)">产品求购</a></li>
+			<li ><a rel="nofollow" href="javascript:void(0);" onClick="searchSwitchAction(this,'请输入代理信息关键词', 9)">代理加盟</a></li>
+          </ul>
+        </div>
+        <input name="" id="searchtop" type="submit" value="" class="buttonInput" />
+        <span></span>
+	  </form>
+     </div>
+  </div>
+</div>
+<div class="w950">
+   <div id="nav">
+     <ul>
+         <li ><b><a href="http://www.gtobal.com">首页</a><i></i></b></li>
+         <li><span></span></li>
+         <li class="curr"><b><a href="http://www.gtobal.com/sell/">供应</a><i></i></b></li>         
+         <li><span></span></li>
+		<li ><b><a href="http://www.gtobal.com/sample/">样品</a><i></i></b></li>
+         <li><span></span></li>
+         <li ><b><a href="http://www.gtobal.com/buy/">求购</a><i></i></b></li>
+         <li><span></span></li>
+           
+<li ><b><a href="http://www.gtobal.com/merchants/">招商</a><i></i></b></li>  		 
+         <li><span></span></li>
+         <li ><b><a href="http://www.gtobal.com/company/">企业</a><i></i></b></li>       
+         <li><span></span></li>
+         <li ><b><a href="http://www.gtobal.com/info/">资讯</a><i></i></b></li>  
+         <li><span></span></li>
+         <li ><b><a href="http://www.gtobal.com/expo/">会展</a><i></i></b></li>
+		 <li><span></span></li>
+         <li><b><a href="http://www.gtobal.com/regions/" target="_blank">地区商机</a><i></i></b></li>
+		 <li><span></span></li>
+		 <li><b><a href="http://www.gtobal.com/jtb/" target="_blank">际通币</a><i></i><img alt="new" class="new_ico" src="http://style.china.gtobal.com/images/common/hot.gif"></b></li>
+         <li><span></span></li>
+		 <li ><b><a href="http://www.gtobal.com/data/">数据</a><i></i></b></li>
+         <li><span></span></li>
+          <li><b><a rel="nofollow" href="http://www.shuangtao.com" target="_blank">商城</a><i></i></b></li>
+		 <!--<li><span></span></li>
+		 <li><b><a href="http://guang.gtobal.com/" target="_blank">社区</a><i></i></b></li>-->
+     </ul>
+    
+     <div class="rightBg"></div>
+   </div> 
+
+   <div class="subBar">
+<a href="http://www.gtobal.com/bestproducts/" >精品供应</a>
+<a href="http://www.gtobal.com/sell/products.html" class="curr">产品供应</a>
+<a href="http://www.gtobal.com/sell/storage.html" >库存信息</a>
+<a href="http://www.gtobal.com/sell/used.html" >二手供应</a>
+<a href="http://www.gtobal.com/sell/processes.html" >提供加工</a>
+<a href="http://www.gtobal.com/sell/services.html" >提供服务</a>
+<!--<a href="/sample/">样品中心</a><span style="color:red">HOT</span>-->
+<a href="http://www.gtobal.com/sell/hotkeyword.html" class="subscribeBg subscribeBg_5" target="_blank">热门产品</a>
+<a rel="nofollow" href="http://member.gtobal.com/trade_sell/add" class="subscribeBg subscribeBg_1" target="_blank">我要供应</a>
+<a rel="nofollow" href="http://www.gtobal.com/sample/add.html" class="subscribeBg subscribeBg_2" target="_blank">我要发样</a>
+<a rel="nofollow" href="http://member.gtobal.com/subscribe/add" class="subscribeBg subscribeBg_3" target="_blank">订阅商机</a>
+   </div>
+</div>
+<div id="searchAdd">
+    	<b>当前位置：</b><a href="http://www.gtobal.com">首页</a> > <a href="http://www.gtobal.com/sell/">供应</a> > <a href="http://www.gtobal.com/sell/list-13-p1.html" class="a00489f">建材</a> > <a href="http://www.gtobal.com/sell/list-13-526-p1.html" class="a00489f">建筑管材</a> > <a href="http://www.gtobal.com/sell/list-13-526-5168-p1.html" class="a00489f">不锈钢管</a></div>
+<div class="w950 overFlow">
+		<script type="text/javascript">BAIDU_CLB_fillSlot("395567");</script>
+    </script>
+　　<script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+
+</div>
+
+<div class="height10"></div>
+
+<div class="w950">
+    <div class="w700 fl">
+    	<div class="tip_supply">
+        	你是要采购<a href="http://www.gtobal.com/sell/list-13-526-5168-p1.html" class="af60" target="_blank">不锈钢管</a>产品？点击<a target="_blank" href="http://www.gtobal.com/buy/add.html?f=5168">快速发布采购</a>信息，让卖家主动来找你
+        </div>
+        <div class="height10"></div>
+        <div class="title_07"><b><span>[供应]</span>无缝钢管、友诚管业、热口无缝钢管</b></div>
+        <div class="height15"></div>
+        <div class="clearfix">
+        	<div class="msg_img">
+                            	<div class="imgBorder"><a href="http://style.china.gtobal.com/images/common/nopic.gif" target="_blank"><img src="http://style.china.gtobal.com/images/common/nopic.gif" alt="无缝钢管、友诚管业、热口无缝钢管" /></a></div>
+                <a href="http://www.gtobal.com/sell/detail-1285388002.html" class="pre"></a><a href="http://www.gtobal.com/sell/detail-1071424302.html" class="nexts"></a>
+            </div>
+            <div class="supply_msg">
+            	<p><b>供应商：沧州友诚管业有限公司 </b><a href="http://tzw_1612976294qq.cn.gtobal.com"  target="_blank">[进入公司网站]</a></p>
+                <p><span>所在地：</span><a href="
+											http://www.gtobal.com/sell/search-ac_130900-ap_130000-c_5168-p_1.html					                    " title="河北 沧州市地区不锈钢管供应信息" rel="nofollow" target="_blank">河北 沧州市</a></p>                <!--<p><span>价格：</span><i>12元</i><a href="" class="btn2"></a></p>
+                <p><span>数量：</span>大量</p>
+                <p><span>包装：</span>纸箱.木架</p>
+                <p><span>规格：</span>各种规格</p>
+                <p><span>产地：</span>德国</p>
+                <p><span>信息类型：</span>库存</p>-->
+                <p>
+                    
+                                        <span>价格：</span><i>面议</i>
+                                                                                  <a style=" float: left;" target="_blank" rel="nofollow" href="http://smt.dns4.cn/cert.aspx?cpid=74790&site=%E9%99%85%E9%80%9A%E5%AE%9D"><img src="http://style.china.gtobal.com/gtobal/images/user/tz.gif" alt="商盟会员" /></a>
+                     <span style="float:left; display: inline; margin-left: 8px;">
+                        <script src="http://img.dns4.cn/js/xj.js" type="text/javascript"></script>
+                        <a href="http://img.dns4.cn/xunpan.aspx?TB_iframe=true&height=320&width=600&token=050EADBB5019B27678CBA1C7D010CAE2&cpid=74790&dataid=13318177&sname=际通宝&path=http%3A%2F%2Fwww.gtobal.com%2Fsell%2Fdetail-3249862502.html" class="thickbox" title="发送询盘/留言" style="cursor: pointer">
+                        <img src="http://style.china.gtobal.com/gtobal/images/user/tzim.jpg" width="91" height="25" alt="发送询盘/留言" /></a>
+                    </span>
+                     <span style="float:left; display: inline; margin-left: 8px;"><!--网站客户嵌入代码-->
+                        <script type='text/javascript' src='http://chat.dns4.cn:8080/cimls/?Fps_Conf_shopId=74790&Fps_Conf_webWadarIndex=0&Fps_Conf_isHideImWindowIco=1 '></script><!--客服代码-->
+                        <img id="userListSmImg" style="cursor:pointer;" name="userListSmImg"  onclick="parent.Fps.cl.openWelcomeChat();" src="http://chat.dns4.cn:8080/cimls/tzim.gif" /><!--客服图标-->
+                     </span>
+                                     </p>
+                                                                                                         <p>
+                        						                            <span>数量：</span>大量                                                                                 </p>
+                                                                                             <p>
+                        						                            <span>包装：</span>不限                                                                                 </p>
+                                                                                                                                                                                                                                                                                                                                                           <p style="line-height:36px;">
+                	<b onclick="$('#look span').toggle(300)" id="look">
+                        <span>
+                                                    姓名：武建伟  <br />
+                                                                        手机：13703173800<br />
+                                                <a href="http://tzw_1612976294qq.cn.gtobal.com/contactus.html"  target="_blank">查看详细</a>
+                        </span>
+                    </b>
+                    有效期至：2015-08-03                    
+                </p>
+            </div>
+        </div>
+        <div class="height15"></div>
+
+        <div class="tip_detail">
+            <p>信息发布：2014-08-03 16:39，审核通过：
+                2014-08-03 16:43，审核人员工号：G0243， 已被浏览20次</p>
+                    </div>
+
+        <div class="height15"></div>
+        <!--产品详情-->
+        <div class="line03 clearfix">
+		<div class="title_08">
+        	<p>产品详情<i></i></p>
+        </div>
+        <div class="supply_detail">
+        	<table width="100%" border="0" cellpadding="0" cellspacing="0" class="table_1">
+                         </table>
+            <div class="height10"></div>
+                        <div class="height15"></div>
+            <p>产品主要特点：</p>
+                        <div id="description">无缝钢管、友诚管业、热口无缝钢管由友诚管业提供。无缝钢管、友诚管业、热口无缝钢管是沧州友诚管业有限公司(hbycgy.com)2014年全新升级推出的 <br />无缝钢管因其制造工艺不同 保温无缝钢管，又分为热轧（挤压）无缝钢管和冷拔（轧）无缝钢管两种。冷拔（轧）管又分为圆形管和异形管两种。无缝钢管又因其用途不同而分为如下若干品种：1.结构用无缝钢管（GBT8162-2008）。主要用于一般结构和机械结构。其代表材质（牌号）：碳素钢、20、45号钢；合金钢Q345、20Cr、40Cr、20CrMo、30-35CrMo、42CrMo等。2.输送流体用无缝钢管（GBT8163-2008）。主要用于工程及大型设备上输送流体管道。代表材质（牌号）为20、Q345等。3.低中压锅炉用无缝钢管（GB3087-2008）是用于制造各种结构低中压锅炉过热蒸汽管、沸水管及机车锅炉用过热蒸汽管、大烟管、小烟管和拱砖管用的优质碳素结构钢热轧和冷拔（轧）无缝钢管。代表材质为10、20号钢。4.高压锅炉用无缝钢管（GB5310-2008）是用于制造高压及其以上压力的水管锅炉受热面用的优质碳素钢、合金钢和不锈耐热钢无缝钢管。代表材质为20G、12Cr1MoVG、15CrMoG等。5.高压化肥设备用无缝钢管（GB6479-2000）是适用于工作温度为-40~400℃、工作压力为10~30Ma的化工设备和管道的优质碳素结构钢和合金钢无缝钢管。代表材质为20、16Mn、12CrMo、12Cr2Mo等。6．石油裂化用无缝钢管450℃。代表材质为360、410、460钢级等。 <br /><p>	我公司主要经营各种规格的无缝钢管、Q345B无缝管，Q345C无缝管 无缝钢管，Q345D无缝管 小口径无缝钢管，Q235B钢管等各种Q345系列无缝钢管，产品广泛应用于各大电厂、锅炉厂、石油、化工、机械型企业。</p><p>	&nbsp; &nbsp;经过长年的努力公司已于与成都无缝钢管厂、鞍山钢铁集团、包头钢铁集团、衡阳、冶钢、天津无缝管厂组建的现货销售中心 热口无缝钢管，建立了良好的合作关系，是各种规格、无缝钢管销售代理企业。公司经营的产品材质为：合金钢管材质：12Cr1MovG合金管、15CrMoG合金管、35CrMo、42 CrMo 10CrMo910、A335P11. P22.P91. T91、16Mn无缝钢管、钢研102、ST45.8-111、A106B无缝管。</p><p>	　　经营理念：“同样的产品比质量、同样的质量比价格、同样的价格比服务、 同样的服务比信誉”。 企业精神：“团结拼搏、艰苦奋斗、敬业奉献、务实求新” 公司在广泛的领域里寻求真诚的合作，以提高企业的综合实力。</p> </div>
+			<div class="height10"></div>
+            <div class="tip_supply_01">			
+            	<p>以上是无缝钢管、友诚管业、热口无缝钢管的详细信息，如果您对无缝钢管、友诚管业、热口无缝钢管的价格、厂家、型号、图片有什么疑问，				
+                请
+                    <b><a target="_blank" href="http://tzw_1612976294qq.cn.gtobal.com/contactus.html">联系供应商</a></b>
+                                                                    或 <b><a target="_blank" href="http://www.gtobal.com/message_trade_sell/32498625-2.html">请供应商联系我</a></b>
+                                                                 </p>
+            </div>
+			
+        </div>
+    </div>
+        <!--产品详情-->
+                <div class="height15"></div>
+        <!--相关样品推荐-->
+        <div class="line03 clearfix">
+		<div class="title_08">
+            <p>相关样品推荐<i></i></p><a target="_blank" href="http://www.gtobal.com/sample/">去找找其他样品>></a>
+        </div>
+        <div class="buy_list supply_list">
+        	<ul class="clearfix">
+                                <li>
+                	<div class="imgBorder"><a href="http://www.gtobal.com/sample/detail-4375302.html" target="_blank"><img style="width: 150px;height: 150px;" src="http://pic193.gtobal.com/image2/3E/E8/wKgSHlO_H5-AFQcMAAC1b5zeDvc629_m.jpg" alt="非标不锈钢毛细管" /></a></div>
+                    <p><a  href="http://www.gtobal.com/sample/detail-4375302.html" target="_blank">非标不锈钢毛细管</a></p>
+					<p>共：<i>1000个</i> 剩余：<i>1000个</i></p>
+					<p>拿样价：<i>10.00元</i></p>
+                </li>
+                                <li>
+                	<div class="imgBorder"><a href="http://www.gtobal.com/sample/detail-4375126.html" target="_blank"><img style="width: 150px;height: 150px;" src="http://pic193.gtobal.com/image2/3D/7E/wKgSHlO95VaAPKbMAABgzguOnXA013_m.jpg" alt="不锈钢毛细管" /></a></div>
+                    <p><a  href="http://www.gtobal.com/sample/detail-4375126.html" target="_blank">不锈钢毛细管</a></p>
+					<p>共：<i>100个</i> 剩余：<i>100个</i></p>
+					<p>拿样价：<i>0.01元</i></p>
+                </li>
+                                <li>
+                	<div class="imgBorder"><a href="http://www.gtobal.com/sample/detail-4374870.html" target="_blank"><img style="width: 150px;height: 150px;" src="http://pic193.gtobal.com/image2/3A/39/wKgSa1O5KrSAeT_6AABAGlfNvT0487_m.jpg" alt="303不锈钢毛细管" /></a></div>
+                    <p><a  href="http://www.gtobal.com/sample/detail-4374870.html" target="_blank">303不锈钢毛细管</a></p>
+					<p>共：<i>100个</i> 剩余：<i>100个</i></p>
+					<p>拿样价：<i>0.01元</i></p>
+                </li>
+                                <li>
+                	<div class="imgBorder"><a href="http://www.gtobal.com/sample/detail-4374869.html" target="_blank"><img style="width: 150px;height: 150px;" src="http://pic193.gtobal.com/image2/38/E4/wKgSHlO5KUyACpTMAAHref-kqAQ777_m.jpg" alt="310S不锈钢毛细管" /></a></div>
+                    <p><a  href="http://www.gtobal.com/sample/detail-4374869.html" target="_blank">310S不锈钢毛细管</a></p>
+					<p>共：<i>100个</i> 剩余：<i>100个</i></p>
+					<p>拿样价：<i>0.01元</i></p>
+                </li>
+                            </ul>
+        </div>
+        </div>
+    	<!--相关样品推荐-->
+            	<div class="height10"></div>
+
+        <!--评论模块-->
+    	<div class="voteClass_layout">
+            <div class="voteClass_tit">对本条<b>[无缝钢管、友诚管业、热口无缝钢管]</b>商机评论</div>
+            <div class="voteClass clearfix" style="width:auto">
+                <div class="voteTitle">网友热议<a name="hot"></a></div>
+                <div class="voteConten" id="moodlist">
+                    <table width="102%" class="voteTbale" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr valign="bottom">
+                                                                                                    <td>
+                                        <span class="voteNumber">0</span>
+                                        <span><img src="http://style.china.gtobal.com/images/news/pre_01.gif" height="0" width="20" /></span>
+                                        <p href="javascript:void(0);">
+                                            <span><img src="http://style.china.gtobal.com/images/news/qq_01.gif" /></span>
+                                            <span>有用</span>
+                                        </p>
+                                        <div class="floatShow">
+                                        <div class="show">
+                                            <div class="show_top"></div>
+                                            <div class="show_center" data_txt="&#039;无缝钢管、友诚管业、热口无缝钢管&#039;还蛮好的嘛！找了很久了终于给找到了！我要立刻联系你，老板！">
+                                                &#039;无缝钢管、友诚管业、热口无缝钢管&#039;还蛮好的嘛！找了很久了终于给找到了！我要立刻联系你，老板！                                            </div>
+                                            <div class="arr"></div>
+                                            <div class="show_bottom"></div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                                                                                    <td>
+                                        <span class="voteNumber">0</span>
+                                        <span><img src="http://style.china.gtobal.com/images/news/pre_02.gif" height="0" width="20" /></span>
+                                        <p href="javascript:void(0);">
+                                            <span><img src="http://style.china.gtobal.com/images/news/qq_02.gif" /></span>
+                                            <span>没用</span>
+                                        </p>
+                                        <div class="floatShow">
+                                        <div class="show">
+                                            <div class="show_top"></div>
+                                            <div class="show_center" data_txt="&#039;无缝钢管、友诚管业、热口无缝钢管&#039;对我来说没什么用，看看吧">
+                                                &#039;无缝钢管、友诚管业、热口无缝钢管&#039;对我来说没什么用，看看吧                                            </div>
+                                            <div class="arr"></div>
+                                            <div class="show_bottom"></div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                                                                                    <td>
+                                        <span class="voteNumber">0</span>
+                                        <span><img src="http://style.china.gtobal.com/images/news/pre_03.gif" height="0" width="20" /></span>
+                                        <p href="javascript:void(0);">
+                                            <span><img src="http://style.china.gtobal.com/images/news/qq_03.gif" /></span>
+                                            <span>高兴</span>
+                                        </p>
+                                        <div class="floatShow">
+                                        <div class="show">
+                                            <div class="show_top"></div>
+                                            <div class="show_center" data_txt="嘿嘿，您发布的&#039;无缝钢管、友诚管业、热口无缝钢管&#039;，感觉还不错哦！有机会肯定会合作的啦～">
+                                                嘿嘿，您发布的&#039;无缝钢管、友诚管业、热口无缝钢管&#039;，感觉还不错哦！有机会肯定会合作的啦～                                            </div>
+                                            <div class="arr"></div>
+                                            <div class="show_bottom"></div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                                                                                    <td>
+                                        <span class="voteNumber">0</span>
+                                        <span><img src="http://style.china.gtobal.com/images/news/pre_04.gif" height="0" width="20" /></span>
+                                        <p href="javascript:void(0);">
+                                            <span><img src="http://style.china.gtobal.com/images/news/qq_04.gif" /></span>
+                                            <span>愤怒</span>
+                                        </p>
+                                        <div class="floatShow">
+                                        <div class="show">
+                                            <div class="show_top"></div>
+                                            <div class="show_center" data_txt="对于&#039;无缝钢管、友诚管业、热口无缝钢管&#039;我还要看看">
+                                                对于&#039;无缝钢管、友诚管业、热口无缝钢管&#039;我还要看看                                            </div>
+                                            <div class="arr"></div>
+                                            <div class="show_bottom"></div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                                                                                    <td>
+                                        <span class="voteNumber">0</span>
+                                        <span><img src="http://style.china.gtobal.com/images/news/pre_05.gif" height="0" width="20" /></span>
+                                        <p href="javascript:void(0);">
+                                            <span><img src="http://style.china.gtobal.com/images/news/qq_05.gif" /></span>
+                                            <span>难过</span>
+                                        </p>
+                                        <div class="floatShow">
+                                        <div class="show">
+                                            <div class="show_top"></div>
+                                            <div class="show_center" data_txt="价格那么地高，距离那么地远，我不放心买&#039;无缝钢管、友诚管业、热口无缝钢管&#039;，要不我还是找找别家吧！">
+                                                价格那么地高，距离那么地远，我不放心买&#039;无缝钢管、友诚管业、热口无缝钢管&#039;，要不我还是找找别家吧！                                            </div>
+                                            <div class="arr"></div>
+                                            <div class="show_bottom"></div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                                                                                    <td>
+                                        <span class="voteNumber">0</span>
+                                        <span><img src="http://style.china.gtobal.com/images/news/pre_06.gif" height="0" width="20" /></span>
+                                        <p href="javascript:void(0);">
+                                            <span><img src="http://style.china.gtobal.com/images/news/qq_06.gif" /></span>
+                                            <span>考虑</span>
+                                        </p>
+                                        <div class="floatShow">
+                                        <div class="show">
+                                            <div class="show_top"></div>
+                                            <div class="show_center" data_txt="一直想要找&#039;无缝钢管、友诚管业、热口无缝钢管&#039;，现在终于给找到了，可是我还是要考虑下，网上交易有风险，老板的营业执照看看">
+                                                一直想要找&#039;无缝钢管、友诚管业、热口无缝钢管&#039;，现在终于给找到了，可是我还是要考虑下，网上交易有风险，老板的营业执照看看                                            </div>
+                                            <div class="arr"></div>
+                                            <div class="show_bottom"></div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                                                                                    <td>
+                                        <span class="voteNumber">0</span>
+                                        <span><img src="http://style.china.gtobal.com/images/news/pre_07.gif" height="0" width="20" /></span>
+                                        <p href="javascript:void(0);">
+                                            <span><img src="http://style.china.gtobal.com/images/news/qq_07.gif" /></span>
+                                            <span>支持</span>
+                                        </p>
+                                        <div class="floatShow">
+                                        <div class="show">
+                                            <div class="show_top"></div>
+                                            <div class="show_center" data_txt="支持当地企业！&#039;无缝钢管、友诚管业、热口无缝钢管&#039;在我们家乡是很有名的！">
+                                                支持当地企业！&#039;无缝钢管、友诚管业、热口无缝钢管&#039;在我们家乡是很有名的！                                            </div>
+                                            <div class="arr"></div>
+                                            <div class="show_bottom"></div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                                                                                    <td>
+                                        <span class="voteNumber">0</span>
+                                        <span><img src="http://style.china.gtobal.com/images/news/pre_08.gif" height="0" width="20" /></span>
+                                        <p href="javascript:void(0);">
+                                            <span><img src="http://style.china.gtobal.com/images/news/qq_08.gif" /></span>
+                                            <span>路过</span>
+                                        </p>
+                                        <div class="floatShow">
+                                        <div class="show">
+                                            <div class="show_top"></div>
+                                            <div class="show_center" data_txt="我只是一片云，默默地飘过&#039;无缝钢管、友诚管业、热口无缝钢管&#039;就走了，不带走任何的小云朵！">
+                                                我只是一片云，默默地飘过&#039;无缝钢管、友诚管业、热口无缝钢管&#039;就走了，不带走任何的小云朵！                                            </div>
+                                            <div class="arr"></div>
+                                            <div class="show_bottom"></div>
+                                        </div>
+                                        </div>
+                                    </td>
+                                                             </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="height10"></div>
+            <div class="comment_list01">
+                <div class="comment_title01"><span>有<i> 0 </i>条评论</span><b>评论内容</b>&nbsp;以下评论只代表网友个人观点</div>
+                <ul>
+								暂无任何评论，你来说两句！
+				                </ul>
+            </div>
+
+            <!--新加评论-->
+            <div id="layout_bg"></div>
+            <div id="sampleDetail_msg">
+                <dl>
+                  <dt><i id="sampleDetail_close"></i></dt>
+                  <dd>
+                    <b>我的想法</b>
+                    <textarea rows="" onfocus="if(this.value=='请输入您的疑问') {this.value='';}this.style.color='#333';" onblur="if(this.value=='') {this.value='请输入您的疑问';this.style.color='#999';}" style="color: rgb(153, 153, 153); height: 100px;" class="intercepted1" id="intercepted1" onkeyup="codeLength('.intercepted1',150,'.figure1');">请输入您的疑问</textarea>
+                    <p><i class="figure1">150</i>字以内</p>
+                                          <input type="button" value="提交评论" class="sampleDetail_Btn" id="sampleDetail_Btn"/>
+                                          </dd>
+                </dl>
+            </div>
+            <!--新加评论-->
+            <!--引导页-->
+            <div id="layout_01">
+                <p>X</p>
+                <span></span>
+            </div>
+            <div id="layout_02">
+                <label><input name="x" type="checkbox" > 下次不再提醒</label>
+                <span></span>
+                <P></P>
+            </div>
+            <!--引导页-->
+            <!--强制关闭弹出层-->
+            <div id="knave">
+                <label><input name="" type="checkbox" value="" />下次不再提醒</label>
+                <span></span>
+                <p></p>
+            </div>
+            <!--强制关闭弹出层-->
+        </div>        
+        <!--评论模块-->
+            	<div class="height10"></div>
+        <div class="title_09"><i class="left_09"></i><i class="right_09"></i><!--<a href="">更多最近浏览>></a>--><b>最新精品</b></div>
+        <!--最新精品模块-->
+        <div class="scollLayout">
+        	<div id="left_btn" class="left_btn_no"></div>
+            <div id="right_btn" class="right_btn"></div>
+        	<div id="scroll">
+            	<ul>
+                                        <li>
+                        <div class="imgBorder"><a  href="http://www.gtobal.com/bestproducts/detail-4272432.html" title="" target="_blank"><img src="http://pic192.gtobal.com/image1/1E/6A/wKgSE1Ipe2-AOrpMAAAFpl4ftUw625_n.jpg"  alt="山梨醇"/></a></div>
+                        <p><a href="http://www.gtobal.com/bestproducts/detail-4272432.html" title="山梨醇" target="_blank">山梨醇</a></p>
+                    </li>
+                                        <li>
+                        <div class="imgBorder"><a  href="http://www.gtobal.com/bestproducts/detail-4378359.html" title="" target="_blank"><img src="http://pic193.gtobal.com/image2/10/CE/wKgS6lQDwYWAKDZCAAELYZpSAwg316_n.jpg"  alt="金叶复叶槭树"/></a></div>
+                        <p><a href="http://www.gtobal.com/bestproducts/detail-4378359.html" title="金叶复叶槭树" target="_blank">金叶复叶槭树</a></p>
+                    </li>
+                                        <li>
+                        <div class="imgBorder"><a  href="http://www.gtobal.com/bestproducts/detail-4323714.html" title="" target="_blank"><img src="http://pic192.gtobal.com/image1/2C/60/wKgSE1HauTeAJsY2AAFbR338AkU727_n.JPG"  alt="精品棕鞋垫"/></a></div>
+                        <p><a href="http://www.gtobal.com/bestproducts/detail-4323714.html" title="精品棕鞋垫" target="_blank">精品棕鞋垫</a></p>
+                    </li>
+                                        <li>
+                        <div class="imgBorder"><a  href="http://www.gtobal.com/bestproducts/detail-4311628.html" title="" target="_blank"><img src="http://pic192.gtobal.com/image1/1A/52/wKgSE1IpcyCAOCeqAAJsmBn7Hx8459_n.jpg"  alt="艺家活动房"/></a></div>
+                        <p><a href="http://www.gtobal.com/bestproducts/detail-4311628.html" title="艺家活动房" target="_blank">艺家活动房</a></p>
+                    </li>
+                                        <li>
+                        <div class="imgBorder"><a  href="http://www.gtobal.com/bestproducts/detail-4350174.html" title="" target="_blank"><img src="http://pic192.gtobal.com/image1/EF/BA/wKgSE1Kb-EyAPO4_AAFOXwNXs4g208_n.jpg"  alt="儿童小蹦极"/></a></div>
+                        <p><a href="http://www.gtobal.com/bestproducts/detail-4350174.html" title="儿童小蹦极" target="_blank">儿童小蹦极</a></p>
+                    </li>
+                                        <li>
+                        <div class="imgBorder"><a  href="http://www.gtobal.com/bestproducts/detail-4389473.html" title="" target="_blank"><img src="http://pic9.gtobal.com/gproduct/20150102/cca9745819938ccf0d56ed9c15048127.jpg_n"  alt="儿童钢架小蹦极"/></a></div>
+                        <p><a href="http://www.gtobal.com/bestproducts/detail-4389473.html" title="儿童钢架小蹦极" target="_blank">儿童钢架小蹦极</a></p>
+                    </li>
+                                        <li>
+                        <div class="imgBorder"><a  href="http://www.gtobal.com/bestproducts/detail-4275348.html" title="" target="_blank"><img src="http://pic192.gtobal.com/image1/1E/12/wKgSE1IpeseAIg2eAAAeO1hAVJU351_n.jpg"  alt="儿童充气跳床"/></a></div>
+                        <p><a href="http://www.gtobal.com/bestproducts/detail-4275348.html" title="儿童充气跳床" target="_blank">儿童充气跳床</a></p>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+        <!--最新精品模块-->
+               
+    </div>
+    <div class="w240 fr">
+		<div class="clearfix"><script type="text/javascript">BAIDU_CLB_fillSlot("440459");</script></div>
+		<div class="height10"></div>
+            	<div class="title_09"><i class="left_09"></i><i class="right_09"></i><s></s><span>更多</span><span><a href="http://www.gtobal.com/sell/list-13-526-5168-p1.html" target="_blank" title="不锈钢管">不锈钢管</a></span><span>供应信息</span></div>
+        <div class="line04 clearfix">
+        	<div class="pro">
+                              <dl>
+                	<dt>
+                    	<div class="imgBorder"><a href="http://www.gtobal.com/sell/detail-1071424302.html" target="_blank"><img src="http://pic192.gtobal.com/image1/03/C1/wKgSE1JdFdWAGZ8gAACBrK-50Vo052_n.jpg"  alt="重庆不锈钢管|不锈钢管代理" /></a></div>
+                    </dt>
+                    <dd><a href="http://www.gtobal.com/sell/detail-1071424302.html" target="_blank" title="重庆不锈钢管|不锈钢管代理">重庆不锈钢管|不锈钢管代理</a></dd>
+                </dl>
+                           <dl>
+                	<dt>
+                    	<div class="imgBorder"><a href="http://www.gtobal.com/sell/detail-3460792202.html" target="_blank"><img src="http://pic2.gtobal.com/sells/20150125/314883dd44f17fb6f453777f13b8e77f.jpg_n"  alt="唐山赢鑫优质工业用304不锈钢无缝管" /></a></div>
+                    </dt>
+                    <dd><a href="http://www.gtobal.com/sell/detail-3460792202.html" target="_blank" title="唐山赢鑫优质工业用304不锈钢无缝管">唐山赢鑫优质工业用304不锈钢无缝管</a></dd>
+                </dl>
+                           <dl>
+                	<dt>
+                    	<div class="imgBorder"><a href="http://www.gtobal.com/sell/detail-3460794102.html" target="_blank"><img src="http://pic1.gtobal.com/sells/20150125/302e60ced0c9ba7851799937befc34de.jpg_n"  alt="唐山耐高温2520不锈钢无缝管批发" /></a></div>
+                    </dt>
+                    <dd><a href="http://www.gtobal.com/sell/detail-3460794102.html" target="_blank" title="唐山耐高温2520不锈钢无缝管批发">唐山耐高温2520不锈钢无缝管批发</a></dd>
+                </dl>
+                           <dl>
+                	<dt>
+                    	<div class="imgBorder"><a href="http://www.gtobal.com/sell/detail-1285366502.html" target="_blank"><img src="http://pic192.gtobal.com/image1/3B/8C/wKgSE1HaznyASZQ9AACjNiXfR4A725_n.jpg"  alt="供应不锈钢管" /></a></div>
+                    </dt>
+                    <dd><a href="http://www.gtobal.com/sell/detail-1285366502.html" target="_blank" title="供应不锈钢管">供应不锈钢管</a></dd>
+                </dl>
+                           <dl>
+                	<dt>
+                    	<div class="imgBorder"><a href="http://www.gtobal.com/sell/detail-1285388002.html" target="_blank"><img src="http://pic192.gtobal.com/image1/3B/8C/wKgSE1HaznyAb8cuAACEc8a5zAI053_n.jpg"  alt="供应不锈钢槽管" /></a></div>
+                    </dt>
+                    <dd><a href="http://www.gtobal.com/sell/detail-1285388002.html" target="_blank" title="供应不锈钢槽管">供应不锈钢槽管</a></dd>
+                </dl>
+                        </div>
+        </div>
+        <div class="height10"></div>
+                <div class="clearfix">
+        <script type="text/javascript">
+        /*250*150文字链接，创建于2013-7-23*/
+        var cpro_id = "u1325672";
+        </script>
+        <script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+        </div>
+                <div class="height10"></div>
+        <div class="title_09"><i class="left_09"></i><i class="right_09"></i><a href="http://tzw_1612976294qq.cn.gtobal.com/sell.html" target="_blank">更多>></a><s></s><span>该供应商还发布了</span></div>
+        <div class="line04">
+        	<ul class="ul_02">
+                                <li><i></i><a title="卷管|卷管支柱用卷管|友诚管业" href="http://www.gtobal.com/sell/detail-3296611802.html">卷管|卷管支柱用卷管|友诚管业</a></li>
+                                <li><i></i><a title="直缝钢管|直缝钢管大全|友诚管业" href="http://www.gtobal.com/sell/detail-3296611702.html">直缝钢管|直缝钢管大全|友诚管业</a></li>
+                                <li><i></i><a title="(无缝钢管)、无缝钢管合金钢管、友诚管业" href="http://www.gtobal.com/sell/detail-3293515502.html">(无缝钢管)、无缝钢管合金钢管、友诚管业</a></li>
+                                <li><i></i><a title="友诚管业|(820直缝钢管)|直缝钢管" href="http://www.gtobal.com/sell/detail-3293515002.html">友诚管业|(820直缝钢管)|直缝钢管</a></li>
+                                <li><i></i><a title="螺旋钢管_Q235螺旋钢管_友诚管业" href="http://www.gtobal.com/sell/detail-3293514702.html">螺旋钢管_Q235螺旋钢管_友诚管业</a></li>
+                                <li><i></i><a title="卷管|友诚管业|卷管国标焊接卷管" href="http://www.gtobal.com/sell/detail-3290152402.html">卷管|友诚管业|卷管国标焊接卷管</a></li>
+                                <li><i></i><a title="卷管,合金卷管,友诚管业" href="http://www.gtobal.com/sell/detail-3290152202.html">卷管,合金卷管,友诚管业</a></li>
+                                <li><i></i><a title="厚壁合金卷管_卷管_友诚管业" href="http://www.gtobal.com/sell/detail-3290151902.html">厚壁合金卷管_卷管_友诚管业</a></li>
+                                <li><i></i><a title="直缝大口径卷管|卷管|友诚管业" href="http://www.gtobal.com/sell/detail-3290151702.html">直缝大口径卷管|卷管|友诚管业</a></li>
+                                <li><i></i><a title="螺旋管,3820大口径螺旋管,友诚管业" href="http://www.gtobal.com/sell/detail-3281297102.html">螺旋管,3820大口径螺旋管,友诚管业</a></li>
+                            	
+            </ul>
+        </div>
+                
+        
+                <div class="height10"></div>
+        <div class="title_09"><i class="left_09"></i><i class="right_09"></i><a href="http://www.gtobal.com/buy/products.html">更多>></a><s></s><span>最新采购加盟信息</span></div>
+        <div class="line04">
+        	<ul class="ul_02">
+                            	<li><i></i><a href="http://www.gtobal.com/buy/detail-42468203.html" target="_blank" title="卫世求购大豆豆粕小麦玉米赶快">卫世求购大豆豆粕小麦玉米赶快</a></li>
+                            	<li><i></i><a href="http://www.gtobal.com/buy/detail-42468103.html" target="_blank" title="回收石蜡纤维等">回收石蜡纤维等</a></li>
+                            	<li><i></i><a href="http://www.gtobal.com/buy/detail-42467803.html" target="_blank" title="回收库存涂料色浆">回收库存涂料色浆</a></li>
+                            	<li><i></i><a href="http://www.gtobal.com/buy/detail-42467703.html" target="_blank" title="回收库存流平剂涂料助剂">回收库存流平剂涂料助剂</a></li>
+                            	<li><i></i><a href="http://www.gtobal.com/buy/detail-42467603.html" target="_blank" title="广州回收库存染料">广州回收库存染料</a></li>
+                            	<li><i></i><a href="http://www.gtobal.com/buy/detail-42466103.html" target="_blank" title="卫世求购玉米高粱糯米碎米淀粉">卫世求购玉米高粱糯米碎米淀粉</a></li>
+                            	<li><i></i><a href="http://www.gtobal.com/buy/detail-42465403.html" target="_blank" title="小店废钨钢刀具回收 回收钨钢刀具 钨钢铣刀回收">小店废钨钢刀具回收 回收钨钢刀具 钨钢铣刀回收</a></li>
+                            	<li><i></i><a href="http://www.gtobal.com/buy/detail-42465303.html" target="_blank" title="尖草坪废刀具回收 废钨钢刀具回收 回收钨钢 ">尖草坪废刀具回收 废钨钢刀具回收 回收钨钢 </a></li>
+                            </ul>
+        </div>
+        
+            </div>
+</div>
+<div id="extra" class="disNone">
+<div class=" padding10 clearfix">
+      <span class="icon_1"></span>
+      <div class="tips_1 tips_2">
+        <p>如该信息涉及非法或虚假内容，您可以直接在举报内容中复制相关关键词或段落;</p>
+        <p>如该信息涉及交易或版权纠纷等，您可发送相关举证材料至：<a href="mailto:service@gtobal.com">service@gtobal.com</a> </p>
+        <p>注：邮件中请附上相关信息链接或标题</p>
+      </div>
+  </div>
+  <form id="linkapply_form" name="form"  action="http://www.gtobal.com/?m=trade&c=detail&a=inform" method="post">
+  <ul class="from_ul" id="from_id">
+  <input type="hidden" id="sell_id"  name="ret[id]" value="3249862502">
+  <li><span>信息标题：</span><input name="ret[title]" id="title" type="text" class="{required:true,messages:{required:'请输入信息标题'}} textClass" value="无缝钢管、友诚管业、热口无缝钢管"/><em></em></li>
+  <li><span>信息URL：</span><input name="ret[url]" id="url" type="text" class="{required:true,messages:{required:'请输入信息URL'}} textClass" value="http://www.gtobal.com/sell/detail-3249862502.html" /><em></em></li>
+  <li><span><i>*</i> 举报原因：</span><textarea name="ret[reason]" id="reason" cols="" rows="" class="{required:true,messages:{required:'请输入举报原因'}} textareaClass">请输入您的举报内容或线索，若您所举报账号存在其他违规行为，请在此补充</textarea></li>
+  <li><span>联系人：</span><input name="ret[contact]" id="contact" type="text" class="textClass" style="width:200px;" /></li>
+  <li><span>联系电话：</span><input name="ret[phone]" id="phone" type="text" class="{Phonemobile:true,phoneNumber:true,messages:{required:'请填写您的联系电话',phoneNumber:'请填写正确的联系电话'}} textClass" style="width:200px;"/></li>
+  <li><span><i>*</i> 联系邮箱：</span><input name="ret[email]" type="text" class="{required:true,show_editCont:true,messages:{required:'请输入联系邮箱'}} textClass" style="width:200px;" id="e_mm" /><em></em></li>
+  <li class="tips_li">请输入真实的邮箱，以便我们及时回复</li>
+  <li><span>验证码：</span><input name="ret[spic]" id="code" type="text" class="{required:true,messages:{required:'请输入验证码'}} textClass" style="width:80px;"/><img src="http://www.gtobal.com/?m=index&a=scode" class="fl" id="spic"/></a><a href="javascript:void(0);" rel="http://www.gtobal.com/?m=index&a=scode" id="buqing" onclick="modiP(this); return false;" class="fl a0679c9">看不清？换一张</a><em class="error" style="display:none;" htmlfor="code" id="code_id">验证码输入错误</em></li>
+    <li><input class="but_class_1" type="submit" id="submit" value="提交举报" /></li>
+  </ul>
+</form>
+</div> 
+<div class="w950 overFlow">
+	<script type="text/javascript">BAIDU_CLB_fillSlot("395566");</script>
+</div>
+<div class="height10"></div>
+<div class="w950">
+	<div class="tip_detail">
+        <b>免责声明：</b>以上信息由会员自行提供，内容的真实性、准确性和合法性等由发布会员负责。际通宝对此不承担任何责任。<br/>
+        <b>郑重提示：</b>请记住互联网交易有风险！销售或采购产品前，请务必确认对方资质及产品质量，谨慎对待，谨防欺诈！如果您遇到此类问题，请<a href="#" rel="nofollow" id="qubao_id">举报该信息</a>，谢谢！
+    	
+    </div>
+</div>
+<script>
+$("document").ready(function(){
+	 $("#description img").LoadImage(true,650,1000,"http://style.china.gtobal.com/images/CompTemplate/template1/loading.gif");
+})
+
+function get_vote(n, msg, pis){
+	var _url='http://www.gtobal.com/?m=news&c=detail&a=addmood';
+	var id = '32498625';
+	$.post(_url, {field:n,info_id:id,type:3,msg:msg,pis:pis},function(data){
+		if(data == 1){
+			b=Math.floor(Math.random() * 1000);
+			location.href = 'http://www.gtobal.com/sell/detail-3249862502.html'+'?v='+b+'#hot';
+		} else {
+			alert(data);
+		}
+	  },'json');
+}
+</script>
+<script>
+//滚动切换
+var oScroll=document.getElementById("scroll")
+var oScrollUl=oScroll.getElementsByTagName("ul")[0];
+var oScrollLi=oScrollUl.getElementsByTagName("li");
+var left_btn=document.getElementById("left_btn");
+var right_btn=document.getElementById("right_btn");
+var n=0;
+var timer=null;
+oScrollUl.style.width=oScrollLi[0].offsetWidth*oScrollLi.length+"px";
+function Move(){
+	clearInterval(timer)
+	if(oScrollLi[0].offsetWidth*n==oScrollUl.offsetLeft){
+		clearInterval(timer);
+	}else{
+		timer=setInterval(function(){
+			var speed=(-oScrollUl.offsetLeft-oScrollLi[0].offsetWidth*n)/10;
+			speed=speed>0?Math.ceil(speed):Math.floor(speed);
+			oScrollUl.style.left=oScrollUl.offsetLeft+speed+'px';
+		},30);
+	};
+};
+right_btn.onclick=function(){
+	if(oScrollLi.length<5){return}
+	n++;
+	if(n>0){
+		left_btn.className="left_btn";
+	};
+	if(n>=oScrollLi.length-5){
+		right_btn.className="right_btn_no";
+		n=oScrollLi.length-5;
+	};
+	Move();
+};
+left_btn.onclick=function(){
+	if(oScrollLi.length<5){return}
+	n--;
+	if(n<1){
+		left_btn.className="left_btn_no";
+		n=0;
+	};
+	if(n>=0){
+		right_btn.className="right_btn";
+	};
+	Move();
+};
+
+</script>
+<div class="height5"></div>
+<div class="w950">
+    <style type="text/css">
+/*检索*/
+.retrieval{border:1px solid #ccdef2; background:#e5f1ff; height:30px; text-align:center;line-height:30px; font-family:Arial, Helvetica, sans-serif}
+.retrieval a{margin-right:5px;}
+</style>
+<div class="retrieval">
+	<b>产品检索：
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_1-p_2.html">A</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_2-p_2.html">B</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_3-p_2.html">C</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_4-p_2.html">D</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_5-p_2.html">E</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_6-p_2.html">F</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_7-p_2.html">G</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_8-p_2.html">H</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_9-p_2.html">I</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_10-p_2.html">J</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_11-p_2.html">K</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_12-p_2.html">L</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_13-p_2.html">M</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_14-p_2.html">N</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_15-p_2.html">O</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_16-p_2.html">P</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_17-p_2.html">Q</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_18-p_2.html">R</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_19-p_2.html">S</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_20-p_2.html">T</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_21-p_2.html">U</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_22-p_2.html">V</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_23-p_2.html">W</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_24-p_2.html">X</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_25-p_2.html">Y</a>
+                <a href="http://www.gtobal.com/sell/hotkeyword-f_26-p_2.html">Z</a>
+            </b>
+    </div>
+</div>
+
+<div class="height10"></div>
+<div class="w950" id="searchfoot" >
+           <div class="height5"></div>
+	<p class="font666">
+		<a href="http://www.gtobal.com" target="_blank" title="际通宝首页">际通宝首页</a>&nbsp;|&nbsp;
+        <a href="http://www.gtobal.com/aboutuss/aboutgtobal.html" target="_blank" title="公司介绍">公司介绍</a>&nbsp;|&nbsp;
+        <a href="http://www.jitongtianxia.com" target="_blank" title="际通天下">际通天下</a>&nbsp;|&nbsp;
+        <a rel="nofollow" href="http://china.gtobal.com" target="_blank" title="网址导航">网址导航</a>&nbsp;|&nbsp;
+        <a rel="nofollow" href="http://www.gtobal.com/aboutuss/safety.html" target="_blank" title="服务项目">服务项目</a>&nbsp;|&nbsp;
+        <a rel="nofollow" href="http://www.gtobal.com/aboutuss/careers.html" target="_blank" title="人才招聘">人才招聘</a>&nbsp;|&nbsp;
+        <a rel="nofollow" href="http://www.gtobal.com/aboutuss/gcontact.html" target="_blank" title="联系我们">联系我们</a>&nbsp;|&nbsp;
+        <a rel="nofollow" href="http://www.gtobal.com/aboutuss/legat.html" target="_blank" title="免责声明">免责声明</a>&nbsp;|&nbsp;
+        <a rel="nofollow" href="http://www.gtobal.com/aboutuss/glink.html" target="_blank" title="友情链接">友情链接</a>&nbsp;|&nbsp;
+        <a title="官方博客" target="_blank" href="http://blog.gtobal.com/">官方博客</a>&nbsp;|&nbsp;
+        <a rel="nofollow" href="http://www.gtobal.com/wap/index.html" target="_blank" title="手机wap版">手机wap版</a>
+	</p>
+        <p>际通宝(gtobal.com)，专业电子商务推广平台，提供一体化的企业采购解决方案</p>
+        <p>
+        际通宝官方微博：<a href="http://e.weibo.com/jitongbao/profile" target="_blank"><img src="http://pic192.gtobal.com/image1/37/A6/wKgSE1IxGN2AWKZ_AAAHT5QhOwI596.jpg" alt="关注微博" width="63" height="25" align="absmiddle" /></a> &nbsp;&nbsp;<a href="http://t.qq.com/gtobal_com" target="_blank"><img src="http://img192.gtobal.com/37/B4/wKgSE1IxHsWAUdHlAAAegInUHm0780.jpg" alt="腾讯微博" width="24" height="24" align="absmiddle" /></a>&nbsp;&nbsp;<img src="http://img192.gtobal.com/37/AD/wKgSE1IxG-qAUWC3AAAPJ6tkiAk374.jpg" alt="官方微信" width="27" height="22" align="absmiddle" />际通宝微信公众号：gtobalcom</p>
+	<p>Copyright 2009-2015 <a href="http://www.gtobal.com/aboutus/index.html" target="_blank" class="a000">浙江际通天下科技有限公司</a>版权所有</p>
+	<p>增值电信业务经营许可证 浙B2-20100136
+        </p>
+</div>
+<span style="display:none">
+<!--stats-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F513c08bf49dc79a9d33dd7a4f02c6a1b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</span>
+</body>
+</html>

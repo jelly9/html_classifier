@@ -1,0 +1,707 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>人才搜索 -- 众浩印刷人才网</title>
+<link rel="stylesheet" type="text/css" href="css/base2.css" />
+<link rel="stylesheet" type="text/css" href="css/jobsearch.css" />
+<script src="/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="/js/common.js"></script>
+<script type="text/javascript" language="javascript" src="/js/dialog.js"></script>
+<script type="text/javascript" language="javascript">
+    function hovChange(a, b, c) {
+        $(a).find(b).hover(function () {
+            $(this).addClass(c);
+        }, function () {
+            $(this).removeClass(c);
+        })
+    }
+</script>
+<script type="text/javascript" language="javascript">
+    //写cookies函数
+    function SetCookie(name, value)//两个参数，一个是cookie的名字，一个是值
+    {
+        var Days = 1; //此 cookie 将被保存 1 天
+        var exp = new Date();    //new Date("December 31, 9998");
+        exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+    }
+    function getCookie(name)//取cookies函数        
+    {
+        var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+        if (arr != null) return unescape(arr[2]); return null;
+    }
+    function delCookie(name)//删除cookie
+    {
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval = getCookie(name);
+        if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+    }
+
+    $(function () {
+        var cookiesname = "PHistory";
+        $("a.person").click(function () {
+            var d = new Date();
+            var str = d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate() + " " + d.getHours() + ":" + d.getMinutes();
+            var inString = $(this).attr("xid") + "#" + str;
+            var cookies = getCookie(cookiesname);
+            if (cookies != null && cookies != '') {
+                if (cookies.indexOf(inString) ==-1) {
+                    SetCookie("PHistory", inString + "," + cookies);
+                }
+            }else{
+                SetCookie("PHistory", inString);
+            }
+        });
+    });
+</script>
+</head>
+<body>
+
+<div class="topNav" id="topNav">
+  <div class="topInner">
+    <div class="topLeft"> <a href="http://m.printhr.com" target="_blank" class="mbLink" title="手机版">手机版</a> | <span>印刷人才网欢迎您！</span>  <a href="http://old.printhr.com/" target="_blank" style="color:#dd0000;">返回旧版看看</a> </div>
+    <div class="topRight">
+      <div class="fr" id="otherNavs"> <i></i> <span>地区招聘</span>
+        <div class="cont">
+          <dl class="clearfix">
+            <dt>华东地区：</dt>
+            <dd> <a href="/area/shanghai.aspx" title="上海">上海</a> <a href="/area/zhejiang.aspx" title="浙江">浙江</a> <a href="/area/jiangsu.aspx" title="江苏">江苏</a> <a href="/area/shandong.aspx" title="山东">山东</a> <a href="/area/anhui.aspx" title="安徽">安徽</a> </dd>
+          </dl>
+          <div class="line"></div>
+          <dl class="clearfix">
+            <dt>华南地区：</dt>
+            <dd> <a href="/area/guangdong.aspx" title="广东">广东</a> <a href="/area/fujian.aspx" title="福建">福建</a> </dd>
+          </dl>
+          <div class="line"></div>
+          <dl class="clearfix">
+            <dt>华中地区：</dt>
+            <dd> <a href="/area/hubei.aspx" title="湖北">湖北</a> <a href="/area/hunan.aspx" title="湖南">湖南</a> <a href="/area/henan.aspx" title="河南">河南</a> <a href="/area/jiangxi.aspx" title="江西">江西</a> </dd>
+          </dl>
+          <div class="line"></div>
+          <dl class="clearfix">
+            <dt>华北地区：</dt>
+            <dd> <a href="/area/beijing.aspx" title="北京">北京</a> <a href="/area/tianjin.aspx" title="天津">天津</a> <a href="/area/henan.aspx" title="河南">河南</a> <a href="/area/hebei.aspx" title="河北">河北</a> </dd>
+          </dl>
+          <dl class="clearfix">
+            <dt>其他地区：</dt>
+            <dd> <a href="/area/liaoning.aspx" title="辽宁">辽宁</a> <a href="/area/sichuan.aspx" title="四川">四川</a> <a href="/area/jiangxi.aspx" title="江西">江西</a> </dd>
+          </dl>
+        </div>
+      </div>
+      <div class="fr"> <span class="unLogin" data-login="none"><a href="/person/index.aspx" data-act="perLogin" style="color:#f60;" title="个人中心">个人中心</a>&nbsp;&nbsp;<a href="/person_reg.aspx" title="求职者注册">注册</a> | <a href="/company/index.aspx" class="comIn" title="企业入口">企业入口</a>&nbsp;&nbsp;<a href="/company_reg.aspx" title="企业注册">注册</a></span> | <a href="/help/index.aspx" title="帮助中心"  rel="external nofollow">帮助中心</a> | <a href="/news/index.aspx" title="职场资讯" target="_blank">职场资讯</a> | </div>
+    </div>
+  </div>
+  <script>
+      $("#big5Link").on("click", function () { common.big5Link($(this)); });
+      $("#otherNavs").on({ mouseenter: function () { $(this).addClass("hoverOtherNav"); }, mouseleave: function () { $(this).removeClass("hoverOtherNav"); } });
+  </script> 
+</div>
+
+<div class="header" id="header"> 
+    <div class="header-content">
+        <div class="logo">
+			<a href="/" rel="nofollow" title="众浩印刷人才网"><img class="logo-img fl" src="/images/logo.png" alt="众浩印刷人才网"></a>
+		</div>
+		<ul class="nav">
+            <li class="nav-first myhome"><a  href="/index.aspx" title="首页">首页</a></li>
+            <li class="findJob"><a  href="/search.aspx" title="找工作">找工作</a></li>
+            <li class="findPerson"><a  class='selected' href="/topperson.aspx" title="找人才">找人才</a></li>
+            <li class="school"><a  href="/zph/index.aspx" title="招聘会">招聘会</a></li>
+			<li class="baike"><a  href="/news/index.aspx" title="职场资讯">职场资讯</a></li>
+        </ul>
+		<ul id="us">
+          <li class="phone">400-6618-979</li>
+          <li>客服时间：08:30 -- 17:30</li>
+        </ul>
+    </div>
+</div>
+<div class="content">
+	<div class="bread">
+        <div class="breadL">
+        	<a href="#" id="cur_condition_prev" style="display:none" class="turL arr hbFntWes">&#xf053;</a>
+            <a href="#" id="cur_condition_next" style="display:none"  class="turR arr hbFntWes">&#xf054;</a>
+        	<div class="seld flexslider">
+            	<ul id="sliders" style="width:2000px;">
+                <li id="li_first"><a href="/topperson.aspx" class="noBod">找人才</a></li><li id="li_keyword" title="销售"></li><li class="line">&gt;</li>
+                
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="breadR" style="display:none"><a onclick="jobsearch.conditon_clear();return false;" href="#">清空筛选项</a></div>
+        <div class="clear"></div>
+    </div>
+       
+    <div class="fter" >
+    	<div class="fterCon">
+        <div class="searchBar">
+        <form id="searchForm" action="#" method="get">
+        <div class="bar">
+          <div class="key">
+            <input name="key" id="key" type="text" placeholder="搜索：人才关键字" onfocus="this.placeholder='';" x-webkit-speech x-webkit-grammar="builtin:translate" value="" />
+          </div>
+          <div class="btn"><a data-act="search" href="#" onclick="document.getElementById('searchForm').submit();" title="搜索">搜索</a></div>
+        </div>
+        </form>
+        </div>
+
+        <dl class="gzdd">
+            	<dt>学历:</dt>
+                <dd id="area_f_condition">
+                    <a href="/topperson.aspx?guid=47304b47-421b-4c8e-a128-77d9cd7ad51f&edu1=&work=8" v=""  class=" cu">不限</a>
+                    <a v="2" href="/topperson.aspx?guid=3883af5c-fd80-4257-99bf-e2480ee33a78&edu1=2&work=8" >初中</a><a v="3" href="/topperson.aspx?guid=ab161030-06ec-4cfd-aca5-e3fabb441c23&edu1=3&work=8" >高中</a><a v="4" href="/topperson.aspx?guid=d07791b8-a53d-4d4b-8a39-3d86239e6f92&edu1=4&work=8" >中技</a><a v="5" href="/topperson.aspx?guid=9715623e-51de-4009-bc53-d6bd4e0a46b9&edu1=5&work=8" >中专</a><a v="6" href="/topperson.aspx?guid=98677385-a718-4d8b-864e-7c075eb8cd23&edu1=6&work=8" >大专</a><a v="7" href="/topperson.aspx?guid=4dae1ee7-893e-4e01-9ff0-7c81b87ab69f&edu1=7&work=8" >本科</a><a v="8" href="/topperson.aspx?guid=c024d353-625a-481e-b891-4dd9ffbc4e2f&edu1=8&work=8" >硕士</a><a v="9" href="/topperson.aspx?guid=c4b56e6c-8bb2-40f2-bccf-42889d22cd4c&edu1=9&work=8" >博士</a><a v="10" href="/topperson.aspx?guid=a4ab4592-6d5d-41b3-a0fa-1fa33cd96c38&edu1=10&work=8" >其他</a>
+                </dd>
+        </dl>
+                                            
+        <dl class="sshy">
+            	<dt>工作经验:</dt>
+                <dd>
+                	<div class="fstTrade">
+	                	<a href="/topperson.aspx?guid=db64dbaf-0c26-4d12-9e70-5165b41aa732&work=" v="" class="">不限</a>
+                        <a v="1"  href="/topperson.aspx?guid=c8d537b2-9922-453d-af31-269c4cd43a41&work=1">在读学生</a><a v="2"  href="/topperson.aspx?guid=9890b110-1f5e-4359-9cd6-8190b3e1043f&work=2">应届毕业生</a><a v="3"  href="/topperson.aspx?guid=c95ca429-8fa0-4f33-ba1f-6bfd3a36a924&work=3">一年以上</a><a v="4"  href="/topperson.aspx?guid=467a7b7f-8d42-4107-a434-96bc88a5674f&work=4">二年以上</a><a v="5"  href="/topperson.aspx?guid=07539b36-c68c-4486-9681-d84a174f857d&work=5">三年以上</a><a v="6"  href="/topperson.aspx?guid=17bad5da-dfa8-41e0-9064-f708a530f87a&work=6">五年以上</a><a v="7"  href="/topperson.aspx?guid=96591363-d7de-470a-bab9-39254bc2c250&work=7">八年以上</a><a v="8"  class='cu' href="/topperson.aspx?guid=458757f3-0a0d-4079-9894-25ccbc9562bb&work=8">十年以上</a>
+                	</div>
+                 </dd>
+        </dl>
+        
+        <dl class="sshy">
+            	<dt>工作地点:</dt>
+                <dd>
+                	<div class="fstTrade">
+                        <a href="/topperson.aspx?guid=e35504be-f70c-454f-b72b-67a570f2de23&area1=&work=8" v="" class=" cu">不限</a>
+                        <a v="0100"  href="/topperson.aspx?guid=6f24077d-cccc-41d3-af9b-fd9f7d2cf561&area1=0100&work=8">北京市</a><a v="0200"  href="/topperson.aspx?guid=a1776de0-abef-4c0a-982a-a23d57db1e4b&area1=0200&work=8">上海市</a><a v="0300"  href="/topperson.aspx?guid=92f3bbdb-5b3c-47cc-96d5-de71ea756390&area1=0300&work=8">广东省</a><a v="0400"  href="/topperson.aspx?guid=5ad9707e-acfc-4d63-b190-a86d54aaf545&area1=0400&work=8">深圳市</a><a v="0500"  href="/topperson.aspx?guid=1bcd4b81-dc54-4f71-8f07-8f14f869a4c4&area1=0500&work=8">天津市</a><a v="0600"  href="/topperson.aspx?guid=488bd304-1e0b-47a9-a8f6-1a127d85d2fa&area1=0600&work=8">重庆市</a><a v="0700"  href="/topperson.aspx?guid=ef06735c-6bca-4702-8fe9-f728c745edca&area1=0700&work=8">江苏省</a><a v="0800"  href="/topperson.aspx?guid=95723a09-575a-46ec-993c-671d13b3a066&area1=0800&work=8">浙江省</a><a v="0900"  href="/topperson.aspx?guid=d0b631bd-5d41-4cbb-9ee9-3a07cd217330&area1=0900&work=8">四川省</a><a v="1000"  href="/topperson.aspx?guid=4adb945c-3233-4cd2-8285-e35383dd819e&area1=1000&work=8">海南省</a><a v="1100"  href="/topperson.aspx?guid=978a2799-506e-4fed-a2f5-c537c6a13513&area1=1100&work=8">福建省</a><a v="1200"  href="/topperson.aspx?guid=46036446-92e8-47fd-874b-4726a57522c4&area1=1200&work=8">山东省</a><a v="1300"  href="/topperson.aspx?guid=69619f14-355d-436d-8cc9-ccd6c3f53fa3&area1=1300&work=8">江西省</a><a v="1400"  href="/topperson.aspx?guid=5535c1f3-0846-4aca-9ae9-3ea8a8bcce3a&area1=1400&work=8">广西</a><a v="1500"  href="/topperson.aspx?guid=52fec9bb-69a1-4b20-b32e-2b78724ca203&area1=1500&work=8">安徽省</a><a v="1600"  href="/topperson.aspx?guid=5564b4ec-0f77-40db-8d52-ffee149bdcee&area1=1600&work=8">河北省</a><a v="1700"  href="/topperson.aspx?guid=dbad4c5d-b34e-4bac-baf1-b1dadb4ca42c&area1=1700&work=8">河南省</a><a v="1800"  href="/topperson.aspx?guid=26ef9723-a500-4297-84b5-75894d13db8e&area1=1800&work=8">湖北省</a><a v="1900"  href="/topperson.aspx?guid=84875bfc-ca24-4105-9254-b6069dc0ba31&area1=1900&work=8">湖南省</a><a v="2000"  href="/topperson.aspx?guid=0b2bb72f-cfcc-4a54-8319-001ab2a9ce3f&area1=2000&work=8">陕西省</a><a v="2100"  href="/topperson.aspx?guid=7d052d29-6343-4612-981a-7df59faed4f0&area1=2100&work=8">山西省</a><a v="2200"  href="/topperson.aspx?guid=a43d1105-9477-46be-b3f9-6e6d5d7517d0&area1=2200&work=8">黑龙江省</a><a v="2300"  href="/topperson.aspx?guid=25e545d8-1579-4002-a359-b081c33f17cb&area1=2300&work=8">辽宁省</a><a v="2400"  href="/topperson.aspx?guid=84b7235e-feaf-4db3-9b07-d4cb96ae6a23&area1=2400&work=8">吉林省</a><a v="2500"  href="/topperson.aspx?guid=842df926-0e9a-4f9e-a0d3-73a57c009e88&area1=2500&work=8">云南省</a><a v="2600"  href="/topperson.aspx?guid=d0009e18-8edf-4532-9b3d-765ac65f52ba&area1=2600&work=8">贵州省</a><a v="2700"  href="/topperson.aspx?guid=e3b13ba3-02a0-41ad-b737-0b5478b099ec&area1=2700&work=8">甘肃省</a><a v="2800"  href="/topperson.aspx?guid=1323ce3a-b949-4b73-9aa9-4bf2976b691b&area1=2800&work=8">内蒙古</a><a v="2900"  href="/topperson.aspx?guid=2388fce6-30c0-486e-bfc1-4131fd1afe7d&area1=2900&work=8">宁夏</a><a v="3000"  href="/topperson.aspx?guid=3fff55d8-c373-4dae-a3c9-50f7a8462498&area1=3000&work=8">西藏</a><a v="3100"  href="/topperson.aspx?guid=764ac6a5-818f-4cb6-ba0d-9770d3706abb&area1=3100&work=8">新疆</a><a v="3200"  href="/topperson.aspx?guid=bd5380e4-641d-4e4c-813b-04823297fbe5&area1=3200&work=8">青海省</a><a v="3300"  href="/topperson.aspx?guid=1ce7ea10-e754-459f-b7fd-3be4bb6c2688&area1=3300&work=8">香港</a><a v="3400"  href="/topperson.aspx?guid=86e311db-4e8e-41a3-b0a1-1209c0192f1b&area1=3400&work=8">澳门</a><a v="3500"  href="/topperson.aspx?guid=674558f0-1c97-4a34-b2b3-08a5bcc5b5c9&area1=3500&work=8">台湾</a><a v="3600"  href="/topperson.aspx?guid=8e19066e-9058-42b7-9e6f-4f931caaffe0&area1=3600&work=8">国外</a>
+                	</div>
+                </dd>
+        </dl>
+
+        <dl class="sshy" style="border-bottom:none;">
+            	<dt>更新时间:</dt>
+                <dd>
+                	<div class="fstTrade">
+	                <a href="/topperson.aspx?guid=75e10620-f309-4191-81e0-094113401024&work=8&time=1999" >不限</a>
+                    <a href="/topperson.aspx?guid=e168a396-d730-4fcf-9c58-96b2639bc3b4&work=8&time=1" v="1" >1天内</a>
+                    <a href="/topperson.aspx?guid=1c42f04b-1110-418d-92a2-c75b151486ad&work=8&time=3" v="3" >3天内</a>
+                    <a href="/topperson.aspx?guid=7e02871c-21d0-402e-8457-b8f3d9af7c77&work=8&time=7" v="7" >7天内</a>
+                    <a href="/topperson.aspx?guid=b89db6d6-dc2a-4047-92a6-7abd37398f40&work=8&time=15" v="15" >15天内</a>
+                    <a href="/topperson.aspx?guid=36a169f2-8b22-404f-9c3c-ff5308a28fe1&work=8&time=30" v="30" >30天内</a>
+                    <a href="/topperson.aspx?guid=660e47da-a91b-438e-9d12-0726dbded5c3&work=8&time=90" v="90" >90天内</a>
+                    <a href="/topperson.aspx?guid=0bdabeaa-e731-460c-8b86-e49709a755d4&work=8&time=180" v="180"  class='cu'>半年内</a>
+                	</div>
+                 </dd>
+        </dl>
+
+        <div class="clear"></div>
+        	
+        </div>
+
+    </div>
+    
+    
+    <div class="wealink-left">
+		 <div class="renmai-ganxingqu">
+                <div class="wllft-hd">
+                    <div class="wllft-ctrl2">
+			            <a id="id_dd_sort_0" class="moren " href="/topperson.aspx?guid=6a48bc23-95bd-4c19-b68c-d6176d3157f0&work=8&order=0" rel="0">默认匹配度</a>
+                        <a id="id_dd_sort_1" href="/topperson.aspx?guid=0b0287de-3733-48f4-87ff-ad3d2352bc0e&work=8&order=1" class="last  current" rel="1">登录时间<i class="icon-jx-off"></i></a>
+			        </div>
+			        <h3>为您找到以下符合要求的人才</h3>
+			     </div>
+			     <div class="renmai-gxqbd">
+			         <ul class="cf">
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96974787&key=" xid="96974787#%e6%b4%aa**" class="person" target="_blank"><img src="upload/person/upload/headpic/96974787.jpg" title="洪**" alt="洪**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96974787" xid="96974787#%e6%b4%aa**" target="_blank" title="洪**">洪**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：部门经理/主管</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：江苏省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    &nbsp;
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96974319&key=" xid="96974319#%e6%a2%81**" class="person" target="_blank"><img src="person/images/pic.gif" title="梁**" alt="梁**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96974319" xid="96974319#%e6%a2%81**" target="_blank" title="梁**">梁**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：胶印机长/助手</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：河南省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    有十四年印刷工作經驗，對印刷機保養一般機械問題能……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96975566&key=" xid="96975566#%e8%8c%83**" class="person" target="_blank"><img src="person/images/pic.gif" title="范**" alt="范**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96975566" xid="96975566#%e8%8c%83**" target="_blank" title="范**">范**</a>
+                                        <span class="zpzt">正考虑换个新环境</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：其他相关职位</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：上海市	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    尊敬的先生/小姐：
+本人申请贵公司的（数码印前……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96903216&key=" xid="96903216#%e5%8a%89**" class="person" target="_blank"><img src="person/images/pic.gif" title="劉**" alt="劉**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96903216" xid="96903216#%e5%8a%89**" target="_blank" title="劉**">劉**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：其他相关职位</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：江苏省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    本人从事印刷行业10年，曾做过操作工，印刷工，现……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96794000&key=" xid="96794000#%e5%bc%a0**" class="person" target="_blank"><img src="upload/person/upload/headpic/96794000.jpg" title="张**" alt="张**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96794000" xid="96794000#%e5%bc%a0**" target="_blank" title="张**">张**</a>
+                                        <span class="zpzt">求更好的工作机会</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：技术经理/厂长</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：浙江省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    本人有十八年的实际印刷机操作和印刷厂管理经验，对……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96814949&key=" xid="96814949#%e6%9c%b1**" class="person" target="_blank"><img src="person/images/pic.gif" title="朱**" alt="朱**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96814949" xid="96814949#%e6%9c%b1**" target="_blank" title="朱**">朱**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：生产经理/厂长</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：湖北省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    
+1>10年彩印包装行业生产管理工作经验，3年……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96801226&key=" xid="96801226#%e7%8e%8b**" class="person" target="_blank"><img src="person/images/pic.gif" title="王**" alt="王**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96801226" xid="96801226#%e7%8e%8b**" target="_blank" title="王**">王**</a>
+                                        <span class="zpzt">正考虑换个新环境</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：生产经理/厂长</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：浙江省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    具备印刷行业较全面的理论知识体系。对工艺，计划，……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96914826&key=" xid="96914826#%e6%9d%a8**" class="person" target="_blank"><img src="person/images/pic.gif" title="杨**" alt="杨**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96914826" xid="96914826#%e6%9d%a8**" target="_blank" title="杨**">杨**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：部门经理/主管</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：河南省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    以客户要求为忠心，不断改进产品质量，持续改好产品……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96965562&key=" xid="96965562#%e5%ae%98**" class="person" target="_blank"><img src="person/images/pic.gif" title="官**" alt="官**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96965562" xid="96965562#%e5%ae%98**" target="_blank" title="官**">官**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：其他相关职位</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：上海市	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    2000至20
+05年，上海华师大印务助手机长……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96942439&key=" xid="96942439#%e5%ae%8b**" class="person" target="_blank"><img src="upload/person/upload/headpic/96942439.jpg" title="宋**" alt="宋**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96942439" xid="96942439#%e5%ae%8b**" target="_blank" title="宋**">宋**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：经营管理类岗位</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：上海市	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    本人有9年的生产现场管理经验，对ISO9001（……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96907026&key=" xid="96907026#%e6%9c%b1**" class="person" target="_blank"><img src="upload/person/upload/headpic/96907026.jpg" title="朱**" alt="朱**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96907026" xid="96907026#%e6%9c%b1**" target="_blank" title="朱**">朱**</a>
+                                        <span class="zpzt">正考虑换个新环境</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：生产经理/厂长</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：广东省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    给我一个平台，还你一份惊喜！全面熟悉和了解印刷全……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96975387&key=" xid="96975387#%e5%94%90**" class="person" target="_blank"><img src="person/images/pic.gif" title="唐**" alt="唐**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96975387" xid="96975387#%e5%94%90**" target="_blank" title="唐**">唐**</a>
+                                        <span class="zpzt">正考虑换个新环境</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：部门经理/主管</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：安徽省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    2005年03月---2010年11月  上海正……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96872594&key=" xid="96872594#%e9%bb%84**" class="person" target="_blank"><img src="upload/person/upload/headpic/96872594.jpg" title="黄**" alt="黄**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96872594" xid="96872594#%e9%bb%84**" target="_blank" title="黄**">黄**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：模切机/啤机/烫金机长</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：广东省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    我熟这份工作,我是一个勤快而自律的人,我能够做好……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96815034&key=" xid="96815034#%e5%90%b4**" class="person" target="_blank"><img src="upload/person/upload/headpic/96815034.jpg" title="吴**" alt="吴**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96815034" xid="96815034#%e5%90%b4**" target="_blank" title="吴**">吴**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：胶印机长/助手</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：广东省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                        本人在印刷行业已10年，当胶印机机长9年……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96816419&key=" xid="96816419#%e5%bc%a0**" class="person" target="_blank"><img src="upload/person/upload/headpic/96816419.jpg" title="张**" alt="张**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96816419" xid="96816419#%e5%bc%a0**" target="_blank" title="张**">张**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：生产经理/厂长</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：广东省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    多年來的印刷厂的實踐經歷使我精通印刷生產技术和掌……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96971388&key=" xid="96971388#%e4%bd%99**" class="person" target="_blank"><img src="person/images/pic.gif" title="余**" alt="余**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96971388" xid="96971388#%e4%bd%99**" target="_blank" title="余**">余**</a>
+                                        <span class="zpzt">正考虑换个新环境</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：部门经理/主管</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：福建省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    本人有十多年的生产现场实际管理经验，对ISO90……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96793517&key=" xid="96793517#%e6%9d%8e**" class="person" target="_blank"><img src="upload/person/upload/headpic/96793517.jpg" title="李**" alt="李**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96793517" xid="96793517#%e6%9d%8e**" target="_blank" title="李**">李**</a>
+                                        <span class="zpzt">正考虑换个新环境</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：印前软硬设备操作</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：深圳市	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    回顾这多年来的工作，机遇与挑战都重要，我勇于接受……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96973505&key=" xid="96973505#%e7%8e%8b**" class="person" target="_blank"><img src="upload/person/upload/headpic/96973505.jpg" title="王**" alt="王**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96973505" xid="96973505#%e7%8e%8b**" target="_blank" title="王**">王**</a>
+                                        <span class="zpzt">正在求职，即刻上岗</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：糊盒机长</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：上海市	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    本人希望能在印刷包装企业工作，担任糊盒机(班)长……
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96862882&key=" xid="96862882#%e7%9f%b3**" class="person" target="_blank"><img src="person/images/pic.gif" title="石**" alt="石**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96862882" xid="96862882#%e7%9f%b3**" target="_blank" title="石**">石**</a>
+                                        <span class="zpzt">正考虑换个新环境</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：胶印机长/助手</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：北京市	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    勤奋刻苦 工作塌实
+                                </p>
+                            </div>
+                         </li>
+                         
+                         <li>
+                            <div class="js-clk-cnt cf">
+	                            <div class="touxiang">
+		                            <a href="/person.aspx?id=96955889&key=" xid="96955889#%e9%99%b3**" class="person" target="_blank"><img src="person/images/pic.gif" title="陳**" alt="陳**" width="100" height="100" /></a>
+	                            </div>
+	                            <div class="txt">    
+		                            <p class="title">
+			                            <a class="person clr-08c fnt-14" href="/person.aspx?id=96955889" xid="96955889#%e9%99%b3**" target="_blank" title="陳**">陳**</a>
+                                        <span class="zpzt">正考虑换个新环境</span>
+		                            </p>
+		                            <p class="clr-333">求职岗位：生产经理/厂长</p>
+		                            <p class="clr-333">工作经验：十年以上</p>
+		                            <p class="gz-sx">意向地区：广东省	</p>
+	                            </div>
+	                            <div class="blk10 clear"></div>
+	                            <p class="clr-666">
+                                    自2000年畢業以來，本人一直在印刷行業任職，希……
+                                </p>
+                            </div>
+                         </li>
+                         
+				        </ul>
+			      </div>
+				  <div class="blk30"></div>
+				  <div class="pageNav" style="padding-top:20px;padding-bottom:20px;"> 
+				    
+<!-- AspNetPager V7.0.2 for VS2005 & VS2008  Copyright:2003-2007 Webdiyer (www.webdiyer.com) -->
+<div id="Paging" class="manu" align="center" nowrap="nowrap">
+<span class="current">1</span><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=2" class="manu">2</a><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=3" class="manu">3</a><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=4" class="manu">4</a><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=5" class="manu">5</a><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=6" class="manu">6</a><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=7" class="manu">7</a><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=8" class="manu">8</a><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=9" class="manu">9</a><a href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=10" class="manu">10</a><span><a class="manu" href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=11">...</a></span><a class="manu" href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=2">下页</a><a class="manu" href="topperson.aspx?guid=e325ca17-005c-43b2-89b3-8dff0d753e60&amp;work=8&amp;page=110">末页</a>
+</div>
+<!-- AspNetPager V7.0.2 for VS2005 & VS2008 End -->
+
+ 
+				  </div>
+				  <div class="blk30 clear"></div>
+		        </div>
+		    </div>
+            
+            <div class="wealink-right">
+
+		        
+		        <div class="blk10"></div>
+
+
+		        <div class="wlr-box">
+                    <div class="wlr-box-hd">
+                        <h3 class="clr-grn">我的浏览记录</h3>
+                    </div>
+                    <div class="wlr-box-bd">
+                            <ul class="infoimg-list2 cf ul_top_fans1">
+                                
+                            </ul>
+                        </div>
+                </div>
+				<div class="blk10"></div>
+				
+		    </div>           
+</div>
+<div class="clear"></div>
+<div id="sus" class="sus"><a class="backTop hbFntWes" title="返回顶部" href="#" style="display: none;">&#xf0d8;</a></div>
+
+<div class="footer">
+  <div class="footerNav"><a target="_blank" href="/help/about.aspx" style="margin-left:0px;">关于我们</a>|<a target="_blank" href="/help/contact.aspx">联系我们</a>|<a target="_blank" href="/help/contact.aspx">诚聘英才</a>|<a target="_blank" href="/sitemap.aspx">网站地图</a>|<a target="_blank" href="/Help/About2.aspx">法律声明</a>|<a target="_blank" href="/Help/about3.aspx">付款方式</a></div>
+<div style=" width:1000px;margin:0px auto; font-size:14px;">
+ <b>印刷人才交流综合一群：</b>105525175　　<b>折页糊盒机长二群：</b>200065663　　<b>模切烫金群：</b>271439092
+  </div>
+  <div class="copyright">
+    <p>&copy;2014&nbsp;众浩人才网&nbsp;版权所有&nbsp;&nbsp;|&nbsp;&nbsp;《人才中介经营许可证》：沪浦人社3101150044号&nbsp;&nbsp;|&nbsp;&nbsp;苏ICP备09001108号-8 ICP证：苏B2-20120396  <span><script src="http://s25.cnzz.com/stat.php?id=4020427&web_id=4020427" language="JavaScript"></script>
+</span></p>
+    <p>招聘单位无权收取任何费用,请求职人员加强自我保护意识,按劳动法规保护自身权益,警惕虚假招聘,避免上当受骗!</p>
+  </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 120) {
+                $('#sus').find('a.backTop').css({ 'display': 'inline-block' });
+            } else {
+                $('#sus').find('a.backTop').css({ 'display': 'none' });
+            }
+        });
+
+        $('#sus').find('a.backTop').click(function () {
+            $('html,body').animate({ scrollTop: 0 });
+        });
+    });
+</script>
+</body>
+</html>
+
+

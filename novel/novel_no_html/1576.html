@@ -1,0 +1,447 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>阿亮医生_您的家庭医生_就医服务_预约看病_网上医疗咨询</title>
+<link href="/css/infov2.css" rel="stylesheet" type="text/css" />
+<script src="/js/v2.js" language="javascript"></script>
+<script type="text/javascript" src="/js/jquery-1.4.2.min.js"></script>
+<link href="/drug/js/dialog/dialog2.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="/drug/js/dialog/dialog.js"></script>
+<script src="/login_regist/js/form.js" language="javascript"></script>
+<script type="text/javascript" src="/js/liuyanv4.js" language="javascript"></script>
+<script>
+	var doctorid=284374;
+	var hospitalid=4;
+	var doctorname="田兆黎";
+	function liuyancheck1(thisForm){
+		var tijiao = thisForm.btnSumiteva;
+		tijiao.disabled = true;
+		var lgmsg = document.getElementById("submittingeva");
+		lgmsg.innerHTML = "<font color='red'>正在提交</font>";
+		var doctorreply = thisForm.doctorreply;
+		var doctorContact = thisForm.doctorContact;
+		if(doctorreply.value==""){
+			alert("请输入回复内容！");
+			tijiao.disabled = false;
+			lgmsg.innerHTML = "";
+			doctorreply.focus();
+			return false;
+		}
+		if(doctorContact.value==""){
+			alert("请输入您的联系方式！");
+			tijiao.disabled = false;
+			lgmsg.innerHTML = "";
+			doctorContact.focus();
+			return false;
+		}
+		//登录
+		if(getCookie("username")==""||getCookie("umid")==""){
+			art.dialog({
+				id:'abc',
+				iframe:"/login_regist/reg.jsp?formname=rform1",
+				title:"会员登录", 
+				width:'680', 
+				height:'350'
+				
+			}, 
+			function(){
+				var d = art.dialog({id:'abc'}).data.iframe;
+				var form = d.document.getElementById('dosubmit');
+				form.click();return false;
+			}, 
+			function(){
+				art.dialog({id:'abc'}).close()
+			});
+		}else{
+			thisForm.submit();
+		}
+		tijiao.disabled=false;
+		lgmsg.innerHTML = "";
+		return false;
+	}
+	</script>
+</head>
+<body>
+<div class="mainline">
+	<div class="header1">
+		<div class="header1_optimize">欢迎访问阿亮医生网<!-- ，中国最专业的医疗服务网站 --></div>
+		<div class="header1a">
+			<script>loginstatus();</script>
+			<span>|</span><a href="javascript:add2Bookmark(document.title,document.URL)">添加到收藏夹</a>
+			<span>|</span><a href="http://baby.alyisheng.com/" class="red1">母婴频道</a>
+			<span>|</span><a href="http://t.sina.com.cn/alyisheng" target="_blank" class="sinat">官方微博</a>
+			<span>|</span><a href="http://help.alyisheng.com/">帮助中心</a>
+			<a href="http://help.alyisheng.com/"><img src="/img/help.jpg" width="15" height="15" style="vertical-align:middle;"/></a>
+		</div>
+	</div>
+	<div class="header2">
+		<div class="header2a"><a href="http://www.alyisheng.com/"><img src="/img/logo.jpg" width="166" height="83"/></a></div>
+		<div class="header2b">
+			<div class="header2_optimize1">共收录：<font color="red">20000</font>家医院 <font color="red">350000</font>医生信息<font color="red"> 20万</font>药品信息</div>
+			<div class="header2_optimize2">
+			<form id="searchForm" name="searchForm" action="/search.jsp" method="get" onsubmit="return search(this);" target="_blank">
+				<input type="text" id="keyword" name="keyword" value="输入医院名、科室名、医生名、疾病名、拼音" class="header2_optimize_input" onfocus="if(this.value=='输入医院名、科室名、医生名、疾病名、拼音') this.value='';" onblur="if(this.value=='') this.value='输入医院名、科室名、医生名、疾病名、拼音';"/>
+				<input type="submit" name="search_tijiao" class="optimize_img" value=""/>
+			</form>
+			</div>
+		</div>
+	</div>
+	<div class="header3_update">
+		<div class="chn1"><a href="http://www.alyisheng.com/" class="whiteb">网站首页</a></div>
+		<div class="chn2"><a href="http://www.alyisheng.com/myhospital.jsp" class="whiteb">我的医院</a></div>
+		<div class="chn3"><a href="http://www.alyisheng.com/callask.shtml" class="whiteb">电话咨询</a></div>
+		<div class="chn4"><a href="http://vip.alyisheng.com" class="whiteb">贵宾服务</a></div>
+		<!--<div class="chn5"><a href="http://shop.alyisheng.com" class="whiteb">商城</a></div>-->
+		<div class="chn5"><a href="http://www.alyisheng.com/cardlist.shtml" class="wb14">商城</a></div>
+		<div class="chn10"><a href="http://www.alyisheng.com/hos/" class="whiteb">医院导航</a></div>
+		<div class="chn11"><a href="http://disease.alyisheng.com" class="whiteb">疾病百科</a></div>
+		<div class="chn12"><a href="http://drug.alyisheng.com/" class="whiteb">药品频道</a></div>
+		<div class="chn11"><a href="http://baby.alyisheng.com/" class="whiteb">母婴频道</a></div>
+	</div>
+</div>
+<script type="text/javascript">
+	function search(thisForm){
+		var tijiao = thisForm.search_tijiao;
+		tijiao.disabled=true;
+		var keyword = thisForm.keyword;
+		if(keyword.value==''){
+			alert("请输入医院名、科室名、医生名、疾病名、拼音");
+			keyword.focus();
+			tijiao.disabled=false;
+			return false;
+		}
+	}
+</script>
+<!-- header end -->
+
+  
+<div class="mainline">
+	<div class="local">当前位置：<a href="http://www.alyisheng.com/">阿亮医生网</a> > <a href="http://www.alyisheng.com/hos/p110000.shtml">北京医院导航</a> > <a href="/yiyuan/4/index.shtml">北京中医医院</a> > <a href="/keshi/4/58949/faculty1.shtml">肿瘤科</a> > <a href="/yisheng/4/284374">田兆黎</a> > 医生评价</div>
+</div>
+<div class="mainline">
+	
+    <div class="areatop_3">
+    	<div class="areatop1">田兆黎医生信息页</div>
+        <div class="areatop2">
+        	<div class="hostop1"><a href="/yisheng/4/284374/" class="wbhos">医生首页</a></div>
+            <div class="hostop2"><a href="/yisheng/4/284374/wenzhangd1.shtml" class="wbhos">医生文章</a></div>
+            <div class="hostop2_a"><a href="/yisheng/4/284374/pingjia1.shtml" class="black4">医生评价</a></div>
+            <div class="hostop2_b"><a href="/yisheng/4/284374/liuyan1.shtml" class="wbhos">给医生留言</a></div>
+            <div class="hostop2_c"><a href="http://tianzhaoli.alyisheng.com/" class="wbhos" target="_blank">网上诊室</a></div>
+        </div>
+    </div>
+    
+    <div class="left">
+        <div class="arealf">
+            <div class="yiyuan_header4">
+                <div class="yiyuan_header2" style="font-size:14px;"><a href="/yisheng/4/284374" class="black12" target="_blank">田兆黎</a>医生回复评价</div>  
+                <div class="line2"></div>
+          	</div>
+            <div class="middlearea" style="width:595px;padding-left:20px;padding-bottom:10px;">
+            	
+                <form name="rform1" id="rform1" action="/reply4Evaluate.act" method="post" onsubmit="return liuyancheck1(this);">
+                	<input type="hidden" name="id" value="607795"/>
+                    <div style="width:560px;padding:6px;">
+                    <div style="line-height:22px;">
+                
+					<div style="border-bottom:dotted 1px #cccccc;padding:4px;line-height:22px;">
+					<span style="color:#999999; ">
+						<b>评论人:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012-11-10 12:42
+                    </span><br />
+                    治疗方式：中药<br>				看病过程：在十年之前我大腿跟部长了一个大肿瘤，当时协和医院和朝阳医院都说要手术，最后我在协和医院等待办住院手续，当时学校8000元的支票都开好了，没有病床，于是我找到了田大夫，我记得吃了3个月的中药，还有外用的药，慢慢肿瘤从变软、变小，不知不觉就消失了。好神奇，我万分感谢田大夫的高超医术和医德。过了几年我的邻居的女儿患了甲状腺瘤也需要手术，结果也想试试，找了田大夫看病，吃了几个月的中药也消失了。我们除了感激还是感激。我们真的很幸运，遇到了这样一个。
+                    <br>
+                
+	                </div>
+					</div>
+	                <br />
+				
+					如果您是田兆黎医生，请填写您对本条评论的看法:
+					<div class="blank"></div>
+	        		<textarea name="doctorreply" id="doctorreply" rows="2" cols="20" style="height: 60px; width: 98%;"></textarea>
+					<div style="float:left;height:25px;line-height:25px;">
+						您的联系方式：
+					</div>
+					<textarea name="doctorContact" rows="1" cols="10" height="30px"
+					onfocus="this.style.background='#ffffff';" style="height: 60px; width: 98%;
+					background-image: url(/images/bg/doctorcontact.jpg); background-repeat: no-repeat;
+					background-position: left top"></textarea>
+					<input type="submit" name="btnSumiteva" class="yiyuan_tijiao" value="提交回复" id="btnSumiteva"/>　<span id="submittingeva"></span></div>
+				
+				</form>
+			
+            </div>
+            <div class="footline"></div>
+        </div>
+    </div>
+    <div class="right">
+    	
+		
+		
+		
+		<div class="arearight">
+    <div class="yiyuan_guest1">
+        <div class="yiyuan_right1">医生留言</div>
+        <div class="yiyuan_right2">
+                </div>
+        <div class="line"></div>
+    </div>
+    	    <div class="arearight2">
+	    	<img src="/img/lyicon.gif"/>
+	    </div>
+	    <div class="arearight3">
+	    	<span>患者</span> ajiyy18n87 给<a href="/yisheng/24054/15872/" target="_blank">郑宏良医生</a>留言 2011-02-18 00:00
+	    </div>
+	    <div class="arearight4">
+	    	提问：我儿子今年16岁，有时会经常鼻出血，有什么治疗的好办法？
+        ...<a href="/yisheng/24054/15872/liuyan_detail23503203.shtml" class="red4" target="_blank">查看详细&gt;&gt;</a>
+	    </div>
+	    	    <div class="line1"></div>
+	        	    <div class="arearight2">
+	    	<img src="/img/lyicon.gif"/>
+	    </div>
+	    <div class="arearight3">
+	    	<span>患者</span> cmthang2009 给<a href="/yisheng/24054/15872/" target="_blank">郑宏良医生</a>留言 2011-02-20 00:00
+	    </div>
+	    <div class="arearight4">
+	    	提问：20岁学生，过敏性鼻炎吃什么药有效
+                所患疾...<a href="/yisheng/24054/15872/liuyan_detail23503208.shtml" class="red4" target="_blank">查看详细&gt;&gt;</a>
+	    </div>
+	    	    <div class="line1"></div>
+	        	    <div class="arearight2">
+	    	<img src="/img/lyicon.gif"/>
+	    </div>
+	    <div class="arearight3">
+	    	<span>患者</span> 132987031810 给<a href="/yisheng/24054/15872/" target="_blank">郑宏良医生</a>留言 2011-02-18 00:00
+	    </div>
+	    <div class="arearight4">
+	    	提问：“下咽癌”，如何治疗，急急急！！!
+                所患疾...<a href="/yisheng/24054/15872/liuyan_detail23503212.shtml" class="red4" target="_blank">查看详细&gt;&gt;</a>
+	    </div>
+	            <div class="arearight4">
+    <script type="text/javascript" >liuyanrform();</script>
+   </div>
+</div>
+		
+		
+		<div class="arearm">
+	<div class="inforad">
+	<script type="text/javascript">/*docr2-336*280 2012-2-27*/ var cpro_id = 'u783924';</script><script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+</div>
+</div>
+
+		
+		
+		<div class="arearm">
+    <div class="yiyuan_guest1">
+        <div class="yiyuan_right1">医生文章</div>
+        <div class="yiyuan_right2">
+                </div>
+        <div class="line"></div>
+    </div>
+    <div class="arearf1">
+    	<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0">
+    	        	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135812.html" class="color6" target="_blank">为什么在怀孕或分娩时期，发生甲状腺疾...</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135813.html" class="color6" target="_blank">保定市2012内分泌学术年会通知</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135814.html" class="color6" target="_blank">胃转流术治疗2型糖尿病适应症及禁忌症</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135815.html" class="color6" target="_blank">2011年11月14日保定市第一中心...</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135816.html" class="color6" target="_blank">6月16日保定市第一中心医院举办“国...</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135817.html" class="color6" target="_blank">最新糖尿病知识讲座</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135818.html" class="color6" target="_blank">保定市2012内分泌学术年会通知</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135819.html" class="color6" target="_blank">保定市第一中心医院内分泌科被评为河北...</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135820.html" class="color6" target="_blank">藏锦绣　出奇葩——市第一中心医院内分...</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                	<tr>
+            	<td><img src="/img/tng9.jpg"/></td>
+                <td><a href="/article/info_135821.html" class="color6" target="_blank">芳草荣华大树参天———保定市第一中心...</a></td>
+                <td><a href="/yisheng/19188/69100/" class="color6">张云良</a></td>
+            </tr>
+            <tr>
+            	<td colspan="3"><div class="line1"></div></td>
+            </tr>
+                </table>
+    </div>
+</div>
+		
+		
+		
+		
+		
+		<div class="arearm">
+	<div class="yiyuan_guest1">
+	    <div class="yiyuan_right1">已开通网上诊室同专业医生</div>
+	    <div class="yiyuan_right2" align="right">
+	    	<a href="/alsearch.jsp?type=22&keyword=%E8%82%BF%E7%98%A4%E7%A7%91" class="black5" target="_blank">更多&gt;&gt;</a>
+	    </div>
+	    <div class="line"></div>
+	</div>
+		<div class="arearight2"><img src="/img/dt.gif"/></div>
+	<div class="docinfo10-6">&nbsp; <a href="/yisheng/143/7516/" style="font-weight:bold" target="_blank">沈明秀</a>&nbsp;&nbsp;  主任医师
+	</div>
+	<div class="bt1"><a href="http://shenmingxiu.alyisheng.com/">咨 询</a></div>
+	<div class="arearm1"><span>擅长：</span><a href="/yisheng/4/284374/" class="color6" target="_blank">月经病,妇科各种炎症,缺乳,男女不孕症等</a>
+	</div>
+	<div class="line1"></div>
+		<div class="arearight2"><img src="/img/dt.gif"/></div>
+	<div class="docinfo10-6">&nbsp; <a href="/yisheng/4/214120/" style="font-weight:bold" target="_blank">华苓</a>&nbsp;&nbsp;  主任医师
+	</div>
+	<div class="bt1"><a href="http://drhualing.alyisheng.com/">咨 询</a></div>
+	<div class="arearm1"><span>擅长：</span><a href="/yisheng/4/284374/" class="color6" target="_blank">中西医结合方法治疗妇科内分泌相关性疾病，如：子宫内膜异位症，痛经，功血，高泌乳素...</a>
+	</div>
+	<div class="line1"></div>
+		<div class="arearight2"><img src="/img/dt.gif"/></div>
+	<div class="docinfo10-6">&nbsp; <a href="/yisheng/37221/230611/" style="font-weight:bold" target="_blank">王若光</a>&nbsp;&nbsp;  主任医师
+	</div>
+	<div class="bt1"><a href="http://wangruoguang.alyisheng.com/">咨 询</a></div>
+	<div class="arearm1"><span>擅长：</span><a href="/yisheng/4/284374/" class="color6" target="_blank">不孕症，月经病，多囊卵巢综合症，妇科炎症，子宫内膜异位症，病理性妊娠，妇科肿瘤，...</a>
+	</div>
+	<div class="line1"></div>
+	</div>
+		
+		
+		<div class="arearm">
+	<div class="inforad">
+<script type="text/javascript">/*docr4-336*280 2012-2-27*/ var cpro_id = 'u783921';</script><script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script>
+	</div>
+</div>
+
+
+		
+		
+		<div class="arearm">
+	<div class="yiyuan_guest1">
+           <div class="yiyuan_right1">该院同科室医生</div>
+           <div class="yiyuan_right2">
+                      		<a href="/keshi/4/58949/menzhenf1.shtml" class="black5" target="_blank">更多&gt;&gt;</a>
+                      </div>
+           <div class="line"></div>
+       </div>
+              <div class="arearight2"><img src="/img/dt.gif"/></div>
+       <div class="arearight3">&nbsp; <a href="/yisheng/4/284369/" target="_blank" style="font-weight:bold">王笑民</a>&nbsp;&nbsp;  主任医师
+       </div>
+       <div class="arearm1"><span>擅长：</span><a href="/yisheng/4/284369/" target="_blank" class="color6"> 肺癌、乳腺癌</a>
+       </div>
+       <div class="line1"></div>
+              <div class="arearight2"><img src="/img/dt.gif"/></div>
+       <div class="arearight3">&nbsp; <a href="/yisheng/4/284370/" target="_blank" style="font-weight:bold">张青</a>&nbsp;&nbsp;  主任医师
+       </div>
+       <div class="arearm1"><span>擅长：</span><a href="/yisheng/4/284370/" target="_blank" class="color6">治疗肝癌，胃肠癌，乳腺癌，肺癌及疑难肿瘤等</a>
+       </div>
+       <div class="line1"></div>
+              <div class="arearight2"><img src="/img/dt.gif"/></div>
+       <div class="arearight3">&nbsp; <a href="/yisheng/4/284371/" target="_blank" style="font-weight:bold">迟惠昌</a>&nbsp;&nbsp;  主任医师
+       </div>
+       <div class="arearm1"><span>擅长：</span><a href="/yisheng/4/284371/" target="_blank" class="color6"> 肝癌、肺癌、胰腺癌、胃肠癌、乳腺癌、卵巢癌等恶性肿瘤的治疗</a>
+       </div>
+       <div class="line1"></div>
+       </div> 
+		
+		
+		
+		<div class="areakefu"><img src="/img/kefuimg1.jpg"/></div>
+		
+    </div>
+</div>
+<div class="mainline">
+        <div id="footer">    
+        	<div class="footerline"></div>
+            <p class="fp">
+                <a href="http://www.alyisheng.com/corp/aboutus.shtml" target="_blank">关于我们</a> | <a href="http://www.alyisheng.com/help/feedback.jsp" target="_blank">意见反馈</a> | <a href="http://www.alyisheng.com/corp/servicerules.shtml" target="_blank">服务条款</a> | <a href="http://www.alyisheng.com/corp/business.shtml" target="_blank">
+                    商务合作</a> | <a href="http://www.alyisheng.com/corp/job.shtml" target="_blank">招聘英才</a> | <a href="http://www.alyisheng.com/corp/contact.shtml" target="_blank">联系我们</a> | <a href="http://www.alyisheng.com/corp/link.shtml" target="_blank">友情链接</a>
+                | <a href="http://www.alyisheng.com/corp/pay.shtml" target="_blank">付费方式</a> | <a href="http://www.alyisheng.com/help/" target="_blank">帮助中心</a> | <a href="http://www.alyisheng.com/hos/" target="_blank">医院导航</a><br>
+                免责声明：本站信息仅供参考，不能作为诊断及医疗的依据。<br>
+未经本站授权，请勿转载本站内容 
+2007-2014 alyisheng.com All Rights Reserved<br><a href="http://www.alyisheng.com/corp/license1.shtml" target="_blank">国家药监局（京）-非经营性-2008-0002</a> &nbsp;&nbsp;&nbsp;<a href="http://www.alyisheng.com/corp/license2.shtml" target="_blank">卫生部-卫网审字[2008]15号</a>  &nbsp;&nbsp;&nbsp; <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09065184号</a>     <!--<img src="/images/biaoshi.gif" border="0" align="absmiddle" />-->京公网安备110105011046<br>
+</p>
+<p class="fp">法务支持：北京广霁律师事务所 
+</p>
+<p class="fp">公司总机：010－65691278/ 65691250 / 65691062 / 65691379  
+                <br>客服邮箱:<img src="/images/servicemail.gif" align="absmiddle"/><br><br>
+            </p>
+            
+</div>
+</div>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff983b04ebd6e850eb847b89fe3e3db0c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+<script type="text/javascript" src="http://js.tongji.linezing.com/1550900/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1550900/tongji.gif"/></a></noscript>
+
+</body>
+</html>

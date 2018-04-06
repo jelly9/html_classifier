@@ -1,0 +1,1444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta property="qc:admins" content="25471650416614416751446375" />
+<meta property="wb:webmaster" content="2bc52041a61e8ed7" />
+<title>联捷易- Powered by FittingMall</title>
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="Fittingmall Team and ShopBuilder UI Team" />
+<meta name="copyright" content="Fittingmall" />
+<script src="http://www.fittingmall.com/script/jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="http://www.fittingmall.com/script/base.js" type="text/javascript"></script>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link href="http://www.fittingmall.com/templates/default/css/page.css" rel="stylesheet" type="text/css" />
+<link href="http://www.fittingmall.com/templates/default/css/sele.css" rel="stylesheet" type="text/css" />
+<script>
+/*自定义alert()*/
+function jjalt(tips){
+    //自动获取字符串长度
+    tips = tips+'';
+    var jstr = {};
+    jstr.GetLength = function(str) {
+        return str.replace(/[^\x00-\xff]/g,"aa").length;
+    };
+    var strl = jstr.GetLength(tips);
+    var aw = strl*7+(100-strl)*2;
+    $('#alt').css('width',aw);
+    //alert("默认："+tips);
+    var ww = $(window).width();
+    var wh = $(window).height();
+    var al = (ww-$("#alt").outerWidth())/2;
+    var at = (wh-$("#alt").outerHeight())/2;
+    $('#altbox').css('display','block').css('top','0');
+    $('#alt').css('margin-left',al).css('margin-top',at);
+    $('#altbox .tip').html(tips);
+}
+</script>
+</head>
+<body >
+<!-- 自定义提示 -->
+<div id="altbox" style="position:fixed;z-index:10000;width:100%;height:100%;background-color:rgba(0, 0, 0, 0.4);display:none;">
+    <div id="alt" style="height:140px;background-color:#fff;border:1px solid #ddd;">
+        <div class="tip" style="height:90px;text-align:center;line-height:90px;font-size:13px;"></div>
+        <div style="height:50px;background-color:#eee;border-top:1px solid #ddd;">
+          <button class="btnn" style="float:right;margin-top:15px;margin-right:30px;width:70px;" onclick="$('#altbox').css('display','none');">确定</button>
+        </div>
+    </div>
+</div>
+<!-- 自定义结束 -->
+<div class="shortcut">
+    <div class="w fn-clear">
+        <ul class="fn-right">
+            <li><script src="http://www.fittingmall.com/login_statu.php"></script></li>
+            <li><s></s><a href="http://www.fittingmall.com/main.php?cg_u_type=1">我的商城</a></li>
+            <li><s></s><a href="http://www.fittingmall.com/main.php?cg_u_type=2">卖家中心</a></li>
+            <li><s></s><a href="http://www.fittingmall.com/main.php?m=sns&s=admin_share_product">我的收藏</a></li>
+            <li><s></s><a href="http://www.fittingmall.com/main.php?m=message&s=admin_message_list_inbox">站内消息</a></li>
+        </ul>
+        <ul class="fn-left">
+            <li class="index"><b></b><a href="javascript:addToFavorite()" rel="sidebar"> 收藏首页</a></li>
+            <li class="mobile"><b></b><a href="wap.php">手机版</a></li>
+                    </ul>
+    </div>
+</div><div class="header">
+    <div class="w fn-clear">
+        <div class="logo">
+        <a title="联捷易" href="http://www.fittingmall.com"><img src="http://www.fittingmall.com/uploadfile/all/2015/02/15/1423979867.jpg" /></a>
+        </div>
+        
+                
+        <dl class="code">
+            <dt>扫一扫</dt>
+            <dd><img height="72" src="http://www.fittingmall.com/image/phpqrcode.jpg"></dd>
+        </dl>
+        
+        <div class="search">
+            <form action="http://www.fittingmall.com/index.php" class="form" method="get">
+            <div class="i-search">
+                <input type="hidden" value="product" name="m" id="m">
+                <input type="hidden" value="list" name="s" id="s">
+                <input type="text" class="text" name="key" id="key" value="搜索条件：商品名、副标题、商品详情、店铺名称、规格型号" style="color:#aaa;"  autocomplete="off">
+            </div>
+            <button class="button">搜&nbsp;索</button>
+            </form>
+            <div class="hotwords">
+                <strong>热门搜索：</strong>
+                <a   class='first'  target="_blank" href="http://www.fittingmall.com/product-list.html&key=11">11</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=MV">MV</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=mo">mo</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=mv10">mv10</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=VX">VX</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=R1%2F8+%E6%8E%A5%E5%A4%B4">R1/8 接头</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=c.matic">c.matic</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=%E7%9B%B4%E5%9E%8B%E5%A4%96%E8%9E%BA%E7%BA%B9">直型外螺纹</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=cmatic">cmatic</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=R1%2F4+%E6%8E%A5%E5%A4%B4">R1/4 接头</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=1%2F8%E6%8E%A5%E5%A4%B4">1/8接头</a>
+<a   target="_blank" href="http://www.fittingmall.com/product-list.html&key=1%2F8+%E6%8E%A5%E5%A4%B4">1/8 接头</a>
+
+            </div>
+        </div>
+    </div>  
+</div>
+<div class="menu">
+    <div class="w">
+    <dl class="dl">
+        <dt class="dt"><h2><a href="javascript:void(0);">全部商品分类</a></h2></dt>
+        <dd class="dd"  >
+            <script>
+$(function(){
+    /* 下拉选择分类属性 */
+    $('.j_MenuItem p').mouseover(function(){
+        var iid=$(this).find(".iid").html();
+        $.get("http://www.fittingmall.com",{m:"product",s:"list",id:iid},function(data){
+            $(".select").html($(data).find("#select").html());
+            //alert(iid);
+        });
+    })
+    /*查看更多动作控制*/
+    $('.select .more').live("click",function(){
+        //alert("123");
+        //alert($('.select .more').prev().css('height'));
+        if($('.select #nor').attr('class')==""){
+            $('.select #nor').addClass('ddm');
+            $(this).html('<a href="javascript:;">收起<span>▲</span></a>');
+        }else{
+            $('.select #nor').removeClass('ddm');
+            $(this).html('<a href="javascript:;">更多<span>▼</span></a>');
+        }
+    })
+   /*增加品牌点击数*/
+    $('#hbrand a').live("click",function(){
+        //alert($(this).html());
+        var name=$(this).html();
+        $.get("http://www.fittingmall.com",{m:"product",s:"hits",brand:name});
+    })
+})
+</script>
+<div id="J_Category" class="category">
+    <div class="navcatgory">
+        <ul>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1015.html">气动快插
+                            <span class="iid" style="display:none">1015</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1017.html">气动卡套
+                            <span class="iid" style="display:none">1017</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1016.html">气动快拧
+                            <span class="iid" style="display:none">1016</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1010.html">气动快换
+                            <span class="iid" style="display:none">1010</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1018.html">气动管接
+                            <span class="iid" style="display:none">1018</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1020.html">气阀接头
+                            <span class="iid" style="display:none">1020</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1021.html">液压接头
+                            <span class="iid" style="display:none">1021</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1007.html">气动元件
+                            <span class="iid" style="display:none">1007</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1022.html">液压元件
+                            <span class="iid" style="display:none">1022</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                        <li class="j_MenuItem">
+                <p>
+                    <em style="background-image:url();">
+                        <a href="http://www.fittingmall.com/product-list-1014.html">其他工业
+                            <span class="iid" style="display:none">1014</span>
+                        </a>
+                    </em>
+                </p>
+            </li>
+                    </ul>
+    </div>
+    <div id="J_SubCategory" class="subCategory">
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--  -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=1&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--  -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=2&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--  -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=3&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--  -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=4&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--  -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=5&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--  -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=6&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--  -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=7&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--                 <dl class="fore1">
+                    <dt><a href="http://www.fittingmall.com/product-list-100701.html">气动执行元件</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                        <dd class="barnd">
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=乐清卓正气动">乐清卓正气动</a>
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=宁波孚沃得">宁波孚沃得</a>
+                                            </dd>
+                                    </dl>
+                                <dl class="fore2">
+                    <dt><a href="http://www.fittingmall.com/product-list-100702.html">气动控制元件</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                        <dd class="barnd">
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=CHELIC气立可">CHELIC气立可</a>
+                                            </dd>
+                                    </dl>
+                                <dl class="fore3">
+                    <dt><a href="http://www.fittingmall.com/product-list-100703.html">气源处理元件</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                        <dd class="barnd">
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=金坛康诚">金坛康诚</a>
+                                            </dd>
+                                    </dl>
+                                <dl class="fore4">
+                    <dt><a href="http://www.fittingmall.com/product-list-100704.html">真空元件</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                        <dd class="barnd">
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=乐清西克迪">乐清西克迪</a>
+                                            </dd>
+                                    </dl>
+                 -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=8&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--                 <dl class="fore1">
+                    <dt><a href="http://www.fittingmall.com/product-list-102202.html">液压阀</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                        <dd class="barnd">
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=盐城锦东">盐城锦东</a>
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=浙江松乔">浙江松乔</a>
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=宁波海格威">宁波海格威</a>
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=金坛康诚">金坛康诚</a>
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=乐清西克迪">乐清西克迪</a>
+                                            </dd>
+                                    </dl>
+                                <dl class="fore2">
+                    <dt><a href="http://www.fittingmall.com/product-list-102203.html">液压缸</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                        <dd class="barnd">
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=盐城锦东">盐城锦东</a>
+                                            </dd>
+                                    </dl>
+                                <dl class="fore3">
+                    <dt><a href="http://www.fittingmall.com/product-list-102201.html">液压泵</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                    </dl>
+                 -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=9&name='></script>
+            </div>
+        </div>
+                <div class="j_SubView fn-clear">
+            <div class="catlist">
+                <div class="select"></div>
+                <!--                 <dl class="fore1">
+                    <dt><a href="http://www.fittingmall.com/product-list-101402.html">电气连接器</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                    </dl>
+                                <dl class="fore2">
+                    <dt><a href="http://www.fittingmall.com/product-list-101401.html">建筑工程类</a></dt>
+                    <dd>
+                                        </dd>
+                    
+                                        <dd class="barnd">
+                                                <a href="http://www.fittingmall.com/product-list.html&brand=宁波博洛凯">宁波博洛凯</a>
+                                            </dd>
+                                    </dl>
+                 -->
+            </div>
+            <div class="adv">
+            <script src='http://www.fittingmall.com/api/ad.php?id=19&catid=10&name='></script>
+            </div>
+        </div>
+            </div>   
+</div>
+            </dd>
+        </dl>
+        <ul class="menu-items">
+                        <li > <a href="http://www.fittingmall.com/">首页</a>
+            </li>
+                        <li > <a href="http://www.fittingmall.com/product-list-1015.html">气动快插</a>
+            </li>
+                        <li > <a href="http://www.fittingmall.com/product-list-1017.html">气动卡套</a>
+            </li>
+                        <li > <a href="http://www.fittingmall.com/product-list-1016.html">气动快拧</a>
+            </li>
+                        <li > <a href="http://www.fittingmall.com/product-list-1010.html">气动快换</a>
+            </li>
+                        <li > <a href="http://www.fittingmall.com/product-list-1018.html">气动管接</a>
+            </li>
+                        <li > <a href="http://www.fittingmall.com/product-list-1020.html">气阀接头</a>
+            </li>
+                        <li > <a href="http://www.fittingmall.com/brand.html">品牌</a>
+            </li>
+                        <li > <a href="http://www.fittingmall.com/shop.html">店铺</a>
+            </li>
+                        <li class="cart">
+            <a href="http://www.fittingmall.com?m=product&s=cart">
+            <b><script src="http://www.fittingmall.com/product-cart_number.html"></script></b>
+            我的购物车
+            </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    $('#key').focus(function(){
+        if($(this).val() == '搜索条件：商品名、副标题、商品详情、店铺名称、规格型号'){
+            $(this).val('');
+            $(this).css('color','#000');
+        }
+    });
+    $('#key').blur(function(){
+        if($(this).val() == ''){
+            $(this).val('搜索条件：商品名、副标题、商品详情、店铺名称、规格型号')
+            $(this).css('color','#aaa');
+        }
+    })
+    $(".search .button").click(function(){
+        if($("#key").val() == "搜索条件：商品名、副标题、商品详情、店铺名称、规格型号"){
+            $("#key").val('');
+        }
+    })
+</script><link href="http://www.fittingmall.com/module/product/templates/pro.css" rel="stylesheet" type="text/css" />
+<div class="w">
+    <div class="detailnav">
+    
+                
+                
+                <strong><a href="?m=product&s=list&id=1007">气动元件</a></strong><span>
+                
+                
+                
+                 > <a href="?m=product&s=list&m=product&s=list&id=1007&s140=1&s141=1&orderby=6&brand=SMC&s143=8">SMC</a>  
+               
+        </span>
+    </div>
+</div>
+
+<div class="w">
+    
+    
+    <div id="select" style="position:relative;">
+        <form id="sxdx" action="http://www.fittingmall.com" method="get">
+        <input type="hidden" name="id" value="1007">
+        <input type="hidden" name="m" value="product">
+        <input type="hidden" name="s" value="list">
+        <!--多选按钮-->
+        <div id="dxf" style="width:40px;height:18px;background:#4598d2;text-align:center;line-height:18px;float:right;margin-top:19px;margin-left:1130px;display:none;position:absolute;">
+            <a style="cursor:pointer;color:#fff;" id="duox">多选</a>
+        </div>
+
+        <!-- 单选 -->
+        <div id="sg"> 
+                <dl id="firsthide" class="first">
+            <dt>分类：</dt>
+            <dd>
+                                                <div>
+                <a  href="http://www.fittingmall.com/product-list-100701.html">气动执行元件</a>
+                </div>
+                                <div>
+                <a  href="http://www.fittingmall.com/product-list-100702.html">气动控制元件</a>
+                </div>
+                                <div>
+                <a  href="http://www.fittingmall.com/product-list-100703.html">气源处理元件</a>
+                </div>
+                                <div>
+                <a  href="http://www.fittingmall.com/product-list-100704.html">真空元件</a>
+                </div>
+                            </dd>
+        </dl>
+         
+                <dl id="firsthide"  >
+            <dt>品牌：</dt>
+            <dd id="nor" style="display:block;">
+                                <div><a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8">不限</a></div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=EATON伊顿">EATON伊顿</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=LEGRIS">LEGRIS</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=PARKER派克">PARKER派克</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=FESTO费斯托">FESTO费斯托</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=NORGREN诺冠">NORGREN诺冠</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=C.MATIC">C.MATIC</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=Camozzi康茂盛">Camozzi康茂盛</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=NITTO日东">NITTO日东</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=PISCO碧铄科">PISCO碧铄科</a>
+                </div>
+                                <div id="hbrand">
+                    <a class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SMC">SMC</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=KOGANEI小金井">KOGANEI小金井</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=MYOTOKU妙德">MYOTOKU妙德</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CKD喜开理">CKD喜开理</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AirTac亚德客">AirTac亚德客</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CHELIC气立可">CHELIC气立可</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SUN RISE山耐斯">SUN RISE山耐斯</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SHAKO新恭">SHAKO新恭</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AURORA爱罗拉">AURORA爱罗拉</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=TPUCO匹优">TPUCO匹优</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CDC希帝喜">CDC希帝喜</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=TPC丹海">TPC丹海</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=EASUN亿日">EASUN亿日</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=ISAIAH以赛亚">ISAIAH以赛亚</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=STNC天工">STNC天工</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SAZN乐清三正">SAZN乐清三正</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AIR-FLUID艾弗德">AIR-FLUID艾弗德</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=XNQD新南">XNQD新南</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AIRCORD宁波嘉和">AIRCORD宁波嘉和</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=POL-SUN宁波普力">POL-SUN宁波普力</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=Master Pneumatic">Master Pneumatic</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=宁波孚沃得">宁波孚沃得</a>
+                </div>
+                                <div id="hbrand">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=其他">其他</a>
+                </div>
+                            </dd>
+            <dd id="more" style="display:none;height:140px;">
+                                <div id="idx" style="padding-top:0;width:100%;border-bottom:1px solid #ccc;">
+                    <a href="javascript:;">ABC</a>
+                    <a href="javascript:;">DEF</a>
+                    <a href="javascript:;">GHI</a>
+                    <a href="javascript:;">JKL</a>
+                    <a href="javascript:;">MNO</a>
+                    <a href="javascript:;">PQR</a>
+                    <a href="javascript:;">STU</a>
+                    <a href="javascript:;">VWX</a>
+                    <a href="javascript:;">YZ</a>
+                </div>
+                <div style="height:120px;overflow-y:scroll;padding-top:0;">
+                    <div  id="hbox" style="width:870px;padding-top:0;position:relative;transition:all 0.3s;">
+                        <div id="ABC" style="width:870px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">ABC</span>
+                                                                                                                                                                                                                                                                                                                                                                            <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=C.MATIC">C.MATIC</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=Camozzi康茂盛">Camozzi康茂盛</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CKD喜开理">CKD喜开理</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AirTac亚德客">AirTac亚德客</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CHELIC气立可">CHELIC气立可</a>
+                            </div>
+                                                                                                                                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AURORA爱罗拉">AURORA爱罗拉</a>
+                            </div>
+                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CDC希帝喜">CDC希帝喜</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AIR-FLUID艾弗德">AIR-FLUID艾弗德</a>
+                            </div>
+                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AIRCORD宁波嘉和">AIRCORD宁波嘉和</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                    <div class="clear"></div>
+                        </div>
+
+                        <div id="DEF" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">DEF</span>
+                                                                                    <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=EATON伊顿">EATON伊顿</a>
+                            </div>
+                                                                                                                                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=FESTO费斯托">FESTO费斯托</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=EASUN亿日">EASUN亿日</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="clear"></div>
+                        </div>
+
+                        <div id="GHI" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">GHI</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=ISAIAH以赛亚">ISAIAH以赛亚</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="JKL" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">JKL</span>
+                                                                                                                                            <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=LEGRIS">LEGRIS</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=KOGANEI小金井">KOGANEI小金井</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="MNO" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">MNO</span>
+                                                                                                                                                                                                                                                                                                                    <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=NORGREN诺冠">NORGREN诺冠</a>
+                            </div>
+                                                                                                                                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=NITTO日东">NITTO日东</a>
+                            </div>
+                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=MYOTOKU妙德">MYOTOKU妙德</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=Master Pneumatic">Master Pneumatic</a>
+                            </div>
+                                                                                                                                                                                                    <div class="clear"></div>
+                        </div>
+
+                        <div id="PQR" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">PQR</span>
+                                                                                                                                                                                                    <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=PARKER派克">PARKER派克</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=PISCO碧铄科">PISCO碧铄科</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=POL-SUN宁波普力">POL-SUN宁波普力</a>
+                            </div>
+                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="STU" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">STU</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div id="hbrand">
+                                <a class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SMC">SMC</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SUN RISE山耐斯">SUN RISE山耐斯</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SHAKO新恭">SHAKO新恭</a>
+                            </div>
+                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=TPUCO匹优">TPUCO匹优</a>
+                            </div>
+                                                                                                                                                                        <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=TPC丹海">TPC丹海</a>
+                            </div>
+                                                                                                                                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=STNC天工">STNC天工</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SAZN乐清三正">SAZN乐清三正</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="VWX" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">VWX</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div id="hbrand">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=XNQD新南">XNQD新南</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="YZ" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">YZ</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </dd>
+                        <div class="more"><a>更多<span>▼</span></a></div>
+                    </dl>
+        
+                                <dl  >
+         
+            <dt>主体材质：</dt>
+            <dd>
+                <div id="buxian"><a class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8">不限</a></div>
+                <!-- 单选 -->
+                                <div sxnm="塑料"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=1">塑料</a></div>
+                                <div sxnm="BT 熟料"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=2">BT 熟料</a></div>
+                                <div sxnm="镀镍铜"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=3">镀镍铜</a></div>
+                                <div sxnm="黄铜"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=4">黄铜</a></div>
+                                <div sxnm="不锈钢316"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=5">不锈钢316</a></div>
+                                <div sxnm="不锈钢303/304"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=6">不锈钢303/304</a></div>
+                                <div sxnm="PPS树脂"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=7">PPS树脂</a></div>
+                                <div sxnm="PP树脂"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=8">PP树脂</a></div>
+                                <div sxnm="PA树脂"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=9">PA树脂</a></div>
+                                <div sxnm="阻燃性树脂"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=10">阻燃性树脂</a></div>
+                                <div sxnm="静电散逸性树脂"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=11">静电散逸性树脂</a></div>
+                                <div sxnm="锌"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=12">锌</a></div>
+                                <div sxnm="铝"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=13">铝</a></div>
+                                <div sxnm="其他"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=14">其他</a></div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                                <dl  >
+         
+            <dt>适用场合：</dt>
+            <dd>
+                <div id="buxian"><a  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8">不限</a></div>
+                <!-- 单选 -->
+                                <div sxnm="标准"><a id="sxs" class="curr" href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=1">标准</a></div>
+                                <div sxnm="洁净环境"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=2">洁净环境</a></div>
+                                <div sxnm="食品"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=3">食品</a></div>
+                                <div sxnm="药品相关"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=4">药品相关</a></div>
+                                <div sxnm="静电散逸防静电"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=5">静电散逸防静电</a></div>
+                                <div sxnm="耐溅射"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=6">耐溅射</a></div>
+                                <div sxnm="模具调温"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=7">模具调温</a></div>
+                                <div sxnm="耐热"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=8">耐热</a></div>
+                                <div sxnm="耐寒"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=9">耐寒</a></div>
+                                <div sxnm="耐腐蚀"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=10">耐腐蚀</a></div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                                <dl  >
+         
+            <dt>使用流体：</dt>
+            <dd>
+                <div id="buxian"><a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8">不限</a></div>
+                <!-- 单选 -->
+                                <div sxnm="压缩空气"><a id="sxs" class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=1">压缩空气</a></div>
+                                <div sxnm="氧气"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=2">氧气</a></div>
+                                <div sxnm="水"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=3">水</a></div>
+                                <div sxnm="液压油"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=4">液压油</a></div>
+                                <div sxnm="油脂"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=5">油脂</a></div>
+                                <div sxnm="酸性介质"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=6">酸性介质</a></div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                                <dl  >
+         
+            <dt>外型：</dt>
+            <dd>
+                <div id="buxian"><a class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8">不限</a></div>
+                <!-- 单选 -->
+                                <div sxnm="直通"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=1">直通</a></div>
+                                <div sxnm="2通"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=2">2通</a></div>
+                                <div sxnm="3通"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=3">3通</a></div>
+                                <div sxnm="4通"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=4">4通</a></div>
+                                <div sxnm="5通"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=5">5通</a></div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                                <dl  >
+         
+            <dt>使用压力：</dt>
+            <dd>
+                <div id="buxian"><a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC">不限</a></div>
+                <!-- 单选 -->
+                                <div sxnm="7 kgf/cm2"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=1">7 kgf/cm2</a></div>
+                                <div sxnm="15 kgf/cm2"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=2">15 kgf/cm2</a></div>
+                                <div sxnm="25 kgf/cm2"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=3">25 kgf/cm2</a></div>
+                                <div sxnm="6 Mpa"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=4">6 Mpa</a></div>
+                                <div sxnm="14 Mpa"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=5">14 Mpa</a></div>
+                                <div sxnm="25 Mpa"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=6">25 Mpa</a></div>
+                                <div sxnm="500 Mpa"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=7">500 Mpa</a></div>
+                                <div sxnm="800 Mpa"><a id="sxs" class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8">800 Mpa</a></div>
+                                <div sxnm="1K Mpa"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=9">1K Mpa</a></div>
+                                <div sxnm="2K Mpa"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=10">2K Mpa</a></div>
+                                <div sxnm="1 Mpa"><a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=11">1 Mpa</a></div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                </div>
+        <!-- 多选 -->
+        <div id="dx" style="display:none;">
+                <dl id="firsthide" class="first">
+            <dt>分类：</dt>
+            <dd>
+                                                <div>
+                    <input type="checkbox" name="id" value="100701">
+                    <a  href="http://www.fittingmall.com/product-list-100701.html">气动执行元件</a>
+                </div>
+                                <div>
+                    <input type="checkbox" name="id" value="100702">
+                    <a  href="http://www.fittingmall.com/product-list-100702.html">气动控制元件</a>
+                </div>
+                                <div>
+                    <input type="checkbox" name="id" value="100703">
+                    <a  href="http://www.fittingmall.com/product-list-100703.html">气源处理元件</a>
+                </div>
+                                <div>
+                    <input type="checkbox" name="id" value="100704">
+                    <a  href="http://www.fittingmall.com/product-list-100704.html">真空元件</a>
+                </div>
+                            </dd>
+        </dl>
+         
+                <dl id="firsthide"  >
+            <dt>品牌：</dt>
+            <dd id="nor" style="display:block;">
+                                <div><a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8">不限</a></div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="EATON伊顿">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=EATON伊顿">EATON伊顿</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="LEGRIS">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=LEGRIS">LEGRIS</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="PARKER派克">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=PARKER派克">PARKER派克</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="FESTO费斯托">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=FESTO费斯托">FESTO费斯托</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="NORGREN诺冠">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=NORGREN诺冠">NORGREN诺冠</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="C.MATIC">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=C.MATIC">C.MATIC</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="Camozzi康茂盛">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=Camozzi康茂盛">Camozzi康茂盛</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="NITTO日东">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=NITTO日东">NITTO日东</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="PISCO碧铄科">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=PISCO碧铄科">PISCO碧铄科</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="SMC">
+                    <a class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SMC">SMC</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="KOGANEI小金井">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=KOGANEI小金井">KOGANEI小金井</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="MYOTOKU妙德">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=MYOTOKU妙德">MYOTOKU妙德</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="CKD喜开理">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CKD喜开理">CKD喜开理</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="AirTac亚德客">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AirTac亚德客">AirTac亚德客</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="CHELIC气立可">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CHELIC气立可">CHELIC气立可</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="SUN RISE山耐斯">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SUN RISE山耐斯">SUN RISE山耐斯</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="SHAKO新恭">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SHAKO新恭">SHAKO新恭</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="AURORA爱罗拉">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AURORA爱罗拉">AURORA爱罗拉</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="TPUCO匹优">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=TPUCO匹优">TPUCO匹优</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="CDC希帝喜">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CDC希帝喜">CDC希帝喜</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="TPC丹海">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=TPC丹海">TPC丹海</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="EASUN亿日">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=EASUN亿日">EASUN亿日</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="ISAIAH以赛亚">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=ISAIAH以赛亚">ISAIAH以赛亚</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="STNC天工">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=STNC天工">STNC天工</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="SAZN乐清三正">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SAZN乐清三正">SAZN乐清三正</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="AIR-FLUID艾弗德">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AIR-FLUID艾弗德">AIR-FLUID艾弗德</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="XNQD新南">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=XNQD新南">XNQD新南</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="AIRCORD宁波嘉和">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AIRCORD宁波嘉和">AIRCORD宁波嘉和</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="POL-SUN宁波普力">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=POL-SUN宁波普力">POL-SUN宁波普力</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="Master Pneumatic">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=Master Pneumatic">Master Pneumatic</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="宁波孚沃得">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=宁波孚沃得">宁波孚沃得</a>
+                </div>
+                                <div id="hbrand">
+                    <input type="checkbox" name="brand[]" value="其他">
+                    <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=其他">其他</a>
+                </div>
+                            </dd>
+            <dd id="more" style="display:none;height:140px;">
+                                <div id="idx" style="padding-top:0;width:100%;border-bottom:1px solid #ccc;">
+                    <a href="javascript:;">ABC</a>
+                    <a href="javascript:;">DEF</a>
+                    <a href="javascript:;">GHI</a>
+                    <a href="javascript:;">JKL</a>
+                    <a href="javascript:;">MNO</a>
+                    <a href="javascript:;">PQR</a>
+                    <a href="javascript:;">STU</a>
+                    <a href="javascript:;">VWX</a>
+                    <a href="javascript:;">YZ</a>
+                </div>
+                <div style="height:120px;overflow-y:scroll;padding-top:0;">
+                    <div  id="hbox" style="width:870px;padding-top:0;position:relative;transition:all 0.3s;">
+                        <div id="ABC" style="width:870px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">ABC</span>
+                                                                                                                                                                                                                                                                                                                                                                            <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="C.MATIC">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=C.MATIC">C.MATIC</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="Camozzi康茂盛">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=Camozzi康茂盛">Camozzi康茂盛</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="CKD喜开理">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CKD喜开理">CKD喜开理</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="AirTac亚德客">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AirTac亚德客">AirTac亚德客</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="CHELIC气立可">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CHELIC气立可">CHELIC气立可</a>
+                            </div>
+                                                                                                                                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="AURORA爱罗拉">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AURORA爱罗拉">AURORA爱罗拉</a>
+                            </div>
+                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="CDC希帝喜">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=CDC希帝喜">CDC希帝喜</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="AIR-FLUID艾弗德">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AIR-FLUID艾弗德">AIR-FLUID艾弗德</a>
+                            </div>
+                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="AIRCORD宁波嘉和">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=AIRCORD宁波嘉和">AIRCORD宁波嘉和</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                    <div class="clear"></div>
+                        </div>
+
+                        <div id="DEF" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">DEF</span>
+                                                                                    <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="EATON伊顿">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=EATON伊顿">EATON伊顿</a>
+                            </div>
+                                                                                                                                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="FESTO费斯托">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=FESTO费斯托">FESTO费斯托</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="EASUN亿日">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=EASUN亿日">EASUN亿日</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div class="clear"></div>
+                        </div>
+
+                        <div id="GHI" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">GHI</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="ISAIAH以赛亚">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=ISAIAH以赛亚">ISAIAH以赛亚</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="JKL" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">JKL</span>
+                                                                                                                                            <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="LEGRIS">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=LEGRIS">LEGRIS</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="KOGANEI小金井">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=KOGANEI小金井">KOGANEI小金井</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="MNO" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">MNO</span>
+                                                                                                                                                                                                                                                                                                                    <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="NORGREN诺冠">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=NORGREN诺冠">NORGREN诺冠</a>
+                            </div>
+                                                                                                                                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="NITTO日东">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=NITTO日东">NITTO日东</a>
+                            </div>
+                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="MYOTOKU妙德">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=MYOTOKU妙德">MYOTOKU妙德</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="Master Pneumatic">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=Master Pneumatic">Master Pneumatic</a>
+                            </div>
+                                                                                                                                                                                                    <div class="clear"></div>
+                        </div>
+
+                        <div id="PQR" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">PQR</span>
+                                                                                                                                                                                                    <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="PARKER派克">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=PARKER派克">PARKER派克</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="PISCO碧铄科">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=PISCO碧铄科">PISCO碧铄科</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="POL-SUN宁波普力">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=POL-SUN宁波普力">POL-SUN宁波普力</a>
+                            </div>
+                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="STU" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">STU</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="SMC">
+                                <a class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SMC">SMC</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="SUN RISE山耐斯">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SUN RISE山耐斯">SUN RISE山耐斯</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="SHAKO新恭">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SHAKO新恭">SHAKO新恭</a>
+                            </div>
+                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="TPUCO匹优">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=TPUCO匹优">TPUCO匹优</a>
+                            </div>
+                                                                                                                                                                        <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="TPC丹海">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=TPC丹海">TPC丹海</a>
+                            </div>
+                                                                                                                                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="STNC天工">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=STNC天工">STNC天工</a>
+                            </div>
+                                                                                                                <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="SAZN乐清三正">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=SAZN乐清三正">SAZN乐清三正</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="VWX" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">VWX</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <div id="hbrand">
+                                <input type="checkbox" name="brand[]" value="XNQD新南">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&s143=8&brand=XNQD新南">XNQD新南</a>
+                            </div>
+                                                                                                                                                                                                                                                                                                                                                                            <div class="clear"></div>
+                        </div>
+
+                        <div id="YZ" style="width:870px;min-height:30px;padding-top:0;">
+                            <span style="color:#999;float:left;margin-top:11px;margin-right:10px;">YZ</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </dd>
+            <!--            <div class="more"><a>更多<span>▼</span></a></div>
+            -->
+        </dl>
+        
+                                <dl  >
+         
+            <dt>主体材质：</dt>
+            <dd>
+                <div id="buxian"><a class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8">不限</a></div>
+                <!-- 多选 -->
+                                    <div sxnm="塑料" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="1">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=1">塑料</a>
+                    </div>
+                                    <div sxnm="BT 熟料" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="2">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=2">BT 熟料</a>
+                    </div>
+                                    <div sxnm="镀镍铜" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="3">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=3">镀镍铜</a>
+                    </div>
+                                    <div sxnm="黄铜" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="4">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=4">黄铜</a>
+                    </div>
+                                    <div sxnm="不锈钢316" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="5">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=5">不锈钢316</a>
+                    </div>
+                                    <div sxnm="不锈钢303/304" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="6">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=6">不锈钢303/304</a>
+                    </div>
+                                    <div sxnm="PPS树脂" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="7">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=7">PPS树脂</a>
+                    </div>
+                                    <div sxnm="PP树脂" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="8">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=8">PP树脂</a>
+                    </div>
+                                    <div sxnm="PA树脂" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="9">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=9">PA树脂</a>
+                    </div>
+                                    <div sxnm="阻燃性树脂" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="10">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=10">阻燃性树脂</a>
+                    </div>
+                                    <div sxnm="静电散逸性树脂" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="11">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=11">静电散逸性树脂</a>
+                    </div>
+                                    <div sxnm="锌" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="12">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=12">锌</a>
+                    </div>
+                                    <div sxnm="铝" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="13">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=13">铝</a>
+                    </div>
+                                    <div sxnm="其他" style="cursor:pointer;">
+                        <input type="checkbox" name="s139[]" value="14">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s139=14">其他</a>
+                    </div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                                <dl  >
+         
+            <dt>适用场合：</dt>
+            <dd>
+                <div id="buxian"><a  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8">不限</a></div>
+                <!-- 多选 -->
+                                    <div sxnm="标准" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="1">
+                        <a id="sxs" class="curr" href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=1">标准</a>
+                    </div>
+                                    <div sxnm="洁净环境" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="2">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=2">洁净环境</a>
+                    </div>
+                                    <div sxnm="食品" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="3">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=3">食品</a>
+                    </div>
+                                    <div sxnm="药品相关" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="4">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=4">药品相关</a>
+                    </div>
+                                    <div sxnm="静电散逸防静电" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="5">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=5">静电散逸防静电</a>
+                    </div>
+                                    <div sxnm="耐溅射" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="6">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=6">耐溅射</a>
+                    </div>
+                                    <div sxnm="模具调温" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="7">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=7">模具调温</a>
+                    </div>
+                                    <div sxnm="耐热" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="8">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=8">耐热</a>
+                    </div>
+                                    <div sxnm="耐寒" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="9">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=9">耐寒</a>
+                    </div>
+                                    <div sxnm="耐腐蚀" style="cursor:pointer;">
+                        <input type="checkbox" name="s140[]" value="10">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s141=1&orderby=6&brand=SMC&s143=8&s140=10">耐腐蚀</a>
+                    </div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                                <dl  >
+         
+            <dt>使用流体：</dt>
+            <dd>
+                <div id="buxian"><a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8">不限</a></div>
+                <!-- 多选 -->
+                                    <div sxnm="压缩空气" style="cursor:pointer;">
+                        <input type="checkbox" name="s141[]" value="1">
+                        <a id="sxs" class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=1">压缩空气</a>
+                    </div>
+                                    <div sxnm="氧气" style="cursor:pointer;">
+                        <input type="checkbox" name="s141[]" value="2">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=2">氧气</a>
+                    </div>
+                                    <div sxnm="水" style="cursor:pointer;">
+                        <input type="checkbox" name="s141[]" value="3">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=3">水</a>
+                    </div>
+                                    <div sxnm="液压油" style="cursor:pointer;">
+                        <input type="checkbox" name="s141[]" value="4">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=4">液压油</a>
+                    </div>
+                                    <div sxnm="油脂" style="cursor:pointer;">
+                        <input type="checkbox" name="s141[]" value="5">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=5">油脂</a>
+                    </div>
+                                    <div sxnm="酸性介质" style="cursor:pointer;">
+                        <input type="checkbox" name="s141[]" value="6">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&orderby=6&brand=SMC&s143=8&s141=6">酸性介质</a>
+                    </div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                                <dl  >
+         
+            <dt>外型：</dt>
+            <dd>
+                <div id="buxian"><a class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8">不限</a></div>
+                <!-- 多选 -->
+                                    <div sxnm="直通" style="cursor:pointer;">
+                        <input type="checkbox" name="s142[]" value="1">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=1">直通</a>
+                    </div>
+                                    <div sxnm="2通" style="cursor:pointer;">
+                        <input type="checkbox" name="s142[]" value="2">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=2">2通</a>
+                    </div>
+                                    <div sxnm="3通" style="cursor:pointer;">
+                        <input type="checkbox" name="s142[]" value="3">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=3">3通</a>
+                    </div>
+                                    <div sxnm="4通" style="cursor:pointer;">
+                        <input type="checkbox" name="s142[]" value="4">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=4">4通</a>
+                    </div>
+                                    <div sxnm="5通" style="cursor:pointer;">
+                        <input type="checkbox" name="s142[]" value="5">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8&s142=5">5通</a>
+                    </div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                                <dl  >
+         
+            <dt>使用压力：</dt>
+            <dd>
+                <div id="buxian"><a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC">不限</a></div>
+                <!-- 多选 -->
+                                    <div sxnm="7 kgf/cm2" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="1">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=1">7 kgf/cm2</a>
+                    </div>
+                                    <div sxnm="15 kgf/cm2" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="2">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=2">15 kgf/cm2</a>
+                    </div>
+                                    <div sxnm="25 kgf/cm2" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="3">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=3">25 kgf/cm2</a>
+                    </div>
+                                    <div sxnm="6 Mpa" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="4">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=4">6 Mpa</a>
+                    </div>
+                                    <div sxnm="14 Mpa" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="5">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=5">14 Mpa</a>
+                    </div>
+                                    <div sxnm="25 Mpa" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="6">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=6">25 Mpa</a>
+                    </div>
+                                    <div sxnm="500 Mpa" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="7">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=7">500 Mpa</a>
+                    </div>
+                                    <div sxnm="800 Mpa" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="8">
+                        <a id="sxs" class="curr" href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=8">800 Mpa</a>
+                    </div>
+                                    <div sxnm="1K Mpa" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="9">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=9">1K Mpa</a>
+                    </div>
+                                    <div sxnm="2K Mpa" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="10">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=10">2K Mpa</a>
+                    </div>
+                                    <div sxnm="1 Mpa" style="cursor:pointer;">
+                        <input type="checkbox" name="s143[]" value="11">
+                        <a id="sxs"  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&orderby=6&brand=SMC&s143=11">1 Mpa</a>
+                    </div>
+                            </dd>
+            <!--  -->
+            <div class="clear"></div>
+        </dl>
+                </div>
+        <input id="duobt" type="submit" value="确定" style="float:right;display:none;margin-right:25px;margin-bottom:5px;">
+        <div class="clear"></div>
+        </form>
+    </div>
+            
+    
+    <div class="filter clearfix">
+        <div class="fore1 clearfix">
+            <div class="order">
+                                <a  href="http://www.fittingmall.com/product-list-1007.html&s140=1&s141=1&brand=SMC&s143=8"><span>默认排序</span></a>
+                <a  href="http:/

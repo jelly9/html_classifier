@@ -1,0 +1,1391 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	杭州公安交通信息网
+</title>
+    <!--杭州市公安局交通警察支队 2008年12月24日 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" /><meta name="林建华" content="浙江鸿程计算机系统有限公司" /><meta name="description" content="杭州市交通信息网" /><meta name="keywords" content="关键字" /><meta http-equiv="x-ua-compatible" content="ie=7" />
+
+    <style>
+ 
+#modulesDiv
+{
+	z-index:10000;
+    width:500px;
+    height:400px;
+    background:white;
+    border:#336699 1px solid;
+    position:absolute;
+    left:50%;
+    top:20%;
+    font-size:12px;
+    margin-left:-225px;
+}	
+
+</style>
+    <script type="text/javascript"> 
+        function nTabs(thisObj,Num){ 
+            if(thisObj.className == "active")return; 
+            var tabObj = thisObj.parentNode.id; 
+            var tabList = document.getElementById(tabObj).getElementsByTagName("li"); 
+            for(i=0; i <tabList.length; i++) 
+            { 
+              if (i == Num) 
+              { 
+               thisObj.className = "active";  
+               document.getElementById(tabObj+"_Content"+i).style.display = "block"; 
+              }else{ 
+               tabList[i].className = "normal";  
+               document.getElementById(tabObj+"_Content"+i).style.display = "none"; 
+              } 
+            }  
+        } 
+        function nTabsClick(node)
+        {
+    
+          window.location.href="news_list.aspx?type=1&node="+node;
+        }
+        function hide(){
+		//document.getElementById("mask").style.display = "none";
+		document.getElementById("login").style.display = "none";
+	}
+	
+    </script>
+
+<link href="../App_Themes/Svr_Green/css/servicepage.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Svr_Green/css/sindex.css" type="text/css" rel="stylesheet" /><link href="../App_Themes/Svr_Green/css/top.css" type="text/css" rel="stylesheet" /><style type="text/css">
+	.WebPartZone5_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.WebPartZone1_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.WebPartZone2_0 { border-color:Black;border-width:1px;border-style:Solid; }
+	.WebPartZone4_0 { border-color:Black;border-width:1px;border-style:Solid; }
+
+</style></head>
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false"
+    onselect="document.selection.empty()" oncopy="document.selection.empty()" onbeforecopy="return false"
+     ondrag="return   false">
+    <form name="form1" method="post" action="default.aspx?id=15592" id="form1">
+<div>
+<input type="hidden" name="__WPPS" id="__WPPS" value="u" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTk4MzUyNTU2OQ9kFgICAw9kFg4CAw9kFggFDHdwMTMxOTIzODY1MQ9kFgJmD2QWBAIBDw8WBh4FV2lkdGgbAAAAAADAZ0ABAAAAHgZIZWlnaHQbAAAAAAAAWUABAAAAHgRfIVNCAoADZBYCAgEPFgIeCWlubmVyaHRtbAXRCjxwIHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXIiPjxzcGFuIHN0eWxlPSJmb250LXNpemU6IDEycHg7Ij4mbmJzcDs8L3NwYW4+PGEgaHJlZj0iL2dvdmVybm1lbnQvbmV3cy5hc3B4P2lkPTcyNDUxIiBzdHlsZT0iZm9udC1mYW1pbHk6IOm7keS9kzsgZm9udC1zaXplOiAxNnB4OyI+PHNwYW4gc3R5bGU9ImNvbG9yOiByZ2IoMjU1LDAsMCkiPuKYheeJueWIq+aPkOmGku+8mjwvc3Bhbj48L2E+PC9wPg0KPHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlciI+PGEgc3R5bGU9ImZvbnQtZmFtaWx5OiDpu5HkvZM7IGZvbnQtc2l6ZTogMTZweCIgaHJlZj0iL2dvdmVybm1lbnQvbmV3cy5hc3B4P2lkPTcyNDUxIj48c3BhbiBzdHlsZT0iY29sb3I6IHJnYigyNTUsMCwwKSI+IOiwqOmYsuaWsOWei+iviOmqlzwvc3Bhbj48L2E+PC9wPg0KPHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlciI+Jm5ic3A7PC9wPg0KPHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlciI+PHNwYW4gc3R5bGU9ImNvbG9yOiAjMDAzMzY2Ij48c3BhbiBzdHlsZT0iZm9udC1mYW1pbHk6IOm7keS9kyI+PHNwYW4gc3R5bGU9ImJhY2tncm91bmQtY29sb3I6ICNmZmZmOTkiPjxmb250IHNpemU9IjMiPuadreW3nuaOjOS4iui9pueuoTwvZm9udD48L3NwYW4+PC9zcGFuPjwvc3Bhbj48c3BhbiBzdHlsZT0iY29sb3I6ICMzMzk5NjYiPjxiciAvPg0KPC9zcGFuPjxpbWcgYWx0PSIiIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIiBzcmM9Ii91cGxvYWRmaWxlcy9pbWFnZS8lRTYlOUQlQUQlRTUlQjclOUUlRTYlOEUlOEMlRTQlQjglOEElRTglQkQlQTYlRTclQUUlQTEucG5nIiAvPjwvcD4NCjxwIHN0eWxlPSJ0ZXh0LWFsaWduOiBjZW50ZXIiPuaLkue7nemFkumpvjxiciAvPg0KPGEgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHA6Ly93d3cuMTlsb3UuY29tL2ZvcnVtLTUtdGhyZWFkLTU3MDEzMjY4NzI4MTkxNzUtMS0xLmh0bWwiPjxpbWcgYWx0PSIiIHdpZHRoPSIxMTkiIGhlaWdodD0iMTIwIiBzcmM9Ii91cGxvYWRmaWxlcy9pbWFnZS9qaXVqaWEuanBnIiAvPjwvYT48L3A+DQo8cCBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyIj4mbmJzcDs8L3A+DQo8cCBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyIj48c3Ryb25nPui/keacn+WPkeeOsOacrOe9keermeiiq+WFi+mahu+8jOmAmui/h+aQnOe0ouW8leaTjui/m+WFpee9keermeeahO+8jOeJueWIq+imgeazqOaEj+acrOermeWfn+WQjTwvc3Ryb25nPjxhIGhyZWY9Imh0dHA6Ly93d3cuaHp0aS5jb20iPjxzdHJvbmc+d3d3Lmh6dGkuY29tPC9zdHJvbmc+PC9hPjxzdHJvbmc+77yMPGJyIC8+DQror7fnm7jkupLlkYrnn6XjgII8L3N0cm9uZz48L3A+DQo8cD4mbmJzcDs8L3A+ZAIDDxYEHgxWZXJ0aWNhbFNpZGULKXpBamF4Q29udHJvbFRvb2xraXQuVmVydGljYWxTaWRlLCBBamF4Q29udHJvbFRvb2xraXQsIFZlcnNpb249MS4wLjEwNjE4LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MjhmMDFiMGU4NGI2ZDUzZQEeDkhvcml6b250YWxTaWRlCyl8QWpheENvbnRyb2xUb29sa2l0Lkhvcml6b250YWxTaWRlLCBBamF4Q29udHJvbFRvb2xraXQsIFZlcnNpb249MS4wLjEwNjE4LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MjhmMDFiMGU4NGI2ZDUzZQBkBQt3cDQwMjc1NTY4Mw9kFgJmD2QWAgIBD2QWBAIBD2QWCGYPZBYCZg8PFgQeC05hdmlnYXRlVXJsBSQuLi9zZXJ2aWNlL3NlcnZpY2VuZXdzLmFzcHg/aWQ9NDk3NDIeBFRleHQFMOi/neazleWkhOeQhueql+WPo+WSjOS6pOeuoeacjeWKoeermeW3peS9nOaXtumXtGRkAgEPZBYCZg8PFgQfBgUkLi4vc2VydmljZS9zZXJ2aWNlbmV3cy5hc3B4P2lkPTQ4NTE4HwcFM+WbuuWumuW8j+S6pOmAmuaKgOacr+ebkeaOp+iuvuWkh+iuvue9ruWcsOeCueWFrOWRimRkAgIPZBYCAgEPDxYEHwYFJC4uL3NlcnZpY2Uvc2VydmljZW5ld3MuYXNweD9pZD01NzM3OR8HBT3mna3lt57luILljLrljZXlkJHooYzpqbbpgZPot6/msYfmgLvooajlj4rljZXooYznur/npLrmhI/lm74gZGQCAw9kFgICAQ8PFgQfBgUkLi4vc2VydmljZS9zZXJ2aWNlbmV3cy5hc3B4P2lkPTE1NjAxHwcFEuaxvei9puaKpeW6n+agh+WHhmRkAgMPZBYIZg9kFgJmDw8WBB8GBSQuLi9zZXJ2aWNlL3NlcnZpY2VuZXdzLmFzcHg/aWQ9Mjk5MjIfBwUV6am+6am26K+B5qGj5qGI5p+l6ZiFZGQCAQ9kFgICAQ8PFgQfBgUkLi4vc2VydmljZS9zZXJ2aWNlbmV3cy5hc3B4P2lkPTQ5OTgzHwcFBuaNoumihmRkAgIPZBYCZg8PFgQfBgUkLi4vc2VydmljZS9zZXJ2aWNlbmV3cy5hc3B4P2lkPTI5OTI1HwcFD+mpvumptuivgeWuoemqjGRkAgMPZBYCZg8PFgQfBgUkLi4vc2VydmljZS9zZXJ2aWNlbmV3cy5hc3B4P2lkPTI5OTMyHwcFDOWIneasoeeUs+mihmRkBQt3cDE1NTg1MDI4MA9kFgJmD2QWBAIBDxYCHwMFlAE8cCBhbGlnbj0iY2VudGVyIj48Yj7ku4rml6XvvIjmmJ/mnJ/lm5vvvInpmZDooYw8L2I+PC9wPjxwIGFsaWduPSJjZW50ZXIiPjxzcGFuIGNsYXNzPSJyZWRGb250Ij40PC9zcGFuPjxiPuS4jjwvYj48c3BhbiBjbGFzcz0icmVkRm9udCI+Njwvc3Bhbj48L3A+ZAIDDxYCHwMFmwE8cCBhbGlnbj0ibGVmdCIgc3R5bGU9InBhZGRpbmctdG9wOjZweDtmb250LXNpemU6MTRweDsgIj7mmI7ml6XvvIjmmJ/mnJ/kupTvvInpmZDooYw8c3BhbiBjbGFzcz0icmVkRm9udDAxIj4wPC9zcGFuPuS4jjxzcGFuIGNsYXNzPSJyZWRGb250MDEiPjU8L3NwYW4+PC9wPmQFCndwNzg0MjY1MDgPZBYCZg9kFgICAQ9kFgJmD2QWAmYPZBYMZg8WAh4HVmlzaWJsZWgWAmYPZBYEAgEPEGRkFgBkAgMPEGRkFgBkAgEPFgIfCGhkAgIPZBYCZg9kFgICAQ8PFgIfBwUV5pqC5peg5Y+R6LW36LCD5p+l77yBZGQCAw8WAh8IaGQCBA8PFgIfCGhkZAIGDw8WAh8IaGRkAgUPFgIfCGhkAgkPFgIfCGhkAhMPPCsAEgIAPCsACQEADxYCHgpIZWFkZXJUZXh0BQblt6bmoI9kEBYEHwAbAAAAAABwgkABAAAAHwICgAJkAhUPPCsAEgIAPCsACQEADxYCHwkFBuWPs+agj2QQFgQfABsAAAAAACBzQAEAAAAfAgKAAmQCFw88KwASAQA8KwAJAQAPFgIfCGhkZAIZDzwrABIBADwrAAkBAA8WAh8JBQblupXmoI9kZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBAUKdG9wMSRHcmVlbgUJdG9wMSRCbHVlBQl0b3AxJEdyYXkFCHRvcDEkUmVkXoYOKT/lBtHEvP0MMmEvfGICb7U=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=7RW2SESQVwTw45Bvv_CNDQVmH6Hj1yn0CexqAg9KT4K8ekgmHqKMK__jZ4hryGYnfJWGgUhienr_CjOiQ5EF7TMy5sY1&amp;t=635316293528827089" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=k8mY8FD02yEofQTd5hp9Grw8GwNO2jO7eRnnrWRjfI9Y5Ulfp4qedNJQlfruhEf6UAKlvZ9Q1bTxyGOjCwVvs3Gy42Vn3EBJHYVGA_sbYceUahWw77tvlYTAMB_MbNj-luAZT8psTJP89qx0VW-YOV1Mx0BtvONIL0W9fY1fF3iFcKup0&amp;t=ffffffffb3245d31" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=480ZUrrJPnt5tpzMVUm6fCsrXtSv2IuqCZvxzJWkfIAZHfHze15660jEr-ihJf9OXJFpM93hgWuIfPkFKJavG6PBbjbBTv9v7OuhhRiL2eYn3rA2Qou6bSWnpd1hQ9juHiRCSyxOVIb418zofKtGyjc9ObxYpXSKXxagGe97HZi3IFHA0&amp;t=ffffffffb3245d31" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=9vT2oeWRuwoAMlk0rcN23b_zSu7bS2-7OvHUaXjI7Win4okjaaXnJZ4ADF8B_87_b2omut_cWErfvP0yA_ybdyl7Dveqk-0mjyQrFjmNQn_jyQqTymWzdwVv8Dsz5Zygtkq2X-ssZPTQuBPk5wuG_Oe0PHA1&amp;t=49b30d7a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=gQ26Cvbr-e8SzVPbud1ob-PdU6CAA4ID4sAIuI0W_trskR8OWmQ8TzQ4mB9OXk4x0KKv8epFG8PDoh0ZuxYLyMWs-_PrfT6OAd-zXeF8Epb9kqeRXyq4OyihdorlmLdQ0z4H3c8h5l0l1iKj_ieSkOAdKvw1&amp;t=49b30d7a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=r1CceyMbTMtzkElu8GAX2-2ozSN1gIg0mQu-T0f_rCrw1fvkU3qH1vMXgK7AnJF0G15TcSrBiC9yQLvCJAErsnSo0FVkpC6GDvfJh9OCz8neJwXF8iwDDs5g2yYZd4xqoktJlNsMUHRXWgUni2KLcsgNKdk1&amp;t=49b30d7a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=ygAYo1GZnWffXQeOLiFhjIbCdflnm60DvNavsgiW-Nbagu-NEq2F_8iXxaZCcgeGnvUHq5iqldoRADpM6QY9-no-PJIr7Wdi8Y_TwMbHXPWQgNPvQMWSVxXbZerayxYbzxKa3g7JPNP6wY04kldF_Nqr-zA1&amp;t=49b30d7a" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=mFXigu_FXzmM9lLfTtnKIurMB3Nfv2peFu9jwIf9muyCaFQbhSZAyrEI_pibs_o3PsK26_PR-8Fkc1wXSqG4IfyD3yANJzXIgPyGzF4p6JflYZQ4YnFbaqlBH4TxbTCTID7KF9CFSCzzW0-U0Y9JxV9EepY4wse8w1uA_2cNo65DuI-kx6a9ibIk_HEmNakiD2k65Q2&amp;t=49b30d7a" type="text/javascript"></script>
+    <div id="box">
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', document.getElementById('form1'));
+Sys.WebForms.PageRequestManager.getInstance()._updateControls(['tWebPartManager1$wp78426508$wp1350058900$surveys1$UpdatePanel1'], [], [], 90);
+//]]>
+</script>
+ 
+    
+    
+            <div>
+                 </div>
+  
+
+ 
+ 
+ 
+       
+ 
+  
+        <!--------------------头----------------------->
+        <div id="toppic">
+            
+ <div style="text-align:center">
+<div class="Toppic01">		
+
+<div class="Toppic06"><a href="#"></a>颜色主题：</div>
+<div class="Toppic07"><a href="#"></a><input type="image" name="top1$Green" id="top1_Green" src="../images/index_top_03.gif" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;top1$Green&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="border-width:0px;" /></div>
+<div class="Toppic08"><a href="#"></a><input type="image" name="top1$Blue" id="top1_Blue" src="../images/index_top_02.gif" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;top1$Blue&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="border-width:0px;" /></div>
+<div class="Toppic08"><a href="#"></a><input type="image" name="top1$Gray" id="top1_Gray" src="../images/index_top_05.gif" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;top1$Gray&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="border-width:0px;" /></div>
+<div class="Toppic08"><a href="#"></a><input type="image" name="top1$Red" id="top1_Red" src="../images/index_top_04.gif" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;top1$Red&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" style="border-width:0px;" /></div>
+<div class="Toppic09"><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.hzti.com/');" class="Toppic10">设为首页</a> <span class="STYLE2">|</span> <a href="#" onclick="javascript:external.addFavorite('http://www.hzti.com/','杭州市交通信息网')" class="Toppic10">加为收藏</a><span class="STYLE2">|</span> <a href="http://www.hzti.com/mapsite.aspx"  class="Toppic10">网站地图</a> <span class="STYLE2"></div>
+</div>
+<div class="Toppic">
+  <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="900" height="104">
+    <param name="movie" value="http://www.hzti.com/App_Themes/Svr_Green/flash/top_out_svr.swf" />
+    <param name="quality" value="high" /><param name="wmode" value="Opaque">
+    <embed src="http://www.hzti.com/App_Themes/Svr_Green/flash/top_out_svr.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="900" height="104"></embed>
+  </object>
+</div>
+
+</div>
+        </div>
+        <!--top菜单-->
+        
+
+ 
+<div class="Menubox">
+	<div class="Menuleft">
+	<a href="http://www.hzti.com/service/default.aspx" class="font12ba">首　页</a><span class="fontba01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Menuleft_01"><a href="http://www.hzti.com/service/znjt/transferpage.aspx?type=2&node=151" class="font12ba">路况信息</a> </span>
+         <span class="fontba01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Menuleft_01"><a href="http://www.hzti.com/service/its/accident.aspx?type=2&node=152" class="font12ba">分析数据</a> </span>
+         <span class="fontba01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Menuleft_01"><a href="http://www.hzti.com/service/newslist.aspx?type=2&node=154" class="font12ba">安全天地</a> </span>
+         <span class="fontba01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Menuleft_01"><a href="http://www.hzti.com/service/faqs/faqslist.aspx?type=2&node=155" class="font12ba">警民互动</a> </span>
+         <span class="fontba01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Menuleft_01"><a href="http://www.hzti.com/service/exam/exam.aspx?type=2&node=156" class="font12ba">模拟考试</a> </span>
+         <span class="fontba01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Menuleft_01"><a href="http://www.hzti.com/service/qry/veh_info.aspx?type=2&node=157" class="font12ba">信息查询</a> </span>
+         <span class="fontba01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Menuleft_01"><a href="http://www.hzti.com/service/video/videolist.aspx?type=2&node=158" class="font12ba">视频广播</a> </span>
+         <span class="fontba01">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Menuleft_01"><a href="http://www.hzti.com/service/filesdownload/filesdownlist.aspx?type=2&node=210" class="font12ba">下载专栏</a> </span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.hzti.com/government/news.aspx?id=29936" class="Menuleft_01">
+            联系我们</a>
+	</div>
+</div>
+</div>
+
+        <!--------------------左栏----------------------->
+   <div class="Main">
+      <table width="900" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr><td colspan=3 valign=top><table cellspacing="0" cellpadding="0" border="0" id="WebPartZone5" style="width:98%;">
+	<tr>
+		<td style="height:100%;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;height:100%;">
+			<tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+    <script type="text/javascript">
+    function closefloat(obj)
+    {
+       //document.getElementById('floating1_floating').style.display="none";
+       var kk=obj;
+       kk.parentElement.parentElement.style.display="none";
+    }
+    </script>
+                  <div id="WebPartManager1_wp1319238651_wp537380202_floating" style="color:DarkBlue;background-color:White;border-color:DarkBlue;border-width:0px;border-style:Solid;height:100px;width:190px;z-index: 1;">
+							
+               
+                        
+                            <div id="WebPartManager1_wp1319238651_wp537380202_floating_text" style=" vertical-align: middle; text-align: left; width:&lt;%= width%>; height:auto"><p style="text-align: center"><span style="font-size: 12px;">&nbsp;</span><a href="/government/news.aspx?id=72451" style="font-family: 黑体; font-size: 16px;"><span style="color: rgb(255,0,0)">★特别提醒：</span></a></p>
+<p style="text-align: center"><a style="font-family: 黑体; font-size: 16px" href="/government/news.aspx?id=72451"><span style="color: rgb(255,0,0)"> 谨防新型诈骗</span></a></p>
+<p style="text-align: center">&nbsp;</p>
+<p style="text-align: center"><span style="color: #003366"><span style="font-family: 黑体"><span style="background-color: #ffff99"><font size="3">杭州掌上车管</font></span></span></span><span style="color: #339966"><br />
+</span><img alt="" width="150" height="150" src="/uploadfiles/image/%E6%9D%AD%E5%B7%9E%E6%8E%8C%E4%B8%8A%E8%BD%A6%E7%AE%A1.png" /></p>
+<p style="text-align: center">拒绝酒驾<br />
+<a target="_blank" href="http://www.19lou.com/forum-5-thread-5701326872819175-1-1.html"><img alt="" width="119" height="120" src="/uploadfiles/image/jiujia.jpg" /></a></p>
+<p style="text-align: center">&nbsp;</p>
+<p style="text-align: center"><strong>近期发现本网站被克隆，通过搜索引擎进入网站的，特别要注意本站域名</strong><a href="http://www.hzti.com"><strong>www.hzti.com</strong></a><strong>，<br />
+请相互告知。</strong></p>
+<p>&nbsp;</p></div>
+                            <div style=" text-align:center">
+                             <a href="javascript:viod(0);" onclick="closefloat(this)">关 闭</a>
+                            </div>
+                    
+						</div>
+                    
+                     
+                        </td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+<script   language="javascript">   
+      function   pp()   
+          {   
+             
+             var   keyCode   =   window.event.keyCode;   
+              if(keyCode   ==   13){   
+               
+                event.keyCode   =   9;
+                var txtfield= window.document.getElementById("qzss");
+               txtfield.parentNode.nextSibling.firstChild.click();
+                                   
+                //document.("btn_search").click();       
+              }     
+    
+          }   
+          
+ window.onload=function(){
+  s('qzss','全文检索');
+}
+function g(a){var kk= document.getElementById(a);return kk.previousSibling;}
+function s(qzss,v){
+  with(g(qzss)){
+    value=v;
+    onfocus=function(){if(value==v)value='';}
+    onblur=function(){if(value==''){value=v;}}
+  }
+}
+         
+  </script>
+ 
+
+<div class="gdgg">
+<div class="gdgg_left">
+</div>
+<div class="gdgg_center">
+<marquee  onmouseover=this.stop(); onmouseout=this.start(); direction="left" trueSpeed scrollAmount=1 scrolldelay=20>
+			       
+                      <a title="我市已开展大中型客货车驾驶人审验工作交警提醒：审验到期的驾驶人务必及时办理
+日期:2012/8/2 12:29:19
+点击:38617" href="servicenews.aspx?id=62991">我市已开展大中型客货车驾驶人审验工作交警提醒：审验到期的驾驶人务必及时办理</a>[12-08-02]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="维护得有技巧 12种错误保养方法是毁车
+日期:2011/6/9 11:31:33
+点击:100361" href="servicenews.aspx?id=57935">维护得有技巧 12种错误保养方法是毁车</a>[11-06-09]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="别让汽车天窗成摆设 汽车天窗三大妙用
+日期:2011/6/9 11:25:04
+点击:77960" href="servicenews.aspx?id=57934">别让汽车天窗成摆设 汽车天窗三大妙用</a>[11-06-09]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="除雾妙招！防止冬季/雨季玻璃起雾妙招
+日期:2011/6/9 11:18:48
+点击:48271" href="servicenews.aspx?id=57933">除雾妙招！防止冬季/雨季玻璃起雾妙招</a>[11-06-09]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="风沙天气安全行车规则
+日期:2010/6/4 16:20:53
+点击:5407" href="servicenews.aspx?id=50131">风沙天气安全行车规则</a>[10-06-04]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="夜间安全行车全攻略
+日期:2009/11/27 12:58:24
+点击:35096" href="servicenews.aspx?id=49833">夜间安全行车全攻略</a>[09-11-27]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="雪天行车驾驶技巧应对“暴雪橙色预警”
+日期:2009/11/27 12:56:48
+点击:13828" href="servicenews.aspx?id=49832">雪天行车驾驶技巧应对“暴雪橙色预警”</a>[09-11-27]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="冬季保养发动机要点
+日期:2009/11/27 12:55:08
+点击:27496" href="servicenews.aspx?id=49831">冬季保养发动机要点</a>[09-11-27]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="秋季汽车保养9招
+日期:2009/11/20 10:56:58
+点击:10913" href="servicenews.aspx?id=49821">秋季汽车保养9招</a>[09-11-20]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="影响驾驶的七大错觉
+日期:2009/11/16 12:48:33
+点击:20116" href="servicenews.aspx?id=49813">影响驾驶的七大错觉</a>[09-11-16]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="天气渐凉早晨开车需不需要热车
+日期:2009/11/16 12:47:43
+点击:21156" href="servicenews.aspx?id=49812">天气渐凉早晨开车需不需要热车</a>[09-11-16]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="汽车入秋保养小常识
+日期:2009/11/16 12:46:35
+点击:4706" href="servicenews.aspx?id=49811">汽车入秋保养小常识</a>[09-11-16]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="秋季驾车“四防”
+日期:2009/10/29 17:14:22
+点击:3754" href="servicenews.aspx?id=49780">秋季驾车“四防”</a>[09-10-29]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+                      <a title="雨天行车7注意
+日期:2009/9/3 10:07:45
+点击:8151" href="servicenews.aspx?id=49633">雨天行车7注意</a>[09-09-03]
+                   &nbsp;&nbsp;&nbsp;&nbsp;
+			    </marquee></div>
+<div class="gdgg_center_01">
+</div>
+<div class="gdgg_right_01">
+</div>
+<div class="gdgg_right_02">
+  <input name="WebPartManager1$wp1244696465$wp307908286$textfield" type="text" id="WebPartManager1_wp1244696465_wp307908286_textfield" size="36" class="gdgg_right_03" onkeypress="pp()" />  
+  <input  type="hidden" id="qzss"/>
+</div>
+<div class="gdgg_right">
+   <input type="submit" name="WebPartManager1$wp1244696465$wp307908286$btn_search" value="查 询" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;WebPartManager1$wp1244696465$wp307908286$btn_search&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="WebPartManager1_wp1244696465_wp307908286_btn_search" class="gdgg_right_04" />  
+</div>
+</div></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td style="padding:0;height:100%;"></td>
+			</tr>
+		</table></td>
+	</tr>
+</table></td></tr>
+      <tr>
+ <td  valign="top"  >   
+ <table cellspacing="0" cellpadding="0" border="0" id="WebPartZone1" style="width:590px;">
+	<tr>
+		<td style="height:100%;"><table cellspacing="0" cellpadding="2" border="0" style="width:100%;height:100%;">
+			<tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+<div >
+    
+
+
+<script language="JavaScript" type="text/javascript" src="../scripts/roadimg.js"></script>
+
+
+<div class="Hotleft">
+<div class="Hottop_left"><a href="znjt/znjt.aspx?type=2&node=151">实时路况</a></div>
+<div class="Hottop_center">
+</div>
+<div class="Hottop_right">
+</div>
+<div class="Hotleft_00">
+<div class="Hotleft_01"><img id="rdimg" src="../images/sslk_04.gif" width="222" height="198" /></div>
+</div>
+<div class="Hotleft_06"></div>
+</div>
+    
+<div class="main_left_top">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr >
+      <td align="left" style="padding-top:2px;" ><h4> <a title="我市已开展大中型客货车驾驶人审验工作交警提醒：审验到期的驾驶人务必及时办理
+日期:2012/8/2 12:29:19
+点击:38617" href="servicenews.aspx?id=62991" >我市已开展大中型客货车驾驶人审验...</a></h4></td>
+    </tr>
+    <tr>
+      <td height="54" align="left" valign="top"> 我市已开展大中型客货车驾驶人审验工作交警提醒：审验到期的驾驶人务必及时办理 为进一步加强道路交通安全源头管理，强化大中型客货车驾驶人交通安全教育...<a title="我市已开展大中型客货车驾驶人审验工作交警提醒：审验到期的驾驶人务必及时办理
+日期:2012/8/2 12:29:19
+点击:38617" href="servicenews.aspx?id=62991"> << 详情 </a></td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="main_xx">&nbsp;</td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  
+    <tr>
+      <td width="230px" height="23" align="left"><div style="width:230px; height:100%; float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">·<a title="维护得有技巧 12种错误保养方法是毁车
+日期:2011/6/9 11:31:33
+点击:100361" href="servicenews.aspx?id=57935">维护得有技巧 12种错误保养方法是毁车</a></div></td>
+      <td width="117px" align="right"><font color="ButtonShadow">100361次 06-09</font></td>
+    </tr>
+     
+    <tr>
+      <td width="230px" height="23" align="left"><div style="width:230px; height:100%; float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">·<a title="别让汽车天窗成摆设 汽车天窗三大妙用
+日期:2011/6/9 11:25:04
+点击:77960" href="servicenews.aspx?id=57934">别让汽车天窗成摆设 汽车天窗三大妙用</a></div></td>
+      <td width="117px" align="right"><font color="ButtonShadow">77960次 06-09</font></td>
+    </tr>
+     
+    <tr>
+      <td width="230px" height="23" align="left"><div style="width:230px; height:100%; float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">·<a title="除雾妙招！防止冬季/雨季玻璃起雾妙招
+日期:2011/6/9 11:18:48
+点击:48271" href="servicenews.aspx?id=57933">除雾妙招！防止冬季/雨季玻璃起雾妙招</a></div></td>
+      <td width="117px" align="right"><font color="ButtonShadow">48271次 06-09</font></td>
+    </tr>
+     
+    <tr>
+      <td width="230px" height="23" align="left"><div style="width:230px; height:100%; float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">·<a title="风沙天气安全行车规则
+日期:2010/6/4 16:20:53
+点击:5407" href="servicenews.aspx?id=50131">风沙天气安全行车规则</a></div></td>
+      <td width="117px" align="right"><font color="ButtonShadow">5407次 06-04</font></td>
+    </tr>
+     
+    <tr>
+      <td width="230px" height="23" align="left"><div style="width:230px; height:100%; float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">·<a title="夜间安全行车全攻略
+日期:2009/11/27 12:58:24
+点击:35096" href="servicenews.aspx?id=49833">夜间安全行车全攻略</a></div></td>
+      <td width="117px" align="right"><font color="ButtonShadow">35096次 11-27</font></td>
+    </tr>
+     
+    <tr>
+      <td width="230px" height="23" align="left"><div style="width:230px; height:100%; float:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">·<a title="雪天行车驾驶技巧应对“暴雪橙色预警”
+日期:2009/11/27 12:56:48
+点击:13828" href="servicenews.aspx?id=49832">雪天行车驾驶技巧应对“暴雪橙色预警”</a></div></td>
+      <td width="117px" align="right"><font color="ButtonShadow">13828次 11-27</font></td>
+    </tr>
+     
+  </table>
+</div>
+</div></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+ 
+
+
+<div class="main_cx_01">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="9%" height="42">&nbsp;</td>
+      <td width="23%" align="left" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="35"><a href="../service/qry/violation_veh.aspx?type=2&node=249" class="font14lu01">机动车非现场查询</a></td>
+          </tr>
+        </table>
+        <a href="#" class="font14lu01"></a></td>
+      <td width="11%" align="left">&nbsp;</td>
+      <td width="23%" align="left" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="35"><a href="../service/qry/peccancy.aspx?type=2&node=248" class="font14lu01">机动车现场违法查询</a></td>
+          </tr>
+        </table>
+        <a href="#" class="font14lu01"></a></td>
+      <td width="11%" align="left">&nbsp;</td>
+      <td width="23%" align="left" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="35"><a href="../service/qry/simple.aspx?type=2&node=250" class="font14lu01">机动车简易事故查询</a></td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr>
+      <td height="18">&nbsp;</td>
+      <td align="left">&nbsp;</td>
+      <td align="left">&nbsp;</td>
+      <td align="left">&nbsp;</td>
+      <td align="left">&nbsp;</td>
+      <td align="left">&nbsp;</td>
+    </tr>
+    <tr>
+      <td height="40">&nbsp;</td>
+      <td align="left" valign="bottom"><a href="#" class="font14lu01"></a>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="35"><a href="../service/qry/drv_info.aspx?type=2&node=251" class="font14lu01">驾驶人基本查询</a></td>
+            </tr>
+        </table></td>
+      <td align="left">&nbsp;</td>
+      <td align="left" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="35"><a href="../service/qry/peccancy_drv.aspx?type=2&node=252" class="font14lu01">驾驶人现场违法查询</a></td>
+          </tr>
+        </table>
+        <a href="#" class="font14lu01"></a></td>
+      <td align="left">&nbsp;</td>
+      <td align="left" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="35"><a href="../service/qry/simple_drv.aspx?type=2&node=253" class="font14lu01">驾驶人简易事故查询</a></td>
+          </tr>
+      </table></td>
+    </tr>
+  </table>
+</div>
+<div class="main_cx_02">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="9%" height="42">&nbsp;</td>
+      <td width="49%" align="left" valign="bottom"><table width="88%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+              <td height="35"><a href="../service/qry/veh_info.aspx?type=2&node=247" class="font14lu01">机动车基本查询</a></td>
+          </tr>
+        </table>
+        <a href="#" class="font14lu01"></a></td>        
+      <td width="15%" align="left" valign="bottom"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="32"><a href="../service/znjt/znjt.aspx?type=2&node=115" class="font14lu">上牌点</a></td>
+          </tr>
+        </table>
+        <a href="#" class="font14lu"></a></td>
+      <td align="left" width="5%" >&nbsp;</td>
+      <td width="22%" align="left" valign="bottom">
+         <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="32">
+              <a href="../service/qry/veh_kc.aspx?type=2&node=611" class="font14lu01" target="_blank">机动车拖移查询</a>
+            </td>
+          </tr>
+        </table>
+      </td>    
+    </tr>
+  </table>
+</div>
+
+</td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+ 
+ <div class="svr_col_two">
+ 
+<div class="main_jmhd_01">
+  <table width="100%" border="0" cellspacing="3" cellpadding="0">
+    <tr>
+      <td width="4%" height="31">&nbsp;</td>
+      <td width="22%" align="left" class="fontlu1402">常见问题</td>
+      <td width="11%" align="left"><a href="faqs/FAQSList.aspx?type=2&node=160"> >> 更多 </a></td>
+      <td width="22%" align="left" class="fontlu1402">你问我答</td>
+      <td width="12%" align="left"><a href="#"><a href="messageboard/ConsultList.aspx?type=2&node=161"> >> 更多 </a></td>
+      <td width="21%" align="left" class="fontlu1402">建言献策</td>
+      <td width="8%" align="left"><a href="#"><a href="jyxc/jyxclist.aspx?type=2&node=162"> >> 更多 </a></td>
+    </tr>
+  </table>
+</div>
+<div class="main_jmhd_02" style=" height:201px; overflow:hidden; text-overflow:hidden">
+  <table width="100%" border="0" cellspacing="3" cellpadding="0" >
+    <tr>
+      <td width="33%" height="144" align="center" valign="top"><table width="92%" border="0" cellspacing="0" cellpadding="0">
+      
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="faqs/faqsdetails.aspx?id=281">关于网上自助处理和缴纳罚款的说明</a></td>
+          </tr>
+          
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="faqs/faqsdetails.aspx?id=223">哪里能看被拍摄的违章照片？ 哪里去处理违章？</a></td>
+          </tr>
+          
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="faqs/faqsdetails.aspx?id=247">关于查询违法、事故信息</a></td>
+          </tr>
+          
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="faqs/faqsdetails.aspx?id=248">关于记分、清分、学习</a></td>
+          </tr>
+          
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="faqs/faqsdetails.aspx?id=221">非本地驾驶人基本信息查询</a></td>
+          </tr>
+          
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="faqs/faqsdetails.aspx?id=245">有关测速</a></td>
+          </tr>
+          
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="faqs/faqsdetails.aspx?id=241">杭州机动车是不是必须缴纳“四自道路费”？</a></td>
+          </tr>
+          
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="faqs/faqsdetails.aspx?id=243">换证体检地点</a></td>
+          </tr>
+          	        
+      </table></td>
+      <td width="34%"  valign="top"><table width="92%" border="0" cellspacing="0" cellpadding="0">
+      
+ 
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="messageboard/consultdetails.aspx?id=321887">非现场违章</a></td>
+        </tr>
+        
+ 
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="messageboard/consultdetails.aspx?id=321886">关于面包车号牌是否可以保留</a></td>
+        </tr>
+        
+ 
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="messageboard/consultdetails.aspx?id=321867">杭州机动车转籍的操作流程及车牌保留咨询</a></td>
+        </tr>
+        
+ 
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="messageboard/consultdetails.aspx?id=321866">暂时借用非机动车扣分罚款吗？</a></td>
+        </tr>
+        
+ 
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="messageboard/consultdetails.aspx?id=321846">浙A9100C 没有具体说明</a></td>
+        </tr>
+        
+ 
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="messageboard/consultdetails.aspx?id=321826">凭证号</a></td>
+        </tr>
+        
+ 
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="messageboard/consultdetails.aspx?id=321806">违章查询</a></td>
+        </tr>
+        
+ 
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="messageboard/consultdetails.aspx?id=321791">驾照转籍</a></td>
+        </tr>
+        	
+      </table></td>
+      <td width="33%" align="center" valign="top"><table width="92%" border="0" cellspacing="0" cellpadding="0" >
+      
+
+
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="jyxc/jyxcdetails.aspx?id=183">部分道路单向通行 交警部门向市民征集建议和意见</a></td>
+        </tr>
+
+
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="jyxc/jyxcdetails.aspx?id=182">您有什么良策妙法？交警现向市民公开征求</a></td>
+        </tr>
+
+
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="jyxc/jyxcdetails.aspx?id=142">努力建好“社区里的交警队、家门口的车管所”杭州交警竭诚为您服务——致社区居民的一封信</a></td>
+        </tr>
+
+
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="jyxc/jyxcdetails.aspx?id=123">交通管理服务站</a></td>
+        </tr>
+
+
+        <tr>
+          <td align="left" class="main_jmhd_bg">●&nbsp;<a href="jyxc/jyxcdetails.aspx?id=122">关于假日交通组织的建议</a></td>
+        </tr>
+         
+      </table>        <a href="#"></a></td>
+    </tr>
+  </table>
+</div>
+<div class="main_jmhd_03"></div>
+ 
+</div></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+<style>
+.office_td
+{width:25%;height:12px;word-break:keep-all;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+</style>
+<div class="svr_col_two">
+<div class="main_jjfc_01">
+    <div class="main_jjfc_02">
+        网上办公</div>
+    <div class="main_jjfc_03_01">
+    </div>
+    <div class="main_jjfc_03">
+    </div>
+</div>
+<div class="main_jjfc_04">
+    <table id="WebPartManager1_wp402755683_wp474107459_Table_Office" style="width: 100%; height:100%;table-layout:fixed; text-align:center;">
+							<tr style="height:52px">
+								<td style="width:25%"> 
+           <a href="../service/servicenews.aspx?id=49742"><img border="0" src="../images/wsbg_001.jpg" style="height: 50px; width: 60px"/></a><br /></td>
+								<td style="width:25%">
+                
+           <a href="../service/servicenews.aspx?id=48518"><img border="0" src="../images/wsbg_002.jpg" style="height: 50px; width: 60px"/></a><br /></td>
+								<td style="width:25%">
+             
+           <a href="../service/servicenews.aspx?id=57379"><img border="0" src="../images/wsbg_003.jpg" style="height: 50px; width: 60px"/></a><br /></td>
+								<td style="width:25%">
+                
+           <a href="../service/servicenews.aspx?id=15601"><img border="0" src="../images/wsbg_004.jpg" style="height: 50px; width: 60px"/></a><br /></td>
+							</tr>
+							<tr>
+								<td class="office_td"><a id="WebPartManager1_wp402755683_wp474107459_HyperLink1" href="servicenews.aspx?id=49742">违法处理窗口和交管服务站工作时间</a></td>
+								<td class="office_td"><a id="WebPartManager1_wp402755683_wp474107459_HyperLink2" href="servicenews.aspx?id=48518">固定式交通技术监控设备设置地点公告</a></td>
+								<td class="office_td">  <a id="WebPartManager1_wp402755683_wp474107459_HyperLink3" href="servicenews.aspx?id=57379">杭州市区单向行驶道路汇总表及单行线示意图 </a></td>
+								<td class="office_td"> <a id="WebPartManager1_wp402755683_wp474107459_HyperLink4" href="servicenews.aspx?id=15601">汽车报废标准</a></td>
+							</tr>
+							<tr style="height:52px">
+								<td>  
+           <a href="../service/servicenews.aspx?id=29922"><img border="0" src="../images/wsbg_005.jpg" style="height: 50px; width: 60px"/></a><br /></td>
+								<td> 
+           <a href="../service/servicenews.aspx?id=49983"><img border="0" src="../images/wsbg_006.jpg" style="height: 50px; width: 60px"/></a><br /></td>
+								<td style="width:25%">
+             
+           <a href="../service/servicenews.aspx?id=29925"><img border="0" src="../images/wsbg_007.jpg" style="height: 50px; width: 60px"/></a><br /></td>
+								<td style="width:25%">
+               
+           <a href="../service/servicenews.aspx?id=29932"><img border="0" src="../images/wsbg_008.jpg" style="height: 50px; width: 60px"/></a><br /></td>
+							</tr>
+							<tr>
+								<td class="office_td"><a id="WebPartManager1_wp402755683_wp474107459_HyperLink5" href="servicenews.aspx?id=29922">驾驶证档案查阅</a></td>
+								<td class="office_td"> <a id="WebPartManager1_wp402755683_wp474107459_HyperLink6" href="servicenews.aspx?id=49983">换领</a></td>
+								<td class="office_td"><a id="WebPartManager1_wp402755683_wp474107459_HyperLink7" href="servicenews.aspx?id=29925">驾驶证审验</a></td>
+								<td class="office_td"><a id="WebPartManager1_wp402755683_wp474107459_HyperLink8" href="servicenews.aspx?id=29932">初次申领</a></td>
+							</tr>
+						</table>
+						
+</div>
+<div class="main_jjfc_09">
+    <div class="main_jjfc_05">
+    </div>
+    <div class="main_jjfc_06">
+    </div>
+    <div class="main_jjfc_07">
+    </div>
+</div>
+</div></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+ <div class="svr_col_two">
+<div class="main_xxjy_01"><a href="newslist.aspx?type=2&node=154">安全天地</a></div>
+<div class="main_xxjy_02">
+  <div class="main_jjfc_03_01"><a href="newslist.aspx?type=2&node=154">更多&gt;&gt;</a></div>
+</div>
+<div class="main_xxjy_03"></div>
+<div class="main_xxjy_04"></div>
+<div class="main_xxjy_05">
+<div class="main_xxjy_07">
+ <div class="main_xxjy_07_03">
+
+<div class="main_xxjy_07_01"> <a title="丰田发动机控制电脑诊断
+日期:2008/11/13 15:49:59
+点击:6518"  href="servicenews.aspx?id=15592"><img src="/uploadfiles/image/丰田.jpg" width="89px" height="68px" border="0" /></a> </div>
+ 
+<div class="main_xxjy_07_01"> <a title="帕萨特B5故障4例
+日期:2008/11/13 15:49:20
+点击:5396"  href="servicenews.aspx?id=15591"><img src="/uploadfiles/image/帕萨特.jpg" width="89px" height="68px" border="0" /></a> </div>
+ 
+<div class="main_xxjy_07_01"> <a title="雪佛兰轿车发动机为何抖动
+日期:2008/11/13 15:47:31
+点击:6612"  href="servicenews.aspx?id=15589"><img src="/uploadfiles/image/雪佛兰.jpg" width="89px" height="68px" border="0" /></a> </div>
+     </div>
+  <div class="main_xxjy_07_04">
+  
+
+<div class="main_xxjy_07_02">·<a title="丰田发动机控制电脑诊断
+日期:2008/11/13 15:49:59
+点击:6518"  href="servicenews.aspx?id=15592">丰田发动机控</a></div> 
+  
+
+<div class="main_xxjy_07_02">·<a title="帕萨特B5故障4例
+日期:2008/11/13 15:49:20
+点击:5396"  href="servicenews.aspx?id=15591">帕萨特B5故</a></div> 
+  
+
+<div class="main_xxjy_07_02">·<a title="雪佛兰轿车发动机为何抖动
+日期:2008/11/13 15:47:31
+点击:6612"  href="servicenews.aspx?id=15589">雪佛兰轿车发</a></div> 
+ 
+ </div>
+  <div class="main_xxjy_07_03">
+ 
+<div class="main_xxjy_07_01"> <a title="奥迪100重新启用为何起动困难
+日期:2008/11/13 15:46:59
+点击:4474"  href="servicenews.aspx?id=15588"><img src="/uploadfiles/image/奥迪100.jpg" width="89px" height="68px" border="0" /></a> </div>
+ 
+<div class="main_xxjy_07_01"> <a title="奥迪A6典型故障排除
+日期:2008/11/13 15:46:25
+点击:5799"  href="servicenews.aspx?id=15587"><img src="/uploadfiles/image/奥迪A6.jpg" width="89px" height="68px" border="0" /></a> </div>
+ 
+<div class="main_xxjy_07_01"> <a title="现代索纳塔轿车冷启动困难
+日期:2008/11/13 15:39:51
+点击:4305"  href="servicenews.aspx?id=15579"><img src="/uploadfiles/image/索纳塔.jpg" width="89px" height="68px" border="0" /></a> </div>
+ 
+ </div>
+  <div class="main_xxjy_07_04">
+ 
+<div class="main_xxjy_07_02">·<a title="奥迪100重新启用为何起动困难
+日期:2008/11/13 15:46:59
+点击:4474"  href="servicenews.aspx?id=15588">奥迪100重</a></div> 
+ 
+<div class="main_xxjy_07_02">·<a title="奥迪A6典型故障排除
+日期:2008/11/13 15:46:25
+点击:5799"  href="servicenews.aspx?id=15587">奥迪A6典型</a></div> 
+ 
+<div class="main_xxjy_07_02">·<a title="现代索纳塔轿车冷启动困难
+日期:2008/11/13 15:39:51
+点击:4305"  href="servicenews.aspx?id=15579">现代索纳塔轿</a></div> 
+ </div>
+</div>
+ <div class="main_xxjy_08">
+  
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="我市已开展大中型客货车驾驶人审验工作交警提醒：审验到期的驾驶人务必及时办理
+日期:2012/8/2 12:29:19
+点击:38617"  href="servicenews.aspx?id=62991">我市已开展大中型客货车驾驶人审验工作交警提醒：审验到期的驾驶人务必及时办理</a></div>  </td>
+<td algin="right" class="count_date">38617次 08-02</td>
+    </tr>
+    </table>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="维护得有技巧 12种错误保养方法是毁车
+日期:2011/6/9 11:31:33
+点击:100361"  href="servicenews.aspx?id=57935">维护得有技巧 12种错误保养方法是毁车</a></div>  </td>
+<td algin="right" class="count_date">100361次 06-09</td>
+    </tr>
+    </table>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="别让汽车天窗成摆设 汽车天窗三大妙用
+日期:2011/6/9 11:25:04
+点击:77960"  href="servicenews.aspx?id=57934">别让汽车天窗成摆设 汽车天窗三大妙用</a></div>  </td>
+<td algin="right" class="count_date">77960次 06-09</td>
+    </tr>
+    </table>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="除雾妙招！防止冬季/雨季玻璃起雾妙招
+日期:2011/6/9 11:18:48
+点击:48271"  href="servicenews.aspx?id=57933">除雾妙招！防止冬季/雨季玻璃起雾妙招</a></div>  </td>
+<td algin="right" class="count_date">48271次 06-09</td>
+    </tr>
+    </table>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="风沙天气安全行车规则
+日期:2010/6/4 16:20:53
+点击:5407"  href="servicenews.aspx?id=50131">风沙天气安全行车规则</a></div>  </td>
+<td algin="right" class="count_date">5407次 06-04</td>
+    </tr>
+    </table>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="夜间安全行车全攻略
+日期:2009/11/27 12:58:24
+点击:35096"  href="servicenews.aspx?id=49833">夜间安全行车全攻略</a></div>  </td>
+<td algin="right" class="count_date">35096次 11-27</td>
+    </tr>
+    </table>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="雪天行车驾驶技巧应对“暴雪橙色预警”
+日期:2009/11/27 12:56:48
+点击:13828"  href="servicenews.aspx?id=49832">雪天行车驾驶技巧应对“暴雪橙色预警”</a></div>  </td>
+<td algin="right" class="count_date">13828次 11-27</td>
+    </tr>
+    </table>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="冬季保养发动机要点
+日期:2009/11/27 12:55:08
+点击:27496"  href="servicenews.aspx?id=49831">冬季保养发动机要点</a></div>  </td>
+<td algin="right" class="count_date">27496次 11-27</td>
+    </tr>
+    </table>
+    
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="22" align="left"><div class="xcjytext">·<a title="秋季汽车保养9招
+日期:2009/11/20 10:56:58
+点击:10913"  href="servicenews.aspx?id=49821">秋季汽车保养9招</a></div>  </td>
+<td algin="right" class="count_date">10913次 11-20</td>
+    </tr>
+    </table>
+    
+</div>
+</div>
+<div class="main_jjfc_09">
+    <div class="main_jjfc_05">
+    </div>
+    <div class="main_jjfc_06">
+    </div>
+    <div class="main_jjfc_07">
+    </div>
+</div>
+ </div></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td style="padding:0;height:100%;"></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>       
+                               
+ </td>
+<td  valign="top" style="text-align:center" >  <table cellspacing="0" cellpadding="0" border="0" id="WebPartZone2" style="width:306px;">
+	<tr>
+		<td style="height:100%;"><table cellspacing="0" cellpadding="2" border="0" style="width:100%;height:100%;">
+			<tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+ <script language="JavaScript" type="text/javascript" src="../scripts/gaodian.js"></script>
+ <div class="svr_col_one">
+<div class="Main_right_map_01">
+<a href="znjt/znjt.aspx?type=2&node=151" border=0 >
+ <img src="../images/map.jpg" border=0 width=287px height =238px /></a>
+<!--
+            <div id="WebPartManager1_wp19023956_wp448921706_play1">
+							
+             <span  id="lbl_MediaPlayer"   Width="288px"></span> 
+          
+						</div>
+-->
+</div>
+</div></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+
+<div class="xianx_bg">
+	<div class="pl">
+	<div id="WebPartManager1_wp155850280_wp1476023020_DIV_JRXX" style="height:85px; padding-top:1em;padding-left:5em;"><p align="center"><b>今日（星期四）限行</b></p><p align="center"><span class="redFont">4</span><b>与</b><span class="redFont">6</span></p></div> 
+	<div id="WebPartManager1_wp155850280_wp1476023020_DIV_MRXX" style="padding-top:0.7em;padding-left:5.8em;"><p align="left" style="padding-top:6px;font-size:14px; ">明日（星期五）限行<span class="redFont01">0</span>与<span class="redFont01">5</span></p></div> 
+	 
+	</div>
+	
+</div>
+</td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+<script type="text/javascript" src="../scripts/broadcast.js">
+</script>
+ <div class="svr_col_one">
+<div class="Main_right_dt_01">
+    
+    <div class="Main_right_dt_03">
+        
+        <table width="98%" border="0"  cellspacing="0" cellpadding="0">
+            <tr>
+                <td height="23" align="left" style="padding-left: 10px;">
+                    <img src="http://www.hzti.com/images/dt_07.gif" width="14" height="14" />
+                    <a href="javascript:void(0);"onclick="changeurl('188')">西湖之声汽车电台</a>
+                </td>
+                <td height="23" align="left" style="padding-left: 10px;">
+                    <img src="http://www.hzti.com/images/dt_07.gif" width="14" height="14" />
+                    <a  href="javascript:void(0);"onclick="changeurl('189')">杭州交通经济广播</a>
+                </td>
+            </tr>
+            <tr>
+                <td height="23" align="left" style="padding-left: 10px;" colspan="2">
+                    <img src="http://www.hzti.com/images/dt_07.gif" width="14" height="14" />
+                    <a href="../service/video/videolist.aspx?type=2&node=255">华数交通</a>
+                </td>
+            </tr>
+            
+        </table>
+    </div>
+
+</div>
+
+</div>
+
+<table width="100%"><tr><td align=center > 
+    <a href="http://web.zj.icbc.com.cn/zjbtc/JTFM/NoRealPlacePage.jsp" target="_blank" style="cursor:hand ;">
+    <div style="width:289px;height:90px;background-image:url(http://www.hzti.com/images/wf6.jpg); "></div></a>
+ </td> 
+  </tr>
+</table>
+ </td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+ <div style=" height:55px; margin-left:10px;">
+<a href="http://www.19lou.com/forum-383-1.html" target="_blank" style="cursor:hand ;">
+    <div id="lou19"></div></a></div>
+ </td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+ <div  class="svr_col_one">
+    <div class="Main_right_wzdc_01">网络调查</div>
+<div class="Main_right_wzdc_02">
+<div class="Main_right_wzdc_02_01"> </div>
+</div>
+<div class="Main_right_wzdc_03"></div>
+<div class="Main_right_wzdc_04">
+<div class="Main_right_wzdc_06" style="text-align:left">
+  
+    
+
+<script language="javascript">
+ function openWindow(type)
+ {
+    var w=600;
+    var h=350;
+    var l = (screen.width - w) / 2; 
+    var t = (screen.height - h) / 2; 
+    var s = 'width=' + w + ', height=' + h + ', top=' + t + ', left=' + l; 
+    s += ', toolbar=no, scrollbars=yes, menubar=no, location=no, resizable=yes';
+    var url;  
+    var sid='';
+    var tags=document.getElementsByTagName('table');
+    var oid = '';
+    var isMulti = 'False';
+    
+    var els = document.getElementsByTagName("span");
+    var length = els.length;
+    var objshow = null;
+    for(var i=0;i<length;i++){
+        var id = els[i].id;  
+        if (id.indexOf('surveys1_lbshow') != -1)
+            objshow = els[i];
+    } 
+    var flag=false;
+
+    if (isMulti == 'True'){//多选
+        var tablelist = tablelist!=null?tablelist:document.getElementById('tablelist1'); 
+        if (tablelist != null){
+            var elements = tablelist.getElementsByTagName('input');
+            for (var i=0;i<elements.length;i++)
+            {
+                
+                if (elements[i].type == 'checkbox' && elements[i].checked == true)
+                {  
+                    
+                    oid += elements[i].parentNode.value1+',';
+                    flag = true;
+                }
+            }
+        }
+    }
+    else {//单选    
+        var radioList = null;
+        for (var j=0;j<tags.length;j++)
+        {
+            if (tags[j] != null && tags[j].id.substr(tags[j].id.length-16,16) == 'RadioButtonList1')
+            {
+                radioList = tags[j];
+            }
+        }
+        if (radioList == null)
+            return;
+        var options = radioList.getElementsByTagName('input'); 
+        var fa; 
+        for(i=0;i<options.length;i++) 
+        { 
+             var opt = options[i]; 
+             if(opt.checked)
+             {
+                oid =opt.value;
+                flag =true;
+             }
+        }
+    }
+    if (type == '1')
+    {
+        if (flag)
+        {
+            url = '../survey/survey.aspx?tag=n&surveyid='+sid+'&optionid='+oid+'';
+        }
+        else
+        {
+            objshow.innerText = '您没有选择任何项！';
+        }
+    }
+    else if (type == '2')
+    {
+        url = '../survey/survey.aspx?tag=y&surveyid='+sid+'';
+    } 
+    else
+    {
+       url ='../survey/survey.aspx?tag=r&surveyid='+sid+'';
+    }
+    if (type==3){ window.open(url,"survey",s);}
+    else if (flag || type ==2)
+     window.open(url,"survey",s);
+ }
+ 
+ function view()
+ {
+    var btn1 = null;
+    var btn2 = null; 
+    var btn3 = null; 
+    var els = document.getElementsByTagName("input");
+    var length = els.length;
+    for(var i=0;i<length;i++){
+        var id = els[i].id;    
+        if (els[i].type == 'submit' && id.indexOf('surveys1_Button1') != -1){
+            btn1 = els[i];
+           document.getElementById('b1').style.display = 'inline';
+           els[i].style.display = 'none';
+        }
+        else if (els[i].type == 'submit' && id.indexOf('surveys1_btnMore') != -1){            
+              els[i].style.display = 'none';
+               document.getElementById('b2').style.display = 'inline';
+        }
+        else if (els[i].type == 'submit' && id.indexOf('surveys1_Button2') != -1){
+             document.getElementById('b3').style.display = 'inline';
+            els[i].style.display = 'none';
+        }
+    }
+ 
+//alert(btn1.style.display)
+  }
+  window.onload = view;
+</script>
+
+
+<div id="WebPartManager1_wp78426508_wp1350058900_surveys1_UpdatePanel1">
+							
+    
+                
+        <table id="tablelist1">
+            <tr>
+                <td height="25" colspan="2" title='' >
+                    &nbsp;
+                </td>
+            </tr>
+            
+            
+            <tr id="WebPartManager1_wp78426508_wp1350058900_surveys1_msg">
+								<td>
+               
+                    
+                </td>
+							</tr>
+							
+            
+            <tr valign="middle">
+                <td colspan="2" height="30">
+                    <div align="center">
+                        <table border="0" cellpadding="0" cellspacing="0" width="210">
+                            <tr>
+                                <td align="center">
+                                   <input id="b1" type ="button" value="投 票" onclick="openWindow('1')" style="display:none" />
+                                    
+                                         <input id="b2" type ="button" value="更 多" onclick="openWindow('2')" style="display:none"  />
+                                    <input type="submit" name="WebPartManager1$wp78426508$wp1350058900$surveys1$btnMore" value="更 多" onclick="openWindow('2');WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;WebPartManager1$wp78426508$wp1350058900$surveys1$btnMore&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="WebPartManager1_wp78426508_wp1350058900_surveys1_btnMore" />
+                                    
+                                </td>
+                                <td align="center">
+                                    
+                                    <input id="b3" type ="button" value="查看结果" onclick="openWindow('3')"  style="display:none" />
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+         <span id="WebPartManager1_wp78426508_wp1350058900_surveys1_lbshow" style="color:Red"></span>
+          
+    
+						</div>
+
+  
+</div>
+</div>
+<div class="Main_right_wzdc_05"></div>
+</div>
+	</td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+		 <div class="svr_col_one">
+		<a href="../service/exam/exam.aspx" style="cursor:hand"><div class="Main_right_img3">
+			
+		</div></a>
+		</div></td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td><table cellspacing="0" cellpadding="2" border="0" style="width:100%;">
+					<tr>
+						<td style="padding:0px;">
+<script type="text/javascript">
+ 
+function dd(url)
+{
+   if (url !=""){ window.open(url);}
+}
+
+</script>
+ <div class="svr_col_one">
+<div class="Main_right_yqlj">友情链接</div>
+<div class="Main_right_yqlj_01">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  
+    <tr >
+      <td  height="30px" align="center" >
+      <select name="select"  onchange="dd(this.options[this.options.selectedIndex].value)">
+      
+        <option value="">№　公安站点连接 　　　　-</option>
+				
+                <option value="http://www.hzpolice.gov.cn/">杭州市公安局</option>
+                
+                <option value="http://www.hzcgs.gov.cn/">杭州车管网</option>
+                
+                <option value="http://wf.nbjj.gov.cn">宁波交通违法查询</option>
+                
+                <option value="http://www.wzsjj.cn">温州交警网</option>
+                
+                <option value="http://wscgs.sxga.gov.cn/">绍兴交通违法查询</option>
+                
+                <option value="http://www.jhga.gov.cn/Service/Interface/JDCList.aspx">金华车辆违法查询</option>
+                
+                <option value="http://www.zjjxjj.gov.cn:81/jxjj/vehwf1.jsp">嘉兴车辆违法查询</option>
+                
+                <option value="http://www.tzga.gov.cn:6080/wscgs/vio.do?act=veh_vio_page">台州车辆违法查询</option>
+                
+                <option value="http://gaj.qz.gov.cn/eleclist.asp">衢州车辆违法查询</option>
+                
+                <option value="http://www.police.zhoushan.gov.cn/Services_Illegal.asp">舟山车辆违法查询</option>
+                
+                <option value="http://www.zjcg.com">浙江车管信息网</option>
+                
+                <option value="http://www.zj12122.gov.cn/website/gscx.aspx?itemid=5EC50026-6766-41E7-829D-4019ADFA418A">浙江省高速公路车辆违法查询</option>
+                    			
+      </select> </td>
+     
+    </tr>
+    
+   
+    <tr >
+      <td  height="30px" align="center" >
+      <select name="select"  onchange="dd(this.options[this.options.selectedIndex].value)">
+      
+        <option value="">№　政府、媒体连接 　　　-</option>
+				
+                <option value="http://www.hangzhou.gov.cn">中国杭州</option>
+                
+                <option value="http://www.zfj.gov.cn/">杭州市城市管理行政执法局</option>
+                
+                <option value="http://xkctk.hzcb.gov.cn/">杭州小客车总量调控管理系统</option>
+                
+                <option value="http://www.19lou.com/forum-383-1.html">19楼——与交警互动</option>
+                
+                <option value="http://www.hzcnc.com">华数在线</option>
+                
+                <option value="http://www.fm1054.com">西湖之声</option>
+                
+                <option value="http://www.fm918.net">杭州交通经济广播</option>
+                
+                <option value="http://map.hzplanning.gov.cn/ghjhzgis/">杭州市地理信息公共服务平台</option>
+                    			
+      </select> </td>
+     
+    </tr>
+    
+   
+    <tr >
+      <td  height="30px" align="center" >
+      <select name="select"  onchange="dd(this.options[this.options.selectedIndex].value)">
+      
+        <option value="">№　常用站点连接 　　　　-</option>
+				
+                <option value="http://bus.mapbar.com/hangzhou/">mapbar 杭州公交网</option>
+                
+                <option value="http://hangzhou.8684.cn/">8684 杭州公交网</option>
+                
+                <option value="http://www.12306.cn/">铁路客户服务中心</option>
+                    			
+      </select> </td>
+     
+    </tr>
+    
+     
+  </table>
+</div>
+<div class="Main_right_yqlj_02"></div></div>
+ </td>
+					</tr>
+				</table></td>
+			</tr><tr>
+				<td style="padding:0;height:100%;"></td>
+			</tr>
+		</table></td>
+	</tr>
+</table> 
+   
+   </td>
+ <td valign="top"  >  </td>
+</tr>
+<tr><td colspan="3" valign="top" ><table cellspacing="0" cellpadding="0" border="0" id="WebPartZone4" style="width:98%;">
+	<tr>
+		<td style="height:100%;"><table cellspacing="0" cellpadding="0" border="0" style="width:100%;height:100%;">
+			<tr>
+				<td style="height:100%;"></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+   </td></tr></table>
+        
+<style type="text/css" media="screen">
+
+.Footer_content ul li,.Footer_content ul,.Footer_content p,.Footer_content a,.Footer_content b{list-style: none;margin:0;border: 0;padding: 0;text-decoration: none;font-weight: normal;text-align: center;}
+
+.Footer_content{width: 900px;height: 100px;overflow: hidden;margin: 0 auto;}
+
+.Footer_content p{font-size: 12px;font-family: "宋体";line-height: 16px;color: #002F9D;}
+
+.Footer_content a{color:black;}
+
+.Footer_content a:hover{color: green;text-decoration: underline; }
+
+.Footer_content b{color: #f00;}
+
+.Footer_content ul li{float: left;height:70px;}
+
+.Footer_content ul .foot-wj{width:100px;background:url(http://www.hzti.com/images/pic_net_110.gif) no-repeat 100% 5px;text-align:center;padding-top:60px;padding-right:5px; text-align:right;}       
+
+.Footer_content ul .foot-wj a{color:#042B7B;font-size: 12px;line-height: 18px;} 
+
+.Footer_content ul .foot-wj a:hover{color:#FA0421;}
+
+.Footer_content ul .foot-text{width:700px;text-align:center;padding-left:0px;line-height:16px;padding-top:10px;}
+
+</style>             
+
+
+                   <div class="Footer_content">
+
+                            <ul id="" class="">
+
+                                     <li class="foot-wj"><a href="http://baojing.pingpinganan.gov.cn/preAlarm.aspx" target="_blank" >网上报警</a></li>
+
+ 
+
+                                     <li class="foot-text">
+
+                                               <p>推荐使用Internet Explorer 6.0 以上版本Web浏览器,1024*768分辨率 浏览本站,你是本站第<b>&nbsp;421987980&nbsp;</b>位访问者</p>
+
+                                         <p>Copyright &copy; 2002-2014 杭州市公安局交通警察局 杭州市公安局交通警察支队  版权所有 备案证编号:浙ICP备06030922 </p>
+
+                                         <p>设计制作与技术支持：<a href="http://www.zjhcsoft.com" target="_blank">浙江鸿程计算机系统有限公司 联系电话：0571-87758161</a></p>
+
+                                     </li>
+
+ 
+
+                <li class="foot-wx"><img width="80" height="80" src="http://www.hzti.com/images/weixin.jpg"></li>
+
+                            </ul>
+
+          </div> 
+<iframe src="http://www.hzpolice.gov.cn/Statistics/index.aspx?moudelid=10056" style="display: none"></iframe>
+ 
+ 
+    </div>
+       <iframe src="http://www.hzpolice.gov.cn/Statistics/index.aspx?moudelid=10056" style="display: none"></iframe>
+    
+
+<script type="text/javascript">
+//<![CDATA[
+var __wpmExportWarning='此 Web 部件页已被个性化。因此，一个或更多 Web 部件属性可能包含机密信息。请确保属性包含的信息都是可供他人阅读的信息。导出此 Web 部件之后，使用文本编辑器(如 Microsoft 记事本)查看 Web 部件说明文件(.WebPart)中的属性。';var __wpmCloseProviderWarning='您即将关闭此 Web 部件。它当前正在向其他 Web 部件提供数据，如果关闭此 Web 部件，这些连接将被删除。要关闭此 Web 部件，请单击“确定”。要保留此 Web 部件，请单击“取消”。';var __wpmDeleteWarning='您即将永久删除此 Web 部件。确实要执行此操作吗? 要删除此 Web 部件，请单击“确定”。要保留此 Web 部件，请单击“取消”。';Sys.Application.initialize();
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.AlwaysVisibleControlBehavior, {"HorizontalOffset":10,"VerticalOffset":10,"VerticalSide":1,"id":"WebPartManager1_wp1319238651_wp537380202_avce"}, null, null, $get("WebPartManager1_wp1319238651_wp537380202_floating"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
+
+

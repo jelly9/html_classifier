@@ -1,0 +1,1485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+<title>服务商 - 360行威客</title>
+
+<meta name="keywords" content="服务商" />
+
+<meta name="description" content="服务商" />
+
+
+
+
+<!-- CSS -->
+<!-- Public -->
+<link href="/phpapp/templates/default/style/blue/header.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/header_member.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/dialog.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/phpapp.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/form.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/credit.css" rel="stylesheet" type="text/css" />
+
+<!-- poshytip -->
+<link href="/phpapp/templates/default/style/blue/poshytip/tip-green/tip-green.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/poshytip/tip-darkgray/tip-darkgray.css" rel="stylesheet" type="text/css" />
+
+<!-- Category -->
+<link href="/phpapp/templates/default/style/blue/category.css" rel="stylesheet" type="text/css" />
+
+<!-- NationalFlag -->
+<link href="/phpapp/templates/default/style/blue/nationalflag.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<style type="text/css">
+.wrap,.header_widescreen{
+	width:1000px;
+}
+.header_width,.navigation_box,.footer{
+	width:1000px;
+}
+.navigation_wrap{
+	width:910px;
+}
+.sw_categorys_nav .allcategorys .sublist {
+	width:898px;
+}
+.allcategorys .sublist li {
+	width:200px;
+}
+.user_list{
+	width:930px;
+}
+.user_box,.user_box_show{
+	width:220px;
+}
+</style>
+
+
+</head>
+
+<link rel="shortcut icon" href="http://360hwk.com/favicon.ico" />
+
+<body>
+
+<!-- JS -->
+<!-- Javascript -->
+
+<script type="text/javascript">
+var APPID =82;
+var SURL ='http://360hwk.com';
+var TURL ='/phpapp/templates/default/style/blue/';
+var Language='cn';
+var CategoryURL ="http://360hwk.com/member.php?app=10&action=1";
+var TaskSkillURL ="http://360hwk.com/index.php?app=27&action=1";
+var timestamp=1423858893;
+</script>
+
+
+<!--  Public  -->
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/jquery.js?v=20140904"></script>
+
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/dialog.js?v=20140904"></script>
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/header.js?v=20140904"></script>
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/phpapp.js?v=20140904"></script>
+
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/member.js?v=20140904"></script>
+
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/jquery.SuperSlide.2.1.1.js?v=20140904"></script>
+
+<!--  datepicker  -->
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/datepicker-cn.js?v=20140904"></script>
+
+<!--  input  -->
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/input.js?v=20140904"></script>
+
+<!-- poshytip -->
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/poshytip/jquery.poshytip.js?v=20140904"></script>
+
+<!-- AllCategory -->
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/jquery.tmailsilder.v2.js?v=20140904"></script>
+
+<!-- AJAX -->
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/ajax_auto.js?v=20140904"></script>
+
+
+
+<script type="text/javascript">
+
+      function SubmitAward(OderID){
+		    
+			var award=parseFloat($("#NewAward").val());
+			
+			if (isNaN(award) || award<0){
+		            alert("您输入的金额格式错误，请重新输入!");
+		            $("#NewAward").focus();
+		            return false; 
+	        }
+			
+			if(confirm("请收到货后，再确认收货！是否确认并额外奖励"+award+"元?")){
+		           $("#loading").html('<div class="loading">提交数据中...</div>');
+
+				   SubmitDelivery(OderID,award);
+			
+			}
+						  
+		   
+	  }
+	  
+	  
+	  function PaymentOrders(OderID,tid){
+		    if(confirm("是否确认要为此订单支付?")){
+				 $("#loading").dialog({
+						  title:"订单支付",	
+						  width: 500,
+						  position: ['center',160],
+						  height:'auto'
+				 });
+				 
+				 $("#loading").dialog('open');
+							  
+				 $("#loading").html('<div class="loading">处理支付中...</div>');
+				
+				 $.ajax({
+						  type: "POST",
+						  url: SURL+"/member.php?app=48&action=3&op=2",
+						  data: 'oderid='+OderID+'&tid='+tid,
+						  success: function(data){
+								$("#loading").html(data);
+						  }
+				 });	
+		    }
+	  }
+	  
+	  
+	  function CloseOrders(OderID,tid){
+		    if(confirm("是否确认要关闭订单?")){
+				 $("#loading").dialog({
+						  title:"订单关闭",	
+						  width: 500,
+						  position: ['center',160],
+						  height:'auto'
+				 });
+				 
+				 $("#loading").dialog('open');
+							  
+				 $("#loading").html('<div class="loading">处理支付中...</div>');
+				
+				 $.ajax({
+						  type: "POST",
+						  url: SURL+"/member.php?app=48&action=3&op=5",
+						  data: 'oderid='+OderID+'&tid='+tid,
+						  success: function(data){
+								$("#loading").html(data);
+						  }
+				 });	
+		    }
+	  }
+	  
+	  
+	  function SubmitAddInvoice(OderID,OID){
+		         
+				var Invoice=$('#Invoice').val();  
+				var Content=$('#InvoiceContent').val(); 
+				 
+				$("#loading").dialog({
+						  title:"提交发票",	
+						  width: 300,
+						  position: ['center',160],
+						  height:160
+				});
+				
+				$("#loading").dialog('open');
+						  
+				$("#loading").html('<div class="loading">提交数据中...</div>');
+				
+				$.ajax({
+						  type: "POST",
+						  url: SURL+"/member.php?app=48&action=3&op=4",
+						  data: 'oderid='+OderID+'&oid='+OID+'&invoice_s='+Invoice+'&content_s='+Content,
+						  success: function(data){
+								$("#loading").html(data);
+						  }
+                });	
+				
+		  
+	  }
+      
+      function OpenDelivery(oid){
+            
+              if(oid>0){
+      
+                    var OderID=oid;
+					
+					$("#loading").dialog({
+								  title:"操作订单",	
+								  width: 600,
+								  position: ['center',160],
+								  height:'auto'
+					});
+							 
+					$("#loading").dialog('open');
+						  
+					$("#loading").html('<div class="loading">提交数据中...</div>');
+					
+					$("#loading").html('<strong><span style="color:#F00">额外奖励</span>金额</strong> <input type="text"  id="NewAward" size="50" maxlength="8" class="form_input_text form_input_width_100"  value="0" /> 元 <input type="button" value="确认收货" onclick="SubmitAward(\''+oid+'\')" class="form_button"/><p style="padding-top:6px;"><strong>提示：</strong>额外奖励指您对稿件另奖励的赏金，如果不想奖励默认0元！</p>');
+					
+					
+                    
+              }else{
+                   var OderID='';
+                   $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                           var value=$(this).val();  
+                           
+                           if($(this).attr("disabled")!='disabled'){
+                           
+                           if(OderID){
+                                OderID+=','+value;
+                           }else{
+                                OderID=value;
+                           }
+                           }
+              
+                   }); 	
+                   
+                   if(!OderID){
+                       
+                        alert("请选择订单操作!");
+                        return false;
+                   }
+				   
+				   if(confirm("请收到货后，再确认收货！是否确认?")){
+				
+						  $("#loading").dialog({
+								  title:"操作订单",	
+								  width: 600,
+								  position: ['center',160],
+								  height:'auto'
+						  });
+							 
+						  $("#loading").dialog('open');
+						  
+						  $("#loading").html('<div class="loading">提交数据中...</div>');
+						  
+						  SubmitDelivery(OderID);
+					  
+					  
+				  }
+          
+                    
+              }
+          
+ 
+      }
+      
+      function SubmitDelivery(OderID,award){
+            
+            var content=$("#OderContent").val();
+            
+            $.ajax({
+                              type: "POST",
+                              url: SURL+"/member.php?app=48&action=3&op=1",
+                              data: 'oderid='+OderID+'&award='+award,
+                              success: function(data){
+                                    $("#loading").html(data);
+                              }
+                     });	
+          
+      }
+      
+   function OpenCredit(oid){
+            
+              if(oid>0){
+      
+                    var OderID=oid;
+                    
+              }else{
+                   var OderID='';
+                   $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                           var value=$(this).val();  
+                           
+                           if($(this).attr("disabled")!='disabled'){
+                           
+                           if(OderID){
+                                OderID+=','+value;
+                           }else{
+                                OderID=value;
+                           }
+                           }
+              
+                   }); 	
+                   
+                   if(!OderID){
+                       
+                        alert("请选择订单操作!");
+                        return false;
+                   }
+                    
+              }
+          
+          
+          
+            $("#TaskCreditLevel").dialog({
+                    width: 600,
+                    position: ['center',160],
+                    height:'auto',
+					modal: true,
+			        autoOpen: false
+            });
+               
+            $("#TaskCreditLevel").dialog('open');
+            
+
+            
+            $("#OderID").val(OderID);
+            
+      
+          
+      }
+      
+	  
+      function SubmitCredit(OderID){
+            
+			var OderID=$("#OderID").val();
+			
+            var level=$("#CreditLevel :checked").val();
+			
+			var content=$("#OderContent").val();
+			
+			var workspeed=$("#WorkSpeedValue").val();
+			
+			var worksattitude=$("#WorksAttitudeValue").val();
+			
+			var worksquality=$("#WorksQualityValue").val();
+			
+			$("#TaskCreditLevel").html('<div class="loading">提交数据中...</div>');
+            
+            $.ajax({
+                              type: "POST",
+                              url: SURL+"/member.php?app=48&action=3&op=3",
+                              data: 'oderid_s='+OderID+'&level='+level+'&content_s='+content+'&speed_d='+workspeed+'&attitude_d='+worksattitude+'&quality_d='+worksquality,
+                              success: function(data){
+                                    $("#TaskCreditLevel").html(data);
+                              }
+                     });	
+          
+      }    
+      
+	  $(function(){	
+				 
+			$("#WorksPeed li").mouseover( function () {
+					  
+					  var id=$(this).attr("id");
+					  var num=id.substr(10,1);
+
+					  SetStar('WorksPeed',num);
+					  
+					  $("#WorksPeedScore").html(num+'.0');
+					  
+					  $("#WorkSpeedValue").val(num);
+					  
+			});
+			
+			$("#WorksAttitude li").mouseover( function () {
+					  
+					  var id=$(this).attr("id");
+					  var num=id.substr(14,1);
+
+					  SetStar('WorksAttitude',num);
+					  
+					  //alert(id.substr(10,1));
+					  
+					  $("#WorksAttitudeScore").html(num+'.0');
+					  
+					  $("#WorksAttitudeValue").val(num);
+					  
+			});
+			
+			
+			$("#WorksQuality li").mouseover( function () {
+					  
+					  var id=$(this).attr("id");
+					  var num=id.substr(13,1);
+
+					  SetStar('WorksQuality',num);
+					  
+					  $("#WorksQualityScore").html(num+'.0');
+					  
+					  $("#WorksQualityValue").val(num);
+					  
+			});
+			
+			
+	  
+	  });
+	  
+	  function SetStar(id,num){
+		  
+		   
+					  
+			for(var i=1; i<=5; i++){
+				
+				 if(i > num){
+				      $("#"+id+"_"+i).removeClass('focus');
+				 }else{
+					  $("#"+id+"_"+i).addClass('focus');
+				 }
+			}
+			
+			
+		  
+	  }
+	  
+	  
+      </script>
+      
+      
+      <div id="TaskCreditLevel" style="display:none;padding:20px;" title="订单评价">
+  
+        <div class="credit_level" id="CreditLevel">
+        <ul>
+        <li class="credit_hao"></li>
+        <li class="credit_cha"></li>
+        <li class="credit_zhong"></li>
+        </ul>
+        
+        <ul>
+        <li><input name="creditradio" type="radio" value="0" checked />好评</li> 
+        <li><input name="creditradio" type="radio" value="1"/>中评</li> 
+        <li><input name="creditradio" type="radio" value="2"/>差评</li>
+        </ul>
+        </div>
+        
+        <div class="task_score">
+             <h3>评分：</h3>
+             
+                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                    <div class="score_works_peed">工作速度：<span id="WorksPeedScore" class="color_f60">0.0</span> 分 &nbsp;
+                
+                <a href="javascript:;" class="score_level" id="WorksPeed">
+                
+                      <li title="1分 速度慢得太离谱，非常不满意" id="WorksPeed_1"></li>
+                      
+                      <li title="2分 速度很慢，不满意" id="WorksPeed_2"></li>
+                      
+                      <li title="3分 速度还行" id="WorksPeed_3"></li>
+                      
+                      <li title="4分 速度蛮快，不错" id="WorksPeed_4"></li>
+                      
+                      <li title="5分 速度非常快，非常不错" id="WorksPeed_5"></li>
+                
+                </a>
+                
+                </div>
+                
+                <input id="WorkSpeedValue" type="hidden" value="0" /></td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <div class="score_works_attitude">服务态度：<span id="WorksAttitudeScore" class="color_f60">0.0</span> 分 &nbsp; 
+                
+                <a href="javascript:;" class="score_level" id="WorksAttitude">
+                
+                      <li title="1分 卖家态度很差，还骂人、说脏话，简直不把顾客当回事" id="WorksAttitude_1"></li>
+                
+                      <li title="2分 卖家有点不耐烦，承诺的服务也兑现不了" id="WorksAttitude_2"></li>
+                      
+                      <li title="3分 卖家回复问题很慢，态度一般，谈不上沟通顺畅" id="WorksAttitude_3"></li>
+                      
+                      <li title="4分 卖家服务挺好的，沟通挺顺畅的，总体满意，不错" id="WorksAttitude_4"></li>
+                      
+                      <li title="5分 卖家的服务太棒了，考虑非常周到，完全超出期望值" id="WorksAttitude_5"></li>
+                
+                </a>
+                </div>
+                <input  id="WorksAttitudeValue" type="hidden" value="0" />
+                    </td>
+                  </tr>
+                   <tr>
+                    <td><div class="score_works_quality">完成质量：<span id="WorksQualityScore" class="color_f60">0.0</span> 分 &nbsp; 
+                
+                <a href="javascript:;"  class="score_level" id="WorksQuality">
+                
+                      <li title="1分 差得太离谱，与卖家描述的严重不符，非常不满" id="WorksQuality_1"></li>
+                
+                      <li title="2分 部分有破损，与卖家描述的不符，不满意" id="WorksQuality_2"></li>
+                      
+                      <li title="3分 质量一般，没有卖家描述的那么好" id="WorksQuality_3"></li>
+                      
+                      <li title="4分 质量不错，与卖家描述的基本一致，还是挺满意的" id="WorksQuality_4"></li>
+                      
+                      <li title="5分 质量非常好，与卖家描述的完全一致，非常满意" id="WorksQuality_5"></li>
+                
+                </a>
+                <input id="WorksQualityValue" type="hidden" value="0" />
+                </td>
+                  </tr>
+                </table>
+                
+                <p>提示：<span style="color:#999">将鼠标指到星星等级上进行评分</span></p>
+        </div>
+        
+        <p>评语：(100字内)</p>
+        
+        <textarea id="OderContent" class="form_input_text" style="width:550px;height:100px;margin-bottom:10px;"></textarea><p style="text-align:center;margin-top:10px;">
+        <input id="OderID" type="hidden" value="0" />
+        <input name="Submit" type="button" value="确认" onclick="SubmitCredit()" class="form_button"/>
+        </p>
+  
+  </div>
+      
+   </div>
+
+
+<script type="text/javascript">
+      
+      function SellerOpenDelivery(oid){
+            
+              if(oid>0){
+      
+                    var OderID=oid;
+                    
+              }else{
+                   var OderID='';
+                   $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                           var value=$(this).val();  
+                           
+                           if($(this).attr("disabled")!='disabled'){
+                           
+                           if(OderID){
+                                OderID+=','+value;
+                           }else{
+                                OderID=value;
+                           }
+                           }
+              
+                   }); 	
+                   
+                   if(!OderID){
+                       
+                        alert("请选择订单操作!");
+                        return false;
+                   }
+                    
+              }
+          
+
+              SellerSubmitDelivery(OderID);
+          
+      }
+      
+
+      function UploadOrderFile(OderID){
+
+			$.SaveContent();
+			
+            var content=$("#SellContent").val();
+			
+			$("#loading").dialog({
+                    title:"上传订单文件",	
+                    width: 300,
+                    position: ['center',160],
+                    height:160
+            });
+               
+            $("#loading").dialog('open');
+            
+            $("#loading").html('<div class="loading">上传数据中...</div>');
+   
+            $.ajax({
+					  type: "POST",
+					  url: SURL+"/member.php?app=48&action=1&op=4",
+					  data: '&oderid_s='+OderID+'&content_s='+content+'&Submit=1',
+					  success: function(data){
+							$("#loading").html(data);
+					  }
+             });	
+          
+      }
+	
+	  
+      function SellerSubmitDelivery(OderID){
+            
+		   if(confirm("是否确认已上传文件交接?")){
+			   
+					$("#loading").dialog({
+							  title:"确认文件交接",	
+							  width: 500,
+							  position: ['center',160],
+							  height:'auto'
+					});
+					 
+					$("#loading").dialog('open');
+								  
+					$("#loading").html('<div class="loading">处理确认交接中...</div>');
+					
+					$.ajax({
+							  type: "POST",
+							  url: SURL+"/member.php?app=48&action=1&op=2",
+							  data: 'oderid_s='+OderID,
+							  success: function(data){
+									$("#loading").html(data);
+							  }
+					});	
+		   }
+          
+      }
+
+
+      function SellerOpenCredit(oid){
+            
+              if(oid>0){
+      
+                    var OderID=oid;
+                    
+              }else{
+                   var OderID='';
+                   $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                           var value=$(this).val();  
+                           
+                           if($(this).attr("disabled")!='disabled'){
+                           
+                           if(OderID){
+                                OderID+=','+value;
+                           }else{
+                                OderID=value;
+                           }
+                           }
+              
+                   }); 	
+                   
+                   if(!OderID){
+                       
+                        alert("请选择订单操作!");
+                        return false;
+                   }
+                    
+              }
+          
+          
+          
+            $("#loading").dialog({
+                    title:"订单评价",	
+                    width: 600,
+                    position: ['center',160],
+                    height:'auto'
+            });
+               
+            $("#loading").dialog('open');
+            
+            $("#loading").html('<div class="loading">读取数据中...</div>');
+            
+            
+            $("#loading").html('<div class="credit_level" id="SellerCreditLevel"><ul><li class="credit_hao"></li><li class="credit_cha"></li><li class="credit_zhong"></li></ul><ul><li><input name="creditradio" type="radio" value="0" checked />好评</li> <li><input name="creditradio" type="radio" value="1"/>中评</li> <li><input name="creditradio" type="radio" value="2"/>差评</li></ul></div><p>评语：(100字内)</p><textarea id="SellerCreditContent" class="form_input_text" style="width:550px;height:100px;margin-bottom:10px;"></textarea><p style="text-align:center;margin-top:10px;"><input name="Submit" type="button" value="确认" onclick="SellerSubmitCredit(\''+OderID+'\')" class="form_button" style="width:80px"/></p>');
+            
+      
+          
+      }
+      
+	  
+      function SellerSubmitCredit(OderID){
+
+            var level=$("#SellerCreditLevel input:checked").val();
+			
+			var content=$("#SellerCreditContent").val();
+
+            $.ajax({
+					  type: "POST",
+					  url: SURL+"/member.php?app=48&action=1&op=3",
+					  data: 'oderid_s='+OderID+'&level='+level+'&content_s='+content,
+					  success: function(data){
+							$("#loading").html(data);
+					  }
+              });	
+
+      }
+          
+      </script>
+
+<div id="UserPhotoShow"></div>
+
+<!-- Loading -->
+<div id="TopLoading" style="display:none" title="loading..."></div>
+<div id="loading" style="display:none" title="读取数据中..."></div>
+
+
+
+
+<div id="SiteBigWrap">  
+   <div id="SiteMiddleWrap">
+        <div id="SiteSmallWrap">
+
+            <div id="Header">
+                <div id="HeaderTop" class="header_default header_widescreen">  
+                      <div class="header_width">  
+                          <div class="header_before">
+                              <div id="header_logo">
+                                  <a href="http://360hwk.com" title="360行威客"></a>
+                              </div>
+                              <div class="logo_slogan">
+                      </div>
+                              <div id="HeaderCity" class="header_city">
+                                 <!--
+                                 <strong id="NowCity">南宁市</strong> <a href="http://360hwk.com" id="ChangeCityTitle" title="切换一个新的城市任务">[切换城市]</a>
+                                 -->
+                              </div>
+                          </div>
+ 
+                          <div id="Header_Member">
+
+                                     <script type="text/javascript">
+	      var USERID=0;
+		  var UserSkillsNumber=0;
+	  </script>
+
+
+      <div class="member_addtask">
+              <a href="http://360hwk.com/index.php?app=49&action=1" title="免费发布一个任务" id="TopAddTask">我要发布任务</a>
+      </div>
+    
+                               
+<div id="Header_Member_Login" class="header_member_login">
+
+            <div id="Header_Member_Info" class="header_member_info">
+            <ul>
+                <span id="loginuseruid" style="display:none">0</span> <span class="loginrefresh" style="display:none">0</span> 
+                <li class="nobackground" title="帮助"><a href="http://360hwk.com/index.php?app=57" title="帮助中心">帮助</a></li><li><a href="http://360hwk.com/index.php?app=2&action=2" title="免费注册帐号">免费注册</a></li>
+                
+                <li><a href="javascript:void(0);" title="登录到本站" id="UserLogin" class="topuserlogin_default">登录</a>
+                     <div class="LoginFrame" id="NowLoginFrame" title="网站登录">
+                             <link href="/phpapp/templates/default/style/blue/sns.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+
+var loading='<img src="/phpapp/templates/default/style/blue/images/loading.gif" alt="正在读取数据中..." />';
+var right='<img src="/phpapp/templates/default/style/blue/images/right.png" alt="正确" class="checkright" />';
+var error='<img src="/phpapp/templates/default/style/blue/images/error.png" alt="错误" />';
+var SubmitLoginInput='<input type="submit" value="登 录" onclick="return SubmitLoginNow();" class="form_button"/>';
+var LoginInputPrompt='用户名/邮箱/手机';
+
+
+function VerifyLoginPassword(){
+	          $('#AjaxLoginPasswordError').html(loading);
+		  
+              var password=$("#LoginPassword").val();
+
+			  if(!password.length){
+				   $('#AjaxLoginPasswordError').html(error);
+
+				   var data='亲,请输入密码!';
+			  }else if(password.length<6){
+				   
+				   $('#AjaxLoginPasswordError').html(error);
+				   var data='密码不能小于6位!';
+				   
+			  }else{
+				    $('#AjaxLoginPasswordError').html('');
+					var data='密码位数正常!';
+			  }
+
+			  $('#LoginPassword').poshytip('update',data);
+}
+
+$(function(){
+	  
+	  $("#PasswordTab").tabs();	
+	   
+	  $("#SubmitLoginNow").html(SubmitLoginInput);  
+	  
+	  $("#LoginUserName").val(LoginInputPrompt);
+	  
+	  $("#SiteLoginUserName").val(LoginInputPrompt);
+   
+	  $('#LoginUserName,#LoginPassword,#SiteLoginUserName,#SiteLoginPassword').poshytip({
+			className: 'tip-green',
+			showOn: 'focus',
+			alignTo: 'target',
+			alignX: 'right',
+			alignY: 'center',
+			offsetX: 5
+      });
+	  
+	  $("#SiteSecCode").one("click", function(){
+			seccode();
+	  });
+	   
+	  $(".LoginUserName,#SiteLoginUserName").one("click", function(){ $(this).val('');$(this).css("color","#333"); });
+	 
+	  $("#ShowSNS").toggle(
+			function () {
+			     $("#SNSList").show(500);this.blur();
+			},
+			function () {
+			     $("#SNSList").hide(500);this.blur();
+			}
+	  );
+	  
+	  $("#LoginPassword").click( function () {
+			  VerifyLoginPassword();
+	  });
+	  
+	  $("#LoginPassword").blur( function () { 
+		     VerifyLoginPassword();
+      });
+
+});
+
+
+function SubmitLogin() {
+
+			var username=$("#SiteLoginUserName").val();
+			 if(LoginInputPrompt==username){
+				  $('#SiteLoginUserName').val('');
+				  $('#SiteLoginUserName').focus();
+				  $('#SiteAjaxLoginUserNameError').html(error);
+				  $('#SiteLoginUserName').poshytip('update','请输入用户名！');
+				  return false; 
+			 }else{
+					 if(!username.length){
+						 $('#SiteLoginUserName').focus();
+						 $('#SiteAjaxLoginUserNameError').html(error);
+						 $('#SiteLoginUserName').poshytip('update','对不起!昵称不能为空!');
+		
+						 return false; 
+					 }else{
+						 if(username.length>1){
+							 $('#SiteAjaxLoginUserNameError').html('');
+						 }else{
+							  $('#SiteLoginUserName').focus();
+							  $('#SiteAjaxLoginUserNameError').html(error);
+							  $('#SiteLoginUserName').poshytip('update','对不起!用户名太短了!');
+							 
+							  return false; 
+						 }
+						 
+					 }
+			 }
+		
+			 var password=$("#SiteLoginPassword").val();
+			 if(!password.length){
+				 	
+			     $('#SiteLoginPassword').focus();
+				 $('#SiteAjaxLoginPasswordError').html(error);
+				 $('#SiteLoginPassword').poshytip('update','对不起!密码不能为空!');
+				 
+		         return false; 
+			 }else{
+			
+				 if(password.length>=6){
+				     $('#SiteAjaxLoginPasswordError').html('');
+				 }else{
+					 $('#SiteLoginPassword').focus();
+				     $('#SiteAjaxLoginPasswordError').html(error);
+					 $('#SiteLoginPassword').poshytip('update','对不起!密码不能小于6位!');
+		
+					 return false; 
+				 }
+			 }
+			 
+			 
+			 
+			 			 var seccode=$("#SiteSecCode").val();
+			 if(!seccode.length){
+			     $('#SiteSecCode').focus();
+				 $('#SiteAjaxSecCodeError').html(error);
+			     $('#SiteAjaxSecCode').html('<div class="register_reg_tips">对不起!请输入验证码!</div>');
+		         return false; 
+			 }else{
+				 if(seccode.length!=4){
+					 $('#SiteSecCode').focus();
+				     $('#SiteAjaxSecCodeError').html(error);
+			         $('#SiteAjaxSecCode').html('<div class="register_reg_tips">对不起!请输入4位验证码!</div>');
+		             return false; 
+				 }
+			
+			 }	
+			 
+			 			 
+			
+			$("#loading").html('<div class="loading">登录中...</div>');
+			$("#loading").dialog('open');
+			$("#loading").dialog({ title: '登录框' });
+			 
+			var forms=GetFormAll('#LoginForm');
+			$.ajax({
+   			type: "POST",
+   			url: SURL+'/index.php?app=2&action=1&rand='+Math.random(),
+  		    data: forms,
+   			success: function(data){
+    			  $("#loading").html(data);
+				  return false; 
+				  //alert(data);
+   			}
+			});
+			return false; 
+									   
+ }
+ 
+ 
+function SubmitLoginNow() {
+
+			 var username=$("#LoginUserName").val();
+			 if(LoginInputPrompt==username){
+				  $('#LoginUserName').val('');
+				  $('#LoginUserName').focus();
+				  $('#AjaxLoginUserNameError').html(error);
+				  $('#LoginUserName').poshytip('update','请输入用户名！');
+				  return false; 
+			 }else{
+					 if(!username.length){
+						 $('#LoginUserName').focus();
+						 $('#AjaxLoginUserNameError').html(error);
+						 $('#LoginUserName').poshytip('update','对不起!昵称不能为空!');
+		
+						 return false; 
+					 }else{
+						 if(username.length>1){
+							 $('#AjaxLoginUserNameError').html('');
+						 }else{
+							  $('#LoginUserName').focus();
+							  $('#AjaxLoginUserNameError').html(error);
+							  $('#LoginUserName').poshytip('update','对不起!用户名太短了!');
+							 
+							  return false; 
+						 }
+						 
+					 }
+			 }
+		
+			 var password=$("#LoginPassword").val();
+			 if(!password.length){
+				 	
+			     $('#LoginPassword').focus();
+				 $('#AjaxLoginPasswordError').html(error);
+				 $('#LoginPassword').poshytip('update','对不起!密码不能为空!');
+				 
+		         return false; 
+			 }else{
+			
+				 if(password.length>=6){
+				     $('#AjaxLoginPasswordError').html('');
+				 }else{
+					 $('#LoginPassword').focus();
+				     $('#AjaxLoginPasswordError').html(error);
+					 $('#LoginPassword').poshytip('update','对不起!密码不能小于6位!');
+		
+					 return false; 
+				 }
+			 }
+            
+			 $("#SubmitLogin").html('<div class="loading">登录中...</div>');
+			 
+	
+            var SecurityForm=$("#SecurityForm").val();
+
+			  $.post(SURL+"/index.php?app=2&action=12&rand="+Math.random(),{UserName_s:username,Password_s:password,SecurityForm_s:SecurityForm,SubmitLoginNow:'SubmitLoginNow'},
+					
+				   function (data){
+					  
+					   if(data.indexOf('ok')>0 || data=='ok'){
+						   
+						     if(data=='ok'){
+								   LoginNowForm(data);
+							 }else{
+								 
+								   var LoginIframe=document.getElementById("NowLoginIframe");
+					               var Iframedoc=LoginIframe.contentWindow.document;
+								   Iframedoc.open();
+								   Iframedoc.write(data+parent.LoginNowForm(data));
+								   Iframedoc.close();
+							
+							 }
+							 
+							 
+					   }else{
+						     $('#LoginUserName').focus();
+						     $('#LoginUserName').poshytip('update',data);
+							 $("#SubmitLogin").html(SubmitLoginInput);  
+					   }
+
+					   //alert(data);
+					   return false; 
+				   }
+			  ); 
+	
+			return false; 
+ }
+
+function LoginNowForm(data) {
+     $('#Login_Now').html('<div class="loading"><strong>登录成功！</strong>正在加载数据中...</div>');
+	 $.get("http://360hwk.com/index.php?app=2&action=8",function (data){$('#Header_Member').html(data);}); 
+	 $('#UserLogin').removeClass('topuserlogin_focus');
+	 $(".LoginFrame").hide();
+	 var loginrefresh=parseInt($("span[class='loginrefresh']").last().html());
+	 
+	 if(loginrefresh==1){
+		   window.location.reload(); 
+	 }else if(loginrefresh==2){
+		   window.location.href=SURL;
+	 }
+}
+
+function SubmitPasswordForm() {
+													  
+             var type=$("#ToolType").val();
+			 
+			 var username=$("#UserName");	
+			 var email=$("#EMail");	
+			 var mobile=$("#Mobile");	
+			 
+			 if(username.val()==""){
+					   
+						  alert("请输入用户名!");
+						  username.focus();
+						  return false; 
+			 }
+			 
+			 if(type==0){
+				 
+				   if(email.val()==""){
+					   
+						  alert("请输入邮箱!");
+						  email.focus();
+						  return false; 
+				   }
+				   
+			 }else{
+				 
+				   if(mobile.val()==""){
+					   
+						  alert("请输入手机号码!");
+						  mobile.focus();
+						  return false; 
+				   }
+				   
+			 }
+			 
+
+					
+             var SecCode=$("#SiteSecCode").val();
+			 if (SecCode==""){
+				    alert("请输入验证码!");
+				    $("#SecCode").focus();
+				    return false; 
+			 }
+			  
+
+			$("#loading").html('<div class="loading">提交数据中...</div>');
+			$("#loading").dialog('open');
+			$("#loading").dialog({ title: '找回密码' });
+				
+			$.ajax({
+				  type: "POST",
+				  url: SURL+"/index.php?app=2&action=13&rand="+Math.random(),
+				  data: '&SecCode='+SecCode+'&type_d='+type+'&EMail_s='+email.val()+'&Mobile_s='+mobile.val()+'&UserName_s='+username.val(),
+				  success: function(data){
+					   $("#loading").html(data);
+					   return false; 
+				  }
+			});  
+			  
+			return false; 
+													  
+}
+	 
+	 
+function seccode(){
+	var img=SURL+'/index.php?app=2&action=9&rand='+Math.random();
+	 $('#ShowSecCode').html('<a href="javascript:;" onclick="refreshcode()" style="cursor:hand;" title="点击换一张验证码"><img id="img_seccode" src="'+img+'" align="absmiddle"></a>');
+	 $("#SiteSecCode").val("");
+}
+
+function refreshcode() {
+	
+	var img = SURL+'/index.php?app=2&action=9&rand='+Math.random();
+	if(document.getElementById('img_seccode')) {
+		$('#img_seccode').attr("src",img);
+	}
+} 
+
+function SetToolType(id) {
+	 $('#ToolType').val(id);
+}
+
+</script>
+
+
+<div id="Login_Now" style="padding-top:10px;">
+
+<ul>
+    <form id="LoginNowForm">
+    <p style="height:36px;"><label class="form_input_label" style="width:80px;">用户名：</label> <input id="LoginUserName" type="text" maxlength="80" class="form_input_text form_input_width_100 LoginUserName" value="" title="请输入登录用户名或邮箱或手机"/><span id="AjaxLoginUserNameError"></span></p>
+    
+    <p style="height:36px;padding-top:10px;"><label class="form_input_label" style="width:80px;">密码：</label> <input id="LoginPassword" type="password"  class="form_input_text form_input_width_100" title="请输入登录密码"/><span id="AjaxLoginPasswordError"></span></p>
+    
+    <input type="hidden" id="SecurityForm" value="NxTjCLr9eIQBySSx"/>
+    
+    <p style="margin-top:10px;padding-left:80px;" id="SubmitLoginNow"></p>
+    
+    </form>
+    
+    <div class="login_sns">
+              <h3><em style="float:right;font-style: normal;"><a href="http://360hwk.com/index.php?app=2&action=13">忘记密码?</a></em><a href="javascript:;" id="ShowSNS" class="sns_down">通过合作网站登录</a></h3>
+              <ul id="SNSList" style="display:none;padding-bottom:10px;">
+                                                                        
+                           <li><a href="http://360hwk.com/index.php?app=58" class="sina_icon_small">新浪微博登录</a></li>
+                           
+                                          
+                           <li><a href="http://360hwk.com/index.php?app=59" class="qqweibo_icon_small">QQ微博登录</a></li>
+                           
+                                          
+                           <li><a href="http://360hwk.com/index.php?app=65" class="qq_icon_small ">QQ登录</a></li>
+                           
+                                          
+                           <li><a href="http://360hwk.com/index.php?app=66" class="taobao_icon_small">淘宝登录</a></li>
+                           
+                                          
+                           <li><a href="http://360hwk.com/index.php?app=67" class="netease_icon_small">网易微博登录</a></li>
+                           
+                                          
+                           <li><a href="http://360hwk.com/index.php?app=69" class="sohu_icon_small">搜狐登录</a></li>
+                           
+                                                  </ul>
+      
+    </div>
+    
+</ul>
+
+
+</div>
+
+
+
+<iframe src="javascript:false;" id="NowLoginIframe" style="display:none;height:0px;width:0px;"></iframe>
+
+                     </div>
+                </li>
+        
+            </ul>
+        </div>
+    
+
+</div>
+
+
+
+      
+
+
+
+
+                          </div>
+
+                      </div>
+
+                </div> <!--HeaderTop End-->
+
+
+<div class="navigation_box">
+         <div id="Navigation">  
+              <div class="navigation_wrap">
+              
+                 <div id="SearchTask" class="search_task">
+                      <form action='http://360hwk.com/index.php' method="get" class="navigation_search_form">
+      <input name="submit" type="submit" value=" " class="navigation_search_submit"/>
+      <input name="search" type="text" value="搜索 任务,人才,服务" class="navigation_search"/>
+      <input name="app" type="hidden" value="22"/>
+</form>
+
+                 </div>
+                 
+                  <div id="SiteCategory" class="sw_categorys_nav">
+                    <div class="allcategorys">
+                    <h3 class="title-item-hd">
+                    <a href="javascript:void(0);">
+                    所有任务分类
+                    <s class="icon"></s>
+                    </a>
+                    </h3>
+                    <ul class="sublist">
+                           <li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=1&type=49">商务服务</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=37&type=49"><span style="color:">平面设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=38&type=49"><span style="color:">营销推广</span></a><a href="http://www.360hwk.com/index.php?app=10&action=39&type=49"><span style="color:">动画影音</span></a><a href="http://www.360hwk.com/index.php?app=10&action=40&type=49"><span style="color:">网站开发</span></a><a href="http://www.360hwk.com/index.php?app=10&action=41&type=49"><span style="color:">软件开发</span></a><a href="http://www.360hwk.com/index.php?app=10&action=42&type=49"><span style="color:">策划文案</span></a><a href="http://www.360hwk.com/index.php?app=10&action=43&type=49"><span style="color:">翻译服务</span></a><a href="http://www.360hwk.com/index.php?app=10&action=44&type=49"><span style="color:">工业3D</span></a><a href="http://www.360hwk.com/index.php?app=10&action=45&type=49"><span style="color:">招聘找人</span></a><a href="http://www.360hwk.com/index.php?app=10&action=153&type=49"><span style="color:">其它服务</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=3&type=49">生活服务</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=48&type=49"><span style="color:">情感烦恼</span></a><a href="http://www.360hwk.com/index.php?app=10&action=49&type=49"><span style="color:">心理咨询</span></a><a href="http://www.360hwk.com/index.php?app=10&action=50&type=49"><span style="color:">法律咨询</span></a><a href="http://www.360hwk.com/index.php?app=10&action=51&type=49"><span style="color:">理财咨询</span></a><a href="http://www.360hwk.com/index.php?app=10&action=52&type=49"><span style="color:">宝宝起名</span></a><a href="http://www.360hwk.com/index.php?app=10&action=53&type=49"><span style="color:">公司起名</span></a><a href="http://www.360hwk.com/index.php?app=10&action=54&type=49"><span style="color:">品牌起名</span></a><a href="http://www.360hwk.com/index.php?app=10&action=55&type=49"><span style="color:">网站起名</span></a><a href="http://www.360hwk.com/index.php?app=10&action=56&type=49"><span style="color:">店铺起名</span></a><a href="http://www.360hwk.com/index.php?app=10&action=57&type=49"><span style="color:">个人改名</span></a><a href="http://www.360hwk.com/index.php?app=10&action=154&type=49"><span style="color:">其它服务</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=4&type=49">创意创造</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=58&type=49"><span style="color:">创业点子</span></a><a href="http://www.360hwk.com/index.php?app=10&action=59&type=49"><span style="color:">产品创意</span></a><a href="http://www.360hwk.com/index.php?app=10&action=60&type=49"><span style="color:">想办法</span></a><a href="http://www.360hwk.com/index.php?app=10&action=61&type=49"><span style="color:">出主意</span></a><a href="http://www.360hwk.com/index.php?app=10&action=62&type=49"><span style="color:">生活创意</span></a><a href="http://www.360hwk.com/index.php?app=10&action=155&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=5&type=49">化工</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=156&type=49"><span style="color:">配方</span></a><a href="http://www.360hwk.com/index.php?app=10&action=157&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=158&type=49"><span style="color:">分析</span></a><a href="http://www.360hwk.com/index.php?app=10&action=159&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=160&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=170&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=6&type=49">建筑</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=161&type=49"><span style="color:">建筑设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=162&type=49"><span style="color:">装修设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=163&type=49"><span style="color:">装修施工</span></a><a href="http://www.360hwk.com/index.php?app=10&action=171&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=7&type=49">橡塑</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=179&type=49"><span style="color:">配方</span></a><a href="http://www.360hwk.com/index.php?app=10&action=180&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=178&type=49"><span style="color:">其他</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=8&type=49">机械设备</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=174&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=175&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=176&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=177&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=9&type=49">建材</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=46&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=47&type=49"><span style="color:">配方</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=10&type=49">医药保养</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=181&type=49"><span style="color:">配方</span></a><a href="http://www.360hwk.com/index.php?app=10&action=182&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=183&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=11&type=49">环保</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=184&type=49"><span style="color:">检测</span></a><a href="http://www.360hwk.com/index.php?app=10&action=185&type=49"><span style="color:">分析</span></a><a href="http://www.360hwk.com/index.php?app=10&action=186&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=12&type=49">能源</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=187&type=49"><span style="color:">分析</span></a><a href="http://www.360hwk.com/index.php?app=10&action=188&type=49"><span style="color:">检测化验</span></a><a href="http://www.360hwk.com/index.php?app=10&action=189&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=13&type=49">电子元件</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=190&type=49"><span style="color:">电路板设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=191&type=49"><span style="color:">PLC工业设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=192&type=49"><span style="color:">其他</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=14&type=49">五金工具</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=193&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=194&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=195&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=196&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=15&type=49">电工电气</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=197&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=198&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=199&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=16&type=49">汽摩配件</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=200&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=201&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=202&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=17&type=49">照明工业</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=203&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=204&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=18&type=49">交通运输</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=205&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=206&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=207&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=19&type=49">安全防护</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=208&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=209&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=210&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=20&type=49">纸业</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=211&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=212&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=213&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=21&type=49">包装</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=214&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=215&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=216&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=217&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=22&type=49">印刷</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=218&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=219&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=220&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=221&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=23&type=49">服装服饰</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=222&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=223&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=224&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=225&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=24&type=49">礼工饰品</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=226&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=227&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=228&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=229&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=25&type=49">家居用品</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=230&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=231&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=232&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=233&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=26&type=49">家用电器</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=234&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=235&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=236&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=237&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=27&type=49">办公文教</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=238&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=239&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=240&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=241&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=28&type=49">运动休闲</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=242&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=243&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=244&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=245&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=29&type=49">食品饮料</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=246&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=247&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=248&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=249&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=30&type=49">玩具</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=250&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=251&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=252&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=253&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=31&type=49">仪器仪表</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=254&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=255&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=256&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=257&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=32&type=49">传媒广电</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=258&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=33&type=49">美容护理</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=259&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=260&type=49"><span style="color:">配方</span></a><a href="http://www.360hwk.com/index.php?app=10&action=261&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=34&type=49">冶金矿产</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=262&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=263&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=264&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=265&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=35&type=49">纺织皮革</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=266&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=267&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=268&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=269&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=36&type=49">IT数码</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=270&type=49"><span style="color:">设计</span></a><a href="http://www.360hwk.com/index.php?app=10&action=271&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=272&type=49"><span style="color:">制图</span></a><a href="http://www.360hwk.com/index.php?app=10&action=273&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=2&type=49">农业</a></span></h3><p class="mcate-item-bd"><a href="http://www.360hwk.com/index.php?app=10&action=274&type=49"><span style="color:">工艺</span></a><a href="http://www.360hwk.com/index.php?app=10&action=275&type=49"><span style="color:">其它</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.360hwk.com/index.php?app=10&action=278&type=49">其他末分类</a></span></h3><p class="mcate-item-bd"></p></li>                    </ul>
+                    </div>
+                 </div>
+            
+             
+                  <script type="text/javascript">
+                      $('#SiteCategory').Z_TMAIL_SIDER_V2();
+                  </script>
+            
+                <div class="navigation">
+                      <ul>   
+                            
+                             
+                            
+                                                                    
+                                                                                        <li id="Nav_ID_56"><a href="http://360hwk.com/index.php">首页</a></li> 
+                                   
+                                                                           
+                                                                    
+                                                                                        <li id="Nav_ID_49"><a href="http://360hwk.com/index.php?app=49">任务大厅</a></li> 
+                                   
+                                                                           
+                                                                    
+                                                                                        <li id="Nav_ID_55"><a href="http://360hwk.com/index.php?app=55">找人才</a></li> 
+                                   
+                                                                           
+                                                                    
+                                                                                        <li id="Nav_ID_82"><a href="http://360hwk.com/index.php?app=82">买服务</a></li> 
+                                   
+                                                                           
+                                                                    
+                                                                                        <li id="Nav_ID_9"><a href="http://360hwk.com/member.php?app=9">管理中心</a></li> 
+                                   
+                                                                           
+                                                                    
+                                                                                    	<li><a href="http://www.weituiguang.com">微推广</a></li>
+                                                                           
+                                                              
+                                                        
+                            <!--
+                                                        -->
+                            
+                      </ul>
+                     
+                </div> <!--navigation End-->
+                
+    
+            </div>   <!--navigation_wrap End-->
+    
+     </div> <!--Navigation End-->
+
+</div>
+
+<script type="text/javascript">
+$(function(){	
+	   var nowappid='82';
+	   if(nowappid==10 || nowappid==27){
+		    nowappid=49;
+	   }
+	   $("#Nav_ID_"+nowappid).addClass("focus");
+	   
+});
+</script>
+
+
+</div>
+
+
+<div class="wrap">
+<div class="content">
+
+
+
+
+
+
+
+<script type="text/javascript">var moreselect='0';</script>
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/member.js?v=20140904"></script>
+<script type="text/javascript" src="/phpapp/templates/default/style/blue/js/list.js?v=20140904"></script>
+
+<link href="/phpapp/templates/default/style/blue/icon.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/skills.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/task.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/member.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/form.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/default/style/blue/job.css" rel="stylesheet" type="text/css" />
+
+
+
+       <div class="select_ctarray">
+                      <ul>
+                  <a href="http://360hwk.com/index.php?app=10&action=1&type=82&item=3.11;10000.1337;" class="label"  title="商务服务">商务服务</a><a href="http://360hwk.com/index.php?app=10&action=3&type=82&item=3.11;10000.1337;" class="label"  title="生活服务">生活服务</a><a href="http://360hwk.com/index.php?app=10&action=4&type=82&item=3.11;10000.1337;" class="label"  title="创意创造">创意创造</a><a href="http://360hwk.com/index.php?app=10&action=5&type=82&item=3.11;10000.1337;" class="label"  title="化工">化工</a><a href="http://360hwk.com/index.php?app=10&action=6&type=82&item=3.11;10000.1337;" class="label"  title="建筑">建筑</a><a href="http://360hwk.com/index.php?app=10&action=7&type=82&item=3.11;10000.1337;" class="label"  title="橡塑">橡塑</a><a href="http://360hwk.com/index.php?app=10&action=8&type=82&item=3.11;10000.1337;" class="label"  title="机械设备">机械设备</a><a href="http://360hwk.com/index.php?app=10&action=9&type=82&item=3.11;10000.1337;" class="label"  title="建材">建材</a><a href="http://360hwk.com/index.php?app=10&action=10&type=82&item=3.11;10000.1337;" class="label"  title="医药保养">医药保养</a><a href="http://360hwk.com/index.php?app=10&action=11&type=82&item=3.11;10000.1337;" class="label"  title="环保">环保</a><a href="http://360hwk.com/index.php?app=10&action=12&type=82&item=3.11;10000.1337;" class="label"  title="能源">能源</a><a href="http://360hwk.com/index.php?app=10&action=13&type=82&item=3.11;10000.1337;" class="label"  title="电子元件">电子元件</a><a href="http://360hwk.com/index.php?app=10&action=14&type=82&item=3.11;10000.1337;" class="label"  title="五金工具">五金工具</a><a href="http://360hwk.com/index.php?app=10&action=15&type=82&item=3.11;10000.1337;" class="label"  title="电工电气">电工电气</a><a href="http://360hwk.com/index.php?app=10&action=16&type=82&item=3.11;10000.1337;" class="label"  title="汽摩配件">汽摩配件</a><a href="http://360hwk.com/index.php?app=10&action=17&type=82&item=3.11;10000.1337;" class="label"  title="照明工业">照明工业</a><a href="http://360hwk.com/index.php?app=10&action=18&type=82&item=3.11;10000.1337;" class="label"  title="交通运输">交通运输</a><a href="http://360hwk.com/index.php?app=10&action=19&type=82&item=3.11;10000.1337;" class="label"  title="安全防护">安全防护</a><a href="http://360hwk.com/index.php?app=10&action=20&type=82&item=3.11;10000.1337;" class="label"  title="纸业">纸业</a><a href="http://360hwk.com/index.php?app=10&action=21&type=82&item=3.11;10000.1337;" class="label"  title="包装">包装</a><a href="http://360hwk.com/index.php?app=10&action=22&type=82&item=3.11;10000.1337;" class="label"  title="印刷">印刷</a><a href="http://360hwk.com/index.php?app=10&action=23&type=82&item=3.11;10000.1337;" class="label"  title="服装服饰">服装服饰</a><a href="http://360hwk.com/index.php?app=10&action=24&type=82&item=3.11;10000.1337;" class="label"  title="礼工饰品">礼工饰品</a><a href="http://360hwk.com/index.php?app=10&action=25&type=82&item=3.11;10000.1337;" class="label"  title="家居用品">家居用品</a><a href="http://360hwk.com/index.php?app=10&action=26&type=82&item=3.11;10000.1337;" class="label"  title="家用电器">家用电器</a><a href="http://360hwk.com/index.php?app=10&action=27&type=82&item=3.11;10000.1337;" class="label"  title="办公文教">办公文教</a><a href="http://360hwk.com/index.php?app=10&action=28&type=82&item=3.11;10000.1337;" class="label"  title="运动休闲">运动休闲</a><a href="http://360hwk.com/index.php?app=10&action=29&type=82&item=3.11;10000.1337;" class="label"  title="食品饮料">食品饮料</a><a href="http://360hwk.com/index.php?app=10&action=30&type=82&item=3.11;10000.1337;" class="label"  title="玩具">玩具</a><a href="http://360hwk.com/index.php?app=10&action=31&type=82&item=3.11;10000.1337;" class="label"  title="仪器仪表">仪器仪表</a><a href="http://360hwk.com/index.php?app=10&action=32&type=82&item=3.11;10000.1337;" class="label"  title="传媒广电">传媒广电</a><a href="http://360hwk.com/index.php?app=10&action=33&type=82&item=3.11;10000.1337;" class="label"  title="美容护理">美容护理</a><a href="http://360hwk.com/index.php?app=10&action=34&type=82&item=3.11;10000.1337;" class="label"  title="冶金矿产">冶金矿产</a><a href="http://360hwk.com/index.php?app=10&action=35&type=82&item=3.11;10000.1337;" class="label"  title="纺织皮革">纺织皮革</a><a href="http://360hwk.com/index.php?app=10&action=36&type=82&item=3.11;10000.1337;" class="label"  title="IT数码">IT数码</a><a href="http://360hwk.com/index.php?app=10&action=2&type=82&item=3.11;10000.1337;" class="label"  title="农业">农业</a><a href="http://360hwk.com/index.php?app=10&action=278&type=82&item=3.11;10000.1337;" class="label"  title="其他末分类">其他末分类</a>           </ul>
+       </div>
+
+
+<p style="padding:2px;text-align:right;">
+	 <a class="small blue awesome" href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=5&select=0&more=1&tab=0" id="NowOpenSelect">打开筛选</a>
+</p>
+
+    <div class="task_select_title select_now">          
+    <ul>
+        <li><h2>您已选择:</h2><p class="select_skills"><a href="http://360hwk.com/index.php?app=82&item=3.11&sort=5&select=0&more=0&tab=0">城区</a> <a href="http://360hwk.com/index.php?app=82&item=10000.1337&sort=5&select=0&more=0&tab=0">已实名认证</a> </p></li>
+    </ul>
+    </div>  
+
+<div id="OpenSelect" style="display:none">
+
+    <div class="task_select_title">
+                 
+    <ul> 
+       <li><h2>用户类型:</h2><p><a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;4.12&sort=5&select=0&more=0&tab=0">个人</a> <a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;4.13&sort=5&select=0&more=0&tab=0">企业</a> </p></li><li><h2>卖家好评:</h2><p><a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;5.19&sort=5&select=0&more=0&tab=0">10个好评内</a> <a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;5.20&sort=5&select=0&more=0&tab=0">10-20个好评</a> <a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;5.21&sort=5&select=0&more=0&tab=0">20-50个好评</a> <a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;5.22&sort=5&select=0&more=0&tab=0">大于100个好评</a> </p></li><li><h2>注册时间:</h2><p><a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;7.28&sort=5&select=0&more=0&tab=0">今日</a> <a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;7.29&sort=5&select=0&more=0&tab=0">昨日</a> <a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;7.30&sort=5&select=0&more=0&tab=0">近三天</a> <a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;7.31&sort=5&select=0&more=0&tab=0">近一周</a> <a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;7.32&sort=5&select=0&more=0&tab=0">近一个月</a> </p></li>         
+    </ul>
+    
+    </div>
+</div>
+
+
+<div class="task_list_nav">
+<ul>
+        <li class="mapshow_icon"><a href="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=5&select=0&more=0&tab=1" title="切换地图" class="help_small"></a></li>
+        <li><a href="http://360hwk.com/index.php?app=49">任务列表</a> </li>
+    <li><a href="http://360hwk.com/index.php?app=55">找人才</a></li>
+    <li class="focus"><a href="http://360hwk.com/index.php?app=82">买服务</a></li>
+</li>
+</ul>
+ <span style="padding-left:10px;float:right;">
+     <select id="TaskSelectSort" style="margin-top:8px;">
+                                 
+                                            
+                           <option value="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=0&select=0&more=0&tab=0"  >默认排序</option>
+                      
+                                            
+                           <option value="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=1&select=0&more=0&tab=0"  >报价从高到低</option>
+                      
+                                            
+                           <option value="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=2&select=0&more=0&tab=0"  >报价从低到高</option>
+                      
+                                            
+                           <option value="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=3&select=0&more=0&tab=0"  >完成时间从少到多</option>
+                      
+                                            
+                           <option value="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=4&select=0&more=0&tab=0"  >完成时间从多到少</option>
+                      
+                                            
+                           <option value="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=5&select=0&more=0&tab=0" selected="selected" >出售量从少到多</option>
+                      
+                                            
+                           <option value="http://360hwk.com/index.php?app=82&item=3.11;10000.1337;&sort=6&select=0&more=0&tab=0"  >出售量从多到少</option>
+                      
+                              
+                                                                                                         </select>
+ </span>
+         
+</div>
+
+
+
+
+        <!--
+                -->
+         
+                     <p>暂时没有服务出售!</p>
+                
+        
+              
+  
+ 
+       
+       
+
+
+</div>
+   
+   
+<script type="text/javascript">
+$(function(){	
+	$.PHPAPPTaskFlash('.flashbid',3000);
+});
+</script>
+
+﻿
+				 
+
+                     </div> <!--content End-->
+                 </div> <!--wrap End-->
+                 
+                 <div id="Footer" class="footer">   
+                      <div class="footermenu">
+                            <div class="footermenulist">
+                               <ul>
+                                                                                                                                                                <li><a href="index.php?app=23&action=2"  title="联系方式">联系方式</a></li>
+                                                                                      <li><a href="index.php?app=23&action=3"  title="友情链接">友情链接</a></li>
+                                                                                      <li><a href="index.php?app=46"  title="网站地图">网站地图</a></li>
+                                                                                      <li><a href="index.php?app=57"  title="帮助中心">帮助中心</a></li>
+                                                                                      <li><a href="index.php?app=20" target="_blank" title="推广联盟">推广联盟</a></li>
+                                                                                                             </ul>
+                            </div>
+                            
+                            
+                                    
+                                        <div id="SystemLanguage" class="systemlanguage">
+                                                                                
+                                            <div id="SystemLanguageList" class="languagelist">   
+                                             <h3>请选择国家地区语言</h3>  
+                                                <ul>
+                                                                                                         <li><a href="http://demo.phpapp.cn" class="china-cn" title="中国">中国</a></li>
+                                                                                                         <li><a href="http://tw.phpapp.cn" class="china-tw" title="中国台湾">中国台湾</a></li>
+                                                                                                         <li><a href="http://en.phpapp.cn" class="engish" title="USA">USA</a></li>
+                                                                                                         <li><a href="http://it.phpapp.cn" class="italy" title="Italy">Italy</a></li>
+                                                                                                         <li><a href="http://fr.phpapp.cn" class="france" title="France">France</a></li>
+                                                                                                         <li><a href="http://de.phpapp.cn" class="germany" title="Germany">Germany</a></li>
+                                                                                                         <li><a href="http://hk.phpapp.cn" class="china-hk" title="中国香港">中国香港</a></li>
+                                                                                                         <li><a href="http://jp.phpapp.cn" class="japan" title="Japan">Japan</a></li>
+                                                                                                         <li><a href="http://kr.phpapp.cn" class="korea" title="Korea">Korea</a></li>
+                                                                                                         <li><a href="http://mx.phpapp.cn" class="mexico" title="Mexico">Mexico</a></li>
+                                                                                                         <li><a href="http://pt.phpapp.cn" class="portugal" title="Portugal">Portugal</a></li>
+                                                                                                         <li><a href="http://se.phpapp.cn" class="sweden" title="Sweden">Sweden</a></li>
+                                                                                                         <li><a href="http://th.phpapp.cn" class="thailand" title="Thailand">Thailand</a></li>
+                                                                                                         <li><a href="http://gb.phpapp.cn" class="greatbritain" title="England">England</a></li>
+                                                                                                         <li><a href="http://ca.phpapp.cn" class="canada" title="Canada">Canada</a></li>
+                                                                                                </ul>
+                                            </div>
+                                            
+                                        <h3><em>LANGUAGE</em><span><a href="javascript:void(0);" title="当前语言中国" id="ShowSystemLanguage">中国</a></span></h3>
+            
+                                        </div>
+                                                                                     </div>
+                       
+                       <div class="footercopyright">
+                            <div class="copyright">
+                                <p>
+                                &copy; 2006-2015 <a href="http://www.360hwk.com" target="_blank">&nbsp; 版权所有</a></p>
+                                
+                              <p>
+                                服务热线： 在线咨询QQ</p>
+                                
+                                <p>
+                                <a href="http://www.miitbeian.gov.cn" target="_blank">鲁ICP备08104321号</a> 
+                                                                </p>
+
+                            
+                            </div>
+                            
+                            <div class="footerauthenticate">
+                                <a href="http://www.alipay.com" title="支付宝" class="footeralipay"></a>
+                                <a href="" title="工商注册" class="footergongshang"></a>
+                                <a href="http://cnnic.cn" title="可信网站认证" class="footercnnic"></a>
+                            </div>
+                       </div>
+                       
+                       
+                       
+                           
+                 </div> <!--Footer End-->
+
+ 
+             </div> <!--SiteSmallWrap End-->
+         </div> <!--SiteMiddleWrap End-->
+     </div> <!--SiteBigWrap End-->
+     
+     
+     <div id="ScrollUp" class="scroll_default">
+     	<a id="TipScrollUp" href="javascript:;" onclick="scrollTo(0,0);" title="返回顶部"></a>
+     </div>
+     
+     <div id="POPLIVE" class="pop_live">
+     </div>
+     
+     
+     
+     
+     <!--[if lte IE 6]> 
+    	<link href="/phpapp/templates/default/style/blue/form_ie6.css" rel="stylesheet" type="text/css" />
+     <![endif]-->
+
+  </body>
+</html>
+

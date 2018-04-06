@@ -1,0 +1,389 @@
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+可吸收缝线吻合肌腱的疗效观察
+..._全文求助_互助区_医脉通_medlive.cn</title>
+
+
+
+
+<meta http-equiv=content-type content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" type="text/css" href='http://webres.medlive.cn/basic.css' />
+<link rel="stylesheet" type="text/css" href='http://webres.medlive.cn/common.css' />
+
+<link rel="stylesheet" type="text/css" href='http://x1.webres.medlive.cn/medlive/appeal.css' />
+<link rel="stylesheet" type="text/css" href="http://x1.webres.medlive.cn/css/ky-min.css" />
+<script type="text/javascript" src="http://webres.medlive.cn/jquery.js"></script>
+<script type="text/javascript" src="http://webres.medlive.cn/jquery-ui.js"></script>
+<script type="text/javascript" src="http://x1.webres.medlive.cn/js/prototype.js"></script>
+<script type="text/javascript" src="http://x1.webres.medlive.cn/js/common.js"></script>
+<script type="text/javascript" src="/appeal/js/thesis.js"></script>
+<script type="text/javascript">
+	/*取消求助*/
+	function doCancelAppeal(thid) {
+		if(confirm("如果您确实想取消该求助，请点击下方的“确定”按钮。")) {
+			location.href = 'appeal_del.do?thid=' + thid + '&listMode=0&lantype=1';
+		}
+	}
+	/*修改求助*/
+	function doReAppeal(thid) {
+		var message = "如果您确实想修改求助，请点击下方的“确定”按钮。";
+		if(confirm(message)) {
+			location.href = "appeal_edit.do?thid=" + thid;
+		}
+	}
+	/*认领*/
+	function doAdopt(thid) {
+		if($F('j_captcha')=='') {
+			alert("请填写验证码！");
+			$('j_captcha').focus();
+		} else {
+			if(confirm("如果您确实想要认领，请点击下方的“确定”按钮。")) {
+				location.href = "appeal_adopt.do?thid=" + thid+"&j_captcha="+$F('j_captcha');
+			}
+		}
+	}
+	
+	/*已过期后继续求助*/
+	function doAppealAgain(originalThid) {
+		var message = "本次求助已过了您设定的时间限制，如果您确实想要继续求助，";
+		message += "您可以按“确定”继续求助该文献。";				
+		if(confirm(message)) {
+			location.href = "appeal_edit.do?originalThid=" + originalThid;
+		}
+	}
+</script>
+</head>
+<body>
+
+
+
+
+
+<script>
+	var pull_down = {
+		ids : {},
+		show : function (id,navid){
+			this._clear(id);
+			jQuery("#"+id).show();
+			jQuery('#'+navid).css('background-color','#EAEAEA');
+		},
+		hide : function (id,navid){
+			this._clear(id);
+			this.ids[id] = setTimeout(function(){
+				jQuery("#"+id).hide();
+				}, 200);
+			jQuery('#'+navid).css('background-color','#D6D6D6');
+		},
+		_clear : function(id){
+			if(this.ids[id] > 0){
+				clearTimeout(this.ids[id]);
+				this.ids[id] = 0;
+			}
+		},
+		nav_class : function(obj,id){
+			jQuery(obj).addClass('current');
+			jQuery(obj).siblings().removeClass('current');
+			jQuery('#'+id).css('background-color','#EAEAEA');
+		}
+	};
+</script>
+<div id="feedbackfloat" style="right:1px;position:absolute;top:200px;z-index:10000"> <a target="_blank" href="http://group.medlive.cn/topic_edit?group_id=20000139&act=topic_new"><img src="http://webres.medlive.cn/public/liuyan.png"></a> </div>
+<div class="emr_top">
+  <div class="emr_top_body">
+    <ul class="emr_top_l">
+      <li class="icon index"> <a href="http://www.medlive.cn/">医脉通首页</a> </li>
+      <li class="icon mobile"> <a href="http://app.medlive.cn/">软件中心</a> </li>
+      <li class="icon weibo"> <a href="http://e.weibo.com/medlive">医脉通微博</a> </li>
+      <li class="icon nav">
+        <a id="nav1" href="javascript:void 0;" onmouseover="pull_down.show('top_nav_list','nav1');" onmouseout="pull_down.hide('top_nav_list','nav1');">频道导航<span class="down"></span></a>
+        <ul class="nav_list" id="top_nav_list" style="display:none" onmouseover="pull_down.show('top_nav_list','nav1');" onmouseout="pull_down.hide('top_nav_list','nav1');">
+          <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://news.medlive.cn/'>资讯</a> </li>
+          <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://case.medlive.cn/'>病例</a> </li>
+           <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://special.medlive.cn/'>专题</a> </li>
+          <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://group.medlive.cn/'>圈子</a> </li>
+           <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://guide.medlive.cn/'>指南</a> </li>
+          <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://paper.medlive.cn/'>期刊文献</a> </li>
+          <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://disease.medlive.cn/'>诊疗知识库</a> </li>
+          <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://class.medlive.cn/'>e讲堂</a> </li>
+           <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://survey.medlive.cn/'>e调研</a> </li>
+            <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://meeting.medlive.cn/'>会议</a> </li>
+             <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://drugs.medlive.cn/'>用药参考</a> </li>
+              <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://meddic.medlive.cn/'>医学词典</a> </li>
+          <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://res.medlive.cn/'>医学资源</a> </li>
+          <li onmouseover="pull_down.nav_class(this,'nav1');"> <a href='http://www.medlive.cn/appeal/'>互助区</a> </li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="emr_top_r" id="ajaxInfo"></ul>
+  </div>
+</div>
+<div class="page_header branch_page_header">
+  <div class="page_header_frame"> <a href='http://www.medlive.cn/appeal/'>
+    <div class="site_icon"></div>
+    </a>
+    <div class="site_icon_memo">
+      <div class="txt">互助区</div>
+    </div>
+    <div style="right:8px; top:8px;">
+     <script type="text/javascript">
+		var ran = Math.round(Math.random()*(ad_img.length-1));
+		document.write("<a href='" + ad_img[ran][2] + "' title='" +ad_img[ran][1] + "' target='_blank'><img src='http://x1.webres.medlive.cn/medlive/appeal/ad/" + ad_img[ran][0] + "' /></a>");
+	</script> 
+    </div>
+  </div>
+</div>
+<div class="cms_nav_branch branch_kind_nav">
+  <div class="nav_branch_body">
+    <div class="nav_branch">
+      <ul>
+        <li id="li_thesis"><a href="http://www.medlive.cn/appeal/jsp/appeal_list.do">全文求助</a></li>
+        <li id="li_trans"><a href="http://www.medlive.cn/appeal/jsp/newtranslate_list.do">翻译求助</a></li>
+        <li id="li_word" class="last"><a href="http://www.medlive.cn/appeal/jsp/word_list.do">生词求助</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+	var url = '/user_info_ajax.do';
+	url += "?returnUrl=" + document.URL;
+	
+	jQuery.ajax({ url:url, 
+		success: function(responseText){
+			jQuery("#ajaxInfo").html(responseText);
+		}
+	});
+	
+	jQuery(document).ready(function(){
+		
+			document.getElementById("li_thesis").className="cur";
+		
+	});
+	
+</script>
+<div id="content">
+	<div class="crumbTool c_top">
+    <div class="crumbNav"><a href="../" class="channel">互助区</a> &gt; <a href="appeal_list.do">全文求助</a> &gt; 求助信息浏览</div>
+  </div>
+    <div class="main">
+		 <div class="h_c part farial">
+		  <div class="hd h_tnf">
+			<div class="c_t2"><b>求助信息浏览</b></div>
+		  </div>
+		  <div class="bd">
+			
+
+
+
+
+<div id="runMsg" style="display:none">
+<img src="http://x1.webres.medlive.cn/image/loading.gif" align="absmiddle"/>处理中...</div>
+<div id="successMsg" style="display:none">
+<img src='http://x1.webres.medlive.cn/image/success-16x16.gif' align="absmiddle"></div>
+<div id="errMsg" class="red" style="display:none">
+<img src='http://x1.webres.medlive.cn/image/error-16x16.gif' align="absmiddle"> </div>
+
+
+			
+			<div class="h_table">
+       		  <table width="100%" cellpadding="0" cellspacing="0" class="tat_1">
+				<tr>
+				  <th colspan="4">求助情况</th>
+				</tr>
+				<tr>
+				  <td class="t_w1">全文类型</td>
+				  <td class="t_w2"> 中文全文 
+					
+				  </td>
+				  <td class="t_w3">状态</td>
+				  <td class="t_w4">
+					
+					 <img src='../image/yyz.gif' align='absmiddle' title='已应助'/> 已应助 
+					
+				  </td>
+				</tr>
+				<tr>
+				  <td class="t_w1"> 分值确定方式</td>
+				  <td class="t_w2">
+					系统自动</td>
+				  <td class="t_w3">分值</td>
+				  <td class="score">20</td>
+				</tr>
+				<tr>
+				  <td class="t_w1">求助人</td>
+				  <td> <img src="../image/user_g.gif"/>
+					<a href='http://i.medlive.cn/user/1383437'>jjmedical
+					
+					</a>
+					
+					
+					<span><a onClick="return emtInstalled();" href='emt://openwin/addfriend/uin=1383437'><img src="../../image/friend_1.gif" title="加为好友"/></a> <a onClick="return emtInstalled();" href='emt://openwin/openchat/uin=1383437'><img src="../../image/chat_1.gif" title="聊天"/></a></span>
+				  </td>
+				  <td class="t_w3">求助时间</td>
+				  <td nowarp>2015-02-16 15:42</td>
+				</tr>
+				<tr>
+				  <td class="t_w1">截止时间</td>
+				  <td nowarp>2015-02-23 15:00</td>
+				  <td  class="t_w3">剩余时间</td>
+				  <td nowarp="nowarp" class="warnTime"></td>
+				</tr>
+				<tr>
+				  <td class="t_w1">期刊名称</td>
+				  <td nowarp colspan="3"> 四川医学</td>
+				</tr>
+				<tr>
+				  <td class="t_w1">出版年, 卷(期)<br>
+					起止页码</td>
+				  <td nowarp colspan="3" style="vertical-align:top">2014
+					,
+					
+					(
+					
+					)<br>
+					
+				  </td>
+				</tr>
+				<tr>
+				  <td class="t_w1">标题</td>
+				  <td nowarp colspan="3">可吸收缝线吻合肌腱的疗效观察</td>
+				</tr>
+				<tr>
+				  <td class="t_w1">作者</td>
+				  <td nowarp colspan="3"></td>
+				</tr>
+				<tr>
+				  <td class="t_w1">PMID</td>
+				  <td nowarp colspan="3">
+					
+				  </td>
+				</tr>
+				<tr>
+				  <td class="t_w1">全文链接</td>
+				  <td nowarp colspan="3">
+				  </td>
+				</tr>
+				<tr>
+				  <td class="t_w1">求助附言</td>
+				  <td colspan="3" style="color:red;">54</td>
+				</tr>
+				
+				
+				  <tr>
+					<th colspan="4">认领情况</th>
+				  </tr>
+				  <tr>
+					<td class="t_w1">认领人</td>
+					<td>
+					<a href='http://i.medlive.cn/user/299607'>
+					yanghuabiao
+					
+					  </a>
+					   <a onClick="return emtInstalled();" href='emt://openwin/addfriend/uin=299607'><img src="../../image/friend_1.gif" title="加为好友"/></a> <a onClick="return emtInstalled();" href='emt://openwin/openchat/uin=299607'><img src="../../image/chat_1.gif" title="聊天"/></a> </td>
+					<td class="t_w3">认领时间</td>
+					<td nowarp>2015-02-16 15:42</td>
+				  </tr>
+				  <tr>
+					<td class="t_w1">认领到期时间</td>
+					<td nowarp colspan="3">2015-02-16 15:57</td>
+				  </tr>
+				
+				
+				
+				  <tr>
+					<td nowrap colspan="6"><label>应助情况</label></td>
+				  </tr>
+				  <tr>
+					<td nowrap align="right">应助人</td>
+					<td nowarp>
+					yanghuabiao
+					</td>
+					<td nowrap align="right">应助时间</td>
+					<td nowarp>2015-02-16 15:43</td>
+				  </tr>
+				
+			  </table>
+			  <br/>
+			  <div style="padding:10px">
+			  
+					 您尚未登录，建议您 <a href='http://www.medlive.cn/auth/login'>登录</a> 后使用本站！ 
+					
+				 </div>
+			  </div>
+			
+		  </div>
+		  <div class="h_br"></div>
+		 </div>
+    </div>
+    <div class="sideBar">
+      <div class="part side">
+        
+
+
+
+
+<span class="rc-tp"><span></span></span>
+<div class="hd">
+  <h3>操作</h3>
+</div>
+<div class="bd bg_r">
+  <div class="cz_h">
+    <ul>
+      <li><a href="appeal_list.do">浏览所有求助</a></li>
+      <li class="bg_l1"> <a href="appeal_edit.do">我要求助</a></li>
+      <li class="bg_l2 b_bd"> <a href="/pubmed/">我要先检索再求助</a></li>
+      <li class="bg_l3"><a href="appeal_list_mine.do?listMode=1">我的求助箱</a></li>
+      <li class="bg_l4 b_bd"> <a href="appback_list_mine.do">我的应助箱</a></li>
+      <li class="bg_l5 b_bd"> <a href="press_list.do?appealType=1&pressType=1">投诉中心</a></li>
+      <li class="bg_l6"> <a href="http://group.medlive.cn/forum/20000147">进入全文求助圈子</a></li>
+      <li class="bg_l7"> <a href="http://www.medlive.cn/service/help.php#mutual">帮助</a></Li>
+    </ul>
+  </div>
+</div>
+<div class="rc-bt"><span></span></div>
+      </div>
+      <div class="part side">
+        
+
+
+
+
+<a href="/service/mutual_fullhelp.php"><img src='http://webres.medlive.cn/help/bg_r.gif' alt="医脉通全文求助" /></a>
+
+      </div>
+    </div>
+</div>
+<div class="page_bottom">
+  <ul>
+    <li><a href="/service/aboutus.php">关于我们</a>|</li>
+    <li><a href="/service/contact.php">联系我们</a>|</li>
+    <li><a href="/service/privacy.php">隐私政策</a>|</li>
+    <li><a href="/service/copyright.php">版权声明</a>|</li>
+    <li><a href="/service/disclaimer.php">免责声明</a>|</li>
+    <li><a href="/service/certificate.php">资格证书</a>|</li>
+    <li><a href="http://www.medscape.com.cn" target="_blank">公司产品</a>|</li>
+    <li class="last"><a href="/service/help.php">网站帮助</a></li>
+  </ul>
+</div>
+<div class="page_copyright">北京医脉互通公司 版权所有 京公网安备11010502021568 京ICP备<span class="en">130463</span>号<span class="en">&copy;</span> 2005－2014 medlive.cn, all rights reserved </div>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F62d92d99f7c1e7a31a11759de376479f' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript"> 
+(function() { 
+var u="//tongji.medlive.cn/"; 
+var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; 
+g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'tj.js'; s.parentNode.insertBefore(g,s); 
+})(); 
+</script>
+</body>
+</html>
+

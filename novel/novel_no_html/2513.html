@@ -1,0 +1,460 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	宜良中小企业网
+</title><link href="style/master.css" rel="stylesheet" type="text/css" /><link href="style/layout_1.css" rel="stylesheet" type="text/css" />
+<script src="scripts/slidetab.js" type="text/javascript"></script>
+<script src="scripts/photoshow.js" type="text/javascript"></script>
+<script language="javascript">
+var bsYear;  
+var bsDate;  
+var bsWeek;  
+var arrLen=8;	//数组长度
+var sValue=0;	//当年的秒数
+var dayiy=0;	//当年第几天
+var miy=0;	//月份的下标
+var iyear=0;	//年份标记
+var dayim=0;	//当月第几天
+var spd=86400;	//每天的秒数
+
+var year1999="30;29;29;30;29;29;30;29;30;30;30;29";	//354
+var year2000="30;30;29;29;30;29;29;30;29;30;30;29";	//354
+var year2001="30;30;29;30;29;30;29;29;30;29;30;29;30";	//384
+var year2002="30;30;29;30;29;30;29;29;30;29;30;29";	//354
+var year2003="30;30;29;30;30;29;30;29;29;30;29;30";	//355
+var year2004="29;30;29;30;30;29;30;29;30;29;30;29;30";	//384
+var year2005="29;30;29;30;29;30;30;29;30;29;30;29";	//354
+var year2006="30;29;30;29;30;30;29;29;30;30;29;29;30";
+
+var month1999="正月;二月;三月;四月;五月;六月;七月;八月;九月;十月;十一月;十二月"
+var month2001="正月;二月;三月;四月;闰四月;五月;六月;七月;八月;九月;十月;十一月;十二月"
+var month2004="正月;二月;闰二月;三月;四月;五月;六月;七月;八月;九月;十月;十一月;十二月"
+var month2006="正月;二月;三月;四月;五月;六月;七月;闰七月;八月;九月;十月;十一月;十二月"
+var Dn="初一;初二;初三;初四;初五;初六;初七;初八;初九;初十;十一;十二;十三;十四;十五;十六;十七;十八;十九;二十;廿一;廿二;廿三;廿四;廿五;廿六;廿七;廿八;廿九;三十";
+
+var Ys=new Array(arrLen);
+Ys[0]=919094400;Ys[1]=949680000;Ys[2]=980265600;
+Ys[3]=1013443200;Ys[4]=1044028800;Ys[5]=1074700800;
+Ys[6]=1107878400;Ys[7]=1138464000;
+
+var Yn=new Array(arrLen);   //农历年的名称
+Yn[0]="己卯年";Yn[1]="庚辰年";Yn[2]="辛巳年";
+Yn[3]="壬午年";Yn[4]="癸未年";Yn[5]="甲申年";
+Yn[6]="乙酉年";Yn[7]="丙戌年"; 
+var D=new Date();
+var yy=D.getYear();
+var mm=D.getMonth()+1;
+var dd=D.getDate();
+var ww=D.getDay();
+if (ww==0) ww="<font color=RED>星期日";
+if (ww==1) ww="星期一";
+if (ww==2) ww="星期二";
+if (ww==3) ww="星期三";
+if (ww==4) ww="星期四";
+if (ww==5) ww="星期五";
+if (ww==6) ww="<font color=RED>星期六";
+ww=ww;
+var ss=parseInt(D.getTime() / 1000);
+if (yy<100) yy="19"+yy;
+
+for (i=0;i<arrLen;i++)
+	if (ss>=Ys[i]){
+		iyear=i;
+		sValue=ss-Ys[i];    //当年的秒数
+		}
+dayiy=parseInt(sValue/spd)+1;    //当年的天数
+
+var dpm=year1999;
+if (iyear==1) dpm=year2000;
+if (iyear==2) dpm=year2001;
+if (iyear==3) dpm=year2002;
+if (iyear==4) dpm=year2003;
+if (iyear==5) dpm=year2004;
+if (iyear==6) dpm=year2005;
+if (iyear==7) dpm=year2006;
+dpm=dpm.split(";");
+
+var Mn=month1999;
+if (iyear==2) Mn=month2001;
+if (iyear==5) Mn=month2004;
+if (iyear==7) Mn=month2006;
+Mn=Mn.split(";");
+
+var Dn="初一;初二;初三;初四;初五;初六;初七;初八;初九;初十;十一;十二;十三;十四;十五;十六;十七;十八;十九;二十;廿一;廿二;廿三;廿四;廿五;廿六;廿七;廿八;廿九;三十";
+Dn=Dn.split(";");
+
+dayim=dayiy;
+
+var total=new Array(13);
+total[0]=parseInt(dpm[0]);
+for (i=1;i<dpm.length-1;i++) total[i]=parseInt(dpm[i])+total[i-1];
+for (i=dpm.length-1;i>0;i--)
+	if (dayim>total[i-1]){
+		dayim=dayim-total[i-1];
+		miy=i;
+		}
+bsWeek=ww;
+bsDate=yy+"年"+mm+"月";
+bsDate2=dd+"日";
+bsYear="农历"+Yn[iyear];
+bsYear2=Mn[miy]+Dn[dayim-1];
+if (ss>=Ys[7]||ss<Ys[0]) bsYear=Yn[7];
+function CAL(){
+document.write(bsDate+bsDate2+"&nbsp;&nbsp;"+bsWeek+"&nbsp;&nbsp;"+bsYear+bsYear2);
+}
+//-->
+</script>
+</head>
+<body>
+    <form name="aspnetForm" method="post" action="Provide_Detail_E.aspx?id=1988396&amp;WY_Kind=2" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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c3Bhbj48L2E+PC9saT48bGkgY2xhc3M9Im5vcm1hbCIgb25tb3VzZW92ZXI9Im5UYWJzKHRoaXMsMSk7Ij48YSB0YXJnZXQ9Il9ibGFuayIgaHJlZj0iSW5mb19Nb3JlLmFzcHg/S2luZElkPTE5MyI+PHNwYW4+5biC57qn5paH5Lu26YCa55+lPC9zcGFuPjwvYT48L2xpPjwvdWw+PC9kaXY+PGRpdiBjbGFzcz0icmlnaHQiPjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9ImNvbGNvbnQiPjxkaXYgaWQ9Im15VGFiNF9Db250ZW50MCIgY2xhc3M9ImxlZnQiPjx1bCBjbGFzcz0ibmV3c2xpbmUiPjxsaT48YSB0YXJnZXQ9Il9ibGFuayIgdGl0bGU9IuWunOiJr+WOv+WFrOW8gOmAieaLlOWJr+enkee6p+mihuWvvOW5sumDqOWFrOWRiiIgaHJlZj0iSW5mb19kZXRhaWwuYXNweD9JRD03MDYwNCI+5a6c6Imv5Y6/5YWs5byA6YCJ5ouU5Ymv56eR57qn6aKG5a+85bmy6YOo5YWs5ZGKPC9hPjxzcGFuPjA5LTI5PC9zcGFuPjwvbGk+PGxpPjxhIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i5a6c6Imv5Y6/5Lq65rCR5pS/5bqc5YWs5ZGKIiBocmVmPSJJbmZvX2RldGFpbC5hc3B4P0lEPTcwNjAwIj7lrpzoia/ljr/kurrmsJHmlL/lupzlhazlkYo8L2E+PHNwYW4+MDktMjk8L3NwYW4+PC9saT48bGk+PGEgdGFyZ2V0PSJfYmxhbmsiIHRpdGxlPSLlrpzoia/ljr/ljZfnvorplYfmlL/lupzkv6Hmga/lhazlvIDmjIfljZciIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9NzA1OTkiPuWunOiJr+WOv+WNl+e+iumVh+aUv+W6nOS/oeaBr+WFrOW8gOaMh+WNlzwvYT48c3Bhbj4wOS0yOTwvc3Bhbj48L2xpPjxsaT48YSB0YXJnZXQ9Il9ibGFuayIgdGl0bGU9IueLl+ihl+mVh+S6uuawkeaUv+W6nOS/oeaBr+WFrOW8gOaMh+WNlyIgaHJlZj0iSW5mb19kZXRhaWwuYXNweD9JRD03MDU5NiI+54uX6KGX6ZWH5Lq65rCR5pS/5bqc5L+h5oGv5YWs5byA5oyH5Y2XPC9hPjxzcGFuPjA5LTI5PC9zcGFuPjwvbGk+PGxpPjxhIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i5LqR5Y2X5Yas5a2j5b6B5YW15pS/562W5pyJ6LCD5pW0IOW5tOm+hOmZkOWItuaUvuWuvSAiIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9NzA1OTAiPuS6keWNl+WGrOWto+W+geWFteaUv+etluacieiwg+aVtCDlubTpvoTpmZDliLbmlL7lrr0gPC9hPjxzcGFuPjA5LTI5PC9zcGFuPjwvbGk+PGxpPjxhIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i5a6c6Imv5Y6/56ys5LqM5qyh5YWo5Zu95Yac5Lia5pmu5p+l5Li76KaB5pWw5o2u5YWs5oqlIiBocmVmPSJJbmZvX2RldGFpbC5hc3B4P0lEPTcwNTg0Ij7lrpzoia/ljr/nrKzkuozmrKHlhajlm73lhpzkuJrmma7mn6XkuLvopoHmlbDmja7lhazmiqU8L2E+PHNwYW4+MDktMjk8L3NwYW4+PC9saT48L3VsPjwvZGl2PjxkaXYgaWQ9Im15VGFiNF9Db250ZW50MSIgY2xhc3M9ImxlZnQgbm9uZSI+PHVsIGNsYXNzPSJuZXdzbGluZSI+PGxpPjxhIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i5piG5piO5biC5Lit5bCP5LyB5Lia5pyN5Yqh56S66IyD5Y2V5L2N5o6I54mM5Luq5byP5Zyo5piG5piO5biC5Lit5bCP5LyB5Lia5YWs5YWx5pyN5Yqh5bmz5Y+w5Li+6KGMIiBocmVmPSJJbmZvX2RldGFpbC5hc3B4P0lEPTEwOTEwMCI+5piG5piO5biC5Lit5bCP5LyB5Lia5pyN5Yqh56S66IyD5Y2V5L2N5o6I54mM5Luq5byP5Zyo5piG5piO5biC5Lit5bCP5LyB5Lia5YWs5YWx5pyN5Yqh5bmz5Y+w5Li+6KGMPC9hPjxzcGFuPjExLTE1PC9zcGFuPjwvbGk+PGxpPjxhIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i5YWz5LqO5YGa5aW9MjAxM+W5tOaYhuaYjuW4guS4reWwj+WSjOmdnuWFrOS8geS4muS4iuW4guWJjeacn+S4k+mhueaJtuaMgei1hOmHkeeUs+aKpeW3peS9nOeahOmAmuefpSIgaHJlZj0iSW5mb19kZXRhaWwuYXNweD9JRD05NTAwNyI+5YWz5LqO5YGa5aW9MjAxM+W5tOaYhuaYjuW4guS4reWwj+WSjOmdnuWFrOS8geS4muS4iuW4guWJjeacn+S4k+mhueaJtuaMgei1hOmHkeeUs+aKpeW3peS9nOeahOmAmuefpTwvYT48c3Bhbj4wMy0xMTwvc3Bhbj48L2xpPjxsaT48YSB0YXJnZXQ9Il9ibGFuayIgdGl0bGU9IuWFs+S6juWBmuWlvTIwMTPlubTluqbmmIbmmI7luILkuK3lsI/kvIHkuJrnpL7kvJrljJbmnI3liqHkvZPns7vmnI3liqHnpLrojIPljZXkvY3nlLPmiqXnmoTpgJrnn6UiIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9OTUwMDYiPuWFs+S6juWBmuWlvTIwMTPlubTluqbmmIbmmI7luILkuK3lsI/kvIHkuJrnpL7kvJrljJbmnI3liqHkvZPns7vmnI3liqHnpLrojIPljZXkvY3nlLPmiqXnmoTpgJrnn6U8L2E+PHNwYW4+MDMtMTE8L3NwYW4+PC9saT48bGk+PGEgdGFyZ2V0PSJfYmxhbmsiIHRpdGxlPSIyMDEy5bm05piG5piO5biC5Lit5bCP5LyB5Lia56S+5Lya5YyW5pyN5Yqh5L2T57O75YWs56S66KGoIiBocmVmPSJJbmZvX2RldGFpbC5hc3B4P0lEPTkzMjcwIj4yMDEy5bm05piG5piO5biC5Lit5bCP5LyB5Lia56S+5Lya5YyW5pyN5Yqh5L2T57O75YWs56S66KGoPC9hPjxzcGFuPjAxLTI5PC9zcGFuPjwvbGk+PGxpPjxhIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i5YWz5LqO5YGa5aW9MjAxM+W5tOaYhuaYjuW4guW3peS/oeWPo+S8geS4mumhueebruW6k+W+gembhuW3peS9nOeahOmAmuefpSIgaHJlZj0iSW5mb19kZXRhaWwuYXNweD9JRD05MjY3NiI+5YWz5LqO5YGa5aW9MjAxM+W5tOaYhuaYjuW4guW3peS/oeWPo+S8geS4mumhueebruW6k+W+gembhuW3peS9nOeahOmAmuefpTwvYT48c3Bhbj4wMS0xNjwvc3Bhbj48L2xpPjxsaT48YSB0YXJnZXQ9Il9ibGFuayIgdGl0bGU9IuWFs+S6juW8gOWxleS6keWNl+ecgeWwj+W+ruS8geS4muWPkeWxleeOsOeKtumXruWNt+iwg+afpeeahOmAmuefpSIgaHJlZj0iSW5mb19kZXRhaWwuYXNweD9JRD05MjYxOCI+5YWz5LqO5byA5bGV5LqR5Y2X55yB5bCP5b6u5LyB5Lia5Y+R5bGV546w54q26Zeu5Y236LCD5p+l55qE6YCa55+lPC9hPjxzcGFuPjAxLTE1PC9zcGFuPjwvbGk+PC91bD48L2Rpdj48L2Rpdj5kAgUPZBYCZg8WAh8ABeEVPGRpdiBjbGFzcz0iY29sdG9wIj48ZGl2IGNsYXNzPSJsZWZ0Ij48L2Rpdj48ZGl2IGNsYXNzPSJtaWRkbGUiPjx1bCBpZD0ibXlUYWI1Ij48bGkgY2xhc3M9ImFjdGl2ZSIgb25tb3VzZW92ZXI9Im5UYWJzKHRoaXMsMCk7Ij48YSB0YXJnZXQ9Il9ibGFuayIgaHJlZj0iSW5mb19Nb3JlLmFzcHg/S2luZElkPTE5NSI+PHNwYW4+5pS/562W5rOV6KeEPC9zcGFuPjwvYT48L2xpPjxsaSBjbGFzcz0ibm9ybWFsIiBvbm1vdXNlb3Zlcj0iblRhYnModGhpcywxKTsiPjxhIHRhcmdldD0iX2JsYW5rIiBocmVmPSJJbmZvX01vcmUuYXNweD9LaW5kSWQ9Njg2OCI+PHNwYW4+5pS/5bqc6LWE6YeR55Sz5oqlPC9zcGFuPjwvYT48L2xpPjwvdWw+PC9kaXY+PGRpdiBjbGFzcz0icmlnaHQiPjwvZGl2PjwvZGl2PjxkaXYgY2xhc3M9ImNvbGNvbnQiPjxkaXYgaWQ9Im15VGFiNV9Db250ZW50MCIgY2xhc3M9ImxlZnQiPjx1bCBjbGFzcz0ibmV3c2xpbmUiPjxsaT48YSB0YXJnZXQ9Il9ibGFuayIgdGl0bGU9IuWFs+S6juaKpemAgeOAiuaYhuaYjuW4guS4reWwj+S8geS4muacjeWKoeW5tOa0u+WKqOaWueahiOOAiyIgaHJlZj0iSW5mb19kZXRhaWwuYXNweD9JRD03OTI5NyI+5YWz5LqO5oql6YCB44CK5piG5piO5biC5Lit5bCP5LyB5Lia5pyN5Yqh5bm05rS75Yqo5pa55qGI44CLPC9hPjxzcGFuPjA0LTIzPC9zcGFuPjwvbGk+PGxpPjxhIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i5LqR5Y2X6KW/6JeP5Lik5Zyw56uL5rOV5Yqg5by65qOA5a+f5py65YWz6K+J6K685rOV5b6L55uR552jIiBocmVmPSJJbmZvX2RldGFpbC5hc3B4P0lEPTU1OTE2Ij7kupHljZfopb/ol4/kuKTlnLDnq4vms5XliqDlvLrmo4Dlr5/mnLrlhbPor4norrzms5Xlvovnm5HnnaM8L2E+PHNwYW4+MTEtMTI8L3NwYW4+PC9saT48bGk+PGEgdGFyZ2V0PSJfYmxhbmsiIHRpdGxlPSLkupHljZfnnIHms5XpmaLooYzmlL/lrqHliKTlt6XkvZzkvJrorq7lnKjmm7LpnZblj6zlvIAiIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9NTU0OTYiPuS6keWNl+ecgeazlemZouihjOaUv+WuoeWIpOW3peS9nOS8muiuruWcqOabsumdluWPrOW8gDwvYT48c3Bhbj4xMS0wMTwvc3Bhbj48L2xpPjxsaT48YSB0YXJnZXQ9Il9ibGFuayIgdGl0bGU9IjIwMTAvMTHmpqjlraPkupHljZfnnIHolJfns5blt6XkvZzkvJrorq7lnKjmmIbmmI7pmobph43lj6zlvIAiIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9NTU0OTUiPjIwMTAvMTHmpqjlraPkupHljZfnnIHolJfns5blt6XkvZzkvJrorq7lnKjmmIbmmI7pmobph43lj6zlvIA8L2E+PHNwYW4+MTEtMDE8L3NwYW4+PC9saT48bGk+PGEgdGFyZ2V0PSJfYmxhbmsiIHRpdGxlPSLlhbPkuo7kuL7ooYzmmIbmmI7lrZDlkJvlsbHnlJ/mgIHml4XmuLjpobnnm67mjqfliLbmgKfor6bnu4bop4TliJLosIPmlbTlkKzor4HkvJrnmoTlhazlkYrjgJDnrKwx5Y+344CRIiBocmVmPSJJbmZvX2RldGFpbC5hc3B4P0lEPTUyNTc4Ij7lhbPkuo7kuL7ooYzmmIbmmI7lrZDlkJvlsbHnlJ/mgIHml4XmuLjpobnnm67mjqfliLbmgKfor6bnu4bop4TliJLosIPmlbTlkKzor4HkvJrnmoTlhazlkYrjgJDnrKwx5Y+344CRPC9hPjxzcGFuPjA4LTE2PC9zcGFuPjwvbGk+PGxpPjxhIHRhcmdldD0iX2JsYW5rIiB0aXRsZT0i5Zu95Yqh6Zmi5YWz5LqO6L+b5LiA5q2l5YGa5aW95Yip55So5aSW6LWE5bel5L2c55qE6Iul5bmy5oSP6KeB5Zu95Y+R44CUMjAxMOOAlTnlj7ciIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9NTE0MzIiPuWbveWKoemZouWFs+S6jui/m+S4gOatpeWBmuWlveWIqeeUqOWklui1hOW3peS9nOeahOiLpeW5suaEj+ingeWbveWPkeOAlDIwMTDjgJU55Y+3PC9hPjxzcGFuPjA3LTIzPC9zcGFuPjwvbGk+PC91bD48L2Rpdj48ZGl2IGlkPSJteVRhYjVfQ29udGVudDEiIGNsYXNzPSJsZWZ0IG5vbmUiPjx1bCBjbGFzcz0ibmV3c2xpbmUiPjxsaT48YSB0YXJnZXQ9Il9ibGFuayIgdGl0bGU9IuWFs+S6jua1gemAmumihuWfn+W4guWcuuebkeeuoeS4juaUvuW/g+iCieacjeWKoeS9k+ezu+etiemhueebrui1hOmHkeeUs+aKpeeahOmAmuefpSAiIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9NzA2MjgiPuWFs+S6jua1gemAmumihuWfn+W4guWcuuebkeeuoeS4juaUvuW/g+iCieacjeWKoeS9k+ezu+etiemhueebrui1hOmHkeeUs+aKpeeahOmAmuefpSA8L2E+PHNwYW4+MDktMjk8L3NwYW4+PC9saT48bGk+PGEgdGFyZ2V0PSJfYmxhbmsiIHRpdGxlPSLkupHljZfnnIHlr7vnlLjljr/nrKzkuIDkurrmsJHljLvpmaLlgJ/nlKjlpaXlnLDliKnmlL/lupzotLfmrL7pobnnm67otYTph5HnlLPor7fmiqUiIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9NzA2MjciPuS6keWNl+ecgeWvu+eUuOWOv+esrOS4gOS6uuawkeWMu+mZouWAn+eUqOWlpeWcsOWIqeaUv+W6nOi0t+asvumhueebrui1hOmHkeeUs+ivt+aKpTwvYT48c3Bhbj4wOS0yOTwvc3Bhbj48L2xpPjxsaT48YSB0YXJnZXQ9Il9ibGFuayIgdGl0bGU9IuS6keWNl+ecgei0ouaUv+WOheWFs+S6juWBmuWlvTIwMTHlubTluqbkupHljZfnnIHmnI3liqHkuJrlj5HlsZXkuJPpobnlvJXlr7zotYTph5HnlLPmiqXlt6XkvZznmoTpgJrnn6UiIGhyZWY9IkluZm9fZGV0YWlsLmFzcHg/SUQ9NzA2MjYiPuS6keWNl+ecgei0ouaUv+WOheWFs+S6juWBmuWlvTIwMTHlubTluqbkupHljZfnnIHmnI3liqHkuJrlj5HlsZXkuJPpobnlvJXlr7zotYTph5HnlLPmiqXlt6XkvZznmoTpgJrnn6U8L2E+PHNwYW4+MDktMjk8L3NwYW4+PC9saT48L3VsPjwvZGl2PjwvZGl2PmQCCA9kFhRmDw8WAh8ABbwR5oub77ya6Iqc5rmW5Zyo57q/5byP5rK55qG26LeM6JC96KOF566x5py6fOWMl+a1t+mjn+eUqOayuee6uOeuseWFqOiHquWKqOijheeuseacunzmsrPmsaDmtYHmsLTnur/lvI/msrnohILoo4XnrrHmnLogIOiuoui0reeDree6v++8mjA3NTctODUzOTU1ODnpmYblsI/lp5Av5L2b5bGx5L6d5Yip6L6+5ZOB54mM5qyi6L+O5L2g77yB5L6d5Yip6L6+RUxELTUxVEIg5Zyo57q/5byP5rK55qG26LeM6JC96KOF566x5py6fOW5v+W3numjn+eUqOayuee6uOeuseWFqOiHquWKqOijheeuseacunzmt7HlnLPmtYHmsLTnur/lvI/msrnohILoo4XnrrHmnLp85Lic6I6e6Iqx55Sf5rK5UEVU5aGR5paZ55O26KOF566x5py6fOS4reWxseaXoOS6uuWMluWMheijheeUn+S6p+e6v3znj6Dmtbfoh6rliqjljJbnurjnrrHljIXoo4XmtYHmsLTnur865bm/5rOb5bqU55So5LqO6aOf55So5rK544CB5rK56ISC57G744CB6Iqx55Sf5rK544CB6LCD5ZKM5rK544CB5Yy76I2v44CB6aOf5ZOB44CB5pel5YyW44CB5YyW5aaG5ZOB44CB5ram5ruR5rK544CB5py65rK544CB5Yi56L2m5rK55Lul5Y+K5YW25a6D6L275bel5Lia562J6KGM5Lia55qEUEVU5aGR5paZ55O257G744CB55uS57G76KKL57G744CB5aGR5paZ5qG257G744CB6YeR5bGe6ZOB5qG257G76KOF566x5YyF6KOF44CCDQoNCg0KDQrlnKjoh6rliqjljIXoo4XmtYHmsLTnur/kuK3vvIzkvp3liKnovr7oo4XnrrHmnLrmmK/mlbTnur/ns7vnu5/ov5DooYznmoTmoLjlv4PvvIzljIXoo4XmnLrmorDomb3kuI3mmK/kuqflk4Hnm7TmjqXnlJ/kuqfmnLrmorDvvIzkvYblroPljbTmmK/lrp7njrDnlJ/kuqfoh6rliqjljJbmiYDlv4XpnIDnmoTjgILkvp3liKnovr7oo4XnrrHmnLrnlKjkuo7lrozmiJDov5DovpPljIXoo4XvvIzlroPlsIbljIXoo4XmiJDlk4HmjInkuIDlrprmjpLliJfmlrnlvI/lkozlrprph4/oo4XlhaXnrrHkuK3vvIzlubbmiornrrHnmoTlvIDlj6Ppg6jliIbpl63lkIjmiJblsIHlm7rjgILkvp3liKnovr7oo4Xnm5LmnLrmmK/nlKjkuo7kuqflk4HplIDllK7ljIXoo4XnmoTmnLrmorDvvIzlroPlsIbnu4/ov4forqHph4/nmoTkuIDku73lrprph4/nianmlpnoo4XlhaXnm5LkuK3vvIzlubbmiornm5LnmoTlvIDlj6Ppg6jliIbpl63lkIjmiJblsIHlm7rjgILkvp3liKnovr7oo4XnrrHmnLrlkozoo4Xnm5LmnLrlnYfmnInlrrnlmajmiJAg5b2iKOaIluaJk+W8gOWuueWZqCnjgIHorqHph4/jgIHoo4XlhaXjgIHlsIHlj6PnrYnlip/og73jgILkvZvlsbHluILnpoXln47kvp3liKnovr7ljIXoo4XlmajmnZDmnInpmZDlhazlj7jkuJPkuJrnlJ/kuqflnKjnur/msrnmobbot4zokL3lvI/oo4XnrrHmnLrjgIHlhajoh6rliqjoo4XnrrHmnLrjgIHmipPlj5blvI/oo4XnrrHmnLrjgIHoo4Xnm5LmnLrjgIHova/ooovoo4XnrrHmnLrjgIHlhajoh6rliqjoo4XnrrHmnLrjgIHljYroh6rliqjoo4XnrrHmnLrjgIHmnpXlvI/ooovoh6rliqjoo4XnrrHmnLrjgIHlhajoh6rliqjmiZPljIXmnLrns7vliJfkuqflk4HjgIINCg0KDQoNCuKXhuS+neWIqei+vuWPr+S7peagueaNruWuouaIt+eahOWunumZheWPguaVsOWunumZheeJqeWTgei/m+ihjOiuvuiuoemAieWei++8jOS+neWIqei+vuaJk+mAoOaVtOWOguiHquWKqOWMluWMheijheaWueahiOino+WGs+S4k+WutuKXhg0KDQrkvp3liKnovr7oh6rliqjljJbljIXoo4XmlrnmoYjop6PlhrPkuJPlrrbkuovkuJrpg6gNCuWPsOa5vuS+neWIqei+vuWbvemZhembhuWbouaOp+iCoeaciemZkOWFrOWPuOebkeWItg0K5L2b5bGx5biC56aF5Z+O5L6d5Yip6L6+5YyF6KOF5Zmo5p2Q5pyJ6ZmQ5YWs5Y+46I2j6KqJ5Ye65ZOBDQrlnLDlnYDvvJrlub/kuJznnIHkvZvlsbHluILnpoXln47ljLrljZfluoTllYbkuJrlub/lnLoy5bqnDQrnlLXor53vvJowNzU3LTg1Mzk1NTg5IOS8oOecn++8mjg1MzIwNzI5DQpFLW1haWzvvJo4ODhAZWxpZGEuY2MgIFFROjgwMDA1MDg0OA0K572R5Z2A77yaaHR0cDovL3d3dy56aWRvbmdodWFiYW96aHVhbmcuZWxpZGFwYWNrLm9yZw0K5bm/5beeOjgxMTUxMDg2IOa3seWcszoyNzYyNjc2NiDkuJzojp46ODYyNjc2MjAg5Lit5bGxOjIyODI4Njg4IOaxn+mXqDozNjYxNzIyIOePoOa1tzo1NTA5NjU4IOaDoOW3njozMjY5MTAwIOmhuuW+tzoyMjYxMTc3MyDljZfmtbc6ODU3MDA5MTkg5r6c55+zOjgyNjY0Mjk5IOW5s+a0sjo4Njc4NzI0NyDms4nlt546MjM5OTg1ODgg5aSn5rKlOjg1NzAwOTE2DQoNCmRkAgEPDxYCHwAFCeadjuW/oOWjtWRkAgIPDxYCHwAFcjxhIHRhcmdldD0iX2JsYW5rIiBocmVmPSJodHRwOi8vaHR0cDovL3d3dy5ndWFuemh1YW5qaS5lbGlkYS5jbiI+5Y+w5rm+5L6d5Yip6L6+5Zu96ZmF6ZuG5Zui5o6n6IKh5pyJ6ZmQ5YWs5Y+4PC9hPmRkAgMPDxYCHwAFDzA4NjA3NTc4NTM5NTAwMGRkAgQPDxYCHwAFDzA4NjA3NTc4NTMyMDcyOWRkAgUPDxYCHwAFEWVsaWRhMjAxMUAxNjMuY29tZGQCBg8PFgIfAAVkPGEgdGFyZ2V0PSJfYmxhbmsiIGhyZWY9Imh0dHA6Ly9odHRwOi8vd3d3Lmd1YW56aHVhbmppLmVsaWRhLmNuIj5odHRwOi8vd3d3Lmd1YW56aHVhbmppLmVsaWRhLmNuPC9hPmRkAgcPDxYCHwAFFOW3peS4mueUqOWTgS3lhbblroMuZGQCCA8PFgIfAAUSMjAxNC8xMC8yIDExOjAzOjE2ZGQCCQ8PFgIfAAUDMzY1ZGRkV0gnjCnsR7jPgT4DsevAMJR/YBY=" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwLYyMaZBwKgtrOTBAKIi438D+8MZgggH3G7vxTvWjkHSb2E65PP" />
+</div>
+
+<div class="container">
+  <div class="header">
+    <div class="top"> <span class="cyan"><a href="http://www.smekm.gov.cn" target="_blank">昆明市中小企业网</a></span> <span class="time">
+      <script language="JavaScript" type="text/javascript">          CAL();</script>
+      </span> <span class="red">[<a href="Register.aspx">注册</a>]</span> <span class="blue">[<a href="Login.aspx">登录</a>]</span>
+      <ul class="hfe">
+        <li class="home"><a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://yl.smekm.gov.cn');" href="#">设为首页</a></li>
+        <li class="favorite"><a href="javascript:window.external.AddFavorite('http://yl.smekm.gov.cn','宜良中小企业网')" target="_top">加入收藏</a></li>
+        <li class="email"><a href="mailto:xxxx@smekm.gov.cn" target="_top">联系我们</a></li>
+      </ul>
+    </div>
+    <div class="logo"><a href="default.aspx"><img src="logo/yl/logo.png" /></a></div>
+    <div class="head">
+      <script language="javascript" src="scripts/headshow.js"></script>
+      <div id=imgADPlayer></div>
+        <span id="ctl00_scriptlabelforhedpics"><script> PImgPlayer.addItem( "", "", "images/wh/head_1.jpg"); PImgPlayer.addItem( "", "", "images/wh/head_2.jpg"); PImgPlayer.init("imgADPlayer", 950, 175 );  </script></span>
+    </div>
+    <div class="mainnav">
+      <table width="950" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="5" class="nav_1_l"></td>
+          <td valign="top" class="nav_1_m"><h3 class="red"><a href="default_g.aspx" target="_blank">政府服务</a></h3>
+            <ul class="subnav">
+              <li> <a href="Info_More_G.aspx?KindID=7562" >新闻动态</a><li> <a href="Info_More_G.aspx?KindID=6862" >通知公告</a><li> <a href="Info_More_G.aspx?KindID=6864" >政策法规</a><li> <a href="Info_More_G.aspx?KindID=6865" >办事指南</a><li> <a href="Info_More_G.aspx?KindID=6866" >上市培育</a><li> <a href="Info_More_G.aspx?KindID=6871" >信息查询</a><li> <a href="Info_More_G.aspx?KindID=6872" >政府采购</a><li> <a href="Info_More_G.aspx?KindID=6873" >文件下载</a><li> <a href="Info_More_G.aspx?KindID=6874" >联系方式</a><li> <a href="Info_More_G.aspx?KindID=6878" >融资担保</a><li> <a href="Info_More_G.aspx?KindID=6879" >政策法规</a><li> <a href="Info_More_G.aspx?KindID=6880" >财经信息</a>
+            </ul></td>
+          <td width="5" class="nav_1_r"></td>
+          <td width="5">&nbsp;</td>
+          <td width="5" class="nav_2_l"></td>
+          <td valign="top" class="nav_2_m"><h3 class="brown"><a href="default_c.aspx" target="_blank">企业服务</a></h3>
+            <ul class="subnav">
+              <li> <a href="ES_InfoMore_C.aspx?KindID=6902" >最新资讯</a><li> <a href="ES_InfoMore_C.aspx?KindID=6866" >上市培育</a><li> <a href="ES_InfoMore_C.aspx?KindID=6873" >文件下载</a><li> <a href="ES_InfoMore_C.aspx?KindID=6876" >知名企业</a><li> <a href="ES_InfoMore_C.aspx?KindID=6878" >融资担保</a><li> <a href="ES_InfoMore_C.aspx?KindID=6880" >财经信息</a><li> <a href="ES_InfoMore_C.aspx?KindID=6881" >机构信息</a><li> <a href="ES_InfoMore_C.aspx?KindID=6884" >成功案例</a><li> <a href="ES_InfoMore_C.aspx?KindID=6886" >创业资讯</a><li> <a href="ES_InfoMore_C.aspx?KindID=6888" >创业故事</a><li> <a href="ES_InfoMore_C.aspx?KindID=6889" >创业政策</a><li> <a href="ES_InfoMore_C.aspx?KindID=6890" >创业项目</a>
+            </ul></td>
+          <td width="5" class="nav_2_r"></td>
+          <td width="5">&nbsp;</td>
+          <td width="5" class="nav_3_l"></td>
+          <td valign="top" class="nav_3_m"><h3 class="yellow"><a href="default_e.aspx" target="_blank">电子商务</a></h3>
+            <ul class="subnav">
+              <li> <a href="companyList.aspx" >企业展台</a><li> <a href="ProductMore.aspx" >产品展台</a><li> <a href="PQCInfoList.aspx" >求购信息</a><li> <a href="PQCInfoList.aspx" >供应信息</a><li> <a href="PQCInfoList.aspx" >合作信息</a><li> <a href="http://www.gmseb.cn" >GMS平台</a><li> <a href="Info_More_E.aspx?KindID=203" >物流信息</a><li> <a href="Info_More_E.aspx?KindID=122" >商务信息</a><li> <a href="http://www.yfca.com.cn/" >CA认证</a>
+            </ul></td>
+          <td width="5" class="nav_3_r"></td>
+          <td width="5">&nbsp;</td>
+          <td width="5" class="nav_4_l"></td>
+          <td valign="top" class="nav_4_m"><h3 class="cyan"><a href="default_i.aspx" target="_blank">企业信息化</a></h3>
+            <ul class="subnav">
+             <li> <a href="News_I.aspx" >最新资讯</a><li> <a href="ServerCompany_I.aspx" >服务企业</a><li> <a href="Resolve_I.aspx" >解决方案</a><li> <a href="Software_I.aspx" >软件产品</a><li> <a href="ITService_I.aspx" >IT服务</a><li> <a href="KnowledgeNews_I.aspx" >信息化知识</a><li> <a href="CompanyCase_I.aspx" >企业案例</a><li> <a href="Expert_I.aspx" >信息化专家</a><li> <a href="SoftDownload_I.aspx" >软件下载</a>
+            </ul></td>
+          <td width="5" class="nav_4_r"></td>
+          <td width="5">&nbsp;</td>
+          <td width="5" class="nav_5_l"></td>
+          <td valign="top" class="nav_5_m"><h3 class="blue"><a href="default_f.aspx" target="_blank">特色产业</a></h3>
+            <ul class="subnav">
+               <li> <a href="Info_More_F.aspx?KindID=6944" >区位经济</a><li> <a href="Info_More_F.aspx?KindID=6945" >特色产品</a><li> <a href="Info_More_F.aspx?KindID=6946" >矿产资源</a><li> <a href="Info_More_F.aspx?KindID=6947" >电力资源</a><li> <a href="Info_More_F.aspx?KindID=6948" >旅游经济</a>
+            </ul></td>
+          <td width="5" class="nav_5_r"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="content">    
+  
+<style type="text/css">
+    
+#n_re_con{
+	width:642px;
+	float:left;
+	font-size:13px;
+}
+/*---------发布的内容页面-------------*/
+.pub_cn{
+	margin-top:10px;
+	border:1px solid #ccc;
+	background:url(images_E/m_bg.jpg) top repeat-x;
+	padding:0 10px 10px;
+	margin-bottom:10px;
+	width:645px;
+}
+.pub_cn h1{
+	color:#0048a2;
+	font-size:14px;
+	line-height:30px;
+	text-align:center;
+	margin-bottom:10px;
+}
+.pub_cn p{
+	line-height:22px;
+}
+/*---------------表格------------*/
+.tc{
+	float:left;
+	width:660px;
+	height:158px;
+	border:solid #ccc; border-width:1px 1px 1px 1px;
+	margin-left:9px;
+	display:inline;
+	text-align:center;
+}
+.tc td{
+	width:363px;
+	border:solid #ccc; border-width:1px 1px 1px 1px;
+}
+.tc tr{
+	height:22px;
+	line-height:22px;
+}
+
+
+#nn_notice{
+	margin-top:10px;
+	border:1px solid #ccc;
+	background:#edf3ff;
+	height:55px;
+	float:left;
+    width:666px;
+	padding-top:5px;
+}
+#nn_notice h1{
+	float:left;
+	color:red;
+	height:44px;
+	line-height:54px;
+	padding-left:5px;
+	padding-right:5px;
+	font-size:14px;
+}
+#nn_notice p
+{
+	font-size:12px;
+	line-height:18px;
+}
+
+
+</style>
+
+  <div class="breadcrumb">您的位置:<a href="default.aspx">首页</a>&gt;&gt;供求详细信息</div>
+
+  
+      <div class="rowone">
+       <!--左边整块-->
+       
+
+    
+      <!--登录+商家信息-->
+      
+
+      <div class="column signin">
+        <div class="coltop">
+          <div class="left"></div>
+          <div class="middle"><span>用户登录与注册</span></div>
+        </div>
+        <div class="colcont">
+          <div class="left">
+            <div class="none" id="userinfo">
+              <script type="text/javascript">
+              function show(id){if(document.getElementById(id).style.display="block"){document.getElementById(id).style.display="none";}}
+              function hide(id) { if (document.getElementById(id).style.display = "none") { document.getElementById(id).style.display = "block"; } }
+
+              function checkempty() {
+
+                  if (document.getElementById("TxtUserName").value == null || document.getElementById("TxtUserName").value == "") {
+                      alert("请先输入用户名！"); return false;
+                  }
+
+                  if (document.getElementById("TxtPassword").value == null || document.getElementById("TxtPassword").value == "") {
+                      alert("请输入密码！"); return false;
+                  }
+                  var item = document.getElementsByName("radio_enterprise");
+                  for (var i = 0; i < item.length; i++) {
+                      if (item[i].checked) {
+                          document.getElementById("rblusertype").value = item[i].value;
+                      }
+                  }
+                  return true;
+              }
+              function goredirect() {
+                  var fmlogin = document.getElementById("aspnetForm");
+                  if (document.getElementById("rblusertype").value == "1") {
+                      fmlogin.action = "http://220.165.248.169/ComAdmin/index.aspx"
+                  }
+                  else if (document.getElementById("rblusertype").value == "2") {
+                      fmlogin.action = "http://220.165.248.169/PersonalAdmin/admin.aspx"
+                  }
+                  fmlogin.submit();
+              }
+
+               
+              </script>
+            </div>
+            <div class="show" id="userform">       
+              <!--登录后去除，class="none"-->
+              <label>用户名：</label>
+               <input id="TxtUserName" type="text" class="username" tabindex="1" name="TxtUserName"  />
+             
+              <span class="join">
+             <input type="submit" name="ctl00$ListOrContentLeft1$Login1$signin3" value="注册" id="ctl00_ListOrContentLeft1_Login1_signin3" tabindex="4" class="button" />
+              </span>
+              <label>密&nbsp;&nbsp;码：</label>
+              <input id="TxtPassword" type="password" class="password" tabindex="2" name="TxtPassword" />
+             
+              <span class="sign">
+               <input type="submit" name="ctl00$ListOrContentLeft1$Login1$lbt_login" value="登录" onclick="if(checkempty()==true){goredirect();} else{return false;} ;" id="ctl00_ListOrContentLeft1_Login1_lbt_login" tabindex="3" class="button" />
+              </span>
+              <label>类&nbsp;&nbsp;型：</label>
+              <span class="radio" style="width: 165px">  
+                  <input id="Radio1" type="radio"  name="radio_enterprise" value="1" checked/>企业
+                  &nbsp;&nbsp;     
+                  <input id="Radio2" type="radio"  name="radio_enterprise" value="2"/>个人    
+                  <input id="rblusertype" type="hidden"    />   
+                
+                </span>   
+              </div>             
+          </div>
+        </div>   
+      </div>               
+  
+      
+      <div class="column data">
+        <div class="coltop"> </div>
+        <div class="colcont">
+          <div class="left">
+            <ul class="dataline">
+               <span id="ctl00_ListOrContentLeft1_Login1_Label_FirstPageInfoCounts"><li>商家：<a href="CompanyList.aspx" target="_blank"><font class="red">17</font></a>家</li><li>商品：<a href="ProductMore.aspx" target="_blank"><font class="red">4</font></a>种</li><li>供应：<a href="PQCInfoList.aspx" target="_blank"><font class="red">173720</font></a>条</li><li>求购：<a href="PQCInfoList.aspx" target="_blank"><font class="red">10229</font></a>条</li></span>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--登录+商家信息-->
+      <div class="column tab_2">
+        <div class="coltop"><div class="left"></div><div class="middle"><ul id="myTab4"><li class="active" onmouseover="nTabs(this,0);"><a target="_blank" href="Info_More.aspx?KindId=7564"><span>文件通知</span></a></li><li class="normal" onmouseover="nTabs(this,1);"><a target="_blank" href="Info_More.aspx?KindId=193"><span>市级文件通知</span></a></li></ul></div><div class="right"></div></div><div class="colcont"><div id="myTab4_Content0" class="left"><ul class="newsline"><li><a target="_blank" title="宜良县公开选拔副科级领导干部公告" href="Info_detail.aspx?ID=70604">宜良县公开选拔副科级领导干部公告</a><span>09-29</span></li><li><a target="_blank" title="宜良县人民政府公告" href="Info_detail.aspx?ID=70600">宜良县人民政府公告</a><span>09-29</span></li><li><a target="_blank" title="宜良县南羊镇政府信息公开指南" href="Info_detail.aspx?ID=70599">宜良县南羊镇政府信息公开指南</a><span>09-29</span></li><li><a target="_blank" title="狗街镇人民政府信息公开指南" href="Info_detail.aspx?ID=70596">狗街镇人民政府信息公开指南</a><span>09-29</span></li><li><a target="_blank" title="云南冬季征兵政策有调整 年龄限制放宽 " href="Info_detail.aspx?ID=70590">云南冬季征兵政策有调整 年龄限制放宽 </a><span>09-29</span></li><li><a target="_blank" title="宜良县第二次全国农业普查主要数据公报" href="Info_detail.aspx?ID=70584">宜良县第二次全国农业普查主要数据公报</a><span>09-29</span></li></ul></div><div id="myTab4_Content1" class="left none"><ul class="newsline"><li><a target="_blank" title="昆明市中小企业服务示范单位授牌仪式在昆明市中小企业公共服务平台举行" href="Info_detail.aspx?ID=109100">昆明市中小企业服务示范单位授牌仪式在昆明市中小企业公共服务平台举行</a><span>11-15</span></li><li><a target="_blank" title="关于做好2013年昆明市中小和非公企业上市前期专项扶持资金申报工作的通知" href="Info_detail.aspx?ID=95007">关于做好2013年昆明市中小和非公企业上市前期专项扶持资金申报工作的通知</a><span>03-11</span></li><li><a target="_blank" title="关于做好2013年度昆明市中小企业社会化服务体系服务示范单位申报的通知" href="Info_detail.aspx?ID=95006">关于做好2013年度昆明市中小企业社会化服务体系服务示范单位申报的通知</a><span>03-11</span></li><li><a target="_blank" title="2012年昆明市中小企业社会化服务体系公示表" href="Info_detail.aspx?ID=93270">2012年昆明市中小企业社会化服务体系公示表</a><span>01-29</span></li><li><a target="_blank" title="关于做好2013年昆明市工信口企业项目库征集工作的通知" href="Info_detail.aspx?ID=92676">关于做好2013年昆明市工信口企业项目库征集工作的通知</a><span>01-16</span></li><li><a target="_blank" title="关于开展云南省小微企业发展现状问卷调查的通知" href="Info_detail.aspx?ID=92618">关于开展云南省小微企业发展现状问卷调查的通知</a><span>01-15</span></li></ul></div></div>
+
+      </div>
+      <div class="column tab_2">
+       <div class="coltop"><div class="left"></div><div class="middle"><ul id="myTab5"><li class="active" onmouseover="nTabs(this,0);"><a target="_blank" href="Info_More.aspx?KindId=195"><span>政策法规</span></a></li><li class="normal" onmouseover="nTabs(this,1);"><a target="_blank" href="Info_More.aspx?KindId=6868"><span>政府资金申报</span></a></li></ul></div><div class="right"></div></div><div class="colcont"><div id="myTab5_Content0" class="left"><ul class="newsline"><li><a target="_blank" title="关于报送《昆明市中小企业服务年活动方案》" href="Info_detail.aspx?ID=79297">关于报送《昆明市中小企业服务年活动方案》</a><span>04-23</span></li><li><a target="_blank" title="云南西藏两地立法加强检察机关诉讼法律监督" href="Info_detail.aspx?ID=55916">云南西藏两地立法加强检察机关诉讼法律监督</a><span>11-12</span></li><li><a target="_blank" title="云南省法院行政审判工作会议在曲靖召开" href="Info_detail.aspx?ID=55496">云南省法院行政审判工作会议在曲靖召开</a><span>11-01</span></li><li><a target="_blank" title="2010/11榨季云南省蔗糖工作会议在昆明隆重召开" href="Info_detail.aspx?ID=55495">2010/11榨季云南省蔗糖工作会议在昆明隆重召开</a><span>11-01</span></li><li><a target="_blank" title="关于举行昆明子君山生态旅游项目控制性详细规划调整听证会的公告【第1号】" href="Info_detail.aspx?ID=52578">关于举行昆明子君山生态旅游项目控制性详细规划调整听证会的公告【第1号】</a><span>08-16</span></li><li><a target="_blank" title="国务院关于进一步做好利用外资工作的若干意见国发〔2010〕9号" href="Info_detail.aspx?ID=51432">国务院关于进一步做好利用外资工作的若干意见国发〔2010〕9号</a><span>07-23</span></li></ul></div><div id="myTab5_Content1" class="left none"><ul class="newsline"><li><a target="_blank" title="关于流通领域市场监管与放心肉服务体系等项目资金申报的通知 " href="Info_detail.aspx?ID=70628">关于流通领域市场监管与放心肉服务体系等项目资金申报的通知 </a><span>09-29</span></li><li><a target="_blank" title="云南省寻甸县第一人民医院借用奥地利政府贷款项目资金申请报" href="Info_detail.aspx?ID=70627">云南省寻甸县第一人民医院借用奥地利政府贷款项目资金申请报</a><span>09-29</span></li><li><a target="_blank" title="云南省财政厅关于做好2011年度云南省服务业发展专项引导资金申报工作的通知" href="Info_detail.aspx?ID=70626">云南省财政厅关于做好2011年度云南省服务业发展专项引导资金申报工作的通知</a><span>09-29</span></li></ul></div></div>
+
+      </div>
+   
+       <!--左边整块-->       
+      </div>
+    
+        
+<div class="rowfour" >
+    <div class="column info">
+        <div class="coltop">
+          <div class="left"></div>
+          <div class="middle"><span>供求详细信息</span></div> 
+          
+        </div>
+        <div class="colcont">
+          <div class="left">
+             <div id="n_re_con">      
+                 <div class="pub_cn">
+  <h1>招：芜湖在线式油桶跌落装箱机|北海食用油纸箱全自动装箱机|河池流水线式油脂装箱机  订购热线：0757-85395589陆小姐/佛山依利达品牌欢迎你！♀高明钢铁卷气动钢带捆扎机♀佛山依利达牛扒真空包装机♀番禺化工产品连续式塑料薄膜封口机♀花都印刷品折纸机♀广州陶瓷卫浴淋浴门全自动打包机♀三水洁具光纤激光打标机</h1>
+  <p>　　<span id="ctl00_Main_lblinfo">招：芜湖在线式油桶跌落装箱机|北海食用油纸箱全自动装箱机|河池流水线式油脂装箱机  订购热线：0757-85395589陆小姐/佛山依利达品牌欢迎你！依利达ELD-51TB 在线式油桶跌落装箱机|广州食用油纸箱全自动装箱机|深圳流水线式油脂装箱机|东莞花生油PET塑料瓶装箱机|中山无人化包装生产线|珠海自动化纸箱包装流水线:广泛应用于食用油、油脂类、花生油、调和油、医药、食品、日化、化妆品、润滑油、机油、刹车油以及其它轻工业等行业的PET塑料瓶类、盒类袋类、塑料桶类、金属铁桶类装箱包装。
+
+
+
+在自动包装流水线中，依利达装箱机是整线系统运行的核心，包装机械虽不是产品直接生产机械，但它却是实现生产自动化所必需的。依利达装箱机用于完成运输包装，它将包装成品按一定排列方式和定量装入箱中，并把箱的开口部分闭合或封固。依利达装盒机是用于产品销售包装的机械，它将经过计量的一份定量物料装入盒中，并把盒的开口部分闭合或封固。依利达装箱机和装盒机均有容器成 形(或打开容器)、计量、装入、封口等功能。佛山市禅城依利达包装器材有限公司专业生产在线油桶跌落式装箱机、全自动装箱机、抓取式装箱机、装盒机、软袋装箱机、全自动装箱机、半自动装箱机、枕式袋自动装箱机、全自动打包机系列产品。
+
+
+
+◆依利达可以根据客户的实际参数实际物品进行设计选型，依利达打造整厂自动化包装方案解决专家◆
+
+依利达自动化包装方案解决专家事业部
+台湾依利达国际集团控股有限公司监制
+佛山市禅城依利达包装器材有限公司荣誉出品
+地址：广东省佛山市禅城区南庄商业广场2座
+电话：0757-85395589 传真：85320729
+E-mail：888@elida.cc  QQ:800050848
+网址：http://www.zidonghuabaozhuang.elidapack.org
+广州:81151086 深圳:27626766 东莞:86267620 中山:22828688 江门:3661722 珠海:5509658 惠州:3269100 顺德:22611773 南海:85700919 澜石:82664299 平洲:86787247 泉州:23998588 大沥:85700916
+
+</span>
+  </p>
+    </div>
+                    <table width="200" border="1" class="tc" >
+  <tr>
+    <td>联系人：</td>
+    <td><span id="ctl00_Main_lblcontact">李忠壵</span></td>
+  </tr>
+  <tr>
+    <td>公司名称：</td>
+    <td><span id="ctl00_Main_lblcompanyName"><a target="_blank" href="http://http://www.guanzhuanji.elida.cn">台湾依利达国际集团控股有限公司</a></span></td>
+  </tr>
+  <tr>
+    <td>电话：<span id="ctl00_Main_lblTel">086075785395000</span></td>
+    <td>传真：<span id="ctl00_Main_lblFax">086075785320729</span></td>
+  </tr>
+  <tr>
+    <td>电子邮件：<span id="ctl00_Main_lblEmail">elida2011@163.com</span></td>
+    <td>联系地址：</td>
+  </tr>
+  <tr>
+    <td>网址：<span id="ctl00_Main_lblSiteurl"><a target="_blank" href="http://http://www.guanzhuanji.elida.cn">http://www.guanzhuanji.elida.cn</a></span></td>
+    <td>所属行业：<span id="ctl00_Main_lblbusiness">工业用品-其它.</span></td>
+  </tr>
+  <tr>
+    <td>信息发布时间：<span id="ctl00_Main_lblpubTime">2014/10/2 11:03:16</span></td>
+    <td>信息有效天数：<span id="ctl00_Main_lblvaluedate">365</span></td>
+  </tr>
+</table>
+               <div id="nn_notice">
+  <h1>免责声明:</h1>
+ <p>信息的真实性与合法性由信息提供者负责,请谨慎审核,理性抉择。本网站对用户所提供的信息的真实性及准确性不承担任何责任，如果因信息真实性或冒发他人信息所引起的纠纷及责任乃至法律责任，均由原信息发布人自行承担，本站不承担任何责任。</p>
+ </div>
+</div>
+          </div>
+          <div class="right"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="column link">
+        <div class="coltop">
+          <div class="left"></div>
+          <div class="middle">
+            <ul id="myTab6">
+              <li class="active" onmouseover="nTabs(this,0);"><a href="#"><span>友情链接</span></a></li>
+              
+            </ul>
+          </div>
+          <div class="right"></div>
+        </div>
+        <div class="colcont">
+          <div class="left" id="myTab6_Content0">
+            <ul class="linkline">        
+              暂无友情链接
+            </ul>
+          </div>
+          
+          <div class="right"></div>
+        </div>
+      </div>
+  </div>
+ <div class="footer">
+      
+  </div>
+</div>
+    </form>
+</body>
+</html>
+

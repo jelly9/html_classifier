@@ -1,0 +1,825 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>【上海二手车】2011年5月_二手二手压路机价格◆→湖北二手压路机市场_价格4.5万元_华夏二手车网</title>
+<meta name="description" content="◆◆◆◆◆◆13764887822◆◆◆◆◆【中国XG集团】上海二手工程机械有限公司网站；本公司长期" />
+<meta name="keywords" content="买二手车，卖二手车  二手  " />
+<script type="text/javascript">var COOKIEDOMAIN='hx2car.com';</script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/common/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/common/js/jquery/jquery.cookie.js" ></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/page/js/page.js" ></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/common/js/md5.js"></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/car/js/arpheal.js"></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/car/js/elycharts.min.js"></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/car/js/bjcardetail.js"></script>
+<link href="http://www.hx2car.com/resource/web/page/common.css" rel="stylesheet" type="text/css" />
+<link href="http://www.hx2car.com/resource/web/common/css/carDetail.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+$(function(){
+	var complain=function(){
+		if(this.id=="huaxiahelp"){
+			$("#help_huaxia").show();
+			$("#input_help").val("");
+		}else{$("#tousu_huaxia").show();
+			    $("#input_tousu").val("");
+		}
+	    $(".check_all").attr("checked",false);
+		$(".check_num").val("");
+		$(".warn_shadow").show();
+	}
+	$("#huaxiahelp").bind("click",complain);
+	$("#tousu").bind("click",complain);
+	$(".warn_title i").bind("click" ,function(){$("#tousu_huaxia").hide();$("#help_huaxia").hide();$(".warn_shadow").hide();});
+	$(".think").bind("click",function(){$("#tousu_huaxia").hide();$("#help_huaxia").hide();$(".warn_shadow").hide();});
+	
+	var check_Num=function(){
+		var check_one=/^[0-9]+$/;
+		if(!check_one.test(this.value)){
+			$(this).val("");}
+	}
+	$(".check_num").bind("keyup",check_Num);
+	
+	var input_comp=function(){
+		if(this.style.color=="red"){
+			$(this).val("");
+			$(this).css("color","black");}
+	}
+	$("#input_tousu").bind("click",input_comp);
+	$("#input_help").bind("click",input_comp);
+	$("#mobile_num").bind("click",input_comp);
+	
+	var sub_mit=function(){
+	    var comment_tousu="";
+	    var comment_helper="";
+	    var car_id=$("#car_id").val();
+	    var managerIdVal=$("#managerId").val();
+		var pho=$("#moblie_Num").val();
+		var carId = "hxtoushucar:"+car_id+";";
+		var sub_url="";var phoVal=""; var query_all="";
+		var flag_="";var loginname="";var info="";
+		if(this.id=="sub_tousu"){
+			if($("#input_tousu").val()=="请选择或输入投诉内容"){
+				$("#input_tousu").val("");
+			}if($("#check1").attr("checked")=="checked"){
+				comment_tousu+="信息描述不符;";
+			}if($("#check2").attr("checked")=="checked"){
+				comment_tousu+="电话号码错误;";
+			}if($("#check3").attr("checked")=="checked"){
+				comment_tousu+="价格不正常;";
+			}if($("#input_tousu").val()!=null && $("#input_tousu").val()!=""){
+				comment_tousu+=$("#input_tousu").val()+";";
+			}if(comment_tousu==""){
+			$("#input_tousu").val("请选择或输入投诉内容");
+			$("#input_tousu").css("color","red");
+			}if(pho!=null && pho!=""){
+			comment_tousu+="投诉者联系方式:"+pho;
+			}flag_="1";
+			 query_all=comment_tousu;
+		}else{
+			loginname=$("#carLoginname").val();
+			if($("#input_help").val()=="请选择或输入申请服务内容"){
+				$("#input_help").val("");
+			}if($("#mobile_num").val()=="请输入您正确的手机号码"){
+				$("#mobile_num").val("");
+			}if($("#check4").attr("checked")=="checked"){
+				comment_helper+="核对车况;";
+			}if($("#check5").attr("checked")=="checked"){
+				comment_helper+="定金转付;";
+			}if($("#check6").attr("checked")=="checked"){
+				comment_helper+="买卖沟通;";
+			}if($("#input_help").val()!=null && $("#input_help").val()!=""){
+				comment_helper+=$("#input_help").val()+";";
+			}if(comment_helper==""){
+				$("#input_help").val("请选择或输入申请服务内容");
+				$("#input_help").css("color","red");
+			}if($("#mobile_num").val()==null || $("#mobile_num").val()==""){
+				$("#mobile_num").val("请输入您正确的手机号码");
+				$("#mobile_num").css("color","red");
+			}else{
+				phoVal=$("#mobile_num").val();
+				flag_="1";
+			}query_all=comment_helper;
+		}
+		if(query_all!="" && flag_=="1"){
+		if(this.id=="sub_tousu"){
+		    query_all=carId+comment_tousu;
+			sub_url="/user/sendUserComment.json";
+			info="tousu";
+		}else{
+			sub_url="/user/UserhelpComment.json";
+		}
+		jQuery.post(sub_url,{carId: car_id,managerId :managerIdVal,comment: query_all,phoNum: phoVal,loginName: loginname},function(data){
+			if(data){
+			  if(data.success){
+				$("#tousu_huaxia").hide();$("#help_huaxia").hide();
+				 $("#mes1").show();
+				 $("#mes1").css("height","260px");
+				  $("#mes1 .warn_content").html('<span class="warn_con warn_special">您的信息已提交!</span>');
+				  if(info=="tousu"){
+				    $("#mes1 .warn_title span").html("投诉信息");
+				  }else{ $("#mes1 .warn_title span").html("助手信息");}
+				  $("#mes1 .warn_content2").hide();
+					$("#mes1 .refer").hide();
+					$("#mes1 .think").css("float","none");
+					$("#mes1 .think").css("margin-left","90px");
+					$("#mes1 .think").html("确定");
+				}
+			}});}}
+	$("#sub_tousu").bind("click",sub_mit);
+	$("#sub_help").bind("click",sub_mit);
+});
+</script>
+</head>
+
+<body>
+<div class="top">
+  <div class="top_all">
+    <p>欢迎来到华夏二手车网！[<a href="/sys/login.htm" target="_blank" class="orange12">登录</a>] [<a href="/user/register.htm" target="_self" class="orange12">注册</a>]</p>
+    <div class="top_nav">
+      <a href="/car/addcar.htm" target="_blank" class="gray12_f60">我要卖</a>|
+      <a href="/car/search.htm" target="_blank" class="gray12_f60">我要买</a>|
+      <a href="http://auto.hx2car.com" target="_blank" class="gray12_f60">资讯中心</a>|
+      <a href="/help/benefit.htm" target="_blank" class="gray12_f60">推荐宝</a>|
+      <a href="/help/outlet.htm" target="_blank" class="gray12_f60">网上门店</a>|
+      <a href="/corps/index.htm" target="_blank" class="gray12_f60">华夏军团</a>|
+      <a href="/help/help.htm" target="_blank" class="gray12_f60">帮助</a>
+    </div>
+  </div>
+</div>
+<div class="logo_region_search">
+  <a href = "http://www.hx2car.com?marked=zzmarked" target="_blank"><div class="logo"></div></a>
+  <div class="region">
+  <p class="total_region">北京站</p>
+    <div class="all_region" lang ="#popArea">
+      <p class="change_region">[<a class="gray12_f60">切换分站</a>]</p>
+    <div class="change_region_con" style = "display:none" id = "popArea">
+      <p class="change_region_hot">热门：
+      <a class="orange12" href="http://www.hx2car.com?marked=zzmarked">总站</a>
+        <a class="orange12" href="http://zj.hx2car.com">浙江</a>
+		<a class="orange12" href="http://beijing.hx2car.com">北京</a>
+		<a class="orange12" href="http://shanghai.hx2car.com">上海</a>
+		<a class="orange12" href="http://jiangsu.hx2car.com">江苏</a>
+		<a class="orange12" href="http://liaoning.hx2car.com">辽宁</a>
+      </p>
+        
+        <p><b>A</b><a href="http://anhui.hx2car.com" class="gray12_f60">安徽</a></p>
+        <p><b>B</b><a href="http://beijing.hx2car.com" class="gray12_f60">北京</a></p>
+        <p><b>C</b><a href="http://cq.hx2car.com" class="gray12_f60">重庆</a></p>
+        <p><b>F</b><a href="http://fj.hx2car.com" class="gray12_f60">福建</a></p>
+        <p><b>G</b><a href="http://gs.hx2car.com" class="gray12_f60">甘肃</a>
+        <a href="http://gz.hx2car.com" class="gray12_f60">贵州</a>
+        <a href="http://guangdong.hx2car.com" class="gray12_f60">广东</a>
+        <a href="http://gx.hx2car.com" class="gray12_f60">广西</a></p>
+        <p><b>H</b><a href="http://hlj.hx2car.com" class="gray12_f60">黑龙江</a>
+        <a href="http://hebei.hx2car.com" class="gray12_f60">河南</a>
+        <a href="http://henan.hx2car.com" class="gray12_f60">河北</a>
+        <a href="http://hunan.hx2car.com" class="gray12_f60">湖南</a>
+        <a href="http://hubei.hx2car.com" class="gray12_f60">湖北</a>
+        <a href="http://hainan.hx2car.com" class="gray12_f60">海南</a></p>
+        <p><b>J</b><a href="http://jl.hx2car.com" class="gray12_f60">吉林</a>
+        <a href="http://jiangsu.hx2car.com" class="gray12_f60">江苏</a>
+        <a href="http://jiangxi.hx2car.com" class="gray12_f60">江西</a></p>
+        <p><b>L</b><a href="http://liaoning.hx2car.com" class="gray12_f60">辽宁</a></p>
+        <p><b>S</b><a href="http://shanghai.hx2car.com" class="gray12_f60">上海</a>
+        <a href="http://sd.hx2car.com" class="gray12_f60">山东</a>
+        <a href="http://sx.hx2car.com" class="gray12_f60">山西</a>
+        <a href="http://shanxi.hx2car.com" class="gray12_f60">陕西</a>
+        <a href="http://sc.hx2car.com" class="gray12_f60">四川</a></p>
+        <p><b>T</b><a href="http://tianjin.hx2car.com" class="gray12_f60">天津</a>
+        <a href="http://taiwan.hx2car.com" class="gray12_f60">台湾</a></p>
+        <p><b>X</b><a href="http://xz.hx2car.com" class="gray12_f60">西藏</a>
+        <a href="http://xj.hx2car.com" class="gray12_f60">新疆</a></p>
+        <p><b>Y</b><a href="http://yn.hx2car.com" class="gray12_f60">云南</a></p>
+        <p style="margin-bottom:5px;"><b>Z</b><a href="http://zj.hx2car.com" class="gray12_f60">浙江</a></p>
+        <p><a href="http://www.hx2car.com?marked=zzmarked" class="gray12_f60">总站</a><a href="http://nf.hx2car.com" class="gray12_f60">南方</a>
+        <a href="http://xb.hx2car.com" class="gray12_f60">西部</a>
+        <a href="http://hz.hx2car.com" class="gray12_f60">华中</a>
+        <a href="http://hn.hx2car.com" class="gray12_f60">华南</a>
+        <a href="http://hd.hx2car.com" class="gray12_f60">华东</a>
+        <a href="http://db.hx2car.com" class="gray12_f60">东北</a>
+        <a href="http://nmg.hx2car.com" class="gray12_f60">内蒙古</a>
+        <a href="http://nx.hx2car.com" class="gray12_f60">宁夏</a>
+        <a href="http://qh.hx2car.com" class="gray12_f60">青海</a></p>
+    </div>
+     </div>
+  </div>
+  <div class="search">
+    <div class="search_box">
+      <form id ="indexsearch"  method="get" action="/search/index.htm" target="_blank">
+      <div class="search_input">
+        <input type="text" name="keyword" autocomplete="off"/>
+        <p class="search_point" id ="keyStr" >搜”<span>北京 suv</span>“试试，您可能喜欢</p>
+        <div class="suggestcomplete">
+        <ul>
+        </ul>
+        </div>
+      </div>
+      <a class="search_btn">搜索</a>
+      </form>
+    </div>
+    <p class="search_hot">
+      <a href="/brand/10101001/" target="_blank" class="gray12_f60">本田CR-V</a>
+      <a href="/brand/DFBTAA/" target="_blank" class="gray12_f60">思域</a>
+      <a href="/brand/10360005/" target="_blank" class="gray12_f60">卡罗拉</a>
+      <a href="/brand/10360002/" target="_blank" class="gray12_f60">花冠</a>
+      <a href="/brand/20016/" target="_blank" class="gray12_f60">丰田RAV4</a>
+      <a href="/brand/10190002/" target="_blank" class="gray12_f60">普力马</a>
+      <a href="/brand/10190003/" target="_blank" class="gray12_f60">海马3</a>
+      <a href="/brand/10050008/" target="_blank" class="gray12_f60">利亚纳</a>
+      <a href="/brand/MZD3AA/" target="_blank" class="gray12_f60">马自达3</a>
+      <a href="/brand/10400001/" target="_blank" class="gray12_f60">Mazda6</a>
+      <a href="/brand/10160001/" target="_blank" class="gray12_f60">雅阁</a>
+      <a href="/brand/10380002/" target="_blank" class="gray12_f60">高尔夫7</a>
+    </p>
+  </div>
+</div>
+<div class="nav">
+  <div class="wrap_nav">
+    <a href="/public/brand.htm" class="all_car" target="_blank">二手车大全</a>
+    <ul>
+      <li><a href="/" >首页</a></li>
+      <li><a href="/car/search.htm" >二手车信息</a></li>
+      <li><a href="/trade/tradeallcar.htm" >二手车批发</a></li>
+      <li><a href="/car/luxury.htm" >高档</a></li>
+      <li><a href="/car/midrange.htm" >中档</a></li>
+      <li><a href="/car/compactcar.htm" >经济</a></li>
+      <li><a href="/car/sportscar.htm" >跑车</a></li>
+      <li><a href="/car/suv.htm" >SUV</a></li>
+      <li><a href="/car/truck.htm" >货车</a></li>
+    </ul>
+  </div>
+</div>
+<input id="car_id" type="hidden" value="3749083" />
+<input id="car_brand" type="hidden" value="0">
+<input id="year" type="hidden" value="2011">
+<input id="Nowyear" type="hidden" value="2014">
+<input id="user_name" type="hidden" value="" />
+<input id="user_id" type="hidden" value="0" />
+<input id="checks" type="hidden" value="">
+<input id="carLoginname" type="hidden" value="shlucheng">
+<input id="carcreattime" type="hidden" value="2">
+<input id="Usmobile" type="hidden" value="13764887822">
+
+<div class="glance_way">
+  <p>
+    <a href="/" class="first_way">首页</a>><a href="/search/index.htm?keyword=%E8%BD%BF%E8%BD%A6" target="_blank">轿车</a>  </p>
+</div>
+<div class="cardetail">
+  <div class="detail_l">
+    <div class="car_infor">
+      
+      
+      <div class="infor_l">
+      <div class="car_compare">
+        <ul>
+          <li class="compare_now"><a onclick="Goduibi();" id="duibi_car">加入对比</a></li>
+          <li class="compare_check"><input id="checkone" onclick="choseorNo();" type="checkbox" value="" /></li>
+        </ul>
+        <ul id="dedao">
+        </ul>
+      </div>
+      
+        <div class="infor_pic">
+          <p id="big_pic" class="pic_large"> <img alt='【上海】2011年5月&nbsp;二手压路机价格◆→湖北二手压路机市场'  src='http://img.hx2car.com/uploadpic/20120704/9FsAnAYFtX07ApPA-855806713-215529.jpg'   width='399'  height='266'  /> <span><b>已过期</b></span></p>
+          <ul id="car_pic">
+			<li id="focusBigImg_0"  class="photo_on" >
+            <img src='http://img.hx2car.com/uploadpic/20120704/9FsAnAYFtX07ApPA-855806713-215529.jpg' width="75" height="50px"/><i></i>
+            </li>
+            <div class="clear"></div>
+          </ul>
+        </div>
+        <div class="collect_notice">
+          <div class="collect"><span><a id="addfavorit" lang="3749083">收藏</a></span>|</div>
+          <div class="share"><span>分享：</span><div class="bdsharebuttonbox share_to"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>|</div>
+          <span class="notice" >免费发送此信息到手机</span>
+          <div class="clear"></div>
+        </div>
+        <div class="compare">
+        	<p class="compare1">
+        	<a target="_blank" style="width:142px;" href="/search/compare.htm?keyword=%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA&year=2011年">近年二手比较</a>
+          <a  target="_blank" style="width:178px;border-right:none;" href="/search/compare.htm?keyword1=%E5%8C%97%E4%BA%AC+%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA&keyword2=%E4%B8%8A%E6%B5%B7+%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA&keyword3=%E6%B1%9F%E8%8B%8F+%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA&keyword4=%E6%B5%99%E6%B1%9F+%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA">京、江、浙、沪二手比较</a>
+        <div class="clear"></div>
+        </p>
+        <p class="compare2">
+        <a target="_blank" href="/search/index.htm?keyword=%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA">同品牌车辆</a>
+        <a target="_blank" href="/search/index.htm?keyword=%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA&startPrice=3&endPrice=5">同价格车辆</a>
+        <a target="_blank" href="/search/index.htm?keyword=2011年 %E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA">同年份车辆</a>
+        <a target="_blank" style="border-right:none;" href="/search/index.htm?keyword=%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA
+        %E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA">同型号车辆</a>
+        </p>
+        </div>
+      </div>
+      <div class="infor_r">
+        <h1 class="carname">【上海】2011年5月&nbsp;二手压路机价格◆→湖北二手压路机市场&nbsp;黑色&nbsp;手动挡</h1>
+        <p class="carprice"><i>￥</i><span>4.5万</span>
+        
+        <em>点击量：<i class="clicktimes">302</i></em>
+        </p>
+         <p class="cartel cartel_selled">
+        <span class="context_car">您所查看的车辆信息已过期</span><span class="order_car">预约求购</span></p>
+        <p class="carplace">
+        </p>
+        <div class="car_message">
+          <ul class="message_title">
+            <li  class="message_on" lang="#li1">车辆信息</li>
+            <li lang="#li2">贷款</li>
+            <li lang="#li3">保险</li>
+            <li lang="#li4">过户</li>
+            <span>更新时间：2012-06-18 20:28:02</span>
+          </ul>
+        </div>
+        <div class="li1" id="li1">
+          <ul>
+            <li>编号：<span>201203749083</span></li>
+            <li>车型：<span>轿车</span></li>
+            <li>里程：<span>5万公里</span></li>
+            <li>排放：<span>未知</span></li>
+			<li>燃油：<span></span></li>
+			<li>用途：<span>非营运</span></li>
+            <li>能否过户：<span>能</span></li>
+            <li>能否按揭：<span>能</span></li>
+            <li>保险情况：<span>___年___月</span></li>
+            <li>年审情况：<span>___年___月</span></li>
+          </ul>
+        </div>
+        <div class="li2" id="li2" style="display:none;">
+          <ul>
+            <li><span class="li2_title">整车价格：</span><input id="jiage" maxlength="8" onkeyup="calcountAll();"  value="45000"   type="text" /><span>元</span></li>
+            <li><span class="li2_title">首付比例：</span><input id="bili" value="30" name="" onkeyup="calcountAll();"type="text" /><span>%</span></li>
+            <li style="margin-right:0;"><span class="li2_title">首付款：</span><input  id="shoufu" value="13500" disabled=""   type="text" /><span>元</span></li>
+            <li><span class="li2_title">手续费：</span><input id="shouxu" value="1350" disabled=""   type="text" /><span>元</span></li>
+            <li><span class="li2_title">贷款额：</span><input id="daikuan" value="31500"   disabled="" type="text" /><span>元</span></li>
+            <li style="margin-right:0;"><span class="li2_title">贷款年限：</span><input id="daikuanyear" value="3"    onkeyup="calcountAll();" type="text" /><span>年</span></li>
+            <li><span class="li2_title">利率：</span><input id="lilv" value="6.15"    disabled=""  type="text" /><span>%</span></li>
+            <li><span class="li2_title">月供：</span><input id="yuegong" value="960"   disabled="" type="text" /><span>元</span></li>
+          </ul>
+        </div>
+        <div class="li2" id="li3" style="display:none;">
+          <ul>
+            <li class="special_so"><span class="li2_title">整车价格：</span><input id="txtMoney" maxlength="8" value="45000" name="" type="text" onkeyup="calall();"  /><span>元</span></li>
+            <li class="li2_special"><span class="li2_title">车上人员责任险：</span><input id="zeren" value="50" name="" disabled="" type="text" /><span>元</span></li>
+            <li class="special_so"><span class="li2_title">交强险：</span><input id="jiaoqiang" value="950" name="" disabled="" type="text" /><span>元</span></li>
+            <li class="li2_special"><span class="li2_title">第三者责任险：</span><input id="disanze" value="746" name="" disabled="" type="text" /><span>元</span></li>
+            <li class="special_so"><span class="li2_title">自损险：</span><input id="zisun" value="67" disabled=""name="" type="text" /><span>元</span></li>
+            <li class="li2_special"><span class="li2_title">车辆损失险：</span><input id="chesun" value="948" disabled=""name="" type="text" /><span>元</span></li>
+            <li style="margin-right:0;"><span class="li2_title">总计：</span><input id="sum" value="2761" disabled=""name="" type="text" /><span>元</span></li>
+          </ul>
+        </div>
+        <div class="li2" id="li4" style="display:none;">
+          <ul>
+            <li class="special_li4">1、卖方身份证原件及复印件</li> 
+            <li class="special_li4">4、车辆的机动车登记证书及复印件</li>           
+            <li class="special_li4">2、买方身份证原件及复印件</li>
+            <li class="special_li4">5、车辆行驶证原件及复印件</li>   
+            <li class="special_li4">3、车辆原始购置发票或上次过户发票原件及复印件</li>
+            <li class="special_li4">6、旧机动车买卖合同（市场或经纪公司领取）</li>
+            <li class="special_li4">7、机动车到场</li>
+          </ul>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="car_introduce"  id="toup"><p>车辆描述：<span>◆◆◆◆◆◆13764887822◆◆◆◆◆【中国XG集团】上海二手工程机械有限公司网站；本公司长期供应【二手压路机】【二手装载机】【二手汽车吊】【二手推土机】【二手挖掘】【二手叉车】等二手国产进口工程机械，价格低廉，欢迎选购。本公司品种齐全，质量可靠，价格优惠，以质量求生存，以信誉求发展。以诚信的态度欢迎海内外广大客户。</span></p></div>
+        <div class="car_recommend">
+      <p class="recommend_title">同品牌车源
+	  <a  target="_blank" href="/search/index.htm?keyword=%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E4%BB%B7%E6%A0%BC%E2%97%86%E2%86%92%E6%B9%96%E5%8C%97%E4%BA%8C%E6%89%8B%E5%8E%8B%E8%B7%AF%E6%9C%BA%E5%B8%82%E5%9C%BA">更多</a>
+      </p>
+      <ul >
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904861"><img src="http://img.hx2car.com/upload/car/2014/6/11/03/35/94/38/96/small/300_200.jpg" width="186" height="124" alt="[山东济南]&nbsp;2011年3月&nbsp;宝马宝马5系525Li 领先型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904861" title="[山东济南]2011年3月宝马宝马5系525Li 领先型">2011年3月宝马宝马5系525Li 领先型</a></p>
+          <p class="carareas_prices"><span class="carareas">山东济南</span><span class="carprices">33.65万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904823"><img src="http://img.hx2car.com/upload/car/2014/6/11/09/48/88/18/64/small/300_200.jpg" width="186" height="124" alt="[河北邯郸涉]&nbsp;2009年10月&nbsp;本田CR-V2.4四驱尊贵导航版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904823" title="[河北邯郸涉]2009年10月本田CR-V2.4四驱尊贵导航版">2009年10月本田CR-V2.4四驱尊贵导航版</a></p>
+          <p class="carareas_prices"><span class="carareas">河北邯郸涉</span><span class="carprices">14.5万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904389"><img src="http://img.hx2car.com/upload/car/2014/6/11/15/60/58/54/24/small/300_200.jpg" width="186" height="124" alt="[江苏泰州兴化]&nbsp;2008年5月&nbsp;雷克萨斯ISIS300 豪华版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904389" title="[江苏泰州兴化]2008年5月雷克萨斯ISIS300 豪华版">2008年5月雷克萨斯ISIS300 豪华版</a></p>
+          <p class="carareas_prices"><span class="carareas">江苏泰州兴化</span><span class="carprices">16.5万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904831"><img src="http://img.hx2car.com/upload/car/2014/6/11/20/03/80/99/97/small/300_200.jpg" width="186" height="124" alt="[江西宜春高安]&nbsp;2012年6月&nbsp;二手半挂车"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904831" title="[江西宜春高安]2012年6月二手半挂车">2012年6月二手半挂车</a></p>
+          <p class="carareas_prices"><span class="carareas">江西宜春高安</span><span class="carprices">15.8万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904799"><img src="http://img.hx2car.com/upload/car/2014/6/11/17/50/90/26/82/small/300_200.jpg" width="186" height="124" alt="[陕西西安雁塔区]&nbsp;2013年8月&nbsp;奔驰E级E300L时尚豪华型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904799" title="[陕西西安雁塔区]2013年8月奔驰E级E300L时尚豪华型">2013年8月奔驰E级E300L时尚豪华型</a></p>
+          <p class="carareas_prices"><span class="carareas">陕西西安雁塔区</span><span class="carprices">41.8万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137262296"><img src="http://img.hx2car.com/upload/car/2014/5/13/03/71/24/09/91/small/300_200.jpg" width="186" height="124" alt="[江苏苏州相城区]&nbsp;2012年5月&nbsp;奔驰E级E260L CGI时尚型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137262296" title="[江苏苏州相城区]2012年5月奔驰E级E260L CGI时尚型">2012年5月奔驰E级E260L CGI时尚型</a></p>
+          <p class="carareas_prices"><span class="carareas">江苏苏州相城区</span><span class="carprices">35.8万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137902952"><img src="http://img.hx2car.com/upload/car/2014/5/23/09/52/35/40/55/small/300_200.jpg" width="186" height="124" alt="[浙江杭州江干区]&nbsp;2011年1月&nbsp;宝马(进口)宝马5系523i  豪华型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137902952" title="[浙江杭州江干区]2011年1月宝马(进口)宝马5系523i  豪华型">2011年1月宝马(进口)宝马5系523i  豪华型</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江杭州江干区</span><span class="carprices">33.5万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904745"><img src="http://img.hx2car.com/upload/car/2014/6/11/12/53/35/71/61/small/300_200.jpg" width="186" height="124" alt="[山东济宁梁山]&nbsp;2012年10月&nbsp;东风天龙双驱  定做全新半挂车 公告企业"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904745" title="[山东济宁梁山]2012年10月东风天龙双驱  定做全新半挂车 公告企业">2012年10月东风天龙双驱  定做全新半挂车 公告企业</a></p>
+          <p class="carareas_prices"><span class="carareas">山东济宁梁山</span><span class="carprices">12.0万</span></p>
+        </li>
+      </ul>
+    </div>    <div class="car_recommend">
+      <p class="recommend_title">同价格车源<a target="_blank" href="/search/index.htm?startPrice=3&endPrice=5">更多>></a></p>
+      <ul>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137668711"><img src="http://img.hx2car.com/upload/car/2014/6/4/01/32/89/51/53/small/300_200.jpg" width="186" height="124" alt="[辽宁沈阳]&nbsp;2013年1月&nbsp;宾利欧陆GTS6.0敞篷版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137668711" title="[辽宁沈阳]2013年1月宾利欧陆GTS6.0敞篷版">2013年1月宾利欧陆GTS6.0敞篷版</a></p>
+          <p class="carareas_prices"><span class="carareas">辽宁沈阳</span><span class="carprices">320.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137879133"><img src="http://img.hx2car.com/upload/car/2014/6/9/02/93/12/19/68/small/300_200.jpg" width="186" height="124" alt="[浙江台州]&nbsp;2013年1月&nbsp;宾利飞驰"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137879133" title="[浙江台州]2013年1月宾利飞驰">2013年1月宾利飞驰</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江台州</span><span class="carprices">288.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137298345"><img src="http://img.hx2car.com/upload/car/2014/4/23/13/98/28/41/33/small/300_200.jpg" width="186" height="124" alt="[江苏苏州相城区]&nbsp;2012年11月&nbsp;宾利欧陆FlyingSpur6.0五座"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137298345" title="[江苏苏州相城区]2012年11月宾利欧陆FlyingSpur6.0五座">2012年11月宾利欧陆FlyingSpur6.0五座</a></p>
+          <p class="carareas_prices"><span class="carareas">江苏苏州相城区</span><span class="carprices">273.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137298402"><img src="http://img.hx2car.com/upload/car/2014/4/23/08/75/75/06/41/small/300_200.jpg" width="186" height="124" alt="[江苏苏州相城区]&nbsp;2012年5月&nbsp;宾利欧陆FlyingSpur6.0四座"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137298402" title="[江苏苏州相城区]2012年5月宾利欧陆FlyingSpur6.0四座">2012年5月宾利欧陆FlyingSpur6.0四座</a></p>
+          <p class="carareas_prices"><span class="carareas">江苏苏州相城区</span><span class="carprices">278.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137562449"><img src="http://img.hx2car.com/upload/car/2014/5/15/11/14/56/42/93/small/300_200.jpg" width="186" height="124" alt="[浙江宁波慈溪]&nbsp;2012年12月&nbsp;宾利慕尚6.8T尊贵版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137562449" title="[浙江宁波慈溪]2012年12月宾利慕尚6.8T尊贵版">2012年12月宾利慕尚6.8T尊贵版</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江宁波慈溪</span><span class="carprices">398.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/136458486"><img src="http://img.hx2car.com/upload/car/2014/1/30/15/82/75/45/42/small/300_200.jpg" width="186" height="124" alt="[北京北京朝阳区]&nbsp;2014年1月&nbsp;兰博基尼AventadorLP700-4"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/136458486" title="[北京北京朝阳区]2014年1月兰博基尼AventadorLP700-4">2014年1月兰博基尼AventadorLP700-4</a></p>
+          <p class="carareas_prices"><span class="carareas">北京北京朝阳区</span><span class="carprices">595.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137883445"><img src="http://img.hx2car.com/upload/car/2014/6/9/12/55/67/68/39/small/300_200.jpg" width="186" height="124" alt="[浙江杭州]&nbsp;2013年11月&nbsp;宾利欧陆6.0T"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137883445" title="[浙江杭州]2013年11月宾利欧陆6.0T">2013年11月宾利欧陆6.0T</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江杭州</span><span class="carprices">358.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137339969"><img src="http://img.hx2car.com/upload/car/2014/4/26/21/42/66/87/54/small/300_200.jpg" width="186" height="124" alt="[广西壮族自治区南宁江南区]&nbsp;2013年10月&nbsp;宾利欧陆GT 4.0 V8"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137339969" title="[广西壮族自治区南宁江南区]2013年10月宾利欧陆GT 4.0 V8">2013年10月宾利欧陆GT 4.0 V8</a></p>
+          <p class="carareas_prices"><span class="carareas">广西壮族自治区南宁江南区</span><span class="carprices">258.0万</span></p>
+        </li>
+      </ul>
+    </div>    <div class="car_recommend">
+      <p class="recommend_title">同地区车源<a target="_blank" href="/search/index.htm?keyword=上海">更多>></a></p>
+      <ul>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904489"><img src="http://img.hx2car.com/upload/car/2014/6/11/20/54/28/99/10/small/300_200.jpg" width="186" height="124" alt="[上海上海浦东新区]&nbsp;2010年8月&nbsp;雪佛兰科鲁兹科鲁兹1.8SEAT"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904489" title="[上海上海浦东新区]2010年8月雪佛兰科鲁兹科鲁兹1.8SEAT">2010年8月雪佛兰科鲁兹科鲁兹1.8SEAT</a></p>
+          <p class="carareas_prices"><span class="carareas">上海上海浦东新区</span><span class="carprices">7.98万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904396"><img src="http://img.hx2car.com/upload/car/2014/6/11/12/79/37/57/63/small/300_200.jpg" width="186" height="124" alt="[上海上海浦东新区]&nbsp;2007年8月&nbsp;斯巴鲁力狮2.0RWagon"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904396" title="[上海上海浦东新区]2007年8月斯巴鲁力狮2.0RWagon">2007年8月斯巴鲁力狮2.0RWagon</a></p>
+          <p class="carareas_prices"><span class="carareas">上海上海浦东新区</span><span class="carprices">12.68万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/136816871"><img src="http://img.hx2car.com/upload/car/2014/3/12/05/77/00/73/48/small/300_200.jpg" width="186" height="124" alt="[上海上海闵行区]&nbsp;2012年10月&nbsp;玛莎拉蒂Gran Turismo"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/136816871" title="[上海上海闵行区]2012年10月玛莎拉蒂Gran Turismo">2012年10月玛莎拉蒂Gran Turismo</a></p>
+          <p class="carareas_prices"><span class="carareas">上海上海闵行区</span><span class="carprices">168.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904234"><img src="http://img.hx2car.com/upload/car/2014/6/11/16/82/32/05/91/small/300_200.jpg" width="186" height="124" alt="[上海上海浦东新区]&nbsp;2013年6月&nbsp;克莱斯勒(进口)300C2013款 3.6L "/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904234" title="[上海上海浦东新区]2013年6月克莱斯勒(进口)300C2013款 3.6L ">2013年6月克莱斯勒(进口)300C2013款 3.6L </a></p>
+          <p class="carareas_prices"><span class="carareas">上海上海浦东新区</span><span class="carprices">34.98万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137904121"><img src="http://img.hx2car.com/upload/car/2014/6/11/09/40/40/00/85/small/300_200.jpg" width="186" height="124" alt="[上海上海浦东新区]&nbsp;2011年3月&nbsp;宝马(进口)宝马7系750Li"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137904121" title="[上海上海浦东新区]2011年3月宝马(进口)宝马7系750Li">2011年3月宝马(进口)宝马7系750Li</a></p>
+          <p class="carareas_prices"><span class="carareas">上海上海浦东新区</span><span class="carprices">83.88万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137843203"><img src="http://img.hx2car.com/upload/car/2014/6/6/19/40/24/99/36/small/300_200.jpg" width="186" height="124" alt="[上海上海嘉定区]&nbsp;2013年4月&nbsp;奥迪奥迪A6L3.5FSI豪华型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137843203" title="[上海上海嘉定区]2013年4月奥迪奥迪A6L3.5FSI豪华型">2013年4月奥迪奥迪A6L3.5FSI豪华型</a></p>
+          <p class="carareas_prices"><span class="carareas">上海上海嘉定区</span><span class="carprices">47.8万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/136426613"><img src="http://img.hx2car.com/upload/car/2014/3/24/10/87/40/68/38/small/300_200.jpg" width="186" height="124" alt="[上海上海嘉定区]&nbsp;2011年11月&nbsp;宝马宝马5系523Li豪华型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/136426613" title="[上海上海嘉定区]2011年11月宝马宝马5系523Li豪华型">2011年11月宝马宝马5系523Li豪华型</a></p>
+          <p class="carareas_prices"><span class="carareas">上海上海嘉定区</span><span class="carprices">36.7万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137829845"><img src="http://img.hx2car.com/upload/car/2014/6/5/15/56/15/20/31/small/300_200.jpg" width="186" height="124" alt="[上海上海杨浦区]&nbsp;2011年9月&nbsp;道奇(进口)酷威2.7豪华导航版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137829845" title="[上海上海杨浦区]2011年9月道奇(进口)酷威2.7豪华导航版">2011年9月道奇(进口)酷威2.7豪华导航版</a></p>
+          <p class="carareas_prices"><span class="carareas">上海上海杨浦区</span><span class="carprices">17.88万</span></p>
+        </li>
+      </ul>
+    </div>
+    <div class="car_recommend">
+      <p class="recommend_title">推荐车源<a target="_blank" href="/car/search.htm?carFlag=essence">更多>></a></p>
+      <ul>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137196933"><img src="http://img.hx2car.com/upload/car/2014/4/28/12/01/00/97/34/small/150_100.jpg" width="186" height="124" alt="[河北石家庄裕华区]&nbsp;2010年3月&nbsp;斯巴鲁 森林人  2.5XS 自动豪华导航版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137196933" title="[河北石家庄裕华区]2010年3月斯巴鲁 森林人  2.5XS 自动豪华导航版">2010年3月斯巴鲁 森林人  2.5XS 自动豪华导航版</a></p>
+          <p class="carareas_prices"><span class="carareas">河北石家庄裕华区</span><span class="carprices">16.8万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/136944441"><img src="http://img.hx2car.com/upload/car/2014/3/23/02/10/34/56/20/small/150_100.jpg" width="186" height="124" alt="[湖南长沙]&nbsp;2012年5月&nbsp;大众 速腾  1.8TSI自动旗舰版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/136944441" title="[湖南长沙]2012年5月大众 速腾  1.8TSI自动旗舰版">2012年5月大众 速腾  1.8TSI自动旗舰版</a></p>
+          <p class="carareas_prices"><span class="carareas">湖南长沙</span><span class="carprices">17.5万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137244245"><img src="http://img.hx2car.com/upload/car/2014/4/18/02/41/30/83/62/small/150_100.jpg" width="186" height="124" alt="[重庆重庆渝北区]&nbsp;2006年10月&nbsp;宝马 宝马7系  740Li尊贵型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137244245" title="[重庆重庆渝北区]2006年10月宝马 宝马7系  740Li尊贵型">2006年10月宝马 宝马7系  740Li尊贵型</a></p>
+          <p class="carareas_prices"><span class="carareas">重庆重庆渝北区</span><span class="carprices">42.8万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137552633"><img src="http://img.hx2car.com/upload/car/2014/5/14/14/63/91/47/63/small/150_100.jpg" width="186" height="124" alt="[北京]&nbsp;2006年12月&nbsp;奔驰 ML级越野车  ML350豪华型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137552633" title="[北京]2006年12月奔驰 ML级越野车  ML350豪华型">2006年12月奔驰 ML级越野车  ML350豪华型</a></p>
+          <p class="carareas_prices"><span class="carareas">北京</span><span class="carprices">面议</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137339471"><img src="http://img.hx2car.com/upload/car/2014/4/26/14/28/17/92/80/small/150_100.jpg" width="186" height="124" alt="[北京]&nbsp;2012年5月&nbsp;宝马 宝马7系  730Li豪华型"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137339471" title="[北京]2012年5月宝马 宝马7系  730Li豪华型">2012年5月宝马 宝马7系  730Li豪华型</a></p>
+          <p class="carareas_prices"><span class="carareas">北京</span><span class="carprices">面议</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/136615710"><img src="http://img.hx2car.com/upload/car/2014/2/22/04/22/82/49/77/small/150_100.jpg" width="186" height="124" alt="[广东深圳罗湖区]&nbsp;2013年2月&nbsp;别克 君威  2.0L舒适版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/136615710" title="[广东深圳罗湖区]2013年2月别克 君威  2.0L舒适版">2013年2月别克 君威  2.0L舒适版</a></p>
+          <p class="carareas_prices"><span class="carareas">广东深圳罗湖区</span><span class="carprices">15.5万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/136626698"><img src="http://img.hx2car.com/upload/car/2014/2/23/11/08/56/81/44/small/150_100.jpg" width="186" height="124" alt="[重庆重庆渝北区]&nbsp;2013年9月&nbsp;雷克萨斯 RX 2.7 270 Mark Levinson 特别限量版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/136626698" title="[重庆重庆渝北区]2013年9月雷克萨斯 RX 2.7 270 Mark Levinson 特别限量版">2013年9月雷克萨斯 RX 2.7 270 Mark Levinson 特别限量版</a></p>
+          <p class="carareas_prices"><span class="carareas">重庆重庆渝北区</span><span class="carprices">48.5万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137651849"><img src="http://img.hx2car.com/upload/car/2014/5/22/19/04/05/13/76/small/150_100.jpg" width="186" height="124" alt="[山东济南槐荫区]&nbsp;2011年1月&nbsp;捷豹 XF  XF3.0L V6风华版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137651849" title="[山东济南槐荫区]2011年1月捷豹 XF  XF3.0L V6风华版">2011年1月捷豹 XF  XF3.0L V6风华版</a></p>
+          <p class="carareas_prices"><span class="carareas">山东济南槐荫区</span><span class="carprices">面议</span></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="detail_r">
+    <div class="carowner">
+      <p class="owner_title"><span>车主简介</span><a href="/profile/215529" target="_blank">个人主页</a></p>
+      <p class="owner_pic"><a href="/profile/215529" target="_blank"><img src="http://img.hx2car.com/upload/user/2013/1/17/18/46/20/48/12/cut/cut.jpg" href="/profile/215529" width="137" height="137" /></a></p>
+      <p class="owner_name">袁先生</p>
+      <p class="owner_credit">信誉：<a style="color:black">20</a></p>
+      <p class="owner_area">地区：<span>上海市上海青浦区</span></p>
+      <p class="owner_say"><b>ta说：</b><span>13918396488长期出售二手压路机，二手装载机……</span></p>
+    </div>
+    <div class="hescars">
+      <p class="hescars_title">推荐车辆</p>
+      <ul>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137668711"><img src="http://img.hx2car.com/upload/car/2014/6/4/01/32/89/51/53/small/300_200.jpg" width="171" height="114" alt="[辽宁沈阳]&nbsp;2013年1月&nbsp;宾利欧陆GTS6.0敞篷版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137668711" title="[辽宁沈阳]2013年1月宾利欧陆GTS6.0敞篷版">2013年1月宾利欧陆GTS6.0敞篷版</a></p>
+          <p class="carareas_prices"><span class="carareas">辽宁沈阳</span><span class="carprices">320.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137879133"><img src="http://img.hx2car.com/upload/car/2014/6/9/02/93/12/19/68/small/300_200.jpg" width="171" height="114" alt="[浙江台州]&nbsp;2013年1月&nbsp;宾利飞驰"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137879133" title="[浙江台州]2013年1月宾利飞驰">2013年1月宾利飞驰</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江台州</span><span class="carprices">288.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137298345"><img src="http://img.hx2car.com/upload/car/2014/4/23/13/98/28/41/33/small/300_200.jpg" width="171" height="114" alt="[江苏苏州相城区]&nbsp;2012年11月&nbsp;宾利欧陆FlyingSpur6.0五座"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137298345" title="[江苏苏州相城区]2012年11月宾利欧陆FlyingSpur6.0五座">2012年11月宾利欧陆FlyingSpur6.0五座</a></p>
+          <p class="carareas_prices"><span class="carareas">江苏苏州相城区</span><span class="carprices">273.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137298402"><img src="http://img.hx2car.com/upload/car/2014/4/23/08/75/75/06/41/small/300_200.jpg" width="171" height="114" alt="[江苏苏州相城区]&nbsp;2012年5月&nbsp;宾利欧陆FlyingSpur6.0四座"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137298402" title="[江苏苏州相城区]2012年5月宾利欧陆FlyingSpur6.0四座">2012年5月宾利欧陆FlyingSpur6.0四座</a></p>
+          <p class="carareas_prices"><span class="carareas">江苏苏州相城区</span><span class="carprices">278.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137562449"><img src="http://img.hx2car.com/upload/car/2014/5/15/11/14/56/42/93/small/300_200.jpg" width="171" height="114" alt="[浙江宁波慈溪]&nbsp;2012年12月&nbsp;宾利慕尚6.8T尊贵版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137562449" title="[浙江宁波慈溪]2012年12月宾利慕尚6.8T尊贵版">2012年12月宾利慕尚6.8T尊贵版</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江宁波慈溪</span><span class="carprices">398.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/136458486"><img src="http://img.hx2car.com/upload/car/2014/1/30/15/82/75/45/42/small/300_200.jpg" width="171" height="114" alt="[北京北京朝阳区]&nbsp;2014年1月&nbsp;兰博基尼AventadorLP700-4"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/136458486" title="[北京北京朝阳区]2014年1月兰博基尼AventadorLP700-4">2014年1月兰博基尼AventadorLP700-4</a></p>
+          <p class="carareas_prices"><span class="carareas">北京北京朝阳区</span><span class="carprices">595.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137883445"><img src="http://img.hx2car.com/upload/car/2014/6/9/12/55/67/68/39/small/300_200.jpg" width="171" height="114" alt="[浙江杭州]&nbsp;2013年11月&nbsp;宾利欧陆6.0T"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137883445" title="[浙江杭州]2013年11月宾利欧陆6.0T">2013年11月宾利欧陆6.0T</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江杭州</span><span class="carprices">358.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137339969"><img src="http://img.hx2car.com/upload/car/2014/4/26/21/42/66/87/54/small/300_200.jpg" width="171" height="114" alt="[广西壮族自治区南宁江南区]&nbsp;2013年10月&nbsp;宾利欧陆GT 4.0 V8"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137339969" title="[广西壮族自治区南宁江南区]2013年10月宾利欧陆GT 4.0 V8">2013年10月宾利欧陆GT 4.0 V8</a></p>
+          <p class="carareas_prices"><span class="carareas">广西壮族自治区南宁江南区</span><span class="carprices">258.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137035559"><img src="http://img.hx2car.com/upload/car/2014/3/31/17/33/79/80/26/small/300_200.jpg" width="171" height="114" alt="[浙江台州]&nbsp;2011年9月&nbsp;法拉利458 Spider 4.5 4.5L 标准版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137035559" title="[浙江台州]2011年9月法拉利458 Spider 4.5 4.5L 标准版">2011年9月法拉利458 Spider 4.5 4.5L 标准版</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江台州</span><span class="carprices">278.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137082934"><img src="http://img.hx2car.com/upload/car/2014/4/4/20/90/39/46/04/small/300_200.jpg" width="171" height="114" alt="[河南郑州金水区]&nbsp;2011年6月&nbsp;宾利 6.0 6.0T W12 四座"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137082934" title="[河南郑州金水区]2011年6月宾利 6.0 6.0T W12 四座">2011年6月宾利 6.0 6.0T W12 四座</a></p>
+          <p class="carareas_prices"><span class="carareas">河南郑州金水区</span><span class="carprices">258.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/67538456"><img src="http://img.hx2car.com/upload/car/2013/11/17/13/89/53/64/59/small/300_200.jpg" width="171" height="114" alt="[河南郑州金水区]&nbsp;2012年1月&nbsp;劳斯莱斯幻影6.7标准版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/67538456" title="[河南郑州金水区]2012年1月劳斯莱斯幻影6.7标准版">2012年1月劳斯莱斯幻影6.7标准版</a></p>
+          <p class="carareas_prices"><span class="carareas">河南郑州金水区</span><span class="carprices">578.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/66940418"><img src="http://img.hx2car.com/upload/car/2013/9/17/16/09/60/58/34/small/300_200.jpg" width="171" height="114" alt="[山东青岛四方区]&nbsp;2013年9月&nbsp;兰博基尼盖拉多5.2 LP550-2标准版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/66940418" title="[山东青岛四方区]2013年9月兰博基尼盖拉多5.2 LP550-2标准版">2013年9月兰博基尼盖拉多5.2 LP550-2标准版</a></p>
+          <p class="carareas_prices"><span class="carareas">山东青岛四方区</span><span class="carprices">266.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/67938878"><img src="http://img.hx2car.com/upload/car/2013/12/24/13/48/30/16/60/small/300_200.jpg" width="171" height="114" alt="[山东青岛四方区]&nbsp;2012年6月&nbsp;宾利欧陆GT6.0"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/67938878" title="[山东青岛四方区]2012年6月宾利欧陆GT6.0">2012年6月宾利欧陆GT6.0</a></p>
+          <p class="carareas_prices"><span class="carareas">山东青岛四方区</span><span class="carprices">326.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/67591568"><img src="http://img.hx2car.com/upload/car/2013/11/22/16/71/13/78/63/small/300_200.jpg" width="171" height="114" alt="[山东青岛四方区]&nbsp;2010年9月&nbsp;劳斯莱斯古思特6.6T标准版"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/67591568" title="[山东青岛四方区]2010年9月劳斯莱斯古思特6.6T标准版">2010年9月劳斯莱斯古思特6.6T标准版</a></p>
+          <p class="carareas_prices"><span class="carareas">山东青岛四方区</span><span class="carprices">348.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a target="_blank" href="/details/137568380"><img src="http://img.hx2car.com/upload/car/2014/5/15/19/36/96/33/07/small/300_200.jpg" width="171" height="114" alt="[江苏苏州相城区]&nbsp;2012年5月&nbsp;宾利飞驰"/></a></p>
+          <p class="carnames"><a target="_blank" href="/details/137568380" title="[江苏苏州相城区]2012年5月宾利飞驰">2012年5月宾利飞驰</a></p>
+          <p class="carareas_prices"><span class="carareas">江苏苏州相城区</span><span class="carprices">288.0万</span></p>
+        </li>
+      </ul>
+    </div> 
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="bottom_ad">
+  <p>
+  </p>
+</div>
+<div class="bottom" style = "height:100px">
+  <div class="bottom_al">
+    
+    <div class="bottom_nav">
+      <p class="net_nav">
+        <a href="/help/about.htm" target="_blank">关于我们</a>|
+        <a href="/help/link.htm" target="_blank">友情链接</a>|
+        <a href="/help/sampleIndex.htm" target="_blank">广告指南</a>|
+        <a href="/help/effect.htm" target="_blank">服务指南</a>|
+        <a href="/help/help.htm" target="_blank">帮助中心</a>|
+        <a href="/topgradecar/citynavigation.htm" target="_blank">地区导航</a>|
+        <a href="/help/city.htm" target="_blank">城市地图</a>|
+        <a href="http://auto.hx2car.com/" target="_blank">资讯中心</a>|
+        <a href="/help/contact.htm" target="_blank">联系我们</a>
+      </p>
+      <p>服务信箱：kf@hx2car.cn 联系电话：0571-88212994 QQ群：41281177</p>
+      <p>Copyright © 2003-2013 版权所有<a href="http://www.hx2car.com" target="_blank">hx2car.com</a> 浙ICP备05000595号</p>
+      <p>增值电信业务经营许可证: 浙B2-20070101</p>
+     
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+   var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setDomainName', 'hx2car.com']);
+  _gaq.push(['_setAccount', 'UA-2057722-1']);
+  _gaq.push(['_addOrganic', 'sogou', 'query']);
+  _gaq.push(['_addOrganic', 'baidu', 'word']);
+  _gaq.push(['_addOrganic', 'soso', 'w']);
+  _gaq.push(['_addOrganic', 'youdao', 'q']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<div class="service_back" id="toScroll">
+  <div class="back" id="toTop"><a href="javascript:void(0);"><span>返回顶部</span></a></div>
+</div>
+<div class="detail_shadow" style="display:none;"></div>
+<div class="picdetail" id="pic" style="display:none;"></div>
+<div class="warn_shadow" style="display:none;"></div>
+<div id="mes1" class="warn_box" style="display:none">
+  <p class="warn_title"><span>短息通知</span><i></i></p>
+  <p class="warn_content"><span class="warn_ll">短信内容：</span><span class="warn_con"></span></p>
+  <p class="warn_content2"><span class="warn_l2">手机号码：</span><span class="warn_con"><input id="mobileNum" type="text" value="" /></span></p>
+  <p class="warn_btn" ><a   class="refer">马上发送</a><a class="think" >我再想想</a></p>
+</div>
+<div class="tool">
+  <div style="position:relative;z-index:99999;">
+    <ul  id="yincang">
+      <li class="tool_logo"><a></a></li>
+      <li class="violationqueries"><a href="/tools/violationqueries.htm" target="_blank">违章查询</a></li>
+      <li class="compare"><a href="/tools/carassess.htm" target="_blank">免费评估</a></li>
+      <li class="credit"><a href="/tools/creditcount.htm" target="_blank">贷款计算</a></li>
+      <li class="safe"><a href="/tools/safecount.htm" target="_blank">保险计算</a></li>
+      <li class="little" id="hidetool"><a>>></a></li>
+      <div class="clear"></div>
+    </ul>
+    <ul style="margin-right:none;">
+      <li class="tool_logo_no" id="showtool"><a>工具</a></li>
+    </ul>
+  </div>
+</div>
+<div class="warn_box warn_box1" id="mes3" style="display:none">
+  <p class="warn_title" style="margin-bottom:10px;">用户登录</p>
+  <p class="warn_content2 warn_content3"><span class="warn_l3">用户名：</span><span class="warn_con"><input type="text" id="login_name"value="" /></span></p>
+  <p class="warn_content2 warn_content3" style="margin-bottom:10px;"><span class="warn_l3">密码：</span><span class="warn_con"><input type="password" id="password"value="" /></span></p>
+  <p class="password_wrong"><a id="infomes"></a></p>
+  <p class="warn_btn warn_btn1"><a onclick="floatLogin();" class="refer">马上登录</a><a   class="think">我再想想</a></p>
+</div>
+<input type="hidden" id="managerId"  name="managerId" value="0" />
+<div id="tousu_huaxia" class="warn_box" style="display:none;">
+  <p class="warn_title">投诉此车<i></i></p>
+  <p class="warn_content"><span class="warn_ll">投诉内容：</span><span class="warn_checkbox">
+    <input id="check1" type="checkbox" class="check_all" value="" /><label for="check1">信息描述不符</label>
+    <input id="check2"type="checkbox" class="check_all" value="" /><label for="check2">电话号码错误</label>
+    <input id="check3"type="checkbox" class="check_all" value="" /><label for="check3">价格不正常</label>
+    <label>其他</label>
+    <input id="input_tousu" type="text" value="" placeholder="请输入投诉内容" class="other_ts"/>
+  </span></p>
+  <p class="warn_content2"><span class="warn_l2">手机号码：</span><span class="warn_con"><input id="moblie_Num" class="check_num" type="text" value="" placeholder="请输入您的手机号码"/></span></p>
+  <p class="warn_btn"><a id="sub_tousu" class="refer">提交</a><a  class="think">我再想想</a></p>
+</div>
+<div id="help_huaxia" class="warn_box" style="display:none;">
+  <p class="warn_title">华夏助手<span>（填写以下信息，让华夏助您买车无忧）</span><i></i></p>
+  <p class="warn_content"><span class="warn_ll">服务内容：</span><span class="warn_checkbox">
+    <input id="check4"  type="checkbox" class="check_all" value="" /><label for="check4">核对车况</label>
+    <input id="check5"  type="checkbox" class="check_all" value="" /><label for="check5">定金转付</label>
+    <input id="check6"  type="checkbox" class="check_all" value="" /><label for="check6">买卖沟通</label>
+    <label>其他</label>
+    <input id="input_help" type="text" value="" placeholder="请输入申请服务内容" class="other_ts"/>
+  </span></p>
+  <p class="warn_content2"><span class="warn_l2">手机号码：</span><span class="warn_con"><input id="mobile_num" class="check_num" type="text" value="" placeholder="请输入您的手机号码"/></span></p>
+  <p class="warn_btn"><a id ="sub_help" class="refer">提交</a><a  class="think">我再想想</a></p>
+</div>
+<script type="text/javascript">
+
+$(function(){
+		var ShowMsgBox = function(){
+			$(".warn_shadow").show();
+			$("#mes1").show();
+			$("#mobileNum").val("");
+			$("#mobileNum").css("color","#d4d4d5");
+			 var url="";
+			 $("#mes1 .warn_content2").show();
+			if($(this).html() == "预约看车"){
+			    $("#mes1 .warn_title  span").html("预约看车");
+				$("#mes1 .warn_content").html('<span class="warn_ll">短信内容：</span><span class="warn_con" id="context">我对二手压路机价格◆→湖北二手压路机市场感兴趣，预约看车。</span>');
+			    url = "/trade/sendorder.json";
+			}else if($(this).html() == "免费发送此信息到手机"){
+				$("#mes1 .warn_content").html('<span class="warn_ll">短信内容：</span><span class="warn_con" id="context">2011年5月&nbsp;二手压路机价格◆→湖北二手压路机市场 地区：上海 车主：袁先生 价格：4.5万元  13918396488</span>');
+				$("#mes1 .warn_title span").html("短信通知");
+				url= "/car/sendmsg.json";
+			}else if($(this).html()=="预约求购"){
+				 $("#mes1 .warn_title span").html("预约求购");
+				$("#mes1 .warn_content").html('<span class="warn_ll">短信内容：</span><span class="warn_con" id="context">我对二手压路机价格◆→湖北二手压路机市场感兴趣，若有同类型车，请通知我。</span>');
+			    url = "/trade/sendorder.json";
+			}else{
+				$("#mes1 .warn_content").html('<span class="warn_ll">短信内容：</span><span class="warn_con" id="context">我对二手压路机价格◆→湖北二手压路机市场感兴趣，如果降价，请通知我。</span>');
+				$("#mes1 .warn_title span").html("降价通知");
+				 url = "/trade/sendorder.json";
+			}
+			$("#mes1 #mobileNum").val();
+			$("#mes1 #mobileNum").attr("style","");
+			$("#mes1 .refer").attr("lang",url);
+			$("#mes1 .refer").show();
+			$("#mes1").css("height","315px");
+			$("#mes1 .warn_content2").show();
+			$("#mes1 .think").attr("style","");
+			$("#mes1 .think").html("我再想想");
+		}
+		$(".order_car").bind("click",ShowMsgBox);
+		$(".order_btn").bind("click",ShowMsgBox);
+		$(".carprice b").bind("click",ShowMsgBox);
+		$("#mes1 .warn_title i").bind("click" ,function(){$("#mes1").hide();$(".warn_shadow").hide();});
+		$(".collect_notice .notice").bind("click",ShowMsgBox);
+	 var showorhide=function(){
+	 var i = "";
+	 if(this.id=="showtool"){
+	 	$("#yincang").show();
+	 	i= "1";
+	 }else{
+	 	$("#yincang").hide();
+	 	i= "2";
+	 }
+	 	$.cookie("keyflag",i,{expires:365,path:'/',domain:'hx2car.com'});
+	 }
+		$("#showtool").bind("click",showorhide);
+		$("#hidetool").bind("click",showorhide);
+	
+	var flagcookie=$.cookie("keyflag");
+	if(flagcookie=="2"){
+		$("#yincang").hide();
+	}
+
+});
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+</body>
+</html>

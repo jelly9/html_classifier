@@ -1,0 +1,887 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<title>上海滨江欣景大酒店预订,上海酒店,旅易</title>
+<meta name="description" content="上海滨江欣景大酒店预订" />
+<meta name="keywords" content="上海滨江欣景大酒店,上海滨江欣景大酒店预订,上海滨江欣景大酒店,上海酒店预订,黄浦区酒店预订" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../public/js/datePicker.css" />
+
+<!--解决ie png透明图片问题-->
+<!--[if lte IE 6]>
+    <script src="../js/iepng.js" type="text/javascript"></script>
+ <![endif]-->
+<script src="../js/jquery.js" type="text/javascript"></script>
+<script src="../public/js/jquery.datePicker-min.js" type="text/javascript"></script>
+<script src="../js/city.js" language="javascript"></script>
+<script src="../js/jquery.lazyload.js" language="javascript"></script>
+<script src="../js/r.js" language="javascript" ></script>
+<script src="../js/common.js" type="text/javascript"></script>
+<script src="../js/member.js" language="javascript"></script>
+
+
+<script language="javascript">
+<!--
+var info_hotelid="14076";
+var piclist="/cnhotel/picmax/20120319150458970.jpg,/cnhotel/picmax/20120319150459857.jpg"
+-->
+</script>
+<script src="/cnhotel/view.js" language="javascript" charset="gb2312"></script>
+<style type="text/css">
+ #picbg,#mapbg{ z-index:999999999999; display:none; position:absolute;  margin:0px auto; background-color:#2b4238; color:#eeeeee; border:5px solid #CCCCCC;}
+  #picbg img,#mapbg img{ border:0px;}
+.picleft{ width:100%; height:100%; overflow:hidden;}
+.picright{ width:24%; height:96%; float:left; background-color:#24382F; padding:10px; text-indent:2px; }
+.picbian{ width:100%; height:100%; background-color:#ffffff; position:relative;}
+.picright .title{ width:100%; height:auto; border-bottom:1px solid #666; float:left; line-height:20px;  font-size:13px;  }
+.picright .desc{ width:100%; height:64%; border-bottom:1px solid #666; float:left; line-height:24px; padding:20px 3px; color:#c6c6c6; }
+.picright .gju{ width:100%; height:14%; border-bottom:1px solid #666; float:left; line-height:24px; padding:10px 0px; color:#c6c6c6; text-indent:5px; }
+.picright .desc .sp2{ color:#c6c6c6;}
+#picbg #before,#picbg #next,#picbg #closepic,#closemap{ display:block; width:30px; height:32px; background-color:Transparent; position:absolute; color:White; z-index:99999999;}
+#picbg #closepic, #closemap{ height:32px;background:url(../images/closepic.png) no-repeat 0px 2px;}
+#closemap:hover,#picbg #closepic:hover{background:url(../images/closepichov.png) no-repeat 0px 2px;}
+</style>
+</head>
+
+<body class="bodydoc">
+  <div class="lvyi-bigbox"> 
+    
+<!--透明遮罩层-->
+<div class="lvyi-bigzhao" style="display:none;"></div>
+<!--登陆层-->
+    <div  class="lvyi-loginbox" style="display:none;">
+       <div class="lb-loginmain" style=" overflow:hidden;">
+       <!--<div class="lbl-top">
+           <h2>
+                <p>尽享人生旅程 ——旅易</p>
+                <span><img src="/images/colse.gif" width="16" height="16" id="logocolse" /></span>
+           </h2>
+       </div>-->
+         <div class="logocolse"></div>
+         <div class="lbl-left">
+             <p class="lt-title">尽享人生旅程 ——旅易</p>
+             <p><img  src="/images/r-winx.jpg" height="150" width="150"/></p>
+             <p class="lt-weixin">请扫描二维码关注我们</p>
+         </div>
+         <div class="lbl-right">              
+               <div class="lblr-loginmodel" id="lblr-loginmodel"  style="display:none;">                             
+               </div> 
+               <div  class="lblr-loginmodel"  id="lvyi-getpwd" style="display:none;">
+                    
+               </div>     
+         </div>         
+       </div>
+    </div>  
+    
+    <!-- top star-->
+    <div class="lvyi-topbox">
+           <div class="tb-main">
+              <div class="tb_top1 " style=" ">
+                 <div class="tbm-tool1 huise">
+                   <ul style="margin-right:5px;">                     
+                      <!--  <li><a href="javascript:;" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.tripeasy.cn/')" >设为首页</a></li>-->
+                      <li><a href="javascript:;" onclick="window.external.AddFavorite('http://www.tripeasy.cn/','酒店机票服务&mdash;旅易商旅服务专家')">收藏本站</a></li>
+                      <li><a href="javascript:;" id="weixin" >+微信</a> </li>
+                      <li><a href="http://weibo.com/tripeasy" target="_blank" id="weibo" >+微博</a></li>
+                     </ul>
+                     <ul id="userul">
+                        
+                      <li><a href="javascript:;" id="fg">忘了密码</a></li>                      
+                      <li><a href="/member/reg.asp">注册</a></li>
+                      <li  id="weibo" style="display:none;"><a href="javascript:;"><img  src="/images/tsina.png" width="16" height="16" /> </a></li>
+                      <li><a href="javascript:;" id="loginshow">登陆</a></li>                      
+                      <li><span>欢迎来到旅易!</span></li>
+                                            
+                   </ul>
+               </div>
+              </div>
+              <div class="tb_top2">
+               <div class="top2_main">
+                  <div class="tbm-logo left">
+                    <a href="/" title="旅易"><img src="/images/logo1.jpg" width="190" height="55" /></a>
+                 </div>             
+                  <div class="tbm-tool2 left">
+                  <form id="searform" method="get">
+                  <div class="tbmt-sear left">
+                     <div class="cls"></div>
+                     <div class="tbmts-bg">                    
+                       <span class="tbmtsb-searsp"><input type="text" class="tbmtsbs-seartxt txt"  value="请输入景点名称" /></span>
+                       <div class="tbmtsb-catesel">
+                         <span id="tbmtsbc-hover">景点</span>
+                         <ul id="tbmtsbc-cateul" style="display:none">                            
+                            <li><span><a href="javascript:;">景点</a></span></li>
+                            <li><span><a href="javascript:;">攻略</a></span></li>
+                            <li><span><a href="javascript:;">酒店</a></span></li>
+                            <li><span><a href="javascript:;">行程</a></span></li>
+                         </ul>
+                       </div>
+                       <span><input type="button" value="" class="tbmtsb-searbtn" /></span>               
+                     </div>
+                  </div>
+                  </form>
+                  <div class="tbmt-meun left">
+                     <ul>
+                        <li><a href="/pay/index.html" class="pay"></a></li>
+                        <li><a href="/members/hotelorder.html" class="ding"></a></li>                        
+                     </ul>
+                  </div>
+                  <div class="tbmt-ad left">
+                     
+                       <img src="/images/kefu.gif" width="160" height="36" />
+                     
+                  </div>
+               </div>    
+               </div> 
+              </div>    
+           </div>
+       </div>        
+    <!-- top over-->
+
+    <!-- meun star-->
+       <div class="lvyi-meunbox"  >
+          <div class="mb-main" >
+            <div class="mbm-rukou left" >
+                <span>旅易快捷<em></em></span>
+                <div class="mbmr-ban" >                
+                   <div class="mbmrb-meun">
+                       <ul>
+                          <li class="li1" act="1">
+                              <a href="">主题旅游</a>
+                              <div class="mbmrb-content">                              
+                                 <h2>热门主题</h2>                                 
+                                 <div class="bc-list">
+                                                                      
+                                 </div>
+                              </div>
+                           </li>
+                          <li class="li2" act="0">
+                              <a href="">帕劳旅游</a>
+                              <div class="mbmrb-content" style="background:none;">
+                                <a href="/tour_travel/jingdian/index-1.html" style=" height:auto; text-indent:0px; margin-left:0px;"> <img src="/images/palao.png" width="605" height="298" /></a>
+                              </div>
+                          </li>
+                          <li class="li3 " act="2">
+                               <a href="">热门景点</a>
+                               <div class="mbmrb-content">
+                                 <h2>热门景点</h2>
+                                 <div class="bc-list">
+                                     
+                                 </div>
+                               </div>
+                          </li>
+                          <li class="li4" act="3">
+                                <a href="">酒店-城市入口</a>
+                                <div class="mbmrb-content">
+                                     <h2>热门城市</h2>
+                                 <div class="bc-list">
+                                    
+                                 </div>
+                                </div>
+                          </li>
+                          <li class="li5" act="4">
+                                <a href="">签证-国家入口</a>
+                                <div class="mbmrb-content">
+                                     <h2>热门国家</h2>
+                                 <div class="bc-list">
+                                    
+                                 </div>
+                                </div>
+                          </li>
+                          <li class="li6" act="0">
+                                <a class="bordernone">商旅定制</a>
+                                <div class="mbmrb-content"></div>
+                          </li>
+                       </ul>
+                   </div>                   
+                </div>   
+            </div>
+            <div class="mbm-meun left">
+                <ul>
+                   <li><a href="/">首页</a></li>
+                   <li><a href="/cnhotel/">国内酒店</a></li>
+                   
+                     <li><a href="/flight/">预订机票</a></li>
+                   
+                   <li><a href="/visa/">各国签证</a></li>
+                   <li><a href="/tour_travel/">旅游度假</a></li>               
+                  <!-- <li><a href="/GBcard.html" target="_blank">广发旅易联名卡</a></li>-->
+                   <li><a href="/travelcustom/">商旅定制</a></li>
+                   <li ><a href="/article/">新闻资讯</a></li>                  
+                </ul>
+            </div>
+          </div>
+       </div>   
+       <div style="border: 1px solid #f0d584;
+background: #fffcde; width:980px; margin:0px auto;
+color: #f40; border-top:none; height:30px; line-height:30px; padding-left:20px; ">春节值班通知：2月18-21日止客服值班时间为 09:00-18:00，紧急联系电话：18688435112 不便之处，敬请谅解，请您新春快乐！</div>
+    <div class="weixinmodel"></div>    
+    <!-- meun over-->
+    <script  type="text/javascript">
+       ouerurl="/cnhotel/r_hotel-booking.asp"
+       $(function(){
+         $("#weixin").hover(function(){
+           $(".weixinmodel").show();
+         },function(){
+           $(".weixinmodel").hide();
+         });
+         $("input,select,textarea").focus(function(){
+             $(this).css("border-color","#E7A947")        
+          });
+           $("input,select,textarea").blur(function(){
+             $(this).css("border-color","#C1C1C1")        
+          })
+       })
+    </script>
+ 
+    <!-- banner star-->
+      
+   <div class="lvyi-banbox"  id="chotel-daohang">
+           <div class="bb-toum hotel-bb-toum" ></div>
+           <div class="bbt-main hotel-bt-main" >            
+             <div class="bbtm-wrap hotel-bbtm-wrap">               
+                 <form action="/hotel/search123.html" method="get" id="indexsearch">
+                           <dl>
+                               <dt ><!--<span>选择城市</span>-->
+                                   <span class="bbtmwrph-sp" id="bbtmwrph-sp1"  sel="1" >
+                                       <input type="text" value="上海" class="txt" id="citytxt"  readonly="readonly" style="width:100px;"/>
+                                       <em class="sp sp0"></em> 
+                                       <input type="hidden"id="cityhidtxt" name="cityhidtxt" value="321" />                                                                             
+                                   </span>
+                                   <div class="bbtmwrph-hotelcity" id="hotelcityShow">
+                                     <div class="bbtmwrph-selmodel" id="hotelcitycate"><span class="spsel">请选择:</span>
+                                        <ul>
+                                           <li class="selhover cityhot" hot="1" cate="citylist">热门城市</li>
+                                           <li cate="citylist">ABCDEF</li>
+                                           <li cate="citylist">GHJKL</li>
+                                           <li cate="citylist">MNPQRS</li>
+                                           <li cate="citylist">TWXYZ</li>                                          
+                                        </ul>
+                                     </div>
+                                     <div class="bbtmwrphh-hotellist" id="citylist">
+                                     <ul>
+                                                                          
+                                     </ul>
+                                    </div>
+                                   </div>
+                               </dt>
+                               <dt><!--<span>选择商圈</span>-->
+                                   <span class="bbtmwrph-sp" sel="2" >
+                                       <input type="text" value="选择要查找的商圈" class="txt" id="qutxt" name="qutxt" style="width:160px;"/>
+                                       <em class="sp sp1"></em>
+                                   </span>
+                                   <div class="bbtmwrph-hotelcity" id="hotelqushow" >
+                                      <div class="bbtmwrph-selmodel"><span class="spsel">请选择商圈:</span><span class="spsel" style="color:#0BA3B8; cursor:pointer; float:right; margin-right:10px;" onclick='getnulltxt("qutxt")'>[清空商圈]</span></div>
+                                       <div class="bbtmwrphh-hotellist" id="qulist">
+                                     <ul>
+                                                                    
+                                     </ul>
+                                    </div>
+                                   </div>
+                               </dt>
+                               <dt style="width:160px;"><!--<span>入住日期</span>-->
+                                   <span class="bbtmwrph-sp ">
+                                      <span> 入住</span>
+                                       <input type="text"  name="rdate" id="rdate"  class="selectdate txt" value="2015-2-20" readonly="readonly" style="width:100px;"/>
+                                        <em class="sp sp2"></em>
+                                    </span>
+                                    
+                               </dt>
+                               <dt style="width:160px;"><!--<span>离店日期</span>-->
+                                   <span class="bbtmwrph-sp">
+                                       <span> 离店</span>
+                                       <input type="text" name="ddate" id="ddate" value="2015-2-21"  class="txt selectdate" readonly="readonly" style="width:100px;"/>
+                                       <em class="sp sp3"></em>
+                                   </span>
+                                   
+                               </dt>
+                               <dt><!--<span>酒店名称</span>-->
+                                   <span class="bbtmwrph-sp">
+                                        <input type="text" name="hotelname" id="hotelname" onclick='getnulltxt("hotelname")' value="酒店名称" class="txt" style="width:200px;" />
+                                       
+                                    </span>
+                                     
+                               </dt>
+                               <dt style="width:auto; background-color:Transparent;">                               
+                                   <input type="submit" value="搜索" class="btn"  id="hotelSubmit"/>                                
+                               </dt>
+                           </dl>
+                         </form>
+              
+              
+             </div>
+           </div>
+   </div>          
+  <script src="../js/cftxt.js" language="javascript"></script>
+   <script src="/js/portamento.js" language="javascript"></script>
+   <script type="text/javascript">
+     $('#chotel-daohang').portamento();
+   </script>     
+    <!-- banner over-->
+    
+    <!-- mainbox star-->
+    <script src="/cnhotel/pic.js" language="javascript"></script>
+       <div class="lvyi-mainbox" >
+       
+       <!--star 内容左边框-->
+          <div class="mb-leftbg hotel-mb-leftbg">
+              <div class="mb-leftmodel mb-view-book">
+                   <div class="mbl-view-book-daohang">
+                       <span><a href="/cnhotel/">国内酒店</a></span> &gt; <span><a href="/hotel/search-city-Shanghai-321.html">上海酒店</a></span> &gt; <span>上海滨江欣景大酒店</span>
+                   </div>
+                   <div class="mblh-view-book-title">
+                     <h2>
+                      <span>上海滨江欣景大酒店</span>
+                      <span class="star star5"></span>                     
+                     </h2>
+                      <p><span >酒店地址：上海黄浦区中山南路76号（近外滩）</span><span><a href="javascript:;" style="color:#0BA3B8;" id="mapbtn">地图</a></span></p>
+                   </div>
+                   <div class="mblh-view-book-base">
+                      <div class="desc-img">
+                        <img src="/cnhotel/picmin/2012031915023612224.jpg" alt="上海滨江欣景大酒店"  width="250" height="180" id="minpic"/>
+                      </div>
+                      <div class="desc-base">
+                         <dl>
+                            <dt><span class="sp1">酒店定位：</span>
+                                <span>
+                                 <span>商务酒店</span>
+                                </span>
+                            </dt>
+                            <dt class="desc-base-dist"><span class="sp1">&nbsp;行&nbsp;政&nbsp;区：</span>
+                                <span>
+                                <a href="/hotel/search-dist-321-721.html">黄浦区</a>
+                                </span>
+                             </dt>
+                            <dt class="desc-base-qu"><span class="sp1">&nbsp;商&nbsp;业&nbsp;区：</span>
+                                <span>
+                                <a href="/hotel/search-cbd-80-%D4%A5%D4%B0.html">豫园</a>
+                                  <a href="/hotel/search-cbd-80-%B4%F3%D0%CB%BD%D6%C9%CC%D2%B5%C7%F8.html">大兴街商业区</a>
+                                  
+                                </span>
+                            </dt>
+                           
+                             <dt class="desc-base-dist"><span class="sp1">开业时间：</span><span>2010-4-20</span></dt>　　
+                             <dt class="desc-base-qu"><span class="sp1">装修时间：</span><span>2010-4-20</span></dt>　　                              
+                             <dt><span class="sp1">总机电话：</span>
+                                <span>
+                                021-63306060　　
+                                </span>
+                             </dt>
+                            <dt><span class="sp1">酒店描述：</span>
+                                <span>
+                                舒适, 出行方便, 个性, 美景, 浪漫
+                                </span>
+                            </dt>
+                            <dt>
+                                <span>
+                                   <!-- JiaThis Button BEGIN -->
+                <div id="ckepop">   
+                     <span class="jiathis_txt" >&nbsp;分&nbsp;享&nbsp;到：</span>              
+                    <a class="jiathis_button_tools_1"></a>
+                    <a class="jiathis_button_tools_2"></a>
+                    <a class="jiathis_button_tools_3"></a>
+                    <a class="jiathis_button_tools_4"></a>                   
+                </div>
+                <script type="text/javascript" >
+				var jiathis_config={
+					url:"http://www.tripeasy.cn/hotel/view-booking-14076.html",
+					summary:"上海滨江欣景大酒店地处上海南外滩景观区域，毗邻豫园老城隍庙旅游胜地，与生机盎然的陆家嘴金融区隔江相望",
+					title:"上海滨江欣景大酒店#酒店预订#",
+					hideMore:false
+				}
+				</script>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1338254181604349" charset="utf-8"></script>
+                <div class="clear"></div>
+                <!-- JiaThis Button END -->
+                                </span>
+                            </dt>
+                         </dl>
+                      </div>
+                   </div>                   
+                 <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3" charset="gb2312"></script>
+                 <div class="mb-view-book-desc mblh-view-book-room&introduce">
+                   <div class="desc-navigation">
+                     <a href="javascript:;" class="hover" tab="desc-room" tab2="desc-room" into="0">房型预定</a>
+                     <a href="javascript:;" tab="desc-introduce" tab2="desc-introduce" into="1">酒店简介</a>
+                   </div>
+                   <div class="desc-model desc-room" id="desc-room">
+                      <div class="room-tishi">
+                         <p>前台现付：先通过网站预订酒店、在入住酒店时直接支付给酒店前台；即入住时付款</p>
+                         <p>预付房款：先通过网站预订,等客服确认后再通过网银、支付宝、银联、信用卡等支付房款；即先付款后入住</p> 
+                      </div>                   	
+                      <div class="room-listmodel">
+                        <div class="hotel-bbtm-wrap datesel">
+                        <form method="post">
+                          <dl>
+                             <dt style="border:0px; line-height:34px; font-size:14px; color:#333;   "> 入住时间</dt>
+                             <dt ><!--<span>入住日期</span>-->
+                                   <span class="bbtmwrph-sp ">
+                                      <span> 入住</span>
+                                       <input type="text"  name="rdate"  class="selectdate txt" value="2015-2-20" readonly="readonly" style="width:150px;"/>
+                                        <em class="sp sp2"></em>
+                                    </span>
+                                    
+                               </dt>
+                               <dt ><!--<span>离店日期</span>-->
+                                   <span class="bbtmwrph-sp">
+                                       <span> 离店</span>
+                                       <input type="text" name="ddate" value="2015-2-21"  class="txt selectdate" readonly="readonly" style="width:150px;"/>
+                                       <em class="sp sp3"></em>
+                                   </span>
+                                   
+                               </dt>
+                               <dt style="width:auto; background-color:Transparent; border:0px; text-align:right; float:right; margin-right:0px; ">                               
+                                   <input type="submit" value="搜 索" class="btn" onclick="javascript:setdate('14076')" style="background-color:#89A6C2; width:110px; height:32px; margin-right:5px; font-size:14px; line-height:35px;"  id="dateSubmit"/>                                
+                               </dt>
+                          </dl>
+                          </form>
+                        </div>
+                        <div class="room-list">                    
+                              
+                             <div  class="room-list-one tr1" title="以下价格为每间每天的价格">
+                                <div class="roomname"  >房间名称</div>
+                                <div class='throuth frontprice'>前台价格</div>
+                                <div class='rprice'>价格 RMB</div>
+                                <div class='paytype'>支付类型</div>
+                                <div class='caozuo'>预定</div>                                                      
+                             </div>
+                               
+                           <div class="room-list-one tr2" >
+                               <div class="roomname rn"><i>1</i> <span class="">城景房 （双早）</span></div>
+                               
+                               <div class='throuth frontprice'><em>1680</em>元</div>                              
+                               <div div class='rprice'>参考价：<em>800</em>元<span class='green'>(双早)</span></div>
+                               <div class='paytype'>	<span class='green'>预付房款</span></div>
+                               <div class="caozuo"><input value="预订此房" type="button" style=" border:0px; background-color:#89A6C2; width:70px; height:23px; margin-top:5px; color:#ffffff; cursor:pointer;" onclick="bookform(14076,5771,1)" /></div>     
+                               <div class="list-mode" >
+                                  	
+                                   </div>                                                      
+                            
+                           </div>  
+                                                                                                      
+                        </div>                       
+                      </div>
+                   </div>
+                   <div  class="desc-model desc-introduce" id="desc-introduce" style="display:none;">
+                     
+                   </div>
+                 </div>
+                   
+
+               <div class="mb-view-book-desc mblh-view-book-answer&comments">
+                   <div class="desc-navigation">
+                     <a href="javascript:;" class="hover"  tab="comm-list"  tab2="desc-comments" into="0">酒店问答</a>
+                     <a href="javascript:;" tab="answer-list" tab2="desc-answer" into="1">用户点评</a>
+                   </div>
+                   <div class="desc-model desc-comments" >
+                      <div class="comm-list" id="comm-list">
+                        <script type="text/javascript">
+                            GetCommtents(info_hotelid,"0"); 
+                        </script>                        
+                      </div>
+                      <div class="eidt-comm">                                                           
+                         <textarea class="comm-txt" cols="" rows="" wrap="virtual" id="recontent"></textarea>
+                         <div style="margin-top:3px;">
+                            <span style="float:left;">还可以输入<em style="color:Red; font-style:normal;" id="commcount">250</em>字</span>
+                            <div style="float:right;" class="eidt-comm-btn">
+                               <span><input type="text" value="请输入昵称" id="niname" style="width:180px; height:24px; line-height:24px; border:1px solid #eeeeee;" /></span>
+                               <span><a href="javascript:;" style="color:#ffffff; background-color:#0BA3B8;" class="comm-btn" id="subquest">发布</a></span>
+                               
+                            </div>
+                         </div>                         
+                      </div>              
+                   </div>       
+                  <div class="desc-model desc-answer"  style="display:none;">
+                      <div class="comm-list" id="answer-list">
+                      
+                      </div>                      
+                       <div class="eidt-comm">                                                           
+                         <textarea class="comm-txt" cols="" rows="" wrap="virtual" id="ancontent"></textarea>
+                         <div style="margin-top:3px;">
+                            <span style="float:left;">还可以输入<em style="color:Red; font-style:normal;" id="anmcount">250</em>字</span>
+                            <div style="float:right;" class="eidt-comm-btn">
+                               <span><input type="text" value="请输入昵称" id="ainame" style="width:180px; height:24px; line-height:24px; border:1px solid #eeeeee;" /></span>
+                               <span><a href="javascript:;" style="color:#ffffff; background-color:#0BA3B8;" class="comm-btn" id="subanswer">发布</a></span>
+                               
+                            </div>
+                         </div>                         
+                      </div>     
+                      
+                  </div>
+                </div>  
+                 <script type="text/javascript">
+ $(function(){
+    $(".tr2").hover(function(){
+	  $(this).addClass("hover");
+	  var td1=$(this).children(".list-mode");
+	  //td1.css({top:$(this).position().top+28,left:$(this).position().left})
+	  //td1.show();
+	},
+	function(){
+	 // $(this).removeClass("hover");
+	 // $(this).children(".list-mode").hide();
+ 	 }
+	);
+	
+	$(".desc-navigation a").click(function(){
+	   var t=$(this); 
+	   $(this).addClass("hover");
+	   $(this).siblings("a").removeClass("hover");
+	   var tab=$("#"+$(this).attr("tab"));
+	   if($(this).attr("into")=="1"){
+	        $.ajax({type:"get",url:"/cnhotel/gethotelbase.asp",data:"hotelid="+info_hotelid+"&cate="+escape(t.attr("tab2"))+"&num="+Math.round(Math.random()*10000),beforeSend:function(){tab.html("<img src='../images/loading.gif' style=' margin:0px 0px 0px 300px;' />")},error:function(){tab.html("系统查询出错...");},success:function(rtext){tab.html(rtext);t.attr("into","0"); }
+                                 });	
+	   }
+	  $("."+$(this).attr("tab2")).show();
+	  $("."+$(this).attr("tab2")).siblings(".desc-model").hide();
+	})
+ })
+</script>                     
+          </div>
+         </div>
+          <!--end 内容左边框-->
+          
+          <!--star 内容右边框-->
+          
+          <div class="mb-rightbg" > 
+          
+                       <div class="mb-rightmodel">
+                 <h2 class="model2">
+                   <span class="mblr-catelist gran"><a href="javascript:;">为什么选择旅易</a></span>                  
+                </h2>
+                <div class="mbr-newslist mbr-listmodel">                 
+                   <img src="/images/whych.jpg" width="243" height="265" />
+                </div>
+             </div> 
+             <!--star 推荐酒店--> 
+            
+            
+             <div class="mb-rightmodel">
+                 <h2 class="model2">
+                   <span class="mblr-catelist gran"><a href="javascript:;">推荐酒店</a></span>                  
+                </h2>
+                <div class="mbr-newslist mbr-listmodel">
+                  <ul>
+                       
+					<li><a href='/hotel/view-booking-1336.html' target='_blank' title='上海延安饭店'>上海延安饭店</a></li><li><a href='/hotel/view-booking-1343.html' target='_blank' title='上海航空酒店浦东机场店'>上海航空酒店浦东机场店</a></li><li><a href='/hotel/view-booking-3465.html' target='_blank' title='上海大众假日酒店'>上海大众假日酒店</a></li><li><a href='/hotel/view-booking-5059.html' target='_blank' title='上海瑞峰公寓酒店'>上海瑞峰公寓酒店</a></li><li><a href='/hotel/view-booking-5156.html' target='_blank' title='上海浦东华美达花廷酒店'>上海浦东华美达花廷酒店</a></li><li><a href='/hotel/view-booking-5570.html' target='_blank' title='上海城市酒店'>上海城市酒店</a></li><li><a href='/hotel/view-booking-13565.html' target='_blank' title='上海嘉汇华美达广场大酒店'>上海嘉汇华美达广场大酒店</a></li><li><a href='/hotel/view-booking-13587.html' target='_blank' title='上海中祥大酒店'>上海中祥大酒店</a></li><li><a href='/hotel/view-booking-13588.html' target='_blank' title='上海同济戴斯大酒店'>上海同济戴斯大酒店</a></li><li><a href='/hotel/view-booking-13879.html' target='_blank' title='上海松江开元名都大酒店'>上海松江开元名都大酒店</a></li>      
+                   </ul>
+                </div>
+             </div> 
+             <!--end 推荐酒店--> 
+              <!--star 酒店预订热门排行--> 
+            
+            
+             <div class="mb-rightmodel">
+                 <h2 class="model2">
+                   <span class="mblr-catelist gran"><a href="javascript:;">酒店预订热门排行</a></span>                  
+                </h2>
+                <div class="mbr-newslist mbr-listmodel">
+                  <ul>
+                   <li><a href='/hotel/view-booking-5628.html' target='_blank' title='上海世茂皇家艾美酒店'>上海世茂皇家艾美酒店</a></li><li><a href='/hotel/view-booking-11280.html' target='_blank' title='上海浦东丽思卡尔顿酒店'>上海浦东丽思卡尔顿酒店</a></li><li><a href='/hotel/view-booking-5161.html' target='_blank' title='上海龙之梦万丽大酒店'>上海龙之梦万丽大酒店</a></li><li><a href='/hotel/view-booking-13772.html' target='_blank' title='上海复旦皇冠假日酒店'>上海复旦皇冠假日酒店</a></li><li><a href='/hotel/view-booking-5216.html' target='_blank' title='上海希尔顿酒店'>上海希尔顿酒店</a></li><li><a href='/hotel/view-booking-6920.html' target='_blank' title='上海威斯汀大饭店'>上海威斯汀大饭店</a></li><li><a href='/hotel/view-booking-13033.html' target='_blank' title='上海虹桥喜来登上海太平洋大饭店'>上海虹桥喜来登上海太平洋大饭店</a></li><li><a href='/hotel/view-booking-13782.html' target='_blank' title='上海世博洲际酒店'>上海世博洲际酒店</a></li><li><a href='/hotel/view-booking-4789.html' target='_blank' title='上海扬子江万丽酒店'>上海扬子江万丽酒店</a></li><li><a href='/hotel/view-booking-13468.html' target='_blank' title='上海斯格威铂尔曼大酒店'>上海斯格威铂尔曼大酒店</a></li>
+                   </ul>
+                </div>
+             </div> 
+             <!--end 酒店预订热门排行-->           
+             <!--star 品牌-->             
+             <div class="mbr-brandmodel" style="margin-top:30px;">
+                <h2 class="model2">
+                   <span class="mblr-catelist"><a href="/hotel/search-brand.html">品牌酒店</a></span>                  
+                </h2>
+                <div class="mbr-listmodel mbr-brandlist">
+                   <ul>
+                       
+                                    <li>
+                                      <a href="/hotel/search-brand-1.html" title="如家快捷" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111501230.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">如家快捷</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-2.html" title="锦江之星" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111501231.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">锦江之星</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-.html" title="丽思·卡尔顿酒店" target='_blank'>
+                                        <img src="/cnhotel/ppic/2013080516395123578.jpg" width="50" height="40"  />
+                                        <span class="mbrb-pic">丽思·卡</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-5.html" title="汉庭连锁" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111501234.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">汉庭连锁</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-84.html" title="戴斯酒店" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111515310.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">戴斯酒店</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-85.html" title="宜必思" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111515311.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">宜必思</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-115.html" title="锦江" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111520341.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">锦江</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-116.html" title="铂尔曼" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111520342.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">铂尔曼</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-117.html" title="索菲特" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111520343.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">索菲特</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-118.html" title="皇冠假日" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111520344.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">皇冠假日</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-119.html" title="香格里拉" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111521345.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">香格里拉</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                                    <li>
+                                      <a href="/hotel/search-brand-120.html" title="喜来登" target='_blank'>
+                                        <img src="/cnhotel/ppic/20101214111521346.gif" width="50" height="40"  />
+                                        <span class="mbrb-pic">喜来登</span>
+                                      </a>
+                                    </li>                                   
+                                    
+                   
+                   </ul>
+                   
+                </div>               
+             </div>
+               
+           <!--end 品牌-->   
+          
+          </div>
+          <!--end 内容右边框-->     
+         
+       </div>
+    <!-- mainbox over-->
+    
+    <!-- footer star-->
+      <div class="cls"></div>
+ <div id="foot">
+      <div class=" ft-banquan">
+          <p>
+             <a href="/sitemap.xml" target="_blank">网站地图</a> |
+             
+             <a href="/service/service.html" target="_blank">服务说明</a> |
+             <a href="/service/help.html" >常见问题</a> |
+              
+             <a href="/service/aboutus.html" target="_blank">关于我们</a> |
+             <a href="/service/contact.html" target="_blank">联系我们</a> |                
+             <a href="/service/event.html">旅易大事件</a> 
+             <!--<a href="#" target="_blank">业绩管理</a> -->
+          
+          </p>
+          <p>Copyright @ 2009-2012 <A href="http://www.tripeasy.cn">tripeasy</A> <A href="http://www.tripeasy.cn">广州旅易</A> 版权所有 　 粤ICP备10224299号-1 <A title="站长统计" href="http://www.cnzz.com/stat/website.php?web_id=475791" target="_blank">站长统计</A><IMG border="0" src="http://zs1.cnzz.com/stat.htm?id=475791&r=&lg=zh-cn&ntime=0.05692400 1292295585&repeatip=1&rtime=1&cnzz_eid=69585226-1288851705-&showp=1440x900&st=3445261&sin=&res=0" width="0" height="0"><script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4134a7d7f06a7d47137978780736d8f7' type='text/javascript'%3E%3C/script%3E"));</script></p>
+      </div>
+      <div class="lvyi-footerbox">   
+      <div class="ft-hotel">
+        <span>快速连接</span>
+        <p>
+        <a href="/hotel/search-city-Guangzhou-80.html" title="广州酒店预订">广州酒店预订</a>|
+<a href="/hotel/search-city-Shenzhen-91.html" title="深圳酒店预订">深圳酒店预订</a>|
+<a href="/hotel/search-city-Shanghai-321.html" title="上海酒店预订">上海酒店预订</a>|
+<a href="/hotel/search-city-Beijing-53.html" title="北京酒店预订">北京酒店预订</a>|
+<a href="/hotel/search-city-Sanya-133.html" title="三亚酒店预订">三亚酒店预订</a>|
+<a href="/hotel/search-city-Xianggang-395.html" title="香港酒店预">香港酒店预订</a>|
+<a href="/hotel/search-city-Aomen-396.html" title="澳门酒店预订">澳门酒店预订</a>|
+<a href="/hotel/search-city-Fuzhou-54.html" title="福州酒店预订">福州酒店预订</a>|
+<a href="/hotel/search-city-Xiamen-61.html" title="厦门酒店预订">厦门酒店预订</a>|
+<a href="/hotel/search-city-Lanzhou-69.html" title="兰州酒店预订">兰州酒店预订</a>|
+<a href="/hotel/search-city-Zhuhai-97.html" title="珠海酒店预订">珠海酒店预订</a>|
+<a href="/hotel/search-city-Guilin-102.html" title="桂林酒店预订">桂林酒店预订</a>|
+<a href="/hotel/search-city-Nanning-108.html" title="南宁酒店预订">南宁酒店预订</a>|
+<a href="/hotel/search-city-Zunyi-120.html" title="遵义酒店预订">遵义酒店预订</a>|
+<a href="/hotel/search-city-Haikou-127.html" title="海口酒店预订">海口酒店预订</a>|
+<a href="/hotel/search-city-Qinhuangdao-145.html" title="秦皇岛酒店预订">秦皇岛酒店预订</a>|
+<a href="/hotel/search-city-Shijiazhuang-146.html" title="石家庄酒店预订">石家庄酒店预订</a>|
+<a href="/hotel/search-city-Luoyang-155.html" title="洛阳酒店预订">洛阳酒店预订</a>|
+<a href="/hotel/search-city-Kaifeng-154.html" title="开封酒店预订">开封酒店预订</a>|
+<a href="/hotel/search-city-Zhengzhou-163.html" title="郑州酒店预订">郑州酒店预订</a>|
+<a href="/hotel/search-city-Haerbin-170.html" title="哈尔滨酒店预订">哈尔滨酒店预订</a>|
+<a href="/hotel/search-city-Wuhan-192.html" title="武汉酒店预订">武汉酒店预订</a>|
+<a href="/hotel/search-city-Changsha-199.html" title="长沙酒店预订">长沙酒店预订</a>|
+<a href="/hotel/search-city-Zhangjiajie-210.html" title="张家界酒店预订">张家界酒店预订</a>|
+<a href="/hotel/search-city-Changzhou-221.html" title="常州酒店预订">常州酒店预订</a>|
+<a href="/hotel/search-city-Nanjing-224.html" title="南京酒店预订">南京酒店预订</a>|
+<a href="/hotel/search-city-Suzhou-226.html" title="苏州酒店预订">苏州酒店预订</a>|
+<a href="/hotel/search-city-Shenyang-256.html" title="沈阳酒店预订">沈阳酒店预订</a>|
+<a href="/hotel/search-city-Dalian-248.html" title="大连酒店预订">大连酒店预订</a>|
+<a href="/hotel/search-city-Yushucangzuzizhizhou-282.html" title="玉树酒店预订">玉树酒店预订</a>|
+<a href="/hotel/search-city-Qingdao-292.html" title="青岛酒店预订">青岛酒店预订</a>|
+<a href="/hotel/search-city-Jinan-287.html" title="济南酒店预订">济南酒店预订</a>|
+<a href="/hotel/search-city-Taiyuan-307.html" title="太原酒店预订">太原酒店预订</a>|
+<a href="/hotel/search-city-Xian-317.html" title="西安酒店预订">西安酒店预订</a>|
+<a href="/hotel/search-city-Chengdu-324.html" title="成都酒店预订">成都酒店预订</a>|
+<a href="/hotel/search-city-Tianjin-343.html" title="天津酒店预订">天津酒店预订</a>|
+<a href="/hotel/search-city-Kunming-373.html" title="昆明酒店预订">昆明酒店预订</a>|
+<a href="/hotel/search-city-Lijiang-374.html" title="丽江酒店预订">丽江酒店预订</a>|
+<a href="/hotel/search-city-Zhoushan-392.html" title="舟山酒店预订">舟山酒店预订</a>|
+<a href="/hotel/search-city-Ningbo-388.html" title="宁波酒店预订">宁波酒店预订</a>|
+<a href="/hotel/search-city-Hangzhou-383.html" title="杭州酒店预订">杭州酒店预订</a>|
+<a href="/hotel/search-city-Chongqing-394.html" title="重庆酒店预订">重庆酒店预订</a>
+        </p>
+      </div>
+     <div class="ft-firendLink">
+        <span>友情链接</span>
+        <p>
+       <!-- <a href="http://www.zhongmin.cn/index.aspx?source=4591" target="_blank">旅游保险</a> | <a href="http://www.ly186.com" target="_blank">广州旅游</a> |-->
+         <a href='http://foshan.liebiao.com/' target='_blank'>佛山信息网</a> | <a href='http://www.huangoutuan.com/' target='_blank'>服装团购</a> | <a href='http://newhouse.yz.fang.com/' target='_blank'>扬州新房</a> | <a href='http://bbs.nc.soufun.com' target='_blank'>南昌业主论坛</a> | <a href='http://www.gzhp.net' target='_blank'>广州旅行社</a> | <a href='http://www.gogocn.com' target='_blank'>四川旅游</a> | <a href='http://hotel.kuxun.cn/tianjin-jiudian-daquan.html' target='_blank'>天津酒店</a> | <a href='http://hotel.kuxun.cn/wuhan-jiudian-daquan.html' target='_blank'>武汉酒店</a> | <a href='http://hotel.kuxun.cn/sanya-jiudian-daquan.html' target='_blank'>三亚酒店</a> | <a href='http://www.fanlv.net/' target='_blank'>三亚旅游</a> | <a href='http://www.tripmh.com/' target='_blank'>酒店预订网</a> | <a href='http://www.changfengcn.com' target='_blank'>快速门</a> | <a href='http://guangzhou.hotel.mapbar.com/' target='_blank'>广州酒店预订</a> | <a href="tencent://message/?uin=1790941714&Site=www.tripeasy.cn&Menu=yes" target="_blank">交换链接QQ:1790941714</a></p>
+      </div>
+    </div>
+ <DIV style="display:none; right:150px; bottom:20px; position:fixed; cursor:pointer;" id="goTopBtn"><IMG border=0 src="/images/top.png"></DIV>
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=slide&amp;img=8&amp;pos=left&amp;uid=0" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+var bds_config={"bdTop":$(window).height()-450};
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
+
+<!-- WPA Button Begin -->
+<script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzkzODAzNjk1OF8yMzY4OTRfNDAwNzE2MTcxOF8"></script>
+<!-- WPA Button End -->
+
+ <script>
+                    function goTop() {
+                        var obj = document.getElementById("goTopBtn");
+                        function getScrollTop() {
+                            return document.documentElement.scrollTop || document.body.scrollTop;
+                        }
+                        function setScrollTop(value) {
+                            if(document.documentElement.scrollTop)
+                            {
+                                document.documentElement.scrollTop=value;
+                            }
+                            else
+                            {
+                                document.body.scrollTop=value;
+                            }
+                        }
+                        window.onscroll = function () { getScrollTop() > 0 ? obj.style.display = "" : obj.style.display = "none"; }
+                        obj.onclick = function () {
+                            var goTop = setInterval(scrollMove, 10);
+                            function scrollMove() {
+                                setScrollTop(getScrollTop() / 1.1);
+                                if (getScrollTop() < 1) clearInterval(goTop);
+                            }
+                        }
+                    }
+                    goTop();
+                </script>
+<script type="text/javascript" name="baidu-tc-cerfication" data-appid="5130140" src="http://apps.bdimg.com/cloudaapi/lightapp.js"></script>
+</div>
+    <!-- footer over-->    
+  </div>
+   <div id="picbg">
+      <a href="javascript:;" id="before"><img  src="../images/leftbig.png" width="35" height="51" /></a>
+      <a href="javascript:;" id="next"><img  src="../images/rightbig.png" width="35" height="51" /></a>
+      <a href="javascript:;" id="closepic"></a>
+      <div class="picleft" style="position:relative;">
+         <div class="picbian">
+           <div id="bigimg" style=" clear:left; background-color:Transparent; width:auto; height:auto; position:absolute;">
+             
+           </div>
+           <img src="/images/loading.gif" style=" position:absolute; width:30px; height:30px; left:320px; top:250px;"  id="loadimg"/>
+         </div>
+         <div style="width:100%; height:45px;  position:absolute; top:0px; left:0px;">
+            <div style="width:100%; height:45px;background-color:#FA8E36; filter:alpha(opacity=90); -moz-opacity:0.9; opacity:0.9;  "></div>
+            <div style=" position:absolute; top:0px; left:0px;width:100%; height:45px; text-indent:10px; line-height:48px; font-size:14px; text-align:center; color:White;">
+              <span>共<b style="padding:0px 5px;" id="piccount">12</b>张</span>
+              <span style="margin-left:15px;">第<b style="  padding:0px 5px;" id="thiscount">1</b>张</span>
+            </div>
+             
+         </div>
+      </div>      
+  </div>
+  <script type="text/javascript" src="pic.js"></script>
+  <div id="mapbg" style="background-color:White;">
+     <a href="javascript:;" id="closemap"></a>
+      <div class="picleft" style="position:relative;">
+       <img src="/images/loading.gif" style=" position:absolute; width:30px; height:30px; left:320px; top:250px;"  id="loadmap"/>
+       <div style="width:99%;height:99%;border:1px solid gray; display:none;" id="container2" ></div>
+      </div>
+     
+   </div>
+   <script type="text/javascript">
+       var map = new BMap.Map("container2");
+// 创建地址解析器实例
+var Hotelmap="";
+var myGeo = new BMap.Geocoder();
+
+
+// 将地址解析结果显示在地图上,并调整地图视野
+myGeo.getPoint("上海黄浦区中山南路76号（近外滩）", function(point){
+  if (point) {
+	var opts = {width : 250,height: 100,title:"上海滨江欣景大酒店"}
+	map.centerAndZoom(point,16);
+	map.addControl(new BMap.NavigationControl()); 
+	Hotelmap=new BMap.Marker(point);
+    map.addOverlay(Hotelmap);
+	var infoWindow = new BMap.InfoWindow("地址：上海黄浦区中山南路76号（近外滩）<br>电话：021-63306060<br>订房热线：4007 161718", opts);  
+	Hotelmap.addEventListener("click", function(){this.openInfoWindow(infoWindow);});	
+  }
+}, "上海");
+
+     $(function(){
+       $("#mapbtn").click(function(){
+          var w=$(window).width();
+		  var h=$(window).height();
+		  ShowbBgZhao();	
+		  $("#mapbg").css({width:"700px",height:h-130,left:(w-700)/2,top:"210px"}); 
+          $("body").css({height:h,overflow:"hidden"});				                             	
+		  $("html , body").animate({scrollTop:"140"},100);
+		  $("#closemap").css({right:8,top:5});
+		  $("#loadmap").show(); 	
+		  $("#mapbg").show();		  
+           $("#container2").show();
+           $("#loadmap").hide(); 
+       });
+       $("#closemap").click(function(){
+         $(".lvyi-bigzhao").hide();
+		 $("#mapbg").hide();
+		 $(".bodydoc").css({height:"auto",overflow:"visible"});       
+       })
+     
+     })
+   </script>
+</body>
+</html>
+
+

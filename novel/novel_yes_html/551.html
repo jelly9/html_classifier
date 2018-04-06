@@ -1,0 +1,832 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>我，赖上你了冰山！_第一卷_第十八章 罗厅长的爱好_免费txt全文下载_豪门总裁_纵横女生网</title>
+<link rel="stylesheet" href="http://static.zongheng.com/v3_0/mm/style/basic.css"/>
+<link rel="stylesheet" href="http://static.zongheng.com/v3_0/mm/style/m_book.css" />
+<script type="text/javascript" src="http://static.zongheng.com/v2_0/js/zongheng-min.js"></script>
+<script type="text/javascript" src="http://static.zongheng.com/v2_0/js/adClickStat.js"></script>
+</head>
+<body bookId="159542" tomeId="360449" chapterId="2876373" lastChapterId="2871912" nextChapterId="2876373" isMonthBookType="false" isUserDonate="true" showForceLoginPage="">
+
+<!-- 头部 开始 -->
+<script type="text/javascript">
+<!--
+window.tempUser = window.user;
+//-->
+</script>
+<script type="text/javascript" src="http://static.zongheng.com/v3_1/mm/js/user.min.js"></script>
+<script type="text/javascript">
+<!--
+(function(){
+    UserManager.addListener(function(user){
+        if(window.user != null && window.tempUser == null)
+        {
+            window.location.reload();
+            return false;
+        }
+
+        if(window.user == null && window.tempUser != null)
+        {
+            window.location.reload();
+            return false;
+        }
+
+        if(window.user != null && window.tempUser != null)
+        {
+            if(window.user.userId != window.tempUser.userId)
+            {
+                window.location.reload();
+                return false;
+            }
+        }
+    });
+
+    UserManager.addListener(function(user){
+
+        var html = window.UserManager.build(user);
+        jQuery("#login").html(html);
+
+        if(user != null && user != undefined)
+        {
+            jQuery.PopPanel({
+                from: "#userInfoBtn",
+                to: "#userinfo"
+            });
+        }
+        else
+        {
+            jQuery("#login-form").login();
+        }
+
+        if(user != null && user != undefined)
+        {
+            UserInfoManager.load(true);
+        }
+
+        // 用户注册
+        jQuery(".user_register").unbind();
+        jQuery(".user_register").click(function(){
+            window.location.href = "http://passport.zongheng.com/reg.do?location=" + encodeURIComponent(window.location.href);
+            return false;
+        });
+
+        jQuery(".free_register").unbind();
+        jQuery(".free_register").click(function(){
+            window.location.href = "http://passport.zongheng.com/reg.do?location=" + encodeURIComponent(window.location.href);
+            return false;
+        });
+
+        jQuery(".logout").unbind();
+        jQuery(".logout").click(function(){
+            UserManager.logout();
+            return false;
+        });
+    });
+
+    UserInfoManager.addListener(function(userInfo){
+        var html = window.UserInfoManager.build(userInfo);
+        jQuery("#userinfo").html(html);
+
+        if(userInfo != null)
+        {
+            jQuery("#userMsg").html("（" + userInfo.message + "）");
+            jQuery("#userVote").html("（" + userInfo.recomment + "）");
+        }
+        else
+        {
+            jQuery("#userMsg").html("（0）");
+            jQuery("#userVote").html("（0）");
+        }
+    });
+})();
+
+jQuery(function(){
+    // 设置首页
+    jQuery(".homepage").click(function(){
+        if(jQuery.browser.msie)
+        {
+            this.style.behavior = "url(#default#homepage)";
+            this.setHomePage("http://www.mmzh.com");
+        }
+        else if(jQuery.browser.mozilla)
+        {
+            try
+            {
+                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                var prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref("browser.startup.homepage", "http://www.mmzh.com");
+            }
+            catch(e)
+            {
+                alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将[signed.applets.codebase_principal_support]设置为'true'");
+            }
+        }
+        return false;
+    });
+
+    // 收藏本站
+    jQuery(".homemark").click(function(){
+        var title = "纵横女生网";
+        var address = "http://www.mmzh.com";
+
+        // FF
+        if(window.sidebar != null)
+        {
+            try
+            {
+                if(window.sidebar.addPanel != null)
+                {
+                    window.sidebar.addPanel(title, address, "");
+                    return;
+                }
+            }
+            catch(e)
+            {
+            }
+
+            alert("请按Ctrl+D键收藏 !");
+            return;
+        }
+
+        // IE
+        if(window.external != null)
+        {
+            try
+            {
+                window.external.addFavorite(address, title);
+                return;
+            }
+            catch(e){
+            }
+
+            try
+            {
+                window.external.addToFavoritesBar(address, title, "slice");
+                return;
+            }
+            catch(e){
+            }
+        }
+
+        alert("您的浏览器不支持此操作, 请使用浏览器的收藏夹进行添加 !");
+        return false;
+    });
+});
+jQuery(function(){
+    var src = document.getElementById("ssoagent");
+    if(src != null)
+    {
+        src.src = "http://passport.zongheng.com/x.html";
+    }
+});
+//-->
+</script>
+<iframe id="ssoagent" src="about:blank" style="width: 0px; height: 0px; border: 0px solid #cfcfcf; display: none;"></iframe>
+
+<!-- 登录弹出框 -->
+<div id="login_panel" class="uplogin" style="display: none;">
+    <h1><span onclick="Dialog.close('login_panel')"></span>登录</h1>
+    <div class="dl">
+        <form async="true">
+        <div class="tit"><span>登录</span></div>
+        <div class="inputbox">
+            <h2>纵横注册用户请直接登录</h2>
+            <p>用户名：<input name="username" type="text" class="sr"/></p>
+            <p>密　码：<input name="passwd" type="password" class="sr"/></p>
+            <p>验证码：<input name="rand" type="text" class="yzm"/><img class="change_img" style="display: none;"/>&nbsp;<a href="javascript:void(0)" class="change_img_btn">看不清楚？</a></p>
+            <div class="dlbt"><span><input name="login" type="button" value="登　录"/></span><a href="javascript:void(0)" class="forgot" target="_blank">忘记密码</a></div>
+        </div>
+        <div class="tc">没有纵横账号？<a href="javascript:void(0)" class="free_register">立即注册纵横账号</a></div>
+        </form>
+    </div>
+</div>
+<!-- 登录弹出框 -->
+<a name="top"></a>
+<div class="headwrap">
+    <div class="wrap pos_rela">
+        <div class="headlink">
+            <a href="http://www.zongheng.com">纵横中文网</a><a href="http://www.mmzh.com">女生网首页</a><a href="http://www.mmzh.com/rank.html">排行榜</a><a href="http://www.mmzh.com/store.html">女生书库</a><a href="http://www.zongheng.com/help/help.html" class="fred">帮助中心</a>
+        </div>
+        <div id="login" class="login">
+            <script type="text/javascript">(function(){document.write(window.UserManager.build(window.user));})();</script>
+        </div>
+        <div id="userinfo" class="userinfo" style="display: none;"></div>
+    </div>
+</div>
+<div class="cl"></div>
+<div class="wrap">
+    <div style="float: left;"><script type="text/javascript" src="http://static.zongheng.com/upload/ad/column/19672573641.js"></script></div>
+    <div style="float: right;"><script type="text/javascript" src="http://static.zongheng.com/upload/ad/column/19672573642.js"></script></div>
+</div>
+<div class="cl"></div>
+<div class="wrap">
+    <div class="book_nav">
+        
+<script type="text/javascript">
+<!--
+var Util = {};
+
+Util.trim = function(s)
+{
+    return (s != null ? new String(s).replace(/(^\s*)|(\s*$)/g, "") : "");
+};
+
+Util.setCookie = function(cookie)
+{
+    var expires = "";
+
+    if(cookie.expires != null)
+    {
+        var date;
+
+        if(typeof(cookie.expires) == "number")
+        {
+            date = new Date();
+            date.setTime(date.getTime() + (cookie.expires * 24 * 60 * 60 * 1000));
+        }
+        else if(cookie.expires.toUTCString != null)
+        {
+            date = cookie.expires;
+        }
+
+        // use expires attribute, max-age is not supported by IE
+        expires = "; expires=" + date.toUTCString();
+    }
+
+    var path = cookie.path ? "; path=" + (cookie.path) : "";
+    var domain = cookie.domain ? "; domain=" + (cookie.domain) : "";
+    var secure = cookie.secure ? "; secure" : "";
+
+    document.cookie = [cookie.name, "=", encodeURIComponent(cookie.value), expires, path, domain, secure].join("");
+};
+
+Util.getCookie = function(name)
+{
+    var value = null;
+
+    if(document.cookie && document.cookie != "")
+    {
+        var cookies = document.cookie.split(';');
+        
+        for(var i = 0; i < cookies.length; i++)
+        {
+            var cookie = Util.trim(cookies[i]);
+
+            if(cookie.substring(0, name.length + 1) == (name + "="))
+            {
+                value = decodeURIComponent(cookie.substring(name.length + 1));
+
+                break;
+            }
+        }
+    }
+
+    return value;
+};
+//-->
+</script>
+<div class="setting">
+<script type="text/javascript">
+<!--
+function setUserSetting(setting)
+{
+    var bgColor = (setting.bgColor != null ? setting.bgColor : jQuery("body").attr("style_bg_color"));
+    var fontSize = (setting.fontSize != null ? setting.fontSize : jQuery("body").attr("style_font_size"));
+    var fontFamily = (setting.fontFamily != null ? setting.fontFamily : jQuery("body").attr("style_font_family"));
+
+    if(bgColor == null)
+    {
+        bgColor = "#e9faff";
+    }
+
+    if(fontSize == null)
+    {
+        fontSize = "14px";
+    }
+
+    if(fontFamily == null)
+    {
+        fontFamily = decodeURIComponent("%E5%AE%8B%E4%BD%93");
+    }
+
+    jQuery("body").attr("style_bg_color", bgColor);
+    jQuery("div.book_reader").css("background-color", bgColor);
+    jQuery(".watermark").css("background-color", bgColor);
+
+    jQuery("body").attr("style_font_size", fontSize);
+    jQuery("div.book_con p").css("font-size", fontSize);
+
+    jQuery("body").attr("style_font_family", fontFamily);
+    jQuery("div.book_con p").css("font-family", fontFamily);
+
+    jQuery("#user_setting_bgcolor").val(bgColor);
+    jQuery("#user_setting_fontsize").val(fontSize);
+    jQuery("#user_setting_fontfamily").val(fontFamily);
+
+    jQuery(".watermark").css("background-color", bgColor);
+}
+
+(function(){
+
+    var bgColor = Util.getCookie("style_bg_color");
+    var fontSize = Util.getCookie("style_font_size");
+    var fontFamily = Util.getCookie("style_font_family");
+
+    if(bgColor == null)
+    {
+        bgColor = "#e9faff";
+    }
+
+    if(fontSize == null)
+    {
+        fontSize = "14px";
+    }
+
+    if(fontFamily == null)
+    {
+        fontFamily = decodeURIComponent("%E5%AE%8B%E4%BD%93");
+    }
+
+    var s0 = [];
+    s0[s0.length] = "<" + "s" + "tyle type=\"text/css\">";
+    s0[s0.length] = "div.book_reader{background-color: " + bgColor + ";}";
+    s0[s0.length] = "div.book_reader div.book_con p{";
+    s0[s0.length] = "font-size: " + fontSize + ";";
+    s0[s0.length] = "font-family: \"" + fontFamily + "\";";
+    s0[s0.length] = "}";
+    s0[s0.length] = "</s" + "tyle>";
+    document.write(s0.join(""));
+
+    var bgs = [
+        {"text": "淡蓝", "value": "#e9faff"},
+        {"text": "灰色", "value": "#efefef"},
+        {"text": "明黄", "value": "#ffffed"},
+        {"text": "绿意", "value": "#eefaee"},
+        {"text": "红粉", "value": "#fcefff"},
+        {"text": "白雪", "value": "#ffffff"}
+    ];
+
+    var ffs = [
+        {"text": "宋体", "value": decodeURIComponent("%E5%AE%8B%E4%BD%93")},
+        {"text": "黑体", "value": decodeURIComponent("%E9%BB%91%E4%BD%93")},
+        {"text": "微软雅黑", "value": decodeURIComponent("%E5%BE%AE%E8%BD%AF%E9%9B%85%E9%BB%91")},
+        {"text": "楷体", "value": decodeURIComponent("%E6%A5%B7%E4%BD%93_GB2312")}
+    ];
+
+    var fss = [
+        {"text": "小", "value": "14px"},
+        {"text": "中", "value": "16px"},
+        {"text": "大", "value": "20px"},
+        {"text": "特大", "value": "24px"}
+    ];
+
+    var build = function(id, options, value)
+    {
+        var a = [];
+
+        if(id != null)
+        {
+            a[a.length] = "<select id=\"" + id + "\">";
+        }
+        else
+        {
+            a[a.length] = "<select>";
+        }
+
+        for(var i = 0; i < options.length; i++)
+        {
+            if(value == options[i].value)
+            {
+                a[a.length] = "<option value=\"" + options[i].value + "\" selected=\"true\">" + options[i].text + "</option>";
+            }
+            else
+            {
+                a[a.length] = "<option value=\"" + options[i].value + "\">" + options[i].text + "</option>";
+            }
+        }
+
+        a[a.length] = "</select>";
+
+        return a.join("");
+    };
+
+    var s1 = build("user_setting_bgcolor", bgs, bgColor);
+    var s2 = build("user_setting_fontfamily", ffs, fontFamily);
+    var s3 = build("user_setting_fontsize", fss, fontSize);
+
+    document.write(s1);
+    document.write(s2);
+    document.write(s3);
+})();
+
+jQuery(function(){
+
+    var bgColor = Util.getCookie("style_bg_color");
+    var fontSize = Util.getCookie("style_font_size");
+    var fontFamily = Util.getCookie("style_font_family");
+
+    if(bgColor == null)
+    {
+        bgColor = "#e9faff";
+    }
+
+    if(fontSize == null)
+    {
+        fontSize = "14px";
+    }
+
+    if(fontFamily == null)
+    {
+        fontFamily = decodeURIComponent("%E5%AE%8B%E4%BD%93");
+    }
+
+    jQuery("body").attr("style_bg_color", bgColor);
+    jQuery("body").attr("style_font_size", fontSize);
+    jQuery("body").attr("style_font_family", fontFamily);
+
+    jQuery("#user_setting_bgcolor").change(function(){
+
+        setUserSetting({bgColor: this.value});
+    });
+
+    jQuery("#user_setting_fontsize").change(function(){
+
+        setUserSetting({fontSize: this.value});
+    });
+
+    jQuery("#user_setting_fontfamily").change(function(){
+
+        setUserSetting({fontFamily: this.value});
+    });
+
+    // 保存默认配置
+    jQuery("#save_user_setting").click(function(){
+
+        var bgColor = jQuery("body").attr("style_bg_color");
+        var fontSize = jQuery("body").attr("style_font_size");
+        var fontFamily = jQuery("body").attr("style_font_family");
+
+        jQuery.cookie("style_bg_color", bgColor, {path: "/", domain:".mmzh.com", expires: 365});
+        jQuery.cookie("style_font_size", fontSize, {path: "/", domain:".mmzh.com", expires: 365});
+        jQuery.cookie("style_font_family", fontFamily, {path: "/", domain:".mmzh.com", expires: 365});
+
+        alert("保存设置成功 !");
+    });
+
+    // 恢复默认配置
+    jQuery("#default_user_setting").click(function(){
+
+        jQuery.cookie("style_bg_color", "#e9faff", {path: "/", domain:".mmzh.com", expires: 365});
+        jQuery.cookie("style_font_size", "14px", {path: "/", domain:".mmzh.com", expires: 365});
+        jQuery.cookie("style_font_family", decodeURIComponent("%E5%AE%8B%E4%BD%93"), {path: "/", domain:".mmzh.com", expires: 365});
+        setUserSetting({bgColor: "#e9faff", fontSize: "14px", fontFamily: decodeURIComponent("%E5%AE%8B%E4%BD%93")});
+
+        alert("恢复设置成功 !");
+    });
+});
+//-->
+</script>
+    <span id="save_user_setting">保存设置</span>
+    <span id="default_user_setting">恢复默认</span>
+</div>
+        <div class="pink">
+            <div class="title"><a href="http://www.mmzh.com">纵横女生网</a>|<a href="javascript:void(0)" class="jrsq">加入书签</a>|<a href="javascript:void(0)" class="ttjp">投红票</a>|&nbsp;全文阅读(<a href="javascript:void(0)" class="readtotal_new">新版</a><a href="http://www.mmzh.com/totaltome/159542.html">旧版</a>)&nbsp;|<a href="javascript:void(0)" class="download">下载本书</a>|<a href="http://www.mmzh.com/book/159542.html">返回书页</a>|<a href="http://www.mmzh.com/showchapter/159542.html">返回书目</a></div>
+        </div>
+    </div>
+    <div class="cl"></div>
+</div>
+<div class="wrap book_reader">
+    <h1><em class="le"></em><span>我，赖上你了冰山！</span><em class="ri"></em></h1>
+    <div class="tc"><h2>第一卷第十八章 罗厅长的爱好</h2></div>
+    <div class="tc">[更新时间]&nbsp;2012-03-19 08:37:47&nbsp;[字数]&nbsp;2255</div>
+    <div class="book_con">
+        
+        <p><span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p><span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p><span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“哈哈哈，司马经理，欢迎啊欢迎！”罗厅长豪爽的大笑着起身和司马握手。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“罗厅长你好，”司马握着手道：“这是我们公司助理小陈。”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐连忙鞠躬：“罗厅长你好。”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“好，好，来，来，坐下说，服务员上菜了。”罗厅长顺便介绍身边的秘书给两人认识。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>这罗厅长倒也朴素，身边就一个秘书，加上司马两人整个包间不过四人而已。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“我们G市是非常欢迎昶信这样有实力的环保企业入驻。”罗厅长寒暄两句就直奔正题道：“只要昶信能为G市的环境带来改善，我们环保厅一定鼎力支持！”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“罗厅长客气了，我们昶信在环保方面的实力是有目共睹的，我相信在贵厅的领导下定能再创佳绩！”司马冷峻的脸上带着些微笑意说道。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“呵呵，我们也别在这自卖自夸了，在这我就放个话，只要昶信能遵守规章我姓罗的一定支持到底！”罗厅长拍着胸口大声保证道。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐惊奇的看着这罗厅长，这个官员和自己印象中的完全不一样，不但五十多岁了还那么健壮，而且这直白的保证更是从没见哪个当官的说过，这简直颠覆了官场潜规则！<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>两人聊了一会儿，罗厅大声道：“好了，司马，这公事就谈到这里，来来来，陪老哥喝酒！”说着叫秘书给众人倒酒。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐好奇的看着一脸苦笑的秘书，实在忍不住好奇，等他倒完悄悄问道：“你怎么这副表情啊？”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>结果那罗厅长竟然听了去，哈哈大笑道：“哈哈哈，等下你就知道了。”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>秘书对思璐耸耸肩，神秘的笑笑：“呵呵，没错，等下你就知道了。”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>接下来思璐就完全理解了这话的意思，只见那罗厅一杯接一杯的敬酒，声音洪亮的喝彩，一瓶酒竟然十来分钟就喝光了。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“了解了吧？”秘书苦笑的对思璐说：“我们这罗厅什么都好，就是这酒瘾实在是大。而且每次一喝就非喝醉不可。”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐连喝几杯，虽然照顾女性只是很小的杯子，可也有些受不了，听道这话不由哀嚎道：“不是吧！？罗厅酒量好不好啊？”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“呵呵，”秘书笑得更苦了：“这就是问题所在了，我跟着罗厅两年了，从三两的酒量愣是练到了一斤！”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“啊？！”思璐大张着嘴，满脸惊讶：“这么厉害！”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>司马倒是酒量不错，这都分了一瓶了，脸上竟丝毫看不出酒意。仍旧不紧不慢的陪着罗厅喝酒，不时还聊上几句。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>又过了半小时桌上的酒已经喝了三瓶了，思璐光是闻着这酒味都觉得晕呼呼的了，三个男人还在那推杯换盏。连忙找了借口溜了出去。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“呼…”思璐长呼了口气忖道：看来这仨是不准备活着回去了，我还是溜号的好，等下再去巡视战场。”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐这一溜就足足溜了半小时，这才回到包间，此时三人都有些晕呼呼的了，思璐走进去竟然没人发现，这桌子上更是放着五个空瓶，还有一个正拿在秘书手上，往桌子上猛倒。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐拍拍额头，打量了下几人的脸色，个个都是满头大汗，说着莫名奇妙的话，在那死撑。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“总经理，罗厅，您看这酒也喝得差不多了，要不就先散了吧，看你们这么投缘，不如下次接着喝？”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“不，不行！”罗厅大着舌头道：“难得见…见到司马这种对手，今天，不醉…不醉不休！”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>司马也晕呼呼的道：“来！罗…罗厅，我司马也…也是海量，今…天，就喝到你高兴为止！”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐看着憨态可掬的司马，不由觉得好笑，这哪还看得出那冰山的样子。还好那秘书还有点理智，和思璐两人连推带拉的把两人劝了出去。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“总经理，总经理。”思璐摇着被服务员送到车上的司马道：“你醒醒啊，你住哪儿啊？我找不到啊。”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“塞，塞尚小区，88号。”司马迷迷糊糊的说道。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“哦。知道了。”思璐紧张的发动汽车，慢慢的开了起来。虽说有驾照，可是领了之后就再没碰过车。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐以每小时三十码的速度，在街道上慢慢的爬行，不时还要看看后面的司马，不一会儿就满头大汗，心里赌咒发誓的以后只坐不开。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>好不容易把车开到了小区，思璐望着司马一米八的身高，又看看自己一米六的个子，心中那个郁闷啊。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“总经理你醒醒啊！”思璐无语的看着呼呼大睡的司马，想要指望他醒来怕是要等到明天了。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>此时正好有保安巡视，思璐连忙拜托两个保安帮忙，这才把司马送到了屋前。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“总经理，你的钥匙呢？”思璐着急的道：“钥匙啊，在哪儿呢？”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“小姐，我看你还是自己拿吧，看他这模样哪听得见啊。”扶着司马的保安看着人事不省的司马无奈的道。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“啊？我拿？”思璐脸色绯红。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“当然是拿了。”保安肯定的道。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“哦，好。”思璐忍着羞涩伸手在司马腰间一阵乱摸。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>这肌肉可真结实…<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“小姐，你干嘛呢？”保安看着思璐在腰那猛找，无语的道：“一般他们都把钥匙放公文包里……”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“啊？哦。”思璐一张脸红得像猴子屁股一样：丢死人了，也不早说！<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>翻开公文包果然很顺利的找到了钥匙，几人进屋，两个保安把司马往沙发上一丢就告辞离去了。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐这才有空打量这房子，这是个错层的公寓，看大小足有两百三百平，整个装修风格是米色的，看起来清爽又不刺眼。客厅里摆着套西式的布艺沙发，一个大大的茶几，墙上一个巨大的液晶电视，就别无它物了。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐费力的把一身酒味和汗臭的司马搬到床上，四下张望了一番，这卧室非常干净整齐，连一些小摆件也放的整整齐齐的。本想一走了之，可看着他连衬衣都湿透的样子，又不忍心。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“算了，本小姐好心，就帮你把衣服脱了。”思璐自言自语的说着，羞涩的脱去司马的衣服：“哇，平时没怎么见他锻炼这一身肌肉哪来的啊。”伸手戳了戳那结实的腹肌，思璐红着脸开始解裤子。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>“啊！呸呸，怎么是红色的三角裤，恶心死了。”思璐这还是第一次如此近距离的观察男人的身体，不由得身体微微发抖。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>费了好大的力，终于把这裤子给脱了下来，思璐连忙把被子给他盖上，又紧张的盯着司马的脸，确定没有醒来，这才长长的松了口气。<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p>思璐拉了拉自己汗湿的衣服不由抱怨道：“真是的，比我通宵赶稿还累，啊！受不了了，这又湿又臭的怎么穿啊！干脆洗个澡再走？反正那笨蛋还在睡觉。”<span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p><p><span class="watermark">*+?!+首=发www.zongheng.com*||-*</span></p>
+        <div class="addition">
+            
+            
+            <div class="auds"><a href="http://www.mmzh.com">本书纵横女生网首发，欢迎读者登录www.mmzh.com查看更多优秀作品。</a></div>
+        </div>
+    </div>
+</div>
+<div class="wrap book_key">
+    <div class="tc key">
+        
+            (快捷键：←)<a href="http://www.mmzh.com/chapter/159542/2871912.html">上一章</a>
+        
+        <a href="http://www.mmzh.com/showchapter/159542.html">回目录</a>(快捷键：回车)
+        
+        
+            <a href="http://www.mmzh.com/readmore/159542.html">下一章</a><span>(快捷键：→)</span>
+        
+    </div>
+    <div class="tc">
+    <script type="text/javascript">
+<!--
+(function(){
+
+    var isUserDonate = (window.user != null && (document.body.getAttribute("isUserDonate") == "true"));
+    var isMonthBookType = (window.user != null && (document.body.getAttribute("isMonthBookType") == "true"));
+
+    document.write("<a id=\"bottom_fbpl\" href=\"javascript:void(0)\">&nbsp;发表评论&nbsp;</a>|");
+    document.write("<a id=\"bottom_ttjp\" href=\"javascript:void(0)\">&nbsp;投红票&nbsp;</a>|");
+    document.write("<a id=\"bottom_dksj\" href=\"http://home.zongheng.com/favoritesBook.do\" target=\"_blank\">打开书架</a>|");
+
+    if(false && isUserDonate)
+    {
+        // document.write("<a id=\"userdonate\">&nbsp;我要捧场&nbsp;</a>|");
+    }
+
+    if(isMonthBookType)
+    {
+        // document.write("<a id=\"bottom_dbby\" href=\"http://www.mmzh.com/vip/mbook/159542.html\" target=\"_blank\">单本包月</a>|");
+    }
+
+    if(window.user != null && window.user != undefined)
+    {
+        // document.write("<a id=\"bottom_hytj\" href=\"http://home.zongheng.com/refer.do\" target=\"_blank\">向好友推荐</a>|");
+    }
+
+    document.write("<a href=\"http://www.mmzh.com/showchapter/159542.html\">返回书目</a>|");
+    document.write("<a href=\"http://www.mmzh.com/book/159542.html\">返回书页</a>|");
+    document.write("<a href=\"http://www.mmzh.com\">返回首页</a>");
+})();
+//-->
+</script>
+    </div>
+</div>
+
+<div class="fly">
+    <span id="bookmark" class="bookmark"></span>
+    <span class="booktop" onclick="window.location.href='#top';"></span>
+</div>
+
+
+<!-- 评论对话框 -->
+<div id="thread_dialog_panel" class="comment_pop shadow">
+    <table height="100%" cellspacing="0" cellpadding="0" border="0" width="100%" style="z-index: 9997">
+        <tr>
+            <td class="shadowtl">&nbsp;</td>
+            <td class="shadowtbg">
+                <h3>发表评论<a href="javascript:void(0)" class="small close" style="right: 10px;" title="最小化"></a></h3>
+            </td>
+            <td class="shadowtr">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="shadowlbg">&nbsp;</td>
+            <td bgcolor="#ffffff">
+                <div class="remarkps">
+                    <div class="fl">
+                        <div>标题: <input name="title" type="text" class="input_01" value=""/></div>
+                        <div class="cl"></div>
+                        <div><textarea name="content"></textarea></div>
+                        <div class="cl"></div>
+                        <div class="check verifycode_panel">验证码：<input name="verifyCode" type="text" class="yzm"><img style="width: 60px; height: 25px; vertical-align: middle; display: none; cursor: pointer;" class="verifycode_img"/><a href="javascript:void(0)" class="verifycode_btn">看不清楚？换一张</a></div>
+                        <div class="cl"></div>
+                        <span class="fr">
+                            <span class="my_comment_panel"><a href="http://home.zongheng.com/myDynamic.do" target="_blank">【我发布的书评】</a>&nbsp;&nbsp;</span>
+                            <a href="http://www.mmzh.com/threadList/159542.html" target="_blank">查看更多评论 &gt;&gt;</a>
+                            <input type="button" class="submit fb" send="post" value="发送评论"/>
+                        </span>
+                    </div>
+                    <div class="fr">
+                        <table class="comic facepanel1" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0128-5050.gif" facecode="[cat_1]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0140-5050.gif" facecode="[cat_2]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0141-5050.gif" facecode="[cat_3]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0142-5050.gif" facecode="[cat_4]"></td>
+                            </tr>
+                            <tr>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0143-5050.gif" facecode="[cat_5]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0144-5050.gif" facecode="[cat_6]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0145-5050.gif" facecode="[cat_7]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0146-5050.gif" facecode="[cat_8]"></td>
+                            </tr>
+                            <tr>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0147-5050.gif" facecode="[cat_9]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0139-5050.gif" facecode="[cat_10]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0138-5050.gif" facecode="[cat_11]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0137-5050.gif" facecode="[cat_12]"></td>
+                            </tr>
+                            <tr>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0129-5050.gif" facecode="[cat_13]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0130-5050.gif" facecode="[cat_14]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0131-5050.gif" facecode="[cat_15]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0132-5050.gif" facecode="[cat_16]"></td>
+                            </tr>
+                        </table>
+                        <table class="comic facepanel2" cellspacing="0" cellpadding="0" border="0" class="comic" style="display: none;">
+                            <tr>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0133-5050.gif" facecode="[cat_17]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0134-5050.gif" facecode="[cat_18]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0135-5050.gif" facecode="[cat_19]"></td>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0136-5050.gif" facecode="[cat_20]"></td>
+                            </tr>
+                            <tr>
+                                <td><img height="30" width="30" src="http://static.zongheng.com/v2_0/images/cat/CPC-BQ0148-5050.gif" facecode="[cat_21]"></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                        <div class="showimg">
+                            <span class="now">1</span><span>2</span>
+                        </div>
+                    </div>
+                </div>
+            </td>
+            <td class="shadowrbg">&nbsp;</td>
+        </tr>
+        <tr>
+            <td class="shadowbl">&nbsp;</td>
+            <td class="shadowbbg">&nbsp;</td>
+            <td class="shadowbr">&nbsp;</td>
+        </tr>
+    </table>
+</div>
+<!-- 评论对话框 结束 -->
+
+<div id="menu" style="display: none">
+    <ul>
+        <li><a id="mouse_syy">上一页</a></li>
+        <li><a id="mouse_xyy">下一页</a></li>
+        <li><a id="mouse_hsm">回书目</a></li>
+    </ul>
+    <ul>
+        <li><a id="mouse_shx">刷新</a></li>
+        <li><a id="mouse_dy">打印</a></li>
+    </ul>
+    <ul>
+        <li><a id="mouse_sjsq">加入书架书签</a></li>
+        <li><a id="mouse_tptj">投红票</a></li>
+        <li><a id="mouse_fhshuy">返回书页</a></li>
+        <li><a id="mouse_fhshouy">返回首页</a></li>
+    </ul>
+    <ul>
+        <li><a id="mouse_fbsp">发表书评</a></li>
+        <li><a id="mouse_vip">成为VIP会员</a></li>
+        <li><a id="mouse_author">申请作者</a></li>
+        <li><a id="mouse_shelf">打开书架</a></li>
+    </ul>
+</div>
+<script type="text/javascript">
+<!--
+jQuery("body").contextMenu("menu", {
+    bindings: {
+        // 上一页
+        mouse_syy: function(){
+            var bookId = jQuery("body").attr("bookId");
+            var chapterId = jQuery("body").attr("chapterId");
+            var lastChapterId = jQuery("body").attr("lastChapterId");
+            if(lastChapterId == chapterId)
+            {
+                if(window.confirm("是否返回书页"))
+                {
+                    window.location.href = "http://www.mmzh.com/book/" + bookId + ".html";
+                }
+            }
+            else
+            {
+                window.location.href = "http://www.mmzh.com/chapter/" + bookId + "/" + lastChapterId + ".html";
+            }
+        },
+        // 下一页
+        mouse_xyy: function(){
+            var bookId = jQuery("body").attr("bookId");
+            var chapterId = jQuery("body").attr("chapterId");
+            var nextChapterId = jQuery("body").attr("nextChapterId");
+            if(nextChapterId == chapterId)
+            {
+                window.location.href = "http://www.mmzh.com/readmore/" + bookId + ".html";
+            } else {
+                window.location.href = "http://www.mmzh.com/chapter/" + bookId + "/" + nextChapterId + ".html";
+            }
+        },
+        // 返回书目
+        mouse_hsm: function(){
+            var bookId = jQuery("body").attr("bookId");
+            window.location.href = "http://www.mmzh.com/showchapter/" + bookId + ".html";
+        },
+        // 刷新
+        mouse_shx: function(){
+            window.location.reload();
+        },
+        // 打印
+        mouse_dy: function(){
+            window.print();
+        },
+        // 加入书签
+        mouse_sjsq: function(){
+            if(window.user != null && window.user != undefined)
+            {
+                var params = {
+                    bookId: jQuery("body").attr("bookId"),
+                    chapterId: jQuery("body").attr("chapterId"),
+                    tomeId: jQuery("body").attr("tomeId")
+                };
+                jQuery.getJSON("/ajax/book.bookmark.do", params, function(data){
+                    if(data.mes)
+                    {
+                        alert(data.mes);
+                    }
+                });
+            }
+            else
+            {
+                if(window.confirm("只有登录用户才能使用书架书签功能,确定要登录吗?"))
+                {
+                    login();
+                }
+            }
+        },
+        // 投票推荐
+        mouse_tptj: function(){
+            jQuery("#bottom_ttjp").click();
+        },
+        // 返回书页
+        mouse_fhshuy: function(){
+            var bookId = jQuery("body").attr("bookId");
+            window.location.href = "http://www.mmzh.com/book/" + bookId + ".html";
+        },
+        // 返回首页
+        mouse_fhshouy: function(){
+            window.location.href = "http://www.mmzh.com";
+        },
+        // 发表评论
+        mouse_fbsp: function(){
+            Dialog.open("fbpl");
+        },
+        // 加入书架
+        mouse_shelf: function(){
+            if(window.user != null && window.user != undefined)
+            {
+                window.location.href = "http://home.zongheng.com/favoritesBook.do";
+            }
+            else
+            {
+                if(window.confirm("只有登录用户才能使用书架功能,确定要登录吗?"))
+                {
+                    login("http://home.zongheng.com/favoritesBook.do");
+                }
+            }
+        }
+    }
+});
+//-->
+</script>
+
+<!-- 对话框 -->
+<div id="messagedialog_total" class="flashchapter" style="display: none;">
+    <span class="close_flash" onclick="Dialog.close('messagedialog_total');"></span>
+    <p>新版全文阅读目前只针付费用户开放，请充值后使用该功能。</p>
+    <div class="anniu"><span><a href="http://home.zongheng.com/show/charge.html">点击充值</a></span><span class="mar"><a href="http://www.mmzh.com/reader/demo1.html">展示效果</a></span></div>
+</div>
+<div class="wrap">
+    <div style="float: left;"><script type="text/javascript" src="http://static.zongheng.com/upload/ad/column/19672573643.js"></script></div>
+    <div style="float: right;"><script type="text/javascript" src="http://static.zongheng.com/upload/ad/column/19672573644.js"></script></div>
+</div>
+<div class="cl"></div>
+
+<script type="text/javascript">
+<!--
+if(top.location == self.location)
+{
+    setTimeout(function(){
+        logger("/click/3123/31/159542/w/2876373/5592516/2012-03-05/" + (user ? user.userId : 0) + "/chapter");
+    }, 8000);
+}
+//-->
+</script>
+
+
+
+
+
+
+<div style="display: none"><script src="http://w.cnzz.com/c.php?id=30058113" language="JavaScript"></script></div>
+</body>
+</html>
+<script type="text/javascript" src="http://static.zongheng.com/v3_1/mm/js/chapter.min.js"></script>

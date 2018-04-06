@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>再一次爱上你/正文/二十八  尘埃落定/澄文中文网</title>
+	<meta name="author" content=""/>
+    <meta name="keywords" content="再一次爱上你连载"/>
+    <meta name="description" content="再一次爱上你，二十八  尘埃落定最新阅读"/>
+			<link href="http://res.cwzww.com/css/css2/main.css" rel="stylesheet" type="text/css" />
+
+
+	<!--																	新增加
+	<style type="text/css">
+        body {
+           background: #EAF5FF;
+        }
+    </style>
+	-->
+	<script type="text/javascript" src="http://www.cwzww.com/js/jquery-1.7.2.js"></script>
+	
+		<script charset="utf-8" type="text/javascript" src="http://www.cwzww.com/cw_admin_a/res/js/lhgdialog/lhgdialog.js" ></script>
+		<script type="text/javascript" src="http://www.cwzww.com/personal/ajax.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+	   
+
+		var winH = $(window).height();
+		var winW = $(window).width();
+		var bodyH = $(document.body).outerHeight(true);
+		var bodyW = $(document.body).outerWidth(true);
+		
+		var boxH = $(".alertBox").height();
+		var boxW = $(".alertBox").width();
+		var alertH
+		var alertW
+		
+		//可视高度大于实际高度时
+		if (winH > bodyH){
+			alertH = winH;
+		}else {
+			alertH = bodyH;
+		}
+		//宽度超的时候
+		if (winW > bodyW) {
+			alertW = winW;
+		}else {
+			alertW = bodyW;
+		}
+		//alert(boxH+ "---1--" + boxW);
+		//alert(alertW+ "--2---" + alertH);
+		var lastH = (winH - boxH)/2 +"px";
+		var lastW = (alertW - boxW)/2 +"px";
+		
+		$(".alertBox").css ({top:lastH,left:lastW});
+		$(".blackBg").css ({width:alertW,height:alertH});
+		 
+		$(".alertBox,.blackBg").show();
+		
+		   $("#close").click(
+	   	   function () {
+			 $(".alertBox,.blackBg").hide()
+		    	  }
+		   );
+		   $("#close_img").click(
+	   	   function () {
+			 $(".alertBox,.blackBg").hide()
+		    	  }
+		   );
+		   $("#close_b").click(
+			   	   function () {
+					 $(".alertBox,.blackBg").hide()
+				    	  }
+				   );
+	    }
+
+	   );
+	   
+
+	   
+	   //弹出框内容
+	   //alert($(window).height()); //浏览器当前窗口可视区域高度 
+		//alert($(document).height()); //浏览器当前窗口文档的高度		
+		//alert($(document.body).height());//浏览器当前窗口文档body的高度 		
+		//alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin 
+		//alert($(window).width()); //浏览器当前窗口可视区域宽度 
+		//alert($(document).width());//浏览器当前窗口文档对象宽度 
+		//alert($(document.body).width());//浏览器当前窗口文档body的高度 
+	//alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin 
+		
+//************************	2013-09-03 start
+
+	function recommends(bookId){
+		$.dialog({   
+			title:'投票推荐',   
+			fixed: true,
+			width:'600px',
+			height: '350px',
+			max: false,		//是否显示最大化按钮
+			min: false,		//是否显示最小化按钮
+			time:'10',		//10秒自动关闭
+			lock:true,
+			content: 'url:http://www.cwzww.com/recommend.php?book_id='+bookId+''
+		});
+	}
+	
+
+	function bookshelf(bookId){
+		$.dialog({   
+			title:'加入书架',   
+			fixed: true,
+			width:'500px',
+			height: '300px',
+			max: false,		//是否显示最大化按钮
+			min: false,		//是否显示最小化按钮
+			time:'10',
+			lock:true,
+			content: 'url:http://www.cwzww.com/addbookshelf.php?bkId='+bookId+''
+		});
+	}
+
+	function bookmarks(bookId,chId){
+		$.dialog({   
+			title:'加入书签',   
+			fixed: true,
+			width:'500px',
+			height:'300px',
+			max: false,		
+			min: false,		
+			time:'10',
+			lock:true,
+			content: 'url:http://www.cwzww.com/addBookmarks.php?bkId='+bookId+'&ch_id='+chId+''
+		});
+	}
+//************************	2013-09-03 end
+</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+		 $("#txt01,#txt02,#txt03").hide();
+		 $("#txt01").show();
+		 //点击展开
+		  $("#box01,#box02,#box03").click(
+				function () { 
+				   $("[id^=txt]").hide();
+				   $("[id^=box]").removeClass("on");
+				   $("#"+this.id.replace("box","txt")).show();
+				   $(this).addClass("on");
+				 }
+		   );
+		});
+
+	//************************禁止使用鼠标左键*****************************
+	function left(){
+		if(event.button == 1){
+			exit;
+		}
+	}
+	document.onMouseDown=left;
+
+	function onKeyDown(){
+		if((event.keyCode==116)||(window.event.ctrlKey)||(window.event.shiftKey)||(event.keyCode==122)){
+			event.keyCode=0;
+			event.returnValue=false;
+		}
+	}
+
+	function yxl(){ 
+		if(window.event.altKey){
+			window.event.returnValue=false;
+		}
+	}
+	document.onkeydown=yxl 
+	//************************禁止使用鼠标左键*****************************
+	function cycle1(){
+		var bgcolor = document.getElementById("bgcolor");
+		bgcolor.className = "bookInfo color01";  //改变classname
+	}
+	function cycle2(){
+		var bgcolor = document.getElementById("bgcolor");
+		bgcolor.className = "bookInfo color02";  //改变classname
+	}
+	function cycle3(){
+		var bgcolor = document.getElementById("bgcolor");
+		bgcolor.className = "bookInfo color03";  //改变classname
+	}
+	function cycle4(){
+		var bgcolor = document.getElementById("bgcolor");
+		bgcolor.className = "bookInfo color04";  //改变classname
+	}
+
+	
+	</script>
+	<script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-11745755-4']);
+        _gaq.push(['_setDomainName', 'none']);
+        _gaq.push(['_setAllowLinker', true]);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+</head>
+
+<body>
+<div class="mainBox">
+	<!--顶栏-->
+		<div class="smallNav">
+    	            <form style="display: inline; magin: 0px" id="loginform"
+                  name="loginform" method="post" target="_self" action="/userLogin.php">
+                <ul class="login">
+                    <li>
+						帐号：
+						<input value="" id="userName" name="userName" size="10" type="text"/>&nbsp;&nbsp;
+						密码：
+						<input id="password" name="password" size="10" type="password"/>&nbsp;&nbsp;
+                    </li>
+                    <li>
+						<input type="image" src="http://res.cwzww.com/www/images/btn_Login.jpg" name="image" style='width: 49px; height: 20px; border: 0' onclick="javascript:document.loginform.submit();"/>&nbsp;
+					<!--input name="" type="checkbox" value="" />记住密码&nbsp;-->
+					</li>
+                    <li><!--a href="#">忘记密码</a>&nbsp;&nbsp;-->
+						<a href='/userReg.php' target='_self'>我要注册</a>
+                    </li>
+                </ul>
+                <input type=hidden name=act value='login'/>
+				<input type=hidden name=destUrl value=''/>
+            </form>
+                    <ul class="helpBox">
+                <li class="helpIcon"><a href="#">帮助中心</a></li>
+				<li>|</li>
+                <li class="homeIcon">
+                    <a href='#' target="_self" onmouseover="this.style.cursor='pointer';this.style.cursor='hand'"
+                       onmouseout="this.style.cursor='default'" onclick="setHP091104(this, 'http://www.cwzww.com/');"
+                       style="color:#004d00;cursor:hand;">设为主页</a>
+                </li>
+                <!--li class="mobileIcon"><a href="#">手机版</a>&nbsp;|&nbsp;</li-->
+            </ul>
+        </div> 
+    <!--end 顶栏-->
+    <!--新增快捷登录入口-暂时隐藏-->
+
+    <!--end 新增快捷登录入口-->
+   
+    <!-- 主体开始-->
+   
+   
+
+
+   <div class="floorBox">
+
+   <!--悬浮工具 -->
+<div class="readTools" id="fudong">
+	<ul>
+    	<li><a id="recommend_s" href="javascript:void(0)" onclick="recommends(21559);" class="rtBt01">投推荐票</a></li><li><a href="javascript:void(0)" onclick="bookshelf(21559);" class="rtBt02">加入书架</a></li><li><a href="javascript:void(0)" onclick="bookmarks(21559,949501);" class="rtBt03">加入书签</a></li><li><a href="javascript:void(0)" onclick="comment();" class="rtBt04">发表评论</a></li>    </ul>
+</div>
+<!--end 悬浮工具 -->
+   
+  		<!--左侧整条-->
+        <div class="f01L bookWidth">
+       <!--小说简介-->
+  <!--<div class="bookInfo">        背景颜色更换-->
+  <!--<div class="bookInfo color01">-->
+ <!--<div onclick="cycle();" class="bookInfo color01">-->
+ <div id="bgcolor" class="bookInfo color03">
+            <div class="location">
+            	<ul>
+                	<li><a href="/">澄文中文网</a></li>
+					<li>/</li>
+										<li>
+							<a href='/dushi/' target='_blank'>都市·校园</a></li>
+						<li>/</li>
+						<li><a href='/dushi/1.html' target='_blank'>正剧</a></li>
+					<li>/</li>
+					<li><a href="/book/21559.html">再一次爱上你</a></li>
+                </ul>
+            </div>
+        	
+        <!--end 小说简介-->
+
+       <!--小说内容嵌入-->
+	   			
+				
+				<div class="readBox">
+
+                    <table width="100%" cellspacing="5" cellpadding="0" border="0" class="toolsTable">
+						<tr>
+							<td>
+								字体大小:
+                                <select id="txtsize" class="ssot"
+                                        onChange="doSize(this.options[this.selectedIndex].value);" name="txtsize">
+                                    <option value="26px">最大</option>
+                                    <option value="22px">较大</option>
+                                    <option selected="selected" value="14px">中等</option>
+                                    <option value="12px">较小</option>
+                                    <option value="10px">最小</option>
+                                </select>&nbsp;
+															</td>
+							<td align="right">背景色切换：</td>
+							<td>
+								<a title="粉紫" class="colorBg01" id="color" onclick=cycle1()></a>
+								<a title="炫蓝" class="colorBg02" id="color" onclick=cycle2()></a>
+								<a title="草绿" class="colorBg03" id="color" onclick=cycle3()></a>
+								<a title="纸黄" class="colorBg04" id="color" onclick=cycle4()></a>
+								
+							</td>
+							<td class="antblue"><img src="/images/fring.png" align="absmiddle" /> ← → 键盘左右键前后翻页，回车[Enter]返回目录</td>
+						</tr>
+                    </table>
+					<table width="100%" cellspacing="0" cellpadding="0" border="0" style="table-layout:fixed;" class="readTable" onkeydown="onKeyDown()" oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+                        <thead>
+							<tr>
+								<td height="100" align="center" ><div id="ff">二十八  尘埃落定</div></td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td align="right"></td>
+							</tr>
+															<!--0-->								<tr>
+									<td class="text01" id="t_二十八  尘埃落定"><font color="black">　　尘埃落定，这个字就像一颗定心丸，让夏凌轩跳动得疯狂的心跳慢慢恢复正常的频率。<br><br>　　下面尖叫的声音已经不是他应该在意的问题，澄澈的双眸亮了起来，夏凌轩揽过已经呆住的迟爱下台。<br><br>　　路过幕布后方的那个人，“哥，谢啦。”<br><br>　　隐藏在黑暗里的人挥挥手，说到底他们也是兄弟，看到自家弟弟在这段感情中的纠结和退缩，做哥哥的也得帮一把不是么？<br><br>　　看自家弟弟牵着人走远，他微微勾起嘴角，掏出手机打了个电话。<br><br>　　“迟爱，你……”喜悦过后冷静下来，才发现迟爱一直没有出声，夏凌轩有些担心地开口。<br><br>　　“什么？”刚好回过神来的迟爱抬头问，没听到他说什么。<br><br>　　“你……刚才是不是，为了顾及我面子才答应的？”夏凌轩拧着眉，眸子满满是迟爱的倒影，失落地问。<br><br>　　“啊？不是啊。”迟爱呆呆地摇头，为了顾及面子，给自己惹个麻烦的事情她才不会干，想答应就答应了。<br><br>　　“你……”想到自己在与夏明轩的交谈中，他有意无意地透露的信息，“算了，没什么。”<br><br>　　“什么？”<br><br>　　“没什么，我先回宿舍了，你也回去吧。”无意间捏到了夏凌轩的指尖，冰凉冰凉的，迟爱笑笑推推他。<br><br>　　“……再呆会儿。”夏凌轩摇了摇头。<br><br>　　他不想回去，他还想和她再呆会。<br><br>　　那样，即使是梦，醒来，也不会那么遗憾。<br><br>　　“！”似乎没想到他会这么说，迟爱的脸稍稍有些发烫。<br><br>　　走到光亮处，学校的超市还是灯火通明，大概所有的人都去看晚会，就连超市里的人也去凑热闹。<br><br>　　只留下一个收银员坐在柜台里面，坐着玩手机。<br><br>　　迟爱走进去，拿了两杯热饮，走到收银台。<br><br>　　察觉到有动静，收银员抬起头来，就看到包得像粽子的迟爱，不免被吓到。<br><br>　　聊了几句，把钱找给迟爱，整个人又缩成一团坐下来玩手机。<br><br>　　迟爱把东西递给夏凌轩，夏凌轩微微叹口气，勾起一抹苦笑。<br><br>　　倏地挑眉，“怎么了？”<br><br>　　夏凌轩慢慢从旁边的袋子里拿出两个热气腾腾的……团子，递给迟爱。<br><br>　　“喂，我说，人家圣诞节送苹果送花的，你倒直接送团子了。哈哈……”迟爱愣了愣，猛然大笑了起来。<br><br>　　在这寂静得只能听到落雪声音的夜里格外清晰，仿佛这一片天地只有她清脆而开怀的笑声。<br><br>　　热气腾腾的团子，是他在圣诞节的夜晚给女朋友的礼物。<br><br>　　夏凌轩也不由得讪讪地笑了起来。<br><br>　　在明亮的灯光下，他的脸似乎有些发红。<br><br>　　吃完团子喝完热饮，远处的晚会也快落幕。<br><br>　　“这次真要回去了，你也回吧。”迟爱站起来拍拍手，无意状地拂过自己的肚子，自言自语地嘟哝，“大晚上地，吃这么多东西，又要长胖了！。”<br><br>　　“你干嘛？”<br><br>　　他停下脚步，有些无措，似乎没有想到会被她问。“我送你回去。”停顿了会，补充，“可以吗？”<br><br>　　“……嗯，好啊。”矜持地点头，迟爱小声回答。<br><br>　　差点忘了，男朋友一般都会送女朋友回宿舍的。<br><br>　　冬天的雪地，两排脚印一前一后地朝女生宿舍过去<br><br>　　回到宿舍，迎接她的是两双戏谑的眼神。<br><br>　　没有理会她们，迟爱抿着唇笑笑，爬去床上。<br><br>　　脸上的，是自己都没发现的甜蜜笑容。</font></td>
+								</tr>
+									
+						</tbody>
+					</table>
+				
+                    <table width="100%" cellspacing="5" cellpadding="0" border="0" class="toolsTable">
+                        <td align="center" class="upDownKey">
+							<span class="sec">&larr;</span>
+							<a href="/chapter/21559,948258.html">[上一章]</a>
+							<a href="/book/21559/" class="hong">作品目录</a>
+							<a href="/bookPublicBottom.php?book_id=21559">[下一章]<span class="sec">&rarr;</span></a>
+						</td>
+                    </table>
+                		<script language="javascript">
+	// 创建远程调用对象
+	var httpReview = createRequestObject();	// 书评操作
+
+	function createRequestObject(){
+		var obj;
+		var browser = navigator.appName;
+		if(browser == "Microsoft Internet Explorer"){
+			obj = new ActiveXObject("Microsoft.XMLHTTP");
+		}else{
+			obj = new XMLHttpRequest();
+		}
+		return obj;    
+	}
+	</script>	
+		<script
+			language="javascript" type="text/javascript" src="/js/review_new.js">
+		</script>	
+		<div class="newPost">
+			<h2>我要评论：</h2>
+						<script type="text/javascript" src="/js/editor-2.js"></script>
+
+						<textarea id="sp_content" name="sp_content" rows="5" class="newPostInt" onfocus="if(this.value=='亲等你来评哟~~') {this.value='';}">亲等你来评哟~~</textarea>
+						<a name="newReview" id="newReview"></a><br />
+				 <a href='javascript:void(0)'  onclick="return check(21559)" class="newPostBt">提交评论</a>
+			
+             <br>
+             　　温馨提示：请不要从WORD中直接复制书评，会造成格式错误。
+		
+
+		</div>
+            </div>
+        <!--end 小说内容嵌入-->
+      </div>
+        <!--end 小说评论-->
+		</div>			
+        <!--end 左侧整条-->
+        
+        <!--右侧整条-->
+        <div class="f01R">
+
+			<!--大家都在看的书-->
+			<div class="listStyle01 coverRBox">
+			  <h2 class="title">大家都在看的书</h2>
+				<ul>
+					<ul><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/guyan">言情</a>]</span><a target="_blank" href="/book/42024.html" title="姻缘">姻缘</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/xuanhuan">玄幻</a>]</span><a target="_blank" href="/book/18612.html" title="浮光">浮光</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/dushi">都市</a>]</span><a target="_blank" href="/book/18632.html" title="隐之光">隐之光</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/dushi">都市</a>]</span><a target="_blank" href="/book/43798.html" title="心间晚晴">心间晚晴</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/guyan">言情</a>]</span><a target="_blank" href="/book/44052.html" title="桃面何处寻">桃面何处寻</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/dushi">都市</a>]</span><a target="_blank" href="/book/43311.html" title="混蛋炼成计划">混蛋炼成计划</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/chuanyue">穿越</a>]</span><a target="_blank" href="/book/22758.html" title="外星女友养成记">外星女友养成记</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/xuanhuan">玄幻</a>]</span><a target="_blank" href="/book/43724.html" title="狐妖校花的铁卫">狐妖校花的铁卫</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/chuanyue">穿越</a>]</span><a target="_blank" href="/book/44590.html" title="穿越之美人太冷">穿越之美人太冷</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/xuanhuan">玄幻</a>]</span><a target="_blank" href="/book/43444.html" title="奇幻之旅之太古世界">奇幻之旅之太古世界</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/dushi">都市</a>]</span><a target="_blank" href="/book/42636.html" title="妖魅女王的完美伪装">妖魅女王的完美伪装</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/huanxiang">幻想</a>]</span><a target="_blank" href="/book/43393.html" title="小子们，上课请勿搞基">小子们，上课请勿搞基</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/dushi">都市</a>]</span><a target="_blank" href="/book/13950.html" title="霸爱总裁：爱妻是无尾熊">霸爱总裁：爱妻是无尾</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/dushi">都市</a>]</span><a target="_blank" href="/book/22641.html" title="逆袭爱情——家有萌宝一双">逆袭爱情——家有萌宝</a></li><li><span class="Yellow fr"></span><span class="book_n_r_pic"><img src="http://res.cwzww.com/www/images/ico_style01.jpg" /></span><span class="fl blue">[<a target="_blank" href="/chuanyue">穿越</a>]</span><a target="_blank" href="/book/14739.html" title="虎妻难招惹：我家有只母老虎">虎妻难招惹：我家有只</a></li></ul>				</ul>
+			</div>
+			<!--end 大家都在看的书-->
+        </div>
+       <!--end 右侧整条-->
+    </div>
+
+
+	
+ 
+   
+   
+    
+    <!--阅读模块 -->
+	
+    <!--end 阅读模块 -->
+    
+    <!--热门推荐-->
+    <!--end 热门推荐-->
+          
+	<div style="display: none" id="stats">
+<!--修改于2012.4.26 12.00-->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F93b24ebb08f0a7dff2d6d1d510287e09' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script src="http://s22.cnzz.com/stat.php?id=4530935&web_id=4530935" language="JavaScript"></script>
+
+</div>
+	
+	<div class="clearFix"></div>
+	
+    <!--第九层-->
+    <div class="floorBox adBoxIe6">
+    			<div class="clearFix"></div>
+        <!--副导航-->
+        <div class="subNav2">
+        	<ul>
+								<li><a target="_blank" href="http://www.cwzww.com/vip">VIP</a></li>
+				<li><a target="_blank" href="http://www.cwzww.com/library/all">书库</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/library/dayup3k.html">日更三千</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/guyan/">古代言情</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/xianxia/">仙侠·修真</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/xuanhuan/">玄幻·奇幻</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/lishi/">历史·架空</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/chuanyue/">穿越·异界</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/huanxiang/">幻想·竞技</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/dushi/">都市·校园</a></li>
+                <li><a target="_blank" href="http://www.cwzww.com/lingyi/">灵异·悬疑</a></li>
+                <li class="noLine"><a target="_blank" href="http://www.cwzww.com/tongren/">同人·其他</a></li>
+            </ul>
+        </div>
+        <!--end 副导航-->
+
+		<div class="clearFix"></div>
+ <!--关键字+版权-->
+        <div class="copyright">
+	<span class="keywords">本站关键字：<a href="http://www.cwzww.com/">免费后宫小说下载</a>、<a href="http://www.cwzww.com/">好看的后宫小说</a>，完本后宫小说，精品后宫小说推荐，好看的玄幻小说、好看的<a href="http://www.cwzww.com/">都市小说</a>、<a href="http://www.cwzww.com/">穿越小说</a>、<a href="http://www.cwzww.com/">修真小说</a>、网游小说，悬疑灵异小说。</span><br />
+            <a href="http://www.cwzww.com/about/index.html" rel='nofollow'>关于澄文中文网 </a>
+            &nbsp;|&nbsp;
+            <a href="http://www.cwzww.com/about/lxwm.html" rel='nofollow'>客服中心</a>
+            &nbsp;|&nbsp;
+            <a href="http://www.cwzww.com/about/bdsm.html"  rel='nofollow'>榜单说明</a>
+            &nbsp;|&nbsp;
+            <a href="http://www.cwzww.com/about/zxns.html" rel='nofollow'>加入我们</a>
+			&nbsp;|&nbsp;
+ 			<a href="http://www.cwzww.com/about/map.html">网站地图</a> 
+			&nbsp;|&nbsp;
+ 			<a href="/sitemap/">热书地图</a> <br>
+            Copyright 2010- 2013 cwzww.com, All Rights Reserved.
+            <br>
+            京公网安备：11010502021612 京ICP证110876号 京网文[2011]0655-229号 京ICP备11021716号-1
+            <br>
+            客服电话 010-85376047 
+
+
+        </div>
+        <!--end 关键字+版权-->
+	</div>    
+    <!--end 第九层-->       
+  <!--end 主体开始-->
+</div>
+
+
+</body>
+</html>
+ <script type="text/javascript">
+//*******************	2013-09-13 start
+	var clientWidth = document.body.clientWidth;
+	var iID=setInterval(setHidden, 1000);
+	
+	function setHidden(){
+		var clientWidth = document.body.clientWidth;
+		
+		if(clientWidth < 1090){
+			document.getElementById("fudong").style.display="none"; 
+		}else{
+			document.getElementById("fudong").style.display="block"; 
+		}	
+	}
+//*******************	2013-09-13 end
+
+ //*********************	2013-09-10 start
+	//*	漂浮
+	var id = function(o){
+		return window.document.getElementById(o);
+	};
+	
+	var scroll = function(o){
+		var space = id(o).offsetTop;
+		id(o).style.top = space+'px';
+		void function(){
+			var goTo = 0;
+			var roll = setInterval(function(){
+				var height = document.documentElement.scrollTop + document.body.scrollTop+space;
+				var top = parseInt(id(o).style.top);
+				if(height != top){
+					goTo = height-parseInt((height - top)*0.9);
+					id(o).style.top = goTo+'px';
+				}
+			},1);
+		}();
+	}
+	
+	var browser = navigator.appName
+	var b_version = navigator.appVersion
+	var version = b_version.split(";");
+	try{
+		var trim_Version = version[1].replace(/[ ]/g,"");  
+		if(browser=="Microsoft Internet Explorer" && trim_Version=="MSIE6.0"){ 
+			var upcss = document.getElementById("fudong").className = "readTools_1"; 
+			scroll('fudong');
+			
+		}
+	}catch(err){
+	
+	}
+
+	function comment(){
+	//	alert("评论");
+		sp_content.focus();	//也可以
+	}
+	
+//******************** 2013-09-10 end
+
+    function doSize(colval) {
+        if (!colval) {
+            return false;
+        }
+        var obj = document.getElementById("t_二十八  尘埃落定");
+        if (obj) {
+            obj.style.fontSize = colval;
+            if (colval == "22px") {
+                obj.style.lineHeight = "32px";
+            } else if (colval == "26px") {
+                obj.style.lineHeight = "38px";
+            } else {
+                obj.style.lineHeight = "24px";
+            }
+            SetCookie("cfg_txtsize", colval, 3 * 60 * 60 * 24 * 365, "/", ".cwzww.com");
+        }
+
+    }
+    function SetCookie(name, value) {//设定Cookie值
+        var expdate = new Date();
+        var argv = SetCookie.arguments;
+        var argc = SetCookie.arguments.length;
+        var expires = (argc > 2) ? argv[2] : null;
+        var path = (argc > 3) ? argv[3] : null;
+        var domain = (argc > 4) ? argv[4] : null;
+        var secure = (argc > 5) ? argv[5] : false;
+        if (expires != null) expdate.setTime(expdate.getTime() + ( expires * 1000 ));
+        document.cookie = name + "=" + escape(value) + ((expires == null) ? "" : ("; expires=" + expdate.toGMTString())) + ((path == null) ? "" : ("; path=" + path)) + ((domain == null) ? "" : ("; domain=" + domain)) + ((secure == true) ? "; secure" : "");
+    }
+
+    function DelCookie(name) {//删除Cookie
+        var exp = new Date();
+        exp.setTime(exp.getTime() - 1);
+        var cval = GetCookie(name);
+        document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+    }
+
+    function GetCookieVal(offset) {//获得Cookie解码后的值
+        var endstr = document.cookie.indexOf(";", offset);
+        if (endstr == -1) endstr = document.cookie.length;
+        return unescape(document.cookie.substring(offset, endstr));
+    }
+    var GetCookie = function(name) {
+        var arg = name + "=";
+        var alen = arg.length;
+        var clen = document.cookie.length;
+        var i = 0;
+        while (i < clen) {
+            var j = i + alen;
+            if (document.cookie.substring(i, j) == arg) return GetCookieVal(j);
+            i = document.cookie.indexOf(" ", i) + 1;
+            if (i == 0) break;
+        }
+        return null;
+    };
+    var t_ts = GetCookie("cfg_txtsize");
+    if (t_ts != null) {
+        doSize(t_ts);
+        document.getElementById("txtsize").value = t_ts;
+    }
+
+    document.onkeydown = nextpage
+    function nextpage() {
+        if (event.keyCode == 37) location = '/chapter/21559,948258.html';
+        if (event.keyCode == 39) location = '/bookPublicBottom.php?book_id=21559';
+        if (event.keyCode == 13) location = '/book/21559/';
+    }
+</script>
+  <!--end 主体开始-->
+</div>
+

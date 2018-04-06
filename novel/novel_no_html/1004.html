@@ -1,0 +1,1936 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title id="_headCtl_HeadCtrlTitle">State Alert Map from WeatherBug.com</title>
+<meta name="description" content="WeatherBug's state alert map provides accurate severe weather warnings for all 50 states." />
+<meta name="keywords" content="state alert map, weather warnings, weather advisories, severe storm, weatherbug" />
+<meta name="code-behind-url" content="http://weather.ca.weatherbug.com/Alerts/Alerts.aspx?alert_mode=1&zcode=Z5010%2f&lang_id=zh-cn&lang_id=zh-cn&alert_state=MN&alert_fips=27161&region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+<meta http-equiv="Pragma" content="no-cache">
+
+<META name="y_key" content="2fe1f2789a2f8fd0" >
+<div style="visibility: hidden;position:absolute;left:-1px;top:-1px"><?xml version="1.0"?><users><user>0CFE69074D054EC786164AC7D52B6357</user></users></div>
+<script src="http://weather.ca.weatherbug.com/Script/Ajax.js?ver=1.6.2.0" type="text/javascript" language="javascript"></script>
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/Safeonload.js?ver=1.6.2.0"></script>
+
+
+<script language='javascript' type='text/javascript' src='http://weather.ca.weatherbug.com/script/thirdparty.js' ></script>
+
+<script src="http://weather.ca.weatherbug.com/script/lifestyle/commonFunctions.js" type="text/javascript"></script>
+    <script src="http://weather.ca.weatherbug.com/script/lifestyle/apiUtils.js" type="text/javascript"></script>
+    <script src="http://weather.ca.weatherbug.com/script/lifestyle/pulseForecastProvider.js" type="text/javascript"></script>
+    <script src="http://weather.ca.weatherbug.com/script/lifestyle/LifeStylePopIconLookup.js" type="text/javascript"></script>
+    <script src="http://weather.ca.weatherbug.com/script/lifestyle/lifeStyleForecast.js" type="text/javascript"></script>
+
+
+<script language="javascript" type="text/javascript" src="http://cms.weatherbug.com/ScriptResource.axd?d=d2ZYA6RHbsT3HSj5BMRYvtp__XYz0eZLA4aSB57Q1onb9m5Me2XcyNEu1L8R-DqNUvgkyjXm24y2QbE-fIEVYTCiFSRZ74I72KuS8chldPy_IiQ42fYUklvQmTmxnqXSS6Xl0g2&t=397b6a7"></script>
+
+
+
+
+
+	<script language="javascript" type="text/javascript">
+	    try {
+	        document.domain = "ca.weatherbug.com";
+	    }
+	    catch (e) { }
+	</script>
+
+	
+
+
+<script language="javascript">
+    /* cookie vars */
+    var cookieDomain = document.domain;
+    var cookieName_secondary = "wxbug_cookie2.ca";
+
+</script>
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/Nav.js?ver=1.6.2.0"></script>
+<script language="javascript" type="text/javascript" src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" >
+    jQuery.noConflict();
+</script>
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/jQueryWBXtra.js?ver=1.6.2.0"></script>
+<script language="javascript" type="text/javascript">
+    var adFeedbackUrl = "http://weather.ca.weatherbug.com/ads/AdFeedbackForm.aspx";
+</script>
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/jQueryEqualizeHeightWidth.js?ver=1.6.2.0"></script>
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/jqueryUI/jquery-ui-1.7.2.custom.min.js?ver=1.6.2.0"></script>
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/jqueryUI/ui.core.js?ver=1.6.2.0"></script>
+
+<!--[if IE]>
+<script type="text/JavaScript" src="http://weather.ca.weatherbug.com/script/dd_roundies.js?ver=1.6.2.0"></script>
+<link rel="stylesheet" type="text/css" href="http://img.weather.weatherbug.com/Style/ie.css?ver=1.6.2.0" />
+<![endif]-->
+<!--[if lte IE 6]>
+<script type="text/JavaScript" src="http://weather.ca.weatherbug.com/script/correctpng.js?ver=1.6.2.0"></script>
+<![endif]-->
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/styles.js?ver=1.6.2.0"></script>
+
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />  
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="Stylesheet" href="http://img.weather.weatherbug.com/Style/common.css?ver=1.6.2.0" />
+<link rel="Stylesheet" href="http://img.weather.weatherbug.com/Style/HorizNav.css?ver=1.6.2.0" />
+<link rel="Stylesheet" href="http://img.weather.weatherbug.com/Style/AdFeedback.css?ver=1.6.2.0" />
+<link rel="Stylesheet" href="http://img.weather.weatherbug.com/Style/colorbox.css?ver=1.6.2.0" />
+<link rel="Stylesheet" href="http://img.weather.weatherbug.com/Style/severe.css?ver=1.6.2.0" />
+
+<link rel="stylesheet" href="http://img.weather.weatherbug.com/Style/jquery-ui-1.7.2.custom.css?ver=1.6.2.0" />
+
+<link rel="Stylesheet" href="http://img.weather.weatherbug.com/Style/noscript.css" title="noscript" />
+
+<script language="javascript" type="text/javascript">
+    // remove the noscript stylesheet
+    jQuery('link[@rel*=style][title]').each(function () {
+        if (this.getAttribute('title') == "noscript") this.disabled = true;
+    });
+
+    // mostly universal functions to be run onload
+    jQuery(document).ready(function () {
+        jQuery("#middle .equalize .boxbody").equalizeAllHeights();
+    });
+</script>
+
+<link rel="stylesheet" type="text/css" media="print" href="http://img.weather.weatherbug.com/Style/print.css?ver=1.6.2.0" />
+
+
+
+	    <link rel="alternate" type="application/rss+xml" title="All WeatherBug feeds" href="http://feeds.weatherbug.com/rss.aspx?zipCode=64688&zCode=Z5010/&units=0&feed=curr,fcst,cpht,news" />
+	    <link rel="alternate" type="application/rss+xml" title="WeatherBug Current Conditions feed" href="http://feeds.weatherbug.com/rss.aspx?zipCode=64688&zCode=Z5010/&units=0&feed=curr" />
+	    <link rel="alternate" type="application/rss+xml" title="WeatherBug Forecast feed" href="http://feeds.weatherbug.com/rss.aspx?zipCode=64688&zCode=Z5010/&units=0&feed=fcst" />
+	    <link rel="alternate" type="application/rss+xml" title="WeatherBug Community Photos feed" href="http://feeds.weatherbug.com/rss.aspx?zipCode=64688&zCode=Z5010/&units=0&feed=cpht" />
+	    <link rel="alternate" type="application/rss+xml" title="WeatherBug US Weather News feed" href="http://feeds.weatherbug.com/rss.aspx?zipCode=64688&zCode=Z5010/&units=0&feed=news" />
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        var chromeInstallElement = jQuery("#CHROME_INSTALL");
+        jQuery.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase());
+        var cookieExpires = (new Date(2019, 1, 1)).toGMTString();
+        if (jQuery.browser.chrome) {
+            if ((document.cookie.search(/weatherwindow=installed/) == -1) && (document.cookie.search(/weatherwindow=popupclosed/) == -1)) {
+                jQuery("#CHROME_INSTALL_close").bind("click", function () {
+                    jQuery(this).preventDefault;
+                    document.cookie = "weatherwindow=popupclosed; expires=" + cookieExpires + "; path=/"
+                    chromeInstallElement.hide("blind", { direction: "vertical" }, "fast");
+                    return (false);
+                });
+                jQuery("#CHROME_INSTALL_install").bind("click", function () {
+                    document.cookie = "weatherwindow=installed; expires=" + cookieExpires + "; path=/"
+                    chromeInstallElement.hide("blind", { direction: "vertical" }, "fast");
+                    return (true);
+                });
+                chromeInstallElement.show("blind", { direction: "vertical" }, "slow");
+            } else {
+                if (document.cookie.search(/weatherwindow=installed/) >= 0) {
+                    document.cookie = "weatherwindow=installed; expires=" + cookieExpires + "; path=/"
+                }
+            }
+        }
+    });
+	</script>
+	<style type="text/css">
+		#CHROME_INSTALL {
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF2B7), to(#FAE793));
+			font-family: Tahoma, sans-serif; font-size: 14px; color: rgb(51, 51, 51); 
+			border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204);
+			position: fixed; top: 0px; left:0; width: 100%; z-index: 100000; display: block; height: 35px; 
+		}
+		#CHROME_INSTALL_close {
+			float: right; width: 10px; height: 10px; line-height:10px; font-size:10px; margin-top: 14px;
+			margin-right: 10px; margin-bottom: 0px; margin-left: 0px; cursor: pointer;
+			background-position: initial initial; background-repeat: no-repeat no-repeat;
+			color:#cabd84; font-weight:bold; text-decoration:none;
+		}
+		#CHROME_INSTALL_install {
+			float: right; width: 87px; height: 26px; line-height:26px; margin-top: 4px; margin-right: 10px; 
+			margin-bottom: 0px; margin-left: 0px; cursor: pointer; 
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f3f3f3), to(#d7d7d7));
+			border:1px #838383 solid; border-radius:5px; color: #000; text-decoration:none;
+			text-align:center;
+		}
+		#CHROME_INSTALL_text {
+			padding-top: 8px; padding-right: 10px; padding-bottom: 10px; padding-left: 38px;
+			background-image: url(http://img.weather.weatherbug.com/images/common/chrome-plug-in.png); background-attachment: initial; 
+			background-origin: initial; background-clip: initial; background-color: initial; overflow-x: hidden;
+			overflow-y: hidden; white-space: nowrap; -webkit-user-select: none; cursor: default;
+			background-position: 5px 5px; background-repeat: no-repeat no-repeat; 
+		}
+		#CHROME_INSTALL_link {
+			text-decoration: underline; color: rgb(75, 104, 156); cursor: pointer; 
+		}
+	</style>
+
+
+	<div id="CHROME_INSTALL" style="display:none;">
+		<a id="CHROME_INSTALL_close" title="close">
+			<span>X</span>
+		</a>
+		<a id="CHROME_INSTALL_install" href="https://chrome.google.com/webstore/detail/ihdkejbciahopmbagpnjmmkkdpfpaaak" target="_blank" title="Install">
+			<span>Install</span>
+		</a>
+		<div id="CHROME_INSTALL_text">
+			WeatherBug now has a <span id="CHROME_INSTALL_link">Google Chrome Extension</span>.
+			Get weather information, direct to your browser.
+		</div>
+	</div>
+<div style="position:absolute; width:1px; height:1px; left:-10px; top:-10px; overflow:hidden;">
+<!-- google_ad_section_start -->
+	Wheeling, MO 64688
+<!-- google_ad_section_end -->
+</div>
+
+
+<link rel="Stylesheet" href="http://img.weather.weatherbug.com/Style/WBredux.css?ver=1.6.2.0" />
+        
+<script type="text/javascript" src="http://ad.crwdcntrl.net/5/c=2241/pe=y/var=ccauds"></script>
+<script language="javascript" type="text/javascript"> 
+   
+    var ccKeywords = "keyword=";
+    if (typeof (ccauds) != 'undefined') {
+        for (var cci = 0; cci < ccauds.Profile.Audiences.Audience.length; cci++) {
+            if (cci > 0) ccKeywords += "&keyword=";
+            ccKeywords += ccauds.Profile.Audiences.Audience[cci].abbr;
+        }
+    }
+    try {
+        var cookieName = 'wbminilotcookie';
+        var cookieValue = ccKeywords;
+        var myDate = new Date();
+        myDate.setMonth(myDate.getMonth() + 12);
+        document.cookie = cookieName + "=" + cookieValue + ";expires=" + myDate + ";domain=.weatherbug.com;path=/";
+    } catch (ex) { }
+</script>
+    </head>
+    <body>
+        
+<div style="padding:0px; margin:0px;">
+
+</div>
+
+<!--[if lte IE 6]>
+    <div id="ie-lte6root">
+		    <script type="text/javascript" language="javascript" src="http://weather.ca.weatherbug.com/script/ie6fix.js"></script>
+    <![endif]-->
+<!--[if IE 7]>
+	    <div id="ie7root">
+		    <script type="text/javascript" language="javascript" src="http://weather.ca.weatherbug.com/script/ie7fix.js"></script>
+    <![endif]-->
+<!--[if IE 8]>
+	    <div id="ie8root">
+		    <script type="text/javascript" language="javascript" src="http://weather.ca.weatherbug.com/script/ie8fix.js"></script>
+    <![endif]-->
+
+
+<div id="hdr-wrap">
+  <div id="hdr">
+    <div id="hdr-top-wrap">
+      <div id="hdr-top">
+        <div id="hdr-banner-ad">
+          <div class="ad-728x90-wrap">
+            
+            <div class="ad-728x90">
+              <div id="wXcds1-ad" class="wXcds1" onload="document.getElementById('wXcds1').style.visibility='hidden'"><noscript><iframe name="cds1" src="http://pub.weatherbug.com/RealMedia/ads/adstream_sx.cgi/www.wthrwbug.com/Alerts@x12?&LNG=zhcn&PC=Z5010/&Z3=64688&L2=Wheeling&L3=MO&L5=USA&L1=616&L4=49&WO1=17.1&WO6=30.54&WO4=45&FC1=7&_RM_HTML_KEYWORDFC1_=7&FC2=26&FC3=4&FC7=28&FC9=32&HO1=0.3" width="728" height="90" allowtransparency="true" frameborder="0" scrolling="no" style="background-color:transparent; overflow:hidden;"></iframe></noscript></div>
+            </div>
+          </div>
+        </div>
+
+        
+        <script type="text/javascript">
+          var feedbackURL = "mailto:WebTeam@weatherbug.com&subject=Feedback for ca.weatherbug.com&body=%0d%0d%0d-----------------------------------------------------------------------------------%0dhttp://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27161";
+        </script>
+
+      </div>
+    </div>
+    
+    <div id="hdr-banner-wrap">
+      <div id="hdr-banner">
+        <h1>
+          <a href="http://weather.ca.weatherbug.com">WeatherBug&reg; Your Weather Just Got Better&trade;</a>
+        </h1>
+        <div id="hdr-sponsor">
+          
+        </div>
+
+        <div id="hdr-utils">
+          <div id="hdr-search">
+            <script language="javascript" type="text/javascript">
+              function wxSearch() {
+                try {
+                  var searchfor = "searchfor=" + document.getElementById("searchfor").value;
+                  var searchWxBug = document.getElementById("wXsearch-type-weatherbug");
+                  if (searchWxBug.checked) { searchfor + "+site%3Aweatherbug.com"; }
+                  window.open("http://www.mywebsearch.com/jsp/cfg_redir2.jsp?id=GBYYYYYYYY&fl=0&ptb=2wipfRdKaPdXXIOf.HcfiQ&url=http%3a%2f%2fsearch%2emywebsearch%2ecom%2fmywebsearch%2fAJmain%2ejhtml%3fst%3dbar%26ptnrS%3dGBYYYYYYYY%26" + searchfor, "Ask");
+                  return false;
+                } catch (e) {
+                } return true;
+              }
+            </script>
+            <form class="vert-align" name="hdr-search-form" id="hdr-search-form" target="Ask" method="get" action="http://www.ask.com/web?o=1571&l=dis">
+              <table cellspacing="0" class="vert-align">
+                <tr>
+                  <td id="hdr-search-input">
+                    <input type="text" name="q" id="q2" value="Enter Web Search Here" onfocus="if(this.value=='Enter Web Search Here') this.value = '';" onblur="if(this.value=='') this.value = 'Enter Web Search Here';" />
+                    <input type="hidden" value="dis" id="Hidden1" name="l" />
+                    <input type="hidden" value="1571" id="Hidden2" name="o" />
+                  </td>
+                  <td id="hdr-search-submit">
+                    <input type="submit" value="" />
+                  </td>
+                  <td id="hdr-search-logo">
+                    <input type="image" src="http://img.weather.weatherbug.com/images/common/hdr-search-logo-ask.gif" />
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+          <ul id="hdr-links">
+            <li class="feedback">
+              <a href="mailto:WebTeam@weatherbug.com&subject=Feedback for ca.weatherbug.com&body=%0d%0d%0d-----------------------------------------------------------------------------------%0dhttp://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27161">Feedback</a>
+            </li>
+            <li class="wap">
+              <a href="http://weather-mobile.weatherbug.com" target="_blank">WAP</a>
+            </li>
+            <li class="mobile">
+              <a href="http://m.weatherbug.com" target="_blank">Mobile Web</a>
+            </li>
+            <li class="app">
+              <a href="http://weather.ca.weatherbug.com/desktop-weather/weatherbug-desktop-application.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn?partner=organic" target="_blank">Desktop Application</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    /*
+    * jQuery resize event - v1.1 - 3/14/2010
+    * http://benalman.com/projects/jquery-resize-plugin/
+    * 
+    * Copyright (c) 2010 "Cowboy" Ben Alman
+    * Dual licensed under the MIT and GPL licenses.
+    * http://benalman.com/about/license/
+    */
+    (function ($, h, c) { var a = $([]), e = $.resize = $.extend($.resize, {}), i, k = "setTimeout", j = "resize", d = j + "-special-event", b = "delay", f = "throttleWindow"; e[b] = 250; e[f] = true; $.event.special[j] = { setup: function () { if (!e[f] && this[k]) { return false } var l = $(this); a = a.add(l); $.data(this, d, { w: l.width(), h: l.height() }); if (a.length === 1) { g() } }, teardown: function () { if (!e[f] && this[k]) { return false } var l = $(this); a = a.not(l); l.removeData(d); if (!a.length) { clearTimeout(i) } }, add: function (l) { if (!e[f] && this[k]) { return false } var n; function m(s, o, p) { var q = $(this), r = $.data(this, d); r.w = o !== c ? o : q.width(); r.h = p !== c ? p : q.height(); n.apply(this, arguments) } if ($.isFunction(l)) { n = l; return m } else { n = l.handler; l.handler = m } } }; function g() { i = h[k](function () { a.each(function () { var n = $(this), m = n.width(), l = n.height(), o = $.data(this, d); if (m !== o.w || l !== o.h) { n.trigger(j, [o.w = m, o.h = l]) } }); g() }, e[b]) } })(jQuery, this);
+  </script>
+  <script type="text/javascript">
+    var pushDownAdTimer = false;
+    jQuery(document).ready(function () {
+      var adWrapper = jQuery("#wXcds1");
+      var ad = adWrapper.find(" > *").not("script").not("noscript");
+      var adChild = ad.find(" > *");
+      if (ad.width() == 970 || adChild.width() == 970) {
+        jQuery("#wXcds1, #hdr-top-wrap").addClass("pushdown");
+        jQuery(".ad-728x90-wrap .ad-feedback-wrap").remove();
+        jQuery("#hdr-banner-ad .ad-728x90-wrap").removeClass("ad-728x90-wrap").addClass("ad-970x66-wrap");
+        jQuery("#hdr-banner-ad .ad-728x90").removeClass("ad-728x90").addClass("ad-970x66");
+        jQuery("#wXcds1-ad").height("66px").css("min-height", "66px").height("auto");
+        adWrapper.resize(function () {
+          var adWrapper = jQuery(this);
+          var height = adWrapper.height();
+          placeAdsInterval = setInterval(function () {
+            placeAds();
+          }, 1);
+          var pushDownAdTimer = setInterval(function () {
+            var bannerAd = jQuery("#hdr-banner-ad");
+            if (height != bannerAd.height()) {
+              bannerAd.height(adWrapper.height() + "px");
+              //jQuery("#ie7root .wXhoriznav ul li").css("position", "static");
+            } else {
+              clearInterval(placeAdsInterval);
+              clearInterval(pushDownAdTimer);
+              //jQuery("#ie7root .wXhoriznav ul li").css("position", "relative");
+            }
+          }, 20);
+        });
+      }
+    });
+
+  </script>
+
+  
+
+<div class="wXhorizcont">
+  <div class="wXhoriznav">
+    <ul id="wXhorizmenu">
+      <!-- begin new menu-->
+      <!-- Local Weather * -->
+      <li id="hnav-localwx"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather.html?zcode=Z5010/&lang_id=zh-cn">Local</a>
+        <ul>
+          <li id="hnav-localconds"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather.html?zcode=Z5010/&lang_id=zh-cn">Local Weather Conditions</a></li>
+          <li id="hnav-featcams"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-cams/local-cams.html?zcode=Z5010/&lang_id=zh-cn">Weather Cameras</a></li>
+          <li id="hnav-traffic"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/Wheeling-traffic.html?zcode=Z5010/&lang_id=zh-cn">Traffic Cameras</a></li>
+        </ul>
+      </li>
+      <!-- Forecast * -->
+      <li id="hnav-fcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/7-day-forecast.html?zcode=Z5010/&lang_id=zh-cn">Forecasts</a>
+        <ul>
+          <li id="hnav-7dayfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/7-day-forecast.html?zcode=Z5010/&lang_id=zh-cn">7 Day Forecast</a></li>
+          <li id="hnav-detailfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/detailed-forecast.html?zcode=Z5010/&lang_id=zh-cn">Detailed Forecast</a></li>
+          <li id="hnav-hrlyfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/hourly-forecast.html?zcode=Z5010/&lang_id=zh-cn">Hourly Forecast</a></li>
+          
+          <li id="hnav-wkendfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/weekend-forecast.html?zcode=Z5010/&lang_id=zh-cn">Weekend Forecast</a></li>
+          <!-- Index Sections * -->
+          
+          <li id="hnav-golffcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/golf-forecast.html?zcode=Z5010/&lang_id=zh-cn">Golf Forecast</a></li>
+          <li id="hnav-familyoutdoorfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/familyoutdoor-forecast.html?zcode=Z5010/&lang_id=zh-cn">Family Forecast</a></li>
+          <li id="hnav-fitnessfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/fitness-forecast.html?zcode=Z5010/&lang_id=zh-cn">Fitness Forecast</a></li>
+          <li id="hnav-outdoornatfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/outdoor-nature-forecast.html?zcode=Z5010/&lang_id=zh-cn">Outdoor Nature Forecast</a></li>
+          <li id="hnav-achespainsfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/aches-pains-forecast.html?zcode=Z5010/&lang_id=zh-cn">Aches & Pains Forecast</a></li>
+          <li id="hnav-beautyfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/beauty-forecast.html?zcode=Z5010/&lang_id=zh-cn">Beauty Forecast</a></li>
+
+          
+          <li id="hnav-gamedayfcast"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-forecast/game-day-forecast.html?zcode=Z5010/&lang_id=zh-cn">Game Day Forecast</a></li>
+          
+          <li id="Li1"><a href="http://weather.ca.weatherbug.com/lifestyle/fashion-forecast/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Fashion Forecast</a></li>
+        </ul>
+      </li>
+      <!-- Radar and Maps * -->
+      <li id="hnav-maps">
+        
+        <a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-radar/doppler-radar.html?zcode=Z5010/&lang_id=zh-cn">Maps</a>
+        
+        <ul>
+          <li id="hnav-slmap"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/interactive-map.html?zcode=Z5010/&lang_id=zh-cn" title="Interactive Map">Interactive Map</a></li>
+          <li id="hnav-doppler"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-radar/doppler-radar.html?zcode=Z5010/&lang_id=zh-cn">Doppler Radar</a></li>
+          <li id="hnav-satellite"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/satellite/satellite-radar.html?zcode=Z5010/&lang_id=zh-cn">Satellite/Radar</a></li>
+          <li id="hnav-infrared"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/satellite/infrared-satellite.html?zcode=Z5010/&lang_id=zh-cn">Infrared Satellite</a></li>
+          <li id="hnav-lightning"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/lightning.html?zcode=Z5010/&lang_id=zh-cn">Lightning Map</a></li>
+          <li id="hnav-visible"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/satellite/visible-satellite.html?zcode=Z5010/&lang_id=zh-cn">Visible Satellite</a></li>
+          <li id="hnav-temps"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/temperature-map.html?zcode=Z5010/&lang_id=zh-cn">Temperature Map</a></li>
+          <li id="hnav-todayhigh"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/todays-high-temps.html?zcode=Z5010/&lang_id=zh-cn">Today's High Temps</a></li>
+          <li id="hnav-tomlow"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/tonights-low-temps.html?zcode=Z5010/&lang_id=zh-cn">Tonight's Low Temps</a></li>
+          <li id="hnav-tomhigh"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/tomorrows-high-temps.html?zcode=Z5010/&lang_id=zh-cn">Tomorrow's High Temps</a></li>
+          <li id="hnav-windsp"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/surface-winds-map.html?zcode=Z5010/&lang_id=zh-cn">Wind Speed Map</a></li>
+          <li id="hnav-windch"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/wind-chill-map.html?zcode=Z5010/&lang_id=zh-cn">Wind Chill Map</a></li>
+          <li id="hnav-cameramap"><a href="http://weather.ca.weatherbug.com/weather-cams/find-cams.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Weather Cameras Map</a></li>
+          <li id="hnav-allergies"><a href="http://weather.ca.weatherbug.com/allergy/allergies-map.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Allergies Map</a></li>
+          <li id="hnav-flumap"><a href="http://weather.ca.weatherbug.com/cold-flu/flu-outbreak-map.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Flu Activity Map</a></li>
+          <li id="hnav-droughtmap"><a href="http://weather.ca.weatherbug.com/green-living/drought-map.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Drought Map</a></li>
+          <li id="hnav-hurricane-map"><a href="http://weather.ca.weatherbug.com/hurricanes/hurricane-tracker.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Hurricane Tracker</a></li>
+          
+        </ul>
+      </li>
+      
+      <!-- Severe Weather * -->
+      
+      <li id="hnav-severe"><a href="http://weather.ca.weatherbug.com/severe-weather/national-alert-map.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Alerts</a>
+        
+        <ul>
+          <li id="hnav-localerts"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn">Local Weather Alerts</a></li>
+          
+          <li id="hnav-natalerts"><a href="http://weather.ca.weatherbug.com/severe-weather/national-alert-map.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">National Weather Alerts</a></li>
+          
+          <li id="hnav-hurrctr"><a href="http://weather.ca.weatherbug.com/hurricanes/hurricane.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Hurricane Center</a></li>
+        </ul>
+      </li>
+      <!-- News * -->
+      <li id="hnav-news"><a href="http://weather.ca.weatherbug.com/weather-news/weather-reports.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">News</a>
+        <ul>
+          <li id="hnav-topnews"><a href="http://weather.ca.weatherbug.com/weather-news/weather-reports.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Top Stories</a></li>
+          <li id="hnav-newsarchive"><a href="http://weather.ca.weatherbug.com/weather-news/news-archive.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">News Archive</a></li>
+          <li id="hnav-pr"><a href="http://weather.ca.weatherbug.com/news/press-releases.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Press Releases</a></li>
+          
+          
+        </ul>
+      </li>
+
+      <!-- Multimedia * -->
+      <li id="hnav-photogallery"><a href="http://photos.weatherbug.com">Photos</a>
+      </li>
+
+      
+
+
+      <!-- Health * -->
+      <li id="hnav-health"><a href="http://weather.ca.weatherbug.com/cold-flu.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Health</a>
+        <ul>
+          <li id="hnav-allergies"><a href="http://weather.ca.weatherbug.com/pollen-forecast.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Allergies</a></li>
+          <li id="hnav-coldflu"><a href="http://weather.ca.weatherbug.com/cold-flu.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Cold &amp; Flu</a></li>
+
+          
+          <li id="hnav-achepainlife"><a href="http://weather.ca.weatherbug.com/lifestyle/aches-pains/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Aches &amp; Pains</a></li>
+          
+          <li id="hnav-aq"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/air-quality.html?zcode=Z5010/&lang_id=zh-cn">Air Quality</a></li>
+          <li id="hnav-uv"><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/uv-index.html?zcode=Z5010/&lang_id=zh-cn">UV Index</a></li>
+          
+        </ul>
+      </li>
+      <!-- Lifestyle -->
+      <li id="hnav-lifestyle"><a href="http://weather.ca.weatherbug.com/lifestyle/home-garden/gardening-forecast/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Lifestyle</a>
+        <ul>
+          
+          <li id="hnav-golflife"><a href="http://weather.ca.weatherbug.com/lifestyle/golf/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Golf</a></li>
+          <li id="hnav-familyoutdoorlife"><a href="http://weather.ca.weatherbug.com/lifestyle/familyoutdoor/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Family</a></li>
+          <li id="hnav-fitnesslife"><a href="http://weather.ca.weatherbug.com/lifestyle/fitness/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Fitness</a></li>
+          <li id="hnav-outdoornatlife"><a href="http://weather.ca.weatherbug.com/lifestyle/outdoor-nature/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Outdoor Nature</a></li>
+          
+          
+          <li id="hnav-fashion"><a href="http://weather.ca.weatherbug.com/lifestyle/fashion-forecast/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Fashion</a></li>
+          <li id="hnav-travel"><a href="http://weather.ca.weatherbug.com/travel/home.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Travel</a></li>
+          <li id="hnav-beachboat"><a href="http://weather.ca.weatherbug.com/beach-and-boating.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Beach &amp; Boating</a></li>
+          <li id="hnav-green"><a href="http://weather.ca.weatherbug.com/green-living.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Green Living</a></li>
+          <li id="hnav-snowski"><a href="http://weather.ca.weatherbug.com/snow-ski/us-snow-ski.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Snow &amp; Ski</a></li>
+          
+          <li id="hnav-homegarden"><a href="http://weather.ca.weatherbug.com/lifestyle/home-garden/gardening-forecast/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Home &amp; Garden</a></li>
+          
+          <li id="hnav-beautylife"><a href="http://weather.ca.weatherbug.com/lifestyle/beauty/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Beauty</a></li>
+          
+          <li id="hnav-gamedaylife"><a href="http://weather.ca.weatherbug.com/lifestyle/game-day/MO/Wheeling.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Game Day</a></li>
+          
+        </ul>
+      </li>
+      <!-- Weather Tools -->
+      <li id="hnav-tools"><a href="http://weather.ca.weatherbug.com/weatherbug-apps.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Tools</a>
+        <ul>
+          <li id="hnav-deskwx"><a href="http://weather.ca.weatherbug.com/weatherbug-apps.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">WeatherBug Apps</a></li>
+          <li id="hnav-sparkAlert"><a href="http://weather.ca.weatherbug.com/spark-alert.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Spark&#153;</a></li>
+          <li id="hnav-api"><a href="http://weather.ca.weatherbug.com/desktop-weather/api.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Pulse API</a></li>
+          <li id="hnav-login"><a href="http://weather.ca.weatherbug.com/weather-blogs.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Backyard Community</a></li>
+          <li id="hnav-newMedia"><a href="http://weather.ca.weatherbug.com/new-media.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">New Media</a></li>
+          <li id="hnav-glossary"><a href="http://weather.ca.weatherbug.com/weather-glossary/weather-glossary.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Weather Glossary</a></li>
+        </ul>
+      </li>
+      <!-- About WeatherBug -->
+      <li id="hnav-about"><a href="http://weather.ca.weatherbug.com/about-us.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">About</a>
+        <ul>
+          <li id="hnav-aboutus"><a href="http://weather.ca.weatherbug.com/about-us.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Company Overview</a></li>
+          <li id="hnav-advertising"><a href="http://weather.ca.weatherbug.com/advertising.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Advertising</a></li>
+          <li id="hnav-support"><a href="http://weather.ca.weatherbug.com/about-weatherbug/support-faq/desktop-products.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Support FAQs</a></li>
+          <li id="hnav-pro"><a href="http://www.earthnetworks.com" target="_blank">Earth Networks</a></li>
+          <li id="hnav-prosolutions"><a href="http://weather.weatherbug.com/weatherbug-professional/" target="_blank">Enterprise Solutions</a></li>
+          <li id="hnav-proprods"><a href="http://weather.weatherbug.com/weather-education/default.asp" target="_blank">WeatherBug Schools</a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- end new menu -->
+  </div>
+</div>
+
+<script language="javascript" type="text/javascript">
+  buildHorizMenu();
+</script>
+
+</div>
+
+        <div id="content-wrapper">
+		    
+		<div id="breadcrumb">
+			<ul>
+    <li><a href="http://weather.ca.weatherbug.com/world-weather.html?zcode=Z5010/&lang_id=zh-cn">世界天气</a></li>
+    <li>&gt; <a href="http://weather.ca.weatherbug.com/North-America-weather.html?zcode=Z5010/&lang_id=zh-cn">North America 天气</a></li>
+<li>&gt; <a href="http://weather.ca.weatherbug.com/USA-weather.html?zcode=Z5010/&lang_id=zh-cn">USA 天气</a></li>
+<li>&gt; <a href="http://weather.ca.weatherbug.com/USA/Missouri-weather.html?zcode=Z5010/&lang_id=zh-cn">Missouri</a></li>
+            <li>&gt; <a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather.html?zcode=Z5010/&lang_id=zh-cn">Wheeling</a></li>
+<li>&gt; <a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather.html?zcode=Z5010/&lang_id=zh-cn">64688</a></li>
+
+			</ul>
+    </div>
+
+<div id="brdcrmb-chg-units">
+	<span class="brdcrmb-chg-units-label">Change Units:</span>
+	
+		<span class="brdcrmb-currtemp here">&deg;F</span>
+	<span class="brdcrmb-txt">&nbsp;|&nbsp;</span><a href="#" onclick="window.location=window.location.href.replace(/&units=\d{1}/g,'') + '&units=1';return false;"  class="brdcrmb-currtemp">&deg;C</a>
+	
+</div>
+
+<div class="clearfloats"></div>
+		    <div id="content">
+			    <div class="column" id="nav">
+				    
+<div class="box" id="nav-vert">
+
+
+
+<!-- tools section -->
+
+
+<!-- Severe Weather -->
+
+<div class="boxhdr">
+		<h2>恶劣天气</h2>
+	</div>
+	<div class="boxbody">
+		<ul class="vert-nav-menu" id="vnav-severe">
+			<li id="vnav-localerts"  class="here">
+				<a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn" title="当地天气警报" >当地天气警报</a>
+			</li>
+			
+				<li id="vnav-natalerts" >
+					<a href="http://weather.ca.weatherbug.com/severe-weather/national-alert-map.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="国家天气警报" >国家天气警报</a>
+				</li>
+			
+			<li id="vnav-hurrctr" >
+				<a href="http://weather.ca.weatherbug.com/hurricanes/hurricane.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Hurricane Center" >Hurricane Center</a>
+				
+			</li>
+			
+		</ul>
+	</div>
+
+<!-- News -->
+
+<!-- Multimedia -->
+
+<!-- Health -->
+
+</div><!-- end menu header -->
+
+					<div class="ad-160x600-wrap">
+					    
+	                    <div class="ad-160x600">
+		                    <div id="wXcds4-ad" class="wXcds4" onload="document.getElementById('wXcds4').style.visibility='hidden'"><noscript><iframe name="cds4" src="http://pub.weatherbug.com/RealMedia/ads/adstream_sx.cgi/www.wthrwbug.com/HM@x15?&LNG=zhcn&PC=Z5010/&Z3=64688&L2=Wheeling&L3=MO&L5=USA&L1=616&L4=49&WO1=17.1&WO6=30.54&WO4=45&FC1=7&_RM_HTML_KEYWORDFC1_=7&FC2=26&FC3=4&FC7=28&FC9=32&HO1=0.3" width="160" height="600" allowtransparency="true" frameborder="0" scrolling="no" style="background-color:transparent; overflow:hidden; margin-bottom:5px;"></iframe></noscript></div>
+	                    </div>
+                    </div>				    
+			    </div>
+			    <div class="column" id="guts">
+			    
+<div id="guts-header">
+    <h1>Local Severe Weather Alerts</h1>
+    
+<div id="share-wrap">
+<script type="text/javascript" language="javascript">
+
+    var hideSMSID = null;
+    
+    function showSms() {
+		clearTimeout(hideSMSID);
+		var divSmsElem = jQuery("#divSms");
+		var divSmsTextElem = jQuery("#smsText");
+		var divSmsLink = jQuery("#aSms");
+
+		var divSmsClose = jQuery("#sms-close-btn");
+		divSmsClose.bind("click", function() { hideSms(); });
+
+		divSmsElem.css("top", divSmsLink.offset().top + 4 + "px");
+		divSmsElem.css("left", divSmsLink.offset().left - 261 + "px");
+
+		divSmsPageName = "Local Weather Conditions";
+		if (jQuery("#guts-header h1").length > 0) {
+			divSmsPageName = jQuery("#guts-header h1").html();
+		}
+
+		divSmsElem.show();
+		if (divSmsTextElem.attr("value").search(/\S/) == -1) {
+			divSmsTextElem.attr("disabled", true);
+			divSmsTextElem.css("background", "#fff url(http://img.weather.weatherbug.com/images/common/ajax-loader.gif) no-repeat center");
+			jQuery.ajax({
+			    url: "http://weather.ca.weatherbug.com/data/getsmsURL.aspx?tURL=" + escape(window.location),
+				datatype: "text",
+				success: function(data) {
+					divSmsMsg = "Check out the " + divSmsPageName + " from WeatherBug! " + data;
+				},
+				error: function(data) {
+					divSmsMsg = "Check out WeatherBug! http://weather.ca.weatherbug.com";
+				},
+				complete: function()	{
+					divSmsTextElem.css("background", "");
+					divSmsTextElem.attr("value", divSmsMsg);
+					divSmsTextElem.attr("disabled", false);
+				}
+			});
+		}
+    }
+
+
+    
+
+
+
+    function hideSms() {
+		hideSMSID = null;
+
+        var divSmsElem = jQuery("#divSms");
+
+        divSmsElem.hide();
+
+        var divSmsTo = jQuery("#cellEmailTo");
+        var divSmsFrom = jQuery("#cellFrom");
+        var divSmsCarr1 = jQuery("#carrierEmailRecip");
+        var divSmsCarr2 = jQuery("#carrierEmailSender");
+        
+        
+        divSmsTo.attr("value","");
+        divSmsFrom.attr("value","");
+
+        divSmsCarr1.attr("selectedIndex","0");
+        divSmsCarr2.attr("selectedIndex","0");
+        
+    }
+    
+    function sendSmsMsg()
+    {
+        if ((cellEmailTo.value.length > 6) && (cellFrom.value.length > 6))
+        {
+            var myHttp = getHttpObj();
+            var smsTo = cellEmailTo.value + carrierEmailRecip.value;
+            var smsFrom = cellFrom.value + carrierEmailSender.value;
+            var sms = smsText.value;
+            if (myHttp != null) {
+                myHttp.open("GET", "http://weather.ca.weatherbug.com/data/sendsms.asmx/SendSMS?smsText=" + encodeURI(sms) + "&cellEmailTo=" + smsTo + "&cellFrom=" + smsFrom, true);
+                myHttp.onreadystatechange = function() {
+                	if ((myHttp.readyState == 4) && (myHttp.status == 200)) {
+                		var response = myHttp.responseText;
+
+                		if (response.indexOf("true") > 0) {
+                			alert("Text message successfully sent!")
+                			cellEmailTo.value = "";
+                			cellFrom.value = "";
+                			hideSms();
+                		}
+                		else {
+                			alert("Unable to send SMS");
+                		}
+                	}
+                	else if (myHttp.readyState == 4) {
+                		alert("Unable to send SMS");
+                	}
+                }
+                myHttp.send(null);
+            }
+        }
+    }
+    function maxLength(field, maxChars) {
+        if (field.value.length >= maxChars) {
+            event.returnValue = false;
+            return false;
+        }
+    }
+
+    function maxLengthPaste(field, maxChars) {
+        event.returnValue = false;
+        if ((field.value.length + window.clipboardData.getData("Text").length) > maxChars) {
+            return false;
+        }
+        event.returnValue = true;
+    }
+
+  
+</script>
+<ul class="menu">
+	<script type="text/javascript">
+		document.write('<li><a href="javascript:window.print();">Print</a></li>');	
+	</script>
+	
+	<li><a class="a2a_dd" href="http://www.addtoany.com/share_save?">Share/Save/Email</a>
+		<script type="text/javascript">
+			a2a_show_title = 1;
+			a2a_num_services = 10;
+			a2a_color_main = "254590";
+			a2a_color_border = "668cdc";
+			a2a_color_link_text = "10469d";
+			a2a_color_link_text_hover = "ffffff";
+			a2a_color_arrow_hover = "fff";
+			var a2a_config = a2a_config || {};
+			a2a_config.onclick = 1;
+			a2a_config.show_title = false;
+
+		jQuery(document).ready(function() {
+			jQuery("#a2apage_dropdown").bind("mouseout", a2a_onMouseOut_delay);
+		});
+			
+		</script>
+		
+		
+		
+	</li>
+</ul>
+
+</div>
+
+    <div class="clearfloats"></div>
+</div>
+                    
+    <div class="box box-severe  showcase" id="box-severe-local">
+    
+<script language="javascript" type="text/javascript">
+    var section = "nav_section";
+    function checkLen()
+    {
+        var txtBox = document.getElementById('loc');
+        
+        
+        txtBox.value = txtBox.value.replace(">", "").replace("<", "");
+        
+        if (txtBox.value.length < 3 )
+        {
+            window.alert('Please narrow your search to 3 or more characters');
+            return false;
+        }
+        try
+        {
+            isClick = true;
+            if (section="Traffic")
+            {
+                if (camTimer != null)
+                {
+                    clearTimeout(camTimer);
+                }
+            }
+        }catch(e){}
+   
+        return true;
+    }
+</script>
+
+
+<div class="boxhdr">
+    
+    <h2>Wheeling, MO 64688</h2>
+    
+    <div id="loc-change-wrap">
+        <form class="vert-align" action="http://weather.ca.weatherbug.com/Common/SearchResults.html" method="get" name="loc-change" id="loc-change" onsubmit="checkLen()">
+            <table cellspacing="0" class="vert-align">
+                <tr>
+        	        <td>
+
+<script language="javascript" type="text/javascript">
+function doRecentLocationsSection()
+{
+
+    try { SetRecentLocation('USA','MO','Wheeling','64688','KCDJ'); } catch (e) {}
+
+    try { WriteRecentLocationsHTML('http://weather.ca.weatherbug.com','-weather.html','当前位置'); } catch (e) {}
+}
+//moved to adheadctl.ascx to be called at the bottom of the page
+//SafeAddOnload(doRecentLocationsSection);
+</script>
+<div id="loc-recent-div">
+
+</div> 
+<script type="text/javascript" src="http://weather.ca.weatherbug.com/script/recentLoc.js"></script></td>
+                    <td><label>更改位置</label></td>
+                    
+                    
+                     <td>
+                        <div class=" location">
+                            <input type="text" name="loc" onclick="this.value=''" id="loc" class="input" value="输入城市或美国邮政编码" />
+                            <input type="hidden" name="is_search" id="is_search" value="true" />
+                            <input type="hidden" name="nav_section" id="nav_section" value="45" />
+                            <input type="hidden" name="loc_country" id="loc_country" value="WORLD" />
+                            <input type="hidden" name="zcode" value="Z5010/"/><input type="hidden" name="lang_id" value="zh-cn"/>
+                        </div>
+                    </td>
+                    <td><input type="submit" name="submit" class="submit" value="GO" /></td>
+                </tr>	
+            </table>
+        </form>
+    </div>
+    
+    <div class="clearfloats"></div>   
+    
+</div>    
+    <div class="boxbody">
+  <!-- begin state section -->
+  
+    	<h3>
+            警报 适用于 Waseca County
+		</h3>
+        <div id="box-severe-detail">
+           
+            <h2>活动警报数量： 1</h2>
+            
+                    <div class="alert">
+						<h5>
+							警报 1 - Wind Chill Advisory
+						
+						</h5>
+						<p class="alert-desc-short">
+							A WIND CHILL ADVISORY IS IN EFFECT UNTIL 9:00AM CST SATURDAY, JANUARY 10
+						</p>
+						<p class="alert-begin">
+						    Event Start: 2015年1月9日 23:00 CST
+						    
+						</p>
+						<p class="alert-end">
+						    Event End: 2015年1月10日 9:00 CST
+							
+						</p>
+						
+							<a class="alert-info-view" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27161&alert_id=nws85133005fMN084" rel="nofollow">
+								详细信息
+							</a>
+							 
+					</div>
+                    
+           	</div>
+            
+    
+  <!-- end done -->
+      
+      <h4>Minnesota 州地图</h4>
+      
+        <div class="column one">
+        <img src="http://wwc.stormdisplay.com/sas/images/state_MN.jpg?rnd=" width="400" height="430" usemap="#state_alerts_map" />
+        
+        <map name="state_alerts_map">
+          
+          <area alt="North Dakota" title="North Dakota" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=ND" shape="poly" coords="3,45,1,46,1,238,79,240,73,206,70,161,58,104,54,47" />
+          
+          <area alt="South Dakota" title="South Dakota" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=SD" shape="poly" coords="3,240,1,242,2,427,83,427,85,421,80,410,81,407,78,395,85,392,85,281,69,259,75,254,81,242" />
+          
+          <area alt="Iowa" title="Iowa" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=IA" shape="poly" coords="317,390,81,395,84,403,82,409,86,414,85,426,333,427,328,415,332,406,325,391" />
+          
+          <area alt="Michigan" title="Michigan" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MI" shape="poly" coords="397,172,381,176,370,184,354,193,360,196,368,206,397,211" />
+          
+          <area alt="Wisconsin" title="Wisconsin" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=WI" shape="poly" coords="331,173,327,172,321,177,291,190,279,188,270,192,271,228,251,245,246,257,252,262,252,313,277,330,286,333,296,347,314,357,325,371,324,374,328,395,335,404,330,416,336,427,396,427,397,215,374,210,359,198,338,189,334,192,328,194,327,191,331,179" />
+          
+          <area alt="Aitkin" title="Aitkin" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27001" shape="poly" coords="398,2,397,428,398,428" />
+          
+          <area alt="Aitkin" title="Aitkin" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27001" shape="poly" coords="204,169,201,198,204,218,219,219,219,222,233,223,233,170" />
+          
+          <area alt="Yellow Medicine" title="Yellow Medicine" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27173" shape="poly" coords="398,2,397,428,398,428" />
+          
+          <area alt="Yellow Medicine" title="Yellow Medicine" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27173" shape="poly" coords="119,304,115,305,113,310,86,311,86,321,122,321,124,326,134,326,134,320" />
+          
+          <area alt="Wright" title="Wright" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27171" shape="poly" coords="398,2,397,428,398,428" />
+          
+          <area alt="Wright" title="Wright" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27171" shape="poly" coords="195,273,189,278,183,280,184,298,205,298,205,295,214,283,213,280" />
+          
+          <area alt="Winona" title="Winona" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27169" shape="poly" coords="398,2,397,428,398,428" />
+          
+          <area alt="Winona" title="Winona" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27169" shape="poly" coords="286,346,284,348,285,366,318,364,301,351" />
+          
+          <area alt="Wilkin" title="Wilkin" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27167" shape="poly" coords="398,2,397,428,398,428" />
+          
+          <area alt="Wilkin" title="Wilkin" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27167" shape="poly" coords="74,196,73,198,82,233,93,232,92,196" />
+          
+          <area alt="Watonwan" title="Watonwan" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27165" shape="poly" coords="398,2,397,428,398,428" />
+          
+          <area alt="Watonwan" title="Watonwan" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27165" shape="poly" coords="160,355,158,356,159,370,179,369,178,355" />
+          
+          <area alt="Washington" title="Washington" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27163" shape="poly" coords="242,279,240,281,242,310,250,312,251,279" />
+          
+          <area alt="Waseca" title="Waseca" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27161" shape="poly" coords="210,349,208,350,210,370,224,369,222,349" />
+          
+          <area alt="Wadena" title="Wadena" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27159" shape="poly" coords="158,185,144,186,144,212,159,212" />
+          
+          <area alt="Wabasha" title="Wabasha" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27157" shape="poly" coords="270,331,263,337,263,346,274,348,274,351,284,351,284,348,293,345,288,336,276,331" />
+          
+          <area alt="Traverse" title="Traverse" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27155" shape="poly" coords="83,235,82,241,70,261,93,262,94,236" />
+          
+          <area alt="Todd" title="Todd" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27153" shape="poly" coords="146,213,144,215,146,250,166,249,164,214" />
+          
+          <area alt="Swift" title="Swift" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27151" shape="poly" coords="104,274,102,277,102,289,138,289,139,275" />
+          
+          <area alt="Stevens" title="Stevens" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27149" shape="poly" coords="98,252,96,255,96,273,117,273,116,252" />
+          
+          <area alt="Steele" title="Steele" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27147" shape="poly" coords="226,349,225,369,239,370,240,350" />
+          
+          <area alt="Stearns" title="Stearns" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27145" shape="poly" coords="173,250,145,251,145,272,156,273,163,278,180,280,189,279,193,273,182,250" />
+          
+          <area alt="St. Louis" title="St. Louis" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27137" shape="poly" coords="232,68,234,127,235,184,267,185,269,191,278,186,277,185,289,172,286,94,280,92,274,84,265,85,264,92,261,92,255,83,256,80,250,79,248,76,249,74" />
+          
+          <area alt="Sibley" title="Sibley" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27143" shape="poly" coords="170,317,170,333,200,332,205,321,202,320,201,317,186,323,174,323,173,317" />
+          
+          <area alt="Sherburne" title="Sherburne" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27141" shape="poly" coords="203,263,189,265,190,268,216,282,215,263" />
+          
+          <area alt="Scott" title="Scott" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27139" shape="poly" coords="219,311,202,327,228,325,227,313" />
+          
+          <area alt="Roseau" title="Roseau" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27135" shape="poly" coords="92,46,90,49,91,73,134,73,134,64,143,63,134,46" />
+          
+          <area alt="Rock" title="Rock" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27133" shape="poly" coords="88,373,86,375,86,393,103,394,103,373" />
+          
+          <area alt="Rice" title="Rice" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27131" shape="poly" coords="221,327,219,329,219,347,239,348,240,331,231,331,227,327" />
+          
+          <area alt="Renville" title="Renville" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27129" shape="poly" coords="165,306,131,307,130,315,160,332,168,332,167,317,173,316,173,307" />
+          
+          <area alt="Redwood" title="Redwood" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27127" shape="poly" coords="138,320,136,321,134,329,125,329,125,350,146,350,147,344,156,344,157,333" />
+          
+          <area alt="Red Lake" title="Red Lake" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27125" shape="poly" coords="88,112,86,114,87,119,114,124,118,112" />
+          
+          <area alt="Ramsey" title="Ramsey" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27123" shape="poly" coords="233,290,231,292,233,304,241,303,241,291" />
+          
+          <area alt="Pope" title="Pope" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27121" shape="poly" coords="119,252,117,255,118,273,144,272,143,252" />
+          
+          <area alt="Polk" title="Polk" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27119" shape="poly" coords="61,99,58,100,70,139,125,140,123,114,120,114,114,125,85,118,84,100" />
+          
+          <area alt="Pipestone" title="Pipestone" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27117" shape="poly" coords="88,351,86,353,86,371,103,372,103,351" />
+          
+          <area alt="Pine" title="Pine" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27115" shape="poly" coords="238,208,236,211,234,250,247,250,250,244,269,229,268,208" />
+          
+          <area alt="Pennington" title="Pennington" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27113" shape="poly" coords="87,99,85,101,86,110,123,113,123,99" />
+          
+          <area alt="Otter Tail" title="Otter Tail" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27111" shape="poly" coords="101,191,99,192,99,195,94,197,96,229,143,228,142,192" />
+          
+          <area alt="Olmsted" title="Olmsted" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27109" shape="poly" coords="259,348,258,370,269,368,284,368,284,354,273,352,273,349" />
+          
+          <area alt="Norman" title="Norman" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27107" shape="poly" coords="72,141,70,142,71,163,103,162,102,142" />
+          
+          <area alt="Nobles" title="Nobles" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27105" shape="poly" coords="106,373,104,374,105,394,131,393,130,373" />
+          
+          <area alt="Nicollet" title="Nicollet" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27103" shape="poly" coords="199,333,162,334,192,350,195,348" />
+          
+          <area alt="Murray" title="Murray" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27101" shape="poly" coords="106,351,104,353,104,371,130,372,130,351" />
+          
+          <area alt="Mower" title="Mower" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27099" shape="poly" coords="243,370,242,390,268,390,267,371" />
+          
+          <area alt="Morrison" title="Morrison" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27097" shape="poly" coords="168,216,166,217,167,250,179,249,181,246,205,246,202,235,202,226,178,225,179,219,177,217" />
+          
+          <area alt="Mille Lacs" title="Mille Lacs" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27095" shape="poly" coords="205,220,203,221,203,236,206,238,206,262,215,262,215,236,218,235,219,221" />
+          
+          <area alt="Meeker" title="Meeker" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27093" shape="poly" coords="164,279,162,282,164,305,173,305,175,300,184,300,183,282" />
+          
+          <area alt="Mcleod" title="Mcleod" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27085" shape="poly" coords="187,300,174,302,175,322,195,316,195,301" />
+          
+          <area alt="Martin" title="Martin" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27091" shape="poly" coords="161,372,159,373,160,393,186,392,185,372" />
+          
+          <area alt="Marshall" title="Marshall" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27089" shape="poly" coords="60,75,58,78,59,98,122,98,123,75" />
+          
+          <area alt="Mahnomen" title="Mahnomen" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27087" shape="poly" coords="106,142,104,143,105,163,125,162,124,142" />
+          
+          <area alt="Lyon" title="Lyon" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27083" shape="poly" coords="105,323,103,324,104,350,124,349,123,323" />
+          
+          <area alt="Lincoln" title="Lincoln" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27081" shape="poly" coords="88,323,86,326,86,350,101,350,102,324" />
+          
+          <area alt="Le Sueur" title="Le Sueur" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27079" shape="poly" coords="203,328,198,345,208,348,217,348,218,328" />
+          
+          <area alt="Lake Of The Woods" title="Lake Of The Woods" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27077" shape="poly" coords="144,22,142,23,142,44,137,46,143,64,135,65,135,74,138,74,141,85,173,84,172,66,167,65,161,59,156,29,150,22" />
+          
+          <area alt="Lake" title="Lake" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27075" shape="poly" coords="288,94,286,93,290,171,320,138,318,93,303,101" />
+          
+          <area alt="Lac Qui Parle" title="Lac Qui Parle" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27073" shape="poly" coords="88,284,86,285,87,311,113,310,113,307,117,303,106,292" />
+          
+          <area alt="Koochiching" title="Koochiching" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27071" shape="poly" coords="175,64,173,65,176,118,200,118,203,114,230,114,228,68,219,68,213,74,201,76,197,68" />
+          
+          <area alt="Kittson" title="Kittson" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27069" shape="poly" coords="57,46,58,73,90,74,89,47" />
+          
+          <area alt="Kandiyohi" title="Kandiyohi" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27067" shape="poly" coords="142,274,140,275,140,305,162,305,160,276" />
+          
+          <area alt="Kanabec" title="Kanabec" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27065" shape="poly" coords="222,225,220,227,219,236,216,236,217,251,232,251,234,225" />
+          
+          <area alt="Jackson" title="Jackson" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27063" shape="poly" coords="145,372,132,373,132,394,158,392,157,372" />
+          
+          <area alt="Itasca" title="Itasca" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27061" shape="poly" coords="204,115,200,119,176,119,175,142,189,143,203,158,204,169,234,169,231,124,231,115" />
+          
+          <area alt="Isanti" title="Isanti" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27059" shape="poly" coords="219,252,217,253,218,271,239,271,239,265,234,263,231,252" />
+          
+          <area alt="Hubbard" title="Hubbard" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27057" shape="poly" coords="144,147,142,148,143,184,163,182,162,147" />
+          
+          <area alt="Houston" title="Houston" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27055" shape="poly" coords="320,367,303,368,303,388,325,387,322,381,323,372" />
+          
+          <area alt="Hennepin" title="Hennepin" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27053" shape="poly" coords="219,284,207,294,208,305,217,305,219,310,225,311,232,305,228,291" />
+          
+          <area alt="Grant" title="Grant" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27051" shape="poly" coords="97,230,95,233,96,251,116,250,115,230" />
+          
+          <area alt="Goodhue" title="Goodhue" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27049" shape="poly" coords="255,318,251,327,242,328,241,347,262,347,262,338,269,330,275,330,273,327" />
+          
+          <area alt="Freeborn" title="Freeborn" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27047" shape="poly" coords="216,371,214,374,215,392,241,391,240,371" />
+          
+          <area alt="Fillmore" title="Fillmore" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27045" shape="poly" coords="301,370,269,369,270,390,302,388" />
+          
+          <area alt="Faribault" title="Faribault" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27043" shape="poly" coords="211,371,188,372,187,392,213,392,213,372" />
+          
+          <area alt="Douglas" title="Douglas" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27041" shape="poly" coords="119,230,117,233,117,251,144,251,143,230" />
+          
+          <area alt="Dodge" title="Dodge" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27039" shape="poly" coords="243,348,241,350,241,368,257,368,255,348" />
+          
+          <area alt="Dakota" title="Dakota" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27037" shape="poly" coords="237,304,227,311,230,329,238,330,241,327,252,324,253,315,241,311,240,305" />
+          
+          <area alt="Crow Wing" title="Crow Wing" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27035" shape="poly" coords="181,185,178,224,202,225,202,185" />
+          
+          <area alt="Cottonwood" title="Cottonwood" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27033" shape="poly" coords="133,351,131,352,132,372,158,370,157,356,148,356,145,351" />
+          
+          <area alt="Cook" title="Cook" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27031" shape="poly" coords="325,89,320,91,322,137,327,131,357,115,381,100,368,102,361,97,331,97" />
+          
+          <area alt="Clearwater" title="Clearwater" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27029" shape="poly" coords="127,108,125,110,127,163,142,162,139,108" />
+          
+          <area alt="Clay" title="Clay" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27027" shape="poly" coords="72,164,74,196,98,196,96,164" />
+          
+          <area alt="Chisago" title="Chisago" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27025" shape="poly" coords="245,251,234,252,235,262,238,262,240,265,240,277,251,278,252,267,246,258" />
+          
+          <area alt="Chippewa" title="Chippewa" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27023" shape="poly" coords="107,290,106,291,129,313,130,306,139,306,139,291" />
+          
+          <area alt="Cass" title="Cass" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27021" shape="poly" coords="184,143,164,147,165,180,160,185,162,212,179,217,179,184,203,184,202,157" />
+          
+          <area alt="Carver" title="Carver" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27019" shape="poly" coords="198,300,196,302,197,316,200,316,207,321,216,312,217,306,208,306,206,301" />
+          
+          <area alt="Carlton" title="Carlton" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27017" shape="poly" coords="237,186,235,188,236,206,268,207,267,186" />
+          
+          <area alt="Brown" title="Brown" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27015" shape="poly" coords="160,333,158,333,157,345,148,345,149,355,179,355,178,344" />
+          
+          <area alt="Blue Earth" title="Blue Earth" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27013" shape="poly" coords="183,347,181,350,181,371,208,371,207,347,192,351" />
+          
+          <area alt="Big Stone" title="Big Stone" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27011" shape="poly" coords="72,263,86,279,86,282,100,288,101,274,95,273,95,264" />
+          
+          <area alt="Benton" title="Benton" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27009" shape="poly" coords="182,247,181,248,189,263,204,262,205,248" />
+          
+          <area alt="Beltrami" title="Beltrami" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27007" shape="poly" coords="126,75,124,76,124,106,141,109,142,145,174,144,173,87,139,84,138,75" />
+          
+          <area alt="Becker" title="Becker" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27005" shape="poly" coords="141,163,98,165,99,189,142,189" />
+          
+          <area alt="Anoka" title="Anoka" href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27003" shape="poly" coords="220,272,218,273,218,282,230,294,230,290,239,289,238,272" />
+          
+        </map>
+        
+      </div>
+    <!-- Legend -->
+        <div class="column two">    
+        
+                <div id="box-severe-key"> 
+					<h4>Advisory Color Key</h4>       
+					<ul>
+            <li>
+						    <div class="key" style="background:#999999;"></div> Winter Weather Advisory
+						    <div class="clearfloats"></div>
+                     </li>
+					</ul>
+				</div>
+				<div class="clearfloats show-ie6"></div>            
+        
+            <p class="note">
+                注意：由于警报发布和地图处理之间存在几分钟的延迟，左侧图像可能不是您所在郡当前警报状态的实时反映。
+			</p>
+		</div>
+		<!-- End Legend -->
+		
+      
+        <div class="clearfloats"></div>
+	</div>
+</div>
+
+                    <!-- testing -->
+				    <div class="column" id="middle">
+					    <div class="column equalize" id="box-fcast-maps-wrap">
+					    
+<div class="box" id="box-fcast-maps">
+	<div class="boxhdr">
+		<h2>
+			<a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/temperature-map.html?zcode=Z5010/&lang_id=zh-cn">
+				Temperature and Forecast Maps 
+			</a>
+		</h2>
+	</div>
+	<div class="boxbody">
+	    
+		<div class="column one">
+				
+                <a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/temperature-map.html?zcode=Z5010/&lang_id=zh-cn" rel="nofollow">
+					<img src="http://radarimg.weatherbug.com/images/AWSRadars/regional_current_temps/NC/currenttemps.NC.60.jpg?rnd=2-010920151923" alt="最近温度图 Missouri" border="0" />
+				</a>
+		</div>
+		<div class="column two">
+			<ul>
+                <li><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/temperature-map.html?zcode=Z5010/&lang_id=zh-cn" rel="nofollow">最近&nbsp;Temp</a></li>
+                <li><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/todays-high-temps.html?zcode=Z5010/&lang_id=zh-cn" rel="nofollow">Today's&nbsp;高温</a></li>
+                <li><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/tonights-low-temps.html?zcode=Z5010/&lang_id=zh-cn" rel="nofollow">Tonight's&nbsp;低温</a></li>
+                <li><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/weather-maps/tomorrows-high-temps.html?zcode=Z5010/&lang_id=zh-cn" rel="nofollow">Tomorrow's&nbsp;高温</a></li>
+			</ul>
+		</div>
+		
+		<div class="clearfloats"></div>
+	</div>
+</div>
+ 
+						
+					    </div>
+					    <div class="column equalize" id="box-local-radar-wrap">
+						    
+<div class="box" id="box-local-radar">
+	<div class="boxhdr">
+		<h2><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-radar/doppler-radar.html?zcode=Z5010/&lang_id=zh-cn">Radar for Wheeling, MO</a></h2>
+	</div>
+	<div class="boxbody">
+		<div class="column one">
+            <a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-radar/doppler-radar.html?zcode=Z5010/&lang_id=zh-cn"><img src="http://radarimg.weatherbug.com/images/AWSRadars2/bugradar/87/radar0.jpg?rnd=2-010920151923" alt="雷达天气地图 Wheeling, MO" width="106" height="82" border="0" /></a>
+		</div>
+		<div class="column two">
+			<ul>                
+					<li><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-radar/doppler-radar.html?zcode=Z5010/&lang_id=zh-cn">放大雷达</a></li>
+					
+	    	        <script language="javascript" type="text/javascript">
+		    	        document.write("<li><a href=\"http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-radar/doppler-radar.html?zcode=Z5010/&lang_id=zh-cn&map_animate=1\">动态播放雷达</a></li>");
+    		        </script>
+		            
+		        
+	                <li><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-radar/doppler-radar.html?zcode=Z5010/&lang_id=zh-cn&radar_mode=0&image_type=6">地区雷达地图</a></li>
+	                <li><a href="http://weather.ca.weatherbug.com/MO/Wheeling-weather/local-radar/doppler-radar.html?zcode=Z5010/&lang_id=zh-cn&radar_mode=0&image_type=7">全国雷达地图</a></li>
+                			
+			</ul>
+		</div>
+		<div class="clearfloats"></div>
+	</div>
+</div>
+
+					    </div>
+					    <div class="clearfloats"></div>
+				        
+
+				          
+				        <!-- News -->
+				        
+				        
+<script language="javascript" type="text/javascript">
+
+    function featContent(image, icon, title, url, urlalt,  urltarget, shorttitle, description, link1, link1desc, link2, link2desc) {
+       
+        this.image = image;
+        this.icon = icon;
+        this.title = title;
+        this.url = url;
+        this.urlalt = urlalt;
+        this.urltarget = urltarget;
+        this.shorttitle = shorttitle;
+        this.description = description;
+        this.link1 = link1;
+        this.link1desc = link1desc;
+        this.link2 = link2;
+        this.link2desc = link2desc;
+}
+
+var contInfo = new Array();
+
+		contInfo[0] = new featContent ("http://img.weather.weatherbug.com/images/green/green-promo-icon.jpg", "http://img.weather.weatherbug.com/images/green/green-promo-icon.jpg", "Take the first steps to reduce your environmental impact.", "http://weather.ca.weatherbug.com/green-living.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ", "Green Living", "_self", "Green Living", "You too can help save our planet and put money back in your wallet. Learn how you can take the first steps to reduce your environmental impact, including driving green, easy ways you can conserve water, and energy saving tips.  To learn more and discover the benefits of going green, visit WeatherBug’s green living section.", "http://weather.ca.weatherbug.com/green-living/driving-green.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ", "Driving Green", "http://weather.ca.weatherbug.com/green-living/water-conservation.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ", "Water Conservation");contInfo[1] = new featContent ("http://img.weather.weatherbug.com/images/allergies/allergy_pollen.jpg", "http://img.weather.weatherbug.com/images/allergies/allergy_pollen.jpg", "The latest pollen forecast, including useful allergy tips.", "http://weather.ca.weatherbug.com/pollen-forecast.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ", "Allergies", "_self", "Allergies", "Get the latest pollen forecast and check current local and national allergy levels. Also, useful allergy tips, including how to recognize allergy symptoms, prevention and other facts about pollen, mold, dust mite and animal allergies. To learn more, visit WeatherBug's allergy section.", "http://weather.ca.weatherbug.com/allergy/allergy-symptoms.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ", "Symptoms", "http://weather.ca.weatherbug.com/allergy/allergy-prevention.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ", "Prevention");contInfo[2] = new featContent ("/locimages/KnowBefore/KnowBefore.jpg", "/locimages/KnowBefore/KnowBefore.jpg", "Be in the Know with WeatherBug.", "http://knowbefore.weatherbug.com/", "Know Before Blog", "_blank", "Know Before™ Blog", "Stay up-to-date on all major weather events, news and more through our new Know Before™ blog! Check it out now.", "", "", "", "");
+
+jQuery(document).ready(function() {
+    jQuery(".feature a").bind("click", function() {updateSeasonal(this.id.charAt(this.id.length - 1));return false});
+    var randomnumber=Math.floor(Math.random()*2);
+    updateSeasonal(randomnumber.toString());
+});
+
+    function updateSeasonal(thisID) {  
+    jQuery(".featured").removeClass("featured");
+    jQuery("#feat-" + thisID).addClass("featured");
+    jQuery("#box-feat-img").attr("href", contInfo[thisID].url);
+    jQuery("#box-feat-img").attr("title", contInfo[thisID].urlalt);
+    jQuery("#box-feat-img").attr("target", contInfo[thisID].urltarget);
+    jQuery("#box-feat-seasonal h3 a").attr("href", contInfo[thisID].url);
+    jQuery("#box-feat-seasonal h3 a").attr("title", contInfo[thisID].urlalt);
+    jQuery("#box-feat-seasonal h3 a").attr("target", contInfo[thisID].urltarget);
+    jQuery("#box-feat-title").html(contInfo[thisID].shorttitle);
+    jQuery("#box-feat-img img").attr("src", contInfo[thisID].image);
+    jQuery("#box-feat-img img").attr("alt", contInfo[thisID].urlalt); 
+    if( jQuery("#box-feat-img img").attr("src").indexOf("EliteforMobile2")!=-1)
+    jQuery("#box-feat-img img").attr("style", "width:65px;border:0px");
+   
+
+   
+    jQuery("#box-feat-desc").html(contInfo[thisID].description);
+    jQuery("#box-feat-lnkmore").attr("href", contInfo[thisID].url);
+    jQuery("#box-feat-lnkmore").attr("title", contInfo[thisID].urlalt);
+    jQuery("#box-feat-lnkmore").attr("target", contInfo[thisID].urltarget);
+    jQuery("#box-feat-lnk1a").attr("href", contInfo[thisID].link1);
+    jQuery("#box-feat-lnk1a").attr("title", contInfo[thisID].link1desc);
+    jQuery("#box-feat-lnk1a").html(contInfo[thisID].link1desc);
+    jQuery("#box-feat-lnk2a").attr("href", contInfo[thisID].link2);
+    jQuery("#box-feat-lnk2a").attr("title", contInfo[thisID].link2desc);
+    jQuery("#box-feat-lnk2a").html(contInfo[thisID].link2desc);
+}
+</script>
+
+<div class="box" id="box-feat">
+	<div class="boxhdr">
+		<h2>WeatherBug Featured Content</h2>
+	</div>
+	<div class="boxbody">
+		<div class="column one">
+		
+    	    <div id="feat-0" class="featured">
+    	
+    	    <div class="feature">
+				<div class="column one">
+					<a id="featURL_0" href="http://weather.ca.weatherbug.com/green-living.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Green Living" >
+						<img src="http://img.weather.weatherbug.com/images/green/green-promo-icon.jpg" alt="Green Living" style='' />
+					</a>
+				</div>
+				<div class="column two">
+					<p>
+						<a id="featURLtxt_0" href="http://weather.ca.weatherbug.com/green-living.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Green Living" >
+							Take the first steps to reduce your environmental impact.
+						</a>
+					</p>
+				</div>
+				<div class="clearfloats"></div>
+			</div>
+		</div>
+        
+    	    <div id="feat-1">
+    	
+    	    <div class="feature">
+				<div class="column one">
+					<a id="featURL_1" href="http://weather.ca.weatherbug.com/pollen-forecast.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Allergies" >
+						<img src="http://img.weather.weatherbug.com/images/allergies/allergy_pollen.jpg" alt="Allergies" style='' />
+					</a>
+				</div>
+				<div class="column two">
+					<p>
+						<a id="featURLtxt_1" href="http://weather.ca.weatherbug.com/pollen-forecast.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Allergies" >
+							The latest pollen forecast, including useful allergy tips.
+						</a>
+					</p>
+				</div>
+				<div class="clearfloats"></div>
+			</div>
+		</div>
+        
+    	    <div id="feat-2">
+    	
+    	    <div class="feature">
+				<div class="column one">
+					<a id="featURL_2" href="http://knowbefore.weatherbug.com/" title="Know Before Blog" >
+						<img src="/locimages/KnowBefore/KnowBefore.jpg" alt="Know Before Blog" style='' />
+					</a>
+				</div>
+				<div class="column two">
+					<p>
+						<a id="featURLtxt_2" href="http://knowbefore.weatherbug.com/" title="Know Before Blog" >
+							Be in the Know with WeatherBug.
+						</a>
+					</p>
+				</div>
+				<div class="clearfloats"></div>
+			</div>
+		</div>
+        
+		</div>
+		<div class="column two" id="box-feat-seasonal">
+			<div class="content">
+                <a id="box-feat-img" target="_self"  href="http://weather.ca.weatherbug.com/green-living.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" class="feat-seasonal-img" title="Green Living" >
+                    <img src="http://img.weather.weatherbug.com/images/green/green-promo-icon.jpg" alt="Green Living"   /></a>
+		        <h3><a  href="http://weather.ca.weatherbug.com/green-living.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ"  
+                   target="_self" 
+                     title="Green Living" ><span id="box-feat-title">Green Living</span></a></h3>
+		        <p><span id="box-feat-desc">You too can help save our planet and put money back in your wallet. Learn how you can take the first steps to reduce your environmental impact, including driving green, easy ways you can conserve water, and energy saving tips.  To learn more and discover the benefits of going green, visit WeatherBug’s green living section.</span><span class="boxmore"><a id="box-feat-lnkmore" href="http://weather.ca.weatherbug.com/green-living.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Green Living" >&nbsp;More&nbsp;&gt;</a></span></p>
+            </div>
+			<ul>
+                
+				<li><a id="box-feat-lnk1a" href="http://weather.ca.weatherbug.com/green-living/driving-green.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Driving Green" style="list-style-type: disc">Driving Green</a></li>
+				<li><a id="box-feat-lnk2a" href="http://weather.ca.weatherbug.com/green-living/water-conservation.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Water Conservation" style="list-style-type: disc">Water Conservation</a></li>
+			    
+            </ul>
+		</div>
+		<div class="clearfloats"></div>
+	</div>
+</div>
+				        
+<div class="box showcase" id="box-feat">
+    	<div class="boxhdr">
+		<h2>Sponsored Content</h2>
+	</div>
+	<div class="boxbody">
+	    <div style="width:484px; height:125px; background:#FFFFFF; overflow:hidden;">
+            
+<noscript>
+<div id="wXcds12-ad" style="width:500px; height:150px; "><iframe name="cds12" src="http://pub.weatherbug.com/RealMedia/ads/adstream_sx.cgi/www.wthrwbug.com/SponsoredLink@x24?&LNG=zhcn&PC=Z5010/&Z3=64688&L2=Wheeling&L3=MO&L5=USA&L1=616&L4=49&WO1=17.1&WO6=30.54&WO4=45&FC1=7&_RM_HTML_KEYWORDFC1_=7&FC2=26&FC3=4&FC7=28&FC9=32&HO1=0.3" width="500" height="150" allowtransparency="true" frameborder="0" scrolling="no" style="margin:0 0 0 0"></iframe></div>
+ 
+</noscript>
+
+    <script>
+        
+        document.write("<iframe name=\"cds12\" src=\"http://pub.weatherbug.com/RealMedia/ads/adstream_sx.cgi/www.wthrwbug.com/SponsoredLink@x24?&LNG=zhcn&PC=Z5010/&Z3=64688&L2=Wheeling&L3=MO&L5=USA&L1=616&L4=49&WO1=17.1&WO6=30.54&WO4=45&FC1=7&_RM_HTML_KEYWORDFC1_=7&FC2=26&FC3=4&FC7=28&FC9=32&HO1=0.3 " + (((typeof (ccKeywords) != "undefined") ? ("&" + ccKeywords) : "")) + "\" width=\"500\" height=\"150\" allowtransparency=\"true\" frameborder=\"0\" scrolling=\"no\" style=\"margin: 0 0 0 0\"></iframe>");
+    </script>
+ 
+	    
+	    </div>
+	</div>
+</div>
+
+				    </div>
+				    <div class="column" id="right">
+				        <div class="ad-300x250-wrap">
+				            
+	                        <div class="ad-300x250">
+		                    <div id="wXcds2-ad" class="wXcds2" onload="document.getElementById('wXcds2').style.visibility='hidden'"><noscript><iframe name="cds2" src="http://pub.weatherbug.com/RealMedia/ads/adstream_sx.cgi/www.wthrwbug.com/HM@x13?&LNG=zhcn&PC=Z5010/&Z3=64688&L2=Wheeling&L3=MO&L5=USA&L1=616&L4=49&WO1=17.1&WO6=30.54&WO4=45&FC1=7&_RM_HTML_KEYWORDFC1_=7&FC2=26&FC3=4&FC7=28&FC9=32&HO1=0.3" width="300" height="250" allowtransparency="true" frameborder="0" scrolling="no" style="background-color:transparent; overflow:hidden; margin-bottom:5px;"></iframe></noscript></div>
+                            
+	                        </div>
+                        </div>
+						
+
+<div class="box" id="box-tools">
+  <div class="boxhdr">
+    <h2>Be Prepared, Know Before
+    </h2>
+  </div>
+  <div class="boxbody">
+    <div class="column one">
+      <h3>WeatherBug Desktop</h3>
+      <a id="freq_cap_link" target="_blank" href="http://weather.ca.weatherbug.com/desktop-weather/weatherbug-desktop-application.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn?partner=organic">
+        <img src="http://img.weather.weatherbug.com/images/tools/desktop-weather/box-tools-d7-taskbar.png" alt="WeatherBug Desktop" />
+      </a>
+    </div>
+    <div class="column two">
+      <p>
+        Get faster alerts and better forecasts from the exclusive neighborhood-level WeatherBug network.
+      </p>
+      <a href="http://weather.ca.weatherbug.com/desktop-weather/weatherbug-desktop-application.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn?partner=organic" target="_blank">Learn More</a>
+    </div>
+    <div class="clearfloats"></div>
+  </div>
+</div>
+
+
+                        
+<div class="box" id="box-videos">
+	<div class="boxhdr">
+		<h2><a href="http://weather.ca.weatherbug.com/video/national-weather-forecast.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Weather Videos</a></h2>
+	</div>
+	<div class="boxbody">
+		<div class="box-video">
+			<a href="http://weather.ca.weatherbug.com/video/national-weather-forecast.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" class="thumbnail" title="Weather Forecast">
+				<img class="column" src="http://img.weather.weatherbug.com/images/common/vid-th-extreme.jpg" alt="Extreme Weather" />
+				<span class="column th-info">
+					<strong>Weather Forecast</strong>
+					
+					星期五, 一月 09, 2015 
+						
+							National weather forecast video highlighting extreme conditions, including severe weather news and events.
+						
+					<span class="anchor">Watch Video</span>
+				</span>
+				<span class="clearfloats"></span>
+			</a>
+		</div>
+
+        <!-- Remove Local video
+		<div class="box-video">
+			<a href="http://weather.ca.weatherbug.com/multimedia/local-weather-forecast-video.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" class="thumbnail"  title="Live Local Weather">
+				<img class="column" src="http://img.weather.weatherbug.com/images/common/vid-th-local.jpg" alt="Local Weather" />
+				<span class="column th-info">
+					<strong>Local Weather</strong>
+					星期五, 一月 09, 2015 
+					Local weather, including current conditons and extended forecast, from the weathercaster of your choice.
+					<span class="anchor">Watch Video</span>
+				</span>
+				<span class="clearfloats"></span>
+			</a>
+		</div>
+            -->
+		<div class="boxmore">
+			<span><a href="http://weather.ca.weatherbug.com/video/national-weather-forecast.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ" title="Multimedia" >More Videos</a> &gt;</span>
+		</div>
+	</div>
+</div>
+                        
+						 
+			            <div class="ad-300x250-wrap">
+			                  
+			                <div class="ad-300x250">
+	                            <div id="wXcds10-ad" class="wXcds10" onload="document.getElementById('wXcds10').style.visibility='hidden'"><noscript><iframe name="cds10" src="http://pub.weatherbug.com/RealMedia/ads/adstream_sx.cgi/www.wthrwbug.com/HM@?&LNG=zhcn&PC=Z5010/&Z3=64688&L2=Wheeling&L3=MO&L5=USA&L1=616&L4=49&WO1=17.1&WO6=30.54&WO4=45&FC1=7&_RM_HTML_KEYWORDFC1_=7&FC2=26&FC3=4&FC7=28&FC9=32&HO1=0.3" width="300" height="250" allowtransparency="true" frameborder="0" scrolling="no" style="background-color:transparent; overflow:hidden; margin-bottom:5px;"></iframe></noscript></div>    
+	                        </div>
+                        </div>
+				    </div>
+				    <div class="clearfloats"></div>
+			    </div>
+			    <div class="clearfloats"></div>
+		    </div>
+	    
+<script language="javascript" type="text/javascript">
+    function footerFeedback()
+    {
+        window.open('mailto:WebTeam@weatherbug.com&subject=Feedback for ca.weatherbug.com&body=%0d%0d%0d-----------------------------------------------------------------------------------%0dhttp://weather.ca.weatherbug.com/MO/Wheeling-weather/severe-weather/local-alerts.html?zcode=Z5010/&lang_id=zh-cn&alert_state=MN&alert_fips=27161','feedback','status=0,toolbar=0,location=0,menubar=0,directories=0,resizable=0,scrollbars=0,height=400,width=700'); 
+        return false;
+    }
+</script>
+<div id="footer-wrap">
+	<div id="footer">
+      
+		<div id="footer-search-wrap">
+			<script type="text/javascript" language="javascript">
+			    function ask_changeTab(link, baseUrl) {
+			        document.getElementById("askweb").className = "";
+			        document.getElementById("asklocal").className = "";
+			        document.getElementById("askimages").className = "";
+			        document.getElementById("askvideo").className = "";
+			        document.getElementById("asknews").className = "";
+			        document.getElementById("askshop").className = "";
+			        document.getElementById(link).className = "selected";
+			        document.getElementById("footer-search").action = baseUrl;
+			        askTab = link;
+			    }
+			    var askTab = "askweb";
+
+			    function ask_submit() {
+			        if (askTab == "askshop") {
+			            var query = document.getElementById('q').value;
+			            var redirUrl = 'http://ask.pronto.com/user/search.do?query=' + query + '&asko=12770&askl=dir&where=64688';
+			            window.open(redirUrl);
+			            return false;
+			        } else {
+			            return true;
+			        }
+			    }
+			</script>
+
+			<form name="footer-search" id="footer-search" target="Ask" action="http://www.ask.com/web" onsubmit="return ask_submit();">
+				<div class="column one">
+					<img src="http://img.weather.weatherbug.com/images/common/foot-logo-ask.png" alt="ASK.com" />
+				</div>
+				<div class="column two">
+					<ul id="footer-search-tabs">
+						<li id="footer-search-web"><a id="askweb" class="selected" href="javascript:ask_changeTab('askweb', 'http://www.ask.com/web')">Web</a></li>
+						<li id="footer-search-local"><a id="asklocal" href="javascript:ask_changeTab('asklocal', 'http://city.ask.com/local');">Local</a></li>
+						<li id="footer-search-imgs"><a id="askimages" href="javascript:ask_changeTab('askimages', 'http://www.ask.com/pictures');">Images</a></li>
+						<li id="footer-search-vid"><a id="askvideo" href="javascript:ask_changeTab('askvideo', 'http://www.ask.com/video');">Video</a></li>
+						<li id="footer-search-news"><a id="asknews" href="javascript:ask_changeTab('asknews', 'http://news.ask.com/news');">News</a></li>
+						<li id="footer-search-shop"><a id="askshop" href="javascript:ask_changeTab('askshop', '');">Shopping</a></li>
+					</ul>	
+					<input type="text" name="q" id="q" value="" />
+					<input type="hidden" value="dis" id="l" name="l" />
+					<input type="hidden" value="1571" id="o" name="o" />
+					<input type="hidden" value="64688" id="where" name="where" />
+					<input type="submit" name="footer-search-submit" id="footer-search-submit" value="Search" />
+				</div>
+				<div class="clearfloats"></div>
+			</form>
+		</div>
+		
+		<ul class="footer-nav" id="footer-nav-main">
+			<li class="ftr-nav-hdr">WeatherBug</li>
+			<li>
+				<div id="footer-langs-wrap">
+				<a href="javascript:return(false);">Language</a><script type="text/javascript">document.write("&nbsp;|&nbsp;");</script>
+				<div id="footer-langs" style="display:none;">
+			
+            
+            </div>
+            </div>
+			<script type="text/javascript">
+				var hideTimer = false;
+				jQuery(document).ready(function() {
+					jQuery("#footer-langs-wrap").bind("mouseover", function() {
+						if (hideTimer) {
+							clearTimeout(hideTimer);
+						}
+						jQuery("#footer-langs-wrap #footer-langs").show();
+					});
+
+					jQuery("#footer-langs").bind("mouseout", function() {
+						hideTimer = setTimeout(function() {
+							jQuery("#footer-langs-wrap #footer-langs").hide();
+						}, 200);
+					});
+				});
+			</script>
+			<noscript>
+				:
+				<a class="link" href="http://weather.ca.weatherbug.com?zcode=Z5010/&lang_id_prev=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ&zip=64688&lang_id=fr-ca">Passer au français</a>,
+				<a class="link" href="http://weather.weatherbug.co.uk?zcode=Z5010/&lang_id_prev=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ&zip=64688&lang_id=en-gb">Change to UK English</a> 				
+				|
+			</noscript>	
+			</li>
+			<li><a href="http://weather.ca.weatherbug.com/desktop-weather.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Desktop</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://weather.ca.weatherbug.com/mobile.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Mobile</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://weather.ca.weatherbug.com/desktop-weather/api.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">API</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://weather.ca.weatherbug.com/advertising.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Advertising</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://weather.ca.weatherbug.com/contact-us.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn">Contact Us</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://weather.ca.weatherbug.com/about-us/site-map.html?zcode=Z5010/&lang_id=zh-cn&region=8&region_name=North America&country=US&country_name=USA&state_code=MO&state_name=Missouri&zip=64688&city_name=Wheeling&stat=KCDJ">Site Map</a></li>
+			
+		</ul>
+	 
+		<ul class="footer-nav" id="footer-nav-pro">
+			<li class="ftr-nav-hdr">Enterprise</li>
+			<li><a href="http://weather.weatherbug.com/weatherbug-professional/industry-solutions" target="_blank">Industry Solutions</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://weather.weatherbug.com/weatherbug-professional/products" target="_blank">Professional Products</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://www.earthnetworks.com/IndustrySolutions/schoolsuniversities" target="_blank">WeatherBug Schools</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://weather.weatherbug.com/weatherbug-professional/industry-solutions/media" target="_blank">Media/Broadcasters</a></li>
+			
+		</ul>
+		<ul class="footer-nav" id="footer-nav-aws">
+			<li class="ftr-nav-hdr">Corporate</li>
+			<li><a href="http://www.earthnetworks.com/AboutUs.aspx " target="_blank">About Us</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://www.earthnetworks.com/OurNetworks.aspx" target="_blank">Our Networks</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://www.earthnetworks.com/MediaCenter.aspx" target="_blank">Media Center</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://www.earthnetworks.com/Partners.aspx" target="_blank">Partners</a>&nbsp;|&nbsp;</li>
+			<li><a href="http://www.earthnetworks.com/AboutUs/Careers.aspx" target="_blank">Careers</a></li>
+		</ul>
+      
+		
+
+<div id="footer-tou" style="overflow: hidden">
+  <!--  <a id="footer-truste" target="_blank" href="http://weather.ca.weatherbug.com/about-us/privacy-policy.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn"
+        rel="nofollow">
+        <img src="http://www.weatherbug.com/assets/TRUSTe_Certified_Privacy.gif" alt="reviewed by TRUST e site privacy statement" />
+    </a>-->
+    <div id="690d5487-bda7-4d44-9a48-a3b4e0d9edc5" style="width:150px;float:left">
+        <script type="text/javascript" src="//privacy-policy.truste.com/privacy-seal/Earth-Networks-Inc-/asc?rid=690d5487-bda7-4d44-9a48-a3b4e0d9edc5"></script>
+        <a href="//privacy.truste.com/privacy-seal/Earth-Networks-Inc-/validation?rid=6ebd88f2-f39d-46ef-9c22-70ccf08bc627" title="TRUSTe online privacy certification" target="_blank">
+            <img style="border: none" src="//privacy-policy.truste.com/privacy-seal/Earth-Networks-Inc-/seal?rid=6ebd88f2-f39d-46ef-9c22-70ccf08bc627" alt="TRUSTe online privacy certification" /></a>
+
+    </div>
+    <div style="padding-top: 12px;float:left">
+        <p>
+            &copy; Earth Networks, 2015. WeatherBug is a brand of Earth Networks.
+        </p>
+        <p>
+            All Rights Reserved.
+            <a target="_blank" href="http://weather.ca.weatherbug.com/about-us/privacy-policy.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn"
+                rel="nofollow">Privacy Policy</a>
+            |
+			<a target="_blank" href="http://weather.ca.weatherbug.com/about-us/terms-of-use/desktop-products.html?region=8&region_name=North+America&country=US&country_name=USA&state_code=MO&state_name=Missouri&dma=616&zip=64688&city_name=Wheeling&units=0&stat=KCDJ&lang_id=zh-cn"
+                rel="nofollow">Terms of Use</a>
+        </p>
+    </div>
+    <div style="clear:both" />
+</div>
+		
+	</div>
+</div>
+
+<div class="clearfloats"></div>
+
+<div style="padding:0px; margin:0px;">
+
+</div>
+
+
+
+
+<script type="text/javascript">
+	jQuery(".column#right .boxhdr h2").each(function() {
+		checkBoxHdr(35,jQuery(this));
+	});
+
+	jQuery(".column#middle .equalize .boxhdr h2").each(function() {
+		checkBoxHdr(30,jQuery(this));
+	});
+
+	function checkBoxHdr(LEN, BOXHDR) { 
+		if (typeof LEN === undefined) maxLen = 30;
+		else maxLen = LEN;
+		var thisBoxHdr = BOXHDR;
+		if (thisBoxHdr.children("a").length > 0) thisBoxHdr = BOXHDR.children("a:first");
+		var thisBoxHdrTxt = jQuery.trim(thisBoxHdr.html());
+		if (thisBoxHdrTxt.length > maxLen) {
+			var newBoxHdrTxt = thisBoxHdrTxt;
+			newBoxHdrTxt = thisBoxHdrTxt.split(",")[0];
+			if (newBoxHdrTxt.length > maxLen) {
+				newBoxHdrTxt = newBoxHdrTxt.substring(0, maxLen) + "...";
+			}
+			thisBoxHdr.html(newBoxHdrTxt);
+		}
+	}
+	
+</script>
+
+
+
+<script type="text/javascript" src="http://static.addtoany.com/menu/page.js"></script>
+
+<script type="text/javascript">
+  // Begin Rocket Fuel Universal Pixel
+  (function () {
+    var cachebust = (Math.random() + "").substr(2);
+    var protocol = "https:" == document.location.protocol ? 'https:' : 'http:';
+    new Image().src = protocol + "//20558943p.rfihub.com/ca.gif?rb=9371&ca=20558943&ra=" + cachebust;
+  })();
+  // End Rocket Fuel Universal Pixel
+</script>
+
+        
+
+<!-- Commented for migrating to GA 
+
+<div class="wXomniture">
+<script language="javascript" type="text/javascript">var s_account="UA-20687678-29";</script>
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/s_code_AWS.js?ver=1.6.2.0"></script>
+<script language="javascript" type="text/javascript">s.pageName = ""; s.channel = "Alerts"; s.prop1 = "North America"; s.prop2 = "USA"; s.prop3 = "Missouri"; s.prop4 = "Wheeling"; s.prop5 = "64688"; s.prop6 = "616"; s.prop7 = "zh-cn"; s.prop17="z5010/";</script>
+<script language="javascript" type="text/javascript" src="http://weather.ca.weatherbug.com/script/s_code_AWS_2.js?ver=1.6.2.0"></script>
+<noscript><iframe style="height:1px;width:1px" src="http://weather.ca.weatherbug.com/Common/Omniture.aspx?page_name=&section_name=Alerts"></iframe></noscript>
+</div>
+
+-->
+
+<!--Setting the Google Analytics -->
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-20687678-29']);
+    _gaq.push(['_setDomainName', 'weather.ca.weatherbug.com']);
+    _gaq.push(['_setCustomVar', 1, 'ZCode', 'z5010/', 2], ['_setCustomVar', 2, 'Section', 'Alerts', 2], ['_setCustomVar', 3, 'RegionName', 'North America', 2],   ['_setCustomVar', 4, 'Dma', '616', 2]);
+    _gaq.push(['_setCustomVar', 5, 'Zipcode', '64688', 2]);
+    _gaq.push(['_setCustomVar', 6, 'CountryName', 'USA', 2]);
+    _gaq.push(['_setCustomVar', 7, 'CityName', 'Wheeling', 2]);
+    _gaq.push(['_setCustomVar', 8, 'CultureInfo', 'zh-cn', 2]);
+   _gaq.push(['_trackPageview', '']);
+    //_gaq.push(['_setLocalRemoteServerMode']);
+    
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript'; 
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); 
+</script>
+
+        
+        
+       
+         
+        
+      
+        <script language="javascript" type="text/javascript">
+	        var dmn = document.domain;
+		    wxOAS_sitepage = 'www.wthrwbug.com/HM';
+	        wxOAS_url = 'http://pub.weatherbug.com/RealMedia/ads/';
+            wxOAS_targetparams = '&DMN=' + dmn;
+            
+            if (typeof (ccKeywords) != "undefined") {
+                wxOAS_targetparams += "&" + ccKeywords;
+            }
+
+           
+	        wxOAS_listpos = 'cds1,cds2,cds3,cds4,cds9,cds10';
+            wxOAS_creativeparams = '&_RM_HTML_KEYWORDPC_=Z5010/&_RM_HTML_KEYWORDZ3_=64688&_RM_HTML_KEYWORDL2_=Wheeling&_RM_HTML_KEYWORDL3_=MO&_RM_HTML_KEYWORDL1_=616&_RM_HTML_KEYWORDWO1_=17.1&_RM_HTML_KEYWORDWO6_=30.54&_RM_HTML_KEYWORDWO4_=45&_RM_HTML_KEYWORDHO1_=0.3';
+            wxOAS_isnewOAS = '1';
+            wxOAS___adParams = '&PC=Z5010/&Z3_=64688&L2_=Wheeling&L3_=MO&L5=USA&L05=North America&L1_=616&LWO1_=17.1&WO6_=30.54&WO4_=45&WNO1_=8&WNO2_=0&WNO3_=25&WDO1_=-1&WRO1_=0&FLO1_=7&FLO1=7&FC1=7&FC2=26&FC3=4&FCD04=4&FCD05=3&FCD06=3&FCD07=26&FCN1=31&FCN2=2&FCN3=169&FCN04=2&FCN05=73&FCN06=2&FCN07=&FC07=15&FC7=28&FCL07=2&FCL7=19&FC9=32&FC10=25&FC11=25&FC12=28&FC13=35&FCL9=18&FCL10=9&FCL11=14&FCL12=17&FCL13=&HO1_=0.3';
+            wxoAS___AdPage='HM';
+
+	        if (wxOAS_isnewOAS == "1") {
+	            wxOAS_listpos = convertOASListPos(wxOAS_listpos);
+	        }
+	        function getD1(inVal) {
+	            try {
+	                if (inVal == 1) {
+	                    return "m";
+	                }
+	                else if (inVal == 2) {
+	                    return "f";
+	                }
+	                else
+	                    return "";
+	            }
+	            catch (e) {
+	                return "";
+	            }
+	        }
+
+	        function getD2(inVal) {
+	            try {
+	                if (!isNaN(inVal)) {
+	                    var d = new Date();
+	                    var n = d.getFullYear();
+	                    return n - inVal;
+	                }
+	            }
+	            catch (e) {
+	                return "";
+	            }
+	        }
+
+	        function getHO1(inVal) {
+	            try {
+	                if (!isNaN(inVal))
+	                    return Math.round(inVal);
+	            }
+	            catch (e) {
+	                return "";
+	            }
+	        }
+
+	        function getRange(inVal) {
+
+	            try {
+	                if (inVal == null || inVal == "") return "";
+	                if (isNaN(inVal.substring(inVal.length - 1))) {
+	                    inVal = inVal.substring(0, inVal.length - 1);
+	                }
+
+	                if (inVal < -30)
+	                    return "-30+";
+	                else if (inVal >= -29 && inVal <= -20)
+	                    return "-20--29";
+	                else if (inVal >= -19 && inVal <= -10)
+	                    return "-10--19";
+	                else if (inVal > -9 && inVal <= 0)
+	                    return "0--9";
+	                else if (inVal >= 1 && inVal < 10)
+	                    return "1-9";
+	                else if (inVal >= 10 && inVal < 20)
+	                    return "10-19";
+	                else if (inVal >= 20 && inVal < 30)
+	                    return "20-29";
+	                else if (inVal >= 30 && inVal < 40)
+	                    return "30-39";
+	                else if (inVal >= 40 && inVal < 50)
+	                    return "40-49";
+	                else if (inVal >= 50 && inVal < 60)
+	                    return "50-59";
+	                else if (inVal >= 60 && inVal < 70)
+	                    return "60-69";
+	                else if (inVal >= 70 && inVal < 80)
+	                    return "70-79";
+	                else if (inVal >= 80 && inVal < 90)
+	                    return "80-89";
+	                else if (inVal >= 90 && inVal < 100)
+	                    return "90-99";
+	                else if (inVal >= 100 && inVal < 110)
+	                    return "100-109";
+	                else if (inVal > 110)
+	                    return "110+";
+	                else
+	                    return "";
+	            }
+	            catch (e) {
+	                return "";
+	            }
+	        }
+	        function _getParam(name) {
+	            var ret = __getParam(name);
+	            return ret.replace("N/A", "");
+	        }
+	        function __getParam(name) {
+	            name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+	            var regexS = "[\\?&]" + name + "=([^&#]*)";
+	            var regex = new RegExp(regexS);
+	            var results = regex.exec(wxOAS___adParams);
+	            if (results == null)
+	                return "";
+	            else
+	                return decodeURIComponent(results[1].replace(/\+/g, " "));
+	        }
+
+	        function convertOASListPos(list) {
+	            var newlist = ""; ;
+                newlist = list.replace("cds10", "x11").replace("cds1", "x12").replace("cds2", "x13").replace("cds3", "x14").replace("cds4", "x15").replace("cds5", "cds5").replace("cds6", "cds6").replace("cds9", "x03").replace("cdsspons1", "x59").replace("ssn1", "x19").replace("ssn2", "Left").replace("cds12", "x24");
+                return newlist;
+	        } 
+	        function getlotmName(Name)
+	        {
+	            return lotmap[Name];
+	        }
+	        function getlotmConvertor(name,converter) {
+	            var retvalue="";
+	            switch (converter)
+	            {
+	                case "getRange":
+	                    retvalue = getRange(_getParam(name));
+	                    break;
+	                case "getPollenType":
+	                    retvalue = _getParam(name).replace(new RegExp("(\/\)", "g"), " ").replace(".", "");
+	                    break;
+	                case "getsectionName": 
+	                    retvalue = wxoAS___AdPage;
+	                    retvalue = wxoAS___AdPage.replace("/", "-").replace("/", "-");
+	                    break;
+	                case "getChillIndex":
+	                    retvalue = _getParam(name);
+	                    if (retvalue > 69) retvalue = ""; 
+	                    break;
+	                case "getHeatIndex":
+	                    retvalue = _getParam(name);
+	                    if (retvalue <= 69) retvalue = "";
+	                    break; 
+	                default:
+	                    retvalue = _getParam(name);
+	                    break; 
+	            }
+	            return retvalue;
+	        }
+	        var lotmap = [];
+            //7 day condition
+	        lotmap["FC1"]   = ["W_TDY_D_C",""];
+	        lotmap["FC2"]   = ["W_TDY1_D_C",""];
+	        lotmap["FC3"]   = ["W_TDY2_D_C",""];
+	        lotmap["FCD04"]  = ["W_TDY3_D_C",""];
+	        lotmap["FCD05"]  = ["W_TDY4_D_C",""];
+	        lotmap["FCD06"]  = ["W_TDY5_D_C",""];
+	        lotmap["FCD07"]  = ["W_TDY6_D_C",""];
+            //7 day night condition
+	        lotmap["FCN1"]  = ["W_TDY_N_C",""];
+	        lotmap["FCN2"]  = ["W_TDY1_N_C",""];
+	        lotmap["FCN3"]  = ["W_TDY2_N_C",""];
+	        lotmap["FCN04"] = ["W_TDY3_N_C",""];
+	        lotmap["FCN05"] = ["W_TDY4_N_C",""];
+	        lotmap["FCN06"] = ["W_TDY5_N_C",""];
+	        lotmap["FCN07"] = ["W_TDY6_N_C",""];
+            //7 Day Day Temperature
+	        lotmap["FC07"] = ["W_TDY_D_T", "getRange"];
+	        lotmap["FC7"]  = ["W_TDY1_D_T", "getRange"];
+	        lotmap["FC9"]  = ["W_TDY2_D_T", "getRange"];
+	        lotmap["FC10"] = ["W_TDY3_D_T", "getRange"];
+	        lotmap["FC11"] = ["W_TDY4_D_T", "getRange"];
+	        lotmap["FC12"] = ["W_TDY5_D_T", "getRange"];
+	        lotmap["FC13"] = ["W_TDY6_D_T", "getRange"];
+	        //7 Day Night Temperature
+	        lotmap["FCL07"]  = ["W_TDY_N_T", "getRange"];
+	        lotmap["FCL7"]   = ["W_TDY1_N_T", "getRange"];
+	        lotmap["FCL9"]   = ["W_TDY2_N_T", "getRange"];
+	        lotmap["FCL10"]  = ["W_TDY3_N_T", "getRange"];
+	        lotmap["FCL11"]  = ["W_TDY4_N_T", "getRange"];
+	        lotmap["FCL12"]  = ["W_TDY5_N_T", "getRange"];
+	        lotmap["FCL13"]  = ["W_TDY6_N_T", "getRange"];
+            //Alert,Temp,Pollen count,pollenType,AirQuality
+	        lotmap["WO3"]    = ["W_ALERT",""];
+	        lotmap["HO1_"]    = ["W_POL",""];
+	        lotmap["HO4"]    = ["W_POLTYPE", "getPollenType"];
+	        lotmap["LWO1_"] = ["W_TEMP", "getRange"];
+	        lotmap["HO3"]    = ["W_AQ", ""];
+            //zip,dma,city,region,state,country
+            //Z3=21013&L2=Baldwin&L3=MD&L5=USA
+	        lotmap["L1_"]  = ["W_DMA", ""];
+	        lotmap["L2_"]  = ["W_CITY", ""];
+	        lotmap["L3_"]  = ["W_STATE", ""];
+	        lotmap["L5"]  = ["W_COUNTRY", ""];
+	        lotmap["L05"] = ["W_REGION", ""];
+	        lotmap["NA"] = ["W_SECTION", "getsectionName"];
+            //curr wind speed,avg windspeed,gusspeed
+	        lotmap["WNO1_"] = ["W_WC", ""];
+	        lotmap["WNO2_"] = ["W_WA", ""];
+	        lotmap["WNO3_"] = ["W_WG", ""];
+            //Dew Point
+	        lotmap["WDO1_"] = ["W_DEW", ""];
+	        lotmap["WRO1_"] = ["W_RAIN", ""];
+	        lotmap["FLO1_"] = ["W_HINDEX", "getHeatIndex"];
+	        lotmap["FLO1"] = ["W_CINDEX", "getChillIndex"];
+
+	        function dumplotame(obj) {
+	            var it = 0; 
+	            var obj = new Array();
+	            var obje = new Array(); 
+	            for (var i in lotmap) { 
+	                    var name=i;
+	                    var item = lotmap[i];
+	                    var itemName = item[0];
+	                    var itemConv = item[1];
+	                    var itemValue = getlotmConvertor(name, itemConv);
+                        if(it<=20)
+                            obj[obj.length] = "seg=" + itemName + ":" + itemValue;
+	                    else
+                            if (it > 20)
+                                obje[obje.length] = "seg=" + itemName + ":" + itemValue; 
+	                    it++; 
+	            }
+	            var random1 = 1 + "" + Math.floor(Math.random() * 1101) + "" + Math.floor(Math.random() * 9101) ;
+	            var random2 = 1 + "" + Math.floor(Math.random() * 1101) + "" + Math.floor(Math.random() * 9101);
+	            var img1 = "http://bcp.crwdcntrl.net/5/c=2241/rand=" + random1 + "/pv=y/" + obj.join("/");
+	            var img2 = "http://bcp.crwdcntrl.net/5/c=2241/rand=" + random2 + "/pv=y/" + obje.join("/");
+	          
+	            document.write("<IMG SRC=\"" + img1 + "\"/>");
+	            document.write("<IMG SRC=\"" + img2 + "\"/>");
+	             
+	        }
+	         
+        </script>
+<script type="text/javascript" src="http://tags.crwdcntrl.net/c/2241/cc.js?ns=_cc2241" id="LOTCC_2241"></script>
+        <script type="text/javascript" language="javascript">     _cc2241.bcp();
+             
+            dumplotame(_cc2241); 
+        </script>
+        <script type="text/javascript" src="http://weather.ca.weatherbug.com/Ads/AdValueWriter.aspx?zcode=Z5010/&zip=64688&city=&stat=KCDJ"></script>
+        <script language="JavaScript1.1" src="http://weather.ca.weatherbug.com/script/Ad.js?ver=1.6.2.0" type="text/javascript"></script>
+<div id="wXcds1" class="wXcds1" style="overflow:visible; position:absolute; visibility:hidden;"><script language="javascript" type="text/javascript">try { wxOAS_AD('cds1'); } catch (e) {}</script></div><div id="wXcds2" class="wXcds2" style="overflow:visible; position:absolute; visibility:hidden;"><script language="javascript" type="text/javascript">try { wxOAS_AD('cds2'); } catch (e) {}</script></div><div id="wXcds3" class="wXcds3" style="overflow:visible; position:absolute; visibility:hidden;"><script language="javascript" type="text/javascript">try { wxOAS_AD('cds3'); } catch (e) {}</script></div><div id="wXcds4" class="wXcds4" style="overflow:visible; position:absolute; visibility:hidden;"><script language="javascript" type="text/javascript">try { wxOAS_AD('cds4'); } catch (e) {}</script></div><div id="wXcds9" class="wXcds9" style="overflow:visible; position:absolute; visibility:hidden;"><script language="javascript" type="text/javascript">try { wxOAS_AD('cds9'); } catch (e) {}</script></div><div id="wXcds10" class="wXcds10" style="overflow:visible; position:absolute; visibility:hidden;"><script language="javascript" type="text/javascript">try { wxOAS_AD('cds10'); } catch (e) {}</script></div><script language="javascript" type="text/javascript">placeAd('wXcds1','wXcds1-ad');function placeAds(){ sizeAd('wXcds1','wXcds1-ad');sizeAd('wXcds2','wXcds2-ad');sizeAd('wXcds4','wXcds4-ad');sizeAd('wXcds10','wXcds10-ad');placeAd('wXcds1','wXcds1-ad');placeAd('wXcds2','wXcds2-ad');placeAd('wXcds4','wXcds4-ad');placeAd('wXcds10','wXcds10-ad');
+        }</script>
+<script type="text/javascript" language="javascript">
+	try {
+		doRecentLocationsSection();
+	}
+	catch (e) { }
+	try {
+		placeAds();
+		jQuery("body").bind("resize", placeAds);
+	} catch (e) { }
+</script>
+
+<script type="text/javascript" language="javascript">
+	jQuery(window).load(function() {
+		try { 
+			placeAds(); 
+		} catch (e) { }
+	});
+</script>
+
+
+        <img src="http://pub.weatherbug.com/RealMedia/ads/adstream_nx.cgi/w

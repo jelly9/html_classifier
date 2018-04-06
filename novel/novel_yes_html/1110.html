@@ -1,0 +1,493 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+    <script type="text/javascript" src="/js/jq.js"></script>
+    <link href="http://www.bxwx2.org/css/main.css" type="text/css"
+        rel="stylesheet" />
+    
+<script type="text/javascript">
+
+    //浏览器检查：非PC=true,PC=false
+    function BrowserCheck() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    var IsMobile = true; //是否是手机
+    function IsMobileInit() {
+        IsMobile = BrowserCheck();
+    }
+    IsMobileInit();
+</script>
+<script type="text/javascript">
+    var LookNum = 1;
+    function JiShu() {
+        LookNum = $.getCookie('LookNum');
+        if (LookNum == null || LookNum == '') {
+            LookNum = 1;
+            $.setCookie('LookNum', LookNum);
+        }
+        else {
+            var n = parseInt(LookNum);
+            if (n < 3) {
+                n = n + 1;
+            }
+            else {
+                n = 1;
+            }
+            LookNum = n;
+            $.setCookie('LookNum', LookNum);
+        }
+    }
+    JiShu();
+</script>
+
+    
+    <title>
+        网游之全敏法师txt单章:第二十三章 打架,笔下文学</title>
+    <meta name="keywords" content="网游之全敏法师txt单章:第二十三章 打架" />
+    <meta name="description" content="网游之全敏法师txt单章:第二十三章 打架" />
+    <script type="text/javascript">
+        var xsid=46512;
+        var zjid=63480;
+        var zjname='第二十三章 打架';
+    </script>
+    <style>
+        .DJ300X250
+        {
+            float: left;
+            margin-left: 2px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        
+
+<!--登陆Start-->
+<div class="ywtop">
+    <div class="ywtop_con">
+        <div class="nri name1">
+            <div class="cc">
+                <div class="txt">
+                    账号：</div>
+                <div class="inp">
+                    <input type="text" id="myusername"></div>
+            </div>
+            <div class="cc">
+                <div class="txt">
+                    密码：</div>
+                <div class="inp">
+                    <input type="password" id="mypassword"></div>
+            </div>
+            <div class="frii">
+                <input id="denglu" type="button" value="登 录" style="cursor: pointer;"></div>&nbsp;
+            <div class="ccc">
+                <div class="txtt">
+                    <a href="/usergetpass.aspx">忘记密码</a></div>
+                <div class="txtt">
+                    <a href="/userregister.aspx">用户注册</a></div>
+            </div>
+        </div>
+        <div class="nri name2" style="display: none;">
+            Hi,<a target="_top" id="name1">cuizhanjun1981</a>&nbsp;&nbsp; <a target="_top" href="/usershujia.aspx">
+                我的书架</a> | <a target="_self" style="cursor: pointer;" id="tuichu">退出登录</a>&nbsp;</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#tuichu').click(function () {
+        $.setCookie('username', '', -3000);
+        $.setCookie('userid', '', -3000);
+        window.location.href = window.location.href;
+    });
+    $('#denglu').click(function () {
+        var username = $('#myusername').val();
+        
+        var pwd = $('#mypassword').val();
+        if (username == '' || pwd == '') {
+            alert('请填写用户名和密码！');
+            return;
+        }
+        username = escape(username);
+        $.ajax({
+            type: 'POST',
+            url: '/ashx/user.ashx',
+            data: { 'action': 'checkUserLogin', 'username': username, 'pwd': pwd },
+            success: function (userid) {
+                if (userid == "0") {
+                    alert('密码错误，登录失败！');
+                }
+                else {
+                    if (userid > 0)
+                        Login(username, userid);
+                }
+            }
+        });
+    });
+    function Login(username, userid) {
+        $.setCookie('username', username, 3000);
+        $.setCookie('userid', userid, 3000);
+        ShowUserName();
+    }
+    function ShowUserName() {
+        var username = $.getCookie('username');
+        var userid = $.getCookie('userid');
+        if (username == '' || userid == '' || username == null || userid == null) {
+            $('.name1').css('display', 'block');
+            $('.name2').css('display', 'none');
+        }
+        else {
+
+            $('.name1').css('display', 'none');
+            $('.name2').css('display', 'block');
+
+            $('#name1').html(username);
+        }
+
+    }
+
+    ShowUserName();
+</script>
+<!--登陆End-->
+
+<div class="header">
+    <div class="header_logo">
+        <h1 id="header211">
+            笔下文学
+        </h1>
+    </div>
+    <div class="header_search">
+        <form action="/search.aspx" method="get">
+        <input id="bookname" class="search" name="bookname" type="text" value="请输入书名或作者名" />
+        <input id="sss" type="submit" value="搜索" style="width: 96px; line-height: 28px; height: 28px;">
+        <script type="text/javascript">
+            $('#bookname').focus(function () {
+                var bookname = $(this).val();
+                if (bookname == '请输入书名或作者名') {
+                    $(this).val('');
+                }
+            });
+        </script>
+        </form>
+    </div>
+</div>
+<div class="nav">
+    <ul>
+        <li><a id="index" href="/">首页</a></li>
+        <li><a id="paihang" href="http://www.bxwx2.org/ph/1.htm">热门排行</a></li>
+        <li><a id="leixing1" href="http://www.bxwx2.org/type/1/1.htm">异界大陆</a></li>
+        <li><a id="leixing2" href="http://www.bxwx2.org/type/2/1.htm">西方奇幻</a></li>
+        <li><a id="leixing3" href="http://www.bxwx2.org/type/3/1.htm">武侠仙侠</a></li>
+        <li><a id="leixing4" href="http://www.bxwx2.org/type/4/1.htm">都市娱乐</a></li>
+        <li><a id="leixing5" href="http://www.bxwx2.org/type/5/1.htm">历史军事</a></li>
+        <li><a id="leixing6" href="http://www.bxwx2.org/type/6/1.htm">科幻游戏</a></li>
+        <li><a id="leixing7" href="http://www.bxwx2.org/type/7/1.htm">竞技同人</a></li>
+        <li><a id="leixing8" href="http://www.bxwx2.org/type/8/1.htm">悬疑灵异</a></li>
+        <li><a id="leixing9" href="http://www.bxwx2.org/type/9/1.htm">玄幻其他</a></li>
+        <li><a id="update" href="http://www.bxwx2.org/zx/1.htm">最新更新</a></li>
+    </ul>
+</div>
+
+        
+    <div class="content_read" style="width: 100%;">
+        <div id="neirongDiv" class="box_con">
+            <div class="con_top">
+                <div id="page_set">
+                    <li style="position: relative; float: right;"><span style="font-size: 16px;">视觉设置：</span>
+                        <select id="bgcolor" name="bgcolor" class="stylectl">
+                            <option value="#f6f6f6" style="background-color: #e3e8f7">底色</option>
+                            <option value="#f6f6f6" style="background-color: #f6f6f6">半灰</option>
+                            <option value="#ffffff" style="background-color: #ffffff">白色</option>
+                            <option value="#e3e8f7" style="background-color: #e3e8f7">淡蓝</option>
+                            <option value="#daebfc" style="background-color: #daebfc">蓝色</option>
+                            <option value="#ebeaea" style="background-color: #ebeaea">淡灰</option>
+                            <option value="#e7e3e6" style="background-color: #e7e3e6">灰色</option>
+                            <option value="#dedcd8" style="background-color: #dedcd8">深灰</option>
+                            <option value="#d8d7d7" style="background-color: #d8d7d7">暗灰</option>
+                            <option value="#e6fae4" style="background-color: #e6fae4">绿色</option>
+                            <option value="#f9fbdd" style="background-color: #f9fbdd">明黄</option>
+                        </select>
+                        <select id="fontcolor" name="fontcolor" class="stylectl">
+                            <option value="#000000">字色</option>
+                            <option value="#000000">黑色</option>
+                            <option value="#a10d0d">红色</option>
+                            <option value="#167b0b">绿色</option>
+                            <option value="#0d3475">蓝色</option>
+                            <option value="#660000">棕色</option>
+                        </select>
+                        <select id="fontsize" name="fontsize" class="stylectl">
+                            <option value="16px">字号</option>
+                            <option value="14px">小号</option>
+                            <option value="16px">较小</option>
+                            <option value="18px">中号</option>
+                            <option value="20px">较大</option>
+                            <option value="24px">大号</option>
+                            <option value="28px">特大</option>
+                        </select>
+                        <select id="fontfamily" name="fontfamily" class="stylectl">
+                            <option value="宋体">字体</option>
+                            <option value="宋体">宋体</option>
+                            <option value="微软雅黑">微软雅黑</option>
+                            <option value="黑体">黑体</option>
+                            <option value="楷书">楷体</option>
+                            <option value="隶书">隶书</option>
+                        </select>
+                        <select id="divwidth" name="divwidth" class="stylectl">
+                            <option value="80%">宽度</option>
+                            <option value="50%">50%</option>
+                            <option value="60%">60%</option>
+                            <option value="70%">70%</option>
+                            <option value="80%">80%</option>
+                            <option value="90%">90%</option>
+                            <option value="100%">100%</option>
+                        </select>
+                    </li>
+                </div>
+                <a href="/">
+                    笔下文学</a> &gt; <a href="http://www.bxwx2.org/txt/46512/">
+                        网游之全敏法师</a> &gt;
+                第二十三章 打架
+            </div>
+            <div class="bookname">
+                <h1>
+                    第二十三章 打架
+                </h1>
+            </div>
+            <div class="bottem2" style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
+                <a id="A1" href="http://www.bxwx2.org/txt/46512/63479.htm">
+                    上一章</a> &larr; <a id="A2" href="http://www.bxwx2.org/txt/46512/">章节目录</a> &rarr;
+                <a id="A3" href="http://www.bxwx2.org/txt/46512/63481.htm">
+                    下一章</a> <a class="jiarushuqian" href="###">加入书签</a>
+            </div>
+            <div id="zjneirong">
+                　　好一会没声音，李玉把身前的桌子踢到一边，这样，两帮人之间就再也没有障碍物了。<p>　　“呵呵，开同学会啊。”孙蕊从门外走进来，看见两帮人对峙，把书包带往上提了提，出声道。<p>　　除了李玉，所有人都看了看孙蕊。然后，又对峙起来。<p>　　“小子，今天上午让我很没面子，我找场子来了。”许国战冷声说。李玉眨了一下眼，然后继续看着许国战。这下，许国战脸上有点挂不住了，再怎么说，自己也是龙新三大势力之一的战神帮帮主啊。<p>　　“你……你小子龟什么啊，死的活的叫一声。”<p>　　李玉歪了一下头，继续本着坚持就是胜利的革命精神，以大无畏的态度，死咬牙关不放口。（恶搞一下）<p>　　“草你女马了个b呀，兄弟们，打呀。哦……”许国战刚喊完，就叫了一声，倒在地上，捂着肚子“嗯嗯啊啊”的叫个不停。<p>　　许国战刚骂完，李玉脸色一变的同时，已经冲了出去。以他的爆发力，三米距离，在对方还没反应过来时，已经一拳打在许国战肚子上。就这一拳，李玉曾经打断过一公分的钢板，那是年轻的时代，疯狂的时候。现在，暂且不提。<p>　　在一重拳下，许国战再一次成为软脚虾。还没完，李玉一脚踢在他的胸口上，只听两声“卡擦”。许国战吐了两口血，向后撞在小弟腿上，幸福的晕了过去。现在，李玉穿着宽大的校服，如果没穿校服，你就会发现他穿在里面的紧身t恤右袖子，已经裂了。<p>　　右边，一个拿棒球棒的人，一棒打向李玉的脸，“嘭”，打是打上了，李玉却没有倒下，接着，罗林的板凳已经砸在那个人的头上，那个人应声倒在地上。赵涛、陶然，联手放到一个，李玉一手拿起一张空单人桌（木制的，很轻）。为罗林挡下打向他脑袋的钢管，一肘击，磕在对方的肩上，然后，在他腿上踢了一脚。<p>　　很不幸，又一人的板砖准确的命中李玉的头。手中桌子一拍，那人随着桌子的破碎倒下。<p>　　不到三分钟，四人放到了许国战等八个人。李玉头破了，血流了一脸，配上死人脸和看似平静的眼神，还挺吓人的。其他三人，多少受了点伤。<p>　　很不巧，李玉他们刚打完，张萍走进教室。看见一片狼藉的教室，笑容僵在脸上，当看见李玉他们时，先是一愣，接着，赶忙跑过来：“李玉，没事吧，流血了，快到医务室。”李玉瞟了张萍一眼，摇摇头，向医务室走去。三个舍友也跟着出去了。在场的同学，这才把地上打滚哀叫的人抬向外面，救护车来后，送去了医院，看样子，至少要住两个月的院了。<p>　　医务室这边，简单的包了一下，李玉被叫去政教处。刚进门，脑袋上就被敲了一暴栗：“臭小子，你咋给我保证的？”教务主任王鹏瞪着李玉问。<p>　　李玉吐了吐舌头，回答：“在本校期间，绝不惹是生非。”<p>　　“你又是怎么做的？”王老师暴跳如雷。<p>　　“人家砸场子，不能不接啊。”李玉刚说完，脑门上就又挨了一暴栗。<p>　　“你说这事怎么解决？”王老师平下气，问。<p>　　“该怎么解决就怎么解决，是他们不对在先，拿着武器到班里找茬，我们只是自卫，要我说，要给他们处分，这回，是触到我的逆鳞了，放在两年前，他们至少是残疾，连带狗屁战神帮也被灭了不可。”<p>　　“不是这个问题，许国战的家世不一般，以你混混出身，人家想对付你，简单！动动手指的问题，顺带还连上学校也倒霉，虽然他们不敢把学校怎么样，但，真要学校给个交代，怎么办？把你送出去吗？以高老头的性格，不太可能。这可影响学校声誉啊。”<p>　　“让高校长实话实说，我们只是自卫，再加上，他们拿武器在学校里施暴，不开除他们就是好事了，他们还敢叽歪歪，再挑事，我直接在校外一次性解决。ok？”<p>　　王老师想了一下，道：“嗯，虽然没那么简单，但也不是不能解决，我和高老头商量一下，由校方出面搞定，你别再惹事了，好好玩《荣誉》，先回去吧。”<p>　　李玉刚走两步，王老师的声音传来，“你的人，别让他们乱动，滚吧。”<p>　　接下来的几天里，由于战神帮老大被干翻，战神帮士气低落，被其他两帮“轻轻的骚扰”了几下。有人甚至叫嚣着，拉人干翻李玉，结果被二把手按了下来，理由是，先顶住其他两帮进攻，在老大回来之前，别让战神帮散了。在许国战战败之后，战神帮名声大落。<p>　　====================================<p>　　很快，《荣誉》又开放了。<p>　　怪物的各项属性都有很大变动，boss数量大量减少，不但如此，系统还开启了地域怪物混杂化，不再像以各种怪物聚集在一个区域。增加了打怪时的不确定性。并且，宠物再也不像以前爆宠物蛋了，而是根据怪物的种类，真实的进行繁殖。哺乳动物以胎生方式产出幼崽，捕捉后，可令其成为宠物。其它则是各种形式的卵生。这样，使游戏更具有真实性。并且，鉴定术对人，只能鉴定出姓名与等级。说是保留隐私。<p>　　李玉看了看自己的属性：<p>　　紫玄天羽：lv。48中级魔法师。<p>　　生命值：800|800力量：80魅力：？<p>　　魔力：785|785精神力：86幸运：？<p>　　体力：100速度：115饥饿度：100|100<p>　　技能：火球，风刃，闪电，冰箭，爆裂火球，土元素守护，星梦，意念术，瞪眼攻击，沼泽术，石化术，土刺。<p>　　装备：狼牙，僵尸手杖，守护大地，隐藏披风，白头巾，铜护手，熊皮靴。<p>　　升到49级，还要46万多经验。<p>　　冲到城外怪区，李玉开始找野猪。<p>　　ps：今天会考完了，我要回家了，家里那边网吧的打字法我不会用，所以，到8月1号，我可能会很少更新，甚至是不更，多有不便，小羽在这说一声抱歉。<p>　　这里已经是一个转折了，小羽写变态了的已经改过来了，在经过一段数据流（40章以后），这本书就走上正轨了。<p>　　
+                <div>
+                    <br />
+                    <p id="xuanchuan" style="color: red;">
+                    </p>
+                    <br />
+                </div>
+            </div>
+            <div class="bottem2" style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
+                <a id="shangye" href="http://www.bxwx2.org/txt/46512/63479.htm">
+                    上一章</a> &larr; <a id="mulu" href="http://www.bxwx2.org/txt/46512/">章节目录</a>
+                &rarr; <a id="xiaye" href="http://www.bxwx2.org/txt/46512/63481.htm">
+                    下一章</a> <a class="jiarushuqian" href="###">加入书签</a>
+            </div>
+            <div style="width: 910px; text-align: center; margin: auto; position: relative; top: -10px;"
+                id="Ad12" class="DJ960X230">
+                <div id="zhangjieAdd21" style="width: 100%; margin: auto; display: table; min-width: 930px;">
+                    <span id="Ad21" class="DJ300X250">
+                        <script type="text/javascript">
+                            if (IsMobile == false) {
+                                var cpro_id = "u1597045";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+                            }
+                            else {
+                                var cpro_id = "u1595800";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/cm.js\" type=\"text\/javascript\"><\/script>");
+
+                            }
+                        </script>
+                    </span><span id="Ad22" class="DJ300X250">
+                        <script type="text/javascript">
+                            if (IsMobile == false) {
+                                var cpro_id = "u1594380";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+                            }
+                            else {
+                                var cpro_id = "u1595800";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/cm.js\" type=\"text\/javascript\"><\/script>");
+
+                            }
+                        </script>
+                    </span><span id="Ad23" class="DJ300X250">
+                        <script type="text/javascript">
+                            if (IsMobile == false) {
+                                var cpro_id = "u1613558";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+                            }
+                            else {
+                                var cpro_id = "u1595800";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/cm.js\" type=\"text\/javascript\"><\/script>");
+
+                            }
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript">
+        //加载样式
+        $(function () {
+            LoadStyle();
+        })
+        //加载样式
+        function LoadStyle() {
+            try {
+                var bgcolor = $.getCookie('bgcolor'); //背景颜色
+                if (bgcolor == '' || bgcolor == null) {
+                    bgcolor = $('#bgcolor').val();
+                    $.setCookie('bgcolor', bgcolor);
+                }
+                $('#neirongDiv').css('background-color', bgcolor);
+                $('#bgcolor').val(bgcolor);
+
+                var fontcolor = $.getCookie('fontcolor'); //字体颜色
+                if (fontcolor == '' || fontcolor == null) {
+                    fontcolor = $('#fontcolor').val();
+                    $.setCookie('fontcolor', fontcolor);
+                }
+                $('#neirongDiv').css('color', fontcolor);
+                $('#fontcolor').val(fontcolor);
+
+                var fontsize = $.getCookie('fontsize'); //字体大小
+                if (fontsize == '' || fontsize == null) {
+                    fontsize = $('#fontsize').val();
+                    $.setCookie('fontsize', fontsize);
+                }
+                $('#neirongDiv').css('font-size', fontsize);
+                $('#fontsize').val(fontsize);
+
+                var fontfamily = $.getCookie('fontfamily'); //字体
+                if (fontfamily == '' || fontfamily == null) {
+                    fontfamily = $('#fontfamily').val();
+                    $.setCookie('fontfamily', fontfamily);
+                }
+                $('#neirongDiv').css('font-family', fontfamily);
+                $('#fontfamily').val(fontfamily);
+
+                var divwidth = $.getCookie('divwidth'); //宽度
+		divwidth=980;
+                if (divwidth == '' || divwidth == null) {
+                    divwidth = $('#divwidth').val();
+                    $.setCookie('divwidth', divwidth);
+                }
+                $('#neirongDiv').css('width', divwidth);
+                $('#divwidth').val(divwidth);
+
+            } catch (e) {
+
+            }
+        }
+        $('.stylectl').change(function () {
+            var key = $(this).attr('id');
+            var value = $(this).val();
+            $.setCookie(key, value);
+
+            LoadStyle();
+        });
+    </script>
+    <script type="text/javascript">
+        //上一页，下一页，返回目录
+        $(document).keyup(function (event) {
+            var key = event.keyCode;
+            if (key == '37') {
+                if (document.getElementById("shangye") != null)
+                    window.location.href = document.getElementById("shangye").attributes["href"].value;
+            }
+            if (key == '39') {
+                if (document.getElementById("xiaye") != null)
+                    window.location.href = document.getElementById("xiaye").attributes["href"].value;
+            }
+            if (key == '13') {
+                if (document.getElementById("mulu") != null)
+                    window.location.href = document.getElementById("mulu").attributes["href"].value;
+            }
+        });
+        //预加载下页
+        function yujiazai() {
+            var xiaye = $('#xiaye').attr('href');
+            $.get(xiaye);
+        }
+        $(function () {
+            /*2秒后预加载下页*/
+            setTimeout("yujiazai()", 2000);
+        })
+    </script>
+    <script type="text/javascript">
+        $('.jiarushuqian').click(function () {
+
+            var username = $.getCookie('username');
+            var userid = $.getCookie('userid');
+            if (username == '' || userid == '' || username == null || userid == null) {
+                alert('请先登录！');
+                return;
+            }
+            username = escape(username);
+            zjname = escape(zjname);
+            $.ajax({
+                type: 'POST',
+                url: '/ashx/user.ashx',
+                data: { 'action': 'jiaShuQian', 'xsid': xsid, 'type': 0, 'zjid': zjid, 'zjname': zjname },
+                success: function (msg) {
+                    alert('加入书签成功!');
+                }
+            });
+        });
+    </script>
+    <input type="hidden" value="2014-08-28 15:05:55" />
+
+
+        <!--页面主体end-->
+        
+
+<!--页尾end-->
+
+<script type="text/javascript">
+    if (IsMobile == false) {
+        document.write('<script src="http://j.77power.com/adscpv/i.php?z=72156"><\/script>');
+        //document.write('<script src="http://rwq.youle55.com/r/er_14190_6288.js"><\/script>');
+    }
+</script>
+<script type="text/javascript">
+    if (IsMobile == false) {
+        var cpro_id = "u1613575";
+        document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/f.js\" type=\"text\/javascript\"><\/script>");
+    }
+    else {
+        var cpro_id = "u1613584";
+        document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/cm.js\" type=\"text\/javascript\"><\/script>");
+
+    }
+</script>
+<!--51.la统计-->
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/16232272.js"></script>
+<noscript>
+    <a href="http://www.51.la/?16232272" target="_blank">
+        <img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/16232272.asp"
+            style="border: none" /></a></noscript>
+
+
+<div style="margin: auto; width: 970px;">
+    <script type="text/javascript">
+        if (IsMobile == false) {
+            document.write('<script src="http://j.77power.com/adscpv/i.php?z=78852"><\/script>');
+            
+        }
+    </script>
+</div>
+
+    </div>
+</body>
+</html>
+

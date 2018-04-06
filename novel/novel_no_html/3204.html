@@ -1,0 +1,965 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="mobile-agent" content="format=html5; url=http://club.qingdaonews.com/touch/show_141_3847871_1_0.htm"  />
+<title>最有钱的人都是这样来评价自己-青青岛社区</title>
+<meta name="Keywords" content="最有钱的人都是这样来评价自己">
+<meta name="description" content="&nbsp;1、我太穷了，我穷得除了剩下钱以外，什么都没有了。2、哦，是你呀，我现在正在忙。忙什么？呵呵，今天出太阳了，我把钱搬出来晒一晒。3、比尔·盖兹？他那也叫有钱？我要是让他给我数钱，他准会说我判了他一个无期。4、现在，银行的人都怕我了。他们说我要是把钱全都存到他们那里去，" />
+<link rel="stylesheet" type="text/css" href="style/common.css?20130703"  />
+<link rel="stylesheet" type="text/css" href="style/style.css" />
+<script type="text/javascript" src="script/jq/jquery.min.js" ></script>
+<script type="text/javascript" src="script/jq/jquery.cookie.js" ></script>
+<script type="text/javascript" src="script/ajax.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script type="text/javascript" src="script/showAnnouce.js"></script>
+<link rel="stylesheet" href="script/fancy/jquery.fancybox.css?v=2.1.4" type="text/css" media="screen" />
+<script type="text/javascript" src="script/fancy/jquery.fancybox.pack.js?v=2.1.4"></script>
+<!--以前在页面中的js现在放在show.js中-->
+<script language="javascript" type="text/javascript">
+        //回复翻页
+    function viewPagee(ipage){
+        location='showAnnounce_141_3847871_'+ipage+'_0.htm';
+    }
+</script>
+<script type="text/javascript" src="script/photo/swfobject.js"></script>
+<script type="text/javascript" src="script/photo/jquery.uploadify.v2.1.0.js"></script>
+<link rel="stylesheet" type="text/css" href="style/uploadify.css"/>
+
+<script type="text/javascript" src="script/jquery.lazyload.js"></script>
+<script type="text/javascript" src="script/jquery.prettyPhoto.js"></script>
+<link rel="stylesheet" type="text/css" href="style/prettyPhoto.css"/>
+<script type="text/javascript">
+	//jQuery.noConflict();
+	$(function() {
+		var un = encodeURI("");   //用户名
+		var pw = '';   //密码 md5模式需要设置md5=1
+                var board_id = "141";
+                var watermarkindex = '2';
+		$("#uploadify").uploadify({
+			'width'          : '62',
+			'height'         : '22',
+			'uploader'       : '/script/photo/uploadify.swf',            //flash文件
+			'script'         : 'http://pic.qingdaonews.com/operate/pd_photo.php',   //相册接口
+			'scriptData'     : { 'pw':pw,'un':un,'mark':watermarkindex,'max':'650','md5':'1','act':'upload','bid':board_id}, //mark=1 水印 max为最大宽度不限制宽度设为0 md5为是否加密方式
+			'cancelImg'      : '/newimg/cancel.png',
+			'queueID'        : 'add_photo',
+			'folder'         : 'http://pic.qingdaonews.com/album/tmp',     //相册临时目录
+			'queueSizeLimit' : '5',                                           //最大同时传图数
+			//'buttonText' : 'Upload',
+			'buttonImg':'/newimg/choose-photo-button.png',                       //按钮图片
+			'fileDesc'       :  '只能选择jpg,gif格式的图片上传',             //图片格式验证失败提示
+			'fileExt'        :  '*.jpg;*.jpeg;*.gif;*.png',                 //允许上传后缀
+			'auto'           :  true,                                    //是否自动上传
+			'sizeLimit'      : '3000000',                                  //最大尺寸3m
+			'multi'          : true,                                      //多图上传
+			'onError'        : function (a, b, c, d) {                     //错误提示
+				if(d.status == 404)
+					alert('Could not find upload script. ');
+				else if(d.type === "HTTP")
+					alert('error '+d.type+": "+d.info);
+				else if(d.type ==="File Size")
+					alert('对不起，您上传的文件尺寸大于3兆，请修改后再传');
+				else
+					alert('error '+d.type+": "+d.info);
+			},
+			'onSelect'      : function(){ jQuery('#rightload').show(); },         //选择图片后操作
+			'onComplete'  : function(a,b,c,d,e){  insertImg_pre(d);   },   //每一张图片上传后操作，d为图片路径或返回值
+			'onAllComplete'  : function(){ jQuery("#rightload").hide();   }              //全都上传完毕后执行操作
+		});
+	});
+
+    function loadsavedpost()
+    {
+        if("3847871"==$.cookie("qqd_saved_unpost_reply_id")){
+            if ($.cookie("qqd_saved_unpost_reply_body")!=null && $.cookie("qqd_saved_unpost_reply_body")!="")
+            {
+                //document.getElementById("fms_body").value=$.cookie("qqd_saved_unpost_reply_body");
+                $("#fms_body").text($.cookie("qqd_saved_unpost_reply_body"));
+            }
+        }
+        else{
+            clearsavedunpost()
+        }
+        intid_savepost=setInterval("saveunpost()",2000);
+    }
+    function saveunpost()
+    {
+        $.cookie("qqd_saved_unpost_reply_id","3847871",{
+            expires: 1
+        });
+        $.cookie("qqd_saved_unpost_reply_body",document.getElementById("fms_body").value,{
+            expires: 1
+        });
+    }
+    function clearsavedunpost(){
+        clearInterval(intid_savepost);
+        $.cookie("qqd_saved_unpost_reply_id",null);
+        $.cookie('qqd_saved_unpost_reply_body', null);
+    }
+    var intid_savepost=0;
+$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+
+<style>
+.tagline{ margin-bottom:5px; background:#f9f9f9; border:1px #f1f1f1 solid; height:30px; line-height:30px; font-size:14px; padding-left:10px;}
+.tagline a{ background:url(http://club.qingdaonews.com/newimg/li.gif) repeat-x 0 -340px; border:1px solid #C1DBCE;color: #064F34;padding: 2px 6px;
+	font-size:12px; font-weight:bold;}
+</style>
+</head>
+<body>
+<!--吊顶开始-->
+<div id="header_qd">
+  <div class="top980">
+    <div class="menu_left">
+      <ul class="menu_club">
+        <li class="no_sub pr10"><a target="_blank" href="http://www.qingdaonews.com" class="tablink nosub">青岛新闻网首页 &gt;</a></li>
+        <li class="w70"> <a target="_blank" href="#" class="tablink">频道</a>
+          <ul class="w200">
+            <li><a href="http://news.qingdaonews.com/">新闻</a></li>
+            <li><a href="http://club.qingdaonews.com/">社区</a></li>
+            <li><a href="http://t.qingdaonews.com/">微博</a></li>
+            <li><a href="http://yuqing.qingdaonews.com/">舆情</a></li>
+            <li><a href="http://ent.qingdaonews.com/">文娱</a></li>
+            <li><a href="http://sports.qingdaonews.com/">体育</a></li>
+            <li><a href="http://baoliao.qingdaonews.com/">爆料</a></li>
+            <li><a href="http://travel.qingdaonews.com/">旅游</a></li>
+            <li><a href="http://house.qingdaonews.com/">房产</a></li>
+            <li><a href="http://auto.qingdaonews.com/">汽车</a></li>
+            <li><a href="http://finance.qingdaonews.com/">财经</a></li>
+            <li><a href="http://health.qingdaonews.com/">健康</a></li>
+            <li><a href="http://lady.qingdaonews.com/">女性</a></li>
+            <li><a href="http://edu.qingdaonews.com/">教育</a></li>
+            <li><a href="http://food.qingdaonews.com/">美食</a></li>
+            <li><a href="http://love.qingdaonews.com/">婚嫁</a></li>
+            <li><a href="http://dazhe.qingdaonews.com/">打折</a></li>
+            <li><a href="http://tuanzi.qingdaonews.com/">团购</a></li>
+            <li><a href="http://info.qingdaonews.com/">分类</a></li>
+            <li><a href="http://caipiao.qingdaonews.com/">购彩</a></li>
+          </ul>
+        </li>
+        <li class="w70"> <a target="_blank" href="http://club.qingdaonews.com">社区</a>
+          <ul class="w270">
+				<li><a href="http://club.qingdaonews.com/club_entry_2_2_0_1_1.htm">青岛论坛</a></li>
+				<li><a href="http://t.qingdaonews.com/">微博快报</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1025_2_0_1_0.htm">社会万象</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1148_2_0_1_0.htm">聚焦中国</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1059_3_0_1_0.htm">市南论坛</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1060_3_0_1_0.htm">新 市 北</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1054_3_0_1_0.htm">李沧论坛</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_128_3_0_1_0.htm">西 海 岸</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_20_2_0_1_0.htm">青岛楼事</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_26_15_0_1_0.htm">游山玩水</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1115_8_0_1_0.htm">教育论坛</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1235_9_0_1_0.htm">亲子论坛</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_39_6_0_1_0.htm">车迷论坛</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_33_12_0_1_0.htm">健康有约</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1127_10_0_1_0.htm">我家理财</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1075_14_0_1_0.htm">吃喝玩乐</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_24_13_0_1_0.htm">单身男女</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1187_14_0_1_0.htm">我要结婚</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1193_2_0_1_0.htm">喜宴酒店</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1126_13_0_1_0.htm">婆媳论坛</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_149_14_0_1_0.htm">娱乐八卦</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_71_5_0_1_0.htm">摄影园地</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_1170_2_0_1_0.htm">我爱打折</a></li>
+				<li><a href="http://club.qingdaonews.com/club_entry_27_14_0_1_0.htm">美食广场</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+		<!--用户登录-->
+	<div class="y" id="hLogin">
+       用户名 <input name="" class="ipt" type="text" id="loginname">
+		密码 <input name="" class="ipt" type="password" id="password">
+		<a href="javascript:login()" class="cYellow fb">[登录]</a>
+		<a href="http://passport.qingdaonews.com" target="_blank">注册</a>
+    </div>
+    <!--用户结束-->	
+	  </div>
+
+</div>
+<!--吊顶结束-->
+<div class="ad">
+      <script language="JavaScript" type="text/javascript" src="http://951.up.hiao.com/up/loc/2012-5/uploc951.js" charset="gb2312"></script><script language="JavaScript" type="text/javascript" src="http://952.up.hiao.com/up/loc/2012-5/uploc952.js" charset="gb2312"></script>
+</div>
+
+<div id="maincontainer">
+	<!--导航 s-->
+	<div class="header">
+		<div class="logo"><a href="http://club.qingdaonews.com"><img src="newimg/logo.gif" alt="青青岛社区" /></a></div>
+		<script language="JavaScript" type="text/javascript" src="http://950.up.hiao.com/up/loc/2012-5/uploc950.js" charset="gb2312"></script>
+	</div>
+	<!--导航 e-->
+	<!--目录 B-->
+	<div class="qnav_tree">
+		<div class="z"><a href="http://www.qingdaonews.com">青岛新闻网</a> > <a href="/">青青岛社区</a> > <a href="/club_entry_141_14_0_1_0.htm" target=_blank>灌水乐园</a> <span class="pl10"></span> </div>
+		<div class="search_i">
+			<form method="post" name="qqdclub_search" action="http://club.qingdaonews.com/queryResult_new.php" target='_blank'>
+				<input type="text" name="txtTopic" onfocus="this.value=='搜索你想要的'?this.value='':'搜索你想要的';" onblur="this.value==''?this.value='搜索你想要的':'';" class="txt" value="搜索你想要的">
+					<input name="board_id" type="hidden" value="141" />
+				<input type="submit" title="帖子标题快速检索" value="搜索" class="btn" style="cursor:pointer;">
+				<input type="hidden" name="op" value="new">
+			</form>
+		</div>
+	</div>
+	<!--目录 e-->
+	
+
+	<!--顶部翻页 B-->
+	<div class="post">
+		<div class="z" style="margin-top:2px;margin-bottom:1px;"> <a href="javascript:setit()" class="btn"><img src="newimg/btn_reply.gif" alt="回复此贴" title="回复此贴"/></a> <a href="postform.php?index=14&board_id=141" class="btn"><img src="newimg/btn_post.gif" alt="发表新贴" title="发表新贴"/></a> </div>
+		<div class="page_mod">
+			<form method="get" action="javascript:viewPagee($('#page1').val())" name="frmList2" onSubmit="viewPagee($('#page1').val())">
+							<a href="gentopicall_static.php?board_id=141&topic_id=3847871&Page=1">刷新生成此帖</a> <a href="club_entry_141_14_0_1_0.htm">返回列表</a><strong>1</strong><span class="page_go"> <em>到第</em>
+				<input type="text" class="txt" value="" name="Page" id="page1">
+				<em>页</em>
+				<input class="btn" type="submit" value="确定" />
+				<input type="hidden" name="topic_id" value="3847871">
+				<input type="hidden" name="board_id" value="141">
+				</span>
+			</form>
+		</div>
+		<div class="blank1">-</div>
+	</div>
+	<!--顶部翻页 e-->
+	<div class="wrapper">
+		<div class="vleft">
+			<!--帖子信息 B-->
+			<div class="vlist">
+                				<div class="vitem">
+					<div class="vuser vtopuser" style="z-index:999;">
+                                            <span class="vuser_fl"><em class="ico_n0">楼主</em></span>
+                                            <span class="vuser_name" id="vuser_name0">
+						<!--楼主信息-->
+						<a href=http://passport.qingdaonews.com/u/熊出_没注意 onMouseOver="fnShow(0);" onmouseout="javascript:fnHidden(0);" class="username">熊出_没注意</a>
+                                                <div class="list" id="menu0" onmouseout="javascript:fnHidden(0);" onMouseOver="fnShow(0);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/熊出_没注意 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=熊出_没注意 target=_blank>给他（她）发消息</a></li>
+                                								<li><a href=/showAnnounce_old_141_3847871_1_1.htm target=_self>只看楼主</a></li>
+							</ul>
+						</div>
+                        
+						<!--楼主信息--> 
+					    </span>
+                                            <span class="vuser_level" id="vuser_level0"><span>海牛级</span><img src="http://club.qingdaonews.com/faces/score/red.gif" title="13级" ><img src="http://club.qingdaonews.com/faces/score/red.gif" title="13级" ><img src="http://club.qingdaonews.com/faces/score/red.gif" title="13级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="13级"><img src="http://club.qingdaonews.com/images/stars1.gif" title="13级"><img src="http://club.qingdaonews.com/images/stars1.gif" title="13级"><img src="http://club.qingdaonews.com/images/stars1.gif" title="13级"><img src="http://club.qingdaonews.com/images/stars1.gif" title="13级"><img src="http://club.qingdaonews.com/images/stars1.gif" title="13级"><img src="http://club.qingdaonews.com/images/stars1.gif" title="13级"></span>
+                                            <span class="vuser_tools">
+                                                                                            <a href="javascript:openwin('/sendmsg.php?sn=熊出_没注意',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('熊出_没注意')">回复</a> | <a href="javascript:setit_yy('141','3847871','m');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=0&topic_id=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662',645,600);">编辑</a>
+                                            </span>
+                                        </div>
+					<div class="vcon" style="z-index:0;">
+						<div class="vtit">
+							<h1>最有钱的人都是这样来评价自己</h1>
+                                                        <span class="z">人气：<span class="cRed">131</span> 回复：<span class="cRed">8</span></span><a href="javascript:window.print();">打印</a> | 文字选择：<span onclick="javascript:s();" class="cBlack" title="正常字体">T</span><big onclick="javascript:b();" class="cBlack" title="放大字号">T</big>
+							<div class="hr">
+								<hr />
+							</div>
+						</div>
+						<div class="text"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="ztext"><tr><td>
+							<p>
+								                                <SPAN id=tom_content><FONT face=仿宋_GB2312>&nbsp;</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>1、我太穷了，我穷得除了剩下钱以外，什么都没有了。</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>2、哦，是你呀，我现在正在忙。忙什么？呵呵，今天出太阳了，我把钱搬出来晒一晒。</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>3、比尔·盖兹？他那也叫有钱？我要是让他给我数钱，他准会说我判了他一个无期。</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>4、现在，银行的人都怕我了。他们说我要是把钱全都存到他们那里去，他们可就连落脚的地方也没有了。</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>5、谢灵运说：“天下才分十斗，曹子建独得八斗，我得一斗，天下人共用一斗。”我说：“天下财分十斗，我独得八斗，我的家人得一斗，天下人共用一斗。”</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>6、以前，我手底下的人一不听话，我就用钱砸他们。现在，我不砸了，我把他们带到我家，他们一进去，就说：“乖乖，这么多钱，吓都吓死了。”然后，说着说着就口吐白沫了。</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>7、不好意思，到现在才打电话给你。是这样的，上个星期我见到了一只大象，我见它不爽，用钱砸它，它被砸死了。后来，处理此事的人火化大象花了一天，焚烧我砸大象的钱好像到现在还没烧完。我正在关注着这事。</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>8、你快打电话叫一百辆挖土机来吧。我家门口被倒塌下来的钱堵住了，我爬都爬不出来。</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>9、你在哪里？你快坐直升飞机来吧。我开跑车在钱堆里都三天三夜了，也没找到出口。</FONT><br><P style="TEXT-INDENT: 2em"><FONT face=仿宋_GB2312>10、你知道什么叫闻风丧胆吗？当我告诉你我有多少钱时你知道了……哎！早知道如此，就不对你说了，现在还要带你去医院，真是的。</FONT></SPAN>
+							</p>
+							<br /></td></tr></table>
+						</div>
+						<div class="vbtn">
+                            <p><a class="btn_b" style="padding-left:8px;" href="intf/genTopicForCWB.php?board_id=141&topic_id=3847871&title=最有钱的人都是这样来评价自己&desc=我分享了网友熊出_没注意的文章：最有钱的人都是这样来评价自己 &nbsp;1、我太穷了，我穷得除了剩下钱以外，什么都没有了。2、哦，是你呀，我现在正在忙。忙什么？呵呵，今天出太阳了，我把钱搬出来晒一晒&width=700" target="_blank">生成长微博<img style="position: absolute;margin: -8px 0 0 -10px;" src="newimg/ico_new_b.gif"></a> <a class="btn_b" href="club_entry_141_14_0_1_0.htm">返回本版</a> <a href="javascript:setit('熊出_没注意')" class="btn_s">回复</a> <a target="_self" class="btn_s" href="javascript:setit_yy('141','3847871','m');">引用</a> <a class="btn_s" target="_blank" href="send_to_friend.php?board_id=141&amp;topic_id=3847871&amp;title=%D7%EE%D3%D0%C7%AE%B5%C4%C8%CB%B6%BC%CA%C7%D5%E2%D1%F9%C0%B4%C6%C0%BC%DB%D7%D4%BC%BA">推荐</a> <a class="btn_s" id="favorite" href="javascript:void(0);">收藏</a></p><div class='weixin'><img src="http://pic.qingdaonews.com/url2qrcode.php?url=http://club.qingdaonews.com/touch/show_141_3847871_1_0.htm" width="85" height="85" /><p>分享到微信朋友圈</p></div>
+							<!-- Baidu Button BEGIN -->
+<div style="width:300px;margin:0 auto;" class="pt10 pb10">
+<a title="分享到青青岛微博" style="padding:8px 10px 3px 0;" class="z" href="javascript:var d=document,w=window,f='http://t.qingdaonews.com',l=d.location,e=encodeURIComponent,p='?u='+e(l.href)+'&t='+e(d.title)+'&d='+e(w.getSelection?w.getSelection().toString():d.getSelection?d.getSelection():d.selection.createRange().text);if(!w.open(f+'/share.php'+p,'share','toolbar=0,status=0,width=950,height=470')){l.href=f+'.new'+p;}void(0)"><img src="newimg/qdwb_s.gif" style="vertical-align:middle;" /> 青青岛微博</a>
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more">更多</span>
+<a class="shareCount"></a>
+</div>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6864113"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+                                                            <!--script type="text/javascript" src="script/share.js"></script-->
+                                                </div>
+                                                <div>
+                                                    
+                                                </div>
+                                                <div class="img signa_ture"><img src=http://club.qingdaonews.com/uploadfiles/200812/12/233402272488.jpg></div>
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-10 13:13:17 来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('熊出_没注意')">回复</a> | <a href="javascript:setit_yy('2','3847871','m');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=0&topic_id=3847871&parent_id=3847871&title=最有钱的人都是这样来评价自己&topic_author=熊出_没注意',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=0&topic_id=3847871&sess=b69278808f17e3882fd215602cec0f57',645,600);">编辑</a> </div>
+						</div>
+					</div>
+					<div class="ad">
+						<script type="text/javascript" language="javascript" charset="gb2312" src="http://up.hiao.com/up/uploc75.js"></script>
+<script type="text/javascript" language="javascript" charset="gb2312" src="http://up.hiao.com/up/uploc138.js"></script>
+
+					</div>
+				</div>
+				<!-- 楼主结束 -->
+                				                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">沙发</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/青青岛社区网友 onMouseOver="fnShow(2);" class="username">青青岛社区网友</a>
+						<div class="list" id="menu2" onMouseOver="fnShow(2);" onmouseout="fnHidden(2);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/青青岛社区网友 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=青青岛社区网友 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level2"><span>海草级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="1级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=青青岛社区网友',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('青青岛社区网友')">回复</a> | 引用 | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629289&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10"></em>
+						<div class="text">
+							<p> <span class="f12 cDGray"><img src="http://club.qingdaonews.com/faces/Pics/2045.gif" alt="{2045}" /></span> </p>
+						</div>
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-10 17:23:06                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('青青岛社区网友')">回复</a> | 引用 | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629289&parent_id=3847871&title=举报&topic_author=青青岛社区网友',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629289&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">3楼</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 onMouseOver="fnShow(3);" class="username">薇薇精致婚纱馆</a>
+						<div class="list" id="menu3" onMouseOver="fnShow(3);" onmouseout="fnHidden(3);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=薇薇精致婚纱馆 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level3"><span>蛏子级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=薇薇精致婚纱馆',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629379','r');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629379&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10">回复:</em>
+						<div class="text">
+							<p>  </p>
+						</div>
+                                                
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-11 11:04:19                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629379','r');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629379&parent_id=3847871&title=举报&topic_author=薇薇精致婚纱馆',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629379&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">4楼</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 onMouseOver="fnShow(4);" class="username">薇薇精致婚纱馆</a>
+						<div class="list" id="menu4" onMouseOver="fnShow(4);" onmouseout="fnHidden(4);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=薇薇精致婚纱馆 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level4"><span>蛏子级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=薇薇精致婚纱馆',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629380','r');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629380&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10">回复:</em>
+						<div class="text">
+							<p>  </p>
+						</div>
+                                                
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-11 11:04:31                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629380','r');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629380&parent_id=3847871&title=举报&topic_author=薇薇精致婚纱馆',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629380&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">5楼</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 onMouseOver="fnShow(5);" class="username">薇薇精致婚纱馆</a>
+						<div class="list" id="menu5" onMouseOver="fnShow(5);" onmouseout="fnHidden(5);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=薇薇精致婚纱馆 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level5"><span>蛏子级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=薇薇精致婚纱馆',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629381','r');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629381&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10">回复:</em>
+						<div class="text">
+							<p>  </p>
+						</div>
+                                                
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-11 11:04:37                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629381','r');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629381&parent_id=3847871&title=举报&topic_author=薇薇精致婚纱馆',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629381&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">6楼</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 onMouseOver="fnShow(6);" class="username">薇薇精致婚纱馆</a>
+						<div class="list" id="menu6" onMouseOver="fnShow(6);" onmouseout="fnHidden(6);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=薇薇精致婚纱馆 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level6"><span>蛏子级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=薇薇精致婚纱馆',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629382','r');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629382&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10">回复:</em>
+						<div class="text">
+							<p>  </p>
+						</div>
+                                                
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-11 11:04:41                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629382','r');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629382&parent_id=3847871&title=举报&topic_author=薇薇精致婚纱馆',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629382&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">7楼</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 onMouseOver="fnShow(7);" class="username">薇薇精致婚纱馆</a>
+						<div class="list" id="menu7" onMouseOver="fnShow(7);" onmouseout="fnHidden(7);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=薇薇精致婚纱馆 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level7"><span>蛏子级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=薇薇精致婚纱馆',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629383','r');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629383&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10">回复:</em>
+						<div class="text">
+							<p>  </p>
+						</div>
+                                                
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-11 11:04:47                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629383','r');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629383&parent_id=3847871&title=举报&topic_author=薇薇精致婚纱馆',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629383&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">8楼</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 onMouseOver="fnShow(8);" class="username">薇薇精致婚纱馆</a>
+						<div class="list" id="menu8" onMouseOver="fnShow(8);" onmouseout="fnHidden(8);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=薇薇精致婚纱馆 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level8"><span>蛏子级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=薇薇精致婚纱馆',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629384','r');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629384&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10">回复:</em>
+						<div class="text">
+							<p>  </p>
+						</div>
+                                                
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-11 11:04:51                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629384','r');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629384&parent_id=3847871&title=举报&topic_author=薇薇精致婚纱馆',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629384&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">9楼</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 onMouseOver="fnShow(9);" class="username">薇薇精致婚纱馆</a>
+						<div class="list" id="menu9" onMouseOver="fnShow(9);" onmouseout="fnHidden(9);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=薇薇精致婚纱馆 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level9"><span>蛏子级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=薇薇精致婚纱馆',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629385','r');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629385&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10">回复:</em>
+						<div class="text">
+							<p>  </p>
+						</div>
+                                                
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-11 11:04:56                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629385','r');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629385&parent_id=3847871&title=举报&topic_author=薇薇精致婚纱馆',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629385&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                                <div class="vitem">
+					<div class="vuser"> <span class="vuser_fl">10楼</span> <span class="vuser_name" id="vuser_name2"> <a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 onMouseOver="fnShow(10);" class="username">薇薇精致婚纱馆</a>
+						<div class="list" id="menu10" onMouseOver="fnShow(10);" onmouseout="fnHidden(10);" style="display: none;">
+							<ul>
+								<li><a href=http://passport.qingdaonews.com/u/薇薇精致婚纱馆 target=_blank>进他（她）的空间</a></li>
+								<li><a href=/sendmsg.php?sn=薇薇精致婚纱馆 target=_blank>给他（她）发消息</a></li>
+                                
+							</ul>
+						</div>  
+						</span> 
+                        
+                        <span class="vuser_level" id="vuser_level10"><span>蛏子级</span><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" ><img src="http://club.qingdaonews.com/images/stars1.gif" title="6级" > </span>
+					 
+						<span class="vuser_tools"> <a href="javascript:openwin('/sendmsg.php?sn=薇薇精致婚纱馆',645,460);" class="ico_m">纸条</a> | <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629386','r');">引用</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629386&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+													</span>
+					</div>
+					<div class="vcon"> <em class="f14 pb10">回复:</em>
+						<div class="text">
+							<p>  </p>
+						</div>
+                                                
+                        
+						<div class="vtools">
+							<div class="hr">
+								<hr />
+							</div>
+							<div class="z"> 2009-02-11 11:05:02                            来自青青岛社区 </div>
+							<div class="y"> <a href="javascript:setit('薇薇精致婚纱馆')">回复</a> | <a href="javascript:setit_yy('141','49629386','r');">引用</a> | <a href="javascript:openwin('/reportAnnounce.php?board_id=141&type=1&topic_id=49629386&parent_id=3847871&title=举报&topic_author=薇薇精致婚纱馆',645,386);">举报</a> | <a href="javascript:openwin('/ownerEditAnnounce_static.php?board_id=141&type=1&topic_id=49629386&pid=3847871&sess=74f168e6e4fba8d4c2b8c74e97405662&pt=6&lc=0&page=1',645,600);">编辑</a>
+															</div>
+						</div>
+					</div>
+				</div>
+                
+                				<div class="clear mb10">
+					<div class="page_mod">
+                        <form method="get" action="javascript:viewPagee($('#page2').val())" name="frmList2" onSubmit="viewPagee($('#page2').val())">
+                            <a href="gentopicall_static.php?board_id=141&topic_id=3847871&Page=1">刷新生成此帖</a> <a href="club_entry_141_14_0_1_0.htm">返回列表</a><strong>1</strong><span class="page_go"> <em>到第</em>
+                            <input type="text" class="txt" value="" name="Page" id="page2">
+                            <em>页</em>
+                            <input class="btn" type="submit" value="确定" />
+                            <input type="hidden" name="topic_id" value="3847871">
+                            <input type="hidden" name="board_id" value="141">
+                            </span>
+                        </form>
+					</div>
+				</div>
+				<div class="ad mt10">
+                    <script type="text/javascript" src="http://up.hiao.com/up/uploc91.js" language="javascript" charset="gb2312"></script>
+<script type="text/javascript" src="http://up.hiao.com/up/uploc92.js" language="javascript" charset="gb2312"></script>
+
+				</div>
+			</div>
+			<!--帖子信息 e-->
+			<div class="blank1">--</div>
+			<!--帖子回复 B-->
+                                            <div class=statement>帖子已过期，不能回复！</div>
+            
+            			<!--帖子回复 e-->
+		</div>
+		<div class="vright">
+			<!--右侧提取 B-->
+<div class="vhotnews">
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://club.qingdaonews.com/goldbank" target="_blank">金币兑换专区</a></strong><a href="http://club.qingdaonews.com/goldbank/" target="_blank">更多</a></h2><div class="padding"><ul class="li_img"><li style="height:auto"><a href="http://club.qingdaonews.com/goldbank/goodshow.php?id=139" target="_blank" atremote="atremote"><img src="http://pic.qingdaonews.com/p/goldmall/2014/04/oriphoto/2014041716371949534.jpg" border="0" width="155" atremote="atremote"></a><span><a href="http://club.qingdaonews.com/goldbank/goodshow.php?id=139" target="_blank" atremote="atremote"><strong>生活缴费一站搞定 充值送金币</strong></a></span></li></ul></div></div>
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://www.qingdaonews.com/node/node_57509.htm" atremote="atremote" target="_blank">热点回顾</a></strong><a href="http://www.qingdaonews.com/node/node_57509.htm" atremote="atremote" target="_blank">更多</a></h2>
+
+<div class="padding"><ul class="newslist12px"><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5403234_1_0.htm" target="_blank" atremote="atremote">癌症单身母亲被平安骗10W</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5402909_1_0.htm" target="_blank" atremote="atremote">青岛人在德国 体验异域风土人情</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5401810_1_0.htm" target="_blank" atremote="atremote">老人横穿海尔路被撞飞7米</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5401716_1_0.htm" target="_blank" atremote="atremote">放开二胎 房价是否顺势反弹</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5399916_1_0.htm" target="_blank" atremote="atremote">盘点那些消失了的行当</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5399282_1_0.htm" target="_blank" atremote="atremote">台东停车管理太坑爹</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5404308_1_0.htm" target="_blank" atremote="atremote">探访青岛里院:老建筑破败不堪</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5400250_1_0.htm" target="_blank" atremote="atremote">韩国富人区的夜店实拍</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5400242_1_0.htm" target="_blank" atremote="atremote">我从新疆来 被打上特殊标签</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5400268_1_0.htm" target="_blank" atremote="atremote">我在青岛买房 遇到无耻中介</a></li></ul></div>
+</div>
+
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://info.qingdaonews.com" atremote="atremote" target="_blank">生活工具</a></strong></h2>
+
+<div class="padding">
+<div class="tool_a"><a href="http://guahao.qingdaonews.com/" target="_blank">医院网上挂号 &gt;&gt;</a></div>
+
+<div class="tool_b"><a href="http://club.qingdaonews.com/tools/bus/index.php" target="_blank">青岛公交查询 &gt;&gt;</a></div>
+
+<div class="tool_c"><a href="http://ticket.qingdaonews.com/" target="_blank">长途汽车售票 &gt;&gt;</a></div>
+
+<div class="tool_d"><a href="http://auto.qingdaonews.com/wzcx/search.html" target="_blank">车辆违章查询 &gt;&gt;</a></div>
+</div>
+</div>
+
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://info.qingdaonews.com" atremote="atremote" target="_blank">分类信息</a></strong><a href="http://info.qingdaonews.com/post.php" atremote="atremote" target="_blank"><span class="cRed">免费发布</span></a></h2>
+
+<div class="padding"><ul class="newslist12px nli3 fc">    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-72.html" target="_blank"  rel="nofollow"  rel="nofollow">[家居维修]</a></li>    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-86-page-1.html" target="_blank"  rel="nofollow"  rel="nofollow">[保 洁]</a></li>    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-103.html" target="_blank"  rel="nofollow"  rel="nofollow">[加盟招商]</a></li>    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-80.html" target="_blank"  rel="nofollow"  rel="nofollow">[生活配送]</a></li>    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-74.html" target="_blank"  rel="nofollow"  rel="nofollow">[搬 家]</a></li>    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-178.html" target="_blank"  rel="nofollow"  rel="nofollow">[景点门票]</a></li>    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-46.html" target="_blank"  rel="nofollow"  rel="nofollow">[租 车]</a></li>    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-29.html" target="_blank"  rel="nofollow"  rel="nofollow">[数码产品]</a></li>    <li><a href="http://info.qingdaonews.com/list-city_id-1-fid-118.html" target="_blank"  rel="nofollow"  rel="nofollow">[家 教]</a></li></ul>
+</div>
+</div>
+
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://info.qingdaonews.com" atremote="atremote" target="_blank">最新发布信息</a></strong><a href="http://info.qingdaonews.com/" atremote="atremote" target="_blank">更多</a></h2>
+
+<div class="padding"><ul class="newslist12px"><li>·[<span class="cBlack"><A title="" href="http://info.qingdaonews.com/list-city_id-1-fid-175.html" target=_blank>健身</A>]&nbsp;<a href="http://info.qingdaonews.com/bencandy-city_id-1-fid-175-id-390063.html" target="_blank"  rel="nofollow">转李沧健身游泳卡</a></li><li>·[<span class="cBlack"><A title="" href="http://info.qingdaonews.com/list-city_id-1-fid-23.html" target=_blank>手机</A>]&nbsp;<a href="http://info.qingdaonews.com/bencandy-city_id-1-fid-23-id-389493.html" target="_blank"  rel="nofollow">售白色16G苹果4S</a></li><li>·[<span class="cBlack"><A title="" href="http://info.qingdaonews.com/list-city_id-1-fid-30.html" target=_blank>设备</A>]&nbsp;<a href="http://info.qingdaonews.com/bencandy-city_id-1-fid-30-id-372217.html" target="_blank"  rel="nofollow">半价转9成新钢琴</a></li><li>·[<span class="cBlack"><A title="" href="http://info.qingdaonews.com/list-city_id-1-fid-26.html" target=_blank>家具</A>]&nbsp;<a href="http://info.qingdaonews.com/bencandy-city_id-1-fid-26-id-390695.html" target="_blank"  rel="nofollow">低价转实木踢脚线</a></li><li>·[<span class="cBlack"><A title="" href="http://info.qingdaonews.com/list-city_id-1-fid-85.html" target=_blank>食品</A>]&nbsp;<a href="http://info.qingdaonews.com/bencandy-city_id-1-fid-85-id-389456.html" target="_blank"  rel="nofollow">出售正宗土鸡蛋</a></li><li>·[<span class="cBlack"><A title="" href="http://info.qingdaonews.com/list-city_id-1-fid-25.html" target=_blank>家电</A>]&nbsp;<a href="http://info.qingdaonews.com/bencandy-city_id-1-fid-25-id-390102.html" target="_blank"  rel="nofollow">低价转让液晶电视</a></li><li>·[<span class="cBlack"><A title="" href="http://info.qingdaonews.com/list-city_id-1-fid-45.html" target=_blank>顺风车</A>]&nbsp;<a href="http://info.qingdaonews.com/bencandy-city_id-1-fid-45-id-389469.html" target="_blank"  rel="nofollow">5.1 市北区-新泰</a></li><li>·[<span class="cBlack"><A title="" href="http://info.qingdaonews.com/list-city_id-1-fid-45.html" target=_blank>顺风车</A>]&nbsp;<a href="http://info.qingdaonews.com/bencandy-city_id-1-fid-45-id-390742.html" target="_blank"  rel="nofollow">5.1 水清沟-泰安</a></li></ul>
+</div>
+</div>
+
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://www.qingdaonews.com/node/node_56929.htm" atremote="atremote" target="_blank">精品贴图</a></strong><a href="http://www.qingdaonews.com/node/node_56929.htm" atremote="atremote" target="_blank">更多</a></h2>
+
+<div class="padding"><ul class="li_img"><li><a href="http://club.qingdaonews.com/showAnnounce_27_3980830_1_0.htm" target="_blank" atremote="atremote"><img src="http://www.qingdaonews.com/images/attachement/jpg/site1/20140421/d43d7e44609014bea11803.jpg" border="0" height="100" width="155" atremote="atremote"></a><span><a href="http://club.qingdaonews.com/showAnnounce_27_3980830_1_0.htm" target="_blank" atremote="atremote">最开心就是和家人一起吃</a></span></li><li><a href="http://club.qingdaonews.com/photos/4/photos_3069.htm" target="_blank" atremote="atremote"><img src="http://www.qingdaonews.com/images/attachement/jpg/site1/20140421/d43d7e44609014bea1aa06.jpg" border="0" height="100" width="155" atremote="atremote"></a><span><a href="http://club.qingdaonews.com/photos/4/photos_3069.htm" target="_blank" atremote="atremote">醇香四溢的啤酒蒜薹烧鲅鱼</a></span></li><li><a href="http://club.qingdaonews.com/photos/10/photos_3045.htm" target="_blank" atremote="atremote"><img src="http://www.qingdaonews.com/images/attachement/jpg/site1/20140418/78dd08f022ca14bad97606.jpg" border="0" height="100" width="155" atremote="atremote"></a><span><a href="http://club.qingdaonews.com/photos/10/photos_3045.htm" target="_blank" atremote="atremote">街上的妹纸们都穿成这样了么</a></span></li></ul>
+<ul class="li_img"><li><a href="http://ent.qingdaonews.com/2014-04/21/content_10406200.htm" target="_blank" atremote="atremote"><img src="http://www.qingdaonews.com/images/attachement/jpg/site1/20140421/201a065afbea14befec91e.jpg" border="0" height="100" width="155" atremote="atremote"></a><span><a href="http://ent.qingdaonews.com/2014-04/21/content_10406200.htm" target="_blank" atremote="atremote">揭明星子女如何起名</a></span></li></ul>
+<ul class="li_img"><li><a href="http://ent.qingdaonews.com/2014-04/21/content_10406171.htm" target="_blank" atremote="atremote"><img src="http://www.qingdaonews.com/images/attachement/jpg/site1/20140421/201a065afbea14bf004c45.jpg" border="0" height="100" width="155" atremote="atremote"></a><span><a href="http://ent.qingdaonews.com/2014-04/21/content_10406171.htm" target="_blank" atremote="atremote">琼瑶剧男星今昔对比</a></span></li></ul>
+<ul class="li_img"><li><a href="http://news.qingdaonews.com/shehui/2014-04/21/content_10406014.htm" target="_blank" atremote="atremote"><img src="http://www.qingdaonews.com/images/attachement/jpg/site1/20140421/201a065afbea14bef8a742.jpg" border="0" height="100" width="155" atremote="atremote"></a><span><a href="http://news.qingdaonews.com/shehui/2014-04/21/content_10406014.htm" target="_blank" atremote="atremote">大学自习室里的抓拍</a></span></li><li><a href="http://news.qingdaonews.com/shehui/2014-04/21/content_10406055.htm" target="_blank" atremote="atremote"><img src="http://www.qingdaonews.com/images/attachement/jpg/site1/20140421/201a065afbea14befa8615.jpg" border="0" height="100" width="155" atremote="atremote"></a><span><a href="http://news.qingdaonews.com/shehui/2014-04/21/content_10406055.htm" target="_blank" atremote="atremote">让人彻底凌乱的猛图</a></span></li></ul>
+</div>
+</div>
+
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://minsheng.qingdaonews.com/" target="_blank">民生在线</a></strong><a href="http://minsheng.qingdaonews.com/" target="_blank">更多</a></h2>
+
+<div class="padding"><ul class="li_img"><li><a href="http://mszx.qingdaonews.com/html/20140421092050/index.htm" target="_blank" atremote="atremote" rel="nofollow"><img src="http://www.qingdaonews.com/images/attachement/jpg/site1/20140421/0017c4c3212e14bebc5001.jpg" border="0" height="100" width="155"></a><span><a href="http://mszx.qingdaonews.com/html/20140421092050/index.htm" target="_blank" atremote="atremote" rel="nofollow">崂山区副区长赵镭明日网谈</a></span></li></ul><ul class="newslist12px"><li>·<a href="http://minsheng.qingdaonews.com/content/2014-04/18/content_10398906.htm"  rel="nofollow" target="_blank" atremote="atremote">外债数据国家统一定期发布</a></li><li>·<a href="http://minsheng.qingdaonews.com/content/2014-04/18/content_10398947.htm"  rel="nofollow" target="_blank" atremote="atremote">个人外币国家不会强制结汇</a></li><li>·<a href="http://minsheng.qingdaonews.com/content/2014-04/18/content_10398856.htm"  rel="nofollow" target="_blank" atremote="atremote">今年银行业融资1.7万亿</a></li><li>·<a href="http://minsheng.qingdaonews.com/content/2014-04/18/content_10398833.htm"  rel="nofollow" target="_blank" atremote="atremote">人行每年可兑等值5万美元</a></li></ul>
+</div>
+</div>
+
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://club.qingdaonews.com/club_entry_2_2_0_1_0.htm" target="_blank">热点聚焦</a></strong><a href="http://club.qingdaonews.com/club_entry_2_2_0_1_0.htm" target="_blank">更多</a></h2>
+
+<div class="padding"><ul class="newslist12px"><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5406487_1_0.htm" target="_blank" atremote="atremote">世园会4月25日12︰30正式开园纳客</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5406443_1_0.htm" target="_blank" atremote="atremote">76岁老人手绘社区地图 八大关做义务导游</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_1115_175894_1_0.htm" target="_blank" atremote="atremote">青岛嫚嫁外地男人十有九个后悔 看我的分析</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5405498_1_0.htm" target="_blank" atremote="atremote">交警周再明被追授为人民满意公务员 记二等功</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_128_4128863_1_0.htm" target="_blank" atremote="atremote">香江路招商银行，你的态度能好点吗？</a></li><li>·<a href="http://club.qingdaonews.com/goldbank/goodshow.php?id=140" target="_blank" atremote="atremote">青青岛社区八分钟约会报名 谈一场靠谱恋爱</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_1115_175844_1_0.htm" target="_blank" atremote="atremote">城阳这家培训学校真牛气 公然泄密中考题</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5406215_1_0.htm" target="_blank" atremote="atremote">出租车送医闯红灯比较多 但请不要喝彩&nbsp;</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_1115_175882_1_0.htm" target="_blank" atremote="atremote">我离异男 找了个老姑娘比我挣得多嫌我穷</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_2_5405678_1_0.htm" target="_blank" atremote="atremote">无违章撞人后送医院 因移动现场负全责 冤枉不</a></li></ul></div>
+</div>
+
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://t.qingdaonews.com/op/weiping" target="_blank">微博热议</a></strong><a href="http://t.qingdaonews.com/op/weiping" target="_blank">更多</a></h2>
+
+<div class="padding"><ul class="newslist12px"><li>·<a href="http://weibo.com/2292899701/B0pt6pUSN?mod=weibotime"  rel="nofollow"  target="_blank" atremote="atremote">舌尖上的故乡：盘点100座城市和它的美食</a></li><li>·<a href="http://weibo.com/1768470921/B0tNF6UxJ?mod=weibotime"  rel="nofollow"  target="_blank" atremote="atremote">看着都疼！湖南小伙将清明上河图刺在背上</a></li><li>·<a href="http://weibo.com/2292899701/B0soJBjrp?mod=weibotime"  rel="nofollow"  target="_blank" atremote="atremote">青岛老丈人和鲅鱼的那些事儿 你知道多少？</a></li><li>·<a href="http://weibo.com/2292899701/B0u7IvNWA?mod=weibotime"  rel="nofollow"  target="_blank" atremote="atremote">盘点青岛适合发呆+邂逅的小店 你造吗</a></li><li>·<a href="http://weibo.com/2292899701/B0l7z9y4M?mod=weibotime"  rel="nofollow"  target="_blank" atremote="atremote">青岛有钱也吃不到的限量美食 你都吃过吗？</a></li><li>·<a href="http://weibo.com/2292899701/B0jrQmNOV?mod=weibotime"  rel="nofollow"  target="_blank" atremote="atremote">美国大嘴猴称青岛销售全假货 从未授权销售</a></li><li>·<a href="http://weibo.com/2292899701/B0iRpBT7W?mod=weibotime"  rel="nofollow"  target="_blank" atremote="atremote">2014毕业生平均月薪3945元 你拖后腿了吗？</a></li><li>·<a href="http://www.qd.sd.cn/forum.php?mod=viewthread&amp;tid=725718&amp;fromuid=6875242"  rel="nofollow"  target="_blank" atremote="atremote">女中学生闹口角被捅伤因脂肪厚挽回一命(图)</a></li><li>·<a href="http://www.qd.sd.cn/forum.php?mod=viewthread&amp;tid=725750&amp;fromuid=6875242"  rel="nofollow"  target="_blank" atremote="atremote">午睡提高1/3的早死几率 ？到底应该听谁的呢</a></li><li>·<a href="http://www.qd.sd.cn/forum.php?mod=viewthread&amp;tid=725728&amp;fromuid=6875242"  rel="nofollow"  target="_blank" atremote="atremote">快递包装袋有剧毒别用手撕 拿完快递快洗手</a></li></ul>
+</div>
+</div>
+
+<div class="vnbox">
+<h2 class="img"><strong class="z"><a href="http://club.qingdaonews.com/club_entry_1239_2_0_1_0.htm" target="_blank">社区活动</a></strong><a href="http://club.qingdaonews.com/club_entry_1239_2_0_1_0.htm" target="_blank">更多</a></h2>
+
+<div class="padding"><ul class="newslist12px"><li>·<a href="http://house.qingdaonews.com/2014/04/xmh/" target="_blank" atremote="atremote">重温时代印记 老物件置换</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_1235_46442_1_0.htm" target="_blank" atremote="atremote">魔法故事会《搞怪医生埃米尔》</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_1235_46400_1_0.htm" target="_blank" atremote="atremote">传递正能量 陪孩子走一段精彩路</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_49_4016063_1_0.htm" target="_blank" atremote="atremote">本周末林内燃气热水器团购 价格低</a></li><li>·<a href="http://yezhu.qingdaonews.com/huodong/20140417.htm" target="_blank" atremote="atremote">幸运大转盘赢精美大礼</a></li><li>·<a href="http://yezhu.qingdaonews.com/thread-2510611-1-1.html" target="_blank" atremote="atremote">西海岸免费吃喝玩乐一日游</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_1187_74852_1_0.htm" target="_blank" atremote="atremote">晒晒你收到钻戒的感受 送情侣对戒</a></li><li>·<a href="http://club.qingdaonews.com/showAnnounce_1235_46264_1_0.htm" target="_blank" atremote="atremote">香港少年钢琴家音乐会报名</a></li><li>·<a href="http://yezhu.qingdaonews.com/thread-2514398-1-1.html" target="_blank" atremote="atremote">物业管理微时代邀你见证</a></li><li>·<a href="http://yezhu.qingdaonews.com/thread-2513464-1-1.html" target="_blank" atremote="atremote">4月19全城看好房直降36万</a></li></ul></div>
+</div>
+</div>
+
+
+		</div>
+	</div>
+	<div class="gotop"><img src="newimg/gotop.gif" alt="返回顶部" onclick="scrollTo(0,0);" /></div>
+</div>
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F099a2f2a4f2c2f042dbd360b42309fc4' type='text/javascript'%3E%3C/script%3E"));</script>
+<script type="text/javascript">
+    $(function(){
+       var username = encodeURI("");
+       var userpwd = "";
+       var board_id ="141";
+       var topic_id ="3847871";
+        $("#favorite").unbind("click").click(function(){
+            if(username && userpwd){
+                $.ajax({
+                    type: "GET",
+                    url: "xhr/favorite.php",
+                    data: 'act=addcp&uname='+username+'&upw='+userpwd+'&favid='+board_id+"&topic_id="+topic_id,
+                    dataType: "json",
+                    success: function(msg){
+                        if(msg.result=='success'){
+                            alert("收藏成功");
+                        }else{
+                            //alert('收藏失败');
+                            alert(msg.info);
+                        }
+
+                    },
+                    error:function(XMLHttpRequest, textStatus, errorThrown){
+                        alert('收藏失败');
+                    }
+                })
+            } else{
+                alert("登录后才能收藏");
+            }
+        })
+        return false;
+    })
+    function xhr_add(board_id, topic_id, reply_id){
+		$.post("/xhr/wonder.php",{act: "set", board_id: board_id, topic_id: topic_id, reply_id: reply_id, manager: "" },
+			function(data){
+				switch(data){
+					case "0":
+						alert("添加失败");
+						break;
+					case "1":
+						alert("添加成功");
+						break;
+					case "2":
+						alert("已添加过精华");
+						break;
+					default:
+						alert("出现未知错误,请稍后再试");
+						document.write(data);
+				}
+			}
+		)
+	}
+        loadsavedpost();
+</script>
+<link rel="stylesheet" href="style/swfupload/post-min.css"/>
+<script type="text/javascript" src="script/swfupload/swfupload.js"></script>
+<script type="text/javascript" src="script/swfupload/swfupload.queue.js"></script>
+<script type="text/javascript" src="script/swfupload/fileprogress.js"></script>
+<script type="text/javascript" src="script/swfupload/handlers.js"></script>
+<script type="text/javascript">
+
+    var swfUploadobject, un = encodeURI(""), pw = "", board_id = "141", md5="1";
+    $(function(){
+        loadswfUpload();
+    });
+
+    function loadswfUpload(){
+        // 判断用户是否登录
+        if(un && pw){
+            $("#upattachLogin").hide();
+            if(swfUploadobject == undefined ) {
+                initSwfUpload();
+                if(swfUploadobject == undefined){
+                    initSwfUpload();
+                }
+            }
+        } else {
+            $("#upattachLogin").show();
+        }
+    }
+
+    function initSwfUpload(){
+        $("#upattachMod").html("");
+        var settings = {
+            file_post_name:"Filedata",
+            post_params : {
+                "pw" : pw,
+                "un" : un,
+                "mark" : "watermarkindex",
+                "max" : "650",
+                "md5" : md5,
+                "act" : "upload",
+                "bid" : board_id,
+                "type" : 1
+            },
+            swf_domain:"http://club.qingdaonews.com/",
+            upload_url: "http://pic.qingdaonews.com/operate/pd_photo.php",
+            custom_settings:{progressTarget:"upList",thumbnail_height: 2000,thumbnail_width: 780,thumbnail_quality: 95},
+            file_types : "*.jpg;*.png;*.jpeg;",
+            file_types_description : "All Files",
+            file_upload_limit : 10,
+            file_queue_limit : 0,
+            progress:new FileProgress(),
+            initData:[],
+            debug: false,
+            editor: Editor.window,
+            image_dir_type : 1
+        };
+        swfUploadobject = new SWFUpload(settings);
+    }
+
+</script>
+<link rel="stylesheet" href="style/tuji/thickbox.css" type="text/css" media="screen" />
+<script src="script/tuji/thickbox-compressed.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function(){
+        $("#D_cancelBtn").click(function(){
+            tb_remove();
+        });
+        $("#D_username, #D_password").keyup(function (event) {
+            if (event.keyCode == 13){
+                $("#D_loginBtn").trigger("click");
+            }
+        });
+        $("#D_loginBtn").click(function(){
+
+            var qusername=$("#D_username").val();
+            var qpassword=$("#D_password").val();
+            if((qusername.length<2)||(qpassword.length<4)){
+                win_tips("请认真填写用户名密码！");
+                return false;
+            } else{
+                $('#D_loginBtn').attr("disabled",true);
+                $.getJSON("http://passport.qingdaonews.com/homelogin.php?username="+encodeURI(qusername)+"&password="+qpassword+"&callback=?",function(json){
+                    if(json['result']=='success'){
+                        win_tips("");
+                        tb_remove();
+
+                        // 登录后处理
+                        un = encodeURI(qusername);
+                        pw = qpassword;
+                        md5 = "0";
+                        loadswfUpload();
+                        $("#postUserInfo").html('<span class=smallFont>用 户 名：</span><input  class=singleinput type=hidden name=a_name id="a_name" value="'+qusername+'"><input type=text  class=singleinput name=a_name1 disabled size=18 maxlength=50 value="'+qusername+'"> <font color=red><strong>*</strong></font><span class=smallfont><a type=checkbox id="other" class="thickbox" name=change href="#TB_inline?height=100&width=300&inlineId=loginDialog&title=other" alt="用户登录"> <label for="other" >更换用户名</label></span>');
+
+                        $('input.thickbox').each(function(i) {
+                            $(this).unbind('click');
+                        });
+                        if(json['point']>200)
+                            point = 1;
+                        else
+                            point = 0;
+
+                        if(point==0) {
+                            $("#verifycodehtml").show();
+                        } else {
+                            $("#verifycodehtml").hide();
+                        }
+
+
+                        tb_init('.thickbox');
+                    }
+                    else{
+                        win_tips("登陆失败，用户名或密码错误！");
+                        $('#D_loginBtn').attr("disabled", false);
+                        return false;
+                    }
+
+                    $('#D_loginBtn').attr("disabled", false);
+                });
+            }
+        });
+        function win_tips(message){
+            $(".win-tip").html(message);
+        }
+    });
+</script>
+<div id="loginDialog" style="display:none;">
+    <span class="win-tip"></span>
+    <ul id="pop_login" class="link0">
+        <li class="login-name">
+            <label class="lab" for="D_username">
+                账　号：
+            </label>
+            <input type="text" id="D_username" name="D_username" class="txt" tabindex="1" placeholder="用户名">
+            &nbsp;
+            <a href="http://passport.qingdaonews.com/reg/" target="_blank">新用户注册</a>
+        </li>
+        <li class="login-pass">
+            <label class="lab" for="D_password">
+                密　码：
+            </label>
+            <input type="password" id="D_password" name="D_password" class="txt" tabindex="2" placeholder="密码">
+            &nbsp;
+            <a href="http://passport.qingdaonews.com/reg/getpassword.php" target="_blank">忘记密码？</a>
+        </li>
+        <li class="login-btn">
+            <a id="D_loginBtn" class="confirm-btn" tabindex="5">
+                <span>
+                    登录
+                </span>
+            </a>
+            &nbsp;&nbsp;
+            <a id="D_cancelBtn" class="options-btn" tabindex="6">
+                <span>
+                    取消
+                </span>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--版权 s-->
+<div id="commonFooter">
+	<iframe name="qingdaonewsBottom" frameborder="0" scrolling="no" src="http://www.qingdaonews.com/buttonqd.htm"></iframe></div>
+<!--版权 e-->
+<script src="http://club.qingdaonews.com/script/show2.js"></script>
+<script src="http://club.qingdaonews.com/script/top.js"></script>
+
+<style type="text/css">
+.vtip{width:350px;position:fixed;z-index:999;bottom:5px;right:5px;border:1px solid #7EBFA1;background:#F8F8F8;    _position: absolute;
+    _top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight);}
+.vtip h2.img{ background-image:none; background-color:#7EBFA1;line-height:30px; height:30px; text-align:right;}
+.vtip h2.img strong{ color:#0B4B30; padding-left:10px; font-size:14px; font-weight:bold;}
+.vtip h2.img a{color:#000000;padding-right:10px;}
+.hotli{padding:5px 5px 0 110px;display:block; overflow:hidden; height:68px; position:relative; clear:both; line-height:20px;color:#525252}
+.hotli .z{ position:absolute; margin:4px 0 0 -105px; text-align:center; width:90px; display:inline;}
+.hotli h4{ height:20px; overflow:hidden; padding-bottom:4px;}
+.hotli a.cGreen{color:#064F34;}
+.hotli a:hover.cGreen{ background:#064F34;color:#ffffff;}
+</style>
+<div class="vtip" style="display:none">
+	<h2 class="img"><strong class="z">小道消息</strong><a href="javascript:void(0);" id='popclose'>关闭</a></h2>
+	<div class="padding fl">
+                        <div class="hotli">
+                    <div class="z"><a atremote="atremote" href="http://club.qingdaonews.com/showAnnounce_2_5405678_1_0.htm"  target="_black"><img width="90" height="55" border="0" atremote="atremote" src="http://pic.qingdaonews.com/p/club/2014/04/oriphoto/2014041912204173959.jpg" /></a></div>
+                    <h4><strong><a atremote="atremote" href="http://club.qingdaonews.com/showAnnounce_2_5405678_1_0.htm"  target="_black">撞了人后送医院还是打120等救护车?</a></strong></h4>
+                    <p><a atremote="atremote" href="http://club.qingdaonews.com/showAnnounce_2_5405678_1_0.htm"  target="_black">我是正常开车的，速度也不快20-30，出事在登州路是单行线，并车前我还……</a></p>
+            </div>
+            <ul class="newslist12px" style="list-style: disc outside">
+                                                        <li>·<a atremote="atremote" target="_blank" href="http://club.qingdaonews.com/showAnnounce_2_5404762_1_0.htm">青岛话边缘化?你说普通话or青岛话</a></li>
+                                                                                                                                                            </ul>
+            	</div>
+</div>
+<script type="text/javascript">
+        $(".vtip").slideDown(2000);
+        setTimeout( function(){$(".vtip").fadeOut(5000);},10000);            
+        $(".vtip").mouseover(function () {
+                $(".vtip").stop(true,true); 
+                $(".vtip").fadeIn();
+        })
+        $("#popclose").click(function(){
+            $('.vtip').hide();
+            var exp = new Date();
+            exp.setTime(exp.getTime() + 86400000);
+            document.cookie = "pop_last="+ 1398054083 + ";expires=" + exp.toGMTString();
+        })
+</script>
+</body>
+</html>

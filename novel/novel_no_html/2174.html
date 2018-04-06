@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>吃货分享— 微美食 </title>
+<link href="http://weibojs.yazuo.com/yazuojs/share/comment.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="http://weibojs.yazuo.com/js/jquery.js"></script><script type="text/javascript" src="http://weibojs.yazuo.com/v2/share/js/common/commonFun.js?"></script><script type="text/javascript" src="http://weibojs.yazuo.com/v2/share/js/common/layerCommon.js?"></script><script type="text/javascript" src="http://weibojs.yazuo.com/v2/share/js/common/layerFace.js?"></script><script type="text/javascript" src="http://weibojs.yazuo.com/v2/share/js/feed.js?"></script><script type="text/javascript" src="http://weibojs.yazuo.com/v2/share/js/commentDetail.js?"></script>
+</head>
+<body>
+<script type="text/javascript">
+$(function(){
+	$(".hd_selCity").click(function(){
+		var dis = $(".cityList").css("display");
+		if(dis=="none"){
+			$(".cityList").show();
+		}else{
+			$(".cityList").hide();
+		}
+	});
+	$(document).click(function(event){
+		if($(event.target).attr("class")!="hd_selCity" && $(event.target).attr("class")!="hd_xl"){
+			$(".cityList").hide();
+		}
+	});
+	
+	$(".cityList a").click(function(){
+		var code = $(this).attr("alt");
+		$.getJSON("/root/set.city",{"code":code},function(data){
+			if(data.ok == 1){
+				var url = "/" + data.city + "/";
+				if(data.url){
+					url += data.url + "/" ;
+				}
+				top.location.href = url;
+			}
+		});
+
+	});
+	//头部浮层
+	$('.hd_mywms').hover(function(){
+		$('.scumLayer').show();
+	},function(){
+		$('.scumLayer').hide();
+	});
+	$('.scumLayer').hover(function(){
+		$(this).show();
+	},function(){
+		$(this).hide();
+	})
+	$('.scumLayer .scumList .t').click(function(){
+		$(this).parents('.scumList').hide();
+		$(this).parents('.scumLayerHover').children('.scumG').hide();
+		$(this).parents('.scumLayerHover').removeClass('scumLayerHover');
+	});
+	$.getJSON('/root/set.getnotice',function(json){
+		if(json.msg){
+			$('#topNotice').html(json.msg).data('id',json.id).parent().show();
+		}
+	});
+});
+function clearnt(){
+	$.getJSON('/root/set.readnotice',{'nid':$('#topNotice').data('id')},function(json){
+		$('.globe_warn').remove();
+	});
+	return true;
+}
+</script>
+<!-- sina头部开始 -->
+<div id="weibo_top_public" wv="4" style="height:35px;"></div>
+<script src="http://js.t.sinajs.cn/t4/home/js/public/topInit.js"></script>
+<script type="text/javascript">
+	WBtopGlobal && WBtopGlobal.init({
+	    name: "",
+	    uid: "",
+	    any: 'wvr=4',
+	    islogin: "0",
+	    icon: "http://tp3.sinaimg.cn//50/5629181118/1",
+	    lang: "zh-cn",
+	    verified: "",
+	    verify: "0",
+		backurl:"http://food.weibo.com/",
+		_wv : "4"
+	});
+</script>
+<!-- sina头部结束 -->
+<div></div>
+<!-- 头部  -->
+<div class="indexNew_header">
+	<div class="hd_cont clear_wrap">
+    	<div class="hd_logo left"><a href="/bj" class="logo_link"></a></div>
+        
+        <div class="hd_city citySel left">
+        	<img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" class="hd_zb" />
+            <span class="hd_selCity" title="点击选择切换城市">北京<img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" class="hd_xl" /></span>
+            <span class="hd_sm">选择切换城市</span>   
+        <!--城市-->
+                <div class="W_layer cityList">
+                    <div class="bg">
+                       <div class="content">
+                       		<ul class="cityLi">
+								<li><p class="clear_wrap"><a href="javascript:void(0);" alt="31000" class="setCity">上海</a><a href="javascript:void(0);" alt="33001" class="setCity">杭州</a><a href="javascript:void(0);" alt="35001" class="setCity">福州</a><a href="javascript:void(0);" alt="50000" class="setCity">重庆</a><a href="javascript:void(0);" alt="42001" class="setCity">武汉</a><a href="javascript:void(0);" alt="33003" class="setCity">温州</a><a href="javascript:void(0);" alt="51001" class="setCity">成都</a></p></li> 
+                            </ul>
+                       </div>
+                       <div class="arrow white_bg arrow_t"></div>
+                   </div>
+               </div>
+            <!--城市-->    
+        </div>
+        
+        <div class="right">
+        	<div class="hd_gqt left"><img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" class="left" /><span class="left"><b>过期退款</b><br /><em class="gray999">过期未使用自动退款</em></span></div>
+            <div class="hd_wyy left"><img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" class="left" /><span class="left"><b>无需预约</b><br /><em class="gray999">凭券直接到店消费</em></span></div>
+        </div>
+    </div>
+    <div class="hd_menu">
+        <div class="menu_cont clear_wrap" style="position:relative;">
+        	<div class="hd_mlist left">
+            	<a href="/bj">会员代金券</a><img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" class="hd_sline" />
+            	<a href="/bj/coupon/index" >粉丝会员卡</a><img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" class="hd_sline" />
+            </div>
+            <div class="hd_mright right">
+            	<span class="hd_phone"><img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" class="phone_icon" />400-882-7123</span>
+                <span class="hd_mywms">我的微美食<img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" class="wms_icon" /></span>
+            </div>                          
+          <!--浮层-->
+             <div class="scumLayer" style="display:none;">
+                 <!--个人信息-->
+                    <!--个人信息-->
+
+<div class="scumBox">
+        <div class="scumList">
+               <ul>
+               	 <li class="yh">
+                       <img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" alt="" />
+                          <a href="/user/orders" class="t">我的订单</a>           
+                    </li>
+                   <li class="vms">
+                       <img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif" alt="" />
+                          <a href="/card" class="t">我的卡包</a>
+                   </li>
+                </ul>
+        </div>
+</div>
+
+<!--个人信息结束-->
+                 <!--个人信息结束-->
+                <div class="scumG"><!--灰色层--></div>
+             </div>
+             <!--浮层 end-->
+        </div>
+    </div>
+</div>
+<!--头部end-->
+<div class="globe_warn clear_wrap hide">
+    <span class="left warn_text" id="topNotice">欢迎你访问</span>
+    <a class="right iKnow" href="javascript:;" onclick="clearnt();return false;"><img src="http://weibojs.yazuo.com/v2/index/images/transparent.gif">我知道了</a>
+</div> 
+<!-- 正文开始 -->
+<div class="wrapper">
+	<!--bread-->
+    <div class="breadCont"><a href="/share/shop/295667">（复兴村油焖大虾）</a><img src="http://weibojs.yazuo.com/v2/share/images/transparent.gif" class="breadIcon" /><span>豆包的主人是肉丸子的分享</span></div>
+	<!--/bread-->
+	<!--内容-->
+    <div class="main clear_wrap">
+    	<!--左边-->
+        <div class="mainLeft">
+
+        	<!--feed-->
+        	<div>
+            <div class="feedList clear_wrap">
+                <div class="userContent">
+                	<div class="wbcon hide"><a href="http://weibo.com/u/2175394861 target="_blank"></a></div>
+                	<div class="userTop clear_wrap">
+                    	<div class="userFace">
+            				<a href="/share/share/2175394861" class="left" ><img src="http://tp4.sinaimg.cn/2175394861/50/20150205" width="50" height="50" /></a>
+                        	<div class="userTime"><a class="userName" href="/share/share/2175394861">豆包的主人是肉丸子</a><p><span class="gray999">06月13日  19:11</span>来自<a target="_blank" href="/root/mobiledown" class="q_blue">微美食客户端</a></p></div>
+                		</div>
+                        <!-- <div class="infoRig">
+                            <a href="javascript:;" class="btn1 right likeLink setLike" mid="866041412138"><img class="loveIcon" src="http://weibojs.yazuo.com/v2/share/images/transparent.gif" />喜欢</a><span class="btn3 right hide hide">已喜欢</span>
+                            <span class="loveNum">0</span>
+                        </div> -->
+                    </div>
+                    <div class="pCont">
+                        <p class="picShow"><img src="http://ww4.sinaimg.cn/large/81a9e42djw1dtwqskl5utj" width="600" /></p>
+                        <p class="compName"><a href="/share/shop/295667">复兴村油焖大虾</a></p>
+                        <p class="starCont hide">评分：<span default="0" class="star1"><span></span></span></p>
+                        <p class="wordCon">我滴小小小虾兵<img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_org.gif" title="嘻嘻" alt="嘻嘻" type="face"><img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/0b/tootha_org.gif" title="嘻嘻" alt="嘻嘻" type="face"><img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/6a/laugh.gif" title="哈哈" alt="哈哈" type="face"></p>
+                    </div>
+                    <div class="info clear_wrap">
+                    	<div class="infoLeft">
+                        	<p><img src="http://weibojs.yazuo.com/v2/share/images/transparent.gif" class="addIcon" /><span class="q_blue">湖北 江汉区 汉口火车站</span> 汉口常青街复兴村新村小区口(近复兴村公汽终点站)</p>
+                            <p class="grayccc"><a href="javascript:void(0);" class="commentLink">评论(<span class="commentNum" >0</span>)</a>|<a href="javascript:void(0);"  mid="" class="tranLink feed_btn repost">分享</a><em class="hide" >|<a href="javascript:void(0);"  type="lsj" mid="866041412138" class=" delShare feed_list_del">删除</a></em></p>
+                        </div>
+                        <div class="infoRig">
+                        	<a mid="866041412138" href="javascript:;" class="btn6 right loveNum">0</a>
+                            <a href="javascript:;" class="btn1 right likeLink setLike" mid="866041412138"><img class="loveIcon" src="http://weibojs.yazuo.com/v2/share/images/transparent.gif" />喜欢</a><span class="btn3 right hide hide">已喜欢</span>
+                        </div>
+                    </div>
+                </div>
+                <!--评论-->
+                <div class="commentCont">
+                	<div class="arrowT"></div>
+                <!--评论input-->
+                    <div class="repeatList">
+                        <div class="input clear_wrap">
+                            <div><textarea id="commentInput" cols="" rows="" class="feed_textarea text_v_hide"  onKeyUp="checkLength(this,120);" name="">我来说说</textarea></div>
+                            <div class="action">
+                                <ul class="commoned_list">
+                                    <li><a href="javascript:;" class="face"><img src="http://weibojs.yazuo.com/v2/share/images/transparent.gif" class="faceIcon" />表情</a></li>
+                                    <li><label><input type="checkbox" class="W_checkbox is_tran" name="">同时转发到我的微博</label></li>
+                                </ul>
+                            </div>
+                            <a class="btn2 commentBtn setComment"  mid="866041412138" href="javascript:;"><span>评论</span></a>
+                        </div>
+                <!--/评论input-->
+                <!--评论list-->
+                
+                <!--/评论list-->
+                    </div>
+                    
+                </div>
+                <!--/评论-->
+            </div>
+            </div>
+        	<!--/feed-->
+        </div>
+        <!--/左边-->
+    	<!--右边-->
+        <div class="mainRig">
+			<!--手机客户端图片-->
+        	<a class="phonePic" href="/bj/root/mobiledown"  target="_blank"></a>
+        	<!--/手机客户端图片-->
+        	<!--商家信息-->
+            <div class="rigDiv">
+            	<div class="tigTit"><img src="http://weibojs.yazuo.com/v2/share/images/transparent.gif" class="homeIcon" /><strong>商家信息</strong></div>
+                <div class="rigCon">
+                	<ul class="sameCity compMes">
+                    	<li>
+                        	<a href="/share/shop/295667" class="ccName">（复兴村油焖大虾）</a>
+                            <p class="ccStar"><span class="star1" default="0"><span></span></span></p>
+                            <p><a target="_blank" href="/share/shop/295667">24<span class="gray666">条点评</span></a><a target="_blank"  href="/share/shop.pic/295667"class="padL10">24<span class="gray666">张美图</span></a></p>
+                        </li>
+                    	<li class="compXX">
+                            <p>均价：<span>48</span>元</p>
+                            <p>电话：<span></span></p>
+                            <p><img class="addIcon" src="http://weibojs.yazuo.com/v2/share/images/transparent.gif"><span class="q_blue">湖北市  江汉区 汉口火车站</span> 汉口常青街复兴村新村小区口(近复兴村公汽终点站)</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        	<!--/商家信息-->
+
+        	<!--其它点评-->
+        	
+        	<!--/其它点评-->
+        </div>
+        <!--/右边-->
+    </div>
+	<!--/内容-->
+</div>
+<script type="text/javascript">
+$(function(){
+	starPrase({//星星评分
+		'divName':'star2',
+		'width':13.8
+　	});
+	starPrase({//星星评分
+		'divName':'star1',
+		'width':20
+　	});
+$('#commentInput').focus().val('');
+});
+</script>
+
+<!-- 正文结束 -->
+<!--  页脚    -->
+<!--  页脚    -->
+<div class="fooder">
+  <div class="wrap clear_wrap">
+    <div class="help_link left">
+      <p class="W_linkb">
+      <a target="_blank" class="ico_service" style="background:url(http://img.t.sinajs.cn/t4/style/images/common/ico_expand.png) no-repeat 0 -40px;padding: 2px 15px 20px 20px;" href="http://help.weibo.com/?refer=didao">微博帮助</a>
+     <a href="http://weibo.com/k/weijianyi"  target="_blank">意见反馈</a>　
+      <a href="http://weibo.com/pub/verified"  target="_blank">微博认证及合作</a>　
+      <a href="http://news.sina.com.cn/guide/"  target="_blank">新浪网导航</a>　
+      	
+      </p>
+      <p>京网文[2011]0398-130号&nbsp;&nbsp;&nbsp;京ICP证100780号</p>
+    </div>
+    <div class="copy right">
+      <p>Copyright &copy; 1996-2012 SINA</p>
+      <p>北京微梦创科网络技术有限公司 京ICP证100780号</p>
+    </div>
+  </div>
+</div>
+<div style="display:none;">
+<script src="http://s5.cnzz.com/stat.php?id=3696268&web_id=3696268&show=pic1" language="JavaScript"></script>
+
+</div>
+</body>
+</html>

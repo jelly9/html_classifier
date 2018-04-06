@@ -1,0 +1,1688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="baidu-tc-verification" content="0901a0ef5c1a7ba732cbf79f54153392" />
+<meta property="qc:admins" content="144526166765173636" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+
+<title>用户技能 - 工程财富网 - 工程交易首选|工程产业链电商平台</title>
+
+<meta name="keywords" content="用户技能" />
+
+<meta name="description" content="用户技能" />
+
+
+
+
+<!-- CSS -->
+<!-- Public -->
+<link href="/phpapp/templates/generous/style/blue/header.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/header_member.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/dialog.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/phpapp.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/form.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/credit.css" rel="stylesheet" type="text/css" />
+
+<!-- poshytip -->
+<link href="/phpapp/templates/generous/style/blue/poshytip/tip-green/tip-green.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/poshytip/tip-darkgray/tip-darkgray.css" rel="stylesheet" type="text/css" />
+
+<!-- Category -->
+<link href="/phpapp/templates/generous/style/blue/category.css" rel="stylesheet" type="text/css" />
+
+<!-- NationalFlag -->
+<link href="/phpapp/templates/generous/style/blue/nationalflag.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<style type="text/css">
+.wrap,.header_width,.header_info{
+	width:1000px;
+}
+.navigation_wrap{
+	width:1000px;
+}
+.sw_categorys_nav .allcategorys .sublist {
+	width:978px;
+}
+.allcategorys .sublist li {
+	width:200px;
+}
+
+</style>
+
+
+</head>
+
+<link rel="shortcut icon" href="http://www.5agc.cn/favicon.ico" />
+
+<body>
+<script src="http://siteapp.baidu.com/static/webappservice/uaredirect.js" type="text/javascript"></script><script type="text/javascript">uaredirect("http://siteapp.baidu.com/webapp/www.5agc.cn","http://www.5agc.cn");</script>
+
+<!-- JS -->
+<!-- Javascript -->
+
+<script type="text/javascript">
+var APPID =82;
+var SURL ='http://www.5agc.cn';
+var TURL ='/phpapp/templates/generous/style/blue/';
+var Language='cn';
+var CategoryURL ="http://www.5agc.cn/member/fenlei/get.html";
+var TaskSkillURL ="http://www.5agc.cn/skills/task.html";
+var timestamp=1423061133;
+</script>
+
+
+<!--  Public  -->
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/jquery.js?v=20130715"></script>
+
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/dialog.js?v=20130715"></script>
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/header.js?v=20130715"></script>
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/phpapp.js?v=20130715"></script>
+
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/member.js?v=20130715"></script>
+
+<!--  datepicker  -->
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/datepicker-cn.js?v=20130715"></script>
+
+<!--  input  -->
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/input.js?v=20130715"></script>
+
+<!-- poshytip -->
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/poshytip/jquery.poshytip.js?v=20130715"></script>
+
+<!-- AllCategory -->
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/jquery.tmailsilder.v2.js?v=20130715"></script>
+
+<!-- AJAX -->
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/ajax_auto.js?v=20130715"></script>
+
+
+
+<script type="text/javascript">
+	function CancelProject(cid,type){
+		  
+		  var warnning="请确定项目结束?";
+		  var op=2;
+		  
+		  if(type==1){
+			  
+			  var warnning="请确定项目取消?";
+			  var op=1;
+		  }
+	    
+	    if(cid>0){
+	
+			   if(confirm(warnning)){
+					
+					  $("#loading").dialog({
+							  title:"操作订单",	
+							  width: 600,
+							  position: ['center',160],
+							  height:'auto'
+					  });
+						 
+					  $("#loading").dialog('open');
+					  
+					  $("#loading").html('<div class="loading">提交数据中...</div>');
+					  
+			          $.ajax({
+	                    type:"POST",
+	                    url:SURL+"/member.php?app=48&action=14&op="+op,
+	                    data:'cid='+cid,
+	                    success:function(data){
+	                          $("#loading").html(data);
+	                    }
+			          
+	           	  	  });
+				  
+			  }
+				
+	          
+	    }
+	
+	
+	}
+
+	function BuyerSubmitLvBao(cid,tid){
+		    
+		$("#loading").dialog({
+				  title:"确认文件交接",	
+				  width: 500,
+				  position: ['center',160],
+				  height:'auto'
+		});
+		 
+		$("#loading").dialog('open');
+					  
+		$("#loading").html('<div class="loading">处理确认交接中...</div>');
+		
+		$.ajax({
+				  type: "POST",
+				  url: SURL+"/member.php?app=48&action=3&op=6",
+				  data: 'cid='+cid+'&tid='+tid,
+				  success: function(data){
+						$("#loading").html(data);
+				  }
+		});	
+		
+	}
+		
+      function SubmitAward(OderID){
+		    
+			var award=parseFloat($("#NewAward").val());
+			
+			if (isNaN(award) || award<0){
+		            alert("您输入的金额格式错误，请重新输入!");
+		            $("#NewAward").focus();
+		            return false; 
+	        }
+			
+			if(confirm("请确定项目结束后，再确认结算！是否确认并额外奖励"+award+"元?")){
+		           $("#loading").html('<div class="loading">提交数据中...</div>');
+
+				   SubmitDelivery(OderID,award);
+			
+			}
+						  
+		   
+	  }
+      
+      function SubmitAwardProject(OderID){
+		    
+			var award=parseFloat($("#NewAward").val());
+			
+			if (isNaN(award) || award<0){
+		            alert("您输入的金额格式错误，请重新输入!");
+		            $("#NewAward").focus();
+		            return false; 
+	        }
+			
+			if(confirm("请确定项目结束后，再确认结算！是否确认并额外奖励"+award+"元?")){
+		           $("#loading").html('<div class="loading">提交数据中...</div>');
+
+				   SubmitDeliveryProject(OderID,award);
+			
+			}
+						  
+		   
+	  }
+	  
+	  
+	  function PaymentOrders(OderID,tid){
+		    if(confirm("是否确认要为此订单支付?")){
+				 $("#loading").dialog({
+						  title:"订单支付",	
+						  width: 500,
+						  position: ['center',160],
+						  height:'auto'
+				 });
+				 
+				 $("#loading").dialog('open');
+							  
+				 $("#loading").html('<div class="loading">处理支付中...</div>');
+				
+				 $.ajax({
+						  type: "POST",
+						  url: SURL+"/member.php?app=48&action=3&op=2",
+						  data: 'oderid='+OderID+'&tid='+tid,
+						  success: function(data){
+								$("#loading").html(data);
+						  }
+				 });	
+		    }
+	  }
+	  
+	  
+	  function CloseOrders(OderID,tid){
+		    if(confirm("是否确认要关闭订单?")){
+				 $("#loading").dialog({
+						  title:"订单关闭",	
+						  width: 500,
+						  position: ['center',160],
+						  height:'auto'
+				 });
+				 
+				 $("#loading").dialog('open');
+							  
+				 $("#loading").html('<div class="loading">处理支付中...</div>');
+				
+				 $.ajax({
+						  type: "POST",
+						  url: SURL+"/member.php?app=48&action=3&op=5",
+						  data: 'oderid='+OderID+'&tid='+tid,
+						  success: function(data){
+								$("#loading").html(data);
+						  }
+				 });	
+		    }
+	  }
+	  
+	  
+	  function SubmitAddInvoice(OderID,OID){
+		         
+				var Invoice=$('#Invoice').val();  
+				var Content=$('#InvoiceContent').val(); 
+				 
+				$("#loading").dialog({
+						  title:"提交发票",	
+						  width: 300,
+						  position: ['center',160],
+						  height:160
+				});
+				
+				$("#loading").dialog('open');
+						  
+				$("#loading").html('<div class="loading">提交数据中...</div>');
+				
+				$.ajax({
+						  type: "POST",
+						  url: SURL+"/member.php?app=48&action=3&op=4",
+						  data: 'oderid='+OderID+'&oid='+OID+'&invoice_s='+Invoice+'&content_s='+Content,
+						  success: function(data){
+								$("#loading").html(data);
+						  }
+                });	
+				
+		  
+	  }
+      
+      function OpenDelivery(oid){
+            
+              if(oid>0){
+      
+                    var OderID=oid;
+					
+					$("#loading").dialog({
+								  title:"操作订单",	
+								  width: 600,
+								  position: ['center',160],
+								  height:'auto'
+					});
+							 
+					$("#loading").dialog('open');
+						  
+					$("#loading").html('<div class="loading">提交数据中...</div>');
+					
+					$("#loading").html('<strong><span style="color:#F00">额外奖励</span>金额</strong> <input type="text"  id="NewAward" size="50" maxlength="8" class="form_input_text form_input_width_100"  value="0" /> 元 <input type="button" value="确认结算" onclick="SubmitAward(\''+oid+'\')" class="form_button"/><p style="padding-top:6px;"><strong>提示：</strong>额外奖励指您对项目另奖励的赏金，如果不想奖励默认0元！</p>');
+					
+					
+                    
+              }else{
+                   var OderID='';
+                   $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                           var value=$(this).val();  
+                           
+                           if($(this).attr("disabled")!='disabled'){
+                           
+                           if(OderID){
+                                OderID+=','+value;
+                           }else{
+                                OderID=value;
+                           }
+                           }
+              
+                   }); 	
+                   
+                   if(!OderID){
+                       
+                        alert("请选择订单操作!");
+                        return false;
+                   }
+				   
+				   if(confirm("请确定项目结束后，再确认结算！是否确认?")){
+				
+						  $("#loading").dialog({
+								  title:"操作订单",	
+								  width: 600,
+								  position: ['center',160],
+								  height:'auto'
+						  });
+							 
+						  $("#loading").dialog('open');
+						  
+						  $("#loading").html('<div class="loading">提交数据中...</div>');
+						  
+						  SubmitDelivery(OderID);
+					  
+					  
+				  }
+          
+                    
+              }
+          
+ 
+      }
+      
+      function OpenDeliveryProject(oid){
+          
+          if(oid>0){
+  
+                var OderID=oid;
+				
+				$("#loading").dialog({
+							  title:"操作订单",	
+							  width: 600,
+							  position: ['center',160],
+							  height:'auto'
+				});
+						 
+				$("#loading").dialog('open');
+					  
+				$("#loading").html('<div class="loading">提交数据中...</div>');
+				
+				$("#loading").html('<strong><span style="color:#F00">额外奖励</span>金额</strong> <input type="text"  id="NewAward" size="50" maxlength="8" class="form_input_text form_input_width_100"  value="0" /> 元 <input type="button" value="确认结算" onclick="SubmitAwardProject(\''+oid+'\')" class="form_button"/><p style="padding-top:6px;"><strong>提示：</strong>额外奖励指您对项目另奖励的赏金，如果不想奖励默认0元！</p>');
+				
+				
+                
+          }else{
+               var OderID='';
+               $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                       var value=$(this).val();  
+                       
+                       if($(this).attr("disabled")!='disabled'){
+                       
+                       if(OderID){
+                            OderID+=','+value;
+                       }else{
+                            OderID=value;
+                       }
+                       }
+          
+               }); 	
+               
+               if(!OderID){
+                   
+                    alert("请选择订单操作!");
+                    return false;
+               }
+			   
+			   if(confirm("请确定项目结束后，再确认结算！是否确认?")){
+			
+					  $("#loading").dialog({
+							  title:"操作订单",	
+							  width: 600,
+							  position: ['center',160],
+							  height:'auto'
+					  });
+						 
+					  $("#loading").dialog('open');
+					  
+					  $("#loading").html('<div class="loading">提交数据中...</div>');
+					  
+					  SubmitDeliveryProject(OderID);
+				  
+				  
+			  }
+      
+                
+          }
+      
+
+  }
+      
+      function SubmitDeliveryProject(OderID,award){
+          
+          var content=$("#OderContent").val();
+          
+          $.ajax({
+                            type: "POST",
+                            url: SURL+"/member.php?app=48&action=11&op=1",
+                            data: 'oderid='+OderID+'&award='+award,
+                            success: function(data){
+                                  $("#loading").html(data);
+                            }
+                   });	
+        
+    }
+      
+      function SubmitDelivery(OderID,award){
+            
+            var content=$("#OderContent").val();
+            
+            $.ajax({
+                              type: "POST",
+                              url: SURL+"/member.php?app=48&action=3&op=1",
+                              data: 'oderid='+OderID+'&award='+award,
+                              success: function(data){
+                                    $("#loading").html(data);
+                              }
+                     });	
+          
+      }
+      
+   function OpenCredit(oid){
+            
+              if(oid>0){
+      
+                    var OderID=oid;
+                    
+              }else{
+                   var OderID='';
+                   $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                           var value=$(this).val();  
+                           
+                           if($(this).attr("disabled")!='disabled'){
+                           
+                           if(OderID){
+                                OderID+=','+value;
+                           }else{
+                                OderID=value;
+                           }
+                           }
+              
+                   }); 	
+                   
+                   if(!OderID){
+                       
+                        alert("请选择订单操作!");
+                        return false;
+                   }
+                    
+              }
+          
+          
+          
+            $("#TaskCreditLevel").dialog({
+                    width: 600,
+                    position: ['center',160],
+                    height:'auto',
+					modal: true,
+			        autoOpen: false
+            });
+               
+            $("#TaskCreditLevel").dialog('open');
+            
+
+            
+            $("#OderID").val(OderID);
+            
+      
+          
+      }
+      
+	  
+      function SubmitCredit(OderID){
+            
+			var OderID=$("#OderID").val();
+			
+            var level=$("#CreditLevel :checked").val();
+			
+			var content=$("#OderContent").val();
+			
+			var workspeed=$("#WorkSpeedValue").val();
+			
+			var worksattitude=$("#WorksAttitudeValue").val();
+			
+			var worksquality=$("#WorksQualityValue").val();
+			
+			$("#TaskCreditLevel").html('<div class="loading">提交数据中...</div>');
+            
+            $.ajax({
+                              type: "POST",
+                              url: SURL+"/member.php?app=48&action=3&op=3",
+                              data: 'oderid_s='+OderID+'&level='+level+'&content_s='+content+'&speed_d='+workspeed+'&attitude_d='+worksattitude+'&quality_d='+worksquality,
+                              success: function(data){
+                                    $("#TaskCreditLevel").html(data);
+                              }
+                     });	
+          
+      }    
+      
+	  $(function(){	
+				 
+			$("#WorksPeed li").mouseover( function () {
+					  
+					  var id=$(this).attr("id");
+					  var num=id.substr(10,1);
+
+					  SetStar('WorksPeed',num);
+					  
+					  $("#WorksPeedScore").html(num+'.0');
+					  
+					  $("#WorkSpeedValue").val(num);
+					  
+			});
+			
+			$("#WorksAttitude li").mouseover( function () {
+					  
+					  var id=$(this).attr("id");
+					  var num=id.substr(14,1);
+
+					  SetStar('WorksAttitude',num);
+					  
+					  //alert(id.substr(10,1));
+					  
+					  $("#WorksAttitudeScore").html(num+'.0');
+					  
+					  $("#WorksAttitudeValue").val(num);
+					  
+			});
+			
+			
+			$("#WorksQuality li").mouseover( function () {
+					  
+					  var id=$(this).attr("id");
+					  var num=id.substr(13,1);
+
+					  SetStar('WorksQuality',num);
+					  
+					  $("#WorksQualityScore").html(num+'.0');
+					  
+					  $("#WorksQualityValue").val(num);
+					  
+			});
+			
+			
+	  
+	  });
+	  
+	  function SetStar(id,num){
+		  
+		   
+					  
+			for(var i=1; i<=5; i++){
+				
+				 if(i > num){
+				      $("#"+id+"_"+i).removeClass('focus');
+				 }else{
+					  $("#"+id+"_"+i).addClass('focus');
+				 }
+			}
+			
+			
+		  
+	  }
+	  
+
+	  
+	  
+      </script>
+      
+      
+      <div id="TaskCreditLevel" style="display:none;padding:20px;" title="订单评价">
+  
+        <div class="credit_level" id="CreditLevel">
+        <ul>
+        <li class="credit_hao"></li>
+        <li class="credit_cha"></li>
+        <li class="credit_zhong"></li>
+        </ul>
+        
+        <ul>
+        <li><input name="creditradio" type="radio" value="0" checked />好评</li> 
+        <li><input name="creditradio" type="radio" value="1"/>中评</li> 
+        <li><input name="creditradio" type="radio" value="2"/>差评</li>
+        </ul>
+        </div>
+        
+        <div class="task_score">
+             <h3>评分：</h3>
+             
+                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                    <div class="score_works_peed">工作速度：<span id="WorksPeedScore" class="color_f60">0.0</span> 分 &nbsp;
+                
+                <a href="javascript:;" class="score_level" id="WorksPeed">
+                
+                      <li title="1分 速度慢得太离谱，非常不满意" id="WorksPeed_1"></li>
+                      
+                      <li title="2分 速度很慢，不满意" id="WorksPeed_2"></li>
+                      
+                      <li title="3分 速度还行" id="WorksPeed_3"></li>
+                      
+                      <li title="4分 速度蛮快，不错" id="WorksPeed_4"></li>
+                      
+                      <li title="5分 速度非常快，非常不错" id="WorksPeed_5"></li>
+                
+                </a>
+                
+                </div>
+                
+                <input id="WorkSpeedValue" type="hidden" value="0" /></td>
+                  </tr>
+                  <tr>
+                    <td>
+                    <div class="score_works_attitude">服务态度：<span id="WorksAttitudeScore" class="color_f60">0.0</span> 分 &nbsp; 
+                
+                <a href="javascript:;" class="score_level" id="WorksAttitude">
+                
+                      <li title="1分 承包商态度很差，还骂人、说脏话，简直不把顾客当回事" id="WorksAttitude_1"></li>
+                
+                      <li title="2分 承包商有点不耐烦，承诺的服务也兑现不了" id="WorksAttitude_2"></li>
+                      
+                      <li title="3分 承包商回复问题很慢，态度一般，谈不上沟通顺畅" id="WorksAttitude_3"></li>
+                      
+                      <li title="4分 承包商服务挺好的，沟通挺顺畅的，总体满意，不错" id="WorksAttitude_4"></li>
+                      
+                      <li title="5分 承包商的服务太棒了，考虑非常周到，完全超出期望值" id="WorksAttitude_5"></li>
+                
+                </a>
+                </div>
+                <input  id="WorksAttitudeValue" type="hidden" value="0" />
+                    </td>
+                  </tr>
+                   <tr>
+                    <td><div class="score_works_quality">完成质量：<span id="WorksQualityScore" class="color_f60">0.0</span> 分 &nbsp; 
+                
+                <a href="javascript:;"  class="score_level" id="WorksQuality">
+                
+                      <li title="1分 差得太离谱，与承包商描述的严重不符，非常不满" id="WorksQuality_1"></li>
+                
+                      <li title="2分 部分有破损，与承包商描述的不符，不满意" id="WorksQuality_2"></li>
+                      
+                      <li title="3分 质量一般，没有承包商描述的那么好" id="WorksQuality_3"></li>
+                      
+                      <li title="4分 质量不错，与承包商描述的基本一致，还是挺满意的" id="WorksQuality_4"></li>
+                      
+                      <li title="5分 质量非常好，与承包商描述的完全一致，非常满意" id="WorksQuality_5"></li>
+                
+                </a>
+                <input id="WorksQualityValue" type="hidden" value="0" />
+                </td>
+                  </tr>
+                </table>
+                
+                <p>提示：<span style="color:#999">将鼠标指到星星等级上进行评分</span></p>
+        </div>
+        
+        <p>评语：(100字内)</p>
+        
+        <textarea id="OderContent" class="form_input_text" style="width:550px;height:100px;margin-bottom:10px;"></textarea><p style="text-align:center;margin-top:10px;">
+        <input id="OderID" type="hidden" value="0" />
+        <input name="Submit" type="button" value="确认" onclick="SubmitCredit()" class="form_button"/>
+        </p>
+  
+  </div>
+      
+   </div>
+
+
+<script type="text/javascript">
+      
+      function SellerOpenDelivery(oid){
+            
+              if(oid>0){
+      
+                    var OderID=oid;
+                    
+              }else{
+                   var OderID='';
+                   $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                           var value=$(this).val();  
+                           
+                           if($(this).attr("disabled")!='disabled'){
+                           
+                           if(OderID){
+                                OderID+=','+value;
+                           }else{
+                                OderID=value;
+                           }
+                           }
+              
+                   }); 	
+                   
+                   if(!OderID){
+                       
+                        alert("请选择订单操作!");
+                        return false;
+                   }
+                    
+              }
+          
+
+              SellerSubmitDelivery(OderID);
+          
+      }
+      
+
+      function UploadOrderFile(OderID){
+
+			$.SaveContent();
+			
+            var content=$("#SellContent").val();
+			
+			$("#loading").dialog({
+                    title:"上传订单文件",	
+                    width: 300,
+                    position: ['center',160],
+                    height:160
+            });
+               
+            $("#loading").dialog('open');
+            
+            $("#loading").html('<div class="loading">上传数据中...</div>');
+   
+            $.ajax({
+					  type: "POST",
+					  url: SURL+"/member.php?app=48&action=1&op=4",
+					  data: '&oderid_s='+OderID+'&content_s='+content+'&Submit=1',
+					  success: function(data){
+							$("#loading").html(data);
+					  }
+             });	
+          
+      }
+	
+	  
+      function SellerSubmitLvBao(cid,tid){
+          
+					$("#loading").dialog({
+							  title:"确认文件交接",	
+							  width: 500,
+							  position: ['center',160],
+							  height:'auto'
+					});
+					 
+					$("#loading").dialog('open');
+								  
+					$("#loading").html('<div class="loading">处理确认交接中...</div>');
+					
+					$.ajax({
+							  type: "POST",
+							  url: SURL+"/member.php?app=48&action=1&op=5",
+							  data: 'cid='+cid+'&tid='+tid,
+							  success: function(data){
+									$("#loading").html(data);
+							  }
+					});	
+         
+     }
+      
+      
+      function SellerSubmitDelivery(OderID){
+            
+		   if(confirm("是否确认已上传文件交接?")){
+			   
+					$("#loading").dialog({
+							  title:"确认文件交接",	
+							  width: 500,
+							  position: ['center',160],
+							  height:'auto'
+					});
+					 
+					$("#loading").dialog('open');
+								  
+					$("#loading").html('<div class="loading">处理确认交接中...</div>');
+					
+					$.ajax({
+							  type: "POST",
+							  url: SURL+"/member.php?app=48&action=1&op=2",
+							  data: 'oderid_s='+OderID,
+							  success: function(data){
+									$("#loading").html(data);
+							  }
+					});	
+		   }
+          
+      }
+      
+      
+      function SellerSubmitDeliveryProject(OderID){
+          
+		   if(confirm("是否确认已上传文件交接?")){
+			   
+					$("#loading").dialog({
+							  title:"确认文件交接",	
+							  width: 500,
+							  position: ['center',160],
+							  height:'auto'
+					});
+					 
+					$("#loading").dialog('open');
+								  
+					$("#loading").html('<div class="loading">处理确认交接中...</div>');
+					
+					$.ajax({
+							  type: "POST",
+							  url: SURL+"/member.php?app=48&action=10&op=2",
+							  data: 'oderid_s='+OderID,
+							  success: function(data){
+									$("#loading").html(data);
+							  }
+					});	
+		   }
+         
+     }
+
+
+      function SellerOpenCredit(oid){
+            
+              if(oid>0){
+      
+                    var OderID=oid;
+                    
+              }else{
+                   var OderID='';
+                   $("#orderlist").find("input:checked[name!='checkboxall']").each(function(){
+                           var value=$(this).val();  
+                           
+                           if($(this).attr("disabled")!='disabled'){
+                           
+                           if(OderID){
+                                OderID+=','+value;
+                           }else{
+                                OderID=value;
+                           }
+                           }
+              
+                   }); 	
+                   
+                   if(!OderID){
+                       
+                        alert("请选择订单操作!");
+                        return false;
+                   }
+                    
+              }
+          
+          
+          
+            $("#loading").dialog({
+                    title:"订单评价",	
+                    width: 600,
+                    position: ['center',160],
+                    height:'auto'
+            });
+               
+            $("#loading").dialog('open');
+            
+            $("#loading").html('<div class="loading">读取数据中...</div>');
+            
+            
+            $("#loading").html('<div class="credit_level" id="SellerCreditLevel"><ul><li class="credit_hao"></li><li class="credit_cha"></li><li class="credit_zhong"></li></ul><ul><li><input name="creditradio" type="radio" value="0" checked />好评</li> <li><input name="creditradio" type="radio" value="1"/>中评</li> <li><input name="creditradio" type="radio" value="2"/>差评</li></ul></div><p>评语：(100字内)</p><textarea id="SellerCreditContent" class="form_input_text" style="width:550px;height:100px;margin-bottom:10px;"></textarea><p style="text-align:center;margin-top:10px;"><input name="Submit" type="button" value="确认" onclick="SellerSubmitCredit(\''+OderID+'\')" class="form_button" style="width:80px"/></p>');
+            
+      
+          
+      }
+      
+	  
+      function SellerSubmitCredit(OderID){
+
+            var level=$("#SellerCreditLevel input:checked").val();
+			
+			var content=$("#SellerCreditContent").val();
+
+            $.ajax({
+					  type: "POST",
+					  url: SURL+"/member.php?app=48&action=1&op=3",
+					  data: 'oderid_s='+OderID+'&level='+level+'&content_s='+content,
+					  success: function(data){
+							$("#loading").html(data);
+					  }
+              });	
+
+      }
+          
+      </script>
+
+<div id="UserPhotoShow"></div>
+
+<!-- Loading -->
+<div id="TopLoading" style="display:none" title="loading..."></div>
+<div id="loading" style="display:none" title="读取数据中..."></div>
+
+
+<div id="SiteBigWrap">  
+   <div id="SiteMiddleWrap">
+        <div id="SiteSmallWrap">
+
+            <div id="Header" class="header">
+                <div id="HeaderTop" class="header_default header_widescreen">  
+                      <div class="header_width"> 
+                       
+                          <div class="header_before">
+                               <a href="http://www.5agc.cn/renwu/xuanmo.html" title="免费发布悬赏任务"><span  class="header_addtask">发布项目</span></a> | <a href="http://www.5agc.cn/rencai.html" title="雇用">雇承包商</a> | <a href="http://www.5agc.cn/member/fuwu/add.html" title="免费发布一个服务">发布服务</a> | <a href="http://www.5agc.cn/renwu.html" title="我要做任务赚钱">参与投标</a> | 财富热线 400-611-9699 <!-- 城市代码 -->
+                          </div>
+ 
+                          <div id="Header_Member">
+
+                                     <script type="text/javascript">
+	      var USERID=0;
+		  var UserSkillsNumber=0;
+	  </script>
+
+
+                               
+<div id="Header_Member_Login" class="header_member_login">
+
+            <div id="Header_Member_Info" class="header_member_info">
+            <ul>
+                <span id="loginuseruid" style="display:none">0</span> <span class="loginrefresh" style="display:none">0</span> 
+                <li class="nobackground" title="帮助"><a href="http://www.5agc.cn/help.html" title="帮助中心">帮助</a></li><li><a href="http://www.5agc.cn/user/register.html" title="免费注册帐号">免费注册</a></li>
+                
+                <li><a href="javascript:void(0);" title="登录到本站" id="UserLogin" class="topuserlogin_default">登录</a>
+                     <div class="LoginFrame" id="NowLoginFrame" title="网站登录">
+                             <link href="/phpapp/templates/generous/style/blue/sns.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+
+var loading='<img src="/phpapp/templates/generous/style/blue/images/loading.gif" alt="正在读取数据中..." />';
+var right='<img src="/phpapp/templates/generous/style/blue/images/right.png" alt="正确" class="checkright" />';
+var error='<img src="/phpapp/templates/generous/style/blue/images/error.png" alt="错误" />';
+var SubmitLoginInput='<input type="submit" value="登 录" onclick="return SubmitLoginNow();" class="form_button"/>';
+var LoginInputPrompt='用户名/邮箱/手机';
+
+
+function VerifyLoginPassword(){
+	          $('#AjaxLoginPasswordError').html(loading);
+		  
+              var password=$("#LoginPassword").val();
+
+			  if(!password.length){
+				   $('#AjaxLoginPasswordError').html(error);
+
+				   var data='亲,请输入密码!';
+			  }else if(password.length<6){
+				   
+				   $('#AjaxLoginPasswordError').html(error);
+				   var data='密码不能小于6位!';
+				   
+			  }else{
+				    $('#AjaxLoginPasswordError').html('');
+					var data='密码位数正常!';
+			  }
+
+			  $('#LoginPassword').poshytip('update',data);
+}
+
+$(function(){
+	  
+	  $("#PasswordTab").tabs();	
+	   
+	  $("#SubmitLoginNow").html(SubmitLoginInput);  
+	  
+	  $("#LoginUserName").val(LoginInputPrompt);
+	  
+	  $("#SiteLoginUserName").val(LoginInputPrompt);
+   
+	  $('#LoginUserName,#LoginPassword,#SiteLoginUserName,#SiteLoginPassword').poshytip({
+			className: 'tip-green',
+			showOn: 'focus',
+			alignTo: 'target',
+			alignX: 'right',
+			alignY: 'center',
+			offsetX: 5
+      });
+	  
+	  $("#SiteSecCode").one("click", function(){
+			seccode();
+	  });
+	   
+	  $(".LoginUserName,#SiteLoginUserName").one("click", function(){ $(this).val('');$(this).css("color","#333"); });
+	 
+	  $("#ShowSNS").toggle(
+			function () {
+			     $("#SNSList").show(500);this.blur();
+			},
+			function () {
+			     $("#SNSList").hide(500);this.blur();
+			}
+	  );
+	  
+	  $("#LoginPassword").click( function () {
+			  VerifyLoginPassword();
+	  });
+	  
+	  $("#LoginPassword").blur( function () { 
+		     VerifyLoginPassword();
+      });
+
+});
+
+
+function SubmitLogin() {
+
+			var username=$("#SiteLoginUserName").val();
+			 if(LoginInputPrompt==username){
+				  $('#SiteLoginUserName').val('');
+				  $('#SiteLoginUserName').focus();
+				  $('#SiteAjaxLoginUserNameError').html(error);
+				  $('#SiteLoginUserName').poshytip('update','请输入用户名！');
+				  return false; 
+			 }else{
+					 if(!username.length){
+						 $('#SiteLoginUserName').focus();
+						 $('#SiteAjaxLoginUserNameError').html(error);
+						 $('#SiteLoginUserName').poshytip('update','对不起!昵称不能为空!');
+		
+						 return false; 
+					 }else{
+						 if(username.length>1){
+							 $('#SiteAjaxLoginUserNameError').html('');
+						 }else{
+							  $('#SiteLoginUserName').focus();
+							  $('#SiteAjaxLoginUserNameError').html(error);
+							  $('#SiteLoginUserName').poshytip('update','对不起!用户名太短了!');
+							 
+							  return false; 
+						 }
+						 
+					 }
+			 }
+		
+			 var password=$("#SiteLoginPassword").val();
+			 if(!password.length){
+				 	
+			     $('#SiteLoginPassword').focus();
+				 $('#SiteAjaxLoginPasswordError').html(error);
+				 $('#SiteLoginPassword').poshytip('update','对不起!密码不能为空!');
+				 
+		         return false; 
+			 }else{
+			
+				 if(password.length>=6){
+				     $('#SiteAjaxLoginPasswordError').html('');
+				 }else{
+					 $('#SiteLoginPassword').focus();
+				     $('#SiteAjaxLoginPasswordError').html(error);
+					 $('#SiteLoginPassword').poshytip('update','对不起!密码不能小于6位!');
+		
+					 return false; 
+				 }
+			 }
+			 
+			 
+			 
+			 			 var seccode=$("#SiteSecCode").val();
+			 if(!seccode.length){
+			     $('#SiteSecCode').focus();
+				 $('#SiteAjaxSecCodeError').html(error);
+			     $('#SiteAjaxSecCode').html('<div class="register_reg_tips">对不起!请输入验证码!</div>');
+		         return false; 
+			 }else{
+				 if(seccode.length!=4){
+					 $('#SiteSecCode').focus();
+				     $('#SiteAjaxSecCodeError').html(error);
+			         $('#SiteAjaxSecCode').html('<div class="register_reg_tips">对不起!请输入4位验证码!</div>');
+		             return false; 
+				 }
+			
+			 }	
+			 
+			 			 
+			
+			$("#loading").html('<div class="loading">登录中...</div>');
+			$("#loading").dialog('open');
+			$("#loading").dialog({ title: '登录框' });
+			 
+			var forms=GetFormAll('#LoginForm');
+			$.ajax({
+   			type: "POST",
+   			url: SURL+'/index.php?app=2&action=1&rand='+Math.random(),
+  		    data: forms,
+   			success: function(data){
+    			  $("#loading").html(data);
+				  return false; 
+				  //alert(data);
+   			}
+			});
+			return false; 
+									   
+ }
+ 
+ 
+function SubmitLoginNow() {
+
+			 var username=$("#LoginUserName").val();
+			 if(LoginInputPrompt==username){
+				  $('#LoginUserName').val('');
+				  $('#LoginUserName').focus();
+				  $('#AjaxLoginUserNameError').html(error);
+				  $('#LoginUserName').poshytip('update','请输入用户名！');
+				  return false; 
+			 }else{
+					 if(!username.length){
+						 $('#LoginUserName').focus();
+						 $('#AjaxLoginUserNameError').html(error);
+						 $('#LoginUserName').poshytip('update','对不起!昵称不能为空!');
+		
+						 return false; 
+					 }else{
+						 if(username.length>1){
+							 $('#AjaxLoginUserNameError').html('');
+						 }else{
+							  $('#LoginUserName').focus();
+							  $('#AjaxLoginUserNameError').html(error);
+							  $('#LoginUserName').poshytip('update','对不起!用户名太短了!');
+							 
+							  return false; 
+						 }
+						 
+					 }
+			 }
+		
+			 var password=$("#LoginPassword").val();
+			 if(!password.length){
+				 	
+			     $('#LoginPassword').focus();
+				 $('#AjaxLoginPasswordError').html(error);
+				 $('#LoginPassword').poshytip('update','对不起!密码不能为空!');
+				 
+		         return false; 
+			 }else{
+			
+				 if(password.length>=6){
+				     $('#AjaxLoginPasswordError').html('');
+				 }else{
+					 $('#LoginPassword').focus();
+				     $('#AjaxLoginPasswordError').html(error);
+					 $('#LoginPassword').poshytip('update','对不起!密码不能小于6位!');
+		
+					 return false; 
+				 }
+			 }
+            
+			 $("#SubmitLogin").html('<div class="loading">登录中...</div>');
+			 
+	
+            var SecurityForm=$("#SecurityForm").val();
+
+			  $.post(SURL+"/index.php?app=2&action=12&rand="+Math.random(),{UserName_s:username,Password_s:password,SecurityForm_s:SecurityForm,SubmitLoginNow:'SubmitLoginNow'},
+					
+				   function (data){
+					  
+					   if(data.indexOf('ok')>0 || data=='ok'){
+						   
+						     if(data=='ok'){
+								   LoginNowForm(data);
+							 }else{
+								 
+								   var LoginIframe=document.getElementById("NowLoginIframe");
+					               var Iframedoc=LoginIframe.contentWindow.document;
+								   Iframedoc.open();
+								   Iframedoc.write(data+parent.LoginNowForm(data));
+								   Iframedoc.close();
+							
+							 }
+							 
+							 
+					   }else{
+						     $('#LoginUserName').focus();
+						     $('#LoginUserName').poshytip('update',data);
+							 $("#SubmitLogin").html(SubmitLoginInput);  
+					   }
+
+					   //alert(data);
+					   return false; 
+				   }
+			  ); 
+	
+			return false; 
+ }
+
+function LoginNowForm(data) {
+     $('#Login_Now').html('<div class="loading"><strong>登录成功！</strong>正在加载数据中...</div>');
+	 $.get("http://www.5agc.cn/user/status.html",function (data){$('#Header_Member').html(data);}); 
+	 $('#UserLogin').removeClass('topuserlogin_focus');
+	 $(".LoginFrame").hide();
+	 var loginrefresh=parseInt($("span[class='loginrefresh']").last().html());
+	 
+	 if(loginrefresh==1){
+		   window.location.reload(); 
+	 }else if(loginrefresh==2){
+		   window.location.href=SURL;
+	 }
+}
+
+function SubmitPasswordForm() {
+													  
+             var type=$("#ToolType").val();
+			 
+			 var username=$("#UserName");	
+			 var email=$("#EMail");	
+			 var mobile=$("#Mobile");	
+			 
+			 if(username.val()==""){
+					   
+						  alert("请输入用户名!");
+						  username.focus();
+						  return false; 
+			 }
+			 
+			 if(type==0){
+				 
+				   if(email.val()==""){
+					   
+						  alert("请输入邮箱!");
+						  email.focus();
+						  return false; 
+				   }
+				   
+			 }else{
+				 
+				   if(mobile.val()==""){
+					   
+						  alert("请输入手机号码!");
+						  mobile.focus();
+						  return false; 
+				   }
+				   
+			 }
+			 
+
+					
+             var SecCode=$("#SiteSecCode").val();
+			 if (SecCode==""){
+				    alert("请输入验证码!");
+				    $("#SecCode").focus();
+				    return false; 
+			 }
+			  
+
+			$("#loading").html('<div class="loading">提交数据中...</div>');
+			$("#loading").dialog('open');
+			$("#loading").dialog({ title: '找回密码' });
+				
+			$.ajax({
+				  type: "POST",
+				  url: SURL+"/index.php?app=2&action=13&rand="+Math.random(),
+				  data: '&SecCode='+SecCode+'&type_d='+type+'&EMail_s='+email.val()+'&Mobile_s='+mobile.val()+'&UserName_s='+username.val(),
+				  success: function(data){
+					   $("#loading").html(data);
+					   return false; 
+				  }
+			});  
+			  
+			return false; 
+													  
+}
+	 
+	 
+function seccode(){
+	var img=SURL+'/index.php?app=2&action=9&rand='+Math.random();
+	 $('#ShowSecCode').html('<a href="javascript:;" onclick="refreshcode()" style="cursor:hand;" title="点击换一张验证码"><img id="img_seccode" src="'+img+'" align="absmiddle"></a>');
+	 $("#SiteSecCode").val("");
+}
+
+function refreshcode() {
+	
+	var img = SURL+'/index.php?app=2&action=9&rand='+Math.random();
+	if(document.getElementById('img_seccode')) {
+		$('#img_seccode').attr("src",img);
+	}
+} 
+
+function SetToolType(id) {
+	 $('#ToolType').val(id);
+}
+
+</script>
+
+
+<div id="Login_Now" style="padding-top:10px;">
+
+<ul>
+    <form id="LoginNowForm">
+    <p style="height:36px;"><label class="form_input_label" style="width:80px;">用户名：</label> <input id="LoginUserName" type="text" maxlength="80" class="form_input_text form_input_width_100 LoginUserName" value="" title="请输入登录用户名或邮箱或手机"/><span id="AjaxLoginUserNameError"></span></p>
+    
+    <p style="height:36px;padding-top:10px;"><label class="form_input_label" style="width:80px;">密码：</label> <input id="LoginPassword" type="password"  class="form_input_text form_input_width_100" title="请输入登录密码"/><span id="AjaxLoginPasswordError"></span></p>
+    
+    <input type="hidden" id="SecurityForm" value="7pG3a6f4e1aeW8Qp"/>
+    
+    <p style="margin-top:10px;padding-left:80px;" id="SubmitLoginNow"></p>
+    
+    </form>
+    
+    <div class="login_sns">
+              <h3><em style="float:right;font-style: normal;"><a href="http://www.5agc.cn/user/getmypassword.html">忘记密码?</a></em><a href="javascript:;" id="ShowSNS" class="sns_down">通过合作网站登录</a></h3>
+              <ul id="SNSList" style="display:none;padding-bottom:10px;">
+                                                                        
+                           <li><a href="http://www.5agc.cn/index.php?app=58" class="sina_icon_small">新浪微博登录</a></li>
+                           
+                                          
+                           <li><a href="http://www.5agc.cn/index.php?app=59" class="qqweibo_icon_small">QQ微博登录</a></li>
+                           
+                                          
+                           <li><a href="http://www.5agc.cn/index.php?app=65" class="qq_icon_small ">QQ登录</a></li>
+                           
+                                          
+                           <li><a href="http://www.5agc.cn/index.php?app=66" class="taobao_icon_small">淘宝登录</a></li>
+                           
+                                          
+                           <li><a href="http://www.5agc.cn/index.php?app=67" class="netease_icon_small">网易微博登录</a></li>
+                           
+                                          
+                           <li><a href="http://www.5agc.cn/index.php?app=69" class="sohu_icon_small">搜狐登录</a></li>
+                           
+                                                  </ul>
+      
+    </div>
+    
+</ul>
+
+
+</div>
+
+
+
+<iframe src="javascript:false;" id="NowLoginIframe" style="display:none;height:0px;width:0px;"></iframe>
+
+                     </div>
+                </li>
+        
+            </ul>
+        </div>
+    
+
+</div>
+
+
+
+      
+
+
+
+
+                          </div>
+
+                      </div>
+
+                </div> <!--HeaderTop End-->
+                
+                
+                <div class="header_info">
+                      <div id="header_logo">
+                          <a href="http://www.5agc.cn" title="工程财富网"></a>
+                      </div>
+                      <div class="logo_slogan">
+                      </div>
+                      
+                      <div id="HeaderCity" class="header_city">
+                      </div>
+                      
+                      <div class="header_release">
+                         <ul>
+                             <li><a href="http://www.5agc.cn/renwu.html">我要投标</a></li>
+							 <li class="header_release_task"><a href="http://www.5agc.cn/renwu/xuanmo.html">我要招标</a></li>
+                         </ul>
+                      </div>
+                </div>              
+
+
+                <div class="navigation_box">
+                         <div id="Navigation">  
+                              <div class="navigation_wrap">
+                              
+                                 <div id="SearchTask" class="search_task">
+                                      <form action='http://www.5agc.cn/index.php' method="get" class="navigation_search_form">
+      <input name="submit" type="submit" value=" " class="navigation_search_submit"/>
+      <input name="search" type="text" value="搜索 项目,承包商,服务" class="navigation_search"/>
+      <input name="app" type="hidden" value="22"/>
+</form>
+
+                                 </div>
+                                 
+                                  <div id="SiteCategory" class="sw_categorys_nav">
+                                    <div class="allcategorys">
+                                    <h3 class="title-item-hd">
+                                    <a href="javascript:void(0);">
+                                    所有项目分类
+                                    <s class="icon"></s>
+                                    </a>
+                                    </h3>
+                                    <ul class="sublist">
+                                           <li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/zx/renwu.html">咨询频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/jzgczx/renwu.html"><span style="color:">建筑咨询</span></a><a href="http://www.5agc.cn/fenlei/szgy/renwu.html"><span style="color:">市政公用</span></a><a href="http://www.5agc.cn/fenlei/csgd/renwu.html"><span style="color:">城市轨交</span></a><a href="http://www.5agc.cn/fenlei/glgc/renwu.html"><span style="color:">公路工程</span></a><a href="http://www.5agc.cn/fenlei/tlgc/renwu.html"><span style="color:">铁路工程</span></a><a href="http://www.5agc.cn/fenlei/swdz/renwu.html"><span style="color:">水文地质等</span></a><a href="http://www.5agc.cn/fenlei/slgc/renwu.html"><span style="color:">水利工程</span></a><a href="http://www.5agc.cn/fenlei/gkhh/renwu.html"><span style="color:">港口河海</span></a><a href="http://www.5agc.cn/fenlei/sthj/renwu.html"><span style="color:">生态环境</span></a><a href="http://www.5agc.cn/fenlei/syhg/renwu.html"><span style="color:">石油化工</span></a><a href="http://www.5agc.cn/fenlei/yydz/renwu.html"><span style="color:">医药电子</span></a><a href="http://www.5agc.cn/fenlei/zixunzhaobiao/renwu.html"><span style="color:">招标</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/sj/renwu.html">设计频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/jzhsj/renwu.html"><span style="color:">建筑设计</span></a><a href="http://www.5agc.cn/fenlei/szsj/renwu.html"><span style="color:">市政设计</span></a><a href="http://www.5agc.cn/fenlei/glsj/renwu.html"><span style="color:">公路设计</span></a><a href="http://www.5agc.cn/fenlei/tlsj/renwu.html"><span style="color:">铁路设计</span></a><a href="http://www.5agc.cn/fenlei/slsj/renwu.html"><span style="color:">水利设计</span></a><a href="http://www.5agc.cn/fenlei/dztxgd/renwu.html"><span style="color:">电子通信广电</span></a><a href="http://www.5agc.cn/fenlei/dlsj/renwu.html"><span style="color:">电力设计</span></a><a href="http://www.5agc.cn/fenlei/sytaq/renwu.html"><span style="color:">石油天然气</span></a><a href="http://www.5agc.cn/fenlei/hgshyy/renwu.html"><span style="color:">化工石化医药</span></a><a href="http://www.5agc.cn/fenlei/mtsj/renwu.html"><span style="color:">煤炭设计</span></a><a href="http://www.5agc.cn/fenlei/yjsj/renwu.html"><span style="color:">冶金设计</span></a><a href="http://www.5agc.cn/fenlei/nlsj/renwu.html"><span style="color:">农林设计</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/zj/renwu.html">造价频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/tjgczj/renwu.html"><span style="color:">土建造价</span></a><a href="http://www.5agc.cn/fenlei/zsylzj/renwu.html"><span style="color:">装饰园林造价</span></a><a href="http://www.5agc.cn/fenlei/azgczj/renwu.html"><span style="color:">安装造价</span></a><a href="http://www.5agc.cn/fenlei/szgczj/renwu.html"><span style="color:">市政造价</span></a><a href="http://www.5agc.cn/fenlei/glgczj/renwu.html"><span style="color:">公路造价</span></a><a href="http://www.5agc.cn/fenlei/tlgczj/renwu.html"><span style="color:">铁路造价</span></a><a href="http://www.5agc.cn/fenlei/dlgczj/renwu.html"><span style="color:">电力造价</span></a><a href="http://www.5agc.cn/fenlei/dztxzj/renwu.html"><span style="color:">电子通信造价</span></a><a href="http://www.5agc.cn/fenlei/slgczj/renwu.html"><span style="color:">水利工程造价</span></a><a href="http://www.5agc.cn/fenlei/zhgczj/renwu.html"><span style="color:">综合造价</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/jl/renwu.html">监理频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/fwjzjl/renwu.html"><span style="color:">房建监理</span></a><a href="http://www.5agc.cn/fenlei/jdazjl/renwu.html"><span style="color:">机电监理</span></a><a href="http://www.5agc.cn/fenlei/szjl/renwu.html"><span style="color:">市政监理</span></a><a href="http://www.5agc.cn/fenlei/gljl/renwu.html"><span style="color:">公路监理</span></a><a href="http://www.5agc.cn/fenlei/dljl/renwu.html"><span style="color:">电力监理</span></a><a href="http://www.5agc.cn/fenlei/slsdjl/renwu.html"><span style="color:">水利水电监理</span></a><a href="http://www.5agc.cn/fenlei/hgsyjl/renwu.html"><span style="color:">化工石油监理</span></a><a href="http://www.5agc.cn/fenlei/gkyhd/renwu.html"><span style="color:">港口与航道</span></a><a href="http://www.5agc.cn/fenlei/txjl/renwu.html"><span style="color:">通信监理</span></a><a href="http://www.5agc.cn/fenlei/tlgcjl/renwu.html"><span style="color:">铁路工程</span></a><a href="http://www.5agc.cn/fenlei/nlgcjl/renwu.html"><span style="color:">农林监理</span></a><a href="http://www.5agc.cn/fenlei/zhhjl/renwu.html"><span style="color:">综合监理</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/sg/renwu.html">施工频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/fwjzsg/renwu.html"><span style="color:">建筑施工</span></a><a href="http://www.5agc.cn/fenlei/zszxsg/renwu.html"><span style="color:">装修施工</span></a><a href="http://www.5agc.cn/fenlei/ylyhsg/renwu.html"><span style="color:">园林绿化施工</span></a><a href="http://www.5agc.cn/fenlei/jdazsg/renwu.html"><span style="color:">机电安装施工</span></a><a href="http://www.5agc.cn/fenlei/szgygcsg/renwu.html"><span style="color:">市政施工</span></a><a href="http://www.5agc.cn/fenlei/glgcsg/renwu.html"><span style="color:">公路施工</span></a><a href="http://www.5agc.cn/fenlei/dlgcsg/renwu.html"><span style="color:">电力施工</span></a><a href="http://www.5agc.cn/fenlei/slsdsg/renwu.html"><span style="color:">水利水电</span></a><a href="http://www.5agc.cn/fenlei/hgsysg/renwu.html"><span style="color:">石化</span></a><a href="http://www.5agc.cn/fenlei/gkyhdsg/renwu.html"><span style="color:">港口航道</span></a><a href="http://www.5agc.cn/fenlei/txgcsg/renwu.html"><span style="color:">通信</span></a><a href="http://www.5agc.cn/fenlei/tlgcsg/renwu.html"><span style="color:">铁路</span></a><a href="http://www.5agc.cn/fenlei/nlgcsg/renwu.html"><span style="color:">农林施工</span></a><a href="http://www.5agc.cn/fenlei/qtgcsg/renwu.html"><span style="color:">其它施工</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/lw/renwu.html">劳务频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/mgfb/renwu.html"><span style="color:">木工</span></a><a href="http://www.5agc.cn/fenlei/qzfb/renwu.html"><span style="color:">砌筑</span></a><a href="http://www.5agc.cn/fenlei/mhfb/renwu.html"><span style="color:">抹灰</span></a><a href="http://www.5agc.cn/fenlei/szzfb/renwu.html"><span style="color:">石制作</span></a><a href="http://www.5agc.cn/fenlei/yqfb/renwu.html"><span style="color:">油漆大白</span></a><a href="http://www.5agc.cn/fenlei/gjfb/renwu.html"><span style="color:">钢筋</span></a><a href="http://www.5agc.cn/fenlei/hntfb/renwu.html"><span style="color:">混凝土</span></a><a href="http://www.5agc.cn/fenlei/jsjfb/renwu.html"><span style="color:">脚手架</span></a><a href="http://www.5agc.cn/fenlei/mbfb/renwu.html"><span style="color:">模板</span></a><a href="http://www.5agc.cn/fenlei/hjfb/renwu.html"><span style="color:">焊接</span></a><a href="http://www.5agc.cn/fenlei/sndfb/renwu.html"><span style="color:">水暖电</span></a><a href="http://www.5agc.cn/fenlei/bjfb/renwu.html"><span style="color:">钣金</span></a><a href="http://www.5agc.cn/fenlei/jxfb/renwu.html"><span style="color:">架线</span></a><a href="http://www.5agc.cn/fenlei/mqfb/renwu.html"><span style="color:">幕墙</span></a><a href="http://www.5agc.cn/fenlei/zhlwfb/renwu.html"><span style="color:">综合劳务</span></a><a href="http://www.5agc.cn/fenlei/lglwfb/renwu.html"><span style="color:">力工</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/cl/renwu.html">材料频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/tjcl/renwu.html"><span style="color:">土建材料</span></a><a href="http://www.5agc.cn/fenlei/zscl/renwu.html"><span style="color:">装饰材料</span></a><a href="http://www.5agc.cn/fenlei/sncl/renwu.html"><span style="color:">水暖材料</span></a><a href="http://www.5agc.cn/fenlei/dqcl/renwu.html"><span style="color:">电气材料</span></a><a href="http://www.5agc.cn/fenlei/szcl/renwu.html"><span style="color:">市政材料</span></a><a href="http://www.5agc.cn/fenlei/sgcl/renwu.html"><span style="color:">水工材料</span></a><a href="http://www.5agc.cn/fenlei/jjsb/renwu.html"><span style="color:">家居设备</span></a><a href="http://www.5agc.cn/fenlei/ylcl/renwu.html"><span style="color:">园林景观</span></a><a href="http://www.5agc.cn/fenlei/lycl/renwu.html"><span style="color:">楼宇家居智能</span></a><a href="http://www.5agc.cn/fenlei/afsbcl/renwu.html"><span style="color:">安防设备</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/sb/renwu.html">设备频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/jxsb/renwu.html"><span style="color:">机械设备</span></a><a href="http://www.5agc.cn/fenlei/dqsb/renwu.html"><span style="color:">电气设备</span></a><a href="http://www.5agc.cn/fenlei/rlsb/renwu.html"><span style="color:">热力设备</span></a><a href="http://www.5agc.cn/fenlei/lysb/renwu.html"><span style="color:">炉窑设备</span></a><a href="http://www.5agc.cn/fenlei/jzsb/renwu.html"><span style="color:">静置设备</span></a><a href="http://www.5agc.cn/fenlei/dzsb/renwu.html"><span style="color:">电子信息设备</span></a><a href="http://www.5agc.cn/fenlei/gpsrqcn/renwu.html"><span style="color:">给排水燃气采暖</span></a><a href="http://www.5agc.cn/fenlei/tfktsb/renwu.html"><span style="color:">通风空调</span></a><a href="http://www.5agc.cn/fenlei/zdhybsb/renwu.html"><span style="color:">自动化仪表</span></a><a href="http://www.5agc.cn/fenlei/xfsb/renwu.html"><span style="color:">消防设备</span></a><a href="http://www.5agc.cn/fenlei/gygd/renwu.html"><span style="color:">工业管道</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/dc/renwu.html">地产频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/xmch/renwu.html"><span style="color:">项目策划</span></a><a href="http://www.5agc.cn/fenlei/zbdl/renwu.html"><span style="color:">招标代理</span></a><a href="http://www.5agc.cn/fenlei/xmsj/renwu.html"><span style="color:">项目设计</span></a><a href="http://www.5agc.cn/fenlei/xmzj/renwu.html"><span style="color:">项目造价</span></a><a href="http://www.5agc.cn/fenlei/xmjl/renwu.html"><span style="color:">项目监理</span></a><a href="http://www.5agc.cn/fenlei/xmsg/renwu.html"><span style="color:">项目施工</span></a><a href="http://www.5agc.cn/fenlei/dcclgy/renwu.html"><span style="color:">材料供应</span></a><a href="http://www.5agc.cn/fenlei/dcsbgy/renwu.html"><span style="color:">设备供应</span></a><a href="http://www.5agc.cn/fenlei/fdcyx/renwu.html"><span style="color:">房地产营销</span></a><a href="http://www.5agc.cn/fenlei/wygl/renwu.html"><span style="color:">物业管理</span></a><a href="http://www.5agc.cn/fenlei/fdcxxh/renwu.html"><span style="color:">房地产信息化</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/jz/renwu.html">家装频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/jzsj/renwu.html"><span style="color:">家装设计</span></a><a href="http://www.5agc.cn/fenlei/jzjl/renwu.html"><span style="color:">家装监理</span></a><a href="http://www.5agc.cn/fenlei/jzsg/renwu.html"><span style="color:">家装施工</span></a><a href="http://www.5agc.cn/fenlei/jzshji/renwu.html"><span style="color:">家装审计</span></a><a href="http://www.5agc.cn/fenlei/jzdw/renwu.html"><span style="color:">家装队伍</span></a><a href="http://www.5agc.cn/fenlei/jzclgy/renwu.html"><span style="color:">材料供应</span></a><a href="http://www.5agc.cn/fenlei/jzrz/renwu.html"><span style="color:">家庭软装</span></a><a href="http://www.5agc.cn/fenlei/jzdl/renwu.html"><span style="color:">家装代理</span></a><a href="http://www.5agc.cn/fenlei/jjfs/renwu.html"><span style="color:">居家风水</span></a><a href="http://www.5agc.cn/fenlei/jjbj/renwu.html"><span style="color:">保洁服务</span></a><a href="http://www.5agc.cn/fenlei/bjfw/renwu.html"><span style="color:">搬家服务</span></a><a href="http://www.5agc.cn/fenlei/jhhs/renwu.html"><span style="color:">旧货回收</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/zs/renwu.html">装饰频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/zssj/renwu.html"><span style="color:">装饰设计</span></a><a href="http://www.5agc.cn/fenlei/zsys/renwu.html"><span style="color:">装饰预算</span></a><a href="http://www.5agc.cn/fenlei/zsjl/renwu.html"><span style="color:">装饰监理</span></a><a href="http://www.5agc.cn/fenlei/zssg/renwu.html"><span style="color:">装饰施工</span></a><a href="http://www.5agc.cn/fenlei/gzdw/renwu.html"><span style="color:">公装队伍</span></a><a href="http://www.5agc.cn/fenlei/clgy/renwu.html"><span style="color:">材料供应</span></a><a href="http://www.5agc.cn/fenlei/rz/renwu.html"><span style="color:">软装</span></a><a href="http://www.5agc.cn/fenlei/zsdl/renwu.html"><span style="color:">装饰代理</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/jd/renwu.html">酒店频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/jdgh/renwu.html"><span style="color:">酒店规划</span></a><a href="http://www.5agc.cn/fenlei/jdsj/renwu.html"><span style="color:">酒店设计</span></a><a href="http://www.5agc.cn/fenlei/jdzj/renwu.html"><span style="color:">酒店造价</span></a><a href="http://www.5agc.cn/fenlei/jdsbgy/renwu.html"><span style="color:">酒店设备供应</span></a><a href="http://www.5agc.cn/fenlei/jdsg/renwu.html"><span style="color:">酒店施工</span></a><a href="http://www.5agc.cn/fenlei/cfsb/renwu.html"><span style="color:">厨房设备</span></a><a href="http://www.5agc.cn/fenlei/yyznh/renwu.html"><span style="color:">影音智能化</span></a><a href="http://www.5agc.cn/fenlei/jdps/renwu.html"><span style="color:">酒店配饰</span></a><a href="http://www.5agc.cn/fenlei/rcwhwx/renwu.html"><span style="color:">日常维护维修</span></a><a href="http://www.5agc.cn/fenlei/jdhbyx/renwu.html"><span style="color:">酒店海报营销</span></a><a href="http://www.5agc.cn/fenlei/jdxxh/renwu.html"><span style="color:">酒店信息化</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/gzpd/renwu.html">雇主频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/gzfdc/renwu.html"><span style="color:">房地产</span></a><a href="http://www.5agc.cn/fenlei/gzcyyq/renwu.html"><span style="color:">产业园区</span></a><a href="http://www.5agc.cn/fenlei/gzgctz/renwu.html"><span style="color:">工厂</span></a><a href="http://www.5agc.cn/fenlei/gzjtzs/renwu.html"><span style="color:">家庭装饰</span></a><a href="http://www.5agc.cn/fenlei/gzggzs/renwu.html"><span style="color:">公共装饰</span></a><a href="http://www.5agc.cn/fenlei/gzwywh/renwu.html"><span style="color:">物业维护</span></a><a href="http://www.5agc.cn/fenlei/gzshizheng/renwu.html"><span style="color:">市政</span></a><a href="http://www.5agc.cn/fenlei/gzjiaotong/renwu.html"><span style="color:">交通</span></a><a href="http://www.5agc.cn/fenlei/gzshuili/renwu.html"><span style="color:">水利</span></a><a href="http://www.5agc.cn/fenlei/gzdztx/renwu.html"><span style="color:">电子通信</span></a><a href="http://www.5agc.cn/fenlei/gzdianli/renwu.html"><span style="color:">电力</span></a><a href="http://www.5agc.cn/fenlei/gzshiyou/renwu.html"><span style="color:">石油燃气</span></a><a href="http://www.5agc.cn/fenlei/gzkuangshan/renwu.html"><span style="color:">矿山</span></a><a href="http://www.5agc.cn/fenlei/gzyejin/renwu.html"><span style="color:">冶金</span></a><a href="http://www.5agc.cn/fenlei/gznonglin/renwu.html"><span style="color:">农林</span></a><a href="http://www.5agc.cn/fenlei/gztouzi/renwu.html"><span style="color:">投资</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/zl/renwu.html">租赁频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/wlgc/renwu.html"><span style="color:">物流公司</span></a><a href="http://www.5agc.cn/fenlei/zlgs/renwu.html"><span style="color:">租赁公司</span></a><a href="http://www.5agc.cn/fenlei/wlz/renwu.html"><span style="color:">物流组</span></a><a href="http://www.5agc.cn/fenlei//renwu.html"><span style="color:">货车租赁</span></a><a href="http://www.5agc.cn/fenlei//renwu.html"><span style="color:">装卸班组</span></a><a href="http://www.5agc.cn/fenlei//renwu.html"><span style="color:">排渣车</span></a><a href="http://www.5agc.cn/fenlei//renwu.html"><span style="color:">挖掘机</span></a><a href="http://www.5agc.cn/fenlei//renwu.html"><span style="color:">吊车</span></a><a href="http://www.5agc.cn/fenlei//renwu.html"><span style="color:">脚手架</span></a><a href="http://www.5agc.cn/fenlei//renwu.html"><span style="color:">吊篮</span></a></p></li><li><h3 class="mcate-item-hd"><span><a href="http://www.5agc.cn/fenlei/zonghe/renwu.html">综合频道</a></span></h3><p class="mcate-item-bd"><a href="http://www.5agc.cn/fenlei/zonghexqpt/renwu.html"><span style="color:">住宅小区平台</span></a><a href="http://www.5agc.cn/fenlei/zongheshcpt/renwu.html"><span style="color:">商城平台</span></a><a href="http://www.5agc.cn/fenlei/zonghezhyshcpt/renwu.html"><span style="color:">专业商城平台</span></a><a href="http://www.5agc.cn/fenlei/zonghezixunpt/renwu.html"><span style="color:">咨询平台</span></a><a href="http://www.5agc.cn/fenlei/zonghezhxpt/renwu.html"><span style="color:">装修平台</span></a><a href="http://www.5agc.cn/fenlei/zonghecs/renwu.html"><span style="color:">材设平台</span></a><a href="http://www.5agc.cn/fenlei/zonghejiudian/renwu.html"><span style="color:">酒店平台</span></a><a href="http://www.5agc.cn/fenlei/zonghefdc/renwu.html"><span style="color:">房地产平台</span></a></p></li>                                    </ul>
+                                    </div>
+                                 </div>
+                            
+                             
+                                  <script type="text/javascript">
+                                      $('#SiteCategory').Z_TMAIL_SIDER_V2();
+                                  </script>
+                            
+                                <div class="navigation">
+                                      <ul>   
+                                                            
+                                             
+                                            
+                                                                                                    
+                                                                                                                        <li id="Nav_ID_56"><a href="http://www.5agc.cn/">首页</a></li> 
+                                                   
+                                                                                                           
+                                                                                                    
+                                                                                                                        <li id="Nav_ID_49"><a href="http://www.5agc.cn/renwu.html">招标大厅</a></li> 
+                                                   
+                                                                                                           
+                                                                                                    
+                                                                                                                        <li id="Nav_ID_55"><a href="http://www.5agc.cn/rencai.html">找承包商</a></li> 
+                                                   
+                                                                                                           
+                                                                                                    
+                                                                                                                        <li id="Nav_ID_82"><a href="http://www.5agc.cn/fuwu.html">买服务</a></li> 
+                                                   
+                                                                                                           
+                                                                                                    
+                                                                                                                        <li id="Nav_ID_166"><a href="http://www.5agc.cn/tehuifuwu.html">特惠频道</a></li> 
+                                                   
+                                                                                                           
+                                                                                                    
+                                                                                                                        <li id="Nav_ID_9"><a href="http://www.5agc.cn/member.php?app=9">管理中心</a></li> 
+                                                   
+                                                                                                           
+                                                                                              
+                                                                                        
+                                            <!--
+                                                                                        -->
+                                            
+                                      </ul>
+                                     
+                                </div> <!--navigation End-->
+                                
+                    
+                            </div>   <!--navigation_wrap End-->
+                    
+                     </div> <!--Navigation End-->
+                
+                </div>
+
+<script type="text/javascript">
+$(function(){	
+	   var nowappid='82';
+	   if(nowappid==10 || nowappid==27){
+		    nowappid=49;
+	   }
+	   $("#Nav_ID_"+nowappid).addClass("focus");
+	   
+});
+</script>
+
+
+</div>
+
+
+
+<div class="wrap">
+<div class="content">
+
+
+
+
+
+<script type="text/javascript">var moreselect='0';</script>
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/member.js?v=20130715"></script>
+<script type="text/javascript" src="/phpapp/templates/generous/style/blue/js/list.js?v=20130715"></script>
+
+<link href="/phpapp/templates/generous/style/blue/icon.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/skills.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/task.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/member.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/form.css" rel="stylesheet" type="text/css" />
+<link href="/phpapp/templates/generous/style/blue/job.css" rel="stylesheet" type="text/css" />
+
+
+
+       <div class="select_ctarray">
+           <h1><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;" class="label" title="厂家">厂家</a>分类 &nbsp; <a class="small blue awesome" onclick="MyFollow('0','299')">关注</a></h1>           <ul>
+                  <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;" class="label" title="厂家">厂家</a>           </ul>
+       </div>
+
+
+
+    <div class="task_select_title select_now">          
+    <ul>
+        <li><h2>您已选择:</h2><p class="select_skills"><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=&sort=0&select=0&more=0&tab=0">20-50个好评</a> </p></li>
+    </ul>
+    </div>  
+
+<div class="task_list_nav">
+<ul>
+        <li class="mapshow_icon"><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=1" title="切换地图" class="help_small"></a></li>
+        <li class="focus"><a href="http://www.5agc.cn/fuwu.html">所有服务</a></li>
+</li>
+</ul>
+         
+</div>
+
+
+
+<div class="select_options">
+
+    <span class="select_sort_list">
+      
+                                             
+                                                    
+                               <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0" class="select_sort selected" >默认排序</a>
+                          
+                                                    
+                               <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=1&select=0&more=0&tab=0" class="select_sort" >报价从高到低</a>
+                          
+                                                    
+                               <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=2&select=0&more=0&tab=0" class="select_sort" >报价从低到高</a>
+                          
+                                                    
+                               <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=3&select=0&more=0&tab=0" class="select_sort" >完成时间从少到多</a>
+                          
+                                                    
+                               <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=4&select=0&more=0&tab=0" class="select_sort" >完成时间从多到少</a>
+                          
+                                                    
+                               <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=5&select=0&more=0&tab=0" class="select_sort" >出售量从少到多</a>
+                          
+                                                    
+                               <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=6&select=0&more=0&tab=0" class="select_sort" >出售量从多到少</a>
+                          
+                                      
+                                                                                                                                       
+     </span>
+     
+    <p style="padding:2px;text-align:right;padding-top:12px;padding-right:20px;">
+                     <a class="small blue awesome" href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=1&tab=0" id="NowOpenSelect">打开筛选</a>
+            </p>
+ 
+</div>
+
+  
+<div id="OpenSelect" style="display:none">
+
+    <div class="task_select_title">
+                 
+    <ul> 
+       <li><h2>地区分类:</h2><p><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.1&sort=0&select=0&more=0&tab=0">北京市</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.2&sort=0&select=0&more=0&tab=0">天津市</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.3&sort=0&select=0&more=0&tab=0">河北省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.4&sort=0&select=0&more=0&tab=0">山西省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.5&sort=0&select=0&more=0&tab=0">内蒙古自治区</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.6&sort=0&select=0&more=0&tab=0">辽宁省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.7&sort=0&select=0&more=0&tab=0">吉林省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.8&sort=0&select=0&more=0&tab=0">黑龙江省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.9&sort=0&select=0&more=0&tab=0">上海市</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.10&sort=0&select=0&more=0&tab=0">江苏省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.11&sort=0&select=0&more=0&tab=0">浙江省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.12&sort=0&select=0&more=0&tab=0">安徽省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.13&sort=0&select=0&more=0&tab=0">福建省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.14&sort=0&select=0&more=0&tab=0">江西省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.15&sort=0&select=0&more=0&tab=0">山东省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.16&sort=0&select=0&more=0&tab=0">河南省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.17&sort=0&select=0&more=0&tab=0">湖北省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.18&sort=0&select=0&more=0&tab=0">湖南省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.19&sort=0&select=0&more=0&tab=0">广东省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.20&sort=0&select=0&more=0&tab=0">广西壮族自治区</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.21&sort=0&select=0&more=0&tab=0">海南省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.22&sort=0&select=0&more=0&tab=0">重庆市</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.23&sort=0&select=0&more=0&tab=0">四川省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.24&sort=0&select=0&more=0&tab=0">贵州省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.25&sort=0&select=0&more=0&tab=0">云南省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.26&sort=0&select=0&more=0&tab=0">西藏自治区</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.27&sort=0&select=0&more=0&tab=0">陕西省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.28&sort=0&select=0&more=0&tab=0">甘肃省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.29&sort=0&select=0&more=0&tab=0">青海省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.30&sort=0&select=0&more=0&tab=0">宁夏回族自治区</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.31&sort=0&select=0&more=0&tab=0">新疆维吾尔自治区</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.32&sort=0&select=0&more=0&tab=0">台湾省</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.33&sort=0&select=0&more=0&tab=0">香港特别行政区</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.34&sort=0&select=0&more=0&tab=0">澳门特别行政区</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.35&sort=0&select=0&more=0&tab=0">海外</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;10000.36&sort=0&select=0&more=0&tab=0">其他</a></p></li><li><h2>显示雇主:</h2><p><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;40.43&sort=0&select=0&more=0&tab=0">显示雇主</a> </p></li><li><h2>工程通:</h2><p><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;41.45&sort=0&select=0&more=0&tab=0">已工程通认证</a> </p></li><li><h2>体验店:</h2><p><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;42.44&sort=0&select=0&more=0&tab=0">已体验店认证</a> </p></li><li><h2>会员VIP:</h2><p><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;46.47&sort=0&select=0&more=0&tab=0">VIP</a> <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;46.48&sort=0&select=0&more=0&tab=0">门户</a> </p></li><li><h2>实名认证:</h2><p><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;3.11&sort=0&select=0&more=0&tab=0">已实名认证</a> </p></li><li><h2>用户类型:</h2><p><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;4.12&sort=0&select=0&more=0&tab=0">个人</a> <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;4.13&sort=0&select=0&more=0&tab=0">企业</a> </p></li><li><h2>注册时间:</h2><p><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;7.28&sort=0&select=0&more=0&tab=0">今日</a> <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;7.29&sort=0&select=0&more=0&tab=0">昨日</a> <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;7.30&sort=0&select=0&more=0&tab=0">近三天</a> <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;7.31&sort=0&select=0&more=0&tab=0">近一周</a> <a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;7.32&sort=0&select=0&more=0&tab=0">近一个月</a> </p></li>         
+    </ul>
+    
+    </div>
+</div>
+
+
+
+        <!--
+                <div class="ajax_page" style="margin-bottom:10px;"><strong>1</strong><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=2">2</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=3">3</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=4">4</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=5">5</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=6">6</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=2">下一页</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=500">后页</a></div>
+                -->
+         
+                     <p>暂时没有服务出售!</p>
+                
+        
+              		 <div class="ajax_page"><strong>1</strong><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=2">2</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=3">3</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=4">4</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=5">5</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=6">6</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=2">下一页</a><a href="http://www.5agc.cn/skills/cj/fuwu.html&item=5.21;&sort=0&select=0&more=0&tab=0&page=500">后页</a></div>
+              
+  
+ 
+       
+       
+
+
+</div>
+   
+   
+<script type="text/javascript">
+$(function(){	
+	$.PHPAPPTaskFlash('.flashbid',3000);
+});
+</script>
+
+
+                         
+        
+                         <div id="Footer" class="footer">   
+                              <div class="footermenu">
+                                    <div class="footermenulist">
+                                       <ul>
+                                                                                                                                                                                                <li><a href="http://www.5agc.cn/index.php?app=23&action=1"  title="关于我们">关于我们</a></li>
+                                                                                                      <li><a href="http://www.5agc.cn/index.php?app=23&action=2"  title="联系方式">联系方式</a></li>
+                                                                                                      <li><a href="http://www.5agc.cn/index.php?app=23&action=3"  title="友情链接">友情链接</a></li>
+                                                                                                      <li><a href="http://www.5agc.cn/index.php?app=46"  title="网站地图">网站地图</a></li>
+                                                                                                      <li><a href="http://www.5agc.cn/index.php?app=57"  title="帮助中心">帮助中心</a></li>
+                                                                                                      <li><a href="http://www.5agc.cn/index.php?app=20" target="_blank" title="推广联盟">推广联盟</a></li>
+                                                                                                      <li><a href="http://www.5agc.cn/index.php?app=163"  title="客服中心">客服中心</a></li>
+                                                                                                      <li><a href="http://www.5agc.cn/weixin.html"  title="微信公众号">微信公众号</a></li>
+                                                                                                      <li><a href="http://www.5agc.cn/index.php?app=173&amp;action=1" target="_blank" title="诚信墙">诚信墙</a></li>
+                                                                                                                                     </ul>
+                                    </div>
+                                    
+                                                                  </div>
+                               
+                               <div class="footercopyright">
+                                    <div class="copyright">
+                                        <p>
+                                        &copy; 2006-2015  <a href="http://www.5agc.cn">工程财富网</a> Total 0.0766850(s)                                        </p>
+                                        
+                                        <p>
+                                       服务热线：400-611-9699 在线咨询QQ：1330690699 微信公众号：dl-798
+                                        </p>
+                                        
+                                        <p>
+                                        <a href="http://www.miibeian.gov.cn" target="_blank">辽ICP备14000758号</a>                                        	<a href="http://www.5agc.cn/company/quality.html" target="_blank">增值电信业务经营许可证：辽B2-20140085</a> 
+                                                                                </p>
+        
+                                    
+                                    </div>
+                                    
+                                    <div class="footerauthenticate">
+                                        <a href="http://www.alipay.com" title="支付宝" class="footeralipay"></a>
+                                        <a href='http://wljg.lngs.gov.cn/iciaicweb/dzbscheck.do?method=change&id=E2014090200052302' target="_blank"><img alt='网络经济主体信息' border='0' DRAGOVER='true' src='http://www.5agc.cn/images/footer/gongshang.png' /></a>
+										<a ><script src="http://kxlogo.knet.cn/seallogo.dll?sn=e14012421020045819i651000000&size=0"></script></a>
+                                    </div>
+                               </div>
+                               
+                               
+                               
+                                   
+                         </div> <!--Footer End-->
+                 
+                     </div> <!--content End-->
+                 </div> <!--wrap End-->
+ 
+             </div> <!--SiteSmallWrap End-->
+         </div> <!--SiteMiddleWrap End-->
+     </div> <!--SiteBigWrap End-->
+     
+     
+     <div id="ScrollUp" class="scroll_default">
+     	<a id="TipScrollUp" href="javascript:;" onclick="scrollTo(0,0);" title="返回顶部"></a>
+     </div>
+     
+     <div id="POPLIVE" class="pop_live">
+     </div>
+     
+     
+     
+
+
+<script type='text/javascript' src='http://tb.53kf.com/kf.php?arg=10084014&style=1'></script>
+  </body>
+</html>
+

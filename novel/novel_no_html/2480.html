@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title> 保供稳价、惠泽市民、服务三农渝惠食品集团喜获工行50亿元授信 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="Author" content="redheart47@163.com" />
+<meta name="Power By" content="www.smaxit.com.cn|重庆讯迈科技有限公司" />
+<meta name="Keywords" content="重庆商业投资集团有限公司|重庆商投集团|商投集团|渝惠食品集团&渝惠集团&渝惠&渝惠食品&渝惠食品集团有限公司" />
+<meta name="Description" content="重庆商业投资集团有限公司|重庆商投集团|商投集团|渝惠食品集团&渝惠集团&渝惠&渝惠食品&渝惠食品集团有限公司" />
+<script src="/www/js/ajaxserver.js" type="text/javascript"></script>
+<script src="/www/js/jquery.min.js" type="text/javascript"></script>
+</head>
+<body>
+<LINK rel=stylesheet type=text/css href="/templates/2013/css/style.css"><SCRIPT type=text/javascript> 
+function addEvent(obj,evtType,func,cap){ 
+cap=cap||false; 
+if(obj.addEventListener){ 
+obj.addEventListener(evtType,func,cap); 
+return true; 
+}else if(obj.attachEvent){ 
+if(cap){ 
+obj.setCapture(); 
+return true; 
+}else{ 
+return obj.attachEvent("on" + evtType,func); 
+} 
+}else{ 
+return false; 
+} 
+} 
+function getPageScroll(){ 
+var xScroll,yScroll; 
+if (self.pageXOffset) { 
+xScroll = self.pageXOffset; 
+} else if (document.documentElement && document.documentElement.scrollLeft){ 
+xScroll = document.documentElement.scrollLeft; 
+} else if (document.body) { 
+xScroll = document.body.scrollLeft; 
+} 
+if (self.pageYOffset) { 
+yScroll = self.pageYOffset; 
+} else if (document.documentElement && document.documentElement.scrollTop){ 
+yScroll = document.documentElement.scrollTop; 
+} else if (document.body) { 
+yScroll = document.body.scrollTop; 
+} 
+arrayPageScroll = new Array(xScroll,yScroll); 
+return arrayPageScroll; 
+} 
+function GetPageSize(){ 
+var xScroll, yScroll; 
+if (window.innerHeight && window.scrollMaxY) { 
+xScroll = document.body.scrollWidth; 
+yScroll = window.innerHeight + window.scrollMaxY; 
+} else if (document.body.scrollHeight > document.body.offsetHeight){ 
+xScroll = document.body.scrollWidth; 
+yScroll = document.body.scrollHeight; 
+} else { 
+xScroll = document.body.offsetWidth; 
+yScroll = document.body.offsetHeight; 
+} 
+var windowWidth, windowHeight; 
+if (self.innerHeight) { 
+windowWidth = self.innerWidth; 
+windowHeight = self.innerHeight; 
+} else if (document.documentElement && document.documentElement.clientHeight) { 
+windowWidth = document.documentElement.clientWidth; 
+windowHeight = document.documentElement.clientHeight; 
+} else if (document.body) { 
+windowWidth = document.body.clientWidth; 
+windowHeight = document.body.clientHeight; 
+} 
+if(yScroll < windowHeight){ 
+pageHeight = windowHeight; 
+} else { 
+pageHeight = yScroll; 
+} 
+if(xScroll < windowWidth){ 
+pageWidth = windowWidth; 
+} else { 
+pageWidth = xScroll; 
+} 
+arrayPageSize = new Array(pageWidth,pageHeight,windowWidth,windowHeight) 
+return arrayPageSize; 
+} 
+
+var AdMoveConfig=new Object(); 
+AdMoveConfig.IsInitialized=false; 
+AdMoveConfig.ScrollX=0; 
+AdMoveConfig.ScrollY=0; 
+AdMoveConfig.MoveWidth=0; 
+AdMoveConfig.MoveHeight=0; 
+AdMoveConfig.Resize=function(){ 
+var winsize=GetPageSize(); 
+AdMoveConfig.MoveWidth=winsize[2]; 
+AdMoveConfig.MoveHeight=winsize[3]; 
+AdMoveConfig.Scroll(); 
+} 
+AdMoveConfig.Scroll=function(){ 
+var winscroll=getPageScroll(); 
+AdMoveConfig.ScrollX=winscroll[0]; 
+AdMoveConfig.ScrollY=winscroll[1]; 
+} 
+addEvent(window,"resize",AdMoveConfig.Resize); 
+addEvent(window,"scroll",AdMoveConfig.Scroll); 
+
+function AdMove(id){ 
+if(!AdMoveConfig.IsInitialized){ 
+AdMoveConfig.Resize(); 
+AdMoveConfig.IsInitialized=true; 
+} 
+var obj=document.getElementById(id); 
+obj.style.position="absolute"; 
+var W=AdMoveConfig.MoveWidth-obj.offsetWidth; 
+var H=AdMoveConfig.MoveHeight-obj.offsetHeight; 
+var x = W*Math.random(),y = H*Math.random(); 
+var rad=(Math.random()+1)*Math.PI/6; 
+var kx=Math.sin(rad),ky=Math.cos(rad); 
+var dirx = (Math.random()<0.5?1:-1), diry = (Math.random()<0.5?1:-1); 
+var step = 1; 
+var interval; 
+this.SetLocation=function(vx,vy){x=vx;y=vy;} 
+this.SetDirection=function(vx,vy){dirx=vx;diry=vy;} 
+obj.CustomMethod=function(){ 
+obj.style.left = (x + AdMoveConfig.ScrollX) + "px"; 
+obj.style.top = (y + AdMoveConfig.ScrollY) + "px"; 
+rad=(Math.random()+1)*Math.PI/6; 
+W=AdMoveConfig.MoveWidth-obj.offsetWidth; 
+H=AdMoveConfig.MoveHeight-obj.offsetHeight; 
+x = x + step*kx*dirx; 
+if (x < 0){dirx = 1;x = 0;kx=Math.sin(rad);ky=Math.cos(rad);} 
+if (x > W){dirx = -1;x = W;kx=Math.sin(rad);ky=Math.cos(rad);} 
+
+y = y + step*ky*diry; 
+if (y < 0){diry = 1;y = 0;kx=Math.sin(rad);ky=Math.cos(rad);} 
+if (y > H){diry = -1;y = H;kx=Math.sin(rad);ky=Math.cos(rad);} 
+} 
+this.Run=function(){ 
+var delay = 10; 
+interval=setInterval(obj.CustomMethod,delay); 
+obj.onmouseover=function(){clearInterval(interval);} 
+obj.onmouseout=function(){interval=setInterval(obj.CustomMethod, delay);} 
+} 
+this.Close = function(){ 
+obj.style.display = "none"; 
+clearInterval(interval); 
+} 
+} 
+
+</SCRIPT> 
+<DIV id=header class=cen>
+<TABLE class="cen    " height=100 cellSpacing=0 cellPadding=0 width=1004 border=0>
+<TBODY>
+<TR>
+<TD style="PADDING-TOP: 10px" vAlign=middle width=464 align=right><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="428" height="73">
+          <param name="movie" value="/templates/2013/swf/logo.swf" />
+          <param name="wmode" value="transparent" />
+          <param name="quality" value="high" />
+          <embed src="/templates/2013/swf/logo.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="428" height="73"></embed>
+        </object></TD>
+<TD width=337></TD>
+<TD style="PADDING-TOP: 36px" vAlign=top width=203 align=left>
+<TABLE cellSpacing=0 cellPadding=0 width=148 border=0>
+<TBODY>
+<TR>
+<TD class=tb height=22 vAlign=middle align=center><A href="javascript:void(0)" onClick="setHomePage(this,'http://www.cqstjt.cn/')">设为首页</A> | <A href="javascript:addFavorite('重庆商业投资集团有限公司','http://www.cqstjt.cn/')">加入收藏</A></TD></TR>
+<TR>
+<TD height=19 vAlign=middle align=left>
+<TABLE height=19 cellSpacing=0 cellPadding=0 width=148 border=0>
+<FORM method=post name=searchform action=/www/news/search.asp>
+<TBODY>
+<TR>
+<TD vAlign=middle width=11 align=left><IMG width=11 height=19 src="/templates/2013/images/stjt_ss01.jpg"></TD>
+<TD vAlign=middle width=113 align=left><INPUT style="BORDER-LEFT-WIDTH: 0px; HEIGHT: 16px; BORDER-RIGHT-WIDTH: 0px; BACKGROUND-IMAGE: url(/templates/2013/images/stjt_ss02.jpg); BORDER-BOTTOM-WIDTH: 0px; COLOR: rgb(157,157,157); PADDING-TOP: 3px; BORDER-TOP-WIDTH: 0px; WIDTH: 113px" value=请输入关键字 name=key onFocus="if (value =='请输入关键字'){value =''}" onBlur="if (value ==''){value='请输入关键字'}"> </TD>
+<TD vAlign=middle width=24 align=left><INPUT height=19 src="/templates/2013/images/stjt_ss03.jpg" type=image width=24 border=0></TD></TR></TBODY></FORM>
+<TBODY></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV>
+<UL id=nav>
+<LI class=line></LI>
+<LI><A href="/index.html">首 页</A> </LI>
+<LI><A href="/html/1/zjyh/">走进商投</A> </LI>
+<LI><A href="/html/1/xwzx/">新闻中心</A> </LI>
+<LI><A href="/html/1/jtcy/">集团产业</A> </LI>
+<LI><A href="/html/1/dqgz/">党群视窗</A> </LI>
+<LI><A href="/html/1/qywh/">企业文化</A> </LI>
+<LI><A href="/html/1/zcfg/">政策法规</A> </LI>
+<LI><A href="/html/1/zshz/">招商合作</A> </LI>
+<LI><A href="/html/1/rczx/">人力资源</A> </LI>
+<LI class=line02></LI></UL>
+<TABLE class="cen    " height=346 cellSpacing=0 cellPadding=0 width=1004 bgColor=#ffffff border=0>
+<TBODY>
+<TR>
+<TD height=330 vAlign=top align=center><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1004" height="330">
+        <param name="movie" value="/templates/2013/swf/banner.swf" />
+        <param name="wmode" value="transparent" />
+        <param name="quality" value="high" />
+        <embed src="/templates/2013/swf/banner.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1004" height="330"></embed>
+      </object></TD></TR>
+<TR>
+<TD height=16 background=/templates/2013/images/stjt_03.jpg></TD></TR></TBODY></TABLE>
+<div class="cen" id="container">
+   <div id="colL">
+   <dl class="nav">
+      <dt>新闻中心</dt>
+      <dd>
+        <ul>
+          
+<li><a href="/html/1/xwzx/gzdt/">集团动态</a></li>
+
+<li><a href="/html/1/xwzx/mtbd/">媒体聚焦</a></li>
+
+<li><a href="/html/1/xwzx/hyxx/">行业资讯</a></li>
+
+<li><a href="/html/1/xwzx/spxw/">视频新闻</a></li>
+
+        </ul>
+      </dd>
+    </dl>
+	<table width="199" height="34" align="center" bgcolor="#a9d8fa" border="0" cellspacing="0" cellpadding="0">
+      <tbody><tr>
+        <td align="center" valign="middle"><select style="width:196px" onchange="if(this.value!='')window.open(this.value);this.options[0].selected=true" size="1"><option value="" selected>::::::::::友情链接::::::::::</option>
+</select>
+        </td>
+      </tr>
+    </tbody></table>
+   </div>
+   <div id="colR">
+     <div id="position">当前位置：<a href="/">首页</a> &gt;  <a href="/html/1/xwzx/">新闻中心</a> > <a href="/html/1/xwzx/gzdt/">集团动态</a> &gt; 正文</div>
+    <div id="text" class="cen">
+      <h1>保供稳价、惠泽市民、服务三农渝惠食品集团喜获工行50亿元授信</h1>
+      <h3>发布人：集团董事会办公室     发布日期：2010/12/29     浏览：<script src="/www/js/gethits.asp?id=279" language="javascript"></script>次  字号：<a href="javascript:fontZoom(16)">大</a> <a href="javascript:fontZoom(14)">中</a> <a href="javascript:fontZoom(12)">小</a></h3>
+      <div id="showcontent"> <P style="TEXT-ALIGN: center" align=center><IMG src="/upfiles/201012/20101229143709272.jpg" border=0></P>
+<P style="TEXT-ALIGN: center" align=center>签约仪式现场</P>
+<P style="TEXT-ALIGN: center" align=center><IMG style="DISPLAY: block; MARGIN: 0px auto; TEXT-ALIGN: center" src="/upfiles/201012/20101229143929352.jpg" border=0></P>
+<P style="TEXT-ALIGN: center" align=center>秦董和王总亲切交谈</P>
+<P style="TEXT-ALIGN: center" align=center><IMG src="/upfiles/201012/20101229144125453.jpg" border=0></P>
+<P style="TEXT-ALIGN: center" align=center>秦董讲话</P>
+<P style="TEXT-ALIGN: center" align=center><IMG src="/upfiles/201012/20101229144315555.jpg" border=0></P>
+<P style="TEXT-ALIGN: center" align=center>会议现场</P>
+<P style="TEXT-ALIGN: center" align=center><IMG src="/upfiles/201012/20101229144556400.jpg" border=0></P>
+<P style="TEXT-ALIGN: center" align=center>会后合影</P> </div>
+    </div>
+    <div id="tools">【<a href="javascript:addFavorite(window.document.title,window.location)" title="加入收藏">加入收藏</a>】【<a href="javascript:window.print()">打印此文</a>】【<a href="javascript:window.close()">关闭窗口</a>】【<a href="javascript:scrolltop()">返回顶部</a>】 </div>
+    <div id="prenext">
+      <ul>
+        <li>上一条:<a href="/html/1/xwzx/gzdt/10/12/29/276.html">五部门联合检查观农贸充分肯定观农贸整治成果</a></li>
+        <li>下一条:<a href="/html/1/xwzx/gzdt/10/12/29/278.html">保供稳价、惠泽市民、服务三农渝惠食品集团喜获工行50亿元授信</a></li>
+      </ul>
+    </div>
+   </div>
+   <div class="clear"></div>
+</div>
+<TABLE class="cen   " border=0 cellSpacing=0 cellPadding=0 width=1004 bgColor=#ffffff height=64>
+<TBODY>
+<TR>
+<TD width=10></TD>
+<TD vAlign=center width=984 align=middle>
+<DIV id=yqlj class=cen>
+<UL>
+<LI><A target=_blank href="http://www.mofcom.gov.cn/"><IMG border=0 width=183 height=36 src="/templates/2013/images/yqlj_01.jpg"></A> 
+<LI><A target=_blank href="http://www.cq.gov.cn/"><IMG border=0 width=183 height=36 src="/templates/2013/images/yqlj_02.jpg"></A> 
+<LI><A target=_blank href="http://www.sasaccq.gov.cn/"><IMG border=0 width=183 height=36 src="/templates/2013/images/yqlj_03.jpg"></A> 
+<LI><A target=_blank href="http://wsy.cq.gov.cn/"><IMG border=0 width=183 height=36 src="/templates/2013/images/yqlj_04.jpg"></A> 
+<LI><A target=_blank href="http://www.cqagri.gov.cn/"><IMG border=0 width=183 height=36 src="/templates/2013/images/yqlj_05.jpg"></A> </LI></UL></DIV></TD>
+<TD width=10></TD></TR></TBODY></TABLE>
+<DIV id=help class=cen><A href="javascript:scrolltop()">返回顶部</A> | <A target=_blank href="/html/1/lxwm/">联系我们</A> | <A target=_blank href="/html/1/jghq/ly/">市场行情</A> | <A href="#">OA办公系统</A></DIV>
+<DIV id=copyright class=cen>
+<DIV id=copyright02>
+<DIV id=cqgs><A href="#"><IMG border=0 width=60 height=66 src="/templates/2013/images/stjt_26.jpg"></A></DIV>
+<DIV class=copyright>重庆商业投资集团有限公司 版权所有 渝ICP备10202283号-1<BR>地址：重庆市北部新区星光大道60号金星大厦园馆 邮编：4011121 电话：023-60368242<BR>不得未经授权建立本站镜像</DIV>
+<DIV id=ygwb><A href="#"><IMG border=0 width=60 height=66 src="/templates/2013/images/stjt_27.jpg"></A></DIV></DIV></DIV>
+<script src="/count/mystat.asp?siteid=1" type="text/javascript"></script>
+</body>
+</html>
+

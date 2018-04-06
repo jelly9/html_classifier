@@ -1,0 +1,1171 @@
+
+
+
+
+
+	
+
+
+
+	
+	
+
+
+
+	
+	
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>bjsanpin01&#039;职业博客_经理人的职业博客_企博网</title>
+<meta name="keywords" content="bjsanpin01&#039;职业博客,经理人,杭州" />
+<meta name="description" content="bjsanpin01&#039;职业博客-,王德尊的经理人职业博客，企博网。" />
+
+
+
+
+
+<link rel="stylesheet" href="http://fs04.bokee.net/bloggermodule/template/jsp/20.css" type="text/css" media="all" />
+
+
+
+<link rel="stylesheet" href="http://fs04.bokee.net/bloggermodule/template/css/1/blog.css" type="text/css" media="all" />
+
+<link href="http://fs04.bokee.net/bloggermodule/template/jsp/show.css" rel="stylesheet" type="text/css" />
+
+<script src="http://www.bokee.net/6a21/??/bloggermodule/include/js/common.js,/common/js/jquery/js/jquery-1.6.1.min.js" type="text/javascript" language="javascript"></script>
+
+
+
+<script language="javaScript">
+var jq = jQuery.noConflict();
+
+jQuery(document).ready(function($){
+	  $.ajaxSetup ({  
+	         cache: false  
+	   });	
+	var emptyCount=0;
+	var ajax_load = "<img src='/pagemodule/images3/icon/loading.gif' alt='loading...' />";  
+	var jsonUrl = "/bloggermodule/usertimeline_listNew.do";  
+	var lastdate=null;
+	var bokeeName="bjsanpin01";
+    var f = function(){
+    	  	 $("#result").html(""); 
+       	 $.getJSON(jsonUrl, {bokeeName: bokeeName,lastdate:lastdate}, function(json) {
+            	 var result="";
+            	 var total=0;  
+			 jQuery.each(json, function() {
+            		total++;
+            		if(total >8){
+                			return;
+            		}
+            		var txt=this.txt;
+            		result +=  "\n<li><img src='http://fs04.bokee.net/pagemodule/images3/icon/"+this.icon+".gif' class='type'/>"+txt+"\t"+"</li>\n";
+					if(lastdate==null || this.date > lastdate){
+                          	lastdate=this.date;
+                    }
+			});
+        		 
+			var liArr = $('#usertimeline  li');
+      		var start=8 - total;
+        		 
+        	liArr.each(function(index){if(index >=start){$(this).remove();}});
+			$("#usertimeline").prepend(result);
+			//alert($("#usertimeline li .feed_content").html());
+			//$("#usertimeline li .feed_content").empty();
+			$("#usertimeline li .date").css("white-space","nowrap");
+		 	if(total==0){
+				emptyCount++;
+	       	if(emptyCount> 10){	emptyCount =1 ;}
+				setTimeout (f ,5000*emptyCount);
+			}else{
+				emptyCount=0;
+				setTimeout (f ,5000);
+			}
+		}); 
+       }
+	 f();
+});
+
+
+
+
+jQuery(document).ready(function($){
+	  $.ajaxSetup ({  
+	         cache: false  
+	      });	
+     
+	   var emptyCount=0;
+    var ajax_load = "<img src='/pagemodule/images3/icon/loading.gif' alt='loading...' />";  
+    var jsonUrl = "/bloggermodule/timeline/homepage_friendupdate_json.jsp";  
+    var lastdate=null;
+    var bokeeName="bjsanpin01";
+    	var f = function(){
+       	 $("#result").html(""); 
+        	 $.getJSON(jsonUrl, {bokeeName: bokeeName,lastdate:lastdate}, function(json) {
+            	 var result="";
+            	 var total=0;  
+	          		 $.each(json, function() {
+           		 	total++;
+           		 	result +=  "\n<li><img src='http://fs04.bokee.net/pagemodule/images3/icon/"+this.icon+".gif' class='type'/>"+this.txt+"\t"+"</li>\n";
+                   if(lastdate==null || this.date > lastdate){
+                     	lastdate=this.date;
+                		}
+        		 });
+        		 if(lastdate !=null){
+        			lastdate = lastdate + 1000 ; 
+        		 }
+        		 var liArr = $('#friendtimeline  li');
+        		 var start= 3 - total;
+        		 
+        		 liArr.each(function(index){if(index >=start){$(this).remove();}});
+				 $("#friendtimeline").prepend(result);
+				// $("#friendtimeline li .feed_content").empty();
+				 $("#friendtimeline li .date").css("white-space","nowrap");
+				 if($('#friendtimeline  li').length <1 ){
+					 $("#friendtimeline_title").hide();
+				 }else{
+					 $("#friendtimeline_title").show();
+				 }
+				 if(total==0){
+           		 emptyCount++;
+	             	 if(emptyCount> 100){
+	             		 emptyCount =1 ;
+	             	 }
+	             	 setTimeout (f ,5000*emptyCount);
+            }else{
+          	   emptyCount=0;
+ 	          	 	setTimeout (f ,5000);
+            	}
+          }); 
+    	}
+ 	 f();
+});
+
+</script>
+
+</head>
+
+
+
+
+
+ 	
+	
+
+<body style="background-image:url();">
+	
+
+<script type='text/javascript' src='http://www.bokee.net/6a21/??/dwr/engine.js,/dwr/util.js,/dwr/interface/AJAXCSS.js,/dwr/interface/AJAXCJH.js,/dwr/interface/AJAXDELETE.js,/dwr/interface/AJAXManager.js,/dwr/interface/AJAXWebLog.js,/bloggermodule/admin/include/tipswindown.js,/includes/pop/blogdaily.js,/common/js/layer.js'></script>
+
+
+
+
+
+
+<div id="top">
+<div class="top_box">
+
+
+	<h1><a href="http://www.bokee.net" target="_blank">bokee.net</a></h1>
+	<h2><a href="http://www.bokee.net/mainmodule/TradeGroupCount_blogDetailCareer.do?tradeCode=00100160" target="_blank">经理人博客</a></h2>
+	<script language="javascript" type="text/javascript" src="http://www.bokee.net/bloggermodule/include/js/login_js.jsp?x=2" ></script>	
+	<script language="javascript" type="text/javascript">login_01()</script>
+
+	
+
+
+
+
+<style type="text/css">
+/*顶部图片定位*/
+.backindex{
+   position:relative;
+   top:-23px;
+   right:193px;
+   float:right;
+   margin:0 0 -24px 0;
+}
+</style>
+
+
+
+
+
+</div>
+</div>
+
+<div id="main">
+
+
+
+
+<div id="head">
+<h1><a href="http://bjsanpin01.blog.bokee.net">
+
+
+bjsanpin01&#039;职业博客
+
+
+
+</a>
+</h1>
+<h2>
+
+</h2>
+<table cellpadding="0" cellspacing="0">
+<tr><td><span><a href="http://bjsanpin01.blog.bokee.net">bjsanpin01.blog.bokee.net</a> <a href="javascript:;" onclick="setCopy('http://bjsanpin01.blog.bokee.net');" title="复制网页地址">复制网址</a> | <a href="http://www.bokee.net/bloggermodule/favor_addBlog.do?bokeeName=bjsanpin01">加入分享</a>
+ 
+ 
+</span></td>
+</tr>
+</table>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div id="menu">
+
+<ul>
+<li><a href="/bloggermodule/main.jsp?bokeeName=bjsanpin01"><span>首页</span></a></li>
+<li><a href="/bloggermodule/blog_list.do?bokeeName=bjsanpin01"><span>文章</span></a></li>
+<li><a href="/bloggermodule/image_list.do?bokeeName=bjsanpin01&pagerow=24"><span>图片</span></a></li>
+<li><a href="/bloggermodule/v2/include/weibolist.jsp?bokeeName=bjsanpin01"><span>微博</span></a></li>
+<li><a href="/bloggermodule/v2/include/follow_fan.jsp?bokeeName=bjsanpin01"><span>关注/粉丝</span></a></li>
+<!-- <li><a href="/bloggermodule/list/friendhistory.jsp?bokeeName=bjsanpin01"><span>好友更新</span></a></li> -->
+<li><a href="/bloggermodule/list/history.jsp?bokeeName=bjsanpin01"><span>个人动态</span></a></li>
+<li><a href="/bloggermodule/favor_listAllFavor.do?bokeeName=bjsanpin01" class="xugang"><span>分享</span></a></li>
+<li class="menuliuyan"><a href="/bloggermodule/bokeenote_list.do?bokeeName=bjsanpin01&pagerow=20"><span>留言</span></a></li>
+
+</ul>
+</div>
+
+
+
+<div id="middle">
+<div class="mleft">
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+	
+
+
+
+
+	
+	
+
+
+
+<div class="space">
+<h2 class="title_card"></h2>
+<div class="content">
+<div class="spacelogo">
+<link rel="stylesheet" href="/common/js/jquery/css/tipswindown.css" type="text/css" media="all" />
+<script src="/bloggermodule/admin/include/tipswindown.js" type="text/javascript" language="javascript"></script>
+<div class="spacelogo_img">
+
+
+	
+	<a href="javascript:void(0);" onclick="clickLogo()"><img src="http://fs01.bokee.net/userfilespace/200x300/usermanagermodule/images/man/m-1.gif" border="0" title="王德尊"/></a>
+	
+	
+
+</div>
+
+
+<h2 class="username">
+
+
+	<a href="/bloggermodule/include/userInfo.jsp?bokeeName=bjsanpin01" title="我的信息">王德尊</a>
+
+
+
+		
+			<img src="/pagemodule/images3/icon/transparent.gif" title="男" class="male" />
+		
+		
+		
+	
+</h2>
+
+</div>
+
+
+<div class="fun">
+<ul>
+
+
+
+	<li id="addBtn_even"><span onclick="followHe(null)" href="#">加关注</span></li>
+
+<li class="li_m"><a href="javascript:void(0)" onclick="sendPriLet(null)">发私信</a></li>
+
+</ul>
+</div>
+
+
+
+<script language="javaScript">
+  var jq = jQuery.noConflict(); 
+</script>
+
+<script language="JavaScript" type="text/JavaScript">
+	function checkLogin(){
+		needLogin(null);
+		return false;
+	}
+	function needLogin(msg){
+		var uri="iframe:/bloggermodule/v2/include/login.jsp";
+		if(msg!=null){
+			uri=uri+"?msg=error";
+		}
+		tipsWindown("登录",uri,"400","170","true","","true","");
+	}
+	
+
+</script>
+
+
+<script language="JavaScript" type="text/JavaScript">
+ function addBtnShow(){
+		clearTimeout(addBtnHiden.t);
+	 	if(jQuery('.cancelBtn').length!=0){
+			return;
+		}
+	 	var oDiv=document.createElement('div');
+		oDiv.className='cancelBtn';
+		oDiv.innerHTML="<span onclick='removeHe()'>取消关注</span>";
+		document.body.appendChild(oDiv);
+		oDiv.style.top=jQuery('#addBtn_even').offset().top+25+'px';
+		oDiv.style.left=jQuery("#addBtn_even").offset().left+2+'px';
+		oDiv.onmouseover = function(){clearTimeout(addBtnHiden.t)};
+		oDiv.onmouseout=addBtnHiden;
+	 }
+	function addBtnHiden(){
+		addBtnHiden.t=setTimeout(
+		function(){jQuery('.cancelBtn').remove();},200)
+	}
+	addBtnHiden.t=null;
+	
+	function removeHe(){
+		var bol=checkLogin();
+		if(!bol){
+			return;
+		}
+		var destinationId="21026546";
+		jQuery.getJSON("/linkmodule/ajax/follow_remove.do",{"destinationId":destinationId},function(json){
+		if(!json.success){
+		 	alert(json.msg);
+		 }
+		if(json.success){
+			jQuery("#addBtn_even").removeAttr("onmouseover","addBtnShow()");
+			jQuery("#addBtn_even").removeAttr("onmouseout","addBtnHiden()");
+			jQuery("#addBtn_even").html("<span onclick='followHe(null)' href='#'>加关注</span>");
+		}
+	});
+	}
+
+function followHe(destinationId){
+	var bol=checkLogin();
+	if(!bol){
+		return;
+	}
+	if(destinationId==null){
+		destinationId="21026546";
+	}
+	jQuery.getJSON("/linkmodule/ajax/follow_follow.do",{"destinationId":destinationId},function(json){
+		if(!json.success){
+		 	alert(json.msg);
+		 }
+		if(json.success){
+			//关注成功，需要弹出成功提示
+			var uri="url:/bloggermodule/v2/include/tag.jsp?destinationId="+destinationId;
+			tipsWindown("关注成功",uri,"400","200","true","","true","");
+			//发送通知邮件
+			jQuery.getJSON(
+    				'/usermanagermodule/userRegist_sendFollowEmail.do',
+    				{destinationId:destinationId},
+					function(data){}
+			);
+			jQuery("#addBtn_even").attr("onmouseover","addBtnShow()");
+			jQuery("#addBtn_even").attr("onmouseout","addBtnHiden()");
+			var bidirection=json.data.bidirection;
+			if(bidirection){
+				//双向关注，显示相互关注
+				jQuery("#addBtn_even").html("<img src='/pagemodule/images3/icon/transparent.gif' class='add_icon addBtn_c'/> 相互关注");
+			}else{
+				jQuery("#addBtn_even").html("<img src='/pagemodule/images3/icon/transparent.gif' class='add_icon addBtn_d'/> 已关注");
+			}
+		}
+	});
+}
+function sendPriLet(destinationName){
+	var bol=checkLogin();
+	if(!bol){
+		return;
+	}
+	if(destinationName==null){
+		destinationName="bjsanpin01";
+	}
+	var mineId="";
+	window.open("/linkmodule/message/sendFreeMessage.jsp?friend_ids="+destinationName);
+
+}
+
+function clickLogo(){
+	var bol=checkLogin();
+	if(!bol){
+		return;
+	}
+	window.location.href="/bloggermodule/include/userInfo.jsp?bokeeName="+'bjsanpin01';
+
+}
+
+function leaveMsg(bokeeName){
+	var bol=checkLogin();
+	if(!bol){
+		return;
+	}
+	if(bokeeName==null){
+		bokeeName="bjsanpin01";
+	}
+	window.location.href="/bloggermodule/bokeenote_list.do?bokeeName="+bokeeName+"&pagerow=20";
+}
+</script>
+
+<div class="user_atten">
+
+<ul>
+
+<li>
+	<a href="/bloggermodule/v2/include/morefollow.jsp?sourceId=21026546&bokeeName=bjsanpin01"><strong>0</strong><span>关注</span></a>
+</li>
+<li class="li_f">
+	<a href="/bloggermodule/v2/include/morefan.jsp?sourceId=21026546&bokeeName=bjsanpin01"><strong>0</strong><span>粉丝</span></a>
+</li>
+
+		
+
+<li class="li_k"><a href="#"><strong>0</strong><span>一度人脉</span></a></li>
+</ul>
+</div>
+
+<div class="medal">
+<ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+
+<div class="user_info">
+<ul>
+
+
+	<li>职业：<a href="http://www.bokee.net/mainmodule/TradeGroupCount_blogDetailCareer.do?tradeCode=00100160">经理人</a></li>
+
+
+
+	<li>地区：杭州</li>
+
+
+
+
+
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+    <div class="space">
+      <h2 class="title"> 
+	 	  
+		  		
+		  		
+		  		
+		  			他的关注   
+		  		
+		  
+	     <a href="/bloggermodule/v2/include/morefollow.jsp?sourceId=21026546&bokeeName=bjsanpin01" class="more">更多</a>
+	 </h2>
+      <div class="content">
+        <ul class="face">
+        	
+        	
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+    <div class="space">
+      <h2 class="title"> 
+      	
+		  		
+		  		
+		  		
+		  			他的粉丝   
+		  		
+		  
+	     <a href="/bloggermodule/v2/include/morefan.jsp?sourceId=21026546&bokeeName=bjsanpin01" class="more">更多</a> 
+
+	 </h2>
+      <div class="content">
+        <ul class="face">
+        	
+        	
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-12646435-1");
+pageTracker._setDomainName("none");
+pageTracker._setAllowLinker(true);
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				
+				
+				
+
+<div class="space">
+<h2 class="title">
+
+
+	
+		
+		
+			他加入的企业博客	
+				
+	
+
+<a href="http://www.bokee.net/bloggermodule/list/morecompanies.jsp?bokeeName=bjsanpin01" class="more">更多</a>
+</h2>
+<div class="content">
+
+
+	
+	
+		
+		
+	
+
+
+<ul class="ul_circom">
+<script type="text/javascript">
+
+	
+		
+		
+		
+		
+		 
+ 			
+ 		 
+			
+				
+				
+					
+						
+						
+							document.write('<li><a href="http://www.bokee.net/companymodule/company_indexCompany.do?id=1673607" target="_blank">北京中港金诚国际商贸有限公司(创建)</a></li>');
+						
+					
+				
+				
+			
+		
+					
+		
+		
+	
+	
+
+
+function tipInfo(cid){
+	if(confirm("您确定要放弃对此企业博客的管理权吗？")){
+		window.location="/companymodule/company_hostExitCompany.do?id="+cid;
+	}
+}
+</script>
+</ul>
+</div>
+</div>
+
+
+
+
+
+<!-- 推荐企业博客 -->
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+ 
+ 
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+ 
+
+
+
+
+
+
+<div class="space">
+<h2 class="title">数据统计</h2>
+<div class="content">
+<ul class="ul_stats">
+<li>创建日期：2010-07-26</li>
+<li>最后更新日期：<span id="latestUpdateTime"></span></li>
+<li>总访问量：19 次</li>
+<li>文章：0 篇</li>
+<li>评论数量：0 篇</li>
+<li>留言：0 篇</li>
+</ul>
+</div>
+</div>
+
+	
+
+
+
+
+<script language="JavaScript">
+
+ function sub(){
+ window.open('/blogmodule/opml_hotScribe.do;jsessionid=83241CED3D67E68D01BB4869F7352218.fs08?xmlurl=http%3a%2f%2fwww.bokee.net%2fbjsanpin01%2frss2.xml&title=','快速订阅我的网志','height=500, width=500, top=0, left=0, toolbar=no, menubar=no, scrollbars=no,resizable=no,location=no, status=no');
+ }
+</script>
+
+<div class="space">
+<h2 class="title_rss"></h2>
+<div class="content">
+<a href="http://www.bokee.net/bjsanpin01/rss2.xml" target="_blank" ><img src="http://fs04.bokee.net/images/rss2.gif" border="0" /></a> 
+<a href="http://www.bokee.net/bjsanpin01/atom.xml" target="_blank" ><img src="http://fs04.bokee.net/images/atomxml.gif" border="0" /></a>
+
+</div>
+</div>
+
+</div>
+
+<div class="mright">
+	
+	<h2 class="title2">最新动态<a href="/bloggermodule/list/history.jsp?bokeeName=bjsanpin01" class="more">更多</a></h2>
+	<div class="feed">
+	<ul id="usertimeline"></ul>
+	
+	</div>
+	
+	<div class="blogcolumn"><strong>文章分类：</strong>
+	
+
+
+
+
+
+
+	
+	
+
+
+<a href="/bloggermodule/blog_listcolumn.do;jsessionid=83241CED3D67E68D01BB4869F7352218.fs08?columnName=%e6%9c%80%e6%96%b0%e4%ba%a7%e5%93%81&bokeeName=bjsanpin01" >
+
+最新产品</a>
+
+<a href="/bloggermodule/blog_listcolumn.do;jsessionid=83241CED3D67E68D01BB4869F7352218.fs08?columnName=%e8%b5%84%e8%b4%a8%e8%af%81%e4%b9%a6&bokeeName=bjsanpin01" >
+
+资质证书</a>
+
+<a href="/bloggermodule/blog_listcolumn.do;jsessionid=83241CED3D67E68D01BB4869F7352218.fs08?columnName=%e9%a3%9f%e5%93%81%e9%a5%ae%e6%96%99%e4%bb%a3%e7%90%86%e5%8a%a0%e7%9b%9f&bokeeName=bjsanpin01" >
+
+食品饮料代理加盟</a>
+
+
+
+	</div>
+	
+	
+	<h2 class="title2">顶置文章</h2>
+	
+
+
+
+
+
+
+	
+	
+
+<ul class="ul_recommend">
+
+</ul>
+
+
+	
+	
+	<h2 class="title2">最新文章  <span class="f12">(0篇)</span>	
+	
+	<a href="/bloggermodule/blog_list.do?bokeeName=bjsanpin01" class="more">更多</a></h2>
+	<div class="artlist">
+	
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+	
+	</div>
+
+		
+	<h2 class="title2" id="bokeenote">留言
+	
+	<a href="/bloggermodule/bokeenote_list.do?bokeeName=bjsanpin01&pagerow=10" class="more">更多</a></h2>
+	
+
+
+
+
+<!-- 陈俊晖改AJAX删除 -->
+<style type="text/css">
+.deleteAhref {
+
+    
+	
+	display:none;
+	
+
+}
+</style>
+
+
+	
+	
+	
+
+<div class="note_list">
+<ul>
+
+</ul>
+</div>
+
+<a name="note"></a>
+<form name="BokeeNoteForm_quickSave" id="BokeeNoteForm_quickSave" action="/bloggermodule/bokeenote_quickSave.do" onsubmit="return false;" method="post">
+<input type="hidden" name="forumId" value="1339070"/>
+<input type="hidden" name="bokeeName" value="bjsanpin01"/>
+
+
+<table class="note_box">
+<tr><th colspan="2" align="left">留言板</th></tr>
+
+<tr><td colspan="2"><textarea name="content" maxlength="550"></textarea></td>
+</tr>
+
+	
+	
+		<script type="text/javascript">
+			function choose(){ 
+			 if(document.getElementById("niming").checked) {
+			  document.getElementById("loginbox").style.display = "none";
+			  document.getElementById("tishibox").style.display = "block";
+			 }else {
+			  document.getElementById("loginbox").style.display = "block";
+			  document.getElementById("tishibox").style.display = "none";
+			 }
+			}
+			</script>
+		<tr><td>登录名 <input type="text" name="username" size="12" value=""/> 密码 <input type="password" name="password" size="12"/> <a href="/usermanagermodule/usermManager_preRegist.do" target="_blank">注册</a></td>
+		<td></td>
+		</tr>
+	
+
+<tr>
+	<td valign="top">
+	<table>
+	<tr>
+		<td>验证码</td>
+		<td><input type="text" name="noteYZM" class="note_yzm" id="loginRand" maxlength="4" onkeypress="return checkKeyCode(event.keyCode);"/></td>
+		<td><span id="yzm"><img border="0" src="/includes/image.jsp?rand=noteYZM" align="absmiddle"></span></td>
+	</tr>
+	</table> 
+		</td>
+	<td align="right"><button onclick="return isTrueYZM();" class="butt1"> 留 言 </button>
+	</tr>
+</table>
+</form>
+
+<script language="javascript">
+
+function isTrueYZM(){
+var frm = $('BokeeNoteForm_quickSave');
+//if(frm.title.value==""){
+//		alert("请填写留言标题！");
+//		return false;
+//	}
+	if(frm.content.value==""){
+		alert("请填写留言内容！");
+		return false;
+	}
+var yzm = $('loginRand').value;
+if(yzm=="" || yzm.length!=4){
+alert("请填写正确的验证码!");
+return false;
+}
+AJAXCJH.isTrueYZM(yzm,"noteYZM",trueOrWrongYZM);
+return false;
+}
+function trueOrWrongYZM(checkResult){
+if(checkResult){
+document.getElementById('BokeeNoteForm_quickSave').submit();
+}else{
+$('yzm').innerHTML="<img border='0' src='/includes/image.jsp?rand=noteYZM' align='absmiddle'><font color='red'>验证码错误</font>";
+}
+}
+function validateBokeeNoteForm_quickSave(frm){
+	
+	return true;
+}
+
+function ajaxDeleteThis(thisDelete,noteBokeeName,theNoteId){
+	if(confirm("确定要删除此留言吗!")){
+	 thisDelete.innerHTML = "<font color=red>正在删除中,请稍等......</font>";
+     AJAXCSS.deleteBokeeNote(noteBokeeName,theNoteId,deleteResult);
+	}
+
+return false;
+}
+
+function deleteResult(theDeleteResult){
+	if(theDeleteResult==0){
+	  alert("抱歉，请登录后再操作!");
+	}else if(theDeleteResult==-1){
+	  alert("抱歉，你没有权限删除!")
+	}else{
+	  document.getElementById(theDeleteResult).style.display = "none";
+	}
+}
+
+function checkKeyCode(eValue)
+{
+	if (eValue == 13){
+	   return isTrueYZM();
+	}
+}
+</script>
+
+
+
+</div>
+</div>
+
+
+
+
+<div id="foot">
+<a href="http://www.bokee.net">企博网</a> 版权所有&copy; 2006-2014 <a href="http://www.bokee.net/info/brief.jsp">关于我们</a> <a href="http://www.bokee.net/mainmodule/notice/add.html">联系我们</a> <a href="http://www.bokee.net/info/guild.jsp">帮助中心</a> <a href="http://service.bokee.net/">客服中心</a> <a href="http://search.51job.com/list/co,c,1580749,0000,10,1.html" target="_blank">诚征英才</a> 
+
+<a href="/usermodule/choosePath.do?action=preRegist" target="_blank">用户注册</a>
+
+
+</div>
+</div>
+
+
+ 
+<div style="display:none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7c0b7adb11b27f20c6fad784c6a2d523' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script src="http://v7.cnzz.com/stat.php?id=201290&web_id=201290" language="JavaScript"></script>
+<script src='http://w.cnzz.com/c.php?id=30065615' language='JavaScript'></script>
+</div>
+
+
+<script type="text/javascript" language="javascript" src="http://www.bokee.net/common/js/blogtj.jsp?id=21026546" ></script>
+<div id="showLayer" style='display:none' onmouseout='hidenL(event,this)'>
+	<div id="png"></div>
+	<div class="showContent" name="operateArea"></div>
+	<div id="arrow"></div>
+</div>
+
+<script type="text/javascript">
+var jq = jQuery.noConflict(); 
+	//移除，取消显示
+	jQuery('.fance li').hover(function(){jQuery(this).find('.fanceS').show()},function(){jQuery(this).find('.fanceS').hide()});
+	//移除，取消,加关注弹出层
+	jQuery("[name='operateArea']").delegate("a[id^=removeFollow_]","click",function(event){
+		event.preventDefault();
+		var destinationId = getUserId(this.id);
+		var atten_ok_t = Bind(this,atten_ok,destinationId)
+		cPopManger.init(this,{'message':'确定不再关注该用户?','clickYes':atten_ok_t})
+	});
+	function atten_ok(d){
+		jQuery.getJSON(
+			"/linkmodule/ajax/follow_remove.do",
+			{destinationId:d},
+				function (data){
+					if(data.success){
+						Cache.clear(d.toString());
+						jQuery('#removeFollow_'+d).parent().parent().parent().slideUp('fast');
+					}
+				}
+		);
+	}
+	jQuery("[name='operateArea']").delegate("a[id^=follow_]","click",function(event){ 
+		var destinationId = getUserId(this.id);var that= this
+		jQuery.getJSON(
+			"/linkmodule/ajax/follow_follow.do",
+			{destinationId:destinationId},
+				function (data){
+					if(data.success){		
+						jQuery.getJSON(
+    						'/usermanagermodule/userRegist_sendFollowEmail.do',
+    						{destinationId:destinationId},
+							function(data){}
+						);
+						var uri="url:/bloggermodule/v2/include/tag.jsp?destinationId="+destinationId;
+						tipsWindown("关注成功",uri,"400","200","true","","true","");
+						Cache.clear(destinationId.toString())
+						if(jQuery(that).parent().attr('class').indexOf('fancebox_btn')>0){
+							jQuery(that).parent().html("<span><img src='/pagemodule/images3/icon/transparent.gif' class='add_icon addBtn_d'>已关注</span>")
+						}
+					}
+				}
+		 );	
+		event.preventDefault(); 
+	});
+	jQuery("[name='operateArea']").delegate("a[id^=removeFan_]","click",function(event){ 	
+		event.preventDefault(); 
+		var destinationId = getUserId(this.id);
+		var remove_ok_t = Bind(this,remove_ok,destinationId)
+		cPopManger.init(this,{'message':'确定要移除该用户?<br/>移除之后将取消他对你的关注','clickYes':remove_ok_t})
+	});
+	function remove_ok(d){
+		jQuery.getJSON(
+			"/linkmodule/ajax/follow_removeFan.do",
+			{destinationId:d},
+				function (data){
+					if(data.success){
+						Cache.clear(d.toString());
+						jQuery('#removeFan_'+d).parent().parent().parent().slideUp('fast')
+					}
+				}
+		 );  
+	}	
+	function getId( idStr){
+		var arr = idStr.split("_");
+		var id= arr[2];
+		return id;
+	}
+	function getUserId( idStr){
+		var arr = idStr.split("_");
+		var userId= arr[1];
+		return userId;
+	} 
+	function escapeMYHTML(content) {
+		return content.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+	}
+</script>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=598326" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+</script>
+<!-- Baidu Button END -->
+
+</body>
+</html>
+

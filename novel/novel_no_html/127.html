@@ -1,0 +1,1930 @@
+
+    
+
+
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>寻找猫君|宠物/动物|摄影|大奔 - 原创设计作品 - 站酷 (ZCOOL)</title>
+<meta name="keywords" content="宠物/动物,摄影,大奔,原创作品,设计作品,站酷,站酷网,ZCOOL" />
+<meta name="description" content="寻找猫君,宠物/动物,摄影,大奔 站酷网,中国最具人气的设计师互动平台。" />
+
+
+
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<link rel="stylesheet" type="text/css" href="http://static.zcool.com.cn/v1.1.13/css/globalwide.css"/>
+
+<script src="http://static.zcool.com.cn/v1.1.13/scripts/jquery-1.7.2.min.js"></script>
+<script src="http://static.zcool.com.cn/v1.1.13/scripts/jquery.cookie.js"></script>
+<script src="http://static.zcool.com.cn/v1.1.13/scripts/global.js"></script>
+<script src="http://static.zcool.com.cn/v1.1.13/js/passport.js"></script>
+<script src="http://static.zcool.com.cn/v1.1.13/scripts/jquery.blockUI.js"></script>
+<script src="http://static.zcool.com.cn/v1.1.1/passport/scripts/passport.js" type="text/javascript"></script>
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?6100b0cf343809acdb5765a0be722a2c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<script type="text/javascript">
+// userCookieUID = $.cookie('userCookieUID');
+function ChangeOption2(citylist, sourceName, targetName) {
+	var sourceElement = document.getElementsByName(sourceName)[0];
+	var targetElement = document.getElementsByName(targetName)[0];
+	var selValue = sourceElement.value;
+	clean1(targetElement);
+	if (selValue == "0") {
+		targetElement.options[0] = new Option("--请选择--","0");
+		return;
+	}
+	var j = 0;
+	for (i = 0; i < citylist.length; i++) {
+		if (citylist[i][2] == selValue) {
+			targetElement.options[j] = new Option(citylist[i][0],
+					citylist[i][1]);
+			j++;
+		}
+	}
+	targetElement.options[0].selected = true;
+}
+function clean1(targetElement) {
+	len = targetElement.options.length;
+	for (i = 0; i < len; i++) {
+		targetElement.options[0] = null;
+	}
+	targetElement.options[0] = new Option("", "");
+}
+function isnotlogin(){
+// 	return userCookieUID <= 0;
+	return !isLogon();
+}
+function myeval(str){
+	return eval('('+str+')');
+}
+//是否关注了此用户
+function isguanzhu(cId,guanzhuId){
+	if(isnull(userCookieUID) || userCookieUID == cId){
+		//$('#'+guanzhuId).hide();
+		return;
+	}
+	
+	$('[id^="'+guanzhuId+'"]').show(); 
+	$.post("/getGuanzhuStatus.do",{sysdata:getSystimes(),memberId:userCookieUID,createrId:cId},function(returnData) {
+			if(returnData=='true'||returnData==true)
+			{
+				$('[id^="'+guanzhuId+'"]').addClass("on").addClass("done");
+				$('[id^="'+guanzhuId+'"]').attr("title",'取消关注');
+				if ($('[id^="'+guanzhuId+'"]').text()!='')
+				{
+					$('[id^="'+guanzhuId+'"]').text("已关注");
+				}
+			}else
+			{
+				$('[id^="'+guanzhuId+'"]').removeClass("on").removeClass("done");
+			}
+			
+	});
+	
+	
+}
+
+var enable_focus=true;
+//关注/取消关注
+function follow3(idStart,mid,cb){
+	if (isnotlogin()) {
+		popLogin();
+		return;
+	}
+	if (userCookieUID == mid) {
+		alert("不能关注自己");
+		return;
+	}
+	if(!enable_focus)
+	{
+		return;
+	}
+	enable_focus=false;
+	var str = "关注";
+	var dStr = "取消关注";
+	var paramObject = {mid:mid};
+	if ($('[id^="'+idStart+'"]').is('.on')) 
+	{
+		paramObject.f = 0;
+		str = "取消关注";
+		dStr = "添加关注";
+	}
+	$.getJSON("/follow1.do",paramObject,function(data){
+		if (data.success) {
+			alert(str+"成功！");
+			$('[id^="'+idStart+'"]').attr("title",dStr);
+			if(cb == null)
+			{
+				$('[id^="'+idStart+'"]').toggleClass('on');
+			}else
+			{
+				cb();
+			}
+		}else{
+			alert(str+"关注失败！");
+		}
+		enable_focus=true;
+	});
+	
+}
+
+function follow(obj,mid,cb){
+	if (isnotlogin()) {
+		popLogin();
+		return;
+	}
+	if (userCookieUID == mid) {
+		alert("不能关注自己");
+		return;
+	}
+
+	if(!enable_focus)
+	{
+		return;
+	}
+	
+		
+	var str = "关注";
+	var dStr = "取消关注";
+	var paramObject = {mid:mid};
+	if ($(obj).is('.on')) {
+		paramObject.f = 0;
+		str = "取消关注";
+		dStr = "添加关注";
+	}
+	enable_focus=false;	
+	$.getJSON("/follow1.do",paramObject,function(data){
+		if (data.success) {
+			alert(str+"成功！");
+			$(obj).attr("title",dStr);
+			if(cb == null)
+			{
+				$(obj).toggleClass('on');
+			}else
+			{
+				cb();
+			}
+		}else{
+			alert(str+"关注失败！");
+		}
+		enable_focus=true;	
+	});
+}
+function follow2(obj,mid,cb){
+	if (isnotlogin()) {
+		popLogin();
+		return;
+	}
+	if (userCookieUID == mid) {
+		alert("不能关注自己");
+		return;
+	}
+
+	var str = "关注";
+	var dStr = "取消关注";
+	var sStr = "已关注";
+	var paramObject = {mid:mid};
+	if ($(obj).is('.done')) {
+		paramObject.f = 0;
+		str = "取消关注";
+		dStr = "添加关注";
+		sStr = "加关注";
+	}
+	enable_focus=false;
+	$.getJSON("/follow1.do",paramObject,function(data){
+		if (data.success) {
+			alert(str+"成功！");
+			$(obj).attr("title",dStr).html(sStr);
+			if(cb == null){
+				$(obj).toggleClass('done');
+			}else{
+				cb();
+			}
+		}else{
+			alert(str+"关注失败！");
+		}
+		enable_focus=true;
+	});
+}
+
+function loadedMessage(type){
+	return;//改为不用ajax更新消息状态，所以这里不用了
+	var ids;
+	if ("2" == type) {//粉丝/tofans.do?flag=0
+		//把所有的这类消息都给改为已读
+	} else if ("recommend.html" == type){
+		
+	} else if ("comments.html" == type) {
+		//把所有new的评论的ID传过去
+	} else if ("5" == type) {//留言homePage.html#gb
+		//把所有new的评论的ID传过去
+	} else if ("reComments.html" == type) {
+		//把所有new的评论的ID传过去
+	} else if ("smsShow.html" == type) {
+		//把所有new的评论的ID传过去
+	} else if ("notifications.html" == type) {
+		//把所有new的评论的ID传过去
+	} else if ("notificationsEvent.html" == type) {
+		//把所有new的评论的ID传过去
+	} else {
+		ids = '';
+		$.each( $('.redFlag'), function(i, n){
+		    ids = ids + ',' + $(n).attr('mid');
+		});
+	}
+	if (type||ids) {
+		$.getJSON("/loadedMessage.do",{type:type,ids:ids},function(data){
+			if (data.success) {
+				//成功之后应该改写一下消息的数字？
+			}else{
+			}
+		});
+	}
+}
+function getSystimes(){
+	return new Date().getTime();
+}
+
+function getImageDomain(path){
+	if (path.indexOf("zcimg") > -1){
+		return "http://zcimg.zcool.com.cn";
+	}
+	else{
+		return "http://image.zcool.com.cn";
+	}
+	
+}
+
+////////////////////////////////textarea框字数-1///////////////////////////////////
+function exeTextKeyUp(t){
+	var max = parseInt(t.attr('maxlength'));
+	if(t.length>0){
+		if(t.val().length > max){
+			t.val(t.val().substr(0, t.attr('maxlength')));
+		}
+		if (t.parent().find(".cf30.abc").length>0)
+		{
+			t.parent().find(".cf30.abc").html(max - t.val().length);
+		} else if (t.parent().parent().find(".cf30.abc").length>0) {
+			t.parent().parent().find(".cf30.abc").html(max - t.val().length);
+		}
+	} else {
+		
+	}
+}
+
+$(document).ready(function(){
+	$('textarea[maxlength]').live('keyup',function(){
+		exeTextKeyUp($(this));
+	});
+	$('textarea[maxlength]').live('blur',function(){
+		exeTextKeyUp($(this));
+	});
+	
+	$('input[maxlength]').live('keyup',function(){
+		exeTextKeyUp($(this));
+	});
+	$('input[maxlength]').live('blur',function(){
+		exeTextKeyUp($(this));
+	});
+	
+	$.each($('textarea[maxlength]'),function(i,n){
+		exeTextKeyUp($(this));
+	});
+	$.each($('input[maxlength]'),function(i,n){
+		exeTextKeyUp($(this));
+	});
+});
+
+////////////////////////////表情/////////////////////////////////////////////////////
+function AddText(textEl,txt) {
+	selection = document.selection;
+	checkFocus(textEl);
+	if(!isUndefined(textEl.selectionStart)) {
+		var opn = textEl.selectionStart;
+		textEl.value = textEl.value.substr(0, textEl.selectionStart) + txt + textEl.value.substr(textEl.selectionEnd);
+	} else if(selection && selection.createRange) {
+		var sel = selection.createRange();
+		sel.text = txt;
+		sel.moveStart('character', -strlen(txt));
+	} else {
+		textEl.value += txt;
+	}
+}
+function insertSmile(smile) {
+	var textEl = document.getElementById($('#popFace').attr('textareaID'));
+	checkFocus(textEl);
+	smile = "["+ smile +"]";
+	AddText(textEl,smile);
+	$('#popFace').hide();
+}
+
+/////////////////////////////工具////////////////////////////////////
+function isnull(val) {
+	if (val == null || val == 'undefined' || val == 'null' || val == '' || $.trim(val).length==0) {
+		return true;
+	} else {
+		return false;
+	}
+};
+function isUndefined(variable) {
+	return typeof variable == 'undefined' ? true : false;
+}
+function strlen(str) {
+	return ($.browser.msie && str.indexOf('\n') != -1) ? str.replace(/\r?\n/g, '_').length : str.length;
+}
+function checkFocus(textEl) {
+	if(!textEl.hasfocus) {
+		textEl.focus();
+	}
+}
+
+
+</script>
+
+
+<script type="text/javascript">
+
+function submitlogin(btn){
+	var username = $('#username').val();
+	var password = $('#password').val();
+	var autologin = $("#autolog").attr('checked');
+	if (username.length == 0 || password.length == 0) {
+		alert("用户名和密码都必须填写");
+		return false;
+	}
+	
+	var remember = "0";
+	if (autologin=="checked"){
+		remember="1";
+	}
+
+	$z.login(1006,username, password, remember, null, callback, 'http://www.zcool.com.cn','http://passport.zcool.com.cn','http://www.zcool.com.cn/login_cb');
+
+	return false;
+}
+
+function callback(data){
+	if (data.result){
+		alert("登录成功！");
+		$("#popLogin").hide();
+	}
+	else{
+		if(data.repeatLogin){
+			if(data.repeat_account=="ERR_ANOTHER_ACCOUNT") {  //重复登录（密码正确）,且前后登录账号不一样
+				$z.logout('http://www.zcool.com.cn/logout.do','1006','http://passport.zcool.com.cn',false);
+				setTimeout(function() {
+					location.href = data.repeatRedirectUrl;
+				},2000);
+			} else if(data.repeat_account=="ERR_SAME_ACCOUNT") {//重复登录（密码正确）,且前后登录账号一样
+				location.reload();
+			} else {   
+				alert("登录失败！"+ data.msg);
+			}
+		}else {
+			alert("登录失败！"+ data.msg);
+		}
+		
+	}
+}
+function qqLogin(){
+	location.href="http://passport.zcool.com.cn/thirdlogin/qq.do?appId=1006&service="+window.location.href+"&appLogin=http://www.zcool.com.cn/login_cb&passportHost=http://passport.zcool.com.cn&login=http://www.zcool.com.cn/tologin.do";
+}
+function wbLogin(){
+	location.href="http://passport.zcool.com.cn/thirdlogin/wb.do?appId=1006&service="+window.location.href+"&appLogin=http://www.zcool.com.cn/login_cb&passportHost=http://passport.zcool.com.cn&login=http://www.zcool.com.cn/tologin.do";
+}
+
+
+</script>
+<div class="popDoc" id="popLogin"  style="display:none;width:450px;height:350px;margin:-175px 0 0 -225px; background:#f2f2f2;z-index:1000;">
+	<div class="popDocTitle"><a href="javascript:void(0)" class="fRight" onclick="$(this).parents('.popDoc').hide();"><img src="http://static.zcool.com.cn/v1.0.8/images/dClose.png" width="16" height="16" alt="关闭"/></a>登录站酷网</div>
+    <div class="loginPop">
+    	<div class="loginTable">
+    		<form action="" onSubmit="submitlogin(null);return false;">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <th scope="row">用户名/邮箱:</th>
+                <td><input type="text" value="" class="newTxt w250" id="username" /></td>
+              </tr>
+              <tr>
+                <th scope="row">&nbsp;</th>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <th scope="row">密　码:</th>
+                <td><input type="password" value="" class="newTxt w250" id="password" /></td>
+              </tr>
+              <tr>
+                <th scope="row">&nbsp;</th>
+                <td><span>&nbsp;</span></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td class="vm"><input type="checkbox" value="" id="autolog"/> <label for="autolog" class="c999">自动登录</label></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>
+                	<div class="vm pt20">
+                		<input value="登 录" type="submit" class="yellowBtn"/>
+                		&nbsp;&nbsp;&nbsp;
+                		<a href="/toforgetpsw.do">忘记密码</a> 
+                		<span class="caaa">|</span> 
+                		<a href="/toregister.do">注册</a></div></td>
+              </tr>
+            </table>
+            </form>
+        </div>
+        <div class="otherLogType"><p class="c666">使用第三方登录：</p><p class="pt10"><a href="javascript:qqLogin();"><img src="http://static.zcool.com.cn/v1.0.8/images/icons/connect_qq_24.png"></a><a href="javascript:wbLogin();" ><img src="http://static.zcool.com.cn/v1.0.8/images/icons/connect_weibo_24.png"></a></p></div>
+    </div>
+</div>
+
+    
+
+
+ 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+	评论，编辑评论，回复评论，赞同评论
+-->
+
+<!-- 回复评论 -->
+<div class="crbBox pt10 hide" id="replyCommentFormadd">
+	<textarea maxlength="2000" class="commentArea gray" id="replyCommentFormadd_textarea"></textarea>
+		<div class="vm commentFunc layout">
+			<a class="addFace c009cff" href="javascript:void(0)" onclick="popFace(this)">
+				<img src="http://static.zcool.com.cn/v1.0.8/images/face.png" alt="表情">
+				<span class="f12">添加表情</span>
+			</a>
+			<p class="f12">您还可以输入 <span class="cf30 abc">2000</span> 个字符</p>
+		</div>
+		<div class="vm pt10 right">
+			<input type="button" class="yellowBtn mr20" id="replyCommentBtn" onclick="submitReplyComment($(this))" value="确认回复"/>
+			<a btnmode="true" class="grayBtn" hidefocus href="javascript:void(0)"  onclick="$(this).parents('.crbBox').hide()">
+				<span>取消回复</span>
+			</a>
+		</div>
+</div>
+
+<!-- 编辑评论 -->  
+<div class="popDoc" id="popModifyComment" style="display:none; width:450px;height:260px;margin:-130px 0 0 -225px;">
+	<div class="popDocTitle">
+		<a href="javascript:void(0)" class="fRight" onclick="$(this).parents('.popDoc').hide();">
+			<img src="http://static.zcool.com.cn/v1.0.8/images/dClose.png" width="16" height="16" alt="关闭"/>
+		</a>
+		编辑评论
+	</div>
+    <div class="popDocCon">
+    	<div class="crbBox pt10">
+			<textarea maxlength="2000" class="gray" style="width: 400px;height:100px;" id="popModifyComment_text"></textarea>
+			<input type="hidden" id="popModifyComment_id" value="">
+			<div class="vm commentFunc layout" style="width: 400px;">
+				<a class="addFace c009cff" href="javascript:void(0)" onclick="popFace(this)">
+					<img src="http://static.zcool.com.cn/v1.0.8/images/face.png" alt="表情"/><span class="f12">添加表情</span>
+				</a>
+				<p class="f12">
+					您还可以输入 <span class="cf30 abc">2000</span> 个字符
+				</p>
+			</div>
+			<div class="vm pt10 right">
+<!-- 					<span class="cf30 mr20" style="display: none">您没有输入任何内容</span> -->
+					<input type="button" class="yellowBtn mr20" id="modifyCommentBtn" onclick="submitModifycomment()" value="确认修改"/>
+					<a btnmode="true" class="grayBtn" hidefocus href="javascript:void(0)" onclick="$(this).parents('.popDoc').hide();"><span>取消修改</span></a>
+			</div>
+		</div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+$("#replyCommentFormadd_textarea").ctrlSubmit(function(event){
+  submitReplyComment($("#replyCommentBtn"));
+});
+$("#popModifyComment_text").ctrlSubmit(function(event){
+  submitModifycomment();
+});
+
+//评论
+function submitComment(btn,el,objectType,objectId){
+	if (isnotlogin()) {
+		popLogin();
+	} else {
+		var imgPath = $('#work-uploader-path')?$('#work-uploader-path').val():'';
+		var imgName = $('#work-uploader-name')?$('#work-uploader-name').val():'';
+		var content = $('#'+el).attr('value');
+		if(content.length<10){
+			popMessage("评论字符太少，最少输入10个字。");
+			return ;
+		}
+		
+		var recommend = $('#commentAndRecommend').attr('checked') == 'checked' ? 1 : 0;
+		var paramObject = {sysdata:getSystimes(),content:content,type:objectType,id:objectId,imgPath:imgPath,imgName:imgName,recommend:recommend};
+		
+		loadingBlock();
+		$.post("/comment.do",paramObject,function(data){
+			$.unblockUI();
+			var b = eval('commentcb');
+			var dataobj=eval("("+data+")");
+			b(paramObject,dataobj);
+		});
+		
+	}
+}
+
+//赞同
+function submitZantong(commentId,btn){
+	if(btn.attr('zan') == 'true'){
+		popMessage('您已经"赞同"过了！');
+		return;
+	}
+	var paramObject = {sysdata:getSystimes(),commentId:commentId};
+	loadingBlock();
+	$.post("/zan.do",paramObject,function(data){
+		$.unblockUI();
+		var dataobj=eval("("+data+")");
+		if(dataobj.success == 'true' || dataobj.success==true){
+			btn.next('span').html('('+dataobj.count+')');
+			btn.attr('zan','true');
+		}else{
+			popMessage("操作失败！");
+		}
+	});
+}
+
+//有的页面会删除结点，比如作品详细页的评论。在删除前使回复的结点隐藏到其他地方
+function initHuiFu(appendId){
+	var editform = $('#replyCommentFormadd');
+	editform.hide();
+	$('#'+appendId).parent().append(editform);
+}
+
+function editCommentadd(_this,originalId,objectType,objectId,originalCreator,originalElement){
+	var editform = $('#replyCommentFormadd');
+	if ($(_this).parent().parent().find('#replyCommentFormadd').length<=0) {//如果不在自己这个消息下
+		//editform.children('textarea').val('');
+		editform.children('textarea').attr('originalId',originalId);
+		editform.children('textarea').attr('objectType',objectType);
+		editform.children('textarea').attr('objectId',objectId);
+		
+		if(originalId == 0){
+			editform.children('textarea').attr('originalCreator',originalCreator);
+			editform.children('textarea').attr('originalContent',$("#"+originalElement).val());
+		}
+		if(originalId == -1){
+			editform.children('textarea').attr('originalCreator',originalCreator);
+			editform.children('textarea').attr('originalContent',$("#"+originalElement).html());
+		}
+		editform.children('textarea').val('');
+		editform.show();
+		$(_this).parent().parent().append(editform);
+		$("#replyCommentFormadd_textarea").focus();
+	} else {
+		editform.toggle();
+	}
+}
+
+function submitReplyComment(btn){
+	if (isnotlogin()) {
+		popLogin();
+		return ;
+	}
+	var editform = $('#replyCommentFormadd');
+	var content = editform.children('textarea').val();
+	var originalId = editform.children('textarea').attr('originalId');
+	var objectType = editform.children('textarea').attr('objectType');
+	var objectId = editform.children('textarea').attr('objectId');
+	
+	if(content.length<10){
+		popMessage("评论字符太少，最少输入10个字。");
+		return ;
+	}
+	var paramObject;
+	if(originalId <= 0){
+		var originalCreator = editform.children('textarea').attr('originalCreator');
+		var originalContent = editform.children('textarea').attr('originalContent');
+		paramObject = {sysdata:getSystimes(),type:objectType,content:content,id:objectId,creator:originalCreator,ocontent:originalContent};
+	}else{
+		paramObject = {sysdata:getSystimes(),type:objectType,content:content,id:objectId,originalId:originalId};
+	}
+	
+	loadingBlock();	
+	$.post("/comment.do",paramObject,function(data){
+		$.unblockUI();
+		editform.toggle('slow');
+		var b = eval('commentcb');
+		var dataobj=eval("("+data+")");
+		b(paramObject,dataobj);
+	});
+	
+}
+
+//提交修改评论
+function submitModifycomment(){
+	var commentId = $('#popModifyComment_id').val();
+	var content = $('#popModifyComment_text').val();
+	if(content.length<10){
+		popMessage("评论字符太少，最少输入10个字。");
+		return ;
+	}
+	var paramObject = {sysdata:getSystimes(),content:content,id:commentId};
+	loadingBlock();	
+	$.post("/modifycomment.do",paramObject,function(data){
+		$.unblockUI();
+		var dataobj=eval("("+data+")");
+		var b = eval('modifyCommentcb');
+		b(paramObject,dataobj);
+	});
+}
+//弹出编辑评论
+function modifyComment(commentId){
+	loadingBlock();	
+	$.post("/getCommentById.do",{commentId:commentId},function(data){
+		$.unblockUI();
+		popModifyComment();
+		$('#popModifyComment_id').val(commentId);
+		if(data.success == 'true' || data.success==true){
+			$('#popModifyComment_text').val(data.Comments.content);
+		}else{
+			popMessage("数据加载失败！");
+		}
+	},'json');
+}
+</script>
+
+    
+
+
+ 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!-- 举报，举报评论 -->
+<div class="popDoc" id="popAlert" style="display:none; width:450px;height:300px;margin:-150px 0 0 -225px;">
+	<input type="hidden" value="" id="feedback_objectId">
+	<input type="hidden" value="" id="feedback_type">
+	<div class="popDocTitle"><a href="javascript:void(0)" class="fRight" onclick="$(this).parents('.popDoc').hide();">
+		<img src="http://static.zcool.com.cn/v1.0.8/images/dClose.png" width="16" height="16" alt="关闭"/>
+		</a>举报
+	</div>
+    <div class="popDocCon">
+    	<div class="alertPopBox">
+        	<p class="right">还可以输入 <span class="cf30 abc">300</span> 字符</p>
+            <textarea maxlength="300" class="normalArea w400 f14" inputdefault="请输入举报理由">请输入举报理由</textarea>
+	        <div class="center pt20">
+	        	<a href="javascript:void(0)" class="yellowBtn" onclick="submitFeedback($(this))">确认</a>
+	            <a href="javascript:void(0)" class="grayBtn ml30" onclick="$(this).parents('.popDoc').hide();">取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+//举报
+function feedBackWindow(jubaoId,type){
+	$('#feedback_objectId').val(jubaoId);
+	$('#feedback_type').val(type);
+	popAlert();
+}
+//提交举报
+function submitFeedback(btn){
+	if (isnotlogin()) {
+		popLogin();
+	} else {
+		var content = btn.parent().parent().find('textarea').val();
+		var type = $('#feedback_type').val();
+		var id = $('#feedback_objectId').val();
+		var paramObject = {sysdata:getSystimes(),content:content,type:type,id:id};
+		$.post("/jubao.do",paramObject,function(data){
+			var dataobj=eval("("+data+")");
+			if(dataobj.success == 'true' || dataobj.success==true){
+				alert("提交成功！");
+				btn.parent().parent().find('textarea').val('');
+				btn.parents('.popDoc').hide();
+			}else{
+				alert("提交失败！");
+			}
+		});
+	}
+}
+</script>
+
+    
+<div class="popDoc" id="popFav" style="display:none; width:450px;height:260px;margin:-130px 0 0 -225px;">
+	<div class="popDocTitle">
+		<a href="javascript:void(0)" class="fRight" onclick="$(this).parents('.popDoc').hide();">
+			<img src="http://static.zcool.com.cn/v1.0.8/images/dClose.png" width="16" height="16" alt="关闭"/>
+		</a>
+		收藏（<span id="popFav_coung">0</span>次）
+	</div>
+    <div class="popDocCon">
+    	<div class="favBox">
+        	<table>
+            	<tr id="popFav_selecttr">
+                	<th>选择收藏分类：</th>
+                    <td>
+	                    <span class="selectBox"><select id="popFav_selects">
+	                    	<option>默认收藏夹</option>
+	                    </select></span>
+                    </td>
+                </tr>
+                <tr>
+                	<th></th>
+                    <td class="vm">
+	                    <img src="http://static.zcool.com.cn/v1.0.8/images/bigAdd.png" width="16" height="16" alt="添加"/> <a href="javascript:void(0)" onclick="$(this).parents('tr').next().show();$(this).parents('tr').hide();">
+		                    <span>创建收藏分类</span>
+	                    </a>
+                    </td>
+                </tr>
+                <tr class="hide">
+                	<th>添加收藏分类：</th>
+                    <td class="vm">
+                    	<input type="text" value="" maxlength="16" class="isTxt w90" />
+                     	<a href="javascript:void(0)" class="btn ml5" onclick="popAddFolder($(this))">添加</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="center mt10">
+        	<a href="javascript:void(0)"  class="yellowBtn" btnmode="true"  onclick="submitSelectFav($(this))">确认</a>
+       		<a href="javascript:void(0)" class="grayBtn ml20" btnmode="true" onclick="$(this).parents('.popDoc').hide();">取消</a>
+       	</div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+function myFavoriteFunc(val,objectType,objectId){
+	if (isnotlogin()) {
+		popLogin();
+	}else{
+		$("#popFav_coung").attr('objectType',objectType);
+		$("#popFav_coung").attr('objectId',objectId);
+		
+		$("#popFav_coung").html(val);
+		$("#popFav_selects").empty();
+		$.post("/getFavFolders.do",{sysdata:getSystimes()},function(dataobj){
+			if(dataobj.success == 'false' || dataobj.success==false){
+			}else{
+				if(dataobj.length > 0){
+					$("#popFav_selecttr").css('display','');
+					for(var i=0;i<dataobj.length;i++){
+						$("#popFav_selects").append('<option value="'+dataobj[i].id+'">'+dataobj[i].name+'</option>');
+					}
+				}else{
+					$("#popFav_selecttr").css('display','none');
+				}
+			}
+			popFav();
+		},'json');
+	}
+}
+
+//新建收藏夹
+function popAddFolder(btn){
+	if (isnotlogin()) {
+		popLogin();
+	}else {
+		var name = btn.parent().find('input').attr('value');
+		if(isnull(name)){
+			alert("请填写收藏夹名称！");
+			return;
+		}
+		var url = "/addFolder.do";
+		$.get(url,{sysdata:getSystimes(),name:name},function(res) {
+			if(res.status == '200'||res.status == 200){
+				$("#popFav_selects").append('<option value="'+res.id+'" selected="selected">'+res.name+'</option>');
+				$("#popFav_selecttr").css('display','');
+				
+				btn.parents('tr').prev().show();
+				btn.parents('tr').hide();
+			}else{
+				if(res.status == '300'||res.status == 300){
+					alert("该收藏夹已经存在！");
+					return;
+				}else{
+					alert("您还没有登录！");
+					return;
+				}
+			}
+		},'json');
+	}
+}
+//选择收藏夹
+function submitSelectFav(btn){
+	if (isnotlogin()) {
+		popLogin();
+	} else {
+		var folderId = document.getElementById("popFav_selects").value;
+		var type = $("#popFav_coung").attr('objectType')
+		var id = $("#popFav_coung").attr('objectId');
+		var paramObject = {sysdata:getSystimes(),folderId:folderId,type:type,id:id};
+
+		var oldtxt = btn.text();
+		btn.text("loading..");
+		btn.attr("disabled","true");
+
+		$.post("/fav.do",paramObject,function(data){
+			btn.text(oldtxt);
+			btn.parents('.popDoc').hide();
+
+			var dataobj=eval("("+data+")");
+			if(dataobj.success == 'true' || dataobj.success==true){
+				popMessage("成功添加到收藏夹！");
+			}else{
+				if (dataobj.errorCode==1){
+					popMessage("你以前已经收藏过了，可以去收藏夹查看");
+				}else{
+					popMessage("收藏失败，请联系管理员！");
+				}
+			}
+		});
+	}
+}
+</script>
+
+<div class="popDoc" id="popMesg"  style="display:none;width:450px;height:350px;margin:-175px 0 0 -225px; background:#f2f2f2;z-index:1000;">
+	<div class="popDocTitle"><a href="javascript:void(0)" class="fRight" onclick="$(this).parents('.popDoc').hide();"><img src="http://static.zcool.com.cn/v1.0.8/images/dClose.png" width="16" height="16" alt="关闭"/></a>提示</div>
+    <div class="loginPop">
+    	<div class="loginTable">
+            操作成功
+        </div>
+       
+    </div>
+</div>
+</head>
+<body>
+
+    
+
+
+  
+
+
+    
+
+
+  
+
+<!--[if lt IE 7]>
+<div class="upgradeBrowser"><div class="upgradeBrowserBox"><span>Hi，您的IE浏览器版本过低，请升级您的浏览器至IE8+，以享受更优质的浏览效果！:)</span></div></div>
+<![endif]-->
+<div class="topWrapper">
+	<div class="topHeader">
+		<div class="newlogowp">
+	      <div style="position:relative"><a href="http://www.zcool.com.cn/special/newlogo2014" class="newlogo"></a></div>
+	      <script>$(".topHeader").hover(function(){$(this).addClass("hover");},function(){$(this).removeClass("hover");});</script>
+	    </div>
+    	<a href="http://www.zcool.com.cn/" class="topLogo"></a>
+        <div class="topNav"><a href="http://www.zcool.com.cn/" >首页</a>
+
+        	<span class="navMore  selected ">
+				<a href="http://www.zcool.com.cn/works/"  class="selected">
+					作品<b></b>						
+				</a>	
+        		<div class="navMoreCon w336">
+	            	<div class="pl20 pt10 pb10">
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		
+	            		<a href="http://www.zcool.com.cn/works/0!0!!0!0!200!1!1!!!/">全部</a><a href="http://www.zcool.com.cn/works/8!0!!0!0!200!1!1!!!/" >平面</a><a href="http://www.zcool.com.cn/works/17!0!!0!0!200!1!1!!!/" >GUI</a><a href="http://www.zcool.com.cn/works/607!0!!0!0!200!1!1!!!/" >网页</a><a href="http://www.zcool.com.cn/works/1!0!!0!0!200!1!1!!!/" >插画</a><a href="http://www.zcool.com.cn/works/608!0!!0!0!200!1!1!!!/" >动漫</a><a href="http://www.zcool.com.cn/works/33!0!!0!0!200!1!1!!!/" >摄影</a><a href="http://www.zcool.com.cn/works/609!0!!0!0!200!1!1!!!/" >空间/建筑</a><a href="http://www.zcool.com.cn/works/499!0!!0!0!200!1!1!!!/" >工业/产品</a><a href="http://www.zcool.com.cn/works/24!0!!0!0!200!1!1!!!/" >三维</a><a href="http://www.zcool.com.cn/works/610!0!!0!0!200!1!1!!!/" >影视</a><a href="http://www.zcool.com.cn/works/611!0!!0!0!200!1!1!!!/" >手工艺</a><a href="http://www.zcool.com.cn/works/612!0!!0!0!200!1!1!!!/" >纯艺术</a><a href="http://www.zcool.com.cn/works/613!0!!0!0!200!1!1!!!/" >服装</a><a href="http://www.zcool.com.cn/works/44!0!!0!0!200!1!1!!!/" >其他</a>
+	                </div>
+            	</div>
+			</span>
+
+			<a href="http://www.zcool.com.cn/articles/"  >文章</a>
+			<a href="http://www.zcool.com.cn/shows/" >欣赏</a>
+			<a href="http://www.zcool.com.cn/gfxs/" >素材</a>
+			<a href="http://job.zcool.com.cn/"  target="_blank">招聘</a>
+			<a href="http://www.zcool.com.cn/event/eventlist.do" >赛事</a>
+			<span class="navMore">更多<b></b>
+        	<ul class="navMoreUl">
+            	<li><a href="http://www.zcool.com.cn/toDesigners.do">酷友/设计师</a></li>
+                <li><a href="http://www.zcool.com.cn/newestComment.do">酷友精彩评论</a></li>
+                <li><a href="http://www.zcool.com.cn/special/speciallist.do">站酷专题</a></li>
+				<li><a href="http://idea.zcool.com.cn/" target="_blank">搜灵感</a></li>
+				<li><a href="http://www.hellorf.com/" target="_blank">海洛创意</a></li>
+				<li><a href="http://www.zcooler.com/" target="_blank">主创网</a></li>
+				<li><a href="http://shop.zcool.com.cn/" target="_blank">站酷商店</a></li>
+                
+                <!--<li><a href="http://group.zcool.com.cn/" target="_blank">小组</a></li>-->
+                <!--<li><a href="http://f.zcool.com.cn" target="_blank">找服务</a></li>-->
+            </ul>
+        </span></div>
+        <div class="topHeadeRight">
+        	<ul class="thrUl">
+        		<li class="doLogBox"><a href="/tologin.do">登录</a>|<a href="http://passport.zcool.com.cn/reg.do?appId=1006&service=http://www.zcool.com.cn&appLogin=http://www.zcool.com.cn/login_cb&passportHost=http://passport.zcool.com.cn">注册</a></li>
+            </ul>
+          	<span class="topSearch">
+			<form action="http://www.zcool.com.cn/tosearch.do" onsubmit="return searchHeaderFunc();">
+				<input id="head_searchText_id" name="world"  type="text" class="topSearchTxt" />
+				<input class="topSearchBtn" type="submit" value="" />
+            	<div class="chooseS layout">
+                	<table width="100%">
+                    	<tr>
+                        	<td><input type="radio" name="page" id="a1" value="0" checked/><label for="a1" >全部</label></td>
+                            <td><input type="radio" name="page" id="a2"  value="1" /><label for="a2">作品</label></td>
+                            <td><input type="radio" name="page" id="a3"  value="2" /><label for="a3">文章</label></td>
+                        </tr>
+                        <tr>
+                        	<td><input type="radio" name="page" id="a4"  value="3" /><label for="a4">欣赏</label></td>
+                            <td><input type="radio" name="page" id="a5"  value="4" /><label for="a5">素材</label></td>
+                            <td><input type="radio" name="page" id="a6"  value="5" /><label for="a6">设计师</label></td>
+                        </tr>
+						<tr>
+                        	<td colspan=3><input type="radio" name="page" id="a10"  value="10" /><label for="a10">正版图片</label></td>
+                        </tr>
+                    </table>
+                </div>
+			</form>
+            </span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+<!--
+	function searchHeaderFunc(){
+		var world = $.trim($("#head_searchText_id").val());
+		if(world == '' || world == null){
+			alert("关键词不能为空！");
+			return false;
+		}
+		if ($("input[name='page']:checked").val() == 10){
+			window.open("http://www.hellorf.com/photo/search/all/"+ encodeURIComponent(world) +".html");
+			return false;
+		}
+		return true;
+	}
+
+//-->
+</script>
+<script>
+$(function(){
+	
+	//判断是否宽屏
+	var winWide = window.screen.width;
+	var wideScreen = false;
+	//if(winWide<=1024){//1024及以下分辨率
+	//	$("#css").attr("href","http://static.zcool.com.cn/v1.0.8/css/global.css");
+	//}else{
+	//	$("#css").attr("href","http://static.zcool.com.cn/v1.0.8/css/globalwide.css");
+	//	wideScreen = true;//是宽屏
+	//}
+	//var mainWidth = 1004;
+	var mainWidth = 1084;
+	if(wideScreen){
+		mainWidth = 1084;
+	}else{
+	//	mainWidth = 1004;
+		mainWidth = 1084;
+	}
+	
+	goTopInit(mainWidth);
+	$(window).resize(function(){goTopInit(mainWidth);});
+	$(window).scroll(function(){goTopInit(mainWidth);});
+});
+function goTopInit(mainWidth){
+	
+	var winWide = $(window).width();
+	if($(window).scrollTop()==0){
+		if(!$("#goTop").is(":hidden")){
+			$("#goTop").hide();
+		}
+	}else{
+		if($("#goTop").is(":hidden")){
+			$("#goTop").show();
+		}
+	}
+	$("#goTop").css({
+		"left":(winWide-mainWidth)/2+mainWidth
+	});
+
+	
+}
+
+function sayBugs(_this){
+	var content = $("#sayContent").val();
+	if ($.trim(content).length==0){
+		alert("亲，怎么也得写几个字吧");
+		return;
+	}
+	popMessage("非常感谢您的参与！");
+	$('#sayBugs').fadeOut(1000);
+	var paramObject = {sysdata:getSystimes(),content:content,result:"json"};
+	$.post("/saveguestfaq.do",paramObject);
+}
+</script>
+<script type="text/javascript">domain='my.zcool.com.cn';appname='/';homepageDomain='zcool.com.cn'</script>
+<script type="text/javascript" src="http://static.zcool.com.cn/v1.1.3/js/logon.js"></script>
+<div class="goTop" id="goTop">
+    <a href="#" class="goTopLink"></a>
+</div>
+
+<div class="container mt20">
+	<div class="ad pb20"><!-- 广告位：V2013_works_05 --><iframe src="/ad/zcad.html#id=556989" width="1083" height="90" scrolling="no" frameborder="0" style="display:block;margin:0"></iframe></div>
+	<div class="longConWhite">
+		<div class="layout">
+			
+        	<table width="100%" class="workTopBar">
+            	<tr>
+                	<td>
+                        <h1 class="workTitle">
+                        	<span>原创作品：</span>寻找猫君 
+                        	
+                        </h1>
+                        <p class="c999">系统分类：
+                        	<a href="/works/" class="c4095ce">原创作品</a> - 
+                        	<a href="/works/33!0!0!0!0!100!1!1/" class="c4095ce" target="_blank">摄影</a> - 
+                        	<a href="/works/33!40!0!0!0!100!1!1/" class="c4095ce mr20" target="_blank">宠物/动物</a> 
+							
+                        </p>
+                        <p class="cf30">
+                        	作品版权：<a href="http://www.zcool.com.cn/u/383512" target="_blank">大奔</a> 版权所有，禁止匿名转载；禁止商业使用；禁止个人使用。
+                        </p>
+                	</td>
+                    <td class="leftBorder" width="210">
+                   		<div class=" layout ">
+                            <a  href="http://www.zcool.com.cn/u/383512" title="大奔的主页" target="_blank" class="userInforHead">
+                           		<img id="headpic1" width="64" height="64"/>
+                            </a>
+                        		
+                            <div class="userInforCon">
+                                <div class="userName vm">
+                                	<a  href="http://www.zcool.com.cn/u/383512" title="大奔的主页" target="_blank">大奔</a> 
+                                	
+				                    
+
+
+
+
+	                                	
+			                    	<a  title="添加关注"  class="apBtn" onclick="follow3('guanzhuId',383512)" href="javascript:void(0)" id="guanzhuId1" ></a>
+                                </div>
+                                <p class="c666">广州 / 设计爱好者<br/><span class="c999">3年前发布</span></p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+      	</div>
+		
+        
+        <div class="workContentWrapper borderTop" style="background:#ffffff;color:#616161;"><!--自定义颜色-->
+                <div class="workInfor">
+                	           
+                	<p class="mt10">他们看起来永远都是那么无忧无虑。</p>
+                </div>
+	            <div class="workShow">
+	                <ul>
+	                	
+	                     
+	                    
+	                    
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/40/11/1307366706151.jpg" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_0"  class="mb10" src="http://image.zcool.com.cn/40/11/m_1307366706151.jpg" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/3/10/1307366708795.JPG" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_1"  class="mb10" src="http://image.zcool.com.cn/3/10/m_1307366708795.JPG" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/30/35/1307366711968.JPG" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_2"  class="mb10" src="http://image.zcool.com.cn/30/35/m_1307366711968.JPG" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/61/31/1307366713351.JPG" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_3"  class="mb10" src="http://image.zcool.com.cn/61/31/m_1307366713351.JPG" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/9/10/1307366715871.JPG" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_4"  class="mb10" src="http://image.zcool.com.cn/9/10/m_1307366715871.JPG" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/53/16/1307366718411.JPG" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_5"  class="mb10" src="http://image.zcool.com.cn/53/16/m_1307366718411.JPG" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/16/55/1307366720148.JPG" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_6"  class="mb10" src="http://image.zcool.com.cn/16/55/m_1307366720148.JPG" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									
+	                        		<img id="_list_img_7"  class="mb10" src="http://image.zcool.com.cn/26/14/m_1307366722092.JPG" alt="查看《寻找猫君》原图，原图尺寸：531x800" />
+	                        		
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/52/20/1307366724510.JPG" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_8"  class="mb10" src="http://image.zcool.com.cn/52/20/m_1307366724510.JPG" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                    <li>
+	                        <div class="wsContent">
+	                        	
+	                        	
+									<a href="/img.html#src=/3/0/1307366729571.JPG" title="查看《寻找猫君》原图，原图尺寸：903x600" target="_blank">
+	                        		<img id="_list_img_9"  class="mb10" src="http://image.zcool.com.cn/3/0/m_1307366729571.JPG" alt="查看《寻找猫君》原图，原图尺寸：903x600" />
+	                        		</a>
+								
+								
+								
+	                        </div>
+
+							
+	                        <div class="wsDes">
+								
+									<p style="filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;">
+										
+										
+									</p>
+								
+	                            <p class="f14"></p>
+	                        </div>
+							
+	                    </li>
+						
+	                </ul>
+	                <div class="center pt30">
+	                	<span class="subBtn" id="btnRecommend" onclick="javascript:if(isnotlogin()){submitrecommend(null);return;};if(!$(this).hasClass('down')){popRecommend();}">
+		                	<div style="color:#FFF;padding:63px 0 0 0;">
+		                		<span id="recommend_count1">
+		                			0
+		                		</span>
+		                	</div>
+	                	</span>
+	                </div>
+					<div class="ofHidden" style="padding:16px 0 0 476px;">
+						
+
+
+ 
+
+
+
+
+
+
+
+<!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<a class="jiathis_button_cqq"></a>
+<a class="jiathis_button_tsina"></a>
+<a class="jiathis_button_qzone"></a>
+<a class="jiathis_button_tqq"></a>
+<a class="jiathis_button_weixin"></a>
+<a href="http://www.jiathis.com/share?uid=1923103" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+	data_track_clickback:true,
+	siteNum:5,
+	sm:"cqq,tsina,qzone,weixin,tqq",
+	summary:" ",
+	ralateuid:{
+		"tsina":"1733083617"
+	},
+	appkey:{
+		"tsina":"163310332",
+		"tqq":"100332598"
+	},
+	shortUrl:true,
+	hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code_mini/jia.js?uid=1923103" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+                    </div>
+					
+						<div class='bigPage pt30 pb20 vm center'><a class='pagePrev' btnmode='true' hideFocus style='display:none;'><b></b></a><a href='/work/ZNzQ4MzA4/1.html' btnmode='true' hideFocus class='selected'>1</a> 
+<a href='/work/ZNzQ4MzA4/2.html' btnmode='true' hideFocus>2</a> 
+<a href='/work/ZNzQ4MzA4/3.html' btnmode='true' hideFocus>3</a> 
+<a href='/work/ZNzQ4MzA4/2.html' btnmode='true' hideFocus class='pageNext'><b></b> </a></div>        
+					
+	            </div>
+          </div>
+            <div class="workNav layout">
+            	<div class="workNavRight">
+                	<span>作品人气</span><br/>
+                    <b>800</b>
+                    <div class="workNavRightPop">
+                    	<table>
+                        	<tr>
+                            	<td><span class="c999">浏览：</span>800次</td>
+                                <td><span class="c999">收藏：</span>0次</td>
+                                <td><span class="c999">评论：</span>0次</td>
+                            </tr>
+                            <tr>
+                            	<td><span class="c999">推荐：</span><span id="recommend_count2">0</span>次</td>
+                                
+                            </tr>
+                            <!--
+                            <tr>
+                            	<td colspan="3"><span class="c999">使用装备：</span>
+								
+								</td>
+                            </tr>
+                            -->
+                        </table>
+                    </div>
+                </div>
+            	<ul class="workNavUl layout">
+                      
+
+                                	
+
+                          
+
+
+
+
+            	
+
+
+
+						
+                    
+                   
+                    <li>
+                    	<a href="javascript:void(0)"  onclick='myFavoriteFunc(0,3,187077)' >
+                        	<img src="http://static.zcool.com.cn/v1.0.8/images/starW.png" alt="收藏"/>
+                    		<span class="rightWn"><b>收藏</b><br/>
+                        		<span>FAVORITE</span>
+                            </span>
+                        </a>
+                    </li>
+                  
+                    <li>
+                    	<a href="javascript:void(0)" onclick="feedBackWindow(187077,3)">
+                        	<img src="http://static.zcool.com.cn/v1.0.8/images/reportW.png" alt="举报"/>
+                    		<span class="rightWn"><b>举报</b><br/>
+                        		<span>REPORT IT</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div><!--workNav-->
+            <div class="layout downInforShow">
+            	<div class="userInfor layout fLeft relative">
+                    <a  title="添加关注"  class="apBtn" onclick="follow3('guanzhuId',383512)" href="javascript:void(0)" id="guanzhuId2" ></a>
+                    <a href="http://www.zcool.com.cn/u/383512" title="大奔的主页" target="_blank" class="userInforHead">
+						<img id="headpic2" width="64" height="64"/>
+                    </a>                    
+                    <div class="userInforCon">
+                        <div class="userName vm"><a href="http://www.zcool.com.cn/u/383512" title="大奔的主页" target="_blank">大奔</a>
+                         
+	                    
+
+
+
+
+	                                	
+		                 
+                        </div>
+                        <p class="c666">广州 / 设计爱好者<br/><span class="c999">3年前发布</span></p>
+                    </div>
+                </div>
+                <div class="fRight workOtherImg">
+                    <a href="http://www.zcool.com.cn/u/383512" title="大奔的主页" class="morePoint" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--百分点代码：20141201-->
+<script type="text/javascript">
+	window["_BFD"] = window["_BFD"] || {};
+	_BFD.BFD_INFO = {
+		"ptime" : parseInt('1307367008'), //文章发表时间，时间戳格式
+	};		
+</script>
+<!--百分点代码：20141201-->
+<div class="longbox w1003">
+    <div class="camTitle">
+    	<div class="camNavC">
+	    	<a id="commentBtn" href="javascript:void(0);" class="selected">评论(0)</a>
+	    	<a id="ReCommendBtn" href="javascript:void(0);">推荐（<span id=recommend_count3>0</span>）</a>
+    	</div>
+    </div>
+    <div class="longConCam">
+    	<div class="inputLong">
+        	<textarea class="normalArea" maxlength="2000" id="commentContent"></textarea>
+            <div class="vm commentFunc pt5 layout">
+            	<div class="fRight right">
+            		<span>还可以输入 <span class="cf30  abc">2000</span> 个字符</span>
+					<input type="button" class="yellowBtn mt10" id="mainCommentBtn" onclick="submitComment($(this),'commentContent',3,187077)" value="评论"/>
+            	</div>
+                <a href="javascript:void(0)" onclick="popFace(this)" class="addFace c009cff">
+	                <img src="http://static.zcool.com.cn/v1.0.8/images/face.png" alt="表情"/></a> <a href="javascript:void(0)" onclick="popFace(this)" class="addFace c009cff"><span>添加表情</span>
+                </a>
+                <span class="ml10"><label><input type="checkbox" name="commentAndRecommend" value="1" id="commentAndRecommend" /> 同时推荐此作品</span></label>
+            </div>
+        </div>
+        <!-- 评论推荐内容 -->
+    </div>
+	<div class="ad pt20">
+    <!-- 广告位：V2013_works_06 -->
+    <iframe src="/ad/zcad.html#id=785760" width="1083" height="90" scrolling="no" frameborder="0" style="display:block;margin:0"></iframe>
+    </div>
+</div>
+
+
+
+<div class="footer">
+    <div class="footerSearch">
+        <div class="ftSearch">
+            <form action="http://www.zcool.com.cn/tosearch.do" onsubmit="return searchFooterFunc();">
+            <span class="ftChoose" hoverable="true">
+                <span class="ftChooseList">全部</span><b></b>
+                <div class="ftChoosePop">
+                    <ul>
+                        <li><a href="javascript:void(0)" value="0">全部</a></li>
+                        <li><a href="javascript:void(0)" value="1">作品</a></li>
+                        <li><a href="javascript:void(0)" value="2">文章</a></li>
+                        <li><a href="javascript:void(0)" value="3">欣赏</a></li>
+                        <li><a href="javascript:void(0)" value="4">素材</a></li>
+                        <li><a href="javascript:void(0)" value="5">设计师</a></li>
+                    </ul>
+                </div>
+            </span>
+            <input type="text" value="" name="world" class="ftSearchTxt" />
+            <input type="hidden" value="" name="page" id="hide_page_id" />
+            <input type="submit" value="" class="ftSearchBtn" />
+            </form>
+        </div>
+    </div>
+	<!-- 微信二维码 -->
+	<style type="text/css">
+      .zcwx {display:none;width:186px;height:211px;padding:0px;position:absolute;margin:-125px 0 0 -73px;z-index:1000;}
+    </style>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".zcwxc").mouseover(function(){
+		$(".zcwx").fadeIn();
+		$(".zcwxc").mouseout(function(){
+		$(".zcwx").fadeOut();
+		});
+	});
+})
+</script>
+<!-- 微信二维码结束 -->
+    <div class="footerFunction layout">
+        <dl>
+            <dt><a href="http://www.zcool.com.cn/service/about.html" target="_blank">关于</a></dt>
+            <dd><a href="http://www.zcool.com.cn/service/about.html" target="_blank">关于站酷</a></dd>
+            <dd><a href="http://www.zcool.com.cn/service/copyright.html" target="_blank">版权声明</a></dd>
+            <dd><a href="http://www.zcool.com.cn/service/privacy.html" target="_blank">关于隐私</a></dd>
+            <dd><a href="http://www.zcool.com.cn/service/disclaimer.html" target="_blank">免责声明</a></dd>
+            <dd><a href="http://www.zcool.com.cn/service/sitemap.html" target="_blank">网站地图</a></dd>
+			<dd><a href="http://job.zcool.com.cn/subject.jsp?subjectid=1429" target="_blank">加入站酷</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://www.zcool.com.cn/" target="_blank">栏目</a></dt>
+            <dd><a href="http://www.zcool.com.cn/works/" target="_blank">原创作品</a></dd>
+            <dd><a href="http://www.zcool.com.cn/articles/" target="_blank">设计文章</a></dd>
+            <dd><a href="http://www.zcool.com.cn/shows/" target="_blank">佳作欣赏</a></dd>
+            <dd><a href="http://www.zcool.com.cn/gfxs/" target="_blank">设计素材</a></dd>
+            <dd><a href="http://www.zcool.com.cn/eventlist.do" target="_blank">设计赛事</a></dd>
+            <dd><a href="http://www.zcool.com.cn/newestComment.do" target="_blank">精彩评论</a></dd>
+        </dl>
+        <dl>
+            <dt><a href="http://www.zcool.com.cn/service/adservice.html" target="_blank">商务</a></dt>
+            <dd><a href="http://www.zcool.com.cn/service/adservice.html" target="_blank">企业服务</a></dd>
+            <dd><a href="http://www.zcool.com.cn/service/adservice.html" target="_blank">赛事服务</a></dd>
+            <dd><a href="http://job.zcool.com.cn/" target="_blank">招聘服务</a></dd>
+			<dd><a href="http://www.hellorf.com/" target="_blank">图片服务</a></dd>
+        </dl>
+        <dl>
+            <div class="zcwx"><img src="http://www.zcool.com.cn/images/zcwx.png" width="186" height="211" /></div>
+			<dt><a href="http://www.zcool.com.cn/service/contact.html" target="_blank">联系</a></dt>
+            <dd><a href="http://www.zcool.com.cn/suggest.do" target="_blank">在线提问</a></dd>
+            <dd><a href="http://www.zcool.com.cn/service/contact.html" target="_blank">联系我们</a></dd>
+            <dd><a href="http://e.weibo.com/hizcool" target="_blank">站酷微博</a></dd>
+			<dd class="zcwxc" style="cursor:hand;cursor:pointer;">站酷微信</dd>
+            
+        </dl>
+        <dl>
+            <dt><a href="http://www.zcool.com.cn/service/faq.html" target="_blank">帮助</a></dt>
+            <dd><a href="http://www.zcool.com.cn/service/credits.html" target="_blank">站酷规则</a></dd>
+            <dd><a href="http://www.zcool.com.cn/service/faq.html" target="_blank">常见问题</a></dd>
+        </dl>
+        <dl class="qualification">
+            <dt><a href="http://www.zcool.com.cn/service/link.html" target="_blank">友链</a></dt>
+            <dd><a href="http://www.chinaccnet.com/" target="_blank">中电云集</a></dd>
+			<dd><a href="http://www.xingyun.cn/" target="_blank">星云网</a></dd>
+			<dd><a href="http://www.chinaz.com/" target="_blank">站长之家</a></dd>
+            <dd><a href="http://www.fengniao.com/" target="_blank">蜂鸟网</a></dd>
+			<dd><a href="http://www.zcool.com.cn/service/link.html" target="_blank">更多</a></dd>
+        </dl>
+        <dl class="copyright">
+            <dt><a href="http://www.zcool.com.cn/service/copyright.html" target="_blank">版权信息</a></dt>
+            <dd>站酷（ZCOOL）会员所发布展示的“原创作品/文章”版权归原作者所有，任何商业用途均须联系作者。如未经授权用作他处，作者将保留追究侵权者法律责任的权利。<br/>
+            <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备11017824号-4</a> / <a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证130164号</a><br />北京市公安局朝阳分局备案编号:110105000501<br/>
+<span class="copyrightLink">Copyright &copy; 2006-2014 <a href="http://www.zcool.com.cn" target="_blank">ZCOOL</a> <script src='http://w.cnzz.com/c.php?id=30039725&l=3' language='JavaScript'></script>
+</span></dd>
+        </dl>
+    </div>
+</div>
+<div class="popDoc" id="gloablPopMesg"  style="display:none;width:260px;height:80px;margin:-175px 0 0 -125px; background:#FFF;z-index:1000;">
+    <div class="loginPop">
+    	<div class="popContent pt30 center f14">
+            操作成功！
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="http://static.zcool.com.cn/v1.0.8/js/zcool-analytics.js"></script>
+<!--百分点11月25号加-->
+<script type="text/javascript">
+window["_BFD"] = window["_BFD"] || {};
+_BFD.client_id = "Czhanku";
+_BFD.script = document.createElement("script");
+_BFD.script.type = "text/javascript";
+_BFD.script.async = true;
+_BFD.script.charset = "utf-8";
+_BFD.script.src = (('https:' == document.location.protocol?'https://ssl-static1':'http://static1')+'.baifendian.com/service/zhanku/zhanku.js');
+document.getElementsByTagName("head")[0].appendChild(_BFD.script);
+</script>
+<!--百分点11月25号加-->
+<script type="text/javascript">
+	function searchFooterFunc(){
+		$.each($('.ftChoosePop ul li a'),function(i,n){
+			if($(this).text() == $('.ftChooseList').text()){
+				$('#hide_page_id').val($(this).attr('value'));
+				return;
+			}
+		});
+		var world = $.trim($(".ftSearchTxt").val());
+		if(world == '' || world == null){
+			alert("关键词不能为空！");
+			return false;
+		}
+		return true;
+	}
+</script>
+<img style="display: none;" src="http://log.zcool.com.cn/show.gif?type=3&key=187077&t=1418708006558"/>
+
+
+<!--推荐窗口-->
+<div class="popDoc" id="popRecommend" style="display:none; width: 450px; height: 300px; margin: -150px 0 0 -225px;">
+	<div class="popDocTitle">
+		<a href="javascript:void(0)" class="fRight" onclick="$(this).parents('.popDoc').hide();">
+			<img src="http://static.zcool.com.cn/v1.0.8/images/dClose.png" width="16" height="16" alt="关闭"/>
+		</a>推荐作品
+	</div>
+	<div class="popDocCon">
+		<form action="/tuijian.do" id="poprecommendform">
+			<div class="alertPopBox">
+				<p class="right">还可以输入 <span class="cf30 abc">160</span> 字符</p>
+				<div class="pt5"><textarea maxlength="160" class="normalArea w400 f14" inputdefault="我很喜欢这组原创作品，推荐你也看看 :)" name="poprecommendContent" id="poprecommendContent">我很喜欢这组原创作品，推荐你也看看 :)</textarea></div>
+				<div class="vm pt5 layout">
+					<span class="fRight">
+						<label class="c666"><input type="checkbox" name="poprecommendComment" value="1" id="poprecommendComment" /> 同时评论此作品</label>
+					</span>
+					<a href="javascript:void(0)" onclick="popFace(this)" class="addFace c009cff">
+						<img src="http://static.zcool.com.cn/v1.0.8/images/face.png" alt="表情"/><span>添加表情</span>
+					</a>
+				</div>
+				<div class="center pt20">
+					<input type="button" class="yellowBtn" id="mainRecommendBtn"  onclick="submitrecommend($(this));" value="确认推荐"/>
+					<a href="javascript:void(0)" class="grayBtn ml30" onclick="$(this).parents('.popDoc').hide();">取消推荐</a>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- 下载 窗口-->
+<div class="popDoc" id="popDown"  style="display:none; width:450px;height:340px;margin:-170px 0 0 -225px;">
+	<div class="popDocTitle">
+	<a href="javascript:void(0)" class="fRight" onclick="$(this).parents('.popDoc').hide();">
+	<img src="http://static.zcool.com.cn/v1.0.8/images/dClose.png" width="16" height="16" alt="关闭"/></a>原创作品-下载(0.0M)</div>
+    <div class="popDwonBox">
+    	<div class="pt20 pb20 center"><span class="cf30 ml10">©版权归
+    	 <a href="http://www.zcool.com.cn/u/383512" class="c009cff">
+    	 大奔</a> 所有，禁止匿名转载；禁止商业使用；禁止个人使用。</span></div>
+        <div class="downBox">
+        	<ul class="layout">
+                <li class="center pt30 pb30">
+              		 <a href="javascript:;" onclick="javascript:return down(0,'http://downct.zcool.com.cn');" target="_blank" class="lBtn" >电信下载</a>　
+					 <a href="javascript:;" onclick="javascript:return down(0,'http://60.210.99.191');" target="_blank" class="lBtn" >联通下载</a><br /> 
+                </li>
+            </ul>
+        </div>
+        <!--<div class="mt20 center"><a href="#"><img src="http://static.zcool.com.cn/v1.0.8/images/upload/aa.jpg" alt="aa"/></a></div>-->
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	setTimeout('delayLoad()', 500); 
+	
+	
+	
+
+	//评论
+	$("#commentBtn").click(function(){
+		$(this).addClass("selected");
+		$("#ReCommendBtn").removeClass();
+		//setTimeout(enableSlowForBlockUI,1000);
+		loadingBlock();	
+		refreshComments(1);
+	});
+	//酷友推荐
+	$("#ReCommendBtn").click(function(){
+		$(this).addClass("selected");
+		$("#commentBtn").removeClass();
+		//setTimeout(enableSlowForBlockUI,1000);
+		loadingBlock();	
+		refreshTuijian(1); 
+	});
+});
+
+$("#commentContent").ctrlSubmit(function(event){
+   submitComment($("#mainCommentBtn"),'commentContent',3,187077)
+});
+$("#poprecommendContent").ctrlSubmit(function(event){
+   submitrecommend($("#mainRecommendBtn"));
+});
+
+function delayLoad(){
+	var creator = 383512;
+	refreshComments(1); //评论
+	isguanzhu(creator,'guanzhuId'); //是否关注了此用户js.jsp
+	initOtherProduct(creator,187077); //加载其他作品
+	
+}
+
+//加载其他作品
+function initOtherProduct(memberId,productId){
+	var params = {sysdata:getSystimes(), memberId:memberId,productId:productId};
+	$.get("/getOtherProduct.do",params,function(dataobj,textStatus) {
+		if(textStatus == 'success'){
+			for(var i = 0 ;i < dataobj.length ; i++){
+				if (i > 5)break;
+				var obj = dataobj[i];
+				var imgdomain = getImageDomain(obj.obj_coverpath);
+				var str = '<a href="'+obj.url+'" title="'+obj.obj_title+'" target="_blank"><img src="'+imgdomain + obj.obj_coverpath+'c_s_'+obj.obj_covername+'"  width="100" height="75" /></a>';
+				$(".fRight.workOtherImg").append(str);
+			}
+		}
+	},'json');
+}
+
+//评论分页处理函数
+function refreshComments(page){
+	var params = {sysdata:getSystimes(),objectId:187077,fromManager:'',objectType:3,p:page};
+	$.get("/getDetailComments.do",params,function(returnData) {
+		$.unblockUI();
+		if (returnData) {
+			initHuiFu("ReCommendBtn");
+			$('.inputLong').show(); 
+			$('.inputLong').nextAll().remove();
+			$('.longConCam').append(returnData);
+			$('#commentBtn').html("评论("+$("#hideTotalComment").val()+")");
+		}
+	});
+}
+
+//酷友推荐分页处理函数
+function refreshTuijian(page){
+	var params = {sysdata:getSystimes(),objectId:187077,objectType:3,p:page};
+	$.get("/getDetailRecommend.do",params,function(returnData) {
+		$.unblockUI();
+		if (returnData) {
+			initHuiFu("ReCommendBtn");
+			$('.inputLong').hide(); 
+			$('.inputLong').nextAll().remove();
+			$('.longConCam').append(returnData);
+			$('#recommend_count3').html($('#recommend_count1').html());
+		}
+	});
+}
+
+//评论后回调函数
+function commentcb(paramObject,dataobj)
+{
+	var msg='';
+	if(dataobj.success == 'true' || dataobj.success==true)
+	{
+		popMessage("评论成功");
+		$('#commentContent').val('');
+		refreshComments(1);
+	}
+	else
+	{
+		popMessage("评论失败");
+	}
+	
+}
+
+//编辑评论成功后回调函数
+function modifyCommentcb(paramObject,dataobj){
+	if(dataobj.success == 'true' || dataobj.success==true){
+		popMessage("修改成功！");
+		$('#popModifyComment').hide();
+		refreshComments(1);
+	}else{
+		popMessage("修改失败！");
+	}
+}
+//下载
+function down(file,url)
+{
+	var isValidDown = userCookieUID!="" && userCookieUID >0;
+	if (!isValidDown){
+		if ($.cookie('DOWN') == null){
+			isValidDown =true;
+
+			var now = new Date();
+			var tomorrow = new Date(now.getFullYear(),now.getMonth(), now.getDate()+1);
+			$.cookie('DOWN', '1',{ expires: tomorrow });
+		}
+	}
+	if (isValidDown){
+		loadingBlock();	
+		
+		$.get("/down.do?file="+file+"&type=3&oid=187077",function(res) {
+			$.unblockUI();
+			location.href= url;
+		});
+		
+	}
+	else{
+		popLayer('popDownErr',150);
+	}
+	return false;
+}
+//提交推荐
+function submitrecommend(btn) {
+	//if (isnotlogin()) 
+	{
+		//popLogin();
+	}
+	//else 
+	{
+		var comment = $('#poprecommendComment').attr('checked') == 'checked' ? 1 : 0;
+		var content = $('#poprecommendContent').attr('value');
+
+		if(!isnotlogin())
+		{
+			if(content==null || content=='' || content=='请输入推荐原因')
+			{
+				popMessage("请输入推荐原因");
+				return;
+			}
+			
+		}			
+		
+		var paramObject = {sysdata:getSystimes(),comment:comment,content:content,id:187077,type:3};
+
+		//loadingBlock();	
+		$.post("/tuijian.do",paramObject,function(data){
+			$.unblockUI();
+			if (btn )btn.parents('.popDoc').fadeOut(2000);
+			var dataobj=eval("("+data+")");
+			if(dataobj.success == 'true' || dataobj.success==true){
+				
+				popMessage("推荐成功");
+				var cnt=$("#recommend_count1").html();
+				cnt++;
+				$("#recommend_count1").html(cnt);
+				$("#recommend_count2").html(cnt);
+				$("#recommend_count3").html(cnt);
+				$("#recommend_count4").html(cnt);
+				
+				$("#btnRecommend").addClass('down');
+				if($("#ReCommendBtn").hasClass("selected")){
+					refreshTuijian(1); 
+				}
+			}else{
+				if (dataobj.errorCode==1){
+					popMessage("你已经推荐过一次了");
+					$("#btnRecommend").addClass('down');
+				}else{
+					popMessage("推荐失败！");
+				}
+			}
+		});
+		
+	}
+}
+</script>
+
+<script type="text/javascript">
+	$("#headpic1").attr("src","http://image.zcool.com.cn/img2/avatar/68/96/m_1318777664820.jpg");
+	$("#headpic2").attr("src","http://image.zcool.com.cn/img2/avatar/68/96/m_1318777664820.jpg");
+</script>
+
+</body>
+</html>
+

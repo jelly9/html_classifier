@@ -1,0 +1,440 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>常见物质间的相互关系专题复习（九年级下册）杨婷</title>
+<script language="javascript" src="./template/js/homepage.js"></script>
+<script language="javascript">
+
+	window.onerror = ResumeError;
+	function ResumeError() { 
+		return true; 
+	} 
+	
+	
+
+function play(videoid,dirid,videourl,logourl,userid ){
+	playiframe.location.href = "../manage/opr_play_front.jsp?videoid="+videoid+"&dirid="+dirid
+		+"&logourl="+logourl+"&videourl="+videourl+"&referer=&userid="+userid;
+	//window.frames["playiframe"].location.href = hre ;
+}
+
+window.onload = function(){
+	if(document.playiframe.document.readyState=="complete"){
+		setTimeout("setVisiblity()",100);
+
+		playiframe.location.href = "../manage/opr_play_front.jsp?videoid=1822&dirid=1"
+			+"&logourl=&videourl=data_videofiles/201306/1822/20130627111325729.flv&referer=&userid=";
+	} 
+}
+	function setVisiblity(){
+		document.getElementById('asd').style.display = "block";
+	}
+</script>
+<script language="javascript" src="./template/js/commface.js"></script>
+
+<script language="javascript" src="import.js"></script>
+<script language="javascript">
+	$import('css','jpage/jpage/theme/white/css/jpage.css');$import('js','jpage/jquery.js');$import('js','cookie/jquery.cookie.js');$import('js','jpage/jpage/jquery.jpage.js');$(document).ready(function(){$('#pagetest2').jpage({themeName:'white',openCookies:false,showMode:'full',totalRecord:1,dataBefore:'',dataAfter:'',groupSize:10,proxyUrl:'dataproxy.jsp',perPage:5,barPosition:'bottom',ajaxParam:	{videoid:1822}});})
+</script>
+<script language="javascript">
+function insertPic(obj){
+	var url = obj.src;
+	var tag = "[/"+url.substring(url.lastIndexOf("/")+1,url.length-4)+"]";
+	var txtarea = document.getElementById("vc_comment");
+	//IE
+		if(document.selection) {
+ 		var theSelection = document.selection.createRange().text;
+		theSelection=tag;
+			txtarea.focus();
+			if(theSelection.charAt(theSelection.length - 1) == " "){
+			theSelection = theSelection.substring(0, theSelection.length - 1);
+			document.selection.createRange().text = theSelection+ " ";
+		} else {
+			document.selection.createRange().text = theSelection;
+		}
+		 // Mozilla
+		}else if(txtarea.selectionStart || txtarea.selectionStart == '0'){
+		var startPos = txtarea.selectionStart;
+		 	var endPos = txtarea.selectionEnd;
+			var myText = (txtarea.value).substring(startPos, endPos);
+			myText=tag;
+			if(myText.charAt(myText.length - 1) == " "){ // exclude ending space char, if any
+			subst = myText.substring(0, (myText.length - 1))+ " "; 
+			} else {
+			subst = myText; 
+		}
+		txtarea.value = txtarea.value.substring(0, startPos) + subst + txtarea.value.substring(endPos, txtarea.value.length);
+		txtarea.focus();
+		var cPos=startPos+(myText.length);
+		txtarea.selectionStart=cPos;
+		txtarea.selectionEnd=cPos;
+		// All others
+		}else{
+		txtarea.value+=tag;
+		txtarea.focus();
+		}
+		if (txtarea.createTextRange) txtarea.caretPos = document.selection.createRange().duplicate();
+}
+
+function filter(str)
+{
+    str = str.replace(/\&/g,"%26");
+    return str;
+}
+
+function ajaxSubmit(){
+	var vc_id = document.form1.v_id.value;
+	var vc_comment = document.form1.vc_comment.value
+	var verifycode = document.form1.vrifycode.value ;
+	
+	var imgvfyObj = document.getElementById("imgvfy");
+	var verifycObj = document.form1.vrifycode;
+	var commentObj = document.getElementById("commentpop");
+	var commtipObj = document.getElementById("commtip");
+
+	formData  = "./comment_ajax.jsp?i_id="+vc_id+"&vrifycode="+verifycode;
+	jQuery.ajax({
+	   type: "POST",
+	   data:"vc_comment="+encodeURI(filter(vc_comment)),
+	   url: formData,
+	   success: function(result){
+		 if(result==0){ 
+			 verifycObj.value = "";
+			 commentObj.className = "commentpop1"
+			 commtip.innerHTML = "验证码不正确或已失效！请重新输入";
+			 commentObj.style.display = "block";
+			 imgvfyObj.click();
+			 verifycObj.focus();
+         }else if(result==1){
+			//视频ID判断
+        	 commentObj.className = "commentpop1"
+    		 commtip.innerHTML = "该视频不存在或者已被删除，请刷新页面...";
+		 }else if(result==2){
+			//内容格式验证
+			 verifycObj.value = "";
+			 commentObj.className = "commentpop1"
+			 commtip.innerHTML = "评论内容长度不能少于5且不超过255";
+			 commentObj.style.display = "block";
+			 document.form1.vc_comment。focus();
+		 }else if(result==3){
+			 document.form1.vc_comment.value = "" ;
+			 verifycObj.value = "";
+			 imgvfyObj.click();
+			 commentObj.className = "commentpop"
+			 commtip.innerHTML = "评论已提交，请等待审核通过。";
+			 commentObj.style.display = "block";
+		 }else {
+			 verifycObj.value = "";
+			 verifycObj.focus();
+			 commentObj.className = "commentpop1"
+			 commtip.innerHTML = "网络繁忙，请重试...";
+			 commentObj.style.display = "block";
+		 }
+	}});	
+}
+//控制描述的长度
+var oldValue=new Array();
+function checkMaxLen(obj,maxlength,num){
+ if(obj.value.length>maxlength){
+  obj.value=oldValue[num];
+ }
+ else{
+  oldValue[num]=obj.value;
+ }
+}
+
+function showqq(obj){
+	var face = '<span style="cursor:hand;">&nbsp;<img src="../comment/qqface/tx.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/cy.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/ch.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/lh.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/ll.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/bs.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/shuai.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/jk.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/fn.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/zhm.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<br>&nbsp;<img src="../comment/qqface/zk.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/qiao.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/tuu.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/dy.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/gz.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/yun.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/jy.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/fd.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/wx.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/db.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<br>&nbsp;<img src="../comment/qqface/qiang.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/ruo.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/shl.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/bq.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/ok.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/no.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/ws.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/mg.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/dx.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<img src="../comment/qqface/lw.gif" width="24" height="24" style="border:1;border-color:#B0CFEE;border-style:solid;" onclick="insertPic(this);"/>&nbsp;<br>&nbsp;</span>';
+	openNewDiv(obj,face,242);
+	return false;
+	
+}
+function checkmform(){
+	var vc_comment = document.getElementsByName("vc_comment")[0];
+	var vrifycode = document.getElementsByName("vrifycode")[0];
+	if(vc_comment.value.length<5){
+		alert("评论内容至少5个字！");
+		vc_comment.focus();
+		return false;
+	}
+	if(vc_comment.value.length>255){
+		alert("评论内容不能超过255字！");
+		vc_comment.focus();
+		return false;
+	}
+	if(vrifycode.value.length == 0){
+		alert("请输入验证码！");
+		vrifycode.focus();
+		return false;
+	}
+	if(vrifycode.value.length != 4){
+		alert("请输入四位验证码");
+		vrifycode.focus();
+		return false;
+	}
+	return true;
+}
+
+function funcsubmit(){
+	if(checkmform()){
+		ajaxSubmit();
+	}
+}
+function delcook(obj,id){
+	var cook = getCookie('watch_record');
+	formData  = "../manage/opr_watchrecord.jsp";
+	jQuery.ajax({
+	   type: "POST",
+	   data:"del="+id
+	   		+"&oldcook="+cook,
+	   url: formData,
+	   success: function(result){
+		 if(result==0){
+			 obj.parentNode.style.display='none';
+		 }else{
+		 }
+	   }
+	});
+}
+function getCookie(name){
+    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+     if(arr != null) return arr[2]; return null;
+
+}
+
+</script>
+
+<style type="text/css">
+body{
+	font-color:#000000;
+}
+.commentpop {
+	BORDER-RIGHT: #ffd667 1px solid; PADDING-RIGHT: 5px; FLOAT:LEFT;
+	BORDER-TOP: #ffd667 1px solid; PADDING-LEFT: 5px; 
+	BACKGROUND: #fffcc9; LEFT: 0px; PADDING-BOTTOM: 0px; 
+	MARGIN: 0px 10px 10px; OVERFLOW: hidden; BORDER-LEFT: #ffd667 1px solid; 
+	LINE-HEIGHT: 22px; PADDING-TOP: 0px; BORDER-BOTTOM: #ffd667 1px solid; 
+	POSITION: relative; TOP: 0px; HEIGHT: 22px
+}
+.commentpop1 {
+	BORDER-RIGHT: #DD3C10 1px solid; PADDING-RIGHT: 5px; FLOAT:LEFT;
+	BORDER-TOP: #DD3C10 1px solid; PADDING-LEFT: 5px; 
+	BACKGROUND: #FFEBE8; LEFT: 0px; PADDING-BOTTOM: 0px; 
+	MARGIN: 0px 10px 10px; OVERFLOW: hidden; BORDER-LEFT: #DD3C10 1px solid; 
+	LINE-HEIGHT: 22px; PADDING-TOP: 0px; BORDER-BOTTOM: #DD3C10 1px solid; 
+	POSITION: relative; TOP: 0px; HEIGHT: 22px
+}
+.commentpop.close {
+	BORDER-RIGHT: #909090 1px solid; BORDER-TOP: #909090 1px solid; 
+	FONT-SIZE: 10px; RIGHT: 5px; OVERFLOW: hidden; 
+	BORDER-LEFT: #909090 1px solid; WIDTH: 10px; CURSOR: pointer; 
+	COLOR: #909090; TEXT-INDENT: -1px; LINE-HEIGHT: 10px; 
+	BORDER-BOTTOM: #909090 1px solid; FONT-FAMILY: verdana; 
+	POSITION: absolute; TOP: 5px; HEIGHT: 10px; TEXT-ALIGN: center;
+	FLOAT:LEFT;
+}
+</style>
+</head>
+<body>
+<script src="./title.jsp?i_categoryid={i_categoryid}"></script>
+<div class="nav_bot">
+  <div class="dul">
+    <img src="./template/images/hanweb_sy_27.gif" /><span>当前地址：<a href="index.jsp">首页</a>&gt;&gt;<a href='./opr_section.jsp?i_categoryid=61'>百节好课2013年</a>&gt;&gt;<a href='./opr_section.jsp?i_categoryid=565'>参评课例</a>&gt;&gt;<a href='./opr_section.jsp?i_categoryid=82'>初中</a>&gt;&gt;<a href='./opr_section.jsp?i_categoryid=79'>化学</a>&gt;&gt;常见物质间的相互关系专题复习（九年级下册）杨婷</span>
+  </div>
+</div>
+<table width="1002" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#000000">
+	<tr bgcolor="#000000">
+		<td width="12" align="center" valign="top"  bgcolor="#000000">&nbsp;</td>
+		<td align="center" valign="top" bgcolor="#000000">
+		<div style="width: 640px; height: 495px;background-color:#000000;z-index:999;">
+				<iframe id="asd" allowtransparency="true"; style="display:none" frameborder="0" src="" width="640" height="495" name="playiframe" ></iframe>
+		</div>
+				
+		</td>
+		<td width="12" align="center" valign="top"  bgcolor="#000000">&nbsp;</td>
+	</tr>
+	<tr><td bgcolor="#000000" colspan="3">&nbsp;</td></tr>
+</table>
+
+<table width="1002" border="0" align="center" cellpadding="0"
+	cellspacing="0">
+	<tr>
+		<td bgcolor="#FFFFFF" height="5"></td>
+	</tr>
+</table>
+
+<table width="1002" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+	<tr valign="top" >
+		<td width="12">&nbsp;</td>
+		<td align="center" valign="top">
+		<iframe id='mark' name='mark' src='mark.jsp?i_id=1822' width='100%' height='150px' marginwidth='0' marginheight='0' scrolling='no' frameborder='1'></iframe>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="10"></td>
+			</tr>
+		</table>
+<div id="content">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="border:#EAEAEA solid 1px" >
+     <tr>
+       <td height="40" align="left" style="padding-left:12px">
+       <div  style=" width:98%;height:28px; border-bottom:#C3D7F7 dotted 1px">
+       <a href="#author"><img src="./template/images/sp_26.jpg" width="101" height="26" border="0"/></a>
+       </div></td>
+     </tr>
+	 <tr>
+        <td align="left" valign="top" style="padding-left:12px">
+		<div id="pagetest2"></div>
+		<table width="98%" border="0" cellspacing="0" cellpadding="0" style="margin-top: 15px; background-color:#f5f5ef;" >
+			<tr>
+				<td width="70" align="center" style="color: #0082CB; font-size: 12px; font-weight: bold;padding-top:10px;">发表评论</td>
+			</tr>
+			<tr>
+				<td >&nbsp;
+				<div class="commentpop" id="commentpop" style="display:none;">
+					<div onclick="this.parentNode.style.display='none';" class="close" style="float:right;width:20px;cursor:hand;"><font style="font-size:8px;color:#000000；">X</font></div><span id="commtip" style="font-size: 12px;float:left;">评论已提交，请等待审核通过。</span>
+				</div></td>
+			</tr>
+		</table>
+		<a name="author" ></a>
+		<form name="form1" method="post" style="margin:0px">
+		<input type="hidden" name="v_id" value="1822">
+		<table width="98%" border="0" cellspacing="0" cellpadding="0" style="background-color:#f5f5ef;" >
+			<tr>
+				<td height="80" colspan="3" align="center">
+				<label>
+					<textarea name="vc_comment" id="vc_comment" onpropertychange="checkMaxLen(this,300,0);" style="width: 98%; height: 80px; border: #D7D7D7 solid 1px"></textarea>
+				</label>
+				</td>
+			</tr>
+			<tr>
+				<td><span style="cursor:hand;color: #0082CB; font-size: 12px; padding-top:10px;"><a class="tip" onMouseOver="showqq(this);" onMouseOut="Judge();return false;"  target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;[表 情]</a></span></td>
+				<td height="32" align="left">
+					<span id="show_code" style="display:block;">
+						<font style="font-size: 12px;color:#000000;">&nbsp;&nbsp;请输入验证码&nbsp;</font><input type="text" name="vrifycode" maxlength="4" size="4">&nbsp;&nbsp;
+						<img id="imgvfy" src="../../VerifyCodeServlet?code=4&var=qq" onclick="this.src='../../VerifyCodeServlet?code=4&var=qq&random='+ Math.random();"
+						  title="如果看不清数字，请点图片刷新验证码" style="cursor:pointer" width="60" height="20" align="absmiddle">
+					</span>
+				</td>
+				<td height="32" align="right"><img src="./template/images/sp_33.jpg" style="width: 78px; height: 20px;cursor:hand;" onclick="funcsubmit();" />&nbsp;&nbsp;</td>
+			</tr>
+		</table>
+		</form>
+		</td>
+		</tr>
+    	</table>
+</div>
+ <table width="100%" height="55" border="0" cellpadding="0" cellspacing="0" >
+ <tr><td>&nbsp;</td></tr>
+ </table>
+		</td>
+		<td width="12">&nbsp;</td>
+		<td width="300" align="center" valign="top">
+		<table width="100%" border="0" cellpadding="0"
+			cellspacing="0" bgcolor="#F4F4F4">
+			<tr>
+				<td align="left" valign="top"
+					style="padding-left: 12px; padding-right: 12px; padding-top: 10px">
+				<div
+					style="color: #0082CB; font-size: 14px; font-weight: bold; height: 20px; border-bottom: #C3D7F7 dotted 1px">视频描述</div>
+				<table width="100%" border="0" cellspacing="0" cellpadding="0"
+					style="margin-top: 10px">
+					<tr>
+						<td width="47" height="22" align="left"
+							style="color: #486AB4; font-size: 12px;padding-left: 10px; ">名&nbsp;&nbsp;&nbsp;&nbsp;称：</td>
+						<td style="font-size: 12px; color: #5E5E5E;"> 常见物质间的相互关系专题复习（九年级下册）杨婷</td>
+					</tr>
+					<tr>
+						<td height="22" align="left"
+							style="color: #486AB4; font-size: 12px;padding-left: 10px;">播&nbsp;&nbsp;&nbsp;&nbsp;放：</td>
+						<td style="font-size: 12px; color: #5E5E5E;">4</td>
+					</tr>
+					<tr>
+						<td height="22" align="left"
+							style="color: #486AB4; font-size: 12px;padding-left: 10px; ">时&nbsp;&nbsp;&nbsp;&nbsp;间：</td>
+						<td style="font-size: 12px; color: #5E5E5E;">2013-06-27 10:35:42</td>
+					</tr>
+					<tr>
+						<td height="22" align="left"
+							style="color: #486AB4; font-size: 12px;padding-left: 10px; ">分&nbsp;&nbsp;&nbsp;&nbsp;类：</td>
+						<td style="font-size: 12px; color: #5E5E5E;">化学</td>
+					</tr>
+				</table>
+				<table width="100%" height="75" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 10px;word-break:break-all;word-wrap:break-word;">
+					<tr valign="top">
+						<td align="left" style="color: #486AB4; font-size: 12px; padding-left: 10px;line-height:20px;" width="250">描&nbsp;&nbsp;&nbsp;&nbsp;述：<font
+							style="font-size: 12px; color: #5E5E5E;">太仓市沙溪第一中学  杨婷
+本节课以讲解推断题为主线，以物质的分类、常见基本反应类型和建立物质间的网络关系为暗线展开教学。首先让学生说出初中阶段常见的物质有哪些，并且尝试着给这些物质进行分类。其次在黑板上列出三种物质：氢氧化钠，氢氧化钙，碳酸钠，让学生用相应的符号表示出它们之间的相互关系，并写出相应的化学方程式，指出所属反应类型。再次，让学生模仿上述三种物质间的关系网络写出一些其他的物质间的相互关系。最后，做一些相应的网络型推断题来加以练习巩固。</font></td>
+					</tr>
+				</table>
+
+				</td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td height="10"></td>
+			</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0"
+			style="border: #EAEAEA solid 1px">
+			<tr>
+				<td style="padding-left: 12px; padding-right: 12px;padding-bottom:5px;">
+				<table width="98%" height="35" border="0" cellpadding="0" cellspacing="0" style="border-bottom: #E7E7E7 dotted 1px">
+					<tr>
+						<td align="left" valign="bottom"
+							style="font-size: 14px; color: #1776C9; font-weight: bold; padding-bottom: 4px">最近观看</td>
+					</tr>
+				</table>
+				<div style='height:120px;line-height:120px;vertical-align:middle;'><span>暂无观看记录</span></div>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<td width="12">&nbsp;</td>
+	</tr>
+</table>
+<div class="space2"></div>
+<script src="./foot.jsp"></script>
+</body>
+</html>
+
+

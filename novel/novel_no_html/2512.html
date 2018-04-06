@@ -1,0 +1,915 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="gb2312">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>文章评论_平利人大常委会网站</title>
+<LINK href=TEMPLETS/2/CSS/EC_home.css rel=stylesheet>
+<LINK href="TEMPLETS/2/CSS/EC_News.css" rel="stylesheet">
+<script language="javascript">
+<!--
+function CheckFormAddReview()	//检测评论发表栏填写项目是否为空
+{
+	if(document.AddReview.Author.value=="")
+	{
+		alert("请输入用户名！");
+		document.AddReview.Author.focus();
+		return false;
+	}
+	if(document.AddReview.email.value == "")
+	{
+		alert("请输入您的EMAIL！");
+		document.AddReview.email.focus();
+		return false;
+	}
+	if(document.AddReview.verifycode.value == "")
+	{
+		alert("请输入验证码！");
+		return false;
+	}
+	if(document.AddReview.content.value == "")
+	{
+		alert("请输入评论内容！");
+		return false;
+	}
+}
+
+function changedata() {
+	if ( document.AddReview.none.checked ) {
+		document.AddReview.Author.value = "游客";
+	} 
+}
+function changedata1() {
+	if ( document.AddReview.none1.checked ) {
+		document.AddReview.email.value = "guest@echsys.com";
+	} 
+}
+
+	function MM_goToURL() { //v3.0
+	var i, args=MM_goToURL.arguments; document.MM_returnValue = false;
+	for (i=0; i<(args.length-1); i+=2) eval(args[i]+".location='"+args[i+1]+"'");
+	}
+
+	function MM_openBrWindow(theURL,winName,features) { //v2.0
+	window.open(theURL,winName,features);
+	}
+	//-->
+</script>
+
+</head>
+<body>
+<!--内容部分开始-->
+<div id="EC_Content">
+
+<SCRIPT src="inc/slide.js"></SCRIPT>
+<noscript><iframe scr="*"></iframe></noscript>
+<script language=javascript>
+function CheckFormUserLogin()
+{
+	if(document.UserLogin.UserName.value=="")
+	{
+		alert("请输入用户名！");
+		document.UserLogin.UserName.focus();
+		return false;
+	}
+	if(document.UserLogin.Passwd.value == "")
+	{
+		alert("请输入密码！");
+		document.UserLogin.Passwd.focus();
+		return false;
+	}
+	if(document.UserLogin.verifycode.value == "")
+	{
+		alert("请输入验证码！");
+		document.UserLogin.verifycode.focus();
+		return false;
+	}
+}
+</script>
+<SCRIPT language="JavaScript" type="text/javascript">
+    // Begin morelink
+      function morelink(morelink)
+      {
+        url = 'MoreLink.asp?linktype=1';
+        window.open(url,morelink);
+      }
+    // End morelink-->
+ // Begin linkreg
+      function linkreg(linkreg)
+      {
+        url = 'LinkReg.asp';
+        window.open(url,linkreg);
+      }
+    // End linkreg-->
+// Begin vote
+      function vote(vote)
+      {
+        url = 'E_Vote.asp?stype=view';
+        window.open(url,vote);
+      }
+    // End vote-->
+// Begin adduser
+      function adduser(adduser)
+      {
+        url = 'AddUser.asp';
+        window.open(url,adduser);
+      }
+    // End adduser-->
+// Begin getpwd
+      function getpwd(getpwd)
+      {
+        url = 'GetPwd.asp';
+        window.open(url,getpwd);
+      }
+    // End getpwd-->
+</script>
+
+
+<div class=header>
+
+<div class="login white_tit float_left">
+<!--登录表单-->
+
+<form method="POST" action="ChkLogin.asp" name="UserLogin" onSubmit="return CheckFormUserLogin();">
+           用户：
+          <input name="UserName" style="width:80px;height:16px;border:1px solid #9FAABF">
+          密码：
+          <input name="Passwd" type="password" style="width:80px;height:16px;border:1px solid #9FAABF">
+          验码：
+          <input name="verifycode" type="text"  style="width:50px;height:16px;border:1px solid #9FAABF" >
+          <img src="getcode.asp">
+		  <input name="Submit" type="image" src="TEMPLETS/2/images/login.gif" width="38" height="18" border="0" align="absmiddle"/>
+		  
+</form>
+        
+</div>
+<!--顶部自定义菜单-->
+<div class="mymenu white_tit float_right">
+<a href='E_Special.asp' target='_blank'> 专题报道 </a>|<a href='E_PhotoNews.asp'  target='_blank'> 图片新闻 </a>|<a href='./map.asp'  target='_blank'> 网站地图 </a>|<a href='mailto:pllsf@163.com' target='_blank'> 联系我们 </a>|
+</div>
+<!--顶部自定义菜单-->
+<div class=clear_float><img src="TEMPLETS/2/images/clear_line" width="1002" height="1" border="0" align="absmiddle"></div>
+</div>
+<div class=banner>
+
+		<a href="http://www.plxrd.gov.cn">
+        <object codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0' 
+      height="165" width="1002" classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000'>
+          <param name="movie" value='TEMPLETS/2/images/top_flash.swf'>
+          <param name="quality" value="high">
+          <param name="wmode">
+          <embed src="photo/top.swf" quality=high 
+      pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" 
+      type="application/x-shockwave-flash" width="1002" height="165"> </embed>
+        </object>
+		</a>
+        
+		
+</div>
+<div class=mainnav>
+<UL>
+<LI><SPAN class=nav_current id=nav1 ><A class=f_nav href="index.asp">首 页</A></SPAN></LI>
+<LI><SPAN class=nav_link id=nav2 ><a href="EC_ShowArticle.asp?EC_ArticleID=1">主任致辞</a></SPAN></LI>
+<LI><SPAN class=nav_link id=nav3 ><a href="EC_ShowArticle.asp?EC_ArticleID=1582">领导之窗</a> </SPAN></LI>
+<LI><SPAN class=nav_link id=nav5 ><A href="E_BigClass.asp?E_typeid=3&E_BigClassID=45">重要会议</A></SPAN></LI>
+</UL>
+<div class="data float_right">2014年11月5日  星期三</div>
+</div>
+
+<SCRIPT language=javascript>
+//==========================
+//        菜单开始
+//==========================
+//菜单原提供：www.plxrd.gov.cn
+//制作：五峰
+//QQ：  22544772
+//时间：2008.11.23
+//平利人大网站管理系统
+//版权所有：平利人大
+//原 mt_dropdownC.js
+//具有栏目隐藏与外部链接功能
+mtDropDown.spacerGif = "TEMPLETS/2/images/Menu_x.gif"; 
+mtDropDown.dingbatOn = "TEMPLETS/2/images/Menu_expand-1.gif"; 
+mtDropDown.dingbatOff = "TEMPLETS/2/images/Menu_expand-0.gif"; 
+mtDropDown.dingbatSize = 14; 
+mtDropDown.menuPadding = 1; 
+mtDropDown.itemPadding = 4; 
+mtDropDown.shadowSize = 2; 
+mtDropDown.shadowOffset = 3; 
+mtDropDown.shadowColor = "#D2D1D1"; 
+mtDropDown.shadowPng = "TEMPLETS/2/images/005.png"; 
+mtDropDown.backgroundColor = "#EBEBEB"; 
+mtDropDown.backgroundPng = "TEMPLETS/2/images/004.png"; 
+mtDropDown.hideDelay = 100; 
+mtDropDown.slideTime = 100; 
+
+mtDropDown.reference = {topLeft:1,topRight:2,bottomLeft:3,bottomRight:4};
+mtDropDown.direction = {down:1,right:2};
+mtDropDown.registry = [];
+mtDropDown._maxZ = 100;
+
+mtDropDown.isSupported = function() {
+if (typeof mtDropDown.isSupported.r == "boolean") 
+return mtDropDown.isSupported.r;
+var ua = navigator.userAgent.toLowerCase();
+var an = navigator.appName;
+var r = false;
+if (ua.indexOf("gecko") > -1) r = true; 
+else if (an == "Microsoft Internet Explorer") {
+if (document.getElementById) r = true; 
+}
+mtDropDown.isSupported.r = r;
+return r;
+}
+
+mtDropDown.initialize = function() {
+for (var i = 0, menu = null; menu = this.registry[i]; i++) {
+menu.initialize();
+}
+}
+
+mtDropDown.renderAll = function() {
+var aMenuHtml = [];
+for (var i = 0, menu = null; menu = this.registry[i]; i++) {
+aMenuHtml[i] = menu.toString();
+}
+document.write(aMenuHtml.join(""));
+}
+
+function mtDropDown(oActuator, iDirection, iLeft, iTop, iReferencePoint, parentMenuSet) {
+
+this.addItem = addItem;
+this.addMenu = addMenu;
+this.toString = toString;
+this.initialize = initialize;
+this.isOpen = false;
+this.show = show;
+this.hide = hide;
+this.items = [];
+
+this.onactivate = new Function(); 
+this.ondeactivate = new Function(); 
+this.onmouseover = new Function(); 
+this.onqueue = new Function(); 
+
+this.index = mtDropDown.registry.length;
+mtDropDown.registry[this.index] = this;
+var id = "mtDropDown" + this.index;
+var contentHeight = null;
+var contentWidth = null;
+var childMenuSet = null;
+var animating = false;
+var childMenus = [];
+var slideAccel = -1;
+var elmCache = null;
+var ready = false;
+var _this = this;
+var a = null;
+var pos = iDirection == mtDropDown.direction.down ? "top" : "left";
+var dim = null;
+
+function addItem(sText, sUrl) {
+var item = new mtDropDownItem(sText, sUrl, this);
+item._index = this.items.length;
+this.items[item._index] = item;
+}
+function addMenu(oMenuItem) {
+if (!oMenuItem.parentMenu == this) throw new Error("Cannot add a menu here");
+if (childMenuSet == null) childMenuSet = new mtDropDownSet(mtDropDown.direction.right, -5, 2, mtDropDown.reference.topRight);
+var m = childMenuSet.addMenu(oMenuItem);
+childMenus[oMenuItem._index] = m;
+m.onmouseover = child_mouseover;
+m.ondeactivate = child_deactivate;
+m.onqueue = child_queue;
+return m;
+}
+function initialize() {
+initCache();
+initEvents();
+initSize();
+ready = true;
+}
+function show() {
+
+if (ready) {
+_this.isOpen = true;
+animating = true;
+setContainerPos();
+elmCache["clip"].style.visibility = "visible";
+elmCache["clip"].style.zIndex = mtDropDown._maxZ++;
+
+slideStart();
+_this.onactivate();
+}
+}
+function hide() {
+if (ready) {
+_this.isOpen = false;
+animating = true;
+for (var i = 0, item = null; item = elmCache.item[i]; i++) 
+dehighlight(item);
+if (childMenuSet) childMenuSet.hide();
+slideStart();
+_this.ondeactivate();
+}
+}
+function setContainerPos() {
+var sub = oActuator.constructor == mtDropDownItem; 
+var act = sub ? oActuator.parentMenu.elmCache["item"][oActuator._index] : oActuator; 
+var el = act;
+var x = 0;
+var y = 0;
+var minX = 0;
+var maxX = (window.innerWidth ? window.innerWidth : document.body.clientWidth) - parseInt(elmCache["clip"].style.width);
+var minY = 0;
+var maxY = (window.innerHeight ? window.innerHeight : document.body.clientHeight) - parseInt(elmCache["clip"].style.height);
+
+while (sub ? el.parentNode.className.indexOf("mtDropdownMenu") == -1 : el.offsetParent) {
+x += el.offsetLeft;
+y += el.offsetTop;
+if (el.scrollLeft) x -= el.scrollLeft;
+if (el.scrollTop) y -= el.scrollTop;
+el = el.offsetParent;
+}
+if (oActuator.constructor == mtDropDownItem) {
+x += parseInt(el.parentNode.style.left);
+y += parseInt(el.parentNode.style.top);
+}
+switch (iReferencePoint) {
+case mtDropDown.reference.topLeft:
+break;
+case mtDropDown.reference.topRight:
+x += act.offsetWidth;
+break;
+case mtDropDown.reference.bottomLeft:
+y += act.offsetHeight;
+break;
+case mtDropDown.reference.bottomRight:
+x += act.offsetWidth;
+y += act.offsetHeight;
+break;
+}
+x += iLeft;
+y += iTop;
+x = Math.max(Math.min(x, maxX), minX);
+y = Math.max(Math.min(y, maxY), minY);
+elmCache["clip"].style.left = x + "px";
+elmCache["clip"].style.top = y + "px";
+}
+function slideStart() {
+var x0 = parseInt(elmCache["content"].style[pos]);
+var x1 = _this.isOpen ? 0 : -dim;
+if (a != null) a.stop();
+a = new Accelimation(x0, x1, mtDropDown.slideTime, slideAccel);
+a.onframe = slideFrame;
+a.onend = slideEnd;
+a.start();
+}
+function slideFrame(x) {
+elmCache["content"].style[pos] = x + "px";
+}
+function slideEnd() {
+if (!_this.isOpen) elmCache["clip"].style.visibility = "hidden";
+animating = false;
+}
+function initSize() {
+
+var ow = elmCache["items"].offsetWidth;
+var oh = elmCache["items"].offsetHeight;
+var ua = navigator.userAgent.toLowerCase();
+
+elmCache["clip"].style.width = ow + mtDropDown.shadowSize + 2 + "px";
+elmCache["clip"].style.height = oh + mtDropDown.shadowSize + 2 + "px";
+
+elmCache["content"].style.width = ow + mtDropDown.shadowSize + "px";
+elmCache["content"].style.height = oh + mtDropDown.shadowSize + "px";
+contentHeight = oh + mtDropDown.shadowSize;
+contentWidth = ow + mtDropDown.shadowSize;
+dim = iDirection == mtDropDown.direction.down ? contentHeight : contentWidth;
+
+elmCache["content"].style[pos] = -dim - mtDropDown.shadowSize + "px";
+elmCache["clip"].style.visibility = "hidden";
+
+if (ua.indexOf("mac") == -1 || ua.indexOf("gecko") > -1) {
+
+elmCache["background"].style.width = ow + "px";
+elmCache["background"].style.height = oh + "px";
+elmCache["background"].style.backgroundColor = mtDropDown.backgroundColor;
+
+elmCache["shadowRight"].style.left = ow + "px";
+elmCache["shadowRight"].style.height = oh - (mtDropDown.shadowOffset - mtDropDown.shadowSize) + "px";
+elmCache["shadowRight"].style.backgroundColor = mtDropDown.shadowColor;
+
+
+
+elmCache["shadowBottom"].style.top = oh + "px";
+elmCache["shadowBottom"].style.width = ow - mtDropDown.shadowOffset + "px";
+elmCache["shadowBottom"].style.backgroundColor = mtDropDown.shadowColor;
+}
+
+else {
+
+elmCache["background"].firstChild.src = mtDropDown.backgroundPng;
+elmCache["background"].firstChild.width = ow;
+elmCache["background"].firstChild.height = oh;
+
+elmCache["shadowRight"].firstChild.src = mtDropDown.shadowPng;
+elmCache["shadowRight"].style.left = ow + "px";
+elmCache["shadowRight"].firstChild.width = mtDropDown.shadowSize;
+elmCache["shadowRight"].firstChild.height = oh - (mtDropDown.shadowOffset - mtDropDown.shadowSize);
+
+
+
+elmCache["shadowBottom"].firstChild.src = mtDropDown.shadowPng;
+elmCache["shadowBottom"].style.top = oh + "px";
+elmCache["shadowBottom"].firstChild.height = mtDropDown.shadowSize;
+elmCache["shadowBottom"].firstChild.width = ow - mtDropDown.shadowOffset;
+}
+}
+function initCache() {
+var menu = document.getElementById(id);
+var all = menu.all ? menu.all : menu.getElementsByTagName("*"); 
+elmCache = {};
+elmCache["clip"] = menu;
+elmCache["item"] = [];
+for (var i = 0, elm = null; elm = all[i]; i++) {
+switch (elm.className) {
+case "items":
+case "content":
+case "background":
+case "shadowRight":
+case "shadowBottom":
+elmCache[elm.className] = elm;
+break;
+case "item":
+elm._index = elmCache["item"].length;
+elmCache["item"][elm._index] = elm;
+break;
+}
+}
+
+_this.elmCache = elmCache;
+}
+function initEvents() {
+
+for (var i = 0, item = null; item = elmCache.item[i]; i++) {
+item.onmouseover = item_mouseover;
+item.onmouseout = item_mouseout;
+item.onclick = item_click;
+}
+
+if (typeof oActuator.tagName != "undefined") {
+oActuator.onmouseover = actuator_mouseover;
+oActuator.onmouseout = actuator_mouseout;
+}
+
+elmCache["content"].onmouseover = content_mouseover;
+elmCache["content"].onmouseout = content_mouseout;
+}
+function highlight(oRow) {
+oRow.className = "item hover";
+if (childMenus[oRow._index]) 
+oRow.lastChild.firstChild.src = mtDropDown.dingbatOn;
+}
+function dehighlight(oRow) {
+oRow.className = "item";
+if (childMenus[oRow._index]) 
+oRow.lastChild.firstChild.src = mtDropDown.dingbatOff;
+}
+function item_mouseover() {
+if (!animating) {
+highlight(this);
+if (childMenus[this._index]) 
+childMenuSet.showMenu(childMenus[this._index]);
+else if (childMenuSet) childMenuSet.hide();
+}
+}
+function item_mouseout() {
+if (!animating) {
+if (childMenus[this._index])
+childMenuSet.hideMenu(childMenus[this._index]);
+else 
+dehighlight(this);
+}
+}
+function item_click() {
+if (!animating) {
+if (_this.items[this._index].url) 
+location.href = _this.items[this._index].url;
+}
+}
+function actuator_mouseover() {
+parentMenuSet.showMenu(_this);
+}
+function actuator_mouseout() {
+parentMenuSet.hideMenu(_this);
+}
+function content_mouseover() {
+if (!animating) {
+parentMenuSet.showMenu(_this);
+_this.onmouseover();
+}
+}
+function content_mouseout() {
+if (!animating) {
+parentMenuSet.hideMenu(_this);
+}
+}
+function child_mouseover() {
+if (!animating) {
+parentMenuSet.showMenu(_this);
+}
+}
+function child_deactivate() {
+for (var i = 0; i < childMenus.length; i++) {
+if (childMenus[i] == this) {
+dehighlight(elmCache["item"][i]);
+break;
+}
+}
+}
+function child_queue() {
+parentMenuSet.hideMenu(_this);
+}
+function toString() {
+var aHtml = [];
+var sClassName = "mtDropdownMenu" + (oActuator.constructor != mtDropDownItem ? " top" : "");
+for (var i = 0, item = null; item = this.items[i]; i++) {
+aHtml[i] = item.toString(childMenus[i]);
+}
+return '<div id="' + id + '" class="' + sClassName + '">' + 
+'<div class="content"><table class="items" cellpadding="0" cellspacing="0" border="0">' + 
+'<tr><td colspan="2"><img src="' + mtDropDown.spacerGif + '" width="1" height="' + mtDropDown.menuPadding + '"></td></tr>' + 
+aHtml.join('') + 
+'<tr><td colspan="2"><img src="' + mtDropDown.spacerGif + '" width="1" height="' + mtDropDown.menuPadding + '"></td></tr></table>' + 
+'<div class="shadowBottom"><img src="' + mtDropDown.spacerGif + '" width="1" height="1"></div>' + 
+'<div class="shadowRight"><img src="' + mtDropDown.spacerGif + '" width="1" height="1"></div>' + 
+'<div class="background"><img src="' + mtDropDown.spacerGif + '" width="1" height="1"></div>' + 
+'</div></div>';
+}
+}
+
+mtDropDownSet.registry = [];
+function mtDropDownSet(iDirection, iLeft, iTop, iReferencePoint) {
+
+this.addMenu = addMenu;
+this.showMenu = showMenu;
+this.hideMenu = hideMenu;
+this.hide = hide;
+
+var menus = [];
+var _this = this;
+var current = null;
+this.index = mtDropDownSet.registry.length;
+mtDropDownSet.registry[this.index] = this;
+
+function addMenu(oActuator) {
+var m = new mtDropDown(oActuator, iDirection, iLeft, iTop, iReferencePoint, this);
+menus[menus.length] = m;
+return m;
+}
+function showMenu(oMenu) {
+if (oMenu != current) {
+
+if (current != null) hide(current); 
+
+current = oMenu;
+
+oMenu.show();
+}
+else {
+
+cancelHide(oMenu);
+}
+}
+function hideMenu(oMenu) {
+
+if (current == oMenu && oMenu.isOpen) {
+
+if (!oMenu.hideTimer) scheduleHide(oMenu);
+}
+}
+function scheduleHide(oMenu) {
+
+oMenu.onqueue();
+oMenu.hideTimer = window.setTimeout("mtDropDownSet.registry[" + _this.index + "].hide(mtDropDown.registry[" + oMenu.index + "])", mtDropDown.hideDelay);
+}
+function cancelHide(oMenu) {
+
+if (oMenu.hideTimer) {
+window.clearTimeout(oMenu.hideTimer);
+oMenu.hideTimer = null;
+}
+}
+function hide(oMenu) { 
+if (!oMenu && current) oMenu = current;
+if (oMenu && current == oMenu && oMenu.isOpen) {
+
+cancelHide(oMenu);
+current = null;
+oMenu.hideTimer = null;
+oMenu.hide();
+}
+}
+}
+
+function mtDropDownItem(sText, sUrl, oParent) {
+this.toString = toString;
+this.text = sText;
+this.url = sUrl;
+this.parentMenu = oParent;
+function toString(bDingbat) {
+var sDingbat = bDingbat ? mtDropDown.dingbatOff : mtDropDown.spacerGif;
+var iEdgePadding = mtDropDown.itemPadding + mtDropDown.menuPadding;
+var sPaddingLeft = "padding:" + mtDropDown.itemPadding + "px; padding-left:" + iEdgePadding + "px;"
+var sPaddingRight = "padding:" + mtDropDown.itemPadding + "px; padding-right:" + iEdgePadding + "px;"
+return '<tr class="item"><td nowrap style="' + sPaddingLeft + '">' + 
+sText + '</td><td width="14" style="' + sPaddingRight + '">' + 
+'<img src="' + sDingbat + '" width="14" height="14"></td></tr>';
+}
+}
+
+function Accelimation(from, to, time, zip) {
+if (typeof zip == "undefined") zip = 0;
+if (typeof unit == "undefined") unit = "px";
+this.x0 = from;
+this.x1 = to;
+this.dt = time;
+this.zip = -zip;
+this.unit = unit;
+this.timer = null;
+this.onend = new Function();
+this.onframe = new Function();
+}
+
+Accelimation.prototype.start = function() {
+this.t0 = new Date().getTime();
+this.t1 = this.t0 + this.dt;
+var dx = this.x1 - this.x0;
+this.c1 = this.x0 + ((1 + this.zip) * dx / 3);
+this.c2 = this.x0 + ((2 + this.zip) * dx / 3);
+Accelimation._add(this);
+}
+
+Accelimation.prototype.stop = function() {
+Accelimation._remove(this);
+}
+
+Accelimation.prototype._paint = function(time) {
+if (time < this.t1) {
+var elapsed = time - this.t0;
+this.onframe(Accelimation._getBezier(elapsed/this.dt,this.x0,this.x1,this.c1,this.c2));
+}
+else this._end();
+}
+
+Accelimation.prototype._end = function() {
+Accelimation._remove(this);
+this.onframe(this.x1);
+this.onend();
+}
+
+Accelimation._add = function(o) {
+var index = this.instances.length;
+this.instances[index] = o;
+
+if (this.instances.length == 1) {
+this.timerID = window.setInterval("Accelimation._paintAll()", this.targetRes);
+}
+}
+
+Accelimation._remove = function(o) {
+for (var i = 0; i < this.instances.length; i++) {
+if (o == this.instances[i]) {
+this.instances = this.instances.slice(0,i).concat( this.instances.slice(i+1) );
+break;
+}
+}
+
+if (this.instances.length == 0) {
+window.clearInterval(this.timerID);
+this.timerID = null;
+}
+}
+
+Accelimation._paintAll = function() {
+var now = new Date().getTime();
+for (var i = 0; i < this.instances.length; i++) {
+this.instances[i]._paint(now);
+}
+}
+
+Accelimation._B1 = function(t) { return t*t*t }
+Accelimation._B2 = function(t) { return 3*t*t*(1-t) }
+Accelimation._B3 = function(t) { return 3*t*(1-t)*(1-t) }
+Accelimation._B4 = function(t) { return (1-t)*(1-t)*(1-t) }
+
+Accelimation._getBezier = function(percent,startPos,endPos,control1,control2) {
+return endPos * this._B1(percent) + control2 * this._B2(percent) + control1 * this._B3(percent) + startPos * this._B4(percent);
+}
+
+Accelimation.instances = [];
+Accelimation.targetRes = 10;
+Accelimation.timerID = null;
+
+</SCRIPT>
+<SCRIPT language=javascript>
+//原 mt_dropdown_initialize.js
+		var preloaded = [];
+
+		// here is a lame preloading script i am putting in just for demonstration
+		for (var i = 1; i <= 8; i++) {
+			preloaded[i] = [loadImage(i + "-0.gif"), loadImage(i + "-1.gif")];
+		}
+
+		function init() {
+			if (mtDropDown.isSupported()) {
+				mtDropDown.initialize();
+			}
+		}
+
+		// this is a crappy example preloader. Use whichever one you want.
+		function loadImage(sFilename) {
+			var img = new Image();
+			img.src ="TEMPLETS/2/images/" + sFilename;
+			return img;
+		}
+</SCRIPT>
+<body onLoad="init();" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<div class="global_nav">
+<ul><li><a href='E_Type.asp?E_typeid=1' id=menu1 title='人大简介'>人大简介</a></li><li><a href='E_Type.asp?E_typeid=2' id=menu2 title='人大机构'>人大机构</a></li><li><a href='E_Type.asp?E_typeid=23' id=menu3 title='财政经济'>财政经济</a></li><li><a href='E_Type.asp?E_typeid=3' id=menu4 title='工作动态'>工作动态</a></li><li><a href='E_Type.asp?E_typeid=4' id=menu5 title='法制建设'>法制建设</a></li><li><a href='E_Type.asp?E_typeid=19' id=menu6 title='社会民生'>社会民生</a></li><li><a href='E_Type.asp?E_typeid=5' id=menu7 title='代表工作'>人事代表</a></li><li><a href='E_Type.asp?E_typeid=7' id=menu8 title='调查研究'>调查研究</a></li><li><a href='E_Type.asp?E_typeid=24' id=menu9 title=''>议案建议</a></li><li><a href='E_Type.asp?E_typeid=8' id=menu10 title='人事任免'>人事任免</a></li><li><a href='E_Type.asp?E_typeid=9' id=menu11 title='法律法规'>法律法规</a></li><li><a href='E_Type.asp?E_typeid=11' id=menu12 title='文献资料'>文献资料</a></li><li><a href='E_Type.asp?E_typeid=6' id=menu13 title='文化艺苑'>文化艺苑</a></li></ul><div style="position: absolute; top: -299px;height:100px;width:120px;overflow:hidden;"><a href="http://www.paintinghere.com/painting/Pear_Tree_1921.html">Tree Painting</a> <a href="http://www.paintinghere.com/artist/Berthe_Morisot-1.html">Berthe Morisot Paintings</a> <a href="http://www.paintinghere.com/artist/Winslow_Homer-1.html">Winslow Homer Paintings</a> <a href="http://www.paintinghere.com/artist/William_Blake-1.html">William Blake Paintings</a> <a href="http://www.paintinghere.com/artist/George_Inness-1.html">George Inness</a> <a href="http://www.paintinghere.com/artist/Edgar_Degas-1.html">Edgar Degas Paintings</a> <a href="http://www.paintinghere.com/artist/abstract-1.html">abstract Canvas Painting</a> <a href="http://www.paintinghere.com/painting/The_Return_of_the_Prodigal_Son_78.html">Rembrandt Prodigal Son</a> <a href="http://www.paintinghere.com/painting/The_Starry_Night_1221.html">Van Gogh Starry Night</a> <a href="http://www.paintinghere.com/painting/Dogs_Playing_Poker_7306.html">Dogs Playing Poker</a></div><SCRIPT LANGUAGE=javascript>
+if (mtDropDown.isSupported()) {
+	var ms = new mtDropDownSet(mtDropDown.direction.down, 0, 0, mtDropDown.reference.bottomLeft);
+
+	var menu4 = ms.addMenu(document.getElementById('menu4'));
+	menu4.addItem('- 十七届人大各次会议','E_BigClass.asp?E_typeid=3&E_BigClassID=59'); 
+	menu4.addItem('- 领导活动','E_BigClass.asp?E_typeid=3&E_BigClassID=44'); 
+	menu4.addItem('- 重要会议','E_BigClass.asp?E_typeid=3&E_BigClassID=45'); 
+	menu4.addItem('- 十六届人大各次会议资料','E_BigClass.asp?E_typeid=3&E_BigClassID=58'); 
+
+	var subMenu0 = menu4.addMenu(menu4.items[0]);
+	subMenu0.addItem('- 十七届人大三次会议专题','E_SmallClass.asp?E_typeid=3&E_BigClassID=59&E_SmallClassID=117');
+	subMenu0.addItem('- 十七届人大二次会议专题','E_SmallClass.asp?E_typeid=3&E_BigClassID=59&E_SmallClassID=116');
+	subMenu0.addItem('- 十七届人大一次会议专题','E_SmallClass.asp?E_typeid=3&E_BigClassID=59&E_SmallClassID=114');
+
+	var subMenu2 = menu4.addMenu(menu4.items[2]);
+	subMenu2.addItem('- 常委会会议','E_SmallClass.asp?E_typeid=3&E_BigClassID=45&E_SmallClassID=99');
+	subMenu2.addItem('- 主任会议','E_SmallClass.asp?E_typeid=3&E_BigClassID=45&E_SmallClassID=98');
+
+	var subMenu3 = menu4.addMenu(menu4.items[3]);
+	subMenu3.addItem('- 十六届人大六次会议专题','E_SmallClass.asp?E_typeid=3&E_BigClassID=58&E_SmallClassID=113');
+	subMenu3.addItem('- 十六届人大四次会议专题','E_SmallClass.asp?E_typeid=3&E_BigClassID=58&E_SmallClassID=112');
+
+	var menu5 = ms.addMenu(document.getElementById('menu5'));
+	menu5.addItem('- 法制建设','E_BigClass.asp?E_typeid=4&E_BigClassID=54'); 
+
+	var menu6 = ms.addMenu(document.getElementById('menu6'));
+	menu6.addItem('- 社会民生','E_BigClass.asp?E_typeid=19&E_BigClassID=53'); 
+
+	var menu12 = ms.addMenu(document.getElementById('menu12'));
+	menu12.addItem('- 常委会会刊','E_BigClass.asp?E_typeid=11&E_BigClassID=47'); 
+	menu12.addItem('- 大事记','E_BigClass.asp?E_typeid=11&E_BigClassID=48'); 
+	menu12.addItem('- 各项制度','E_BigClass.asp?E_typeid=11&E_BigClassID=49'); 
+	menu12.addItem('- 平利人大工作','E_BigClass.asp?E_typeid=11&E_BigClassID=50'); 
+	menu12.addItem('- 人代会会刊','E_BigClass.asp?E_typeid=11&E_BigClassID=51'); 
+
+	var menu13 = ms.addMenu(document.getElementById('menu13'));
+	menu13.addItem('- 摄影园地','E_BigClass.asp?E_typeid=6&E_BigClassID=38'); 
+	menu13.addItem('- 文学','E_BigClass.asp?E_typeid=6&E_BigClassID=39'); 
+	menu13.addItem('- 书 画','E_BigClass.asp?E_typeid=6&E_BigClassID=40'); 
+	menu13.addItem('- 大众健康','E_BigClass.asp?E_typeid=6&E_BigClassID=46'); 
+
+	var subMenu0 = menu13.addMenu(menu13.items[0]);
+	subMenu0.addItem('- 平利风光','E_SmallClass.asp?E_typeid=6&E_BigClassID=38&E_SmallClassID=115');
+	subMenu0.addItem('- 鸟语花香','E_SmallClass.asp?E_typeid=6&E_BigClassID=38&E_SmallClassID=95');
+	subMenu0.addItem('- 人物纪实','E_SmallClass.asp?E_typeid=6&E_BigClassID=38&E_SmallClassID=94');
+
+	var subMenu2 = menu13.addMenu(menu13.items[2]);
+	subMenu2.addItem('- 书法','E_SmallClass.asp?E_typeid=6&E_BigClassID=40&E_SmallClassID=104');
+	subMenu2.addItem('- 绘画','E_SmallClass.asp?E_typeid=6&E_BigClassID=40&E_SmallClassID=105');
+
+	mtDropDown.renderAll();
+	}
+	//==========================
+	//        菜单结束
+	//==========================
+</SCRIPT>
+
+</div>
+</body>
+
+
+<!--中间内容部分开始-->
+<div id="EC_Cnt_center">
+<!--左边部分开始-->
+
+<div class="EC_Cnt_Left float_left">
+<!--位置导航部分开始-->
+<div class="position">
+<img src="TEMPLETS/2/images/lm_dot.gif" width="11" height="11">&nbsp;&nbsp;您的位置&nbsp;&nbsp;<a href="./" >首页</a> >> 评论：
+        平利县十六届人大常委会会刊第25号（总第198期）
+</div>
+<!--位置导航部分结束-->
+<!--正文部分开始-->
+<div class=EC_Content_Left>
+
+<div class="comment_tit">	  
+<font color="" size="+2" face="楷体_GB2312"><a href="EC_ShowArticle.asp?EC_ArticleID=1117">平利县十六届人大常委会会刊第25号（总第198期）</a>点击查看原文</font></div>
+<ul>
+       <li>该信息当前没有评论！</li>
+</div>					
+</ul>
+<div class=comment_tab>
+
+<form method="POST" action="AddReview.asp" name=AddReview  onSubmit="return CheckFormAddReview();">
+
+<input type=hidden name=EC_ArticleID value=1117>
+用户名：<input type="text" name="Author" style="width:100px;height:16px;border:1px solid #9FAABF">
+游客：<INPUT onclick=changedata() type=checkbox value=true  name=none>
+电子邮件：<input name="email" type="text" value="" style="width:100px;height:16px;border:1px solid #9FAABF">
+游客：<INPUT onclick=changedata1() type=checkbox value=true  name=none1>
+验证码：<input name="verifycode" type="text"  style="width:50px;height:16px;border:1px solid #9FAABF" ><img src="getcode.asp">
+<br/>
+评论内容：（100字以内）<br/>
+<script language="javascript">
+document.write ('<iframe src="guestbox.asp?action=new" id="message" width="98%" height="100" frameborder=yes scrolling=no align=center></iframe>')
+frames.message.document.designMode = "On";
+</script><br/>
+<input type="hidden" name="editor" value="">
+<input name="passed" type="hidden" value="0">
+<input type="submit" value="发表评论" name="Submit3" OnClick="document.AddReview.content.value = frames.message.document.body.innerHTML;">
+<input name="reset2" type=reset value="重新填写">
+<input type="hidden" name="content" value="">
+<input type="hidden" name="title" value="评论：平利县十六届人大常委会会刊第25号（总第198期）">
+
+</form>
+
+</div>
+</div>
+
+<!--正文部分结束-->
+</div>
+<!--左边部分结束-->
+
+<div class="EC_Cnt_Right float_right">
+<div class="EC_n_right lianmu_bg">
+<H3>热门文章</H3>
+<DIV>
+<ul class="list">
+
+<li><span class="float_right">[6334]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=189" title="关于《中华人民共和国统计法》执法检查情况的自查报告" target="_blank"> <font color=""> 关于《中华人民共和国统计法》.. </font> </a></li>
+
+<li><span class="float_right">[5719]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=39" title="陈世斌书法作品——百寿图" target="_blank"> <font color=""> 陈世斌书法作品——百寿图 </font> </a></li>
+
+<li><span class="float_right">[5228]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=37" title="陈世斌书法作品——有书真富贵无事小神仙" target="_blank"> <font color=""> 陈世斌书法作品——有书真富贵.. </font> </a></li>
+
+<li><span class="float_right">[5062]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=1" title="主任致辞" target="_blank"> <font color=""> 主任致辞 </font> </a></li>
+
+<li><span class="float_right">[4451]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=160" title="平利县人大常委会关于任命陈功文等同志兼任职务的决定" target="_blank"> <font color=""> 平利县人大常委会关于任命陈功.. </font> </a></li>
+
+<li><span class="float_right">[4259]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=472" title="六名拟任职人员在县人大常委会上做供职承诺" target="_blank"> <font color=""> 六名拟任职人员在县人大常委会.. </font> </a></li>
+
+<li><span class="float_right">[4232]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=190" title="关于对县法院执行工作的执法检查报告" target="_blank"> <font color=""> 关于对县法院执行工作的执法检.. </font> </a></li>
+
+<li><span class="float_right">[4061]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=215" title="平利县第十六届人民代表大会代表名单" target="_blank"> <font color=""> 平利县第十六届人民代表大会代.. </font> </a></li>
+
+<li><span class="float_right">[3907]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=91" title="陈世斌书法作品——无为" target="_blank"> <font color=""> 陈世斌书法作品——无为 </font> </a></li>
+
+<li><span class="float_right">[3770]</span>·<a href="EC_ShowArticle.asp?EC_ArticleID=154" title="平利县人民代表大会常务委员会关于王顺利等同志职务任命的决定" target="_blank"> <font color=""> 平利县人民代表大会常务委员会.. </font> </a></li>
+	
+</ul>
+</div>
+</div>
+
+
+</div>
+<!--右边部分结束-->
+<div class=clear_float></div>
+</div>
+<!--中间内容部分结束-->
+<div id=footer>
+<div class="foot_nav white_tit">
+<a href='E_Special.asp' target='_blank'> 专题报道 </a>|<a href='E_PhotoNews.asp'  target='_blank'> 图片新闻 </a>|<a href='./map.asp'  target='_blank'> 网站地图 </a>|<a href='mailto:pllsf@163.com' target='_blank'> 联系我们 </a>|
+</div>
+<div class=foot_info>
+Copyright 2008 plxrd.gov.cn Government All Rights Reserved<br />
+版权所有： <a href="http://www.plxrd.gov.cn" target="_blank" >
+<span style="text-decoration: none">平利人大常委会</span></a> 协办：平利政府信息中心 
+ 
+<a target="_blank" href="http://www.miibeian.gov.cn/"><span style="text-decoration: none">
+陕ICP备09001063号</span></a><br>
+投稿邮箱: <a href="mailto:plxrd@163.com" >plxrd@163.com</a>&nbsp;在线投稿QQ: <a href="tencent://message/?uin=457400584&amp;Site=平利人大网站&amp;Menu=yes" >1339146753</a><br />
+页面执行时间：125.000毫秒
+&nbsp;<a href="login.asp" target="_blank" >[后台管理]</a>
+<br>
+</div>
+</div>
+
+
+
+</div>
+<!--内容部分结束-->
+</body>
+</html>
+

@@ -1,0 +1,2005 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="http://s.xnimg.cn/a69228/js/register/register-app-invite.js" type="text/javascript"></script>
+<meta charset="utf-8" />
+<meta name="Description" content="人人网 校内是一个真实的社交网络，联络你和你周围的朋友。 加入人人网校内你可以:联络朋友，了解他们的最新动态；和朋友分享相片、音乐和电影；找到老同学，结识新朋友；用照片和日志记录生活,展示自我。" /><meta name="Keywords" content="Xiaonei,Renren,校内,大学,同学,同事,白领,个人主页,博客,相册,群组,社区,交友,聊天,音乐,视频,校园,人人,人人网" />
+<link rel="shortcut icon" type="image/x-icon" href="http://a.xnimg.cn/favicon-rr.ico?ver=3" /><link rel="apple-touch-icon" href="http://a.xnimg.cn/wap/apple_icon_.png" />
+<link href="http://s.xnimg.cn/a68568/n/core/global2-all-min.css" rel="stylesheet" />
+<script>XN = {get_check:'',get_check_x:'73cbe4d2',env:{domain:'renren.com',shortSiteName:'人人',siteName:'人人网'}};photoSeedSrc= 'http://s.xnimg.cn/a66061/n/apps/photo/photoSeed.js';
+</script>
+<script src="http://s.xnimg.cn/a68566/n/core/base-all2.js"></script>
+<script>
+XN.namespace('user');
+XN.$extend(XN.user, {
+'isGuide':true,
+'stage':''
+});
+</script>
+<script>if (window.asyncHTMLManager) {
+window.asyncHTMLManager.addEvent('load', function() {
+load_jebe_ads(1, false, true);
+});
+} else {
+load_jebe_ads(1);
+}
+XN.getFileVersion(['http://s.xnimg.cn/a19816/csspro/apps/profile.css',
+'http://s.xnimg.cn/a54265/csspro/module/friendSelector.css',
+'http://s.xnimg.cn/a16298/csspro/module/status-pop.css',
+'http://s.xnimg.cn/a58689/csspro/module/school-selector.css',
+'http://s.xnimg.cn/a64379/csspro/module/minieditor.css',
+'http://s.xnimg.cn/a20457/jspro/xn.app.recommendFriend.js',
+'http://s.xnimg.cn/a63482/jspro/xn.app.status.js',
+'http://s.xnimg.cn/a67944/jspro/xn.app.share.js',
+'http://s.xnimg.cn/a64158/jspro/xn.app.ilike.js',
+'http://s.xnimg.cn/a58863/jspro/xn.ui.pager.js',
+'http://s.xnimg.cn/a32035/jspro/xn.ui.multiFriendSelectorBox.js',
+'http://s.xnimg.cn/a57199/jspro/xn.app.friend.group.js',
+'http://s.xnimg.cn/a59856/jspro/xn.app.addFriend.js',
+'http://s.xnimg.cn/a5881/jspro/xn.ui.multiFriendSelectorBox.forGuide.js',
+'http://s.xnimg.cn/a65443/jspro/lib/mediaplayer.js',
+'http://s.xnimg.cn/a64992/jspro/xn.ui.schoolSelectors.js',
+'http://s.xnimg.cn/a13200/jspro/album/ZeroClipboard.js',
+'http://s.xnimg.cn/a66084/jspro/xn.ui.emoticons.js',
+'http://s.xnimg.cn/a30963/n/apps/home/modules/drag-upload/drag-upload.js',
+'http://a.xnimg.cn/swf/album/ZeroClipboard.swf?ver=$revxxx$',
+'http://a.xnimg.cn/n/core/modules/flashUploader/flashUploader.js',
+'http://s.xnimg.cn/a33832/n/core/modules/flashUploader/upload-pop-all-min.css',
+'http://s.xnimg.cn/a52793/apps/wiki/css/wiki-card-all-min.css',
+'http://s.xnimg.cn/a57926/apps/wiki/js/wiki_model.js',
+'http://s.xnimg.cn/a52502/apps/wiki/js/wikicard-load.js',
+'http://s.xnimg.cn/a66726/n/core/feed/video/video-show.js'
+]);
+XN.namespace( 'user' );
+XN.$extend(XN.user, {
+'id':'',
+'ruid':'',
+'tinyPic':'',
+'name':"",
+'pageVersion':6
+});
+XN.event.addEvent(window, 'load', function(){
+var r = parseInt(Math.random()*150);
+if (r == 5 && window.UGC) UGC.Network.ping.performance.start("100000","sns.home.performance");
+});
+object.predefine('xn/namecard', 'http://s.xnimg.cn/a63148/modules/namecard/js/namecard.js');object.predefine('xn/showShareFriend', 'http://s.xnimg.cn/a54260/n/core/modules/show-share-friend/showShareFriendsModule.js');
+object.predefine('xn/mentionMain', 'http://s.xnimg.cn/a64315/n/core/modules/mention/index.js');
+object.predefine('xn/site-nav/switch-account', 'http://s.xnimg.cn/a41752/n/core/modules/site-nav/switch-account.js');
+object.predefine('xn/site-nav/drop-menu-profile xn/site-nav/drop-menu-app', 'http://s.xnimg.cn/a58640/n/core/modules/site-nav/drop-menu.js');
+object.predefine('xn/site-nav/search', 'http://s.xnimg.cn/a55318/n/core/modules/site-nav/search.js');
+object.predefine('xn/ilike', 'http://s.xnimg.cn/a66921/n/core/modules/ilike/index.js');
+object.predefine('xn/group/vote', 'http://s.xnimg.cn/a49736/n/core/feed/group/group-vote.js');
+object.predefine('xn/lib/switch', 'http://s.xnimg.cn/a54374/n/core/lib/switch.js');
+object.predefine('xn/lib/scrollFix', 'http://s.xnimg.cn/a61394/n/core/lib/scrollFix.js');
+object.predefine('xnapp/birthday', 'http://s.xnimg.cn/a59454/apps/home/compatible/birthday.js');
+object.predefine('xn/apps/toolsBox', 'http://s.xnimg.cn/a53568/jspro/modules/tools-box/tools-box.js');
+object.predefine('xn/feed/videoShow','http://s.xnimg.cn/a66726/n/core/feed/video/video-show.js');
+</script>
+<link rel="stylesheet" type="text/css" href="http://s.xnimg.cn/a58765/jspro/privacy/style/hidden-all-min.css" media="all" />
+<script type="text/javascript" src="http://s.xnimg.cn/a68308/jspro/xn.app.privacy.hidden.js"></script>
+<link href="http://s.xnimg.cn/a69267/csspro/apps/reg_update.css" rel="stylesheet" type="text/css" media="all" /><link href="http://s.xnimg.cn/a58956/csspro/module/replies.css" rel="stylesheet" type="text/css" media="all" />
+<link href="http://s.xnimg.cn/a58882/n/apps/share/compatible/detail-all-min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="http://s.xnimg.cn/a62803/csspro/apps/seo_share_v2.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="http://s.xnimg.cn/a68889/jspro/lib/mediaplayer.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a69051/jspro/xn.app.share.js"></script>
+<link href="http://s.xnimg.cn/a61231/n/apps/status/compatible/reply-all-min.css" type="text/css" media="all" rel="stylesheet" />
+<script type="text/javascript" src="http://s.xnimg.cn/a63042/jspro/xn.app.sharereply.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a54191/n/apps/share/seo_log.js"></script>
+<script type="text/javascript">
+XN.config.jumpOut = false;XN.namespace('XN.app.share');$extend(XN.app.share, {
+pageInfo: {type : 'v' } 
+});</script>
+
+ 	<script type="text/javascript">
+XN.mentionGroup = true;
+</script>
+<title>谁能告诉我这是毛片还是MV啊?韩国的妹子们真是奔放啊！对于这种越来越没有节操的行为！我只能说：放马过来吧！Stella《Marionette》未删减版曝光！【人人网 - 分享】</title><meta name="description" content="【沃德独家】(新单) Stella - Marionette (未删减版)" />
+</head>
+<body id="pageShare" class="page-terminal">
+	<input type="hidden" id="userGuideType" value="" /><div id="dropmenuHolder" class="dropmenu-holder dropmenu-holder-new rr"><div id="moredownWeb" class="dropdown" style="position:absolute; top:-9999px; left:-9999px;">
+<div class="menu-dropdown-border">
+<div class="weblist">
+<ul class="clearfix">
+<li><a href="http://share.renren.com">分享</a></li>
+<li><a href="http://app.renren.com">应用程序</a></li>
+<li><a href="http://page.renren.com">公共主页</a></li>
+<li><a href="http://life.renren.com">人人生活</a></li>
+<li><a href="http://xiaozu.renren.com/">人人小组</a></li>
+<li><a href="http://name.renren.com">同名同姓</a></li>
+<li><a href="http://school.renren.com/allpages.html">校园百科</a></li>
+<li><a href="http://school.renren.com/daxue/">大学百科</a></li>
+<li><a href="http://life.renren.com/hot">人人热点</a></li>
+<li><a href="http://zhan.renren.com/">人人小站</a></li>
+<li><a href="http://j.renren.com/">人人逛街</a></li>
+<li><a href="http://xiaozhao.renren.com/">人人校招</a></li>
+<li><a href="http://gaokao.renren.com/">人人高考</a></li>
+<li><a href="http://chewen.com/">车问网</a></li>
+<li><a href="http://geek.renren.com">开发者大赛</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div id="topbar"></div><div id="header"><div id="navBar" class="site-nav rr">
+<div class="navigation-wrapper">
+<div class="navigation navigation-new clearfix">
+<div id="logo2"><h1>
+<a title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏" href="http://www.renren.com"><img width="160" height="31" src="http://s.xnimg.cn/imgpro/v6/logo.png" title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏" alt="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏">
+</a>
+</h1>
+</div>                  
+<div class="nav-body clearfix"><div class="nav-other"><div class="menu"><div class="menu-title">
+<strong>
+<a id="reg_link" title="注册" stats="homenav_reg" href="http://wwv.renren.com/xn.do?ss=10113&amp;rt=27">注册</a>
+</strong>
+</div>
+</div>
+<div class="menu">
+<div class="menu-title">
+<strong>
+<a title="登录" stats="homenav_login" href="http://www.renren.com/">登录</a>
+</strong>
+</div>
+</div>
+<div class="menu"><div class="menu-title">
+<strong>
+<a title="帮助" stats="homenav_help" href="http://support.renren.com/helpcenter">帮助</a>
+</strong>
+</div>
+</div>
+<div class="menu">
+<div class="menu-title">
+<strong>
+<a title="给我们提建议" stats="homenav_suggest" href="http://support.renren.com/link/suggest">给我们提建议</a>
+</strong>
+</div>
+</div>
+<div class="menu last">
+<div class="menu-title" stats="homenav_more" id="moreWeb"><a href="#" onclick="this.blur();">更多</a></div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="full-page-holder">
+
+<div class="clearfix" id="seoTopContainer"></div><div class="full-page has-reg-bar clearfix"><div class="titletabs clearfix">
+<ul class="nav-tabs Third">
+<li class="title-share">
+<a target="_blank" href="http://share.renren.com">分享</a>
+</li>
+<li class="angleright"></li>
+<li>
+<a target="_blank" href="http://share.renren.com/videolist/0">
+<span>热门视频</span>
+</a>
+</li>
+<li class="angleright"></li>
+<li>
+<span>
+
+
+
+
+
+
+
+谁能告诉我这是毛片还是MV啊?韩国的妹子们真是奔放啊！对于这种越来越没有节操的行为！...</span>
+</li>
+</ul>
+<!--<div class="title-name title-share">
+<a href="http://share.renren.com" onclick="shareLog('video', 'click', 3)">分享</a>
+</div>-->
+</div>
+<div class="video_bigbox" data-wiki="" ><h3 class="video-title">谁能告诉我这是毛片还是MV啊?韩国的妹子们真是奔放啊！对于这种越来越没有节操的行为！我只能说：放马过来吧！Stella《Marionette》未删减版曝光！</h3>
+<div class="text-article">
+<div class="content-body">
+<div id="sharevideo" style="padding: 0;">
+<img class="videoimg" src="http://v3.pfs.56img.com/images/14/5/r561139068i56olo56i56.com_139239511689hd.jpg" alt="1.2;http://player.56.com/renrenshare_MTA2NTY4Njc0.swf/1030_xiaosanna.swf" /></div>
+</div></div>
+<div class="share-source share-from">
+<span class="float-left">来自：<a href="http://www.56.com/u69/v_MTA2NTY4Njc0.html/1030_xiaosanna.html" target="_blank" style="color: #666666" onclick="shareLog('video', 'click', 3)" rel="nofollow">
+
+
+
+
+    
+
+
+http://www.56.com/u69/v_MTA2NTY4Njc0.html/1030_...</a></span>
+<span class="share-operations share-operations-nologin">
+<a class="share-btn" href="javascript:showReg(0);" onclick="shareLog('video', 'comment', 502)" rel="nofollow">
+<span class="icon-reply">评论</span>
+</a>
+<a class="share-btn" href="javascript:showReg(0);" onclick="shareLog('video', 'like', 501)" rel="nofollow">
+<span class="icon-ilike">赞</span>
+</a>
+<a class="share-btn" href="javascript:showReg(0);" onclick="shareLog('video', 'share', 503)" rel="nofollow">
+<span class="icon-share share_new">分享</span>
+</a>
+</span>
+</div>
+<div class="floor_wrapper clearfix">
+<h4 class="clearfix">分享这个视频的人喜欢<a class="float-right" target="_blank" href="http://share.renren.com/videolist/0" onclick="shareLog('video', 'click', 504)">查看更多&raquo;</a></h4>
+<div class="rollphotos">
+<div class=blk_29>
+<ul class="Cont" id="ISL_Cont_1">
+<li class="box2">
+<div class="video_wrapper">
+<a title="太有才了！几个女音乐家的乐器大乱斗！赞爆了！这绝对是骨灰级音乐家大乱斗！！" target="_blank" class="video_min" href="http://share.renren.com/share/349726993/17205370437" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="太有才了！几个女音乐家的乐器大乱斗！赞爆了！这绝对是骨灰级音乐家大乱斗！！" alt="太有才了！几个女音乐家的乐器大乱斗！赞爆了！这绝对是骨灰级音乐家大乱斗！！" src="http://fmn.rrimg.com/fmn063/20140508/1050/p/m3w110h80q92lt_large_Qn7V_71640000744a1191.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/349726993/17205370437" target=_blank onclick="shareLog('video', 'click', 504)">太有才了！几个女音乐家的乐器大乱斗！赞爆了！这绝对是骨灰级音乐家大乱斗！！</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="耐克最新创意广告 随意变身成各种球星！！叼炸！！各种惊喜！！——这条耐克广告三天内的youtube播放已经超过三百万。。。。出镜的球星你能认全吗？" target="_blank" class="video_min" href="http://share.renren.com/share/403898448/17211349088" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="耐克最新创意广告 随意变身成各种球星！！叼炸！！各种惊喜！！——这条耐克广告三天内的youtube播放已经超过三百万。。。。出镜的球星你能认全吗？" alt="耐克最新创意广告 随意变身成各种球星！！叼炸！！各种惊喜！！——这条耐克广告三天内的youtube播放已经超过三百万。。。。出镜的球星你能认全吗？" src="http://fmn.rrimg.com/fmn059/20140506/1120/p/m3w110h80q92lt_large_FXae_71640000324d1191.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/403898448/17211349088" target=_blank onclick="shareLog('video', 'click', 504)">耐克最新创意广告 随意变身成各种球星！！叼炸！！各种惊喜！！——这条耐克广告三天内的youtube播放已经超过三百万。。。。出镜的球星你能认全吗？</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="小学生爆笑采访：我会用劫、上单盲僧秀操作！我的天呀~ 上单盲僧秀操作, 我还只会用劫秀操作呢, 他都会盲僧了TAT~在小学生眼里我们都弱爆了_(:з」∠)_" target="_blank" class="video_min" href="http://share.renren.com/share/403471823/17208158510" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="小学生爆笑采访：我会用劫、上单盲僧秀操作！我的天呀~ 上单盲僧秀操作, 我还只会用劫秀操作呢, 他都会盲僧了TAT~在小学生眼里我们都弱爆了_(:з」∠)_" alt="小学生爆笑采访：我会用劫、上单盲僧秀操作！我的天呀~ 上单盲僧秀操作, 我还只会用劫秀操作呢, 他都会盲僧了TAT~在小学生眼里我们都弱爆了_(:з」∠)_" src="http://fmn.rrimg.com/fmn062/20140505/1055/p/m3w110h80q92lt_large_61gQ_25450000232d118f.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/403471823/17208158510" target=_blank onclick="shareLog('video', 'click', 504)">小学生爆笑采访：我会用劫、上单盲僧秀操作！我的天呀~ 上单盲僧秀操作, 我还只会用劫秀操作呢, 他都会盲僧了TAT~在小学生眼里我们都弱爆了_(:з」∠)_</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="【《飞鲨》宣传片】舰载机训练震撼画面大公开！甲板滑跃起飞、双机编队、空中大过载翻转动作，全角度呈现航母舰载机的训练实况。画面完全可以媲美好莱坞大片！深深的震撼到了！！必须点赞！" target="_blank" class="video_min" href="http://share.renren.com/share/421695480/17185017460?from=0101060302" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="【《飞鲨》宣传片】舰载机训练震撼画面大公开！甲板滑跃起飞、双机编队、空中大过载翻转动作，全角度呈现航母舰载机的训练实况。画面完全可以媲美好莱坞大片！深深的震撼到了！！必须点赞！" alt="【《飞鲨》宣传片】舰载机训练震撼画面大公开！甲板滑跃起飞、双机编队、空中大过载翻转动作，全角度呈现航母舰载机的训练实况。画面完全可以媲美好莱坞大片！深深的震撼到了！！必须点赞！" src="http://fmn.rrimg.com/fmn057/20140430/1340/p/m3w110h80q92lt_large_JuF0_0b79000051f1125f.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/421695480/17185017460?from=0101060302" target=_blank onclick="shareLog('video', 'click', 504)">【《飞鲨》宣传片】舰载机训练震撼画面大公开！甲板滑跃起飞、双机编队、空中大过载翻转动作，全角度呈现航母舰载机的训练实况。画面完全可以媲美好莱坞大片！深深的震撼到了！！必须点赞！</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="太有爱了！汪星人有特别的劝架技能！当老妈拿着拖鞋要打小BB的时候，于是汪星人就上去劝架了……哈哈哈，养狗就要养这样的~关键时候能帮你，管用！" target="_blank" class="video_min" href="http://share.renren.com/share/403469898/17158969942" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="太有爱了！汪星人有特别的劝架技能！当老妈拿着拖鞋要打小BB的时候，于是汪星人就上去劝架了……哈哈哈，养狗就要养这样的~关键时候能帮你，管用！" alt="太有爱了！汪星人有特别的劝架技能！当老妈拿着拖鞋要打小BB的时候，于是汪星人就上去劝架了……哈哈哈，养狗就要养这样的~关键时候能帮你，管用！" src="http://fmn.rrimg.com/fmn063/20140428/1110/p/m3w110h80q92lt_large_8wEH_695f0000033e118c.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/403469898/17158969942" target=_blank onclick="shareLog('video', 'click', 504)">太有爱了！汪星人有特别的劝架技能！当老妈拿着拖鞋要打小BB的时候，于是汪星人就上去劝架了……哈哈哈，养狗就要养这样的~关键时候能帮你，管用！</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="【世界上最辛苦的工作】一个公司弄了一场假招聘，视频面试所有应聘者。这份工作辛苦劳累，没休假，没薪水，但却有数十亿人在担任这个职位…看到后面，果断泪奔~“Mum，I love U”" target="_blank" class="video_min" href="http://share.renren.com/share/421235932/17171058899" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="【世界上最辛苦的工作】一个公司弄了一场假招聘，视频面试所有应聘者。这份工作辛苦劳累，没休假，没薪水，但却有数十亿人在担任这个职位…看到后面，果断泪奔~“Mum，I love U”" alt="【世界上最辛苦的工作】一个公司弄了一场假招聘，视频面试所有应聘者。这份工作辛苦劳累，没休假，没薪水，但却有数十亿人在担任这个职位…看到后面，果断泪奔~“Mum，I love U”" src="http://fmn.rrimg.com/fmn060/20140421/1140/p/m3w110h80q92lt_large_Smj3_1fc1000095c21191.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/421235932/17171058899" target=_blank onclick="shareLog('video', 'click', 504)">【世界上最辛苦的工作】一个公司弄了一场假招聘，视频面试所有应聘者。这份工作辛苦劳累，没休假，没薪水，但却有数十亿人在担任这个职位…看到后面，果断泪奔~“Mum，I love U”</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="萌爆了！！两个小萝莉的柔道比赛！这么的恶意卖萌简直犯规啊(^o^)/~说好的你推倒我两次，我推倒你两次的呢" target="_blank" class="video_min" href="http://share.renren.com/share/403469898/17137074551" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="萌爆了！！两个小萝莉的柔道比赛！这么的恶意卖萌简直犯规啊(^o^)/~说好的你推倒我两次，我推倒你两次的呢" alt="萌爆了！！两个小萝莉的柔道比赛！这么的恶意卖萌简直犯规啊(^o^)/~说好的你推倒我两次，我推倒你两次的呢" src="http://fmn.rrimg.com/fmn061/20140418/1055/p/m3w110h80q92lt_large_7gbn_1d7c00001c45125d.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/403469898/17137074551" target=_blank onclick="shareLog('video', 'click', 504)">萌爆了！！两个小萝莉的柔道比赛！这么的恶意卖萌简直犯规啊(^o^)/~说好的你推倒我两次，我推倒你两次的呢</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="丧心病狂魔术师给狗变魔术第二集！还记得那个超贱魔术师把狗食物变没的故事吗？现在居然出了第二集。。。看到最后真心笑了！大杜宾可不是好骗的惹！！！哈哈哈~" target="_blank" class="video_min" href="http://share.renren.com/share/406776768/17119723664" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="丧心病狂魔术师给狗变魔术第二集！还记得那个超贱魔术师把狗食物变没的故事吗？现在居然出了第二集。。。看到最后真心笑了！大杜宾可不是好骗的惹！！！哈哈哈~" alt="丧心病狂魔术师给狗变魔术第二集！还记得那个超贱魔术师把狗食物变没的故事吗？现在居然出了第二集。。。看到最后真心笑了！大杜宾可不是好骗的惹！！！哈哈哈~" src="http://fmn.rrimg.com/fmn064/20140417/1050/p/m3w110h80q92lt_large_lV8Z_36cc000013f1125d.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/406776768/17119723664" target=_blank onclick="shareLog('video', 'click', 504)">丧心病狂魔术师给狗变魔术第二集！还记得那个超贱魔术师把狗食物变没的故事吗？现在居然出了第二集。。。看到最后真心笑了！大杜宾可不是好骗的惹！！！哈哈哈~</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="燃爆了！90年代《直到世界尽头》原唱现场版！如果你看过2012版，你还记得那个一身黑衣带帽子的胖大叔吗？这是同一个人！他曾是个美少年啊！泪..还有《圣斗士星矢》《进击的巨人》现场版！全程高能" target="_blank" class="video_min" href="http://share.renren.com/share/279994843/17140925011?from=0101060302" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="燃爆了！90年代《直到世界尽头》原唱现场版！如果你看过2012版，你还记得那个一身黑衣带帽子的胖大叔吗？这是同一个人！他曾是个美少年啊！泪..还有《圣斗士星矢》《进击的巨人》现场版！全程高能" alt="燃爆了！90年代《直到世界尽头》原唱现场版！如果你看过2012版，你还记得那个一身黑衣带帽子的胖大叔吗？这是同一个人！他曾是个美少年啊！泪..还有《圣斗士星矢》《进击的巨人》现场版！全程高能" src="http://fmn.rrimg.com/fmn065/20140416/1120/p/m3w110h80q92lt_large_SKGE_078800001a171190.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/279994843/17140925011?from=0101060302" target=_blank onclick="shareLog('video', 'click', 504)">燃爆了！90年代《直到世界尽头》原唱现场版！如果你看过2012版，你还记得那个一身黑衣带帽子的胖大叔吗？这是同一个人！他曾是个美少年啊！泪..还有《圣斗士星矢》《进击的巨人》现场版！全程高能</a></p>
+</li>
+<li class="box2">
+<div class="video_wrapper">
+<a title="这些汪星人是要成精了吗？！为了好吃的，你们还有什么不能干哒？！Σ(･ω･ﾉ)ﾉ" target="_blank" class="video_min" href="http://share.renren.com/share/420943701/17144245350" onclick="shareLog('video', 'click', 504)"><img width="110" height="80" title="这些汪星人是要成精了吗？！为了好吃的，你们还有什么不能干哒？！Σ(･ω･ﾉ)ﾉ" alt="这些汪星人是要成精了吗？！为了好吃的，你们还有什么不能干哒？！Σ(･ω･ﾉ)ﾉ" src="http://fmn.rrimg.com/fmn065/20140415/1120/p/m3w110h80q92lt_large_90xN_6d7800011cb31190.jpg"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+</div>
+</div>
+<p><a href="http://share.renren.com/share/420943701/17144245350" target=_blank onclick="shareLog('video', 'click', 504)">这些汪星人是要成精了吗？！为了好吃的，你们还有什么不能干哒？！Σ(･ω･ﾉ)ﾉ</a></p>
+</li>
+</ul><div class="LeftBotton control" id="LeftArr" style="display: none;"></div>
+<div class="RightBotton control" id="RightArr" style="display: none;"></div>
+</div>
+</div>
+</div>
+
+<div id="friendCmtsList"><div id="boxcont_friendCmts_16955154145"><div class="statuscmtlist statuscmtlist-large" id="friendCmts_comment_list"><div class="statuscmtitem clearfix" id="friendCmts_comment_173537937961881600" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn121/20110725/1540/h_tiny_s9CH_69500001b9e32f75.jpg)" namecard="600531420" target="_blank" title="虞娅囡" href="http://name.renren.com/600531420"></a><p class="replybody">
+<a href="http://name.renren.com/600531420" namecard="600531420" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">虞娅囡</a>:
+<span class="replycontent">Stella《Marionette》未删减版曝光！<img src='http://a.xnimg.cn/imgpro/emotions/tie/18.gif' alt='偷笑'  /><img src='http://a.xnimg.cn/imgpro/emotions/tie/11.gif?ver=1' alt='流口水'  /><img src='http://a.xnimg.cn/imgpro/emotions/tie/11.gif?ver=1' alt='流口水'  /></span>
+<br />
+<span class="time">2014-02-17 15:10</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537938410588160" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20140812/2220/tiny_qdnb_54510000e97e1986.jpg)" namecard="325498256" target="_blank" title="李翊朝" href="http://name.renren.com/325498256"></a><p class="replybody">
+<a href="http://name.renren.com/325498256" namecard="325498256" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">李翊朝</a>:
+<span class="replycontent"><a href='http://www.renren.com/g/515936646' namecard='515936646' target='_blank'>@陆任贾↑Arrow</a> </span>
+<br />
+<span class="time">2014-02-17 15:11</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537939674938368" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn221/20090920/0830/tiny_NcXc_7486d019116.jpg)" namecard="46510589" target="_blank" title="李静" href="http://name.renren.com/46510589"></a><p class="replybody">
+<a href="http://name.renren.com/46510589" namecard="46510589" target="_blank" title="李静" >李静</a>:
+<span class="replycontent">你得明白 这本来就是一圈丑女……整了型还是丑女的内里换不来白富美</span>
+<br />
+<span class="time">2014-02-17 15:13</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537940013094912" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20140509/0810/tiny_NZvz_dee4000035f7195a.jpg)" namecard="515936646" target="_blank" title="陆任贾E100" href="http://name.renren.com/515936646"></a><p class="replybody">
+<a href="http://name.renren.com/515936646" namecard="515936646" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">陆任贾E100</a>:
+<span class="replycontent">回复李翊朝: 完全不是我喜欢的风格。</span>
+<br />
+<span class="time">2014-02-17 15:14</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537940411814912" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20100424/2010/tiny_EKgr_148730o019118.jpg)" namecard="235224557" target="_blank" title="孙霄" href="http://name.renren.com/235224557"></a><p class="replybody">
+<a href="http://name.renren.com/235224557" namecard="235224557" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">孙霄</a>:
+<span class="replycontent">毛片要是这样。。。那估计也就没人看毛片了。。</span>
+<br />
+<span class="time">2014-02-17 15:15</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537940839885824" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20140812/1110/h_tiny_DuyV_8d97000340181986.jpg)" namecard="253788789" target="_blank" title="陈舒文" href="http://name.renren.com/253788789"></a><p class="replybody">
+<a href="http://name.renren.com/253788789" namecard="253788789" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">陈舒文</a>:
+<span class="replycontent"><a href='http://www.renren.com/g/229188749' namecard='229188749' target='_blank'>@王超群</a> 这个mv不错的</span>
+<br />
+<span class="time">2014-02-17 15:16</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537940902875136" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20140812/2220/tiny_qdnb_54510000e97e1986.jpg)" namecard="325498256" target="_blank" title="李翊朝" href="http://name.renren.com/325498256"></a><p class="replybody">
+<a href="http://name.renren.com/325498256" namecard="325498256" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">李翊朝</a>:
+<span class="replycontent">回复陆任贾↑Arrow:看了吗 为什么不中</span>
+<br />
+<span class="time">2014-02-17 15:16</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537941119079424" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20140512/1705/h_tiny_Q6V6_27d70000ba201986.jpg)" namecard="224121671" target="_blank" title="王家佳" href="http://name.renren.com/224121671"></a><p class="replybody">
+<a href="http://name.renren.com/224121671" namecard="224121671" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">王家佳</a>:
+<span class="replycontent">是stellar ！不是stella！</span>
+<br />
+<span class="time">2014-02-17 15:16</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537941538836480" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn221/20130602/2010/h_tiny_VOyM_3ae100000083111a.jpg)" namecard="237871381" target="_blank" title="胡越" href="http://name.renren.com/237871381"></a><p class="replybody">
+<a href="http://name.renren.com/237871381" namecard="237871381" target="_blank" title="胡越" >胡越</a>:
+<span class="replycontent">我去！</span>
+<br />
+<span class="time">2014-02-17 15:17</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537941785197569" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20130515/1530/tiny_X6pt_f91b00032b6f111a.jpg)" namecard="250576380" target="_blank" title="郭瑞" href="http://name.renren.com/250576380"></a><p class="replybody">
+<a href="http://name.renren.com/250576380" namecard="250576380" target="_blank" title="郭瑞" >郭瑞</a>:
+<span class="replycontent">nnd，好多年看集体舞没感觉了</span>
+<br />
+<span class="time">2014-02-17 15:18</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537943752861696" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn221/20140429/1945/h_tiny_RJk7_e09f00000889195a.jpg)" namecard="361297619" target="_blank" title="赵梓馨" href="http://name.renren.com/361297619"></a><p class="replybody">
+<a href="http://name.renren.com/361297619" namecard="361297619" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">赵梓馨</a>:
+<span class="replycontent">哈哈</span>
+<br />
+<span class="time">2014-02-17 15:22</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537943887908864" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn221/20140429/1945/h_tiny_RJk7_e09f00000889195a.jpg)" namecard="361297619" target="_blank" title="赵梓馨" href="http://name.renren.com/361297619"></a><p class="replybody">
+<a href="http://name.renren.com/361297619" namecard="361297619" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">赵梓馨</a>:
+<span class="replycontent">哈4</span>
+<br />
+<span class="time">2014-02-17 15:22</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537951566893056" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20140531/1305/h_tiny_E443_27990001b97a1986.jpg)" namecard="503627291" target="_blank" title="张恩豪" href="http://name.renren.com/503627291"></a><p class="replybody">
+<a href="http://name.renren.com/503627291" namecard="503627291" target="_blank" title="张恩豪" >张恩豪</a>:
+<span class="replycontent">早看了</span>
+<br />
+<span class="time">2014-02-17 15:37</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537953451109376" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn121/20130215/1115/tiny_J1ZT_3fa30000fe35113e.jpg)" namecard="251879302" target="_blank" title="滕跃234" href="http://name.renren.com/251879302"></a><p class="replybody">
+<a href="http://name.renren.com/251879302" namecard="251879302" target="_blank" title="滕跃234" >滕跃234</a>:
+<span class="replycontent">这几个大姐不去日本可惜了</span>
+<br />
+<span class="time">2014-02-17 15:41</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537972104248320" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20140418/1810/tiny_dWd2_3aa000008c3b111a.jpg)" namecard="248552532" target="_blank" title="蒋凯平" href="http://name.renren.com/248552532"></a><p class="replybody">
+<a href="http://name.renren.com/248552532" namecard="248552532" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">蒋凯平</a>:
+<span class="replycontent">对于这种不知廉耻的骚货们我只想说一句：请联系我~</span>
+<br />
+<span class="time">2014-02-17 16:19</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537974980986880" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn221/20130615/1740/tiny_PkKo_f94b00046fcc111a.jpg)" namecard="332254055" target="_blank" title="吴彦成" href="http://name.renren.com/332254055"></a><p class="replybody">
+<a href="http://name.renren.com/332254055" namecard="332254055" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">吴彦成</a>:
+<span class="replycontent"><a href='http://www.renren.com/g/327618484' namecard='327618484' target='_blank'>@孔中亮</a> </span>
+<br />
+<span class="time">2014-02-17 16:25</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537978124878848" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20140618/2055/tiny_HGCb_54ba0000059e1986.jpg)" namecard="327462675" target="_blank" title="景德 Jade" href="http://name.renren.com/327462675"></a><p class="replybody">
+<a href="http://name.renren.com/327462675" namecard="327462675" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">景德 Jade</a>:
+<span class="replycontent"><a href='http://www.renren.com/g/553302461' namecard='553302461' target='_blank'>@田正华</a> </span>
+<br />
+<span class="time">2014-02-17 16:32</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537978331449344" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20140618/2055/tiny_HGCb_54ba0000059e1986.jpg)" namecard="327462675" target="_blank" title="景德 Jade" href="http://name.renren.com/327462675"></a><p class="replybody">
+<a href="http://name.renren.com/327462675" namecard="327462675" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">景德 Jade</a>:
+<span class="replycontent"><a href='http://www.renren.com/g/369980221' namecard='369980221' target='_blank'>@李二辉</a> </span>
+<br />
+<span class="time">2014-02-17 16:32</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537980994065408" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn121/20140304/2125/h_tiny_6Zkk_88fd0004829f113e.jpg)" namecard="235494074" target="_blank" title="张赛丰" href="http://name.renren.com/235494074"></a><p class="replybody">
+<a href="http://name.renren.com/235494074" namecard="235494074" target="_blank" title="张赛丰" >张赛丰</a>:
+<span class="replycontent">岛国有AV棒子国有MV，我天朝人民可以不定期换口味了</span>
+<br />
+<span class="time">2014-02-17 16:37</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537984629721088" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20140610/1550/h_tiny_hPI3_0eac00014785195a.jpg)" namecard="327618484" target="_blank" title="孔中亮" href="http://name.renren.com/327618484"></a><p class="replybody">
+<a href="http://name.renren.com/327618484" namecard="327618484" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">孔中亮</a>:
+<span class="replycontent">回复吴彦成: 够意思<img src='http://a.xnimg.cn/imgpro/emotions/tie/11.gif?ver=1' alt='流口水'  /><img src='http://a.xnimg.cn/imgpro/emotions/tie/11.gif?ver=1' alt='流口水'  /><img src='http://a.xnimg.cn/imgpro/emotions/tie/11.gif?ver=1' alt='流口水'  />撸的素材</span>
+<br />
+<span class="time">2014-02-17 16:45</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537986527736832" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20140524/2050/h_tiny_8JbB_e0a500016417195a.jpg)" namecard="746367265" target="_blank" title="王可" href="http://name.renren.com/746367265"></a><p class="replybody">
+<a href="http://name.renren.com/746367265" namecard="746367265" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">王可</a>:
+<span class="replycontent"><a href='http://www.renren.com/g/334522486' namecard='334522486' target='_blank'>@魏泽辉</a> <img src='http://a.xnimg.cn/imgpro/icons/statusface/1.gif?ver=1' alt='微笑'  /></span>
+<br />
+<span class="time">2014-02-17 16:49</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537988935173120" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20120618/1015/tiny_N5og_38230001d0631376.jpg)" namecard="259212380" target="_blank" title="董峥" href="http://name.renren.com/259212380"></a><p class="replybody">
+<a href="http://name.renren.com/259212380" namecard="259212380" target="_blank" title="董峥" >董峥</a>:
+<span class="replycontent">主要人家有着和中国女孩追求的病态瘦腿不一样的美腿</span>
+<br />
+<span class="time">2014-02-17 16:53</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173537993759954944" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20140524/2050/h_tiny_8JbB_e0a500016417195a.jpg)" namecard="746367265" target="_blank" title="王可" href="http://name.renren.com/746367265"></a><p class="replybody">
+<a href="http://name.renren.com/746367265" namecard="746367265" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">王可</a>:
+<span class="replycontent"><a href='http://www.renren.com/g/333548956' namecard='333548956' target='_blank'>@康佳洺✖Knick</a> </span>
+<br />
+<span class="time">2014-02-17 17:03</span></p>
+</div>
+<div class="statuscmtitem clearfix" id="friendCmts_comment_173538043142893568" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn111/20090622/0920/tiny_HBXl_120008e204236.jpg)" namecard="257265172" target="_blank" title="李建立" href="http://name.renren.com/257265172"></a><p class="replybody">
+<a href="http://name.renren.com/257265172" namecard="257265172" target="_blank" title="李建立" >李建立</a>:
+<span class="replycontent"><a href='http://www.renren.com/g/318253377' namecard='318253377' target='_blank'>@翟飞</a> </span>
+<br />
+<span class="time">2014-02-17 18:44</span></p>
+</div>
+	</div>
+</div>
+</div><input type="hidden" id="isAdmin" value="" />
+<div class="nologin_reply video_nologin_reply"><img width="50" height="50" src="http://s.xnimg.cn/actimg/schoolv2/img/d_default.gif" alt="guest">
+<div class="reply">
+<textarea class="cmtbody" placeholder="请注册/登录进行评论" name="comment"></textarea>
+</div>
+<div class="reply-nav clearfix">
+<a class="input-button float-right" href="javascript:showReg(0);" onclick="shareLog('video', 'click', 505)">发表评论</a>
+<label><input type="checkbox">同时分享给好友</label>
+<label><input type="checkbox" checked="true">同时评论给原作者</label>
+</div>
+</div>
+</div>
+<div class="sidebar vedioterminal">
+<!--<div class="returelist">
+<a href="http://share.renren.com" onclick="shareLog('index', 'click', 5)">返回分享首页</a>
+</div>-->
+
+<!-- 和注册弹层id重复，删除右侧的 --><!-- 
+<div class="shares-list" id="hotsharelist"><h4>热门分享推荐</h4>
+<div class="shares-item">
+<p class="shares-content"><span class="shares-video"> <img src="http://v5.pfs.56img.com/images/19/21/rr-zgkyhwbynhi56olo56i56.com_sc_14071339077hd.jpg" width="90px" height="65px" /> 
+<a href="http://share.renren.com/share/405662472/17544472142" onclick="shareLog('video', 'click', 5)">
+<span>点击播放</span></a> </span></p>
+<p class="shares-title">
+<a href="http://share.renren.com/share/405662472/17544472142" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+
+    
+
+
+看CJ上开启无节操采访，问showgirl和女朋友你要哪个，全面开启拆... </a></p>
+</div>
+<div class="shares-item">
+<p class="shares-content"><span class="shares-video"> <img src="http://v5.pfs.56img.com/images/2/13/xl-pcinsslhuoi56olo56i56.com_sc_140720429816hd.jpg" width="90px" height="65px" /> 
+<a href="http://share.renren.com/share/349726993/17551245796" onclick="shareLog('video', 'click', 5)">
+<span>点击播放</span></a> </span></p>
+<p class="shares-title">
+<a href="http://share.renren.com/share/349726993/17551245796" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+
+    
+
+
+卸下伪装做最真实的自己。模特Ruby Rose中性的打扮展示了她对自... </a></p>
+</div>
+<div class="shares-item">
+<p class="shares-content"><span class="shares-video"> <img src="http://v5.pfs.56img.com/images/19/27/avo6666i56olo56i56.com_sc_140754349014hd.jpg" width="90px" height="65px" /> 
+<a href="http://share.renren.com/share/435556875/17557747974" onclick="shareLog('video', 'click', 5)">
+<span>点击播放</span></a> </span></p>
+<p class="shares-title">
+<a href="http://share.renren.com/share/435556875/17557747974" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+
+    
+
+
+神配音！毁西游记之《猴子坑爹记》！经典新配音，相似度极高！唐... </a></p>
+</div>
+<div class="shares-item">
+<p class="shares-content"><span class="shares-video"> <img src="http://v5.pfs.56img.com/images/20/13/siwenpizi1i56olo56i56.com_14064715476hd.jpg" width="90px" height="65px" /> 
+<a href="http://share.renren.com/share/699070439/17544617023" onclick="shareLog('video', 'click', 5)">
+<span>点击播放</span></a> </span></p>
+<p class="shares-title">
+<a href="http://share.renren.com/share/699070439/17544617023" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+
+    
+
+
+司文痞子：天津妞犀利吐槽白衣校花和大长腿！！！那个天杀的！！... </a></p>
+</div>
+<div class="shares-item">
+<p class="shares-content"><span class="shares-video"> <img src="http://v5.pfs.56img.com/images/20/0/yykrydyi56olo56i56.com_140738038798hd.jpg" width="90px" height="65px" /> 
+<a href="http://share.renren.com/share/235081012/17550086054" onclick="shareLog('video', 'click', 5)">
+<span>点击播放</span></a> </span></p>
+<p class="shares-title">
+<a href="http://share.renren.com/share/235081012/17550086054" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+
+    
+
+
+太流弊了!像的没话说~~网友神制作最具品质群星模仿20位大腕合唱... </a></p>
+</div>
+</div> -->
+<div class="nav-tabs"><ul class="tabs">
+<li id="youliketab">
+<a href="#nogo" onfocus="this.blur()">猜你喜欢</a>
+</li>
+<li id="hotshareTab">
+<a href="#nogo" onfocus="this.blur()">热门分享</a>
+</li>
+</ul>
+</div>
+<ul class="shares-list" id="youlikelist">
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v19.56img.com/images/23/29/r244523413i56olo56i56.com_13558114623hd.jpg" width="90px" height="65px" />
+<a target="_blank" title="信息量大太了！！口味偏轻者勿看！智商不高者勿看！合租妹子务必细看！屌丝男偷听吸毒女室友的淋浴声撸管，直到女室友带回一个女老公说要搬离，撸管男疯狂地拿起了锤子…到底是习惯还是变态？是爱还是病？" href="http://share.renren.com/share/236003530/15196174231"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/236003530/15196174231">
+
+
+
+
+    
+
+
+信息量大太了！！口味偏轻者勿看！智商不高者勿看！合租妹子务必...</a>
+</li>
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v19.56img.com/images/20/9/memoryxxiaoi56olo56i56.com_134571302097hd.jpg" width="90px" height="65px" />
+<a target="_blank" title="我的个天啊！这太TM震撼了，整个把我看傻眼了。这群妹子太厉害了！这是哪个学校啊！！一晚上100万的浏览量，果然不是盖的。。。不得不服啊！！！" href="http://share.renren.com/share/238624110/15196018332"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/238624110/15196018332">
+
+
+
+
+    
+
+
+我的个天啊！这太TM震撼了，整个把我看傻眼了。这群妹子太厉害了...</a>
+</li>
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v19.56img.com/images/4/20/siniangwi56olo56i56.com_sc_135651105296hd.jpg" width="90px" height="65px" />
+<a target="_blank" title="【男人最希望收到的礼物！】贱贱的解说，完爆男生们的心愿！男人最希望收到什么样的礼物，你懂的。。。3:40节操掉光光。。" href="http://share.renren.com/share/246857847/15195979718"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/246857847/15195979718">
+
+
+
+
+    
+
+
+【男人最希望收到的礼物！】贱贱的解说，完爆男生们的心愿！男人...</a>
+</li>
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v19.56img.com/images/13/22/siniangwi56olo56i56.com_sc_135781652598hd.jpg" width="90px" height="65px" />
+<a target="_blank" title="关于《英雄联盟》39 件事，铁粉必看！玩了这么久原来还有这些不知道的东西！玩LOL的  妹子真心崇拜~！！" href="http://share.renren.com/share/268583266/15392186276"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/268583266/15392186276">
+
+
+
+
+    
+
+
+关于《英雄联盟》39 件事，铁粉必看！玩了这么久原来还有这些不...</a>
+</li>
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v155.56img.com/images/11/14/r481654231i56olo56i56.com_sc_135750976446hd.jpg" width="90px" height="65px" />
+<a target="_blank" title="这个漂亮的妹子要火啊！长得本来就美，而且化妆简直绝了！芭比娃娃妆，韩国最新最火化妆达人，化妆秘诀视频~女生快来学习吧！" href="http://share.renren.com/share/272836854/15206074816"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/272836854/15206074816">
+
+
+
+
+    
+
+
+这个漂亮的妹子要火啊！长得本来就美，而且化妆简直绝了！芭比娃...</a>
+</li>
+<div class="show-more"><a rel="nofollow" href="javascript:showReg(0);">显示更多&raquo;</a>
+</div>
+</ul>
+<ul class="shares-list" id="hotsharelist">
+<!-- 只显示2个,视频，现在只取视频 -->
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v5.pfs.56img.com/images/19/21/rr-zgkyhwbynhi56olo56i56.com_sc_14071339077hd.jpg" width="90px" height="65px" />
+<a title="看CJ上开启无节操采访，问showgirl和女朋友你要哪个，全面开启拆情侣模式！更有无良主持要求摸showgirl胸部，看姑娘们如何反击！！简直笑疯了！！" target="_blank" href="http://share.renren.com/share/405662472/17544472142" onclick="shareLog('video', 'click', 5)"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/405662472/17544472142" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+    
+
+
+看CJ上开启无节操采访，问showgirl和女朋友你要哪个，全面开启拆...</a>
+</li>
+<!-- 只显示2个,视频，现在只取视频 -->
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v5.pfs.56img.com/images/2/13/xl-pcinsslhuoi56olo56i56.com_sc_140720429816hd.jpg" width="90px" height="65px" />
+<a title="卸下伪装做最真实的自己。模特Ruby Rose中性的打扮展示了她对自己身份的解释。剪去长发脱去高跟，洗去遮瑕露出花臂，穿上西装卷起裤脚，叼起香烟口无遮拦！极端的妖媚让人惶恐不安。" target="_blank" href="http://share.renren.com/share/349726993/17551245796" onclick="shareLog('video', 'click', 5)"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/349726993/17551245796" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+    
+
+
+卸下伪装做最真实的自己。模特Ruby Rose中性的打扮展示了她对自...</a>
+</li>
+<!-- 只显示2个,视频，现在只取视频 -->
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v5.pfs.56img.com/images/19/27/avo6666i56olo56i56.com_sc_140754349014hd.jpg" width="90px" height="65px" />
+<a title="神配音！毁西游记之《猴子坑爹记》！经典新配音，相似度极高！唐三角让孙悟坑变妹纸来耍耍，还说憋不住了？！这剧情信息量咋就这么大呢？脑洞太大该怎么补...哈哈~二师弟的配音最像了，你觉得呢？" target="_blank" href="http://share.renren.com/share/435556875/17557747974" onclick="shareLog('video', 'click', 5)"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/435556875/17557747974" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+    
+
+
+神配音！毁西游记之《猴子坑爹记》！经典新配音，相似度极高！唐...</a>
+</li>
+<!-- 只显示2个,视频，现在只取视频 -->
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v5.pfs.56img.com/images/20/13/siwenpizi1i56olo56i56.com_14064715476hd.jpg" width="90px" height="65px" />
+<a title="司文痞子：天津妞犀利吐槽白衣校花和大长腿！！！那个天杀的！！！鱼塘主和于妈都弱爆了！！！捂着我笑出来的八块腹肌，我觉得自己已经不需要健身教练了。。。" target="_blank" href="http://share.renren.com/share/699070439/17544617023" onclick="shareLog('video', 'click', 5)"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/699070439/17544617023" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+    
+
+
+司文痞子：天津妞犀利吐槽白衣校花和大长腿！！！那个天杀的！！...</a>
+</li>
+<!-- 只显示2个,视频，现在只取视频 -->
+<li class="shares-item clearfix">
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://v5.pfs.56img.com/images/20/0/yykrydyi56olo56i56.com_140738038798hd.jpg" width="90px" height="65px" />
+<a title="太流弊了!像的没话说~~网友神制作最具品质群星模仿20位大腕合唱《小苹果》~哈哈哈，羽泉那个真是像的不忍直视~ 为嘛杰伦哥那嘎达要那样唱捏？不像！差评！" target="_blank" href="http://share.renren.com/share/235081012/17550086054" onclick="shareLog('video', 'click', 5)"><span>点击播放</span></a>
+</span>
+</p>
+<a target="_blank" href="http://share.renren.com/share/235081012/17550086054" onclick="shareLog('video', 'click', 5)">
+
+
+
+
+    
+
+
+太流弊了!像的没话说~~网友神制作最具品质群星模仿20位大腕合唱...</a>
+</li>
+<a rel="nofollow" href="javascript:showReg(0);">显示更多&raquo;</a></ul>
+<script>
+var tabView = new XN.ui.tabView({
+selectedClass: 'selected'
+}).addTab({
+label: 'youliketab',
+active:true,
+content: 'youlikelist'
+});
+tabView.addTab({
+label: 'hotshareTab',
+active: false,
+content : 'hotsharelist'
+});
+</script>
+<div class="other_same_share">
+<h4 class="clearfix ">热门视频推荐<a href="#" target="_blank" class="changelist">换一换</a></h4>
+<ul class="shares-list other_list" id="baidulist">
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://fmn.rrimg.com/fmn062/20140818/1020/main_ZDWP_4939000070351190.jpg" width="110px" height="80px" />
+<a target="_blank" title="麦兜闯进世界杯" onclick="shareLog('video', 'click', 220)" href="http://baidu.ku6.com/kan/Te68?fr=renn" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" onclick="shareLog('video', 'click', 220)" title="麦兜闯进世界杯" href="http://baidu.ku6.com/kan/Te68?fr=renn">
+
+
+
+
+    
+
+
+麦兜闯进世界杯</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://fmn.rrimg.com/fmn065/20140818/1020/main_OMpY_704a00005d7d125d.jpg" width="110px" height="80px" />
+<a target="_blank" title="保定版《小苹果》！一个备胎的自我修养" onclick="shareLog('video', 'click', 220)" href="http://baidu.ku6.com/kan/TJDS?fr=renn" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" onclick="shareLog('video', 'click', 220)" title="保定版《小苹果》！一个备胎的自我修养" href="http://baidu.ku6.com/kan/TJDS?fr=renn">
+
+
+
+
+    
+
+
+保定版《小苹果》！一个备胎的自我修养</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://fmn.rrimg.com/fmn063/20140818/1020/main_9uHI_38a700018780125f.jpg" width="110px" height="80px" />
+<a target="_blank" title="老外整人恶作剧：忘记铅笔在哪儿的交警" onclick="shareLog('video', 'click', 220)" href="http://baidu.ku6.com/kan/T7W2?fr=renn" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" onclick="shareLog('video', 'click', 220)" title="老外整人恶作剧：忘记铅笔在哪儿的交警" href="http://baidu.ku6.com/kan/T7W2?fr=renn">
+
+
+
+
+    
+
+
+老外整人恶作剧：忘记铅笔在哪儿的交警</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://fmn.rrimg.com/fmn057/20140818/1020/main_W5Ia_68a6000028001191.jpg" width="110px" height="80px" />
+<a target="_blank" title="少女被男友以3万元卖至深山" onclick="shareLog('video', 'click', 220)" href="http://baidu.56.com/kan/0lFY?fr=renn" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" onclick="shareLog('video', 'click', 220)" title="少女被男友以3万元卖至深山" href="http://baidu.56.com/kan/0lFY?fr=renn">
+
+
+
+
+    
+
+
+少女被男友以3万元卖至深山</a></p>
+</li>
+</ul></div>
+<div class="nav-tabs top_share"><h4>分享热搜榜</h4>
+<ul class="tabs" style="float:right;">
+<li id="top_blog"><a href="#nogo" onfocus="this.blur()">日志</a></li>
+<li id="top_video"><a href="#nogo" onfocus="this.blur()">视频</a></li>
+<li id="top_img"><a href="#nogo" onfocus="this.blur()">相册</a></li>
+</ul>
+</div>
+<ul class="shares-list top_share_list" id="top_blog_list">
+<li class="share-item clearfix" style="margin-top:-10px; _margin-top: 0; background-color:#f8fbfd;">
+<p class="shares-item">
+<span class="rank no1">1</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 209)" title="我们的地址是团结路66号，我们的名字是乌鲁木齐6中，我们的哥哥是07年击败一中最强胥毅夺冠的高考状元林佳瑞！2012六中学弟学妹加油！我们是最棒的！" href="http://blog.renren.com/share/248879205/13319809300">
+
+
+
+
+    
+
+
+我们的地址是团结路66号，我们的名字是乌鲁木齐6中，我们的...</a></span></p>
+<div class="top_share_details" style="display:block;">
+
+<p class="float-right"><span class="share_link" title="热度">85</span><!--<span class="share_see">45678</span> --></p></div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank no2">2</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 209)" title="生日快乐 吉祥如意" href="http://blog.renren.com/share/221120111/13320978826">
+
+
+
+
+    
+
+
+生日快乐 吉祥如意</a></span></p>
+<div class="top_share_details" style="display:none;">
+
+<p class="float-right"><span class="share_link" title="热度">85</span><!--<span class="share_see">45678</span> --></p></div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank no3">3</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 209)" title="葛军去死" href="http://blog.renren.com/share/248227547/13332643306">
+
+
+
+
+    
+
+
+葛军去死</a></span></p>
+<div class="top_share_details" style="display:none;">
+
+<p class="float-right"><span class="share_link" title="热度">85</span><!--<span class="share_see">45678</span> --></p></div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank">4</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 209)" title="【神秘事件】监控实拍，某大学寝室男子 梦游跳楼死亡，以后我再也不敢睡觉了，什么时候梦游都不知道，死了也不知道？太可怕了！梦游…………" href="http://blog.renren.com/share/2063/13323963938">
+
+
+
+
+    
+
+
+【神秘事件】监控实拍，某大学寝室男子 梦游跳楼死亡，以后...</a></span></p>
+<div class="top_share_details" style="display:none;">
+
+<p class="float-right"><span class="share_link" title="热度">85</span><!--<span class="share_see">45678</span> --></p></div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank">5</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 209)" title="少壮院士邓中翰〈你关注过吗？〉" href="http://blog.renren.com/share/179706788/13315304437">
+
+
+
+
+    
+
+
+少壮院士邓中翰〈你关注过吗？〉</a></span></p>
+<div class="top_share_details" style="display:none;">
+
+<p class="float-right"><span class="share_link" title="热度">85</span><!--<span class="share_see">45678</span> --></p></div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank">6</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 209)" title="“在南开 最应该做的十件事”的投票评选结果最终出炉了，大家来看看吧！！！" href="http://blog.renren.com/share/223563552/13321621100">
+
+
+
+
+    
+
+
+“在南开 最应该做的十件事”的投票评选结果最终出炉了，大...</a></span></p>
+<div class="top_share_details" style="display:none;">
+
+<p class="float-right"><span class="share_link" title="热度">85</span><!--<span class="share_see">45678</span> --></p></div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank">7</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 209)" title="第十八届经济管理学院学生会拟任学生干部公示名单" href="http://blog.renren.com/share/222833491/13299242229">
+
+
+
+
+    
+
+
+第十八届经济管理学院学生会拟任学生干部公示名单</a></span></p>
+<div class="top_share_details" style="display:none;">
+
+<p class="float-right"><span class="share_link" title="热度">85</span><!--<span class="share_see">45678</span> --></p></div>
+</li>
+<div class="show-more"><a target="_blank" href="http://blog.renren.com/category/hot/1" onclick="shareLog('blog', 'click', 209)">更多热搜日志&raquo;</a></div></ul>
+<ul class="shares-list top_share_list" id="top_video_list">
+<li class="share-item clearfix" style="margin-top:-10px; _margin-top: 0; background-color:#f8fbfd;">
+<p class="shares-item">
+<span class="rank no1">1</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 210)" title="【喵呜字幕】有一种感情，能让旁观者为之动容，那就是爱！What Are Words" href="http://share.renren.com/share/100013051/5591470961">
+
+
+
+
+    
+
+
+【喵呜字幕】有一种感情，能让旁观者为之动容，那就是爱！Wha...</a></span></p>
+<div class="top_share_details" style="display:block;">
+<div class="video_wrapper">
+<a title="【喵呜字幕】有一种感情，能让旁观者为之动容，那就是爱！What Are Words" target="_blank" onclick="shareLog('blog', 'click', 210)" class="video_min" href="http://share.renren.com/share/100013051/5591470961"><img width="110" height="80" title="【喵呜字幕】有一种感情，能让旁观者为之动容，那就是爱！What Are Words" alt="【喵呜字幕】有一种感情，能让旁观者为之动容，那就是爱！What Are Words" src="http://g3.ykimg.com/0100641F464D78F3B2D626050A12DD15D10FE9-FEB1-9262-B422-8E6C09D52AF3"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+<!--  
+<span class="video_time">01:55:22</span>
+-->
+</div>
+</div>
+<div class="top_share_infor2">
+<p class="share_link" title="热度">209993123</p><!--<p class="share_see">45678</p>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank no2">2</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 210)" title="牛人超节约室内空间创意设计,广大蜗居人士必看" href="http://share.renren.com/share/419090877/15541260204">
+
+
+
+
+    
+
+
+牛人超节约室内空间创意设计,广大蜗居人士必看</a></span></p>
+<div class="top_share_details" style="display:none;">
+<div class="video_wrapper">
+<a title="牛人超节约室内空间创意设计,广大蜗居人士必看" target="_blank" onclick="shareLog('blog', 'click', 210)" class="video_min" href="http://share.renren.com/share/419090877/15541260204"><img width="110" height="80" title="牛人超节约室内空间创意设计,广大蜗居人士必看" alt="牛人超节约室内空间创意设计,广大蜗居人士必看" src="http://g3.ykimg.com/0100641F464BFC9FCE69EF003CE626229D53DA-F3A6-3B39-CBDC-E40B4AC0817E"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+<!--  
+<span class="video_time">01:55:22</span>
+-->
+</div>
+</div>
+<div class="top_share_infor2">
+<p class="share_link" title="热度">146364330</p><!--<p class="share_see">45678</p>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank no3">3</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 210)" title="Caci 向 Liudmila 的表白（中文字幕）" href="http://share.renren.com/share/100020833/9840143619">
+
+
+
+
+    
+
+
+Caci 向 Liudmila 的表白（中文字幕）</a></span></p>
+<div class="top_share_details" style="display:none;">
+<div class="video_wrapper">
+<a title="Caci 向 Liudmila 的表白（中文字幕）" target="_blank" onclick="shareLog('blog', 'click', 210)" class="video_min" href="http://share.renren.com/share/100020833/9840143619"><img width="110" height="80" title="Caci 向 Liudmila 的表白（中文字幕）" alt="Caci 向 Liudmila 的表白（中文字幕）" src="http://g3.ykimg.com/0100641F464E9F28BAFE0202E8C87BB96A4525-A880-3B8F-5FBA-03D390256D46"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+<!--  
+<span class="video_time">01:55:22</span>
+-->
+</div>
+</div>
+<div class="top_share_infor2">
+<p class="share_link" title="热度">109234871</p><!--<p class="share_see">45678</p>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank">4</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 210)" title="广美学生何伟锋毕业作品-《小胖妞》" href="http://share.renren.com/share/370337341/15579572875">
+
+
+
+
+    
+
+
+广美学生何伟锋毕业作品-《小胖妞》</a></span></p>
+<div class="top_share_details" style="display:none;">
+<div class="video_wrapper">
+<a title="广美学生何伟锋毕业作品-《小胖妞》" target="_blank" onclick="shareLog('blog', 'click', 210)" class="video_min" href="http://share.renren.com/share/370337341/15579572875"><img width="110" height="80" title="广美学生何伟锋毕业作品-《小胖妞》" alt="广美学生何伟锋毕业作品-《小胖妞》" src="http://g1.ykimg.com/0100641F464C1DCEB47689004E6AF36D2C6A01-8C69-E080-057D-9B95F4B16E09"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+<!--  
+<span class="video_time">01:55:22</span>
+-->
+</div>
+</div>
+<div class="top_share_infor2">
+<p class="share_link" title="热度">89790237</p><!--<p class="share_see">45678</p>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank">5</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 210)" title="中国人制作的"中国阅兵”视频 第一版" href="http://share.renren.com/share/100005543/5657237454">
+
+
+
+
+    
+
+
+中国人制作的"中国阅兵”视频 第一版</a></span></p>
+<div class="top_share_details" style="display:none;">
+<div class="video_wrapper">
+<a title="中国人制作的"中国阅兵”视频 第一版" target="_blank" onclick="shareLog('blog', 'click', 210)" class="video_min" href="http://share.renren.com/share/100005543/5657237454"><img width="110" height="80" title="中国人制作的"中国阅兵”视频 第一版" alt="中国人制作的"中国阅兵”视频 第一版" src="http://g3.ykimg.com/0100641F464D51344E2E8503019D7FB4626393-9BDB-CDF2-114A-16A0F38092FC"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+<!--  
+<span class="video_time">01:55:22</span>
+-->
+</div>
+</div>
+<div class="top_share_infor2">
+<p class="share_link" title="热度">81217052</p><!--<p class="share_see">45678</p>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank">6</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 210)" title="Adele伦敦演唱会someone like you和rolling in the deep" href="http://share.renren.com/share/100011678/12050220604">
+
+
+
+
+    
+
+
+Adele伦敦演唱会someone like you和rolling in the deep</a></span></p>
+<div class="top_share_details" style="display:none;">
+<div class="video_wrapper">
+<a title="Adele伦敦演唱会someone like you和rolling in the deep" target="_blank" onclick="shareLog('blog', 'click', 210)" class="video_min" href="http://share.renren.com/share/100011678/12050220604"><img width="110" height="80" title="Adele伦敦演唱会someone like you和rolling in the deep" alt="Adele伦敦演唱会someone like you和rolling in the deep" src="http://g4.ykimg.com/0100641F464EE8A7A7F2A301B21E276A497239-4DE1-7D19-4EA7-34A578D11482"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+<!--  
+<span class="video_time">01:55:22</span>
+-->
+</div>
+</div>
+<div class="top_share_infor2">
+<p class="share_link" title="热度">79842287</p><!--<p class="share_see">45678</p>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix" style="">
+<p class="shares-item">
+<span class="rank">7</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 210)" title="11度青春之《老男孩》" href="http://share.renren.com/share/100008604/4009810802">
+
+
+
+
+    
+
+
+11度青春之《老男孩》</a></span></p>
+<div class="top_share_details" style="display:none;">
+<div class="video_wrapper">
+<a title="11度青春之《老男孩》" target="_blank" onclick="shareLog('blog', 'click', 210)" class="video_min" href="http://share.renren.com/share/100008604/4009810802"><img width="110" height="80" title="11度青春之《老男孩》" alt="11度青春之《老男孩》" src="http://g3.ykimg.com/0100641F464CC82D0A3E1D0405200608953962-BE7E-13C7-81BA-87D638586F52"/></a>
+<div class="video_bottom_back">
+<span class="video_play_icon"></span>
+<!--  
+<span class="video_time">01:55:22</span>
+-->
+</div>
+</div>
+<div class="top_share_infor2">
+<p class="share_link" title="热度">73471785</p><!--<p class="share_see">45678</p>-->
+</div>
+</div>
+</li>
+<a target="_blank" href="http://share.renren.com/videolist/0" onclick="shareLog('blog', 'click', 210)">更多热搜视频&raquo;</a></ul>
+<ul class="shares-list top_share_list" id="top_img_list">
+<li class="share-item clearfix share-img" style="margin-top:-10px; _margin-top: 0; background-color:#f8fbfd;">
+<p class="shares-item">
+<span class="rank no1">1</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 211)" title="简笔画大全~{当一个小孩子喜欢的老师吧~}不再打包发送" href="http://share.renren.com/239103980_15598469587">
+
+
+
+
+    
+
+
+简笔画大全~{当一个小孩子喜欢的老师吧~}不再打包发送</a></span></p>
+<div class="top_share_details" style="display:block;">
+<a title="简笔画大全~{当一个小孩子喜欢的老师吧~}不再打包发送" target="_blank" class="album-mame" href="http://share.renren.com/239103980_15598469587" onclick="shareLog('blog', 'click', 211)"><img width="50" height="50" title="简笔画大全~{当一个小孩子喜欢的老师吧~}不再打包发送" alt="简笔画大全~{当一个小孩子喜欢的老师吧~}不再打包发送" src="http://fmn.rrimg.com/fmn062/20111004/1125/p_head_qcSU_35fd00025dff1262.jpg"/></a>
+<div class="top_share_infor">
+<!--  
+<p>来源：杨晨曦的相册</p>
+-->
+<span class="share_link" title="热度">24963500</span><!--<span class="share_see">45678</span>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix share-img" style="">
+<p class="shares-item">
+<span class="rank no2">2</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 211)" title="证件照...（图到用时方恨少，留着吧，会有用的" href="http://share.renren.com/269645114_15557641318">
+
+
+
+
+    
+
+
+证件照...（图到用时方恨少，留着吧，会有用的</a></span></p>
+<div class="top_share_details" style="display:none;">
+<a title="证件照...（图到用时方恨少，留着吧，会有用的" target="_blank" class="album-mame" href="http://share.renren.com/269645114_15557641318" onclick="shareLog('blog', 'click', 211)"><img width="50" height="50" title="证件照...（图到用时方恨少，留着吧，会有用的" alt="证件照...（图到用时方恨少，留着吧，会有用的" src="http://fmn.rrimg.com/fmn064/20111004/0645/p_head_poe5_35cd000258cb1261.jpg"/></a>
+<div class="top_share_infor">
+<!--  
+<p>来源：杨晨曦的相册</p>
+-->
+<span class="share_link" title="热度">22352629</span><!--<span class="share_see">45678</span>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix share-img" style="">
+<p class="shares-item">
+<span class="rank no3">3</span>
+<span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 211)" title="水果的不同切法，很适合孩子或招待客人用,存起来，要用随时能看" href="http://share.renren.com/324568247_15564563657">
+
+
+
+
+    
+
+
+水果的不同切法，很适合孩子或招待客人用,存起来，要用随时能看</a></span></p>
+<div class="top_share_details" style="display:none;">
+<a title="水果的不同切法，很适合孩子或招待客人用,存起来，要用随时能看" target="_blank" class="album-mame" href="http://share.renren.com/324568247_15564563657" onclick="shareLog('blog', 'click', 211)"><img width="50" height="50" title="水果的不同切法，很适合孩子或招待客人用,存起来，要用随时能看" alt="水果的不同切法，很适合孩子或招待客人用,存起来，要用随时能看" src="http://fmn.rrimg.com/fmn064/20120731/1730/head_Vv70_1d9e000009f01191.jpg"/></a>
+<div class="top_share_infor">
+<!--  
+<p>来源：杨晨曦的相册</p>
+-->
+<span class="share_link" title="热度">17461132</span><!--<span class="share_see">45678</span>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix share-img" style="">
+<p class="shares-item">
+<span class="rank">4</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 211)" title="全球最好看的50部动画片" href="http://share.renren.com/249339059_15583693898">
+
+
+
+
+    
+
+
+全球最好看的50部动画片</a></span></p>
+<div class="top_share_details" style="display:none;">
+<a title="全球最好看的50部动画片" target="_blank" class="album-mame" href="http://share.renren.com/249339059_15583693898" onclick="shareLog('blog', 'click', 211)"><img width="50" height="50" title="全球最好看的50部动画片" alt="全球最好看的50部动画片" src="http://fmn.rrimg.com/fmn057/20110928/1920/p_head_vf6x_36060001e85e1265.jpg"/></a>
+<div class="top_share_infor">
+<!--  
+<p>来源：杨晨曦的相册</p>
+-->
+<span class="share_link" title="热度">16386160</span><!--<span class="share_see">45678</span>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix share-img" style="">
+<p class="shares-item">
+<span class="rank">5</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 211)" title="这是一尊转运佛，见此佛99秒内转发，可踢走霉运，好运相伴！" href="http://share.renren.com/221809967_15592952044">
+
+
+
+
+    
+
+
+这是一尊转运佛，见此佛99秒内转发，可踢走霉运，好运相伴！</a></span></p>
+<div class="top_share_details" style="display:none;">
+<a title="这是一尊转运佛，见此佛99秒内转发，可踢走霉运，好运相伴！" target="_blank" class="album-mame" href="http://share.renren.com/221809967_15592952044" onclick="shareLog('blog', 'click', 211)"><img width="50" height="50" title="这是一尊转运佛，见此佛99秒内转发，可踢走霉运，好运相伴！" alt="这是一尊转运佛，见此佛99秒内转发，可踢走霉运，好运相伴！" src="http://fmn.rrimg.com/fmn060/20111114/1530/head_Rcjf_1fbc0000a037125e.jpg"/></a>
+<div class="top_share_infor">
+<!--  
+<p>来源：杨晨曦的相册</p>
+-->
+<span class="share_link" title="热度">16050615</span><!--<span class="share_see">45678</span>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix share-img" style="">
+<p class="shares-item">
+<span class="rank">6</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 211)" title="41种粥的做法 学会了去温暖爱的人的胃吧" href="http://share.renren.com/264462916_15558081336">
+
+
+
+
+    
+
+
+41种粥的做法 学会了去温暖爱的人的胃吧</a></span></p>
+<div class="top_share_details" style="display:none;">
+<a title="41种粥的做法 学会了去温暖爱的人的胃吧" target="_blank" class="album-mame" href="http://share.renren.com/264462916_15558081336" onclick="shareLog('blog', 'click', 211)"><img width="50" height="50" title="41种粥的做法 学会了去温暖爱的人的胃吧" alt="41种粥的做法 学会了去温暖爱的人的胃吧" src="http://fmn.rrimg.com/fmn039/20100328/1335/p_head_FrEk_0a650000036b2d12.jpg"/></a>
+<div class="top_share_infor">
+<!--  
+<p>来源：杨晨曦的相册</p>
+-->
+<span class="share_link" title="热度">16008043</span><!--<span class="share_see">45678</span>-->
+</div>
+</div>
+</li>
+<li class="share-item clearfix share-img" style="">
+<p class="shares-item">
+<span class="rank">7</span><span class="tag"><a target="_blank" onclick="shareLog('blog', 'click', 211)" title="【转】一套价值8800元的EXCEL教程，包你一学就会。" href="http://share.renren.com/228008946_15548351006">
+
+
+
+
+    
+
+
+【转】一套价值8800元的EXCEL教程，包你一学就会。</a></span></p>
+<div class="top_share_details" style="display:none;">
+<a title="【转】一套价值8800元的EXCEL教程，包你一学就会。" target="_blank" class="album-mame" href="http://share.renren.com/228008946_15548351006" onclick="shareLog('blog', 'click', 211)"><img width="50" height="50" title="【转】一套价值8800元的EXCEL教程，包你一学就会。" alt="【转】一套价值8800元的EXCEL教程，包你一学就会。" src="http://fmn.rrimg.com/fmn061/20120303/0900/head_RL6c_19e10001131c1260.jpg"/></a>
+<div class="top_share_infor">
+<!--  
+<p>来源：杨晨曦的相册</p>
+-->
+<span class="share_link" title="热度">15422616</span><!--<span class="share_see">45678</span>-->
+</div>
+</div>
+</li>
+    <p class="get_more"><a target="_blank" href="http://share.renren.com/albumlist/0" onclick="shareLog('blog', 'click', 211)">更多热搜相册&raquo;</a></p>
+</ul>
+<div class="other_same_share">
+<div class="nav-tabs">
+<ul class="tabs"><li class="selected">网络热门</li></ul>
+</div>
+<ul class="shares-list other_list" id="baidulist">
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://www.qiyipic.com/zongyi/fix/wuzhenyu07188888.jpg" width="110px" height="80px" />
+<a target="_blank" title="爸爸去哪儿2:吴镇宇苗寨摆龙头宴" onclick="shareLog('video', 'click', 223)" href="http://www.iqiyi.com/v_19rrhifjpg.html?vfm=rrjunten" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" onclick="shareLog('video', 'click', 223)" title="爸爸去哪儿2:吴镇宇苗寨摆龙头宴" href="http://www.iqiyi.com/v_19rrhifjpg.html?vfm=rrjunten">
+
+
+
+
+    
+
+
+爸爸去哪儿2:吴镇宇苗寨摆龙头宴</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://pic2.qiyipic.com/yule/20140718/fffl1_c2cbf3eb15c64b1b88fe3376973e2e41.jpg" width="110px" height="80px" />
+<a target="_blank" title="张翰穿大牌像淘宝款遭网友吐槽" onclick="shareLog('video', 'click', 223)" href="http://www.iqiyi.com/v_19rrhildec.html?vfm=rrjunten" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" onclick="shareLog('video', 'click', 223)" title="张翰穿大牌像淘宝款遭网友吐槽" href="http://www.iqiyi.com/v_19rrhildec.html?vfm=rrjunten">
+
+
+
+
+    
+
+
+张翰穿大牌像淘宝款遭网友吐槽</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://www.qiyipic.com/news/fix/meinv11.jpg" width="110px" height="80px" />
+<a target="_blank" title="日俄混血美女爆红" onclick="shareLog('video', 'click', 223)" href="http://www.iqiyi.com/v_19rrhilif0.html?vfm=rrjunten" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" onclick="shareLog('video', 'click', 223)" title="日俄混血美女爆红" href="http://www.iqiyi.com/v_19rrhilif0.html?vfm=rrjunten">
+
+
+
+
+    
+
+
+日俄混血美女爆红</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://www.qiyipic.com/games/fix/10.jpg" width="110px" height="80px" />
+<a target="_blank" title="七黄五狼黑第三期预告" onclick="shareLog('video', 'click', 223)" href="http://www.iqiyi.com/v_19rrhjdj7g.html?vfm=rrjunten" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" onclick="shareLog('video', 'click', 223)" title="七黄五狼黑第三期预告" href="http://www.iqiyi.com/v_19rrhjdj7g.html?vfm=rrjunten">
+
+
+
+
+    
+
+
+七黄五狼黑第三期预告</a></p>
+</li>
+</ul></div>
+<div class="same_share"><h4 class="clearfix ">热门日志推荐</h4>
+<ul class="shares-list" id="">
+<li class="blog-item clearfix"><a title="电视剧《仙剑奇侠传3》分集剧情介绍" target="_blank" href="http://blog.renren.com/share/242559627/945437927" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+电视剧《仙剑奇侠传3》分集剧情介绍</a></li>
+<li class="blog-item clearfix"><a title="windows 8激活最新密钥" target="_blank" href="http://blog.renren.com/share/264887384/14359376629" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+windows 8激活最新密钥</a></li>
+<li class="blog-item clearfix"><a title="舞蹈教学视频大全" target="_blank" href="http://blog.renren.com/share/229642402/6374121060" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+舞蹈教学视频大全</a></li>
+<li class="blog-item clearfix"><a title="【午夜福利】啄木鸟伍迪全集 咯咯咯咯咯咯咯咯咯咯咯。。小时候的..." target="_blank" href="http://blog.renren.com/share/116113148/13162058136" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+【午夜福利】啄木鸟伍迪全集 咯咯咯咯咯咯咯咯咯咯咯。。小...</a></li>
+<li class="blog-item clearfix"><a title="【百分百未来学校】信息管理与信息系统专业的就业前景分析" target="_blank" href="http://blog.renren.com/share/284244800/16663728668" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+【百分百未来学校】信息管理与信息系统专业的就业前景分析</a></li>
+<li class="blog-item clearfix"><a title="摸奶节 (Mo Nai Jie) aka Breast-Touching Festival, Yunan" target="_blank" href="http://blog.renren.com/share/255595266/8124970611" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+摸奶节 (Mo Nai Jie) aka Breast-Touching Festival, Yunan</a></li>
+<li class="blog-item clearfix"><a title="何清涟:中国为何容易出现“政治家族”" target="_blank" href="http://blog.renren.com/share/254824916/8917832229" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+何清涟:中国为何容易出现“政治家族”</a></li>
+<li class="blog-item clearfix"><a title="十二星座超级排行榜" target="_blank" href="http://blog.renren.com/share/260554744/459687693" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+十二星座超级排行榜</a></li>
+<li class="blog-item clearfix"><a title="史上最牛B的杀人犯!!!(被称为人民英雄)" target="_blank" href="http://blog.renren.com/share/244246822/629670441" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+史上最牛B的杀人犯!!!(被称为人民英雄)</a></li>
+<li class="blog-item clearfix"><a title="音乐盒与八音盒的区别" target="_blank" href="http://blog.renren.com/share/229862806/583448145" onclick="shareLog('blog', 'click', 212)">
+
+
+
+
+    
+
+
+音乐盒与八音盒的区别</a></li>
+<a target="_blank" onclick="shareLog('blog', 'click', 212)" href="http://blog.renren.com/category/hot/1" class="more_margin">查看更多&raquo;</a></ul>
+</div>
+<div class="other_same_share">
+<h4 class="clearfix ">同类视频推荐<a href="http://share.renren.com/videolist/0" target="_blank">查看更多</a></h4>
+<ul class="shares-list other_list">
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://vi0.ku6img.com/data2/p1/ku6video/2013/8/11/12/1381475864838_72570187_72570187/3.jpg" width="110px" height="80px" />
+<a target="_blank" title="七夕情人节特别贡献-我说我爱你-袁树雄" href="http://share.renren.com/share/536723225/16260426092" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" title="七夕情人节特别贡献-我说我爱你-袁树雄" href="http://share.renren.com/share/536723225/16260426092">
+
+
+
+
+    
+
+
+七夕情人节特别贡献-我说我爱你-袁树雄</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://vi0.ku6img.com/data2/p1/ku6video/2013/8/11/18/1381500701382_72622136_72622136/2.jpg" width="110px" height="80px" />
+<a target="_blank" title="搞笑二逼加速版《领悟》" href="http://share.renren.com/share/536723225/16260429839" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" title="搞笑二逼加速版《领悟》" href="http://share.renren.com/share/536723225/16260429839">
+
+
+
+
+    
+
+
+搞笑二逼加速版《领悟》</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://vi1.ku6img.com/data2/p1/ku6video/2013/8/10/16/1381403587308_72461340_72461340/1.jpg" width="110px" height="80px" />
+<a target="_blank" title="秀才有料：保障房频演“空城计”" href="http://share.renren.com/share/536723225/16260431072" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" title="秀才有料：保障房频演“空城计”" href="http://share.renren.com/share/536723225/16260431072">
+
+
+
+
+    
+
+
+秀才有料：保障房频演“空城计”</a></p>
+</li>
+<li class="shares-item" >
+<p class="shares-content">
+<span class="shares-video">
+<img src="http://vi0.ku6img.com/data2/p3/ku6video/2013/8/2/6/1380618923796_71120957_71120957/6.jpg" width="110px" height="80px" />
+<a target="_blank" title="最佳现场 赵立新犀利评娱乐圈 回忆父亲的苏联情结" href="http://share.renren.com/share/536723297/16225610776" class="other_shares_play"><span>点击播放</span></a>
+</span>
+</p>
+<p class="other_list_title"><a target="_blank" title="最佳现场 赵立新犀利评娱乐圈 回忆父亲的苏联情结" href="http://share.renren.com/share/536723297/16225610776">
+
+
+
+
+    
+
+
+最佳现场 赵立新犀利评娱乐圈 回忆父亲的苏联情结</a></p>
+</li>
+</ul></div>
+
+<div class="hot-keywords shares-list">
+<h4 class="clearfix">热词推荐<a class="float-right" target="_blank" href="http://share.renren.com/keywords" onclick="shareLog('keywords', 'click', 5)">查看更多</a></h4>
+<p class="shares-item">
+<span class="rank no1">1</span>
+<a href="http://share.renren.com/keywords/4195778" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">比特币挖矿</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">89123</span>
+</p>
+<p class="shares-item">
+<span class="rank no2">2</span>
+<a href="http://share.renren.com/keywords/4190550" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">嫦娥五号</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">77567</span>
+</p>
+<p class="shares-item">
+<span class="rank no3">3</span>
+<a href="http://share.renren.com/keywords/4197814" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">第五个现代化</a>
+<span class="arr_down">
+<span class="arr_down1"></span>
+<span class="arr_down2"></span>
+</span>
+<span class="count">45052</span>
+</p>
+<p class="shares-item">
+<span class="rank">4</span>
+<a href="http://share.renren.com/keywords/4183888" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">不可思议的夏天</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">11298</span>
+</p>
+<p class="shares-item">
+<span class="rank">5</span>
+<a href="http://share.renren.com/keywords/4198118" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">光复节</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">1488</span>
+</p>
+<p class="shares-item">
+<span class="rank">6</span>
+<a href="http://share.renren.com/keywords/4188626" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">北京枪声</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">1247</span>
+</p>
+<p class="shares-item">
+<span class="rank">7</span>
+<a href="http://share.renren.com/keywords/4185410" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">东南早报</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">667</span>
+</p>
+<p class="shares-item">
+<span class="rank">8</span>
+<a href="http://share.renren.com/keywords/4192696" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">牛奶国际</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">368</span>
+</p>
+<p class="shares-item">
+<span class="rank">9</span>
+<a href="http://share.renren.com/keywords/4187130" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">美国空袭伊拉克</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">267</span>
+</p>
+<p class="shares-item">
+<span class="rank">10</span>
+<a href="http://share.renren.com/keywords/4198112" target="_blank" class="keyword" onclick="shareLog('keywords', 'click', 5)">江湖论剑</a>
+<span class="arr_up">
+<span class="arr_up1"></span>
+<span class="arr_up2"></span>
+</span>
+<span class="count">155</span>
+</p>
+</div></div></div>
+</div></div>
+</div>
+</div>
+<div id="footer">
+	<div class="site-footer" style="background:#fff;position:relative;">
+<div class="main">
+<ul class="link">
+<li><a href="http://www.renren-inc.com/zh/product/renren.html">关于我们</a></li>
+<li><a href="http://wan.renren.com">人人游戏</a></li>
+<li><a href="http://www.56.com">56网</a></li>
+<li><a href="http://mobile.renren.com/mobilelink.do?psf=40002">手机应用</a></li>
+<li><a href="http://page.renren.com/register/regGuide/">公共主页</a></li>
+<li><a href="http://dev.renren.com">开放平台</a></li>
+<li><a href="http://bolt.jebe.renren.com/introduce.htm">自助服务</a></li>
+<li><a href="http://page.renren.com/marketing/index">品牌营销</a></li>
+<li><a href="http://ir.renren-inc.com/phoenix.zhtml?c=244796&p=irol-irhome">About Renren Inc</a></li>
+<li><a href="http://www.renren-inc.com/zh/">人人集团</a></li>
+<li><a href="http://www.renren-inc.com/zh/hr/">招聘</a></li>
+<li><a href="http://support.renren.com/helpcenter">客服帮助</a></li>
+<li><a href="http://www.renren.com/siteinfo/privacy">隐私</a></li>
+</ul>
+<span class="copyright">
+人人网<span title="revision$revxxx$; SJSWT43-60.opi.com">&copy;</span>2014
+</span></div>
+<div class="haoes">
+<p class="company-name"><span>北京千橡网景科技发展有限公司：</span>
+<span>文网文[2009]169号</span><span class="dot">·</span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证090254号</a><span class="dot">·</span><span>京公网安备110000000009号</span><span class="dot">·</span><span>甲测资字11002066</span>
+</p>
+<span>文化部监督电子邮箱：wlwh@vip.sina.com</span><span class="dot">·</span><a href="http://a.xnimg.cn/n/core/res/certificate.jpg" target="_blank">互联网药品信息服务资格证</a><span class="dot">·</span><a href="http://py.qianlong.com" target="_blank">北京地区网站联合辟谣平台</a><br>
+<p class="special-add"><span>文明办网文明上网举报电话：4000803580 举报邮箱：admin@renren.com</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.bjjubao.org/" target="_blank"><img src="http://s.xnimg.cn/imgpro/civilization/bljubao.gif" width="25" height="24">北京互联网举报中心
+</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.bj.cyberpolice.cn/index.jsp" target="_blank"><img src="http://s.xnimg.cn/imgpro/civilization/c_2.jpg" width="25" height="24">网络110报警服务</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.bjwhzf.gov.cn/accuse.do" target="_blank"><img src="http://s.xnimg.cn/imgpro/civilization/c_3.jpg" width="25" height="24">北京文化市场举报热线</a>
+</div>
+</div>
+</div>
+</div><div id="toolBackTo" class="back-to" style="display:none;">
+<a stats="site_footer_back_to_top" class="backtotop" href="#top">返回顶部
+<img stats="site_footer_back_to_top" src="http://a.xnimg.cn/imgpro/button/back-tip.png" class="back-tip" />
+</a>
+</div>
+<script src="http://s.xnimg.cn/a12023/jspro/beacon.js"></script><script>
+COMSCORE.beacon({ c1:2, c2:6934070, c3:"", c4:"", c5:"", c6:"", c15:"" });
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=6934070&c3=&c4=&c5=&c6=&c15=&cj=1" />
+</noscript>
+</div><script type="text/javascript">
+(function($){
+XN.dom.ready(function(){showReg(0);
+$('.ud_pop_header a').bind('click',show)
+function show() {
+playVideoOfContent( 'sharevideo', 'videoimg', null, null, null, '700');
+}	
+});
+})(jxn);
+</script>
+<script type="text/javascript">XN.dom.ready(function(){XN.app.share.itemToggle();
+});
+</script>
+
+<span style="position: absolute; top: -9999px; left: -9999px;"><script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F4397070d9365caef87e72dc468269464' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</span>
+<!-- start：由于seo需求将相关代码移至末尾 -->
+<link
+href="http://s.xnimg.cn/a53824/csspro/apps/seo/seo-xz.css"
+rel="stylesheet" type="text/css" />
+<div style="display: none;" id="mask_layer" class="mask_layer"></div><div id="reg_layer" style="display:none;" class="ud_generic_dialog explanation pop_dialog">
+<div class="ud_generic_dialog_popup">
+<div id="regcontent" class="regcontent"><div class="ud_pop_header">
+<h1>十秒钟加入人人网，分享更多精彩内容</h1>
+<a href="javascript:;" onclick="closepop();shareLog('video', 'close', 1);">
+<img src="http://s.xnimg.cn/imgpro/app/closeButton.gif" alt="关闭">
+</a>
+</div>
+<div id="pop_content" class="ud_pop_content">
+<div class="ud_regAdWrapper">
+<div class="ud_regbox">
+<div id="reg_wrap" style="display:none">
+<!-- regForm -->
+<form class="ud_main_regform" method="post" id="regform"  name="regform" action="http://reg.renren.com/ajax/sb/aspopup">
+<input type="hidden" name="fromUrl" id="fromUrl" value="http://xiaozu.renren.com" />
+<input type="hidden" name="iu" id="iu" />
+<input type="hidden" name="ic" id="ic" />
+<input type="hidden" name="uuid" id="uuid" />
+<input type="hidden" name="ss" id="ss" value="10149" />
+<input type="hidden" name="action_id" id="action_id" value="206229" />
+<input type="hidden" name="accType" id="accType" value="1" />
+<input type="hidden" name="g" id="g" />
+<input type="hidden" name="b" id="b" />
+<input type="hidden" name="icode_type" id="icode_type" value="web_reg"/>
+<div class="ud_form_row" id="d_email" style="padding-top:0 !important;">
+<label id="regmail_label" for="regemail">电子邮箱</label>
+<div class="input_wrap">
+<input type="text" name="regEmail" id="regEmail" class="inputtext" placeholder="请输入真实邮箱账号" />
+<span id="dmmg" style="display:none;"><img src="http://xnimg.cn/img/reg/fzcg_dh.gif"/></span>
+<div class="box-error" id="regEmail_error_span">
+<div class="box-error-outer">
+<div class="box-error-inner">
+<p id="regEmail_error_span_i">请输入正确的邮箱，完成注册</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ud_form_row" id="p_pwd">
+<label for="pwd">设置密码</label>
+<div class="input_wrap">
+<input type="password" maxlength="20" name="pwd" id="pwd" class="inputtext" />
+<span id="mmg" style="display:none;"><img src="http://xnimg.cn/img/reg/fzcg_dh.gif"/></span>
+<div class="box-error pwd" id="pwd_error_span" >
+<div class="box-error-outer">
+<div class="box-error-inner">
+<p id="pwd_error_span_i">密码必须由6-20个字符组成</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ud_form_row icode_input_row" id="p_icode">
+<label for="code">验证码</label>
+<div class="input_wrap">
+<input type="text" name="icode" id="icode" class="inputtext validate-code" size="6" maxlength="6" />
+<input type="hidden" name="key_id" value=805112024 />
+<div class="box-error" id="icode_error_span">
+<div class="box-error-outer">
+<div class="box-error-inner">
+<p id="icode_error_span_i">请输入验证码</p>
+</div>
+</div>
+</div>
+</div>
+<div class="input_wrap">
+<img onclick="refreshCode();" height="40" class="validate-num" id="verifyPic" src="http://icode.renren.com/getcode.do?t=web_reg&rnd=1299749698633"/>
+</div>
+<div class="input_wrap">
+<a href="javascript:;" onclick="refreshCode();">看不清？<br />换一张</a>
+</div>
+</div>
+<div class="ud_form_row">
+<label></label>
+<div class="input_wrap">
+<input type="hidden" name="activity" value="" id="activity" />
+<input type="hidden" name="iv" value="" id="iv" />
+<input type="hidden" name="from" value="" id="from" />
+<div id="dialog_buttons" class="share_buttons">
+<input type="submit" id="button_submit" class="inputsubmit" value="" onclick="shareLog('video', 'reg', 1);"/>
+</div>
+<a href="http://www.renren.com" target="_blank" class="">已有账号，去登录 ></a>
+</div>
+</div>
+</form>
+<script type="text/javascript">
+try{
+new RegCheck();
+}catch(e){}
+</script>
+<script type="text/javascript" src="http://s.xnimg.cn/a4049/js/form_control.js"></script>
+<!-- regForm -->
+<!--poploginForm -->
+<form method="post" id="poploginForm" class="share_login" action="http://www.renren.com/PLogin.do" onsubmit="return checkShareLogin();">
+<div class="ud_form_row" id="d_email" style="padding-top:0 !important;">
+<label id="regmail_label" for="regemail">账号:</label>
+<div class="input_wrap">
+<input type="text" name="email" id="email" class="inputtext" placeholder="账号/邮箱/手机号" style="background:url(http://s.xnimg.cn/imgpro/app/5238/face-icon.png) 5px center no-repeat; background-color:#FFF;"/>
+<span id="dmmg" style="display:none;"><img src="http://xnimg.cn/img/reg/fzcg_dh.gif"/></span>
+<div class="box-error" id="regEmail_error_span">
+<div class="box-error-outer">
+<div class="box-error-inner">
+<p id="regEmail_error_span_i">请输入正确的邮箱，完成注册</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ud_form_row" id="p_pwd">
+<label for="pwd">密码:</label>
+<div class="input_wrap">
+<input type="password" maxlength="20" name="password" id="password" class="inputtext" style="background:url(http://s.xnimg.cn/imgpro/app/5238/lock-icon.png) 5px center no-repeat; background-color:#FFF;"/>
+<span id="mmg" style="display:none;"><img src="http://xnimg.cn/img/reg/fzcg_dh.gif"/></span>
+<div class="box-error pwd" id="pwd_error_span" >
+<div class="box-error-outer">
+<div class="box-error-inner">
+<p id="pwd_error_span_i">请输入密码</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<input type="hidden" name="origURL" id= "login_reg" value="http://www.renren.com/Home.do" />
+<input type="hidden" name="domain" value="renren.com" />
+<script>
+document.getElementById("login_reg").value =  window.location.href;
+</script>
+<div class="ud_form_row" id="x_secure">
+<label></label>
+<div class="input_wrap">
+<label title="为了确保您的信息安全，请不要在网吧或者公共机房勾选此项！" for="popautoLogin">
+<input type="checkbox" name="autoLogin" id="popautoLogin" value="true" />&nbsp;下次直接登录
+</label>
+<a href="http://safe.renren.com/findPass.do" stats="home_findpassword">忘记密码？</a>
+</div>
+</div>
+<div class="ud_form_row">
+<label></label>
+<div class="input_wrap">
+<input type="submit" id="poplogin" class="input-submit" value="" onclick="shareLog('video', 'login', 1);" />
+</div>
+</div>		
+<div id="loginerr"></div>
+</form>
+<!--loginForm end -->
+</div>
+<div class="pop-code-box getmini clearfix"> 
+<div class="title"><p>下载人人mini客户端，</p>
+<p style="text-align:right;"><span >15</span>元话费即领走！</p></div>
+<div class="firstpart clearfix">
+<div class="rightqrcode"></div>
+<div class="leftpartword">
+<p>人人mini客户端</p>
+<p>功能精简实用有趣，</p>
+<p>助你轻松玩转校园！</p>
+</div>
+</div>
+<div class="words clearfix">
+<span>速来领取兑换码拿话费！</span>
+<a href="http://coupon.renren.com" target="_blank" >活动详情</a>
+</div>
+<div class="getcode clearfix">
+<input type="text" name="getCode" id="getMobile" maxlength="11" class="getcodetext" autocomplete="off" placeholder="请输入真实手机号">
+<div id="getcodebutton"></div>
+</div>
+<div id="righterror"></div>
+</div>
+</div></div>
+</div>
+</div>	
+</div>
+</div>
+<script>
+function checkShareLogin(){
+if($('email').value=='' || $('email').value=='账号/邮箱/手机号')
+{
+$('loginerr').innerHTML='请填写帐号';
+$('email').focus();
+return false;
+}	
+if ($('password').value=='')
+{
+$('loginerr').innerHTML='请填写密码';
+$('password').focus();
+return false;
+}
+else {
+ajxlogin($('email').value,$('password').value);
+return true;
+}
+}
+function showReg(){
+var dialog = $('regcontent');
+dialog.style.position = 'relative';
+$('mask_layer').style.display='block';
+$('reg_layer').style.display='block';
+$("reg_wrap").style.display="block";
+$('loginerr').innerHTML='';
+}
+if($('msgId') && $('msgId').value!=''){
+showReg();
+}
+function showLogin(){
+$('mask_layer').style.display='block';
+$('reg_layer').style.display='block';
+$("poploginForm").style.display="block";
+$("reg_wrap").style.display="none";
+$('loginerr').innerHTML='';
+$("reg_title").innerHTML="登录人人网";
+$("reg_tright").innerHTML='还没有人人网帐号？&nbsp;&nbsp;&nbsp;<a href="javascript:;" hidefocus="true" onclick="showReg();return false;">立即注册</a>';
+}
+if($('msgId') && $('msgId').value!=''){
+showLogin();
+}
+function closepop(){
+$('mask_layer').style.display='none';
+$('reg_layer').style.display='none';
+}
+function ajxlogin(inv,pv){
+(new Image()).src="http://reg.renren.com/AjaxRegLog.do?tp=5238login&input="+inv;
+}
+</script>
+<linkhref="http://s.xnimg.cn/a58956/csspro/module/replies.css"
+rel="stylesheet" type="text/css" media="all" />
+<link
+href="http://s.xnimg.cn/a62662/csspro/apps/share.css"
+rel="stylesheet" type="text/css" media="all" />
+<!-- end：由于seo需求将相关代码移至末尾 -->
+<script>
+// input ie placeholder
+(function() {
+if (!window.object || !object.use) {return;}
+object.use('dom', function(dom) {
+dom.ready(function() {
+var inputs = dom.getElements('input');
+});
+});
+})();
+</script>
+<script id="seoTopTemplate" type="text/tmplate">
+<div class="ud_reg-tip">
+<div class="ud_reg-tipin clearfix">
+<span class="ud_reg-now">
+<a href="javascript:showReg(0);" onclick="shareLog('video', 'reg', 2);"><img src="http://s.xnimg.cn/imgpro/app/5238/reg_free_bug.png" alt="" /></a></span>
+<h4></h4>
+<div class="barlogin">
+<div id="loginerrfree"></div>
+<!--poploginForm -->
+<form method="post" id="poploginFormfree" class="ud_share_login" action="http://www.renren.com/PLogin.do"  onsubmit="this.origURL.value=location.href;" style="display:block !important;padding-top: 0px !important; padding-left:25px;">
+<table style="width:337px !important;">
+<tr>
+<td width="190">
+<input type="text" name="email" class="input-text" id="emailfree" value="" placeholder="账号/邮箱/手机号" style="background:url(http://s.xnimg.cn/imgpro/app/5238/face-icon.png) 0 0 no-repeat; background-color:#FFF;padding-left:25px;"/></td>
+<td width="145">
+<p class="autologin">
+<label title="为了确保您的信息安全，请不要在网吧或者公共机房勾选此项！" for="popautoLogin">
+<input type="checkbox" name="autoLogin" id="popautoLoginfree" value="true" />&nbsp;下次直接登录</label></p>
+</td>
+</tr>
+<tr>
+<td vlign="top">
+<input type="password" id="passwordfree" name="password" error="请输入密码" class="input-text" style="background:url(http://s.xnimg.cn/imgpro/app/5238/lock-icon.png) 0 0 no-repeat; background-color:#FFF;padding-left:25px; "/>                                
+</td>
+<td><p class="autologin" style="position:relative;">
+<!--    <input type="hidden" name="origURL" value="http://www.renren.com/Home.do" />  -->
+<input type="hidden" name="origURL" value="" />
+<input type="hidden" name="domain" value="renren.com" />
+<input type="submit" id="poploginfree" class="input-submit" value="" style="background:url(http://s.xnimg.cn/imgpro/app/5238/log_btn.png) -4px 0 no-repeat;background-color:#F0F9FB;width:80px; height:35px; border:none; display:inline-block;" onclick="shareLog('video', 'login', 2);" />
+<a href="http://safe.renren.com/findPass.do" stats="home_findpassword" style="_position:absolute; white-space:nowrap; display:inline-block; _right:0;_display:block;_width:70px; _height:20px;_line-height:35px;">忘记密码？</a>
+</p>
+</td>
+</tr>
+</table>
+</form>
+<!--loginForm end -->
+</div>
+</div>
+</div>
+</script>
+<script type="text/javascript" src="http://s.xnimg.cn/a57743/n/apps/share/seo_login_check.js"></script>
+<!-- hidden input referer for seo log -->
+<input type="hidden" id="seoReferer" value="" />
+<!-- SEO的统计代码 --><div style="display: none;"><script language="javascript" type="text/javascript" src="http://js.users.51.la/4080340.js"></script></div>
+<noscript>
+<a href="http://www.51.la/?4080340" target="_blank">
+<img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4080340.asp" style="border: none" />
+</a>
+</noscript>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-10392240-13']);
+_gaq.push(['_trackPageview']);
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+<script type="text/javascript" src="http://s.xnimg.cn/a60820/n/apps/share/seo_share_video.js"></script>
+</body>
+</html>
+

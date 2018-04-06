@@ -1,0 +1,792 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<META content="MSHTML 6.00.2900.6036" name=GENERATOR>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>电气信息类专校园大学生业学生社团的建设与发展(2)</title>
+<meta name="keywords" content="电气信息类专业学生社团的建设与发展,电气信息类专业学生社团" />
+<meta name="description" content="社团在创立之初，虽然社团在校团委和学院团委的监管下运行，实验室都尽量提供元器件与场地支持，每年都有学生获奖，无法开展更多的活动，并指定专业教师作为协会指导教师提供长期的帮助与指导，都有相应的指导教师" />
+<link href="http://www.xystu.net/templets/mobantx/style/common.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="http://www.xystu.net/templets/mobantx/style/page.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="http://www.xystu.net/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function doZoom(size) 
+{ 
+      var zoom=document.all?document.all['mbtxfont']:document.getElementById('mbtxfont'); 
+        zoom.style.fontSize=size+'px'; 
+} 
+function CheckLogin(){
+	  var taget_obj = document.getElementById('_ajax_feedback');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("http://www.xystu.net/member/ajax_feedback.php");
+	  DedeXHTTP = null;
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("http://www.xystu.net/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "http://www.xystu.net/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("http://www.xystu.net/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+-->
+</script>
+</head>
+<body>
+<div class="w960 center">
+    <div class="topnav">
+        <div class="fl">
+            <span id="welcome"></span>
+            <span id="showAsks" class="pl8"></span>
+        </div>
+        <div class="fr link">
+            <a href="http://www.xystu.net/plus/heightsearch.php" target="_blank">高级搜索</a>|
+            <a href="http://www.xystu.net/tags.php" target="_blank">TAG标签</a>|
+            <a href="http://www.xystu.net/data/rssmap.html" target="_blank" class="rss">RSS订阅</a>|
+            <a href="http://www.xystu.net/data/sitemap.html" target="_blank">网站地图</a>|
+            <a onclick="AddFavorite(window.location,document.title)" style="cursor:pointer"><span class="c1">收藏本站</span></a>
+        </div>
+    </div>
+    <div class="header mt8">
+        <div class="logo fl">
+            <a href="http://www.xystu.net">
+                <img src="http://www.xystu.net/logo.gif" alt="校园大学生" /></a>
+        </div>
+        <div class="banner1 fl pl8">
+            <script src='http://www.xystu.net/plus/ad_js.php?aid=4' language='javascript'></script>
+
+
+        </div>
+        <div class="banner2 fl pl8">
+            <script src='http://www.xystu.net/plus/ad_js.php?aid=3' language='javascript'></script>
+
+
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+    <div id="navMenu" class="mt8">
+        <ul>
+            <li class="hoveri"><a href='http://www.xystu.net/'>首 页</a></li>
+            
+            <li class="channel"><a href='http://www.xystu.net/news/' >校园动态</a></li>
+            
+            <li class="channel"><a href='http://www.xystu.net/job/' >就业指导</a></li>
+            
+            <li class="channel"><a href='http://www.xystu.net/study/' >学习参考</a></li>
+            
+            <li class="channel"><a href='http://www.xystu.net/joke/' >开心一刻</a></li>
+            
+            <li class="channel"><a href='http://www.xystu.net/word/' >文字阅读</a></li>
+            
+            <li class="channel"><a href='http://www.xystu.net/love/' >谈谈爱情</a></li>
+            <li class='hoverc'><a href='http://www.xystu.net/shetuan/' >社团组织</a></li>
+            <li class="channel"><a href='http://www.xystu.net/happy/' >吃喝住行</a></li>
+            </ul>
+    </div>
+    <div id="HotSearch">
+        <div class="hot fl">
+            <h3>本月热词：</h3>
+            <ul>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%D1%A7%D4%BA/' target="_blank">学院</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%CE%CA%B4%F0%CF%B5%CD%B3/' target="_blank">问答系统</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%CE%CA%CE%CA/' target="_blank">问问</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%CB%D1%CB%D1/' target="_blank">搜搜</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%CA%FD%D7%D6/' target="_blank">数字</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%CC%E1%CE%CA/' target="_blank">提问</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%D1%A7%C9%FA/' target="_blank">学生</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%CA%D7%BD%EC/' target="_blank">首届</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%CE%CA%CC%E2/' target="_blank">问题</a></li>
+                
+                <li><a href='http://www.xystu.net/tags.php?/%D1%A7%D0%A3/' target="_blank">学校</a></li>
+                </ul>
+        </div>
+        <div class="search fr">
+            <form name="formsearch" action="http://www.xystu.net/plus/search.php" target="_blank">
+                <div class="form">
+                    <h3>搜索：</h3>
+                    <input type="hidden" name="kwtype" value="0" />
+                    <input name="q" type="text" class="sckey" id="search-keyword" value="在这里搜索..."
+                    onfocus="if(this.value=='在这里搜索...'){this.value='';}" onblur="if(this.value==''){this.value='在这里搜索...';}" />
+                    <select name="searchtype" class="scsel" id="search-option">
+                        <option value="title" selected='1'>标题</option>
+                        <option value="titlekeyword">模糊</option>
+                    </select>
+                    <button type="submit" class="scbtn">搜索</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- /header -->
+<!-- /header -->
+    <div class="clear" style="margin-top:5px;"></div>
+    <div id="mbtx" style="margin-bottom:5px;"></div>
+    <div class="mbody">
+        <div id="article_left">
+            <div id="lm_class">
+                <h5><ins>栏目分类</ins></h5>
+                <ul>
+                    </ul>
+            </div>
+            <div class="soft_xiangg">
+                <h4 class="soft_xg_title">社团组织相关信息</h4>
+                <div class="soft_xg_box">
+                    <div id="soft_xg_tuij">
+                        <h5>·相关社团组织文章推荐</h5>
+                        <ul class="soft_xg_ul">
+                            <li><a href="http://www.xystu.net/shetuan/20131107/27168.html" target="_blank" title="外校的注明学校) A1. 校内2分/支 满分12分 A2. 校外3分/支 赞助状况(校园大学生若为物资写清物资名称及数额">外校的注明学校) A1. 校内2分/支 满分12分 A2</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26864.html" target="_blank" title="我再一次校园大学生表示衷心的谢意">我再一次校园大学生表示衷心的谢意</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26863.html" target="_blank" title="重庆愿意与SK校园大学生海力士共同处理解决">重庆愿意与SK校园大学生海力士共同处理解决</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26862.html" target="_blank" title="企业风访赌王郑彬邀请校园大学生联创社社长孙斌担任战略军师和经纪人">企业风访赌王郑彬邀请校园大学生联创社社长孙</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26861.html" target="_blank" title="旺德福校园大学生话剧社团章程">旺德福校园大学生话剧社团章程</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26860.html" target="_blank" title="活动后要提交相应总结材校园大学生料； 4. 协会会长换届要向社团部申报">活动后要提交相应总结材校园大学生料； 4. 协</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26859.html" target="_blank" title="共青团浙校园大学生江农林大学委员会">共青团浙校园大学生江农林大学委员会</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26857.html" target="_blank" title="大学活校园大学生动策划书范文">大学活校园大学生动策划书范文</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26856.html" target="_blank" title="转眼间2011年考研已进入最后的冲刺阶段... 河南理工大学bbs 河南理工大学bbs 【博主提醒:非微博用户需要复制校">转眼间2011年考研已进入最后的冲刺阶段... 河</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131104/26855.html" target="_blank" title="以及助学校园大学生贷款等的银行卡">以及助学校园大学生贷款等的银行卡</a></li>
+</ul>
+                    </div>
+                </div>
+            </div>
+            <div id="tuijian_soft">
+                <h5>热门社团组织文章推荐</h5>
+                <ul>
+                    <li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20121215/959.html" target="_blank" title="河南大校园大学生学社团联合会">
+                                <img src="http://www.xystu.net/dede/allimg/121215/0QSQ4L_lit.jpg" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20121215/959.html" target="_blank" title="河南大校园大学生学社团联合会">河南大校园大学生学社团联合会</a>
+                            </strong>
+                            <br />
+                            河南大学社团联合会_百度百科
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20130312/11694.html" target="_blank" title="上海工程技术校园大学生大学社团联合会招新">
+                                <img src="http://www.xystu.net/dede/allimg/130312/0136204553_lit.JPG" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20130312/11694.html" target="_blank" title="上海工程技术校园大学生大学社团联合会招新">上海工程技术校园大学生大学社</a>
+                            </strong>
+                            <br />
+                            宣传部 上海工程技术大学 腾飞 新
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20130816/18132.html" target="_blank" title=" 河南大学兼职社团 规模：未填写公司行业：校园大学生未填写 地址：开封市明伦街河南大学 公司介绍： 河南大学兼职社团">
+                                <img src="http://www.xystu.net/dede/allimg/130816/0242404150_lit.jpg" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20130816/18132.html" target="_blank" title=" 河南大学兼职社团 规模：未填写公司行业：校园大学生未填写 地址：开封市明伦街河南大学 公司介绍： 河南大学兼职社团"> 河南大学兼职社团 规模：未填</a>
+                            </strong>
+                            <br />
+                            河南大学兼职社团 规模：未填写公
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20121228/6278.html" target="_blank" title="河南省郑州校园大学生市二七区人民检察院">
+                                <img src="http://www.xystu.net/dede/allimg/121228/1343293413_lit.jpg" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20121228/6278.html" target="_blank" title="河南省郑州校园大学生市二七区人民检察院">河南省郑州校园大学生市二七区</a>
+                            </strong>
+                            <br />
+                            河南省郑州市二七区人民检察院 时
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20130625/14593.html" target="_blank" title="南昌大学共青学院校园大学生第五届社团文化艺术节拉开序幕">
+                                <img src="http://www.xystu.net/dede/allimg/130625/10221254K_lit.jpg" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20130625/14593.html" target="_blank" title="南昌大学共青学院校园大学生第五届社团文化艺术节拉开序幕">南昌大学共青学院校园大学生第</a>
+                            </strong>
+                            <br />
+                            南昌大学共青学院第五届社团文化艺
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20130706/15425.html" target="_blank" title="来展现自己校园大学生的独一无二的作品">
+                                <img src="http://www.xystu.net/dede/allimg/130706/22413A5I_lit.jpg" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20130706/15425.html" target="_blank" title="来展现自己校园大学生的独一无二的作品">来展现自己校园大学生的独一无</a>
+                            </strong>
+                            <br />
+                            社团活动 社团精品活动——潮出个
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20130805/17080.html" target="_blank" title="社团招新校园大学生将于10月中旬启动">
+                                <img src="http://www.xystu.net/dede/allimg/130805/2009452114_lit.jpg" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20130805/17080.html" target="_blank" title="社团招新校园大学生将于10月中旬启动">社团招新校园大学生将于10月中</a>
+                            </strong>
+                            <br />
+                            高校社团招新“百团大战” 今年微
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20130901/19672.html" target="_blank" title="分别选出男生校园大学生前三名和女生前三名">
+                                <img src="http://www.xystu.net/dede/allimg/130901/1431343234_lit.jpg" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20130901/19672.html" target="_blank" title="分别选出男生校园大学生前三名和女生前三名">分别选出男生校园大学生前三名</a>
+                            </strong>
+                            <br />
+                            河南大学大学生网球协会-协会简介
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20131023/25431.html" target="_blank" title="长江大校园大学生学社团文化网">
+                                <img src="http://www.xystu.net/dede/allimg/131023/145P93U3_lit.png" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20131023/25431.html" target="_blank" title="长江大校园大学生学社团文化网">长江大校园大学生学社团文化网</a>
+                            </strong>
+                            <br />
+                            长江大学社团文化网
+                        </p>
+                    </li>
+<li><p class="simg">
+                            <a href="http://www.xystu.net/shetuan/20130222/9808.html" target="_blank" title="共青团长春校园大学生大学光华学院委员会">
+                                <img src="http://www.xystu.net/dede/allimg/130222/010I55316_lit.jpg" width="16" height="16" />
+                            </a>
+                        </p>
+                        <p class="text">
+                            <strong>
+                                <a href="http://www.xystu.net/shetuan/20130222/9808.html" target="_blank" title="共青团长春校园大学生大学光华学院委员会">共青团长春校园大学生大学光华</a>
+                            </strong>
+                            <br />
+                            首页 组织机构 院团委 共青团长春
+                        </p>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="soft_xiangg">
+                <h4 class="soft_xg_title">广告赞助商</h4>
+                <div ><script src='http://www.xystu.net/plus/ad_js.php?aid=5' language='javascript'></script>
+                   
+                </div>
+            </div>
+
+            <div id="soft_down_ph">
+                <h5>社团组织文章阅读排</h5>
+                <div class="soft_down_ph_box">
+                    <ul>
+                        <li><a href="http://www.xystu.net/shetuan/20121230/7739.html" target="_blank" title="第七届全国高校园大学生校会长年会参会社团人员">第七届全国高校园大学生校会长年会参会社团人</a></li>
+<li><a href="http://www.xystu.net/shetuan/20121230/7740.html" target="_blank" title="第六届全国高校社团会长校园大学生年会暨新青年领袖论坛已经审批通过名单">第六届全国高校社团会长校园大学生年会暨新青</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130129/9334.html" target="_blank" title="大学康师傅校园大学生方便面营销策划书">大学康师傅校园大学生方便面营销策划书</a></li>
+<li><a href="http://www.xystu.net/shetuan/20121215/959.html" target="_blank" title="河南大校园大学生学社团联合会">河南大校园大学生学社团联合会</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130312/11694.html" target="_blank" title="上海工程技术校园大学生大学社团联合会招新">上海工程技术校园大学生大学社团联合会招新</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130728/16441.html" target="_blank" title="社团校园大学生活动主持词">社团校园大学生活动主持词</a></li>
+<li><a href="http://www.xystu.net/shetuan/20121222/3499.html" target="_blank" title="中美大校园大学生学社团比较">中美大校园大学生学社团比较</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130816/18132.html" target="_blank" title=" 河南大学兼职社团 规模：未填写公司行业：校园大学生未填写 地址：开封市明伦街河南大学 公司介绍： 河南大学兼职社团"> 河南大学兼职社团 规模：未填写公司行业：校</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130805/17093.html" target="_blank" title="向校外新闻媒体及校报、网站等投稿； 3、负责社联会的板报制作和各校园大学生种通知海报的书写； 4、负责社联会月报的编写、">向校外新闻媒体及校报、网站等投稿； 3、负责</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130730/16525.html" target="_blank" title=" （二）依校园大学生托学生社团这一载体"> （二）依校园大学生托学生社团这一载体</a></li>
+<li><a href="http://www.xystu.net/shetuan/20131030/26151.html" target="_blank" title="校学生会权益部举校园大学生办消费者权益保护宣传活动">校学生会权益部举校园大学生办消费者权益保护</a></li>
+<li><a href="http://www.xystu.net/shetuan/20121217/1851.html" target="_blank" title="河南大学学生社团校园大学生联合会换届总结大会圆满落幕">河南大学学生社团校园大学生联合会换届总结大</a></li>
+<li><a href="http://www.xystu.net/shetuan/20121218/2109.html" target="_blank" title="大学社团经校园大学生费申请报告怎么写？"><strong>大学社团经校园大学生费申请报告怎么写？</strong></a></li>
+<li><a href="http://www.xystu.net/shetuan/20121228/6278.html" target="_blank" title="河南省郑州校园大学生市二七区人民检察院">河南省郑州校园大学生市二七区人民检察院</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130304/10809.html" target="_blank" title="关于开展“与信仰对话、与祖国同行”学校园大学生习实践党的十八大精神增强共青团员先进意识主题教育活动的通知">关于开展“与信仰对话、与祖国同行”学校园大</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130625/14593.html" target="_blank" title="南昌大学共青学院校园大学生第五届社团文化艺术节拉开序幕">南昌大学共青学院校园大学生第五届社团文化艺</a></li>
+<li><a href="http://www.xystu.net/shetuan/20130920/21981.html" target="_blank" title="报考人员除了要符合党校园大学生政领导干部选拔任用的基本条件之外">报考人员除了要符合党校园大学生政领导干部选</a></li>
+<li><a href="http://www.xystu.net/shetuan/20121216/1444.html" target="_blank" title="山东师范校园大学生大学学生会章程">山东师范校园大学生大学学生会章程</a></li>
+<li><a href="http://www.xystu.net/shetuan/20121217/1773.html" target="_blank" title="以学生为本，高校园大学生校社团创新大学生培养模式">以学生为本，高校园大学生校社团创新大学生培</a></li>
+<li><a href="http://www.xystu.net/shetuan/20121217/1774.html" target="_blank" title="我国科技社校园大学生团的管理创新探析">我国科技社校园大学生团的管理创新探析</a></li>
+</ul>
+                </div>
+            </div>
+        </div>
+        <div id="down_right">
+            <div class="down_r_cent">
+                <h3 class="down_r_title">◎ <a href='http://www.xystu.net/'>首页</a> > <a href='http://www.xystu.net/shetuan/'>社团组织</a> > 
+                    <span>INTRODUCE</span>
+                </h3>
+                <div class="down_about_box">
+                    <div class="single">
+                        <h1>电气信息类专校园大学生业学生社团的建设与发展(2)</h1>
+                        <div class="meta singlemeta">
+                            <span>2013-11-07 08:16</span>
+                            <span>作者:校园大学生</span>
+                            <span>来源:<a href="http://www.5wmz.com/">百度影音</a></span>
+                            <span>浏览:
+                                <script src="http://www.xystu.net/plus/count.php?view=yes&aid=27186&mid=1" type='text/javascript' language="javascript"></script>次</span>
+                            <span class="cmts">
+                                <a href="#down_comment">我要评论</a>
+                                <a href="http://www.xystu.net/plus/feedback.php?aid=27186">
+                                    (条)</a></span>
+                            <span>字号:<a href="javascript:doZoom(16)" class="mfbig">大</a>
+                                <a href="javascript:doZoom(14)" class="mfmid mfcurrent">中</a>
+                                <a href="javascript:doZoom(12)" class="mfsml">小</a></span>
+                        </div>
+                    </div>
+                    <div class="entrycontent">
+                        <div class="entry">
+                            
+                            <p class="summary"><strong>摘要</strong>:社团在创立之初，虽然社团在校团委和学院团委的监管下运行，实验室都尽量提供元器件与场地支持，每年都有学生获奖，无法开展更多的活动，并指定专业教师作为协会指导教师提供长期的帮助与指导，都有相应的指导教师</p>
+                            
+                            <div class="content">
+                                <div id="mbtxfont">
+                                <table width='100%'>
+                                    <tr>
+                                        <td>
+                                            <div><script src='http://www.xystu.net/plus/ad_js.php?aid=8' language='javascript'></script>
+</div>
+                                             社团在创立之初，虽然社团在校团委和学院团委的监管下运行，实验室都尽量提供元器件与场地支持，每年都有学生获奖，无法开展更多的活动，并指定专业教师作为协会指导教师提供长期的帮助与指导，都有相应的指导教师支持，探索解决教育活动产生、发展过程中遇到的实际教育问题，精品学习网论文网为您提供教育学论文范文参考， 协会会定期组织协会成员在校内外开展免费维修活动。</p>
+<p>变成学生自发的行为，能促进不同专业学生的交流，基本都只剩下协会的十几个干部还在撑着，以及论文写作指导和格式排版要求，，获得多项浙江省大学生创新项目，提升学生创新、就业能力，绝大多数的社团负责人缺乏经营建设的理念，一方面， 5.会员流失现象严重 近些年来，加大了对电子科技协会的支持，倚Ｓ昧肆己玫纳谏缤沤ㄉ璧母鞣矫嫣岢隽艘恍┯行У慕ㄉ璐胧ㄒ瞪缤旁诔锝ǖ墓讨芯陀邪炎约核У淖ㄒ道砺壑逗途咛逑钅俊⑹导嘟岷系奶氐悖丫Ｎ藜福傅冀淌Φ淖饔妹挥械玫匠浞值姆⒒樱股缤呕疃厣⒏鲂曰⒋葱禄  (责任编辑：admin)
+                                        </td>
+                                    </tr>
+                                </table>
+                                </div>
+                                <div class="dede_pages">
+                                    <ul class="pagelist">
+                                        <li><a>共2页: </a></li><li><a href='27186.html'>上一页</a></li><li><a href='27186.html'>1</a></li><li class="thisclass"><a href='#'>2</a></li><li><a href='#'>下一页</a></li></ul>
+                                </div>
+                            </div>
+                            <!-- //顶踩 -->
+                            <div class="newdigg" id="newdigg">
+                                <div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',27186)">
+                                    <div class="digg_act">顶一下</div>
+                                    <div class="digg_num">(0)</div>
+                                    <div class="digg_percent">
+                                        <div class="digg_percent_bar">
+                                            <span style="width:0%"></span>
+                                        </div>
+                                        <div class="digg_percent_num">0%</div>
+                                    </div>
+                                </div>
+                                <div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',27186)">
+                                    <div class="digg_act">踩一下</div>
+                                    <div class="digg_num">(0)</div>
+                                    <div class="digg_percent">
+                                        <div class="digg_percent_bar">
+                                            <span style="width:0%"></span>
+                                        </div>
+                                        <div class="digg_percent_num">0%</div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            <!-- //顶踩部份的源码结束 -->
+							<script language="javascript" type="text/javascript">getDigg(27186);</script>
+                            <!-- //分享代码开始 -->
+                            <!-- JiaThis Button BEGIN -->
+                            <div class='feixiangjia'>
+                                <div id="ckepop" class='feixiangjias'>
+                                    <a href="http://www.xystu.net/" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank">分享到：</a>
+                                    <a class="jiathis_button_qzone">QQ空间</a>
+                                    <a class="jiathis_button_tsina">新浪微博</a>
+                                    <a class="jiathis_button_kaixin001">开心网</a>
+                                    <a class="jiathis_button_renren">人人网</a>
+                                    <a class="jiathis_button_baidu">百度搜藏</a>
+                                    <a class="jiathis_button_douban">豆瓣</a>
+                                    <a class="jiathis_button_tqq">腾讯微博</a>
+                                </div>
+                            </div>
+                            <script type="text/javascript" src="http://v1.jiathis.com/code/jia.js" charset="utf-8"></script>
+                            <!-- JiaThis Button END -->
+                            <!-- //分享代码结束 -->
+                            <div class="boxoff">
+                                <strong>------分隔线----------------------------</strong>
+                            </div>
+                            <div class="handle">
+                                <div class="context">
+                                    <ul>
+                                        <li>上一篇：<a href='http://www.xystu.net/shetuan/20131107/27185.html'> 2. 入选创新工</a> </li>
+                                        <li>下一篇：<a href='http://www.xystu.net/shetuan/20131107/27187.html'>同济大学社团校园大学生联合会招新啦~！！！</a> </li></ul>
+                                </div>
+                                <!-- /context -->
+                                <div class="actbox">
+                                    <ul>
+                                        <li id="act-fav">
+                                            <a href="http://www.xystu.net/plus/stow.php?aid=27186" target="_blank">收藏</a>
+                                        </li>
+                                        <li id="act-err"><a href="http://www.xystu.net/plus/erraddsave.php?aid=27186&title=电气信息类专校园大学生业学生社团的建设与发展(2)" target="_blank">挑错</a>
+                                        </li>
+                                        <li id="act-pus"><a href="http://www.xystu.net/plus/recommend.php?aid=27186" target="_blank">推荐</a>
+                                        </li>
+                                        <li id="act-pnt">
+                                            <a href="#" onClick="window.print();">打印</a>
+                                        </li></ul>
+                                </div>
+                                <!-- /actbox -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /content -->
+                    <!--百度谷歌广告 开始-->
+                    <div class="soft_teb_sm">
+                        <h6 class="biaoti">
+                            <ins>特别说明</ins>
+                        </h6>
+                        <p>本站部分文章来源于网络，如有侵权请联系FYTI#qq.com,我们将第一时间删除！</p>
+                    </div>
+                    <!--百度谷歌广告 结束-->
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="down_r_cent">
+                <a name="xiazai_dizhi" id="xiazai_dizhi"></a>
+                <h3 class="down_rurl_title"><span id="myip"></span>◎ 广告赞助</h3>
+                <div class="down_url_box">
+                    <div ><script src='http://www.xystu.net/plus/ad_js.php?aid=9' language='javascript'></script>
+</div>
+                </div>
+            </div>
+            <!-- //AJAX评论区 开始-->
+                        <div id="down_comment">
+                <!-- //主模板必须要引入http://www.xystu.net/include/dedeajax2.js -->
+                <a name='postform'></a>
+                <div id="comment_left">
+                    <div class="title">
+                        <span id="downComment1" class="hover">◎最新评论</span>
+                    </div>
+                    <div class="comment_left_box">
+                        <a name='commettop'></a>
+                        <!-- //这两个ID的区块必须存在，否则JS会出错 -->
+                        <ul class="comment_list" id='commetcontentNew'></ul>
+                        <ul class="comment_list" id='commetcontent'></ul>
+                        <div class="comment_ckall">
+                            <a href="http://www.xystu.net/plus/feedback.php?aid=27186" target="_blank" style="color:red;">查看全部评论 >></a>
+                        </div>
+                        <!--评论输入信息区域 开始-->
+                        <div class="comment_info">
+                            <h6 class="comment_kanfa">谈谈您对该文章的看</h6>
+                            <form action="#" method="post" name="feedback">
+                                <input type="hidden" name="dopost" value="send" />
+                                <input type="hidden" name="comtype" value="comments">
+                                <input type="hidden" name="aid" value="27186" />
+                                <input type="hidden" name="fid" id='feedbackfid' value="0" />
+                                <dl>
+                                    <dd><span> 表　　情：</span></dd>
+                                    <dt>
+                                           
+                                    </dt>
+                                </dl>
+                                <dl>
+                                    <dd>评论内容：</dd>
+                                    <dt>
+                                        <textarea cols="60" name="msg" rows="5" class="comm_info_sr"></textarea>
+                                    </dt>
+                                </dl>
+                                <dl>                                    
+                                    <dt id="_ajax_feedback">
+                                        <!--未登陆-->                                      
+
+								                                    
+                                        <input type="checkbox" name="notuser" id="dcmp-submit-guest" />
+                                        <label for="dcmp-submit-guest" /> 匿名?</label>
+                                          
+                                        <input type="radio" name="feedbacktype" checked="1" value="feedback" id="dcmp-stand-neu" /><label for="dcmp-stand-neu"><img src="http://www.xystu.net/templets/mobantx/images/cmt-neu.gif" />中立</label>
+                                        <input type="radio" name="feedbacktype" value="good" id="dcmp-stand-good" /><label for="dcmp-stand-good"><img src="http://www.xystu.net/templets/mobantx/images/cmt-good.gif" />好评</label>
+                                        <input type="radio" name="feedbacktype" value="bad" id="dcmp-stand-bad" /><label for="dcmp-stand-bad"><img src="http://www.xystu.net/templets/mobantx/images/cmt-bad.gif" />差评</label>
+                                           
+                                    </dt>
+                                </dl>
+                                
+                                <dl>
+                                    <dd></dd>
+                                    <dt>
+                                        <button type="button" class="comment_but" value="发表评论" onClick='PostComment()'>发表评论</button>
+                                        <span class="comemnt_sm">* 请注意用语文明且合法，谢谢合作 审核后才会显示！ Ctrl+回车 可以直接发表</span>
+                                    </dt>
+                                </dl>
+                            </form>
+                            <div class="clear">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--
+//由于评论载入时使用异步传输，因此必须在最后一步加载（DIGG和评论框须放在评论内容前面）
+//如果一定需要提前的把myajax.SendGet改为myajax.SendGet2，但可能会引起页面阻滞
+-->
+<script language='javascript'>
+function LoadCommets(page)
+{
+		var taget_obj = document.getElementById('commetcontent');
+		var waithtml = "<div style='line-height:50px'><img src='http://www.xystu.net/images/loadinglit.gif' />评论加载中...</div>";
+		var myajax = new DedeAjax(taget_obj, true, true, '', 'x', waithtml);
+		myajax.SendGet2("http://www.xystu.net/plus/feedback_ajax_mbtx.php?dopost=getlist&aid=&page="+page);
+		DedeXHTTP = null;
+}
+function PostComment()
+{
+		var f = document.feedback;
+		var nface = '6';
+		var nfeedbacktype = 'feedback';
+		var nvalidate = '';
+		var nnotuser = '';
+		var nusername = '';
+		var npwd = '';
+		var taget_obj = $DE('commetcontentNew');
+		var waithtml = "<div style='line-height:30px'><img src='http://www.xystu.net/images/loadinglit.gif' />正在发送中...</div>";
+		if(f.msg.value=='')
+		{
+			alert("评论内容不能为空！");
+			return;
+		}
+		if(f.validate)
+		{
+			if(f.validate.value=='') {
+				alert("请填写验证码！");
+				return;
+			}
+			else {
+				nvalidate = f.validate.value;
+			}
+		}
+		if(f.msg.value.length > 500)
+		{
+			alert("你的评论是不是太长了？请填写500字以内的评论。");
+			return;
+		}
+		if(f.feedbacktype) {
+			for(var i=0; i < f.feedbacktype.length; i++)
+				if(f.feedbacktype[i].checked) nfeedbacktype = f.feedbacktype[i].value;
+		}
+		if(f.face) {
+			for(var j=0; j < f.face.length; j++)
+				if(f.face[j].checked) nface = f.face[j].value;
+		}
+		if(f.notuser.checked) nnotuser = '1';
+		if(f.username) nusername = f.username.value;
+		if(f.pwd) npwd = f.pwd.value;
+		
+		var myajax = new DedeAjax(taget_obj, false, true, '', '', waithtml);
+		myajax.sendlang = 'gb2312';
+		myajax.AddKeyN('dopost', 'send');
+		myajax.AddKeyN('aid', '');
+		myajax.AddKeyN('fid', f.fid.value);
+		myajax.AddKeyN('face', nface);
+		myajax.AddKeyN('feedbacktype', nfeedbacktype);
+		myajax.AddKeyN('validate', nvalidate);
+		myajax.AddKeyN('notuser', nnotuser);
+		myajax.AddKeyN('username', nusername);
+		myajax.AddKeyN('pwd', npwd);
+		myajax.AddKeyN('msg', f.msg.value);
+		myajax.SendPost2('http://www.xystu.net/plus/feedback_ajax_mbtx.php');
+		f.msg.value = '';
+		f.fid.value = 0;
+		if(f.validate)
+		{
+			if($DE('validateimg')) $DE('validateimg').src = "http://www.xystu.net/include/vdimgck.php?"+f.validate.value;
+			f.validate.value = '';
+		}
+}
+function quoteCommet(fid)
+{
+	document.feedback.fid.value = fid;
+}
+LoadCommets(1);
+</script><!-- //评论内容区结束 -->
+            <!-- //AJAX评论区 结束-->
+            
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- /footer -->
+        <!-- /footer -->
+    <div class="clear">
+    </div>
+    <!-- //二级子类下拉菜单，考虑SEO原因放置于底部 -->
+    <script type='text/javascript' src='http://www.xystu.net/images/js/dropdown.js'></script>
+    <ul id="dropmenu1" class="dropMenu">
+        
+    </ul><ul id="dropmenu2" class="dropMenu">
+        
+    </ul><ul id="dropmenu3" class="dropMenu">
+        
+    </ul><ul id="dropmenu4" class="dropMenu">
+        
+    </ul><ul id="dropmenu5" class="dropMenu">
+        
+    </ul><ul id="dropmenu6" class="dropMenu">
+        
+    </ul><ul id="dropmenu7" class="dropMenu">
+        
+    </ul><ul id="dropmenu8" class="dropMenu">
+        
+    </ul><ul id="dropmenu20" class="dropMenu">
+        
+    </ul><ul id="dropmenu21" class="dropMenu">
+        
+    </ul>
+    <script type="text/javascript">cssdropdown.startchrome("navMenu")</script>
+    <div class="footer mt8">
+        <div class="link mt8">
+            <a href="#" target="_blank">关于我们</a>|
+            <a href="#" target="_blank">版权说明</a>|
+            <a href="#" target="_blank">免责声明</a>|
+            <a href="#" target="_blank">联系我们</a>|
+            <a href="/data/sitemap.html" target="_blank">网站地图</a>
+        </div>
+        <div class="copyright">
+            Copyright &copy; 2010-2013  校园大学生. 河南版 版权所有 <a href=http://www.dedecms.com target='_blank'>Power by DedeCms</a>&nbsp;&nbsp;
+            <br />
+            免责声明：本站部分资源来源于网络，如有侵权，请
+            <a href="mailto:fyti@qq.com" target="_blank"><span class="c2">点此联系我们</span></a>，我们将会尽快处理，谢谢！
+            <br />
+            <a href="http://www.miibeian.gov.cn" target="_blank"></a> <script language="javascript" type="text/javascript" src="http://js.users.51.la/5233132.js"></script>
+<noscript><a href="http://www.51.la/?5233132" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/5233132.asp" style="border:none" /></a></noscript></div>
+           
+            <!--//请保留此处的版权信息，如果你随便删除，我们有权限终止你的使用-->
+        </div>
+    </div>
+    <script language="javascript" type="text/javascript" src="http://www.xystu.net/templets/mobantx/js/common.js">
+    </script>
+    <div id="mbtx96060" style="display:none">
+        <div style="margin-top:2px; margin-bottom:1px;">
+            <script language='javascript' src='http://www.xystu.net/templets/mobantx/js/gg96060.js'>
+            </script>
+       
+    </div>
+        <script type="text/javascript">
+        document.getElementById("mbtx").innerHTML = document.getElementById("mbtx96060").innerHTML;
+        document.getElementById("mbtx96060").innerHTML = "";
+    </script>
+	
+	
+	
+	<script src='http://www.xystu.net/plus/ad_js.php?aid=7' language='javascript'></script>
+
+<script src='http://www.xystu.net/plus/ad_js.php?aid=6' language='javascript'></script>
+
+
+	
+	
+	
+    <!-- /footer -->
+    <!-- /footer --> 
+    <div id="gg64060" style="display:none">
+        <div style="margin-top:2px; margin-bottom:1px;">
+            <script language='javascript' src='http://www.xystu.net/templets/mobantx/js/gg64060.js'>
+            </script>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("mbtx64060").innerHTML = document.getElementById("gg64060").innerHTML;
+        document.getElementById("gg64060").innerHTML = "";
+    </script>
+    <div id="gg300250" style="display:none">
+        <div style="margin-top:2px; margin-bottom:1px;">
+            <script language='javascript' src='http://www.xystu.net/templets/mobantx/js/gg300250.js'>
+            </script>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("mbtx300250").innerHTML = document.getElementById("gg300250").innerHTML;
+        document.getElementById("gg300250").innerHTML = "";
+    </script>
+    <div id="gg250220" style="display:none">
+        <div style="margin-top:2px; margin-bottom:1px;">
+            <script language='javascript' src='http://www.xystu.net/templets/mobantx/js/gg250220.js'>
+            </script>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("mbtx250220").innerHTML = document.getElementById("gg250220").innerHTML;
+        document.getElementById("gg250220").innerHTML = "";
+    </script>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,1053 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=gb2312"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <title>《这家是你的还是我的！》卿小双　ˇ番外【上】ˇ 最新更新:2011-10-08 23:03:40</title>
+                <meta name="Keywords" content="卿小双,这家是你的还是我的！,卿小双《这家是你的还是我的！》之番外【上】,主角：裴琰、沈悦 ┃ 配角：齐然、林慕、魏凡、安朔 ┃ 其它：, 娱乐圈 最新更新:2011-10-08 23:03:40 作品积分：3727852" />
+        <meta name="Description" content="卿小双《这家是你的还是我的！》之番外【上】,主角：裴琰、沈悦 ┃ 配角：齐然、林慕、魏凡、安朔 ┃ 其它：, 娱乐圈 最新更新:2011-10-08 23:03:40 作品积分：3727852"  />
+        <meta name="Author" content="卿小双" />
+        <meta name="Copyright" content="卿小双,这家是你的还是我的！ 晋江文学城 晋江原创网" />
+        <script type='text/javascript' src='http://js.adm.cnzz.net/js/abase.js'></script>
+        
+<div style="display:none;" class="cnzz"><script src='http://w.cnzz.com/c.php?id=30075907' language='JavaScript'></script></div>
+    </head>
+    <body topmargin="0" itemscope itemtype="http://schema.org/Novel">
+        <link href="http://static.jjwxc.net/css/channel_2010/index2010.css?ver=20140728" rel="stylesheet" type="text/css" media="screen" />
+<style>
+    #showNovelTro{position:absolute;display:none;padding:6px;border:1px solid #009900;background-color:#FFFFFF;width:240px;z-index:9999;}
+    #showNovelTro ul{list-style-type:none;padding:0;margin:0;}
+    #showNovelTro ul li{margin:0;padding:0;list-style-type:none;}
+</style>
+<script>
+    var _czc = _czc||[];
+    _czc.push(["_setAccount", "30075907"]);
+</script>
+<script type="text/javascript">!window.jQuery&&document.write('<script src="http://static.jjwxc.net/scripts/jquery-1.8.0.min.js"><\/script>');</script>
+<script type="text/javascript" src="http://static.jjwxc.net/scripts/jquery.blockUI.pack.js"></script>
+<script type="text/javascript" src="http://static.jjwxc.net/scripts/jjlogin.js?ver=201502021312"></script>  
+<script type="text/javascript" src="http://static.jjwxc.net/scripts/main.120724.js?ver=20150122"></script>
+<script type='text/javascript' src='http://js.adm.cnzz.net/js/abase.js'></script>
+<script>
+    function isonlinedoublered(type) {
+        if (type==2) {
+            return true;
+        }
+        if (type!=1) {
+            return false;
+        }
+        //2015.02.18-2015.03.05
+        var localtime = Math.round(new Date().getTime()/1000);
+        if (parseInt(localtime)>=1424188800&&parseInt(localtime)<=1425571199) {
+            return true;
+        }
+        return false;
+    }
+    $(function() {
+        if (isonlinedoublered(1)) {
+            // 翻倍红包公告提示
+            $.ajax({
+                type: "get",
+                async: true, //同步异步 true为异步(默认),false为同步
+                url: "http://s8.static.jjwxc.net/public_notice.php", //实际上访问时产生的地址为: test.php?callbackfun=jsonpCallback&id=10
+                cache: true, //默认值false false时生成随机的&_=随机数
+                dataType: "jsonp",
+                jsonpCallback: "red_envelope_150204",
+                ifModified: true,
+                success: function(json) {
+                    var msg = '';
+                    $.each(json.publicMsg, function(index, v) {
+                        msg += v+"&nbsp;&nbsp;&nbsp;&nbsp;";
+                    });
+                    if (msg!='') {
+                        $("#public_notice_new").css('display', 'block');
+                        $("#public_info_show").html(msg);
+                    }
+                }
+            });
+        }
+        var version = 0;
+        var caretPos = 0;
+        $('#autoComplete').bind('input propertychange', function() {
+            var checkUrl = window.location.pathname;
+            var checkType = $("#tj option:selected").val();
+            if (checkUrl.indexOf("search.php")<0||checkType!=1) {
+                return false;
+            }
+            var words = encodeURIComponent($(this).val());
+            var type = 1;//按作品搜索
+            var html = "";
+            var left = 168;
+            var top = 70;
+            version++;
+            var inputObj = document.getElementById("autoComplete");
+            var thisCaretPos = getCursortPosition(inputObj);
+            if (thisCaretPos!=caretPos) {
+                caretPos = thisCaretPos;
+                $('#showNovelTro').hide();
+                $.getJSON("http://www.jjwxc.net/search/search_ajax.php?action=search&keywords="+words+"&type="+type+"&version="+version, function(data) {
+                    if (data.status==200&&data.version==version) {
+                        html += "<ul>";
+                        $.each(data.data, function(i, v) {
+                            html += "<li><a href='http://my.jjwxc.net/search/result.php?novelid="+v.novelid+"&searchkey="+encodeURIComponent(data.searchkey)+"&type="+data.type+"'>"+v.novelname+"</a> -----<a href='http://www.jjwxc.net/oneauthor.php?authorid="+v.authorid+"'>"+v.authorname+"</a> </li>"
+                        })
+                        html += "</ul>";
+                        $('#showNovelTro').css({
+                            left: left+'px',
+                            top: top+'px'
+                        }).html(html).show();
+                    }
+                })
+            }
+        });
+        $(document).click(function() {
+            $('#showNovelTro').hide();
+        });
+    })
+    function getCursortPosition(ctrl) {//获取光标位置函数
+        var CaretPos = 0;    // IE Support
+        if (document.selection) {
+            ctrl.focus();
+            var Sel = document.selection.createRange();
+            Sel.moveStart('character', -ctrl.value.length);
+            CaretPos = Sel.text.length;
+        }
+        // Firefox support
+        else if (ctrl.selectionStart||ctrl.selectionStart=='0')
+            CaretPos = ctrl.selectionStart;
+        return (CaretPos);
+    }
+</script>
+<div id="sitetop" class="c99" style="position: relative; z-index: 3;"><div style="float:left"><span id="serverTime"></span></div>
+    <div class="toplogin">
+        <div class="top_right" style="position:relative; z-index:2000;">
+            <div id="t_user_info"></div> <div id="t_user_sms"></div> <div id="t_user_nav"></div>
+            <noscript>由于您的浏览器禁用了javascript，无法正常使用本网站功能，<a href="http://help.jjwxc.net/user/article/136" target="_blank"><font color="blue">请参考此方法重新开启javascript</font></a></noscript>
+        </div>
+    </div>
+    <script>checkLogin();</script>
+    <!--待审核提示消息框-->
+    <div class="blockUI blockMsg" id ="examine_num" style="z-index: 1002; position: absolute; height:45px; width:140px; top: 35px; left: 820px; text-align: center; color: rgb(0, 0, 0);  background-color:#FFFFF7;border:1px solid #FFCC00;display: none;line-height:15px">
+        <a href="#" style="float: right;margin-right: 8px" id="examine_num_close">关闭</a><br/>
+        <div id ="examine_num_content"></div>
+    </div>
+</div>
+<!--整站头部结束-->
+<!--js加载判断，从以前的foot_opt.php中的标签调整至此-->
+<p id="checkJs" style="text-align:center"></p>
+<!--logo 导航条-->
+<div id="sitehead" style="position:relative; z-index:2;line-height: 22px;">
+    <div class="logo"><a href="http://www.jjwxc.net/" rel="nofollow"><img src="http://static.jjwxc.net/images/channel_2010/logo.gif" width="120" height="120" alt="晋江文学城logo" title="晋江文学城" /></a></div>
+    <div class="nav1">
+        <div class="fl" style="width:371px;">
+            <div class="link1"><a href="http://www.jjwxc.net/fenzhan/yq/" class="a1"></a><a href="http://www.jjwxc.net/fenzhan/yc/" class="a2"></a><a href="http://www.jjwxc.net/fenzhan/noyq/" class="a3"></a><a href="http://www.jjwxc.net/fenzhan/ys/" class="a4"></a></div>
+            <div class="link2">
+                <a href="http://www.jjwxc.net/fenzhan/by/" target="_blank">完结文库</a><a href="http://www.jjwxc.net/fenzhan/bq/" target="_blank">出版影视</a><a href="http://www.jjwxc.net/jjgame/" target="_blank" >游戏娱乐</a><a href="http://bbs.jjwxc.net" target="_blank">论坛</a><a href="http://www.jjwxc.net/sp/JJ-app-download/" onclick="_czc.push(['_trackEvent', 'WWW分页', '点击', '手机频道']);" target="_blank"><font style="color:red;font-weight:700">手机版</font></a><a onclick="trans(0);
+                        return false;" id="S2TLink" href="#">繁体版</a>
+
+            </div>
+        </div>
+        <!--全站通发顶部banner广告-->
+        <div  style="float: right; width: 468px;" ><script>CNZZ_SLOT_RENDER('256809');</script></div>
+        <div id="ad3"></div>
+        <div class="clear"></div>
+    </div>
+    <div class="nav2">
+        <div class="left1"></div>
+        <div class="right1"></div>
+        <div id="dymenu">
+            <ul class="root">
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://www.jjwxc.net/bookbase_slave.php">作品库<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://www.jjwxc.net/bookbase_slave.php?endstr=true&orderstr=1">完结作品</a></li>
+                        <li><a href="http://www.jjwxc.net/bookbase_slave.php?booktype=sp">驻站作品</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:65px;"></iframe></li>
+                        <li><a href="http://www.jjwxc.net/bookbase_slave.php?booktype=vip">VIP作品</a></li>
+                        <li><a href="http://www.jjwxc.net/bookbase_slave.php?booktype=package">完结半价/包月</a></li>
+                        <li><a href="http://www.jjwxc.net/bookbase_slave.php?booktype=scriptures">经典文库</a></li>
+                        <li><a href="http://www.jjwxc.net/bookbase_slave.php?booktype=free">免费文库</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+                <li class="topen">
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://www.jjwxc.net/topten.php">排行榜<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://www.jjwxc.net/topten.php?orderstr=1">官推言情榜</a></li>
+                        <li><a href="http://www.jjwxc.net/topten.php?orderstr=1&t=1">官推纯爱同人榜</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:65px;"></iframe></li>
+                        <li><a href="http://www.jjwxc.net/topten.php?orderstr=3">新晋作者榜</a></li>
+                        <li><a href="http://www.jjwxc.net/topten.php?orderstr=5">月度排行榜</a></li>
+                        <li><a href="http://www.jjwxc.net/topten.php?orderstr=4">季度排行榜</a></li>
+                        <li><a href="http://www.jjwxc.net/topten.php?orderstr=6">半年排行榜</a></li>
+                        <li><a href="http://www.jjwxc.net/topten.php?orderstr=7">总分排行榜</a></li>
+                        <li><a href="http://www.jjwxc.net/topten.php?orderstr=8">字数排行榜</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://www.jjwxc.net/channel/comment.html">评论频道<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://www.jjwxc.net/comment.php?orderstr=1">发表排序</a></li>
+                        <li><a href="http://www.jjwxc.net/comment.php?orderstr=2">点击排序</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:45px;"></iframe></li>
+                        <li><a href="http://www.jjwxc.net/spcomment.php">特邀评论</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://www.jjwxc.net/authorlist.php">作者专区<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://www.jjwxc.net/authorlist.php">字母排序</a></li>
+                        <li><a href="http://www.jjwxc.net/scorelist.php">积分排序</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:65px;"></iframe></li>
+                        <li><a href="http://help.jjwxc.net/user/more/23/0">写作导航</a></li>
+                        <li><a href="http://www.jjwxc.net/starshow.php">明星作者</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://www.jjwxc.net/fenzhan/bq/">出版专区<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://www.jjwxc.net/fenzhan/bq/">封面欣赏</a></li>
+                        <li><a href="http://www.jjwxc.net/fenzhan/bq/">最新签约</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:35px;"></iframe></li>
+                        <li><a href="http://www.jjwxc.cn/zhuanlan/index/zhuanlantype/yuanchuang">图书销售</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://www.jjwxc.net/aboutus/#fragment-33">新闻活动<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://www.jjwxc.net/onebook.php?novelid=494708">晋江新闻</a></li>
+                        <li><a href="http://www.jjwxc.net/aboutus/#fragment-33">网站活动</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:45px;"></iframe></li>
+                        <li><a href="http://www.jjwxc.net/aboutus/#fragment-33">媒体报道</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://my.jjwxc.net/pay/paycenter.php"><font color="red">充值</font><img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://my.jjwxc.net/pay/paycenter.php">快捷充值</a></li>
+                        <li><a href="http://my.jjwxc.net/pay/tutorial.php">充值流程</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:45px;"></iframe></li>
+                        <li><a href="http://www.jjwxc.net/fenzhan/yq/action_center.html">包月卡激活</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://my.jjwxc.net/backend/auto.php">求助投诉<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://help.jjwxc.net/user/article/49">更改笔名</a></li>
+                        <li><a href="http://my.jjwxc.net/backend/auto.php?act=3">笔名自杀</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:65px;"></iframe></li>
+                        <li><a href="http://my.jjwxc.net/backend/auto.php?act=4">删除文章</a></li>
+                        <li><a href="http://www.jjwxc.net/report_center.php">检举文章</a></li>
+                        <li><a href="http://my.jjwxc.net/backend/auto.php?act=6">投诉书评</a></li>
+                        <li><a href="http://my.jjwxc.net/backend/auto.php?act=7">修改授权</a></li>
+                        <li><a href="http://my.jjwxc.net/backend/auto.php?act=8">笔名排序错误</a></li>
+                        <li><a href="http://help.jjwxc.net/user/password">忘记密码</a></li>
+                        <li><a href="http://bbs.jjwxc.net/board.php?board=22&page=1">意见建议簿</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://my.jjwxc.net/login.php">注册/登录<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://my.jjwxc.net/register/index.html" rel="nofollow">用户注册</a></li>
+                        <li><a href="http://my.jjwxc.net/login.php">登陆管理</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:65px;"></iframe></li>
+                        <li><a href="http://my.jjwxc.net/backend/logout.php" title="退出登录状态">退出登陆</a></li>
+                        <li><a href="http://help.jjwxc.net/user/password">忘记密码</a></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://help.jjwxc.net/user/index">帮助<img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul>
+                        <li><a href="http://help.jjwxc.net/user/index">帮助中心</a></li>
+                        <li><a href="http://help.jjwxc.net/user/contact">客服中心</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:20px;"></iframe></li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+
+                <li>
+                    <!--[if IE]><a
+                href="#">
+                <table>
+                  <tbody>
+                  <tr>
+                    <td><![endif]-->
+                    <div class="title"><a href="http://game.jjwxc.net"><font color="red">游戏</font><img src="http://static.jjwxc.net/images/channel_2010/navli.jpg" /></a></div>
+                    <ul id="jjgames">
+                        <li>
+                            <a style="width:110px" href="http://ktpd.jjqj.net/" target="_blank">晋江开天辟地2
+                                <img src="http://static.jjwxc.net/images/channel_2010/new.gif" width="22px" />   
+                            </a>    
+                        </li>
+                        <li>
+                            <a style="width:110px" href="http://jjhgll.175wan.com/" target="_blank">晋江后宫来了
+                            </a>    
+                        </li>
+                        <!--                        <li>
+                                                    <a style="width:110px" href="http://jjzsxy.3737.com/" target="_blank">晋江再世仙缘
+                                                    </a>    
+                                                </li>-->
+                        <li><a style="width:110px" href="http://xxd.jjqj.net/" target="_blank">晋江仙侠道</a>    
+                        </li>
+                        <li><a style="width:110px" href="http://jjwxc.tgm.9917.com/" target="_blank">晋江唐宫梦</a>
+                        </li>
+<!--                        <li><a href="http://jjwxc.zcl.2g.cn/" target="_blank">晋江总裁令</a><iframe src="about:blank" style="filter:'progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0)'; position:absolute; visibility:inherit; top:0px; left:0px; width:110px; z-index:-1; height:65px;"></iframe>
+                        </li>-->
+                        <li><a style="width:110px" href="http://jjwxc.aoshitang.com/gcld" target="_blank">晋江攻城掠地
+                            </a>    
+                        </li>
+
+                        <li><a style="width:110px" href="http://jjwxc.9917.com/servers_yyzq.html?wait=alert">晋江凤凰决
+
+                            </a>    
+                        </li>
+                        <li><a style="width:110px" href="http://jjwxc.9917.com/">晋江宫廷计</a>
+                        </li>
+                    </ul>
+                    <!--[if IE]></td></tr></tbody></table></a><![endif]-->
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="nav3">
+        <div class="left2"></div>
+        <div class="mainnavbox">
+            <div class="mainnav">
+
+                <a href="http://www.jjwxc.net/fenzhan/yq/dp.html">短篇</a>
+                <a href="http://www.jjwxc.net/fenzhan/dm/ys.html">同人言情小说</a>
+                <a href="http://www.jjwxc.net/fenzhan/dm/tr.html">同人言情动漫</a>
+                <a href="http://www.jjwxc.net/fenzhan/yq/kh.html">科幻悬疑网游</a>
+                <a href="http://www.jjwxc.net/fenzhan/yq/wx.html">玄幻奇幻</a>
+                <a href="http://www.jjwxc.net/fenzhan/yq/chy.html">古代穿越</a>
+                <a href="http://www.jjwxc.net/fenzhan/yq/qc.html">幻想现言</a>
+                <a href="http://www.jjwxc.net/fenzhan/yq/bgx.html">都市青春</a>
+                <a href="http://www.jjwxc.net/fenzhan/yq/bgg.html">古代言情</a>
+            </div>
+            <div class="search">
+                <a class="limitFree" href="http://www.jjwxc.net/sp/novelfree/" target="_blank" style="float:left"><img width="51" style="margin-left: 40px;" src="http://static.jjwxc.net/images/Channel/xmyd.gif" ></a>
+                <div class="search_right">
+                    <form  method="get" action="http://www.jjwxc.net/bookbase.php" target="_top"  id="formright">
+                        <input type="hidden" name="s_typeid" value="1" />
+                        <select name="fw" id="fwfw" class="input2">
+                            <option value="0">-范围-</option>
+                                                                                        <option value="1" >全站</option>
+                                                                    <option value="2" >完结半价</option>
+                                                                    <option value="3" >VIP库</option>
+                                                            </select>
+                        <select name="ycx" id="ycyc" class="input2" style="width:73px">
+                            <option value="0">-原创性-</option>
+                                                                                        <option value="1" >原创</option>
+                                                                    <option value="2" >同人</option>
+                                                            </select>
+                        <select name="xx" id="xxxx" class="input2">
+                            <option value="0">-性向-</option>
+                                                                                        <option value="1" >言情</option>
+                                                                    <option value="2" >纯爱</option>
+                                                                    <option value="3" >百合</option>
+                                                                    <option value="4" >女尊</option>
+                                                                    <option value="5" >无CP</option>
+                                                            </select>
+                        <select name="sd" id="sdsd" class="input2">
+                            <option value="0">-时代-</option>
+                                                                                        <option value="1" >近代现代</option>
+                                                                    <option value="2" >古色古香</option>
+                                                                    <option value="4" >架空历史</option>
+                                                                    <option value="5" >幻想未来</option>
+                                                            </select>
+                        <select name="lx" id="lxlx" class="input2">
+                            <option value="0">-类型-</option>
+                                                                                        <option value="1" >爱情</option>
+                                                                    <option value="2" >武侠</option>
+                                                                    <option value="3" >奇幻</option>
+                                                                    <option value="4" >仙侠</option>
+                                                                    <option value="5" >网游</option>
+                                                                    <option value="6" >传奇</option>
+                                                                    <option value="7" >科幻</option>
+                                                                    <option value="8" >童话</option>
+                                                                    <option value="9" >恐怖</option>
+                                                                    <option value="10" >侦探</option>
+                                                                    <option value="11" >动漫</option>
+                                                                    <option value="12" >影视</option>
+                                                                    <option value="13" >小说</option>
+                                                                    <option value="14" >真人</option>
+                                                                    <option value="15" >其他</option>
+                                                                    <option value="16" >剧情</option>
+                                                            </select>
+                        <select name="fg" id="fgfg" class="input2">
+                            <option value="0">-风格-</option>
+                                                                                        <option value="1" >悲剧</option>
+                                                                    <option value="2" >正剧</option>
+                                                                    <option value="3" >轻松</option>
+                                                                    <option value="4" >爆笑</option>
+                                                                    <option value="5" >暗黑</option>
+                                                            </select>
+                        <select name="bq" id="ss_tags" class="input2" style="width: 71px;"><!--原来代码是 id="s_tags" 。由于js文件的原因，如果启用该id会导致下拉框多出很多很多标签，混乱，因此修改掉！-->
+                            <option value="-1">-标签-</option>
+                            <!--标签改为Ajax获取，在 main.120724_.js 中-->
+                        </select>
+                        <input name="submit" type="submit" onclick="_czc.push(['_trackEvent', 'WWW分页', '点击', '分类查询']);" class="searchbutton input3" id="submit" value="查询" />
+                    </form>
+                </div>
+                <div class="search_left">
+                    <form name="form8" method="get" action="http://www.jjwxc.net/search.php" target=_blank id="formleft">
+                                                    <input name = "kw" id = "autoComplete" autocomplete = "off" type = "text" onfocus = "if (this.value!='')
+                                        this.value = '';
+                                    $(this).css('color', 'black');" style = "width: 110px;color:#B2B2B2;" value = "请输入关键字">
+                                   
+
+                        <div id="showNovelTro"></div>
+                        <select name="t" class="input2" id="tj">
+                            <option value="1" selected>作品</option>
+                            <option value="2">作者</option>
+                            <option value="4">主角</option>
+                            <option value="5">配角</option>
+                            <option value="6">其它关键字</option>
+                        </select>
+                        <input name="submit" type="submit" onclick="_czc.push(['_trackEvent', 'WWW分页', '点击', '关键字查询']);" value="查询" class="searchbutton input3" />
+                        <!--super174-->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="right2"></div>
+    </div>
+</div>
+<script>headChange();</script>
+<div style="width:984px; margin:5px auto;display: none;" id="public_notice_new">
+    <div style="width:30px;float:left">
+        <img src="http://s8.statiac.jjwxc.net/images/laba.png">
+    </div>
+    <div style="width:945px;float:left">
+        <marquee scrollAmount="3" id="public_info_show" onmouseover="this.stop()" onmouseout="this.start()"></marquee>
+    </div>
+</div>
+<script>CNZZ_SLOT_RENDER('321082');</script>    <div class="h8px"></div>
+    <div align="center" style="height: 90px;">
+        <table width="984" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+            <tr>
+                <td width="732" height="90"><script>CNZZ_SLOT_RENDER('61508');</script></td>                <!-- 广告位：全站通发右侧小焦点-->
+                <td width="252" height="90" >
+                    <script type="text/javascript">
+                        document.write('<a style="display:none!important" id="tanx-a-mm_51073678_5024723_15442943"></a>');
+                        tanx_s = document.createElement("script");
+                        tanx_s.type = "text/javascript";
+                        tanx_s.charset = "gbk";
+                        tanx_s.id = "tanx-s-mm_51073678_5024723_15442943";
+                        tanx_s.async = true;
+                        tanx_s.src = "http://p.tanx.com/ex?i=mm_51073678_5024723_15442943";
+                        tanx_h = document.getElementsByTagName("head")[0];
+                        if (tanx_h)
+                            tanx_h.insertBefore(tanx_s, tanx_h.firstChild);
+                    </script>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="h8px"></div>
+<!--logo 导航条结束-->        <div id="authorid_" style="display: none">609523</div>
+        <div id="clickNovelid" style="display: none">1055737</div>
+        <style type="text/css">
+            .king_tickets_il {
+                float: left;
+                overflow: hidden;
+                width: 130px;
+                height: 28px;
+                padding: 0;
+                margin: 0;
+            }
+            .king_tickets_ul {
+                height: 40px;
+                line-height: 20px;
+                width: 200px;
+                overflow: hidden;
+                padding: 0;
+                margin: 0;
+            }
+            #ticketsrank_box{width:200px;min-height:20px;line-height:10px;}
+            #tickets_box{width:200px;height:80px;min-height:20px;line-height:20px;overflow:hidden;}
+            #tickets_box li{height:20px;padding-left:10px;overflow:hidden;}
+            /*收藏弹框分类样式 Sushang*/
+            #mongolia_layer{z-index: 1001; cursor: wait; border: medium none; margin: 0pt; padding: 0pt; width: 100%;height: 100%;top: 0pt; left: 0pt; position: fixed; background-color: rgb(0, 0, 0); opacity: 0.2;  filter : Alpha(opacity=20) ;display: none}
+            .float_favorite{height: 280px;width: 430px;background-color: #F0FFFA;font-size: 13px;position:absolute;display: none;z-index:1002;}
+            .float_title{height: 25px;width: 430px;background: #A0D59F}
+            .float_title span{float:left;margin: 6px 0 0 8px;}
+            .float_title img{float:right;margin: 4px 3px 0 0;cursor: pointer;}
+            .float_message{height: 45px;width: 430px;font-size: 12px;float:left;margin-top: 13px;color: #0F8C28;}
+            .float_comment{height: 150px;width: 395px;background: url(/images/float_comment.png) no-repeat;float:left;margin:8px 0 0 20px;font-size: 13px;}
+            .float_comment_title{height: 22px;width: 395px;font-weight: 600;}
+            .float_comment_title font{float:left;margin:5px 0 0 20px;}
+            .float_comment ul{list-style-type:none;margin:8px 0 0 20px;float:left}
+            .float_comment li{width: 62px;height: 17px;background: url(/images/lattice.png) no-repeat;float:left;margin: 5px 10px 5px 0px;line-height: 17px;text-align:center;}
+            .float_foot{height: 25px;width: 430px;font-size: 13px;float:left;margin:5px 0 0 0px;}
+            .float_foot a:link{color:#595B58;text-decoration:none;}
+            .float_foot a:visited{text-decoration:none;}
+        </style>
+        <div id="login_question" style="display:none; cursor: default;">
+            <table width="300" border="0" cellspacing="0" cellpadding="2" style="font-size:12px">
+                <tr>
+                    <td colspan="3" align="right"><img src="http://s9.static.jjwxc.net/images/close.gif" width="12" height="12" style="cursor:pointer" onClick="$.unblockUI()"/></td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="left"><img src="http://s9.static.jjwxc.net/images/login_key.gif" width="16" height="16" style="cursor:pointer"/>　请登陆</td>
+                </tr>
+                <tr>
+                    <td width="168" align="right">登陆方式：</td>
+                    <td colspan="2">
+                        <!--input name="USEUUID_ajax" type="radio" value="0" onClick="ajax_login(this.value)"/-->
+                        晋江邮箱或笔名<br /><span style="border-bottom: 1px dashed #666" onclick="show_sdo_login_block()">（以<span style="font-weight: bold; color:red;">盛大通行证</span>方式登陆请点这里）</span></td>
+                </tr>
+                <tr>
+                    <td align="right"><span id="loginname_update">邮箱或笔名：</span></td>
+                    <td width="157"><input name="loginname" type="text" class="input_text" id="loginname_ajax" size="20" maxlength="50" /></td>
+                    <td width="163">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td align="right">密　码：</td>
+                    <td><input name="loginpassword" type="password" class="input_text" id="loginpassword_ajax" size="20" maxlength="30" /></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3"><div id="ajax_login"></div></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="37%"><input type="button" name="Submit" id="login_ajax" value="登　录" onClick="login_ajax()"/></td>
+                                <td width="63%" align="left"><font style="font-size:18px; font-weight: bold;"><a href="http://my.jjwxc.net/register/index.html">注册</a></font></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <input name="callback" type="hidden" id="callback" /><input name="submit_at" type="hidden" id="submit_at" />
+        
+            <table width="984" border="0" align="center" cellpadding="0" cellspacing="0" style="table-layout:fixed" id="oneboolt">
+                <tr>
+                    <td width="760" class="noveltitle">
+                        <h1><a href=http://www.jjwxc.net/onebook.php?novelid=1055737><span class="bigtext">
+                                    这家是你的还是我的！                                </span></a>
+                        </h1>作者：<a href=http://www.jjwxc.net/oneauthor.php?authorid=609523>卿小双</a>
+                    </td>
+                    <td width="10">&nbsp;</td>
+                    <td width="214" align="center" class="noveltitle"><span style="font-size:12px;">作 者 推 文</span></td>
+                </tr>
+                <tr>
+                    <td width="760" rowspan="2" valign="top"  class="novelbody"  style="width:760px;word-break:break-all;word-wrap:break-word">
+                        <div class="noveltext">
+                            <div style="width: 100%; text-align: center;">
+                                [<span id="favorite_2" rel="2|这家是你的还是我的！|番外【上】|2011-10-13 23:47:01|卿小双|2|62864|609523" class="favorite_novel">收藏此章节</span>]　<span id="download_action" style="cursor: pointer;">[下载]&nbsp;&nbsp;</span><span id="yrt3"></span><script type="text/javascript">displayyrt("#yrt3", 'style="color:#9B30FF;"');</script>
+                                [<font style="color: red;"><a target="_blank" href="http://www.jjwxc.net/report_center.php">举报色情反动、刷分、抄袭</a></font>]
+                                <div id="favoriteshow_2" style="display:none"></div>
+                                <div id="download_box" style="position:absolute;display:none;padding:6px;border:1px solid #009900;background-color:#FFFFE7;width:70px;">
+                                    <div style="line-height: 20px;text-align: center;"><a title='博朗电子书专用格式' id="getebd" href="downebd.php?novelid=1055737">电子书下载</a></div>
+                                    <div style="line-height: 20px;text-align: center;"><span id="download_text" class="download_novel" style="font-weight: bold; color: red; cursor: pointer;" rel="1055737">TXT下载</span></div>
+                                </div>
+                                <!--收藏分类弹框 start-->
+                                <div id="mongolia_layer"></div><!--蒙层-->
+                                <div id="float_favorite" class="float_favorite">
+                                    <div class="float_title"><span>文章收藏</span><img src="http://s9.static.jjwxc.net/images/close.gif" onClick="close_fav()"/></div>
+                                    <div id="float_message" class="float_message"> </div>
+                                    <div class="float_comment">
+                                        <div class="float_comment_title"><font color="black">为收藏文章分类</font></div>
+                                        <ul id="float_comment_ul"></ul>
+                                    </div>
+                                    <div class="float_foot">
+                                                                                <a href="http://my.jjwxc.net/backend/favoriteclass.php" target='_blank'>定制收藏类别</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://my.jjwxc.net/backend/favorite.php?jsid=.1425829610" target='_blank'>查看收藏列表</a>
+                                    </div>
+                                </div>
+                                <!--收藏分类弹框 End-->
+                            </div>
+                                                        <div align="center" style="float:left;width:713px;padding-left: 0px; padding-top:14px;font-size:16px;"><h2>番外【上】</h2></div>
+                            <div style="clear:both;"></div>
+                            　　因为沈悦的工作时间不定，两个相处的时间就显得少。所以，裴琰能不去的应酬一般都让秘书推了，努力多制造两个人的世界。但总是难免有些推脱不掉的，比方说，世交家族长辈的七十大寿。<br>　　<font color='#E1FAE3'>。65658fde58ab3c2b6e5132a39fae7cb9《》 @ Copyright of 晋江原创网 @</font><br>　　裴妈妈打电话过来说，“我这边有约会，晚上你自己先过去，我晚点就到。”<br>　　裴琰皱眉，妈平时是那么重视礼数的人，怎么会让他一个人先过去？<font color='#EeFAEa'>。aba3b6fd5d18</font><br>　　看了看日历，今天周五，对别人来说就是周末的开始，可是对沈悦来说是忙碌的开始才对。<br>　　于是裴琰给沈悦发了个短信，“晚上有应酬，晚点到家。”<font color='#E9FAEd'>。1728efbda81692282ba6</font><br>　　许久，沈悦的回复短信传来，“恩。”<font color='#EcFAE5'>。19ca14《》 @ Copyright of 晋江原创网 @</font><br>　　就一个字，裴琰忍不住想，这是有多忙啊，等半天才一个字？平时不管怎么样，也会提醒他开车别喝酒，喝酒别开车，今天这是怎么了？<font color='#E9FAEc'>。0336dcba《》 @ Copyright of 晋江原创网 @</font><br>　　想给沈悦打个电话过去，又觉得太矫情了。<font color='#EaFAEc'>。3c《》 @ Copyright of 晋江原创网 @</font><br>　　裴琰只觉得，不对劲，非常不对劲！<font color='#EdFAEf'>。fc490ca4《》 @ Copyright of 晋江原创网 @</font><br>　　<font color='#EaFAE3'>。82aa4b0af34c2313a562076992e50aa3《》 @ Copyright of 晋江原创网 @</font><br>　　裴琰带着徐雅妘到了宴会地点，走进去一看，果然是宾客满堂，衣香鬓影，说不出的富丽堂皇，七十大寿这阵势也足够阔气了。<font color='#E2FAE5'>。dc912a253d1e9ba4《》 @ Copyright of 晋江原创网 @</font><br>　　早有人等在门口，看见裴琰进来，就带着他来到了寿星程家老太爷的面前。<br>　　程老太爷满头银发，但精神矍铄，一看见裴琰走过来，就笑着拍了拍他肩膀，说：“好小子，几年不见，都这么帅了啊！”<font color='#E3FAE9'>。06409663226af2f31144《》 @ Copyright of 晋江原创网 @</font><br>　　“程爷爷可是一点变化都没有，朱颜鹤发，老当益壮！”裴琰接过徐雅妘递过来的礼物，说，“祝您寿比南山！”<font color='#EbFAE9'>。65ded5353c5ee48d0b7d48c591b8《》 @ Copyright of 晋江原创网 @</font><br>　　“你这孩子，人来了就是了，还这么破费干嘛！”程老太爷笑呵呵的让人接过东西，止不住的满眼赞赏，“人长得帅，又出息，我可是知道的啊，你们裴氏生意越发的好了，什么时候给老头子我也支支招啊！”<font color='#E7FAE7'>。46ba9f2a6976570b0353203ec4474217《》 @ Copyright of 晋江原创网 @</font><br>　　裴琰一笑，说：“程爷爷拿我寻开心吧，您可是商海好手，我可不敢在您面前班门弄斧。”<br>　　裴琰那颇好的口才逗得程老爷子很是高兴。<font color='#E1FAE1'>。da《》 @ Copyright of 晋江原创网 @</font><br>　　“爷爷，人家裴大哥本来就很帅！”说话的人叫程舒婷，是程老太爷的亲孙女，程氏集团的千金。<font color='#E1FAEc'>。88ae6372cfdc5df69a976e893f4d554b《》 @ Copyright of 晋江原创网 @</font><br>　　亏得裴琰记忆力很好，虽然没见过面，但是他的情报网让他时刻都能掌握国内外商界情况，“程小姐，你好。”<font color='#E4FAE5'>。a1d0c6e83f027327d8461063f4ac58《》 @ Copyright of 晋江原创网 @</font><br>　　“裴大哥就叫我婷婷吧！”程舒婷看着裴琰一脸的笑容，“裴大哥没见过我，可是我常常跟裴妈妈一起见面呢！我们在美容院里经常聊天哦！”<font color='#E3FAEf'>。67《》 @ Copyright of 晋江原创网 @</font><br>　　“哦？是吗？这么巧啊！”裴琰小吃一惊，但是面上却没有丝毫的表现，只是隐隐觉得，这中间有什么不对劲。<font color='#E4FAEc'>。e6b4b2a746ed40e1af829d1fa82daa《》 @ Copyright of 晋江原创网 @</font><br>　　程老爷子也似乎想起来了什么，看着裴琰，问道：“你母亲怎么还没到呢？我知道徇风在国外暂时回不来，他也专门派人给老头子我送了礼物了。不过我可是知道颜思回国了，专门给她打了电话让她一定要跟你一起来的啊！”<font color='#E7FAE6'>。e2230b853516e7b05d《》 @ Copyright of 晋江原创网 @</font><br>　　“母亲有事会耽误一会儿，稍后就到，我替妈妈给程爷爷赔个不是了。”裴琰赶紧道歉。<br>　　“哎，这有什么，谁没个急事，你来了就好。不然啊，我可饶不了徇风。”程老爷子赶紧摆手，跟裴家多少年的交情了，他可不会因为这点小事就生气，再说了，他的算盘才开始打呢，更不会生气了。<font color='#EcFAE8'>。0cb929eae7a499e50248a3a78f7acfc7《》 @ Copyright of 晋江原创网 @</font><br>　　“爷爷~”程舒婷拉了拉程老爷子的袖子，欲言又止。<font color='#EfFAEa'>。7b13b2203029ed80337f27127</font><br>　　程老爷子点头笑了笑，对着裴琰说，“你们年轻人一起去玩吧，裴琰啊，你帮我照顾会儿婷婷好吗？”<font color='#E2FAE6'>。13f320e7b5ead1024ac95c3b208610db《》 @ Copyright of 晋江原创网 @</font><br>　　裴琰就知道会这样，平时的应酬还好，没人敢在他面前这么来，可是这会儿是认识多年的长辈开口，这面子，他抹不开。只好任由程舒婷走过来，挽住了他的胳膊。<font color='#E6FAEd'>。f4b9ec30ad9f68f8</font><br>　　<font color='#E5FAEd'>。7f24d240521d99071c93af3917215ef7《》 @ Copyright of 晋江原创网 @</font><br>　　一直站在旁边，充分感受到了周围朝程舒婷放射无数羡慕嫉妒恨目光的徐雅妘忍不住摇头，她老板这种世人眼中的钻石单身汉哪个女人不眼馋啊，可是人家不喜欢女人，再好的出身也白搭。而且他也根本不是单身汉啊，可惜这个事实，她可不敢拿出去说，身家性命前程啊，只能庆幸，老板家的那口子还好没在这里啊！<font color='#E1FAEe'>。258be18e31c8188555c2ff05《》 @ Copyright of 晋江原创网 @</font><br>　　裴琰可不想在这种情况下成为焦点，要不明天媒体万一乱写点什么，沈悦就算不是个醋坛子，也不会给他个好脸色看，精神洁癖严重了也是病的。<font color='#E2FAE2'>。d81f9c1be2e08964bf9f24b15f0e4900</font><br>　　带着程舒婷来到了稍微外围，靠庭院的地方，裴琰拿了两杯果汁，递了一杯给程舒婷。<br>　　“咦？裴大哥，你不喝酒吗？”程舒婷很少见男人不喝酒的，尤其是这种宴会上。<br>　　裴琰摇头，道：“这几天稍微有点咳嗽，还是不喝的好。”虽然是借口，但是裴琰总觉得会发生点什么，还是不喝的好。<font color='#EeFAE5'>。30ef30b64204a3088a26bc《》 @ Copyright of 晋江原创网 @</font><br>　　他们站得远了点，一时没注意到门口的动静。<font color='#E8FAE9'>。48ab2f9b45957ab574cf005eb8a76760</font><br>　　可是已经在旁边吃点心的徐雅妘看到了！看到了不要紧，吓得她差点把蛋糕糊裙子上，老板呢！秘书就是什么时候都要对老板忠心啊！四下环顾徐雅妘都没看到裴琰，心想，不知道跑到哪里去了，还带着程舒婷，这可真是好看了！<font color='#EfFAEf'>。f4f6dce2f3a0f9《》 @ Copyright of 晋江原创网 @</font><br>　　老板，我会帮你祈祷的，你自求多福吧！阿门！<font color='#EbFAEc'>。dc5689792e08eb2e219dce49e64c88</font><br>　　<font color='#EbFAEb'>。d947bf06a885db0d477d707121934ff8《》 @ Copyright of 晋江原创网 @</font><br>　　程老爷子也注意到了门口的动静，带着人就走了过去，一看就笑开了。<font color='#E4FAEd'>。9f53d83ec0</font><br>　　“颜思啊，我可是等你好久了啊！”<font color='#E5FAE3'>。eddea82a《》 @ Copyright of 晋江原创网 @</font><br>　　裴妈妈也笑着，说：“程叔公，我一时耽搁了，您老可别跟我生气啊！”<br>　　“哪儿能啊！裴琰都和我说了，小事小事。”程老爷子心情很好的回答着。<br>　　“哦，小琰都到啦？”裴妈妈微微一愣，朝左右看了看，问，“他人呢？”<br>　　“跟婷婷去院子里聊天了！”程老爷子可是一直留意着呢！“小琰可是个好孩子，我中意的很呢！”<font color='#EdFAE8'>。9b8619251a19057cff70779273e95aa6《》 @ Copyright of 晋江原创网 @</font><br>　　“是吗？”裴妈妈依旧笑着，不动声色的跟旁边的人说，“小悦啊，我们准备的礼物呢？”<br>　　程老爷子这才注意到裴妈妈身边有个很干净顺眼的男孩，一身银色的西装，衬得他格外清雅，“这位是……”看到裴妈妈还挽着这男孩，忍不住好奇的问。<font color='#E7FAE8'>。d240e3d38a8882ecad8633c8</font><br>　　“哦，”裴妈妈笑意更浓了，“这是我干儿子，小悦，这是程叔公，你就跟小琰一样叫他老人家一声程爷爷吧。”<font color='#EcFAEa'>。fa3a3c407f82377f55c19c5d4033《》 @ Copyright of 晋江原创网 @</font><br>　　“程爷爷您好。”递上礼物，这人从容不迫的说着祝福词：“祝您松鹤长春，寿比南山。”<br>　　这人是谁呢？必然就只能是沈悦了。<font color='#E7FAE8'>。e820a45f《》 @ Copyright of 晋江原创网 @</font><br>　　<font color='#E1FAE1'>。74db120f0a8e5646ef5a30154e9f6deb《》 @ Copyright of 晋江原创网 @</font><br>　　说起来沈悦一开始也没明白是怎么回事，突然接到了裴妈妈的电话，虽然说裴琰找借口带他回去见了父母，虽然大家都心知肚明，但是毕竟没有点破。裴妈妈单独约见他这种事情，还真是没怎么发生过，所以沈悦一路忐忑的到了见面地点，发现裴妈妈二话不说就拉着他去买东西。<br>　　直到他一身装扮都齐备了，他才找到机会跟裴妈妈说话，“那个，伯母，我们这是……”<br>　　“行了，你这孩子，小琰怎么叫我，你就怎么叫我吧！”<font color='#E7FAE1'>。c0f168ce8900fa56e57789</font><br>　　跟裴琰一样？沈悦一惊，裴琰叫你妈妈，难不成……<font color='#E5FAEb'>。6cd67d9b6f0150c77bda2eda01</font><br>　　裴妈妈见沈悦迟疑，凤目一瞪，道：“怎么？不愿意？”<font color='#E9FAE6'>。1be3bc32e6564055d5ca3e</font><br>　　“呃……不是，那个，我……”沈悦心想，裴妈妈也太开明了点吧！<font color='#E8FAEa'>。eb163727917c</font><br>　　“小悦，你不喜欢裴妈妈吗？”<font color='#EcFAEe'>。70efdf2ec9b0《》 @ Copyright of 晋江原创网 @</font><br>　　“怎么会！”沈悦赶紧辩解，他自然是知道裴妈妈有多好的，上次裴琰跟他回自己家见爸妈，好多东西都是裴妈妈帮着裴琰买的。说来也是，都见过家长了，而且他们这情况结婚什么的也没那么容易，但，既然认定了，也就是他了。想到这里，那个字就轻而易举的脱口而出了，“妈！”<br>　　“诶！”裴妈妈很是开心，拉着沈悦不住的点头，说，“我儿子就是好看！”<br>　　“夫人，您家公子穿这身可真好看，称他的气质真是再合适不过了，您眼光真好！”旁边的导购小姐多精明啊，赶紧搭腔。<font color='#EeFAEc'>。0e65972dce68dad4d52d《》 @ Copyright of 晋江原创网 @</font><br>　　“我的眼光一向很好。”裴妈妈似乎话里有话的说着，“就这套吧！”<font color='#EeFAE4'>。192fc044e7</font><br>　　沈悦抢不过裴妈妈手快，让她付了钱。俗话说得好啊，拿人手短，于是沈悦就陪着裴妈妈去买了东西，选礼物，一直到被裴妈妈带到了程老爷子的七十大寿宴会上。<font color='#EbFAEf'>。9dcb88e013764959</font><br>　　<font color='#EaFAE7'>。1141938ba2c2b13f5505d7c424ebae5f《》 @ Copyright of 晋江原创网 @</font><br>　　到这会儿，沈悦觉得，他似乎有些明白裴妈妈带他来是干嘛的了。<font color='#EdFAE8'>。c042f4db68f234</font><br>　　“我家那小子啊，每天工作都快忙傻了，别说些女孩子不爱听的，把婷婷给闷坏了，叫他们过来玩吧！”裴妈妈笑着对程老爷子说，“年轻人嘛，多认识几个朋友也是好的，程叔公，你说是吧！”<br>　　程老爷子看了看沈悦，点点头，说：“是啊是啊，年轻人嘛，一起玩比较热闹。”然后转头吩咐手下人，“去请小姐和裴少爷过来。”<font color='#EaFAEf'>。efe937780e《》 @ Copyright of 晋江原创网 @</font><br>　　见派去的人离开，裴妈妈对沈悦说：“走，小悦，我介绍个人给你认识。”说着，裴妈妈拉着沈悦往旁边走去。<font color='#E6FAE4'>。05049e90fa4f5039a8cadc6acbb4b2《》 @ Copyright of 晋江原创网 @</font><br>　　因为沈悦是生面孔，而裴氏总裁夫人还跟他那么亲近，都在揣测他的身份到底是什么，全场的注意点都集中在了沈悦身上。<font color='#EdFAEc'>。fbd7939d674997cdb469《》 @ Copyright of 晋江原创网 @</font><br>　　<font color='#E2FAE4'>。ef575e8837d065a1683c022d2077d342《》 @ Copyright of 晋江原创网 @</font><br>　　“竟晖！”<font color='#E2FAE1'>。43ec517d68b6edd3015b3edc9a1136《》 @ Copyright of 晋江原创网 @</font><br>　　一个英俊但眉眼略显冷漠的男子转身，看见裴妈妈，一瞬间眼神就变得温暖，带着笑意走了过来。那么一瞬间的变化，让沈悦觉得这个人笑和不笑的感觉差太多了。<font color='#E5FAEe'>。9ab0d88431732957</font><br>　　韩竟晖走到裴妈妈面前，十分友好的跟她问好，“颜姨，我就听说你要来，还在想怎么裴琰都到了，你怎么没来。”<font color='#EfFAEd'>。e57c6b956a6521b28495f2886c《》 @ Copyright of 晋江原创网 @</font><br>　　“这是沈悦，”裴妈妈为他们两个做介绍，“这是韩竟晖。”<font color='#E3FAE8'>。d93ed5b6db83be78ef</font><br>　　两人握手，互相问好。<font color='#EfFAE2'>。2ab56412b1163ee131e1《》 @ Copyright of 晋江原创网 @</font><br>　　只是，韩竟晖看着沈悦，微微皱眉。<font color='#E5FAEf'>。8cb22bdd《》 @ Copyright of 晋江原创网 @</font><br>　　看出来他的疑惑，裴妈妈笑着说：“其实你们俩还挺有渊源的。”<font color='#EaFAEa'>。c2aee86157b4a4</font><br>　　沈悦和韩竟晖同时面露疑惑。还没来得及问，就被旁边一个声音打断了。<br>　　<font color='#E1FAEf'>。fc3cf452d3da8402bebb765225ce8c0e《》 @ Copyright of 晋江原创网 @</font><br>　　“爷爷，你叫人家回来干嘛啊，人家正和裴大哥聊得开心呢！”程舒婷挽着裴琰从人群中走出来，来到程老太爷的面前，嘟着嘴嗔怪。<font color='#E2FAEd'>。093f65e080《》 @ Copyright of 晋江原创网 @</font><br>　　程老爷子轻轻摆手，说：“别不懂规矩，裴琰的妈妈来了，自然要叫他过来。”<br>　　“是吗？裴妈妈来啦！在哪儿呢？”程舒婷一听爷爷这么说，也来不及生气了，四下寻找裴妈妈的身影。<font color='#E9FAEf'>。4558dbb6f6f8bb2e16d03b85bde76e2c《》 @ Copyright of 晋江原创网 @</font><br>　　裴琰皱着眉，奇怪，他的右眼皮怎么跳个不停。<font color='#EaFAE1'>。9f61408e3afb633e50cdf1b20de6f4</font><br>　　“舒婷。”裴妈妈走过来。<font color='#EaFAE5'>。d09bf41544a3365a《》 @ Copyright of 晋江原创网 @</font><br>　　程舒婷赶紧空出一只手去挽她的胳膊，裴妈妈赶忙伸出手，变成拉着程舒婷的手，顺便仔细看了看程舒婷的另一只挽在自家儿子手上的手。忍不住在心里祈祷，我的儿子诶，自求多福吧。<br>　　<font color='#E7FAE5'>。c9f0f895fb98ab9159f51fd0297e236d《》 @ Copyright of 晋江原创网 @</font><br>　　站在旁边统观全局的徐雅妘心里想的那是跟裴妈妈一样一样的啊，这也太混乱了，老板，你自求多福吧，别甩不掉牛皮糖还丢了老婆啊！<font color='#E6FAE7'>。81e74d67《》 @ Copyright of 晋江原创网 @</font><br>　　<font color='#E6FAE6'>。158f3069a435b314a80bdcb024f8e422《》 @ Copyright of 晋江原创网 @</font><br>　　裴琰，你够胆！<font color='#EcFAEa'>。1a5b1e4daae265b790965a275b《》 @ Copyright of 晋江原创网 @</font><br>　　沈悦顺着裴妈妈离开的身影看过去，自然是什么都看见了。<font color='#EaFAE5'>。a8abb4bb284b5b27aa7c</font><br>　　“你……”<font color='#E8FAE5'>。a3f390d88e4c41f2747bfa2f1b5f87《》 @ Copyright of 晋江原创网 @</font><br>　　沈悦回头，看见韩竟晖脸上挂着一抹不怀好意的笑容，有点纳闷。<font color='#E9FAE6'>。fc490ca45c00b1</font><br>　　“我记得你的声音。”韩竟晖好整以暇的笑了笑，一副成竹在胸的样子。<br>　　沈悦彻底愣住，这谁啊，怎么神叨叨的。<font color='#E6FAEe'>。1f44《》 @ Copyright of 晋江原创网 @</font><br>　　“安朔啊……”韩竟晖嘴角勾起一抹坏笑，“说起来还要谢谢你，给了我一个很好的借口让他两天没下床呢！”<font color='#E7FAE9'>。1fc214004c9481e4c8073e85323bfd《》 @ Copyright of 晋江原创网 @</font><br>　　“你！”这下沈悦知道他是谁了，也知道他为什么这么说了，只是，“都过了那么久了，你居然还记得！”沈悦忍不住有点啼笑皆非，这人也太记仇了。<font color='#E8FAE3'>。d56b9fc4b0f1be8871f5e1c40c</font><br>　　韩竟晖但笑不语，沈悦也忍不住笑了。<font color='#E8FAE9'>。979d47《》 @ Copyright of 晋江原创网 @</font><br>　　这样的见面，还真是让人意外啊。<font color='#E6FAEf'>。1be3bc32e6《》 @ Copyright of 晋江原创网 @</font><br>　　<font color='#EaFAE5'>。ccc0aa1b81bf81e16c676ddb977c5881《》 @ Copyright of 晋江原创网 @</font><br>　　不过，此刻的裴琰还是没看见沈悦，只是仍旧保持着绅士风度没有甩开程舒婷的手，陪着她站在裴妈妈和程老爷子的旁边。<font color='#E2FAE2'>。94f6d7e04a4d45203530《》 @ Copyright of 晋江原创网 @</font><br>　　“颜思啊，”程老爷子发话了，“你可不知道，我这宝贝儿孙女对你儿子可是赞不绝口啊！”<br>　　“是吗？舒婷之前还跟我说世界上的男人都是坏家伙呢！”裴妈妈转头看了看程舒婷，问，“是吧，舒婷。”<font color='#E8FAEc'>。d707329bece455a462b58ce00d1194c9《》 @ Copyright of 晋江原创网 @</font><br>　　“程妈妈~”程舒婷一副小女儿娇态，“人家是说世界上的男人除了我爷爷我爸爸，还有……裴大哥之外，才都是坏家伙呢！”<font color='#EaFAE4'>。c52f1bd66cc19d056《》 @ Copyright of 晋江原创网 @</font><br>　　裴琰就算神经再大条也明白这是什么情况了，止不住想扶额，尤其眼皮还一直跳啊跳的跳得他心烦。<font color='#EaFAEd'>。ccb1d45fb76f7c5a0bf619f979c6cf36《》 @ Copyright of 晋江原创网 @</font><br>　　程老爷子摇摇头，想起了什么似的，对程舒婷说：“等会儿你肯定要改口的！”<br>　　“才不会呢！”程舒婷骄傲的昂着头，说着。<font color='#E9FAE3'>。430c3626b879b4005d41b8a46172e0c0</font><br>　　“那是你还没见到裴夫人的干儿子，你要是见到了，肯定会改口的！”程老爷子只顾着自己说，完全没注意到裴琰的脸色都变了。<font color='#E7FAEa'>。fc3cf452d3da84《》 @ Copyright of 晋江原创网 @</font><br>　　“干儿子？”程舒婷看着裴妈妈，疑惑的说，“裴妈妈，我以前怎么没听你提起过他？”<br>　　“他不从商，外人都没见过他。”裴妈妈心想说，提了还得了！<font color='#E6FAE3'>。70c639df5e30bdee</font><br>　　程舒婷四下看了看，“他在哪儿呢？让他过来大家见见面吧。”转而又对着裴琰说，“裴大哥也真是的，怎么都不跟我说你还有个干弟弟呢？”程舒婷说话间，挽着裴琰胳膊的手又紧了几分。<br>　　裴琰心想，如果现在把她的手甩开，还来不来得及……<font color='#E9FAEb'>。e5f6ad6ce374177eef023bf5</font><br>　　<font color='#E1FAE1'>。b3e3e393c77e35a4a3f3cbd1e429b5dc《》 @ Copyright of 晋江原创网 @</font><br>                            <div id="favoriteshow_3" style="display:none" align="center"></div>
+                            <div align="right">
+                                <div style="float:right; height: 25px;">
+                                    <img src="http://s9.static.jjwxc.net/images/bookmark.gif" width="7" height="15" /> <font color='#009900'><span id="favorite_3" rel="3|这家是你的还是我的！|番外【上】|2011-10-13 23:47:01|卿小双|2|62864|609523" class="favorite_novel">插入书签</span></font>　
+                                </div>
+                            </div>
+                            <div class=readsmall style=color:#009900;><hr size=1 color='#EEFAEE' />作者有话要说：</br>突然很想念沈小悦和裴小琰，之前也答应了要给他们写番外。<br>所以，折腾了个长长的番外。。。真的太长了。。。<br>还没写完呢，字数都赶上正文的十分之一了。。。我快囧哭了我。。。<br>另外，安朔家的攻也终于露面了。开心吗开心吗开心吗？？？<br>【安排在这里让他露面，我果然最宠溺沈小悦和裴小琰这两只。。。】<br>至于肉嘛。。。你们想要有呢还是有呢还是有呢？？？</div>                            <div style="clear: both;"></div>
+                            <hr size=1 />
+                            <div style="width:710px;height:70px;float:right;">
+                                <!--cnzz tui-->
+                                <script  type="text/javascript" charset="utf-8"  
+                                src="http://tui.cnzz.net/cs.php?id=1000006862"></script>
+                                <!--cnzz tui-->
+                            </div> 
+                        </div></td>
+                    <td rowspan="2" valign="bottom"></td>
+                    <td width="214" valign="top" class="novelbody" style="width:214px;word-break:break-all;word-wrap:break-word;">
+                        <table width="100%" height="100%" cellspacing="0" style="margin:20px 0px 0px 0px;" align="center">
+                            <tr>
+                                <td>
+                                    <!--文章页右侧焦点一 -->
+                                    <script>CNZZ_SLOT_RENDER('105509');</script>                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%" height="100%" cellspacing="0" style="margin:20px 0px 0px 0px;" align="center">
+                            <tr>
+                                <td width="200px" height="200px">
+                                    <!--文章页右侧焦点二 -->
+                                    <script>CNZZ_SLOT_RENDER('256848');</script>                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%" height="100%" cellspacing="0" style="margin:20px 0px 0px 0px;" align="center">
+                            <tr>
+                                <td>
+                                    <!-- 文章页右侧焦点三 -->
+                                    <script>CNZZ_SLOT_RENDER('256815');</script>                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%" height="100%" cellspacing="0" style="margin:20px 0px 0px 0px;" align="center">
+                            <tr>
+                                <td>
+                                    <!--文章页右侧焦点四 -->
+                                    <script>CNZZ_SLOT_RENDER('256836');</script>                                </td>
+                            </tr>
+                        </table>
+                        <table width="100%" height="100%" cellspacing="0" style="margin:20px 0px 0px 0px;" align="center">
+                            <tr>
+                                <td width="200px" height="200px">
+                                    <!--文章阅读页右侧方二 -->
+                                    <script>CNZZ_SLOT_RENDER('256851');</script>                                </td>
+                            </tr>
+                        </table>
+                        <!--文章页右侧焦点四下面的一行字 -->
+                        <font color="#EEFAEE" style="display:block;width: 100%;text-align: center; padding-top: 20px"><script type="text/javascript">CNZZ_SLOT_RENDER('266017')</script></font>
+                    </td>
+                </tr>
+                <tr>
+                    <td valign="bottom" class="novelbody"  style="width:214px;word-break:break-all;word-wrap:break-word">
+                        <font color="#EEFAEE" id="vip_month_flag">0</font>
+                        <table width="95%" height="100%" cellspacing="10" align="center">
+                            <!--文章阅读页右侧黄金焦点-->
+                            <tr><td height="600"><script>CNZZ_SLOT_RENDER('256814')</script></td></tr>
+                            <tr><td height="20"  id="adp_jjwxc_onebook_right_150_20"></td></tr>
+                        </table>
+                        <span class="graytext">
+                                                    </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" class="novelbody" style="padding:0">
+                        <span id="message" style="display:none">请稍候</span>
+                        <script type="text/javascript">
+    var novelid = 1055737;var chapterid = 37;                        </script>
+                        <!--2014.08.19此处广告加载改为cnzz，并且所有页面都显示此广告-->
+                        <div  style="width:720px;height:50px"><script>CNZZ_SLOT_RENDER('267553');</script></div>
+
+                        <br/>
+                    </td>
+                    <td valign="bottom">&nbsp;</td>
+                    <td align="right" valign="bottom" class="novelbody" style="padding:0"><font style="cursor:pointer; padding-right:5px" onClick="javascript:window.scroll(0, 0);" color="#999999">↑返回顶部</font></td>
+                </tr>
+                <tr>
+                    <td height="30"  class="noveltitle" >
+                        <span style="font-size:16px;">
+                            <a href="onebook.php?novelid=1055737&chapterid=36"><span class="bigtext">←上一章</span></a>&nbsp;&nbsp;<a href="onebook.php?novelid=1055737&chapterid=38"><span class="bigtext">下一章→</span></a>                            </span> &nbsp;
+                            <select name="chapter_list" id="chapter_list" style="border:1px solid #000000;width: 250px;">
+                                <option value="">第37章 番外【上】</option>
+                            </select>
+                                            </td>
+                    <td>&nbsp;</td>
+                    <td class="noveltitle">作 者 推 文</td>
+                </tr>
+            </table>
+            <div class="tc">
+                <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td height="5"></td>
+                    </tr>
+                    <tr>
+                        <td><div id="novelRel" align="center"></div></td>
+                    </tr>
+                    <tr>
+                        <td height="5"></td>
+                    </tr>
+                </table>
+                <table width="984" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+                    <tr height="15">
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <!--文章页翻页处黄金焦点-->
+                        <td width="728" height="90" valign="middle"><script>CNZZ_SLOT_RENDER('81527');</script></td> 
+                        <!-- end -->
+                        <td width="252" height="90" align="center" id="adp_jjwxc_onebook_tw_250_90"></td>
+                    </tr>
+                </table>
+                <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td height="5"></td>
+                    </tr>
+                </table>
+            </div>
+                        <div class="tc"></div>
+                        <div align="center">
+                <script>
+    function isMinusPosint(select) {
+        var value = $(select).val();
+        if (value<=2) {
+            var stoneCheck = '';
+            var stoneBanlance = '';
+            $.post('/backend/getCoinsBalance.php', {test: 'test'}, function(json) {
+                if (json.status==0) {
+                    stoneCheck = "<input type='button' value='登录并同意' onclick=\"show_login();return false;\"/>";
+                } else {
+                    stoneCheck = "<input type='button' value='确定' onclick='$.unblockUI();' />";
+                    stoneBanlance = "<br>您现有"+json.banlance+"个月石<br>";
+                }
+                $.blockUI("<span style='color:#009900'>是否使用<span style='color:red; font-weight:bold;'>1个</span>月石用来发负分评论？</span><br><br><div style='text-align:left'>&nbsp;&nbsp;&nbsp;&nbsp;负分评论旨在让读者客观地表达自己的观点并指出作品的不足，需要发评人具备一定的阅读经验。为控制有人利用负分评论恶意攻击作品的现象，现每次发表负分评论需在登陆状态下进行，且扣除1个月石。</div><div style='text-align:center'>"+stoneBanlance+"<br><a href='http://help.jjwxc.net/user/article/156' target='_blank' style='color:blue;'>如何获得月石?</a><br><br>"+stoneCheck+"&nbsp;&nbsp;&nbsp;<input type='button' value='取消' onclick=\"document.getElementById('commentmark').options[2].selected=true; $.unblockUI(); \" /></div>");
+
+            }, 'json');
+        } else if (value>2) {
+            $('#minusPointTip').css('display', 'none');
+        }
+    }
+</script>
+<table width="984" border="0" cellpadding="0" cellspacing="1" bgcolor="#009900" id="publishcomment">
+    <tr>
+        <td bgcolor="#EEFAEE">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="68%"><table width="99%" border="0" cellspacing="0" cellpadding="5">
+                                                            <tr>
+                                    <td colspan="2">
+                                        <div style="border-bottom:1px darkseagreen dashed;float: left; width:650px;">
+                                            <div id="ticketsort" style="color:blue;text-align: center;float: left;" ></div>
+                                            <div style="border: 1px dashed #828E8D;background:#DDF0EE ;float: right; width: 32px;height: 35px;margin-right: 5px;text-align: center; line-height: 18px;cursor: pointer" onclick="showpage('1055737')" >更多动态</div>
+                                            <div style="float: right; width: 130px;height: 40px;text-align: left;" id="tickets_box">&nbsp;</div>
+                                        </div>
+                                        <div style="width: 650px; text-align: left">
+                                            <input id="landmines" type="radio" name="KingTickets_radio" value="0" rel="0"/>地雷(100点)
+                                            <input id="grenades" type="radio" name="KingTickets_radio" value="1" rel="1"/>手榴弹(×5)
+                                            <input id="rocket" type="radio" name="KingTickets_radio" value="2" rel="2"/>火箭炮(×10)
+                                            <input id="shallowbomb" type="radio" name="KingTickets_radio" value="3" rel="3"/>潜水炸弹(×50)
+                                            <input id="deeptorpedo" type="radio" name="KingTickets_radio" value="4" rel="4"/>深水鱼雷(×100)
+                                        </div>
+                                    </td>
+                                </tr>
+                                                            <tr>
+                                <td width="8%" colspan="2" style="font-size:12px"><form name="form1" id="publish_comment">
+                                        <table width="99%" border="0" cellpadding="5" cellspacing="0">
+                                            <tr>
+                                                <td colspan="2" style="font-size:12px"><input type="hidden" value="1055737" id="novelid" name="novelid"/>
+                                                    <input type="hidden" value="37" id="chapterid" name="chapterid"/>
+                                                    <input type="hidden" value="这家是你的还是我的！" id="novelname" name="novelname"/>
+                                                    <input type="hidden" value="0" id="comment_novel" name="comment_novel"/>
+                                                    网友：
+                                                    <input name="commentauthor" type="text" class="input_text" id="commentauthor" 
+                                                           value="" 
+                                                           onFocus="setonfcous()" onBlur="setofffcous()" tabindex="4" size="10" maxlength="50" style="width: 150px"/>
+                                                    打分：
+                                                    <select tabindex="5" id="commentmark" name="commentmark" onchange="isMinusPosint(this);">
+                                                        <option value="5">2分｜鲜花一捧</option>
+                                                        <option value="4">1分｜一朵小花</option>
+                                                        <option selected="selected" value="3">0分｜交流灌水</option>
+                                                        <option value="2">-1分｜一块小砖</option>
+                                                        <option value="1">-2分｜砖头一堆</option>
+                                                    </select>
+                                                    评论主题：
+                                                    <input type="text" onBlur="setofffcous()" maxlength="100" size="28" value="长篇书评请填写此栏目" onFocus="if (this.value!='')
+                                                                this.value = '';
+                                                            setonfcous();" id="commentsubject" class="input_text_long" name="commentsubject" style="width: 200px"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2" style="font-size:12px"><textarea onBlur="setofffcous()" onFocus="setonfcous()" tabindex="6" class="input_textarea_short" rows="7" cols="100" name="commentbody" id="commentbody" style="width:645px; height:110px"/></textarea>
+                                                    <div id="commentbody_message"></div>
+                                                    <div style="display: none;" id="fcous">off</div>
+                                                    <div style="display: none; margin-top: 5px; color: #090" id="minusPointTip"></div></td>
+                                            </tr>
+                                            <tr>
+                                                <td width="92%" style="font-size:12px">
+                                                                                                        <div style="width: 600px; height: 60px; line-height: 30px; text-align:left;">
+                                                        分享到：
+                                                        <a id="tengxun" title="分享到腾讯微博" class="social_share" shortintro="家装设计师跟客户的故事" rel="" style="background:url('http://static.jjwxc.net/images/tengxun01.gif') no-repeat scroll 0 0 transparent;line-height:normal;padding:3px 5px 0 20px;color:#1A66B3;">腾讯微博</a>
+                                                        <a id="kaixin" title="分享到开心网" class="social_share" shortintro="家装设计师跟客户的故事" rel="" style="background:url('http://static.jjwxc.net/images/icon_kx001.gif') no-repeat scroll 0 0 transparent;line-height:normal;padding:3px 5px 0 20px;color:#1A66B3;">开心网</a>
+                                                        <a id="sina" title="分享到新浪微博" class="social_share" shortintro="家装设计师跟客户的故事" rel="" style="background:url('http://static.jjwxc.net/images/sharesina16.png') no-repeat scroll 0 0 transparent;line-height:normal;padding:3px 5px 0 20px;color:#1A66B3;">新浪微博</a>
+                                                        <a id="renren" title="分享到人人" class="social_share" shortintro="家装设计师跟客户的故事" rel="" style="background:url('http://xnimg.cn/imgpro/share/share-tinybtn.png') no-repeat scroll 0 0 transparent;line-height:normal;padding:3px 5px 0 20px;color:#1A66B3;">人人网</a>
+                                                        <div style="text-align:left;">
+                                                            <div style="float: left;width:100px">
+                                                                <iframe frameborder="0" scrolling="no" src="http://open.qzone.qq.com/like?url=http://user.qzone.qq.com/1825173712&type=button_num&width=400&height=30" allowtransparency="true" border="0" style="width: 100px; height: 30px; border: medium none; overflow: hidden; float: left; padding-top: 2px;"></iframe>
+                                                            </div>
+                                                            <div style="float: left;">
+                                                                <!--必填-->
+                                                                <meta property="og:type" content="article" />
+                                                                <meta property="og:url" content="http://www.jjwxc.net/onebook.php?novelid=1055737" />
+                                                                <meta property="og:title" content="这家是你的还是我的！" />
+                                                                <meta property="og:description" content="家装设计师跟客户的故事" />
+                                                                <!--选填-->
+                                                                <meta property="og:image" content="" />
+                                                                <meta name="weibo: article:create_at" content="2011-01-19 16:23:35" />
+                                                                <meta name="weibo: article:update_at" content="2011-10-13 23:47:01" />
+                                                                <html xmlns:wb=“http://open.weibo.com/wb”>
+                                                                    <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+                                                                    <wb:like appkey="2gCHGG" type="number"></wb:like>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                </td>
+                                                <td width="8%" align="left"><span class="toright">
+                                                        <div class="fanbuttondiv" id="submit_comment" style="margin:0">
+                                                            <input type="submit" value="确定" tabindex="7" class="fanbutton" name="button12" id="comment_submit"/>
+                                                        </div>
+                                                    </span></td>
+                                            </tr>
+                                        </table>
+                                    </form></td>
+                            </tr>
+                        </table></td>
+                    <td width="1%">&nbsp;</td>
+                    <td width="31%" width="300" height="250">
+                        <!--广告位：文章页评论处大图-->
+                        <div id="CNZZ_0423"><script>CNZZ_SLOT_RENDER('109460');</script></div>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+            </div>
+            <br/>
+                            <table width="984" border="0" align="center" cellpadding="0" cellspacing="0" style="table-layout:fixed ">
+                    <tr>
+                        <td width="760" valign="top" style="width:760px;word-break:break-all;word-wrap:break-word" id="comment_list" align="center">
+                            <img src="http://s9.static.jjwxc.net/images/loadings.gif" border="0">
+                        </td>
+                        <td width="10"></td>
+                        <td width="214" valign="top" class="readtd"   style="width:214px;word-break:break-all;word-wrap:break-word">
+                                                            <div class="tdtitle"><div class="textcenter">作者加精评论</div></div>
+                                <div class="righttd">
+                                    <ul class="rightul2">
+                                                                            </ul>
+                                                                    </div>
+                                <br/><br/><br/>
+                                <div class="tdtitle" style="border-top: 1px solid #009900;"><div class="textcenter">本文相关话题</div></div>
+                                <div style="padding: 5px">
+                                    <ul class="rightul2" style="clear:both" id="topics_list"></ul>
+                                </div>
+                                                    </td>
+                    </tr>
+                </table>
+                <div class="tc"></div>
+                <div class="controlbar" style="text-align:center">
+                    <b><span class="bluetext">以上显示的是最新的二十条评论，要看本章所有评论，</span><a href="http://www.jjwxc.net/comment.php?novelid=1055737&chapterid=37&page=1" target="_blank"><span class="redtext">请点击这里</span></a></b>
+                </div>
+                        <script type="text/javascript" src="http://static.jjwxc.net/scripts/onebook.120711.js?ver=201502261635"></script>
+        <script>getCommentUserName();</script>
+        <script>
+            genWarningPannel(1055737);
+            genExportPannel(1055737);
+        </script>
+        <script language="JavaScript">
+            document.onkeydown = nextpage
+            function nextpage(event) {
+                event = event ? event : (window.event ? window.event : null);
+                if ($("#fcous").html()=='off') {
+                        if (event.keyCode==37)
+                            window.location = 'onebook.php?novelid=1055737&chapterid=36';
+                            if (event.keyCode==39)
+                            window.location = 'onebook.php?novelid=1055737&chapterid=38';
+                }
+            }
+        </script>
+            <table width="984" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr align="center">
+            <!--全站底部通发banner-->
+            <td width="960" height="60" ><script type="text/javascript" src="http://d.cpmok.net/s?z=doniv&c=163" charset="gbk" ></script></td>
+        </tr>
+        <tr align="center">
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+    <div id="footer">
+    <p class="red"><a href="http://www.jjwxc.net/aboutus/" target="_blank"><font color="red">关于我们</font></a> - <a href="http://www.jjwxc.net/aboutus/#fragment-29" target="_blank"><font color="red">联系方式</font></a> - <a href="http://bbs.jjwxc.net/board.php?board=22&page=1" target="_blank"><font color="red">意见反馈</font></a> - <a href="http://help.jjwxc.net/user/more/24/0" target="_blank"><font color="red">读者导航</font></a> - <a href="http://help.jjwxc.net/user/more/23/0" target="_blank"><font color="red">作者导航</font></a> - <a href="http://www.jjwxc.net/invite.php" target="_blank"><font color="red">招纳贤才</font></a> - <a href="http://help.jjwxc.net/user/article/76" target="_blank"><font color="red">投稿说明</font></a> - <a href="http://www.jjwxc.net/jjwxcauthority.php" target="_blank"><font color="red">权利声明</font></a> - <a href="http://www.jjwxc.net/jjwxcad.php" target="_blank"><font color="red">广告服务</font></a> - <a href="http://www.jjwxc.net/friendly.php" target="_blank"><font color="red">友情链接</font></a> - <a href="http://help.jjwxc.net/user/more_index" target="_blank"><font color="red">常见问题</font></a></p>
+    <p class="red"> Copyright By 晋江文学城 www.jjwxc.net All rights reserved</p>
+    <p class="red">Processed in 0.02 second(s) 最后生成2015-03-08 23:46:50</p>
+    <p class="red"><a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP证080637号</a> <a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">京ICP备12006214号-2</a><font color="#666666"> 新出网证(京)字206号 京公网安备11010502023476</font></p>
+    <p class="red">本站全部作品（包括小说和书评）版权为原创作者所有 本网站仅为网友写作提供上传空间储存平台。本站所收录作品、互动话题、书库评论及本站所做之广告均属其个人行为</p>
+    <p class="red">与本站立场无关。网站页面版权为晋江文学城所有，任何单位，个人未经授权不得转载、复制、分发，以及用作商业用途。</p>
+    <p class="red">重要声明：请所有作者发布作品时严格遵守国家互联网信息管理办法规定。我们拒绝任何色情暴力小说，一经发现，立即删除违规作品，严重者将同时封掉作者账号。</p>
+    <p class="red">请大家联合起来，共创和谐干净网络。</p>
+</div>
+<!-- google 部份后置加载的广告移到页脚 20140325 -->
+<!-- Google Admanager BEGIN ，Must Put behind all googleADManager function-->
+<script type="text/javascript" src="http://partner.googleadservices.com/gampad/google_service.js"></script>
+<script type="text/javascript">JJ_ADS_GID = 'ca-pub-7602717919537096';
+    GS_googleAddAdSenseService(JJ_ADS_GID);
+    GS_googleEnableAllServices();</script>
+<!-- Google Admanager END -->
+
+<!-- Google Admanager BEGIN 部份后置加载的广告 晋江个性化处理 -->
+<script type="text/javascript">JJ_ADS_POS = [];
+    $("[id^='adp_']").each(function() {
+        JJ_ADS_POS.push(this.id.replace(/adp_/, ''))
+    });</script>
+<script type="text/javascript">for (i in JJ_ADS_POS) {
+        eval(GA_googleAddSlot(JJ_ADS_GID, JJ_ADS_POS[i]));
+    }
+    GA_googleFetchAds();</script>
+
+<!-- Baidu Admanager BEGIN -->
+<script type='text/javascript' src='http://drmcmm.baidu.com/js/m.js'></script>
+<script type="text/javascript" src="http://www.jjwxc.net/scripts/check.js?var=20131224"></script>
+<script type="text/javascript">JJ_BAIDU_ADS_POS = [];
+    $("[id^='bdadp_']").each(function() {
+        JJ_BAIDU_ADS_POS.push(this.id.replace(/bdadp_/, ''));
+        $(this).attr('id', this.id.replace(/bdadp_/, 'adp_'))
+    });</script>
+<script type="text/javascript">for (i in JJ_BAIDU_ADS_POS) {
+        eval(BAIDU_CLB_addSlot(JJ_BAIDU_ADS_POS[i]));
+    }
+    BAIDU_CLB_enableAllSlots();</script>
+
+
+ <script type="text/javascript"> GA_googleAddAttr("url", "chapterid_odd"); </script>
+
+<!-- jjwxc_qz_db --><div class="adp_hidden" id="adp_h_jjwxc_qz_db" style="z-index: 2;"><script type="text/javascript">GA_googleFillSlot("jjwxc_qz_db");</script></div>
+<!-- jjwxc_top_textlink_310_60 --><div class="adp_hidden" id="adp_h_jjwxc_top_textlink_310_60" style="width:310px;padding-top:10px"><script type="text/javascript">GA_googleFillSlot("jjwxc_top_textlink_310_60");</script></div>
+<!-- jjwxc_onebook_250_90 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_250_90"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_250_90");</script></div>
+<!-- jjwxc_sypdy_DBZC_468_60 --><div class="adp_hidden" id="adp_h_jjwxc_sypdy_DBZC_468_60"><script type="text/javascript">GA_googleFillSlot("jjwxc_sypdy_DBZC_468_60");</script></div>
+<!-- jjwxc_sypdy_DBYC_468_60 --><div class="adp_hidden" id="adp_h_jjwxc_sypdy_DBYC_468_60"><script type="text/javascript">GA_googleFillSlot("jjwxc_sypdy_DBYC_468_60");</script></div>
+<!-- jjwxc_qz_gg_728_90 --><div class="adp_hidden" id="adp_h_jjwxc_qz_gg_728_90"><script type="text/javascript">GA_googleFillSlot("jjwxc_qz_gg_728_90");</script></div>
+<!-- jjwxc_onebook_yc_180_350 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_yc_180_350"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_yc_180_350");</script></div>
+<!-- jjwxc_onebook_yc_160_600 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_yc_160_600"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_yc_160_600");</script></div>
+<!-- jjwxc_onebook_right_150_20 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_right_150_20" style="width: 160px;"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_right_150_20");</script></div>
+<!-- jjwxc_onebook_250_90 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_250_90"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_250_90");</script></div>
+<!-- jjwxc_onebook_tw_250_90 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_tw_250_90"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_tw_250_90");</script></div>
+<!-- jjwxc_onebook_chapter_foot_left_468_60 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_chapter_foot_left_468_60"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_chapter_foot_left_468_60");</script></div>
+<!-- jjwxc_onebook_chapter_foot_right_468_60 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_chapter_foot_right_468_60"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_chapter_foot_right_468_60");</script></div>
+<!-- jjwxc_onebook_200_200 --><div class="adp_hidden" id="adp_h_jjwxc_onebook_200_200"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook_200_200");</script></div>
+<!-- jjwxc_onebook2_200_200 --><div class="adp_hidden" id="adp_h_jjwxc_onebook2_200_200"><script type="text/javascript">GA_googleFillSlot("jjwxc_onebook2_200_200");</script></div>
+<div class="adp_hidden" id="adp_h_17160"><script type="text/javascript">BAIDU_CLB_fillSlot("17160");</script></div>
+<script>CNZZ_SLOT_RENDER('313136');</script><script type="text/javascript">$('#hidden_adp').show();
+    function show_google_ads() {
+        $('div.adp_hidden').each(function() {
+            var idp = $(this).attr('id').replace(/adp_h/, 'adp');
+            var pos = $("#"+idp).offset();
+            if (pos) {
+                $(this).css({"left": pos.left+"px", "top": pos.top+"px"});
+            }
+        });
+    }
+    show_google_ads();
+    $(window).scroll(function() {
+        show_google_ads();
+    })</script>
+<!-- Google Admanager END -->
+<script type="text/javascript">if (typeof (showTime)=='function') {
+        showTime();
+    }</script>
+
+<div style="display:none;" class="cnzz">
+    <script src='http://w.cnzz.com/c.php?id=30075907' language='JavaScript'></script>
+    <script>
+    var _czc = _czc||[];
+    _czc.push(["_setAccount", "30075907"]);
+    </script>
+</div>
+
+<div style="display: none"><script>
+    if (typeof (CNZZ_SLOT_RENDER)!="undefined") {
+        CNZZ_SLOT_RENDER('261520');
+        CNZZ_SLOT_RENDER('343535');
+        CNZZ_SLOT_RENDER('343536');
+        CNZZ_SLOT_RENDER("343537");CNZZ_SLOT_RENDER("350451");    }
+    </script>
+</div><img src="http://clickcount.jjwxc.net:443/track.gif?c_1055737_37" width="0" height="1" />        <script type="text/javascript">
+            $(function () {
+                $('#six_sub').click(function () {
+                    var statue = $('#statue').val();
+                    var novelid = $('#novelid').val();
+                    var rand = Math.random();
+                    $.post('./onebook_ajax.php?rand='+rand, {statue: statue, novelid: novelid}, function (data) {
+                        datas = eval(data);
+                        var html = '';
+                        for (i = 0; i<datas.length; i++) {
+                            html += "<li style='text-align:left;float:left;width:228px;margin-left:5px;color:blue;'>";
+                            html += "<a href='onebook.php?novelid="+datas[i]['related_books_novelid']+"'";
+                            html += "style='color:blue;' title='《"+datas[i]['related_books_novelname']+"》"+datas[i]['related_books_authorname']+"' target='_blank'>《"+datas[i]['related_books_novelname'].substr(0, 9);
+                            html += "》"+datas[i]['related_books_authorname'].substr(0, 4);
+                            html += "</a></li>";
+                        }
+                        $('#six_list').html(html);
+                    });
+                });
+            });
+        </script>
+        <!--
+        网友审核结果3票通过islock:26 
+        -->
+    </body>
+</html>

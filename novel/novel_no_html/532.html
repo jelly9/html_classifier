@@ -1,0 +1,1634 @@
+
+<!DOCTYPE html>
+
+<html>
+<head id="ctl00_Head1"><meta http-equiv="x-dns-prefetch-control" content="on" /><link rel="dns-prefetch" href="http://webresource.c-ctrip.com" /><link rel="dns-prefetch" href="http://pic.c-ctrip.com" /><link rel="dns-prefetch" href="http://s.c-ctrip.com" /><meta content="all" name="robots" /><meta name="robots" content="index,follow" /><style type="text/css">
+					.city_suggestion_pop { width:496px; border:1px solid #ccc; background-color:#fff; }  
+					.city_suggestion_pop .title { height:26px; margin:0 10px 4px; padding:0 2px; border-bottom:1px dotted #ccc; line-height:26px; color:#999; }  
+					.city_suggestion_pop .close { float:right; width:26px; height:26px; font:bold 14px/26px Simsun; color:#666; text-align:center; }  
+					.notfound_pop{ padding-bottom: 4px;}  
+					.notfound_pop .title{ line-height:26px; overflow: hidden; margin:0 10px 4px; padding:0 2px; color: #c01111; border-bottom: 0 none; word-break:break-all;}  
+					.notfound_pop .close{ margin-top: 2px;}  
+					.city_suggestion_pop .text_input { float:left; max-width:210px; _width:210px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; }  
+					.city_suggestion_pop .close:hover { text-decoration:none; color:#FFA800; }  
+					.city_suggestion_pop .sug_item{ overflow: hidden;}  
+					.city_suggestion_pop .sug_item a { display:block; overflow: hidden; padding-left:10px; color:#000; font-family:Tahoma; line-height:28px; cursor:pointer; *zoom:1;}  
+					.city_suggestion_pop .sug_item a:after{ clear:both; content:"."; display:block; height:0; overflow:hidden; }  
+					.city_suggestion_pop .sug_item .num { float:left; width: 80px; overflow: hidden; color:#999; text-align: right;}  
+					.city_suggestion_pop .sug_item .city { display:block; float: left; width:315px; max-height:56px; _height:28px; padding-right:4px; overflow:hidden; }  
+					.city_suggestion_pop .sug_item .en { color:#999; }  
+					.keywords_pop .sug_item .en { color:#333; }  
+					.city_suggestion_pop .sug_item b { font-weight:bold; color:#06c; }  
+					.city_suggestion_pop .sug_item a:hover,  .city_suggestion_pop .sug_item .hover { background-color:#2577e3; color:#fff; text-decoration:none; }  
+					.city_suggestion_pop .sug_item a:hover span,  .city_suggestion_pop .sug_item .hover span,  .city_suggestion_pop .sug_item a:hover b,  .city_suggestion_pop .sug_item .hover b { color:#fff; }  
+					.city_suggestion_pop .sug_category{ float: right; padding-left: 6px; width: 60px; height: 28px; line-height: 28px; background-image:url(http://pic.c-ctrip.com/hotelinternational121211/ico_search_box_5.png); background-repeat: no-repeat;}  
+					.city_suggestion_pop .item_list_city, .city_suggestion_pop .item_list_hotel{ padding-bottom: 5px; border-bottom: 1px solid #ccc;}  
+					.city_suggestion_pop .sug_category_hover{ color: #fff; background-color: #2577e3; background-position: right 6px; background-color:#2577e3; }  
+					.city_suggestion_pop .item_list_airport, .city_suggestion_pop .item_list_landmarks{ padding: 4px 0 6px;}  
+					.city_suggestion_pop .item_list_city .sug_category{background-position: right -29px;}  
+					.city_suggestion_pop .item_list_city .hover .sug_category{background-position: right 6px;}  
+					.city_suggestion_pop .item_list_city a:hover .sug_category{background-position: right 6px;}  
+					.city_suggestion_pop .item_list_airport .sug_category{background-position: right -99px;}  
+					.city_suggestion_pop .item_list_airport .hover .sug_category{background-position: right -62px;}  
+					.city_suggestion_pop .item_list_airport a:hover .sug_category{background-position: right -62px;}  
+					.city_suggestion_pop .item_list_hotel .sug_category{background-position: right -165px;}  
+					.city_suggestion_pop .item_list_hotel .hover .sug_category{background-position: right -133px;}  
+					.city_suggestion_pop .item_list_hotel a:hover .sug_category{background-position: right -133px;}  
+					.city_suggestion_pop .item_list_landmarks .sug_category{background-position: right -198px;}  
+					.city_suggestion_pop .item_list_landmarks .hover .sug_category{background-position: right -232px;}  
+					.city_suggestion_pop .item_list_landmarks a:hover .sug_category{background-position: right -232px;}  
+					.city_suggestion_pop .item_list_scenic .sug_category{background-position: right -265px;}  
+					.city_suggestion_pop .item_list_scenic .hover .sug_category{background-position: right -297px;}  
+					.city_suggestion_pop .item_list_scenic a:hover .sug_category{background-position: right -297px;}  
+					.city_suggestion_pop .sug_item .city{width:290px;}  
+					.city_suggestion_pop .sug_category{width:55px; padding-right:20px; padding-left:0; text-align:right;} 
+					.city_suggestion_pop .sug_item a{padding-right:10px; line-height:1.5; padding-top:4px; padding-bottom:4px;}  
+					.city_suggestion_pop .sug_item{padding: 4px 0 4px; border-bottom:1px solid #ccc; margin-bottom:-1px;}  
+					.city_suggestion_pop .sug_item a.sug_item_header{line-height:28px; padding-top:0; padding-bottom:0; }  
+					.city_suggestion_pop .item_list_traffic .sug_category{background-position: right -330px; padding-right:40px;}  
+					.city_suggestion_pop .item_list_traffic .city{width:}  
+					.city_suggestion_pop .item_list_traffic .hover .sug_category{background-position: right -366px;padding-right: 40px;}  
+					.city_suggestion_pop .item_list_traffic a:hover .sug_category{background-position: right -366px;}  
+					.city_suggestion_pop .item_list_areaadmin .sug_category{background-position: right -404px;} 
+					.city_suggestion_pop .item_list_areaadmin .hover .sug_category{background-position: right -441px;} 
+					.city_suggestion_pop .item_list_areaadmin a:hover .sug_category{background-position: right -441px;} 
+					.city_suggestion_pop .item_list_business .sug_category{background-position: right -551px;} 
+					.city_suggestion_pop .item_list_business .hover .sug_category{background-position: right -590px;} 
+					.city_suggestion_pop .item_list_business a:hover .sug_category{background-position: right -590px;} 
+					.city_suggestion_pop .item_list_hotel .city {width:395px;}
+					.city_select_lhsl { position:relative; width:378px; padding:6px 10px 10px; border:1px solid #999; background-color:#fff; }  
+					.city_select_lhsl .search_history_title{ margin-bottom:2px; font-weight:bold; }  
+					.city_select_lhsl .close { float:right; margin-right: -5px; width:20px; height:20px; color:#666; text-align:center; font:bold 16px/20px Simsun; }  
+					.city_select_lhsl .close:hover { text-decoration:none; color:#FFA800; }  
+					.city_select_lhsl .ico_key, 
+					.city_select_lhsl .ico_unkey { display:none; }  
+					.city_select_lhsl .title { color:#999; margin-bottom: 10px;}  
+					.city_select_lhsl .tab_box { width:100%; height:22px; margin-bottom:6px; border-bottom:2px solid #ccc; }  
+					.city_select_lhsl .tab_box li { position:relative; float:left; display:inline; margin-right:10px; line-height:22px; cursor:pointer; }  
+					.city_select_lhsl .tab_box li b { display:none; }  
+					.city_select_lhsl .tab_box li span { padding:0 3px; }  
+					.city_select_lhsl .tab_box li span:hover,.city_select_lhsl .tab_box .li_hover{ color: #06c;}  
+					.city_select_lhsl .tab_box .selected { border-bottom:2px solid #06c; margin-bottom:-2px; font-weight:bold; color:#06c; }  
+					.city_select_lhsl .tab_box .selected b {  display: none; position:absolute; top:23px; left:50%; display:block; width:0; height:0; margin-left:-5px; overflow:hidden; font-size:0; line-height:0; border-color:#06c transparent transparent transparent; border-style: solid dashed dashed dashed; border-width:5px; }  
+					.city_select_lhsl .search_history_box{ display:inline-block; margin-bottom: 10px;}  
+					.city_select_lhsl .search_history_box,.city_select_lhsl .city_item {display:block;overflow:hidden;}  
+					.city_select_lhsl .search_history_box a,.city_select_lhsl .city_item a { float:left; width:54px; height:24px; padding-left:5px; border:1px solid #fff; overflow:hidden; text-overflow:ellipsis; line-height:24px; color: #333; white-space: nowrap;}  
+					.city_select_lhsl .search_history_box a:hover,.city_select_lhsl .city_item a:hover{ text-decoration: none; color: #fff; background: #2577e3;}  
+					.city_select_lhsl .hot_airport_title{ font-weight: bold; margin-bottom: 8px; clear:both;}  
+					.city_select_lhsl .airport_item{ overflow: hidden;}  
+					.city_select_lhsl .airport_item a{ float:left; width:100px; height:24px; margin-right: 20px; border:1px solid #fff; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; line-height:24px; color: #333;}  
+					.city_select_lhsl .airport_item a:hover{ text-decoration: none; color: #fff; background: #2577e3;}  
+					.city_select_pad { padding-top:5px; }  
+					.city_select_pad .title { margin:0 0 0 30px; }  
+					.city_select_pad .ico_key, 
+					.city_select_pad .ico_unkey { position:absolute; top:1px; left:1px; display:block; width:39px; height:25px; background:url(http://pic.c-ctrip.com/ctripOnPad/un_key.png) no-repeat; -webkit-transform:scale(.7); }  
+					.city_select_pad .ico_unkey { background-position:0 -28px; }  
+					.city_select_pad .close, 
+					.city_select_pad .close:hover { font-family:helvetica,Simsun; color:#666; }  
+					.city_group_header{background-color:#eeeeef; padding:0 10px; margin:0 -10px; border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1; line-height:21px; font-weight:bolder; cursor:pointer;}  
+					.ico_arrow{width:0; height:0; border-width:0 5px 5px; border-style:dashed dashed solid; border-color:transparent transparent #9a9a9a; position:absolute; right:10px; vertical-align:middle; margin-top:8px; overflow:hidden;}  
+					.city_select_lhsl .tab_box .selected b{display:none;}  
+					.city_group{background-color:#fbfbfb; margin:0 -10px; padding:0 10px; overflow:hidden; *zoom:1;}  
+					.city_group .city_item a{border-color:#fbfbfb;}  
+					.tab_box{margin-top:10px;}  
+					.city_group{border-top:2px solid #d1d9de;}  
+					.city_group .ico_arrow{border-width:5px 5px 0; border-style:solid dashed dashed; border-color:#9a9a9a transparent transparent;}  
+					.sta_unfold .tab_box,.sta_unfold .city_item{display:none;}  
+					.sta_unfold .ico_arrow{border-style:dashed dashed solid; border-color:transparent transparent #9a9a9a; border-width:0 5px 5px; }  
+					.sta_unfold{border-top-width:1px;}  
+					.city_select_lhsl .hot_airport_title{margin-top:10px; clear:both;}  
+					.city_select_lhsl .city_item a{white-space: nowrap;}  
+					.city_suggestion_pop .item_list_areaadmin .sug_category{background-position: right -404px;} 
+					.city_suggestion_pop .item_list_areaadmin .hover .sug_category{background-position: right -441px;} 
+					.city_suggestion_pop .item_list_areaadmin a:hover .sug_category{background-position: right -441px;} 
+					.choice_classification{ padding: 6px 10px 10px;  width:476px; border:1px solid #ccc; background-color:#fff;} 
+					.choice_classification .close{ float:right; margin-right: -5px; width:20px; height:20px; color:#666; text-align:center; font:bold 16px/20px Simsun; } 
+					.choice_classification .close:hover{ text-decoration:none; color:#FFA800; } 
+					.choice_classification .title{ color: #999; } 
+					.choice_classification .choice_item_title{ margin-top: 15px; font-weight: bold;} 
+					.choice_classification .choice_item_list{ *zoom:1;} 
+					.choice_classification .choice_item_list:after{ clear:both; content:"."; display:block; height:0; overflow:hidden; } 
+					.choice_classification .choice_item_list a{ float:left; width:134px; height:24px; margin-right: 20px; border:1px solid #fff; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; line-height:24px; color: #333;} 
+					.choice_classification .choice_item_list a:hover{text-decoration: none; color: #fff; background: #2577e3;} 
+					.calendar_wrap{position:relative;display:inline-block;padding:3px 5px 0;font-size:12px;font-family:tahoma,​Arial,​Helvetica,​simsun,​sans-serif;border:1px solid #999;background:#fff;*display:inline;*zoom:1;box-shadow:0 3px 5px #ccc;}.calendar_content{background:#bbb;}.calendar_month{float:left;overflow:hidden;width:182px;text-align:center;}.calendar_title{height:23px;line-height:23px;font-weight:bold;color:#fff;text-align:center;background-color:#004fb8;}.month_next,.month_prev{position:absolute;top:3px;width:23px;height:23px;color:#fff;background:#2d7ce7 url(http://pic.c-ctrip.com/cquery/un_calender_index.png) no-repeat;cursor:pointer;cursor:pointer;}.month_prev{left:5px;}.month_next{right:5px;float:right;background-position:100% 0;}.month_prev:hover{background-color:#62adf1;background-position:0 -26px;}.month_next:hover{background-color:#62adf1;background-position:100% -26px;}.calendar_day{overflow:hidden;padding-top:4px;padding-bottom:5px;}.calendar_day dt{display:inline;float:left;width:26px;height:22px;line-height:20px;color:#666;border-bottom:2px solid #fff;background:#ececec;}.calendar_day .weekend{font-weight:bold;color:#f90;}.calendar_day dd{_width:185px;}.calendar_day dd a{float:left;overflow:hidden;width:26px;height:24px;line-height:22px;border:1px solid #fff;border-width:1px 0;font-size:11px;font-weight:bold;color:#005ead;text-decoration:none;cursor:pointer;}.calendar_day a:hover,.calendar_day .today,.calendar_day .day_selected,.calendar_day .c_festival_select,.calendar_day .c_festival_select:hover{background:#e6f4ff url(http://pic.c-ctrip.com/cquery/un_calender_index.png) no-repeat;}.calendar_day a:hover{background-color:#e6f4ff;background-position:-26px -53px;text-decoration:none;}.calendar_day .today{background-color:#fff5d1;background-position:0 -82px;}.calendar_day .day_over,.calendar_day .day_no{font-weight:normal;color:#dbdbdb;outline:none;cursor:default;}.calendar_day .day_over:hover,.calendar_day .day_no:hover{background:#fff;}.calendar_day .day_selected,.calendar_day .day_selected:hover{background-color:#629be0;background-position:0 -53px;color:#fff;}.calendar_day .c_festival_select,.calendar_day .c_festival_select:hover{background-color:#ffe6a6;background-image:url(http://pic.c-ctrip.com/cquery/un_calender_index.png);background-position:0 -111px;}.calendar_month.other{width:192px;}.calendar_month.other .calendar_day{margin-left:4px;padding-left:4px;border-left:2px solid #bbb;}.calendar_day .c_festival_select,.calendar_day .c_festival_select:hover{background-color:#ffe6a6;background-image:url(http://pic.c-ctrip.com/cquery/un_calender_index.png);background-position:0 -111px;}.c_yuandan span,.c_chuxi span,.c_chunjie span,.c_yuanxiao span,.c_qingming span,.c_wuyi span,.c_duanwu span,.c_zhongqiu span,.c_guoqing span,.c_jintian span,.c_shengdan span{width:24px;height:24px;background-image:url(http://pic.c-ctrip.com/cquery/un_festivals.png?v=1);background-repeat:no-repeat;text-indent:-9999em;overflow:hidden;display:block;}.c_yuandan span{background-position:0 0;}.c_chuxi span{background-position:0 -32px;}.c_chunjie span{background-position:0 -64px;}.c_yuanxiao span{background-position:0 -96px;}.c_qingming span{background-position:0 -128px;}.c_wuyi span{background-position:0 -160px;}.c_duanwu span{background-position:0 -192px;}.c_zhongqiu span{background-position:0 -224px;}.c_guoqing span{background-position:0 -256px;}.c_jintian span{background-position:0 -288px;}.c_shengdan span{ background-position: 0 -320px;}.c_calender_date{display:inline-block;color:#666;text-align:right;position:absolute;z-index:1;}.calendar_wrap:before,.calendar_wrap:after{content:'.';display:block;overflow:hidden;visibility:hidden;font-size:0;line-height:0;width:0;height:0;}.calendar_wrap:after{clear:both;}</style>
+<script type="text/javascript">
+	function errorPic1(obj) {
+		obj.src = 'http://pic.c-ctrip.com/hotels110127/no_pic_s.png';
+		obj.setAttribute('_src', 'http://pic.c-ctrip.com/hotels110127/no_pic_big.png');
+		obj.onerror = null;
+	}
+	function errorPic2(obj) {
+		obj.src = 'http://pic.c-ctrip.com/hotels110127/no_pic_big.png';
+		obj.onerror = null;
+	}
+    </script>
+	<style type="text/css">
+        .ibl
+        {
+            display: inline-block;
+        }
+	</style>
+     <link rel="canonical" href="http://hotels.ctrip.com/international/153408.html" />
+<title>
+	玛尔乔莱娜酒店预订及价格查询【携程海外酒店】La Marjolaine
+</title><meta name="description" content="携程酒店为您提供La Marjolaine(玛尔乔莱娜酒店)预订及价格查询，涵盖玛尔乔莱娜酒店电话、服务设施、地址交通及周边酒店信息，鲜活的玛尔乔莱娜酒店点评、酒店图片信息，使您入住朱昂莱班酒店更放心更省心。La Marjolaine" /><meta name="keywords" content="玛尔乔莱娜酒店预订,玛尔乔莱娜酒店价格，玛尔乔莱娜酒店电话，La Marjolaine" /></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+	
+    <link href="http://webresource.c-ctrip.com/ResHotelIntlOnline/R7/search/css/pri_detail.css?releaseno=20141129"
+        rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/ResHotelIntlOnline/R7/search/css/detail_map_iframe.css?releaseno=20141129" />
+	<link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/priceblur/h16/bab4762f3d1543bd91d1e9786da32374.css" /><link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/priceblur/h17/e003e895b7804ac6a438099e4293bd7c.css" /><link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/priceblur/h45/fee14233b8ef42cd8abd037c00f814c6.css" /><link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/priceblur/h12/e379e47807d247de805001f3f02331ca.css" /><link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/priceblur/h18/52ed78833b9946edaf4e0473ac1126fc.css" /><link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/priceblur/h58/996b969d943e4c398681a67286e62540.css" /><link rel="stylesheet" type="text/css" href="http://webresource.c-ctrip.com/priceblur/h59/407564b8ffa6463e830774bf3ce1a01f.css" />
+
+    <form name="aspnetForm" method="post" action="/international/juanlespins3533" id="aspnetForm">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzQ4MDI2NDMzD2QWAmYPZBYCAgIPFgIeBmFjdGlvbgUeL2ludGVybmF0aW9uYWwvanVhbmxlc3BpbnMzNTMzFgJmD2QWAgIBDxYCHgRUZXh0BRsgJmd0OyDnjpvlsJTkuZTojrHlqJzphZLlupdkZP3XNUrRg68dUxUp8js6nJwtIzUtHxOpFEG+NPaRtFhl" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgKtu46OCQLLjoPTBmRh+uYrbo9w/dbdMemqapOSX3YOU0W6qkZRqDTiUeK8" />
+</div>
+        <container style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; z-index: 100;"></container>
+            <input type="hidden" id="CorrelationId" name="CorrelationId" value="6760336101210011501"/><link href="http://webresource.c-ctrip.com/ResCRMOnline/r1/pageheader/css/pageheader.css?temp=20141112" rel="stylesheet" />
+
+    
+    <div class="cui_hd_cont">
+  <div id="cui_hd" class="cui_hd">
+    <div class="ctriplogo"><a href="http://www.ctrip.com" title="携程旅行网">携程旅行网</a></div>
+    <div class="cui_toolkit"><a id="cui_lang_en" class="cui_lang_en" href="http://english.ctrip.com/" rel="nofollow">English</a>		
+        |
+        <a class="cui_help" target="_blank" rel="nofollow" href="http://kefu.ctrip.com">客服中心
+          </a> |
+        <div class="cui_lang" onmouseover="this.className='cui_lang cui_lang_hover'" onmouseout="this.className='cui_lang'"><b></b><div id="cui_lang_list" class="cui_lang_list"><a class="cui_lang_gb" href="http://www.ctrip.com">简体版</a><a class="cui_lang_big5" rel="nofollow" href="http://www.ctrip.com.hk/">繁体版</a><a class="cui_lang_jap" rel="nofollow" href="http://jp.ctrip.com/">日语版</a><a class="cui_lang_korea" rel="nofollow" href="http://www.ctrip.co.kr/">韩语版</a><a href="http://de.ctrip.com/" rel="nofollow" class="cui_lang_de">Deutsch</a><a href="http://fr.ctrip.com/" rel="nofollow" class="cui_lang_fr">Fran&#xE7;ais</a><a href="http://es.ctrip.com/" rel="nofollow" class="cui_lang_es">Espa&#xF1;ol</a><a href="http://ru.ctrip.com/" rel="nofollow" class="cui_lang_ru">Русский</a><a href="http://vn.ctrip.com/" rel="nofollow" class="cui_lang_vn">Tiêng Viêt</a></div>
+      </div>
+    </div>
+    <div onmouseover="this.className='cui_tel cui_tel_hover'" onmouseout="this.className='cui_tel'" onclick="this.className='cui_tel cui_tel_hover'" class="cui_tel"><b></b><span class="cui_tel_in" title="免境内长话费">
+              国内：<i>1010-6666</i></span><div class="cui_tel_more"><span class="cui_tel_in">
+                国内（座机拨打）：<i>800-820-6666</i></span><span class="cui_tel_in">
+                香港：<i>852-3610-6666</i></span><span class="cui_tel_in">
+                海外：<i>+86-21-3406-4888</i></span></div>
+    </div>
+    <div id="head_float_level" class="cui_wireless"><a class="cui_wireless_pic">
+                  携程无线<i></i></a></div>
+    <div class="cui_pagehead_pic"></div>
+  </div>
+</div>
+<div id="cui_nav">
+  <div class="base_nav">
+    <ul id="cui_nav_ul" class="cui_nav">
+      <li id="cui_nav_home"><a title="首页" class="cui_nav_non" id="c_ph_hp" href="http://www.ctrip.com"><span>首页</span></a></li>
+      <li class="sep"></li>
+      <li id="cui_nav_hotel" class="cui_nav_current"><a id="a_hotelLink" title="酒店" class="cui_nav_hotel cui_nav_has" href="http://hotels.ctrip.com"><span>酒店</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div class="cui_sub_nav" id="div_hotel"><a title="国内酒店" id="c_ph_hotel_h" href="http://hotels.ctrip.com">国内酒店</a>|<a title="海外酒店" id="c_ph_hoteli_h" class="cui_sub_current" href="http://hotels.ctrip.com/international/&#xD;&#xA;                  ">海外酒店</a>|<a title="团购" id="c_ph_tuan_h" href="http://tuan.ctrip.com">团购</a>|<a title="特卖酒店" id="c_ph_hotsale_h" href="http://hotels.ctrip.com/hotsale">特卖酒店<i class="cui_ico_save"></i></a>|<a rel="nofollow" title="途家公寓" id="c_ph_tujia_h" href="http://hotels.ctrip.com/tujia/&#xD;&#xA;                  ">途家公寓</a>|<a title="客栈民宿" id="c_ph_inn_h" href="http://inn.ctrip.com/">客栈民宿<i class="cui_ico_new" style="left:42px;"></i></a></div><a class="cui_ico_order" rel="nofollow" href="http://my.ctrip.com/Home/Order/HotelOrderList.aspx">酒店订单 &gt;
+              </a></div>
+      </li>
+      <li class="sep"></li>
+      <li id="cui_nav_vac"><a id="a_vacationLink" title="旅游" class="cui_nav_vac cui_nav_has" href="http://vacations.ctrip.com"><span>旅游</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div class="cui_sub_nav" id="div_vacation"><a title="旅游首页" id="c_ph_vacations_v" href="http://vacations.ctrip.com">旅游首页</a>|<a title="周末游" id="c_ph_around_v" href="http://you.ctrip.com/around/">周末游</a>|<a title="跟团游" id="c_ph_vacationsd_v" href="http://vacations.ctrip.com/grouptravel/">跟团游<i class="cui_ico_new" style="left:29px;"></i></a>|<a title="自驾游" id="c_ph_taocanj_v" href="http://taocan.ctrip.com/sh/">自驾游<span class="cui_ico_notejj"></span></a>|<a title="自由行" id="c_ph_taocan_v" href="http://taocan.ctrip.com/fh/">自由行</a>|<a title="邮轮" id="c_ph_cruise_v" href="http://cruise.ctrip.com/">邮轮</a>|<a title="当地玩乐" id="c_ph_huodong_v" href="http://huodong.ctrip.com/">当地玩乐</a>|<a title="游学" id="c_ph_youxue_v" href="http://vacations.ctrip.com/youxue">游学</a>|<a title="签证" id="c_ph_visa_v" href="http://vacations.ctrip.com/visa">签证</a>|<a title="公司旅游" id="c_ph_mice_v" href="http://vacations.ctrip.com/mice">公司旅游</a>|<a title="顶级游" href="http://www.hhtravel.com/" target="_blank" rel="nofollow" id="c_ph_hh_v">顶级游</a>|<a title="高尔夫" id="c_ph_golf_v" href="http://fun.ctrip.com/golf/">高尔夫</a>|<a title="保险" id="c_ph_insurance_v" href="http://vacations.ctrip.com/insurance">保险</a>|<a title="特卖汇" id="c_ph_deals_v" href="http://vacations.ctrip.com/deals">特卖汇
+                </a></div><a class="cui_ico_order" rel="nofollow" href="http://my.ctrip.com/Home/Order/PkgOrderList.aspx">旅游订单 &gt; </a></div>
+      </li>
+      <li class="sep"></li>
+      <li id="cui_nav_flight"><a id="a_flightLink" title="机票" class="cui_nav_flight cui_nav_has" href="http://flights.ctrip.com"><span>机票</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div id="div_flight" class="cui_sub_nav"><a title="国内机票" id="c_ph_flights_f" href="http://flights.ctrip.com">国内机票</a>|<a title="国际机票" id="c_ph_flightsi_f" href="http://flights.ctrip.com/international/">国际机票</a>|<a title="机+酒" id="c_ph_taocan_f" href="http://taocan.ctrip.com/fh/">机+酒</a>|<a title="航班动态" id="c_ph_flightstoolbox_f" href="http://flights.ctrip.com/domestic/MyToolBox/Default.aspx">航班动态
+                </a>|<a rel="nofollow" title="机场攻略" id="c_ph_airportguides_f" href="http://flights.ctrip.com/booking/airport-guides.html">机场攻略
+                </a>|<a rel="nofollow" title="网上选座" id="c_ph_bookseat_f" href="http://flights.ctrip.com/domestic/MyToolBox/BookSeatDemo.aspx">网上选座
+                </a>|<a rel="nofollow" title="退票改签" id="c_ph_flightorderlist_f" href="http://my.ctrip.com/Home/Order/FlightOrderList.aspx">退票改签
+                </a></div><a class="cui_ico_order" rel="nofollow" href="http://my.ctrip.com/Home/Order/FlightOrderList.aspx">机票订单 &gt;
+              </a></div>
+      </li>
+      <li class="sep"></li>
+      <li id="cui_nav_trains"><a title="火车" class="cui_nav_has" id="c_ph_train" href="http://trains.ctrip.com"><b></b><span>火车</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div class="cui_sub_nav"><a title="国内火车票" id="c_ph_train_t" href="http://trains.ctrip.com">国内火车票</a>|<a title="国际火车票" id="c_ph_traino_t" href="http://vacations.ctrip.com/outie">国际火车票
+                </a></div><a class="cui_ico_order" rel="nofollow" href="http://my.ctrip.com/Home/Order/RailwayOrderList.aspx">火车票订单 &gt;</a></div>
+      </li>
+      <li class="sep"></li>
+      <li id="cui_nav_destination"><a title="汽车票" class="cui_nav_non" id="c_ph_bus" href="http://Bus.ctrip.com"><span>汽车票</span></a></li>
+      <li class="sep"></li>
+      <li id="cui_nav_car"><a href="http://car.ctrip.com/#ctm_ref=chp_var_txt" class="cui_nav_hotel cui_nav_has" id="c_ph_car"><span>用车</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div class="cui_sub_nav"><a title="用车首页" id="c_ph_car_c" href="http://car.ctrip.com#ctm_ref=chp_var_txt">用车首页</a>|<a title="国内接送机/专车" id="c_ph_daijia_c" href="http://car.ctrip.com/daijia#ctm_ref=chp_var_txt">国内接送机/专车</a>|<a title="海外接送机" id="c_ph_hwdaijia_c" href="http://car.ctrip.com/daijia/o#ctm_ref=chp_var_txt">海外接送机<i class="cui_ico_new" style="left:56px;"></i></a>|<a title="海外自驾" id="c_ph_hwzj_c" href="http://car.ctrip.com/hwzijia#ctm_ref=chp_var_txt">海外自驾</a>|<a title="国内自驾" id="c_ph_zj_c" href="http://car.ctrip.com/zijia#ctm_ref=chp_var_txt">国内自驾
+                </a></div><a class="cui_ico_order" rel="nofollow" href="http://my.ctrip.com/Home/Order/CarOrderList.aspx">用车订单 &gt;
+              </a></div>
+      </li>
+      <li class="sep"></li>
+      <li id="cui_nav_ticket"><a title="门票" class="cui_nav_has" id="c_ph_piao" href="http://piao.ctrip.com"><b></b><span>门票</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div class="cui_sub_nav"><a title="国内门票" id="c_ph_piao_p" href="http://piao.ctrip.com/?clear=t">国内门票</a>|<a title="海外门票" id="c_ph_piaooversea_p" href="http://piao.ctrip.com/oversea">海外门票</a>|<a title="当地玩乐" id="c_ph_huodong_p" href="http://huodong.ctrip.com">当地玩乐<i class="cui_ico_new" style="left:42px;"></i></a>|<a title="周末游" id="c_ph_around_p" href="http://you.ctrip.com/around#ctm_ref=gs-990123-290801-0-02-M001|0|0">周末游
+                </a></div><a class="cui_ico_order" rel="nofollow" href="http://my.ctrip.com/Home/Order/PiaoOrderlist.aspx">门票订单 &gt;
+              </a></div>
+      </li>
+      <li class="sep"></li>
+      <li id="cui_nav_tuan"><a class="cui_nav_has" id="c_ph_tuan" href="http://tuan.ctrip.com"><span>团购</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div class="cui_sub_nav"><a title="团购首页" id="c_ph_tuan_tu" href="http://tuan.ctrip.com">团购首页</a>|<a title="酒店客房" id="c_ph_tuanhotel_tu" href="http://tuan.ctrip.com/hotel/">酒店客房</a>|<a title="餐饮娱乐" id="c_ph_tuanlife_tu" href="http://tuan.ctrip.com/life/">餐饮娱乐</a>|<a title="旅游出行" id="c_ph_tuantravel_tu" href="http://tuan.ctrip.com/travel/">旅游出行</a>|<a title="门票" id="c_ph_tuanticket_tu" href="http://tuan.ctrip.com/ticket/">门票
+                </a></div><a class="cui_ico_order" rel="nofollow" href="http://my.ctrip.com/Home/Order/GroupOrderList.aspx">团购订单 &gt;
+              </a></div>
+      </li>
+      <li class="sep"></li>
+      <li id="cui_nav_destination01"><a title="攻略" class="cui_nav_non" id="c_ph_you" href="http://you.ctrip.com"><b></b><span>攻略</span></a></li>
+      <li class="sep"></li>
+      <li id="cui_nav_destination01"><a title="全球购" class="cui_nav_non" id="c_ph_go" href="http://g.ctrip.com"><b></b><span>全球购</span></a></li>
+      <li class="sep"></li>
+      <li id="cui_nav_lpk"><a class="cui_nav_has" id="c_ph_lipin" href="http://lipin.ctrip.com"><span>礼品卡</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div class="cui_sub_nav"><a title="礼品卡" id="c_ph_lipin_l" href="http://lipin.ctrip.com">礼品卡首页</a>|<a title="携程宝" id="c_ph_xcb_l" href="http://lipin.ctrip.com/xcb">携程宝</a>|<a title="程涨宝" id="c_ph_czb_l" href="http://lipin.ctrip.com/czb">程涨宝
+                </a></div><a class="cui_ico_order" rel="nofollow" href="http://my.ctrip.com/Home/Order/TicketOrderList.aspx">礼品卡订单 &gt;
+              </a></div>
+      </li>
+      <li class="sep"></li>
+      <li id="cui_nav_destination03"><a title="商旅" rel="nofollow" class="cui_nav_non" id="c_ph_crptravel" href="http://www.ctrip.com/crptravel/"><b></b><span>商旅</span></a></li>
+      <li class="sep"></li>
+      <li id="cui_nav_more"><a rel="nofollow" id="a_moreLink" title="更多" class="cui_nav_more cui_nav_has" href="http://jifen.ctrip.com/rewards&#xD;&#xA;              "><span>更多</span><i class="cui_ico_triangle"></i></a><div class="cui_subnav_wrap">
+          <div class="cui_sub_nav" id="div_more"><a title="积分商城" rel="nofollow" id="c_ph_rewards_m" href="http://jifen.ctrip.com/rewards">积分商城</a>|<a title="合作卡" rel="nofollow" id="c_ph_cards_m" href="http://cards.ctrip.com">合作卡</a>|<a title="订餐" rel="nofollow" href="http://dining.ctrip.com" id="c_ph_dining_m">
+                  订餐
+                </a></div>
+        </div>
+      </li>
+      <li id="loginDivLi" class="cui_myctrip">
+        <div id="div_LoginShow" style="display:none;"><span class="cui_myctrip_status" id="usernameId"><a rel="nofollow" id="c_ph_myhome" href="http://my.ctrip.com/home/myinfo.aspx">我的携程
+                </a></span><b></b><a href="" class="cui_links_exit" id="c_ph_logout">退出</a></div>
+        <div id="notLogin"></div>
+        <div class="cui_account" id="notLoginDiv" style="display:none;">
+          <div class="cui_account_info"><a rel="nofollow" href="http://my.ctrip.com/Home/Order/FlightOrderList.aspx">机票订单
+                </a><a rel="nofollow" href="http://my.ctrip.com/Home/Order/HotelOrderList.aspx">酒店订单
+                </a><a rel="nofollow" href="http://my.ctrip.com/Home/Order/PkgOrderList.aspx">旅游订单
+                </a><a rel="nofollow" href="http://my.ctrip.com/Home/Order/RailwayOrderList.aspx">火车票订单
+                </a><a rel="nofollow" class="gray" href="http://my.ctrip.com/home/FastOrder/OrderSearch.aspx">非会员订单
+                </a></div>
+          <div class="cui_account_info"><a rel="nofollow" href="&#xD;&#xA;          https://secure.ctrip.com/Payment-Base-PaymentPwd/Wallet/View/MyWalletIndex.aspx">携程钱包
+                </a><a rel="nofollow" href="&#xD;&#xA;          https://sinfo.ctrip.com/MyInfo/AccountCenter/UserInfoUpdate.aspx">个人中心
+                </a><a rel="nofollow" href="&#xD;&#xA;          https://sinfo.ctrip.com/Balance/zh-cn/Promocode.aspx">票券与积分
+                </a><a rel="nofollow" href="http://my.ctrip.com/Home/Passenger/PassengerList.aspx">常用信息
+                </a></div>
+        </div>
+        <div class="cui_account" id="loginDiv" style="display:none;">
+          <div id="div_user"></div>
+          <div class="cui_account_info"><a rel="nofollow" href="http://my.ctrip.com/Home/Order/FlightOrderList.aspx">机票订单
+                </a><a rel="nofollow" href="http://my.ctrip.com/Home/Order/HotelOrderList.aspx">酒店订单
+                </a><a rel="nofollow" href="http://my.ctrip.com/Home/Order/PkgOrderList.aspx">旅游订单
+                </a><a rel="nofollow" href="http://my.ctrip.com/Home/Order/RailwayOrderList.aspx">火车票订单
+                </a><a rel="nofollow" class="gray" href="http://my.ctrip.com/home/FastOrder/OrderSearch.aspx">非会员订单
+                </a></div>
+          <div class="cui_account_info"><a rel="nofollow" href="&#xD;&#xA;          https://secure.ctrip.com/Payment-Base-PaymentPwd/Wallet/View/MyWalletIndex.aspx">携程钱包
+                </a><a rel="nofollow" href="&#xD;&#xA;          https://sinfo.ctrip.com/MyInfo/AccountCenter/UserInfoUpdate.aspx">个人中心
+                </a><a rel="nofollow" href="&#xD;&#xA;          https://sinfo.ctrip.com/Balance/zh-cn/Promocode.aspx">票券与积分
+                </a><a rel="nofollow" href="http://my.ctrip.com/Home/Passenger/PassengerList.aspx">常用信息
+                </a></div>
+        </div>
+      </li>
+    </ul>
+  </div><input type="hidden" id="siteDomainHeadFloat" value="ctrip"><input type="hidden" id="bsType" value="1"><div id="nav_bh" class="cui_nav_behind" style="display:none;height:0px;"></div>
+</div><input type="hidden" id="popfloating_isshow" value="0"><script type="text/javascript">
+(function () {
+;window.replace=function(){return ''};(function(){var D=document,$=function(id){return D.getElementById(id)},st=null,st2=null,lazyTime=0,lis=[$("cui_nav_hotel"),$("cui_nav_car"),$("cui_nav_vac"),$("cui_nav_flight"),$("cui_nav_more"),$("cui_nav_trains"),$("cui_nav_tuan"),$("cui_nav_lpk"),$("cui_nav_ticket")],E={onmouseenter:function(o,f){if(D.all){o.onmouseenter=f
+}else{o.onmouseover=function(e){(e.relatedTarget==null?f():(!(this===e.relatedTarget||this.compareDocumentPosition(e.relatedTarget)==20)&&f()))
+}}},onmouseout:function(o,f){if(D.all){o.onmouseleave=f}else{o.onmouseout=function(e){(e.relatedTarget==null?f():(!(this===e.relatedTarget||this.compareDocumentPosition(e.relatedTarget)==20)&&f()))
+}}},addEvent:function(el,type,handler){if(el.addEventListener){el.addEventListener(type,handler,false)
+}else{if(el.attachEvent){el.attachEvent("on"+type,handler)}else{el["on"+type]=handler}}}},F={setTime:function(){E.onmouseenter($("cui_nav"),function(){setTimeout(function(){lazyTime=150
+},30)});E.onmouseout($("cui_nav"),function(){lazyTime=0})},initEvent:function(){for(var i=0,len=lis.length;
+i<len;i++){(function(){var j=i;E.onmouseenter(lis[j],function(){F.interFn(lis[j])});E.onmouseout(lis[j],function(){F.outerFn(lis[j])
+})})(i)}},reset:function(){for(var i=0,len=lis.length;i<len;i++){if(lis[i].className.indexOf("cui_nav_current")>-1){lis[i].className="cui_nav_current"
+}else{lis[i].className=""}}},padReset:function(j){for(var i=0,len=lis.length;i<len;i++){if(lis[i].className.indexOf("cui_nav_current")>-1){lis[i].className="cui_nav_current"
+}else{if(i!==j){lis[i].className=""}}}},interFn:function(obj){var nodes=document.getElementById("cui_nav").getElementsByTagName("li");
+var node="";for(var i=0;i<nodes.length;i++){if(nodes[i].className.match((/cui_nav_current/))){var node=nodes[i]
+}}if(st2!=null){clearTimeout(st2);st2=null}st=setTimeout(function(){F.reset();if(obj.className.indexOf("cui_nav_current")>-1){}else{obj.className="cui_nav_o";
+node.className="cui_nav_current cui_nav_unhover"}},lazyTime)},outerFn:function(obj){var nodes=document.getElementById("cui_nav").getElementsByTagName("li");
+var node="";for(var i=0;i<nodes.length;i++){if(nodes[i].className.match((/cui_nav_current/))){var node=nodes[i]
+}}if(st!=null){clearTimeout(st);st=null}st2=setTimeout(function(){F.reset();if(obj.className.indexOf("cui_nav_current")>-1){obj.className="cui_nav_current"
+}else{obj.className="";node.className="cui_nav_current"}},250)},initMobile:function(){for(var i=0,len=lis.length;
+i<len;i++){(function(){var j=i;var oneLevel=lis[j].getElementsByTagName("A")[0];oneLevel.href="###";oneLevel.onmousedown=function(){F.padReset(j);
+if(lis[j].className.indexOf("cui_nav_current")===-1){if(lis[j].className.indexOf("cui_nav_o")>-1){lis[j].className="";
+document.getElementsByClassName("cui_nav_current")[0].className="cui_nav_current";oneLevel.style.visibility="hidden";
+setTimeout(function(){oneLevel.style.visibility="visible"},10)}else{lis[j].className="cui_nav_o";document.getElementsByClassName("cui_nav_current")[0].className="cui_nav_current";
+document.getElementsByClassName("cui_nav_current")[0].className+=" cui_nav_unhover"}}}})(i)}},contains:function(target){for(var i=0,len=lis.length;
+i<len;i++){if(lis[i].compareDocumentPosition(target)-19>0){return true}}return false}};if($("headStyleId")){$("headStyleId").parentNode.removeChild($("headStyleId"))
+}if((/ip(hone|od)|ipad/i).test(navigator.userAgent)){F.initMobile();E.addEvent(D.body,"click",function(e){var target=e.target||e.srcElement;
+if(!F.contains(target)){F.reset()}})}else{F.setTime();F.initEvent()}})();
+})();
+</script>
+             
+<div id="base_bd">
+        <!--多少位客人浏览begin-->
+    <div id="divViewCount" style="position: fixed; _position: absolute; bottom: 10px;
+        right: 20px; display: none;" class="bottom_box">
+            有<span id="spanVisitCount">1</span>位客人正在浏览该酒店<a href="javascript:void(0);" id="closeViewCount"></a> 
+		</div>		
+		<!--多少位客人浏览end-->
+		<!--搜索框begin-->
+    
+<div id="searchForm" class="search_part" style="display:">
+    目的地 <input id="txtCity" name="cityName"  class="input_txt"  style="width: 130px;" value="朱昂莱班，普罗旺斯-阿尔卑斯-蓝色海岸，法国" _lastvalue="朱昂莱班，普罗旺斯-阿尔卑斯-蓝色海岸，法国" autocomplete="off" />
+    &nbsp;&nbsp;入住 <input type="text" style="width: 130px;" autocomplete="off" class="input_txt" name="CheckIn" id="txtCheckIn" value="2014-12-13"/>
+    &nbsp;&nbsp;退房 <input type="text" style="width: 130px;" autocomplete="off" class="input_txt" name="CheckOut" id="txtCheckOut" value="2014-12-14"/>
+	
+	&nbsp;&nbsp;间数
+	<select name="rooms" id="rooms">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+	</select>
+	
+    <input type="submit" id="btn_search" value="查看其它酒店" class="btn_search" />
+    <a href="javascript:return false;" id="btnMapSearch"  class="btn_map_booking hidden" >查看地图预订酒店</a>
+</div>
+        <!--收藏begin-->
+		<div class="path_bar2">
+			<div class="float_right">
+                <a class="ico_print" rel="nofollow" href="javascript:print()">打印</a>    
+			</div>
+        <div itemprop="breadcrumb">
+            <a title="海外酒店" href="http://hotels.ctrip.com/international/">海外酒店</a> &gt;
+            <a id='lnkCountryName' d-url="/international/country31/" href="/international/country31/" data-dopost="T" data-ctm="">法国酒店</a>
+            &gt;
+            <a id='lnkCityName' d-url="/international/juanlespins3533" href="/international/juanlespins3533"  data-dopost="T" data-ctm="">朱昂莱班酒店</a> &gt; 玛尔乔莱娜酒店</div>
+		</div>
+		<!--收藏end-->
+		<!--搜索框end-->
+    <!--图片预获取BEGIN-->
+    <div class="forward" style="height: 1px; width: 1px; overflow: hidden">
+        <img src="http://images4.c-ctrip.com/target/hotel/154000/153408/393eb37199af4517a52e971758838107_300_225.jpg" height="1px" width="1px" /><img src="http://images4.c-ctrip.com/target/hotel/154000/153408/e1660c3b7202451fab78a281564b4ee8_300_225.jpg" height="1px" width="1px" /><img src="http://images4.c-ctrip.com/target/hotel/154000/153408/f21a33fcee434cbe8c42aa42c9d1ffbd_130_130.jpg" height="1px" width="1px" /><img src="http://images4.c-ctrip.com/target/hotel/154000/153408/9a0debce52c440a68adcec75d49a2c8b_130_130.jpg" height="1px" width="1px" /><img src="http://images4.c-ctrip.com/target/hotel/154000/153408/45e49ded73394b6a9e890546d19099cb_130_130.jpg" height="1px" width="1px" /><img src="http://images4.c-ctrip.com/target/hotel/154000/153408/f395122af3de4a1a929fec69321457ee_130_130.jpg" height="1px" width="1px" /><img src="http://images4.c-ctrip.com/target/hotel/154000/153408/cda097c5352a471f9e12173fa7ca4ab8_300_225.jpg" height="1px" width="1px" /><img src="http://images4.c-ctrip.com/target/hotel/154000/153408/f9786ec9a3ec4860ae7cd25bebd9f5c4_130_130.jpg" height="1px" width="1px" /><img src="http://images4.c-ctrip.com/target/hotel/154000/153408/b3603905e00c49eca78df4f20c86e181_130_130.jpg" height="1px" width="1px" />
+    </div>
+    <!--图片预获取END-->
+	        <!--酒店信息begin-->
+	        <div class="htl_info_com layoutfix">
+		        <div class="htl_info" itemscope itemtype="http://schema.org/Hotel">
+			        <div class="price_box">
+				<p class="noprice_tips hidden">酒店暂未公布价格<br>建议您选择其他酒店</p>
+				<div class="J_price_info">
+				        <p class="staring_price">						
+                            <span  id="detail_price"></span>						
+				        </p>
+				        <p class="mlt_price" id="detail_originalprice"></p>
+			        </div>
+            </div>
+                    <div class="book_info">
+                <a class="book_btn" id="book_btn" href="javascript:;">立即预订</a>
+                        <div class="htl_p_info">
+                            <span class="ico_box" id="detail_ico"></span>
+                            
+                        </div>
+                    </div>
+            <h1 class="name" itemprop="name">
+                La Marjolaine(玛尔乔莱娜酒店)<span class="" title=""
+                    data-role="title"></span></h1>
+            <div class="name_alias">
+                </div>
+                    <div class="grade">
+                <span class="hotel_diamond02" title="朱昂莱班经济型（携程用户评定为2钻）">
+                </span>
+			        </div>
+			        <div class="adress" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <span>
+                    法国普罗旺斯-阿尔卑斯-蓝色海岸
+                    <span itemprop="addressLocality">
+                        朱昂莱班</span><span itemprop="streetAddress">15, Av Du Docteur Fabre</span>
+                    </span>
+                <a id="linkViewMap" class="view_map" href="/international/map/153408.html" data-dopost="T"
+                    d-url="/international/map/153408.html" data-ctm="" style="display: ">
+                    查看地图</a>
+				        <a class="btn-compare J_compare_153408" onclick="compareTool.addHotel({hotelid:153408,hotelname:'La Marjolaine(玛尔乔莱娜酒店)',price:'0',showprice:'0',picurl:'http://images4.c-ctrip.com/target/hotel/154000/153408/775f548909554aa1ad24bdf353f6e676_130_130.jpg',city:3533},this)" href="javascript:;"><i class="icon-compare"></i>对比</a>
+                        <a rel="nofollow" data-type="I" data-id="153408" data-favorid="" id="fav153408" data-city="3533" onclick="DoFavHotel(this, event);" title="收藏酒店" class="coll" href="javascript:;"><span>收藏</span></a>
+                    </div>
+			        <div class="icon_list">
+				        <span class="ico_free_wifi" title="公共区域WIFI" data-role="title"></span><span class="ico_parking" title="停车场" data-role="title"></span><a class="all_facilities" href="javascript:window.scroll(0,$('#detail_title').offset().top - 110);" id="all_facilities">所有设施</a>
+			        </div>
+		        </div>
+	        <!--酒店信息end-->
+        <div class="htl_com" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"
+            style="">
+            <meta itemprop="ratingValue" content="4.4" />
+            <a  href="/international/dianping/153408.html" data-dopost="T" d-url="/international/dianping/153408.html"
+                data-ctm="" class="commnet_score" id="commnet_score"><span class="score">&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="score_text">
+                        4.4</span>/5分 </span><span class="recommend">
+                            </span>
+                
+                <span class="commnet_num">源自<span itemprop="reviewCount">10</span>位住客点评</span>
+                </a>
+                
+                
+            </div>
+        <div class="htl_com" style="display:none">
+            <p class="no_comment">
+                暂无点评</p>
+                <div class="comment_text">
+					<i class="ico_arrows"></i>
+					<div class="comment_text_msg">
+                    <p>
+                        马上分享入住体验，成为首位点评者</p>
+                    <a class="btn_comment" id="btn_commentFirst" data-hotel="153408" onclick="WriteComment(this, event);"
+                        href="javascript:;">我要点评</a>
+                    </div>
+				</div>
+            </div>
+            </div>
+               <!--酒店图片begin-->
+            <div class="htl_pic_map layoutfix">
+		        <div class="htl_pic" id="picList">
+            <meta itemprop="image" content="http://images4.c-ctrip.com/target/hotel/154000/153408/775f548909554aa1ad24bdf353f6e676_130_130.jpg" />
+			        <div class="pic1"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/393eb37199af4517a52e971758838107_300_225.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/393eb37199af4517a52e971758838107_550_412.jpg" data-index="0" pid="1726128"></div></div><div class="pic2"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/e1660c3b7202451fab78a281564b4ee8_300_225.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/e1660c3b7202451fab78a281564b4ee8_550_412.jpg" data-index="1" pid="1726127"></div></div><div class="pic3"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/f21a33fcee434cbe8c42aa42c9d1ffbd_130_130.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/f21a33fcee434cbe8c42aa42c9d1ffbd_550_412.jpg" data-index="2" pid="1726126"></div></div><div class="pic4"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/9a0debce52c440a68adcec75d49a2c8b_130_130.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/9a0debce52c440a68adcec75d49a2c8b_550_412.jpg" data-index="3" pid="1726124"></div></div><div class="pic5"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/45e49ded73394b6a9e890546d19099cb_130_130.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/45e49ded73394b6a9e890546d19099cb_550_412.jpg" data-index="4" pid="1727571"></div></div><div class="pic6"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/f395122af3de4a1a929fec69321457ee_130_130.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/f395122af3de4a1a929fec69321457ee_550_412.jpg" data-index="5" pid="1727572"></div></div><div class="pic7"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/cda097c5352a471f9e12173fa7ca4ab8_300_225.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/cda097c5352a471f9e12173fa7ca4ab8_550_412.jpg" data-index="6" pid="1727573"></div></div><div class="pic8"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/f9786ec9a3ec4860ae7cd25bebd9f5c4_130_130.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/f9786ec9a3ec4860ae7cd25bebd9f5c4_550_412.jpg" data-index="7" pid="1727574"></div></div><div class="pic9"><div style="background-image:url(http://images4.c-ctrip.com/target/hotel/154000/153408/b3603905e00c49eca78df4f20c86e181_130_130.jpg);" _src="http://images4.c-ctrip.com/target/hotel/154000/153408/b3603905e00c49eca78df4f20c86e181_550_412.jpg" data-index="8" pid="1727575"></div></div><div class="btn_upload_box"><a class="btn_upload" id="btn_uploadother" data-hotel="153408" onclick="UploadPicture(this,event);"><i class="ico_upload"></i>我要上传</a></div><p class="pop_link">
+<a class="all_pic" data-href="/international/pic/153408.html" id="view_allpic" data-dopot="T" data-ctm="?checkin=2014-12-13&checkout=2014-12-14&rooms=1" d-url="/international/pic/153408.html" data-index="0">查看所有图片（<span class="allNum">51</span>）</a></p>
+
+		        </div>
+                <div class="htl_map" id="map">
+            <a href="/international/map/153408.html" data-dopost="T" d-url="/international/map/153408.html"
+                class="view" id="viewMap">查看地图</a>
+                </div>
+	        </div>
+    <div id="popTopPic" class="hotel_pic_top" style="position: absolute; display: none;">
+        <img src="http://pic.c-ctrip.com/common/pic_alpha.gif" onerror="this.src='http://pic.c-ctrip.com/hotels121118/bg_nopic2.png';" />
+    </div>
+            <!--酒店图片end-->	
+            <div class="hidden" itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                <meta itemprop="latitude" content="43.5696693256571" />
+                <meta itemprop="longitude" content="7.11287498474121" />
+            </div>
+        <!--主题部分begin-->
+    <div class="main_detail_wrapper2">
+			<div class="detail_main2" id="divDetailMain">
+            
+                 
+		        <div class="hotel_tabs_box " id="divHotelTabs">
+                    <a class="book_btn hidden" href="javascript:;" id="lnkBook">立即预订</a>
+			        <ul class="hotel_tabs layoutfix" id="contentTab">
+						<li class="current" value="1" id="bookTab"><a href="###">预订房型</a></li>
+                        <li value="2"><a href="###">简介设施</a></li>
+                        <li value="3"><a href="###">酒店政策</a></li>
+                    <li value="4" id="commentTab" style="display: " class="">
+                        <a href="/international/dianping/153408.html"  data-ctm="" d-url="/international/dianping/153408.html">
+                            住客点评(10)</a></li>
+					</ul>			
+		        </div>
+			
+            <div style="display: block;" class="detail_content">
+					  
+                     <a name="book" id="book"></a>              
+                <div class="discount_box hidden"></div>
+                     <div class="room_select_box J_detail_title_2" id="room_select_box">
+						<div class="no_result hidden" id="no_result">
+							<span class="i"></span>
+                        <p class="info">
+                            没有找到符合您要求的房型。</p>
+						</div>
+					    <div class="date_change_box">
+                            <div class="left" id="date_change_box_left">
+                            <p class="title hidden" id="modfiy_title">
+                                您可以尝试修改入住退房日期</p>
+                            入住
+                            <input id="change_txtCheckIn" disabled="disabled" name="change_txtCheckIn" class="input_txt"
+                                mod="notice|calendar" mod_notice_tip="yyyy-mm-dd" mod_calendar_focusnext="true"
+                                mod_calendar_rangestart="#" autocomplete="off" value="2014-12-13"
+                                style="width: 67px;" type="text">
+                            退房
+                            <input id="change_txtCheckOut" name="change_txtCheckOut" class="input_txt" mod="notice|calendar"
+                                disabled="disabled" mod_notice_tip="yyyy-mm-dd" mod_calendar_focusnext="true"
+                                mod_calendar_rangestart="#" autocomplete="off" value="2014-12-14"
+                                style="width: 67px;" type="text">
+                            <span class="num_night" id="roomday">
+                                1晚</span>
+                            
+                            间数
+                            <select disabled="disabled" name="num" id="num" disabled="disabled">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                                                       
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                                
+                                                        <option value="8">8</option>
+                                                       
+                                    </select>
+                                          
+                            <a class="btn sta-disabled" rel="nofollow" href="javascript:;" id="changeBtn">确定</a>
+                                     
+                            <div class="date_change_pop hidden">
+                                <i class="ico-arrow"></i>目前显示两周后房价，修改日期可查看更多房型。<a href="javascript:;" class="btn_close"
+                                    onclick="$('.date_change_pop').addClass('hidden')">×</a></div>
+					            
+                            </div>
+                            <div class="right" id="pay_way">   
+                            <div id="divProminfo" class="pro_info" style="display: none">
+                            </div>
+                            </div>
+                        </div>
+                    <div class="room_list_loading" id="hotelLoading" style="display: none">
+                        给力加载中，请稍候......</div>
+						<div class="nearby_htl_box hidden">
+                        <p class="title">
+                            为您推荐周边酒店</p>
+                        <ul id="recommendhotel">
+                        </ul>
+						</div>                 
+					    <div class="htl_room_table" id="hotelList">						
+					    </div>
+                    </div>
+                <div class="htl_tips detail_con_0" id="hotelAdd" style="display: none;">
+						<span class="i"></span>
+                    <p class="t">
+                        酒店提示</p>
+                    <p id="bookingTip" style="display: none;">
+                    </p>
+						
+					</div>
+                    <div id="hotel_info_comment">
+                        <div class="detail_content" id="detail_content">                   
+                        
+<!--酒店介绍begin-->
+<span itemprop="description">
+<h2 class="detail_title J_detail_title_2">酒店介绍</h2><div class="htl_room_txt text_3l" id="htlDes" style="height:117px; overflow:hidden;"><div>　　这家酒店位于Juan-les-Pins 市，坐落在一个开满鲜花的花园的中心地带，距离海滩有2分钟的步行路程。酒店设有带免费无线网络连接的空调客房。
+
+La Marjolaine 酒店的每间客房都设有私人浴室。每天早晨，客人可以在用餐室享用欧陆式早餐。
+
+Marjolaine 酒店的其他设施包括一处户外露台和一个有盖私人停车场。
+
+酒店距离Antibes 镇中部只有20分钟的步行路程，距离戛纳（Cannes）有20分钟车程。</div></div>
+</span>
+<div class="layoutfix"><a class="show_unfold float_right hidden" href="javascript:;" id="more">显示全部</a></div>
+<!--酒店介绍end-->
+<!--酒店设施begin-->
+<h2 class="detail_title" id="detail_title">酒店设施</h2><div class="htl_info_table detail_con_1"><table><tbody><tr><th>网络连接</th><td><ul class="detail_extracontent"><li>有可无线上网的公共区域</li><li>有可无线上网的公共区域 <span class="free">免费</span></li></ul></td></tr>
+<tr><th>停车场</th><td><ul class="detail_extracontent"><li>停车场</li></ul></td></tr>
+<tr><th>通用设施</th><td><ul class="detail_extracontent"><li>暖气</li><li>空调</li><li>无烟楼层</li><li>所有公共及私人场所严禁吸烟</li></ul></td></tr><tr><th>服务项目</th><td><ul class="detail_extracontent"><li>传真/复印</li><li>送餐服务</li><li>快速办理入住/退房手续</li><li>行李寄存</li></ul></td></tr></div></tbody></table></div>
+<!--酒店设施end-->
+<!--酒店政策begin-->
+<h2 class="detail_title J_detail_title_2" id="detail_policy">酒店政策</h2><div class="htl_info_table detail_con_2"><table><tbody><tr><th>入住和离店</th><td>入住时间：<span class="text_bold">14:00</span>-<span class="text_bold">22:00</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;离店时间：<span class="text_bold">11:00</span>以前</td></tr>
+<tr><th>取消政策</th><td>不同类型的客房附带不同的取消预订和预先付费政策 选择上述客房时，请参阅“客房政策”。<br/>若提前离店，酒店将收取一定的费用</td></tr>
+<tr><th>押金/预付款</th><td>入住时需要出示政府核发的身份证件(带照片)。</td></tr>
+<tr><th>宠物</th><td>不可携带宠物。</td></tr>
+<tr><th>特殊条款</th><td>信用卡授权解除需时1-3个月。视不同国家、城市之银行操作时间而定。<br/>海外酒店（包括港澳台）酒店已确认的订单，如在最晚取消时间前取消订单，并再重新预订，酒店可能会拒绝使用新价格。<p>根据各国不同情况，您可能还需要缴纳当地其他的税费。</p></td></tr>
+<tr><th>酒店接受的<br>银行卡类型</th><td><div class="detail_extracontent layoutfix"><p>除接受现金支付外，酒店内接受信用卡支付的种类有：</p><div class="card_cont_img"><img alt="万事达(Master)" title="万事达(Master)" src="http://pic.c-ctrip.com/creditcard/pic_25.png"><img alt="威士(VISA)" title="威士(VISA)" src="http://pic.c-ctrip.com/creditcard/pic_26.png"><img alt="vCarte Bleue" title="vCarte Bleue" src="http://pic.c-ctrip.com/creditcard/pic_01.png"></div></<div></td></tr>
+</tbody></table></div>
+<!--酒店政策end-->
+<!--GTA酒店的特殊说明begin-->
+
+<!--GTA酒店的特殊说明end-->
+
+
+                        
+
+
+                            
+                        <h2 class="detail_title J_detail_title_2" id="detail_comment" style="display: ">
+                            住客点评</h2>
+                        <div id="commentList" class="hotel_info_comment detail_con_3">
+                            
+
+   <div id="mainContent1" class="detail_cmt_box">
+        <div class="comment_tab_main">
+            <div class="comment_tab_list">
+			    <div class="comment_sumary_box">
+				    <span class="btn_comment float_right" id="btn_commentOther" data-hotel="153408" onclick="WriteComment(this, event);">我要点评</span>
+				    <div class="comment_total_score">
+					    <span class="big_c"><span class="b" style="width:88%"></span></span>
+					    <span class="score"><span class="n">4.4</span>/5分</span>
+					    <span class="rec"style="display:none"><span class="n">0%</span>用户推荐</span>
+				    </div>
+                    
+			    </div>
+                
+                <iframe width="100%" height="800" frameborder="none" style="border: medium none;" src="http://www.booking.com/reviewlist.zh.html?tmpl=reviewlistpopup;pagename=la-marjolaine-juan-les-pins;cc1=fr;hrwt=1;aid=349369"></iframe>
+            </div>
+        </div>
+    </div>
+
+                            </div>
+                            <div class="nearby_htl_box" id="nearby_htl_box">
+<h2 class="detail_title">周边酒店</h2>
+<ul  id="nearby_htl">
+<li>
+<a class="pic" rel="nofollow" href="/international/153405.html" data-dopost="T" data-ctm="#ctm_ref= hi_0_0_0_0_lst_sr_1_df_ls_1_n_hi_ne_0_n" d-url="/international/153405.html" >
+<img alt="H&#244;tel Trianon(特里亚农酒店)" src="http://images4.c-ctrip.com/target/hotel/154000/153405/27ccf66eb25147afa90b32d357782644_130_130.jpg" />
+</a>
+<p class="name"><a title="H&#244;tel Trianon(特里亚农酒店)" href="/international/153405.html" data-dopost="T" data-ctm="#ctm_ref= hi_0_0_0_0_lst_sr_1_df_ls_1_n_hi_ne_0_n" d-url="/international/153405.html">H&#244;tel Trianon(特里亚农酒店)</a></p>
+<p class="price_score"><span class="price">
+<dfn>RMB</dfn>258<span class="qi">起</span>
+</span>
+<span class="score">3.5<span>/5分</span></span>
+</p>
+</li>
+</ul>
+</div>
+
+                        </div>
+                    </div>
+                     
+				</div>	
+                
+		    </div>
+		<div class="detail_side2">
+			
+            <div class="search_history side_mod side_mod_coll"><div id="divMyVisitedHotels" style="display:none"><div class="side_hd"><h2>我浏览过的酒店</h2></div><div class="side_bd"><ul class="side_list" id="vistedHotels"><li>暂无浏览记录</li></ul></div></div></div>
+            
+<div class="side_mod side_tips">
+    <div class="side_hd">
+        <h2>贴心提示</h2>
+    </div>
+    <div class="side_bd">
+        <p>预订过程中可能有少量酒店存在价格调整的情况，请以成功提交订单时的价格为准。</p>
+    </div>
+</div>
+            
+
+<div id="faq-block" class="faq-block side_mod">
+    <div class="side_hd">
+        <a href="javascript:void(0);" id="faq-more" class="more hidden" target="_blank">更多</a>
+        <h2>互助问答(<span id="faq-total">0</span>)</h2>
+    </div>
+    <div class="side_bd">
+        <a href="javascript:void(0);" id="faq153408" class="btn-ask faq-btnask">我要提问</a>
+        <p class="faq-answer-intro"><span>答案由住客提供，仅供参考。</span></p>
+        <p id="faq-noresults" class="no-results hidden">还没人提问哦，你来开个头吧！</p>
+        <div id="faq-list" class="faq-list"></div>
+    </div>
+</div>
+
+<div id="pop-box-ask" class="pop-box pop-box-ask hidden">
+	<a class="c_close" href="javascript:void(0);">×</a>
+	<div class="pop-bd">
+		<p><span class="fr"><span class="charnumber" data-maxLen="50">0</span>/50字</span>我的问题</p>
+		<textarea placeholder="请输入您想要提的问题" class="form-textarea"></textarea>
+		<div class="wrap-email">
+            
+            <input type="text" value="" placeholder="请输入您的邮箱地址" class="form-text">
+            
+            <a class="btn-primary fr disabled" href="javascript:void(0);"><i class="icon-loading hidden"></i><span>发表问题</span></a>
+            <span class="gray">邮件会告诉您有答案了。</span>
+        </div>
+	</div>
+</div>
+
+<div id="pop-box-msg" class="pop-box pop-box-msg hidden">
+	<div class="pop-hd"><a class="c_close" href="javascript:void(0);">×</a>友情提示：</div>
+	<div class="pop-bd"></div>
+	<div class="pop-ft"><a class="btn btn-primary" href="javascript:void(0);">确定</a></div>
+</div>
+
+<script type="text/javascript" language="javascript">
+    var faqConfig = {
+        email: "",
+        addFaqUrl: "/international/tool/AjaxHotelFaqAdd.aspx",
+        loadFaqUrl: "/international/tool/AjaxHotelFaqLoad.aspx",
+        cityId : 3533,
+        hotelId : 153408,
+        hotelName: "La Marjolaine(玛尔乔莱娜酒店)",
+        hotelEname: "La Marjolaine",
+        quickLogin : false
+    };
+</script>
+	    </div>
+	   </div>
+       	<!--主题部分end-->
+        <!--SEO底部begin-->
+    
+<div class="sortft">
+			<div class="sortft_ctrip">
+				<div class="sortft_b">
+					<div class="sortft_t">携程网提供的相关热门信息检索</div>
+				<p>携程网为您提供<a href="/international/153408.html" data-dopost="T" d-url="/international/153408.html" target="_blank">La Marjolaine(玛尔乔莱娜酒店)</a>预订价格查询，涵盖该酒店电话、地址、交通、地图、点评以及朱昂莱班旅游、<a href="http://you.ctrip.com/place/juanlespins1970.html" data-dopost="T" target="_blank">朱昂莱班旅游攻略</a>信息，使您入住<a href="/international/juanlespins3533" data-dopost="T" d-url="/international/juanlespins3533" target="_blank">朱昂莱班酒店</a>更放心更省心。</p>
+                </div>
+				<div class="sortft_list">
+					<a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/karlovyvary3456" href="http://hotels.ctrip.com/international/karlovyvary3456" title="卡罗维发利酒店酒店预订">卡罗维发利酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/21379.html" href="http://hotels.ctrip.com/international/21379.html" title="新加坡圣淘沙香格里拉度假酒店酒店预订">新加坡圣淘沙香格里拉度假酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/56552.html" href="http://hotels.ctrip.com/international/56552.html" title="曼谷梦幻酒店酒店预订">曼谷梦幻酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/18794.html" href="http://hotels.ctrip.com/international/18794.html" title="吉隆坡文华东方酒店酒店预订">吉隆坡文华东方酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/65111.html" href="http://hotels.ctrip.com/international/65111.html" title="大叻帝后酒店酒店预订">大叻帝后酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/230408.html" href="http://hotels.ctrip.com/international/230408.html" title="新加坡81酒店牛车水酒店预订">新加坡81酒店牛车水</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/shizuoka1176" href="http://hotels.ctrip.com/international/shizuoka1176" title="静冈住宿酒店预订">静冈住宿</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/148501.html" href="http://hotels.ctrip.com/international/148501.html" title="喜来登洛杉矶城区酒店酒店预订">喜来登洛杉矶城区酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/139913.html" href="http://hotels.ctrip.com/international/139913.html" title="雅加达艾美酒店酒店预订">雅加达艾美酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/henry20203" href="http://hotels.ctrip.com/international/henry20203" title="亨利酒店酒店预订">亨利酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/brand/h333/" href="http://hotels.ctrip.com/brand/h333/" title="正福草堂酒店酒店预订">正福草堂酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/brand/h273/" href="http://hotels.ctrip.com/brand/h273/" title="飘HOME酒店酒店预订">飘HOME酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/miami702" href="http://hotels.ctrip.com/international/miami702" title="迈阿密酒店酒店预订">迈阿密酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/country3/" href="http://hotels.ctrip.com/international/country3/" title="新加坡住宿推荐酒店预订">新加坡住宿推荐</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/siemreap1369" href="http://hotels.ctrip.com/international/siemreap1369" title="暹粒住宿酒店预订">暹粒住宿</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/brand/h2/" href="http://hotels.ctrip.com/brand/h2/" title="豪生酒店酒店预订">豪生酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/brand/h326/" href="http://hotels.ctrip.com/brand/h326/" title="银座佳驿酒店预订">银座佳驿</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/fulton20152" href="http://hotels.ctrip.com/international/fulton20152" title="富尔顿酒店酒店预订">富尔顿酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/brand/h77/" href="http://hotels.ctrip.com/brand/h77/" title="千禧酒店预订">千禧</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/brand/h86/" href="http://hotels.ctrip.com/brand/h86/" title="粤海之星酒店预订">粤海之星</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/sandiego698" href="http://hotels.ctrip.com/international/sandiego698" title="圣地亚哥酒店酒店预订">圣地亚哥酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/kualalumpur315" href="http://hotels.ctrip.com/international/kualalumpur315" title="吉隆坡住宿酒店预订">吉隆坡住宿</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/country91/" href="http://hotels.ctrip.com/international/country91/" title="委内瑞拉酒店酒店预订">委内瑞拉酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/brand/h167/" href="http://hotels.ctrip.com/brand/h167/" title="最佳西方酒店预订">最佳西方</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/brand/h83/" href="http://hotels.ctrip.com/brand/h83/" title="雅诗阁酒店预订">雅诗阁</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/international/seoul274" href="http://hotels.ctrip.com/international/seoul274" title="首尔酒店酒店预订">首尔酒店</a><a target="_blank" data-dopost="T" d-url="http://hotels.ctrip.com/" href="http://hotels.ctrip.com/" title="宾馆酒店预订">宾馆</a>
+				</div>
+			</div>
+			<div class="sortft_box">
+				<h3>预订快捷入口</h3>
+                 <a href="/international/country1/" target="_blank" title="台湾酒店">台湾酒店</a>
+				<a href="/international/country4/" target="_blank" title="泰国酒店">泰国酒店</a>
+				<a href="/international/country42/" target="_blank" title="韩国酒店">韩国酒店</a>
+				<a href="/international/country78/" target="_blank" title="日本酒店">日本酒店</a>
+                	<a href="/international/country2/" target="_blank" title="马来西亚酒店">马来西亚酒店</a>
+				<a href="/international/country108/" target="_blank" title="印度尼西亚酒店">印度尼西亚酒店</a>
+				<a href="/international/country66/" target="_blank" title="美国酒店">美国酒店</a>
+				<a href="/international/country31/" target="_blank" title="法国酒店">法国酒店</a>
+                	<a href="/international/country146/" target="_blank" title="马尔代夫酒店">马尔代夫酒店</a>
+                     <a title="新加坡酒店" target="_blank" href="/international/singapore73">新加坡酒店</a>
+                       <a title="普吉岛酒店" target="_blank" href="/international/phuket725">普吉岛酒店</a>
+            <a title="巴厘岛酒店" target="_blank" href="/international/bali723">巴厘岛酒店</a>
+             <a title="台北酒店" target="_blank" href="/international/taibei617">台北酒店</a>
+               <a title="长滩岛酒店" target="_blank" href="/international/boracay1391">长滩岛酒店</a>
+                <a title="首尔酒店" target="_blank" href="/international/seoul274">首尔酒店</a>
+             <a title="清迈酒店" target="_blank" href="/international/chiangmai623">清迈酒店</a>
+            <a title="巴黎酒店" target="_blank" href="/international/paris192">巴黎酒店</a>
+             <a title="伦敦酒店" target="_blank" href="/international/london338">伦敦酒店</a>
+            <a title="纽约酒店" target="_blank" href="/international/newyork633">纽约酒店</a>
+            <a title="希尔顿" target="_blank" href="http://hotels.ctrip.com/brand/h10/">希尔顿</a>
+ <a title="皇冠假日酒店" target="_blank" href="http://hotels.ctrip.com/brand/h23/">皇冠假日酒店</a>
+  <a title="喜来登酒店" target="_blank" href="http://hotels.ctrip.com/brand/h12/">喜来登酒店 </a>
+ <a title="洲际酒店" target="_blank" href="http://hotels.ctrip.com/brand/h24/">洲际酒店</a>
+ <a title="万豪酒店" target="_blank" href="http://hotels.ctrip.com/brand/h18/">万豪酒店</a>
+ <a title="凯悦酒店" target="_blank" href="http://hotels.ctrip.com/brand/h26/">凯悦酒店 </a>
+ <a title="国际酒店大全" target="_blank" href="http://hotels.ctrip.com/international/landmarks/">国际酒店大全</a>
+			</div>
+		</div>
+        <!--SEO底部end-->
+   <!-- for map-popup.js start -->
+    <div class="map_pop" id="popMap" style="width:80%;display:none;">
+        <a id="delMap" href="javascript:void(0);" class="delete">&times;</a>
+        <div class="map_box">
+            <div class="map_side" id="J_mapSide">
+                <div class="btn_side_close" id="J_btnSide">
+                    <a href="javascript:;" rel="nofollow"></a>
+                </div>
+
+            <div class="side_inner J_side_inner_route">
+               <div id="around_search" class="around_search">
+					    <div class="side_title">周边查询</div>
+					   
+                        <div id="around_box" class="around_box"><a id="ahotel" href="javascript:;" class="hotel"><i></i>酒店</a></div><div class="view"><a id="aHinge" href="javascript:;">查看全城交通枢纽</a></div>
+				</div>
+                <div id="route_search" class="route_search">
+					<div class="map_side_title "><span id="map_search_back2" class="back hidden"><a href="javascript:;">&lt; 返回</a>|</span>线路查询</div>
+					<div id="route_way" class="route_way">
+						<a href="javascript:;" class="selected">驾车</a>
+						<a href="javascript:;">公交</a>
+						<a href="javascript:;">步行</a>
+					</div>
+					<div class="route_box">
+						<div class="change"><a href="javascript:;">换</a></div>
+						<div class="form_item">
+							<span class="ico_start">A</span>
+							<input type="text" class="input_txt"/>
+                            <a class="remove hidden" href="javascript:;">×</a>
+                        </div>
+						<div class="form_item">
+							<span class="ico_end">B</span>
+							<input type="text" class="input_txt"/>
+                            <a class="remove hidden" href="javascript:;">×</a>
+						</div>						
+						<div class="location"><a href="javascript:;">添加目的地</a></div>
+						<div class="btn_box">							
+							<a href="javascript:;" id="btn_rounte_search" class="btn">查询路线</a>
+                            <span class="text_unit up">英里/<span class="txt">千米</span></span>
+						</div>
+                        <div class="alert hidden" id="J_route_warn"><i class="ico_warn"></i><span></span></div>
+						</div>
+				</div>
+                <div class="route_loading hidden"><i class="ico_loading"></i>载入中，请稍候......</div>
+                <div class="no_result hidden" id="J_tooClose">
+					<span class="i"></span>
+					<p class="txt">起点和终点距离很近，</p>
+					<p class="txt">您可以<a id="J_orWalking" class="b">步行</a>前往。</p>
+				</div>
+
+				<div class="no_result hidden" id="J_noRoute">
+					<span class="i"></span>
+					<p class="txt">没有查询到相关路线，</p>
+					<p class="txt">请更换地点重新查询。</p>
+				</div>
+				<div class="result_error hidden" id="J_noPlace">
+                	<div class="route">
+				        <p class="place">抱歉，没有找到相关的地点</p>
+				        <div class="tips">
+					        <p class="txt">您还可以:</p>
+					        <p class="txt">- 检查输入的文字是否有误</p>
+					        <p class="txt">- 尝试更换不同的文字</p>
+
+				        </div>
+			        </div>
+                </div>
+
+                <div id="route_search_box" class="route_search_box">
+					<div class="route_result bus_route_result" style="display:none;">
+						<div class="bus_sort">
+							<a class="selected" data-policy="1" href="javascript:;">最佳路线</a>
+							<a data-policy="2" href="javascript:;">最少换乘</a>
+							<a data-policy="3" href="javascript:;">步行最少</a>
+						</div>
+						<div class="bus_route_height" style="height:385px;"></div>
+					</div>
+					<div class="route_result car_route_result" style="display:none;">
+						<div class="car_label">
+							<a data-policy="1" href="javascript:;">避免高速</a>
+							<a data-policy="2" href="javascript:;">避免收费</a>
+                            <span class="text_unit down">英里/<span class="txt">千米</span></span>
+						</div>
+						<div class="car_total">
+							<p class="l"><a href="javascript:;" class="print">打印</a>全程约 <span class="b distance"></span></p>
+							<p class="l">时间约 <span class="b time"></span></p>
+						</div>
+						<div class="route_detail_box" style="height:313px;"></div>
+					</div>
+					<div class="route_result foot_route_result" style="display:none;">
+						<div class="car_total">
+                            <p><a href="javascript:;" class="print">打印</a>全程约 <span class="b distance"></span></p>
+						</div>
+						<div class="route_detail_box" style="height:375px;"></div>
+					</div>
+					</div>									
+			</div>
+            <div class="side_inner hidden J_side_inner_arround">
+                <div class="around_list_box" id="around_list_box">
+                    <div class="map_side_title"><span id="map_search_around_back" class="back"><a href="javascript:;">&lt; 返回</a>|</span><span id="map_search_around_name"></span></div>
+                    <div class="around_title"></div>
+                    <div style="display:none;" class="no_result_spot">
+						    <i class="i"></i>
+						      <p class="txt" id="no_result_tip_text"></p>
+				    </div>
+                    <div id="arround_list"></div>
+                </div>
+                <div class="c_page_mini hidden" id="c_page_mini"></div>
+            </div>
+            </div>
+		    <div class="map_content" id="mapContent"></div>
+        </div>
+    </div>
+        <script id="landmarkTpl" type="text/tpl">
+        <div class="landmarks_pop">
+            <a href="javascript:;" class="landmarks_pop_x">×</a>
+            <div class="landmarks_name">${name}</div>
+        <div class="landmarks_distance">${distance}公里</div>
+            <div class="landmarks_hotel"><a href="${href}" target="_blank" data-dopost="T">查看附近酒店&nbsp;&gt;</a></div>
+        </div>
+        </script>
+        <script id="landmarkTpl2" type="text/tpl">
+            <div class="pop-landmarks-v2">
+                <div class="box-landmarks">
+                    <a href="javascript:;" class="ui-close">&times;</a>
+                    <div class="ui-header">${name}{{if glurl}}<a href="${glurl}" target="_blank">详情</a>{{/if}}</div>
+                    {{if picurl}}
+                    <div class="ui-img"><img src="${picurl}" alt="${name}" /></div>
+                    {{/if}}
+                    <ul class="ui-info">
+                        {{if desc}}<li class="ui-intro">${desc}</li>{{/if}}
+                        {{if comments}}<li><span class="ui-score"><strong>${score}</strong>/5分</span><span class="ui-comment">${comments}条点评</span></li>{{/if}}
+                        {{if addr}}<li class="ui-location">${addr}</li>{{/if}}
+                        <li class="ui-distance">距离&nbsp;<tt class="mark">${hotelName}</tt>&nbsp;的直线距离为${distance}公里</li>
+                        <li><a href="${href}" target="_blank" data-dopost="T" d-url="${href}">查看周边酒店</a></li>
+                    </ul>
+                </div>
+            </div>
+    </script>
+
+   
+
+    <div style="display :none" id="J_route_detail">
+	    <div class="route_detail">
+		    <span class="{way}"></span>
+		    <p>{step1} <span class="b">{step2}</span> {direction}</p>
+		    <p class="route_distance">{content}</p>
+	    </div>
+    </div>
+
+    <script type="text/template" id="J_aroundHotelTpl">
+    {{each(i, item) list}}
+    <div class="around_item" data-uid="${uid}">
+        <span class="num">${i+1}</span>
+        {{if distance > 0}}
+        <span class="distance">{{if distance >= 1000}}<span>${Math.round(distance / 100) / 10}</span>公里{{else}}<span>${distance}</span>米{{/if}}</span>
+        {{/if}}
+        <p class="name"><a class="around_hotel" href="/hotel/${id}.html" title="${name}" target="_blank" data-dopost="T">${name}</a></p>
+        <div class="go_to" data-poi='{"name": "${name}", "pos": "${location.lng}|${location.lat}"}'>
+            <a data-way="transfer" href="javascript:;">公交</a>|<a data-way="driving" href="javascript:;">驾车</a>|<a data-way="walking" href="javascript:;">步行</a>
+        </div>
+        <p class="price"><span class="base_price"><dfn>&yen;</dfn>${price}</span> 起</p>
+    </div>
+    {{/each}}
+        </script>
+    <script type="text/template" id="J_aroundOtherTpl">
+    {{each(i, item) list}}
+    <div class="around_item" data-uid="${uid}">
+        <span class="num">${i+1}</span>
+        {{if distance > 0}}
+        <span class="distance">{{if distance >= 1000}}<span>${Math.round(distance / 100) / 10}</span>公里{{else}}<span>${distance}</span>米{{/if}}</span>
+        {{/if}}
+        <p class="name" title="${name}">${name}</p>
+        <div class="go_to" data-poi='{"name": "${name}", "pos": "${location.lng}|${location.lat}"}'>
+            <a data-way="transfer" href="javascript:;">公交</a>|<a data-way="driving" href="javascript:;">驾车</a>|<a data-way="walking" href="javascript:;">步行</a>
+	</div>
+        <p class="info">${type.split(";")[1]}</p>
+    </div>
+    {{/each}}
+    </script>
+    <!-- for map-popup.js end -->
+</div>
+	<!--儿童搜索begin-->
+	
+	<!--儿童搜索end-->
+
+    <div style="position: absolute; left: 148px; top: -1000px; display: none;" class="hotel_pic_room"
+        id="popRoomPic">
+        <img src="http://pic.c-ctrip.com/common/pic_alpha.gif">
+</div>
+
+    <!--房型模板Begin-->
+    <div class="hidden">
+    <!-- 房型列表模板  -->
+<textarea id="roomlist_template">
+<table cellspacing="0" cellpadding="0" border="0" summary="详情页酒店房型列表">
+<thead>
+<tr>
+<th class="col1">房型</th>
+<th class="col2">&nbsp;</th>
+<th class="col3">取消政策</th>
+<th class="col4">人数上限</th>
+<th class="col5">${type}价</th>
+<th class="col6">总价（含税和服务费）</th>
+<th class="col7"><label class="base_label">${ticket}</label></th>
+</tr>
+</thead>
+<tbody>${rooms}</tbody>
+</table>
+</textarea>
+<!-- 新版房型模板 -->
+<textarea id="newroom_template">
+${subroomHTML}
+</textarea>
+<!-- 子房型模板 -->
+<textarea id="subroom_template">
+${baseroomHTML}
+<tr class="${lastCls}" ridx="${roomIndex}" sridx="${subRoomIndex}">
+<td class="child_name">
+<span class="room_type_name" ${roomTitle}>${name}</span>
+<p class="room_service">${vendor}${ticket}${prom}${gift}</p>
+${features}
+</td>
+<td class="room_policy">
+${policyInfo}
+</td>
+<td class="room_person">
+${persons}
+</td>
+<td class="base_price">
+<span class="base_pricediv">
+${price_template}
+<div>${returnCash}</div>
+</span>
+</td>
+<td class="room_price">
+${price_templatetotal}
+</td>
+${bookingButtonHtml}
+</tr>
+</textarea>
+<!-- operbar模版 -->
+<textarea id="operbarcol_template">
+<td colspan="7">
+<div class="layoutfix"><a class="show_unfold float_right" href="javascript:;" onclick="window.Room.ExpandMe(${ridx})">更多价格(${count})</a></div>
+</td>
+</textarea>
+<textarea id="operbarexp_template">
+<td colspan="7">
+<div class="layoutfix"><a class="show_fold float_right" href="javascript:;" onclick="window.Room.CollapseMe(${ridx})">收起</a></div>
+</td>
+</textarea>
+<textarea id="showallprice_template">
+<a class="show_unfold" href="javascript:;" onclick="window.Room.ExpandAll()" >全部价格(${count})</a>
+</textarea>
+<textarea id="hideallprice_template">
+<a class="show_fold" href="javascript:;" onclick="window.Room.CollapseAll()">全部收起</a>
+</textarea>
+<textarea id="popRoomDetail_template">
+<div class="room_type_hd">
+	<a class="pop_close" href="javascript:;" onclick="window.Room.HideRoomDetail(${ridx});">×</a>
+	<h3 class="title">${room_name}</h3>
+</div>
+<div class="room_type_bd basefix">
+<div class="room_type_box">
+	<div class="room_type_pic">
+		<div class="room_pic_box"></div>
+        <div class="pic_info ${pic_style}">
+        <div class="pic_control"></div>
+        <p class="pic_text">${pic_name}</p>
+        </div>
+	</div>
+</div>
+    <div class="room_type_cont">
+		<ul class="room_type_info"></ul>
+    </div>
+</div>
+</div>
+</textarea>
+
+        <script type="text/tpl" id="jmpUnBooking">
+            <div class="jmp_bd">
+                ${txt}
+            </div>
+        </script>
+
+        <div id="jmpTempGift">
+            <div class="jmp_bd" style="width: 400px;">
+                <h5 style="font-size: 12px;">
+                    酒店礼物信息</h5>
+                <div>
+                    ${txt}</div>
+            </div>
+        </div>
+
+		<div id="jmpTempTicket">
+            <div class="jmp_bd" style="width: 260px;">
+                <h5 style="font-size: 12px;">
+                    酒店优惠券信息</h5>
+                <div>
+                    ${txt}</div>
+            </div>
+        </div>
+
+        <div class="jmp_content" id="jmpTempOnePrice">
+            <div class="jmp_bd">
+                <div>
+                    <strong>货币换算</strong> <span class="base_price">RMB ${avePrice}</span> = <span style="font-family: arial;">
+                        ${oriCurrency} ${oriPrice}</span>
+                </div>
+                {{if noLocal=='F'}}
+                <div>
+                    每日价不含税和服务费，仅供参考</div>
+                {{/if}} {{if noLocal=='T'}}
+                <div>
+                    每日价为均价且不含税和服务费，仅供参考</div>
+                {{/if}}
+            </div>
+        </div>
+        <div id="jmpTempTotalPrice"> 
+            <div class="jmp_bd breakfast_total_price">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>
+                                <div>
+                                    <span><strong>${num}</strong>间房</span> x <strong>${night}</strong>晚</div>
+                            	<div class="base_tax">${IncludeTaxDesc}</div>
+                            	<div class="base_tax">${ExcludeTaxDesc}</div>
+                            </th>
+                            <td>
+                                <div class="price_detail">
+                                    <span class="t2">房价：</span><span class="base_price black_text"><dfn>RMB</dfn>${totalPrice}</span></div>
+                                <div class="price_detail">
+                                    <span class="t2">税和服务费：</span><span class="base_price black_text"><dfn>RMB</dfn>${totalDiscount}</span></div>
+                                <div class="price_detail">
+                                    <span class="t2">总价：</span><span class="base_price black_text"><dfn>RMB</dfn>${allPrice}</span>
+                                    = <span class="base_price black_text"><dfn>${currency}</dfn>${oriPrice}</span></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+				<div style="text-align:left; padding:8px 0;" class="fyi">
+                 {{if isShowLocalTips}}
+				<p>· 您将根据付款当天的汇率以酒店当地的货币付费给酒店。</p>
+                 {{/if}}
+                 <p>· 根据各国不同情况，您可能还需要缴纳当地其他的税费。</p>
+                </div>
+            </div> 
+        </div>
+
+        <textarea id="jmpTempPrice" style="display: none; padding: 0 6px;">
+            <div style="width:580px;">
+                <div style="margin:6px;"><strong>货币换算</strong> <span class="base_price" style="color:#f60;"> RMB ${avePrice}</span> = ${oriCurrency} ${oriPrice}
+                <table cellspacing="0" cellpadding="0" style="width: 100%;" class="hotel_everyday_list hotel_everyday_list3">
+                    <tbody>
+                        <col />
+                        <col span="7" width="70" />
+                        <tr>
+                            <th></th>
+                            {{each(i) weeks}}
+                            <th>${weeks[i]}</th>
+                            {{/each}}
+                        </tr>
+                        {{enum(key,arr) info}}
+                        <tr>
+                            <td>第${key}周</td>
+                            {{each arr}}
+                            <td><span class="hotel_everyday_price">${data[0]}</span> <span>${data[1]}</span> <span>${data[2]}</span></td>
+                            {{/each}}
+                        </tr>
+                        {{/enum}}
+                    </tbody>
+                </table>
+            </div>
+            {{if noLocal=='F'}}
+            <div class="fyi" style="text-align:right;padding:0 0 10px;">每日价不含税和服务费，仅供参考。</div>
+            {{/if}}
+            {{if noLocal=='T'}}
+            <div class="fyi" style="text-align:right;padding:0 0 10px;">每日价为均价且不含税和服务费，仅供参考。</div>
+            {{/if}}
+            </div>
+        </textarea>
+        <div class="jmp_bd" id="jmpTempPolicy">
+            <p style="margin-bottom: 6px;">
+                ${policyInfo}</p>
+            <p>
+                ${breakfast}</p>
+            <p>
+                ${net}</p>
+            <p>
+                ${bed}</p>
+        </div>
+        
+        <div id="jmpTemp7days" style="display:none;">
+            <div class="jmp_bd">
+                该酒店连续入住天数不能超过7天，<br />
+                超出天数请另外下单。</div>
+        </div>
+        <div id="jmpTempProm" style=display:none;>
+            <div class="jmp_bd">
+                <h5 style="font-size: 12px;">
+                    酒店促销信息</h5>
+                <div>
+                    ${txt}</div>
+            </div>
+        </div>
+        
+        <div id="jmpTempReturnCash" style=display:none;>
+            <div class="jmp_bd">
+                <h5 style="font-size: 12px;">
+                    使用消费券预订酒店返现金</h5>
+                <div>
+                    ${txt}<a target='_blank' href='http://help.ctrip.com/QuestionDetail.aspx?questionId=743'>返现帮助</a></div>
+            </div>
+        </div>
+
+         <div id="jmpTempPromotion" style=display:none;>
+            <div class="jmp_bd">
+                 <div>
+                     ${txt}</div>
+             </div>
+         </div>
+     <!--华人酒店模板End-->
+      <div id="hotel_level">
+          <div class="jmp_bd" style="white-space: nowrap; width: 180px;">
+              <div>
+                  ${txt}</div>
+            </div>
+        </div>
+    
+    </div>
+
+        <!--点评大图begin-->
+        <div class="comment_pic_big_new" style="display: none; position: absolute;">
+            <div class="pic_box_big">
+                <img id="comment_pic_big" alt="" width="550px" height="412px"></div>
+            <p>
+            </p>
+        </div>
+       <!--点评大图end-->
+
+    <!--房型模板End-->
+    <div class="hidden">
+        <div id="jmpTempNoPrice">
+            <div style="white-space: nowrap;" class="jmp_bd">
+                登录后显示会员价信息</div>
+        </div>
+        <div id="jmpTempNoVipPrice">
+            <div style="white-space: nowrap;" class="jmp_bd">
+                ${txt}</div>
+        </div>
+
+	<!--点评模板begin-->
+	<textarea id="tmplCommentMain" style="display: none">
+		<div id="mainContent1" class="detail_cmt_box">
+			<div class="comment_tab_main">
+				<div class="comment_tab_list">
+					<div class="comment_sumary_box">
+						<span class="btn_comment float_right" id="btn_commentOther" data-hotel="${Hotel}" onclick="WriteComment(this, event);">我要点评</span>
+						<div class="comment_total_score">
+							<span class="big_c"><span class="b" style="width:${HotelRankingPercent}%"></span></span>
+							<span class="score"><span class="n">${Rating}</span>/5分</span>
+							<span class="rec" ${CurrentTotalCountStyle}><span class="n">${RecommendPercent}%</span>用户推荐</span>
+						</div>
+						${allSource}
+					</div>
+					${commentBoxBar}
+					<div class="comment_detail_list" style="${commentListDisplay}">
+						${comentList}
+					</div>
+					${singleComment}
+					${paging}
+					${bookingHtml}
+				</div>
+			</div>
+		</div>
+	</textarea>
+
+	<textarea id="tmplCommentAllSource" style="display:none">
+		 <div class="score_list_s">
+			<a href="javascript:void(0)" postdata="&hottype=1" class="item ${ltrRatingPositClass}" title="点击可查看位置相关点评">${ltrRatingPositDel}位置<span class="n">${RatingPosit}</span></a>
+			<a href="javascript:void(0)" postdata="&hottype=3" class="item ${ltrRatingServiceClass}" title="点击可查看服务相关点评">${ltrRatingServiceDel}服务<span class="n">${RatingService}</span></a>
+			<a href="javascript:void(0)" postdata="&hottype=2" class="item ${ltrRatingCostBenefitClass}" title="点击可查看设施相关点评">${ltrRatingCostBenefitDel}设施<span class="n">${RatingCostBenefit}</span></a>
+			<a href="javascript:void(0)" postdata="&hottype=6" class="item ${ltrRatingRoomClass}" title="点击可查看卫生相关点评">${ltrRatingRoomDel}卫生<span class="n">${RatingRoom}</span></a>
+		</div>
+	</textarea>
+
+	<textarea id="tmplCommentBoxBar" style ="display: none;">
+		<div class="comment_box_bar_new clearfix" style="${commentBoxDisplay}">
+			<div class="left">
+				<a postdata="&type=0" class="${ltrAllStyle}" rel="nofollow"  href="${JumpUrl}t0.html"><b></b><span>全部(${SourceTotalCount})</span></a>
+				<a postdata="&type=1" class="${ltrReCommandStyle}" rel="nofollow"  href="${JumpUrl}t1.html"><b></b><span>值得推荐(${RecommendCount})</span></a>
+				<a postdata="&type=2" class="${ltrUnReCommandStyle}" rel="nofollow"  href="${JumpUrl}t2.html"><b></b><span>有待改善(${UnrecommendCount})</span></a>
+				${travelTabHtml}
+			</div>
+			<div class="right">
+				${sortHtml}
+				${travelTypeHtml}
+			</div>
+		</div>
+		<div class='comment_alert' style="${noCommentDisplay}"><p>暂无相关评论</p>
+		</div>
+	</textarea>
+
+	<textarea id="tmplTravelTab" style="display:none;">
+		<a postdata="&type=3" class="Js_TravelNotels ${ltrTravelNotesStyle}" rel="nofollow"  href="${JumpUrl}t3.html"><b></b><span>游记点评(${TravelNotesCount})</span></a>
+	</textarea>
+
+	<textarea id="tmplSortHtml" style="display:none;">
+		<a href="javascript:void(0)" class="sortAct ${currentMostHelp}" style="display:none" data-value="0">最有帮助</a>
+		<a href="javascript:void(0)" class="sortAct ${currentNewest}" style="display:none" data-value="1">最新发表</a>
+	</textarea>
+
+	<textarea id="tmplCommentItem" style="display:none;">
+		${ltrHuipingTips}
+		<div class="comment_block ${ltrLanguage}" itemprop="review" itemscope itemtype="http://schema.org/Review">
+			${ltrUserInfo}
+			<p class="comment_title" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+				<span style="${ltrHuipingHide}">
+					<span class="small_c" cid="${ltrCommentId}">
+						<span class="b" style="width:${ltrPos}"></span>
+					</span>
+					<span class="score">
+						<span class="n">${ltrScore}分</span>
+					</span>
+				</span>
+				${ltrDate}
+				${ltrTranslate}
+				<span class="certifying">${ltrCertifying}</span>
+			</p>
+			<div class="score_pop" style="display: none; position: absolute; background-color: #fff; z-index: 20;">${ltrFourScore}</div>
+			${ltrCommentTag}
+			<div class="comment_txt" itemprop="description">${ltrContent}</div>
+			<div class="comment_more hidden">
+				<a href="javascript:void(0);" class="show_unfold hidden">查看更多</a>
+				<a href="javascript:void(0);" class="show_fold hidden">收起</a>
+			</div>
+			<div class="comment_btn">${ltrUseful}</div>
+			<div class="additional_reply" style="${addCommentDisplay}">
+				${additionComment}
+			</div>
+			<div class="htl_reply" style="${feedbackDisplay}">
+				${hotelFeedback}
+			</div>
+			<div class="comment_pic clearfix" style="${picDisplay}">
+				${commentPic}
+			</div>
+		</div>
+	</textarea>
+
+	<textarea id="tmplPageControl" style="display:none;">
+		<div class="c_page">
+			${LiteralLinkPrev}
+			<div class="c_page_list layoutfix" id="c_page_list">
+			${LiteralFirst}
+			${LiteralPrev5}
+			${LiteralCurPage}
+			${LiteralNext5}
+			${LiteralLast}
+		</div>
+		${LiteralLinkNext}
+		<div class="c_pagevalue">
+			到<input type="text" class="c_page_num" name="cPageNum" id="cPageNum" value="${CurrentPage}"/>
+			页<input type="button" class="c_page_submit" value="确定" name="cPageBtn" id="cPageBtn" />
+		</div>
+		${LiteralTotalPage}
+		</div>
+	</textarea>
+	<!--点评模板end-->
+
+        <!--图片浮层-->
+        <div class="htl_pic_pop hidden" id="divPicModal">
+            <a href="javascript:;" class="close">×</a> 
+            <div class="pic_box">
+                <div class="pic_left">
+                    <div class="pic_b">
+                        <div class="swipe-wrap" style="overflow: hidden; position: relative;">
+                            <div style="float: left; position: relative;">
+                                <img onerror="this.src='http://pic.c-ctrip.com/hotelinternational111201/no_pic228.png';this.onerror=null;"
+                                    ></div>
+                        </div>
+                        <div class="prev">
+                            <span class=""><b></b></span>
+                        </div>
+                        <div class="next">
+                            <span class=""><b></b></span>
+                        </div>
+                        <a href="javascript:;" class="view_360_link" title="360度实景" style="display: none">
+                        </a>
+                        <div class="pic_bottom_info hidden">
+                            <a class="toggle" href="javascript:;"><b></b></a>
+                            <div class="pic_bottom_content">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pic_info">
+                        <span class="num"><span class="c">1</span>/<span class="total">51</span>张</span><span
+                            class="pic_text">La Marjolaine(玛尔乔莱娜酒店)</span></p>
+                    <p class="vfml">
+                    </p>
+                </div>
+                <div class="pic_type_select">
+                    <a href="javascript:;" data-type="0,1,2,3,4,5,6" class="current">全部(51)</a><a href="javascript:;" data-type="2,3,4,5">内景(51)</a>
+                </div>
+                <div class="pic_right">
+                </div>
+            </div>
+            <div class="view_360 hidden">
+            </div>            
+        </div>
+        <!--图片浮层END-->
+    </div>
+    <div class="hidden" id="mask" style="width: 100%; height: 100%; position: fixed;
+        _position: absolute; top: 0; left: 0; z-index: 999; background: rgba(0,0,0,.5)">
+    </div>
+    <div class="hidden comment_show_pop">
+        <div class="pic">
+            <img class="p" src="" alt="">
+            <div class="prev hover hidden">
+                <b></b>
+            </div>
+            <div class="next">
+                <b></b>
+            </div>
+            <a href="javascript:;" class="close">×</a> <span class="d hidden">照片审核未通过</span>
+            <span class="d hidden">照片审核中</span>
+        </div>
+    </div>
+	<script type="text/template" id="J_CommentUserImagePop">
+		<div class="pop-commentuser" id="J_CommentUserInfoPop">
+			<span class="close {hidden}" id="J_close">×</span>
+	    <div class="uimg">
+				<div class="wimg">
+					<img id="J_CommentUserImg" src="{src}"
+						alt="" />
+	    </div>
+				<p class="name" id="J_CommentUserName">
+					{userName}
+				</p>
+    </div>
+			<div class="numd" id="J_CommentCount">
+				<i>{commentCount}</i>点评数量<br />
+			</div>
+			<div class="nump" id="J_CommentPicCount">
+				<i>{pictureCount}</i>上传图片<br />
+			</div>
+		</div>
+	</script>
+	<div class="translate-mask hidden" style="width: 390px;" id="J_translateDialog">
+        <a href="javascript:;" class="close">×</a>
+        <div class="translate-mask-bd">
+            <div class="loading">
+                <img src="http://pic.c-ctrip.com/common/loading_32.gif" alt="">翻译加载中...</div>
+        </div>
+    </div>
+    <!--其他divEnd-->
+
+    <!--hidden开始-->
+	<input type="hidden" id="oriHotelId" value="153408" />
+    <input type="hidden" id="FixSubHotel" value="F" />
+    <input type="hidden" id="cityId" name="cityId" value="3533" />
+    <input type="hidden" id="cityPY" name="cityPY" value="juanlespins" />
+	<input type="hidden" id="isGet" value="False" />
+	
+	<input type="hidden" id="hidCheckInCheckOut" value="?CheckIn=2014-12-13&CheckOut=2014-12-14&Rooms=1&childNum=" />
+	
+	<!-- ABTesting -->
+    <input name="ctl00$MainContentPlaceHolder$ab_testing_tracker" type="hidden" id="ab_testing_tracker" value="L:L17,D:D,Mod:17,141106_hoi_psrch:A;" />
+    <input type="hidden" id="hotelCoordinate" value="43.5696693256571|7.11287498474121" />
+    <input type="hidden" id = "UID" name="UID" value="" />
+    
+    <input type="hidden" name="requestTravelMoney" id="requestTravelMoney" value="F"/>
+     
+    <input type="hidden" name="FixTravelMoneyHotel" id="FixTravelMoneyHotel" value="F"/>
+    <!-- 轮转机制，防止轮转死循环 -->
+	<input type="hidden" id="IsReposted" value="" />
+    <!-- 带筛选条件时，强制不轮转，不可订时仍然轮转 -->
+    <input type="hidden" id="sorted" value="F" />
+    <!-- young蒙版改造 -->
+    <input type="hidden" id="HideIsNoneLogin" name="HideIsNoneLogin" value="T" />
+    <input type="hidden" id="sso_loginprocxyPath" name="sso_loginprocxyPath" value="http://hotels.ctrip.com/international/loginprocxy.html" />
+	<input type="hidden" id="abtestResult" value="A" />
+    <!-- ABTesting结束 -->
+	<input type="hidden" id="hidVendorId" value="32" />
+    <input type="hidden" id="compareBoxAnchor" />
+    <!--预定页使用 -->
+    
+        <input type="hidden" id="hotel" name="hotel" value="153408" />
+    
+	
+	<input type="hidden" id="debugRequest" value="" />
+	
+    <input type="hidden" name="city" id="city" value="3533" />
+    <input type="hidden" name="startdate" id="startdate" />
+    <input type="hidden" name="depdate" id="depdate" />
+    <input type="hidden" name="room" value="" />
+    <input type="hidden" name="roomRatesID" id="roomRatesID" />
+    <input type="hidden" name="checkAvalID" id="checkAvalID" />
+    <input type="hidden" name="operationtype" value="NEWHOTELORDER" />
+    <input type="hidden" name="paymentterm" value="" />
+    <input type="hidden" name="roomNumber" id="roomNumber" value="1" />
+    <input type="hidden" id="page_id" value="102104" />
+
+<div class="modal-allpic hidden">
+    <a href="javascript:" class="close">×</a>
+    <div class="switch-allpic">
+        <div class="bpic">
+            <img class="img" src="" alt="" width="550" height="412">
+            <span class="author"></span>
+            <b class="author-bg"></b>
+            <div class="bprev"><b class="hover"><i></i></b></div>
+            <div class="bnext"><b class="hover"><i></i></b></div>
+            <div class="loading hidden">图片加载中...</div>
+            <a href="javascript:" class="view360 hidden"></a>
+        </div>
+        <p class="title">
+        <span class="name"></span>
+        <span class="num"><i>1</i>/<span class="totalNum"></span>张</span>
+        </p>
+        <div class="spic">
+            <a href="javascript:" class="sprev sprev-dis"><b><i></i></b></a>
+            <a href="javascript:" class="snext"><b><i></i></b></a>
+            <div class="sclip" style="position:relative">
+                <div class="scont" style="top:0;left:0">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-allpic" id="classify_box">
+        <div class="tab-hd tab-hd-fir tab-hd-fold classify_title" id="hotelUploadTitle">酒店上传（<span class="allNum"></span>）<i></i></div>
+        <div class="tab-bd classify_content hidden" id="hotelUploadCon">
+            <dl>
+            <dt><a data-classify_1="hotelUpload" data-classify_2="all" class="all">全部<span></spam></a></dt>
+            </dl>                        
+            <dl class="uploadRooms">
+            <dt><a data-classify_1="hotelUpload" data-classify_2="rooms">房间（<span id="hotelRoomNum"></span>）</a></dt>                                
+            </dl>
+        </div>
+        <div class="tab-hd tab-hd-unfold classify_title" id="userUploadTitle">用户上传（<span class="allNum"></span>）<i></i></div>
+            <div class="tab-bd classify_content" id="userUploadCon">
+            <dl>
+            <dt><a  data-classify_1="userUpload" data-classify_2="all">全部<span></spam></a></dt>
+            </dl>
+            <dl class="uploadRooms">
+            <dt><a data-classify_1="userUpload" data-classify_2="rooms">房间（<span id="userRoomNum"></span>）</a></dt>                                    
+            </dl>
+        </div>
+    </div>
+</div>
+
+
+
+            <script src="http://webresource.c-ctrip.com/ResCRMOnline/r1/js/float/headFloat.min.js?ws_testp20140729.js"></script><div id="base_ft">
+  <p><a href="http://pages.ctrip.com/public/sitemap/sitemap.htm" target="_blank" title="网站导航">网站导航</a>&#xA0;|&#xA0;<a rel="nofollow" title="免费注册" href="https://accounts.ctrip.com/member/emailregist.aspx">免费注册
+            </a>&#xA0;|&#xA0;<a href="http://hotels.ctrip.com/jiudian/" target="_blank" title="宾馆索引">宾馆索引</a>&#xA0;|&#xA0;<a href="http://flights.ctrip.com/booking/hot-city-flights-sitemap.html " target="_blank" title="机票索引">机票索引</a>&#xA0;|&#xA0;<a href="http://pages.ctrip.com/public/sitemap/dj.html" title="旅游索引">旅游索引</a>&#xA0;|&#xA0;<a title="攻略索引" href="http://you.ctrip.com/sitemap/">攻略索引</a>&#xA0;|&#xA0;<a rel="nofollow" href="http://pages.ctrip.com/public/ctripab/abctrip.htm" target="_blank" title="关于携程">关于携程</a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://pages.ctrip.com/commerce/promote/201201/other/qygm/index.html" title="企业公民">企业公民</a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" title="诚聘英才" href="http://job.ctrip.com/">诚聘英才
+            </a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://u.ctrip.com/" title="分销联盟">分销联盟</a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://pages.ctrip.com/commerce/promote/201012/other/yp/index.html" title="企业礼品卡采购">企业礼品卡采购</a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://pages.ctrip.com/public/dlhz.htm" title="代理合作">代理合作</a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://pages.ctrip.com/public/ctripad/adyw.htm" title="广告业务">广告业务</a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://pages.ctrip.com/public/contact.htm" title="联系我们">联系我们</a>&#xA0;|&#xA0;<a rel="nofollow" style="color: #0066CC;" target="_blank" title="我要提建议" href="http://my.ctrip.com/adv/uxp/Community/CommunityAdvice.aspx">我要提建议
+            </a></p>
+  <p><a rel="nofollow" href="http://hotels.ctrip.com/jiameng#ctm_ref=ctr_def_btm_hsu_n_1" target="_blank" title="酒店加盟">酒店加盟</a>&#xA0;|
+            <a rel="nofollow" href="http://pages.ctrip.com/commerce/promote/201406/destination/mdd/index.html">目的地营销合作</a>&#xA0;|&#xA0;
+            <a rel="nofollow" href="http://pages.ctrip.com/public/serve%20guideline.htm" target="_blank" title="服务说明">服务说明</a>&#xA0;|&#xA0;
+            <a rel="nofollow" target="_blank" href="http://pages.ctrip.com/public/diploma/company.htm">营业执照</a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://pages.ctrip.com/tour/ingroupline_pages.asp?folder=ingroup0904&amp;file=0177" title="旅游度假资质">旅游度假资质</a>&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://pages.ctrip.com/public/Insurance/index.htm">保险代理</a>&#xA0;|&#xA0;<a target="_blank" href="http://pages.ctrip.com/public/link/ctrip_link.html">友情链接</a>&#xA0;|&#xA0;<a rel="nofollow" href="http://pages.ctrip.com/public/copyright.htm">Copyright&copy;</a> 1999-2014, <a href="http://www.ctrip.com/"> ctrip.com</a>. All rights reserved.&#xA0;|&#xA0;<a rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn/">ICP证：沪B2-20050130</a></p>
+  <p id="cui_lang_bottom"><a target="_blank" class="cui_lang_big5" rel="nofollow" href="http://www.ctrip.com.hk/">繁体版</a> <a target="_blank" class="cui_lang_en" rel="nofollow" href="http://english.ctrip.com/">English</a> <a target="_blank" class="cui_lang_jap" rel="nofollow" href="http://jp.ctrip.com/">日语版</a> <a target="_blank" class="cui_lang_korea" rel="nofollow" href="http://www.ctrip.co.kr/">韩语版</a> <a target="_blank" href="http://fr.ctrip.com/" rel="nofollow" class="cui_lang_fr">Fran&#xE7;ais</a> <a target="_blank" class="cui_lang_de" rel="nofollow" href="http://de.ctrip.com/">Deutsch</a> <a target="_blank" rel="nofollow" href="http://es.ctrip.com/" class="cui_lang_es">Espa&#xF1;ol</a> <a target="_blank" rel="nofollow" class="cui_lang_ru" href="http://ru.ctrip.com/">Русский</a><a target="_blank" rel="nofollow" class="cui_lang_vn" href="http://vn.ctrip.com/">Tiêng Viêt</a></p>
+  <div class="honour_wrap"><a href="http://www.itrust.org.cn/yz/pjwx.asp?wm=163178864X" title="网信编码：163178864X" class="honour1" target="_blank" rel="nofollow">信用评级</a><a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20110428175405415" title="工商亮照标识" class="honour2" target="_blank" rel="nofollow">上海工商</a><a href="http://search.cxwz.org/cert/l/CX20111018000615000623" title="诚信认证示范企业" class="honour3" target="_blank" rel="nofollow">诚信网站</a><a href="http://www.zx110.org/" class="honour4" target="_blank" rel="nofollow" title="征信网">网络社会征信网</a><a href="http://www.shjbzx.cn/" class="honour5" target="_blank" rel="nofollow" title="上海市互联网违法与违规信息举报中心">信息举报中心</a><a href="https://ss.cnnic.cn/verifyseal.dll?sn=e12061531010025926306977" class="honour6" target="_blank" rel="nofollow" title="可信网站">可信网站</a></div>
+</div><!-- InstanceEnd name="position" --><script type="text/javascript">var globalConfig={H1:'https',H3:'my.ctrip.com',Lang:'gb2312',AjaxUrl:'accounts.ctrip.com'};</script><script type="text/javascript" src="http://webresource.c-ctrip.com/ResCRMOnline/r1/pageheader/js/Ctrip2013JS.js?temp=20141112" charset="utf-8"></script>
+            
+    </form>
+    
+    <script src="http://webresource.c-ctrip.com/code/cquery/LABjs/LAB.js" charset="utf-8" type="text/javascript"></script>
+     <script type="text/javascript" src="http://webresource.c-ctrip.com/ResCRMOnline/R6/member/common/js/mask_young.js?20140603" charset="utf-8"></script>
+<script type="text/tpl" id="J_notRoomTem">
+        <dl>
+		    <dt><a data-classify_1="{uploadType}" data-classify_2="{notRoomName}">{html}</a></dt>
+		</dl>
+   </script>
+    <script type="text/tpl" id="J_roomTem">
+        <dd>
+            <a class="{className}" data-classify_1="{uploadType}" data-classify_2="rooms" data-classify_3="{roomName}">{html}</a>
+        </dd>
+    </script>
+    <script type="text/javascript">
+    	var isMap = true;
+    var selectroomnum =  document.getElementById("num");
+    if(selectroomnum){
+        selectroomnum.value = 1
+    }
+
+    var tabtype = 1;
+    var crrentlink = "http://hotels.ctrip.com/international/153408.html";
+    var MAX_STAY = 28 * 24 * 3600 * 1000;
+    var ISSSOQUICKLOGIN=1;
+    var IsMaskMap = 0;
+    var UsePoiLandMark = 1;
+    var HAS_ROOM_RESULT = false;
+    var IsShowSearchBox =1;
+    var noPriceHotel = 1;
+    var addressMessageConfig = {
+        hotelPos: {
+            suggestion: "可直接选择地理位置或输入位置关键词。",
+            titles: {
+                "zone": "商业区",
+                "landMark": "热门地标"
+            }
+        } 
+    }  
+
+    var validateMessageConfig = {
+        hotel: {
+            city: '请选择酒店所在目的地',
+            checkIn: '请选择入住日期',
+            checkOut: '请选择离店日期',
+            dateErr: '日期格式为yyyy-mm-dd',
+            too_early_in: '入住日期不能早于今天',
+            too_early_out: '您选择的离店日期早于/等于入住日期，请重新选择',
+            too_long: '您入住酒店时间超过28天，请分订单提交预订'
+        }
+    };
+    var langConf = {
+        taiwan: '台湾',
+        search_history: '搜索历史',
+        hot_airport: '热门机场',
+        city_sourceResult: '支持中文/英文/拼音输入',
+        keyword_sourceResult: '支持中文/英文输入',
+        filterResult: '<span class="text_input">${val},</span>若需缩小范围，请输入更多条件。',
+        noFilterResult: '找不到：${val}',
+        city: '城市',
+        airport: '机场',
+        city_placeholder: '城市/机场/地标/酒店',
+        hotel: '酒店', 
+		name:'酒店', 
+		landmark: '地标', 
+		weizhi:'位置', 
+        keyword_placeholder: '(选填)酒店/地标',
+        IntTitle:'海外城市',
+        Title:'国内城市',
+        Location:'行政区',
+        District:'景区',
+        Station:'机场/车站',
+        zone: '商圈',
+        recommendRoom: '推荐房型<span class="ui-tips">(0-17周岁入住需遵循酒店儿童政策。)</span>',
+        unRecommendRoom: '其他房型<span class="ui-tips">(0-17周岁入住需遵循酒店儿童政策。)</span>',
+        noRecommendRoom: '该酒店暂无可订的${roomNum}人间',
+		childAddBed: '儿童和加床'
+    };
+    var roomMessageConfig = {
+        'priceTitle': ['每间每晚房','每间每晚均'],
+        'breakfast': ['无早','单早','双早','三早','四早','五早','六早','七早','八早','每人一份早'],
+        'week': ['周日','周一','周二','周三','周四','周五','周六'],
+        'btn': ['查看', '预订','订完'],
+        'msg':['订完','缺少房价'],
+        'hiddenPrice': '登录后显示会员价信息',
+        'lastnum':['仅剩','间'],
+        'price':['携程标准价','起'],
+        'iconTitle':{
+            'gift': '部分房型有礼物赠送',
+            'prepay': '需预先支付房款',
+            'guarantee': '需到店支付房款',
+            'vendor':'此房型由代理商提供',
+            'noguarantee':'到店付款，无需担保',
+            'vendoricon':'供'
+        },
+        'load':'正在加载，请稍候......',
+        'details': ['抱歉，暂时没有房间信息。','隐藏'],
+        'noVisit':'无浏览记录',
+        'nightunits':'晚'
+    }
+    var addressUrlConfig = {
+        cityJsonp: '/international/Tool/AjaxIndexCity.aspx?IsUseNewStyle=T&keyword=${key}',
+		//Price Blur 2.0
+		allRoom: '/international/Tool/AjaxHotelRoomInfoDetail.aspx?city=3533&hotel=153408&vendorID=32&lowpriceindex=293&origpriceindex=274&basepriceindex=266&baseeverydaypriceindex=272&orignbaseeverydaypriceindex=278&taxroompricestyleindex=264&taxroompricedetailstyleindex=287&EDM=F&urlReferedForOtherSeo=False',
+        roomImgHref:'pic-pid$1/153408.html',
+        order: '/internationalbook/inputneworder.aspx',
+        delayOrder: '/Domestic/InputDelayOrder.aspx',
+        visitCount: '/international/tool/AjaxHotelVisitCount.aspx?hotelid=153408',
+        linkComment:"http://hotels.ctrip.com/international/dianping/153408-p$1.html",
+        mapIframe: '/international/MapIframeNew.aspx',
+        imgMapUrl: 'http://ditu.google.cn/maps/api/staticmap?center=43.5696693256571,7.11287498474121&zoom=15&size=300x225&format=jpg&maptype=roadmap&markers=icon:http://pic.c-ctrip.com/hotelinternational_seo/lp/hotel_pointer_blue.png|43.5696693256571,7.11287498474121&sensor=false',
+        lvPingRecomand:'/international/tool/AjaxLvPingComment.aspx?hotel=153408',
+        HotelComment:'/international/tool/AjaxHotelComment.aspx?hotel=153408&vendorID=32&IsAggregation=0&VendorList=',
+        CommentUserfulNumber:'/international/tool/AjaxVoteComment.aspx',
+        HotelInfo:'/international/tool/AjaxHotelInfo.aspx?hotel=153408',
+        mapPopup: 'http://webresource.c-ctrip.com/ResHotelIntlOnline/R7/search/js/map-popup.js',
+        googleStaticMap: ''
+    }
+    
+	var searchDomestic = 'F';
+    var hotelDomesticConfig = {
+         
+        hotel: {
+            id: "153408",
+            name: "La Marjolaine(玛尔乔莱娜酒店)",
+            position: "43.5696693256571|7.11287498474121",
+            isNoLocalRoomHotel: "T"
+        },
+        popMapFlag: 1,
+        query: {
+            cityId:'3533',
+            checkIn:'2014-12-13', 
+            checkOut:'2014-12-14',
+            roomNum:'1',
+            isNoLocalRoomHotel:'T'
+        },
+        nearFacility: '',
+        ShowCompareOrNot : "T",
+        ShowCompareToolGuidelines : "F"
+    }
+
+    var pictureConfigNew = {
+        hotelUpload:{perferance:[],innerScene:[{"index":"0","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/393eb37199af4517a52e971758838107_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/393eb37199af4517a52e971758838107_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1726128","source":null,"text":"","type":"5"},{"index":"1","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/e1660c3b7202451fab78a281564b4ee8_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/e1660c3b7202451fab78a281564b4ee8_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1726127","source":null,"text":"","type":"5"},{"index":"2","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/f21a33fcee434cbe8c42aa42c9d1ffbd_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/f21a33fcee434cbe8c42aa42c9d1ffbd_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1726126","source":null,"text":"","type":"5"},{"index":"3","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/9a0debce52c440a68adcec75d49a2c8b_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/9a0debce52c440a68adcec75d49a2c8b_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1726124","source":null,"text":"","type":"5"},{"index":"4","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/45e49ded73394b6a9e890546d19099cb_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/45e49ded73394b6a9e890546d19099cb_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1727571","source":null,"text":"","type":"5"},{"index":"5","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/f395122af3de4a1a929fec69321457ee_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/f395122af3de4a1a929fec69321457ee_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1727572","source":null,"text":"","type":"5"},{"index":"6","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/cda097c5352a471f9e12173fa7ca4ab8_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/cda097c5352a471f9e12173fa7ca4ab8_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1727573","source":null,"text":"","type":"5"},{"index":"7","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/f9786ec9a3ec4860ae7cd25bebd9f5c4_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/f9786ec9a3ec4860ae7cd25bebd9f5c4_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1727574","source":null,"text":"","type":"5"},{"index":"8","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/b3603905e00c49eca78df4f20c86e181_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/b3603905e00c49eca78df4f20c86e181_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"1727575","source":null,"text":"","type":"5"},{"index":"9","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/88f1e13487f2406cbbd4b03340b92c91_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/88f1e13487f2406cbbd4b03340b92c91_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492585","source":null,"text":"","type":"5"},{"index":"10","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/9a09d8f196da4a60bac9d20a12a21375_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/9a09d8f196da4a60bac9d20a12a21375_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492587","source":null,"text":"","type":"5"},{"index":"11","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/e714dbfc9d364922b2210ab2d360c309_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/e714dbfc9d364922b2210ab2d360c309_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492588","source":null,"text":"","type":"5"},{"index":"12","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/ed52d5922dd4498b95981435abcb531b_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/ed52d5922dd4498b95981435abcb531b_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492590","source":null,"text":"","type":"5"},{"index":"13","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/e601707348b546f59bbdc2bfe8ce3133_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/e601707348b546f59bbdc2bfe8ce3133_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492593","source":null,"text":"","type":"5"},{"index":"14","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/4fb2459cea3c4856aea582a01079e43d_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/4fb2459cea3c4856aea582a01079e43d_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492595","source":null,"text":"","type":"5"},{"index":"15","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/895e8bd1900d44c697914d63ae62211d_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/895e8bd1900d44c697914d63ae62211d_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492598","source":null,"text":"","type":"5"},{"index":"16","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/3cec0518ffda48f49d6635cc42dff196_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/3cec0518ffda48f49d6635cc42dff196_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492603","source":null,"text":"","type":"5"},{"index":"17","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/44ad1ad7627142d19d48dc843c857cfb_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/44ad1ad7627142d19d48dc843c857cfb_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492604","source":null,"text":"","type":"5"},{"index":"18","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/d0ae40f7171b43cd966bc0e5dbd6438c_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/d0ae40f7171b43cd966bc0e5dbd6438c_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492606","source":null,"text":"","type":"5"},{"index":"19","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/1fb3730ea9d14799856cf2b7fa584860_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/1fb3730ea9d14799856cf2b7fa584860_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492609","source":null,"text":"","type":"5"},{"index":"20","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/2c5a7a25230140eb86faee45c03eb0cd_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/2c5a7a25230140eb86faee45c03eb0cd_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492611","source":null,"text":"","type":"5"},{"index":"21","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/0ea6d73b0fb549348793f786a0d3c4f9_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/0ea6d73b0fb549348793f786a0d3c4f9_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492612","source":null,"text":"","type":"5"},{"index":"22","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/834a6962033d417d8efa49183923ef9c_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/834a6962033d417d8efa49183923ef9c_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492613","source":null,"text":"","type":"5"},{"index":"23","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/4924e6a9904e4dd2b4b50c340278a540_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/4924e6a9904e4dd2b4b50c340278a540_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492616","source":null,"text":"","type":"5"},{"index":"24","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/a38b9e2fd44946faa0ef27bdeb20e909_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/a38b9e2fd44946faa0ef27bdeb20e909_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492618","source":null,"text":"","type":"5"},{"index":"25","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/41fa6f11eed14c90a8cd410245ba1ce2_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/41fa6f11eed14c90a8cd410245ba1ce2_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492620","source":null,"text":"","type":"5"},{"index":"26","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/2cd7ca8d078b4197b20bbf53fb16a2f1_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/2cd7ca8d078b4197b20bbf53fb16a2f1_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492621","source":null,"text":"","type":"5"},{"index":"27","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/a46cbdccb8b74b69ad9e097e54862f54_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/a46cbdccb8b74b69ad9e097e54862f54_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492622","source":null,"text":"","type":"5"},{"index":"28","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/d95a0ad75fee4a37bbddbab582161b00_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/d95a0ad75fee4a37bbddbab582161b00_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492624","source":null,"text":"","type":"5"},{"index":"29","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/f5e8e01a830945f68078d337b3e31181_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/f5e8e01a830945f68078d337b3e31181_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492625","source":null,"text":"","type":"5"},{"index":"30","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/e088d63b99f5401ab98cf55bdc92d97b_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/e088d63b99f5401ab98cf55bdc92d97b_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492627","source":null,"text":"","type":"5"},{"index":"31","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/d84771f779954540ad8d62f1fd36ba53_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/d84771f779954540ad8d62f1fd36ba53_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492629","source":null,"text":"","type":"5"},{"index":"32","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/fda691ba8f334c5e897cab3c665af1f2_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/fda691ba8f334c5e897cab3c665af1f2_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492630","source":null,"text":"","type":"5"},{"index":"33","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/2fc07109cacc447a891f1414b968e4b2_550_412.jpg","min":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/2fc07109cacc447a891f1414b968e4b2_130_130.jpg","name":"","objBelong":"innerScene","objName":"371857150","pid":"17492632","source":null,"text":"","type":"5"},{"index":"34","info":"La Marjolaine(玛尔乔莱娜酒店)","max":"http:\/\/images4.c-ctrip.com\/target\/hotel\/154000\/153408\/7938266925a342e2b202989e98977801_550_412.jpg","min":"

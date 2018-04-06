@@ -1,0 +1,624 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+ <head>
+      <!-- 	注意！您必须同意 FlightAware 的使用条款 (参见: http://flightaware.com/about/termsofuse)
+            Copyright 2012 FlightAware.  All Rights Reserved. -->
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+      <title>FlightAware ✈ Airplanes, Airliners, Jets, and more 照片</title>
+  <link rel="icon" type="image/vnd.microsoft.icon" href="http://e0.flightcdn.com/images/favicon.ico" />
+<style type="text/css">.flightStatusGood { color: #EE001B !important;}; flightStatusBad { color: #85B54B !important; }</style>
+<!-- non scripts -->
+  <link rel="stylesheet" type="text/css" href="http://e1.flightcdn.com/include/c34dc4872-flightaware.css" />
+  <link rel="stylesheet" type="text/css" href="http://e1.flightcdn.com/include/5e4b17597-jquery.rating.css" />
+  <style type="text/css">.flightStatusGood { color: #EE001B !important;}; flightStatusBad { color: #85B54B !important; }</style>
+<!-- scripts -->
+
+<script type="text/javascript"> user = {"username": "", "TZ": ":Asia/Shanghai", "accounttype": "0", "id": "", "locale": "zh_CN", "lang": "zh", "name": " ", "active": "" }; </script>
+
+  <script type="text/javascript" src="http://e0.flightcdn.com/include/1a3c68e5c-flightaware.js" ></script>
+  <script type="text/javascript" src="http://e0.flightcdn.com/live/airlines_js.rvt?locale=zh_CN&country=CN"></script>
+  <script type="text/javascript" src="http://e0.flightcdn.com/include/6c1828b03-jquery.jeditable.min.js" ></script>
+  <script type="text/javascript" src="http://e0.flightcdn.com/include/fcc49ecc6-jquery.rating.js" ></script>
+  <script type="text/javascript" src="http://e1.flightcdn.com/include/e3fac50b5-view_photo.js" ></script>
+<!-- done emit -->
+
+  <meta name="description" content=" FlightAware 航空照片: , " />
+  <meta name="keywords" content=" 照片         " />
+  <meta property="og:title" content="FlightAware ✈ Airplanes, Airliners, Jets, and more 照片"/>
+  <meta property="og:site_name" content="FlightAware"/>
+  <meta property="og:url" content="http://flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="http://e1.photos.flightcdn.com/photos/retriever/2cd96ba5537fc8a416276915809fe2e86b78b13d" />
+</head>
+<!--[if lt IE 7 ]><body class="ie6 ie67"><![endif]-->
+			<!--[if IE 7 ]><body class="ie7 ie67"><![endif]-->
+			<!--[if IE 8 ]><body class="ie8 ie89"><![endif]-->
+			<!--[if IE 9 ]><body class="ie9 ie89"><![endif]-->
+			<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+<div id="pageContainer"><div id="topContainer">
+
+		<script type="text/javascript">
+
+		function openShareWindow(url,id,width,height,scrollbars) {
+   			popups = window.open(url,id,'toolbar=0,location=0,scrollbars='+scrollbars+',statusbar=0,menubar=0,resizable=0,width='+width+',height='+height+',left=20,top=40');
+   			window.popups.focus();
+ 		}
+
+                $(document).ready(function(){
+            $('#airport_name_or_city').autocomplete({
+                source: function(req,add) {
+                    var val = req.term;
+                    $.ajax({
+                        type: 'GET',
+                        url: 'http://e0.flightcdn.com/ajax/airport_names_yajl.rvt',
+                        dataType: 'JSONP',
+                        crossDomain: 'true',
+                        data: "locale=zh_CN&q=" + val,
+                        success: function(data) {
+                            var cities = [];
+                            for (var i=0;i<data.aList.length; i++) {
+                                if (data.aList[i].city_name == '') {
+                                    continue;
+                                } else {
+                                    cities.push(data.aList[i].city_name);
+                                }
+                            }
+                            add(cities);
+                        }});
+                },
+                minLength: 3,
+                delay: 200,
+                autoFocus: true,
+                select: function(event, item) {
+                    var airp = item.item.label;
+                    var airportStringSplit = airp.toString().match(/ - ([A-Z0-9]+)$/);
+                    if (airportStringSplit == null) $('#airport').val(item.item.label);
+                    else $('#airport').val(airportStringSplit[1]);
+                    //Use this timeout to avoid submiting form before the airport code is
+                    //inserted into the proper field.  Timeout set to 5ms.
+                    setTimeout(function() {$('#airportTrackForm').submit();},5);
+                }
+            });
+
+        $('#share_link').validate({
+                rules: {
+                        recipient: {
+                                required: true,
+                                email: true
+                        },
+                        sender: {
+                                required: true,
+                                email: true
+                        }
+                },
+                messages: {
+                        recipient: 'Please fix',
+                        sender: 'Please fix'
+                },
+            submitHandler: function(form) {
+                var scriptUrl = '/ajax/share_email.rvt';
+                var dataStr = $('form#share_link').serialize();
+                $.ajax({
+                   type: 'POST',
+                   url: scriptUrl,
+                   data: dataStr,
+                   success: function(msg) {
+                       $('#emailShareSuccessContentWrapper').html(msg);
+                   }
+               });
+            }
+        });
+        });
+</script>
+
+  <table id="topContent">
+   <tr>
+    <td rowspan="2" style="width: 160px; padding-left: 5px;">
+    <a href="/"><img src="http://e1.flightcdn.com/images/logo.png" style="width:160px;height:60; border: 0;" alt="FlightAware" /></a>
+</td>
+<td id="topSlogan"><h1><a href="/">实时航班跟踪</a></h1></td>
+<td style="width:50%" id="topContainerBadgeBlock"></td>
+    <td rowspan="2" style="width:110px;" id="topLinks1" class="topLinks"><span id="topLink1nowrap"><a href="/account/manage">加入</a> / <a onclick="DoLoginBox(); return false" href="/account/login">登录</a></span></td>
+    <td rowspan="2" style="width:110px;height:81px;" id="topLinks2" class="topLinks">
+    
+<div class="fb-like" data-href="http://flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0" data-send="false" data-layout="box_count" data-width="100" data-show-faces="false" data-font="arial" ></div>
+<div style="height: 5px; clear: both;">&nbsp;</div>
+<div id="plusonediv" style="width:1px;height:1px;"><g:plusone size="small" href="http://flightaware.com/"></g:plusone></div>
+
+    </td>
+  </tr>
+  <tr>
+   <td id="topText" colspan="2">
+    <div id="headerText"><div id="topTextLinks"> <strong><a href="/account/manage">加入FlightAware</a> (<a href="/about/account_types.rvt">为何要加入？</a>)</strong></div> |
+				<a onclick="DoLoginBox(); return false" href="/account/login">登录</a> | <a href="/account/forgot">忘记了用户名/密码?</a> | 星期四 06:10 CST
+</div>
+    <div id="LoginBox">
+			<form name="login" action="https://zh.flightaware.com/account/session" method="post">
+			<input type='hidden' name='mode' value='login' />
+
+			<label for="flightaware_username">用户名 或 邮箱地址</label>
+			<input size='30' type='text' name='flightaware_username' id='flightaware_username' />
+
+			<label for="flightaware_password">密码</label>
+			<input size='12' type='password' name='flightaware_password' id='flightaware_password' />
+			<button class="expandbluebuttons" type="submit">登录 </button></form>
+		<a href="/account/manage">加入FlightAware</a> (免费注册) | <a href="/account/forgot">忘记了用户名/密码?</a> <a href='javascript:NoLoginBox()'>取消</a>
+		</div>
+   <div id="LocaleTopBox"><form  action="http://zh.flightaware.com/account/locale_switch.rvt" method="get" style="display: inline;">
+ <select name="locale"  onchange="this.form.submit();">
+  <option value="ar_SA">العربية</option>
+  <option value="cs_CZ">Čeština</option>
+  <option value="de_DE">Deutsch</option>
+  <option value="en_AU">English (Australia)</option>
+  <option value="en_CA">English (Canada)</option>
+  <option value="en_GB">English (UK)</option>
+  <option value="en_US">English (USA)</option>
+  <option value="es_ES">Español (España)</option>
+  <option value="es_MX">Español</option>
+  <option value="fi_FI">Suomi</option>
+  <option value="fr_CA">Français (Canada)</option>
+  <option value="fr_FR">Français (France)</option>
+  <option value="he_IL">עִבְרִית</option>
+  <option value="hi_IN">हिन्दी</option>
+  <option value="hr_HR">Hrvatski</option>
+  <option value="it_IT">Italiano</option>
+  <option value="ja_JP">日本語</option>
+  <option value="ko_KR">한국어</option>
+  <option value="nl_NL">Nederlands</option>
+  <option value="pl_PL">Polski</option>
+  <option value="pt_BR">Português (Brasil)</option>
+  <option value="pt_PT">Português (Portugal)</option>
+  <option value="ru_RU">Русский</option>
+  <option value="sv_SE">Svenska</option>
+  <option value="tr_TR">Türkçe</option>
+  <option value="zh_CN" selected="selected">中文(简体)</option>
+  <option value="zh_HK">中文(香港)</option>
+  <option value="zh_TW">中文(台灣)</option>
+ </select>
+</form>
+<a href="http://zh.flightaware.com/account/locale_switch.rvt?locale=en_US"><img height="11" width="16" src="http://e1.flightcdn.com/images/countries/US.png" alt="US Flag" title="Switch to US FlightAware" /></a>&nbsp;<a href="http://zh.flightaware.com/account/locale_switch.rvt?locale=zh_CN"><img height="11" width="16" src="http://e0.flightcdn.com/images/countries/CN.png" alt="CN Flag" title="Switch to CN FlightAware" /></a>&nbsp;</div>
+   </td>
+  </tr>
+ </table>
+</div>
+<table cellpadding="0" style="width:99%;"><tr>
+    <td style="padding: 0; margin: 0; vertical-align: top;"><div id="navBar" style="margin-top: 5px; margin-bottom: 4px;" aria-haspopup='true'>
+<ul class="menulist" id="listMenuRoot">
+ <li class="item_first item_emphasis">
+<a href="/live/" class="titleLink"><h4 class="HeaderIMGText navMenu">实时航班跟踪</h4></a> 
+ <ul class="submenu">
+  <li class="submenu_item"><a href="/live/findflight/"> <h4 class="navMenuSub HeaderIMGText">航班搜索</h4> </a></li>
+  <li class="submenu_item"><a href="/live/fleet/"> <h4 class="navMenuSub HeaderIMGText">按营运人浏览</h4> </a></li>
+  <li class="submenu_item"><a href="/resources/airport/browse/"> <h4 class="navMenuSub HeaderIMGText">按机场浏览</h4> </a></li>
+  <li class="submenu_item"><a href="/live/aircrafttype/"> <h4 class="navMenuSub HeaderIMGText">按机型浏览</h4> </a></li>
+  <li class="submenu_item"><a href="/live/airport/random"> <h4 class="navMenuSub HeaderIMGText">随机机场</h4> </a></li>
+  <li class="submenu_item"><a href="/live/flight/random"> <h4 class="navMenuSub HeaderIMGText">随机航班</h4> </a></li>
+  <li class="submenu_item"><a href="/mobile"> <h4 class="navMenuSub HeaderIMGText">移动航班跟踪应用</h4> </a></li>
+</ul>
+</li>
+ <li class=" current">
+<a href="/photos/" class="titleLink"><h4 class="HeaderIMGText navMenu">航空照片</h4></a> 
+ <ul class="submenu">
+  <li class="submenu_item"><a href="/photos/"> <h4 class="navMenuSub HeaderIMGText">热门照片</h4> </a></li>
+  <li class="submenu_item"><a href="/photos/browse/newest"> <h4 class="navMenuSub HeaderIMGText">最新照片</h4> </a></li>
+  <li class="submenu_item"><a href="/photos/ranked/cume"> <h4 class="navMenuSub HeaderIMGText">排名最高</h4> </a></li>
+  <li class="submenu_item"><a href="/photos/staffpicks/cume"> <h4 class="navMenuSub HeaderIMGText">编辑推荐</h4> </a></li>
+</ul>
+</li>
+ <li>
+<a href="/squawks/" class="titleLink"><h4 class="HeaderIMGText navMenu">新闻头条</h4></a> 
+ <ul class="submenu">
+  <li class="submenu_item"><a href="/squawks/browse/general/recently/popular"> <h4 class="navMenuSub HeaderIMGText">时事新闻</h4> </a></li>
+  <li class="submenu_item"><a href="/squawks/browse/general/24_hours/new"> <h4 class="navMenuSub HeaderIMGText">最近新闻</h4> </a></li>
+  <li class="submenu_item"><a href="/squawks/"> <h4 class="navMenuSub HeaderIMGText">热门新闻</h4> </a></li>
+</ul>
+</li>
+ <li>
+<a href="http://discussions.flightaware.com/" class="titleLink"><h4 class="HeaderIMGText navMenu">论坛讨论</h4></a> 
+</li>
+ <li>
+<a href="/resources/" class="titleLink"><h4 class="HeaderIMGText navMenu">飞行员资源</h4></a> 
+ <ul class="submenu">
+  <li class="submenu_item"><a href="/flightplan/"> <h4 class="navMenuSub HeaderIMGText">飞行计划</h4> </a></li>
+  <li class="submenu_item"><a href="/flightplan/manage/flights"> <h4 class="navMenuSub HeaderIMGText">我申报的飞行</h4> </a></li>
+  <li class="submenu_item"><a href="/flightplan/manage/aircraft"> <h4 class="navMenuSub HeaderIMGText">我的飞机</h4> </a></li>
+  <li class="submenu_item"><a href="/flightplan/manage/pilots"> <h4 class="navMenuSub HeaderIMGText">我的飞行员</h4> </a></li>
+  <li class="submenu_item"><a href="/flightplan/faq.rvt"> <h4 class="navMenuSub HeaderIMGText">飞行计划帮助</h4> </a></li>
+</ul>
+</li>
+ <li class="item_emphasis">
+<a href="/commercial/" class="titleLink"><h4 class="HeaderIMGText navMenu">商业服务</h4></a> 
+ <ul class="submenu">
+  <li class="submenu_item"><a href="/commercial/advertising/"> <h4 class="navMenuSub HeaderIMGText">广告发布</h4> </a></li>
+  <li class="submenu_item"><a href="/commercial/fbotoolbox"> <h4 class="navMenuSub HeaderIMGText">FBO工具箱</h4> </a></li>
+  <li class="submenu_item"><a href="/commercial/unblock.rvt"> <h4 class="navMenuSub HeaderIMGText">选择性解除限制</h4> </a></li>
+  <li class="submenu_item"><a href="/commercial/flightxml/"> <h4 class="navMenuSub HeaderIMGText">FlightXML</h4> </a></li>
+  <li class="submenu_item"><a href="/about/contact/"> <h4 class="navMenuSub HeaderIMGText">定制报告</h4> </a></li>
+  <li class="submenu_item"><a href="/commercial/premium/"> <h4 class="navMenuSub HeaderIMGText">高级账户</h4> </a></li>
+  <li class="submenu_item"><a href="/commercial/europe/"> <h4 class="navMenuSub HeaderIMGText">欧洲</h4> </a></li>
+</ul>
+</li>
+ <li>
+<a href="/about/" class="titleLink"><h4 class="HeaderIMGText navMenu">关于FlightAware</h4></a> 
+ <ul class="submenu">
+  <li class="submenu_item"><a href="/about/"> <h4 class="navMenuSub HeaderIMGText">概述</h4> </a></li>
+  <li class="submenu_item"><a href="/about/merchandise/"> <h4 class="navMenuSub HeaderIMGText">公司网店</h4> </a></li>
+  <li class="submenu_item"><a href="/about/faq.rvt"> <h4 class="navMenuSub HeaderIMGText">常见问题</h4> </a></li>
+  <li class="submenu_item"><a href="/about/executives/"> <h4 class="navMenuSub HeaderIMGText">管理团队</h4> </a></li>
+  <li class="submenu_item"><a href="/about/history.rvt"> <h4 class="navMenuSub HeaderIMGText">历史</h4> </a></li>
+  <li class="submenu_item"><a href="/about/contact/"> <h4 class="navMenuSub HeaderIMGText">联系我们</h4> </a></li>
+  <li class="submenu_item"><a href="/about/careers/"> <h4 class="navMenuSub HeaderIMGText">职位招聘</h4> </a></li>
+  <li class="submenu_item"><a href="/about/account_types.rvt"> <h4 class="navMenuSub HeaderIMGText">账户类型</h4> </a></li>
+  <li class="submenu_item"><a href="/about/advertising/"> <h4 class="navMenuSub HeaderIMGText">广告发布</h4> </a></li>
+  <li class="submenu_item"><a href="/news/#press"> <h4 class="navMenuSub HeaderIMGText">媒体和新闻资料</h4> </a></li>
+  <li class="submenu_item"><a href="/news/"> <h4 class="navMenuSub HeaderIMGText">网站新闻</h4> </a></li>
+</ul>
+</li>
+ <li class="item_last item_emphasis">
+<a href="/about/contact/" class="titleLink"><h4 class="HeaderIMGText navMenu">联系我们</h4></a> 
+</li>
+</ul>
+</div>
+ <table id="trackBox">
+<tr>
+   <td class="trackboxComGradient"><div class="trackBoxh2Gradient">   	<h2><a href="/">实时飞行跟踪</a></h2> </div></td></tr><tr><td class="trackboxPriGradient"><div class="trackBoxForm"><div class="trackFormSubhead"><a href="/">私人飞行跟踪:</a></div>
+	<form name="track" id="track" action="/live/form.rvt"><label for="ident">标识符/尾号</label><input name="ident" id="ident" type="text" value="" title="如: CCA983" autocomplete="off" /><br /><div id="flightTrackerIdentError" style="color: red; padding: 12px 0; display: none;"></div><button class="unifiedtrack" type="submit" title="跟踪航班" style="margin-left:67px;">跟踪航班</button></form></div></td></tr><tr>
+		 <td class="trackboxComGradient"><div class="trackBoxForm"><div class="trackFormSubhead"><a href="/">航空公司航班跟踪:</a></div>	<form name="searchform" id="searchform" action="/live/form.rvt" style="display: inline;">
+     <input type='hidden' id="ident_prefix" name='ident_prefix' value='' />
+     <noscript><select name="airline_name_select" id="airline_name_select" style="float: right; width: 125px;"><option value="">Select an airline</option>    <option value="TRS">AirTran (TRS)</option>    <option value="EGF">American Eagle (EGF)</option>    <option value="ASQ">ExpressJet (ASQ)</option>    <option value="FDX">FedEx (FDX)</option>    <option value="BTA">Former ExpressJet (BTA)</option>    <option value="JZA">Jazz Air (JZA)</option>    <option value="JBU">JetBlue (JBU)</option>    <option value="EJA">Netjets Aviation (EJA)</option>    <option value="FLG">Pinnacle (FLG)</option>    <option value="SKW">SkyWest (SKW)</option>    <option value="SWA">Southwest (SWA)</option>    <option value="AWE">US Airways (AWE)</option>    <option value="CCA">中国国际航空公司(CCA)</option>    <option value="ACA">加拿大航空公司(ACA)</option>    <option value="CPA">国泰航空公司(CPA)</option>    <option value="DLH">德国汉莎航空公司(DLH)</option>    <option value="COA">美国大陆航空公司(COA)</option>    <option value="UAL">美国联合航空公司(UAL)</option>    <option value="AAL">美国航空公司(AAL)</option>    <option value="DAL">美国达美航空公司(DAL)</option>    <option value="-- MORE --"></option>    <option value="AKX">ANA Wings (AKX)</option>    <option value="AEE">Aegean Aviation (AEE)</option>    <option value="EIN">Aer Lingus Teoranta (EIN)</option>    <option value="BOX">AeroLogic (BOX)</option>    <option value="AEW">AeroSvit (AEW)</option>    <option value="ARG">Aerolineas Argentinas (ARG)</option>    <option value="AMX">Aerovias de Mexico (AMX)</option>    <option value="ABL">Air Bc (ABL)</option>    <option value="BER">Air Berlin (BER)</option>    <option value="SNC">Air Cargo Carriers (SNC)</option>    <option value="MPD">Air Comet (MPD)</option>    <option value="DLA">Air Dolomiti (DLA)</option>    <option value="AEA">Air Europa (AEA)</option>    <option value="GGN">Air Georgian (GGN)</option>    <option value="AEY">Air Italy (AEY)</option>    <option value="AJM">Air Jamaica (AJM)</option>    <option value="AJX">Air Japan(AJX)</option>    <option value="AMW">Air Midwest (AMW)</option>    <option value="ANV">Air Nevada (ANV)</option>    <option value="ANK">Air Nippon (ANK)</option>    <option value="AMR">Air Specialties Corpor…(AMR)</option>    <option value="THT">Air Tahiti Nui (THT)</option>    <option value="HMA">Air Tahoma (HMA)</option>    <option value="TSC">Air Transat (TSC)</option>    <option value="ATN">Air Transport Internat…(ATN)</option>    <option value="AVN">Air Vanuatu (AVN)</option>    <option value="AWI">Air Wisconsin (AWI)</option>    <option value="XAX">AirAsia X (XAX)</option>    <option value="TRS">AirTran (TRS)</option>    <option value="ABX">Airborne Express (ABX)</option>    <option value="APC">Airpac (APC)</option>    <option value="ALV">Alas de Venezuela (ALV)</option>    <option value="ASA">Alaska Airlines (ASA)</option>    <option value="AER">Alaska Central Express (AER)</option>    <option value="AAY">Allegiant Air (AAY)</option>    <option value="UTY">Alliance Airlines (UTY)</option>    <option value="AAH">Aloha Airlines (AAH)</option>    <option value="AIP">Alpine Aviation (AIP)</option>    <option value="EGF">American Eagle (EGF)</option>    <option value="AMT">American Trans Air (AMT)</option>    <option value="ANE">Americana de Aviacion (ANE)</option>    <option value="AMF">Ameriflight (AMF)</option>    <option value="AJT">Amerijet International (AJT)</option>    <option value="APW">Arrow Airways (APW)</option>    <option value="DHL">Astar Air Cargo (DHL)</option>    <option value="SYX">Astral Aviation (SYX)</option>    <option value="ABS">Athabasca Airways (ABS)</option>    <option value="GTI">Atlas Air (GTI)</option>    <option value="AUB">Augsburg-airways GMBH (AUB)</option>    <option value="AUA">Austrian Airlines (AUA)</option>    <option value="AVA">Avianca, Aerovias Naci…(AVA)</option>    <option value="GUG">Aviateca (GUG)</option>    <option value="BMR">BMI Regional (BMR)</option>    <option value="BHS">Bahamasair Holdings Lt…(BHS)</option>    <option value="BKA">Bankair (BKA)</option>    <option value="BLS">Bearskin Lake Air Serv…(BLS)</option>    <option value="BSY">Big Sky (BSY)</option>    <option value="BLF">Blue1 (BLF)</option>    <option value="CDR">Bombardier Montreal (CDR)</option>    <option value="CXS">Boston-Maine Airways (CXS)</option>    <option value="BZH">Britair (BZH)</option>    <option value="BMA">British Midland Airways (BMA)</option>    <option value="BEL">Brussels Airlines (BEL)</option>    <option value="CJA">Canjet (CJA)</option>    <option value="CCI">Capital Cargo (CCI)</option>    <option value="CFH">Care Flight (CFH)</option>    <option value="GGC">Cargo 360 (GGC)</option>    <option value="CRG">Cargoitalia (CRG)</option>    <option value="CLX">Cargolux Airlines Inte…(CLX)</option>    <option value="BWA">Caribbean Airlines (BWA)</option>    <option value="SFG">Caribbean Sun (SFG)</option>    <option value="ICL">Cavei Avir Lemitanim (ICL)</option>    <option value="CAY">Cayman Airways (CAY)</option>    <option value="GLR">Central Mountain (GLR)</option>    <option value="CWC">Centurion Air Cargo (CWC)</option>    <option value="CLG">Chalair (CLG)</option>    <option value="CHQ">Chautauqua (CHQ)</option>    <option value="CKK">China Cargo (CKK)</option>    <option value="CFE">Cityflyer Express (CFE)</option>    <option value="CJC">Colgan Air (CJC)</option>    <option value="COM">Comair (COM)</option>    <option value="UCA">Commutair (UCA)</option>    <option value="MXA">Compania Mexicana de A…(MXA)</option>    <option value="CPZ">Compass Airlines (CPZ)</option>    <option value="CHP">Consorcio Aviaxsa de C…(CHP)</option>    <option value="CMI">Continental Micronesia (CMI)</option>    <option value="CMP">Copa Airlines (CMP)</option>    <option value="CCM">Corse-Mediterranee, Co…(CCM)</option>    <option value="CTN">Croatia Airlines (CTN)</option>    <option value="CUB">Cubana de Aviacion (CUB)</option>    <option value="CSA">Czech Airlines (CSA)</option>    <option value="DHK">DHL Air Ltd (DHK)</option>    <option value="MSR">Egypt Air (MSR)</option>    <option value="CFS">Empire (CFS)</option>    <option value="ESS">Eos Airlines (ESS)</option>    <option value="ERH">Era Helicopters (ERH)</option>    <option value="ETH">Ethiopian Airlines (ETH)</option>    <option value="ETD">Etihad Airways (ETD)</option>    <option value="EEZ">Eurofly (EEZ)</option>    <option value="ELO">Eurolot (ELO)</option>    <option value="EWG">Eurowings Ag, Nurnberg (EWG)</option>    <option value="EIA">Evergreen Internationa…(EIA)</option>    <option value="ASQ">ExpressJet (ASQ)</option>    <option value="FDX">FedEx (FDX)</option>    <option value="FLX">Flight Express (FLX)</option>    <option value="ACT">Flight Line (ACT)</option>    <option value="FWL">Florida West Internati…(FWL)</option>    <option value="BEE">Flybe  United Kingdom (BEE)</option>    <option value="BTA">Former ExpressJet (BTA)</option>    <option value="FRL">Freedom Airlines (FRL)</option>    <option value="FFT">Frontier (FFT)</option>    <option value="SSX">Frontier Airlines (SSX)</option>    <option value="FTA">Frontier Flying Service (FTA)</option>    <option value="GCO">Gemini Air Cargo, Llc (GCO)</option>    <option value="GJS">GoJet (GJS)</option>    <option value="GUN">Grant Aviation (GUN)</option>    <option value="GLA">Great Lakes Aviation L…(GLA)</option>    <option value="GWL">Great Wall (GWL)</option>    <option value="HAL">Hawaiian Airlines (HAL)</option>    <option value="CRK">Hong Kong Airlines (CRK)</option>    <option value="QXE">Horizon (QXE)</option>    <option value="KAP">Hyannis Air Service D/…(KAP)</option>    <option value="CSQ">I.b.c. Airways (CSQ)</option>    <option value="IBE">Iberia - Lineas Aereas…(IBE)</option>    <option value="IBX">Ibex (IBX)</option>    <option value="ICE">Icelandair (ICE)</option>    <option value="IDE">Independence Air (IDE)</option>    <option value="IGO">IndiGo (IGO)</option>    <option value="AWQ">Indonesia AirAsia (AWQ)</option>    <option value="INC">Insel Air International (INC)</option>    <option value="AIJ">Interjet (AIJ)</option>    <option value="MKU">Island Air (MKU)</option>    <option value="SDY">Island Express (SDY)</option>    <option value="ELY">Israel Airlines (ELY)</option>    <option value="ISR">Israir (ISR)</option>    <option value="JEX">Jal Express (JEX)</option>    <option value="JAZ">Jalways (JAZ)</option>    <option value="JTA">Japan Transocean Air C…(JTA)</option>    <option value="JZA">Jazz Air (JZA)</option>    <option value="JAI">Jet Airways (JAI)</option>    <option value="EXS">Jet2 (EXS)</option>    <option value="JBU">JetBlue (JBU)</option>    <option value="QNZ">Jetconnect (QNZ)</option>    <option value="JST">Jetstar (JST)</option>    <option value="JSA">Jetstar Asia (JSA)</option>    <option value="CKS">Kalitta Air (CKS)</option>    <option value="KFS">Kalitta Charters (KFS)</option>    <option value="KEN">Kenmore Air Harbor, Inc (KEN)</option>    <option value="LYM">Key Lime Air (LYM)</option>    <option value="KAC">Kuwait Airways Corpora…(KAC)</option>    <option value="AVI">L'Avion (AVI)</option>    <option value="LCO">LAN Cargo (LCO)</option>    <option value="LNE">LAN Ecuador (LNE)</option>    <option value="LPE">LAN Peru(LPE)</option>    <option value="SKQ">Labcorp (SKQ)</option>    <option value="LAL">Labrador Airways (LAL)</option>    <option value="LIA">Leeward Islands Air Tr…(LIA)</option>    <option value="LAN">Linea Aerea Nacional d…(LAN)</option>    <option value="LRC">Lineas Aereas Costarri…(LRC)</option>    <option value="LLB">Lloyd Aereo Boliviano (LLB)</option>    <option value="LOT">Lot - Polskie Linie Lo…(LOT)</option>    <option value="GEC">Lufthansa Cargo (GEC)</option>    <option value="CLH">Lufthansa Cityline (CLH)</option>    <option value="LTU">Lufttransport-Unterneh…(LTU)</option>    <option value="LYC">Lynden Air Cargo Llc (LYC)</option>    <option value="MXJ">MAXjet (MXJ)</option>    <option value="SCX">MN Airlines (SCX)</option>    <option value="MAH">Malev - Hungarian Airl…(MAH)</option>    <option value="MPH">Martinair Holland N.V. (MPH)</option>    <option value="ASH">Mesa (ASH)</option>    <option value="MES">Mesaba (MES)</option>    <option value="BSK">Miami Air International (BSK)</option>    <option value="MEP">Midwest Airlines (MEP)</option>    <option value="MON">Monarch (MON)</option>    <option value="MTN">Mountain Air Cargo (MTN)</option>    <option value="EJA">Netjets Aviation (EJA)</option>    <option value="NCA">Nippon Cargo (NCA)</option>    <option value="NAO">North American Airlines (NAO)</option>    <option value="NAC">Northern Air Cargo (NAC)</option>    <option value="NWA">Northwest Airlines (NWA)</option>    <option value="ACY">Old ASA (ACY)</option>    <option value="CAA">Old ASA (CAA)</option>    <option value="OAL">Olympic Airways (OAL)</option>    <option value="OAE">Omni Air Express (OAE)</option>    <option value="JIA">PSA Airlines (JIA)</option>    <option value="PCO">Pacific Coastal Airline (PCO)</option>    <option value="PIA">Pakistan International…(PIA)</option>    <option value="PEN">Peninsula (PEN)</option>    <option value="PDT">Piedmont (PDT)</option>    <option value="FLG">Pinnacle (FLG)</option>    <option value="PAC">Polar Air Cargo (PAC)</option>    <option value="POE">Porter (POE)</option>    <option value="PGA">Portugalia, Companhia …(PGA)</option>    <option value="CME">Prince Edward Air (CME)</option>    <option value="SPR">Provincial Airlines (SPR)</option>    <option value="QLK">QantasLink (QLK)</option>    <option value="RAE">Regional Compagnie Aer…(RAE)</option>    <option value="RXA">Regional Express Airli…(RXA)</option>    <option value="CEA">RegionsAir (CEA)</option>    <option value="RPA">Republic (RPA)</option>    <option value="RAM">Royal Air Maroc (RAM)</option>    <option value="RJA">Royal Jordanian (RJA)</option>    <option value="RYN">Ryan International Air…(RYN)</option>    <option value="RYR">Ryanair (RYR)</option>    <option value="SAS">SAS (SAS)</option>    <option value="BBR">Santa Barbara , C.a. (BBR)</option>    <option value="RZO">Sata Internacional (RZO)</option>    <option value="SVA">Saudi Arabian Airlines (SVA)</option>    <option value="SCO">Scoot (SCO)</option>    <option value="SQH">SeaPort (SQH)</option>    <option value="QUE">Service Aerien Gouvern…(QUE)</option>    <option value="SLI">Servicios Aereos Litor…(SLI)</option>    <option value="TCF">Shuttle America (TCF)</option>    <option value="SIL">Silver Airways (SIL)</option>    <option value="SIA">Singapore Airlines (SIA)</option>    <option value="SBA">Sky Bahamas (SBA)</option>    <option value="SKW">SkyWest (SKW)</option>    <option value="SKK">Skylink Aviation (SKK)</option>    <option value="SSV">Skyservice (SSV)</option>    <option value="SKZ">Skyway Enterprises (SKZ)</option>    <option value="SAA">South African Airways (SAA)</option>    <option value="SOO">Southern Air (SOO)</option>    <option value="SWA">Southwest (SWA)</option>    <option value="NKS">Spirit (NKS)</option>    <option value="CNK">Sunwest Home Aviation …(CNK)</option>    <option value="SWG">Sunwing (SWG)</option>    <option value="SLM">Surinaamse Luchtvaart …(SLM)</option>    <option value="TAM">TAM (TAM)</option>    <option value="TAI">Taca International Air…(TAI)</option>    <option value="VTS">Tatonduk Outfitters (VTS)</option>    <option value="TCX">Thomas Cook (TCX)</option>    <option value="TOM">Thomsonfly (TOM)</option>    <option value="GPD">Tradewind (GPD)</option>    <option value="LOF">Trans States (LOF)</option>    <option value="TPA">Transportes Aereos Mer…(TPA)</option>    <option value="TAP">Transportes Aereos Por…(TAP)</option>    <option value="TUS">Transportes Charter Tu…(TUS)</option>    <option value="TYR">Tyrolean (TYR)</option>    <option value="AWE">US Airways (AWE)</option>    <option value="UPS">United Parcel Service (UPS)</option>    <option value="GWY">Usa 3000 Airlines (GWY)</option>    <option value="JUS">Usa Jet Airlines (JUS)</option>    <option value="UZB">Uzbekistan Havo Jullar…(UZB)</option>    <option value="VAU">V Australia (VAU)</option>    <option value="VEC">Venezolana Servicios E…(VEC)</option>    <option value="VRG">Viacao Aerea Rio-grand…(VRG)</option>    <option value="VOZ">Virgin (VOZ)</option>    <option value="VRD">Virgin America (VRD)</option>    <option value="PBN">Virgin Australia (PBN)</option>    <option value="RBY">Vision (RBY)</option>    <option value="VLE">Volare (VLE)</option>    <option value="VOI">Volaris (VOI)</option>    <option value="WAV">Warbelows Air Ventures (WAV)</option>    <option value="WSG">Wasaya (WSG)</option>    <option value="PCM">Westair Industries (PCM)</option>    <option value="WAE">Western Air Express (WAE)</option>    <option value="WJA">Westjet (WJA)</option>    <option value="WZZ">Wizz Air (WZZ)</option>    <option value="WOA">World Airways (WOA)</option>    <option value="TDX">Wrangler Aviation (TDX)</option>    <option value="WRT">Wright (WRT)</option>    <option value="CXP">Xtra (CXP)</option>    <option value="YZR">Yangtze River Express …(YZR)</option>    <option value="OOM">Zoom (OOM)</option>    <option value="EZY">easyJet (EZY)</option>    <option value="NLY">flyniki (NLY)</option>    <option value="CAL">中华航空有限公司(CAL)</option>    <option value="CES">中国东方航空公司(CES)</option>    <option value="CSN">中国南方航空公司(CSN)</option>    <option value="CCA">中国国际航空公司(CCA)</option>    <option value="CAO">中国国际航空公司(CAO)</option>    <option value="CQH">中国春秋航空公司(CQH)</option>    <option value="AFL">俄罗斯航空公司(AFL)</option>    <option value="ANA">全日空航空公司(ANA)</option>    <option value="USA">全美航空公司(USA)</option>    <option value="ACA">加拿大航空公司(ACA)</option>    <option value="QTR">卡塔尔航空公司(QTR)</option>    <option value="AIC">印度航空公司(AIC)</option>    <option value="EVA">台湾长荣航空公司(EVA)</option>    <option value="CPA">国泰航空公司(CPA)</option>    <option value="THY">土耳其航空公司(THY)</option>    <option value="KAL">大韩航空公司(KAL)</option>    <option value="DLH">德国汉莎航空公司(DLH)</option>    <option value="AZA">意大利航空公司(AZA)</option>    <option value="ALK">斯里兰卡航空公司(ALK)</option>    <option value="SQC">新加坡航空公司(SQC)</option>    <option value="ANZ">新西兰航空公司(ANZ)</option>    <option value="JAL">日本航空公司(JAL)</option>    <option value="AFR">法国航空公司(AFR)</option>    <option value="THA">泰国国际航空公司(THA)</option>    <option value="CHH">海南航空公司(CHH)</option>    <option value="QFA">澳洲航空公司(QFA)</option>    <option value="SWR">瑞士国际航空公司(SWR)</option>    <option value="VIR">维珍航空公司(VIR)</option>    <option value="COA">美国大陆航空公司(COA)</option>    <option value="UAL">美国联合航空公司(UAL)</option>    <option value="AAL">美国航空公司(AAL)</option>    <option value="DAL">美国达美航空公司(DAL)</option>    <option value="FIN">芬兰航空公司(FIN)</option>    <option value="BAW">英国航空公司(BAW)</option>    <option value="KLM">荷兰皇家航空公司(KLM)</option>    <option value="PAL">菲律宾航空公司(PAL)</option>    <option value="UAE">阿联酋航空公司(UAE)</option>    <option value="AAR">韩亚航空公司(AAR)</option>    <option value="MAS">马来西亚航空公司(MAS)</option></select></noscript>
+
+      <div class="jsEnabledAirlineField trackFormRow" style="float: left;" >
+         <div style="float: left;">  <label for="airline_name" class="defaultLabel">航空公司</label> </div></div><div class="jsEnabledAirlineField trackFormRow" style="display: none;"><input id="airline_name" name="q" type="text" value="" title="如: Air China" class="defaultComField" autocomplete="off" />
+     </div><br /><div>&nbsp;</div>
+	<div class="trackFormRow"><div style="float: left;"> <label for="ident_suffix" class="defaultLabel">航班号</label></div><div><input id="ident_suffix" name="ident_suffix" type="text" value="" title="如: 450" class="defaultComField" autocomplete="off"/></div></div>
+     <button type="submit" class="unifiedtrack" title="跟踪航班">跟踪航班</button>
+
+        </form><br /><div class="findFlightS" style=""><a href="/live/findflight" class="titleLink"><h4 class="findFlightSide">不知道航班号？</h4></a></div></div></td>
+  </tr>
+  <tr>
+<td>
+    </td></tr>
+ <tr>
+   <td style="border-top: 5px solid white;">        <div class="airportInfoHeaderGradient"><h2 class="airportInfoHeader">机场跟踪/资料</h2></div></td>
+  </tr>
+  <tr>
+<td class="trackboxAirportGradient">
+    
+   <div class="trackBoxForm"><form class="trackForm" name="airport" id="airportTrackForm" action="/live/form.rvt">
+    <label for="airport">机场代码</label>
+    <input id="airport" title="如: PEK" name="airport" type="text" value="" autocomplete="off" /><br />
+	<span style="font-style: italic;">-或-</span><br />
+    <label for="airport_name_or_city">所在城市</label>
+    <input id="airport_name_or_city" title="如: Beijing" name="airport_name_or_city" type="text" class="airportNameField" autocomplete="off" /><button class="unifiedtrack" type="submit" id="trackunified" title="查看动态" name="查看动态" style="clear:right; margin-bottom:10px;">查看动态</button><br/><button class="unifiedtrack" type="button" id="airportInfoButton" title="查看资料" name="查看资料" style="clear:right; margin-bottom:10px;">查看资料</button><br/></form></div></td>
+ </tr><tr><td><div class="bottomShadow">&nbsp;</div></td></tr>
+</table>
+</td><td class="fullWidth" style="vertical-align: top;">
+        <div class="greyAd fixedWidthPageContent" style="clear: both; margin: 5px 0 5px 5px;">
+ 		         
+		<iframe
+		 name="FA_ads_838992"
+		 width="728" height="90" frameborder="0" style="display: block; margin: 0 auto;" scrolling="no"></iframe>
+		<script>var lazyload_ads = lazyload_ads || []; lazyload_ads.push(["FA_ads_838992", "//ad.doubleclick.net/adi/flight.main/photos;sz=728x90,468x60;aircraft_type=;dcove=d;destination=;destination_IATA=;destination_state=;ident=;lang=zh;locale=zh_CN;prefix=;type=ga;unitName=picture;userGen=t;dc_ref=http%3a%2f%2fflightaware.com%2fphotos%2fview%2f437731-439d9cc06d261f3072d3bf8af7530ef941c161b0?id=437731-439d9cc06d261f3072d3bf8af7530ef941c161b0;tile=1"]);</script>
+		<noscript>
+		 <iframe
+		  url="//ad.doubleclick.net/adi/flight.main/photos;sz=728x90,468x60;aircraft_type=;dcove=d;destination=;destination_IATA=;destination_state=;ident=;lang=zh;locale=zh_CN;prefix=;type=ga;unitName=picture;userGen=t;dc_ref=http%3a%2f%2fflightaware.com%2fphotos%2fview%2f437731-439d9cc06d261f3072d3bf8af7530ef941c161b0?id=437731-439d9cc06d261f3072d3bf8af7530ef941c161b0;tile=1;ord=28271716437"
+		  width="728" height="90" frameborder="0" style="display: block; margin: 0 auto;" scrolling="no"></iframe>
+		</noscript>
+		
+        	</div>
+<div id="bodyHeader"><h2><a class="headerLink" href="/">FlightAware</a> ✈ <a class="headerLink" href="/photos/">航空照片</a> ✈ <span class="bodyNavTitle">Airplanes, Airliners, Jets, and more 照片</span></h2></div><div id="Body" class="container">
+
+
+        <div title="Back to Browsing" class="faActionButton pointer faActionButtonLighter" style="float: left;">
+                <a href="/photos" id="backarrow">返回图片浏览</a>
+        </div>
+	
+
+	<div title="Upload Photos" class="faActionButton pointer faActionButtonLighter">
+		<a href="/photos/upload" id="uparrow"> 上传您的照片</a>
+	</div>
+
+        <div title="Share This" class="faActionButton pointer faActionButtonLighter" id="shareThisButton" style="float: left;">
+                <a id="downarrow"> 分享</a>
+        </div>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(document).ready(function(){
+
+    $('.photo_vote').click(function () {
+      $('#vote_message').html('Thanks!');
+      var scriptUrl = '/ajax/photo_vote.rvt';
+      var split = $(this).prop('id').split('_');
+      var dataStr = 'upload_id=' + split[1] + '&vote=' + split[0];
+      $.ajax({
+        type: "GET",
+        url: scriptUrl,
+        data: dataStr,
+        success: function(msg) {
+          if (msg == 'login') {
+            location.href = '/account/login.rvt';
+          }
+          if (msg == 'activate') {
+            $('#vote_message').html('<br/><a style="color: #ed8000;" href="/account/act">您需要验证您的电子邮件地址才能使用该功能。别担心，验证过程很简单。</a>');
+          } else {
+            //update the "stars" if necessary with the new average.
+            var msgSplit = msg.split('_');
+            var msgWithAverage = msgSplit[0].split(':');
+            for (i=1;i<6;i++) {
+              var myClasses = $('#'+i+'_'+split[1]).attr("class");
+              //if (myClasses) {
+              myClasses = myClasses.replace("fauxLink", "");
+              myClasses = myClasses.replace("photo_vote", "");
+              $('#'+i+'_'+split[1]).removeClass($.trim(myClasses));
+              //}
+              if (split[0] >= i) {
+                // star index should be "on"
+                $('#'+i+'_'+split[1]).attr('src','http://e0.flightcdn.com/images/stars/yellow_circle15_whole.gif');
+                //also get the yellow stars to stay, but they can vote again
+                $('#'+i+'_'+split[1]).addClass('yellow_circle15_whole');
+              } else {
+                $('#'+i+'_'+split[1]).attr('src','http://e0.flightcdn.com/images/stars/blue_circle15_empty.gif');
+                $('#'+i+'_'+split[1]).addClass('blue_circle15_empty');
+              }
+            }
+            // show confirmation upon success:
+            // this will break if we return a different string for new vote, or if we return "Thanks!" for another option as well.
+            // must match what is returned by vote.tcl
+            if ( msgWithAverage[0] == 'Thanks!' ) {
+              $('#vote_number').html(parseInt($('#vote_number').html()) + 1);
+            }
+            if ( msgWithAverage[1] && msgWithAverage[1] != "") {
+              $('#vote_average').html(msgWithAverage[1]);
+            }
+          }
+        }
+      });
+    });
+
+    $('img.photo_vote').mouseover(function () {
+      //make this star and all the previous stars hot (yellow)
+      var split = $(this).prop('id').split('_');
+      for (i=1;i<6;i++) {
+        if (i<=split[0]) {
+          $('#'+i+'_'+split[1]).attr('src','http://e0.flightcdn.com/images/stars/yellow_circle15_whole.gif');
+        } else {
+          $('#'+i+'_'+split[1]).attr('src','http://e0.flightcdn.com/images/stars/blue_circle15_empty.gif');
+        }
+      }
+    });
+
+    $('img.photo_vote').mouseout(function () {
+      //return star to what it had been using the img class, I guess:
+      var split = $(this).prop('id').split('_');
+      for (i=1;i<=6;i++) {
+        var myClasses = $('#'+i+'_'+split[1]).attr("class");
+        if (myClasses) {
+          myClasses = myClasses.replace("fauxLink", "");
+          myClasses = myClasses.replace("photo_vote", "");
+          myClasses = $.trim(myClasses);
+          $('#'+i+'_'+split[1]).attr('src','/images/stars/'+myClasses+'.gif');
+        }
+      }
+    });
+
+   $('span.adminAction').click(function () {
+        var split = $(this).prop('id').split(':');
+        var dataString = 'id=' + split[0] + '&action=' + split[1];
+	if (split.length > 2) {
+            var dataString = dataString + '&reason=' + split[2];
+        }
+
+        $.ajax({
+        type: "POST",
+        url: "/ajax/admin_photo_action.rvt",
+        data: dataString,
+        success: function(msg) {
+            $('span.'+split[1]).html(msg);
+		if (split[1] == 'zero_view_counts') {
+			$('#view_number').html('0');
+		}
+		//if (split[1] == 'halve_view_counts') {
+		//}
+            return false;
+        }
+      });
+   });
+
+  $('#reportPhoto').submit(function() {
+
+        // if the user has selected "other" or "stolen" (copyright infringement) then require comments
+	var radioVal = $("input[@name='abuseTypes']:checked").val();
+	if (radioVal == undefined) {
+	        $('#selectAbuseMessage').show();
+                return false;
+	} else if ($('#comments').val() == "" && (radioVal == 'stolen' || radioVal == 'other')) {
+		if (radioVal == 'stolen') {
+			alert('Please provide proof of copyright infringement in the Comments field.');
+		} else {
+			alert('Please provide details in the Comments field.');
+		}
+		$('#comments').focus();
+                return false;
+	}
+
+        var dataStr = $(this).serialize();
+        $.ajax({
+             type: "POST",
+             url: "/ajax/photo_report.rvt",
+             data: dataStr,
+             success: function(msg) {
+		$('#reportPhotoFormMessage').html('Thank you!');
+	        $('#reportPhotoForm').hide();
+             }
+       });
+
+       return false;
+  });
+
+    // if currentPhotoThumb offset is > x, then we are going to need to adjust the scroll to see it.
+    var centerPosition = (5 * 3) + (2 * 80) - 7;
+    var currentThumbOffset = 0;
+    if ($("#currentPhotoThumb").length) {
+	currentThumbOffset = $("#currentPhotoThumb").offset().top;
+    }
+    if ($("#thumbScroller").length) {
+        var relativeThumbPosition = currentThumbOffset - $("#thumbScroller").offset().top;
+    }
+    if ($("#thumbScroller").length >= 1 && relativeThumbPosition > centerPosition) {
+       var moveIt = relativeThumbPosition - centerPosition;
+      $("#thumbScroller").scrollTop(moveIt);
+    }
+
+ });
+
+
+function addAviationQuality(radio,upload_id)
+{
+    var dataString = 'upload_id=' + upload_id + '&aviation_quality='+radio.value;
+    $.ajax({
+        type: "POST",
+        url: "/ajax/aviation_quality_add.rvt",
+        data: dataString,
+        success: function(msg) {
+            //alert( dataString + ' ' + msg );
+            $('#aviationQualityUpdateMessage').html(jQuery.trim(msg));
+            return false;
+        }
+    });
+}
+
+</script>
+
+<div id="photoRatingArea">
+<div style="float: left; padding-right: 5px;">(<a href="/account/manage/">注册</a> 或 <a href="/account/login.rvt">登录</a>)</div>
+<span class="starsWrapper"><a href="/account/login.rvt"><img class="blue_circle15_empty" id="1_437731-439d9cc06d261f3072d3bf8af7530ef941c161b0" src="http://e0.flightcdn.com/images/stars/blue_circle15_empty.gif" width="15" height="15" title="Poor"><img class="blue_circle15_empty" id="2_437731-439d9cc06d261f3072d3bf8af7530ef941c161b0" src="http://e0.flightcdn.com/images/stars/blue_circle15_empty.gif" width="15" height="15" title="Below Average"><img class="blue_circle15_empty" id="3_437731-439d9cc06d261f3072d3bf8af7530ef941c161b0" src="http://e0.flightcdn.com/images/stars/blue_circle15_empty.gif" width="15" height="15" title="Average"><img class="blue_circle15_empty" id="4_437731-439d9cc06d261f3072d3bf8af7530ef941c161b0" src="http://e0.flightcdn.com/images/stars/blue_circle15_empty.gif" width="15" height="15" title="Good"><img class="blue_circle15_empty" id="5_437731-439d9cc06d261f3072d3bf8af7530ef941c161b0" src="http://e0.flightcdn.com/images/stars/blue_circle15_empty.gif" width="15" height="15" title="Excellent"></a></span>&nbsp;
+<span class="distinctNumerals"> <span id="vote_number">0</span> 投票數
+(<span id="vote_average">0.00</span> 平均)
+            和
+            <span id="view_number">352</span> 浏览 &nbsp;
+            <span id="vote_message" class="ajaxMessage"></span></span>
+</div><br>
+<table cellspacing="0" cellpadding="0" border="0"><tr>
+                <td style="vertical-align: top;"><img id="photo_main" border="0" src="http://e1.photos.flightcdn.com/photos/retriever/205dfd6614cfd573741ff5ec7bd201ec89ae6c10" width="640" height="427"></td>
+                <td style="vertical-align: top;" id="photoDetailThumbsCol">
+<div id="thumbScroller" style="height: 420px; overflow: hidden; position: relative;">
+
+</div>
+</td></tr></table>
+<div style="margin-bottom: 10px; width: 100%;">
+<span id="photo_size_selectors">
+<a data-size='fullsize' data-width='3600' data-height='2400' data-imgsrc='http://e1.photos.flightcdn.com/photos/retriever/f6bccb8363b237f15370d9c3482a3eafee0f08c4' href="/photos/view/photo/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0/size/fullsize"><img src="http://e0.flightcdn.com/images/icons/csMagGlass.png" alt="/images/icons/csMagGlass.png" style="width: 15px; height: 15px;" border="0" /></a>
+ <a data-size='vga' data-width='640' data-height='427' data-imgsrc='http://e1.photos.flightcdn.com/photos/retriever/205dfd6614cfd573741ff5ec7bd201ec89ae6c10' class='disabledGray' href="/photos/view/photo/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0/size/vga">中等</a>
+/ <a data-size='xga' data-width='1024' data-height='683' data-imgsrc='http://e0.photos.flightcdn.com/photos/retriever/fdfb62275b17f8d5711b294de43bfe5d27bc7485'  href="/photos/view/photo/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0/size/xga">大图</a>
+/ <a data-size='fullsize' data-width='3600' data-height='2400' data-imgsrc='http://e1.photos.flightcdn.com/photos/retriever/f6bccb8363b237f15370d9c3482a3eafee0f08c4'  href="/photos/view/photo/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0/size/fullsize">全尺寸</a>
+</span>
+
+<script type="text/javascript">
+                    $('#photo_size_selectors').find('a').click(function () {
+                            $('#photo_main').prop('src', $(this).attr('data-imgsrc'))
+                                    .prop('width', $(this).attr('data-width'))
+                                    .prop('height', $(this).attr('data-height'));
+    
+                            var clicksize = $(this).prop('data-size');
+                            $('#photo_size_selectors').find('a').each(function(index,elem) {
+                                    $(elem).toggleClass('disabledGray', $(elem).prop('data-size') == clicksize);
+                            });
+                            return false;
+                    });
+            </script>
+
+<div style="float: right;"><iframe
+    src="http://www.facebook.com/plugins/like.php?href=http://flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0&amp;layout=button_count&amp;show_faces=false&amp;width=120&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=21&amp;locale=zh_CN"
+    allowTransparency="true>
+    scrolling="no"
+    frameborder="0"
+    width="121"
+    height="22"
+    style="border:none; overflow:hidden; width:121px; height:22px;">
+    </iframe>&nbsp;<iframe
+	id="tweet_frame_1" name="tweet_frame_1"
+	allowtransparency="true"
+	frameborder="0"
+	role="presentation"
+	scrolling="no"
+	src="http://platform.twitter.com/widgets/tweet_button.html?url=http://zh.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0&amp;count=horizontal"
+	width="121" height="21">
+	</iframe></div>
+</div>
+<div id="shareThisDialog" title="Share This Photo" style="display: none;">
+		<table width="100%">
+    			<tr><th class="thirdHeader">Blog/Web Page</th><td><textarea id="html" style="width: 200px; height: 40px;" onClick="SelectAll('html')">&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;a href=&quot;http://flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0&quot;&gt;&lt;img src=&quot;http://e1.photos.flightcdn.com/photos/retriever/205dfd6614cfd573741ff5ec7bd201ec89ae6c10&quot; alt=&quot;FlightAware Photo&quot;  width=&quot;640&quot; height=&quot;427&quot; /&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align: right; font-style: italic; size: 10pt;;&quot;&gt;Photo Courtesy of FlightAware.com&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</textarea></td></tr>
+    			<tr><th class="thirdHeader">Web Forum</th><td><textarea id="webforum" style="width: 200px; height: 40px;" onClick="SelectAll('webforum')">[url=http://flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0][img]http://e1.photos.flightcdn.com/photos/retriever/205dfd6614cfd573741ff5ec7bd201ec89ae6c10[/img]Photo Courtesy of FlightAware.com[/url]</textarea></td></tr>
+    		</table>
+	   </div>
+<div class="photo_attribution">
+	<div class="photo_data">
+		<h2>—</h2>
+		<div class="timestamp">提交时间：<time datetime="2009-10-06T05:53:31Z" title="星期二 (2009年 10月 06日) 13:53 CST">3 年 以前</time></div>
+		<p></p>
+		<div class="photo_counts">
+			
+			
+			
+		</div>
+	</div>
+    <div class="attribution_box"><img class="floatLeft" src="http://e0.photos.flightcdn.com/photos/retriever/c7eab2768a8f333585d6de398c8c3f9c1364fa7b" height="36" width="36" /><div class="user_box"><span><a href="/user/trooperhughes">trooperhughes</a></span> <div class="badges badges_small"><a href="/account/endorsements/437731" title="Paparazzi: 上传超过100架飞机的照片（带标签）"><img src="http://e1.flightcdn.com/images/badges/22_small.png" height="29" width="55" alt="Paparazzi" /></a><a href="/account/endorsements/437731" title="Enthusiast: 上传了5张得到三星或以上评分的照片"><img src="http://e0.flightcdn.com/images/badges/23_small.png" height="29" width="55" alt="Enthusiast" /></a><a href="/account/endorsements/437731" title="Trusted friend: 成为会员满一年并且至少发布了一条新闻或一张照片"><img src="http://e0.flightcdn.com/images/badges/34_small.png" height="29" width="55" alt="Trusted friend" /></a><a href="/account/endorsements/437731" title="Honor Roll: 上传的一张照片被编辑推荐"><img src="http://e1.flightcdn.com/images/badges/11_small.png" height="29" width="55" alt="Honor Roll" /></a><a href="/account/endorsements/437731" title="业余摄影爱好者: 上传了一张照片"><img src="http://e0.flightcdn.com/images/badges/21_small.png" height="29" width="55" alt="业余摄影爱好者" /></a><a href="/account/endorsements/437731" title="Promoter: 发布了一条新闻"><img src="http://e1.flightcdn.com/images/badges/24_small.png" height="29" width="55" alt="Promoter" /></a><a href="/account/endorsements/437731" title="Announcer: 已完成所有用户资料字段"><img src="http://e0.flightcdn.com/images/badges/30_small.png" height="29" width="55" alt="Announcer" /></a><a href="/account/endorsements/437731" title="新手: 跟踪5个航班"><img src="http://e1.flightcdn.com/images/badges/40_small.png" height="29" width="55" alt="新手" /></a></div></div></div>
+
+	</div>
+<div class="greyAd">
+		<iframe
+		 name="FA_ads_952506"
+		 width="728" height="90" frameborder="0" style="display: block; margin: 0 auto;" scrolling="no"></iframe>
+		<script>var lazyload_ads = lazyload_ads || []; lazyload_ads.push(["FA_ads_952506", "//ad.doubleclick.net/adi/flight.main/photos;sz=728x90,468x60;aircraft_type=;dcove=d;destination=;destination_IATA=;destination_state=;ident=;lang=zh;locale=zh_CN;prefix=;type=ga;unitName=picture;userGen=t;dc_ref=http%3a%2f%2fflightaware.com%2fphotos%2fview%2f437731-439d9cc06d261f3072d3bf8af7530ef941c161b0?id=437731-439d9cc06d261f3072d3bf8af7530ef941c161b0;tile=2"]);</script>
+		<noscript>
+		 <iframe
+		  url="//ad.doubleclick.net/adi/flight.main/photos;sz=728x90,468x60;aircraft_type=;dcove=d;destination=;destination_IATA=;destination_state=;ident=;lang=zh;locale=zh_CN;prefix=;type=ga;unitName=picture;userGen=t;dc_ref=http%3a%2f%2fflightaware.com%2fphotos%2fview%2f437731-439d9cc06d261f3072d3bf8af7530ef941c161b0?id=437731-439d9cc06d261f3072d3bf8af7530ef941c161b0;tile=2;ord=28271716437"
+		  width="728" height="90" frameborder="0" style="display: block; margin: 0 auto;" scrolling="no"></iframe>
+		</noscript>
+		</div>
+  </div>
+
+  </td></tr></table>
+	 <div id="Footer">
+      <div id="footerLanguages">
+	  <a onclick="location.href='/account/locale_switch.rvt?locale=ar_SA'; return false;" href="http://ar.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">العربية</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=de_DE'; return false;" href="http://de.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Deutsch</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=en_GB'; return false;" href="http://uk.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">English (UK)</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=en_US'; return false;" href="http://flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">English (USA)</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=es_ES'; return false;" href="http://es.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Español (España)</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=fr_FR'; return false;" href="http://fr.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Français</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=he_IL'; return false;" href="http://he.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">עִבְרִית</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=it_IT'; return false;" href="http://it.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Italiano</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=ja_JP'; return false;" href="http://ja.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">日本語</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=ko_KR'; return false;" href="http://ko.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">한국어</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=nl_NL'; return false;" href="http://nl.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Nederlands</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=pt_BR'; return false;" href="http://pt.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Português</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=ru_RU'; return false;" href="http://ru.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Русский</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=sv_SE'; return false;" href="http://sv.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Svenska</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=tr_TR'; return false;" href="http://tr.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">Türkçe</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=zh_CN'; return false;" href="http://zh.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">中文(简体)</a> | <a onclick="location.href='/account/locale_switch.rvt?locale=zh_TW'; return false;" href="http://zh-tw.flightaware.com/photos/view/437731-439d9cc06d261f3072d3bf8af7530ef941c161b0">中文(台灣)</a>
+	  </div>
+      <div id="footerCopyright">
+	  &copy; 2012 FlightAware | <a href="/about/termsofuse">使用条款</a>  | <a href="/about/privacy">隐私保护</a> | <a href="/about/faq.rvt">常见问题</a>
+	  </div>
+	  
+   </div>
+   </div>
+   <script>var lazyload_scripts = [];</script>
+<div id="fb-root"></div><script>if (document.getElementById('plusonediv') && document.querySelector) lazyload_scripts.push('http://e1.flightcdn.com/include/Google.plusone.js');</script>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_CN/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script><script>if (typeof flightpush_file !== 'undefined') lazyload_scripts.push(flightpush_file);</script>
+<script>_qoptions = { qacct: 'p-16S-sAgkGlgVs'  }; lazyload_scripts.push('http://edge.quantserve.com/quant.js');</script>
+<noscript><img src='http://pixel.quantserve.com/pixel/p-16S-sAgkGlgVs.gif' style='display: none;' height='1' width='1' alt=''></noscript>
+<script>var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-498336-1'], ['_trackPageview'], ['_setVar', 'CN CN/zh_CN'], ['_initData'], ['_setCustomVar', 2, 'Account Type', 'No Account', 1]); lazyload_scripts.push('http://www.google-analytics.com/ga.js');</script>
+<script>var _comscore = [{ c1: '2', c2: '8950477' }]; lazyload_scripts.push('http://sb.scorecardresearch.com/beacon.js');</script>
+<script type='text/javascript'>
+			function lazyLoad() {
+	var rand = Math.floor(Math.random() * 10E6);
+	if (typeof lazyload_ads !== "undefined") for (var x = 0; x < lazyload_ads.length; x++) {
+		window.frames[lazyload_ads[x][0]].location.replace(lazyload_ads[x][1] + ";ord=" + rand);
+	}
+	for (var x = 0; x < lazyload_scripts.length; x++) {
+		var el = document.createElement('script'); el.type = 'text/javascript'; el.async = true; el.src = lazyload_scripts[x];
+		document.getElementsByTagName('head')[0].appendChild(el);
+	}
+}
+if (typeof window.addEventListener !== 'undefined') window.addEventListener('load', lazyLoad, false);
+else if (typeof window.attachEvent !== 'undefined') window.attachEvent('onload', lazyLoad);
+else lazyLoad();
+</script>
+ </body>
+</html>
+

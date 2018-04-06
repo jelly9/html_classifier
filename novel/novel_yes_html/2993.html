@@ -1,0 +1,401 @@
+<html>
+<head>
+    <title>
+        速度决定命运
+        //起点中文网_小说下载|玄幻小说|武侠小说|言情小说|都市小说|历史小说|军事小说|科幻小说...</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="keywords" content="小说,玄幻小说,书库,武侠小说,言情小说,网游,奇幻,历史小说,军事小说" />
+    <meta name="description" content="小说,玄幻小说,书库,武侠小说,言情小说,网游,奇幻,历史小说,军事小说" />
+    <link href="/style/readvolume.css?t=110110" type="text/css" rel="stylesheet"
+        id="lnkStyle" />
+        <link href="/style/qdbp_pop.css?_20140504105450" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/JavaScript/CmfuAjax.js?t=130902"></script>
+    <script src="/Javascript/main.htm?_20140504105515" type="text/javascript"></script>
+    <style type="text/css">
+        .MaskDiv { z-index: 999; filter: alpha(opacity=30); left: 0px; width: 1024px; position: absolute; top: 0px; background: transparent; text-align: center; opacity: 0.4; moz-opacity: 0.4; }
+    </style>
+    <script type="text/javascript">
+		var Page_Data = {
+			PopUrl : "http://act.qidian.com/main",
+			IsHaveMonthTicket: 0,
+            IsHaveDaShang: 1,
+            IsHaveUpdateTicket:0,
+            CmfuUrl:"http://www.qidian.com/",
+            bookName:"速度决定命运",
+            bookId:1528253,
+            authorId:1901044,
+            bookType:1,
+            CategoryId:9,
+            IsNewBookReaderUrl:'1',
+            IsVip:'0'
+		};
+    </script>
+    <script type="text/javascript" src="/Javascript/ReadVolume.js?t=20141125_20150122171802">    </script>
+    <script type="text/javascript" src="/JavaScript/ChapterPageHeader.js?t=20141125_20150122171802"></script>
+</head>
+<body bgcolor="#f6fbfd">
+    <script type="text/javascript">
+        var enableCoverPingbaSite = 'True';
+        var toolBarUrl = 'http://c.pingba.qidian.com/BarFrm.aspx?BgColor=f6fbfd&BookId=1528253&BookName=%E9%80%9F%E5%BA%A6%E5%86%B3%E5%AE%9A%E5%91%BD%E8%BF%90';
+        if (enableCoverPingbaSite.toLowerCase() == "true") {
+            //document.domain = "qidian.com"; //跨域引用
+            if (document.location.href.toLowerCase().indexOf("qidianmm.com") > 0) {
+                document.domain = "qidianmm.com";
+            }
+            if (document.location.href.toLowerCase().indexOf("qdmm.com") > 0) {
+                document.domain = "qdmm.com";
+            }
+            if (document.location.href.toLowerCase().indexOf("qidian.com") > 0) {
+                document.domain = "qidian.com";
+            }
+        }
+        if (document.all) {
+            document.oncontextmenu = showmenuie5;
+            document.onmousedown = click1;
+            document.onselectstart = OnSelectText;
+
+        } else {
+            document.oncontextmenu = function(event) { return showmenuie5(event); }
+            document.onmousedown = function(event) { return click1(event); }
+            document.onselectstart = function(event) { return OnSelectText(event); }
+        }
+    </script>
+    <form id="form1">
+    <script type="text/javascript" src="http://uedas.qidian.com/javascript/statlib.js"></script><script type="text/javascript">CmfuTracker();</script><script type='text/javascript' src='http://uedas.qidian.com/javascript/dw_beacon.js'></script>
+
+    <div class="nav" style="text-align: right" align="center">
+    <table border="0" cellpadding="0" cellspacing="0" width="95%" height="24" align="center">
+        <tr>
+            <td width="260" align="left">
+                <b>小说阅读页</b>&nbsp;读书在起点·原创无极限
+            </td>
+            <td align="right">
+                <a href="http://www.qidian.com/Default.aspx" id="HomeUrl">
+                    起点首页</a>│ <a href="ReadChapterFlash.aspx?Bookid=1528253" target="_blank">
+                        全文阅读</a>│ <a href="#" style="color: Red" onclick="addBookMark('1528253','0');">
+                            加入书架书签</a>│ <a href="#" style="color: Red" onclick="return recomBook('1528253');">
+                                投推荐票</a>│ <a href="http://me.qidian.com/BookCase/1/1" onclick="return checkAuth();"
+                                    target="_blank">打开书架</a>│ <a href="http://me.qidian.com/author/authorLogin.aspx" target="_blank">
+                                        申请作家</a>│ <a href="http://www.qidian.com/Book/1528253.aspx" target="_top" id="bookUrl">
+                                            返回书页</a>│ <a href="http://read.qidian.com/BookReader/1528253.aspx" target="_top">返回书目</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<script language="javascript">
+
+function addBookMark(bookId,chapterId)
+{
+	if (!checkLoginByCookie()) {
+		//if(window.enableTempBookshelf) tbsAddBook(Page_Data.bookId, Page_Data.bookName);
+        //else 
+            ShowBook.ShowPoP.Login();
+        return false;
+    }
+	if(chapterId=='0')
+    	MyAjax.AddBookCaseWithDynamic(Page_Data.bookId, Page_Data.bookName, ShowCallBack);
+	else
+		MyAjax.AddBookMark(bookId,chapterId,ShowCallBack);
+    return false;
+}
+
+function recomBook(bookId)
+{
+	ShowBook.ShowPoP.Show('poptj');
+    
+   return false; 
+}
+
+function mobileAwake(bookId)
+{
+   MyAjax.AddUpdateAwake(bookId ,ShowCallBack);
+   return false; 
+}
+
+
+function monthVote(bookId)
+{
+   MyAjax.MonthVote(bookId,ShowMonthVote);
+   return false; 
+}
+
+var monthIframe = "<iframe id='monthIframe' src='/BookReader/Tips/MonthVote.aspx' style='width:355px;height:222px;' scrolling='no' frameborder='0'></iframe>";
+var vipMonthIframe = "<iframe id='VipMonthIframe' src='' style='width:355px;height:200px;' scrolling='no' frameborder='0'></iframe>";
+
+function ShowMonthVote(res)
+{
+   if(res!=null)
+   {
+     //res.value = "不是VIP会员！" ;
+     var returnValue = res.value.toLowerCase();
+     if(! checkLogin(returnValue,"您还没有登录系统，或者登录已过期，请登录后再进行操作") ) 
+     {
+        return;
+     }
+     if(returnValue.indexOf('vip') > -1)
+     {
+        //非VIP用户 显示非VIP的消息提示窗体
+        var obj = $("AddMark");
+        $("MonthVoteTip").style.left = getPosition(obj).x - 360 + "px";
+        $("MonthVoteTip").style.top = getPosition(obj).y - obj.offsetHeight + "px";
+        $("MonthVoteTip").innerHTML = monthIframe;
+        return;
+     }      
+     //默认为VIP用户 显示VIP的消息提示窗体
+    if(returnValue.indexOf('成功') > -1) 
+     {  
+         var obj = $("AddMark");
+         $("MonthVoteTip").style.left = getPosition(obj).x - 360 + "px";
+         $("MonthVoteTip").style.top = getPosition(obj).y - obj.offsetHeight + "px";
+         $("MonthVoteTip").innerHTML = vipMonthIframe;
+         $("VipMonthIframe").src="/BookReader/Tips/VipMonthVote.aspx?name=" + $("inputBookName").value + "&left=";
+     } 
+    
+     var value = returnValue.replace("\n","");
+     eval(value);  
+   }
+}
+
+function ShowCallBack(res)
+{
+   if(res!=null)
+   {
+     var returnValue = res.value.toLowerCase();
+     if(! checkLogin(returnValue,"您还没有登录系统，或者登录已过期，请登录后再进行操作") ) 
+     {
+        return;
+     }
+     var value = returnValue.replace("\n","");
+     eval(value);
+   }  
+}
+
+function HideMonthIframe()
+{
+  if($("monthIframe"))
+  {
+    $("monthIframe").style.display="none";
+  }
+  if($("VipMonthIframe"))
+  {
+    $("VipMonthIframe").style.display="none";
+  }
+}
+
+//查看是否登录，未登录则弹出登录框
+function checkLogin(result,msg)
+{
+   if(result.indexOf("登录")>=0)
+   {
+       showLogin(msg,true);
+       return false; 
+   } 
+   return true; 
+}
+
+function checkAuth()
+{
+    if(checkLoginByCookie())
+        return true;
+     else
+     {
+          showLogin(msg,true);
+          return false; 
+     }  
+}
+
+</script>
+
+
+    <div align="center">
+    </div>
+    <div id="leftmenu" style="width: 80%; float: left;">
+        <br />
+        <p align="center">
+            <b><span id="lbBookName" class="bkt">速度决定命运</span></b></p>
+            
+          <div class='chat'><b></b>    分卷阅读 </div><div class=list><table cellspacing=0 cellpadding=1 border=0 style='width:95%' class='chplisttable'><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-03-20 22:05:35 字数:2039'  href='#27089548' class='BookName'> 第 .一. 章：【死寂的生活】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-21 23:11:21 字数:3040'  href='#27102422' class='BookName'> 第 .二. 章：【变异的家庭】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-22 13:46:32 字数:2221'  href='#27107254' class='BookName'> 第 .三. 章：【不公的现实】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-03-22 15:23:46 字数:3494'  href='#27108114' class='BookName'> 第 .四. 章：【无力的爱情】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-22 15:24:36 字数:3321'  href='#27108123' class='BookName'> 第 .五. 章：【意外的发现】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-22 15:25:16 字数:3336'  href='#27108131' class='BookName'> 第 .六. 章：【大胆的尝试】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-03-22 15:26:18 字数:2929'  href='#27108141' class='BookName'> 第 .七. 章：【孩子的心声】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-23 12:17:23 字数:2459'  href='#27117900' class='BookName'> 第 .八. 章：【尴尬的境遇】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-24 14:32:11 字数:2606'  href='#27131198' class='BookName'> 第 .九. 章：【特殊的朋友】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-03-26 13:29:43 字数:2138'  href='#27154710' class='BookName'> 第 .十. 章：【善意的收留】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-27 12:23:09 字数:2402'  href='#27166220' class='BookName'> 第 十一 章：【米饭的情缘】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-28 13:03:02 字数:2686'  href='#27178702' class='BookName'> 第 十二 章：【热闹的家庭】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-03-29 12:30:11 字数:2045'  href='#27190751' class='BookName'> 第 十三 章：【繁华的车城】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-30 12:11:29 字数:2628'  href='#27203481' class='BookName'> 第 十四 章：【新鲜的开始】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-03-31 12:35:38 字数:2299'  href='#27217188' class='BookName'> 第 十五 章：【奇怪的老人】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-01 12:45:10 字数:2163'  href='#27230252' class='BookName'> 第 十六 章：【莫名的感觉】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-02 12:39:38 字数:2425'  href='#27241654' class='BookName'> 第 十七 章：【美丽的风景】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-03 12:29:04 字数:2315'  href='#27253534' class='BookName'> 第 十八 章：【姐妹的情谊】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-04 13:11:03 字数:2382'  href='#27265610' class='BookName'> 第 十九 章：【危险的遭遇】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-05 12:35:25 字数:2358'  href='#27277218' class='BookName'> 第 二十 章：【一人的战役】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-06 12:52:54 字数:2416'  href='#27289176' class='BookName'> 第二十一章：【挺好的结果】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-07 13:02:04 字数:2375'  href='#27300627' class='BookName'> 第二十二章：【姗姗的身世】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-10 12:22:18 字数:2309'  href='#27334182' class='BookName'> 第二十三章：【姗姗的烦恼】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-11 12:38:40 字数:2528'  href='#27345965' class='BookName'> 第二十四章：【苦中的乐趣】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-15 12:28:30 字数:2459'  href='#27392747' class='BookName'> 第二十五章：【绍峰的转变】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-16 12:35:14 字数:2515'  href='#27404112' class='BookName'> 第二十六章：【绍峰的师傅】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-17 13:28:08 字数:2627'  href='#27415921' class='BookName'> 第二十七章：【正式的拜师】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-18 12:33:24 字数:2206'  href='#27426835' class='BookName'> 第二十八章：【同事的结识】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-19 12:35:39 字数:2596'  href='#27438469' class='BookName'> 第二十九章：【同事的认知】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-20 12:51:59 字数:2544'  href='#27449814' class='BookName'> 第 三十 章：【工作的开始】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-21 16:50:34 字数:2484'  href='#27463616' class='BookName'> 第三十一章：【绍峰的心情】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-22 21:34:05 字数:2191'  href='#27479855' class='BookName'> 第三十二章：【尊严的侮辱】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-23 20:54:10 字数:2451'  href='#27490057' class='BookName'> 第三十三章：【辱人的代价】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-25 09:29:59 字数:2433'  href='#27505912' class='BookName'> 第三十四章：【冷静的头脑】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-25 15:36:55 字数:2396'  href='#27509627' class='BookName'> 第三十五章：【善意的收买】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-25 21:33:32 字数:2288'  href='#27514229' class='BookName'> 第三十六章：【有钱的感觉】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-26 09:30:00 字数:2434'  href='#27518081' class='BookName'> 第三十七章：【小姐的服务】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-26 15:39:28 字数:2360'  href='#27521404' class='BookName'> 第三十八章：【小姐的人格】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-27 10:20:25 字数:2615'  href='#27529811' class='BookName'> 第三十九章：【店铺的老板】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-27 21:28:05 字数:2276'  href='#27536982' class='BookName'> 第 四十 章：【店面的问题】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-28 12:27:57 字数:2230'  href='#27542452' class='BookName'> 第四十一章：【深刻的反思】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-04-28 21:25:00 字数:2452'  href='#27548680' class='BookName'> 第四十二章：【我们的基地】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-04-29 09:31:26 字数:2414'  href='#27552453' class='BookName'> 第四十三章：【房子的搞定】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-05-29 00:04:36 字数:2428'  href='#27893659' class='BookName'> 第四十四章：【开心的消费】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-05-29 00:05:59 字数:2317'  href='#27893670' class='BookName'> 第四十五章：【店铺的话题】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-05-29 00:07:37 字数:2331'  href='#27893692' class='BookName'> 第四十六章：【铃儿的个性】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-07-16 10:03:02 字数:2286'  href='#28461015' class='BookName'> 第四十七章：【基地的会合】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-07-17 09:57:25 字数:2109'  href='#28473777' class='BookName'> 第四十八章：【我们的乐趣】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-07-18 09:10:53 字数:2116'  href='#28484733' class='BookName'> 第四十九章：【自己的房间】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-07-18 22:48:37 字数:2168'  href='#28493336' class='BookName'> 第 五十 章：【愉快的早晨】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-07-19 10:06:03 字数:2107'  href='#28496646' class='BookName'> 第五十一章：【奇怪的员工】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-07-19 15:22:30 字数:2133'  href='#28500013' class='BookName'> 第五十二章：【店铺的谈判】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-07-20 09:25:30 字数:2346'  href='#28509305' class='BookName'> 第五十三章：【神秘的女孩】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-07-20 20:31:07 字数:2317'  href='#28517528' class='BookName'> 第五十四章：【正式的接手】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-07-23 17:37:30 字数:2292'  href='#28555594' class='BookName'> 第五十五章：【秘密的联盟】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-07-24 17:47:13 字数:2474'  href='#28567180' class='BookName'> 第五十六章：【智慧的对弈】</a></td><td style='width:33%' class='chptd'><a title='更新时间：2010-07-25 18:13:39 字数:2462'  href='#28578698' class='BookName'> 第五十七章：【尴尬的一吻】</a></td></tr><tr><td style='width:33%' class='chptd'><a title='更新时间：2010-09-29 10:14:57 字数:2280'  href='#29401749' class='BookName'> 第五十八章：【开张的准备】</a></td></tr></table></div>
+        <br />
+        <br />
+        <div id="content" style="font-size: 10.5pt; color: black; line-height: 180%;
+            padding-left: 10; padding-right: 10; font-weight: normal; word-wrap: break-word;
+            table-layout: fixed; word-break: break-all;" align="left">
+            <div align=center> <a style='font-size:14px;color:blue' name=27089548>第 .一. 章：【死寂的生活】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-20 22:05:35字数:2039</div></div><br><script src='http://files.qidian.com/Author6/1528253/27089548.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27102422>第 .二. 章：【变异的家庭】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-21 23:11:21字数:3040</div></div><br><script src='http://files.qidian.com/Author6/1528253/27102422.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27107254>第 .三. 章：【不公的现实】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-22 13:46:32字数:2221</div></div><br><script src='http://files.qidian.com/Author6/1528253/27107254.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27108114>第 .四. 章：【无力的爱情】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-22 15:23:46字数:3494</div></div><br><script src='http://files.qidian.com/Author6/1528253/27108114.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27108123>第 .五. 章：【意外的发现】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-22 15:24:36字数:3321</div></div><br><script src='http://files.qidian.com/Author6/1528253/27108123.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27108131>第 .六. 章：【大胆的尝试】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-22 15:25:16字数:3336</div></div><br><script src='http://files.qidian.com/Author6/1528253/27108131.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27108141>第 .七. 章：【孩子的心声】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-22 15:26:18字数:2929</div></div><br><script src='http://files.qidian.com/Author6/1528253/27108141.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27117900>第 .八. 章：【尴尬的境遇】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-23 12:17:23字数:2459</div></div><br><script src='http://files.qidian.com/Author6/1528253/27117900.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27131198>第 .九. 章：【特殊的朋友】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-24 14:32:11字数:2606</div></div><br><script src='http://files.qidian.com/Author6/1528253/27131198.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27154710>第 .十. 章：【善意的收留】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-26 13:29:43字数:2138</div></div><br><script src='http://files.qidian.com/Author6/1528253/27154710.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27166220>第 十一 章：【米饭的情缘】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-27 12:23:09字数:2402</div></div><br><script src='http://files.qidian.com/Author6/1528253/27166220.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27178702>第 十二 章：【热闹的家庭】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-28 13:03:02字数:2686</div></div><br><script src='http://files.qidian.com/Author6/1528253/27178702.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27190751>第 十三 章：【繁华的车城】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-29 12:30:11字数:2045</div></div><br><script src='http://files.qidian.com/Author6/1528253/27190751.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27203481>第 十四 章：【新鲜的开始】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-30 12:11:29字数:2628</div></div><br><script src='http://files.qidian.com/Author6/1528253/27203481.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27217188>第 十五 章：【奇怪的老人】</a><div style='font-size:12px;color:blue'>更新时间：2010-03-31 12:35:38字数:2299</div></div><br><script src='http://files.qidian.com/Author6/1528253/27217188.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27230252>第 十六 章：【莫名的感觉】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-01 12:45:10字数:2163</div></div><br><script src='http://files.qidian.com/Author6/1528253/27230252.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27241654>第 十七 章：【美丽的风景】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-02 12:39:38字数:2425</div></div><br><script src='http://files.qidian.com/Author6/1528253/27241654.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27253534>第 十八 章：【姐妹的情谊】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-03 12:29:04字数:2315</div></div><br><script src='http://files.qidian.com/Author6/1528253/27253534.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27265610>第 十九 章：【危险的遭遇】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-04 13:11:03字数:2382</div></div><br><script src='http://files.qidian.com/Author6/1528253/27265610.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27277218>第 二十 章：【一人的战役】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-05 12:35:25字数:2358</div></div><br><script src='http://files.qidian.com/Author6/1528253/27277218.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27289176>第二十一章：【挺好的结果】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-06 12:52:54字数:2416</div></div><br><script src='http://files.qidian.com/Author6/1528253/27289176.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27300627>第二十二章：【姗姗的身世】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-07 13:02:04字数:2375</div></div><br><script src='http://files.qidian.com/Author6/1528253/27300627.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27334182>第二十三章：【姗姗的烦恼】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-10 12:22:18字数:2309</div></div><br><script src='http://files.qidian.com/Author6/1528253/27334182.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27345965>第二十四章：【苦中的乐趣】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-11 12:38:40字数:2528</div></div><br><script src='http://files.qidian.com/Author6/1528253/27345965.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27392747>第二十五章：【绍峰的转变】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-15 12:28:30字数:2459</div></div><br><script src='http://files.qidian.com/Author6/1528253/27392747.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27404112>第二十六章：【绍峰的师傅】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-16 12:35:14字数:2515</div></div><br><script src='http://files.qidian.com/Author6/1528253/27404112.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27415921>第二十七章：【正式的拜师】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-17 13:28:08字数:2627</div></div><br><script src='http://files.qidian.com/Author6/1528253/27415921.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27426835>第二十八章：【同事的结识】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-18 12:33:24字数:2206</div></div><br><script src='http://files.qidian.com/Author6/1528253/27426835.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27438469>第二十九章：【同事的认知】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-19 12:35:39字数:2596</div></div><br><script src='http://files.qidian.com/Author6/1528253/27438469.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27449814>第 三十 章：【工作的开始】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-20 12:51:59字数:2544</div></div><br><script src='http://files.qidian.com/Author6/1528253/27449814.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27463616>第三十一章：【绍峰的心情】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-21 16:50:34字数:2484</div></div><br><script src='http://files.qidian.com/Author6/1528253/27463616.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27479855>第三十二章：【尊严的侮辱】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-22 21:34:05字数:2191</div></div><br><script src='http://files.qidian.com/Author6/1528253/27479855.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27490057>第三十三章：【辱人的代价】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-23 20:54:10字数:2451</div></div><br><script src='http://files.qidian.com/Author6/1528253/27490057.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27505912>第三十四章：【冷静的头脑】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-25 09:29:59字数:2433</div></div><br><script src='http://files.qidian.com/Author6/1528253/27505912.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27509627>第三十五章：【善意的收买】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-25 15:36:55字数:2396</div></div><br><script src='http://files.qidian.com/Author6/1528253/27509627.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27514229>第三十六章：【有钱的感觉】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-25 21:33:32字数:2288</div></div><br><script src='http://files.qidian.com/Author6/1528253/27514229.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27518081>第三十七章：【小姐的服务】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-26 09:30:00字数:2434</div></div><br><script src='http://files.qidian.com/Author6/1528253/27518081.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27521404>第三十八章：【小姐的人格】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-26 15:39:28字数:2360</div></div><br><script src='http://files.qidian.com/Author6/1528253/27521404.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27529811>第三十九章：【店铺的老板】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-27 10:20:25字数:2615</div></div><br><script src='http://files.qidian.com/Author6/1528253/27529811.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27536982>第 四十 章：【店面的问题】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-27 21:28:05字数:2276</div></div><br><script src='http://files.qidian.com/Author6/1528253/27536982.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27542452>第四十一章：【深刻的反思】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-28 12:27:57字数:2230</div></div><br><script src='http://files.qidian.com/Author6/1528253/27542452.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27548680>第四十二章：【我们的基地】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-28 21:25:00字数:2452</div></div><br><script src='http://files.qidian.com/Author6/1528253/27548680.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27552453>第四十三章：【房子的搞定】</a><div style='font-size:12px;color:blue'>更新时间：2010-04-29 09:31:26字数:2414</div></div><br><script src='http://files.qidian.com/Author6/1528253/27552453.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27893659>第四十四章：【开心的消费】</a><div style='font-size:12px;color:blue'>更新时间：2010-05-29 00:04:36字数:2428</div></div><br><script src='http://files.qidian.com/Author6/1528253/27893659.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27893670>第四十五章：【店铺的话题】</a><div style='font-size:12px;color:blue'>更新时间：2010-05-29 00:05:59字数:2317</div></div><br><script src='http://files.qidian.com/Author6/1528253/27893670.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=27893692>第四十六章：【铃儿的个性】</a><div style='font-size:12px;color:blue'>更新时间：2010-05-29 00:07:37字数:2331</div></div><br><script src='http://files.qidian.com/Author6/1528253/27893692.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28461015>第四十七章：【基地的会合】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-16 10:03:02字数:2286</div></div><br><script src='http://files.qidian.com/Author6/1528253/28461015.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28473777>第四十八章：【我们的乐趣】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-17 09:57:25字数:2109</div></div><br><script src='http://files.qidian.com/Author6/1528253/28473777.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28484733>第四十九章：【自己的房间】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-18 09:10:53字数:2116</div></div><br><script src='http://files.qidian.com/Author6/1528253/28484733.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28493336>第 五十 章：【愉快的早晨】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-18 22:48:37字数:2168</div></div><br><script src='http://files.qidian.com/Author6/1528253/28493336.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28496646>第五十一章：【奇怪的员工】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-19 10:06:03字数:2107</div></div><br><script src='http://files.qidian.com/Author6/1528253/28496646.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28500013>第五十二章：【店铺的谈判】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-19 15:22:30字数:2133</div></div><br><script src='http://files.qidian.com/Author6/1528253/28500013.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28509305>第五十三章：【神秘的女孩】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-20 09:25:30字数:2346</div></div><br><script src='http://files.qidian.com/Author6/1528253/28509305.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28517528>第五十四章：【正式的接手】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-20 20:31:07字数:2317</div></div><br><script src='http://files.qidian.com/Author6/1528253/28517528.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28555594>第五十五章：【秘密的联盟】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-23 17:37:30字数:2292</div></div><br><script src='http://files.qidian.com/Author6/1528253/28555594.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28567180>第五十六章：【智慧的对弈】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-24 17:47:13字数:2474</div></div><br><script src='http://files.qidian.com/Author6/1528253/28567180.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=28578698>第五十七章：【尴尬的一吻】</a><div style='font-size:12px;color:blue'>更新时间：2010-07-25 18:13:39字数:2462</div></div><br><script src='http://files.qidian.com/Author6/1528253/28578698.txt'  charset='GB2312'></script><br><div align=center> <a style='font-size:14px;color:blue' name=29401749>第五十八章：【开张的准备】</a><div style='font-size:12px;color:blue'>更新时间：2010-09-29 10:14:57字数:2280</div></div><br><script src='http://files.qidian.com/Author6/1528253/29401749.txt'  charset='GB2312'></script><br>
+        </div>
+        <div style="font-size: 14px; font-weight: bold; text-align: center">
+            <a id="aVipLink" target="_blank" style="color: #004D00"></a>
+        </div>
+        <br>
+        <div align="center" class="setb" style="width: 95%">
+    <a href="http://forum.qidian.com/NewForum/List.aspx?bookId=1528253" target="_blank">参与本书讨论</a>&nbsp;|&nbsp;
+    <a href="http://www.qidian.com/BookReader/MailBook.aspx?bookId=1528253" target="_blank">向朋友推荐</a>&nbsp;|&nbsp;
+    <a href="#" onclick="return addBookMark('1528253','0');">加入书架书签</a>&nbsp;|&nbsp;
+    <a href="#" onclick="return recomBook('1528253')" target="frmTarget">投推荐票</a>&nbsp;|&nbsp;
+    <a href='http://me.qidian.com/BookCase/1/1' onclick="return checkAuth();" target="_blank">打开书架</a>&nbsp;|&nbsp;
+    <a href='#' onclick="return AddUpdateAwake('1528253');" target='_blank'>手机更新提醒</a>&nbsp;|&nbsp;
+    <a href="http://www.qidian.com/Book/1528253.aspx" target="_top">返回书页</a>
+</div>
+<script>
+//添加手机提醒
+        function AddUpdateAwake(bookId)
+        {
+            if(confirm('每提醒一条短信需要从您的起点账号扣除10起点币！\r\n您确定要加入更新提醒吗？'))
+            {
+                 MyAjax.AddUpdateAwake(bookId ,ShowServerMessage);
+            }
+            return false;
+        }
+        function ShowServerMessage(result)
+        {
+            if(result!=null) 
+            {
+            if(result.value.indexOf("alert")>=0 || result.value.indexOf("confirm")>=0)
+                eval(result.value);
+               else
+               {
+               alert(result.value);
+               }
+                
+            } 
+        }
+</script>
+    </div>
+    <div id="showTB" style="width: 10px; float: right; vertical-align: top;">
+        <table height="800px" cellspacing="0" cellpadding="0" border="0">
+            <tr>
+                <td id="toolbarTD" valign="top" align="right">
+                    <a target="frmBar" onmousemove="showTitle(this);" href="http://c.pingba.qidian.com/BarFrm.aspx?BgColor=f6fbfd&BookId=1528253&BookName=%E9%80%9F%E5%BA%A6%E5%86%B3%E5%AE%9A%E5%91%BD%E8%BF%90"
+                        onclick="javascript:toolBar()">
+                        <div id="toolDiv" align="right" style="width: 25px" onmouseover="this.style.coursor='hand';">
+                        </div>
+                    </a>
+                </td>
+                <td id="showTD" valign="top" align="left" width="185">
+                    <iframe id="frmBar" name="frmBar" height="100%" src="" width="185" frameborder="no"
+                        onload="iframeFitHeight(this)" scrolling="no" marginheight="0" marginwidth="0"
+                        style="border: 0; background-color: #f6fbfd"></iframe>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <script type="text/javascript">initSidebar();</script>
+    <!------ 女频的下拉式广告 -->
+    <div>
+        <span style="font-size: 1px; width: 95%; color: #E7F4FE">.</span>
+        <!--兼容火狐浏览器-->
+         <center>
+    <div class="ad"  style="width:95%">
+      
+    </div>
+    </center>    
+
+<script type="text/javascript" src='http://ufile.7pk.com/Flashget_union_bd_package.php?fg_uid=592'></script>
+<script type="text/javascript" src="/javascript/Flashget_base64.js?_20140504105515"></script>
+
+<table border="0" cellpadding="0" cellspacing="0" width="95%"  class="navb">
+    <tr>
+   
+        <td width="60%" align="center" >
+            &nbsp;<a href='http://all.qidian.com/default.aspx'  target="_blank">书库首页</a> | <a href="http://top.qidian.com/default.aspx"  id="OrderUrl">排行榜</a> | 
+            <a href='http://sosu.qidian.com/'
+                target="_blank">搜书</a> | <a href="http://sq.qidian.com/Hot/HotIndex.aspx" 
+         target=_blank>专题</a>
+            | <a href='http://sq.qidian.com/Club/ClubIndex.aspx'  target=_blank>俱乐部</a>
+ 
+ 
+ 
+        </td>
+    <!-- 书库首页 | 排行榜 | 搜书 | 专题 | 个人空间 | 俱乐部-->
+        <td width="40%" align="right"  >
+            &nbsp;&nbsp;
+            <select name="ColorSetting" id="ColorSetting" size="1">
+                <option value="0">阅读底色..</option>
+                <option value="2" style='background-color: #E9FAFF'>淡蓝海洋 </option>
+                <option value="3" style='background-color: #FFFFED'>明黄清俊 </option>
+                <option value="4" style='background-color: #eefaee'>绿意淡雅 </option>
+                <option value="5" style='background-color: #FCEFFF'>红粉世家 </option>
+                <option value="6" style='background-color: #ffffff'>白雪天地 </option>
+                <option value="7" style='background-color: #efefef'>灰色世界 </option>
+            </select> 
+            <select name="FontSetting" id="FontSetting" size="1">
+                <option value="0">字体大小..</option>
+                <option value="2">小 </option>
+                <option value="3">中 </option>
+                <option value="4">中大 </option>
+                <option value="5">大 </option>
+                <option value="6">很大 </option>
+                <option value="7">更大 </option>  
+            </select>
+            <input type="button" id="btnSetStyle" value="提交设置" onclick="setUserStyle();" />&nbsp;
+        </td>
+    </tr>
+</table>
+
+<script>
+function setUserStyle() {
+    var _domain='.qidian.com';
+    SetCookie("rc", 0, (new Date()).AddDays(-1),'/');//清除2级域的cookie
+    SetCookie("rf", 0, (new Date()).AddDays(-1),'/');//清除2级域的cookie
+    document.body.style.backgroundColor=getClientColor($("ColorSetting").value);
+    SetCookie("rc", $("ColorSetting").value, (new Date()).AddDays(365),'/',_domain);
+    $("content").style.fontSize=getFontSize($("FontSetting").value)+'pt';
+    SetCookie("rf", $("FontSetting").value, (new Date()).AddDays(365),'/',_domain);
+};
+function bindBgColor() { var colorIndex = GetCookie("rc"); if (colorIndex == null) $("ColorSetting").value = 0; else $("ColorSetting").value = colorIndex }
+function bindFontSize() { var fontIndex = GetCookie("rf"); if (fontIndex == null) $("FontSetting").value = 0; else $("FontSetting").value = fontIndex }
+function setBgColor() { var colorbg = getClientColor(GetCookie("rc")||'0'); document.body.style.backgroundColor = colorbg; };
+function getClientColor(colorIndex) {
+    switch (colorIndex) {
+        case "0": if (typeof IsMM != 'undefined' && IsMM) return "#FCEFFF"; else return "#e7f4fe";
+        case "2": return "#E9FAFF";
+        case "3": return "#FFFFED";
+        case "4": return "#eefaee";
+        case "5": return "#FCEFFF";
+        case "6": return "#ffffff";
+        case "7": return "#efefef";
+        default: if (typeof IsMM != 'undefined' && IsMM) return "#FCEFFF"; else return "#e7f4fe";
+    } 
+ };
+function setFontSize() { $("content").style.fontSize = getFontSize(GetCookie("rf")||'0') + "pt"; }
+function getFontSize(fontIndex) {
+    switch (fontIndex) {
+        case "0": return "10.5";
+        case "2": return "9";
+        case "3": return "10.5";
+        case "4": return "12";
+        case "5": return "14";
+        case "6": return "16";
+        case "7": return "18";
+        default: return "10.5";
+    };
+};
+setFontSize();//设置字体
+setBgColor();//设置背景
+</script>
+
+
+       <iframe id="ifmfooter" src="/iframe/footer_qidian.html" width="100%" onload="dyniframesize('ifmfooter')" scrolling="no" frameborder="0" height="auto"></iframe>
+    </div>
+    <script language="JavaScript" type="text/javascript">
+        page_bottom_init();
+    </script>
+    <div id='DivMask' class='MaskDiv' oncontextmenu='return false'>
+    </div>
+    <div id='DivLogin' class='LoginDiv' align='center'>
+    </div>
+    <script type='text/javascript'>var enableCommendPopWin = true;</script>
+    </form>
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        AdLinkAct(document.location.href);
+        _uacct = "UA-5769277-1";
+        urchinTracker();
+    </script>
+    
+</body>
+</html>
+

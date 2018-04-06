@@ -1,0 +1,358 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
+<title>中国收藏热线_会员登录/注册</title>
+<meta name="keywords" content="中国收藏热线_会员登录/注册"/>
+<meta name="description" content="中国收藏热线_会员登录/注册"/>
+<meta name="copyright" content="中国收藏热线版权所有">
+<meta name="Robots" content="all"/>
+<meta http-equiv="Expires" content="-1" />
+<meta content="3 days" name="revisit-after" />
+<link rel="stylesheet" href="/css/main.css" type="text/css" />
+<base target="_self">
+ 
+<script src="/script/login_cookie_sendurl.js"></script> 
+ 
+<script src="/script/ajax.js"></script>
+<script>
+function set_pwd5(form,names,n){
+	var url="/common/user_limit_md5.asp?checkvalue="+escape(encodeURI(names))+"&n="+n+getRnd();
+	var result=sendUrl(url);
+	form.pwd5.value=result;	
+}
+</script>
+<script language=javascript>
+function check(){
+ var str
+  	
+login_cookie_sendurl("/common/set_cookie.asp");
+	
+ var form=document.form1
+   
+   if (form.name.value=='')
+  {
+     alert('您的登录名未填')
+	 form.name.focus()
+	 return false
+   }
+   for(i=0;i<form.name.value.length;i++){
+     str=form.name.value.charAt(i)
+     if (str=='(' || str==')' || str=='=' || str=='/' || str=='~'|| str=='%'|| str=='^' || str=='!'|| str=='+'|| str=='?'|| str=='"'|| str==':'|| str==';'|| str==','|| str=='['|| str==']'|| str=='{'|| str=='}'|| str=='&'|| str=='#'|| str=='*'|| str=='<'|| str=='>'){
+     alert ('请不要输入非法字符！不合法的登录名！');
+	 form.name.focus()
+     return false
+     }
+   }
+   
+   if (form.pwd_.value=='')
+  {
+     alert('您的密码未填')
+	 form.pwd_.focus()
+	 return false
+   }
+   
+      for(i=0;i<form.pwd_.value.length;i++){
+     str=form.pwd_.value.charAt(i)
+     if (str=='(' || str==')' || str=='=' || str=='/' || str=='~'|| str=='%'|| str=='^' || str=='!'|| str=='+'|| str=='?'|| str=='"'|| str==':'|| str==';'|| str==','|| str=='['|| str==']'|| str=='{'|| str=='}'|| str=='&'|| str=='#'|| str=='*'|| str=='<'|| str=='>'){
+     alert ('请不要输入非法字符！不合法的密码！');
+	  form.pwd_.focus()
+     return false
+     }
+   }  
+	
+	form.pwd.value=calcMD5(form.pwd_.value.toLowerCase());
+	  set_pwd5(form,form.name.value,0); 
+  
+      
+} 
+</script>
+</head>
+<BODY>
+
+ 
+<script src="/script/md5.js"></script> 
+<script src="/script/ajax.js"></script>
+<script>
+function set_pwd5(form,names,n){
+	var url="/common/user_limit_md5.asp?checkvalue="+escape(encodeURI(names))+"&n="+n+getRnd();
+	var result=sendUrl(url);
+	form.pwd5.value=result;	
+}
+</script>
+ <div style="width:100%; height:50px;background-image:url(http://pic1.997788.com/img/img_top/top_bottom_997788.gif);margin:0 auto;" align="center"> 
+  <table width="995" height="50" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+	    
+      
+      <td width="510" align="left" valign="bottom"> <a href="#" target="_blank" onclick="this.href='http://www.7788.com/'" ><img src="http://pic1.997788.com/img/img_top/7788_logo.gif" width="205" height="48" border="0" style="margin-top:2px;"><img src="http://pic1.997788.com/img/img_top/t_top_997788.gif" width="296" height="46" border="0" alt="7788LOGO" id="logo"/></a> 
+      </td>
+<form name="form_top"  method="get" ACTION="http://www.7788.com/all_0/0/" target="_blank" onsubmit="document.form_top.s00.name='s0'">
+        <td align="right" valign="middle"> <img src="http://pic1.997788.com/img/img_search/s.gif" width="16" height="16" border="0"/>&nbsp; 
+          <input type="text"  name="s00" id="s00" style="width:100px;height:18px;background-color:#FFFFFF;border:1px solid #3399CC;color:#333;padding-left:5px;padding-top:4px;" value=""/>
+	  <input type="submit" value=""  style="width:70px;height:20px;line-height:20px;font-size:12px;background-image:url(http://pic1.997788.com/img/img_top/top_search.gif);border:0px;margin:0px;padding:0px;color:#FF0000;"/>&nbsp;&nbsp;&nbsp;
+	</td>
+</form>
+
+  </tr>
+</table>
+</div>
+<script>function wo(obj,url){obj.href=url;return true;}</script>
+<script>function wo(obj,url){obj.href=url;return true;}</script>
+
+<div class="indextop"> 
+  <div class="indextop_bg"> 
+    <div class="indextop_dl"> 
+      <div style="width:100%;height:30px;"> 
+        <table border="0" cellspacing="0" cellpadding="0" style="width:992px;height:34px;">
+          <tr valign="middle"> 
+            
+            <script src="/script/login_cookie_sendurl.js"></script>
+            
+
+            <td> <div style="text-align:left;margin-left:5px;" > 
+				  <input type="button" name="Button" value="会员登录" style="width:65px;height:24px;line-height:28px;font-size:14px;background-image:url(http://pic1.997788.com/img/img_top/regist_button_new.gif);border:0px;margin:0px;padding:0px;" ONCLICK="window.location.href='/mini/user/check/check.asp?E1V2E6C7H260438.35'">
+                  <input type="button" name="Button" value="会员注册" style="width:65px;height:24px;line-height:28px;font-size:14px;background-image:url(http://pic1.997788.com/img/img_top/regist_button_new.gif);border:0px;margin:0px;padding:0px;" ONCLICK="window.location.href='/mini/user/LOGIN2.asp?E1V2E6C7H260438.35'">
+
+              </div>
+			  </td>
+            
+			
+			<td style="padding-left:10px;width:150px;text-align:left;">
+              <a href="#" onclick="this.href='http://m.7788.com/'" target="_blank" class='indextop_nav'><font>手机M版</font></a>
+           &nbsp;
+			<a href="#" onclick="this.href='/download/'" target="_blank" class='indextop_nav'><font>手机APP</font></a>
+            </td>
+			<td>&nbsp;
+			</td>
+            
+
+            <td align="right"> <div style="float:right;margin-right:5px;" > 
+ 
+                <input type="button" name="Button" value="店主登录" style="width:65px;height:24px;line-height:28px;font-size:14px;background-image:url(http://pic1.997788.com/img/img_top/regist_button_new.gif);border:0px;margin:0px;padding:0px;" ONCLICK="window.location.href='/mini/shopstation/manager/login.asp?E1V2E6C7H260438.35'">
+                  <input type="button" name="Button" value="申请开店" style="width:65px;height:24px;line-height:28px;font-size:14px;background-image:url(http://pic1.997788.com/img/img_top/regist_button_new.gif);border:0px;margin:0px;padding:0px;" ONCLICK="window.location.href='/mini/shopstation/user_login/regedit.asp?E1V2E6C7H260438.35'">
+              </div></td>
+            
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+   
+  
+  
+  <div class="clear"></div>
+  <div class="indextop_menubg"> 
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" height="40">
+      <tr> 
+        <td rowspan="2" width="170"><a href="#" class="cmenu" onclick="this.href='/'" > 
+          <img src="http://pic1.997788.com/img/img_top/logo.gif" border="0" alt="中国收藏热线LOGO" id="logo" width="170"/> 
+          
+          </a></td>
+        <td class="indextop_bro_r">
+          
+          <a href="#" onclick="this.href='http://www.7788.com'" target="_blank" title="二手、旧货、收藏、艺术交易平台"><img src="http://pic1.997788.com/img/img_top/t_top_1.gif" border="0" alt="二手、旧货、收藏、艺术交易平台" /></a>
+          
+        </td>
+        <td width="60" class="indextop_bro_r"> 
+          
+          <a href="#" class="amenu" onclick="this.href='/all_0/0/?o=o'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico10.gif" width="13" height="12" border="0" />&nbsp;<font color="#666666">商品</font></a> 
+          
+        </td>
+        <td width="90" class="indextop_bro_r"> 
+          
+          <a href="#" class="amenu" onclick="this.href='/auction_0/0/?o=o'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico09.gif" width="16" height="12" border="0" />&nbsp;<font color="#666666">大众拍卖</font></a> 
+          
+        </td>
+        <td width="60" class="indextop_bro_r"> 
+          
+          <a href="#" class="amenu" onclick="this.href='/rush_0/0/?o=o'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico13.gif" width="13" height="12" border="0" />&nbsp;<font color="#666666">抢购</font></a> 
+          
+        </td>
+        <td width="60" class="indextop_bro_r"> 
+          
+          <a href="#" class="amenu" onClick="this.href='/market_0/0/'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico07.gif" width="13" height="12" border="0" />&nbsp;<font color="#666666">集市</font></a> 
+          
+        </td>
+        <td width="60" class="indextop_bro_r"> 
+          
+          &nbsp;<a href="#" class="amenu" onclick="this.href='/shop_search/'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico05.gif" width="13" height="12" border="0" />&nbsp;<font color="#666666">商店</font></a> 
+          
+        </td>
+        <td width="40" class="indextop_bro_r"> 
+          
+          &nbsp;<a href="#" class="amenu" onClick="this.href='/meeting/'" ><font color="#666666">会展</font></a> 
+          
+        </td>
+      </tr>
+      <tr> 
+        <td class="indextop_bro_r indextop_font">&nbsp;</td>
+        <td class="indextop_bro_r" style="text_align:left;"> 
+          
+          <a href="#" class="amenu" onclick="this.href='/search_0/0/?o=o'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico01.gif" width="13" height="12" border="0">&nbsp;<font color="#666666">零售</font></a> 
+          
+        </td>
+        <td class="indextop_bro_r" style="text_align:left;"> 
+          
+          <a href="#" class="amenu" onclick="this.href='/auctionz_0/0/?o=o'"><img src="http://pic1.997788.com/img/img_top/indextop_ico09.gif" width="16" height="12" border="0" />&nbsp;<font color="#666666">专场拍卖</font></a> 
+          
+        </td>
+        <td class="indextop_bro_r"> 
+          
+          <a href="#" class="amenu" onclick="this.href='/whole_0/0/?o=o'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico02.gif" width="13" height="12" border="0" />&nbsp;<font color="#666666">批发</font></a> 
+          
+        </td>
+        <td class="indextop_bro_r" style="text_align:left;"> 
+          
+          &nbsp;<a href="#" class="amenu" onclick="this.href='/bbs/search/'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico04.gif" width="13" height="12" border="0" />&nbsp;<font color="#000000">论坛</font></a> 
+          
+        </td>
+        <td class="indextop_bro_r"> 
+          
+          &nbsp;<a href="#" class="amenu" onclick="this.href='/member/'" ><img src="http://pic1.997788.com/img/img_top/indextop_ico06.gif" width="13" height="12" border="0" />&nbsp;<font color="#666666">会员</font></a> 
+          
+        </td>
+        <td class="indextop_bro_r"> 
+          
+          <a href="#" class="amenu" onClick="this.href='/dt/'" >&nbsp;<font color="#666666">地摊</font></a> 
+          
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<form action="/mini/user/check/checkuser.asp?E1V2E6C7H260438.35" method="post" name="form1"   onsubmit="return check()">
+  <table width="600" border="0" align="center" cellpadding="0" cellspacing="0" mm:layoutgroup="true" style="border-left:1px solid #86A34B;border-right:1px solid #86A34B;border-bottom:1px solid #86A34B;color:#5B8800;font-size:14px;background-color:#EFF8D5;">
+    <tr> 
+      <td height="40" style="text-align:center;background-image:url(http://pic1.997788.com/img/img_bg/member_head_1.gif);"><font style="color:#FF0000;font-size:24px;font-weight:bold;">会员登录</font></td>
+    </tr>
+
+    <tr> 
+      <td style="text-align:center;padding-left:5px;height:40px;"> <strong>登录名</strong>(用户名)：
+        <input type="text" name="name" size="15" value=""> </td>
+    </tr>
+    <tr> 
+      <td style="text-align:center;padding-left:50px;height:40px;"><strong>密　码： </strong>
+        <input type="password" name="pwd_" maxlength="15" size="15"><input type="hidden" name="pwd2" value="809d51f74574758476f8768368cb88ee" /><input type="hidden" name="pwd3" value="fe611136543c7b4848ca68a6a42eb0de" /><input type="hidden" name="pwd4" value="aa2053e7e2ea604da1a595583a5f5282" /><input type="hidden" name="pwd5" value="" /><input type="hidden" name="pwd" value="" /></td>
+    </tr>
+    <tr> 
+      <td height="40"  align="center" valign="top"> 
+	  		
+	 <input type="hidden" name="path_info" value=""> 
+	  <input name="submit" type="submit"  style="background-color:#FFCC00; bg-color:#FFCC00; border-color:#996600;width:150px; height:30px;font-size:16px;" value="会员登录"> 
+        <input type="button" name="Button" value="免费注册" style="background-color:#FFCC00; bg-color:#FFCC00; border-color:#996600;
+        width:80px; height:25px;" ONCLICK="window.location.href='/mini/user/LOGIN2.asp?E1V2E6C7H260438.35'"> 
+      </td>
+    </tr>
+	<tr>
+	  <td style="height:30px;background-color:#FFFFFF;padding-left:10px;"> <strong>合作网站登录、绑定：</strong> 
+      </td>
+    </tr>
+
+    
+<script type="text/javascript">
+<!--
+function gotoBind(achor)
+{
+	var url = "";
+	var domain = "www.997788.com";
+	var sid = "E1V2E6C7H260438.35";
+	var x = "";
+	if (x!="")
+	{
+		url = parent.parent.window.location.href;
+	}
+	else if(url=="")
+	{
+		url = "http://"+ domain +"/mini/user/LOGIN2.asp";
+	}
+	//alert(url);
+	//alert("?action=sign&domain="+ domain +"&url="+ escape(url) +"&"+ sid);
+	achor.href += "?action=sign&domain="+ domain +"&url="+ escape(url) +"&"+ sid;
+	return true;
+}
+//-->
+</script>
+<tr>
+  <td height="30" align="center" valign="top">
+  <table><tr><td>合作登录网站:</td>
+  <td>
+  
+		<a style="margin:0 5px;" target="_top" href="http://www.7788.com/mini/user/user_bind/bind_api_0.asp" onclick="return gotoBind(this);"><img src="http://pic1.997788.com/img/img_bind/bind_login_0.png" border="0"/></a>
+		
+		<a style="margin:0 5px;" target="_top" href="http://www.7788.com/mini/user/user_bind/bind_api_1.asp" onclick="return gotoBind(this);"><img src="http://pic1.997788.com/img/img_bind/bind_login_1.png" border="0"/></a>
+		
+  </td>
+  </tr>
+  </table>  
+  </td>
+</tr>    
+<tr>
+	  <td style="padding:10px;text-align:left;"> <strong>合作网站登录、绑定方法：</strong><br />
+
+    1、点击以上图标，到合作网站进行登录；<br />
+
+
+2、回到本站，进行账号绑定，未在本网注册的，可先注册再绑定；已在本网注册过的，可以直接绑定。<br />
+
+
+3、只需绑定一次，以后直接使用合作网站账号登录。<br />
+
+
+4、自行增删绑定，会员后台“个人资料管理”→“登录绑定设置”，可以“取消绑定”或“立即绑定”。
+
+
+	  </td>
+    </tr>
+  </table>
+    </form>
+<!--底部版权信息开始-->
+
+<div style="margin:auto;width:99%;clear:both;text-align:center;">
+<div style="margin:auto;width:99%;clear:both;height:150px;border-top:1px solid #828282;">
+<div style="width:99%;height:30px;line-height:30px;"> 
+
+<script>function wo(obj,url){obj.href=url;return true;}</script>		
+<a href="#" target="_blank" onclick="this.href='/mini/help/help_index.asp?E1V2E6C7H260438.35'">帮助</a>  
+      | <a href="#" target="_blank" onclick="this.href='/mini/help/trade_way.asp?E1V2E6C7H260438.35'">交易原则</a>
+	  | <a href="#" target="_blank" onclick="this.href='/apprise/?E1V2E6C7H260438.35'">网站公告</a>  
+	  | <a href="#" target="_blank" onclick="this.href='/about/connect.asp?E1V2E6C7H260438.35'">联系网站</a>
+	  | <a href="#" target="_blank" onclick="this.href='/love/?E1V2E6C7H260438.35'">爱心捐赠</a>
+	  | <a href="#" target="_blank" onclick="this.href='/mini/shopstation/public/sale_tongji.asp?E1V2E6C7H260438.35'">统计</a> 
+	  | <a href="#" target="_blank" onclick="this.href='/hq/?E1V2E6C7H260438.35'">行情</a> 
+	   | <a href="#" target="_blank" onclick="this.href='/about/?E1V2E6C7H260438.35'">专业</a> 
+	  
+	  
+	  | <a href="#" target="_blank" onclick="this.href='/web_page/link.asp?E1V2E6C7H260438.35'">申请链接</a> 
+	  
+	   
+    </div>
+		
+    <div style="width:100%;line-height:17px;">Copyright &copy; 1999-2012 997788.com. 
+      All Rights Reserved ；建议分辨率最好为1024*768，IE5.0或以上版本浏览器<br />
+		  中国收藏热线版权所有；未经许可，本网图片、文字不得转载、复制、及制作镜像！<br />客服电话：0591-83636288，83654677 (白天接听：9:00--17:00)<br>
+    <a href="#" target="_blank" onclick="this.href='http://www.fuzhou.cyberpolice.cn/index.asp'"><img src="http://pic1.997788.com/img/img_bottom/police.gif" width="59" height="41" border="0" /></a> 
+    <a href="#" target="_blank" onclick="this.href='http://www.fuzhou.cyberpolice.cn/index.asp'"><img src="http://pic1.997788.com/img/img_bottom/110.gif" width="93" height="41" border="0" /></a> 
+    <a href="#" target="_blank" onclick="this.href='http://www.miibeian.gov.cn/'"><img src="http://pic1.997788.com/img/img_bottom/icp.gif" width="134" height="43" border="0" />
+	<a href="#" style="margin:10px;" target="_blank" onclick="this.href='http://27.151.116.17:8081//ei/Ei!certificate.action?id=4028814b437150080143988f6c6a0059'"><img src="http://pic1.997788.com/img/img_bottom/wangjian1.png" width="33" height="45" border="0" /></a>
+	<a href="#" target="_blank" onclick="this.href='http://27.151.116.17:8081//ei/Ei!certificate.action?id=4028814b437150080143988f6c6a0059'"><img src="http://pic1.997788.com/img/img_bottom/wangjian2.jpg" width="54" height="41" border="0" /></a>
+	</a><br />
+    <br>
+
+
+
+		 </div>
+		 
+	 
+
+
+
+
+</div>
+<!--底部版权信息结束-->
+
+</body>
+</html>
+

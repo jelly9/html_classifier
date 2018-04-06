@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>洛阳金东置业有限公司 - 河洛人才网</title>
+<meta name="description" content="1.我们金东公司三大企业文化”做事先做人“ ”军队+学校&quot; &quot;生存+学习+发展“共同构造了我们今天在销售领域的...},公司简介">
+<meta name="keywords" content="洛阳金东置业有限公司,公司简介">
+<meta name="author" content="骑士CMS" />
+<meta name="copyright" content="74cms.com" />
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<link rel="shortcut icon" href="/favicon.ico" />
+<link href="/templates/lyjob2/css/common.css" rel="stylesheet" type="text/css" />
+<link href="/templates/tpl_company/default/css/css.css" rel="stylesheet" type="text/css" />
+<script src="/templates/lyjob2/js/jquery.js" type='text/javascript' ></script>
+<script src="/templates/lyjob2/js/jquery.dialog.js" type='text/javascript' ></script>
+<script type="text/javascript">
+$(document).ready(function()
+{
+		var company_id="60680";
+		var tsTimeStamp= new Date().getTime();
+		$.get("/plus/ajax_contact.php", { "id": company_id,"time":tsTimeStamp,"act":"company_contact"},
+			function (data,textStatus)
+			 {			
+				$("#company_contact").html(data);
+			 }
+		);
+		$.get("/plus/ajax_click.php", { "id": company_id,"time":tsTimeStamp,"act":"company_click"},
+			function (data,textStatus)
+			 {			
+				$(".click").html(data);
+			 }
+		);
+		$(".app_jobs").click(function(){
+	dialog("投简历","url:get?/user/user_apply_jobs.php?id="+$(this).attr("id")+"&act=app","500px","auto","");
+	});
+	$("#newbuddy").click(function(){
+	dialog("加为好友","url:get?/user/user_buddy.php?tuid=349768","350px","auto","");
+	});
+	$("#addpms").click(function(){
+	var url="/user/user_pms.php?tuid=349768";
+	dialog("发送短消息","url:get?"+url,"400px","auto","");
+	});
+});
+</script>
+</head>
+<body>
+<div id="tipSlider">
+<!--    <div><a class="closeme" href="#"></a><a class="goreg" href=""></a></div>-->
+  	<div><a target="_blank" href="http://www.lyjob.cn/news/news-show.php?id=1694"><img src="/data/comads/2014/06/28/1403948664683.gif" width="985" height="50"></a></div>
+  </div>
+<div class="head_box">
+	<div class="head">
+	  <div class="head_logo">
+	    <a href="/"><img src="/data/images/logo.png" alt="河洛人才网" border="0" align="absmiddle" /></a> 
+	      	  </div>
+	  <div class="head_logo_right clearfix">
+		<div class="head_top_box">
+				<div class="head_top_box_left link_lan"><span id="top_loginform"></span></div>
+				<div class="head_top_box_right link_bk">
+				<a class="lia fwrx">服务热线：0379-64850085</a><a class="lia" style=" padding:0 5px; "><img src="/templates/lyjob2/images/topnav_fg.jpg"/></a><a href="/help/" class="lia bzzx">帮助中心</a>
+<a href="/wap/"  class="lia t_m">手机找工作</a> 
+<script type="text/javascript">
+//顶部部登录
+$.get("/plus/ajax_user.php", {"act":"top_loginform"},
+function (data,textStatus)
+{			
+$("#top_loginform").html(data);
+}
+);
+//
+var headHeight=$(".header").height()+10;
+    var nav=$(".nav");
+    $(window).scroll(function(){
+        if($(this).scrollTop()>headHeight){
+            nav.addClass("navFix");
+            }
+        else{
+            nav.removeClass("navFix");
+            }
+});
+//
+$("#t_so").hover(
+function(){
+$("#t_so").css("position","relative");
+$("#op_search").show();
+},
+function(){
+$("#op_search").hide();
+$("#t_so").css("position","");	
+}
+);
+$(".top-search-button").click(function()
+{
+	$("body").append('<div id="pageloadingbox">页面加载中....</div><div id="pageloadingbg"></div>');
+	$("#pageloadingbg").css("opacity", 0.5);
+	$.get("/plus/ajax_search_location.php", {"act":$(this).attr('id'),"key":$("#top-search-key").val()},
+			function (data,textStatus)
+			 {
+				 window.location.href=data;
+			 }
+		);
+});
+</script>				</div>
+				<div class="clear"></div>
+		</div>   
+		<!--导航 -->
+		<div class="wzrc5nav">
+		    <div class="clist">
+		        								<a href="/index.php" target="_self" >首  页</a>
+								<a href="/bookseat/index.php" target="_blank" >预定招聘会</a>
+								<a href="/mingqi/index.php" target="_self" >名企招聘</a>
+								<a href="/jobs/jobs-list.php" target="_self" class="select">找工作</a>
+								<a href="/resume/resume-list.php" target="_self" >聘人才</a>
+								<a href="/simple/simple-list.php" target="_self" >微招聘</a>
+								<a href="/jobs/map-search.php" target="_self" >地图搜索</a>
+								<a href="/news/" target="_self" >人才资讯</a>
+								<a href="/hrtools/hrtools-list.php?id=1" target="_self" >HR工具箱</a>
+						    </div>
+		  <div class="clear"></div>
+		</div>
+		<!--导航end -->
+	  </div>  
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+$(document).ready(function()
+{	
+	var nav=$(".floatnav");
+	var headHeight=nav.height()+45;
+	$(window).scroll(function()
+	{
+	if($(this).scrollTop()>headHeight)
+	{
+	nav.addClass("navFix");
+	}
+	else
+	{
+	nav.removeClass("navFix");
+	}
+	});
+});
+</script><div class="page_location link_bk">
+当前位置：<a href="/">首页</a>&nbsp;>>&nbsp;<a href="/jobs/">招聘信息</a>&nbsp;>>&nbsp;洛阳金东置业有限公司
+</div>
+<div class="company-show-topnav">
+  <div class="topcomname">
+  <h1>洛阳金东置业有限公司</h1>
+  	<div class="company_license2" title="营业执照未验证"></div>
+		<div class="clear"></div>
+  </div>
+  <div class="snav">
+		<a href="/company/company-show.php?id=60680" class="selected">公司介绍</a>
+		<a href="/company/company-jobs.php?id=60680" >招聘职位</a>
+		<a href="/company/company-comment.php?id=60680" >评论</a>
+		<a href="/company/company-img.php?id=60680" >图片</a>
+		<a href="/company/company-news.php?id=60680" >公司动态</a>
+		<div class="clear"></div>
+  </div>
+</div>
+<div class="company-show">
+  <div class="left">
+    <div class="show link_lan">
+			
+			<div class="link_bku">所在地区：<a href="/jobs/jobs-list.php?district=1&sdistrict=39" target="_blank">洛阳市/洛龙区</a>&nbsp;&nbsp;&nbsp;更新时间：2015-03-09&nbsp;&nbsp;&nbsp;点击：<span class="click"></span>次</div>			
+			 <div class="logo"><img src="/data/logo/no_logo.gif" border="0" /></div>
+			 
+			 <div class="item">
+			 <ul class="link_bku">
+			<li>企业性质：民营</li>
+			<li>所属行业：<a href="/jobs/jobs-list.php?trade=26" target="_blank">房地产开发</a></li>
+			<li>注册资金：1000万人民币</li>
+			<li>公司规模：<a href="/jobs/jobs-list.php?scale=82" target="_blank">100-499人</a></li>
+			</li>
+			<li>添加时间：2015-03-09</li>
+			</ul>
+			</div>
+			<div class="clear"></div>
+			 <table width="100%" border="0" cellspacing="0" cellpadding="6" >
+			  <tr>
+				<td bgcolor="#F5FAFE" class="listtit">招聘职位</td>
+				<td bgcolor="#F5FAFE" class="listtit">招聘人数</td>
+				<td bgcolor="#F5FAFE" class="listtit">工作地区</td>
+				<td align="center" bgcolor="#F5FAFE" class="listtit">刷新日期</td>
+				<td align="center" bgcolor="#F5FAFE" class="listtit">截至日期</td>
+				<td width="100" align="center" bgcolor="#F5FAFE" class="listtit">投简历</td>
+			  </tr>
+			  			  	  </table>
+	  			 <div  style=" padding:10px; text-align:center; color:#FF0000">没有发布招聘信息!</div>
+      	         <div class="title"><strong>公司简介</strong></div>
+			 1.我们金东公司三大企业文化”做事先做人“ ”军队+学校" "生存+学习+发展“共同构造了我们今天在销售领域的强势!我们的团队从不找借口，只找方法！相信我是一切的根源”                                                                                                         2.我们从不空降人才，特别是销售人才，坚持自己发掘，自己培养，优胜劣汰！10年来坚持每一个管理人才必须从销售人员做起的原则！从基层做起!        3. 我们秉持先生存，再通过学习实现自我能力成长，而实现个人的发展！所以公司为每一位入职员工提供最全面务实的销售技能培训！只要你够勤奋，有悟性， 你将迅速成为一名销售界高手！我们培训的核心就是业界知名的“九大步骤” !                                                                                                             4.我们为每一位销售人员提供1600元底薪用来生存，提供3‰提成足以高过所有现有置业顾问提成！为成长起来的销售经理提供团队总业绩2‰的高额奖励，并可以参加楼盘公司的股份成为股东一员！<br />
+5.如果你有信心，有理想，有行动，请加入我们！
+			 <div class="title"><strong>联系方式</strong></div>
+			 <!--AJAX 联系方式 --><div id="company_contact"></div>
+			 <div class="title"><strong>公司位置</strong></div>
+			  
+				该公司没有标注具体位置。 
+			  	</div>
+  </div>
+  <div class="right">
+		  <div class="txtbox">
+				  <div class="tit">企业档案</div>
+				  <div class="qrcode"><img src="/plus/url_qrcode.php?url=http://www.lyjob.cn/company/company-show.php?id=60680" alt="洛阳金东置业有限公司 - 二维码" /></div>	  
+		    <div class="txt">
+					  <ul class="link_bku">
+						<li>企业性质：民营</li>
+						<li>所属行业：<a href="/jobs/jobs-list.php?trade=26" target="_blank">房地产开发</a></li>
+						
+						<li>公司规模：<a href="/jobs/jobs-list.php?scale=82" target="_blank">100-499人</a></li>
+						<li>所在地区：<a href="/jobs/jobs-list.php?district=1&sdistrict=39" target="_blank">洛阳市/洛龙区</a></li>
+					  </ul>
+				  </div>
+				<div class="pm link_bk">
+					    <div class="pleft"><a href="javascript:void(0)" id="addpms">发短消息</a></div>
+						<div class="pright"><a href="javascript:void(0)" id="newbuddy">加为好友</a></div>
+						<div class="clear"></div>
+				</div>
+	</div>
+			 <div class="txtbox">
+				  <div class="tit">您可能感兴趣的职位</div>	  
+															<div class="txt1 link_lan">
+					<strong><a href="/jobs/jobs-show.php?id=79571" target="_blank">出纳</a></strong><br />
+					<a href="/company/company-show.php?id=46635" target="_blank">洛阳市汇天房地产咨询有限公司</a><br />
+					薪资待遇：面议<br />招聘人数：1人<br />学历要求：大专
+					</div>
+										<div class="txt1 link_lan">
+					<strong><a href="/jobs/jobs-show.php?id=78390" target="_blank">水电维修工</a></strong><br />
+					<a href="/company/company-show.php?id=48255" target="_blank">洛阳市元华物业管理有限公司</a><br />
+					薪资待遇：1500~2000元/月<br />招聘人数：2人<br />学历要求：高中
+					</div>
+										<div class="txt1 link_lan">
+					<strong><a href="/jobs/jobs-show.php?id=78389" target="_blank">客服主管</a></strong><br />
+					<a href="/company/company-show.php?id=48255" target="_blank">洛阳市元华物业管理有限公司</a><br />
+					薪资待遇：2000~3000元/月<br />招聘人数：1人<br />学历要求：中专
+					</div>
+										<div class="txt1 link_lan">
+					<strong><a href="/jobs/jobs-show.php?id=78427" target="_blank">高薪诚聘销售人员数名</a></strong><br />
+					<a href="/company/company-show.php?id=59764" target="_blank">洛阳鼎福房地产营销策划有限公司</a><br />
+					薪资待遇：3000~5000元/月<br />招聘人数：5人<br />学历要求：高中
+					</div>
+										<div class="txt1 link_lan">
+					<strong><a href="/jobs/jobs-show.php?id=78426" target="_blank">房产经纪人</a></strong><br />
+					<a href="/company/company-show.php?id=59764" target="_blank">洛阳鼎福房地产营销策划有限公司</a><br />
+					薪资待遇：5000~10000元/月<br />招聘人数：10人<br />学历要求：高中
+					</div>
+								</div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="footer">
+<div class="link_bk foot_nav"><a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.lyjob.cn');" href="javascript:">设为首页</a>&nbsp;|&nbsp;<a href="javascript:" onclick="window.external.addFavorite(parent.location.href,document.title);">加入收藏</a>
+&nbsp;|&nbsp;<a href="http://rcsc.lyjob.cn/index.php?c=page&a=show&pid=13" target="_blank">公司简介</a>&nbsp;|&nbsp;<a href="http://rcsc.lyjob.cn/index.php?c=page&a=show&pid=5" target="_blank">联系我们</a>&nbsp;|&nbsp;<a href="http://www.lyjob.cn/jobs/jobs-list.php" target="_blank">找工作</a>&nbsp;|&nbsp;<a href="http://www.lyjob.cn/resume/resume-list.php" target="_blank">聘人才</a>&nbsp;|&nbsp;<a href="http://www.lyjob.cn/news/news-list.php?id=4" target="_blank">面试宝典</a>&nbsp;|&nbsp;<a href="http://www.lyjob.cn/news/news-list.php?id=6" target="_blank">劳动法规</a>&nbsp;|&nbsp;<a href="http://www.lyjob.cn/hrtools/hrtools-list.php?id=1" target="_blank">HR工具箱</a>&nbsp;|&nbsp;<a href="http://www.lyjob.cn/jingli/news-list.php?id=14" target="_blank">职业规划</a></div>
+<div class="footerbj"><img original="" src="/templates/lyjob2/images/bj.jpg" width="750" height="2"  border="0"></div>
+<div class="link_bk" style="color: #999;text-decoration: none; ">
+联系地址：洛阳市涧西区中州西路22号（中州西路与延安路交叉口工商银行对面）畅元大厦1、2层 河洛人才市场 联系电话：0379-64850085 网站备案：<a href="http://www.miibeian.gov.cn/" target="_blank">豫ICP备12000427号</a>  <script type="text/javascript" src="http://js.tongji.linezing.com/1478150/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1478150/tongji.gif"/></a></noscript>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8a66e1c22ddbf81d2581c709a4d906b9' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>
+<div class="link_bk">Copyright @ 2013 lyjob.cn 洛阳市河洛信息技术有限公司 All Right Reserved </div>
+<div class="link_bk" style="margin:0 auto; width:980px;">
+    <div style="width:350px; float:left">
+      <img src="/templates/lyjob2/images/b2.gif" width="43" height="68"  border="0" align="left" style="margin:0px;"/>
+      <a  href="http://www.lywj.net/NewsDetail.aspx?id=59" target="_blank"  >关于在全市开展网站专项安全检查行动的通知</a><br />
+      <a  href="http://www.lywj.net/NewsDetail.aspx?id=57" target="_blank"  >关于在全市开展清理整治“网络黑市”专项行动的通…</a><br />
+      <a  href="http://www.lywj.net/NewsDetail.aspx?id=30" target="_blank"  >公安机关网监部门常用法律法规</a>
+    </div>
+    <div style="width:210px; float:left">
+    <img src="/templates/lyjob2/images/b3.gif"  border="0" width="50" height="49"/>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+(function() {
+    var $backToTopTxt = "返回顶部", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+            $("html, body").animate({ scrollTop: 0 }, 120);
+    }), $backToTopFun = function() {
+        var st = $(document).scrollTop(), winh = $(window).height();
+        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();
+        //IE6下的定位
+        if (!window.XMLHttpRequest) {
+            $backToTopEle.css("top", st + winh - 166);
+        }
+    };
+    $(window).bind("scroll", $backToTopFun);
+    $(function() { $backToTopFun(); });
+})();
+</script>
+</body>
+</html>
+

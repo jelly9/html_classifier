@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>湖北咸宁崇阳县东山村小区水质查询</title>
+<meta name="keywords" content="湖北咸宁崇阳县东山村小区数据库,湖北咸宁崇阳县东山村水质查询,湖北咸宁崇阳县东山村小区水质,湖北咸宁崇阳县东山村净水器,湖北咸宁崇阳县东山村净水机,湖北咸宁崇阳县东山村纯水机">
+<meta name="description" content="湖北咸宁崇阳县东山村水质查询网，提供全国31个省市覆盖150万个小区数据的水质状况查询系统！并免费提供水质送检服务，了解水质状况，关注饮水健康！">
+<meta name="baidu-site-verification" content="OCCaCuumBG" />
+<meta name="360-site-verification" content="ed8dee913d08afb37914015129bdeb27" />
+<meta name="sogou_site_verification" content="bVl97hDnpt"/>
+<link type="text/css" rel="stylesheet" href="/images/style.css">
+<script type="text/javascript" src="/js/jquery.js"></script>
+<link type="text/css" rel="stylesheet" href="/js/auto/jquery.autocomplete.css" />    
+<script type="text/javascript" src="/js/auto/jquery.autocomplete.js"></script>
+<script type="text/javascript">var S_ROOT = "/";</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    function rearea(){ 
+          $("#areakey").attr("value"," "); 
+          var pro_name = $("select[name='province']").children('option:selected').val();
+          var city_name = $("select[name='city']").children('option:selected').val();
+          var area_name = $("select[name='area']").children('option:selected').val();
+          xq_list(pro_name,city_name,area_name);
+    }
+
+    /*----获取城市列表----*/
+    function cit_list(pro_name){  //pro_name为省份名字
+        $("#province option[value='"+pro_name+"'] ").attr("selected",true);//默认省第一项
+        $("#city").empty();
+        $("#area").empty();
+        var data;
+        var cit_options = "";
+        $.post("/index/getcity",{id:pro_name},function(json){
+            data = eval('(' + json + ')');
+            $.each(data.data, function (i, item) {
+                cit_options += "<option value="+item.id+">"+item.name+"</option>";
+            });
+            $("select[name='city']").html(cit_options);     
+
+            var city_name = $("select[name='city']").children('option:first').val();
+            area_list(city_name);       
+        });
+    }
+    /*----获取区域列表----*/
+    function area_list(city_name){  //city_name为城市名字
+        var data;
+        var area_options = "";
+        $.post("/index/getcity",{id:city_name},function(json){
+            data = eval('(' + json + ')');
+            $.each(data.data, function (i, item) {
+                area_options += "<option value="+item.id+">"+item.name+"</option>";
+            });
+            $("select[name='area']").html(area_options);
+                rearea();
+        });
+    }
+
+    /*----省份列表改变时获取城市列表----*/
+    $("select[name='province']").change(function(){
+        var pro_name = $(this).children('option:selected').val();
+        cit_list(pro_name);
+    });
+    /*----城市列表改变时获取区域列表----*/
+    $("select[name='city']").change(function(){
+        var pro_name = $("select[name='province']").children('option:selected').val();
+        var city_name = $(this).children('option:selected').val();
+        area_list(city_name);
+    });
+    /*----区域列表改变时获取小区列表----*/
+    $("select[name='area']").change(function(){
+        var pro_name = $("select[name='province']").children('option:selected').val();
+        var city_name = $("select[name='city']").children('option:selected').val();
+        var area_name = $(this).children('option:selected').val();
+        xq_list(pro_name,city_name,area_name);
+    });
+    rearea();
+    function xq_list(pro_name,city_name,area_name){
+          var url = S_ROOT+'index/getarea?provid='+pro_name+'&cityid='+city_name+'&areaid='+area_name; 
+         $("#areakey").autocomplete(url,{
+                        max: 12,    //列表里的条目数
+                        minChars: 0,    //自动完成激活之前填入的最小字符
+                        scrollHeight: 300,   //提示的高度，溢出显示滚动条
+                        matchContains: true,    //包含匹配，就是data参数里的数据，是否只要包含文本框里的数据就显示
+                        autoFill: false,       //自动填充
+                        dataType: "json",
+                        parse: function(data) { //加入对返回的json对象进行解析函数，函数返回一个数组 
+                           return $.map(data, function(row) {
+                                   return {
+                                       data: row, //通过此参数设置formatItem函数的return值
+                                       value: row.name, //等同于formatMatch函数中return的内容
+                                       result: row.name //等同于formatResult函数中return的内容
+                                   }
+                            });
+                        },       
+                        formatItem: function(row, i, max) {
+                             return  row.name;
+                        },
+                        formatMatch: function(row, i, max) {
+                             return row.name;
+                        },
+                        formatResult: function(row) {
+                            return row.name;
+                        }
+           }).result(function(event, data, formatted) { parcelInt(); });
+    }
+});
+function parcelInt(){
+  if($("#areakey").val()==" "){
+    // $("#formtip").css("color","#f00");
+     return false;
+  }
+  $("#parcelForm").submit(); 
+}
+</script><script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=L5qfmkoNZOzRR9VZc8ntYNUf"></script>
+</head>
+<body>
+<!--header area-->
+<header>
+  <div class="adbox"><div class="w1000"><a href="http://yun.shui.cn" target="_blank"><img src="/images/ad_yun.jpg" alt="0元抢购"></a></div></div>
+  <div class="header clear">
+    <div class="w1000 top clear">
+      <div class="fl"><a href="/"><img src="images/logo.jpg" alt="全国小区水质查询平台_亿家净水"></a></div>
+        <div class="fr"><a href="http://www.shui.cn" target="_blank" class="icons icons-linkshui">亿家净水商城</a><a href="http://yun.shui.cn" target="_blank" class="icons icons-linkyun">亿家净水&sdot;云净</a></div>
+    </div>
+    <div class="searchbox">
+      <form action="/info" method="get" name="parcelForm" id="parcelForm">
+      <div class="w1000 search">
+        水质状况查询：<select name="province" id="province" class="sel"><option value="100000">北京</option><option value="100001">上海</option><option value="100002">天津</option><option value="100003">重庆</option><option value="100004">安徽</option><option value="100005">福建</option><option value="100006">甘肃</option><option value="100007">广东</option><option value="100008">广西</option><option value="100009">贵州</option><option value="100010">海南</option><option value="100011">河北</option><option value="100012">河南</option><option value="100013">黑龙江</option><option value="100014">湖北</option><option value="100015">湖南</option><option value="100016">吉林</option><option value="100017">江苏</option><option value="100018">江西</option><option value="100019">辽宁</option><option value="100020">内蒙</option><option value="100021">宁夏</option><option value="100022">青海</option><option value="100023">山东</option><option value="100024">山西</option><option value="100025">陕西</option><option value="100026">四川</option><option value="100027">西藏</option><option value="100028">新疆</option><option value="100029">云南</option><option value="100030">浙江</option></select><select name="city" id="city" class="sel"><option value="100031">北京</option></select><select name="area" id="area" class="sel"><option value="100032">昌平区</option><option value="100033">朝阳区</option><option value="100034">大兴区</option><option value="100035">东城区</option><option value="100036">房山区</option><option value="100037">丰台区</option><option value="100038">海淀区</option><option value="100039">怀柔区</option><option value="100040">门头沟区</option><option value="100041">密云县</option><option value="100042">平谷区</option><option value="100043">石景山区</option><option value="100044">顺义区</option><option value="100045">通州区</option><option value="100046">西城区</option><option value="100047">延庆县</option></select><input type="text" class="text" name="areakey" id="areakey" placeholder="请输入您的小区名称"><a href="javascript:void(0)" class="icons icons-searchbutn" onclick="parcelInt()">查 询</a>
+      </div></form>
+    </div>
+  </div>
+</header>
+<!--container area-->
+<div class="container">
+  <div class="toolbox"><i class="icons icons-channel"></i><a href="/">首页</a> &gt;<a href="/prov?id=100014">湖北</a> &gt;<a href="/city?id=101361">咸宁</a> &gt;<a href="/house?id=101363">崇阳县</a> &gt;<strong class="colred">东山村</strong></div>
+  <div class="infobox clear">
+       <div class="fl">
+        <div class="TDSbox">
+          <div class="tdsdir"  style="-webkit-transform:rotate(11deg);-moz-transform:rotate(11deg);-ms-transform:rotate(11deg);-o-transform: rotate(11deg)"  ></div>
+                     <div class="tdsinner">
+              <div class="tdstext">105</div>
+              <div class="tdsdes">TDS值</div>
+           </div>
+                   </div>
+        <div class="box">
+            <div class="TDSshow">
+               <span>TDS值：</span><strong class="col-red">105</strong>
+               <span>余氯含量：</span><strong class="colgreen">0mg/L</strong>
+            </div>
+            <div class="sharebox">
+                <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a></div>
+                <script type="text/javascript">window._bd_share_config={"common":{"bdSnsKey":{"tsina":"827263991","tqq":"100226809"},"bdText":"我正在使用全国小区水质系统查询平台湖北咸宁崇阳县东山村的水质数据，TDS为105，余氯为0mg/L。推荐大家一起来了解一下自己的水质状况，关注饮水健康!","bdMini":"2","bdMiniList":false,"bdPic":"http://www.shui.cn/images/shuizhi/TDS.jpg","bdStyle":"0","bdSize":"32"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+            </div>
+            <div class="TDSform colgray">数据来源：<a href="http://www.shui.cn" target="_blank">亿家净水</a> <span class="padlr5">|</span>咨询热线：9510-5575</div>
+        </div>
+       </div>
+       <div class="fr" id="allmap"></div>
+    </div>
+    <div class="probox">
+      <div class="tipbox"><i class="icons icons-lanbao"></i>根据当地平均水质情况，为您推荐以下产品：</div>
+      <ul class="prolist clear">
+                    <li>
+            <i class="icons icons-tuijian"></i>
+            <img src="http://www.shui.cn/data/2014/07-16/1405501822614_small.jpg" width="160" height="160"  alt="凯优PC150快接式反渗透纯水机（2014新款）">
+            <p>凯优PC150快接式反渗透纯水机（2014新款）</p>
+            <a href="http://www.shui.cn/product/708826Y.html" target="_blank" title="凯优PC150快接式反渗透纯水机（2014新款）"></a>
+          </li>
+                    <li>
+            <i class="icons icons-tuijian"></i>
+            <img src="http://www.shui.cn/data/2014/01-20/1390182602616_small.jpg" width="160" height="160"  alt="凯优Hious PC580反渗透纯水机">
+            <p>凯优Hious PC580反渗透纯水机</p>
+            <a href="http://www.shui.cn/product/708821.html" target="_blank" title="凯优Hious PC580反渗透纯水机"></a>
+          </li>
+                    <li>
+            <i class="icons icons-tuijian"></i>
+            <img src="http://www.shui.cn/data/2014/01-22/1390377084684_small.jpg" width="160" height="160"  alt="海尔Haier牌HRO5002-5(WD）型反渗透净水机">
+            <p>海尔Haier牌HRO5002-5(WD）型反渗透净水机</p>
+            <a href="http://www.shui.cn/product/707111.html" target="_blank" title="海尔Haier牌HRO5002-5(WD）型反渗透净水机"></a>
+          </li>
+                    <li>
+            <i class="icons icons-tuijian"></i>
+            <img src="http://www.shui.cn/data/2014/11-07/1415332972114_small.jpg" width="160" height="160"  alt="汉斯希尔净水机WS-7315-10-028-02">
+            <p>汉斯希尔净水机WS-7315-10-028-02</p>
+            <a href="http://www.shui.cn/product/101211.html" target="_blank" title="汉斯希尔净水机WS-7315-10-028-02"></a>
+          </li>
+                    <li>
+            <i class="icons icons-tuijian"></i>
+            <img src="http://www.shui.cn/data/2012/11-03/1351908726373_small.jpg" width="160" height="160"  alt="凯优Hious PC580A型反渗透纯水机">
+            <p>凯优Hious PC580A型反渗透纯水机</p>
+            <a href="http://www.shui.cn/product/708801.html" target="_blank" title="凯优Hious PC580A型反渗透纯水机"></a>
+          </li>
+                </ul>
+     </div>
+</div>
+<script type="text/javascript">
+var map = new BMap.Map("allmap");
+var point = new BMap.Point(116.331398,39.897445);
+map.centerAndZoom(point,12);
+// 创建地址解析器实例
+var myGeo = new BMap.Geocoder();
+// 将地址解析结果显示在地图上,并调整地图视野
+myGeo.getPoint("湖北咸宁东山村", function(point){
+  if (point) {
+    map.centerAndZoom(point, 16);
+    map.addOverlay(new BMap.Marker(point));
+  }
+}, "湖北");
+</script>
+<!--footer area-->
+<footer>
+  <div class="footer">
+     <div class="w1000">
+    <p><span class="colgray">友情链接：</span><a href="http://www.shui.cn" target="_blank">亿家净水商城</a><span class="padlr5 colgray">|</span><a href="">无忧服务</a><a href="http://yun.shui.cn" target="_blank">云净&sdot;净水服务</a><span class="padlr5 colgray">|</span><a href="http://my.shui.cn"  target="_blank">净水管家</a><span class="padlr5 colgray">|</span><a href="http://heshui.com" target="_blank">喝水网</a><span class="padlr5 colgray">|</span><a href="http://1jsh.tmall.com" target="_blank">亿家净水天猫旗舰店</a></p>
+      <p><span class="colgray">版权所有：</span>waterp.com <span class="padlr5 colgray">|</span>数据来源：<a href="http://www.shui.cn" target="_blank">shui.cn</a><span class="padlr5 colgray">|</span><a href="http://yun.shui.cn" class="colblue">免费净水器</a></p> 
+     </div>
+  </div>
+</footer>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe1c23373197be2aad3c14a2743a75fff' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" src="http://www.shui.cn/js/kefu/kefu.js"></script>
+<script type="text/javascript" src="http://chat.53kf.com/kf.php?arg=yijiawater&style=2"></script>
+</body>
+</html>

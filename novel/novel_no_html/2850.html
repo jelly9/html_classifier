@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>供求信息_中国蜂产品协会-国内最权威的蜂产品网站</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/templets/default/style/dedecms.css" type="text/css" rel="stylesheet" />
+<link href="/templets/default/style/layout.css" rel="stylesheet" media="screen" type="text/css">
+<link href="/templets/default/style/page.css" rel="stylesheet" media="screen" type="text/css">
+<script src="/templets/default/js/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="/templets/default/js/mainjs.js" type="text/javascript"></script>
+<style>
+.list_con{ width:920px; margin:0px auto;}
+.comUrlTime{}
+.comUrlTime14 li{ height:28px; background:url(../image/point.gif) no-repeat 0px 4px; padding-left:7px;}
+.comUrlTime14 li a{ font-size:14px; display:block;}
+.comUrlTime14 li a.tt{ float:left;}
+.comUrlTime14 li a.time{ float:right}
+.comUrlTime14 li.line{ background:none; height:2px; margin-bottom:20px; overflow:hidden;}
+#dedeinfolink a{ padding:0px 5px;}
+
+
+</style>
+</head>
+
+<body>
+<script language="javascript" type="text/javascript" src="/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+function AddFavorite(sURL, sTitle)
+{
+    try
+    {
+        window.external.addFavorite(sURL, sTitle);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        }
+        catch (e)
+        {
+            alert("由于浏览器功能限制，请使用Ctrl+D进行添加");
+        }
+    }
+}
+function SetHome(obj,vrl){
+        try{
+                obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+                if(window.netscape) {
+                        try {
+                                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                        }
+                        catch (e) {
+                                alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                        }
+                        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                        prefs.setCharPref('browser.startup.homepage',vrl);
+                 }
+        }
+}
+
+
+</script>
+
+<div class="header wrapper">
+   <!--网页顶部-->
+   <div class="topbar clearfix">
+      <div class="l" id="_userlogin">
+        <ul>
+            <li><a href="/member/index_do.php?fmdo=user&dopost=regnew">用户注册</a></li>
+            <li><a href="/member/login.php">会员登录</a></li>
+            <script language="javascript" type="text/javascript">CheckLogin();</script>
+        </ul>
+      </div>
+      <div class="r">
+         <ul>
+             <li><a href="#" onclick="SetHome(this,window.location)">设为首页</a></li>
+            <li><a href="#" onclick="AddFavorite(window.location,document.title)">加入收藏</a></li>
+         </ul>
+      </div> 
+   </div>
+   <!--网页logo和搜索框-->
+   <div class="hMain wrapper">
+       <div class="logo l">
+           <a href="#"><img src="/templets/default/images/logo.jpg" /></a>
+       </div>
+       <div class="search r">
+            <form name="search" action="/plus/search.php">
+            <input type="hidden" name="kwtype" value="0" />
+                    <input id="input_key" name="q" class="input_key" placeholder="点击搜索..." type="text">
+                    <button type="submit" class="input_submit">搜索</button>
+             </form>
+             <div class="tags">
+                 <strong>热门:</strong>
+               　<a href='/plus/search.php?keyword=%E8%9C%82%E8%9C%9C'>蜂蜜</a> 　<a href='/plus/search.php?keyword=%E4%BA%A7%E5%93%81'>产品</a> 　<a href='/plus/search.php?keyword=%E8%9C%82%E8%83%B6'>蜂胶</a> 
+               
+             </div>
+       </div>
+   </div> 
+   <!--导航-->
+   <div class="hNav wrapper clearfix">
+    <ul>
+       <li><a href="/">协会首页</a></li>
+        
+        <li><a href="/bee/xhdt/" target="_blank">协会动态</a></li>
+       
+        <li><a href="/bee/news/index.html" target="_blank">行业资讯</a></li>
+       
+        <li><a href="/bee/sjcx/" target="_blank">数据查询</a></li>
+       
+        <li><a href="http://china-bee.org.cn/" target="_blank">产品追溯</a></li>
+       
+        <li><a href="/a/hyzp/" target="_blank">行业招聘</a></li>
+       
+        <li><a href="/bee/download/" target="_blank">下载专区</a></li>
+       
+        <li><a href="/bee/infos/" target="_blank">供求信息</a></li>
+       
+        <li><a href="http://www.china-bee.com/company" target="_blank">参加会议</a></li>
+       
+        <li><a href="/bee/jmzs/" target="_blank">招商加盟</a></li>
+       
+        <li><a href="/bee/fengmi/wsblh/" target="_blank">网上博览会</a></li>
+       
+        <li><a href="http://www.pad12.com" target="_blank">网上商城</a></li>
+         
+
+     </ul>
+ </div> 
+   <!--热点新闻-->
+   <div class="hPos wrapper clearfix">
+       <strong class="l">[公告]</strong>
+       
+       <div class="scrollwraper r">
+           <div class="scroll clearfix">
+               <div class="hotnew_item l">
+
+           <a href="http://www.china-bee.com/bee/news/xinwenzhongxin/2015/0215/4286.html" target="_blank">王啉会长在全国蜂业大会上的讲话<span>(2015-02-15)</span></a>
+<a href="http://www.china-bee.com/plus/view.php?aid=4247" target="_blank">2014年协会蜂蜜抽检中表现突出的品牌及产品名单<span>(2015-02-15)</span></a>
+<a href="/bee/news/note/2015/0206/4270.html" target="_blank">2015年蜂产品交流会招商函<span>(2015-02-15)</span></a>
+<a href="/bee/news/note/2015/0108/4234.html" target="_blank">康园“蜜巢”牌蜂蜜、“贝斯玛”黑森林蜂蜜在京下架<span>(2015-01-08)</span></a>
+<a href="/bee/news/note/2014/1216/2635.html" target="_blank">福建食药监局公布2014年9月涉嫌违法食品药品广告<span>(2014-11-06)</span></a>
+<a href="/bee/news/note/2014/1216/2634.html" target="_blank">为“中国质量走向世界”护航<span>(2014-10-08)</span></a>
+
+
+               </div>
+               <div class="clone_hotnew_item l"></div>
+         </div>
+      </div> 
+   </div>
+</div>
+<div class="layoutMain_03">
+ <div class="wrapper clearfix">
+	<div class="container02 clearfix">
+		<div class="dizhi" style="padding:8px 0px 8px 8px">您当前的位置：<a href='http://www.china-bee.com/http://www.china-bee.com/'>主页</a> > <a href='/bee/infos/'>供求信息</a> >  </div>
+		<div class="list_con">
+            
+            <table width="100%" id='dedeinfolink' style="font-size:12px; margin-top:12px;">
+<tr>
+	<td width='64' valign="top" style="padding-top:5px;"><span style="background:#F60; color:#fff; padding:5px;">地 区：</span></td>
+	<td width="844" align='left' style="line-height:24px; font-size:12px;">
+	  <a href='/plus/list.php?channelid=-8&tid=51&infotype=503'>不限</a>&nbsp;
+	  <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13000.1&infotype=503'> <b>云南省</b></a> &gt;&gt;  <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.1&infotype=503'>五华区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.10&infotype=503'>石林彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.11&infotype=503'>嵩明县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.12&infotype=503'>禄劝彝族苗族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.13&infotype=503'>寻甸回族彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.14&infotype=503'>安宁市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.2&infotype=503'>盘龙区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.3&infotype=503'>官渡区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.4&infotype=503'>西山区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.5&infotype=503'>东川区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.6&infotype=503'>呈贡县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.7&infotype=503'>晋宁县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.8&infotype=503'>富民县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13001.9&infotype=503'>宜良县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002&infotype=503'>曲靖市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.1&infotype=503'>麒麟区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.2&infotype=503'>马龙县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.3&infotype=503'>陆良县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.4&infotype=503'>师宗县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.5&infotype=503'>罗平县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.6&infotype=503'>富源县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.7&infotype=503'>会泽县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.8&infotype=503'>沾益县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13002.9&infotype=503'>宣威市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003&infotype=503'>玉溪市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.1&infotype=503'>红塔区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.2&infotype=503'>江川县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.3&infotype=503'>澄江县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.4&infotype=503'>通海县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.5&infotype=503'>华宁县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.6&infotype=503'>易门县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.7&infotype=503'>峨山彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.8&infotype=503'>新平彝族傣族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13003.9&infotype=503'>元江哈尼族彝族傣族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13004&infotype=503'>保山市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13004.1&infotype=503'>隆阳区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13004.2&infotype=503'>施甸县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13004.3&infotype=503'>腾冲县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13004.4&infotype=503'>龙陵县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13004.5&infotype=503'>昌宁县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005&infotype=503'>昭通市</a>
+ <b>昭阳区</b>
+ <b>威信县</b>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.11&infotype=503'>水富县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.2&infotype=503'>鲁甸县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.3&infotype=503'>巧家县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.4&infotype=503'>盐津县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.5&infotype=503'>大关县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.6&infotype=503'>永善县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.7&infotype=503'>绥江县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.8&infotype=503'>镇雄县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.9&infotype=503'>彝良县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13006&infotype=503'>丽江市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13006.1&infotype=503'>古城区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13006.2&infotype=503'>玉龙纳西族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13006.3&infotype=503'>永胜县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13006.4&infotype=503'>华坪县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13006.5&infotype=503'>宁蒗彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007&infotype=503'>思茅市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.1&infotype=503'>翠云区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.10&infotype=503'>西盟佤族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.2&infotype=503'>普洱哈尼族彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.3&infotype=503'>墨江哈尼族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.4&infotype=503'>景东彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.5&infotype=503'>景谷傣族彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.6&infotype=503'>镇沅彝族哈尼族拉祜族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.7&infotype=503'>江城哈尼族彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.8&infotype=503'>孟连傣族拉祜族佤族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13007.9&infotype=503'>澜沧拉祜族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008&infotype=503'>临沧市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008.1&infotype=503'>临翔区</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008.2&infotype=503'>凤庆县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008.3&infotype=503'>云　县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008.4&infotype=503'>永德县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008.5&infotype=503'>镇康县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008.6&infotype=503'>双江拉祜族佤族布朗族傣族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008.7&infotype=503'>耿马傣族佤族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13008.8&infotype=503'>沧源佤族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009&infotype=503'>楚雄彝族自治州</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.1&infotype=503'>楚雄市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.10&infotype=503'>禄丰县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.2&infotype=503'>双柏县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.3&infotype=503'>牟定县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.4&infotype=503'>南华县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.5&infotype=503'>姚安县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.6&infotype=503'>大姚县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.7&infotype=503'>永仁县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.8&infotype=503'>元谋县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13009.9&infotype=503'>武定县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010&infotype=503'>红河哈尼族彝族自治州</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.1&infotype=503'>个旧市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.10&infotype=503'>金平苗族瑶族傣族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.11&infotype=503'>绿春县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.12&infotype=503'>河口瑶族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.2&infotype=503'>开远市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.3&infotype=503'>蒙自县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.4&infotype=503'>屏边苗族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.5&infotype=503'>建水县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.6&infotype=503'>石屏县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.7&infotype=503'>弥勒县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.8&infotype=503'>泸西县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13010.9&infotype=503'>元阳县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011&infotype=503'>文山壮族苗族自治州</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011.1&infotype=503'>文山县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011.2&infotype=503'>砚山县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011.3&infotype=503'>西畴县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011.4&infotype=503'>麻栗坡县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011.5&infotype=503'>马关县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011.6&infotype=503'>丘北县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011.7&infotype=503'>广南县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13011.8&infotype=503'>富宁县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13012&infotype=503'>西双版纳傣族自治州</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13012.1&infotype=503'>景洪市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13012.2&infotype=503'>勐海县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13012.3&infotype=503'>勐腊县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013&infotype=503'>大理白族自治州</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.1&infotype=503'>大理市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.10&infotype=503'>洱源县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.11&infotype=503'>剑川县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.12&infotype=503'>鹤庆县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.2&infotype=503'>漾濞彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.3&infotype=503'>祥云县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.4&infotype=503'>宾川县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.5&infotype=503'>弥渡县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.6&infotype=503'>南涧彝族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.7&infotype=503'>巍山彝族回族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.8&infotype=503'>永平县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13013.9&infotype=503'>云龙县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13014&infotype=503'>德宏傣族景颇族自治州</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13014.1&infotype=503'>瑞丽市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13014.2&infotype=503'>潞西市</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13014.3&infotype=503'>梁河县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13014.4&infotype=503'>盈江县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13014.5&infotype=503'>陇川县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13015&infotype=503'>怒江傈僳族自治州</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13015.1&infotype=503'>泸水县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13015.2&infotype=503'>福贡县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13015.3&infotype=503'>贡山独龙族怒族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13015.4&infotype=503'>兰坪白族普米族自治县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13016&infotype=503'>迪庆藏族自治州</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13016.1&infotype=503'>香格里拉县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13016.2&infotype=503'>德钦县</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13016.3&infotype=503'>维西傈僳族自治县</a>
+&nbsp;
+	  </td>
+	</tr>
+<tr><td colspan='2' class='spline'>&nbsp;</td></tr>
+<tr>
+	<td valign="top"><span style="background:#F60; color:#fff; padding:5px;">类 型：</span></td>
+  <td align='left'>
+    <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.10'>不限</a>&nbsp;
+     <a href='/plus/list.php?channelid=-8&tid=51&infotype=500&nativeplace=13005.10'>商品</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&infotype=501&nativeplace=13005.10'>出售</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&infotype=502&nativeplace=13005.10'>求购</a>
+ <b>交换</b>
+ <a href='/plus/list.php?channelid=-8&tid=51&infotype=504&nativeplace=13005.10'>合作</a>
+&nbsp;
+  </td>
+  </tr>
+<tr><td colspan='2' class='spline'>&nbsp;</td></tr>
+<tr>
+	<td valign="top"><span style="background:#F60; color:#fff; padding:5px;">行 业：</span></td>
+  <td align='left'>
+    <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.10&infotype=503'>不限</a>&nbsp;
+    <a href='/plus/list.php?channelid=-8&tid=51&nativeplace=13005.10&vocation=4000&infotype=503'> <b>蜂业设备</b></a> &gt;&gt;  <a href='/plus/list.php?channelid=-8&tid=51&vocation=4001&nativeplace=13005.10&infotype=503'>浓缩设备</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4002&nativeplace=13005.10&infotype=503'>灌装机</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4003&nativeplace=13005.10&infotype=503'>洗瓶机</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4004&nativeplace=13005.10&infotype=503'>摇蜜机</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4005&nativeplace=13005.10&infotype=503'>压片机</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4006&nativeplace=13005.10&infotype=503'>包装机</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4007&nativeplace=13005.10&infotype=503'>干燥设备</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4008&nativeplace=13005.10&infotype=503'>运输机具</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4009&nativeplace=13005.10&infotype=503'>贮存设备</a>
+ <a href='/plus/list.php?channelid=-8&tid=51&vocation=4010&nativeplace=13005.10&infotype=503'>其他设备</a>
+&nbsp;
+  </td>
+  </tr>
+<tr><td colspan='2' class='spline'>&nbsp;</td></tr>
+</table>		
+		
+            
+            
+            
+				<ul class="comUrlTime14" style="margin-top:15px; border-top:1px solid #E7E7E7; padding-top:15px;">
+                
+    
+                    
+                </ul>
+            
+            
+            <div class="page">
+              <div class="dede_pages">
+               <ul class="pagelist">
+                <span class="pageinfo">共0页/0条记录</span>
+               </ul>
+              </div>
+            
+            </div>
+            
+            
+			</div>
+	</div>
+	</div>
+	</div>
+	
+<!--第八层-->
+<div class="layoutMain_980_01">
+ <div class="mHead">
+  <h1><a href="/bee/jmzs/">招商加盟</a></h1>
+  <span><a href="/bee/jmzs/">>>更多</a></span>
+ </div>
+ <div class="wrapper clearfix pt pb">
+     <div class="infiniteCarousel">
+      <div style="overflow: hidden;" class="wrapper">
+       <ul style="width: 9999px;" id="imgscroll">
+       
+
+      <li class="cloned">
+          <a href="/bee/dailijiameng/20141204/1936.html" target="_blank">
+             <img src="/uploads/141210/2-141210093940257.jpg" alt="<strong>吉斯集团”果醋类</strong>" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC"><strong>吉斯集团”果醋类</strong></font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jiamengshangji/20141204/1931.html" target="_blank">
+             <img src="/uploads/allimg/141204/1542124140-0-lp.jpg" alt="巴西蜂蜜享誉全球" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">巴西蜂蜜享誉全球</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jiamengpinpai/20141204/1915.html" target="_blank">
+             <img src="/uploads/allimg/141204/144959C23-0-lp.jpg" alt="淄博规范发展蜂蜜" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">淄博规范发展蜂蜜</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/tesejiameng/20141204/1939.html" target="_blank">
+             <img src="/uploads/allimg/141204/1555211122-0-lp.jpg" alt="蜂蜜南瓜糕加盟" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">蜂蜜南瓜糕加盟</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jiamengzhanhui/20141204/1891.html" target="_blank">
+             <img src="/uploads/allimg/141204/141204/3-14120411451I96.jpg" alt="借力农交会，青海" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">借力农交会，青海</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/zhaoshangjiameng/20141204/1955.html" target="_blank">
+             <img src="/uploads/allimg/141204/1FI51V4-0-lp.jpg" alt="投资理财、特许加" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">投资理财、特许加</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jmzs//2014/0829/1394.html" target="_blank">
+             <img src="/uploads/140922/2-1409221A420N1.jpg" alt="蜂胶系列化妆品诚" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">蜂胶系列化妆品诚</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jmzs//2014/0829/1397.html" target="_blank">
+             <img src="/uploads/140922/2-1409221A239106.jpg" alt="诚招全国加盟代理" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">诚招全国加盟代理</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jmzs//2014/0829/1391.html" target="_blank">
+             <img src="/uploads/140922/2-1409221A136457.jpg" alt="加盟明园  挑战危" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">加盟明园  挑战危</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jmzs//2014/0829/1393.html" target="_blank">
+             <img src="/uploads/140922/2-1409221A02V16.png" alt="诚招全国地级市代" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">诚招全国地级市代</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jmzs//2014/0829/1400.html" target="_blank">
+             <img src="/uploads/140922/2-140922164T3Y1.jpg" alt="0-0.5万 投资小 利润" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">0-0.5万 投资小 利润</font></span>
+          </a>
+       </li>
+<li class="cloned">
+          <a href="/bee/jmzs//2014/0829/1396.html" target="_blank">
+             <img src="/uploads/140922/2-140922164I11M.jpg" alt="诚招圣贝特蜂产品" border="0" height="120" width="160">
+              <span class="title"><font color="#0033CC">诚招圣贝特蜂产品</font></span>
+          </a>
+       </li>
+
+
+
+
+       
+       </ul>
+      </div><a href="javascript:;" class="arrow back"><</a><a href="javascript:;" class="arrow forward">></a>
+     </div>
+ </div>
+ <div class="mFoot"></div>
+</div>
+<!--第九层-->
+<div class="layoutMain_980">
+  <div class="mHead">
+      <h1>友情链接</h1>
+  </div>
+   <div class="wrapper clearfix">
+    <div class="flink">
+      <div id="j_scroll_flink">
+          <p>
+          
+<a href='http://www.nhfpc.gov.cn/' target='_blank'>国家卫生部</a>   |  
+
+<a href='http://www.sda.gov.cn/WS01/CL0001/' target='_blank'>国家食药检局</a>   |  
+
+<a href='http://www.aqsiq.gov.cn/' target='_blank'>国家质检总局</a>   |  
+
+<a href='http://www.ysybee.com/cn/index.asp' target='_blank'>颐寿园产品</a>   |  
+
+<a href='http://www.baihua1919.com/' target='_blank'>北京百花蜂业</a>   |  
+
+<a href='http://fxxy.fafu.edu.cn/' target='_blank'>福建农大蜂学学院</a>   |  
+
+<a href='http://iar.caas.cn/sites/iar/' target='_blank'>中国农科院蜜蜂研究</a>   |  
+
+<a href='http://www.my1918.com.cn/' target='_blank'>湖南明园蜂业</a>   |  
+
+<a href='http://www.gsygroup.com/' target='_blank'>上海冠生园</a>   |  
+
+<a href='http://www.lsa.cn/forum.php' target='_blank'>南京老山药业</a>   |  
+
+<a href='http://www.whgn.org.cn/contants.aspx?a=1232' target='_blank'>湖北省扬子江蜂业有</a>   |  
+
+<a href='http://www.youither.com/' target='_blank'>杭州宝灵</a>   |  
+
+<a href='http://www.beewords.com/' target='_blank'>浙江蜂之语</a>   |  
+
+<a href='http://www.baichun.cn/' target='_blank'>安徽百春制药</a>   |  
+
+<a href='http://www.wsbee.com/' target='_blank'>江西汪氏蜜蜂园</a>   |  
+
+<a href='http://www.beeden.com/zh-CN/index.html' target='_blank'>广州宝生园</a>   |  
+
+<a href='http://hangzhou0174299.11467.com/' target='_blank'>杭州常青蜂业公司</a>   |  
+
+<a href='http://www.tesw.com/' target='_blank'>北京天恩生物</a>   |  
+
+<a href='http://www.bee-king.com.cn/' target='_blank'>北京蜂业公司</a>   |  
+
+<a href='http://www.tianxingfengmi.com/cn/index.asp' target='_blank'>沈阳天兴</a>   |  
+
+<a href='http://www.11467.com/shanghai/co/742975.htm' target='_blank'>上海远景生物</a>   |  
+
+<a href='http://www.tianxin.net.cn/' target='_blank'>安徽王巢</a>   |  
+
+<a href='http://www.pad12.com/' target='_blank'>派得商城</a>   |  
+ 
+          </p>
+    </div>
+  </div>
+ </div>
+  <div class="mFoot"></div>
+</div>
+<!--第十层-->
+<div class="layoutFooter">
+     <div class="fMenu">
+     
+        <a href="/bee/newfile1.html" target="_blank">关于我们</a> |
+        <a href="/bee/newfile2.html" target="_blank">法律声明</a> |
+        
+        <a href="#" target="_blank">手机版</a> |
+        <a href="/bee/newfile3.html" target="_blank" >大事记</a> | 
+        <a href="/bee/newfile4.html" target="_blank">广告报价</a> |
+        <a href="/bee/newfile5.html" target="_blank">联系方式</a> | 
+        <a href="/plus/guestbook.php" target="_blank">留言</a> | 
+        <a href="/bee/sitemap.html" target="_blank">网站地图</a> | 
+        <a href="/member/index_do.php?fmdo=user&dopost=regnew" target="_blank">协会帐号</a> |
+       <!-- <a href="bee/newfile6.html">诚聘英才</a>-->
+    </div>
+     <p class="copyright">
+         Copyright © 2008-2018 中国蜂产品协会-国内最权威的蜂产品网站 版权所有 www.china-bee.com all Rights Reserved<br>
+         经营许可证编号：京ICP备05023137号 投稿与合作邮箱：zgfcpxh@163.com 服务热线：（+86）010-59361516 400-860-1086<br>
+         独家运营技术支持 北京经纬天下信息技术有限公司 <a href="http://www.pad12.com">派得商城</a><br>
+         <a href="#"><img src="/templets/default/images/wlogo.png" alt="360网站卫士"></a>
+     </p>
+</div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?67b6e9988ca8f5f2a23c79b7abd9fd49";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+	
+</body>

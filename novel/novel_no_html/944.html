@@ -1,0 +1,1159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>学术圈-Contextual Recognition of Hand-drawn Diagrams with Conditional Random Fields</title>
+<meta property="wb:webmaster" content="c6fd6b14c06b40c3" /><!--  Piwik Tracking Code  <!-- End Piwik Tracking Code -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.soscholar.com/" : "http://piwik.soscholar.com/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://piwik.soscholar.com/piwik.php?idsite=1" style="border:0" alt="" /></p></noscript>
+<!-- End Piwik Tracking Code -->
+<link
+	rel="stylesheet"
+	href="http://static.soscholar.com/themes/default/css/my_paper.css" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link
+	href="http://static.soscholar.com/themes/default/css/index.css" rel="stylesheet"
+	type="text/css">
+<link
+	rel="stylesheet" href="http://static.soscholar.com/themes/default/css/ui.tabs.css"
+	type="text/css" media="print, projection, screen">
+<link
+	href="http://static.soscholar.com/themes/default/css/layout.css" type="text/css"
+	rel="stylesheet" media="all" />
+<link
+	rel="stylesheet"
+	href="http://static.soscholar.com/themes/default/css/style_login.css" />
+<link
+	rel="stylesheet"
+	href="http://static.soscholar.com/themes/default/css/commont_area.css" />
+<link
+	rel="stylesheet" href="http://static.soscholar.com/themes/default/css/feedback.css" />
+<link
+	href="http://static.soscholar.com/themes/default/css/tipsy.css" media="screen"
+	rel="stylesheet" type="text/css" />
+<link
+	href="http://static.soscholar.com/themes/default/css/tipsy.hovercard.css"
+	media="screen" rel="stylesheet" type="text/css" />
+
+<script
+	src="http://static.soscholar.com/jscript/jquery.min.js" type="text/javascript"></script>
+<script
+	src="http://static.soscholar.com/jscript/popupclass.js" type="text/javascript"></script>
+<script 
+	src="http://static.soscholar.com/jscript/alertDiv.js" type="text/javascript"></script>
+<script
+	type="text/javascript" src="http://static.soscholar.com/jscript/scrolling.js"></script>
+<script
+	src="http://static.soscholar.com/jscript/tools.js" charset="gb2312"></script>
+<script
+	src="http://static.soscholar.com/jscript/login.js"></script>
+
+<script 
+	src="http://static.soscholar.com/jscript/top.js" type="text/javascript"></script>
+
+
+<script
+	src="http://static.soscholar.com/jscript/jquery.tipsy.js"
+	type="text/javascript"></script>
+<script
+	src="http://static.soscholar.com/jscript/jquery.tipsy.hovercard.js"
+	type="text/javascript"></script>
+<script> var base_url = '/';</script>
+<script> var STATIC_SOURCE_URL = 'http://static.soscholar.com/themes/default/';</script>
+<script> var JS_SOURCE_URL = 'http://static.soscholar.com/jscript/';</script>
+<script src="http://static.soscholar.com/jscript/scrolltopcontrol.js"></script>
+<script type="text/javascript" src="http://static.soscholar.com/jscript/friend.js"></script>
+<script>
+var now_user_id='';
+</script>
+<script type="text/javascript" src="http://static.soscholar.com/jscript/rrshare.js"></script>
+<script src="http://static.soscholar.com/jscript/jquery.fcbkcomplete.min.js"
+	type="text/javascript"></script>
+<link rel="stylesheet"
+	href="http://static.soscholar.com/themes/default/css/fcbkcomplete.css"
+	type="text/css" media="screen" charset="utf-8" />
+<script src="http://static.soscholar.com/jscript/search.js" type="text/javascript"></script>
+<script type="text/javascript">
+//更改类型是引用还是被引用
+function change_field_id(paper_id,field_id){
+	location.href="reference_detail?paper_id="+paper_id+"&field_id="+field_id;
+}
+</script>
+<script src="http://static.soscholar.com/jscript/textareaAutoHeight.js" type="text/javascript"></script>
+<script>
+$(document).ready(function(){
+	$('textarea').tah({
+	    moreSpace:15,   // 输入框底部预留的空白, 默认15, 单位像素
+	    maxHeight:500,  // 指定Textarea的最大高度, 默认600, 单位像素
+	    animateDur:200  // 调整高度时的动画过渡时间, 默认200, 单位毫秒
+	});
+});
+</script>
+</head>
+	<LINK rel="Bookmark" href="http://static.soscholar.com/themes/default/images/nail_img.png" >
+<script type="text/javascript" src="http://static.soscholar.com/jscript/head.js"></script>
+<script type="text/javascript" src="http://static.soscholar.com/jscript/md5.js"></script>
+<link href="http://static.soscholar.com/themes/default/css/searchSuggest.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="http://static.soscholar.com/jscript/searchSuggest.js"></script>
+<script type="text/javascript">
+//判断浏览器是否支持 placeholder属性  
+function isPlaceholder(){
+    var input = document.createElement('input');  
+    return 'placeholder' in input;  
+}  
+  
+if (!isPlaceholder()) {//不支持placeholder 用jquery来完成  
+    $(document).ready(function() {  
+        if(!isPlaceholder()){  
+            $("input").not("input[type='password']").each(//把input绑定事件 排除password框  
+                function(){  
+                    if($(this).val()=="" && $(this).attr("placeholder")!=""){  
+                        $(this).val($(this).attr("placeholder"));  
+                        $(this).focus(function(){  
+                            if($(this).val()==$(this).attr("placeholder")) $(this).val("");  
+                        });  
+                        $(this).blur(function(){  
+                            if($(this).val()=="") $(this).val($(this).attr("placeholder"));  
+                        });  
+                    }  
+            });  
+			
+			$("textarea").each(//把textarea绑定事件
+                function(){  
+                    if($(this).val()=="" && $(this).attr("placeholder")!=""){  
+                        $(this).val($(this).attr("placeholder"));  
+                        $(this).focus(function(){  
+                            if($(this).val()==$(this).attr("placeholder")) $(this).val("");  
+                        });  
+                        $(this).blur(function(){  
+                            if($(this).val()=="") $(this).val($(this).attr("placeholder"));  
+                        });  
+                    }  
+            });  
+            //对password框的特殊处理1.创建一个text框 2获取焦点和失去焦点的时候切换  		
+			$("input[type='password']").each(//把input绑定事件 排除password框  
+                function(i){  
+					if($(this).attr("placeholder")){  
+						var pwdField    = $(this);  
+						var pwdVal      = pwdField.attr('placeholder');  
+						pwdField.after('<input id="pwdPlaceholder'+i+'" class="reg_input" type="text" value='+pwdVal+' autocomplete="off"  maxlength="16" style="margin-left:10px;"/>');  
+						var pwdPlaceholder = $('#pwdPlaceholder'+i);  
+						pwdPlaceholder.show();  
+						pwdField.hide();  
+						  
+						pwdPlaceholder.focus(function(){  
+							pwdPlaceholder.hide();  
+							pwdField.show();  
+							pwdField.focus();  
+						});  
+						  
+						pwdField.blur(function(){  
+							if(pwdField.val() == '') {  
+								pwdPlaceholder.show();  
+								pwdField.hide();  
+							}  
+						});  
+					}
+            });  
+        }  
+    });  
+      
+}  
+</script>
+<script type="text/javascript">
+var isIE = (document.all && window.ActiveXObject && !window.opera) ? true : false;//判断是不是ie浏览器
+var  hig
+$(document).ready(function() {//将COPYRIGHT放于底部
+if(isIE){hig=document.documentElement.offsetHeight;}//ie获得网页可见区域的高
+else{hig=document.documentElement.clientHeight;}//火狐跟chrome获得网页可见区域的高
+$("td[class='center_box']").css({"height":parseInt(hig)-36-24-56-24-95});
+$("td[class='center_box_news']").css({"height":parseInt(hig)-36-24-56-24-95});
+$("td[class='album_height']").css({"height":parseInt(hig)-36-24-56-24-95});
+});
+
+</script>
+<style>
+.float{width:auto;border:1px solid #ccdcef;font-size:12px;background-color:#fcfcfc;-moz-box-shadow:1px 1px 2px rgba(0,0,0,.2);-webkit-box-shadow:1px 1px 2px rgba(0,0,0,.2);box-shadow:1px 1px 2px rgba(0,0,0,.2);position:absolute;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;right:0px;padding-top:5px;padding-right:30px;padding-bottom:5px;padding-left:10px;color:#333333;text-align:right;}
+.float a{font-size:12px;font-weight:normal;color:#5077bb;text-decoration:none;}
+.float .close-ico{position:absolute;top:5px;right:5px;display:block;width:16px;height:16px;background-image:url(http://static.soscholar.com/themes/default//images/close-ico.png);text-indent:-900px;overflow:hidden;}
+.float .close-ico:hover{background-position:0 -16px;}
+.float p{line-height:22px}
+</style>
+<script>
+(function($){
+    $.fn.capacityFixed = function(options) {
+        var opts = $.extend({},$.fn.capacityFixed.deflunt,options);
+
+        var FixedFun = function(element) {
+            var top = opts.top;
+            var right = ($(window).width()-opts.pageWidth)/2+opts.right;
+            element.css({
+                "right":right,
+                "top":top
+            });
+            $(window).resize(function(){
+                var right = ($(window).width()-opts.pageWidth)/2+opts.right;
+                element.css({
+                    "right":right
+                });
+            });
+            element.find(".close-ico").click(function(event){
+                element.remove();
+                event.preventDefault();
+            })
+        };
+        return $(this).each(function() {
+            FixedFun($(this));
+        });
+    };
+    $.fn.capacityFixed.deflunt={
+		right : 0,//相对于页面宽度的右边定位
+        top:36,
+        //pageWidth : self.innerWidth
+		pageWidth : self.pageWidth
+	};
+})(jQuery);
+
+
+//格式化时间
+Date.prototype.format = function(format)
+{
+    var o =
+    {
+        "M+" : this.getMonth()+1, //month
+        "d+" : this.getDate(),    //day
+        "h+" : this.getHours(),   //hour
+        "m+" : this.getMinutes(), //minute
+        "s+" : this.getSeconds(), //second
+        "q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+        "S" : this.getMilliseconds() //millisecond
+    }
+    if(/(y+)/.test(format))
+    format=format.replace(RegExp.$1,(this.getFullYear()+"").substr(4 - RegExp.$1.length));
+    for(var k in o)
+    if(new RegExp("("+ k +")").test(format))
+    format = format.replace(RegExp.$1,RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+    return format;
+}
+var date=new Date();
+var int=setInterval("show_new_unread('"+date.format('yyyy-MM-dd hh:mm:ss')+"')",30000);//定时执行
+//显示最新feed信息
+function show_new_unread(nowtime) {
+	$.ajax( {
+		type : "POST",
+		url : base_url+"friend/showUnreadnum",
+		data : "pageType="+"reference_detail",
+		dataType: "json",
+		success : function(msg) {	
+				if (parseInt(msg.fansnum) >0 || parseInt(msg.messagenum) >0 
+						|| parseInt(msg.commentnum)>0 || parseInt(msg.atnum)>0 
+						|| parseInt(msg.atcommnum)>0 || parseInt(msg.feednum)>0
+						|| parseInt(msg.generalquestionatNum)>0|| parseInt(msg.generalquestioncommentNum)>0
+						|| parseInt(msg.generalquestionatanswerNum)>0|| parseInt(msg.itemvoteNum)>0) {
+					if(document.getElementById('float')){
+						document.getElementById('float').style.display="block";
+					}
+					if (parseInt(msg.fansnum) >0){
+						document.getElementById('fansDiv').style.display="block";
+						$("#unread_fans").html(msg.fansnum);
+					}
+					if (parseInt(msg.messagenum) >0){
+						document.getElementById('messDiv').style.display="block"
+						$("#unread_message").html(msg.messagenum);
+					}
+					if (parseInt(msg.commentnum) >0){
+						document.getElementById('commDiv').style.display="block"
+						$("#unread_comm").html(msg.commentnum);
+					}
+					if (parseInt(msg.atnum) >0){
+						document.getElementById('atDiv').style.display="block"
+						if(parseInt(msg.atcommnum) >0){
+							$("#unread_at").html((parseInt(msg.atnum)+parseInt(msg.atcommnum))+"");
+						}else{
+							$("#unread_at").html(msg.atnum);
+						}
+					}else if(parseInt(msg.atcommnum) >0){
+						document.getElementById('atCommDiv').style.display="block"
+						$("#unread_at_comm").html(msg.atcommnum);
+					}
+					if (parseInt(msg.feednum) >0){
+						document.getElementById('feedCommDiv').style.display="block"
+						$("#unread_feed_comm").html(msg.feednum);
+					}
+
+					if (parseInt(msg.generalquestionatNum) >0){
+						document.getElementById('generalquestionatNumDiv').style.display="block"
+						$("#unread_generalquestionat_comm").html(msg.generalquestionatNum);
+					}
+
+					if (parseInt(msg.generalquestioncommentNum) >0){
+						document.getElementById('generalquestioncommentNumDiv').style.display="block"
+						$("#unread_generalquestioncomment_comm").html(msg.generalquestioncommentNum);
+					}
+
+					if (parseInt(msg.generalquestionatanswerNum) >0){
+						document.getElementById('generalquestionanswerNumDiv').style.display="block"
+						$("#unread_generalquestionanswer_comm").html(msg.generalquestionatanswerNum);
+					}
+					if (parseInt(msg.generalquestiontagaskNum) >0){
+						document.getElementById('generalquestiontagaskNumDiv').style.display="block"
+						$("#unread_generalquestiontagask_comm").html(msg.generalquestiontagaskNum);
+					}
+					if (parseInt(msg.itemvoteNum) >0){
+						document.getElementById('itemVoteNumDiv').style.display="block"
+						$("#unread_itemvote").html(msg.itemvoteNum);
+					}
+					if (parseInt(msg.itemvoteNum) >0){
+						document.getElementById('rankerFeedNumDiv').style.display="block"
+						$("#unread_rankerfeed").html(msg.itemvoteNum);
+					}
+				}else{
+					document.getElementById('float').style.display="none";
+				}
+			}
+		}
+	);
+}
+$(document).ready(function(){
+  var date=new Date();
+  show_new_unread(date.format('yyyy-MM-dd hh:mm:ss'));//定时执行
+});
+</script>
+
+<div id="navigation_bg">
+	<div id="navigation">
+		<!--导航左侧 关注 日历 趋势 begin-->
+		<div class="head_nav">
+            <ul>
+                <li><div class="logo" onclick="location.href='/'"></div></li>
+                <li  onclick="location.href='/personal_space'"><a href="javascript:;">学术社交</a></li>
+                <li><div class="dot"></div></li>
+                <li  onclick="location.href='/top_news'"><a href="javascript:;">学术应用</a></li>
+                <li><div class="dot"></div></li>
+                <li  onclick="location.href='/universe'"><a href="javascript:;">学术视界</a></li>
+                <li>
+					<form name="form1" id="form1" method="get" action="/search">
+					<input class="input_head" id="q" name="q" type="text" autocomplete='off'
+					onkeydown='if(event.keyCode==13) return false;'
+					value=""
+										placeholder="学术搜索"/>
+					<input type="hidden" id="author" name="author" /> 
+					<input type="hidden" id="year" name="year" />
+					<input type="hidden" id="publisher" name="publisher" /> 
+					<input type="hidden" id="field_id" name="field_id" />
+					<input type="hidden" id="domain_id" name="domain_id" />
+					<input type="hidden" id="sort" name="sort"/>
+					<input class="button_head" name="" type="submit" value=""/>
+					</form>
+					<div class="clear"></div>
+					<ul id="suggest_ul" style="z-index:9999999;display:none;">
+					</ul>
+				</li>
+            </ul>
+		</div>
+		<!--导航左侧 关注 日历 趋势 end-->
+
+		<!--用户登录 注册 begin-->
+		<div id="container">
+		<input type="hidden" id="user_id" value=""/>			<div id="loginContainer">
+				<a href="/register" class="regButton"><span>注册</span>
+				</a><span class="center_line_right">|</span><a
+					href="javascript:void(0)" id="loginButton"><span>登录</span> </a>
+				<div class="clear"></div>
+				<div id="loginBox">
+					<form id="loginForm"
+						action="/login/doLogin" method="post">
+						<fieldset id="body">
+							<fieldset>
+								<label for="email">邮箱</label><input type="text" name="email"
+									class="value_input_login" id="email" autocomplete="off"
+									value="" />
+							</fieldset>
+							<fieldset>
+								<label for="password">密码</label> <input type="password"
+									id="password" class="value_input_login"
+									onkeydown="if(event.keyCode==13)dologin('/');"
+									name="password" id="password" />
+							</fieldset>
+							<fieldset style="display: none" id="image_area">
+								<label for="image">验证码</label> <input type="text"
+									id="check_image"
+									onkeydown="if(event.keyCode==13)dologin('/');"
+									name="check_image" class="check_image" /> <img id="code" src=""
+									style="cursor: pointer;"
+									onClick="create_code('/')" /> <a
+									href="javascript:void(0)"
+									onClick="create_code('/')"><font size=2
+									color=#595959>换一下</font> </a>
+							</fieldset>
+							<input type="button"
+								onClick="dologin('/');" id="login"
+								value="登录" /><label for="checkbox" style="margin-top: 7px;"><input
+								type="checkbox" id="checkbox" checked="checked" onChange="changeRecord();"
+								value="1" style="margin-top: 3px;" />自动登录</label>
+							<div class="p_login_head">
+								<a href="/password">忘记密码？</a>
+							</div>
+						</fieldset>
+						<div
+							style="margin-top: 15px; margin-right: 0px; width: 190px; margin-left: auto; margin-right: auto;">
+							<div class="p_12_usercard" style="float: left; margin-right: 10px; color:#fff;">使用其它帐号登录</div>
+							<a href="/weibo_sina/login"><div
+									class="sina_login_img"></div> </a> <a
+								href="/renren_login"><div
+									class="renren_login_img"></div> </a> <a
+								href="/weibo_tencent/login"><div
+									class="tencent_login_img"></div> </a>
+						</div>
+						<div class="clear"></div>
+						<input type="hidden" id="errorTime" value="0"/>
+						<span id="errorspan"></span>
+					</form>
+				</div>
+			</div>
+					</div>
+		<!--用户登录 注册 end-->
+	</div>
+	<div id="loginfileBG"
+		style="background-color: #A0A0A0; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; z-index: 50018; filter: alpha(opacity =         50); opacity: 0.4; display: none"
+		onClick="$('#loginfileBG').hide();$('#loginfile').hide();"></div>
+	<div
+		style="z-index: 50019; width: 550px; position: fixed; left: 420px; top: 180px; display: none"
+		class="dialogJ dialogJshadow" id='loginfile'>
+		<div class="dialogJtitle">
+			<span class="dialogJtxt" style="color:#ffffff; line-height:24px;">登录或注册</span><a href="javascript:void(0)"
+				onClick="$('#loginfileBG').hide();$('#loginfile').hide();"
+				class="dialogJclose" title="关闭本窗口"><img
+				src="http://static.soscholar.com/themes/default/images/close.gif"> </a>
+		</div>
+		<div class="dialogJcontent_reg">
+			<table width="100%">
+				<tr>
+					<td width="300"><br />
+						<table width="100%" border="0" cellspacing="0" cellpadding="0"
+							class="line_right">
+							<tr>
+								<td>
+									<div style="padding-left: 15px;">
+										邮箱：<input type="text" id="email3" class="input_width"
+											value="" />
+										<div class="clear"></div>
+										<br />
+									</div>
+									<div style="padding-left: 15px;">
+										密码：<input type="password"
+											onkeydown="if(event.keyCode==13)dologin3('/');"
+											id="password3" class="input_width" />
+										<div class="clear"></div>
+										<br />
+									</div>
+									<div style="display: none" id="image_area3">
+										&nbsp;验证码：<input type="text" id="check_image3"
+											onkeydown="if(event.keyCode==13)dologin3('/');"
+											name="check_image" class="input_width_short" /> <img
+											id="code3" src=""
+											style="cursor: pointer; vertical-align: middle;"
+											onClick="create_code3('/')" /> <a
+											href="javascript:void(0)"
+											onClick="create_code3('/')"
+											style="text-decoration: none;"><font size=2 color=#595959>换一下</font>
+										</a>
+										<div class="clear"></div>
+										<br />
+									</div>
+									<div>
+										<input type="button"
+											onClick="dologin3('/');"
+											class="login_button" style="margin-left: 51px;"
+											value="登&nbsp;录" /><label style="margin-top: 7px;"><input
+											type="checkbox" id="checkbox3" onChange="changeRecord3();"
+											value="1" checked="checked" style="vertical-align: middle;" />自动登录</label> <span
+											class="p_password_head_news"><a
+											href="/password">忘记密码？</a> </span><br />
+										<p align="center">
+											<span id="errorspan3"></span>
+											<input type="hidden" id="errorTime3" value="0"/>
+										</p>
+									</div>
+									<div class="message_line"></div>
+									<div
+										style="margin-top: 20px; margin-right: 0px; width: 190px; margin-left: auto; margin-right: auto;">
+										<div style="float: left; margin-right: 10px;"
+											class="p_12_usercard">使用其它帐号登录</div>
+										<a href="/weibo_sina/login"><div
+												class="sina_login_img"></div> </a> <a
+											href="/renren_login"><div
+												class="renren_login_img"></div> </a> <a
+											href="/weibo_tencent/login"><div
+												class="tencent_login_img"></div> </a>
+										<div class="clear"></div>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td width="250" valign="top" align="center"><br />
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+									<div class="reg_head_text_title">为什么使用第三方帐号？</div>
+									<div class="reg_head_text">讨厌烦人的注册表单，经常忘了用户名和密码，我有第三方帐号，我喜欢通用的帐号，这样很安全。</div>
+								</td>
+							</tr>
+							<tr>
+								<td align="left"><br />
+									<div class="reg_head_text_title">想用独立的帐号，还未开通？</div>
+									<div class="reg_head_text">赶快免费注册一个吧！</div> <input
+									class="reg-green" type="button" value="注册学术圈"
+									onClick="location.href='/register'" />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" height="10"></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<body>
+	<div class="bg_img_36">
+		<table width="980" border="0" align="center" cellpadding="0"
+			cellspacing="0">
+			<tr>
+				<td width="180" valign="top" class="line_1px">
+					<table class="search_page_text" width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td align="left" valign="top" nowrap="nowrap"><span class="menu_margin_left title_style">类&nbsp;型</span>
+							</td>
+						</tr>
+						<tr>
+							<td align="left" valign="top">
+								<table width="100%" border="0" cellspacing="0" cellpadding="0"
+									class="left_menu_padding">
+									<tr>
+										<td nowrap="nowrap"><div class="p_detail_title line-spacing_10"><ul><li><a href="#" onclick="change_field_id('3a3c134d-1cb0-a463-f855-ff17c6bd73af',1);">参考文献</a></li><li><span class="">引用</span></li></ul></div>										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td valign="top" width="518" class="center_box_news">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td valign="top" class="">共<span class="p_red">15							</span> 篇文献</td>
+						</tr>
+					</table>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+					</table> 					<table width="100%" border="0" cellspacing="0" cellpadding="0"
+						class="spacing_20" style="table-layout: fixed;">
+						<tr>
+							<td valign="top"><span class="p_title"><a
+									href="/detail?paper_id=e80d6d6e-a6c4-3430-18e6-36a8634ae87a">Towards Robust Sketch Recognizers through Error Recovery Techniques								</a> </span>&nbsp;<a style="cursor:default;" href="javascript:void(0)" rel="hovercard"
+								title="loading..."
+								data-url="/paperCard/bibtex?id=e80d6d6e-a6c4-3430-18e6-36a8634ae87a"><img
+									src="http://static.soscholar.com/themes/default//images/bibtex.gif"
+									width="47" height="16" border="0" style="margin-top:3px;" align="top" /> </a>
+								</td>
+						</tr>
+						<tr>
+							<td><div class="word_wrap_518 p_info">  <a target='_blank' href="/author?author_id=707c5945-f15f-4e74-92f8-33b2f9dfa7b4" rel="hovercard" data-url="/paperCard/author?author_id=707c5945-f15f-4e74-92f8-33b2f9dfa7b4">Gennaro Costagliola <a/>, <a target='_blank' href="/author?author_id=3d5fcc8e-5736-e450-c9ed-ea6354156c79" rel="hovercard" data-url="/paperCard/author?author_id=3d5fcc8e-5736-e450-c9ed-ea6354156c79">Vincenzo Deufemia <a/>, <a target='_blank' href="/author?author_id=6dba2737-5f7b-94af-8bad-069d39a9dc6f" rel="hovercard" data-url="/paperCard/author?author_id=6dba2737-5f7b-94af-8bad-069d39a9dc6f">Michele Risi <a/></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="p_snippet">Sketching is an activity that produces informal documents containing hand-drawn shapes highly variable and ambiguous. In this paper we present a diagrammatic sketch recognizer that is able to cope wit......							</td>
+						</tr>
+						<tr>
+												</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td align="left" nowrap="nowrap"><span class="p_paperlink"><a
+												href="reference_detail?paper_id=e80d6d6e-a6c4-3430-18e6-36a8634ae87a&field_id=2">0次引用</a>
+										</span></td>
+										<td align="right" nowrap="nowrap">
+                                            <a href="javascript:void(0);" title="评论" onclick="saveComment('e80d6d6e-a6c4-3430-18e6-36a8634ae87a','0');" style="float:right;text-decoration:none;"><span class="comment_icon_12" id="comment_0">0</span></a>
+                                            <a href="javascript:void(0);" title="喜欢" onclick="saveLike('e80d6d6e-a6c4-3430-18e6-36a8634ae87a','feed_0',this);" style="float:right;text-decoration:none;"><span class="like_icon_12" id="feed_0">0</span></a>
+                                            <a href="javascript:void(0);" title="分享" onclick="saveShare(0,'e80d6d6e-a6c4-3430-18e6-36a8634ae87a','0',this)" style="float:right;text-decoration:none;"><span class="share_icon_12" id="share_0">0</span></a>
+                                            <a href="javascript:void(0);" title="书签" onclick="saveFavorite('e80d6d6e-a6c4-3430-18e6-36a8634ae87a','0',this);" style="float:right;text-decoration:none;"><span class="bookmark_icon_12" id="favorite_0">0</span></a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<!-- 收藏显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="favorite-area0">
+									<input type="hidden" id="favorite_text0" />
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input class="comment_input" type="text"
+											id="addword0"
+											onkeydown="if(event.keyCode==13)addword('0')"
+											onkeyup="immediately(0);" /> <input
+											id="addbutton0"
+											onclick="addword('0')" type="button"
+											class="comment_add" />
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveFavoriteSubmit('e80d6d6e-a6c4-3430-18e6-36a8634ae87a','0')">保&nbsp;存</button>
+									</div>
+									<div class="tag_center">
+										<span class="comment_note">限8个标签，单个标签英文限20个字符，中文限10个字符</span><span
+											class="tishi" id="tishi0"></span>
+									</div>
+									<div class="tag_center">
+										<div class="tagbox">
+											<ul id="kewordul0"></ul>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 评论显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="comment-area0">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id="comment_text0" ></textarea>
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveCommentSubmit('e80d6d6e-a6c4-3430-18e6-36a8634ae87a','0')">保&nbsp;存</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideComment('0')">取&nbsp;消</button>
+									</div>
+									<div class="tag_center">
+										<div class="tag_content">
+											<div id="comment0" class="comment0">
+												<ul class="block">
+													<li>
+														<div id="comment_list0"></div>
+																											</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 全部好友分享窗口 -->
+								<div class="comment-area-inner" style="display: none"
+									id="share-area0">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input type="hidden" id='share_type0' />
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id=shareText0 ></textarea>
+										<button class="comment_share" value="分&nbsp;享" type="button"
+											onclick="saveShareSubmit('e80d6d6e-a6c4-3430-18e6-36a8634ae87a','0')">分&nbsp;享</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideShare2('0')">取&nbsp;消</button>
+									</div>
+									<div class="tag_bottom"></div>
+								</div>
+							</td>
+						</tr>
+					</table> 					<table width="100%" border="0" cellspacing="0" cellpadding="0"
+						class="spacing_20" style="table-layout: fixed;">
+						<tr>
+							<td valign="top"><span class="p_title"><a
+									href="/detail?paper_id=ecd766be-15de-e446-5bf4-b6d387254e52">Models for Learning Spatial Interactions in Natural Images for Context-Based Classification								</a> </span>&nbsp;<a style="cursor:default;" href="javascript:void(0)" rel="hovercard"
+								title="loading..."
+								data-url="/paperCard/bibtex?id=ecd766be-15de-e446-5bf4-b6d387254e52"><img
+									src="http://static.soscholar.com/themes/default//images/bibtex.gif"
+									width="47" height="16" border="0" style="margin-top:3px;" align="top" /> </a>
+								</td>
+						</tr>
+						<tr>
+							<td><div class="word_wrap_518 p_info">  <a target='_blank' href="/author?author_id=dd092143-5d5b-40ea-a116-883eeeb10fb3" rel="hovercard" data-url="/paperCard/author?author_id=dd092143-5d5b-40ea-a116-883eeeb10fb3">Sanjiv Kumar <a/>, <a target='_blank' href="/author?author_id=22e5986e-aa9d-40e8-a625-98e96c26cb9d" rel="hovercard" data-url="/paperCard/author?author_id=22e5986e-aa9d-40e8-a625-98e96c26cb9d">John Lafferty <a/></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="p_snippet">interpreted as representing the official policies, either expressed or implied, of the Carnegie Mellon......							</td>
+						</tr>
+						<tr>
+												</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td align="left" nowrap="nowrap"><span class="p_paperlink"><a
+												href="reference_detail?paper_id=ecd766be-15de-e446-5bf4-b6d387254e52&field_id=2">10次引用</a>
+										</span></td>
+										<td align="right" nowrap="nowrap">
+                                            <a href="javascript:void(0);" title="评论" onclick="saveComment('ecd766be-15de-e446-5bf4-b6d387254e52','1');" style="float:right;text-decoration:none;"><span class="comment_icon_12" id="comment_1">0</span></a>
+                                            <a href="javascript:void(0);" title="喜欢" onclick="saveLike('ecd766be-15de-e446-5bf4-b6d387254e52','feed_1',this);" style="float:right;text-decoration:none;"><span class="like_icon_12" id="feed_1">0</span></a>
+                                            <a href="javascript:void(0);" title="分享" onclick="saveShare(0,'ecd766be-15de-e446-5bf4-b6d387254e52','1',this)" style="float:right;text-decoration:none;"><span class="share_icon_12" id="share_1">0</span></a>
+                                            <a href="javascript:void(0);" title="书签" onclick="saveFavorite('ecd766be-15de-e446-5bf4-b6d387254e52','1',this);" style="float:right;text-decoration:none;"><span class="bookmark_icon_12" id="favorite_1">0</span></a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<!-- 收藏显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="favorite-area1">
+									<input type="hidden" id="favorite_text1" />
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input class="comment_input" type="text"
+											id="addword1"
+											onkeydown="if(event.keyCode==13)addword('1')"
+											onkeyup="immediately(1);" /> <input
+											id="addbutton1"
+											onclick="addword('1')" type="button"
+											class="comment_add" />
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveFavoriteSubmit('ecd766be-15de-e446-5bf4-b6d387254e52','1')">保&nbsp;存</button>
+									</div>
+									<div class="tag_center">
+										<span class="comment_note">限8个标签，单个标签英文限20个字符，中文限10个字符</span><span
+											class="tishi" id="tishi1"></span>
+									</div>
+									<div class="tag_center">
+										<div class="tagbox">
+											<ul id="kewordul1"></ul>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 评论显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="comment-area1">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id="comment_text1" ></textarea>
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveCommentSubmit('ecd766be-15de-e446-5bf4-b6d387254e52','1')">保&nbsp;存</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideComment('1')">取&nbsp;消</button>
+									</div>
+									<div class="tag_center">
+										<div class="tag_content">
+											<div id="comment1" class="comment0">
+												<ul class="block">
+													<li>
+														<div id="comment_list1"></div>
+																											</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 全部好友分享窗口 -->
+								<div class="comment-area-inner" style="display: none"
+									id="share-area1">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input type="hidden" id='share_type1' />
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id=shareText1 ></textarea>
+										<button class="comment_share" value="分&nbsp;享" type="button"
+											onclick="saveShareSubmit('ecd766be-15de-e446-5bf4-b6d387254e52','1')">分&nbsp;享</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideShare2('1')">取&nbsp;消</button>
+									</div>
+									<div class="tag_bottom"></div>
+								</div>
+							</td>
+						</tr>
+					</table> 					<table width="100%" border="0" cellspacing="0" cellpadding="0"
+						class="spacing_20" style="table-layout: fixed;">
+						<tr>
+							<td valign="top"><span class="p_title"><a
+									href="/detail?paper_id=efe8557d-8f42-8490-ba19-dab73cc2d871">Diagram Structure Recognition by Bayesian Conditional Random Fields								</a> </span>&nbsp;<a style="cursor:default;" href="javascript:void(0)" rel="hovercard"
+								title="loading..."
+								data-url="/paperCard/bibtex?id=efe8557d-8f42-8490-ba19-dab73cc2d871"><img
+									src="http://static.soscholar.com/themes/default//images/bibtex.gif"
+									width="47" height="16" border="0" style="margin-top:3px;" align="top" /> </a>
+								</td>
+						</tr>
+						<tr>
+							<td><div class="word_wrap_518 p_info">  <a target='_blank' href="/author?author_id=0b816329-53c1-4511-b3d2-d7c37635fe98" rel="hovercard" data-url="/paperCard/author?author_id=0b816329-53c1-4511-b3d2-d7c37635fe98">Yuan Qi <a/>, <a target='_blank' href="/author?author_id=bfa7dfe8-96e3-47ae-964c-9e04073bfefd" rel="hovercard" data-url="/paperCard/author?author_id=bfa7dfe8-96e3-47ae-964c-9e04073bfefd">Martin Szummer <a/>, <a target='_blank' href="/author?author_id=42ccc74e-1993-426a-a694-f9c88835f501" rel="hovercard" data-url="/paperCard/author?author_id=42ccc74e-1993-426a-a694-f9c88835f501">Thomas P.<font color=red></font> Minka <a/></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="p_snippet">Hand-drawn diagrams present a complex recognition problem. Elements of the diagram are often individually ambiguous, and require context to be interpreted. We present a recognition method based on Bay......							</td>
+						</tr>
+						<tr>
+													<td><span class="p_info_s"><a
+									href="/publisher?publisher_id=827b9884-1d54-24be-2845-5c376fd0e896">Computer Vision and Pattern Recognition								</a>&nbsp;2005 </span></td>
+														</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td align="left" nowrap="nowrap"><span class="p_paperlink"><a
+												href="reference_detail?paper_id=efe8557d-8f42-8490-ba19-dab73cc2d871&field_id=2">15次引用</a>
+										</span></td>
+										<td align="right" nowrap="nowrap">
+                                            <a href="javascript:void(0);" title="评论" onclick="saveComment('efe8557d-8f42-8490-ba19-dab73cc2d871','2');" style="float:right;text-decoration:none;"><span class="comment_icon_12" id="comment_2">0</span></a>
+                                            <a href="javascript:void(0);" title="喜欢" onclick="saveLike('efe8557d-8f42-8490-ba19-dab73cc2d871','feed_2',this);" style="float:right;text-decoration:none;"><span class="like_icon_12" id="feed_2">0</span></a>
+                                            <a href="javascript:void(0);" title="分享" onclick="saveShare(0,'efe8557d-8f42-8490-ba19-dab73cc2d871','2',this)" style="float:right;text-decoration:none;"><span class="share_icon_12" id="share_2">0</span></a>
+                                            <a href="javascript:void(0);" title="书签" onclick="saveFavorite('efe8557d-8f42-8490-ba19-dab73cc2d871','2',this);" style="float:right;text-decoration:none;"><span class="bookmark_icon_12" id="favorite_2">0</span></a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<!-- 收藏显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="favorite-area2">
+									<input type="hidden" id="favorite_text2" />
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input class="comment_input" type="text"
+											id="addword2"
+											onkeydown="if(event.keyCode==13)addword('2')"
+											onkeyup="immediately(2);" /> <input
+											id="addbutton2"
+											onclick="addword('2')" type="button"
+											class="comment_add" />
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveFavoriteSubmit('efe8557d-8f42-8490-ba19-dab73cc2d871','2')">保&nbsp;存</button>
+									</div>
+									<div class="tag_center">
+										<span class="comment_note">限8个标签，单个标签英文限20个字符，中文限10个字符</span><span
+											class="tishi" id="tishi2"></span>
+									</div>
+									<div class="tag_center">
+										<div class="tagbox">
+											<ul id="kewordul2"></ul>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 评论显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="comment-area2">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id="comment_text2" ></textarea>
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveCommentSubmit('efe8557d-8f42-8490-ba19-dab73cc2d871','2')">保&nbsp;存</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideComment('2')">取&nbsp;消</button>
+									</div>
+									<div class="tag_center">
+										<div class="tag_content">
+											<div id="comment2" class="comment0">
+												<ul class="block">
+													<li>
+														<div id="comment_list2"></div>
+																											</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 全部好友分享窗口 -->
+								<div class="comment-area-inner" style="display: none"
+									id="share-area2">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input type="hidden" id='share_type2' />
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id=shareText2 ></textarea>
+										<button class="comment_share" value="分&nbsp;享" type="button"
+											onclick="saveShareSubmit('efe8557d-8f42-8490-ba19-dab73cc2d871','2')">分&nbsp;享</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideShare2('2')">取&nbsp;消</button>
+									</div>
+									<div class="tag_bottom"></div>
+								</div>
+							</td>
+						</tr>
+					</table> 					<table width="100%" border="0" cellspacing="0" cellpadding="0"
+						class="spacing_20" style="table-layout: fixed;">
+						<tr>
+							<td valign="top"><span class="p_title"><a
+									href="/detail?paper_id=f1087393-6194-34b1-2ba6-c6df89c8993a">Learning Diagram Parts with Hidden Random Fields								</a> </span>&nbsp;<a style="cursor:default;" href="javascript:void(0)" rel="hovercard"
+								title="loading..."
+								data-url="/paperCard/bibtex?id=f1087393-6194-34b1-2ba6-c6df89c8993a"><img
+									src="http://static.soscholar.com/themes/default//images/bibtex.gif"
+									width="47" height="16" border="0" style="margin-top:3px;" align="top" /> </a>
+								</td>
+						</tr>
+						<tr>
+							<td><div class="word_wrap_518 p_info">  <a target='_blank' href="/author?author_id=bfa7dfe8-96e3-47ae-964c-9e04073bfefd" rel="hovercard" data-url="/paperCard/author?author_id=bfa7dfe8-96e3-47ae-964c-9e04073bfefd">Martin Szummer <a/></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="p_snippet">Many diagrams contain compound objects composed of parts. We propose a recognition framework that learns parts in an unsupervised way, and requires training labels only for compound objects. Thus, hum......							</td>
+						</tr>
+						<tr>
+													<td><span class="p_info_s"><a
+									href="/publisher?publisher_id=faa0757d-db60-2438-7a51-41dee587568a">International Conference on Document Analysis and Recognition								</a>&nbsp;2005 </span></td>
+														</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td align="left" nowrap="nowrap"><span class="p_paperlink"><a
+												href="reference_detail?paper_id=f1087393-6194-34b1-2ba6-c6df89c8993a&field_id=2">7次引用</a>
+										</span></td>
+										<td align="right" nowrap="nowrap">
+                                            <a href="javascript:void(0);" title="评论" onclick="saveComment('f1087393-6194-34b1-2ba6-c6df89c8993a','3');" style="float:right;text-decoration:none;"><span class="comment_icon_12" id="comment_3">0</span></a>
+                                            <a href="javascript:void(0);" title="喜欢" onclick="saveLike('f1087393-6194-34b1-2ba6-c6df89c8993a','feed_3',this);" style="float:right;text-decoration:none;"><span class="like_icon_12" id="feed_3">0</span></a>
+                                            <a href="javascript:void(0);" title="分享" onclick="saveShare(0,'f1087393-6194-34b1-2ba6-c6df89c8993a','3',this)" style="float:right;text-decoration:none;"><span class="share_icon_12" id="share_3">0</span></a>
+                                            <a href="javascript:void(0);" title="书签" onclick="saveFavorite('f1087393-6194-34b1-2ba6-c6df89c8993a','3',this);" style="float:right;text-decoration:none;"><span class="bookmark_icon_12" id="favorite_3">0</span></a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<!-- 收藏显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="favorite-area3">
+									<input type="hidden" id="favorite_text3" />
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input class="comment_input" type="text"
+											id="addword3"
+											onkeydown="if(event.keyCode==13)addword('3')"
+											onkeyup="immediately(3);" /> <input
+											id="addbutton3"
+											onclick="addword('3')" type="button"
+											class="comment_add" />
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveFavoriteSubmit('f1087393-6194-34b1-2ba6-c6df89c8993a','3')">保&nbsp;存</button>
+									</div>
+									<div class="tag_center">
+										<span class="comment_note">限8个标签，单个标签英文限20个字符，中文限10个字符</span><span
+											class="tishi" id="tishi3"></span>
+									</div>
+									<div class="tag_center">
+										<div class="tagbox">
+											<ul id="kewordul3"></ul>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 评论显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="comment-area3">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id="comment_text3" ></textarea>
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveCommentSubmit('f1087393-6194-34b1-2ba6-c6df89c8993a','3')">保&nbsp;存</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideComment('3')">取&nbsp;消</button>
+									</div>
+									<div class="tag_center">
+										<div class="tag_content">
+											<div id="comment3" class="comment0">
+												<ul class="block">
+													<li>
+														<div id="comment_list3"></div>
+																											</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 全部好友分享窗口 -->
+								<div class="comment-area-inner" style="display: none"
+									id="share-area3">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input type="hidden" id='share_type3' />
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id=shareText3 ></textarea>
+										<button class="comment_share" value="分&nbsp;享" type="button"
+											onclick="saveShareSubmit('f1087393-6194-34b1-2ba6-c6df89c8993a','3')">分&nbsp;享</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideShare2('3')">取&nbsp;消</button>
+									</div>
+									<div class="tag_bottom"></div>
+								</div>
+							</td>
+						</tr>
+					</table> 					<table width="100%" border="0" cellspacing="0" cellpadding="0"
+						class="spacing_20" style="table-layout: fixed;">
+						<tr>
+							<td valign="top"><span class="p_title"><a
+									href="/detail?paper_id=fe47e9b2-6d89-e404-bb95-5716930a597a">A Conceptual Framework for Developing Adaptive Pen-Based User Interface								</a> </span>&nbsp;<a style="cursor:default;" href="javascript:void(0)" rel="hovercard"
+								title="loading..."
+								data-url="/paperCard/bibtex?id=fe47e9b2-6d89-e404-bb95-5716930a597a"><img
+									src="http://static.soscholar.com/themes/default//images/bibtex.gif"
+									width="47" height="16" border="0" style="margin-top:3px;" align="top" /> </a>
+								</td>
+						</tr>
+						<tr>
+							<td><div class="word_wrap_518 p_info">  <a target='_blank' href="/author?author_id=f4fcaeb3-6e6f-4485-ba7a-db206e4e278a" rel="hovercard" data-url="/paperCard/author?author_id=f4fcaeb3-6e6f-4485-ba7a-db206e4e278a">XU Li-Shuang <a/>, <a target='_blank' href="/author?author_id=8c91d5e3-9cdf-04d4-fb68-89fb7af1685a" rel="hovercard" data-url="/paperCard/author?author_id=8c91d5e3-9cdf-04d4-fb68-89fb7af1685a">Mingjun Zhou <a/>, <a target='_blank' href="/author?author_id=93f71ba6-93c7-d47a-ca33-ff0c8f59542f" rel="hovercard" data-url="/paperCard/author?author_id=93f71ba6-93c7-d47a-ca33-ff0c8f59542f">Changzhi Deng <a/>, <a target='_blank' href="/author?author_id=fce04978-4062-4ce7-82ba-5b71f100ab28" rel="hovercard" data-url="/paperCard/author?author_id=fce04978-4062-4ce7-82ba-5b71f100ab28">Feng Tian <a/>, <a target='_blank' href="/author?author_id=e45a1f0a-40e6-84d3-595f-a31705c5840b" rel="hovercard" data-url="/paperCard/author?author_id=e45a1f0a-40e6-84d3-595f-a31705c5840b">Yuan-yuan Liu <a/>, <a target='_blank' href="/author?author_id=ea609cc1-b7cf-4ded-ac55-c59ee25779ce" rel="hovercard" data-url="/paperCard/author?author_id=ea609cc1-b7cf-4ded-ac55-c59ee25779ce">Guozhong Dai <a/></div>
+							</td>
+						</tr>
+						<tr>
+							<td class="p_snippet">This paper presents CFAPUI (a conceptual framework for developing adaptive pen-based user interface), a conceptual framework for developing adaptive pen-based user interface. CFAPUI proposes an archit......							</td>
+						</tr>
+						<tr>
+												</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td align="left" nowrap="nowrap"><span class="p_paperlink"><a
+												href="reference_detail?paper_id=fe47e9b2-6d89-e404-bb95-5716930a597a&field_id=2">1次引用</a>
+										</span></td>
+										<td align="right" nowrap="nowrap">
+                                            <a href="javascript:void(0);" title="评论" onclick="saveComment('fe47e9b2-6d89-e404-bb95-5716930a597a','4');" style="float:right;text-decoration:none;"><span class="comment_icon_12" id="comment_4">0</span></a>
+                                            <a href="javascript:void(0);" title="喜欢" onclick="saveLike('fe47e9b2-6d89-e404-bb95-5716930a597a','feed_4',this);" style="float:right;text-decoration:none;"><span class="like_icon_12" id="feed_4">0</span></a>
+                                            <a href="javascript:void(0);" title="分享" onclick="saveShare(0,'fe47e9b2-6d89-e404-bb95-5716930a597a','4',this)" style="float:right;text-decoration:none;"><span class="share_icon_12" id="share_4">0</span></a>
+                                            <a href="javascript:void(0);" title="书签" onclick="saveFavorite('fe47e9b2-6d89-e404-bb95-5716930a597a','4',this);" style="float:right;text-decoration:none;"><span class="bookmark_icon_12" id="favorite_4">0</span></a>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<!-- 收藏显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="favorite-area4">
+									<input type="hidden" id="favorite_text4" />
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input class="comment_input" type="text"
+											id="addword4"
+											onkeydown="if(event.keyCode==13)addword('4')"
+											onkeyup="immediately(4);" /> <input
+											id="addbutton4"
+											onclick="addword('4')" type="button"
+											class="comment_add" />
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveFavoriteSubmit('fe47e9b2-6d89-e404-bb95-5716930a597a','4')">保&nbsp;存</button>
+									</div>
+									<div class="tag_center">
+										<span class="comment_note">限8个标签，单个标签英文限20个字符，中文限10个字符</span><span
+											class="tishi" id="tishi4"></span>
+									</div>
+									<div class="tag_center">
+										<div class="tagbox">
+											<ul id="kewordul4"></ul>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 评论显示框 -->
+								<div class="comment-area-inner" style="display: none"
+									id="comment-area4">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id="comment_text4" ></textarea>
+										<button class="comment_save" value="保&nbsp;存" title=""
+											type="button"
+											onclick="saveCommentSubmit('fe47e9b2-6d89-e404-bb95-5716930a597a','4')">保&nbsp;存</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideComment('4')">取&nbsp;消</button>
+									</div>
+									<div class="tag_center">
+										<div class="tag_content">
+											<div id="comment4" class="comment0">
+												<ul class="block">
+													<li>
+														<div id="comment_list4"></div>
+																											</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="tag_bottom"></div>
+								</div> <!-- 全部好友分享窗口 -->
+								<div class="comment-area-inner" style="display: none"
+									id="share-area4">
+									<div class="tag_top"></div>
+									<div class="tag_center">
+										<input type="hidden" id='share_type4' />
+										<textarea class="comment_input_386" type="text" maxlength="200"
+											id=shareText4 ></textarea>
+										<button class="comment_share" value="分&nbsp;享" type="button"
+											onclick="saveShareSubmit('fe47e9b2-6d89-e404-bb95-5716930a597a','4')">分&nbsp;享</button>
+										<button title="" value="取&nbsp;消" type="button"
+											class="comment_cancel"
+											onclick="hideShare2('4')">取&nbsp;消</button>
+									</div>
+									<div class="tag_bottom"></div>
+								</div>
+							</td>
+						</tr>
+					</table> <br /> <span class="page_previous_next page_padding"> <div class="page"><span>2/2</span>&nbsp;<a href="reference_detail?paper_id=3a3c134d-1cb0-a463-f855-ff17c6bd73af&field_id=2&page=1">第一页</a> <a href="reference_detail?paper_id=3a3c134d-1cb0-a463-f855-ff17c6bd73af&field_id=2&page=1">上一页</a> <a href="reference_detail?paper_id=3a3c134d-1cb0-a463-f855-ff17c6bd73af&field_id=2&page=1">1</a> <span>2</span> 下一页 </div> </span>
+				</td>
+				<td width="240" valign="top" class="padding_top20"></td>
+			</tr>
+			<tr>
+				<td colspan="4" valign="top" class="">
+					<table width="980" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+		<td height="1" bgcolor="#DCDBDB"></td>
+	</tr>
+	<tr>
+		<td height="40" align="center" valign="middle" class="copyright">
+			COPYRIGHT &copy; 2013 Powered By GOLAXY 中国科学院计算技术研究所 天玑团队
+		</td>
+	</tr>
+</table>				</td>
+			</tr>
+		</table>
+		<div id="slideout_score">
+	<a href="/welcome/guide"><img src="http://static.soscholar.com/themes/default/images/guide.png" alt="Feedback" border="0" /></a>
+</div>
+<div id="slideout_guide">
+	<a href="/scoreRules"><img src="http://static.soscholar.com/themes/default/images/score_rules.png" alt="Feedback" border="0" /></a>
+</div>
+<div id="slideout"><img
+	src="http://static.soscholar.com/themes/default/images/feedback.png" alt="Feedback" />
+<div id="slideout_inner">
+<form>
+<div id="slideout_inner_text">我想反馈：<select name="fb_select"
+	id="fb_select">
+	<option>问题</option>
+	<option>点子</option>
+</select></div>
+<textarea id="fb_text" name="fb_text" onkeyup="clear_fb_result();"></textarea> <input type="button"
+	value="提交" class="inner_submit" onclick="save_fb('/feedback/save_fb','reference_detail')">
+<span id="fblable"></span>
+<a id="slideout_inner_text" href="/feedback" target="blank">排行榜</a>
+</form>
+</div>
+</div>
+	</div>
+</body>
+</html>
+

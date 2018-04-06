@@ -1,0 +1,577 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+	大连高新园区凌川路勘察测量(网上报名) - 建设招标 – 中国建设网
+</title><meta name="keywords" content="大连高新园区凌川路勘察测量(网上报名)" /><meta name="Description" /><link rel="stylesheet" type="text/css" href="../../css/ztb.css" /><link rel="stylesheet" type="text/css" href="../../css/head.css" /><link rel="stylesheet" type="text/css" href="../../css/ztbmenu.css" /><link rel="stylesheet" type="text/css" href="../../css/soso.css" />
+    <script type="text/javascript" src="http://cha.cbi360.com/Js/IntroLink.js"></script>
+    <style>
+        .ztb_red_0:link,.ztb_red_0:visited{ color:#ff0001;}
+        .ztb_red_0:hover{ color:#ff0001;}
+    </style>
+
+    <script src="../../Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+
+    <script language="javascript" type="text/javascript" src="http://book.cbi360.com/js/ContentAddLink.js"></script>
+
+</head>
+<body>
+    <form name="from1" method="post" action="Content.aspx?articleID=858461&amp;PageNo=0" id="from1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTIxMzMyNjMwMTJkZMp2lQ7tfBmqQpTtHA4ibHU7x/2E" />
+
+        
+    <link rel="stylesheet" type="text/css" href="http://vip.cbi360.com/css/public.css">    
+    <link rel="stylesheet" type="text/css" href="http://vip.cbi360.com/css/cbitop.css">
+    <script type="text/javascript" src="http://vip.cbi360.com/js/ajax.js"></script>
+    <script type="text/javascript" src="http://vip.cbi360.com/js/cookie.js"></script>
+    
+    <script src="http://vip.cbi360.com/js/banner.js"></script>
+        <div id="wrap">
+
+            
+
+            <script language="javascript" type="text/javascript">var pd = "zb.cbi360.com";</script>
+
+            <script src="../../Js/sosomenu.js"></script>
+
+            
+
+<script language="JavaScript" src="../../JS/CollectionBase.js" type="text/javascript"></script>
+
+<script language="JavaScript" src="../../JS/detailedGeography1.js" type="text/javascript"></script>
+
+<script type="text/javascript">  
+
+function addLoadEvent(func) { 
+  var oldonload = window.onload; 
+  if (typeof window.onload !='function') { 
+   window.onload = func; 
+  } else {   
+   window.onload = function() { 
+     oldonload(); 
+     func(); 
+    } 
+  } 
+} 
+    
+        var drp_privince;
+        var drp_city;
+        //var drp_county;
+        var cityitems;
+        function setprivince(){   
+            drp_privince=document.getElementById('Top1_ddl_province');
+            drp_city=document.getElementById('Top1_ddl_city');  
+          
+            for(var i=0;i<nationcollect.m_Count;i++){            
+                drp_privince.options.add(new Option(nationcollect.Item(i).Name,nationcollect.Item(i).Name));	
+            }            
+            if(document.getElementById('Top1_hid_setprivince').value!=''){
+                drp_privince.value=document.getElementById('Top1_hid_setprivince').value;               
+            }
+            setcity(drp_privince);	            
+        }
+        
+        function setcity(list){   
+			var index=list.selectedIndex;
+			var items=nationcollect.Item(index);	
+			cityitems=items.SubCollect;
+			for(var i=drp_city.length;i>=0;--i){
+			    drp_city.options.remove(i);		
+			}
+			for(var j=0;j<items.SubCollect.m_Count;j++){
+				drp_city.options.add(new Option(items.SubCollect.Item(j).Name,items.SubCollect.Item(j).Name));		
+			}
+			if(document.getElementById('Top1_hid_setcity').value!=''){
+                drp_city.value=document.getElementById('Top1_hid_setcity').value;
+            }
+			document.getElementById('Top1_hid_privince').value=drp_privince.value;	  
+			document.getElementById('Top1_hid_city').value=drp_city.value;		
+			
+		}
+		
+		function selectprivince(list){   
+			var index=list.selectedIndex;
+			var items=nationcollect.Item(index);	
+			cityitems=items.SubCollect;		
+			for(var i=drp_city.length;i>=0;--i){
+			    drp_city.options.remove(i);		
+			}				
+			for(var j=0;j<cityitems.m_Count;j++){
+				drp_city.options.add(new Option(cityitems.Item(j).Name,cityitems.Item(j).Name));		
+			}
+			document.getElementById('Top1_hid_privince').value=drp_privince.value;	
+			document.getElementById('Top1_hid_city').value=drp_city.value;		
+			
+		}
+		
+		function selectcity(list){
+		    document.getElementById('Top1_hid_city').value=list.value;
+		   
+		}
+		
+			 addLoadEvent(setprivince);	
+			 
+	function query()
+     {
+        var type = document.getElementById("Top1_ddl_Type").value;
+        var datetype = document.getElementById("Top1_ddl_datetype").value;
+        var province =document.getElementById("Top1_hid_privince").value; 
+        var city =document.getElementById("Top1_hid_city").value;
+        var keyWord = document.getElementById("Top1_txt_key").value;   
+         keyWord=keyWord =="请输入关键字"?"":keyWord;
+        var url = "";
+        if (type == "zb")
+        {
+           url = "../../findzb.html";
+        }
+        else if(type=="tb")
+        {
+            url = "../../findtb.html";
+        }
+        url = url + "?title="+ escape(keyWord);
+            
+        if (province != "" && province != "选择省")
+        {
+            url += "&province=" + escape(province);
+         }
+         if (city != "" && city != "选择市")
+         {
+             url += "&city=" + escape(city);
+         }
+         if(datetype!="")
+         {
+            url += "&time=" + escape(datetype);
+         }    
+         location.href=url;
+     }
+     
+function topSearchkeypress(e)
+  {    
+    var e=e||event;		
+	var obj = e.srcElement ? e.srcElement : e.target;
+    var key = (document.all) ? e.keyCode:e.which; 
+    try
+    {
+        if(typeof(eval(loginkeypress))=="function")
+        {
+           if ((key == 13) && (obj == document.getElementById("txtAccount")||obj == document.getElementById("txtPwd"))) 
+            { 
+         
+                var btn = document.getElementById("btLogin"); 
+                btn.focus();          
+            } 
+        }
+        if(typeof(eval(menuSearchkeypress))=="function")
+        {
+            if ((key == 13) && (obj == document.getElementById("txt_key"))) 
+            {     
+                var btn = document.getElementById("btnSearch"); 
+                btn.focus(); 
+            }
+        }      
+        
+    }
+    catch(e)
+    {
+    }
+  	if ((key == 13) && (obj == document.getElementById("Top1_txt_key"))) 
+    {    
+        var btn = document.getElementById("Button1"); 
+        btn.focus(); 
+    }
+    
+  }
+ document.onkeypress=topSearchkeypress;
+</script>
+
+<input name="Top1$hid_privince" type="hidden" id="Top1_hid_privince" />
+<input name="Top1$hid_city" type="hidden" id="Top1_hid_city" />
+<input name="Top1$hid_setprivince" type="hidden" id="Top1_hid_setprivince" />
+<input name="Top1$hid_setcity" type="hidden" id="Top1_hid_setcity" />
+<input name="Top1$hid_specialType" type="hidden" id="Top1_hid_specialType" />
+<input name="Top1$hid_specialName" type="hidden" id="Top1_hid_specialName" />
+
+<script type="text/javascript">
+   function   setgvProvince(){
+    obj = document.getElementById("Top1_ProvinceList1_gvProvince");
+    for(var i=0;i<obj.rows.length;i++)
+    {
+
+        for(var j=0;j<obj.rows[i].cells.length;j++)
+        {
+       
+            obj.rows[i].cells[j].onmouseover=function(){this.style.background='#f9f0c9'};
+            obj.rows[i].cells[j].onmouseout=function(){this.style.background='#f8f8f8'};
+           
+        }
+    }
+}
+
+ function ProvinceListdl()
+   {
+      document.getElementById("ProvinceList").style.display="block";
+   }
+   function ProvinceListClose()
+   {
+    document.getElementById("ProvinceList").style.display="none";
+   }
+   	 addLoadEvent(setgvProvince);	
+
+</script>
+
+<div style="margin: 0px auto; width: 368px; position: relative">
+   <div class="Logincss" id="ProvinceList" style="margin-top:60px;*margin-top:60px!important; *margin-top:60px;  display: none; z-index: 999;
+       left:-180px; vertical-align: middle; position: absolute; background-color:White;" onmouseover="ProvinceListdl();"
+        onmouseout="ProvinceListClose();">
+            <div class="main_main1">
+                <div class="main_maintop1">
+                </div>
+                <div class="main_mainNl1" style="background: #f8f8f8">
+                   <table id="Top1_ProvinceList1_gvProvince" cellspacing="0" cellpadding="0" border="0" border="0" width="100%" style="  font-size:12px;  clear:both;float:left;">
+	<tr>
+		<td class="linksa" align="center" height="25">
+                       <a href='http://zb.cbi360.com'>全国</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../beijing'>北京</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../tianjin'>天津</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../shanghai'>上海</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../chongqing'>重庆</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../hebei'>河北</a> 
+                    </td>
+	</tr><tr>
+		<td class="linksa" align="center" height="25">
+                       <a href='../shanxi'>山西</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../liaoning'>辽宁</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../jilin'>吉林</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../heilongjiang'>黑龙江</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../jiangsu'>江苏</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../zhejiang'>浙江</a> 
+                    </td>
+	</tr><tr>
+		<td class="linksa" align="center" height="25">
+                       <a href='../anhui'>安徽</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../fujian'>福建</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../jiangxi'>江西</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../shandong'>山东</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../henan'>河南</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../hubei'>湖北</a> 
+                    </td>
+	</tr><tr>
+		<td class="linksa" align="center" height="25">
+                       <a href='../hunan'>湖南</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../guangdong'>广东</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../guangxi'>广西</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../hainan'>海南</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../sichuan'>四川</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../guizhou'>贵州</a> 
+                    </td>
+	</tr><tr>
+		<td class="linksa" align="center" height="25">
+                       <a href='../yunnan'>云南</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../shaanxi'>陕西</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../gansu'>甘肃</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../qinghai'>青海</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../ningxia'>宁夏</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../neimenggu'>内蒙古</a> 
+                    </td>
+	</tr><tr>
+		<td class="linksa" align="center" height="25">
+                       <a href='../xinjiang'>新疆</a> 
+                    </td><td class="linksa" align="center" height="25">
+                       <a href='../xizhang'>西藏</a> 
+                    </td><td></td><td></td><td></td><td></td>
+	</tr>
+</table>
+                </div>
+            </div>
+        
+    </div>
+</div>
+<div class="ztb_top">
+    <a href="http://zb.cbi360.com" title="招标投标">
+        <div class="top_left1">
+            <span id="Top1_lbl_NowDate">2012年06月06日 星期三</span></div>
+    </a>
+    <div class="top_left2" onmouseover="ProvinceListdl();" onmouseout="ProvinceListClose();"
+        style="cursor: hand">
+        <p style="font-weight: bold; margin-top: 10px; font-size: 20px;">
+            <a href='http://zb.cbi360.com' style=" font-weight:bold; margin-top:10px;  font-size:20px; ">[全国]</a>
+        </p>
+        <p class="ztb_ice" style="clear: both;">
+            <a class="u ztb_black">其他省份 </a>
+        </p>
+    </div>
+    <div class="top_left3">
+      
+        <div class="top_left3soso_a">
+          
+            <div style="float:left; " >
+                <select name="Top1$ddl_Type" id="Top1_ddl_Type" class="soso_sel">
+	<option value="tb">招标公告</option>
+	<option value="zb">中标公示</option>
+
+</select>
+                </div>
+           
+            <div class="soso_div">
+                <select name="Top1$ddl_province" id="Top1_ddl_province" class="soso_sel" onchange="selectprivince(this);">
+
+</select>
+                </div>
+
+            <div class="soso_div"> 
+                <select name="Top1$ddl_city" id="Top1_ddl_city" class="soso_sel" onchange="selectcity(this);">
+
+</select>
+                </div>
+       
+            <div class="soso_div"> 
+                <select name="Top1$ddl_datetype" id="Top1_ddl_datetype" class="soso_sel">
+	<option value="">时间范围</option>
+	<option value="0">一周内</option>
+	<option value="1">一月内</option>
+	<option value="2">一年内</option>
+
+</select>
+                </div>
+
+            <div style="float:left;">
+                <input name="Top1$txt_key" type="text" value="请输入关键字" id="Top1_txt_key" class="j_soso_text" onblur="javascript:if(this.value==''){this.value='请输入关键字';this.style.color='#888'}else{;this.style.color='#000'}" onfocus="javascript:if(this.value=='请输入关键字'){this.value='';this.style.color='#000'}else{this.style.color='#000'};" />
+
+            </div>
+            <div class="j_soso_div">
+                <input type="button" id="Button1" class="j_soso_btn" onclick="query();" />
+                </div>
+            
+        </div>
+        
+</div>
+</div>
+
+
+            <div class="ztb_main" style="margin-top: 8px;">
+                <div class="conts_cont1">
+                    <div class="conts_link">
+                        <p class="conts_linklogo">
+                            <a href="http://www.cbi360.com" title="中国建设网">
+                                <img src="../../images/ztb/cont_logo.gif" /></a></p>
+                        <p class="conts_link_p">
+                            <a href="http://zb.cbi360.com" title="建设招标">
+                                <img src="../../images/ztb/News_NL_021.gif" /></a></p>
+                        <p id="divNavigation" class="conts_linkfont"><a href="http://www.cbi360.com"  class="In_black u1">中国建设网</a><a href="http://zb.cbi360.com" class="In_black u1">建设招标</a><a  href="../../liaoning" class="In_org u1">辽宁</a>大连高新园区凌川路勘察测量(网上报名)</p>
+                    </div>
+                </div>
+                <script type="text/javascript" src="../../ad/content/content_ad.js?v=top"></script>
+                <div class="J_ZTBcontant">
+                    <p class="J_ZTBcontant1">
+                        <h1>大连高新园区凌川路勘察测量(网上报名)</h1>
+                       
+                    </p>
+                    
+                    <div class="contant_Time">
+                        <p>
+                            2012-2-21 22:28:54
+                        </p>
+                        <p>
+                            <font color="black">来源：</font><a target="_blank" href='http://www.lnzb.cn/lnzbtb/GongGaoPersonalize/ZBGG_Detail.aspx?InfoID=1479f09e-cfee-4d4b-988d-59b00ee30c9f&CategoryNum=003001'>辽宁省建设工程信息网</a></p>
+                        <p>
+                            <a href="http://law.cbi360.com/" target="_blank" class="conts_blue u1">&gt;建筑法律咨询</a>
+                        </p>
+                        <p style="background: url(../../images/ztb/ztbice_new.gif) 0px -1px no-repeat; padding-left: 20px;">
+                            <a target="_blank" href="http://reg.cbi360.com/jst/zb.aspx" class="ztb_red_0 u">免费发布招标信息</a></p>
+                    </div>
+
+                    <script src="http://www.cbi360.com/Js/hhbmsg.js"></script>
+
+                    <div class="ztb_cha">
+                        <a href="http://cha.cbi360.com/" title="该工程相关企业和建造师诚信查询" class="ztb_blue6 In_f1 u"
+                            target="_blank">该工程相关企业和建造师诚信查询</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="http://down.cbi360.com/建设通.exe" class="In_red In_f1 u" title="免费下载建设通（客户端），查询更快捷！
+" target="_blank">免费下载建设通（客户端），查询更快捷！</a></div>
+                    <div id="td_content" class="contant_NL"><p><img height="764" width="970" alt="" src="http://img1.cbi360.com/2012/2/21/2012221222952770.png" /></p></div>
+                    <div id="td_annex" class="contant_NL">
+                    </div>
+                    
+                </div>
+                 <script type="text/javascript" src="../../ad/content/content_ad.js?v=middle"></script>
+                <div class="ztb_contant_2">
+                    <div class="ztb_contant_2top">
+                        <p class="contleftfont1">
+                            <span id="lbl_province">辽宁</span>省的最新招标公告</p>
+                        <p class="ri contleftfont2">
+                            <a href="../../tblist.html?province=%e8%be%bd%e5%ae%81" id="linkProvince" class="u1 In_black3">更多</a></p>
+                    </div>
+                    <div class="ztb_contant_2NL">
+                        <ul>
+                            
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120602/982860.html' target="_blank" title='大连金州新区计划生育服务中心设备采购项目（二次）招标公告'
+                                                class="u1 In_black3">
+                                                大连金州新区计划生育服务中心设备采购项目（二次）招...
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-6-2
+                                        </p>
+                                    </li>
+                                
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120602/982858.html' target="_blank" title='甘井子区农业技术推广中心办公楼维修工程采购公告'
+                                                class="u1 In_black3">
+                                                甘井子区农业技术推广中心办公楼维修工程采购公告
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-6-2
+                                        </p>
+                                    </li>
+                                
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120602/982855.html' target="_blank" title='大连市旅顺口区文化广播影视局公共电子阅览室设备采购项目招标公告'
+                                                class="u1 In_black3">
+                                                大连市旅顺口区文化广播影视局公共电子阅览室设备采购...
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-6-2
+                                        </p>
+                                    </li>
+                                
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120602/982852.html' target="_blank" title='瓦房店市行政综合服务楼施工图设计、地下人防工程设计招标公告（三次公告）'
+                                                class="u1 In_black3">
+                                                瓦房店市行政综合服务楼施工图设计、地下人防工程设计...
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-6-2
+                                        </p>
+                                    </li>
+                                
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120602/982851.html' target="_blank" title='普湾新区高铁广场市政道路及广场施工项目竞争性谈判公告'
+                                                class="u1 In_black3">
+                                                普湾新区高铁广场市政道路及广场施工项目竞争性谈判公...
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-6-2
+                                        </p>
+                                    </li>
+                                
+                        </ul>
+                    </div>
+                </div>
+                <div class="ztb_contant_2" style="margin-left: 8px;">
+                    <div class="ztb_contant_2top">
+                        <p class="contleftfont1">
+                             <span class="contleftfont1">更多关于</span><span class="contleftfont3">&nbsp;&nbsp;<a  target='_bank' href='../../tblist.html?province=%e8%be%bd%e5%ae%81&type=C'>勘察设计</a>&nbsp;&nbsp;&nbsp;&nbsp;<a  target='_bank' href='../../tblist.html?province=%e8%be%bd%e5%ae%81&type='></a>&nbsp;&nbsp;</span><span class="contleftfont1">的招标公告</span></p>
+                        <p class="ri contleftfont2">
+                            <a href="../../tblist.html?province=%e8%be%bd%e5%ae%81&type=C%2f" id="linkKey" class="u1 In_black3">更多</a></p>
+                    </div>
+                    <div class="ztb_contant_2NL">
+                        <ul>
+                            
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120531/977507.html' target="_blank" title='东北育才悲鸿美术学校园林景观方案及施工图设计'
+                                                class="u1 In_black3">
+                                                东北育才悲鸿美术学校园林景观方案及施工图设计
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-5-31
+                                        </p>
+                                
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120526/969820.html' target="_blank" title='盘锦市兴隆台区兴隆新城农垦职工保障性安居工程'
+                                                class="u1 In_black3">
+                                                盘锦市兴隆台区兴隆新城农垦职工保障性安居工程
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-5-26
+                                        </p>
+                                
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120526/969067.html' target="_blank" title='盘锦市大众街建设项目地质勘察'
+                                                class="u1 In_black3">
+                                                盘锦市大众街建设项目地质勘察
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-5-26
+                                        </p>
+                                
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120523/964325.html' target="_blank" title='辽宁省警卫局训练基地设计(网上报名)'
+                                                class="u1 In_black3">
+                                                辽宁省警卫局训练基地设计(网上报名)
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-5-23
+                                        </p>
+                                
+                                    <li>
+                                        <p class="le">
+                                            <a href='../../tb/20120523/963383.html' target="_blank" title='大连周水子小学翻扩建项目勘察'
+                                                class="u1 In_black3">
+                                                大连周水子小学翻扩建项目勘察
+                                            </a>
+                                        </p>
+                                        <p class="ri">
+                                            2012-5-23
+                                        </p>
+                                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <script language="javascript" type="text/javascript">
+                reptKey("td_content","zbtb");
+            </script>
+
+            <div class="footernew">
+
+                <script src="http://www.cbi360.com/Js/ybfoot.js"></script>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+

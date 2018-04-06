@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><meta http-equiv="Content-Language" content="zh-cn" /><meta http-equiv="Content-Type" content="text/html; charset=gb2312" /><title>
+	Pilea funkikensis Hayata
+</title><meta name="keywords" content="《中国植物志》 80卷 126册， 植物 名称 形态特征 生态环境 地理分布 经济用途 物候期 科研 教学 绘图 2009 国家自然科学 一等奖。" /><meta name="description" content="《中国植物志》全书80卷126册，5000多万字。记载了我国301科3408属31142种 植物的科学名称、形态特征、生态环境、地理分布、经济用途和物候期等。该书基于全国80余家科研教学单位的312位作者和164位绘图人员80年的工作积累、45年艰辛编撰才得以最终完成。2009年获得国家自然科学一等奖。" /><link href="/css/style.css" type="text/css" rel="Stylesheet" />
+    <script src="/js/frpskey.js" type="text/javascript" ></script>
+    <script src="/css/highslide.css" type="text/javascript" ></script>
+    <script type="text/javascript" src="/highslide/highslide.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.7.2.js"></script>
+    <style>
+        body
+        {
+        	background-image:none;
+        	background-color:#006633;
+        }
+    </style>
+    <script type="text/javascript">    
+        hs.graphicsDir = '/highslide/graphics/';
+    </script>
+    <script type="text/javascript">
+         $(window).ready(function(){
+            var surl="http://www.eflora.cn/cnpcinfo.ashx?t="+Math.random()+"&latin="+encodeURI("Pilea funkikensis");
+            $.ajax({
+                url:surl,
+                type:"post",
+                ansyn:false,
+                //data:{"latin":encodeURI("Mitrasacme pygmaea var. malaccensis")},
+                dataType:"jsonp",
+                jsonp:"callbackparam",
+                jsonCallback:"success_jsonpCallback",
+                success:function(data){
+                   if(data!=null){
+                       if(data[0]!=null){
+                        var latin=data[0].latin;
+                        var cname="";
+                        if(data[0].cname!=null)
+                        cname=data[0].cname;
+                        var latin2=data[0].latin2;
+                            if(latin!=""){
+                                $("#spSyn").html("<sup style='color:#ff0000;'><b>FOC已修订</sup></b>");
+                                var htmlstr=latin;
+                                if(cname!="")
+                                htmlstr+="<span style='color:#000000'>（"+cname+"）</span>";
+                                $("#spAcc").html("<b>注：<sup style='color:#ff0000;'>ACC</sup> <a style='color:#2A9672' href='http://foc.eflora.cn/search.aspx?id=1&k="+
+                                latin2+"' target='_blank'>"+htmlstr+"</a></b>");
+                            }
+                        }
+                   }
+                    //alert(data[0].latin);
+                }
+            })
+        });
+        var xmlHttp1;
+        //创建对象
+        function createXMLHttpRequest()
+        {
+
+            var isRight = true;
+            try{ xmlHttp1 = new XMLHttpRequest(); }
+            catch(trymicrosoft)
+            {
+                try{xmlHttp1 = new ActiveXobject("Msxml2.XMLHTTP");}
+                catch(othermicrosoft)
+                {
+                    try{xmlHttp1 = new ActiveXobject("Microsoft.XMLHTTP");}
+                    catch(failed)
+                    {
+                        isRight = false;
+                    }
+                }
+            }
+            if(!isRight)
+              alert("XML对象创建失败");
+        }
+         function getA(){
+          
+            var sm="Pilea+funkikensis+Hayata";
+            createXMLHttpRequest();
+            var Urls="/getfrpskey.aspx?s="+sm;
+            
+            xmlHttp1.onreadystatechange = ShowTree;
+
+            xmlHttp1.open("GET", Urls, true);
+            xmlHttp1.send(null);
+            
+            
+        }
+        //此方法直接从服务器端返回HTML
+        function ShowTree()
+        {
+            if (xmlHttp1.readyState == 4){
+                if (xmlHttp1.status == 200)
+                {
+                        var data = xmlHttp1.responseText;
+                        a = window.eval(data);
+                        
+                }
+            }
+        }
+    </script>
+    <script type="text/javascript">
+     function clearTip1(){
+        var tbstr=$("#TextBox1"); 
+        if(tbstr.attr("value")=="学名、异名、中文名、拼音等") {
+           //alert(1);
+            tbstr.attr("value","");
+                
+            }
+        
+    }
+    </script>
+</head>
+<body>
+    <form name="form1" method="post" action="/frps.aspx?id=Pilea+funkikensis" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTU2MTk3NTc3Ng9kFgICAw9kFgICBQ9kFgICBQ8WAh4HVmlzaWJsZWdkZH5Q+YWxdZqsE687il4t9w0QqHF/" />
+
+    <script type="text/javascript" src="http://www.eflora.cn/js/e_top.js"></script>
+    <div class="divmain">
+    
+<script type="text/javascript" src="/js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/js/textcon.js"></script>
+<script type="text/javascript" src="/js/menujs.js"></script>
+<script type="text/javascript" src="/js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="/js/autoajax.js"></script>
+<link type="text/css"  rel="stylesheet" href="/css/jquery.autocomplete.css" />
+    <script type="text/javascript">
+        var w=285;
+        $(window).ready(function(){autoWidth(w);});
+    </script>
+<div class="topbody">
+    <div class="fl" style="margin-top:20px"><img alt='中国植物志' src='/images/logo_frps_0.png' border="0" /></div>
+    <div id="top1_search1" class="fr" style="margin-top:45px;margin-right:100px">
+        <div class="fl">
+            <input name="top1$TextBox1" type="text" value="学名、异名、中文名、拼音等" id="top1_TextBox1" class="textboxalign" onfocus="clearTip()" title="学名、异名、中文名、拼音等" />
+                
+        </div>
+        <div class="fl">
+            <input type="submit" name="top1$Button2" value="检 索" id="top1_Button2" class="botton1" /> 
+        
+        </div>
+        
+    </div>
+    
+    <div class="cl"></div>
+    
+</div>
+<div style="width:982px;margin:0 auto;background:url(/images/tb_dh_lb_bk.jpg) repeat;height:30px">
+    
+      <ul id="menu" ><li><a href='/' class="menu_off">主   页</a></li><li><a href='/v/2' class="menu_off">卷册索引</a></li><li><a href='/namel/a' class="menu_off">学名索引</a></li><li><a href='/name/a' class="menu_off">中文索引</a></li><li><a href='/sheng' class="menu_off">分省名录</a></li><li><a href='/jingji' class="menu_off">经济用途</a></li><li><a href='/search' class="menu_off">高级检索</a></li><li><a href='/zongl' class="menu_off">总   论</a></li><li><a href='/about' class="menu_off">关于本志</a></li></ul>                      
+</div>
+    <div style="width:982px; margin:0 auto">
+        
+        <div id="spinfoDiv">
+            <div style="background:url(/images/bk_zhi_01.jpg);padding-top:10px">
+                <div style="text-align:right;margin:0px 20px 0 0">
+                    <a href='http://www.eflora.cn/sp/Pilea funkikensis' style='color:#000000' target='_blank'>eFlora</a> | <a href='http://foc.eflora.cn/search.aspx?k=Pilea funkikensis&id=1' style='color:#000000' target='_blank'>FOC</a> | <a href='http://www.flph.org/s/Pilea funkikensis' style='color:#000000' target='_blank'>FLPH</a> | <a href='http://www.iflora.cn/search_result.aspx?subject=Pilea funkikensis' style='color:#000000' target='_blank'>DCP</a> | <a href='http://bk.iplant.cn/bk/Pilea funkikensis' style='color:#000000' target='_blank'>iPlant</a> | <a href='http://admin.iplant.cn/frpssp.aspx?keyword=Pilea funkikensis' style='color:#000000' target='_blank'>admin</a>&nbsp;&nbsp;&nbsp;&nbsp;响应时间：9.53秒
+                    
+                </div>
+                <div style="margin:40px 60px 0 60px">
+                    <div style="font-size:14px; margin-top:10px; ">
+                        <b>奋起湖冷水花</b> 
+                    </div>
+                    <div style="font-size:16px;width:600px;font-family:Arial;border-bottom:1px solid #000;padding-bottom:20px">
+                        <b>Pilea</b> <b>funkikensis</b> Hayata  <span id="spSyn" style="font-size:14px"></span>
+                        <div id="spAcc" style="color:#2A9672;font-size:14px"></div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div style="float:left;width:728px;">
+                <div style="margin:0 60px">
+                     中国植物志<span style='font-family:宋体;'>>></span> <a href='/v/23(2)'>第23(2)卷</a> <span style='font-family:宋体;'>>></span> <a href='/frps/Urticaceae'>荨麻科 Urticaceae</a> <span style='font-family:宋体;'>>></span> <a href='/frps/Pilea'>冷水花属 Pilea</a>
+                    <p style='text-indent:24px'><b>14.奋起湖冷水花（植物研究）奋起湖冷水麻（台湾植物志）</b></p><p style='text-indent:24px'>Pilea funkikensis Hayata, Ic. Pl Formos. 6: 45. 1916; Kudo et Masamune in Ann. Rep. Taihoku Bot. Gard. 2: 32. 1932; Masamune, List Vasc. Pl. Taiwan 35. 1954; T. S. Liu, Sasaki et H. Keng in Quart. Journ. Taiwan Mus. 8 (4): 289. 1955; T. S. Liu et W. D. Huang in Li, Fl. Taiwan 2: 209. 1976; C. J. Chen in Bull. Bot. Res. (Harbin) 2: (3): 53. 1982.</p><p style='text-indent:24px'>草本。茎稍肉质，直立不分枝，高0. 6-2米，叶纸质，椭圆状或卵状披针形，先端急尖或渐尖，基部楔形、钝圆或圆形，长12-14厘米，宽4-5厘米，边缘疏生浅锯齿，基出脉3，明显，上面凹陷，下面隆起；叶柄浑圆，长3-6厘米，无毛；托叶柄内生。花雌雄异株或同株，聚伞花序常成对腋生；雄花序由10-30朵组成，团伞花簇无梗；苞片小，长圆形，长约1.7毫米，宽不过。0.7毫米，先端急尖；雌花序聚伞状。雄花：花被钟状，裂片4，长圆形，长约1毫米，宽0.7毫米，先端三角状急尖，稍内弯；雄蕊4，花丝长约1.5毫米；花药长圆形；退化雌蕊小。雌花：花被片4，条形或龙骨状，长0.5-0.7毫米；退化雄蕊4。瘦果长圆形，微偏斜，长约1.3毫米，宽0.7毫米。花期3-5月。</p><p style='text-indent:24px'>特产台湾，阿里山奋起湖（模式产地）。生于山区潮湿处。</p><p style='text-indent:24px'>我们未见本种标本，本文是根据原记载和模式照片描述的。</p>
+                    
+                    <div class="cl"></div>
+                    <div style="font-size:12px;margin-top:10px;">
+                        
+                    </div>
+                    
+                    <div class="cl"></div>
+                    <div style="height:20px"></div>
+                    
+                    
+                </div>
+                <div class="cl"></div>
+                <div  style="margin:0 60px" >
+                
+               <div style='clear:both;text-align:right;margin-top:10px;margin-bottom:20px;margin-right:10px'><img alt="知识共享：署名-非商业性使用-禁止演绎" title='知识共享：署名-非商业性使用-禁止演绎' style="border-width:0;margin-bottom:-3px" src="/images/creativecommons.png" />  1995《中国植物志》第23(2)卷 082页 <a href='http://www.eflora.cn/pdf/23(2)/082.pdf' target='_blank'>PDF</a></div>
+               </div>
+                <div class="cl"></div>
+                
+                
+                <div class="cl" style="height:30px"></div>
+            </div>
+            <div style="float:left;width:252px;">
+                <div class="divrighttitle">
+                    中国植物志系统位置
+                </div>
+                <div class="divrightcon">
+                    <span style='padding-left:0px'>被子植物门 Angiospermae</span><br /><span style='padding-left:10px'>双子叶植物纲 Dicotyledoneae</span><br /><span style='padding-left:20px'>原始花被亚纲 Archichlamydeae</span><br /><span style='padding-left:30px'><a href='/frps/Urticales'>荨麻目 Urticales</a></span><br /><span style='padding-left:40px'><a href='/frps/Urticaceae'>荨麻科 Urticaceae</a></span><br /><span style='padding-left:50px'><a href='/frps/Trib. Elatostemeae'>楼梯草族 Trib. Elatostemeae</a></span><br /><span style='padding-left:60px'><a href='/frps/Pilea'>冷水花属 Pilea</a></span><br /><span style='padding-left:70px'><a href='/frps/Sect. Tetrameres'>四萼组 Sect. Tetrameres</a></span><br /><span style='padding-left:80px'><a href='/frps/Ser. Spinulosae C. J. Chen'>刺果冷水花系 Ser. Spinulosae C. J. Chen</a></span><br />
+                </div>
+                
+                <div id="div_par">
+                    <div class="divrighttitle">
+                        相关类群
+                    </div>
+                    <div class="divrightcon2">
+                        <span><a href='/frps/Pilea cadierei'>花叶冷水花  P. cadierei </a></span><br /><span><a href='/frps/Pilea dolichocarpa'>瘤果冷水花  P. dolichocarpa </a></span><br /><span><a href='/frps/Pilea longicaulis'>长茎冷水花  P. longicaulis </a></span><br /><span><a href='/frps/Pilea pseudonotata'>假冷水花  P. pseudonotata </a></span><br /><span><a href='/frps/Pilea rubriflora'>红花冷水花  P. rubriflora </a></span><br />
+                        <b>……</b>
+                    </div>
+                </div>
+                
+                <div style="border:1px solid #E2E0E3;background-color:#F2EEF2;height:40px;"></div>
+                 <div style="width:252px;margin:0 auto;padding-top:20px; text-align:center">
+                        <img src="/QRCode.ashx?id=32209" style="width:116px;" />
+                </div>
+                <div style="margin:10px;text-align:center">扫一扫，在手机上继续查看</div>
+            </div>
+            <div class="cl"></div>
+        </div>        
+    </div>
+    </div>
+    
+<div style="clear:both"></div>
+<div class="foot">
+    <div style="width:982px;margin:0 auto;">
+   <div class="fl" style="margin:40px 0 0 20px"><img src="/images/logo_frps_2.png" alt='logo_frps' broder='0' /></div>
+   <div class="fl" style="width:420px;margin:40px 0 0 40px">
+   版权所有&nbsp;&nbsp;<span style="font-size:14px;">&copy;</span>&nbsp;&nbsp;1959-2004&nbsp;&nbsp;中国科学院《中国植物志》编委会&nbsp;&nbsp;科学出版社<br />
+中国科学院植物研究所（系统与进化植物学国家重点实验室）<a href="http://www.iplant.cn" style="color:#ffffff" target="_blank">数字植物项目组</a><br />
+京ICP备13006946号-2&nbsp;&nbsp;&nbsp;&nbsp;<script language="javascript" type="text/javascript" src="http://js.users.51.la/2864513.js"></script>
+<noscript><a href="http://www.51.la/?2864513" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/2864513.asp" style="border:none" /></a></noscript>&nbsp;&nbsp;&nbsp;&nbsp;<a href="mailto:iplant@ibcas.ac.cn"  style="color:#ffffff" >我有话要说</a></div>
+   <div class="fl" style="margin:40px 0 0 140px">
+    <img src="/images/logo_eflora_124.png" border='0' alt='log_eflora' /><br />
+    <a href="http://www.eflora.cn" style="color:#ffffff;font-size:14px">http://www.eflora.cn</a>
+    
+    </div>
+</div>
+</div>
+    
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAwLAwdyDBgKGgPyGAQKl8cOID6N7kHJ5NhNI3T+lNubuznD3BZ7I" /></form>
+</body>
+</html>
+

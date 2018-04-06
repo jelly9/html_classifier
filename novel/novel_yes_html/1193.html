@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<title>危险首席：丫头，敬业一点！_第1卷 第一百四十章 为什么分手后都在责怪他_全书网</title>
+<meta name="keywords" content="危险首席：丫头，敬业一点！最新章节_第1卷 第一百四十章 为什么分手后都在责怪他" />
+<meta name="description" content="危险首席：丫头，敬业一点！最新章节阅读:第1卷 第一百四十章 为什么分手后都在责怪他" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="robots" content="all" />
+<link href="/css/common.css" rel="stylesheet" type="text/css">
+<link href="/css/board.css" rel="stylesheet" type="text/css">
+<link href="/css/readtools.Css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery-1.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="/js/jquery.tools.min1.2.5.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/tools.js"></script>
+<script type="text/javascript" src="/scripts/common.js"></script>
+<!--[if lt IE 9]>
+<script src="/js/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+
+<!--
+var preview_page = "3160600.html";
+var next_page = "3160603.html";
+var index_page = "index.html";
+var article_id = "9800";
+var chapter_id = "3160602";
+function jumpPage() {
+  var event = document.all ? window.event : arguments[0];
+  if (event.keyCode == 37) document.location = preview_page;
+  if (event.keyCode == 39) document.location = next_page;
+}
+
+$(document).ready(function(){
+	var article_content = "危险首席：丫头，敬业一点！$$$第1卷 第一百四十章 为什么分手后都在责怪他$$$"+window.location.href+"$$$"+"9800";
+	var timestamp = Date.parse(new Date());
+	$.post('/ajax.php?timestamp',{timestamp:timestamp,article_content:article_content,act:'liulan',id:"9800"},function(data){
+
+	})
+});
+
+document.onkeydown=jumpPage;
+-->
+</script>
+</head>
+
+<body>
+<script>
+	function login(){
+	
+		$.post("/login.php?do=submit",
+		{username:$('#lusername').val(),password:$('#lpassword').val(),action:$('#llogin').val()},function(data)
+				{
+					if(data=='1001')
+					{
+						$('#lusermsg').html('账号或者密码错误');
+					}
+					else
+					{
+						  window.location.reload(); 
+					}
+					return false;
+				})
+		return false;
+	}
+</script>	
+<script>
+	$(document).ready(function(){
+		$('.username').blur(function(){
+			yonghu();
+		})
+		
+		$('.repassword').blur(function(){
+			repassword();
+		})
+	})
+
+	function yonghu()
+	{
+		
+		var username = $('.username').val();
+		$.post('/ajax.php',{username:username,act:'yonghu'},function(data){
+			if(data=='1001')
+			{
+				$('#usermsg').html('用户名已存在');
+				$('#userid').val('1');
+			}
+			else
+			{
+				$('#usermsg').html('');
+				$('#userid').val('0');
+			}
+		})
+		if($('#userid').val()=='1')
+		return false;
+		esle
+		return true;
+	}
+	
+	function repassword()
+	{
+		var flag1=true;
+		var repassword = $('.repassword').val();
+		var password = $('.password').val();
+		if(repassword!=password)
+		{
+			$('#repassmsg').html('密码不一致');
+			flag1=false;
+		}
+		else
+		{
+			$('#repassmsg').html('');
+			flag1=true;
+		}
+		return flag1
+	}
+	
+	function register()
+	{
+	
+		if(!yonghu())
+		{
+			return false
+		}
+		else if(!repassword())
+		{
+			return false
+		}
+		return true;
+	}
+	
+</script>
+<div id="wrapper">
+  <div class="shadow" style="height:1px;"></div>
+<header id="global-head" style="height:32px;">
+    <div>
+      <nav class="site-navigation cf">
+	  <a class="home" href="/">首页</a>
+	  <a href="/top/">排行榜单</a>
+	  <a href="/wanben/">完本小说</a>
+	  </nav>
+		<div class="hd-follow">
+        <div class="myhide"><a href="#" class="hides">浏览记录</a>
+          <div class="hideInfo"><ul></ul><p>*提示：浏览记录仅放置最近浏览的10本书籍</p><span>浏览记录是空的</span></div>
+        </div>
+         <script>
+			$(document).ready(function(){
+				$.post('/ajax.php',{act:'userlogin'},function(data){
+					if(data=='2002')
+					{
+						$(".hd-follow").width(197);
+					}
+					else
+					{
+						$('#checklogin').html(data);
+						$(".hd-follow").width(345);
+					}
+				})
+				
+			})
+		</script>
+        <span id="checklogin">
+		<a href="javascript:;" onClick="openDialog('/login.php?ajax_gets=jieqi_contents', true);" style="color:#F0F0F0">访客登录</a>&nbsp;&nbsp;
+<a href="javascript:;" onClick="openDialog('/register.php?ajax_gets=jieqi_contents', true);" style="color:#F0F0F0">免费注册</a>&nbsp;&nbsp;
+		</span>
+		</div>
+    </div>
+</header>  <link href="/css/channel-net.css" rel="stylesheet" type="text/css">
+<div id="channel-header" class="clearfix" style="margin-top:1px;">
+    <div class="channel-header-wrapper">
+      <div class="channel-logo"><a href="/" title="全书网">全书网</a></div>
+      <nav class="channel-nav">
+        <ul class="channel-nav-list">
+         <li><a href="/modules/article/articlelist.php?class=1" title="玄幻魔法">玄幻魔法</a></li>
+         <li><a href="/modules/article/articlelist.php?class=2" title="武侠修真">武侠修真</a></li>
+         <li><a href="/modules/article/articlelist.php?class=3" title="纯爱耽美">纯爱耽美</a></li>
+         <li><a href="/modules/article/articlelist.php?class=4" title="都市言情">都市言情</a></li>
+         <li><a href="/modules/article/articlelist.php?class=5" title="职场校园">职场校园</a></li>
+         <li><a href="/modules/article/articlelist.php?class=6" title="穿越重生">穿越重生</a></li>
+         <li><a href="/modules/article/articlelist.php?class=7" title="历史军事">历史军事</a></li>
+         <li><a href="/modules/article/articlelist.php?class=8" title="网游动漫">网游动漫</a></li>
+         <li><a href="/modules/article/articlelist.php?class=9" title="恐怖灵异">恐怖灵异</a></li>
+         <li><a href="/modules/article/articlelist.php?class=10" title="科幻小说">科幻小说</a></li>
+         <li><a href="/modules/article/articlelist.php?class=11" title="美文名著">美文名著</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+   <script type="text/javascript" src="/ad/style1.js"></script>
+<div id="container">
+   <script type="text/javascript" src="/ad/style2.js"></script>
+<div class="mainnav"><div class="main-index" id="direct"><span class="r mr10"> <form action="/modules/article/search.php" method="get" >搜小说：<input type="text" name="searchkey" value="" /><button type="submit" >搜</button></form></span>位置：<a href="/" class="c009900">全书网</a> > <a href="/modules/article/articlelist.php?class=1">玄幻魔法</a>  > <a href="/book_9800.html" class="article_title">危险首席：丫头，敬业一点！</a>  > 第1卷 第一百四十章 为什么分手后都在责怪他</div>
+      <section class="main b-detail" id="directs"><div class="bookInfo"><h1>
+	  <span class="r">	  </span>
+	  <em class="l">《危险首席：丫头，敬业一点！》</em><strong class="l jieqi_title">第1卷 第一百四十章 为什么分手后都在责怪他</strong><a href="/modules/article/addbookcase.php?bid=9800&cid=3160602"  target="_blank" title="加入书签" class="l">加入书签</a>
+            <div class="clear"></div></h1>
+<div class="toolbar"><script language="JavaScript" src="/js/toolbar.js" type="text/javascript"></script><script type="text/javascript" src="/ad/style5.js"></script></div>
+   <script type="text/javascript" src="/ad/style3.js"></script>
+<div class="mainContenr"   id="content">&nbsp;&nbsp;&nbsp;&nbsp;第一百四十章 为什么分手后都在责怪他<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;收拾了一下换了衣服，她随后也跟着出了门。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;外面天气不太热，有些阴天，她出门先去附近的超市买了个大大的果篮才坐上公车。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;路上仍旧在矛盾着，去看陌寂年，她的心情无法言说的混『乱』。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;对那家人，她是恨的，可是恨又恨不起来，有感恩的，可是爱又觉得爱无力。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;靠在车窗上，一路就那样熬到了医院。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;下了车，门口有不少记者蹲守，她就知道自己找对地方了，她一身朴素，并没有人会过多注意到她，所以很顺利的就进去了大门。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;陌寂年所在的楼层是封闭的，她一出电梯就别拦住了，她也怕进病房会碰到陌以翔，问病况保安不肯说，一直问她是谁是干什么的，她不想回答，果篮塞过去就要走。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;碰巧陌家的佣人过来送汤，一出电梯和她碰了个对面，见了她，对方拉住她惊喜的道，“童小姐！就知道你会来的！老爷昨天醒了还问起你呢！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;她听了有些心酸，问着，“陌伯伯的病怎么样？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;佣人忍不住抹泪，“不乐观……大少爷叫我们都做好准备，童小姐，老爷那么疼你，你去看看他，说不定他心情一好病也好了呢？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;童曼书犹豫了下，点点头，拿过果篮和她一起往病房走去。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;到了病房门口，她手心微微冒汗，佣人推开门，她的目光飞快的在病房里扫了一圈，没有看到陌以翔，她松口气，跟着走进去。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;坚叔看到她来，也是一阵惊喜，接过果篮眉开眼笑，“果然是来了！你等等，我叫老爷起床！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;童曼书看着躺在病床上面容憔悴的老人家，急忙摇头阻止，可是坚叔没有停止，压低声音在耳边叫着那个睡着的人。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;可想而知，如果陌寂年没有下过命令，怎么会有人敢在他睡着的时候把他叫醒。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;看着慢慢睁开眼朝自己笑的陌寂年，她的眼睛忽然一阵无法控制的滚烫起来。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“小童来了啊……”陌寂年朝她招招手，苍白的脸上带着会心的笑意，温和的叫她，“过来我旁边坐。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;她忍住眼泪走过去。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;一边的佣人和坚叔见状纷纷退出了病房。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;一关上门，坚叔连忙跑到走廊尽头去打电话。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;学校里风光堪比度假胜地，高大有风格的各『色』教学楼不输给度假村的精美别墅，这里是贵族的学院，处处都透出不同凡响的矜贵和考究。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;九月已经开学，这个时候大多数人都在上课，陌以翔从办公室办好手续出来，外面有些欲雨的阴沉感觉。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;站在台阶上，他有些恍惚的看着眼前的校园，虽然说是念了多少年的书，可是细数他在这里的时间，真的是少的可怜，他过去的24年人生里，挥霍了最多光阴的地方就是酒吧和秋名山。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;赛车许久没玩了，酒吧其实也索然无味。夹着档案袋，他立在台阶上直发呆，他其实没有什么明确的目标和规划，人生总是走一步算一步，这时候，忽然有种茫然无措的感觉。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;下了几节台阶，身后忽然走上来一个秃了顶的老头，看那人朴素的打扮就知道是谁了——<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;他们整个学校，唯一死板不懂变通不怕得罪人的，就属这位倔强古板的老王头。当初就是这老头把着要及格的那一分死活不肯给他。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;现在想想，只觉得那些事很可笑。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“喂。”陌以翔开口叫住他。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;老教授回头看了他一眼，倒是还记得他，诧异的问，“你不是该去美国念书了吗？怎么还在这里？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;抬了抬手里的档案袋，陌以翔淡淡回答，“申请延迟了，家里有点事。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;教授点点头，放缓脚步和他一起走，“早就听说我们学校有一位考到了埃德蒙教授手下，没想到竟然是你——”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“好像我很差劲一样。”陌以翔笑笑。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“当老师的嘛，都喜欢勤奋老实的孩子，卖弄小聪明偷懒的，我是不喜欢——”老教授实话实说，不过倒是对陌以翔另眼相看，“上次你考试据说只复习了不到半个月，是真的吗？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;陌以翔想起和童曼书打赌的那件事，挠挠头，“那时候真的挺傻，不过老头，你的课真的一点都不难，整本书我看了两天，全都记住了，现在你问我，我估计还能答出来。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;老头子笑起来，拍拍他高高在上的肩膀，“那时候我是不相信你这样爱逃课的学生能考高分，可是你女朋友说的几句话让我感到她很诚实，也就相信这世上真的如你所说，有的人只需要付出百分之一的汗水就可以成功。小伙子，你倒是有个不错的女朋友——”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;陌以翔听的一阵恍惚，淡淡扯动嘴角，笔挺俊朗的面庞上隐藏着些微落寞，淡淡道，“我们分手了。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;老头子听了，斜了他一眼，眼神里很明确的写着，‘你这个小子没眼光’。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;他只是夹着档案袋笑笑，他也不知道自己做错什么了，为什么每个人知道他们分手后都是在责怪他。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;一路往大门口走去，陌以翔看了眼衣着朴素的老头，打趣，“工资不菲吧，也不打扮的帅点，小心老婆跑掉。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;老教授看了他一眼，“只有你们年轻人才会有这么肤浅的理解，你打扮的多帅，可是女朋友不也分手了？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;陌以翔被堵了一下，愤愤的翻白眼，转弯往停车场走去，“去蹬你的自行车去吧！本来还打算捎你一程，现在省油了！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;老教授看着他，笑笑，“小伙子，我从来不担心老婆会跑掉，因为除了我，她再也找不到一个能对她这么好的人——我能把所有工资全交给她，无条件信任她，从不和她发脾气，三十年只对她一心一意，她的喜好我全都一清二楚，她高兴了不高兴了我看一眼就知道是为了什么，她需要我的时候我一定在她身边陪伴，她不需要我的时候我一定给她足够的空间和自由。她会跑吗？赶她走都不会的。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;陌以翔侧身看着那貌不惊人又古板的老头子，忽然觉得他是那么的嚣张。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;他竟然这么有把握的说，他的女人赶都赶不走……<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;跨上自行车，老教授看着他，“年轻人总是要经历过曲折磨难才会懂的这些，所以你现在想不通也是正常的——小伙子，既然上天给你一个好用的脑瓜，就不要浪费了，我等着你为母校争光的那天。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;看着他骑车离开，陌以翔发着呆。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;口袋里的手机响了老半天，他才拿出来，看到是坚叔，他吓了一跳，以为是医院里出了什么事，连忙接起来。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“少爷快回医院来！”坚叔急吼吼的叫他，这么一句顿时把他吓得不轻，坚叔喘口气，这才道出原委，“快快，童小姐来了！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;陌以翔拉开车门坐进去，沉下脸，“她来关我什么事！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“她等会儿就走了！少爷你学校的手续办完了没有？快点回来吧！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“说了不关我的事！”陌以翔没好气，“她走不走与我何干！最好别让我碰见她！碍眼！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;说着，不顾坚叔的催促他挂断了电话，丢开档案袋，他发动车子离开学校。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;一路上故作镇定的去便利店买了罐冷饮来喝，在店里又翻了翻杂志，看看时间，他却抑制不住自己血『液』里的躁动。</div><script type="text/javascript" src="/ad/style6.js"></script><div class="backs"><a href="3160600.html" class="pre">上一章</a><a href="index.html" class="backfor">返回目录</a><a href="3160603.html" class="next">下一章</a><p>小提示： 按←键返回上一页，按→键进入上一页,您还可以<a href="/modules/article/addbookcase.php?bid=9800&cid=3160602" title="加入书签"  target="_blank">加入书签</a></p></div>
+<script type="text/javascript" src="/ad/style7.js"></script>
+</div><div class="sharesFor"><script language="javascript" type="text/javascript" src="/js/wangzhe.js"></script></div>
+      </section>
+    </div>
+   <script type="text/javascript" src="/js/checklogin.js"></script>
+   <script type="text/javascript" src="/ad/style4.js"></script>
+<div class="attention"><em>阅读提示：</em><br/>
+1、本站会员登录后，将免费体会到最顺畅的阅读方式[<em>最少广告</em>]。<br/>
+2、<em>注册本站会员</em>，将《<a href="/book_9800.html" class="article_title"><em>危险首席：丫头，敬业一点！</em></a>》加入书架，可以通过书架更快的了解更新信息。<br/>
+3、免费小说《<a href="/book_9800.html" class="article_title"><em>危险首席：丫头，敬业一点！</em></a>》 第1卷 第一百四十章 为什么分手后都在责怪他 所描述的内容只是作者 作者 <em>落籽七</em>个人观点，与本站的立场无关，本站只为广大用户提供阅读平台。
+</div>
+</div></div>
+<script language="JavaScript" type="text/JavaScript"> 
+  window.onload = function(){ //window.onload 打开网页就运行
+
+  var str=document.getElementById("content").innerHTML;//这里是整个页面代码 ,也可以指定id
+  str=str.replace(/\<script[\s\S]+?\<\/script\>/gi,""); str=str.replace(/\<styltyp[\s\S]+?\<\/styl\>/gi,"");
+ str=str.replace(/\<style[\s\S]+?\<\/style\>/gi,"");
+ str=str.replace(/\<a[\s\S].+?\<\/a\>/gi,"");  str=str.replace(/Www.+?ggyy\.net/gi,"");
+ str=str.replace(/Www.+?Com/gi,"");
+  str=str.replace(/Www.+?net/gi,"");
+ str=str.replace(/Www.+?cc/gi,"");
+   str=str.replace(/&lt;br.+?&gt;/gi,"<br />");
+str=str.replace(/&amp;hllp;/gi,"&hellip;").replace(/&amp;ldqo;/gi,"&ldquo;").replace(/ldqo/gi,"ldquo").replace(/&amp;rdqo;/gi,"&rdquo;").replace(/&amp;dash;/gi,"&mdash;"); document.getElementById("content").innerHTML=str;
+}
+</script>
+<script type="text/javascript" src="/js/foot.js"></script>
+<script type="text/javascript" src="/js/tong.js"></script>
+<script type="text/javascript" src="/ad/tan.js"></script>
+<script type="text/javascript" src="/ad/style5.js"></script>
+</body></html>

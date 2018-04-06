@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>中国裁判文书网</title>
+<script type="text/javascript" src="../../../../../new/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('body').bind('contextmenu', function() {
+            return false;
+         });
+	$('body').bind("selectstart",function() {
+	   return false;
+	});
+	$("#PrintPage").click(function() {
+		window.open('http://www.court.gov.cn/extension/print.htm?docId=2555199','打印预览', 'height = 600, width = 990, top=20,left=20,scrollbars = yes, status = no,location=no');
+	});
+	$("#DownPDF").click(function() {
+		window.open("http://www.court.gov.cn/downloadPdf/Download?docId=2555199");
+	});
+	//ajax load
+	$.ajax({
+		type : "GET",
+			dataType : "JSON",
+			data     : {docId:'2555199'},
+			cache    : false,
+			url      : "http://www.court.gov.cn/extension/getDocContentJson.htm",
+			success  : function(data) {
+			//alert(data);
+			$("#DocArea").html(data);						
+			}//end-callback
+			,error:function(data){console.log(data)}
+		});//end-ajax
+});
+</script>
+<link rel="stylesheet" type="text/css" href="../../../../../new/css/style.css" />
+</head>
+<body>
+<div id="wrap">
+<div id="header">
+    <div id="header1">
+      <div id="date">
+<SCRIPT language=JavaScript type=text/javascript>
+  today=new Date();
+  function initArray(){
+  	this.length=initArray.arguments.length;
+  	for(var i=0;i<this.length;i++) this[i+1]=initArray.arguments[i] 
+  };
+  var d=new initArray("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+  document.write(today.getFullYear(),"年",today.getMonth()+1,"月",today.getDate(),"日",d[today.getDay()+1]);
+</SCRIPT>      
+      </div>
+      <div id="hotLink"><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.court.gov.cn/zgcpwsw');">设为首页</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="#" onclick="javascript:window.external.AddFavorite('http://www.court.gov.cn/zgcpwsw','中国裁判文书网')">加入收藏</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://www.court.gov.cn/zgcpwsw">返回首页</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://www.court.gov.cn">返回主站</a></div>
+    </div>
+    <div id="logo"><img src="../../../../../new/img/logo.jpg" /></div>
+    <div id="menu">
+      <UL>
+        <LI><A href="../../../../../">首页</A> </LI>
+        <LI class=line></LI>
+        <LI><A href="../../../../../mshz">民事案件</A> </LI>
+        <LI class=line></LI>
+        <LI><A href="../../../../../xshz">刑事案件</A> </LI>
+        <LI class=line></LI>
+        <LI><A href="../../../../../xzhz">行政案件</A> </LI>
+        <LI class=line></LI>
+        <LI><A href="../../../../../zscqhz">知识产权</A> </LI>
+        <LI class=line></LI>
+        <LI><A href="../../../../../pchz">赔偿案件</A> </LI>
+        <LI class=line></LI>
+        <LI><A href="../../../../../zxhz">执行案件</A> </LI>
+      </UL>
+    </div>
+  </div>
+  <div id="nav"> &nbsp;<a href="../../../../../" target="_self">首页</a>&nbsp;&gt;&nbsp;<a href="../../../../" target="_self">福建省高级人民法院</a>&nbsp;&gt;&nbsp;<a href="../../../" target="_self">福建省南平市中级人民法院</a>&nbsp;&gt;&nbsp;<a href="../../" target="_self">邵武市人民法院</a>&nbsp;&gt;&nbsp;<a href="../" target="_self">民事案件</a></div>
+  <div id="wenshu">
+    <table width="100%" border="2" align="center" cellspacing="2" cellpadding="16" bordercolor="#0280CA">
+      <tbody>
+        <tr>
+          <td><div id="ws">
+              <table border="0" width="100%">
+                <tr>
+                  <td><div id="wsTitle">黄秋英与邵武市鑫球铸钢有限公司劳务合同纠纷一审民事判决书</div></td>
+                </tr>
+                <tr>
+                  <td><div id="wsTime"><span>提交时间：2014-08-18</span><input name="PrintPage" type="button" id="PrintPage" value="打印预览" class="btn" />&nbsp;&nbsp;<input name="DownPDF" type="button" id="DownPDF" value="文书下载" class="btn" />&nbsp;&nbsp;&nbsp;&nbsp;
+                  </div></td>
+                </tr>
+                <tr>
+                  <td><div class="hr1" style="width:100%; border-bottom:2px solid #F00; height:2px;"></div></td>
+                </tr>
+                <tr>
+                  <td><DIV style="POSITION: relative; TEXT-ALIGN: left; margin-top:8px;" id=PrintArea>
+                      <DIV style="TEXT-ALIGN: left; FLOAT: left;font-size:20px;" id=DocArea> <!DOCTYPE HTML PUBLIC -//W3C//DTD HTML 4.0 Transitional//EN'><HTML><HEAD><TITLE></TITLE></HEAD><BODY><div style='TEXT-ALIGN: center; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 0cm; FONT-FAMILY: 黑体; FONT-SIZE: 18pt;'>福建省邵武市人民法院</div><div style='TEXT-ALIGN: center; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 0cm; FONT-FAMILY: 黑体; FONT-SIZE: 18pt;'>民 事 判 决 书</div><div style='TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 0cm;  FONT-FAMILY: 宋体;FONT-SIZE: 15pt; '>（2014）邵民初字第105号</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>原告黄秋英，女，1983年4月18日出生，汉族，邵武市沿山镇三元村村民。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>委托代理人吴浙闽，邵武市“148”法律服务所法律服务工作者。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>被告邵武市鑫球铸钢有限公司。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>法定代表人魏其胜，董事长。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>原告黄秋英与被告邵武市鑫球铸钢有限公司（以下简称鑫球公司）劳务合同纠纷一案，本院受理后，依法组成合议庭，公开开庭进行了审理。原告黄秋英及其委托代理人吴浙闽到庭参加诉讼，被告鑫球公司经本院合法传唤无正当理由拒不到庭。本案现已审理终结。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>原告黄秋英诉称，2012年2月至2012年12月，被告鑫球公司雇原告为其做打蜡工作，约定底薪1，800元，并按件提成。2013年2月7日，经双方结算，被告尚欠原告工资26，800元，并出具等额欠条一张。之后，被告并未及时支付所欠全部工资。原告因催讨未果，请求判令：1、被告立即支付拖欠的劳务工资26，800元；2、本案诉讼费由被告承担。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>被告鑫球公司经本院公告送达起诉状副本后未作答辩。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>原告为支持自己的诉讼主张向本院提供了书证一份，即欠条一张，拟证明被告欠原告劳务工资26，800元的事实。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>经审理查明，被告鑫球公司经本院合法传唤无正当理由拒不到庭，可视为放弃质证权利。原告所举证据系原件，来源合法、内容明确，予以采信。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>被告鑫球公司没有举证。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>根据上述采信的证据及当事人在法庭上的陈述，本院认定以下事实：</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>2012年2月至2012年12月，被告鑫球公司雇佣原告黄秋英为其从事打蜡工作。2013年2月7日经双方结算，被告还欠原告劳务工资26，800元。同日，被告的出纳魏平向原告出具欠条一份，并加盖被告鑫球公司的业务专用章及被告的法定代表人魏其胜的私章予以确认，欠条载明：“今邵武市鑫球铸钢有限公司欠员工黄秋英工资共计人民币贰万陆仟捌佰元整（￥26，800.00）此据邵武市鑫球铸钢有限公司魏其胜2013年2月7日。”之后，被告拖欠的26，800元劳务工资款至今未还。原告因追讨无果，遂提起本案诉讼。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>本院认为，被告鑫球公司雇佣原告黄秋英为其从事打蜡工作，双方形成事实上的劳务合同关系。原告提供劳务后，被告应当及时支付工资，被告出具的欠条可以确认其尚欠原告劳务工资26，800元，根据《中华人民共和国民法通则》第一百零八条“债务应当清偿。……。”的规定，对原告要求被告支付拖欠的劳务工资26，800元的诉请，本院予以支持。被告鑫球公司经本院合法传唤，无正当理由拒不到庭参加诉讼，依法可缺席判决。综上，依照《中华人民共和国民法通则》第一百零八条、《中华人民共和国民事诉讼法》第一百四十四条的规定，判决如下：</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>被告邵武市鑫球铸钢有限公司应于本判决生效后十日内支付原告黄秋英劳务工资26，800元。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>如果未按本判决指定期间履行给付金钱义务的，应当依照《中华人民共和国民事诉讼法》第二百五十三条之规定，加倍支付迟延履行期间的债务利息。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>本案受理费470元，由被告邵武市鑫球铸钢有限公司负担。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>如不服本判决，可在判决书送达之日起十五日内，向本院递交上诉状，并按对方当事人的人数提出副本，上诉于福建省南平市中级人民法院。</div><div style='TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 36pt 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>审　判　长　肖 吉 培</div><div style='TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 36pt 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>代理审判员　申屠聪琴</div><div style='TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 36pt 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>人民陪审员　缪 存 彬</div><div style='TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 36pt 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>二〇一四年四月十日</div><div style='TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 36pt 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>书　记　员　连 爱 平</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>本案依据的主要法律条文</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>1、《中华人民共和国民法通则》</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>第一百零八条：债务应当清偿。暂时无力偿还的，经债权人同意或者人民法院裁决，可以由债务人分期偿还。有能力偿还拒不偿还的，由人民法院判决强制偿还。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>2、《中华人民共和国民事诉讼法》</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>第一百四十四条：被告经传票传唤，无正当理由拒不到庭的，或者未经法庭许可中途退庭的，可以缺席判决。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>执行申请提示</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>《中华人民共和国民事诉讼法》</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>第二百三十九条：申请执行的期间为二年。申请执行时效的中止、中断，适用法律有关诉讼时效中止、中断的规定。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>前款规定的期间，从法律文书规定履行期间的最后一日起计算；法律文书规定分期履行的，从规定的每次履行期间的最后一日起计算；法律文书未规定履行期间的，从法律文书生效之日起计算。</div></BODY></HTML></DIV>
+                    </DIV>
+                    </td>
+                </tr>
+                <tr>
+                  <td><div style="border:1px solid #CCC; background:#FCFCFC; margin-top:15px; position:relative; padding:8px;">
+                      <div style="margin:0 auto; width:100%; text-align:center; font-size:16px; font-weight:bold;">&nbsp;公&nbsp;&nbsp;告</div>
+                      <div style="margin-top:10px;">
+                        <p style="font-size:14px; text-indent:2em;">一、本裁判文书库公布的裁判文书由相关法院录入和审核，并依据法律与审判公开的原则予以公开。若有关当事人对相关信息内容有异议的，可向公布法院书面申请更正或者下镜。</p>
+                        <p style="font-size:14px; text-indent:2em;">二、本裁判文书库提供的信息仅供查询人参考，内容以正式文本为准。非法使用裁判文书库信息给他人造成损害的，由非法使用人承担法律责任。</p>
+                        <p style="font-size:14px; text-indent:2em;">三、本裁判文书库信息查询免费，严禁任何单位和个人利用本裁判文书库信息牟取非法利益。</p>
+                        <p style="font-size:14px; text-indent:2em;">四、未经许可，任何商业性网站不得建立与裁判文书库及其内容的链接，不得建立本裁判文书库的镜像（包括全部和局部镜像），不得拷贝或传播本裁判文书库信息。 </p>
+                      </div>
+                    </div></td>
+                </tr>
+              </table>
+            </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<div id="footer">
+    <div id="links1"><a href="http://cpc.people.com.cn/" target="_blank">中国共产党新闻</a>　 <a href="http://www.npc.gov.cn/" target="_blank">全国人大</a>　 <a href="http://www.gov.cn/" target="_blank">中国政府网</a>　 <a href="http://www.cppcc.gov.cn" target="_blank">全国政协</a>　 <a href="http://www.spp.gov.cn" target="_blank">最高人民检察院</a></div>
+    <div id="links2">
+      <a href="http://www.court.gov.cn/zgcpwsw/lxwm/" target="_blank">联系我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://mail.court.gov.cn/" target="_blank">内部邮箱</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.court.gov.cn/gywm/" target="_blank">关于我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.court.gov.cn/wzdt/" target="_blank">网站地图</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="javascript:window.external.AddFavorite('http://www.court.gov.cn/zgcpwsw','中国裁判文书网')" target="_top">添加收藏</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.court.gov.cn/zgcpwsw');"title="设置本站为浏览器首页(起始页)">设为首页</a><br />
+      Copyrights©最高人民法院 All Rights Reserved<br />
+	  未经本网书面授权，请勿转载、摘编或建立镜像，否则视为侵权。<br/>
+      北京市东城区东交民巷27号 100745 总机:010-67550114 举报:010-67556131<br />
+      京ICP备05023036号
+    </div>
+  </div>
+<div style="clear:both"></div>
+<div style="display:none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F692544717e4ca5489bff77b2e9b28e7b' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+</div>
+</body>
+</html>

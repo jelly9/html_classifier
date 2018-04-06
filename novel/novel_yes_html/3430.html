@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<title>射雕之郭靖很聪明_全书网 4.13 蓉儿的母亲支持我？_全书网</title>
+<meta name="keywords" content="射雕之郭靖很聪明最新章节_全书网 4.13 蓉儿的母亲支持我？" />
+<meta name="description" content="射雕之郭靖很聪明最新章节阅读:全书网 4.13 蓉儿的母亲支持我？" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="robots" content="all" />
+<link href="/css/common.css" rel="stylesheet" type="text/css">
+<link href="/css/board.css" rel="stylesheet" type="text/css">
+<link href="/css/readtools.Css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery-1.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="/js/jquery.tools.min1.2.5.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/tools.js"></script>
+<script type="text/javascript" src="/scripts/common.js"></script>
+<!--[if lt IE 9]>
+<script src="/js/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+
+<!--
+var preview_page = "1801619.html";
+var next_page = "1801625.html";
+var index_page = "index.html";
+var article_id = "5570";
+var chapter_id = "1801622";
+function jumpPage() {
+  var event = document.all ? window.event : arguments[0];
+  if (event.keyCode == 37) document.location = preview_page;
+  if (event.keyCode == 39) document.location = next_page;
+}
+
+$(document).ready(function(){
+	var article_content = "射雕之郭靖很聪明$$$全书网 4.13 蓉儿的母亲支持我？$$$"+window.location.href+"$$$"+"5570";
+	var timestamp = Date.parse(new Date());
+	$.post('/ajax.php?timestamp',{timestamp:timestamp,article_content:article_content,act:'liulan',id:"5570"},function(data){
+
+	})
+});
+
+document.onkeydown=jumpPage;
+-->
+</script>
+</head>
+
+<body>
+<script>
+	function login(){
+	
+		$.post("/login.php?do=submit",
+		{username:$('#lusername').val(),password:$('#lpassword').val(),action:$('#llogin').val()},function(data)
+				{
+					if(data=='1001')
+					{
+						$('#lusermsg').html('账号或者密码错误');
+					}
+					else
+					{
+						  window.location.reload(); 
+					}
+					return false;
+				})
+		return false;
+	}
+</script>	
+<script>
+	$(document).ready(function(){
+		$('.username').blur(function(){
+			yonghu();
+		})
+		
+		$('.repassword').blur(function(){
+			repassword();
+		})
+	})
+
+	function yonghu()
+	{
+		
+		var username = $('.username').val();
+		$.post('/ajax.php',{username:username,act:'yonghu'},function(data){
+			if(data=='1001')
+			{
+				$('#usermsg').html('用户名已存在');
+				$('#userid').val('1');
+			}
+			else
+			{
+				$('#usermsg').html('');
+				$('#userid').val('0');
+			}
+		})
+		if($('#userid').val()=='1')
+		return false;
+		esle
+		return true;
+	}
+	
+	function repassword()
+	{
+		var flag1=true;
+		var repassword = $('.repassword').val();
+		var password = $('.password').val();
+		if(repassword!=password)
+		{
+			$('#repassmsg').html('密码不一致');
+			flag1=false;
+		}
+		else
+		{
+			$('#repassmsg').html('');
+			flag1=true;
+		}
+		return flag1
+	}
+	
+	function register()
+	{
+	
+		if(!yonghu())
+		{
+			return false
+		}
+		else if(!repassword())
+		{
+			return false
+		}
+		return true;
+	}
+	
+</script>
+<div id="wrapper">
+  <div class="shadow" style="height:1px;"></div>
+<header id="global-head" style="height:32px;">
+    <div>
+      <nav class="site-navigation cf">
+	  <a class="home" href="/">首页</a>
+	  <a href="/top/">排行榜单</a>
+	  <a href="/wanben/">完本小说</a>
+	  </nav>
+		<div class="hd-follow">
+        <div class="myhide"><a href="#" class="hides">浏览记录</a>
+          <div class="hideInfo"><ul></ul><p>*提示：浏览记录仅放置最近浏览的10本书籍</p><span>浏览记录是空的</span></div>
+        </div>
+         <script>
+			$(document).ready(function(){
+				$.post('/ajax.php',{act:'userlogin'},function(data){
+					if(data=='2002')
+					{
+						$(".hd-follow").width(197);
+					}
+					else
+					{
+						$('#checklogin').html(data);
+						$(".hd-follow").width(345);
+					}
+				})
+				
+			})
+		</script>
+        <span id="checklogin">
+		<a href="javascript:;" onClick="openDialog('/login.php?ajax_gets=jieqi_contents', true);" style="color:#F0F0F0">访客登录</a>&nbsp;&nbsp;
+<a href="javascript:;" onClick="openDialog('/register.php?ajax_gets=jieqi_contents', true);" style="color:#F0F0F0">免费注册</a>&nbsp;&nbsp;
+		</span>
+		</div>
+    </div>
+</header>  <link href="/css/channel-net.css" rel="stylesheet" type="text/css">
+<div id="channel-header" class="clearfix" style="margin-top:1px;">
+    <div class="channel-header-wrapper">
+      <div class="channel-logo"><a href="/" title="全书网">全书网</a></div>
+      <nav class="channel-nav">
+        <ul class="channel-nav-list">
+         <li><a href="/modules/article/articlelist.php?class=1" title="玄幻魔法">玄幻魔法</a></li>
+         <li><a href="/modules/article/articlelist.php?class=2" title="武侠修真">武侠修真</a></li>
+         <li><a href="/modules/article/articlelist.php?class=3" title="纯爱耽美">纯爱耽美</a></li>
+         <li><a href="/modules/article/articlelist.php?class=4" title="都市言情">都市言情</a></li>
+         <li><a href="/modules/article/articlelist.php?class=5" title="职场校园">职场校园</a></li>
+         <li><a href="/modules/article/articlelist.php?class=6" title="穿越重生">穿越重生</a></li>
+         <li><a href="/modules/article/articlelist.php?class=7" title="历史军事">历史军事</a></li>
+         <li><a href="/modules/article/articlelist.php?class=8" title="网游动漫">网游动漫</a></li>
+         <li><a href="/modules/article/articlelist.php?class=9" title="恐怖灵异">恐怖灵异</a></li>
+         <li><a href="/modules/article/articlelist.php?class=10" title="科幻小说">科幻小说</a></li>
+         <li><a href="/modules/article/articlelist.php?class=11" title="美文名著">美文名著</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+   <script type="text/javascript" src="/ad/style1.js"></script>
+<div id="container">
+   <script type="text/javascript" src="/ad/style2.js"></script>
+<div class="mainnav"><div class="main-index" id="direct"><span class="r mr10"> <form action="/modules/article/search.php" method="get" >搜小说：<input type="text" name="searchkey" value="" /><button type="submit" >搜</button></form></span>位置：<a href="/" class="c009900">全书网</a> > <a href="/modules/article/articlelist.php?class=8">网游动漫</a>  > <a href="/book_5570.html" class="article_title">射雕之郭靖很聪明</a>  > 全书网 4.13 蓉儿的母亲支持我？</div>
+      <section class="main b-detail" id="directs"><div class="bookInfo"><h1>
+	  <span class="r">	  </span>
+	  <em class="l">《射雕之郭靖很聪明》</em><strong class="l jieqi_title">全书网 4.13 蓉儿的母亲支持我？</strong><a href="/modules/article/addbookcase.php?bid=5570&cid=1801622"  target="_blank" title="加入书签" class="l">加入书签</a>
+            <div class="clear"></div></h1>
+<div class="toolbar"><script language="JavaScript" src="/js/toolbar.js" type="text/javascript"></script><script type="text/javascript" src="/ad/style5.js"></script></div>
+   <script type="text/javascript" src="/ad/style3.js"></script>
+<div class="mainContenr"   id="content">&nbsp;&nbsp;&nbsp;&nbsp;4.13&nbsp;&nbsp;蓉儿的母亲支持我？<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;老顽童本就是了乐呵呵，没什么心机的，见黄『药』师求自己，只是想显示一下自己的威风，所以说了两句刁难的话，但是他没有想到黄『药』师会有这么激动地反应，堂堂的东写居然贵在了自己的面前。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;黄『药』师双膝着地，“噔噔噔”就给老顽童磕起了响头：“伯通，只要你能答应我就贱内的『性』命，你不管提什么样的条件，我都答应你……………………”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“喂喂喂，我说黄老邪啊，你这算是什么呢？我只不过是想让你好好求我一下，让我威风一下就够了，你给我磕什么头啊，我优不时你爹，嘿嘿，我老顽童没儿子的！”老顽童虽然见到黄『药』师的表现之后心软了，但仍控制不住自己的玩儿心，虽然在用手蟾黄『药』师，但仍开始调侃了起来。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“伯通，咱们之间因为《九阴真经》已经斗了二十年有余了，我不想说什么，只要你能帮我救活阿蘅，我什么条件都能答应你。”为了自己老婆的『性』命，黄『药』师真的是什么都豁得出去，继续跪在地上恳求着。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“哎呀，不好玩儿啊，你有给我磕头的力气，还不如和我打一架呢，你在这里和我较什么劲？”老顽童开始抱着头转起了圈儿，最后大袖一甩，说道：“算了，虽然你那个老婆阴险狡诈，但是总算是个『妇』人，我不能和他一般见识，救她一命吧！唉，真拿你没办法。都这么大年纪了，还给人下跪，我要是当了谁的长辈，就不能太贪玩儿了，你还给我下跪，这不是要我老顽童地命吗？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;老顽童抱怨了一大通，直把还在地上跪着的黄『药』师弄得糊涂了。他完全没有想到老顽童居然会有这样的一种反应。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;还是七公过来给黄『药』师解了围：“老邪啊，你还不赶快起来。老顽童已经答应要救你老婆了，咱们赶紧商量一下怎么去救你老婆啊！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;经过大家的研究，认为我说的方法是可行的，现在的我虽然内里不足，但是气海已经足够容纳相当量地内力了，而且老顽童和气功两个人的内功只是在我地体内经过，不是进行侵入。所以没有任何的危险，我这里安全了，黄『药』师的功力那么深厚，则更加没有问题了。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;在冰窖之内，我们四个人看到了蓉儿的母亲，他很安静地躺在床上，表情上尽是安详，她的身边摆满了各种各样的鲜花。蓉儿都已经女大十八变了。但是我这个岳母大人的样子看齐来也就是二十五六岁，说起来，两个人更加像是姐妹。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;黄『药』师说道：“咱们开始吧。”于是，大家商定好地方法，老顽童在最后，七公在他的前面。我在第二，黄『药』师亲自为自己的妻子治疗。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;由于在怀了蓉儿期间强行默写《九阴真经》的蓉儿的娘手上很深，想要以黄『药』师的力量医好她，确实不是一件容易的事情，即便是集中了我们四个人的功力，事情显得相对容易了很多，大家也是费了很大地力气。大家晕了两个时辰的功，蓉儿母亲才呕出了好几口鲜血，黄『药』师见到自己期待的状况发生了。急忙安定下心神。始了最后的治疗，有过了一个多时辰。这次医治才最终完成。等黄『药』师将依然昏『迷』的妻子重新放在床上，我们几个已经全都没有了力气，都躺在了地上。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;傍晚，蓉儿依偎在我的身边，两个人没有多少话，我知道，此时她地心中想的完全是见到自己的母亲是个什么情况。所以就静静地抱着她，让她在等待的过程中能够多一些安心。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;事情还真的就像是想象之中那么顺利，哑仆终于跑了过来，在那儿手舞足蹈地吭着声。蓉儿马上从我的怀中出来，站起身急切地问道：“是不是我娘醒了？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;那哑仆又作了一大通的手语，蓉儿一下子有忧心忡忡变得笑逐颜开，高兴地向我怀里一扑，然后蹦蹦跳跳去看她已经想了十几年却都没能见到的娘了。我没有跟去，十几年之后母女相见，一定会有太多太多的话想要相互倾诉，我可不会在这种时候去傻傻地边手足无措。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;将蓉儿母亲醒了的事情告诉了七公和老顽童，七公也是高兴地直拍巴掌，直说黄『药』师这些字不必老那么苦着脸了，要是在这么下去，东邪都快变成东魔了，不是妖魔，不是魔幻，而是魔症。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;但是老顽童则在一边开始了不高兴，他转身蹲在了地上，看都不看我们，终于被七公地絮叨弄得烦了，猛地喊了一声道：“喂，我说老叫花子，他黄老邪地老婆活了，关你什么事，你在这儿激动什么？难道你是黄老邪的大舅子？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;这话说得有点儿冲，但是七公了解老顽童这二十多年来所受地苦，所以也没有介意，死劝活劝，终于让老顽童笑了一些气。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;大家一切都安定下来了，只有我的心中还有意思的不安：现在黄『药』师一家团聚，全家人都是那种非常自我的，所以我和蓉儿的问题如何处理，我是一点儿都拿不定。这本身就是一件非常难办的事情。现在到了这种时候，估计蓉儿的母亲会最终拿主意，对于他的『性』情，我是一点儿也不了解，而且我很清楚，我救了她的『性』命和让她把蓉儿交给我肯定是没有任何关系的。桃花岛的服务还算是周到，哑仆给七公我们三个人准备了饭菜，但是我没有太多的心情。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;终于到了晚上，黄『药』师给了我们让陈玄风来叫我，我知道，到了出审判结果的时候了。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;蓉儿正义偎在自己娘的怀里，一脸的幸福，而黄『药』师则面带微笑地看着这对母女，一家三口在一块儿，显得那么其乐融融，说不出的和谐。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;见我到来，蓉儿从他娘的怀中出来，抓住我的手臂说道：“娘，这就是靖哥哥。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“拜见岳母大人！”我赶紧上前准备行礼，虽然心中怪怪的，但是必要的礼节还是一定要有的，而且现在的情况是我想当人家的女婿，但是人家未必会接受。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“先别忙着行礼，”黄母过然如预想之中一样阻拦了我的动作，“你们的事情我已经知道了，本来蓉儿已经成了你的人，我们不应该在给你们设置什么障碍，但是那个蒙古公主的事情实在是让我们难以接受你知道吗？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“岛主夫人，”我马上改变了称呼，“我知道这次我来想要黄岛主答应我们的事情肯定会困难重重，现在你康复了，我想要蓉儿铁了心和我走得底气都小了很多，但是我想说的是，蓉儿是我这一生之中最宝贵的，无论如何，我都不会放弃她。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“你不想放弃？这就能成为理由吗？”黄母似乎很不买我这句话的账，“你要知道，我们的女儿虽然不是什么金枝玉叶，但也被她爹宝贝了十几年。桃花岛之人的脾气你也应该知道，让我的女儿和别的人一起去嫁一个人，这是难以想象的，也是不可接受的。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;我去!着黄母说起话来还真有逻辑『性』，而且攻击『性』极强，条理清楚又不像换告示一般蛮不讲理，看来我今天是遇到难缠的了。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;但是转过念来一想，发现了问题不太对劲儿：既然二女共侍一夫的事情她都和我讲了，肯定是蓉儿已经将我们的事情，包括我在洞中的时候给蓉儿写的信都说给了自己的娘听。不和我说要去自己的女儿，别去搭理那个蒙古公主，蓉儿的母亲说事儿的方法似不太对劲儿。所以这么看来，她其实未必是在难为我，考验的可能『性』反而更大。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;想到这里，我答道：“我知道，一切的利害关系我都很清楚，而且我还可以告诉你们，现在的蒙古大汗野心勃勃，很有可能灭掉金国，你们别因为这个而高兴，我估计他灭金之后，一定会图谋我们宋朝的大好河山。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;黄家三口听了之后都十分惊诧，但黄母还是说道：“你说得不是没有道理，但是这一点和我们现在要解决的有什么关系吗？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;我笑道：“当然有关系，我想说的是，我要是娶那个蒙古公主的话，很有可能在未来的日子里夹在在大宋河蒙古之间，但是我还是要她。因为人活着，情份比什么都重要。对待那个蒙古公主，我会这么做，对待蓉儿，我也会如此，还是那句话：我确定，蓉儿是我此生的最爱。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“这么做的话，你就不怕回最后什么都得不到吗？”黄母很玩味地看了我一下说道。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“说句大言不惭的话，天下之间还没有我郭靖怕的，”我昂然而立，“我知道，我现在喜欢的两个姑娘都有着很强的背景，蓉儿的父亲是武林泰斗，华筝的父亲是蒙古的大汗，但是我一点儿都不怕，就算是天皇老子来了，我也能撬掉他的门牙！我这么说，不是挑衅，这是我的决心！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“好，小伙子有志气，只有这样，我才能将蓉儿放心地交给你！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;一句话，弄得我一头雾水……………………<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;很不好意思地说，我前一段在王群里加人的时候，把所有人都给删了<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;天下能有几个比我还衰的？<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;哎，重建了，群号为：38185358。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;原谅我的无知，兄弟们，都回群里来吧<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;bk</div><script type="text/javascript" src="/ad/style6.js"></script><div class="backs"><a href="1801619.html" class="pre">上一章</a><a href="index.html" class="backfor">返回目录</a><a href="1801625.html" class="next">下一章</a><p>小提示： 按←键返回上一页，按→键进入上一页,您还可以<a href="/modules/article/addbookcase.php?bid=5570&cid=1801622" title="加入书签"  target="_blank">加入书签</a></p></div>
+<script type="text/javascript" src="/ad/style7.js"></script>
+</div><div class="sharesFor"><script language="javascript" type="text/javascript" src="/js/wangzhe.js"></script></div>
+      </section>
+    </div>
+   <script type="text/javascript" src="/js/checklogin.js"></script>
+   <script type="text/javascript" src="/ad/style4.js"></script>
+<div class="attention"><em>阅读提示：</em><br/>
+1、本站会员登录后，将免费体会到最顺畅的阅读方式[<em>最少广告</em>]。<br/>
+2、<em>注册本站会员</em>，将《<a href="/book_5570.html" class="article_title"><em>射雕之郭靖很聪明</em></a>》加入书架，可以通过书架更快的了解更新信息。<br/>
+3、免费小说《<a href="/book_5570.html" class="article_title"><em>射雕之郭靖很聪明</em></a>》 全书网 4.13 蓉儿的母亲支持我？ 所描述的内容只是作者 作者 <em>瀚海腾波</em>个人观点，与本站的立场无关，本站只为广大用户提供阅读平台。
+</div>
+</div></div>
+<script language="JavaScript" type="text/JavaScript"> 
+  window.onload = function(){ //window.onload 打开网页就运行
+
+  var str=document.getElementById("content").innerHTML;//这里是整个页面代码 ,也可以指定id
+  str=str.replace(/\<script[\s\S]+?\<\/script\>/gi,""); str=str.replace(/\<styltyp[\s\S]+?\<\/styl\>/gi,"");
+ str=str.replace(/\<style[\s\S]+?\<\/style\>/gi,"");
+ str=str.replace(/\<a[\s\S].+?\<\/a\>/gi,"");  str=str.replace(/Www.+?ggyy\.net/gi,"");
+ str=str.replace(/Www.+?Com/gi,"");
+  str=str.replace(/Www.+?net/gi,"");
+ str=str.replace(/Www.+?cc/gi,"");
+   str=str.replace(/&lt;br.+?&gt;/gi,"<br />");
+str=str.replace(/&amp;hllp;/gi,"&hellip;").replace(/&amp;ldqo;/gi,"&ldquo;").replace(/ldqo/gi,"ldquo").replace(/&amp;rdqo;/gi,"&rdquo;").replace(/&amp;dash;/gi,"&mdash;"); document.getElementById("content").innerHTML=str;
+}
+</script>
+<script type="text/javascript" src="/js/foot.js"></script>
+<script type="text/javascript" src="/js/tong.js"></script>
+<script type="text/javascript" src="/ad/tan.js"></script>
+<script type="text/javascript" src="/ad/style5.js"></script>
+</body></html>

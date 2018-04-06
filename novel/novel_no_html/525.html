@@ -1,0 +1,339 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html xmlns=http://www.w3.org/1999/xhtml>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>空壳的七乐彩彩票方案详情-彩票宝网上买彩票服务</title>
+    <meta name="keywords" content="彩票宝" />
+	<meta name="description" content="彩票宝-中国最大的彩票行业门户，彩票宝提供PC端和手机端服务。彩票宝购买平台提供体彩、足彩、福彩、竞彩等代购合买服务，是彩民最值得信赖的专业彩票交易平台。彩票宝热线：400-6100-365" />
+    <link rel="stylesheet" href="/assets/css/base.core.css?v=0922" type="text/css"/>
+    <link rel="stylesheet" href="/assets/css/project_info.css?v=0227" type="text/css"/>
+    <script type="text/javascript" src="/assets/libs/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/assets/libs/base.core.js?v=0922"></script>
+    <script type="text/javascript" src="/assets/libs/dialog.code.js"></script>
+    <script type="text/javascript" src="/assets/js/projectInfo.js"></script>
+    <script type="text/javascript" src="/assets/js/projectInfo.tool.js?v=1230"></script>
+    <script type="text/javascript">
+        $().ready(function () {
+            var proejctStatus = ['NotTicketsIssuance', 'TicketsIssuance', 'EndSale', 'SendPrize','TicketFail'];
+            window.ps = new ProjectProgress('projectProgress',100.00, null,'TicketsIssuance|1');
+            
+        }) ;
+        function toCare(url,res,userId,logined){
+        if(logined == 'false'){
+            cp365.needFresh = 1;
+            cp365.login();
+            return;
+        }
+        $.ajax({
+            type:'POST',
+            url:url,
+            data:{result:res,fellowUserId:userId},
+            success:function(res){
+                var stat = res.state;
+                if(stat == 'success'){
+                    $('.astyle1').addClass('yiguanzhu').removeAttr('onclick');
+                }else{
+                    $.alert(stat);
+                }
+            }
+        })
+    }
+    </script>
+</head>
+<body>
+<input type="hidden"  id="lottery" value="seven">
+<input type="hidden"  id="proejctStatus" value="TicketsIssuance">
+<input type="hidden"  id="isliubiao" value="false">
+<input type="hidden"  id="subscribe" value="/seven/scheme!subscribe.action?id=92442">
+<input type="hidden" id="projectId" value="92442" />
+
+<div class="site-nav">
+    <div class="site-nav-bd">
+        <div id="userloginBox">
+            
+            <p>您好，欢迎来到彩票宝！</p>
+            <p class="p2">请<a href="javascript:void 0" class="denglv" onclick="cp365.login();return false;" title="登录彩票宝">登录</a><a href="/user/user!reg.action" class="zhuce" target="_blank" title="免费注册彩票宝账号">免费注册</a></p>
+            
+        </div>
+        <div class="othertypebox " id="otherlogin" >
+            <a href="javascript:void(0);" title="" class="othertypebox_head">合作账号登陆<b></b></a>
+            <div id="otherloginBox" class="otherloginBox">
+                <div class="linkslist">
+                    <a class="hzqq" href="/third/third!index.action?thirdType=TENCENTQQ" target="_blank">QQ登录</a> <a class="hzalipay" href="/third/third!index.action?thirdType=ALIPAY" target="_blank">支付宝</a> <a class="hzsinawb" href="/third/third!index.action?thirdType=SINAWEIBO" target="_blank">新浪微博</a> <a class="hzrenren" href="/third/third!index.action?thirdType=RENREN" target="_blank">人人网</a>
+                    <a class="hzbaidu" href="/third/third!index.action?thirdType=BAIDU" target="_blank">百度</a><a class="hz163" href="/third/third!index.action?thirdType=WANGYI163" target="_blank">网易微博</a>
+                </div>
+            </div>
+        </div>
+        <div class="cpb_favorites">
+                <div class="bdshare_t get-codes-bdshare" id="bdshare"><a href="javascript:void(0)" class="bds_more" data_tongji="top_fx">分享</a></div>
+        </div>
+       <span class="fr"><a href="/activity/list.jsp" target="_blank"><img src="../images/hot.gif"/>&nbsp;活动专题</a><a href="http://www.cpbao.com">首页</a><a href="http://news.cpbao.com" target="_blank">资讯</a><a href="http://live.cpbao.com/jingcai/" target="_blank">比分直播</a><a href="http://data.cpbao.com/chart/index.jsp" target="_blank">走势图表</a><a href="http://odds.cpbao.com" target="_blank">指数</a><a href="http://info.cpbao.com/" target="_blank">资料库</a><a href="/help/index.jsp" target="_blank">帮助中心</a><a href="http://bbs.cpbao.com" target="_blank">论坛</a></span></div>
+</div>
+<div class="header_box">
+    <a href="/" class="logo">彩票宝，正规的彩票销售网站</a>
+    <div class="header_right">
+        <div class="tel">
+            <span class="tel_nums">400-6100-365</span> <a href="/aboutUs/servicecenter.jsp" target="_blank" class="service_online"></a>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<nav class="home_nav">
+    <div class="navs">
+        <!--竞彩-->
+        <div id="lottery_banner" class="nav_left">
+            <div class="navtoptitle nav_hoverico"><a onclick="$('#lottery_banner .lotterys').toggle()" href="/goucai.jsp" target="_blank">选择彩种</a></div>
+            <!--竞彩-->
+            <div class="lotterys" style="display: none">
+                <h4><span>购买彩票</span><a class="red" href="/help/help_detail.jsp?id=308" target="_blank">[兑奖]</a><a href="/help/index.jsp?helpid=43" target="_blank">[如何购彩]</a></h4>
+                <div class="clear"></div>
+                <ul>
+                    <li class="ssq"><span></span><a href="/ssq/index.jsp">双色球</a><a class="des" href="/ssq/index.jsp">大奖一中到底</a></li>
+                    <li class="dlt"><span></span><a href="/dlt/index.jsp">大乐透</a><a class="des" href="/dlt/index.jsp">奖金高达1600万</a></li>
+                    <li class="jczq"><span></span><a href="/jczq/index.jsp">竞彩足球</a><a class="des" href="/jczq/index.jsp">玩法无极限</a></li>
+                    <li class="jclq"><span></span><a href="/jclq/index.jsp">竞彩篮球</a><a class="des" href="/jclq/index.jsp">返奖率高达69%</a></li>
+                    <li class="dcjc"><span></span><a href="/dczc/index.jsp">北京单场</a><a class="des" href="/dczc/index.jsp">全球比赛任你挑</a></li>
+                    <li class="sfc"><span></span><a href="/sfzc/index.jsp">14场胜负彩</a><a class="des" href="/sfzc/index.jsp">合买力量大</a></li>
+                    <li class="rx9"><span></span><a href="/rx9/index.jsp">任选9</a><a class="des" href="/rx9/index.jsp">定胆更省钱</a></li>
+                </ul>
+
+				<div class="otherLots" style="padding: 0">
+					<div class="otherLots-nav" >
+						<h5>高频</h5>
+						<ul>
+							<li class="k3"><span></span><a href="/k3/index.jsp" title="摇色子，中大奖">快3</a><!--<a class="des" href="/k3/index.jsp">摇色子，中大奖</a>--><a href="/jsk3/index.jsp" style="margin-left: 62px" title="摇色子，中大奖">江苏快3</a></li>
+						<li class="nav-more"><em><a title="猜对1个号就中奖，每天84期" href="/11x5/index.jsp">11选5</a></em>
+							<em><a title="全国独家首发，高频最新玩法" href="/poker/index.jsp">快乐扑克</a></em>
+						</li></ul>
+					</div>
+					<div class="otherLots-m">
+						<p>
+							<em><a title="每天84期，返奖率59%" href="/jxssc/index.jsp">新时时彩</a></em><em><a title="每天78期，任猜1-8个号都中奖" href="/jx11x5/index.jsp">新11选5</a></em><em style="width: 82px"><a title="猜对1个号就中奖，每天84期" href="/gd11x5/index.jsp">广东11选5</a></em><em><a title="独有夜间版，01：55截止" href="/ssc/index.jsp">时时彩</a></em>
+							<em class="new"><a title="新的快3玩法，高回报" href="/hubk3/index.jsp">湖北快3</a></em> <em class="new"><a title="新的快3玩法，高回报" href="/jlk3/index.jsp">吉林快3</a></em><!-- <em><a title="猜对1个号就中奖，每天84期" href="/hrbk3/index.jsp">河北快三</a></em>--><em class="new" ><a title="猜对1个号就中奖，每天84期" href="/nmk3/index.jsp">内蒙快3</a></em><em class="new" ><a title="猜对1个号就中奖，每天90期" href="/shel11to5/index.jsp">上海11选5</a></em>
+						</p>
+					</div>
+				</div>
+				<div class="otherLots">
+					<h5>足彩</h5>
+					<p>
+						<em class="cleft"><a title="半场、全场" href="/lczc/index.jsp">六场半全场</a></em>
+						<em><a title="只猜四场" href="/sczc/index.jsp">四场进球彩</a></em>
+					</p>
+				</div>
+				<div class="otherLots otherSzc">
+					<h5>数字</h5>
+					<p>
+						<em class="cleft"><a title="2元赢取1000元，天天开奖" href="/fc3d/index.jsp">福彩3D</a></em>
+						<em><a title="大奖500万 每周一、三、五开奖" href="/qlc/index.jsp">七乐彩</a></em>
+						<em class="cleft"><a title="大奖500万 每周二、五、日开奖" href="/qxc/index.jsp">七星彩</a></em>
+						<em><a title="2元赢取1000元，天天开奖" href="/pl3/index.jsp">排列三</a></em>
+						<em><a  title="2元赢取10万元，天天开奖" href="/pl5/index.jsp">排列五</a></em>
+					</p>
+				</div>
+				<div class="poker_icon"></div>
+            </div>
+        </div>
+		       <!--twonav_left-->
+        <ul id="home_menus" class="nav_right">
+            <li   ><a href="/goucai.jsp">购彩大厅</a></li>
+            <li   ><a href="/hemai/index.jsp">合买大厅</a></li>
+            <li  ><a href="/passcount/index!index.action?playType=SFZC14">过关统计</a></li>
+            <li    ><a href="/kjgg/results!index.action">全国开奖</a></li>
+            <li  ><a href="/user/top-winners-list.jsp">中奖排行榜</a></li>
+           <!-- <li><a href="http://news.cpbao.com" target="_blank">资讯中心</a></li> -->
+            <li><a href="http://live.cpbao.com/jingcai/" target="_blank">比分直播</a></li>
+            <li><a href="http://app.cpbao.com" target="_blank">手机购彩</a></li>
+            
+			    <li><a href="http://www.cpbao.com/activity/dcqb/down.jsp" target="_blank">夺彩奇兵</a></li>
+        </ul>
+        <!--nav_right-->
+    </div>
+</nav>
+<div class="crumb">
+    <ul>
+        <li class="a">您当前的位置：</li>
+        <li><a href="http://www.cpbao.com">首页</a>&nbsp;> &nbsp;</li>
+<li><a href="/goucai.jsp" target="_blank">购彩大厅</a>&nbsp;>&nbsp;</li>
+        <li>七乐彩</li>
+    </ul>
+</div>
+<div class="main">
+    <!--头部-->
+    <div class="header seven_banner" >
+        <h3 class="number_logo">&nbsp;</h3>
+        <div class="h_r "><p><strong>第2014118期七乐彩&nbsp;&nbsp;复式自购方案</strong> </p>
+            <p>截止时间：2014-10-08 19:40&nbsp;&nbsp;方案编号：QLC0000092442</p>
+        </div>
+    </div>
+    <!--中间部分-->
+    <div class="content">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bigtable">
+            <tr>
+                <th>发&nbsp;&nbsp;起&nbsp;&nbsp;人：</th>
+                <td class="td1"><span class="fr btn_a"><a href="#" id="cp_url">复制方案链接</a><!--<a href="#">本方案直播</a>--></span>
+                    <a href="/grxq/grxq.jsp?userId=432080&lotteryId=8" target="_blank"><strong>空壳</strong></a>
+                    <span><em class="gray"></em></span>
+                    <a href="javascript:void(0);"  class="astyle1" onclick="toCare('/attention/attention!addFellow.action','none','432080','false')" >&nbsp;</a>
+                    <span><em class="gray">定制跟单：</em>0人</span><a href="/lottery/auto!autoOrdered.action?autoForm.followUserId=-1&autoForm.lotteryType=SEVEN&autoForm.sponsorUserId=432080" target="_blank">定制TA</a>
+                </td>
+            </tr>
+            
+            <tr>
+                <th><strong>方案信息：</strong></th>
+                <td>
+                    <div class="divbg div1">
+                        <div class="boxshadow ">
+                            <ul class="h_ul"><li class="li1">方案总金额</li><li class="li2">注数</li><li class="li3">倍数</li><li class="li4">投注方式</li><li class="li5">方案状态</li><li class="li6">保密类型</li><li class="li7">出票状态</li><li class="li8 no_rbg">税后奖金(元)</li></ul>
+                            <ul class="b_ul"><li class="li1"><strong class="red" id="schemeNum">2</strong>元</li><li class="li2">1</li><li class="li3">1倍</li><li class="li4">复式自购</li><li class="li5">满员(进度<strong class="red">100.00</strong>%)</li><li class="li6">完全公开
+                                </li><li class="li7"><span class="fgreen">出票成功</span></li><li class="li8 no_rbg"><font color="gray">待开奖</font></li></ul>
+                        </div>
+                        <!--保密类型修改-->
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+            
+                <th>进度信息：</th>
+                <td>
+                    <div class="divbg">
+                        <div class="boxshadow zg_box">
+
+            
+                            <div class="cont_1">
+                                
+                                <div class="project-progress" id="projectProgress">
+                                    <div class="project-progress-box">
+                                        <div class="project-progress-dot1">出票</div>
+                                        <div class="project-progress-dot2">开奖</div>
+                                        <div class="project-progress-dot3">派奖</div>
+                                    </div>
+                                    <div class="project-progress-bar"></div>
+                                    <div class="project-progress-notice">进度100.00%</div>
+                                    <ul class="project-progress-tips">
+                                        <li class="first-tip"><b>发起</b>(10-08 15:54)</li>
+                                        <li><b>出票</b></li>
+                                        <li><b>开奖</b></li>
+                                        <li class="last-tip"><b>派奖</b></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <!-- 每个玩法的详情不同，投注内容详情-->
+
+            
+            
+
+
+<tr>
+    <th><strong>投注信息：</strong></th>
+    <td><span><i class="gray_Ball">01</i><i class="gray_Ball">08</i><i class="gray_Ball">10</i><i class="gray_Ball">12</i><i class="gray_Ball">22</i><i class="gray_Ball">25</i><i class="gray_Ball">29</i></span><br/>
+        </td>
+</tr>
+<tr>
+    <th><strong>开奖号码：</strong></th>
+    <td>未开奖</td>
+</tr>
+
+            
+
+
+
+
+            
+
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
+
+            
+            
+            
+            
+        </table>
+    </div>
+
+</div>
+
+<!--页脚-->
+<footer id="footer">
+    <fieldset class="footer">
+    <!--随时随地 买彩票-->
+    <div class="foot_block foot_block01">
+        <h4></h4>
+        <div>
+        <a href="/help/index.jsp?helpid=43" target="_blank">购彩流程</a><a href="/user/user!reg.action" class="no_boder" target="_blank">免费注册</a><a href="/help/help_detail.jsp?id=1470" target="_blank">充值快捷</a><a href="/help/help_detail.jsp?id=1469" class="no_boder" target="_blank">便捷投注</a>
+        </div>
+    </div>
+    <!--中奖 是件很容易的事-->
+    <div class="foot_block foot_block02">
+        <h4></h4>
+      <div> <a href="/help/help_detail.jsp?id=2125" target="_blank">大奖领取</a><a href="/help/index.jsp?helpid=50" class="no_boder" target="_blank">玩法攻略</a><a href="/help/help_detail.jsp?id=308" target="_blank">快速兑奖</a><a href="/help/help_detail.jsp?id=381" target="_blank" class="no_boder">安全提款</a></div>
+    </div>
+    <!--安全保障 让您购彩更放心-->
+    <div class="foot_block foot_block03">
+        <h4></h4>
+        <div><a href="/help/help_detail.jsp?id=2119" target="_blank">购彩凭证</a><a href="/user/xieyi.jsp" target="_blank" class="no_boder">代购协议</a><a href="/help/help_detail.jsp?id=319" target="_blank">账户安全</a><a href="/help/help_detail.jsp?id=2009" target="_blank"  class="no_boder">信息保密</a></div>
+    </div>
+    <div class="clear"></div>
+    <!--公共连接-网络警察-安全监察等-->
+        <div class="regulatory">
+            <a href="http://www.bj.cyberpolice.cn/index.do" class="regico01"  rel="nofollow"></a><a target="_blank" class="regico03" rel="nofollow"  href="http://www.bjjubao.org/"></a><a class="regico04" href="http://www.itrust.org.cn/yz/pjwx.asp?wm=1067348837" rel="nofollow"></a><a href="http://www.315online.com.cn/member/315130031.html" class="regico05" rel="nofollow"></a><a href="https://ss.knet.cn/verifyseal.dll?sn=e140917110108540008ffd000000&ct=df&a=1&pa=0.09965953300707042" class="regico06" rel="nofollow" target="_blank"></a><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202014031800002" class="regico08" rel="nofollow" target="_blank"><img src="/assets/images/biaoshi.gif" border="0"/></a><!--<a key="528dc5bc3b05a3da0f14a18a" logo_size="124x47" logo_type="official" href="http://www.anquan.org" rel="nofollow" class="regico09"><script src="http://static.anquan.org/static/outer/js/aq_auth.js"></script></a><a key="528dc5bc3b05a3da0f14a18a" logo_size="124x47" logo_type="realname" href="http://www.anquan.org"  class="regico09"><script src="http://static.anquan.org/static/outer/js/aq_auth.js"></script></a>-->
+        </div>
+   <div class="site_police">
+       <span>客服热线：</span><b>400-6100-365</b><span>传真：</span><b>010-88571880</b><span>客服邮箱：</span><b style="margin-right: 0"><a href="mailto:cs@cpbao.com">cs@cpbao.com</a></b>
+       <p style="clear: left">彩票宝提醒您：<strong>彩票有风险，投资需谨慎，热心公益不向未满18周岁的青少年出售彩票！</strong></p>
+   </div>
+    <!--关于我们-->
+    <div class="linkuser"><a href="/aboutUs/index.jsp" target="_blank">关于我们</a><b></b><a href="/aboutUs/contact.jsp" target="_blank">联系我们</a><a href="/aboutUs/join.jsp" target="_blank">加入我们</a><a href="/user/xieyi.jsp">用户协议</a><a href="/aboutUs/servicecenter.jsp" class="no_boder" target="_blank">客服中心</a><a href="#" style="display: none">意见反馈</a></div>
+
+    </fieldset>
+     <div class="website">Copyright@2013-2014&nbsp;&nbsp;彩票宝网&nbsp;&nbsp;&nbsp;All rights reserved&nbsp;&nbsp;&nbsp;&nbsp;京ICP备13020431号&nbsp;&nbsp;&nbsp;京ICP证130178号&nbsp;&nbsp;&nbsp;京公网安备11002011070号</div>
+</footer>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6775656" src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=383042"></script>
+<span style="display: none">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fac6e4cb3a496d5a5d6b973678b5776f2' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</span>
+<script type="text/javascript">
+  var _adwq = _adwq || [];
+  _adwq.push(['_setAccount', 'k8rt8']);
+  _adwq.push(['_setDomainName', '.cpbao.com']);
+  _adwq.push(['_trackPageview']);
+</script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-47999722-1', 'cpbao.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
+

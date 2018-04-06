@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>二手前四后八红岩金刚图片_山西大同二手车_华夏二手车网</title>
+<link href="http://www.hx2car.com/resource/web/car/css/carPicDetail.css" rel="stylesheet" type="text/css" />
+<link href="http://www.hx2car.com/resource/web/car/css/hx2car.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/common/js/jquery/jquery.min.js" ></script>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+			jQuery(document).ready(function($) {
+				$("#thumbs ul li").unbind().bind("click",function(evnt){
+				var nextimg = $("#smallimg"+parseInt($(this).index())+" img")[0].src;
+				var kzm = $("#bigImage")[0].src.split(".")[$("#bigImage")[0].src.split(".").length-1];
+				if(nextimg.indexOf("uploadpic")> 0){
+					nextimg = nextimg.replace("uploadpic","bigpic");
+				}else{
+					var nextlen = nextimg.length;
+					var nextpath  = nextimg.substring(0,nextlen-17);
+					var nextjpg  = nextimg.substring(nextlen-32,nextlen).replace("small/150_100.jpg",".jpg").replace(/\//g,"").replace("jpg",kzm);
+					nextimg = nextpath +"" + nextjpg;
+				}
+				 var bigImage =  $("#smallimg"+parseInt($(this).index())+" img")[0].lang;									
+				$("#bigImage")[0].src =bigImage;
+				$("#bigImage")[0].lang = $(this).index();
+				 $("#thumbs img").removeClass("selected");
+				 $("#smallimg"+parseInt($(this).index())+" img").addClass("selected");
+																  });
+				
+				$("#bigImage").unbind().bind("mousemove click",function(e){									
+						var nextLink,prevLink;
+						var kzm = $("#bigImage")[0].src.split(".")[$("#bigImage")[0].src.split(".").length-1];
+						var len = $("#thumbs ul li").length-1;
+						if(this.lang == len ){
+							prevLink = len - 1;
+							nextLink = "0";
+						}else if(this.lang =="0"){
+							prevLink = len;
+							nextLink = "1";
+						}else{
+							prevLink =  (parseInt(this.lang) - 1);
+							nextLink =  (parseInt(this.lang) + 1);
+						}
+						if (e) {
+								  xlen = e.originalEvent.x-$(this).offset().left||e.originalEvent.layerX-$(this).offset().left||0;
+								  nx = xlen / $("#bigImage").width();
+						}
+						switch((e.type).toLowerCase())
+						{
+							case "click":
+								if (nx > 0.28 ) { 
+									if(parseInt($("#bigImage")[0].lang) < $("#thumbs ul li").length -1){
+									$("#smallimg"+$("#bigImage")[0].lang).removeClass("selected");
+									var nextimg =  $("#smallimg"+nextLink+" img")[0].src;
+									if(nextimg.indexOf("uploadpic")> 0){
+										nextimg = nextimg.replace("uploadpic","bigpic");
+									}else{
+										var nextlen = nextimg.length;
+										var nextpath  = nextimg.substring(0,nextlen-17);
+										var nextjpg  = nextimg.substring(nextlen-32,nextlen).replace("small/150_100.jpg",".jpg").replace(/\//g,"").replace("jpg",kzm);
+										nextimg = nextpath +"" + nextjpg;
+									}
+									 var bigImage =  $("#smallimg"+nextLink+" img")[0].lang;									
+									 $("#bigImage")[0].src =bigImage;
+									$("#bigImage")[0].lang = nextLink;
+									$("#smallimg"+nextLink).addClass("selected");
+									$("#imgtext")[0].innerHTML = $("#smallimg"+nextLink+" img")[0].alt;
+									 }
+								}
+								 if (nx <= 0.28 ) {
+									 if(parseInt($("#bigImage")[0].lang) > 0){
+									 $("#smallimg"+$("#bigImage")[0].lang).removeClass("selected");
+									 var nextimg =  $("#smallimg"+prevLink+" img")[0].src;
+									 if(nextimg.indexOf("uploadpic")> 0){
+											nextimg = nextimg.replace("uploadpic","bigpic");
+										}else{
+											var nextlen = nextimg.length;
+											var nextpath  = nextimg.substring(0,nextlen-17);
+											var nextjpg  = nextimg.substring(nextlen-32,nextlen).replace("small/150_100.jpg",".jpg").replace(/\//g,"").replace("jpg",kzm);
+											nextimg = nextpath +"" + nextjpg;
+										}
+									 var bigImage =  $("#smallimg"+prevLink+" img")[0].lang;									
+									 $("#bigImage")[0].src =bigImage;
+									  $("#bigImage")[0].lang = prevLink;
+									  $("#smallimg"+prevLink).addClass("selected");
+									  $("#imgtext")[0].innerHTML = $("#smallimg"+prevLink+" img")[0].alt;
+									 }
+								 }
+							case "mousemove":
+								if (nx > 0.28 && nextLink != "") { 
+									$("#bigImage").css("cursor","url(http://www.hx2car.com/resource/web/user/images/right.cur),auto");
+									$("#bigImage")[0].title = "点击浏览下一张>>";
+									
+								 }
+								  if (nx <= 0.28 && prevLink != "") {
+									$("#bigImage").css("cursor","url(http://www.hx2car.com/resource/web/user/images/left.cur),auto");
+									$("#bigImage")[0].title = "<<点击浏览上一张";
+								  }
+						}
+				});
+			});
+	
+	function after(){
+		for(var i=0;i<16;i++){
+		if(i<8){
+			$("#smallimg"+i).hide();
+		}else{
+			$("#smallimg"+i).show();
+			}
+		}
+	}
+	
+	function front(){
+		for(var i=0;i<16;i++){
+		if(i<8){
+			$("#smallimg"+i).show();
+		}else{
+			$("#smallimg"+i).hide();
+			}
+		}
+	}
+	</script>
+</head>
+
+<body>
+
+<script type="text/javascript">
+function userLogout(){
+	$.post("/sys/loginout.htm",function(){window.location='/';});
+}
+</script>
+<div class="ttop">
+	<div class="ttop_text">
+		<div class="left">
+			欢迎来到华夏二手车网！<a class="gray12" ref="nofollow"  href="/sys/login.htm" target="_blank">[登录]</a>
+			<a class="gray12" href="/user/register.htm" ref="nofollow" target="_self">[免费注册]</a>
+		</div>
+		<div class="right">
+			<a class="gray12" ref="nofollow" href="/car/addcar.htm" target="_blank">我要卖</a> |
+			<a class="gray12" ref="nofollow" href="/car/addbuy.htm" target="_blank">我要买</a> |
+			<a class="gray12" href="http://auto.hx2car.com" target="_blank">资讯中心</a> |
+			<a class="gray12" href="/help/nbenefit.htm" target="_blank">推荐宝</a> |
+			<a class="gray12" href="/help/nbenefit.htm#product1" target="_blank">网上门店</a> |
+			<a class="gray12" ref="nofollow" href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.hx2car.com');">设为首页</a> |
+			<a class="gray12" ref="nofollow" href="#" onclick="AddFavorite('http://www.hx2car.com','华夏二手车网');">加入收藏</a> |
+			<a class="gray12" ref="nofollow" href="/help/help.htm" target="_blank">帮助</a>
+		</div>
+	</div>
+</div>
+
+<div class="logo_cartitle">
+  <p class="cardetail_logo"><a href="/"target="_blank"></a></p>
+  <div class="cardetail_title">
+    <p class="car_name"><b>2010年1月前四后八红岩金刚</b></p>
+    <div class="car_infor">
+      <p class="car_owner">车主：<span>麻二东</span></p>
+      <p class="car_area">地区：<span>山西大同</span></p>
+      <p class="car_tel" style="position:relative;">电话：<i style="position:absolute;top:-2px;"><img src="http://img.hx2car.com/upload/phoneImg/2007/02/17/7956300808845359457_1.png"/></i></p>
+    </div>
+    <p class="car_price">价格：<span>19万</span></p>
+  </div>
+</div>
+<div class="car_pic">
+  <p class="carpic_ml"><img  id="bigImage" title="点击浏览下一张>>" lang="0" alt="" src="http://img.hx2car.com/upload/car/2013/3/2/06/96/55/82/87/0696558287.jpg" width="720"/></p>
+  <div class="imgtext" id="imgtext"></div>
+  <div id="thumbs" class="carpic_all">
+    <p class="car_size">全部图片(<span>2张</span>)</p>
+    <ul id="getpic">
+				      <li id="smallimg0" name="leaf">
+				      	<a href="#0">
+				      		<img  lang="http://img.hx2car.com/upload/car/2013/3/2/06/96/55/82/87/0696558287.jpg" src="http://img.hx2car.com/upload/car/2013/3/2/06/96/55/82/87/small/90_60.jpg" width="90" height="60" />
+				      	</a></li>
+				      <li id="smallimg1" name="leaf">
+				      	<a href="#1">
+				      		<img  lang="http://img.hx2car.com/upload/car/2013/3/2/15/27/90/16/84/1527901684.jpg" src="http://img.hx2car.com/upload/car/2013/3/2/15/27/90/16/84/small/90_60.jpg" width="90" height="60" />
+				      	</a></li>
+    </ul>
+  </div>
+</div>
+<div class="car_share">
+  <p class="just_share">分享到：</p>
+  <div class="bdsharebuttonbox">
+	<a class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"href="#"></a>
+	<a class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"href="#"></a>
+	<a class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"href="#"></a>
+	<a class="bds_renren" data-cmd="renren" title="分享到人人网"href="#"></a>
+	<a class="bds_weixin" data-cmd="weixin" title="分享到微信"href="#"></a>
+    <a class="bds_more" data-cmd="more"></a>
+  </div>
+</div>
+<div class="brand_reconcar_ad2" style="margin-bottom:20px;">
+  <div class="brand_reconcar brand_hotcar">
+    <div class="brand_reconcar_title">
+        <b>热销车型</b><a target="_blank" href="/car/search.htm?carFlag=essence">更多>></a>
+    </div>
+    <ul style="width: 993px;margin-right: -33px;overflow: hidden;height: 191px;">
+      <li>
+        <p class="brand_carpic"><a href="/details/141505062"><img src="http://img.hx2car.com/upload/car/2015/1/28/21/28/95/31/61/small/300_200.jpg" width="165" height="110" /></a></p>
+        <p class="brand_carname"><a href="/details/141505062" target="_blank">2010年2月&nbsp;海马 普力马  1.6 5座豪华版</a></p>
+        <p class="brand_carown">车主：jin&nbsp;江苏淮安</p>
+        <p class="brand_carprice"><b>￥</b>5.58万</p>
+      </li>
+      <li>
+        <p class="brand_carpic"><a href="/details/139831117"><img src="http://img.hx2car.com/upload/car/2014/10/1/17/51/46/34/79/small/300_200.jpg" width="165" height="110" /></a></p>
+        <p class="brand_carname"><a href="/details/139831117" target="_blank">2011年5月&nbsp;丰田 锐志  2.5 V 风度菁英炫装版</a></p>
+        <p class="brand_carown">车主：许先生&nbsp;广东汕头龙湖</p>
+        <p class="brand_carprice"><b>￥</b>16.99万</p>
+      </li>
+      <li>
+        <p class="brand_carpic"><a href="/details/141553169"><img src="http://img.hx2car.com/upload/car/2015/2/1/16/89/08/02/23/small/300_200.jpg" width="165" height="110" /></a></p>
+        <p class="brand_carname"><a href="/details/141553169" target="_blank">2012年8月&nbsp;奔驰 S级 S 350L 4MATIC</a></p>
+        <p class="brand_carown">车主：万国名 &nbsp;山西太原晋源</p>
+        <p class="brand_carprice"><b>￥</b>78.0万</p>
+      </li>
+      <li>
+        <p class="brand_carpic"><a href="/details/141121367"><img src="http://img.hx2car.com/upload/car/2014/12/26/03/28/33/44/74/small/300_200.jpg" width="165" height="110" /></a></p>
+        <p class="brand_carname"><a href="/details/141121367" target="_blank">2011年12月&nbsp;法拉利 FF  6.3 V12</a></p>
+        <p class="brand_carown">车主：郑建明&nbsp;浙江台州</p>
+        <p class="brand_carprice"><b>￥</b>329万</p>
+      </li>
+      <li>
+        <p class="brand_carpic"><a href="/details/141110031"><img src="http://img.hx2car.com/upload/car/2014/12/25/09/16/51/34/13/small/300_200.jpg" width="165" height="110" /></a></p>
+        <p class="brand_carname"><a href="/details/141110031" target="_blank">2006年9月&nbsp;现代 雅尊  3.3 顶级型</a></p>
+        <p class="brand_carown">车主：jin&nbsp;江苏淮安</p>
+        <p class="brand_carprice"><b>￥</b>7.98万</p>
+      </li>
+      <li>
+        <p class="brand_carpic"><a href="/details/139249610"><img src="http://img.hx2car.com/upload/car/2014/9/6/12/63/52/58/17/small/300_200.jpg" width="165" height="110" /></a></p>
+        <p class="brand_carname"><a href="/details/139249610" target="_blank">2012年7月&nbsp;奔驰 E级  E260 CGI Coupe 1.8T</a></p>
+        <p class="brand_carown">车主：郑建明&nbsp;浙江台州</p>
+        <p class="brand_carprice"><b>￥</b>41.8万</p>
+      </li>
+    </ul>
+  </div>
+</div>
+    <div class="footer">
+	<div class="fline">
+		<a class="gray12s6" href="/help/nabout.htm" target="_blank">关于我们</a> |
+		<a class="gray12s6" href="/help/link.htm" target="_blank">友情链接</a> |
+		<a class="gray12s6" href="/help/nad.htm" target="_blank">广告指南</a> |
+		<a class="gray12s6" href="/help/nbenefit.htm" target="_blank">服务指南</a> |
+		<a class="gray12s6" href="/help/findcar.htm" target="_blank">帮助中心</a> |
+		<a class="gray12s6" href="/topgradecar/citynavigation.htm" target="_blank">地区导航</a> |
+		<a class="gray12s6" href="http://auto.hx2car.com/" target="_blank">资讯中心</a> | 
+		<a class="gray12s6" href="/help/npay.htm" target="_blank">联系我们</a>
+		</div>
+	<div class="fline2">
+		<p class="copyrights">服务信箱：kf@hx2car.cn 联系电话：0571-88212994 QQ群：41281177<br />
+		Copyright @ 2003-2013 版权所有 
+		<a class="gray12" href="http://www.hx2car.com" target="_blank">hx2car.com</a> 
+		浙ICP备05000595号<br />
+		增值电信业务经营许可证: 浙B2-20120219</p>
+	</div>
+	</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setDomainName', 'hx2car.com']);
+  _gaq.push(['_setAccount', 'UA-2057722-1']);
+  _gaq.push(['_addOrganic', 'sogou', 'query']);
+  _gaq.push(['_addOrganic', 'baidu', 'word']);
+  _gaq.push(['_addOrganic', 'soso', 'w']);
+  _gaq.push(['_addOrganic', 'youdao', 'q']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
+

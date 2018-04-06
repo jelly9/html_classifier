@@ -1,0 +1,789 @@
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="gb2312">
+<title>卓博人才网 - 卓博才经周刊</title>
+<meta name="keywords" content="" />
+<meta name="description" content="  " />
+<meta name="robots" content="all" />
+<meta name="author" content="卓博(jobcn.com)" />
+<meta name="copyright" content="www.jobcn.com" />
+
+<link href="/public/style/jobcn.core.css?ver=2012101010" rel="stylesheet"/>
+<link href="/public/style/style.css?ver=20130216" rel="stylesheet"/>
+<link href="/public/style/style.2.css?ver=20140403" rel="stylesheet"/>
+<link href="/public/cactus/0.1b/skin/ui.css" rel="stylesheet"/>
+<link href="/favicon.ico" rel="shortcut icon"/>
+
+
+
+<script src="http://dg.jobcn.com/public/cactus/lib/sea-2.1.1.min.js" id="jobcnjs" data-v="2014-02" data-host=""></script>
+<script src="http://dg.jobcn.com/public/10.2/config.min.js?1419205638139"></script>
+<script src="/public/cactus/lib/jquery-1.6.4.min.js"></script>
+
+<script src="/public/script/jslib/global/jsapi.js?v=130318"></script>
+<script src="/public/script/jobcn.core.js?v=141011"></script>
+<script src="/public/script/jobcn.public.js?ver=20130311"></script>
+<script src="/public/script/data/area.js?ver=20140208"></script>
+<script src="/public/script/action/person/base.js?20131016"></script>
+<script>jobcn.load("ajax");</script>
+
+<script src="/public/script/action/hr/hr.js"></script>
+
+
+
+<link href="/public/style/hr.css" rel="stylesheet">
+<link href="/public/style/search.css?20130829" rel="stylesheet">
+<style type="text/css">
+    html { overflow-x: hidden; }
+</style>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="jobcn_nav_header">
+    <div class="jobcn_index clearfix relative">
+        <div class="nav">
+            <ul class="clearfix">
+                <li id="nh-index"><a href="/?s=top/p" title="卓博人才网 - 首页">首页</a></li>
+                <li id="nh-person"><a rel="nofollow" href="/person/?s=top/p&t=1419205638141" title="卓博人才网 - 个人求职中心">个人中心</a></li>
+                <li id="nh-search"><a href="/search/?s=top/p" title="卓博人才网 - 职位搜索">职位搜索</a></li>                
+                <li id="nh-hr"><a href="http://info.jobcn.com/?s=top/p" target="_blank" title="卓博人才网 - 卓博才经">才经</a></li>
+                <li id="nh-ce"><a href="/ce/?s=top/p" title="卓博人才网 - 卓博测评">测评</a><span class="new">new</span></li>
+				<li id="nh-campus"><a href="http://campus.jobcn.com/?s=top/p" title="卓博人才网 - 校园">校园</a></li>
+                <li id="nh-mobile"><a href="/help/app/touch.jsp?s=top/p" target="_blank" title="卓博人才网 - 手机版">手机版</a></li>
+                <li id="nh-help"><a href="/help/main.xhtml" class="help" title="帮助">帮助</a></li>
+            </ul>
+        </div>
+        <div class="quick_menu clearfix">
+            <script type="text/template" id="template-not-login">
+                <div class="per_not_login">
+                    <ul class="clearfix">
+                        <li><a rel="nofollow" href="/login.jsp?s=top/p">个人登录</a></li>
+                        <li><span>|</span></li>
+                        <li><a rel="nofollow" href="/reg?s=top/p">注册</a></li>
+                        <li><span>|</span></li>                     
+                        <li class="oauth_login_bar ie6hovers">
+                            <div class="other_login">
+                                <div class="other_login_title"><a rel="nofollow" href="javascript:;">QQ</a></div>
+                                <div class="other_login_body">
+                                    <dl class="clearfix">
+                                        <dt> </dt>
+                                        <dd><a rel="nofollow" href="javascript:;" data-site="qq" title="腾讯QQ" class="oauth-login"><i class="qq_icon"></i>腾讯QQ</a></dd>
+                                        <dd><a rel="nofollow" href="javascript:;" data-site="sina" title="微博账号" class="oauth-login"><i class="sina_icon"></i>微博账号</a></dd>
+                                        <dd class="txt">无需注册&nbsp;&nbsp;直接登录</dd>
+                                    </dl>
+                                </div>
+                            </div>                          
+                        </li>
+                    </ul>
+                </div>
+            </script>
+            <script type="text/template" id="template-login">
+                <div class="per_login">
+                    <div class="fl clearfix">
+                        <div class="fl pic">
+                            <img src="{{headasniub}}" alt="图像" width="30" height="30">
+                        </div>
+                        <div class="fl name_exit">
+                            <a rel="nofollow" class="name" href="/person/index.xhtml">{{userName}}</a>
+                            <span class="line1">|</span><a rel="nofollow" id="nav-bar-logout" class="exit" href="/person/logout.xhtml">退出</a>
+                        </div>
+                    </div>
+                </div>
+            </script>
+            
+            <div id="login-reg-bar" class="login_reg_bar">
+            
+                    <div class="per_not_login">
+                        <ul class="clearfix">
+                            <li><a rel="nofollow" href="/login.jsp?s=top/p">个人登录</a></li>
+                            <li><span>|</span></li>
+                            <li><a rel="nofollow" href="/reg?s=top/p">注册</a></li>
+                            <li><span>|</span></li>
+                            <li class="oauth_login_bar ie6hovers">
+                                <div class="other_login">
+                                    <div class="other_login_title"><a rel="nofollow" href="javascript:;">QQ</a></div>
+                                    <div class="other_login_body">
+                                        <dl class="clearfix">
+                                            <dt>&nbsp;</dt>
+                                            <dd><a rel="nofollow" href="javascript:;" data-site="qq" title="腾讯QQ" class="oauth-login"><i class="qq_icon"></i>腾讯QQ</a></dd>
+                                            <dd><a rel="nofollow" href="javascript:;" data-site="sina" title="微博账号" class="oauth-login"><i class="sina_icon"></i>微博账号</a></dd>
+                                            <dd class="txt">无需注册&nbsp;&nbsp;直接登录</dd>
+                                        </dl>
+                                    </div>
+                                </div>                          
+                            </li>
+                        </ul>
+                    </div>  
+                
+            </div>
+            <div class="help_setUp">
+                <ul class="clearfix">
+                    
+                    <li id="site-language-zh"><a href="http://big5.jobcn.com/?s=top/p" class="big5" title="切换到繁体版">繁体版</a></li>
+                    <li id="site-language-big5" class="hide"><a href="http://www.jobcn.com/?s=top/p" class="gb2312" title="简体版">简体版</a></li>
+                </ul>               
+            </div>
+            <div class="com_entrance">
+                <a href="http://hire.jobcn.com/?s=top/p&t=1419205638141" class="text">企业入口</a>
+                            
+            </div>
+        </div>
+    </div>
+</div>
+<script>seajs.use("p.all.page",function(a){a.initNavBar()})</script>
+
+<div class="i_search_box">
+	<div class="jobcn_index">
+		<div class="i_search_main clearfix">
+			<div class="i_logo">
+				<h1><a href="/default.jsp?t=1419205638141" title="卓博人才网">卓博人才网</a></h1>
+				<div class="displayVideo hide"><a href="http://www.jobcn.com/dynamiclogs/detail.xhtml?id=182" target="_blank" title="卓博大电影">卓博大电影</a></div>
+			</div>
+			<div class="i_search">
+				<div class="quick_menu">
+					<a href="http://www.jobcn.com/help/detail.xhtml?id=222" class="search_help" title="搜索帮助"><i></i>搜索帮助</a><span>|</span>
+					<a href="/search/" title="高级搜索">高级搜索</a><span>|</span>
+					<a href="/search/listalljob.xhtml" title="职位遍历">职位遍历</a><span>|</span>
+					<a href="/search/mapSearch.xhtml" title="地图搜索">地图搜索</a>
+				</div>
+				<form class="search" id="search-form" action="/search/result.xhtml?s=search/top" method="get" autocomplete="off">
+				   <!--  <input name="iehack" type="hidden" value="&#9760;" /> -->
+				    <!-- 修正ie下面accept charset无效的一个hack -->
+					<input type="hidden" name="s" value="search/top" />
+					<input type="hidden" name="p.sortBy" id="search-sort-by" value=""/>
+					<input type="hidden" name="p.jobLocationId" id="search-location-id" value="" />
+					<input type="hidden" name="p.jobLocationTown" id="search-location-town" value="" />
+					<input type="hidden" name="p.jobLocationTownId" id="search-location-town-id" value="" />
+					
+					<div class="i_search_bar">
+						<div class="keywork claerfix">
+							<div class="input_box ie6hovers">
+								<label id="search-keyword-label">
+									<span class="placeholder_text">
+										请输入职位名称或企业名称
+									</span>
+									<span class="advertising_con">
+										<span id="search-bar-ad-keyword"></span>
+										<a id="search-bar-ad-link" class="view" target="_blank" href="javascript:;">查看</a>
+										<a id="search-bar-ad-close" class="close" href="javascript:;" title="关闭">&nbsp;</a>
+									</span>
+								</label>
+								<input id="search-keyword" class="jobcn-tip-mouse" title="多个关键字之间“空格”表示与，“分号”表示或" tabindex="11" 
+									data-placeholder="search-keyword-label" name="p.keyword" type="text" value="" />
+							</div>
+							<div class="condition" id="condition">
+								<input name="p.keywordType" type="hidden" value="2" />
+								<a class="condition_title" href="javascript:;">全文</a>
+								<i class="condition_icon"></i>
+								<ul class="condition_list hide">
+									<li data-value="0"><a href="javascript:;">职位</a></li>
+									<li data-value="1"><a href="javascript:;">企业</a></li>
+									<li data-value="2" class="hide"><a href="javascript:;">全文</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="i_area_select claerfix">
+							<div class="input_box">
+								<label id="search-work-location-label" >请输入工作地区</label>
+								<input id="search-work-location" class="jobcn-tip-mouse" title="可输入详细地区，如广州科学城；多个地区以“分号”分开" tabindex="12"
+									data-placeholder="search-work-location-label"  name="p.workLocation" value=""/>
+							</div>
+							<div class="select_title" id="search-location-select"><a href="javascript:;">地区选择</a><i class="select_icon"></i></div>
+						</div>
+						<div class="btn"><button title="职位搜索" type="submit">&nbsp;</button></div>
+						<div class="search-tip-error hide" id="search-tip-error"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script>seajs.use(["p.all.page","jQuery"],function(a,$){$(function(){a.initSearchForm()})})</script>
+<div class="jobcn_main">
+	<div><a href="http://info.jobcn.com/"><img src="/commImage/hr/topNew.jpg"></a></div>
+	<div class="hr_top" style="margin-bottom:0;">
+		<div class="jdefl_width relative">
+			<div class="hr_logo">
+				<img src="/commImage/logo/logo_hr.png" alt="卓博才经">
+			</div>
+			<div class="hr_menu">
+				<ul>
+					<li><a href="default.jsp">才经首页</a><s></s></li>
+					<li><a href="/hr/search.xhtml?newsType=12">HR Club</a>
+					
+					</li>
+					<li><a href="/hr/search.xhtml?newsType=13">职场指南</a>
+					
+					</li>
+					<li style="border:none;">
+						<a href="/hr/hrWeekly.xhtml?_t=1419205638141">才经周刊</a>
+						<s class="active"></s>
+					</li>
+				</ul>
+			</div>
+			<div class="hr_search">
+				<div class="hsearch_field"><label></label><input type="text"  name="keyWordHr" id="keyWordHrId" /></div>
+				<div class="hsearch_input"><button onClick="search()">搜索</button></div>
+			</div>
+		</div>
+	</div>
+<div class="weekly_bg">
+	<div class="hr_weekly">
+		<div class="reg_amount clearfix">
+			<div class="reg_weekly">
+				<div class="hrWeekly_logo"><img src="/commImage/logo/logo_hrWeekly.png" border="0"></div>
+				<div class="clearfix btn">
+					<input style="outline: none;" placeholder="输入你的Email地址" id="emailForCJ"/><button style="cursor: pointer;" onclick="jobcn.HR.jobcnHr.subscribe();">订阅</button>
+				</div>
+				<p>左手HR，右手职场，聚焦热点，不忘娱乐。</p>
+			</div>
+			<div class="amount">
+				<p>订阅人数<br/><span>627755</span></p>
+			</div>
+		</div>
+		<div class="recommend clearfix">
+			<div class="pic">
+                
+                    <img src="http://image.jobcn.com/images/hr/2014/12/11/image_1418282562420.jpg" border="0" width="222" height="184"/>
+                    
+            </div>
+			<div class="content clearfix">
+				<h2>第630期：<a style="font-size: 22px;" target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr630.htm">今年的年终奖期待吗？</a><span class="fr">2014-12-13</span></h2>
+                
+                
+				    <p>年末到来，我们最关心的话题莫过于年终奖。这个时候乃们是不是都期待着人民币满天飞的年终奖呢？让你心痒难耐的“年终奖”对你有什么影响吗？但不是所有公司都有年终奖啊！呃，这个小编也知道，所以让我们带着淡淡的忧伤开始本期的话题…………</p>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+				<div class="clearfix">
+					<dl>
+						<dt>HR说：</dt>
+                        
+                        
+                        
+                        
+						  <dd><span>·</span><a target="_blank" href="http://info.jobcn.com/article/213205">让员工合适的年终奖，应该这样发?</a></dd>
+                        
+                        
+                        
+						  <dd><span>·</span><a target="_blank" href="http://info.jobcn.com/article/213179">年终调薪，调还是不调？</a></dd>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+					</dl>
+					<dl>
+						<dt>求职者说：</dt>
+						
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                          <dd><span>·</span><a target="_blank" href="http://info.jobcn.com/article/213159">年终奖一定是年终发放吗？</a></dd>
+                        
+                        
+                        
+                          <dd><span>·</span><a target="_blank" href="http://info.jobcn.com/article/213157">4个老王的年终奖，道理很深刻！</a></dd>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+					</dl>
+				</div>
+			</div>
+		</div>
+        
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="ajax_load_wrapper">
+<div class="past_events">
+	<dl class="clearfix">
+		<dt>往期回顾</dt>
+		<dd id="select_year">
+		    <div id="2014" class="active"><a href="/hr/hrWeekly.xhtml?year=2014&_t=1419205638151">2014年</a><s></s></div>
+			<div id="2013"><a href="/hr/hrWeekly.xhtml?year=2013&_t=1419205638151">2013年</a><s></s></div>
+			<div id="2012"><a href="/hr/hrWeekly.xhtml?year=2012&_t=1419205638151">2012年</a><s></s></div>
+		</dd>
+	</dl>
+	<ul class="clearfix">
+        
+        
+			<li>
+				<a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr629.htm">
+                    
+                        <img src="http://image.jobcn.com/images/hr/2014/12/05/image_1417744885303.jpg" width="222" height="184" border="0"/>
+                        
+                </a>
+				<p><span class="fl">第629期</span><span class="fr">2014-12-06</span></p>
+				<h3><a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr629.htm">没钱又任性，如何找高薪工作？</a></h3>
+			</li>
+        
+			<li>
+				<a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr628.htm">
+                    
+                        <img src="http://image.jobcn.com/images/hr/2014/11/28/image_1417138728267.jpg" width="222" height="184" border="0"/>
+                        
+                </a>
+				<p><span class="fl">第628期</span><span class="fr">2014-11-29</span></p>
+				<h3><a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr628.htm">年底谈钱的时候到了</a></h3>
+			</li>
+        
+			<li>
+				<a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr627.htm">
+                    
+                        <img src="http://image.jobcn.com/images/hr/2014/11/21/image_1416552752254.jpg" width="222" height="184" border="0"/>
+                        
+                </a>
+				<p><span class="fl">第627期</span><span class="fr">2014-11-22</span></p>
+				<h3><a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr627.htm">年底跳槽，面试机会大吗？</a></h3>
+			</li>
+        
+			<li>
+				<a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr626.htm">
+                    
+                        <img src="http://image.jobcn.com/images/hr/2014/11/13/image_1415873194055.jpg" width="222" height="184" border="0"/>
+                        
+                </a>
+				<p><span class="fl">第626期</span><span class="fr">2014-11-15</span></p>
+				<h3><a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr626.htm">年底，我有屌炸天的辞职理由</a></h3>
+			</li>
+        
+			<li>
+				<a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr625.htm">
+                    
+                        <img src="http://image.jobcn.com/images/hr/2014/11/07/image_1415325567609.jpg" width="222" height="184" border="0"/>
+                        
+                </a>
+				<p><span class="fl">第625期</span><span class="fr">2014-11-08</span></p>
+				<h3><a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr625.htm">哪个职业光棍最多？</a></h3>
+			</li>
+        
+			<li>
+				<a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr624.htm">
+                    
+                        <img src="http://image.jobcn.com/images/hr/2014/10/30/image_1414657553027.jpg" width="222" height="184" border="0"/>
+                        
+                </a>
+				<p><span class="fl">第624期</span><span class="fr">2014-11-01</span></p>
+				<h3><a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr624.htm">你的职业，别人是怎么吐槽的？</a></h3>
+			</li>
+        
+			<li>
+				<a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr623.htm">
+                    
+                        <img src="http://image.jobcn.com/images/hr/2014/10/24/image_1414116559738.jpg" width="222" height="184" border="0"/>
+                        
+                </a>
+				<p><span class="fl">第623期</span><span class="fr">2014-10-25</span></p>
+				<h3><a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr623.htm">在看脸的世界怎么求职？</a></h3>
+			</li>
+        
+			<li>
+				<a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr622.htm">
+                    
+                        <img src="http://image.jobcn.com/images/hr/2014/10/17/image_1413516108597.jpg" width="222" height="184" border="0"/>
+                        
+                </a>
+				<p><span class="fl">第622期</span><span class="fr">2014-10-18</span></p>
+				<h3><a target="_blank" href="http://www.jobcn.com/hr/hrWeekly/2014/hr622.htm">年底跳槽好吗？</a></h3>
+			</li>
+        
+        
+	</ul>
+</div>
+<div class="tac hr">
+	<div id="search_pager" class="search_pager"></div>
+</div>
+</div>
+
+<script type="text/javascript">
+
+    $(function() {
+        $("#select_year").find("div").removeClass("active");
+        $("#" + "2014").addClass("active");
+    });
+
+    /*
+     * 初始化分页控件
+     * paperId      : 需要生成分页控件的ID
+     * currNum      : 当前第几页
+     * totalPage    : 总页数
+     * totalRecords : 总记录数
+     * pageSize     : 每页多少行记录
+     * disItem      : 同时显示的页数
+     * callback     : 回调函数
+     */
+     jobcn.HR.Weekly.initPager("search_pager", 1,
+             6, 47, 8, 5,
+     function(opt) {
+         jobcn.ui.loading.show();
+         $("#ajax_load_wrapper").load("/hr/hrWeeklyByPaginated.xhtml?page.pageNo="
+             + opt.pageNumber + "&year=" + "2014" + "&_t=" + new Date().getTime(),
+         function() {
+             jobcn.ui.loading.hide();
+         });
+     });
+</script>
+	</div>
+</div>
+</div>
+
+<div class="footer">
+	<div class="jobcn_index">
+		<div class="clearfix">
+			<div class="logo"><h1><a rel="nofollow" href="/?s=footer/p" title="卓博人才网">卓博人才网</a></h1></div>
+			<div class="footer_base">
+				<div class="nav_attention">
+					<div class="touch_attention clearfix">
+						<div class="android_touch">
+							<ul class="clearfix">
+								<li><a href="/help/app/10.2/?s=footer/p" class="touch" title="触屏版" target="_blank" >触屏版</a></li>
+								<li><a href="/help/app/10.2/?s=footer/p#android" class="android" title="Android" target="_blank" >Android</a></li>
+							</ul>
+						</div>
+						<div class="attention">
+							<dl class="clearfix">
+								<dt>关注我们：</dt>
+								<dd><a rel="nofollow" href="http://weibo.com/jobcncom" target="_blank" title="关注卓博人才网的新浪微博" class="sina">关注卓博人才网的新浪微博</a></dd>
+								<dd><a rel="nofollow" href="http://t.qq.com/jobcncom" target="_blank" title="关注卓博人才网的腾讯微博" class="qq">关注卓博人才网的腾讯微博</a></dd>
+							</dl>
+						</div>
+					</div>
+					<div class="footer_nav">
+						<dl class="clearfix">
+							<dt><i></i><a rel="nofollow" href="/about/index.xhtml?s=footer/p" target="_blank" title="关于我们">关于我们</a></dt>
+							<dd><a rel="nofollow" href="/about/introduce.jsp?s=footer/p" target="_blank" title="卓博简介">卓博简介</a></dd>
+							<dd><a rel="nofollow" href="/about/perService.jsp?s=footer/p" target="_blank" title="产品与服务">产品与服务</a></dd>
+							<dd><a rel="nofollow" href="/about/dynamic.jsp?s=footer/p" target="_blank" title="卓博动态">卓博动态</a></dd>
+							<dd><a rel="nofollow" href="/position/home.xhtml?comId=200406" target="_blank" title="加入卓博">加入卓博</a></dd>
+							<dd><a rel="nofollow" href="/about/contact.jsp?s=footer/p" target="_blank" title="联系我们">联系我们</a></dd>
+						</dl>
+						<dl class="clearfix">
+							<dt><i></i><a rel="nofollow" href="/person/index.xhtml" target="_blank" title="个人求职">个人求职</a></dt>
+							<dd><a rel="nofollow" href="/login.jsp?s=footer/p" title="登录">登录</a></dd>
+							<dd><a rel="nofollow" href="/reg/?s=footer/p" title="注册">注册</a></dd>
+							<dd><a href="/search/?s=footer/p" title="搜索职位">搜索职位</a></dd>
+							<dd><a href="/search/mapSearch.xhtml?s=footer/p" title="地图搜索">地图搜索</a></dd>
+							<dd><a href="/about/product.jsp?s=footer/p#per" target="_blank" title="增值服务">增值服务</a></dd>
+							<dd><a href="http://info.jobcn.com/weekly?s=footer/p" target="_blank" title="才经周刊">才经周刊</a></dd>
+							<dd><a href="/help/app/10.2/?s=footer/p" title="掌上卓博">掌上卓博</a></dd>
+						</dl>
+						<dl class="clearfix">
+						
+							<dt><i></i><a rel="nofollow" href="http://www.jobcn.com/help/main.xhtml" target="_blank" title="帮助中心">帮助中心</a></dt><!--
+							<dd><a rel="nofollow" href="/help/index.xhtml?s=footer/p" target="_blank" title="使用手册">使用手册</a></dd>
+							<dd><a rel="nofollow" href="/help/index.xhtml?oneLv=801074&twoLv=801076&threeLv=0&fourLv=0&s=footer/p" target="_blank" title="使用技巧">使用技巧</a></dd>
+							<dd><a rel="nofollow" href="/help/index.xhtml?oneLv=801074&twoLv=801077&threeLv=0&fourLv=0&s=footer/p" target="_blank" title="常见问题">常见问题</a></dd>-->
+							<dd><a rel="nofollow" href="http://www.jobcn.com/help/csonline.xhtml" target="_blank" title="在线客服">在线客服</a></dd>
+							<dd><a rel="nofollow" href="/help/checkbrowser.jsp?s=footer/p" target="_blank" title="浏览器检查">浏览器检查</a></dd>
+							<dd><a rel="nofollow" href="/about/contact.jsp?s=footer/p" target="_blank" title="投诉、意见反馈">投诉、意见反馈</a></dd>
+							<dd><a href="/company/list.jsp" target="_blank" title="招聘企业名录">招聘企业名录</a></dd>						
+						</dl>
+					</div>
+				</div>
+				<div class="copyRight_tel">
+					<div class="tel">Tel:(0769)2288-2222</div>
+					<div class="law"><a rel="nofollow" href="/about/law.jsp?s=footer/p" target="_blank" title="法律声明">法律声明</a><span>|</span><a rel="nofollow" href="/about/secrecy.jsp?s=footer" target="_blank" title="隐私保护">隐私保护</a><span>|</span><a rel="nofollow" href="/about/per.jsp?s=footer" target="_blank" title="用户协议">用户协议</a></div>
+					<div class="miibeian">						
+						<dl class="clearfix">
+							<dt><a rel="nofollow" href="/about/permit.htm?s=footer/p" target="_blank" title="粤B2-20040458">粤B2-20040458</a></dt>
+							<dt><a rel="nofollow" href="http://www.miitbeian.gov.cn" target="_blank" title="粤B2-20040458">粤ICP备09027564号</a></dt>
+							<dd><a rel="nofollow" href="http://210.76.65.188/webrecord/innernet/Welcome.jsp?bano=4419003010513" target="_blank" title="“安网”备案标志" class="anwang">“安网”备案标志</a></dd>
+							<dd><a rel="nofollow" href="http://210.76.65.188/" target="_blank" title="网上报警" class="alarm">网上报警</a></dd>
+							<dd><a rel="nofollow" href="https://ss.knet.cn/verifyseal.dll?sn=2010092800100002455&ct=df&pa=162139" target="_blank" title="可信网站" class="knet">可信网站</a></dd>
+						</dl>
+					</div>
+					<div class="copyRight" id="inscribe"><script src="/public/script/jobcn.copyright.js"></script></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="jobcn_toolbar" class="jobcn_toolbar_fr">
+	<ul>
+		<li class="top_triangle"><a rel="nofollow" id="jobcn_backTop" href="javascript:;" title="顶部">顶部</a></li>
+		<li class="fenxiang"><a rel="nofollow" id="jobcn_bdshare" href="javascript:;" title="分享"><span id="shareTo">分享</span></a></li>
+		<li class="proposal"><a rel="nofollow" href="/about/contact.jsp?s=toolbar/p" title="反馈" target="_blank">反馈</a></li>
+		<li class="message"><a rel="nofollow" id="btn_show_noticeBlock" style="cursor:pointer;" title="公告" target="_blank">公告</a></li>
+	</ul>
+</div>
+
+
+
+<div id="Index_notice_block" style="width: 390px; display: block; position: fixed;_position:absolute;overflow:visible; height: 49px; right: 2px; z-index: 500; bottom: 18px;_position:absolute; _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0))-20);">
+
+</div>
+<!--618002-->
+<script>
+seajs.use(["p.all.page", "p.login-register"],function(p, loginReg){
+	p.cost('jcnp612436714aeabcbef445','E25056FDE43B274F77C3996F50BDEAC57A77154F3B340C47363557BCF1C0ABD1');
+	p.toolbar();
+	p.initAnalytics(true);//need to end
+	p.initNoticeShow();
+	loginReg.initLoginTip();
+});
+</script>
+</body>
+</html>
+<script type="text/javascript">
+function search(){
+    var val = jQuery("#keyWordHrId").val();
+    if(!val){
+        alert("请输入查询关键字！");
+        return false;
+    }
+    window.location="/hr/search.xhtml?keyWordHr="+val;
+}
+function funPlaceholder(elem){
+	var	placeholder = "";
+	if(elem && !("placeholder" in document.createElement("input")) && (placeholder = elem.getAttribute("placeholder"))){
+		elem.onfocus = function(){
+			if(elem.value == placeholder){
+				elem.value = ""
+				elem.style.color = "#000000";
+			}	
+		}
+		elem.onblur = function(){
+			if(elem.value == ""){
+				elem.value = placeholder
+				elem.style.color = "#A9A9A9";
+			}	
+		}
+		elem.oninput = function(){
+			if(elem.value == ""){
+				elem.value = placeholder
+				elem.style.color = "#A9A9A9";
+			}	
+		}
+		if(elem.value == ""){
+			elem.value = placeholder;
+			elem.style.color = "#A9A9A9";
+		}
+	}
+}
+funPlaceholder(document.getElementById("subscribeWeekly"));
+</script>

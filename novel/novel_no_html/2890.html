@@ -1,0 +1,1157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>   
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<title>龙贵名门教您怎样选择婚礼摄像师？_结婚-丁丁同城</title>
+	<meta name="keywords" content="龙贵名门教您怎样选择婚礼摄像师？"/>
+	<meta name="description" content="&nbsp;&nbsp;&nbsp; 摄像是婚礼中极其重要的部分。许多新娘都非常遗憾她们忽略了摄像师这一环节，没有记录下婚礼当天的盛况。建议去寻找一位合格的摄像师，这样在未来的日子里，婚礼录像会给你们"/>
+	<meta name="robots" content="all"/>
+	<meta name="author" content="ddmap.com"></meta>
+	<meta name=copyright content="本页版权归丁丁地图（Gsuo极索）所有.All Rights Reserved"/>
+	<link href="/css/global_tc.css" rel="stylesheet" type="text/css" />
+    <link href="/css/tc_detail.css" rel="stylesheet" type="text/css" />
+	<link href="/css/common.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="/css/global_head.css" />
+	<link rel="stylesheet" href="/css/base.css" />
+	<link rel="stylesheet" href="/css/city.css" />
+	<link rel="stylesheet" href="/css/list.css" />
+	<link rel="stylesheet" href="/css/groupAside.css" />
+	<link rel="stylesheet" href="/css/showfollowcss.css" />
+	<script type="text/javascript" src="/scripts/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="/scripts/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="/scripts/groupCommon.js"></script>
+	<script type="text/javascript" src="/scripts/post.js"></script>
+	<script type="text/javascript" src="/scripts/jquery.zxxbox.3.0.js"></script>
+	<script type="text/javascript" src="/scripts/ddmap.lazyload.js"></script>
+	<script charset="gbk" src="/scripts/kindeditor-min.js"></script>
+</head>
+<script type="text/javascript">
+
+
+
+String.prototype.replaceAll = function(s1,s2) {return this.replace(new RegExp(s1,"gm"),s2);}
+function $g(id){return document.getElementById(id);}
+function copy_code(txt) 
+{
+		txt =  "http://c.ddmap.com/gf_571_205_19209_1#"+txt;
+    if(window.clipboardData) {  
+         window.clipboardData.clearData();   
+         window.clipboardData.setData("Text", txt);   
+ } else if(navigator.userAgent.indexOf("Opera") != -1) {
+      window.location = txt;   
+ } else if (window.netscape ) {   
+      try {   
+           netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");   
+      } catch (e) {   
+           alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将'signed.applets.codebase_principal_support'设置为'true'");   
+      }   
+      var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);   
+      if (!clip)   
+           return;   
+      var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);   
+      if (!trans)   
+           return;   
+      trans.addDataFlavor('text/unicode');   
+      var str = new Object();   
+      var len = new Object();   
+      var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);   
+      var copytext = txt;   
+      str.data = copytext;   
+      trans.setTransferData("text/unicode",str,copytext.length*2);   
+      var clipid = Components.interfaces.nsIClipboard;   
+      if (!clip)   
+           return false;   
+      clip.setData(trans,null,clipid.kGlobalClipboard);   
+ }   
+   alert("复制成功！")   
+}
+function getScroll(){
+	var t;
+    if (document.documentElement && document.documentElement.scrollTop) {
+        t = document.documentElement.scrollTop;
+    } else if (document.body) {
+        t = document.body.scrollTop;
+    }
+    return t;
+}
+var userId= "0";
+var userName = "";
+var isGroupMember = "false";
+var allowedExt = ["jpg","jpeg","png","gif","bmp","JPG","JPEG","PNG","GIF","BMP"];
+var isBaned = "false";
+var isBaned = "false";
+function closeEditorDiv (){$('.editor-login').fadeOut();}
+function resizeImage(image, maxWidth, maxHeight){
+	var option = 1;
+	var width = image.width;
+	var height = 	image.height;
+	if (width > maxWidth) {option = maxWidth / width;width = maxWidth;height = height * option;}
+	if(height>maxHeight) {option = maxHeight / height;height = maxHeight;width = width * option;}    
+	image.style.height = height+"px";
+	image.style.width = width+"px";
+}
+var submitFlag = false;
+function checkSubmit(){
+	if(0==1) {alert("该帖子已经被管理员锁定,不能回复!");return false;}
+	if(userId==0) {$('#editorLogin').fadeIn();return false;}
+	if(submitFlag==true){alert("请不要重复提交表单");return false;}
+	 if(isBaned=="true"){alert("你已经被禁言,不能发表话题");return false;}
+	 var contValidate  =  validateString($('#t-area').val(), 6,200000, false);	
+	 if(contValidate == 2) {alert("内容不能为空");return false;}
+	 if(userId==0) {$('.editor-login').fadeIn();return false;}
+ 	if($("#tempusername").val() != "" || $("#tempuserpwd").val() != ""){if(tempflag == false){alert("你使用的临时账号用户名或密码有误，请重新输入！");return false;}}
+    $('#t-area').val(filterScript( $('#t-area').val()));
+    //submitFlag = true;
+    var tempFcont = $('#t-area').val();
+    //判断是否引用回帖
+    if(saveQuoteUser != "" || tempFcont.indexOf("[quote]") > -1 && tempFcont.indexOf("[/quote]") > -1){
+    	var saveFcont = $g(saveFcontId).innerHTML;//获取用户输入的内容
+    	//获取引用内容中最后回复内容的用户信息(以数组形式表示)
+    	var quoteUser = saveQuoteUser.split(",");
+    	//saveFcont = ReverseUbbQuote("<div class=\"citation\">" + saveFcont.replaceAll("<div class=citation>","<div class=\"citation\">") + "</div>");
+    	saveFcont = ReverseUbbQuote("<div class=\"citation\">" + saveFcont + "</div>");
+    	saveFcont = saveFcont.substring(0,saveFcont.lastIndexOf("[/quote]"));
+    	
+    	//获取引用内容中最后回复的内容
+    	var lastReply = saveFcont.substring(saveFcont.lastIndexOf("[/quote]") < 0 ? saveFcont.indexOf("[quote]")+7 : saveFcont.lastIndexOf("[/quote]")+8,saveFcont.length);
+    	lastReply = setFollow(quoteUser[0],quoteUser[1],lastReply.split("|")[1]);
+    	saveFcont = saveFcont.substring(0,saveFcont.lastIndexOf("{\"fkuser\"")) + lastReply + "[/quote]";
+    	//alert(tempFcont+"\n替换后:"+tempFcont.replace(/\[quote\]([\s\S]+)\[\/quote\]/g,""));return false;
+    	var newCont = saveFcont + setFollow("0","",tempFcont.replace(/\[quote\]([\s\S]+)\[\/quote\]/g,""));
+    	$('#t-area').val(newCont);
+    	saveFcontId = "";
+    	return true;
+    }
+    $('#t-area').val(setFollow("0","",tempFcont));
+    saveQuoteUser = "";
+	return true;
+}
+function reg(str){return str.replaceAll("<","&qt");}
+function setQuote(cont){return "[quote]" + cont + "[/quote]";}
+function setFollow(fkuser,uname,cont){return "{\"fkuser\":\""+fkuser+"\",\"uname\":\""+uname+"\"}" + "|" + cont;}
+function setAreaCont(cont){
+	this.location.href="#textarea1";
+		var iframeBody = document.getElementsByTagName("iframe")[0].contentWindow.document.body;
+	iframeBody.innerHTML = "[quote]" + cont + "[/quote]";
+}
+var tempflag = false;
+function checktempuserinfo(){
+	$.ajax({
+		type:"post",
+		data:{sc_username:encodeURIComponent($("#tempusername").val()),sc_password:$("#tempuserpwd").val()},
+		url:"/cityGroup/ajaxCheckUserLogin",
+		success:function(data){
+			if(data == ""){tempflag = false;} else {eval("var userInfo="+data);$("#tempid").val(userInfo.userId);$("#tempname").val(userInfo.userName);$("#temphead").val(userInfo.userHead);tempflag = true;}
+		}
+	});
+}
+function advance(){$("#follows").attr("action","/groupfollow/advance/571?groupId=205&gmid=19209");$("#follows").submit();}
+function  logout(){window.location.href= "/logout.jsp?url="+document.location.href;}
+function queryByFkuser(){
+	window.location.href="/groupfollow/571?groupId=205&gmid=19209&fkuser=935604";
+}
+function replyTo(username) {
+	this.location.href="#textarea1";
+		var iframeBody = document.getElementsByTagName("iframe")[0].contentWindow.document.body;
+	iframeBody.innerHTML = "";
+	iframeBody.innerHTML =  "回复 "+username+":";
+}
+if(window.location.href.indexOf('?g_f=partner_dq_')>0){$(function(){$('#comhead').load('/daqi/index.html');});}
+</script>
+<body>
+<div id="comhead"></div>
+<div class="header">
+	<div class="hdUp">
+		<div class="hdUpC">
+			<ul class="hdUpL">
+              <li class="welcome"><img src="/images/welcome1.gif" alt="" width="12" height="11"/><a href='http://www.ddmap.com'>丁丁网首页</a> </li>
+              <li class="citySel">杭州站<span id='cityselimg'><a href="http://www.ddmap.com/mstmap50007/index_city_choose.jsp">切换城市</a></span><img src="/images/arrow_0922.gif" alt=""></li>
+              <li><a href="http://www.ddmap.com/571/weather" target="_blank">今日天气</a></li>
+              <li class="line"><img src="/images/line_0922.gif" alt=""/></li>
+              <li><a href="http://www.ddmap.com/mstmap50007/operation/ddmall.jsp" target="_blank">积分商城</a></li>
+              <li class="line"><img src="/images/line_0922.gif" alt=""/></li>
+              <li class="wzdh" id="orl">网站导航<img src="/images/arrow_0922.gif" alt=""></li>
+			  <li class="line"><img src="/images/line_0922.gif" alt=""/></li>
+			  <li><a href="http://mobile.ddmap.com/index.jsp" target="_blank">手机丁丁</a></li>
+             </ul>
+             <ul class="hdUpR">
+				<li><a href="http://user.ddmap.com/dcmember/login">登录</a></li>
+				<li class="line"><img src="/images/line_0922.gif" alt=""/></li>
+				<li><a href="http://user.ddmap.com/dcmember/register">注册</a></li>
+				<li class="line"><img src="/images/line_0922.gif" alt=""/></li>
+				<li><a href="javascript:AddFavorite(window.location,document.title)">收藏</a></li>
+			</ul>
+	<!--城市选择-->
+			<div id="citysel" style="display:none;">
+				<p class="cityT">切换城市<img src="/images/arrow_0922.gif" alt=""></p>
+				<ul>
+					<li class="city_L">华东</li>
+					<li class="city_R"> 
+						<a title="上海地图" href="http://www.ddmap.com/shanghai">上海</a>
+						<a title="南京地图" href="http://www.ddmap.com/nanjing">南京</a>
+						<a title="苏州地图" href="http://www.ddmap.com/suzhou">苏州</a>
+						<a title="杭州地图" href="http://www.ddmap.com/hangzhou">杭州</a>
+						<a title="宁波地图" href="http://www.ddmap.com/ningbo">宁波</a>
+						<a title="无锡地图" href="http://www.ddmap.com/wuxi">无锡</a>
+						<a title="温州地图" href="http://www.ddmap.com/wenzhou">温州</a>
+						<a title="绍兴地图" href="http://www.ddmap.com/shaoxing">绍兴</a>
+						<a title="镇江地图" href="http://www.ddmap.com/zhenjiang">镇江</a>
+						<a title="扬州地图" href="http://www.ddmap.com/yangzhou">扬州</a>
+						<a title="常州地图" href="http://www.ddmap.com/changzhou">常州</a>
+						<a title="徐州地图" href="http://www.ddmap.com/xuzhou">徐州</a>
+						<a title="合肥地图" href="http://www.ddmap.com/hefei">合肥</a>
+						<a title="青岛地图" href="http://www.ddmap.com/qingdao">青岛</a>
+						<a title="济南地图" href="http://www.ddmap.com/jinan">济南</a>
+						<a title="南通地图" href="http://www.ddmap.com/nantong">南通</a>
+						<a title="嘉兴地图" href="http://www.ddmap.com/jiaxing">嘉兴</a>
+						<a title="湖州地图" href="http://www.ddmap.com/huzhou">湖州</a>
+						<a title="烟台地图" href="http://www.ddmap.com/yantai">烟台</a>
+						<a title="台州地图" href="http://www.ddmap.com/taizhou">台州</a>
+						<a title="日照地图" href="http://www.ddmap.com/rizhao">日照</a>
+					</li>
+				</ul>
+                <ul>
+                  <li class="city_L">华南</li>
+                  <li class="city_R"> 
+			         <a title="广州地图" href="http://www.ddmap.com/guangzhou">广州</a>
+			         <a title="深圳地图" href="http://www.ddmap.com/shenzhen">深圳</a>
+			         <a title="海口地图" href="http://www.ddmap.com/haikou">海口</a>
+			         <a title="三亚地图" href="http://www.ddmap.com/sanya">三亚</a>
+			         <a title="福州地图" href="http://www.ddmap.com/fuzhou">福州</a>
+			         <a title="厦门地图" href="http://www.ddmap.com/xiamen">厦门</a>
+			         <a title="南宁地图" href="http://www.ddmap.com/nanning">南宁</a>
+			         <a title="桂林地图" href="http://www.ddmap.com/guilin">桂林</a>
+					 <a title="佛山地图" href="http://www.ddmap.com/foshan">佛山</a>
+					 <a title="珠海地图" href="http://www.ddmap.com/zhuhai">珠海</a>
+					 <a title="东莞地图" href="http://www.ddmap.com/dongguan">东莞</a>
+					 <a title="中山地图" href="http://www.ddmap.com/zhongshan">中山</a>
+					 <a title="泉州地图" href="http://www.ddmap.com/quanzhou">泉州</a>
+					 <a title="柳州地图" href="http://www.ddmap.com/liuzhou">柳州</a>
+					 <a title="衡阳地图" href="http://www.ddmap.com/hengyang">衡阳</a>
+					 <a title="北海地图" href="http://www.ddmap.com/beihai">北海</a>
+                 </li>
+                </ul>
+                <ul>
+                  <li class="city_L">华中</li>
+                  <li class="city_R"> 
+                  <a title="武汉地图" href="http://www.ddmap.com/wuhan">武汉</a>
+		          <a title="长沙地图" href="http://www.ddmap.com/changsha">长沙</a>
+		          <a title="南昌地图" href="http://www.ddmap.com/nanchang">南昌</a>
+				  <a title="郑州地图" href="http://www.ddmap.com/zhengzhou">郑州</a>
+				  <a title="安庆地图" href="http://www.ddmap.com/anqing">安庆</a>
+				  <a title="南阳地图" href="http://www.ddmap.com/nanyang">南阳</a>
+				  <a title="濮阳地图" href="http://www.ddmap.com/puyang">濮阳</a>
+				  <a title="黄山地图" href="http://www.ddmap.com/huangshan">黄山</a>
+				  <a title="三门峡地图" href="http://www.ddmap.com/sanmenxia">三门峡</a>
+				  <a title="张家界地图" href="http://www.ddmap.com/zhangjiajie">张家界</a>
+                  </li>
+                </ul>
+                 <ul>
+                  <li class="city_L">华北</li>
+                  <li class="city_R"> 
+		          <a title="北京地图" href="http://www.ddmap.com/beijing">北京</a>
+		          <a title="天津地图" href="http://www.ddmap.com/tianjin">天津</a>
+		          <a title="大连地图" href="http://www.ddmap.com/dalian">大连</a>
+		          <a title="太原地图" href="http://www.ddmap.com/taiyuan">太原</a>
+				  <a title="德州地图" href="http://www.ddmap.com/dezhou">德州</a>
+				  <a title="临沂地图" href="http://www.ddmap.com/linyi">临沂</a>
+				  <a title="保定地图" href="http://www.ddmap.com/baoding">保定</a>
+				  <a title="邢台地图" href="http://www.ddmap.com/xingtai">邢台</a>
+      			  <a title="石家庄地图" href="http://www.ddmap.com/shijiazhuang">石家庄</a>
+				  <a title="秦皇岛地图" href="http://www.ddmap.com/qinhuangdao">秦皇岛</a>
+				  <a title="呼和浩特地图" href="http://www.ddmap.com/huhehaote">呼和浩特</a>
+                  </li>
+                </ul>
+                  <ul>
+                  <li class="city_L">东北</li>
+                  <li class="city_R"> 
+                  <a title="沈阳地图" href="http://www.ddmap.com/shenyang">沈阳</a>
+                  <a title="长春地图" href="http://www.ddmap.com/changchun">长春</a>
+		          <a title="吉林地图" href="http://www.ddmap.com/jilin">吉林</a>
+                  <a title="哈尔滨地图" href="http://www.ddmap.com/haerbin">哈尔滨</a>
+                  </li>
+                </ul>
+                  <ul>
+                  <li class="city_L">西部</li>
+                  <li class="city_R"> 
+                  <a title="重庆地图" href="http://www.ddmap.com/chongqing">重庆</a>
+                  <a title="成都地图" href="http://www.ddmap.com/chengdu">成都</a>
+                  <a title="昆明地图" href="http://www.ddmap.com/kunming">昆明</a>
+		          <a title="西安地图" href="http://www.ddmap.com/xian">西安</a>
+                  <a title="贵阳地图" href="http://www.ddmap.com/guiyang">贵阳</a>
+		          <a title="西宁地图" href="http://www.ddmap.com/xining">西宁</a>
+                  <a title="兰州地图" href="http://www.ddmap.com/lanzhou">兰州</a>
+		          <a title="大理地图" href="http://www.ddmap.com/dali">大理</a>
+		          <a title="拉萨地图" href="http://www.ddmap.com/lasa">拉萨</a>
+                  <a title="乌鲁木齐地图" href="http://www.ddmap.com/wulumuqi">乌鲁木齐</a>
+                  </li>
+                </ul>
+                <ul>
+                  <li class="city_L">其他</li>
+                  <li class="city_R"> 
+                  <a href="http://aomen.ddmap.com/" title='澳门地图'>澳门</a>
+                  <a href="http://xianggang.ddmap.com" title='香港地图'>香港</a>
+                  <a href="http://www.ddmap.com/citylist" target="_blank" class="more_city">更多城市&gt;&gt;</a>
+                 </li>
+               </ul>
+			</div>
+              
+              <!--城市选择 end-->
+			<div  id="HBk" style="display:none;">
+                <div class="HBk">
+                  <p class="HBkT">网站导航 <img src="/images/arrow_0922.gif" alt=""></p>
+                  <div class="subb1 subk">
+                    <h2>生活</h2>
+                    <ul>
+					  <li><a href="http://www.ddmap.com/food/">人气美食</a></li>
+					  <li><a href="http://www.ddmap.com/shop/">丁丁购物</a></li>
+					  <li><a href="http://marry.ddmap.com/">我要结婚</a></li>
+					  <li><a href="http://beauty.ddmap.com/">城市丽人</a></li>
+					  <li><a href="http://travel.ddmap.com/hotel/">酒店</a></li>
+					  <li><a href="http://www.ddmap.com/health/">健康</a></li>
+					  <li><a href="http://www.ddmap.com/class/">培训</a></li>
+					  <li><a href="http://life.ddmap.com/">民生</a></li>
+					</ul>
+					<ul>
+					  <li><a href="http://www.ddmap.com/enjoy/">休闲娱乐</a></li>
+					  <li><a href="http://car.ddmap.com/">爱车学车</a></li>
+					  <li><a href="http://home.ddmap.com">装修建材</a></li>
+					  <li><a href="http://lady.ddmap.com">优活女人</a></li>
+					  <li><a href="http://travel.ddmap.com/">旅游</a></li>
+					  <li><a href="http://www.ddmap.com/child/">母婴</a></li>
+					  <li><a href="http://sh.sports.ddmap.com">健身</a></li>
+					  <li><a href="http://fangchan.ddmap.com">房产</a></li>
+					</ul>
+                  </div>
+                  <div class="subb3 subk">
+                    <h2>工具</h2>
+					<ul>
+					  <li><a href="http://www.ddmap.com/map/21/channel-bus.htm">公交开车</a></li>
+					  <li><a href="http://mobile.ddmap.com" target="_blank">丁丁手机</a></li>
+					  <li><a href="http://ditu.ddmap.com/571/city/">地图</a></li>
+					  <li><a href="http://app.ddmap.com/metro/">地铁</a></li>
+					  <li><a href="http://app.ddmap.com/shpolice/">电子警察</a></li>
+					  <li><a href="http://wenba.ddmap.com/">丁丁问吧</a></li>
+					  <li><a href=" http://www.ddmap.com/mstmap50007/helpcenter/hc_ddmap1.jsp">帮助中心</a></li>
+					</ul>
+                  </div>
+                  <div class="subb3 subk">
+                    <h2>丁丁旗下</h2>
+					<ul>
+					  <li><a href="http://c.ddmap.com/home/" target="_blank">丁丁同城</a></li>
+					  <li><a href="http://v.ddmap.com" target="_blank">丁丁视频</a></li>
+					  <li><a href="http://c.ddmap.com/groupactivity/21" target="_blank">丁丁活动</a></li>
+					  <li><a href="http://coupon.ddmap.com/" target="_blank">优惠券</a></li>
+					  <li><a href="http://topic.ddmap.com/" target="_blank">专题活动</a></li>
+					  <li><a href="http://vip.ddmap.com" target="_blank">会员特权</a></li>
+					  <li><a href="/phb/21--.htm" target="_blank">生活指数</a></li>
+					</ul>
+                  </div>
+                </div>
+               </div>
+               
+               
+    </div> 
+</div>		  
+<div class="clear"></div>
+   <div class="tcMenu">
+             <h1><a href="http://c.ddmap.com/" target="_blank" ><img src="/images/v1/tclogo.gif" width="134" height="49" alt="丁丁同城"/></a></h1>
+             <ul class="tcNav">
+             <li >
+					<a href="/hz">
+	  			首页</a>
+			 </li>
+             <li class="sel">
+			 	<a href='/hz_000_1_1?f=c'>
+			   	小组</a>
+			   </li>
+               <li ><a href='/groupactivity/571'></>活动</a></li>
+               <li ><a href='/video'></>视频</a></li>
+             </ul>
+            <div class="clear"></div>
+          </div>
+          <div class="group">
+                 <p class="tc_arrowU"><img src="/images/v1/tc_arrowU.gif" width="9" height="5"/></p>
+              <div class="menu_index">
+               <p class="tc_arrowU"><img src="/images/M1/tc_arrowU.gif" width="9" height="5"/></p>
+     </div>
+ </div>
+<div class="clear"></div>
+</div>
+
+<script type="text/javascript">
+	function SetHome(obj,vrl){
+		try{obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);}
+		catch(e){if(window.netscape) {try {netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");}catch (e) {alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");}var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);prefs.setCharPref('browser.startup.homepage',vrl);}}
+	}
+	function $d(obj){var arg=document.getElementById(obj);return arg;}
+	$d("orl").onmouseover=function(){$d("HBk").style.display="block";}
+	//$d("orl").onmouseout=function(){$d("HBk").style.display="none";}
+	$d("HBk").onmouseout=function(){this.style.display="none";}
+	$d("HBk").onmouseover=function(){this.style.display="block";}
+	$d("cityselimg").onmouseover=function(){$d("citysel").style.display="";}
+	$d("cityselimg").onmouseout=function(){$d("citysel").style.display="none";}
+	$d("citysel").onmouseover=function(){$d("citysel").style.display="";}
+	$d("citysel").onmouseout=function(){$d("citysel").style.display="none";}
+	
+	function $d(obj){var arg=document.getElementById(obj);return arg;}
+	$(document).ready(function(){
+	 var left = 0;
+	 	left = 444;
+	  $(".tc_arrowU img").css("left",left+"px");
+	 /* 个人中心 提醒弹出层  js  */
+	});
+</script><div class="content">
+<div>
+  <div class="tcLeft" style="padding-bottom:100px;">
+    <div class="index-nav">
+				<a href="http://c.ddmap.com/hz">
+	  			丁丁同城
+			</a>
+			<span>&gt;&gt;</span>
+				<a href="/hz_006_1_1">
+					结婚
+			</a><span>&gt;&gt;</span>
+			<a href="/groupmain/571/205" >我们结婚啦!</a>
+	 </div>
+    <!--detail-->
+    <div class="Notes">
+		<h3 class="titleA">
+			<span id="titleSpan" style="float:left">龙贵名门教您怎样选择婚礼摄像师？  </span>
+			<!--编辑标题-->
+		   	<a href="javascript:AddFavorite(window.location,document.title)" style="float:right;margin:0px 10px 0px 0px;font-weight:normal;">收藏</a>
+		   <div style="clear: both;"></div>
+		</h3>
+		<!--主帖相关内容Start-->
+		<dl class="note clearfix">
+		    <dt>
+		    	<a href="http://user.ddmap.com/935604" target="_blank">
+						<img src="http://timg.ddmap.com/user/bbshead/small/16.gif" width="81" height="79"  alt=""/>
+				</a>
+		        <span class="disB"><a href="http://user.ddmap.com/935604" target="_blank">龙贵名门</a></span>
+		        <span class="disB">
+		        	普通会员
+				</span>
+		    </dt>
+		    <dd class="note_cont">
+		    	<ul class="note_intro clearfix">
+		            <li>发表于：2011-7-15 9:56:33</li>
+	            	<li>浏览：249</li>
+	            	<li>回复：3</li>
+		            <li><a href="javascript:queryByFkuser();">只看楼主</a></li>
+		        </ul>
+		    	<div class="dd_txt" id="contentold">
+           				<span id="gmCont19209"><p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span style="font-family:Verdana;color:green;" lang="EN-US"><span class="replycontent"><span style="font-size:small;"><span style="color:#dfc5a4;">&nbsp;&nbsp;&nbsp; </span></span></span></span><span style="font-size:small;"><span class="replycontent"><span style="font-family:宋体;color:#64451d;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">摄像是婚礼中极其重要的部分。许多新娘都非常遗憾她们忽略了摄像师这一环节，没有记录下婚礼当天的盛况。建议去寻找一位合格的摄像师，这样在未来的日子里，婚礼录像会给你们带来更甜蜜的回忆。</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;" lang="EN-US">&nbsp; &nbsp; &nbsp; </span></span></span><span style="font-family:Verdana;color:green;" lang="EN-US"><br />
+<br />
+<span class="replycontent"><span style="font-size:small;"><span style="color:#64451d;">&nbsp; </span></span></span></span><span style="font-size:small;"><span class="replycontent"><span style="font-family:宋体;color:#64451d;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">如果你有朋友是专业摄像师，你也可以请他帮忙，但要提前与其沟通一些相应的环节。如果是婚庆公司为你提供的摄像师，你要提前与摄像师见面，和他交谈一翻，以考察他的水平。</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;" lang="EN-US">&nbsp; &nbsp; </span></span></span><span style="font-family:Verdana;color:green;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></span></p>
+<p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span style="font-size:small;"><strong><span class="replycontent"><span style="font-family:宋体;color:#64451d;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">交谈时应注意以下几个问题</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;" lang="EN-US">&nbsp; </span></span></strong></span><span style="font-family:Verdana;color:green;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<o:p></o:p></span></p>
+<p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">1</span></span><span class="replycontent"><span style="font-family:宋体;color:#64451d;font-size:9pt;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">、考察他们的培训情况、从业经验。他们是否在此之前已经拍摄过婚礼场面，如果拍过，最好看看以往的录像资料。</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;"> </span></span><span style="font-family:Verdana;color:green;font-size:9pt;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<o:p></o:p></span></p>
+<p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">2</span></span><span class="replycontent"><span style="font-family:宋体;color:#64451d;font-size:9pt;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">、向摄像师描述你的婚礼，询问他们针对你的婚礼现场使用什么样的专业设备和器材比较合适。</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">&nbsp; </span></span><span style="font-family:Verdana;color:green;font-size:9pt;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<o:p></o:p></span></p>
+<p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">3</span></span><span class="replycontent"><span style="font-family:宋体;color:#64451d;font-size:9pt;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">、察看他们每个周末为多少婚礼服务，如果他的日程很满，你最好不要再试图插进去。</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;"> </span></span><span style="font-family:Verdana;color:green;font-size:9pt;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<o:p></o:p></span></p>
+<p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">4</span></span><span class="replycontent"><span style="font-family:宋体;color:#64451d;font-size:9pt;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">、询问他们的设备情况，包括：麦克风、录像带、摄像机的数量以及如何配置相关设备。</span></span><span style="font-family:Verdana;color:green;font-size:9pt;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<o:p></o:p></span></p>
+<p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">5</span></span><span class="replycontent"><span style="font-family:宋体;color:#64451d;font-size:9pt;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">、询问如果万一这些设备临时再现问题，他们有什么备用设备和补救手段。</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;"> </span></span><span style="font-family:Verdana;color:green;font-size:9pt;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<o:p></o:p></span></p>
+<p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">6</span></span><span class="replycontent"><span style="font-family:宋体;color:#64451d;font-size:9pt;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">、与摄像师探讨采用哪种拍摄风格，是直接录制还是做后期的艺术处理？在婚礼当天重点拍摄新郎、新娘，还是把整个婚礼的原貌忠实记录下来？</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;"> </span></span><span style="font-family:Verdana;color:green;font-size:9pt;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<o:p></o:p></span></p>
+<p style="margin:0cm 0cm 0pt;" class="MsoNormal"><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">7</span></span><span class="replycontent"><span style="font-family:宋体;color:#64451d;font-size:9pt;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">、至少预先看两段你想要的那种拍摄风格的成型样片。</span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;font-size:9pt;" lang="EN-US">&nbsp; </span></span><span style="font-family:Verdana;color:green;font-size:9pt;" lang="EN-US"><br style="mso-special-character:line-break;" />
+<br style="mso-special-character:line-break;" />
+<o:p></o:p></span></p>
+<p style="text-indent:9pt;margin:0cm 0cm 0pt;" class="MsoNormal"><span style="font-size:small;"><span class="replycontent"><span style="font-family:宋体;color:green;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;"><strong><span style="color:#64451d;">签订合同</span></strong></span></span><span class="replycontent"><span style="font-family:Verdana;color:#64451d;" lang="EN-US"><strong><span style="color:#64451d;">&nbsp; &nbsp; </span></strong>&nbsp; &nbsp; </span></span></span><span style="font-family:Verdana;color:green;" lang="EN-US"><br />
+</span><span class="replycontent"><span style="font-family:宋体;color:#64451d;font-size:9pt;mso-ascii-font-family:Verdana;mso-hansi-font-family:Verdana;">合同应包括双方的姓名、联系方式、当天确实会来参加拍摄的工作人员的姓名和人数、以及他们所用器材的种类，连同紧急情况下手工艺后援设备与人员。还要列上最终录像带的长度，哪些人和活动必须上，你看到初版和最终版本的日期，你想要多少备份。另外还要有录像带的价钱以及你可能要订的其他项目的额外支出，录像超时的部分也要写清楚，以及付款时间表和如何退款的方案。</span></span><span class="replycontent"><span style="font-family:Verdana;color:green;" lang="EN-US"><o:p></o:p></span></span></p>
+<p style="text-indent:9pt;margin:0cm 0cm 0pt;" class="MsoNormal"><span class="replycontent"><span style="font-family:Verdana;" lang="EN-US"><o:p><span style="font-size:small;">&nbsp;</span></o:p></span></span></p>
+<p style="line-height:160%;margin:0cm 0cm 0pt;word-break:break-all;mso-pagination:widow-orphan;" class="MsoNormal"><span style="font-size:small;"><b style="mso-bidi-font-weight:normal;"><span style="line-height:160%;font-family:宋体;color:fuchsia;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';mso-bidi-font-size:10.5pt;">免费婚礼咨询：</span></b><span style="font-family:'Times New Roman';"><b style="mso-bidi-font-weight:normal;"><span style="line-height:160%;color:fuchsia;mso-bidi-font-size:10.5pt;" lang="EN-US">Eric</span></b><span style="line-height:160%;font-family:Arial;color:green;mso-bidi-font-size:10.5pt;mso-font-kerning:0pt;" lang="EN-US"><o:p></o:p></span></span></span></p>
+<p style="text-align:left;text-indent:18pt;margin:0cm 0cm 0pt;" class="MsoNormal" align="left"><b style="mso-bidi-font-weight:normal;"><span style="color:fuchsia;mso-bidi-font-size:10.5pt;" lang="EN-US"><o:p><span style="font-family:'Times New Roman';font-size:small;">&nbsp;</span></o:p></span></b></p>
+<p style="text-align:left;margin:0cm 0cm 0pt;" class="MsoNormal" align="left"><span style="font-size:small;"><b style="mso-bidi-font-weight:normal;"><span style="font-family:宋体;color:fuchsia;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';mso-bidi-font-size:10.5pt;">幸福热线：</span></b><b style="mso-bidi-font-weight:normal;"><span style="color:fuchsia;mso-bidi-font-size:10.5pt;" lang="EN-US"><span style="font-family:'Times New Roman';">0571-56205520 13666664510<o:p></o:p></span></span></b></span></p>
+<p style="text-align:left;text-indent:18pt;margin:0cm 0cm 0pt;" class="MsoNormal" align="left"><b style="mso-bidi-font-weight:normal;"><span style="color:fuchsia;mso-bidi-font-size:10.5pt;" lang="EN-US"><o:p><span style="font-family:'Times New Roman';font-size:small;">&nbsp;</span></o:p></span></b></p>
+<p style="text-align:left;margin:0cm 0cm 0pt;" class="MsoNormal" align="left"><span style="font-size:small;"><b style="mso-bidi-font-weight:normal;"><span style="font-family:宋体;color:fuchsia;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';mso-bidi-font-size:10.5pt;">幸福</span></b><b style="mso-bidi-font-weight:normal;"><span style="color:fuchsia;mso-bidi-font-size:10.5pt;" lang="EN-US"><span style="font-family:'Times New Roman';">QQ</span></span></b><b style="mso-bidi-font-weight:normal;"><span style="font-family:宋体;color:fuchsia;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';mso-bidi-font-size:10.5pt;">：</span></b><b style="mso-bidi-font-weight:normal;"><span style="color:fuchsia;mso-bidi-font-size:10.5pt;" lang="EN-US"><span style="font-family:'Times New Roman';">2291979309<span style="mso-spacerun:yes;">&nbsp; </span>1822462691<o:p></o:p></span></span></b></span></p>
+<p style="text-align:left;text-indent:18pt;margin:0cm 0cm 0pt;" class="MsoNormal" align="left"><b style="mso-bidi-font-weight:normal;"><span style="mso-bidi-font-size:10.5pt;" lang="EN-US"><o:p><span style="font-family:'Times New Roman';font-size:small;">&nbsp;</span></o:p></span></b></p>
+<p style="text-align:left;margin:0cm 0cm 0pt;" class="MsoNormal" align="left"><a href="http://hangzhou.edushi.com/dian/174358.html" target="_blank"><b style="mso-bidi-font-weight:normal;"><span style="font-family:宋体;color:red;font-size:14pt;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';">龙贵名门</span></b><b style="mso-bidi-font-weight:normal;"><span style="color:red;font-size:14pt;"><span style="font-family:'Times New Roman';"> </span></span></b></a><b style="mso-bidi-font-weight:normal;"><span style="font-family:宋体;color:red;mso-ascii-font-family:'Times New Roman';mso-hansi-font-family:'Times New Roman';mso-bidi-font-size:10.5pt;"><span style="font-size:small;">祝天下新人新婚快乐，百年好合！</span></span></b><b style="mso-bidi-font-weight:normal;"><span style="color:red;mso-bidi-font-size:10.5pt;" lang="EN-US"><o:p></o:p></span></b></p></span>
+				</div>
+           		<!--编辑主帖内容   div样式还有问题!!!-->
+	      		<!--高级编辑的投票-->
+	      		<ul class="note_link clearfix">
+		            <li>
+	      			   	<!--<a href="javascript:#">[引用]</a>&nbsp;&nbsp;-->
+	      			   	<a href="javascript:replyTo('龙贵名门')">[回复]</a></li>           
+		            <li class="li3">
+			            <!--<a href="#">锁贴</a>&nbsp;&nbsp;-->
+						<!-- 2011 11 29 joe说用户不能删除自己的帖子-->
+			           
+		            </li>
+		       </ul>
+<ul class="note_bot clearfix">
+        <li><img src="/images/ad.gif" style="margin-top:5px;margin-top:*0px"></li>
+
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1474" class="cBlue2">晒出你家里最有创意的“一角”</a></li>  
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1079" class="cBlue2">秀出你和他（她）最有个性的婚纱照</a></li>  
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1423" class="cBlue2">想为爱你的他做什么菜呢</a></li>  
+        <li class="li4"><a href="#">Top</a></li>
+ </ul>		    </dd>
+		</dl>
+		<!--主帖相关内容End-->
+		<script type="text/javascript">
+	  		var ctx = "";
+		</script>
+      	<form id="queryForm" action="/groupfollow/571" method="GET">
+      			<input type="hidden" value="" name="newCont" id="newCont" name="newCont"/>
+      	<script>
+			var followMap = {};
+			var saveEditCont = "";//保存编辑前的引用内容
+			//显示编辑
+      		function editFollow(followId,spanId){
+				//cont =  cont.replace(new RegExp("&nnn", "gm"), "\"");
+				var cont = saveEditCont = ieHTML($('#'+spanId).html());
+				if(cont.lastIndexOf("<p class=\"citationnone\">") > -1){
+					cont = cont.substring(cont.lastIndexOf("<p class=\"citationnone\">") + 24,cont.lastIndexOf("</p>"));
+      			}
+      			$("#followFcont"+followId).hide();
+      			if($('#followP' + followId).html().indexOf("textarea") != -1){
+      				$('#followP' + followId).show();
+      			}
+				$('#followP' + followId).html("<textarea id='editTextArea" + followId + "' style='width:600px;height:450px;'>" + cont + "</textarea><img src='/images/edtfinish.gif' onclick='submitEditFollow(" + followId + ");' style='cursor:pointer;'/><img src='/images/edtcancel.gif' onclick='cancleEditFollow(" + followId + ");' style='cursor:pointer;'/>");
+				KE.init({
+					id: 'editTextArea' + followId,
+					afterCreate: function(id){
+						KE.util.focus(id);
+					},
+					imageUploadJson: '/activityimage/uploadimage',
+					resizeMode: 1,
+					allowPreviewEmoticons: true,
+					allowUpload: true,
+					items : [
+						'source','fontname', 'fontsize','|','undo','redo', '|', 'textcolor', 'bgcolor', 'bold', 'italic', 'underline',
+						'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+						'insertunorderedlist', '|', 'emoticons','image','|','link','unlink']
+				});
+				KE.create('editTextArea' + followId);
+			}
+			//提交编辑内容
+			function submitEditFollow(followId){
+				$('#queryForm').attr("action","/groupfollow/edit/571/" + followId + "?groupId=" + 205);
+				$("#queryForm").attr("method","POST");
+				var newValue =  $('#editTextArea'+followId).val();
+				if(null == newValue || "" == newValue){
+					alert("内容不能为空！");
+					$('#editTextArea'+followId).focus();
+					return;
+				}
+				var validate = validateString(newValue,10,200000,false);
+				newValue = saveEditCont.replace(saveEditCont.substring(saveEditCont.lastIndexOf("<p class=\"citationnone\">")+24,saveEditCont.lastIndexOf("</p>")),newValue);
+				saveEditCont = "";
+				$('#newCont').val(newValue);
+				document.getElementById('queryForm').submit();
+			}
+			//退出编辑
+			function cancleEditFollow(followId){
+				if(confirm('确认取消吗?')) {
+					$('#followP' + followId).hide();
+					$("#followFcont"+followId).show();
+				}
+			}
+	      		function deleteFollow(fid){
+					if(confirm("确认要删除吗?"))
+	      			$.ajax({
+	      				url:"/groupfollow/delete/"+fid,
+	      				data:{"fid":fid,
+	      					mapId:571
+	      				},
+	      				type:"POST",
+	      				success:function(){
+      						$('#followUL'+fid).remove();
+      						var followNumber = $('#followNumber').html();
+      						$('#followNumber').html(followNumber-1);
+      						alert("删除成功");
+							window.location.href="/groupfollow/571?groupId=205&gmid=19209";
+	      				}
+	      			});
+	      		}
+	      	//添加收藏
+			function AddFavorite(sURL, sTitle)
+			{
+				try{
+					window.external.addFavorite(sURL, sTitle);
+				}catch (e){
+					try{
+						window.sidebar.addPanel(sTitle, sURL, "");
+					}catch (e){
+						alert("加入收藏失败，请使用Ctrl+D进行添加");
+					}
+				}
+						
+			}
+	      	function deleteFollowCompletely(fid){
+				if(confirm("确认要彻底删除吗?"))
+				$.ajax({
+					url:"/groupfollow/deleteCompletely/"+fid,
+					data:{"fid":fid,mapId:571},
+					type:"POST",
+					success:function(){
+						$('#followUL'+fid).remove();
+						var followNumber = $('#followNumber').html();
+						$('#followNumber').html(followNumber-1);
+						alert("删除成功");
+						window.location.href="/groupfollow/571?groupId=205&gmid=19209";
+					}
+				});
+			}
+	      		
+			//引用回复内容
+			var saveFcontId;
+			var saveQuoteUser = "";//记录被引用用户信息，如有多个信息，以逗号隔开(格式为：userId,userName)
+			function quote(followId,followUser){
+				saveQuoteUser = followUser;
+				htmlId = "followFcont" + followId;
+				var cont = ieHTML($('#'+htmlId).html().toLowerCase());
+				saveFcontId = "followFcont" + followId;
+				if(cont.indexOf("<p class=\"citationnone\">") > -1){
+					cont = cont.substring(cont.lastIndexOf("<p class=\"citationnone\">") + 24,cont.lastIndexOf("</p>"));
+				}
+				
+				//alert(cont);return;
+				setAreaCont(cont);
+			}
+			//为innerHTML赋值时，将html标签到大小转换为小写并属性加双引号，IE时才调用
+			function ieHTML(content){
+				//判断是否ie浏览器，只在ie浏览器下使用
+				if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)){
+					var okText = content.replace(/<(\/?)(\w+)([^>]*)>/g,function(match,$1,$2,$3){
+						if($1){
+							return "</"+ $2.toLowerCase() +">";
+						}
+						return ("<" + $2.toLowerCase() + $3 + ">").replace(/=(("[^"]*?")|('[^']*?')|([^\s]+))([\s>])/g,function(match2,$1,$2,$3,$4,$5, position,all) {
+							if($4){return '="'+ $4 +'"'+ $5;}
+							return match2;
+						})
+					});
+					return okText.replace(/(\s)style=".*:/g,function(lele){return lele.toLowerCase();});
+				}
+				return content;
+			}
+			/*实现 UBB 的引用quote功能,就像网易新闻评论 多个引用要嵌套的表格之JS*/
+			var count = 0;//记录盖楼数
+			function ubbQuote(str){
+				return str.replace(/\[quote\]([\s\S]+)\[\/quote\]/g,
+					function(s0,s){
+						var data = s.substring(s.indexOf('[/quote]') == -1 ? 0 : s.lastIndexOf('[/quote]') + 8,s.length);
+						//alert(s+"\n\n\n"+data);
+						if(data.indexOf("|")==-1){
+							return;
+						}
+						var follow = eval('(' + data.split("|")[0] + ')');
+						var showCont = "<div class=\"citation\">" + 
+									ubbQuote(s.replace(data,"")) ;
+						count++;
+						showCont += "<div class=\"citation-title clearshowfollow\">" + 
+										"<span class=\"user-name\"><a href=\"http://user.ddmap.com/"+follow.fkuser+"\">" + follow.uname + "</a></span>" + 
+										"<span class=\"citation-number\">" + count + "</span>" + 
+									"</div>" + 
+									"<p class=\"citationnone\">" + data.split("|")[1] + "</p>" + 
+								"</div>";
+						return showCont;
+					});
+			}
+			//显示引用、回复等内容
+			function showQuoteCont(followId){
+				//判断是否有引用内容，没有则直接显示回复内容
+				var showFollow = $("#"+followId).html();
+				if (showFollow.indexOf("[quote]") == -1 || showFollow.indexOf("[/quote]") == -1) {
+					var newcont = showFollow.split("|")[1];
+					if (!newcont) {
+					}
+					else {
+						$("#" + followId).html("<div class=\"citation-title clearshowfollow\"><p class=\"citationnone\">"+newcont+"</p></div>");
+					}
+					return ;
+				}	
+				var replycont = showFollow;
+				//alert(replycont.replace(/\[quote\]([\s\S]+)\[\/quote\]/g,""));
+				//var u = eval('(' + replycont.replace(/\[quote\]([\s\S]+)\[\/quote\]/g,"") + ')');
+				
+				var cont = replycont.replace(/\[quote\]([\s\S]+)\[\/quote\]/g,"").split("|")[1];
+				var len = showFollow.lastIndexOf('[/quote]');
+				$("#"+followId).html(ubbQuote(showFollow.substring(0, len == -1 ? showFollow.length : len + 8)) + "<div class=\"citation-title clearshowfollow\"><p class=\"citationnone\">" + cont + "</p></div>");
+				//alert(u.cont);
+				count = 0;//将盖楼数置0
+			}
+			//将引用内容反转为quote
+			function ReverseUbbQuote(str){
+				//str = str.toLowerCase();
+				str = ieHTML(str);
+				return str.replace(/<div class=[\s\S]citation[\s\S]>([\s\S]+)<\/div>/g,
+				function(s0,s){
+					var tempData = s.substring(s.lastIndexOf("<div class=\"citation-title clearshowfollow\">"),s.length);
+					var user = tempData.substring(tempData.indexOf("user.ddmap.com/"),tempData.indexOf("</a>"));
+					var fkuser = user.substring(user.indexOf("/")+1,user.indexOf(">")-1);
+					var uname = user.substring(user.indexOf(">")+1,user.length);
+					var cont = tempData.substring(tempData.indexOf("<p class=\"citationnone\">")+24,tempData.lastIndexOf("</p>"));
+					//alert(s+"\n" + tempData);
+					//alert("fkuser"+fkuser+"\nuname"+uname+"\ncont"+cont);
+					//var data = s.substring(s.indexOf('[/quote]') == -1 ? 0 : s.lastIndexOf('[/quote]') + 8,s.length);
+					//var user = eval('(' + data + ')');
+					var showCont = "[quote]" + 
+								ReverseUbbQuote(s.replace(tempData,"{\"fkuser\":\""+fkuser+"\",\"uname\":\""+uname+"\"}" + "|" + cont)) + 
+								"[/quote]";
+					return showCont;
+				});
+			}
+		</script>
+		<!--回帖相关内容Start-->
+		<a name='12656'></a>
+		<dl class="note clearfix">
+		    <dt>
+		    	<a href="http://user.ddmap.com/661318" target="_blank">
+						<img src="http://timg.ddmap.com/user/bbshead/small/1.gif" width="81" height="79"  alt=""/>
+				</a>
+		        <span class="disB"><a href="http://user.ddmap.com/661318" target="_blank">电话小秘书</a></span>
+		        <span class="disB">
+		        	普通会员
+				</span>
+		    </dt>
+		    <dd class="note_cont">
+		    	<ul class="note_intro clearfix">
+		            <li>发表于：2011-7-15 10:16:33</li>
+		            <li><a href="javascript:queryByFkuser();">只看楼主</a></li>
+		            <li class="liA" onclick="copy_code('12656');">
+		            	【1F】
+				   </li>
+		        </ul>
+		    	<!--回复、引用内容Start-->
+            		<div class="dd_txt" id="followFcont12656">先观望观望~~</div>
+            	<script>
+            		<!--打印引用内容-->
+            		showQuoteCont("followFcont12656");
+            	</script>
+            	<div id='followP12656'></div>
+            	<!--回复、引用内容End-->
+		    	<!--视频功能   样式未经测试-->
+		    	<!--视频功能-->
+	      		<ul class="note_link clearfix">
+		            <li>
+	      			 	<a href="javascript: quote('12656','661318,电话小秘书');">[引用]</a>&nbsp;&nbsp;
+	      			   	<a  href="javascript:replyTo('电话小秘书');">[回复]</a></li>
+		            <li class="li3">
+			            <!--<a href="#">锁贴</a>&nbsp;&nbsp;-->
+			            <!--超级管理员拥有编辑删除权限-->
+						<!-- 
+							2011 11 29 joe说用户不能删除自己的回帖
+						-->
+			            <!--<a href="#" class="cRed3">举报</a>-->
+		            </li>
+		       </ul>
+<ul class="note_bot clearfix">
+        <li><img src="/images/ad.gif" style="margin-top:5px;margin-top:*0px"></li>
+
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1474" class="cBlue2">晒出你家里最有创意的“一角”</a></li>  
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1079" class="cBlue2">秀出你和他（她）最有个性的婚纱照</a></li>  
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1423" class="cBlue2">想为爱你的他做什么菜呢</a></li>  
+        <li class="li4"><a href="#">Top</a></li>
+ </ul>		    </dd>
+		</dl>
+		<a name='12681'></a>
+		<dl class="note clearfix">
+		    <dt>
+		    	<a href="http://user.ddmap.com/698913" target="_blank">
+						<img src="http://timg.ddmap.com/user/bbshead/small/990818_094845_53.jpg" width="81" height="79"  alt=""/>
+				</a>
+		        <span class="disB"><a href="http://user.ddmap.com/698913" target="_blank">天空的小金鱼</a></span>
+		        <span class="disB">
+		        	普通会员
+				</span>
+		    </dt>
+		    <dd class="note_cont">
+		    	<ul class="note_intro clearfix">
+		            <li>发表于：2011-7-15 10:36:33</li>
+		            <li><a href="javascript:queryByFkuser();">只看楼主</a></li>
+		            <li class="liA" onclick="copy_code('12681');">
+		            	【2F】
+				   </li>
+		        </ul>
+		    	<!--回复、引用内容Start-->
+            		<div class="dd_txt" id="followFcont12681">你懂的。。。。。。。。</div>
+            	<script>
+            		<!--打印引用内容-->
+            		showQuoteCont("followFcont12681");
+            	</script>
+            	<div id='followP12681'></div>
+            	<!--回复、引用内容End-->
+		    	<!--视频功能   样式未经测试-->
+		    	<!--视频功能-->
+	      		<ul class="note_link clearfix">
+		            <li>
+	      			 	<a href="javascript: quote('12681','698913,天空的小金鱼');">[引用]</a>&nbsp;&nbsp;
+	      			   	<a  href="javascript:replyTo('天空的小金鱼');">[回复]</a></li>
+		            <li class="li3">
+			            <!--<a href="#">锁贴</a>&nbsp;&nbsp;-->
+			            <!--超级管理员拥有编辑删除权限-->
+						<!-- 
+							2011 11 29 joe说用户不能删除自己的回帖
+						-->
+			            <!--<a href="#" class="cRed3">举报</a>-->
+		            </li>
+		       </ul>
+<ul class="note_bot clearfix">
+        <li><img src="/images/ad.gif" style="margin-top:5px;margin-top:*0px"></li>
+
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1474" class="cBlue2">晒出你家里最有创意的“一角”</a></li>  
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1079" class="cBlue2">秀出你和他（她）最有个性的婚纱照</a></li>  
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1423" class="cBlue2">想为爱你的他做什么菜呢</a></li>  
+        <li class="li4"><a href="#">Top</a></li>
+ </ul>		    </dd>
+		</dl>
+		<a name='12720'></a>
+		<dl class="note clearfix">
+		    <dt>
+		    	<a href="http://user.ddmap.com/734520" target="_blank">
+						<img src="http://timg.ddmap.com/user/bbshead/small/08.gif" width="81" height="79"  alt=""/>
+				</a>
+		        <span class="disB"><a href="http://user.ddmap.com/734520" target="_blank">wc1234</a></span>
+		        <span class="disB">
+		        	普通会员
+				</span>
+		    </dt>
+		    <dd class="note_cont">
+		    	<ul class="note_intro clearfix">
+		            <li>发表于：2011-7-15 10:56:33</li>
+		            <li><a href="javascript:queryByFkuser();">只看楼主</a></li>
+		            <li class="liA" onclick="copy_code('12720');">
+		            	【3F】
+				   </li>
+		        </ul>
+		    	<!--回复、引用内容Start-->
+            		<div class="dd_txt" id="followFcont12720">哈哈~~</div>
+            	<script>
+            		<!--打印引用内容-->
+            		showQuoteCont("followFcont12720");
+            	</script>
+            	<div id='followP12720'></div>
+            	<!--回复、引用内容End-->
+		    	<!--视频功能   样式未经测试-->
+		    	<!--视频功能-->
+	      		<ul class="note_link clearfix">
+		            <li>
+	      			 	<a href="javascript: quote('12720','734520,wc1234');">[引用]</a>&nbsp;&nbsp;
+	      			   	<a  href="javascript:replyTo('wc1234');">[回复]</a></li>
+		            <li class="li3">
+			            <!--<a href="#">锁贴</a>&nbsp;&nbsp;-->
+			            <!--超级管理员拥有编辑删除权限-->
+						<!-- 
+							2011 11 29 joe说用户不能删除自己的回帖
+						-->
+			            <!--<a href="#" class="cRed3">举报</a>-->
+		            </li>
+		       </ul>
+<ul class="note_bot clearfix">
+        <li><img src="/images/ad.gif" style="margin-top:5px;margin-top:*0px"></li>
+
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1474" class="cBlue2">晒出你家里最有创意的“一角”</a></li>  
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1079" class="cBlue2">秀出你和他（她）最有个性的婚纱照</a></li>  
+ <li><a href="http://c.ddmap.com/groupactivity/571/showActivity/1423" class="cBlue2">想为爱你的他做什么菜呢</a></li>  
+        <li class="li4"><a href="#">Top</a></li>
+ </ul>		    </dd>
+		</dl>
+		<input type="hidden" name="gmid" value="19209">
+		<!--回帖相关内容End-->
+	</div>
+  	<script type="text/javascript">
+		$(".changpic").click(function(){
+			var folderUrl = $(this).attr("src");
+		    folderUrl = folderUrl.replace("thumbnail","normal");
+			var id = $(this).attr("id");
+			id =  id.substring(5);
+			$(this).parent().hide();
+			$(this).parent().next().show();
+			$(this).parent().parent().show();
+			var normal = "<a href='javascript:toThumbail("+id+");' style='margin:0 auto;clear:both;display:block;' class='user-pic dy-user-pic'><img class='changpic' style='display:inline;' src='"+folderUrl+"' alt=''/></a>";
+			$(this).parent().parent().find(".blogPicOri").html(normal);
+		});
+		$(".picsmall").click(function(){$(this).parent().parent().hide();$(this).parent().parent().prev().show();});
+		$(".picspan").click(function(){var link = $(this).parent().parent().prev().find(".changpic").attr("src");link = link.replace("thumbnail","general");window.open(link);});
+		$(".videobegin,.videoimg").click(function(){
+			var videoid = "#"+$(this).parent().attr("id");
+			var vimg = $(videoid).find(".videoimg").attr("src");
+			$(this).parent().hide();
+			$(this).parent().next().show();
+			$.ajax({
+	 			url:'/groupvideo/ajax/getRealVideoLocation/205',
+	 			data:{
+	 				videoimg:vimg
+	 			},
+	 			type:"post",
+	 			success:function(data){
+	 				var flash = "<embed src='"+data+"' quality='high' width='440' height='356' align='middle' allowScriptAccess='sameDomain' type='application/x-shockwave-flash'></embed>";
+	 				$(videoid + "-start").html(flash);
+	 			}
+	 		});
+		});
+		$(".picsmall2").click(function(){$(this).next().empty();$(this).parent().parent().hide();$(this).parent().parent().prev().show();});
+	</script>
+ 	</form>
+    <div class="group-control">
+		<span class="go-top"><img alt="" src="/images/top.gif"/><a href="#">回到顶部</a></span>
+		<div class="paging">
+					<a href="javascript:;" class="curr-page">1</a>
+		</div>
+	</div>
+	<a name="quickreply"></a>
+	<!--
+	 去掉回复 include '/commons/editorFollow.ftl'
+	-->
+ <div class="additionA2" style="border:1px solid #EDEDED;height:140px;" >
+		 	<h2>
+		 		<img width="20" height="20" src="/images/qtxz.jpg">
+		 		常去的其他小组
+			</h2>
+		  	<ul> 
+						<li>
+							<p>
+								<a class="a1" href="/groupmain/571/205" target="_blank">
+		  							<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/thumbnail/2011-04-14/205-2011-04-14-1302763428191.jpg" />
+								</a>
+							</p>
+							<p>	
+								<a class="a2" href="/groupmain/571/205" target="_blank">我们结婚啦!</a>
+							</p>
+						</li>
+						<li>
+							<p>
+								<a class="a1" href="/groupmain/571/1841" target="_blank">
+		  							<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/thumbnail/2011-06-30/2011-06-30-1309423551118.jpg" />
+								</a>
+							</p>
+							<p>	
+								<a class="a2" href="/groupmain/571/1841" target="_blank">婚庆典礼</a>
+							</p>
+						</li>
+						<li>
+							<p>
+								<a class="a1" href="/groupmain/571/1678" target="_blank">
+		  							<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/thumbnail/2011-06-20/2011-06-20-1308553644268.jpg" />
+								</a>
+							</p>
+							<p>	
+								<a class="a2" href="/groupmain/571/1678" target="_blank">新娘彩妆</a>
+							</p>
+						</li>
+						<li>
+							<p>
+								<a class="a1" href="/groupmain/571/1681" target="_blank">
+		  							<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/thumbnail/2011-06-20/2011-06-20-1308553950403.jpg" />
+								</a>
+							</p>
+							<p>	
+								<a class="a2" href="/groupmain/571/1681" target="_blank">婚礼喜宴</a>
+							</p>
+						</li>
+						<li>
+							<p>
+								<a class="a1" href="/groupmain/571/1486" target="_blank">
+		  							<img ddmap-lazyload-img="/images/group_head.jpg" />
+								</a>
+							</p>
+							<p>	
+								<a class="a2" href="/groupmain/571/1486" target="_blank">婚庆</a>
+							</p>
+						</li>
+						<li>
+							<p>
+								<a class="a1" href="/groupmain/571/1682" target="_blank">
+		  							<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/thumbnail/2011-06-20/2011-06-20-1308549499590.jpg" />
+								</a>
+							</p>
+							<p>	
+								<a class="a2" href="/groupmain/571/1682" target="_blank">明星也结婚</a>
+							</p>
+						</li>
+						<li>
+							<p>
+								<a class="a1" href="/groupmain/571/1684" target="_blank">
+		  							<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/thumbnail/2011-06-20/2011-06-20-1308550223781.jpg" />
+								</a>
+							</p>
+							<p>	
+								<a class="a2" href="/groupmain/571/1684" target="_blank">蜜月旅行</a>
+							</p>
+						</li>
+				</ul>
+		  </div>	<div class="additionA"  >
+			           </div>	</div>
+  	</div>
+    <div class="tcRight">
+		
+			<p class="bta_2">
+			 	<a href="/groupmain/571/205" target="_blank">返回当前小组</a>
+		<h3 class="bta_1">
+				<a href="http://marry.ddmap.com/571" target="_blank" style="margin-left:20px">进入结婚频道</a>
+		</h3>
+		<h3 class="bta_1">
+				<a href="http://c.ddmap.com/video" target="_blank" style="margin-left:20px">进入视频频道</a>
+		</h3>
+			<div class="tcRight3">
+				<h2>
+					<img ddmap-lazyload-img="/images/v1/tc_icon5.gif" width="13" height="16"/>群组图库...
+				</h2>
+			            <dl>
+				            <dt style="text-align:center">
+            	 				<a href="/gf_571_205_68358" target="_blank">
+						  			<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/normal/2014-05-14/2014-05-14-1400054431299.jpg" id="default" onload="resizeImage(this,160,100)" title='夏季衣服怎样穿，法派特教你做搭配潮流达人！'/>
+								</a>
+							</dt>
+				            <dd style="height:43px;">
+            	 				<a href="/gf_571_205_68358" target="_blank">
+									夏季衣服怎样穿，法派特教你做搭配潮流达人！
+								</a>
+							</dd>
+		            	</dl>
+			            <dl>
+				            <dt style="text-align:center">
+            	 				<a href="/gf_571_205_67434" target="_blank">
+						  			<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/normal/2013-08-24/2013-08-24-1377332513385.JPG" id="default" onload="resizeImage(this,160,100)" title='西服定制齐分享！！！'/>
+								</a>
+							</dt>
+				            <dd style="height:43px;">
+            	 				<a href="/gf_571_205_67434" target="_blank">
+									西服定制齐分享！！！
+								</a>
+							</dd>
+		            	</dl>
+			            <dl>
+				            <dt style="text-align:center">
+            	 				<a href="/gf_571_205_66765" target="_blank">
+						  			<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/normal/2013-08-03/2013-08-03-1375516312321.jpg" id="default" onload="resizeImage(this,160,100)" title='【法派特西服定制】史上强婚博会！即将起航！新郎强音！定制西服首选品牌'/>
+								</a>
+							</dt>
+				            <dd style="height:43px;">
+            	 				<a href="/gf_571_205_66765" target="_blank">
+									【法派特西服定制】史上强婚博会！即将起航！新郎强音！定制西服首选品牌
+								</a>
+							</dd>
+		            	</dl>
+			            <dl>
+				            <dt style="text-align:center">
+            	 				<a href="/gf_571_205_64391" target="_blank">
+						  			<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/normal/2013-01-29/2013-01-29-1359457982842.jpg" id="default" onload="resizeImage(this,160,100)" title='杭州巴黎春天「结婚达人卡」帮你轻松省10000！一卡在手，逛遍婚博都无忧~'/>
+								</a>
+							</dt>
+				            <dd style="height:43px;">
+            	 				<a href="/gf_571_205_64391" target="_blank">
+									杭州巴黎春天「结婚达人卡」帮你轻松省10000！一卡在手，逛遍婚博都无忧~
+								</a>
+							</dd>
+		            	</dl>
+			            <dl>
+				            <dt style="text-align:center">
+            	 				<a href="/gf_571_205_64297" target="_blank">
+						  			<img ddmap-lazyload-img="http://timg.ddmap.com/cheng/userimages/normal/2013-01-24/2013-01-24-1359019844572.jpg" id="default" onload="resizeImage(this,160,100)" title='小编带你看图学拍婚纱照姿势-新娘篇'/>
+								</a>
+							</dt>
+				            <dd style="height:43px;">
+            	 				<a href="/gf_571_205_64297" target="_blank">
+									小编带你看图学拍婚纱照姿势-新娘篇
+								</a>
+							</dd>
+		            	</dl>
+	        </div>
+  	</div>    </div>
+</div>
+  <div class="footer">
+         <ul class="hotCity"> 
+             <li>热门城市：</li>
+             <li class="hotCityr">                     
+                <a href="http://sh.ddmap.com" title='上海地图'>上海市</a>
+				<a href="http://nj.ddmap.com" title='南京地图'>南京市</a>
+				<a href="http://suzhou.ddmap.com" title='苏州地图'>苏州市</a>
+				<a href="http://hz.ddmap.com" title='杭州地图'>杭州市</a>
+				<a href="http://nb.ddmap.com" title='宁波地图'>宁波市</a>
+				<a href="http://wx.ddmap.com" title='无锡地图'>无锡市</a>
+				<a href="http://wz.ddmap.com" title='温州地图'>温州市</a>
+				<a href="http://sx.ddmap.com" title='绍兴地图'>绍兴市</a>
+				<a href="http://zj.ddmap.com" title='镇江地图'>镇江市</a>
+				<a href="http://yz.ddmap.com" title='扬州地图'>扬州市</a>
+				<a href="http://cz.ddmap.com" title='常州地图'>常州市</a>
+				<a href="http://xz.ddmap.com" title='徐州地图'>徐州市</a>
+				<a href="http://hf.ddmap.com" title='合肥地图'>合肥市</a>
+				<a href="http://qd.ddmap.com" title='青岛地图'>青岛市</a>
+				<a href="http://jn.ddmap.com" title='济南地图'>济南市</a>
+				<a href="http://gz.ddmap.com" title='广州地图'>广州市</a>
+				<a href="http://sz.ddmap.com" title='深圳地图'>深圳市</a>
+				<a href="http://hk.ddmap.com" title='海口地图' class="ddhk">海口市</a>
+				<a href="http://sy.ddmap.com" title='三亚地图'>三亚市</a>
+				<a href="http://fz.ddmap.com" title='福州地图'>福州市</a>
+				<a href="http://xm.ddmap.com" title='厦门地图'>厦门市</a>
+				<a href="http://nn.ddmap.com" title='南宁地图'>南宁市</a>
+				<a href="http://gl.ddmap.com" title='桂林地图'>桂林市</a>
+				<a href="http://wh.ddmap.com" title='武汉地图'>武汉市</a>
+				<a href="http://changsha.ddmap.com" title='长沙地图'>长沙市</a>
+				<a href="http://nc.ddmap.com" title='南昌地图'>南昌市</a>
+				<a href="http://dl.ddmap.com" title='大连地图'>大连市</a>
+				<a href="http://cq.ddmap.com" title='重庆地图'>重庆市</a>
+				<a href="http://cd.ddmap.com" title='成都地图'>成都市</a>
+				<a href="http://km.ddmap.com" title='昆明地图'>昆明市</a>
+				<a href="http://xa.ddmap.com" title='西安地图'>西安市</a>
+				<a href="http://gy.ddmap.com" title='贵阳地图'>贵阳市</a>
+				<a href="/mstmap50007/index_city_choose.jsp" title="更多城市" class="ddother">更多城市</a>
+             </li>
+           </ul>
+         <ul>
+	         <li>
+	           <a href='http://www.ddmap.com' target='_blank'>丁丁网</a> |
+	           <a href='http://about.ddmap.com/contactus.htm' target='_blank'>联系我们</a> |
+	           <a href='http://about.ddmap.com/' target='_blank'>关于我们</a> |
+	           <a href="http://crm.ddmap.com/crm_cust/" target="_blank">客户登录</a> |
+	           <a href='http://www.ddmap.com/mstmap50007/wap_intro.jsp' target='_blank'>wap服务</a> |
+	           <a href='http://www.ddmap.com/link-21.htm' target='_blank'>友情链接</a> |
+	           <a href='http://www.ddmap.com/mstmap50007/helpcenter/index.jsp' target='_blank'>帮助中心</a> |
+	           <a href='http://ddmap.com/mstmap50007/in_userjc1.jsp#yjfk' target='_blank'>意见反馈</a> |
+	           <a href='http://www.ddmap.com/sitemap/21/1.htm' target='_blank'>网站地图</a>
+	         </li>
+	         <li class="label">沪ICP证：沪B2-20070030沪ICP备10008907号<img src="http://www.ddmap.com/mstmap50007/images/foot_icon.gif" width="15" height="17" alt=""/>&copy;2005-2011 DDMap<img src="http://www.ddmap.com/mstmap50007/images/foot_110.gif" width="55" height="21" alt=""/></li>
+	   </ul>
+	   <p><a href='http://www.ddmap.com/mstmap50007/g_adv_loc.jsp?cname=A-T1&pic=1&ctype=A&mapno=21&curl=http://www.shcois.net/' target='_blank'><img src="http://img1.ddmapimg.com/adv/idx_gaj.jpg" alt="上海网络社会征信网"/></a></p> 
+	</div>
+	<!--
+	2011 10 24 10:47注释
+	 <iframe name="baierFrame"  id="baierFrame"  src="/baierFrame.html" width="1px" height="1px">
+	</iframe>
+	-->
+	<!--
+	 <iframe name="tbyingyong"  id="tbyingyong"  src="/tbyingyong.html" width="1px" height="1px">
+	</iframe>
+	-->
+</body>
+<script type="text/javascript" language="JavaScript" src="http://js.ddmap.com/js/stat.js"></script>
+<script language='JavaScript'>
+pv('site=channel&type=group&smapno=571&stype=TD&skey1=19209&skey2=205');  
+</script>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22680035-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  // 积分提示
+</script> 
+<div id="sAA" style="padding:15px 30px;display:none">
+  <p class="Prompt"><img src="/images/zxxbox/s.png" width="11" height="16" />+15积分</p>
+</div>
+<div id="sAA2" style="padding:15px 30px;display:none">
+  <p class="Prompt"><img src="/images/zxxbox/s.png" width="11" height="16" />+1积分</p>
+</div>
+</html>

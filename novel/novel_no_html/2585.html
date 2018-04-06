@@ -1,0 +1,2120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0024)http://www.steelhome.cn/ -->
+<HTML><HEAD><TITLE>  网上钢市-商务中心-钢之家钢铁网</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=verify-v1 content=rfRws4Y1mwg6EQn44sY6gX/gxhKUSQteND7cp5jrAoY=>
+<LINK rel=stylesheet type=text/css href="/Business_v4/html/default/css/biz_index_css.css">
+<META name=GENERATOR content="MSHTML 6.00.6001.17184"></HEAD>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"><BODY>
+<div id="main_container">
+	<link href="/_v2css/div_alert_biz.css" rel="stylesheet" type="text/css">
+<script src="/Business_v4/js/ajax.js"></script>
+<script src="/Business_v4/js/qiatanmain.js" defer ></script>
+<script src="/Business_v4/js/swt_online_users.js" defer ></script>
+<script src="/Business_v4/js/cookie.js" ></script>
+<script src="/Business_v4/js/advance_search.js" ></script>
+
+<script src="/Business_v4/js/swt.js"></script>
+<script src="/Business_v4/js/newswt.js"></script>
+<script src="/Business_v4/js/jquery-1.9.1.min.js"></script>
+
+<script defer>
+document.domain="steelhome.cn";
+
+$(document).ready(function(){ 
+	swtchat();
+});
+
+
+function swtchat(){
+	showline("164453,177513,5232,8598,108639,167668,143732,27601,98263,10809,1753,50,1828,12267,495,181285,98660,83466,211325,33946,157146,9906,187441,124475,6352,67301,145302,148173,27236,94095,13245,91019,90691,86614,83591,63612,49,82082,29644,33995,13552,14724,26122,1364,187178");
+}
+
+function showline(smemberids){
+	
+	if (smemberids != "") {
+		var members = smemberids.split(",");
+		for (var i = 0; i < members.length; i++) {
+			var memberid = members[i];
+			if(sthome_swtonline[memberid]>0){
+				$(".img_"+ memberid).attr("src","http://swtapp.steelhome.cn/images/head/gmt3.gif");	
+			}
+		}
+	}	
+}
+
+//window.onload = qiatanpre;
+var mymemberid = '';
+var mytruename = '';
+var myuserid = '';
+var mycompany = '';
+/*
+function qiatanpre(){
+	pTag = "img_";
+	pIds = "no";
+	myip = "127_0_0_1";
+    showonline( "164453,177513,5232,8598,108639,167668,143732,27601,98263,10809,1753,50,1828,12267,495,181285,98660,83466,211325,33946,157146,9906,187441,124475,6352,67301,145302,148173,27236,94095,13245,91019,90691,86614,83591,63612,49,82082,29644,33995,13552,14724,26122,1364,187178", pTag );    
+}
+*/
+
+
+
+
+//添加购物车资源
+function tj( tag ){
+	var objs = document.getElementsByName( tag );
+	var resids = [];
+	for( var i = 0; i < objs.length; ++i ){
+	    if( objs[i].checked == true ){
+		    resids.push( objs[i].value );
+		}
+	}
+	if( resids.length > 0 ){
+	  resids = resids.join( ',' );
+	  var url = "./ajax.php?view=gwc&resids=" + resids;
+      var ajax = new Ajax( url, p_tj, '' );
+	}else{
+	  alert( "请至少选择一项资源" );
+	}
+}
+
+function p_tj( returnstr ){
+	var showdiv = document.getElementById( 'ajaxdivgwc' ); 
+	//showdiv.style.left =  document.body.scrollLeft + 100; 
+	showdiv.style.top =  document.body.scrollTop + 150;
+    showdiv.innerHTML = returnstr;
+	showdiv.style.display = 'block';
+}
+
+//取消一个购物车资源
+function cancelres( resid ){
+	  var url = "./ajax.php?view=cancel_gwc&resid=" + resid;
+      var ajax = new Ajax( url, p_tj, '' );
+}
+
+//销毁全部购物车资源
+function destorygwc(){
+      var url = "./ajax.php?view=destory_gwc";
+      var ajax = new Ajax( url, p_tj, '' );
+}
+
+
+//保存购物数量和购买价
+function savesl( resid ){
+  var sl = document.getElementById( 'sl_' + resid );
+  var bj = document.getElementById( 'jg_' + resid );
+  if( isNaN( sl.value ) || sl.value <= 0 ){
+      alert( '数量请填写一个合法的数字' );
+	  return false;
+  }
+  if( isNaN( bj.value ) || bj.value <= 0 ){
+      alert( '报价请填写一个合法的数字' );
+	  return false;
+  }
+
+  var url = './ajax.php?view=gwcsl&resid=' + resid + "&sl=" + sl.value + "&jg=" + bj.value;
+  var ajax = new Ajax( url, p_noneed, '' );
+}
+
+function p_noneed( returnstr ){}
+
+</script>
+<script type="text/javascript">
+
+function getOs()
+{
+	var OsObject = ""; 
+	if(isSafari=navigator.userAgent.indexOf("Safari")>0) {
+	return "Safari";
+	}
+}
+
+switch (getOs()){
+	case "Safari":
+    document.write("<link rel='stylesheet' type='text/css' href='/_v2css/issa.css' />");
+    break;
+
+	default:
+    document.write("<link rel='stylesheet' type='text/css' href='/_v2css/isie.css' />");
+    break;
+	}
+
+</script>
+
+
+  <script type="text/javascript"> 
+        var Sys = {}; 
+        var ua = navigator.userAgent.toLowerCase(); 
+        if (window.ActiveXObject) 
+            Sys.ie = ua.match(/msie ([\d.]+)/)[1] 
+        else if (window.MessageEvent && !document.getBoxObjectFor) 
+            Sys.chrome = ua.match(/chrome\/([\d.]+)/)[1] 
+        
+        //判断是否 chrome 浏览器
+        if(Sys.chrome) document.write('<link rel="stylesheet" type="text/css" href="/_v2css/isie.css" />'); 
+
+    </script>
+
+<style type="text/css">
+
+	.stylered{
+	
+		color:red;
+	
+	}
+
+</style>
+
+	
+<div><iframe src="http://www.steelhome.cn/denglu.php" width="1000" height="27" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" ></iframe></div>
+
+<div style="height:22px;padding-top:5px;font-family:'宋体'; font-size:12px; "><A href="http://www.steelhome.cn/">首页</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="10px" height="8px"><A href="http://news.steelhome.cn/mcindex.shtml">资讯</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="10px" height="8px"><A href="http://biz.steelhome.cn/">商务</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://www.steelhome.cn/Member/">会员</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A class=stylered href="http://gc.steelhome.cn/">钢材</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://tg.steelhome.cn/">特钢</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://www.ebuxiu.com/" target=_blank>不锈</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A class=stylered href="http://ll.steelhome.cn/">炉料</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://news.steelhome.cn/ll/city-all/c13.html">铁矿</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://news.steelhome.cn/mj">煤焦</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://news.steelhome.cn/thj">铁合金</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://ys.steelhome.cn/">有色</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://www.echemhome.cn">化工</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://zh.steelhome.cn/">财经</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://job.steelhome.cn/">人才</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A class=stylered href="http://shpi.steelhome.cn/">指数</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://news.steelhome.cn/gc/gcvalue-all/">钢厂</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://news.steelhome.cn/hwgs/">海外</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://news.steelhome.cn/gc/bigcol-007">研究</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://news.steelhome.cn/gc/bigcol-004">统计</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A class=stylered href="http://www.steelhome.cn/application/index.html">手机</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A class=stylered href="http://news.steelhome.cn/gc/qh.html">期货</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A class=stylered href="http://www.steelhome.cn/luntan/">论坛</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A  href="http://t.steelhome.cn/">微博</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://baike.steelhome.cn/">百科</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><!-- <A class=stylered href="http://www.steelhome.cn/Register.php">注册</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"> --><A href="http://www.steelhome.cn/hqsearch1.php?key=">搜索</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="9px" height="8px"><A href="http://www.steelhome.cn/sitemap.html">导航</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="10px" height="8px"><A class=stylered href="http://sms.steelhome.cn/">短信</A><img src="http://www.steelhome.cn/stgfiles/201205/point.gif" width="10px" height="8px"><A href="http://en.steelhome.cn/">English</A></DIV>
+<style>
+#ajaxdivgwc {
+   display: none;
+   width: 500px;
+   height: 200px;
+   background-image: url(/Business_v4/html/default/images/bj0.gif);
+   margin:0 auto;
+   z-index: 5;
+   top:  50%;
+   left:  50%;
+   text-align: right;
+   position : absolute;
+}
+</style>	<style type="text/css">
+<!--
+#head_logo {
+	BORDER-TOP: #9e9e9e 1px solid; WIDTH: 1000px; BORDER-BOTTOM: #cdcdcd 3px solid; HEIGHT: 74px
+}
+#logo {
+	FLOAT: left
+}
+#GG_T1 {
+	FLOAT: left; MARGIN: 1px 1px 0px 0px
+}
+#GG_T2 {
+	FLOAT: left; MARGIN: 1px 0px 0px
+}
+-->
+</style>
+<DIV id=head_logo>
+	<DIV id=logo><img src="/_v2image/logo_ny.jpg" border="0" alt="钢之家"><img src="/_v2image/logo-n2.gif" border="0" alt=""></DIV>
+	<DIV id="GG_T1"><a href="http://www.steelhome.cn/Market_area_index.php" target="_blank"><img src="/Business_v4/html/default/images/biz_head_ad1.jpg"  alt="" width="541" height="72" border="0" ></a></DIV>
+	<DIV id="GG_T2">	<a href="http://www.steelhome.cn/application/index.html" target="_blank"><img src="/_v2image/adv_a2_2009.jpg" border="0" alt=""></a>
+		</DIV>
+</DIV>			
+	<DIV id=head_menu_level_2>
+<DIV style="WIDTH: 90px;FLOAT: left;" id=head_menu_level_2_explain><a href="http://biz.steelhome.cn/" ><span  style="color:#fb5c00;">商务中心</span></a></DIV>
+<DIV style="FONT-WEIGHT: normal; word-spacing:-0.2em;" id=head_menu_level_2_navigate>
+<div style="float:left;width:53px;"><a href="xh.html">现货超市</a>	</div>				
+<div style="float:left;width:53px;"><a href="wszy.html"><font color="#fb5c00" ><b>网上钢市</b></font></a></div>					
+<div style="float:left;width:53px;"><a href="tjzy.html">推荐资源</a></div>									
+<div style="float:left;width:53px;"><a href="gqkx.html">供求快讯</a></div>
+<div style="float:left;width:53px;"><a href="gqzb.html">供求专版</a>	</div>				
+<div style="float:left;width:53px;"><a href="http://www.steelhome.cn/biz/biz.php?view=swzs" target="_blank">商务助手</a></div>
+<div style="float:left;width:53px;"><a href="http://www.steelhome.cn/100_integrity/" target="_blank">百家诚信</a></div>
+<div style="float:left;width:60px;"><a target="_blank"  href="/Member/">我的商务区</a></div>	
+<div style="float:left;width:46px;"><a target="_blank"  href="http://www.steelhome.cn/swt/">商务通</a></div>	
+<div style="float:left;width:53px;"><a target="_blank" href="http://news.steelhome.cn/gc/city-all/all.shtml"><font color="#0106BE">各地市场</font></a></div>
+<div style="float:left;width:53px;"><a target="_blank" href="/Market_area_index.php"><font color="#0106BE">行情地图</font></a></div>								
+<div style="float:left;width:53px;"><a target="_blank" href="/Market_area_xhindex.php"><font color="#0106BE">现货报价</font></a></div>
+<div style="float:left;width:53px;"><a target="_blank" href="http://news.steelhome.cn/gc/col-05x"><font color="#0106BE">行情汇总</font></a></div>					
+<div style="float:left;width:53px;"><a target="_blank" href="http://shpi.steelhome.cn/"><font color="#0106BE">价格指数</font></a></div>
+				
+<div style="float:left;width:53px;"><a target="_blank"  href="http://news.steelhome.cn/gc/col-061/"><font color="#0106BE">国际行情</font></a></div>
+<div style="float:left;width:53px;"><a target="_blank" href="http://www.steelhome.cn/biz/biz_gcbj.php"><font color="red">工程价格</font></a></div>
+<div style="float:left;width:48px;"><a target="_blank"  href="http://www.zgdzwz.com/"> <font color="red">大宗物资</font></a></div>
+</DIV>
+<DIV class=styleautosize></DIV>
+</DIV>
+
+<DIV >
+<DIV style="PADDING-BOTTOM: 8px; PADDING-LEFT: 8px; WIDTH: 988px; PADDING-RIGHT: 0px; WORD-SPACING: 0px; PADDING-TOP: 8px"><A 
+href="biz.php?view=res_ws_pz&variety=allgc&pzname=钢材" 
+target=_self><FONT color=#0000ff>钢材</FONT></A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c01&pzname=建筑钢材&bid=103,102" 
+target=_self>建筑钢材</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c02&pzname=中厚板&bid=202,203,204,205,206,207,208,230,231,232" 
+target=_self>中厚板</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c03&pzname=冷热板卷&bid=209,211" 
+target=_self>冷热板卷</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c04&pzname=各类型材&bid=107,108,109,113,111,112,115,118,116" 
+target=_self>各类型材</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c05&pzname=涂镀板卷&bid=216,405,220,225,219,222,223" 
+target=_self>涂镀板卷</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c23&pzname=电工钢&bid=224" 
+target=_self>电工钢</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c06&pzname=带钢&bid=229" 
+target=_self>带钢</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c066&pzname=钢管&bid=401,402,403,404,405,406" 
+target=_self>钢管</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c07&pzname=不锈钢&bid=450,502,503,504,505,506,507" 
+target=_self>不锈钢</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c08&pzname=优焊线&bid=509,510,511,512,513,520,603,604,605" 
+target=_self>优焊线</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c09&pzname=结构钢&bid=515,516" 
+target=_self>结构钢</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c10&pzname=工模钢&bid=518,519" 
+target=_self>工模钢</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c11&pzname=弹簧轴承&bid=514,521" 
+target=_self>弹簧轴承</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c12&pzname=其它&bid=517" 
+target=_self>其它</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=allll&pzname=炉料" 
+target=_self><FONT color=#0000ff>炉料</FONT></A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c13&pzname=矿石&bid=801,802,803,804,805" 
+target=_self>矿石</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c14&pzname=生铁&bid=881,882,883,884,888" 
+target=_self>生铁</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c141&pzname=钢坯&bid=891,885,886,887" 
+target=_self>钢坯</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c15&pzname=废钢&bid=901,902" 
+target=_self>废钢</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c16&pzname=铁合金&bid=921,922,923,924,925,926,927,928,929,930,931" 
+target=_self>铁合金</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=allmj&pzname=煤焦" 
+target=_self><FONT color=#0000ff>煤焦</FONT></A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c18&pzname=耐材&bid=991,992,993" 
+target=_self>耐材</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c19&pzname=碳素&bid=971,972,974,975" 
+target=_self>碳素</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=c20&pzname=辅料&bid=951,952,953,954,955,956" 
+target=_self>辅料</A>&nbsp;<A 
+href="biz.php?view=res_ws_pz&variety=allys&pzname=有色" 
+target=_self><FONT color=#0000ff>有色</FONT></A></DIV>
+
+</DIV>
+
+<div style="clear:both;"></div>
+<!--  城市导航 -->
+	<DIV style="TEXT-ALIGN: left; margin-bottom:2px;" id=head_menu_level_3_havesearch >
+	<DIV style="PADDING-BOTTOM: 8px; PADDING-LEFT: 8px; PADDING-RIGHT: 0px; PADDING-TOP: 8px">
+	
+	 
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=上海&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">上海</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=杭州&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">杭州</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=南京&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">南京</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=无锡&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">无锡</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=济南&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">济南</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=广州&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">广州</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=武汉&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">武汉</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=长沙&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">长沙</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=郑州&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">郑州</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=北京&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">北京</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=天津&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">天津</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=沈阳&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">沈阳</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=哈尔滨&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">哈尔滨</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=重庆&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">重庆</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=成都&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">成都</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=西安&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">西安</a>
+	<a target="_blank" href="biz.php?view=res_ws_pz&cityname=兰州&pzname=回绝也看着他紧搂赵翔在yutianxian.amd2m4.in/">兰州</a>
+	<a target="_blank" href="biz_city.php?view=index&cityname=河南">河南</a>
+	
+	<a target="_blank" href="biz_city.php?view=area_index&area_id=1"><strong>华东市场</strong></a>
+	<a target="_blank" href="biz_city.php?view=area_index&area_id=2"><strong>中南市场</strong></a>
+	<a target="_blank" href="biz_city.php?view=area_index&area_id=3"><strong>华北市场</strong></a>
+	<a target="_blank" href="biz_city.php?view=area_index&area_id=4"><strong>东北市场</strong></a>
+	<a target="_blank" href="biz_city.php?view=area_index&area_id=5"><strong>西南市场</strong></a>
+	<a target="_blank" href="biz_city.php?view=area_index&area_id=6"><strong>西北市场</strong></a>
+
+	</DIV>
+</DIV>			
+<!--- END 城市导航 -->
+
+ 
+
+<DIV style="float:left;margin-left:10px;" >
+	<DIV style="PADDING-BOTTOM: 6px; PADDING-LEFT: 2px; PADDING-RIGHT: 0px; WORD-SPACING: 0px; PADDING-TOP: 6px">
+		<span style="color:#037214">当前位置： </span>
+		<a target="_blank" href="http://www.steelhome.cn/" >钢之家</a>
+		&gt;
+		<a href="http://biz.steelhome.cn/" >商务中心</a>
+		&gt;
+							
+							
+		<a href="wszy.html">网上钢市</a>	&gt;					
+												
+			
+			
+			
+			
+		
+		
+			
+
+				
+	</div>
+</div>
+<div style="clear:both;"></div>
+	<style type="text/css">
+.adv_right_double {
+	float: left;
+	} 
+</style>
+
+  
+ 
+
+	<div id="left_container">
+    	<div id="v4_cate_leads_title"></div>
+<div id="biz_total_show">
+     <div id="biz_total_show_info">
+       	<table width="100%"  border="0">
+		  <tr>
+			<td width="8%" align="right" height=24>&nbsp;</td>
+		    <td width="92%" align="left">&nbsp;当前资源:<span class="biz_total_show_font">192813</span>条 供求:<span class="biz_total_show_font">3851</span>条</td>
+		  </tr>
+		  <tr>
+			<td align="right" height=22>&nbsp;</td>
+		    <td align="left">&nbsp;钢材企业:<span class="biz_total_show_font">2130</span>家 资源:<span class="biz_total_show_font">43212090</span>吨</td>
+		  </tr>
+		  <tr>
+			<td align="right" height=23>&nbsp;</td>
+		    <td align="left">&nbsp;炉料企业:<span class="biz_total_show_font">104</span>家 资源:<span class="biz_total_show_font">4302445</span>吨</td>
+		  </tr>
+	   </table>
+	</div>
+</div>		
+    	    	<!-- <iframe src="http://www.steelhome.cn/biz/biz.php?view=biz_login" width="317" height="84"  align="middle" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" ></iframe>
+				 -->
+		<div id="quick_btn2"><ul><li><a href="/Member/index.php?firstpage=_v2Member_wszy1.php&firstcid=1&firstid=0" width=148 height=31 target=_blank><img src="/Business_v4/html/default/images/btn_quick_1.gif" 
+			border=0></a></li><li><a href="/Member/index.php?firstpage=_v2Member_gqks.php&firstcid=1&firstid=3" width=148 height=31 target=_blank><img src="/Business_v4/html/default/images/btn_quick_2.gif" 
+			border=0></a></li><li><a href="/Member/index.php?firstpage=_v2Member_zydz.php&firstcid=0&firstid=2" width=148 height=31 target=_blank><img src="/Business_v4/html/default/images/btn_quick_3.gif" 
+			border=0></a></li><li><a href="/Member/index.php?firstpage=_v2Member_gqdzmanage.php&firstcid=0&firstid=5" width=148 height=31 target=_blank><img src="/Business_v4/html/default/images/btn_quick_4.gif" 
+			border=0></a></li><li><a href="/Member/index.php?firstpage=_v2Member_wsld.php&firstcid=0&firstid=0" width=148 height=31 target=_blank><img src="/Business_v4/html/default/images/btn_quick_5.gif" 
+			border=0></a></li><li><a href="/Member/index.php?firstpage=_v2Member_wsly.php&firstcid=0&firstid=1" width=148 height=31 target=_blank><img src="/Business_v4/html/default/images/btn_quick_6.gif" 
+			border=0></a></li><li><a href="/Member/index.php?firstpage=/jobsteel/fabu.php&firstcid=0&firstid=1" width=148 height=31 target=_blank><img src="/Business_v4/html/default/images/btn_quick_7.gif" 
+			border=0></a></li><li><a href="/Member/index.php?firstpage=../_v2MemberCenter_company.php&firstcid=2&firstid=2" width=148 height=31 target=_blank><img src="/Business_v4/html/default/images/btn_quick_8.gif" 
+			border=0></a></li></ul></div>        <!--
+        <div id="ad_left_middle">
+        	  <img src="/stimages/biz/091119shangqing_.gif">
+        </div>
+		-->
+		<div style="clear:both;"></div>
+			
+			<div id="biz_index_gcbj_title">
+				<div align="right" style="padding-right:20px;padding-top:12px;padding-bottom:5px;"><a href="biz_gcbj.php" target="_blank">更多</a>  >></div>
+				<div id="biz_index_gcbj_content">
+										
+				</div>
+
+			</div>	
+           
+		<div id="v3_cate_leads_title"></div>
+<div id="cate_leads_content2">
+	<div>
+	  <p>　	 
+	  <a href="biz.php?view=steel_more" >华东钢厂</a>	&nbsp;  
+	  <a href="biz.php?view=steel_more#zn" >中南钢厂</a> &nbsp;
+	  <a href="biz.php?view=steel_more#db" >东北钢厂</a> &nbsp;
+	  <a href="biz.php?view=steel_more#hb" >华北钢厂</a> &nbsp;
+	  </p>
+	  &nbsp;&nbsp;&nbsp;<a href="biz.php?view=steel_more#xn" >西南钢厂</a>	 &nbsp;  
+	  <a href="biz.php?view=steel_more#xb" >西北钢厂</a>	 &nbsp; 
+	  <a href="biz.php?view=steel_more#tg" >特钢企业</a> &nbsp;
+	  <a href="biz.php?view=steel_more#hw" >海外钢厂</a> &nbsp;
+	  <!-- &nbsp;&nbsp;&nbsp;<a href="biz.php?view=steel_more" >更多>></a>-->
+			   　　    
+	</div>
+</div>
+
+
+<div id="cate_leads_title"></div>		
+
+<div id="cate_leads_content">
+<div class="cate_leads_subtitle">
+	钢材资源
+</div>
+<p>
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=长材">长 材</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=线材&ad=20">线材</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=螺纹钢&ad=14">螺纹钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=盘螺">盘螺</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=圆钢">圆钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=角钢&ad=4">角钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=槽钢&ad=5">槽钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=H型钢&ad=10">H型钢</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=工字钢&ad=15">工字钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钢板桩">钢板桩</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=球扁钢&ad=322">球扁钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=扁钢">扁钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=异型材">异型材</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=方钢">方钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=冷弯型钢">冷弯型钢</a><br>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=Z字钢">Z字钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=U型钢">U型钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=丁字钢">丁字钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钢轨&ad=19">钢轨</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铁道用材&ad=21">铁道用材</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=其它型材">其它型材</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p>
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=扁平材&ad=22">扁平材</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=普中板&ad=342">普中板</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=合金中板&ad=344">合金中板</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=造船板&ad=347">造船板</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=锅炉板&ad=346">锅炉板</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=容器板&ad=345">容器板</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=桥梁板">桥梁板</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=中厚板&ad=24">中厚板</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=翼缘板">翼缘板</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=其他中板">其他中板</a>	
+	<br>	
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=热轧板卷&ad=42">热轧普板卷</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=合金钢板卷">合金钢板卷</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=花纹板卷">花纹板卷</a>
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=船卷">船卷</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=管线钢">管线钢</a><br>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=酸洗板卷">酸洗板卷</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=中宽带&ad=51">中宽带</a>
+	<br>
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=冷轧板卷&ad=31">冷轧板卷</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=轧硬卷">轧硬卷</a>
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=热镀锌&ad=2055">热镀锌</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=电镀锌">电镀锌</a>
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=彩涂板卷&ad=1839">彩涂板卷</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=镀铬板卷">镀铬板卷</a><br>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=镀锡板卷">镀锡板卷</a>
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=镀铝锌">镀铝锌</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=其它涂镀">其它涂镀</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=电工钢&ad=46">电工钢</a>
+	<br>	
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=热轧窄带&ad=49">热轧窄带</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=冷轧窄带">冷轧窄带</a>
+
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+	<span class="varstrong"><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钢管">钢管</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=无缝管&ad=56">无缝管</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=焊管&ad=55">焊管</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=镀锌管&ad=53">镀锌管</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铸铁管">铸铁管</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=方管&ad=57">方管</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+	<span class="varstrong"><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=不锈钢">不锈钢</a></span>
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=不锈板卷">不锈板卷</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=不锈钢棒">不锈钢棒</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=不锈线材">不锈线材</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=不锈钢管">不锈钢管</a><br>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=不锈钢坯">不锈钢坯</a>
+
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+
+<p>
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=优特钢">优特钢</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=碳结钢&ad=82">碳结钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=合结钢">合结钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=齿轮钢">齿轮钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=工具钢">工具钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=模具钢">模具钢</a>
+</p>	
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=轴承钢">轴承钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=易切削钢">易切削钢</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=弹簧钢">弹簧钢</a>
+	<p class="inline_p">
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=优硬线">优硬线</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=拉丝线">拉丝线</a>
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=冷镦钢">冷镦钢</a>
+	</p><br>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=合金线材">合金线材</a>
+	<p class="inline_p">
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=PC钢棒">PC钢棒</a>
+	</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=焊线">焊线</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=其它特钢">其它特钢</a>
+	
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+
+
+	<span class="varstrong_span"><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=制品">制 品</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钢丝">钢丝</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钢绳">钢绳</a>
+
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钢绞线">钢绞线</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=型材制品">型材制品</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=不锈制品">不锈制品</a>
+	
+</div>
+				
+				
+				<div id="cate_leads_content">
+<div class="cate_leads_subtitle">
+	炉料资源
+</div>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=矿石">矿 石</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铁矿石&ad=87">铁矿石</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=锰矿石">锰矿石</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铬矿石">铬矿石</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=合金矿石">合金矿石</a>
+
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=生铁">生 铁</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=炼钢生铁">炼钢生铁</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铸造生铁">铸造生铁</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=球墨铸铁">球墨铸铁</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=热压铁块">热压铁块</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钢坯">钢 坯</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=方坯">方坯</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=板坯">板坯</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=管坯">管坯</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=废钢">废 钢</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=重废">重废</a>
+</p>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=中废">中废</a>			
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=统废">统废</a>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=合金废钢">合金废钢</a>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=废铁">废铁</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铁合金">铁合金</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=硅铁">硅铁</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=锰铁">锰铁</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=硅锰">硅锰</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铬铁">铬铁</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钼铁">钼铁</a>
+</p>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钒铁">钒铁</a>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钨铁">钨铁</a><br>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铌铁">铌铁</a>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钛铁">钛铁</a>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=镍铁">镍铁</a>
+		<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=其他合金">其他合金</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=冶金辅料">冶金辅料</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=白云石">白云石</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=石灰石">石灰石</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=添加剂">添加剂</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=润滑油">润滑油</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=炭素材料">炭素材料</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=石墨制品">石墨制品</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=炭块类">炭块类</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=炭糊类">炭糊类</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=耐火材料">耐火材料</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=耐火制品">耐火制品</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=耐火原料">耐火原料</a>
+</div>			
+
+<div id="cate_leads_content" class="cate_leads_content_b">
+<div class="cate_leads_subtitle">
+	煤焦资源 
+</div>
+<p>
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=煤炭">煤 炭</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=动力煤">动力煤</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=炼焦煤">炼焦煤</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=喷吹煤">喷吹煤</a>	
+</p>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p>
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=焦炭">焦 炭</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=冶金焦">冶金焦</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铸造焦">铸造焦</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=兰炭">兰炭</a>
+</p>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p>
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=煤化工">煤化工</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=粗苯">粗苯</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=煤焦油">煤焦油</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=硫酸铵">硫酸铵</a>	
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=甲醇">甲醇</a>
+	
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=氯化苯">氯化苯</a>
+</p>	
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=焦化苯">焦化苯</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=石油苯">石油苯</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=二甲苯">二甲苯</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=加氢苯">加氢苯</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=顺酐">顺酐</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=工业萘">工业萘</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=煤沥青">煤沥青</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=粗酚">粗酚</a>
+<!--工单号7977-->
+<!--
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=蒽油">蒽油</a>
+-->
+</div>
+
+
+<div id="cate_leads_content" class="cate_leads_content_b">
+<div class="cate_leads_subtitle">
+	有色资源
+</div>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=基本金属">基本金属</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铜">铜</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铝">铝</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铅">铅</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=锌">锌</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=锡">锡</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=镍">镍</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=贵金属">贵 金 属</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铂">铂</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钯">钯</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=黄金">黄金</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=白银">白银</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=小金属">小 金 属</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=锑">锑</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铟">铟</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=钴">钴</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=镁">镁</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=锗">锗</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=汞">汞</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=硒">硒</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=铋">铋</a>
+<p>
+	<img src="/Business_v4/html/default/images/cate_leads_bar.gif">
+</p>
+<p class="inline_p">
+	<span><a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=废旧金属">废旧金属</a></span>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=废铜">废铜</a>
+</p>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=废铝">废铝</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=废铅">废铅</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=废锡">废锡</a>
+	<a href="bizpz.php?view=smallpz&search_action=search_zy&cityname=&keyword=废锌">废锌</a>
+</div>
+
+
+
+
+
+        
+    </div>
+    <div id="right_container" >	
+	 <!--  北京铭万智达科技有限公司代码链接服务  -->
+		
+<div id="logo_v3" name="s"><img src="/Business_v4/html/default/images/v3_left.gif" width="104" height="69"></div>
+<div id="search_v3">
+	<ul>
+			<li>
+				<a href="http://www.steelhome.cn/biz/xh.html" id="search_xh" onclick="show_item('search_xh');"   >现货超市</a>
+			</li>
+			<li>
+				<a href="http://www.steelhome.cn/biz/wszy.html" id="search_zy" onclick="show_item('search_zy');"  class="current" >网上钢市</a>
+			</li>
+			<li>
+				<a href="http://www.steelhome.cn/biz/gqkx.html" id="search_gq" onclick="show_item('search_gq');"   >供求快讯</a>
+			</li>
+			<li>
+				<a href="http://www.steelhome.cn/biz/gqzb.html" id="search_gs" onclick="show_item('search_gs');"   >供求专版</a>
+			</li>
+			<li><a href="http://baike.steelhome.cn" target="_blank" id="search_bk" onclick="show_item('search_bk');" >百科</a></li>
+		</ul>
+   
+    <div class="clear_div"></div>
+    
+    <div id="search_v3_input">
+     <table width="100%"  border="0"><form action="biz_search_location.php" target="_blank" name="SearchFormG"  method="post"/>
+			  <tr>
+				<td width="61%" align="center" valign="middle">
+				<input  id="inputString" name="keyword" style="padding-top:4px;" onFocus="KeywordClear()"  onblur="KeywordReSet()"  value='请输入品名、钢厂、交货地进行搜索'  type="text" class="biz_v3_top_input" onkeyup="lookup(this.value);" AUTOCOMPLETE="OFF"/>
+				<input type="hidden" name ="keywords1" id="keywords1" value ="" />
+
+			<div class="suggestionsBox" id="suggestions" style="display: none;" align="left">
+				<img src="./js/autocomplete/upArrow.png" style="position: relative; top: -10px; left: 80px;" alt="upArrow" />
+				<div class="suggestionList" id="autoSuggestionsList">
+					
+				</div>
+			</div>				
+		
+				<input type="hidden" id="search_action" name="search_action" value="search_xh" /></td>
+				<td width="39%" align="left"><input type="image" id="search_submit" src ="/Business_v4/html/default/images/v3_search_goods_btn.gif" alt = "搜索" onClick="return KeywordCheck()"     /></td>
+			  </tr>
+			</form></table>
+			
+			
+			
+			
+<script type="text/javascript" src="./js/autocomplete/jquery-1.2.1.pack.js"></script>
+<script type="text/javascript">
+	function lookup(inputString) {
+		if(inputString.length == 0) {
+			// Hide the suggestion box.
+			$('#suggestions').hide();
+		} else {
+			$.post("./js/autocomplete/rpc.php", {queryString: ""+inputString+""}, function(data){
+				if(data.length >0) {
+					$('#suggestions').show();
+					$('#autoSuggestionsList').html(data);
+				}
+			});
+		}
+	} // lookup
+	
+	function fill(thisValue) {
+
+		$('#inputString').val(thisValue);
+		setTimeout("$('#suggestions').hide();", 200);
+	}
+
+	
+</script>
+
+<style type="text/css">
+	.suggestionsBox {
+		position: absolute;
+		left: 100px;
+		margin: 35px 0px 0px 0px;		
+		width: 150px;
+		background-color: #FFFFFF;
+		border: 1px solid #F5A13E;
+		Z-INDEX:9999;	
+
+	}
+	
+	.suggestionList {
+		margin: 0px;
+		padding: 0px;
+	}
+	
+	.suggestionList li {
+		
+		margin:0px;
+		padding:2px;
+		cursor: pointer;
+	}
+	
+	.suggestionList li:hover {
+		background-color: blue;
+	}
+</style>
+
+
+			
+			
+			
+			
+   </div>
+</div>
+
+
+<script>
+	var keywordDefault ="请输入品名、钢厂、交货地进行搜索";
+	// 给搜索框赋默认值
+	var keywords1= document.getElementById("keywords1").value;
+
+	if(keywords1 != keywordDefault){
+		document.getElementById("inputString").value = keywords1;
+	}
+
+	function KeywordCheck()
+	{
+		keyword = SearchFormG.keyword.value;
+		if(keyword==keywordDefault)
+		{
+			alert(keywordDefault+"!");
+			return false;
+		}
+	}
+
+	function KeywordClear()
+	{		
+		keyword = SearchFormG.keyword.value;
+		if(keyword==keywordDefault)
+		{
+			SearchFormG.keyword.value = "";
+		}
+	}
+
+	function KeywordReSet(thisValue)
+	{	
+		keyword = SearchFormG.keyword.value;
+		if(keyword=="")
+		{
+			SearchFormG.keyword.value = keywordDefault;
+		}
+		
+		$('#inputString').val(thisValue);
+		setTimeout("$('#suggestions').hide();", 200);
+	}
+
+	function show_item(item){
+
+		KeyworkSet(item);
+		document.getElementById("search_xh").className="";
+		document.getElementById("search_zy").className="";
+		document.getElementById("search_gq").className="";
+		document.getElementById("search_gs").className="";
+		document.getElementById("search_bk").className="";
+		
+		document.getElementById(item).className="current";
+		document.getElementById("search_action").value=item;
+		
+		document.getElementById("le_search_xh").style.display = "none";
+		document.getElementById("le_search_zy").style.display = "none";
+		document.getElementById("le_search_gq").style.display = "none";
+		document.getElementById("le_search_gs").style.display = "none";
+		var item_ss="le_"+item;
+		document.getElementById(item_ss).style.display = "";	
+				
+		if(item=="search_bk"){
+			SearchFormG.action="http://baike.steelhome.cn/search-default.html";
+			SearchFormG.keyword.name="searchtext";
+		}else{
+			SearchFormG.action="http://www.steelhome.cn/biz/biz_search_location.php";
+			SearchFormG.keyword.name="keyword";
+		}
+	}
+
+	function KeyworkSet(item){		
+		keyword_user = SearchFormG.keyword.value;
+		if(item=="search_zy" || item=="search_xh")
+		{
+			if( keyword_user!="" &&  keyword_user!="请输入品名或发布单位名称搜索" && keyword_user!="请输入发布单位名称搜索" && keyword_user!="请输入企业或市场名称等关键字搜索" ){
+			}else{
+				keywordDefault = '请输入品名、钢厂、交货地进行搜索';
+				SearchFormG.keyword.value = keywordDefault;
+			}
+			
+		}
+		if(item=="search_gq")
+		{
+			if(keyword_user!="" && keyword_user!="请输入品名、钢厂、交货地进行搜索" && keyword_user!="请输入品名、钢厂、交货地进行搜索"  && keyword_user!="请输入发布单位名称搜索" && keyword_user!="请输入企业或市场名称等关键字搜索" ){
+			}else{
+				keywordDefault = '请输入品名或发布单位名称搜索';
+				SearchFormG.keyword.value = keywordDefault;
+			}
+			
+		}
+		if(item=="search_gs")
+		{
+			if(keyword_user!="" && keyword_user!="请输入品名、钢厂、交货地进行搜索" && keyword_user!="请输入品名、钢厂、交货地进行搜索" && keyword_user!="请输入品名或发布单位名称搜索" && keyword_user!="请输入企业或市场名称等关键字搜索" ){
+			}else{
+				keywordDefault = '请输入发布单位名称搜索';
+				SearchFormG.keyword.value = keywordDefault;
+			}			
+		}
+		if(item=="search_bk")
+		{
+			if(keyword_user!="" && keyword_user!="请输入品名、钢厂、交货地进行搜索" && keyword_user!="请输入品名、钢厂、交货地进行搜索" && keyword_user!="请输入品名或发布单位名称搜索" && keyword_user!="请输入发布单位名称搜索" ){
+				
+			}else{
+				keywordDefault = '请输入企业或市场名称等关键字搜索';
+				SearchFormG.keyword.value = keywordDefault;
+			}			
+		}
+		
+	}
+	
+	if(""!=""){
+			document.getElementById("search_action").value="";
+			//document.getElementById("search_submit").src="/Business_v4/html/default/images/"+".gif";
+
+			KeyworkSet("");
+	}
+		
+		
+	if(""!="biz_ws_pz"){
+		if("biz_ws_pz"=="biz_index" || "biz_ws_pz"=="biz_xh_index" || "biz_ws_pz"=="biz_index_pz" || "biz_ws_pz"=="biz_xh_pz" ){
+			document.getElementById("search_action").value="search_xh";
+			//document.getElementById("search_submit").src="/Business_v4/html/default/images/"+"search_xh.gif";
+
+			KeyworkSet("search_xh");
+		}
+		if("biz_ws_pz"=="biz_tj_index" || "biz_ws_pz"=="biz_ws_index" || "biz_ws_pz"=="biz_ws_pz" || "biz_ws_pz"=="biz_ws_pz" || "biz_ws_pz"=="smallpz" ){
+			document.getElementById("search_action").value="search_zy";
+			//document.getElementById("search_submit").src="/Business_v4/html/default/images/"+"search_zy.gif";
+			KeyworkSet("search_zy");
+		}
+		if("biz_ws_pz"=="biz_gq_index" ){
+			document.getElementById("search_action").value="search_gq";
+			//document.getElementById("search_submit").src="/Business_v4/html/default/images/"+"search_gq.gif";
+			KeyworkSet("search_gq");
+		}
+		if("biz_ws_pz"=="biz_zb_index" || "biz_ws_pz"=="biz_gqzb_pz"){
+			document.getElementById("search_action").value="search_gs";
+			//document.getElementById("search_submit").src="/Business_v4/html/default/images/"+"search_gs.gif";
+			KeyworkSet("search_gs");
+		}
+	}
+</script>		<div id="national_biz_list">
+				<div  class="popupcontent"  id="popupcontent_hd" onmouseover="showPopup('popupcontent_hd',260,80,172);" onMouseOut="hidePopup('popupcontent_hd');" >
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=上海">上海</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=杭州">杭州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=南京">南京</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=无锡">无锡</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=济南">济南</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=合肥">合肥</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=福州">福州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=南昌">南昌</a>
+		</p>
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=苏州">苏州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=南通">南通</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=扬州">扬州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=徐州">徐州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=镇江">镇江</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=常州">常州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=宁波">宁波</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=温州">温州</a>
+		</p>
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=台州">台州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=金华">金华</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=厦门">厦门</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=泉州">泉州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=青岛">青岛</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=烟台">烟台</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=淄博">淄博</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=莱芜">莱芜</a>
+		</p>
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=潍坊">潍坊</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=博兴">博兴</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=嘉兴">嘉兴</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=聊城">聊城</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=泰安">泰安</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=临沂">临沂</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=江阴">江阴</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=济宁">济宁</a>
+		</p>
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=芜湖">芜湖</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=铜陵">铜陵</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=新余">新余</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=萍乡">萍乡</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=九江">九江</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=马鞍山">马鞍山</a>
+		</p>		 
+	</div>
+	
+	<div  class="popupcontent"  id="popupcontent_zn" onmouseover="showPopup('popupcontent_zn',240,55,256);" onMouseOut="hidePopup('popupcontent_zn');" >			
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=广州">广州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=南宁">南宁</a>			
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=长沙">长沙</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=武汉">武汉</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=郑州">郑州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=安阳">安阳</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=洛阳">洛阳</a>
+		</p>
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=新乡">新乡</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=舞钢">舞钢</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=株洲">株洲</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=娄底">娄底</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=柳州">柳州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=乐从">乐从</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=佛山">佛山</a>
+		</p>
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=深圳">深圳</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=台州">台州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=汕头">汕头</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=湛江">湛江</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=海口">海口</a>				
+		</p>			
+	</div>
+	
+	<div  class="popupcontent"  id="popupcontent_hb" onmouseover="showPopup('popupcontent_hb',240,55,340);" onMouseOut="hidePopup('popupcontent_hb');" >			
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=北京">北京</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=天津">天津</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=太原">太原</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=大同">大同</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=唐山">唐山</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=邯郸">邯郸</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=廊坊">廊坊</a>
+		</p>
+		<p>			
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=邢台">邢台</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=胜芳">胜芳</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=包头">包头</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=临汾">临汾</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=大邱庄">大邱庄</a>			
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=石家庄">石家庄</a>
+		</p>
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=秦皇岛">秦皇岛</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=呼和浩特">呼和浩特</a>							
+		</p>			
+	</div>
+	
+	<div  class="popupcontent"  id="popupcontent_db" onmouseover="showPopup('popupcontent_db',240,25,424);" onMouseOut="hidePopup('popupcontent_db');" >			
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=沈阳">沈阳</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=长春">长春</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=本溪">本溪</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=大连">大连</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=哈尔滨">哈尔滨</a>				
+		</p>			
+	</div>
+	
+	<div  class="popupcontent"  id="popupcontent_xn" onmouseover="showPopup('popupcontent_xn',240,25,430);" onMouseOut="hidePopup('popupcontent_xn');" >			
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=重庆">重庆</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=成都">成都</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=昆明">昆明</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=贵阳">贵阳</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=绵阳">绵阳</a>				
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=攀枝花">攀枝花</a>							
+		</p>			
+	</div>
+	
+	<div  class="popupcontent"  id="popupcontent_xb" onmouseover="showPopup('popupcontent_xb',240,40,430);" onMouseOut="hidePopup('popupcontent_xb');" >			
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=西安">西安</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=宝鸡">宝鸡</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=兰州">兰州</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=银川">银川</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=西宁">西宁</a>				
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=天水">天水</a>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=嘉峪关">嘉峪关</a>							
+		</p>
+		<p>
+			<a target="_blank" href="biz.php?view=res_ws_pz&pzname=&cityname=乌鲁木齐">乌鲁木齐</a>	
+		</p>			
+	</div>
+<p class="national_biz">各地网上钢市查询</p>
+<span>
+	<input type="button" class="national_biz_btn"	onmouseover="showPopup('popupcontent_hd',260,80,172);"  onMouseOut="hidePopup('popupcontent_hd');"   value="华东市场">
+	<input type="button" class="national_biz_btn"   onmouseover="showPopup('popupcontent_zn',240,55,256);"  onMouseOut="hidePopup('popupcontent_zn');"   value="中南市场">
+	<input type="button" class="national_biz_btn"   onmouseover="showPopup('popupcontent_hb',240,55,340);"  onMouseOut="hidePopup('popupcontent_hb');"   value="华北市场">
+	<input type="button" class="national_biz_btn"   onmouseover="showPopup('popupcontent_db',240,25,424);"  onMouseOut="hidePopup('popupcontent_db');"   value="东北市场">
+	<input type="button" class="national_biz_btn"   onmouseover="showPopup('popupcontent_xn',240,25,430);"  onMouseOut="hidePopup('popupcontent_xn');"   value="西南市场">
+	<input type="button" class="national_biz_btn"   onmouseover="showPopup('popupcontent_xb',240,40,430);"  onMouseOut="hidePopup('popupcontent_xn');"   value="西北市场">
+</span>
+
+
+<script>
+	var baseText = null;
+	function showPopup(popupcontent,w,h,leftpx){
+		if(!+[1,]){
+		var popUp = document.getElementById(popupcontent);				
+		
+		document.getElementById("popupcontent_hd").style.visibility = "hidden";
+		document.getElementById("popupcontent_zn").style.visibility = "hidden";
+		document.getElementById("popupcontent_hb").style.visibility = "hidden";
+		document.getElementById("popupcontent_db").style.visibility = "hidden";
+		document.getElementById("popupcontent_xn").style.visibility = "hidden";
+		document.getElementById("popupcontent_xb").style.visibility = "hidden";
+		
+		//popUp.style.top = "224px";
+		popUp.style.top = "120px";
+		popUp.style.left = leftpx+"px";
+		popUp.style.width = w + "px";
+		popUp.style.height = h + "px";
+		
+		popUp.style.visibility = "visible";
+		}
+	}
+	function hidePopup(popupcontent){
+	if(!+[1,]){
+		var popUp = document.getElementById(popupcontent);
+		popUp.style.visibility = "hidden";
+		}
+	}
+</script>   
+		</div>	
+		
+		<div>
+			<script>
+function myGetCookie( name ){
+    if( GetCookie( name ) == null ){
+	   return '';
+	}else{
+	   return GetCookie( name );
+	}      
+}
+
+function checkAdvanceSearch(){
+    if( document.getElementById('advancesearch_res_pm').value == '' && document.getElementById('advancesearch_res_gc').value == '' && document.getElementById('advancesearch_res_companyname').value == '' && document.getElementById('advancesearch_res_city').value == '' 
+	&& document.getElementById( 'advancesearch_res_cz' ).value == '' && document.getElementById( 'advancesearch_res_companyname' ).value == '' && document.getElementById( 'advancesearch_res_jhck' ).value == ''
+	){
+	    alert( '品名,钢厂,发布单位,城市,材质, 发布单位, 交货地 至少要填写一项' );
+		return false;
+	}
+	SetCookie( 'advancesearch_pm', document.getElementById('advancesearch_res_pm').value, 'M', 1 );
+	SetCookie( 'advancesearch_cz', document.getElementById('advancesearch_res_cz').value, 'M', 1 );
+	SetCookie( 'advancesearch_city', document.getElementById('advancesearch_res_city').value, 'M', 1 );
+	SetCookie( 'advancesearch_gc' , document.getElementById('advancesearch_res_gc').value, 'M', 1 );
+	SetCookie( 'advancesearch_jhck' , document.getElementById('advancesearch_res_jhck').value, 'M', 1 );
+    SetCookie( 'advancesearch_companyname', document.getElementById('advancesearch_res_companyname').value, 'M', 1 );
+/*
+    if( document.getElementById( "advancesearch_res_type" ).checked == true ){	
+	  SetCookie( 'advancesearch_type', 1, 'M', 1 );
+	}else{
+	  SetCookie( 'advancesearch_type', 2, 'M', 1 );
+	}
+*/	
+	SetCookie( 'advancesearch_order', document.getElementById('advancesearch_res_order').value, 'M', 1 );
+	SetCookie( 'advancesearch_gga1', document.getElementById('advancesearch_res_gga_1').value, 'M', 1 );
+	SetCookie( 'advancesearch_gga2', document.getElementById('advancesearch_res_gga_2').value, 'M', 1 );
+	SetCookie( 'advancesearch_ggb1', document.getElementById('advancesearch_res_ggb_1').value, 'M', 1 );
+	SetCookie( 'advancesearch_ggb2', document.getElementById('advancesearch_res_ggb_2').value, 'M', 1 );
+/*	var tmp = [];
+		    tmp[0] = [];
+			tmp[1] = [];
+			tmp[2] = [];
+			tmp[3] = [];
+			tmp[4] = [];
+			tmp[5] = [];
+			tmp[6] = [];
+    for( var i = 1; i <= 4; i++ ){		  
+			tmp[0][i] = myGetCookie( 'advancesearch_' +  i );
+            tmp[1][i] = myGetCookie( 'advancesearch_pm_' + i );
+			tmp[2][i] = myGetCookie( 'advancesearch_cz_' + i );
+			tmp[3][i] = myGetCookie( 'advancesearch_city_' + i );
+			tmp[4][i] = myGetCookie( 'advancesearch_gc_' + i );
+			tmp[5][i] = myGetCookie( 'advancesearch_jhck_' + i );
+			tmp[6][i] = myGetCookie( 'advancesearch_companyname_' + i );
+	}
+			SetCookie( 'advancesearch_' + 1, document.getElementById('advancesearch_res_pm').value, 'y', 1 );
+			SetCookie( 'advancesearch_pm_' + 1, document.getElementById('advancesearch_res_pm').value, 'y', 1 );
+			SetCookie( 'advancesearch_cz_' + 1, document.getElementById('advancesearch_res_cz').value, 'y', 1 );
+			SetCookie( 'advancesearch_city_' + 1, document.getElementById('advancesearch_res_city').value, 'y', 1 );
+			SetCookie( 'advancesearch_gc' + 1, document.getElementById('advancesearch_res_gc').value, 'y', 1 );
+			SetCookie( 'advancesearch_jhck_' + 1, document.getElementById('advancesearch_res_jhck').value, 'y', 1 );
+            SetCookie( 'advancesearch_companyname_' + 1, document.getElementById('advancesearch_res_companyname').value, 'y', 1 );
+	for( var i = 2; i <= 5; i++  ){
+	          var j = i - 1;
+			  SetCookie( 'advancesearch_' + i, tmp[0][j], 'y', 1 );
+			  SetCookie( 'advancesearch_pm_' + i, tmp[1][j], 'y', 1 );
+			  SetCookie( 'advancesearch_cz_' + i, tmp[2][j], 'y', 1 );
+			  SetCookie( 'advancesearch_city_' + i, tmp[3][j], 'y', 1 );
+			  SetCookie( 'advancesearch_gc' + i, tmp[4][j], 'y', 1 );
+			  SetCookie( 'advancesearch_jhck_' + i, tmp[5][j], 'y', 1 );
+			  SetCookie( 'advancesearch_companyname_' + i, tmp[6][j], 'y', 1 );
+	} */
+	
+}
+
+function initAdvanceSearchValue(){
+    document.getElementById('advancesearch_res_pm').value = myGetCookie( 'advancesearch_pm' );
+    document.getElementById('advancesearch_res_cz').value = myGetCookie( 'advancesearch_cz' );
+    document.getElementById('advancesearch_res_city').value = myGetCookie( 'advancesearch_city' );
+    document.getElementById('advancesearch_res_gc').value = myGetCookie( 'advancesearch_gc' );
+    document.getElementById('advancesearch_res_jhck').value = myGetCookie( 'advancesearch_jhck' );
+    document.getElementById('advancesearch_res_companyname').value = myGetCookie( 'advancesearch_companyname' );
+ /*   if( myGetCookie( 'advancesearch_type' ) == 2 ){	
+        document.getElementById( 'advancesearch_res_type2' ).checked = true;
+	}
+*/	
+	if( myGetCookie( 'advancesearch_order' ) != '' ){
+        document.getElementById('advancesearch_res_order').value = myGetCookie( 'advancesearch_order' );
+	}
+	document.getElementById('advancesearch_res_gga_1').value = myGetCookie( 'advancesearch_gga1' );
+	document.getElementById('advancesearch_res_gga_2').value = myGetCookie( 'advancesearch_gga2' );
+	document.getElementById('advancesearch_res_ggb_1').value = myGetCookie( 'advancesearch_ggb1' );
+	document.getElementById('advancesearch_res_ggb_2').value = myGetCookie( 'advancesearch_ggb2' );
+} 
+
+/*function initadvancemysearch(){
+	for( var i = 1; i <= 5; i++ ){
+	    if( myGetCookie( 'advancesearch_' + i ) != '' &&  GetCookie( 'advancesearch_' + i ) != null ){
+		    var opt = document.createElement( "option" );
+			opt.value = i;
+			opt.innerHTML = myGetCookie( 'advancesearch_' + i );
+            document.getElementById( 'myadvancesearch' ).appendChild( opt );
+		    //str += "<option value='" + i + "'>" + GetCookie( 'advancesearch_' + i ) + "</option>";
+		}
+	}
+}
+
+
+function advancesearchassign( obj ){
+    var i = obj.value;
+    document.getElementById('advancesearch_res_pm').value = GetCookie( 'advancesearch_pm_' + i ) == null ? '' : GetCookie( 'advancesearch_pm_' + i );
+    document.getElementById('advancesearch_res_cz').value = GetCookie( 'advancesearch_cz_' + i ) == null ? '' :GetCookie( 'advancesearch_cz_' + i );
+    document.getElementById('advancesearch_res_city').value = GetCookie( 'advancesearch_city_' + i ) == null ? '' : GetCookie( 'advancesearch_city_' + i );
+    document.getElementById('advancesearch_res_gc').value = GetCookie( 'advancesearch_gc_' + i ) == null ? '' : GetCookie( 'advancesearch_gc_' + i );
+    document.getElementById('advancesearch_res_jhck').value = GetCookie( 'advancesearch_jhck_' + i ) == null ? '' : GetCookie( 'advancesearch_jhck_' + i );
+    document.getElementById('advancesearch_res_companyname').value = GetCookie( 'advancesearch_companyname_' + i ) == null ? '' : GetCookie( 'advancesearch_companyname_' + i );
+} */
+
+</script>
+<script src="./js/suggest_zy.js" ></script>
+<div style="clear:both;"></div>
+<div id="middle_search" style="width:673px;height:80px;margin:5px 2px 0 0;" onclick='hiddenAllsearchDiv();' >
+<span style="margin:5px 2px 0 5px;">详细搜索</span>
+ <form action='./biz_search.php?view=search_zy' method="post" onsubmit='return checkAdvanceSearch();' >
+    	  <div id="search_right" style="width:635px;height:74px;padding-bottom:6px;">
+		 
+		    <input type="hidden" name='search_action' value='search_zy' />
+			   <div style='width:634px; padding-top: 5px; padding-left:10px;' >
+			   <div style="display: inline;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;品名：
+    	          <input name='res_pm' type="text" class="search_condit_3" id="advancesearch_res_pm" onblur="advance_search(this, event );" size="10" autocomplete="off"  value ="" />
+               </div>
+			   <div style="display: inline;">
+			   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;材质：
+    	          <input name='res_cz' type="text" class="search_condit_3"  id='advancesearch_res_cz' onfocus='showczs(event);' onclick='event.cancelBubble=true;' size="12" />
+				</div>
+				<div id='advancesearch_gg' style="display: inline;">
+				&nbsp;&nbsp;厚： <input name='res_gga_1' type="text" class="search_condit_4" size="10" id="advancesearch_res_gga_1" />-<input name="res_gga_2" type="text" class="search_condit_4" size="10" id="advancesearch_res_gga_2" />
+    	        宽：
+    	          <input name='res_ggb_1' type="text" class="search_condit_4" size="10" id="advancesearch_res_ggb_1" />-<input name='res_ggb_2' type="text" class="search_condit_4" size="10" id="advancesearch_res_ggb_2" />
+			     </div>
+				</div>
+				<div style='width:634px; padding-top: 5px; padding-left:10px;'>
+				产地/钢厂：
+    	          <input name="res_cd" type="text" class="search_condit_3" id="advancesearch_res_gc" onfocus='showgcs(event);' onclick='event.cancelBubble=true;' size="12" />
+				  地区/城市：
+    	          <input name="res_jhdd" type="text" class="search_condit_3" id='advancesearch_res_city' onfocus='showcitys(event);' onclick='event.cancelBubble=true;' size="12" />
+				  &nbsp;&nbsp;交货仓库：
+    	          <input name="res_jhck" type="text" class="search_condit_3" id='advancesearch_res_jhck' size="12" />
+                   &nbsp;&nbsp;价格：
+    	          <input name='res_jg_1' type="text" class="search_condit_5" size="10" />-<input name='res_jg_2' type="text" class="search_condit_5" size="10" />
+	        </div>
+			 <div style='width:634px; padding-top: 5px; padding-left:10px;'>
+    	      发布单位 ： <input name="res_companyname" type="text" class="search_condit_3" id="advancesearch_res_companyname" size="12" />
+    	      排序：<select name='searchorder' id="advancesearch_res_order" >
+			    <option value='0' selected>发布时间</option>
+				<option value='1'>价格从高到低</option>
+				<option value='2'>价格从低到高</option>
+				</select> 
+				
+ 	<!--		<input type="radio" name='res_type' value='1' id='advancesearch_res_type' >供应 
+				<input type="radio" name='res_type' value='2' id='advancesearch_res_type2' >采购
+				<input type="submit" class="btn_search" value='' />
+   	            <input type="reset" class="btn_clear" value='' /> -->
+			
+			
+<input type="hidden" name='res_type' value='' id='res_type' >
+<input type="submit"  class="btn_searchgy" value='' onclick="setvalue(1)" />
+<input type="submit"  class="btn_searchcg" value='' onclick="setvalue(2)" />
+<script>
+	function setvalue(t){
+		if(t == 1){
+			document.getElementById('res_type').value = 1;
+		}else if(t == 2){
+			document.getElementById('res_type').value = 2;
+		}
+
+	}
+</script>
+				</div>
+				<div style='width:634px; padding-top: 5px; padding-left:10px;' align='center'>
+    	        
+				<!--<input type="button" class="btn_save_search"/>-->
+    	          
+				</div>
+		 
+  	    </div> 
+		</form>
+  	  </div>
+	  <script>
+	  initAdvanceSearchValue();
+	  my_on_init();
+	  </script>		</div>
+				
+			
+  				<!--页面中部广告
+								<!--结束-->
+			
+				
+				<div class="clear_div"></div>
+
+
+		<input type="hidden" id="qiatan_type" value="res" />
+    <div id="right_col_title" style="width:673px;over-flow:hidden;">
+          <div id="right_bot_col_title" style="width:673px;over-flow:hidden;background:url(/Business_v4/html/default/images/index_olsource_detail.gif) no-repeat;">
+          </div>
+      </div>
+     <div style="width:673px;over-flow:hidden;border:1px solid #ccc;margin:0 0 0 1px;">         
+        <table align=center border="0" cellpadding="0" cellspacing="0" width="100%" style="border:0px solid #ccc;" id='qiatan_table'>
+    <tr class="comm_tr_1" style="height:20px;font-weight:bold;">
+      <td align="center">选择</td>
+	  <td align="center">发布单位</td>
+	  <td></td>
+      <td align="center">品名</td>
+      <td align="center">材质</td>
+      <td align="center">规格</td>
+      <td align="center">价格</td>
+      <td align="center">数量</td>
+      <td align="center">生产厂家</td>
+      <td align="center">交货地点</td>     
+      <td align="center">洽谈</td>
+      <td align="center">留言</td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126103707.style.visibility='visible';" onMouseOut="show126103707.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126103707"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=164453" >天津泰立源</a>
+	  <div id="show126103707" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　天津市泰立源钢材销售有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：086-022-26612820<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126103707" >圆钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126103707" >Q235</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126103707" >8-400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126103707" >3800</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126103707" >100</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126103707" >邯钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126103707" >天津</a></td>     
+      <td align="center"><input type="hidden" value="126103707" /><div id="img_164453"><a href="javascript:checkHasAndChatTo('tjminghao')"><img class="img_164453" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126103707','','天津泰立源');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126179112.style.visibility='visible';" onMouseOut="show126179112.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126179112"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=177513" >建华</a>
+	  <div id="show126179112" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　重庆建华实业有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-023-65208018<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126179112" >元钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126179112" >Q235</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126179112" >10-50</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126179112" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126179112" >50</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126179112" >重,达,威</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126179112" >重庆</a></td>     
+      <td align="center"><input type="hidden" value="126179112" /><div id="img_177513"><a href="javascript:checkHasAndChatTo('cqjhwz')"><img class="img_177513" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126179112','','建华');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126126639.style.visibility='visible';" onMouseOut="show126126639.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126126639"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=5232" >中环钢材</a>
+	  <div id="show126126639" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　常州市武进中环钢材有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0519-86522100<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126126639" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126126639" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126126639" >Φ16</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126126639" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126126639" >200</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126126639" >西城,中天</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126126639" >常州</a></td>     
+      <td align="center"><input type="hidden" value="126126639" /><div id="img_5232"><a href="javascript:checkHasAndChatTo('lwg100')"><img class="img_5232" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126126639','','中环钢材');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126183613.style.visibility='visible';" onMouseOut="show126183613.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126183613"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=8598" >吉建钢铁</a>
+	  <div id="show126183613" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　青岛吉建钢材销售有限责任公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-0532-85023000<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126183613" >线材 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183613" >HPB300</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183613" >Φ8mm</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183613" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183613" >300</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183613" >永锋</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183613" >青岛,烟台</a></td>     
+      <td align="center"><input type="hidden" value="126183613" /><div id="img_8598"><a href="javascript:checkHasAndChatTo('jijian')"><img class="img_8598" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126183613','','吉建钢铁');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126127219.style.visibility='visible';" onMouseOut="show126127219.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126127219"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=108639" >弘玺钢材</a>
+	  <div id="show126127219" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　临沂市弘玺钢材有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0539-3110050<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126127219" >H型钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127219" >Q235</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127219" >248*124</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127219" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127219" >624</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127219" >莱钢,日照</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127219" >临沂</a></td>     
+      <td align="center"><input type="hidden" value="126127219" /><div id="img_108639"><a href="javascript:checkHasAndChatTo('hongxi')"><img class="img_108639" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126127219','','弘玺钢材');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126127836.style.visibility='visible';" onMouseOut="show126127836.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126127836"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=167668" >鸿晨金属</a>
+	  <div id="show126127836" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　马鞍山市鸿晨金属材料贸易有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0555-2771217<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126127836" >H型钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127836" >Q235B</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127836" >400*200*8*13</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127836" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127836" >500</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127836" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126127836" >马鞍山</a></td>     
+      <td align="center"><input type="hidden" value="126127836" /><div id="img_167668"><a href="javascript:checkHasAndChatTo('hongchen')"><img class="img_167668" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126127836','','鸿晨金属');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123130159.style.visibility='visible';" onMouseOut="show123130159.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123130159"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=143732" >马鞍山鑫盛</a>
+	  <div id="show123130159" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　马鞍山市鑫盛冶金材料有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-0555-2471966<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123130159" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130159" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130159" >Φ28-32mm</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130159" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130159" >300</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130159" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130159" >马鞍山</a></td>     
+      <td align="center"><input type="hidden" value="123130159" /><div id="img_143732"><a href="javascript:checkHasAndChatTo('xinsheng888')"><img class="img_143732" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123130159','','马鞍山鑫盛');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123130368.style.visibility='visible';" onMouseOut="show123130368.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123130368"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=27601" >铜陵建材</a>
+	  <div id="show123130368" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　铜陵市建筑材料有限责任公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-0562-2836581<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123130368" >高线 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130368" >HPB300</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130368" >6.5-10</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130368" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130368" >1000</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130368" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130368" >合肥,铜陵</a></td>     
+      <td align="center"><input type="hidden" value="123130368" /><div id="img_27601"><a href="javascript:checkHasAndChatTo('tljc')"><img class="img_27601" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123130368','','铜陵建材');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123129072.style.visibility='visible';" onMouseOut="show123129072.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123129072"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=98263" >芜马金属</a>
+	  <div id="show123129072" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　马鞍山市芜马金属材料有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0086-553-5316085<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123129072" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129072" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129072" >Φ25</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129072" >优惠价</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129072" >300</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129072" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129072" >马鞍山,当</a></td>     
+      <td align="center"><input type="hidden" value="123129072" /><div id="img_98263"><a href="javascript:checkHasAndChatTo('maswmjs')"><img class="img_98263" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123129072','','芜马金属');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123130165.style.visibility='visible';" onMouseOut="show123130165.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123130165"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=10809" >南通金旺</a>
+	  <div id="show123130165" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　南通金旺金属材料有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0513-84135666<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123130165" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130165" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130165" >Ф10mm</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130165" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130165" >200</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130165" >沙钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130165" >南通</a></td>     
+      <td align="center"><input type="hidden" value="123130165" /><div id="img_10809"><a href="javascript:checkHasAndChatTo('ntjy0513')"><img class="img_10809" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123130165','','南通金旺');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126183494.style.visibility='visible';" onMouseOut="show126183494.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126183494"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=1753" >开明实业</a>
+	  <div id="show126183494" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　马鞍山开明实业发展有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-0555-2319913<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126183494" >H型钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183494" >Q235B</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183494" >350*175*7*11</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183494" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183494" >100</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183494" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183494" >马鞍山</a></td>     
+      <td align="center"><input type="hidden" value="126183494" /><div id="img_1753"><a href="javascript:checkHasAndChatTo('kaiming')"><img class="img_1753" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126183494','','开明实业');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126175392.style.visibility='visible';" onMouseOut="show126175392.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126175392"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=50" >三和仓储</a>
+	  <div id="show126175392" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　马鞍山市三和仓储配送有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-555-2101558<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"> <a target="_blank"  href="http://www.steelhome.cn/100_integrity/2012"><img  border="0" src="/Business_v4/html/default/images/bjcxlogo.gif"> </img></a></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126175392" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126175392" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126175392" >Φ16-25mm</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126175392" >2990</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126175392" >500</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126175392" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126175392" >马鞍山</a></td>     
+      <td align="center"><input type="hidden" value="126175392" /><div id="img_50"><a href="javascript:checkHasAndChatTo('massh')"><img class="img_50" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126175392','','三和仓储');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123112076.style.visibility='visible';" onMouseOut="show123112076.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123112076"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=1828" >莱钢无锡</a>
+	  <div id="show123112076" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　莱钢无锡经贸有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0510-83077717<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"> <a target="_blank"  href="http://www.steelhome.cn/100_integrity/2012"><img  border="0" src="/Business_v4/html/default/images/bjcxlogo.gif"> </img></a></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123112076" >H型钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123112076" >Q235B</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123112076" >400*200</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123112076" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123112076" >5000</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123112076" >莱钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123112076" >无锡</a></td>     
+      <td align="center"><input type="hidden" value="123112076" /><div id="img_1828"><a href="javascript:checkHasAndChatTo('lgwx0510')"><img class="img_1828" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123112076','','莱钢无锡');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123126544.style.visibility='visible';" onMouseOut="show123126544.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123126544"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=12267" >上海宝夏</a>
+	  <div id="show123126544" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　上海宝夏物贸发展有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-21-55387998<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123126544" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126544" >HRB400E</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126544" >Ф18*9</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126544" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126544" >100</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126544" >雨花</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126544" >上海</a></td>     
+      <td align="center"><input type="hidden" value="123126544" /><div id="img_12267"><a href="javascript:checkHasAndChatTo('remix5188')"><img class="img_12267" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123126544','','上海宝夏');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126183486.style.visibility='visible';" onMouseOut="show126183486.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126183486"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=495" >皖东贸易</a>
+	  <div id="show126183486" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　安徽省皖东贸易有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0551-65683936<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"> <a target="_blank"  href="http://www.steelhome.cn/100_integrity/2012"><img  border="0" src="/Business_v4/html/default/images/bjcxlogo.gif"> </img></a></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126183486" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183486" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183486" >Φ16-25mm</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183486" >2790</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183486" >1000</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183486" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183486" >合肥</a></td>     
+      <td align="center"><input type="hidden" value="126183486" /><div id="img_495"><a href="javascript:checkHasAndChatTo('sophia52520')"><img class="img_495" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126183486','','皖东贸易');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123128786.style.visibility='visible';" onMouseOut="show123128786.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123128786"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=181285" >济南茂钢钢</a>
+	  <div id="show123128786" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　济南茂钢钢材贸易有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：086-0531-88932811<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123128786" >H型钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123128786" >Q235B</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123128786" >400*200</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123128786" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123128786" >200</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123128786" >莱钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123128786" >莱芜</a></td>     
+      <td align="center"><input type="hidden" value="123128786" /><div id="img_181285"><a href="javascript:checkHasAndChatTo('jnmggt')"><img class="img_181285" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123128786','','济南茂钢钢材');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123126520.style.visibility='visible';" onMouseOut="show123126520.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123126520"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=98660" >上海马沪</a>
+	  <div id="show123126520" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　马鞍山市兴海物资有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0514-87969660<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123126520" >线材 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126520" >HPB300</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126520" >Φ6.5-8mm</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126520" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126520" >160</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126520" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123126520" >马鞍山</a></td>     
+      <td align="center"><input type="hidden" value="123126520" /><div id="img_98660"><a href="javascript:checkHasAndChatTo('1333555')"><img class="img_98660" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123126520','','上海马沪');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123129098.style.visibility='visible';" onMouseOut="show123129098.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123129098"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=83466" >淮矿物流</a>
+	  <div id="show123129098" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　淮矿现代物流有限责任公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0554-7643020<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123129098" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129098" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129098" >Φ16-25mm</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129098" >优价</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129098" >60</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129098" >洛钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123129098" >合肥</a></td>     
+      <td align="center"><input type="hidden" value="123129098" /><div id="img_83466"><a href="javascript:checkHasAndChatTo('hk7643020')"><img class="img_83466" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123129098','','淮矿物流');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show124487322.style.visibility='visible';" onMouseOut="show124487322.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="124487322"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=211325" >马钢无锡</a>
+	  <div id="show124487322" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　马鞍山钢铁无锡销售有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-0510-82361862<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=124487322" >槽钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=124487322" >Q136B</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=124487322" >18a*C*9000</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=124487322" >2920</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=124487322" >74</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=124487322" >马钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=124487322" >无锡</a></td>     
+      <td align="center"><input type="hidden" value="124487322" /><div id="img_211325"><a href="javascript:checkHasAndChatTo('mgwxxs')"><img class="img_211325" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('124487322','','马钢无锡');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show126183462.style.visibility='visible';" onMouseOut="show126183462.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="126183462"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=33946" >南通沙钢</a>
+	  <div id="show126183462" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　南通沙钢经贸有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-0513-86220190<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=126183462" >盘螺 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183462" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183462" >Φ8-Φ10</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183462" >2860</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183462" >1000</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183462" >沙钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=126183462" >南通</a></td>     
+      <td align="center"><input type="hidden" value="126183462" /><div id="img_33946"><a href="javascript:checkHasAndChatTo('ntsgjm')"><img class="img_33946" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('126183462','','南通沙钢');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show125446939.style.visibility='visible';" onMouseOut="show125446939.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="125446939"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=157146" >上海有钢</a>
+	  <div id="show125446939" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　上海有钢实业有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：086-021-55348865<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=125446939" >钢轨 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=125446939" >Q235B</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=125446939" >15kg/18kg/22kg</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=125446939" >3800</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=125446939" >100</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=125446939" >永洋,攀钢</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=125446939" >上海</a></td>     
+      <td align="center"><input type="hidden" value="125446939" /><div id="img_157146"><a href="javascript:checkHasAndChatTo('hgw8899')"><img class="img_157146" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('125446939','','上海有钢');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123130234.style.visibility='visible';" onMouseOut="show123130234.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123130234"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=9906" >安徽中杭</a>
+	  <div id="show123130234" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　安徽中杭股份有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：0555-2822178-3500666<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123130234" >角钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130234" >Q235</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130234" >40*3</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130234" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130234" >1000</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130234" >中杭股份</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130234" >马鞍山</a></td>     
+      <td align="center"><input type="hidden" value="123130234" /><div id="img_9906"><a href="javascript:checkHasAndChatTo('ahzhgf')"><img class="img_9906" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123130234','','安徽中杭');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123130221.style.visibility='visible';" onMouseOut="show123130221.style.visibility='hidden';" class="color_tr_1" >
+      <td align="center"><input name="res_id[]" type="checkbox" value="123130221"></td>
+      <td align="left"><a target="_blank" href="BusinessRes_show.php?mid=187441" >宏林金属</a>
+	  <div id="show123130221" style="position:absolute; padding-left:5px; padding-top:20px; width:280px; height:66px; visibility:hidden;"> 								  
+					   <TABLE width="100%" border=0 cellPadding=1 cellSpacing=1 bgcolor="#f8bf5d">
+					  <TBODY>
+					  <TR bgColor=#FFFFFF >
+						<TD colspan="2" style="FONT-SIZE: 12px;line-height:24px;background-image:url(/Business_v4/html/default/images/company_cmanbg.gif);" >
+						<strong>　马鞍山市宏林钢材贸易有限公司</strong></TD>
+					  </TR>
+					  <TR bgColor=#FFFFFF>
+						<TD colspan="2"  style="FONT-SIZE: 12px; line-height:24px;">
+						&nbsp;公司地址：<br>
+						&nbsp;联系电话：86-0555-3158730<br>
+						&nbsp;钢之家客服热线：4008115058</TD>	
+
+						</TR>
+					  </TBODY>
+					</TABLE>  
+								</div></td>
+	  <td align="left"></td>
+	  <td align="left"><a target="_blank" href="BusinessShow_detail.php?resid=123130221" >螺纹钢 </a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130221" >HRB400</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130221" >Φ10mm</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130221" >电议</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130221" >100</td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130221" >马长江</a></td>
+      <td align="center"><a target="_blank" href="BusinessShow_detail.php?resid=123130221" >马鞍山</a></td>     
+      <td align="center"><input type="hidden" value="123130221" /><div id="img_187441"><a href="javascript:checkHasAndChatTo('honglin888')"><img class="img_187441" src="http://swtapp.steelhome.cn/images/head/gmt4.gif" ></a></div></td>
+      <td align="center"><a  href="#" onclick="window.event.cancelBubble = true;create_alert('123130221','','宏林金属');" >留言</a></td>
+    </tr>
+	   <tr style="cursor:pointer;"   onMouseOver="show123106314.style.visibility='visible';" onMouseOut="show123106314.style.visibility='hidden';"  class="comm_tr_1" >
+      <td align="center"><input nam

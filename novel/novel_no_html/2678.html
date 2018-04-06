@@ -1,0 +1,744 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>税务机器人-详情</title>
+<meta name="description" content="税务机器人"/>
+<meta name="keywords" content="税务机器人"/>
+<script src="/resources/newtaxRobot/js/jquery-1.3.2.min.js"></script>
+<!--[if lt IE 9]>
+    <script src="/resources/newtaxRobot/js/html5.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="/resources/newtaxRobot/css/base.css"/>
+<link rel="stylesheet" type="text/css" href="/resources/cart/css/base.css" />
+<link rel="stylesheet" href="/resources/newtaxRobot/info/css/info.css" />
+
+<script src="/resources/newtaxRobot/info/js/info.js"></script>
+</head>
+<body>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link rel="stylesheet" href="/resources/newtaxRobot/css/header.css"/>
+<script src="/resources/newtaxRobot/js/base.js"></script>
+<script src="/resources/newtaxRobot/js/header.js"></script>
+<link rel="stylesheet" href="/resources/newtaxRobot/css/change.css" />
+<script src="/resources/utils/js/rober.js"></script>
+<link rel="stylesheet" type="text/css" href="/resources/cart/css/popupLogin.css" />
+<link rel="stylesheet" type="text/css" href="/resources/cart/css/easyui.css" />
+<link rel="stylesheet" type="text/css" href="/resources/cart/css/base.css" />
+<script type="text/javascript" src="/resources/shop/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/resources/cart/js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="/resources/shop/js/formvalidatenn.js"></script>
+<script type="text/javascript" src="/resources/shop/js/jsbn.js"></script>
+<script type="text/javascript" src="/resources/shop/js/prng4.js"></script>
+<script type="text/javascript" src="/resources/shop/js/rng.js"></script>
+<script type="text/javascript" src="/resources/shop/js/rsa.js"></script>
+<script type="text/javascript" src="/resources/shop/js/base64.js"></script>
+<script type="text/javascript" src="/resources/shop/js/common.js"></script>
+<script type="text/javascript" src="/resources/cart/js/jquery.cookie.js"></script>
+<!--[if IE 8]>
+	<style type="text/css">
+		#search_input {height:32px;}
+	</style>
+<![endif]-->
+<script type="text/javascript">
+	var baifumall = {
+		base: "",
+		locale: "zh_CN"
+	};
+	function login2(){
+		showLogin(baifumall.base+"/newtaxrobot/collect.jhtml?immediatelyBuy=true");
+	};
+	
+	function AddToFavorite(){
+		if(document.all) {
+			try{
+				window.external.addFavorite(document.URL,document.title);
+				}catch(e){
+					alert('\u5bf9\u4e0d\u8d77\uff0c\u60a8\u7684\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u6b64\u64cd\u4f5c!\n\u8bf7\u60a8\u4f7f\u7528\u83dc\u5355\u680f\u6216Ctrl+D\u6536\u85cf\u672c\u7ad9\u3002');
+					
+				}	
+		}	else if(window.sidebar) {
+			try{
+			window.sidebar.addPanel(document.title,document.URL,"");
+			}catch(e){
+					alert('\u5bf9\u4e0d\u8d77\uff0c\u60a8\u7684\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u6b64\u64cd\u4f5c!\n\u8bf7\u60a8\u4f7f\u7528\u83dc\u5355\u680f\u6216Ctrl+D\u6536\u85cf\u672c\u7ad9\u3002');
+					
+				}
+		}
+		else{
+			alert('\u5bf9\u4e0d\u8d77\uff0c\u60a8\u7684\u6d4f\u89c8\u5668\u4e0d\u652f\u6301\u6b64\u64cd\u4f5c!\n\u8bf7\u60a8\u4f7f\u7528\u83dc\u5355\u680f\u6216Ctrl+D\u6536\u85cf\u672c\u7ad9\u3002');
+		}
+	}
+	
+	function getUrlRelativePath(){
+		var url = document.location.toString();
+		var arrUrl = url.split("//");
+		var start = arrUrl[1].indexOf("/");
+		var reUrl = arrUrl[1].substring(start);
+		if(reUrl.indexOf("?") != -1){
+		}
+		return reUrl;
+	}; 
+	
+	function reginFun(){
+		window.location.href = "/register.jhtml?redirectUrl="+getUrlRelativePath();
+	};
+	
+	function login1(){
+		window.location.href="/login.jhtml?redirectUrl="+getUrlRelativePath();
+	};
+	
+	$().ready(function() {
+		var username = getCookie("un");
+		if (username != null) {
+			$("#headerUsername").html('<a href="/member/index.jhtml">' + username+'</a>').show();
+			$("#logoutid").show();
+			$("#headerLogin").hide();
+			$("#headerRegister").hide();
+			
+			//将税务中心的链接放开
+			$("#personal").attr("href","collect.jhtml");
+			$("#personal").removeAttr("onclick");
+		} else {
+			$("#logoutid").hide();
+			$("#headerLogin").show();
+			$("#headerRegister").show();
+			
+			$("#personal").attr("href","javascript:void(0);");
+			$("#personal").attr("onclick","javascript:login2();");
+		}
+	});
+</script>
+
+	<section class="topnav">
+    	<div class="tn_container">
+        	<p class="tnc_v1">
+            	<a class="tncv1_left" href="javascript:;"></a>
+              <a class="tncv1_right" href="javascript:;" onclick="AddToFavorite();">收藏百望</a>
+           </p>
+           <p class="tnc_v2">
+           	  <a name="topnav_v1">您好！欢迎来到百望！</a>
+        	  <a class="tncv2_a" href="javascript:;" class="tnv_ge dispalyinblock"><span id="headerUsername" style="display:none;"></span></a>
+              <a href="/logout.jhtml" id="logoutid" style="display:none;">[退出]</a>
+        	  <a class="tncv2_a" id="headerLogin" onclick="login1();" style="cursor:pointer;">[登录]</a>
+              <a class="tncv2_a" id="headerRegister" onclick="reginFun();" style="cursor:pointer;">[注册]</a>
+              <a class="tnv_ge dispalyinblock" style="display:none;">|</a>
+              <a class="tncv2_ad" style="cursor:default;display:none;" href="javascript:;">&nbsp;&nbsp;&nbsp;</a>
+              <a id="personal" class="tncv2_a" style="display:none;" href="javascript:void(0);" onclick="">税务中心</a>
+           </p>
+        </div>
+    </section>
+    <section class="headernav">
+    	<div class="headernav_all">
+        	<a href="/"><img class="logo" src="/resources/newtaxRobot/image/logo_01.png"/></a>
+        	<a href="index.jhtml"><img class="logo1" src="/resources/newtaxRobot/image/logo_02.png"/></a>
+           <div class="search">
+           	   <form id="search" action="javascript:;" method="get" onsubmit="search();" style="overflow:hidden;">
+           	   		<input class="search_input" maxlength="30" name="searchKey" id="search_input" value="" type="text" />
+	            	<input type="submit" class="search_a" value="税务搜索" style="cursor:pointer;"/>
+               </form>
+           </div>
+           
+           <div class="phone">
+           	<a><img src="/resources/newtaxRobot/image/phone.png"/></a>
+           </div>
+        </div>
+    </section>
+    <div class="buquan">
+    	<ul>
+    		<li><a href="javascript:;">营改增</a></li>
+    		<li><a href="javascript:;">纳税人销售自己使用过...</a></li>
+    		<li><a href="javascript:;">重点税种</a></li>
+    		<li><a href="javascript:;">纳税人</a></li>
+    		<li><a href="javascript:;">税收政策</a></li>
+    		<li><a href="javascript:;">纳税程序</a></li>
+    		<li><a href="javascript:;">一般纳税人</a></li>
+    		<li><a href="javascript:;">计税方法</a></li>
+    		<li><a href="javascript:;">增值税</a></li>
+    		<li><a href="javascript:;">税务总局</a></li>
+    	</ul>
+    </div>
+    <section class="mainnav">
+    	<div class="mainnav_all">
+        	<div class="navge">&nbsp;</div>
+        	<span class="mainnav_span">
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=1" title="营改增"><b>
+           					营改增
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=2" title="纳税程序"><b>
+           					纳税程序
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=3" title="发票和账薄凭证管理"><b>
+           					发票和账薄凭 ...
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=4" title="出口货物和应税服务退(免)税"><b>
+           					出口货物和应 ...
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=5" title="避税和反避税"><b>
+           					避税和反避税
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=6" title="会计处理"><b>
+           					会计处理
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=7" title="税收优惠"><b>
+           					税收优惠
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=8" title="税收筹划"><b>
+           					税收筹划
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=9" title="税收政策"><b>
+           					税收政策
+           			</b></a>
+           				<span class="mainnav_ge">|</span>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=10" title="法律责任"><b>
+           					法律责任
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=11" title="税务行政复议和诉仪与赔偿"><b>
+           					税务行政复议 ...
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=12" title="重点税种"><b>
+           					重点税种
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=13" title="法规查询"><b>
+           					法规查询
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=14" title="相关表格证明"><b>
+           					相关表格证明
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=15" title="企业不同发展阶段的税收政策"><b>
+           					企业不同发展 ...
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=16" title="企业不同发展阶段的税收筹划"><b>
+           					企业不同发展 ...
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=17" title="税率"><b>
+           					税率
+           			</b></a>
+        			<span class="mainnav_ge">|</span>
+           			<a class="mainnav_title" href="list.jhtml?relaId=18" title="应纳税额计算"><b>
+           					应纳税额计算
+           			</b></a>
+           				<span class="mainnav_ge">|</span>
+            </span>
+        </div>
+    </section>
+    
+<!-- 快速登录 -->
+<!-- 需要引入一下文件 -->
+<!-- 
+<link rel="stylesheet" type="text/css" href="/resources/cart/css/popupLogin.css" />
+<link rel="stylesheet" type="text/css" href="/resources/cart/css/base.css" />
+<script type="text/javascript" src="/resources/utils/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="/resources/shop/js/jquery.validate.js"></script>
+<script type="text/javascript" src="/resources/shop/js/formvalidatenn.js"></script>
+<script type="text/javascript" src="/resources/shop/js/jsbn.js"></script>
+<script type="text/javascript" src="/resources/shop/js/prng4.js"></script>
+<script type="text/javascript" src="/resources/shop/js/rng.js"></script>
+<script type="text/javascript" src="/resources/shop/js/rsa.js"></script>
+<script type="text/javascript" src="/resources/shop/js/base64.js"></script>
+<script type="text/javascript" src="/resources/shop/js/common.js"></script>
+<script type="text/javascript" src="/resources/cart/js/jquery.cookie.js"></script>
+ -->
+<script type="text/javascript">
+var isGoPay = 0;
+var imdiatelyBuy = 0;
+var isProduct = 0;
+jQuery(document).ready(function(){
+(function($, undefined) {
+            $(window).resize(function() {
+                jQuery("#loginDivId").css("top", (jQuery(window).height() - jQuery("#loginDivId").height()) / 2);
+		jQuery("#loginDivId").css("left", (jQuery(window).width() - jQuery("#loginDivId").width()) / 2);
+            });
+			$("#usererror").hide();
+			$("#pwderror").hide();
+			$("#usersuc").hide();
+			$("#pwdsuc").hide();
+			$("#userdiv").hide();
+			$("#pwddiv").hide();
+			$("#capslock").hide();
+			var $loginForm = $("#loginForm");
+			var $username = $("#username");
+			var $captcha = $("#captcha");
+			var $password = $("#password");
+			var $captchaImage = $("#captchaImage");
+			var $isRememberUsername = $("#isRememberUsername");
+			var $submit = $(":submit");
+			//用户名 手邮箱验证
+			$username.blur(function(){
+				if($username.val().length == 0){
+					$("#username").next("i").next("label").next("label").remove();
+					$("#username").parent().append($("<label id='usererror' class='error' style='display:block;'>用户名不能为空</label>"));
+					return;
+				}
+				var flag = checkForm("username",/(^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+)|(0{0,1}(13[0-9]|14[0-9]|15[0-9]|18[0-9])[0-9]{8})$/,"","",true);
+				if(flag){
+					$("#username").next("i").next("label").next("label").remove();
+				} else {
+					$("#username").next("i").next("label").next("label").remove();
+					$("#username").parent().append($("<label id='usererror' class='error' style='display:block;'>您输入的信息有误,请重新输入</label>"));
+				}
+			});
+			//密码验证
+			$password.blur(function(){
+				if($password.val().length == 0){
+					$("#password").next("i").next("label").next("div").next("label").remove();
+					$("#password").parent().append($("<label style='display: block;' class='error' id='pwderror'>密码不能为空</label>"));
+				} else if ($password.val().length < 6) {
+					$("#password").next("i").next("label").next("div").next("label").remove();
+					$("#password").parent().append($("<label style='display: block;' class='error' id='pwderror'>密码长度不能少于6位</label>"));
+				} else {
+					$("#password").next("i").next("label").next("div").next("label").remove();
+				}
+				//removeErrorTextFun();
+			});
+			
+			
+			
+			// 更换验证码
+			$captchaImage.click(function() {
+				$captchaImage.attr("src", "/common/captcha.jhtml?captchaId=&timestamp=" + (new Date()).valueOf());
+			});
+			$("#clkCaptcha").click(function(){
+				$captchaImage.attr("src", "/common/captcha.jhtml?captchaId=&timestamp=" + (new Date()).valueOf());
+			});
+			//键盘大小写锁定提示
+			$("#password").keypress(function(event){
+					var e=event||window.event,
+					kc=e.keyCode||e.which,//按键的keyCode
+					isShift=e.shiftKey||(kc==16)||false;
+					if(((kc>=65&&kc<=90)&&!isShift)||((kc>=97&&kc<=122)&&isShift)){
+						$("#capslock").show();
+					}
+					else{
+						$("#capslock").hide();
+					}
+			});
+			// 表单验证、记住用户名
+			$loginForm.validate({
+				submitHandler: function(form) {
+					//--------------add by AcShop(2014.03.31)
+					if($username.val().length == 0){
+						$("#username").next("i").next("label").next("label").remove();
+						$("#username").parent().append($("<label id='usererror' class='error' style='display:block;'>用户名不能为空</label>"));
+						return;
+					}
+					if($password.val().length == 0){
+						$("#password").next("i").next("label").next("div").next("label").remove();
+						$("#password").parent().append($("<label style='display: block;' class='error' id='pwderror'>密码不能为空</label>"));
+						return;
+					}
+					var flag = checkForm("username",/(^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+)|(0{0,1}(13[0-9]|14[0-9]|15[0-9]|18[0-9])[0-9]{8})$/,"","",true);
+					if(!flag){
+						$("#username").next("i").next("label").next("label").remove();
+						$("#username").parent().append($("<label id='usererror' class='error' style='display:block;'>您输入的信息有误,请重新输入</label>"));
+						$("#usererror").show();
+							$captcha.val("");
+							$captchaImage.attr("src", "/common/captcha.jhtml?captchaId=&timestamp=" + (new Date()).valueOf());
+						return;
+					}
+						var passwordFlag=checkForm("password", /^[^\s&\"<>]{6,20}$/,"","",true);
+						if(!passwordFlag){
+						$("#password").parent().append($("<label style='display: block;' class='error' id='pwderror'>您输入的密码格式不正确</label>"));
+							$captcha.val("");
+							$captchaImage.attr("src", "/common/captcha.jhtml?captchaId=&timestamp=" + (new Date()).valueOf());
+						return;
+					}
+					//end
+					$.ajax({
+						url: "/common/public_key.jhtml",
+						type: "GET",
+						dataType: "json",
+						cache: false,
+						beforeSend: function() {
+							$submit.prop("disabled", true);
+						},
+						success: function(data) {
+							var rsaKey = new RSAKey();
+							rsaKey.setPublic(b64tohex(data.modulus), b64tohex(data.exponent));
+							var enPassword = hex2b64(rsaKey.encrypt($password.val()));
+							$.ajax({
+								url: $loginForm.attr("action"),
+								type: "POST",
+								data: {
+									username: $username.val(),
+									enPassword: enPassword,
+									type:"quick"
+								},
+								dataType: "json",
+								cache: false,
+								success: function(message) {
+									$submit.prop("disabled", false);
+									if ($isRememberUsername.prop("checked")) {
+										//addCookie("memberUsername", $username.val(), {expires: 7 * 24 * 60 * 60});
+										addCookie("memberUsername", $username.val(), {expires: 30 * 60});
+									} else {
+										removeCookie("memberUsername");
+									}
+									if (message.type == "success") {
+										if (isGoPay == "1") {
+											$.ajax({
+												url : "/cart/list/json.jhtml",
+												type : "post",
+												success : function () {
+													goPay();
+												}
+											});
+											return;
+										}
+                                        if (imdiatelyBuy == "1") {
+											$.ajax({
+												url : "/cart/list/json.jhtml",
+												type : "post",
+												success : function () {
+													window.location.href=$("#loginDivId").attr("path");
+												}
+											});
+											return;
+										}
+										if(isProduct == "1"){
+											addF();
+											return;
+										}
+										window.location.href=$("#loginDivId").attr("path");
+									} else {
+										isGoPay = 0;
+                                                                                isProduct = 0;
+                                                                                imdiatelyBuy = 0;
+										/*$.message(message);
+										window.location.reload(true);*/
+										if (message.content == "找回密码" || message.content == "您没有验证过该手机号，请重新输入" || message.content == "此账号不存在" || message.content == "此账号已被禁用" || message.content == "此账号已被锁定" || message.content == "用户名或密码错误") {
+											$("#username").next("i").next("label").next("label").remove();
+											$("#username").parent().append($("<label id='usererror' class='error' style=''>" + message.content + "</label>"));
+										} else if (message.content == "密码错误") {
+											$("#password").next("i").next("label").next("div").next("label").remove();
+											$("#password").parent().append($("<label style='display: block;' class='error' id='pwderror'>" + message.content + "</label>"));
+										} else {//其他
+											$.message(message.content);
+										}
+									}
+								}
+							});
+						}
+					});
+				}
+			});
+			})(jQuery);
+});
+
+			/**
+			**	是否有错误的提示
+			*/
+			/*function removeErrorTextFun(){
+				var passwordFlag=checkForm("password",/^[^\s&\"<>]{6,20}$/,"","",true);
+				if(passwordFlag){
+					if($("#pwderror").text().length > 0){
+						$("#pwderror").remove();
+					}
+				}
+				else{
+					$("#password").next("i").next("label").next("div").next("label").remove();
+					if($("#pwderror").text().length == 0){
+						$("#password").parent().append($("<label style='display: block;' class='error' id='pwderror'>您输入的密码格式不正确</label>"));
+					}
+				}
+			};*/
+			/**
+			**键盘抬起按下事件
+			*/
+			/*function removeErrorFun(obj,event){
+				var evt = window.event||event;
+				var keyv = evt.keyCode;
+				if(keyv>=48 && keyv<= 105){
+					removeErrorTextFun();
+				}
+				
+			};*/
+			
+function showLogin(path){
+		$("#username").next("i").next("label").next("label").remove();
+		$("#password").next("i").next("label").next("div").next("label").remove();
+		$("#usererror").hide();
+		$("#pwderror").hide();
+		$("#usersuc").hide();
+		$("#pwdsuc").hide();
+		$("#userdiv").hide();
+		$("#pwddiv").hide();
+		$("#capslock").hide();
+		$("#loginDivId").attr("path",path);
+		jQuery("#loginZGDivId").css("display","block");
+		jQuery("#loginDivId").css("top", (jQuery(window).height() - jQuery("#loginDivId").height()) / 2);
+		jQuery("#loginDivId").css("left", (jQuery(window).width() - jQuery("#loginDivId").width()) / 2);
+		jQuery("#loginDivId").css("display","block");
+	};
+	function closeLogin(){
+		$("#username").next("i").next("label").next("label").remove();
+		$("#password").next("i").next("label").next("div").next("label").remove();
+		$("#username").val("");
+		$("#password").val("");
+		$("#usererror").hide();
+		$("#pwderror").hide();
+		$("#usersuc").hide();
+		$("#pwdsuc").hide();
+		$("#userdiv").hide();
+		$("#pwddiv").hide();
+		$("#capslock").hide();
+		jQuery("#loginZGDivId").css("display","none");
+		jQuery("#loginDivId").css("display","none");
+	};
+	function getUrlRelativePath(){
+		var url = document.location.toString();
+		var arrUrl = url.split("//");
+		var start = arrUrl[1].indexOf("/");
+		var reUrl = arrUrl[1].substring(start);
+		if(reUrl.indexOf("?") != -1){
+		}
+		return reUrl;
+	};
+	function reginFun(){
+		window.location.href = "/register.jhtml?redirectUrl="+getUrlRelativePath();
+	} 
+	</script>
+		<div id="loginZGDivId" style="z-index: 10000; background-color: black; opacity: 0.1; filter: alpha(opacity=10); height: 100%; width: 100%; position: fixed; top: 0; left: 0; display: none;"></div>
+	    	<div id="loginDivId" style="width: 412px; height: 399px; display: none; z-index: 10001; position: fixed;">
+	    	<input id="immediatelyBuy" type="hidden" value="1">
+        	<div class="thickbox">
+
+                <div style="width:390px;" id="thicktitler" class="thicktitle"><span>您尚未登录,请登录/注册！</span></div>
+                <div style="width: 390px; height: 350px; padding-left: 10px; padding-right: 10px; overflow: hidden;" id="thickconr" class="thickcon">
+                    <div style="width:390px;height:350px;border:0;" >
+                        <div id="regist">
+                            <div class="mt">
+                                <ul class="tab">
+                                    <li class="curr">登&nbsp;录</li>
+                                </ul>
+                            </div>
+                            <form id="loginForm" action="/login/submit.jhtml" method="post">
+                                <div class="mc form" style="left: 5px; top: 70px; padding-right: 80px;">
+                                    <div class="item fore1" style="height:auto;">
+                                        <span>邮箱/已验证手机</span>
+                                        <div class="item-ifo">
+                                            <input type="text" id="username" name="username" class="text" tabindex="1" autocomplete="off" /><i class="i-name"></i>
+					                        <label id="usersuc" class="blank invisible"></label>
+					                        <label id="usererror" class="error" style="display:none;">您输入的信息有误,请重新输入</label>
+                                        </div>
+                                    </div>
+                                    <div class="item fore2" style="height:auto;">
+                                        <span>密码</span>
+                                        <div class="item-ifo">
+                                           <!--<input type="password" id="password" maxlength="20" name="password" class="text" onkeyup="removeErrorFun(this,event)" onkeydown="removeErrorFun(this,event)" tabindex="2" autocomplete="off" /><i class="i-pass"></i>-->
+                                           <input type="password" id="password" maxlength="20" name="password" class="text" tabindex="2" autocomplete="off" /><i class="i-pass"></i>
+					                       <label id="pwdsuc" class="blank invisible"></label>
+					                       <!-- <label id="pwderror" class="error" style="display:none;">密码输入错误</label> -->
+					                       <div id="capslock"><i></i><s></s>键盘大写锁定已打开，请注意大小写</div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="item fore4" id="autoentry" style="height:auto;">
+                                        <span class="label">&nbsp;</span>
+                                        <div class="item-ifo">
+                                            <input type="checkbox" id="isRememberUsername" name="chkRememberMe" class="checkbox">
+                                            <label class="mar">自动登录</label>
+                                            <div id="ctrlDiv" style="float: left; display: none;">
+                                                <input type="checkbox" onclick="javascript:inputSelect();" name="chkOpenCtrl" id="chkOpenCtrl" class="checkbox">
+                                                <label id="jdsafe" class="mar">安全控件登录</label>
+                                            </div>
+                                            <label class="mar"><a class="flk13" target="_blank" href="/password/find.jhtml">忘记密码?</a></label>
+                                            <label class="mar"><a class="flk13"  onclick="reginFun();">立即注册</a></label>
+                                        </div>
+                                        <div style="display:none;" id="updata" class="updata">安全控件升级了!<a class="up-two" onclick="updateCtl()" href="javascript:void(0);"></a>立即更新 <a onclick="$('#updata').hide();" href="javascript:void(0);" class="up-one"></a></div>
+                                        <div id="tip-safe" style="display:none;" class="tip-safe">安全控件可提高账户安全性，加密保护您的密码。</div>
+                                    </div>
+                                    <div class="item">
+                                        <input type="submit" tabindex="8" value="登&nbsp;录" id="loginsubmitframe" class="btn-img btn-regist">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <a id="thickcloser" class="thickclose" href="javascript:void(0);" onclick="closeLogin();">×</a>
+        	</div>
+        </div>
+	    <!-- 快速登录END -->    
+    <section class="main_v3">
+    	 	<p class="standnav">当前位置：法规解释详情&nbsp;&gt;&nbsp;财政部 国家税务总局关于铁路运输和邮政业营业税改征增值税试点有关政策的补充通知</span>
+    	 <ul class="mainv3_left">
+          <li>
+               	  <!-- 显示法规详情 -->
+               	  	<span class="v3li_title">《财政部 国家税务总局关于铁路运输和邮政业营业税改征增值税试点有关政策的补充通知》</span>的内容:<br/>
+               	  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>    对邮政企业范围进行定义，对航空运输企业的逾期票证收入征收增值税，对融资租赁企业的销售额进行明确规定，提供铁路旅客运输的一般纳税人不得按简易计税方法征税，原增值税纳税人从2014年1月1日起取得运输结算单据不得作为抵扣凭证。<span><br/>
+	               	  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一、邮政企业中国邮政速递物流股份有限公司及其子公司（含各级分支机构），不属于《财政部 国家税务总局关于将铁路运输和邮政业纳入营业税改征增值税试点的通知》（财税〔2013〕106号）所称的中国邮政集团公司所属邮政企业。<br/>
+	               	  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;二、航空运输企业航空运输企业已售票但未提供航空运输服务取得的逾期票证收入，按照航空运输服务征收增值税。<br/>
+	               	  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三、融资租赁企业（一）经中国人民银行、银监会或者商务部批准从事融资租赁业务的试点纳税人，在财税〔2013〕106号文件发布前，已签订的有形动产融资性售后回租合同，在合同到期日之前，可以选择按照财税〔2013〕106号文件有关规定或者以下规定确定销售额：试点纳税人提供有形动产融资性售后回租服务，以向承租方收取的全部价款和价外费用，扣除支付的借款利息（包括外汇借款和人民币借款利息）、发行债券利息后的余额为销售额。（二）经商务部授权的省级商务主管部门和国家经济技术开发区批准从事融资租赁业务的试点纳税人，2014年3月31日前注册资本达到1.7亿元的，自本地区试点实施之日起，其开展的融资租赁业务按照财税〔2013〕106号文件和本通知第三条第（一）项规定执行；2014年4月1日后注册资本达到1.7亿元的，从达到标准的次月起，其开展的融资租赁业务按照财税〔2013〕106号文件和本通知第三条第（一）项规定执行。<br/>
+	               	  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;四、计税方法试点纳税人中的一般纳税人提供的铁路旅客运输服务，不得选择按照简易计税方法计算缴纳增值税。<br/>
+	               	  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;五、原增值税纳税人（指按照《中华人民共和国增值税暂行条例》缴纳增值税的纳税人）有关政策原增值税纳税人取得的2014年1月1日后开具的运输费用结算单据，不得作为增值税扣税凭证。<br/>
+	               	  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;六、本通知第一、二、四、五条规定自2014年1月1日起执行，第三条规定自2013年8月1日起执行。<br/>
+          </li>
+          <li class="fenye" style="display:none;">
+          		<a class="guanzhu_img" href="javascript:;"></a>
+              <a class="guanzhu_title" href="javascript:;">关注问题</a>
+              <a class="pinglun_img" href="javascript:;"></a>
+              <a class="pinglun_title" href="javascript:;">评论</a>
+              <a class="fenxiang_img" href="javascript:;"></a>
+              <a class="fenxiang_title" href="javascript:;">分享</a>
+              <a class="shoucang_img" href="javascript:;"></a>
+              <a class="shoucang_title" href="javascript:;">收藏</a>
+              <a class="help_title" href="javascript:;">没有帮助</a>
+          </li>
+        </ul>
+        <div class="mainv3_right">
+        	<div class="v30_c1">
+           	 <p class="v30_c1_1m">
+             	<a href="javascript:;" style="cursor:default;">相关法规</a>
+             </p>
+             <P class="v30_c1_2m">
+                <a class="onmore" href="relamore.jhtml?&codes=A">更多</a>
+             </P>
+                <ul class="v30_c1_3m">
+                  			<li><a href="showlawview.jhtml?lawId=8a8a8a9d454f6fbc01454f6fd87d0a2c&codes=A&relation=&more=3&relaId=" title="  财政部 国家税务总局关于铁路运输企业汇总缴纳增值税的通知">
+                  					  财政部 国家税务总局关于铁路...
+                  			</a></li>
+                  			<li><a href="showlawview.jhtml?lawId=8a8a8a9d454f6fbc01454f6fd87d0a25&codes=A&relation=&more=3&relaId=" title=" 财政部 国家税务总局关于铁路运输和邮政业营业税改征增值税试点有关政策的补充通知">
+                  					 财政部 国家税务总局关于铁路运...
+                  			</a></li>
+                  			<li><a href="showlawview.jhtml?lawId=8a8a8a9d454f6fbc01454f6fd87d0a1c&codes=A&relation=&more=3&relaId=" title=" 财政部 国家税务总局关于防范税收风险若干增值税政策的通知">
+                  					 财政部 国家税务总局关于防范税...
+                  			</a></li>
+                  			<li><a href="showlawview.jhtml?lawId=8a8a8a9d454f6fbc01454f6fd86d0a16&codes=A&relation=&more=3&relaId=" title="  国家税务总局关于成品油生产企业开具的增值税发票纳入防伪税控系统汉字防伪项目管理的公告">
+                  					  国家税务总局关于成品油生产企...
+                  			</a></li>
+                  			<li><a href="showlawview.jhtml?lawId=8a8a8a9d454f6fbc01454f6fd86d0a0d&codes=A&relation=&more=3&relaId=" title="  财政部 国家税务总局关于延续宣传文化增值税和营业税优惠政策的通知">
+                  					  财政部 国家税务总局关于延续...
+                  			</a></li>
+                  			<li><a href="showlawview.jhtml?lawId=8a8a8a9d454f6fbc01454f6fd86d0a09&codes=A&relation=&more=3&relaId=" title="  财政部 国家税务总局 中国人民银行关于铁路运输和邮政业纳入营业税改征增值税试点有关预算管理问题的通知">
+                  					  财政部 国家税务总局 中国人...
+                  			</a></li>
+                </ul>
+           </div>
+		           <div class="v30_c2">
+		           	 <p class="v30_c1_1m">
+		             		<a href="questmore.jhtml" style="cursor:default;">常见问题</a>
+		                </p>
+		                <P class="v30_c1_2m">
+		                	<a class="onmore" href="questmore.jhtml?&codes=A">更多</a>
+		                </P>
+		                <ul class="v30_c1_3m">
+		              			<li><a href="quesview.jhtml?questionId=8a8a8a9d454f6fbc01454f6fdeca1200&codes=A&relation=&more=4&relaId=" title="中国铁路总公司及其分支机构如何汇总缴纳增值税?">
+		              					中国铁路总公司及其分支机构如何汇...
+		              			</a></li>
+		              			<li><a href="quesview.jhtml?questionId=8a8a8a9d454f6fbc01454f6fdeba11d3&codes=A&relation=&more=4&relaId=" title="融资租赁业务的试点纳税人的销售额如何确定？">
+		              					融资租赁业务的试点纳税人的销售额...
+		              			</a></li>
+		              			<li><a href="quesview.jhtml?questionId=8a8a8a9d454f6fbc01454f6fdeba11db&codes=A&relation=&more=4&relaId=" title="航空运输企业在营改增试点前已售出但没有提供的运输服务是征增值税还是营业税？">
+		              					航空运输企业在营改增试点前已售出...
+		              			</a></li>
+		              			<li><a href="quesview.jhtml?questionId=8a8a8a9d454f6fbc01454f6fde7c1184&codes=A&relation=&more=4&relaId=" title="增值税纳税人发生违法行为后，是否还可以享受有关税收优惠政策？">
+		              					增值税纳税人发生违法行为后，是否...
+		              			</a></li>
+		              			<li><a href="quesview.jhtml?questionId=8a8a8a9d454f6fbc01454f6fde4d10f2&codes=A&relation=&more=4&relaId=" title="成品油生产企业增值税如何报税?">
+		              				    成品油生产企业增值税如何报税?
+		              			</a></li>
+		              			<li><a href="quesview.jhtml?questionId=8a8a8a9d454f6fbc01454f6fde4d10ed&codes=A&relation=&more=4&relaId=" title="成品油生产企业是否需要使用防伪税控开票系统？">
+		              					成品油生产企业是否需要使用防伪税...
+		              			</a></li>
+		                </ul>
+		           </div>
+           <div class="v30_c3">
+           	 <p class="v30_c1_1m">
+             		<a href="javascript:;" style="cursor:default;">可提供的服务</a>
+                </p>
+                <P class="v30_c1_2m">
+                	<a class="onmore" href="javascript:;" style="display:none;">更多</a>
+                </P>
+                <ul class="v30_c1_3m">
+	              <li><a href="/product/content/201401/454.html" target="_blank">工业小规模企业代理记账</a></li>
+                  <li><a href="/product/content/201401/458.html" target="_blank">商业小规模企业代理记账</a></li>
+                  <li><a href="/product/content/201401/472.html" target="_blank">外企小规模企业代理记账</a></li>
+                  <li><a href="/product/content/201401/481.html" target="_blank">进出口小规模企业代理记账</a></li>
+                  <li><a href="/product/content/201401/463.html" target="_blank">工业一般纳税人企业代理记账</a></li>
+                  <li><a href="/product/content/201401/466.html" target="_blank">商业一般纳税人企业代理记账</a></li>
+	            </ul>
+           </div>
+        </div>
+    </section>
+    
+<link rel="stylesheet" href="/resources/utils/css/footerH.css" />
+<section class="footer">
+        <div class="w">
+            <div class="footer-1 clearfix">
+                <dl class="fore1">
+                    <dt><b></b><strong>购物指南</strong></dt>
+                    <dd>
+                        <div><a rel="nofollow" target="_blank" href="/help/buylc.do">购物流程</a></div>
+                        <div><a rel="nofollow" target="_blank" href="/help/comenquestion.do">常见问题</a></div>
+                        <div><a rel="nofollow" target="_blank" href="/help/buyquestion.do">购物问题</a></div>                     
+                    </dd>
+                </dl>
+                <dl class="fore2">
+                    <dt><b></b><strong>合作招商</strong></dt>
+                    <dd>
+                        <div><a rel="nofollow" target="_blank" href="/help/businesshz.do">商家合作</a></div>
+                        <div><a rel="nofollow" target="_blank" href="/help/zhaosfx.do">招商方向</a></div>
+                        <div><a rel="nofollow" target="_blank" href="/help/hotphone.do">热线电话</a></div>
+                    </dd>
+                </dl>
+                <dl class="fore3">
+                    <dt><b></b><strong>百望企业服务平台</strong></dt>
+                    <dd>
+                        <div><a rel="nofollow" class="fore3-img" target="_blank" href="/"></a></div>
+                    </dd>
+                </dl>
+                <dl class="fore4">
+                    <dt><b></b><strong>支付方式</strong></dt>
+                    <dd>
+                        <div><a rel="nofollow" target="_blank" href="/help/paymethod.do">在线支付</a></div>
+                    </dd>
+                </dl>
+                <dl class="fore5">
+                    <dt><b></b><strong>客户服务</strong></dt>
+                    <dd>
+                        <div><a target="_blank" href="/help/userregist.do">用户注册</a></div>
+                        <div><a target="_blank" href="/help/mzsm.do">免责声明</a></div>
+                        <div><a rel="nofollow" target="_blank" href="/help/servicefl.do">网站地图</a></div>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="w">
+            <div class="footer-2">
+                <div class="links">
+                    <a rel="nofollow" target="_blank" href="/page/aboutus.do">关于我们</a>|
+                    <a rel="nofollow" target="_blank" href="/page/callus.do">联系我们</a>|
+                    <a rel="nofollow" target="_blank" href="/page/superman.do">人才招聘</a>|
+                    <a rel="nofollow" target="_blank" href="/page/business.do">商家入驻</a>|                        
+                    <a target="_blank" href="/page/friendlink.do">友情链接</a>|
+                    <a target="_blank" href="/page/activity.jhtml">活动报名</a>|
+                    <a target="_blank" href="/page/question.jhtml">我要提问</a>
+                </div>
+                <div class="copyright">Copyright &copy;2013-2014  百望企服baifumall.com 版权所有</div>                       
+            </div>
+        </div> 
+    </section>
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000427977'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "v1.cnzz.com/z_stat.php%3Fid%3D1000427977%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>
+

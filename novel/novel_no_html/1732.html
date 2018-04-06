@@ -1,0 +1,1519 @@
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xn="http://www.renren.com/2009/xnml" xmlns:og="http://ogp.me/ns#">
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />  
+
+
+<title>基于CMS的开放式资源库系统设计与实现 - docin.com豆丁网</title>
+<meta name="description" content="基于CMS的开放式资源库系统设计与实现
+【精品论文】"/>
+<meta name="keywords" content="文档分享下载,,cms,系统,基于,资源,设计,设计资源,实现,cms系统,精品,设计与,论文 "/>
+<meta property="og:title" content="基于CMS的开放式资源库系统设计与实现" />
+<meta property="og:type" content="book" />
+<meta property="og:url" content="http://www.docin.com/p-235121322.html" />
+<meta property="og:image" content="http://img3.yimk.com/docin_235121322_90x80.jpg" />
+<meta property="og:site_name" content="豆丁网" />
+<meta property="og:description" content="基于CMS的开放式资源库系统设计与实现
+【精品论文】" />
+
+
+<meta name="Author"  content="豆丁网" />
+<meta name="Copyright" content="豆丁网 docin.com 版权所有" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link href="http://pics.wanlibo.com/css/docincommon.css?rand=20111131" rel="stylesheet" type="text/css" media="screen, projection"/>
+<link href="http://pics.wanlibo.com/css/end/endv9.css?rand=20111131" rel="stylesheet" type="text/css" />
+<script type="text/javascript"> 
+	var auditLevel = 1;
+	
+	var isSharePs =0;
+</script>
+<script type="text/javascript" src="http://pics.wanlibo.com/js/product_end_new.js?rand=20111131"></script>
+<script type="text/javascript" src="http://pics.wanlibo.com/players/swfobject.js?rand=20111131" ></script>
+<!--测试不同豆单样式  -->
+<style type="text/css" >
+.related-list{height:417px;}
+.doc-relatedShortForOne{height:290px;}
+.doc-relatedShortForMore{height:274px;}
+.doc-nopicDoudan .doc-dlWrap dd a{margin-right:5px;}
+</style>
+</head> 
+<body>
+
+
+
+
+
+<div class="headEnd-wapper" id="endheader">
+ 	<!-- head  -->
+	<div class="headEnd clear">
+		<div class="logo">
+			<a href="http://www.docin.com/" onMouseDown="return inpmv(1387);" title="豆丁网" ><img src="http://pics.wanlibo.com/images_cn/newDocin/head_bar/logo.gif" alt="豆丁网"/></a>
+		</div>
+		<a onMouseDown="return inpmv(1389);" href="http://www.docin.com/app/docin_upload/index" title="我要上传"  class="upload" >我要上传</a>
+		<!-- sear  -->
+		<div class="sear">
+			<form id="searchForm" method="get" action="http://www.docin.com/search.do" >
+				<input type="hidden" name="searchcat" id="searchcat" value="2" />
+				<input type="text" class='listTopDefault' onblur="if(this.value=='') {this.value='在一亿文档库里搜索文档';this.className='listTopDefault';}" onfocus="if(this.value=='在一亿文档库里搜索文档') this.value='';this.className='listTopInput';" value="在一亿文档库里搜索文档" onkeydown="if(event.keyCode==13){ return searchNew()}" name="nkey" class="listTopDefault" maxlength="100" id="topsearch" baidusug="2" autocomplete="off" tabindex="1">
+				<input type="submit" onMouseDown="return inpmv(1390);" onclick="return searchNew();" value="搜索" title="搜索" class="btn" tabindex="2">
+			</form>
+		</div>
+		<!-- sear end  -->
+		<!-- nav  -->
+		<div class="nav">
+			<ul class="nav-main" >
+	 			<li ><span class="padLine"></span><a onMouseDown="return inpmv(1391);" href="http://www.docin.com/list.html" title="文档分类" id="navClassMore"><span><em class="padBtn">文档分类</em></span></a></li>
+	 			<li ><a onMouseDown="return inpmv(1560);" href="http://www.docin.com/bookShop/index.do" title="书城" ><span>书城</span></a></li>
+	 			<li ><a onMouseDown="return inpmv(1392);" href="http://www.docin.com/zazhi/index.do" title="杂志" ><span>杂志</span></a></li>
+	 			<!-- <li ><a onMouseDown="return inpmv(1392);" href="http://www.docin.com/app/famous/index" title="行业名人" ><span>行业名人</span></a></li> -->
+	 			<li ><a href="/app/meetingModel/index" title="会议" ><span>会议</span></a></li>
+	 			<li ><a onMouseDown="return inpmv(1393);" href="http://shequ.docin.com" title="社区" ><span>社区</span></a></li>
+			</ul>
+			
+				<div class="nav-main nav-quick">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="showlogin()">登录</a></li>
+						<li><a href="/app/forward?forward=register">注册</a></li>
+					</ul>
+				</div>
+			
+	
+			<!-- navSkills-class  -->
+			<div class="docinPop nav-skills navSkills-class" id="navClassSkills">
+				<div>
+					<table class="docinPopTable">
+						<tbody>
+							<tr>
+								<td class="pop_topleft"></td>
+								<td class="pop_border"></td>
+								<td class="pop_topright"></td>
+							</tr>
+							<tr>
+								<td class="pop_border"></td>
+								<td class="pop_content">
+									<iframe style="height:100%;width:100%;position:absolute;top:0;left:0;z-index:-1;" scrolling="no" frameborder="0"></iframe>								
+									<div class="dialog_content">
+										<span class="popTopArr"></span>
+										<div class="dialog_body">
+											<div class="clear">
+												<ul>
+													<li ><a href="http://www.docin.com/l-10008-0-0-0-0-1.html" title="论文" >论文</a></li>
+													<li ><a href="http://www.docin.com/l-10003-0-0-0-0-1.html" title="中学教育" >中学教育</a></li>
+													<li ><a href="http://www.docin.com/l-10004-0-0-0-0-1.html" title="高等教育" >高等教育</a></li>
+													<li ><a href="http://www.docin.com/l-10006-0-0-0-0-1.html" title="外语学习" >外语学习</a></li>
+													<li ><a href="http://www.docin.com/l-10017-0-0-0-0-1.html" title="IT计算机" >IT计算机</a></li>
+													<li ><a href="http://www.docin.com/l-10027-0-0-0-0-1.html" title="研究报告" >研究报告</a></li>
+													<li ><a href="http://www.docin.com/l-10028-0-0-0-0-1.html" title="办公文档" >办公文档</a></li>
+													<li ><a href="http://www.docin.com/l-10023-0-0-0-0-1.html" title="行业资料" >行业资料</a></li>
+												</ul>
+												<ul>
+													<li ><a href="http://www.docin.com/l-10034-0-0-0-0-1.html" title="生活休闲" >生活休闲</a></li>
+													<li ><a href="http://www.docin.com/l-10019-0-0-0-0-1.html" title="建筑/环境" >建筑/环境</a></li>
+													<li ><a href="http://www.docin.com/l-10018-0-0-0-0-1.html" title="法律/法学" >法律/法学</a></li>
+													<li ><a href="http://www.docin.com/l-10020-0-0-0-0-1.html" title="通信/电子" >通信/电子</a></li>
+													<li ><a href="http://www.docin.com/l-10005-0-0-0-0-1.html" title="研究生考试" >研究生考试</a></li>
+													<li ><a href="http://www.docin.com/l-11926-0-0-0-0-1.html" title="经济/贸易/财会" >经济/贸易/财会</a></li>
+													<li ><a href="http://www.docin.com/l-10002-0-0-0-0-1.html" title="幼儿/小学教育" >幼儿/小学教育</a></li>
+													<li ><a href="http://www.docin.com/l-11937-0-0-0-0-1.html" title="管理/人力资源" >管理/人力资源</a></li>
+												</ul>
+												<ul class="mar0" >
+													<li ><a href="http://www.docin.com/l-10024-0-0-0-0-1.html" title="汽车/机械/制造" >汽车/机械/制造</a></li>
+													<li ><a href="http://www.docin.com/l-10022-0-0-0-0-1.html" title="医学/心理学" >医学/心理学</a></li>
+													<li ><a href="http://www.docin.com/l-10007-0-0-0-0-1.html" title="资格/认证考试" >资格/认证考试</a></li>
+													<li ><a href="http://www.docin.com/l-11936-0-0-0-0-1.html" title="金融/证券 " >金融/证券 </a></li>
+													<li ><a href="http://www.docin.com/l-10031-0-0-0-0-1.html" title="文学/艺术/军事/历史" >文学/艺术/军事/历史</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</td>
+								<td class="pop_border">
+								</td>
+							</tr>
+							<tr>
+								<td class="pop_bottomleft"></td>
+								<td class="pop_border"></td>
+								<td class="pop_bottomright"></td>
+							</tr>
+						</tbody>		
+					</table>
+				</div>
+			</div>
+			<!-- navSkills-class end  -->
+			<!-- nav-skills  -->
+			
+			<!-- nav-skills end  -->
+		</div>
+		<!-- nav end -->
+			
+	</div>
+	<!-- head  end -->
+</div>
+
+<div id="taskPopBox" class="docinPop" style="display: none"></div>
+<div id="medalOrTaskPopBox" class="docinPop" style="display: none"></div>
+
+
+<script type="text/javascript">
+	function feedNoticeFix(param){
+		var d = document;		
+		var obj = d.getElementById("feedNotice");
+		if(!!!obj){
+			return;
+		}	
+		obj.style.display="block";
+		obj.style.top=param.top+"px";
+		//var InitAbsTop = obj.getBoundingClientRect().top+d.body.scrollTop;
+		function   getTop(o){		
+		var   nTp=0;
+		  var   offsetParent   =   o;
+		  while   (offsetParent!=null   &&   offsetParent!=document.body)   {		  
+		  nTp+=offsetParent.offsetTop;
+		  offsetParent=offsetParent.offsetParent;
+		  }		  
+		  this.showT=nTp;
+		}		
+		var InitAbsTop =new getTop(obj).showT;
+		function removeEV(C,B,A){
+		 if(window.attachEvent){
+		  C.detachEvent("on"+B,A)
+		  }else{
+		   if(window.addEventListener){
+		    C.removeEventListener(B,A,false)
+		    }
+		  }
+		}				
+		function addEV(C,B,A){
+			removeEV(C,B,A);
+		 if(window.attachEvent){
+		  C.attachEvent("on"+B,A)
+		  }else{
+		   if(window.addEventListener){
+		    C.addEventListener(B,A,false)
+		    }
+		  }
+		}
+		function changePos(){				
+				scrolling=true;
+				var scrollH = d.documentElement.scrollTop + d.body.scrollTop;
+				var AbsTop = obj.getBoundingClientRect().top;
+				var curAbsTop = new getTop(obj).showT;				
+				if(scrollH>0){
+					if(scrollH>InitAbsTop){
+						obj.style.top=(param.top+scrollH-InitAbsTop)+"px";
+					}else{
+						obj.style.top=(param.top)+"px";
+					}				
+				}else{
+						obj.style.top=(param.top)+"px";
+				}		
+		}
+		addEV(window,"scroll",changePos);		
+		addEV(window,"change",changePos);
+	}	
+</script>
+
+	<script type="text/javascript">
+		 //feedNoticePs(36,10);
+		 feedNoticeFix({top:35});
+	</script>
+		
+
+
+<div class="wapper clear" id="wapper-end">
+
+
+ <div id="end-cramNav" class="grid col-top clear">
+<div class="col-topLeft">
+
+<a class="fcb" onMouseDown="return inpmv(2132);" href="/l-10008-0-0-0-0-1.html">论文 </a>&nbsp;&gt;&nbsp;<a class="fcb" onMouseDown="return inpmv(2132);" href="/l-11637-0-0-0-0-1.html">自然科学论文</a>&nbsp;&gt;&nbsp;
+ 
+  <h1>基于CMS的开放式资源库系统设计与实现 <a href="#documentinfo" onmousedown="return inpmv(2134);">详细»</a></h1>
+  </div>
+      
+					<div class="doc-likeBar">
+					<div class="doc-like" id="renrenLoad" style="display:none"></div>
+					<div class="doc-like" id="qqLoad" style="display:none"></div>
+				   </div> 
+					
+					</div>
+<!-- grid -->
+ 
+<div class="grid col-freeDoc clear" id="end" style='display:none;'>
+<span class="rd_tl"></span><span class="rd_tr"></span>
+<div class="freeDoc-box clear">
+<div class="freeDoc-rss"><b class="fs14" >今日免费精品文档 <a href="http://feed.feedsky.com/docin_todayfree" target="_blank" title="" ><img src="http://pics.wanlibo.com/images_cn/freedoc/icon-rss.png"  id="rssmore" alt="订阅"/></a></b><a href="http://t.sina.com.cn/docinfree" title="订阅今日免费精品文档" class="freeDoc-share-sina" onmousedown="return inpmv(2135);" target="_blank"></a></div>
+<div class="freeDoc-time" id="oTime"></div>
+<div class="fs14">原价:<del><span class="fs16" >6.48豆元</span></del></div>
+<div class="freeDoc-btn"><a href="javascript:void(0);" onclick="document.getElementById('player').downloadFile();"  onMouseDown="return inpmv(2135);" title="购买">购买</a><b>0豆元</b></div>
+</div>
+<span class="rd_bl"></span><span class="rd_br"></span>
+</div>
+
+<!-- grid end -->
+	<!--grid-->
+	<div class="grid clear" id="shop-end">
+			
+			<div class="doc-quick-shop clear">
+		  		<dl >
+		  			<dt>转帖至</dt>
+		  			<dd>
+		  				<a onMouseDown="return inpmv(2136);" onclick="share(235121322,1);" class="share shareRr" title="转贴至人人网" href="javascript:renren();">人人网</a>
+						<a onMouseDown="return inpmv(2137);" onclick="share(235121322,1);qq();" class="share shareQz" title="转贴至QQ空间" href="javascript:void(0);">QQ空间</a>
+	 					<a onMouseDown="return inpmv(2138);" onclick="share(235121322,1);wenbao();" class="share shareWb" title="转贴至新浪微博" >新浪微博</a>
+						<a onMouseDown="return inpmv(2139);" class="share shareQq" title="转贴至腾讯微博"  onclick="share(235121322,1);postToWb();" >腾讯微博</a>
+	 					<a onMouseDown="return inpmv(2140);" onclick="share(235121322,1);kaixin();" class="share shareKx" title="转贴至开心网">开心网</a>
+	 					<a onMouseDown="return inpmv(2141);" class="share shareFx" title="转帖至飞信" onclick="feixinBtnZhuanTie();">飞信</a>
+						<a onMouseDown="return inpmv(2142);" class="share shareMsn" title="分享到msn" onclick="share(235121322,1);share2MSN();" >分享到msn</a>
+						<a  class="share shareTy" title="分享到3G手机" onclick="tianyi();share(235121322,1);" href="javascript:void(0)" id="eliveinterface" target="_blank">天翼</a>
+						<!-- <a class="share shareDb" title="转帖至豆瓣" onclick="share(235121322,1);douban();" >豆瓣</a>
+						<a  title="转帖至优士"  onMouseDown="return inpmv(2143);" onclick="share(235121322,1);youshi();" style="color: rgb(50, 50, 50); text-align: center; font-size: 12px;" class="share shareUs" id="sharebutton">
+						</a>
+						 -->
+	 				</dd>
+				</dl>
+				<ul>
+					
+						
+						
+			 				<li class="btnTop" ><a onMouseDown="return inpmv(2144);" href="javascript:setTop(235121322,1);" title="顶" ><em><span id="showTop"></span>顶 <b id="showlab">0</b></em></a></li>
+						
+					
+					<li class="btnHit"><a onMouseDown="return inpmv(2145);" href="javascript:setStepon(235121322,1);" id="stepon" title="踩"><em><span></span>踩<b id="steponlab">0</b></em></a></li>
+	 				<li class="btnFac"><a onMouseDown="return inpmv(2146);" href="javascript:document.getElementById('player').favouriteDoc();" title="收藏" ><em><span name="favorate_count_top" id="favorate_count_top"></span>收藏 <b>0</b></em></a></li>
+	 				<li class="btnShare"><a onMouseDown="return inpmv(2147);" href="javascript:openShare(235121322);" title="分享" ><em><span></span>分享</em></a></li>
+	 				
+		 			<li class="btnAdd"><a href="javascript:void(0);" onMouseDown="return inpmv(2148);" title="" onclick="insertDoclist();" ><em><span></span>加入豆单</em></a></li>
+	 				<li class="btnReport"><a onMouseDown="return inpmv(2149);" href="javascript:void(0);" id="feekback1" title="举报" ><em><span></span>举报</em></a></li>
+				</ul>
+	 			 
+		 		<a style="float: right; margin-right: 25px; text-decoration: underline;line-height:22px;"  title='下载豆丁书房客户端,即可手机同步阅读啦！' href="http://www.docin.com/topic/phone/download.jsp" onMouseDown="return inpmv(3048);" target="_blank">下载豆丁书房客户端,即可手机同步阅读啦！</a>
+			</div>
+			
+	</div>
+	<!--grid end-->
+	<!--grid-->
+	<div class="grid gridPad clear" id="player-end">
+		<!--doc-player-->
+		<div class="doc-player doc-noads-player" id="DocinViewer">
+			<span>播放器加载中，请稍候...</span>
+								
+		</div> 
+		
+				<!--doc-player end-->
+			
+			<div class="colSide-ad" id="downdiv">
+			
+				<a href="javascript:void(0);" onMouseDown="return inpmv(2152);" onClick="document.getElementById('player').downloadFile();" title=""><img src="http://pics.wanlibo.com/images_cn/news/pic198643.jpg" alt="下载文档" /></a>
+				
+  			</div>
+  			
+		<!--doc-related-->
+		<div class="doc-related  doc-mark" id="sider" >
+			<h4>相关文档<span><a onMouseDown="return inpmv(2153);" href="/search.do?nkey=%E5%9F%BA%E4%BA%8ECMS%E7%9A%84%E5%BC%80%E6%94%BE%E5%BC%8F%E8%B5%84%E6%BA%90%E5%BA%93%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0&searchcat=4&from=end&mode=2" target="_blank">更多&gt;&gt;</a></span></h4>
+			<div class="related-list relatedList-tips" style="height:417px">
+				
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="基于Pro_E的开放式三维零件库系统的研究与实现" href="http://www.docin.com/p-118388065.html" onMouseDown="return inpmv(2154);">基于Pro_E的开放式三维零件库系统的..</a></dd>
+				<dd>热度:<span class='viewhot2'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="基于ProE的开放式三维零件库系统的研究与实现&#46;" href="http://www.docin.com/p-93760901.html" onMouseDown="return inpmv(2154);">基于ProE的开放式三维零件库系统的研..</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="基于proe的开放式三维零件库系统的研究与实现" href="http://www.docin.com/p-119834227.html" onMouseDown="return inpmv(2154);">基于proe的开放式三维零件库系统的研..</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="eProE的开放式三维零件库系统的研究与实现" href="http://www.docin.com/p-174834974.html" onMouseDown="return inpmv(2154);">eProE的开放式三维零件库系统的研究..</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="基于ProE的开放式三维零件库系统的研究与实现" href="http://www.docin.com/p-146557745.html" onMouseDown="return inpmv(2154);">基于ProE的开放式三维零件库系统的研..</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="基于RDFXML的资源库系统的研究与实现" href="http://www.docin.com/p-265232861.html" onMouseDown="return inpmv(2154);">基于RDFXML的资源库系统的研究与实现</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="通用分布式资源库系统的研究与设计通用分布式资源库系统的研究与设计" href="http://www.docin.com/p-18692278.html" onMouseDown="return inpmv(2154);">通用分布式资源库系统的研究与设计通..</a></dd>
+				<dd>热度:<span class='viewhot2'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="ppt" title="ppt">ppt</em><a target="_blank" title="吴学敏-高职开放式教学资源建设汇报(2011&#46;3武汉)" href="http://www.docin.com/p-243940704.html" onMouseDown="return inpmv(2154);">吴学敏-高职开放式教学资源建设汇报(..</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="C语言试题库系统客户端的设计与开发" href="http://www.docin.com/p-261803951.html" onMouseDown="return inpmv(2154);">C语言试题库系统客户端的设计与开发</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="开放式夹具CAD系统" href="http://www.docin.com/p-33572776.html" onMouseDown="return inpmv(2154);">开放式夹具CAD系统</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="doc" title="doc">doc</em><a target="_blank" title="论文—中等职业学校多媒体教学资源库系统设计与实现探讨" href="http://www.docin.com/p-85784978.html" onMouseDown="return inpmv(2154);">论文—中等职业学校多媒体教学资源库..</a></dd>
+				<dd>热度:<span class='viewhot2'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="doc" title="doc">doc</em><a target="_blank" title="中等职业学校多媒体教学资源库系统设计与实现探讨" href="http://www.docin.com/p-96160360.html" onMouseDown="return inpmv(2154);">中等职业学校多媒体教学资源库系统设..</a></dd>
+				<dd>热度:<span class='viewhot2'></span></dd>
+			</dl>
+				
+			<dl>
+				<dd><em class="pdf" title="pdf">pdf</em><a target="_blank" title="潍坊滨海经济开发区政治部人力资源管理系统的设计与实现" href="http://www.docin.com/p-118979239.html" onMouseDown="return inpmv(2154);">潍坊滨海经济开发区政治部人力资源管..</a></dd>
+				<dd>热度:<span class='viewhot5'></span></dd>
+			</dl>
+				
+			</div>
+		</div>
+		
+		<ul id="small-flash" class="indent-flash display-n" ><li><a title="缩小" onMouseDown="return inpmv(2157);" href="javascript:showEndFlash();"></a></li></ul>
+		<ul id="big-flash" class="indent-flash indent-flashTips" ><li><a title="放大" onMouseDown="return inpmv(2157);" href="javascript:hideEndFlash();"></a></li></ul>
+			
+		<!--doc-related-->
+	</div>
+	<!-- grid end-->
+	<!--doc-user-->
+		
+		 <div class="grid clear" id="luceneDiv">
+		<div class="doc-user clear doc-noads-user">
+		<h4>
+			
+				
+				<a href="/mydoc-6103170-1.html" target="_blank" onMouseDown="return inpmv(2158);">更多&gt;&gt;</a>
+			
+			     该用户其他文档
+			
+		</h4>
+		
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299316210.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_1&#46;1不等式[北师大版八年级（下）]" src="http://img3.yimk.com/docin_299316210_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299316210.html" title="精品课件_1&#46;1不等式[北师大版八年级（下）]" onMouseDown="return inpmv(2159);">
+									精品课件_1&#46;1不等..
+								</a>
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299316149.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_(新人教)九下数27&#46;2相似三角形的应用 练习" src="http://img2.yimk.com/docin_299316149_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299316149.html" title="精品课件_(新人教)九下数27&#46;2相似三角形的应用 练习" onMouseDown="return inpmv(2159);">
+									精品课件_(新人教)九下..
+								</a>
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299316038.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_(新人教)九下数27&#46;2相似三角形判定 练习" src="http://img3.yimk.com/docin_299316038_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299316038.html" title="精品课件_(新人教)九下数27&#46;2相似三角形判定 练习" onMouseDown="return inpmv(2159);">
+									精品课件_(新人教)九下..
+								</a>
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299304119.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_华师大版八下18&#46;4《反比例函数》（第2课时）PPT课件" src="http://img4.yimk.com/docin_299304119_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299304119.html" title="精品课件_华师大版八下18&#46;4《反比例函数》（第2课时）PPT课件" onMouseDown="return inpmv(2159);">
+									精品课件_华师大版八下..
+								</a>
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299302580.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_黄金分割 学生眼中的黄金分割" src="http://img1.yimk.com/docin_299302580_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299302580.html" title="精品课件_黄金分割 学生眼中的黄金分割" onMouseDown="return inpmv(2159);">
+									精品课件_黄金分割 学..
+								</a>
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299302456.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_黄金分割 (2)" src="http://img1.yimk.com/docin_299302456_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299302456.html" title="精品课件_黄金分割 (2)" onMouseDown="return inpmv(2159);">
+									精品课件_黄金分割 (2)
+								</a>
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299302381.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_鹿头镇初级中学《7&#46;1与三角形有关的线段-三角形的稳定性》PPT课件" src="http://img2.yimk.com/docin_299302381_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299302381.html" title="精品课件_鹿头镇初级中学《7&#46;1与三角形有关的线段-三角形的稳定性》PPT课件" onMouseDown="return inpmv(2159);">
+									精品课件_鹿头镇初级中..
+								</a>
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299302291.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_鹅公中学九年级上《图形的旋转》（肖 红）" src="http://img4.yimk.com/docin_299302291_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299302291.html" title="精品课件_鹅公中学九年级上《图形的旋转》（肖 红）" onMouseDown="return inpmv(2159);">
+									精品课件_鹅公中学九年..
+								</a>
+							</dd>
+						</dl>
+						
+						<dl>
+							<dt>
+								<a target="docin_p_end" href="/p-299301910.html" onMouseDown="return inpmv(2159);">
+									<img alt="精品课件_鲁教版数学八上《第四章数据的收集与处理综合小结》PPT课件" src="http://img3.yimk.com/docin_299301910_90x80.jpg" onerror="this.src='http://pics.wanlibo.com/images_cn/no_image/90x80_no.gif'" />
+								</a>
+							</dt>
+							<dd>
+								<a target="docin_p_end" href="/p-299301910.html" title="精品课件_鲁教版数学八上《第四章数据的收集与处理综合小结》PPT课件" onMouseDown="return inpmv(2159);">
+									精品课件_鲁教版数学八..
+								</a>
+							</dd>
+						</dl>
+						
+		</div>
+		</div>
+		
+		<!--doc-user end-->
+
+	<script language="javascript" type="text/javascript">
+		
+		var playcontent = {"converSuccess":[30],"downloadPrice":[6.48],"autherId":[6103170],"pdtType":["pdf"],"onlinePrice":[0],"bookMarkId":[0],"initLoadCtrl":[true],"pdtState":[0],"pageNum":[1],"autherNickName":["文档分享下载"],"sharetime":["2011-07-22 12:21:45"],"pdtTitle":["基于CMS的开放式资源库系统设计与实现"],"pdtSize":[""],"pdtFreeDown":[false],"bookMark":[0],"errorCode":[0],"pdtDescription":["基于CMS的开放式资源库系统设计与实现\r\n【精品论文】"],"onlinePage":[0],"auditLevel":[1],"pcatid":["5"]};
+		function returnJson(){
+			return playcontent;
+		}
+		function addShareNum(){
+		   inpmv(3196);
+		}
+		var fo = new SWFObject("http://pics.wanlibo.com/players/DocinViewer.swf?rand=20111131", "player", "100%", "100%", "9.0.16.0");
+		fo.addVariable("productId",235121322);
+		fo.addVariable("channel",0);
+		fo.addVariable("loadurl" , "file1.yimk.com");
+		fo.addVariable("aid" , 804);
+		fo.addParam("align","middle");
+		fo.addParam("wmode","transparent");
+		fo.addParam("quality","high");
+		fo.addParam("allowScriptAccess","always");
+		fo.addParam("allowFullScreen","true");
+		fo.addParam("wmode","transparent");
+		
+		fo.useExpressInstall('http://pics.wanlibo.com/players/expressinstall.swf');
+		fo.write("DocinViewer");
+	</script>
+
+	<!--grid-->
+	<div class="grid clear" id="commonts-end">
+		<div class="endLongPic">
+		<script type="text/javascript" >BAIDU_CLB_SLOT_ID = "230398";</script>
+        <script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script>
+		</div>
+		<div class="side-column">
+		<div class="doc-info clear doc-noads-info" id="documentinfo">
+			<!--doc-info-l-->
+			<div class="doc-info-l clear doc-info-lTips">
+<dl class="clear">
+					<dt>
+					<a onMouseDown="return inpmv(2160);" href="http://www.docin.com/liufei19900611" target="_blank" title="文档分享下载">
+				     				<img width="65" height="65" src="http://img3.yimk.com/docin_u_6103170_80x80.gif" alt="文档分享下载">
+				     </a>
+					</dt>
+					<dd><ul class="userinfo userinfo-tips">
+                        <li >
+                         <a target="_blank" title="文档分享下载" href="http://www.docin.com/liufei19900611" class="fs14" >文档分享下..</a></li>
+                    	</ul>
+						<ul class="userinfo my-level">
+                   	
+	
+	
+                        <li class="heiTips20" ><span class="fs12" >等级:</span><ul><li class="l-list "><a onMouseDown="return inpmv(2160);" href="/renwu/mygrow/heGrowth.do?userid=6103170" target="_blank"><span class="l4"><span title="高中二年级">高中二年级</span></span></a></li></ul></li>
+                        
+                        <li >分享于&nbsp;<em>2011-07-22 12:21</em></li>
+                    </ul></dd>
+				</dl>
+	
+				
+				<p class="mtb-1015"><a name="download_a" id="download_a" onClick="document.getElementById('player').downloadFile();scrollMove();" onMouseDown="return inpmv(2152);"  href="javascript:void(0);"><img alt="下载文档" src="http://pics.wanlibo.com/images_cn/news/icon-down.gif"></a></p>
+				
+				<h4>文档数据</h4>
+				<ul class="clear">
+					<li class="hot">热度:<span class='viewhot1'></span></li>
+					<li class="d1">浏览:<span>3</span></li>
+					<li class="d2">评论:<span>0</span></li>
+					<li class="d3"><a href="javascript:setTop(235121322,1);" >顶　</a><span class="t"></span>:<span id="span_top_down">0</span></li>
+					<li class="d4"><a  onClick="document.getElementById('player').favouriteDoc();" href="#" >收藏</a>:<span name="favorate_count" id="favorate_count">0</span></li>
+				</ul>
+			</div>
+			<!--doc-info-l end-->
+			<!--doc-info-r-->
+			<div class="doc-info-r doc-noads-info-r">
+				<h4><a onMouseDown="return inpmv(2161);" href="javascript:void(0);" id="feekback2">举报</a>文档介绍</h4>
+					
+				<p id="descTemp">
+					基于CMS的开放式资源库系统设计与实现
+【精品论文】
+					
+				</p>
+				<p id="descAll" style="display:none">
+					基于CMS的开放式资源库系统设计与实现
+【精品论文】
+					<a onMouseDown="return inpmv(2161);" href="javascript:void(0);" class="all" onClick="showTemp()">还原>></a>
+				</p>
+				<div class="clear">
+				<dl class="docInfoRight-l">
+					<dt>文档分类</dt>
+					<dd>
+						
+							<a onMouseDown="return inpmv(2161);" href="/l-10008-0-0-0-0-1.html" >论文 </a>&nbsp;--&nbsp;
+							<a onMouseDown="return inpmv(2161);" href="/l-11637-0-0-0-0-1.html" >自然科学论文</a>
+						
+					</dd>
+				</dl>
+				<dl class="docInfoRight-l">
+					<dt>文档格式</dt>
+					<dd class="doc-mark"><em class="pdf"></em>
+					.pdf
+					</dd>
+				</dl>
+				</div>
+				
+				<dl class="clear">
+					<dt>文档标签</dt>
+					<dd>
+					
+					<a onMouseDown="return inpmv(2161);" href="http://www.docin.com/tag/%E8%AE%BE%E8%AE%A1" target="_blank">设计<span>(119942)</span></a> 
+						
+					<a onMouseDown="return inpmv(2161);" href="http://www.docin.com/tag/%E7%B2%BE%E5%93%81" target="_blank">精品<span>(23623)</span></a> 
+						
+					</dd>
+				</dl>
+				
+			 <ul class="docInfo-task clear" ><li ><a onMouseDown="return inpmv(2161);" href="#" title="" target="_blank" style="display:none">我来整理</a></li></ul>
+			</div>
+			<!--doc-info-r end-->
+		</div>
+		<div class="ad-column clear" id="baiduLoad" >
+			<script type="text/javascript" >
+			/*250*250，创建于2011-10-12*/
+			BAIDU_CLB_SLOT_ID = "223548";
+			</script>
+			<script type="text/javascript" src="http://cbjs.baidu.com/js/o.js"></script>
+		</div>
+		<div id="a5"></div>
+		
+			<div class="ad-column">
+				<a target='_blank' title="第十二届中华管理英才论坛"  href="/app/a_d/onclickA_DMessage?aid=873" onMouseDown="return inpmv(3156);"> <img src="http://pics.wanlibo.com/upload/recommend/1/2011/11/23/14/1322028831213.jpg"/></a>
+			</div> 
+			
+ 	<div class="colSide-help clear">如要提出意见建议，请到<a href="http://shequ.docin.com/app/shequ/themeList?fid=6" target="_blank">社区论坛</a>发帖反馈。</div>
+		<!--ad-column end-->
+		</div>
+<!--commonts-->
+		<div class="commonts">
+			<h4>评论</h4>
+		<div style="display:none">
+		<input type="hidden" id="productId" name="productId" value="235121322"/>
+		<input type="hidden" value="0" id="messageCount" name="messageCount"/>
+		<input type="hidden" id="ajaxReMessageId" name="ajaxReMessageId" />
+		<input type="hidden" id="msgcpage" name="msgcpage" value="1" />
+		<input type="hidden" id="ismy" name="ismy" value="0" />
+		<input type="hidden" id="total" name="total" value="-1" />
+		<input type="hidden" id="userIp" name="userIp" value="220.181.108.112" />
+		</div>
+		
+				<div id="checkCodeDiv" name="checkCodeDiv" class="validator fordocinend"  style="display:none;"><strong >校验码:</strong>&nbsp;<input type="text" id="checkout" name="checkout" /><img id="regimg" name="regimg" alt=""/>请输入左侧字符，<a href="javascript:refCode('regimg');">看不清楚,换张图片</a></div>
+				
+			<div class="commonts-sub">
+				<textarea onBlur="if(!this.value){showTextareaImp();}else{return false;}" onFocus="hiddenTextareaImp();showCheckCode();" name="message" id="message" onKeyDown="if(event.ctrlKey&amp;&amp;event.keyCode==13)insertUserMessage(1);"></textarea>
+				<div id="textarea_imp" class="commonts-skills" onclick="hiddenTextareaImp();showCheckCode();document.getElementById('message').focus();">评论的时候，请遵纪守法并注意语言文明，多给文档分享人一些支持。</div>
+				<div class="commonts-submit"><input type="button" id="insertMessageBtn" onClick="insertUserMessage(1);" class="dBtn-btn dBtn-blue" title="提交评论" value="提交评论"><span>Ctrl+Enter快速提交</span></div>
+				<div id="showMsgContent">评论加载中</div>
+			</div>
+		</div>
+		<!--commonts end-->		
+	</div>
+	<!--grid end-->
+</div>
+<!--举报-->
+        <div id="feekBackDiv" style="display:none;" class="docinPop lightTips">
+			<div>
+				<table class="docinPopTable">
+					<tbody>
+					<tr>
+						<td class="pop_topleft"></td>
+						<td class="pop_border"></td>
+						<td class="pop_topright"></td>
+					</tr>
+					<tr>
+						<td class="pop_border"></td>
+						<td class="pop_content">
+							<iframe scrolling="no" frameborder="0" style="height:100%;width:100%;position:absolute;top:0;left:0;z-index:-1;"></iframe>
+							<div class="dialog_content">
+								<h3 class="dialog_title" style="height:18px;">
+									<a class="dialog_closed" title="关闭" href="javascript:hiddenFeekback();"><img alt="关闭" src="http://pics.wanlibo.com/images_cn/newDocin/popClose.gif"></a>
+								</h3>
+								<div class="dialog_body">
+									<div id="reportMessageDiv" style="display: none;">
+										<p><label for="error1"><input type="radio" onclick="javascript:changeRadio();" value="举报该文档含有违规或不良信息。" name="error" id="error1">举报该文档含有违规或不良信息。</label></p>
+										<p><label for="error4"><input type="radio" onclick="javascript:changeRadio();" value="反馈该文档无法正常浏览。" name="error" id="error4">反馈该文档无法正常浏览。</label></p>
+										<p><label for="error2"><input type="radio" onclick="javascript:changeRadio();" id="error2" name="error" value="举报该文档为重复文档。">举报该文档为重复文档。</label></p>
+										<p id="repeatproduct" class="tips-url" style="display:none"><input id="purl" onblur="if(this.value=='') {this.value='输入与之重复的另一篇文档URL地址';this.className='txt';}" onfocus="if(this.value=='输入与之重复的另一篇文档URL地址') this.value='';this.className='txt-on';" type="text" value="输入与之重复的另一篇文档URL地址" class="txt"> (必填)<br/><span id="subTip">例: http://www.docin.com/p-44907311.html</span></p>
+										<p><textarea id="error3" class="marT15" ></textarea></p>
+										<p class="marT5" style="text-align:center;" >
+											<input type="button" value="提交" onClick="javascript:sendFeekBack(235121322);" class="docinCubeBt">
+											<input type="button" value="取消" onClick="javascript:hiddenFeekback();" class="docinCubeBt docinCubebtGray">
+										</p>
+									 </div>
+									 <div id="recommendedMessageDiv" style="display: none;">
+										<p><label for="recommendMessage">推荐理由：</label></p>
+										<p><textarea id="recommendMessage" name="recommendMessage" class="marT15" ></textarea></p>
+										<p class="marT5" style="text-align:center;" >
+											<input class="docinCubeBt" type="button" id="insertRecommendMessageBtn" value="提交" onClick="javascript:recommendProduct_zhf(1);">
+											<input type="button" value="取消" onClick="javascript:hiddenFeekback();" class="docinCubeBt docinCubebtGray">
+										</p>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td class="pop_border"></td>
+					</tr>
+					<tr>
+						<td class="pop_bottomleft"></td>
+						<td class="pop_border"></td>
+						<td class="pop_bottomright"></td>
+					</tr>
+					</tbody>		
+				</table>
+			</div>
+		</div>
+		<!--举报-->
+
+</div>
+<div id="jquerydiv"></div>
+
+
+
+
+
+<div style="display: none;" id="cbSelectSuccess"
+	class="endShare-wapper endShareX ">
+	<div class="docinPop endShare-skills" id="docinPopBox1"
+		style="z-index: 1000; display: block;">
+
+		<div>
+			<table class="docinPopTable">
+				<tbody>
+					<tr>
+						<td class="pop_topleft"></td>
+						<td class="pop_border"></td>
+						<td class="pop_topright"></td>
+					</tr>
+
+					<tr>
+						<td class="pop_border"></td>
+						<td class="pop_content">
+							<div class="dialog_content clear">
+								<form name="sj">
+									<h3 class="dialog_title">
+										分享完整地址<a href="javascript:document.getElementById('docinPopBox1').style.display='none';void(0);" title="关闭" class="dialog_closed"><img src="http://pics.wanlibo.com/images_cn/newDocin/popClose.gif" alt="关闭"></a>
+									</h3>
+									<div class="endShareUrl end_jl">
+										<span class="endUrl_tit">文档地址：</span>
+										<input type="text" name="textUrl" id="textUrl" class="tUrl" onclick="inputFus('textUrl');" value="http://www.docin.com/p-235121322.html" />
+										<input type="button" onclick="copyUrl('textUrl');"
+											style="padding: 0pt;" class="btn" value="复制" title="复制" />
+										<p>
+											<span class="fco" id="textUrlError" style="display: none;">你使用的浏览器不支持自动复制功能，请按鼠标ctrl+c或鼠标右键~</span>
+										</p>
+									</div>
+									<div class="pop_title">
+										<h5>
+											粘贴到BBS或博客
+										</h5>
+									</div>
+									<div class="endShareUrl clear">
+										<span class="endUrl_tit">flash地址：</span>
+										<input type="text" name="flUrl" class="tUrl" id="flUrl"
+											onclick="inputFus('flUrl');" value="http://www.docin.com/DocinViewer-235121322-144.swf" />
+										<input type="button" onclick="copyUrl('flUrl');"
+											style="padding: 0pt;" class="btn" value="复制" title="复制" />
+										<p>
+											支持嵌入FLASH地址的网站使用
+											<br>
+											<span class="fco" id="flUrlError" style="display: none;">你使用的浏览器不支持自动复制功能，请按鼠标ctrl+c或鼠标右键~</span>
+										</p>
+									</div>
+									<div class="endShareUrl clear">
+										<span class="endUrl_tit">html代码：</span>
+										<textarea class="endShareCode" id="endShareCode"
+											name="endShareCode" onclick="inputFus('endShareCode');">&lt;embed src='http://www.docin.com/DocinViewer-235121322-144.swf' width='650' height='490' type=application/x-shockwave-flash ALLOWFULLSCREEN='true' ALLOWSCRIPTACCESS='always'&gt;&lt;/embed&gt;</textarea>
+										<input type="button" onclick="copyUrl('endShareCode');"
+											style="padding: 0pt;" class="btn" value="复制" title="复制">
+										<p id="b_size" class="end_PlayerSize clear">
+											<a class="cur"
+												onclick='javascript:changeSize("http://www.docin.com/DocinViewer-235121322-144.swf",400,500,this);'
+												href='javascript:void(0);'>默认尺寸</a><a
+												onclick='javascript:changeSize("http://www.docin.com/DocinViewer-235121322-144.swf",450,300,this);'
+												href='javascript:void(0);'>450px*300px</a><a
+												onclick='javascript:changeSize("http://www.docin.com/DocinViewer-235121322-144.swf",480,400,this);'
+												href='javascript:void(0); '>480px*400px</a><a
+												onclick='javascript:changeSize("http://www.docin.com/DocinViewer-235121322-144.swf",650,490,this);'
+												href='javascript:void(0);'>650px*490px</a>
+										</p>
+										<p>
+											支持嵌入HTML代码的网站使用
+											<br>
+											<span class="fco" id="endShareCodeError"
+												style="display: none;">你使用的浏览器不支持自动复制功能，请按鼠标ctrl+c或鼠标右键~</span>
+										</p>
+									</div>
+									<div style='display:none;' id="divcss">
+										<div class="pop_title">
+											<h5>
+												分享给粉丝
+											</h5>
+										</div>
+										<div class="endShareUrl clear">
+											<div class="clear ">
+												<span class="endUrl_tit end_hj">分享标题：</span>
+												<span class="end_hj">推荐：基于CMS的开放式资源库系统设计与实现</span>
+											</div>
+											<div class="clear">
+												<span class="endUrl_tit end_hj">分享评论：</span>
+												<span class="end_hj">这篇文档很不错，推荐给你看看！</span>
+											</div>
+											<div class="clear " id="divcss2" style='display:none;'>
+												<span class="endUrl_tit end_hj">选择粉丝：</span>
+												<!-- choose end-->
+												<div class="colItemSear-main">
+													<div class="colItemSear-txt">
+														<ul id="friend-lists" class=" visiable">
+															<li class="empty"></li>
+														</ul>
+
+														<span id="choose-friend" class="colItem-btn"
+															onclick="ajaxGetAttentionList(1,0,0,0);document.getElementById('choose-friend').className='colItem-btn colItem-btnUp';"
+															title="选择好友">选择好友</span>
+													</div>
+
+													<div id="followPop" class="colItemSear-box clear">
+														<div id="colItemDataBox">
+															<!--top -->
+															<div class="colItemSearBox-top clear">
+																<ul id="friend-type" class="cloItems">
+																</ul>
+																<!-- colItemSearSkills   -->
+																<!--top -->
+															</div>
+															<!--mid -->
+
+														</div>
+													</div>
+													<div class="endShare_Tip  fco" id="endShare_Tip" style="display: none;">您还没有选择要分享给谁哦~</div>
+													<input
+														style="width: 96px; margin-left: 0; margin-top: 20px;"
+														type="button" onclick="shareStart(235121322);" title="马上分享"
+														value="马上分享" class="btn">
+												</div>
+												<!-- choose end-->
+											</div>
+
+										</div>
+									</div>
+								</form>
+							</div>
+
+							</div>
+						</td>
+						<td class="pop_border">
+						</td>
+					</tr>
+					<tr>
+						<td class="pop_bottomleft"></td>
+						<td class="pop_border"></td>
+						<td class="pop_bottomright"></td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</div>
+<input type="hidden" value="1" id="fanstype" />
+<input type="hidden" value="1" id="parentTeamid" />
+<script type="text/javascript" src="http://pics.wanlibo.com/js/my/concern.js?rand=20111131"></script>
+
+<div id="createDoudan" style="display:none;" class="docinPop creatDoudan-skills">
+	<div>
+		<table class="docinPopTable">
+			<tbody>
+				<tr>
+					<td class="pop_topleft"></td>
+					<td class="pop_border"></td>
+					<td class="pop_topright"></td>
+				</tr>
+				<tr>
+					<td class="pop_border"></td>
+					<td class="pop_content">
+						<iframe scrolling="no" frameborder="0" style="height:100%;width:100%;position:absolute;top:0;left:0;z-index:-1;"></iframe>
+						<div class="dialog_content">
+							<h3 class="dialog_title">
+								豆丁提示：
+								<a class="dialog_closed" title="关闭" href="javascript:document.getElementById('createDoudan').style.display='none';void(0);">
+								<img alt="关闭" src="http://pics.wanlibo.com/images_cn/newDocin/popClose.gif"></a>
+							</h3>
+							<div class="dialog_body">
+								<p style="font-size: 16px; line-height: 22px; text-align: center;padding:10px 0">
+									<span style="display:inline-block;text-align:left"><strong>您还没有豆单，请<a onMouseDown="return inpmv(2162);"href="/app/my/docin/doclist/createdoclist?pid=235121322" onclick="javascript:document.getElementById('createDoudan').style.display='none';" target="_blank">创建豆单</a></strong> <a href="http://shequ.docin.com/app/shequ/themeview?tid=55390" target="_blank"><img class="qus" src="http://pics.wanlibo.com/images_cn/add_doudan/qus.gif" alt="帮助" /></a><br/><span class="dou">豆单审核通过后，您会得到豆元奖励</span></span>
+								</p>
+							</div>
+							<div class="dialog_buttons" >
+								<input type="button"  onClick="document.getElementById('createDoudan').style.display='none';" class="docinCubeBt" value="确定" />
+							</div>	
+						</div>
+					</td>
+					<td class="pop_border"></td>
+				</tr>
+				<tr>
+					<td class="pop_bottomleft"></td>
+					<td class="pop_border"></td>
+					<td class="pop_bottomright"></td>
+				</tr>
+			</tbody>		
+		</table>
+	</div>
+</div>
+<div id="addDoudan" style="display:none;" class="docinPop addDoudan-skills">
+	<div>
+		<table class="docinPopTable">
+			<tbody>
+				<tr>
+					<td class="pop_topleft"></td>
+					<td class="pop_border"></td>
+					<td class="pop_topright"></td>
+				</tr>
+				<tr>
+					<td class="pop_border"></td>
+					<td class="pop_content">
+						<iframe scrolling="no" frameborder="0" style="height:100%;width:100%;position:absolute;top:0;left:0;z-index:-1;"></iframe>
+						<div class="dialog_content">
+							<h3 class="dialog_title">
+								把&nbsp;<strong>基于CMS的开放式资源库系统设计与实现</strong>&nbsp;加入豆单
+								<a class="dialog_closed" title="关闭" href="javascript:document.getElementById('addDoudan').style.display='none';void(0);"><img alt="关闭" src="http://pics.wanlibo.com/images_cn/newDocin/popClose.gif"></a></h3>
+							<div class="dialog_body">
+								<form action="" method="post" name="add_douDan" id="add_douDan" onsubmit="">
+									<input type="hidden" name="doclistProductId" id="doclistProductId" value="235121322"/>
+									<div class="add_doudan_list">
+										<ul class="col_title_list" id="doclistEndUL">
+										</ul>
+									</div>
+								</form>
+							</div>
+							<div class="dialog_buttons">
+								<input type="button" onclick="addProduct2Doclist();" value="确定" class="docinCubeBt">
+								<input type="button" onclick="javascript:document.getElementById('addDoudan').style.display='none';void(0);" value="取消" class="docinCubeBt docinCubebtGray">
+							</div>
+						</div>
+					</td>
+					<td class="pop_border"></td>
+				</tr>
+				<tr>
+					<td class="pop_bottomleft"></td>
+					<td class="pop_border"></td>
+					<td class="pop_bottomright"></td>
+				</tr>
+			</tbody>		
+		</table>
+	</div>
+</div>
+<div style="display:none;" id="addOk" class="docinPop addSuccess-skills">
+	<div>
+		<table class="docinPopTable">
+			<tbody>
+			<tr>
+				<td class="pop_topleft"></td>
+				<td class="pop_border"></td>
+				<td class="pop_topright"></td>
+			</tr>
+			<tr>
+				<td class="pop_border"></td>
+				<td class="pop_content">
+					<iframe scrolling="no" frameborder="0" style="height:100%;width:100%;position:absolute;top:0;left:0;z-index:-1;"></iframe>
+					<div class="dialog_content">
+						<h3 class="dialog_title">
+							豆丁提示：
+							<a class="dialog_closed" title="关闭" href="javascript:document.getElementById('addOk').style.display='none';void(0);">
+							<img alt="关闭" src="http://pics.wanlibo.com/images_cn/newDocin/popClose.gif"></a>
+							</h3>
+							<div class="dialog_body">
+								<p style="font-size: 14px; line-height: 22px; text-align: center;padding:10px 0"><span style="display:inline-block;text-align:left">文档加入豆单成功！</span></p>
+							</div>
+							<div class="dialog_buttons" >
+								<input type="button"  onClick="document.getElementById('addOk').style.display='none';" class="docinCubeBt" value="确定" />
+							</div>					
+					</div>
+				</td>
+				<td class="pop_border">
+				</td>
+			</tr>
+			<tr>
+				<td class="pop_bottomleft"></td>
+				<td class="pop_border"></td>
+				<td class="pop_bottomright"></td>
+			</tr>
+			</tbody>		
+		</table>
+	</div>
+</div>
+<script type="text/javascript" src="http://pics.wanlibo.com/js/pp.js?rand=20111131"></script>
+<script type="text/javascript" src="http://static.connect.renren.com/js/v1.0/FeatureLoader.jsp"></script>  
+ <script type="text/javascript">
+	showFeekback("feekBackDiv","feekback1");
+	showFeekback("feekBackDiv","feekback2");	
+	showFeekback("feekBackDiv","recommendMessageButtun");
+	
+		//XN_RequireFeatures(["EXNML"], function() { 
+			//XN.Main.init("12a8fb3f479b458d9509c48dd6a1c946", "/connect/xd_receiver_forconn.html" , {"permsToRequestOnConnect":"publish_feed,email"});
+		//});
+		
+	
+</script>
+
+<script type="text/javascript" src="http://pics.wanlibo.com/js/ajaxUtil.js?rand=20111131"></script>
+<script type="text/javascript">
+	var msnShareUrl = "http://www.docin.com/p-235121322.html&title=%E5%9F%BA%E4%BA%8ECMS%E7%9A%84%E5%BC%80%E6%94%BE%E5%BC%8F%E8%B5%84..&description=%E5%9F%BA%E4%BA%8ECMS%E7%9A%84%E5%BC%80%E6%94%BE%E5%BC%8F%E8%B5%84%E6%BA%90%E5%BA%93%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%0D%0A%E3%80%90%E7%B2%BE%E5%93%81%E8%AE%BA%E6%96%87%E3%80%91&screenshot=http://img3.yimk.com/docin_235121322_110x140.jpg&msg=%E8%BF%99%E7%AF%87%E6%96%87%E6%A1%A3%E5%BE%88%E4%B8%8D%E9%94%99%E5%93%A6%EF%BC%81";
+	var stitle = "%E5%9F%BA%E4%BA%8ECMS%E7%9A%84%E5%BC%80%E6%94%BE%E5%BC%8F%E8%B5%84%E6%BA%90%E5%BA%93%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0";
+	var scontent = "%E5%9F%BA%E4%BA%8ECMS%E7%9A%84%E5%BC%80%E6%94%BE%E5%BC%8F%E8%B5%84%E6%BA%90%E5%BA%93%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%0D%0A%E3%80%90%E7%B2%BE%E5%93%81%E8%AE%BA%E6%96%87%E3%80%91";
+	var image_src = "http://img3.yimk.com/docin_235121322_90x80.jpg";
+	var shareInfo = {
+		"medium": "link",
+		"title": "基于CMS的开放式资源库系统设计与实现",
+		"link": "http://www.docin.com/p-235121322.html?bsh_platform=renren",
+		"image_src": "http://img3.yimk.com/docin_235121322_110x140.jpg",
+		"message": "嗯，这个文档很不错",
+		"video_type": "application/x-shockwave-flash",
+		"description": "基于CMS的开放式资源库系统设计与实现<br>【精品论文】" 
+	};
+	
+	
+</script>
+<script type='text/javascript'>
+_pageId=171;
+var js_pid = 235121322;
+_st = 1322885900064;
+var userid_app=null;
+
+</script>
+<script type="text/javascript" src="http://pics.wanlibo.com/js/pagemodulestat.js?rand=20111131"></script>
+
+<script>
+	var audit_sec = 10;
+	var audit_timeid = 0;
+	var auditType = "";
+	function audit_div(){
+		document.getElementById("audit_div").style.display = "block";
+		document.getElementById("audit_div").style.marginTop = 120+getScrollTop()+"px";
+		if(audit_sec > 0){
+			document.getElementById("audit_span").innerHTML = audit_sec;
+			audit_sec = audit_sec - 1;
+			audit_timeid = window.setTimeout("audit_div()",1000);
+		}else{ 
+		    clearTimeout(audit_timeid);
+		    document.getElementById("audit_div").style.display = "none";
+			audit_sec = 10;
+			if(auditType=="edubbsmain"){
+				document.getElementById("formAdd").submit();
+			}else if(auditType=="edubbsre"){
+				document.getElementById("formRe").submit();
+			}else if(auditType=="groupset"){
+				window.location.reload();
+			}else if(auditType=="groupcreate"){
+				document.forms[0].submit();
+			}else if(auditType=="groupmain"){
+				document.getElementById("talk").submit();
+			}else if(auditType=="regroup"){
+				document.getElementById("reform").submit();
+			}else if(auditType=="updateTalk"){
+				document.getElementById("updatefrom").submit();
+			}
+		}
+	}
+	function audit_close(){
+		clearTimeout(audit_timeid);
+		audit_sec = 10;
+		document.getElementById("audit_div").style.display = "none";
+		if(auditType=="edubbsmain"){
+			document.getElementById("formAdd").submit();
+		}else if(auditType=="edubbsre"){
+			document.getElementById("formRe").submit();
+		}else if(auditType=="groupmain"){
+			document.getElementById("talk").submit();
+		}else if(auditType=="regroup"){
+			document.getElementById("reform").submit();
+		}else if(auditType=="groupset"){
+			window.location.reload();
+		}else if(auditType=="groupcreate"){
+			document.forms[0].submit();
+		}else if(auditType=="updateTalk"){
+				document.getElementById("updatefrom").submit();
+		}
+	}
+	function getScrollTop() {   
+		var scrollPos = 0;    
+		if (typeof window.pageYOffset != 'undefined') {    
+			scrollPos = window.pageYOffset;    
+		}else if (typeof window.document.compatMode != 'undefined' &&    
+			window.document.compatMode != 'BackCompat') {    
+			scrollPos = window.document.documentElement.scrollTop;    
+		}else if (typeof window.document.body != 'undefined') {    
+        	scrollPos = window.document.body.scrollTop;    
+     	}
+     	return scrollPos;   
+ 	}
+</script>
+
+<div id="audit_div" class="docinPop endAudit-skills"  style="top:100px;display:none;">
+	<div>
+		<table class="docinPopTable">
+			<tbody>
+			<tr>
+			<td class="pop_topleft"></td>
+			<td class="pop_border"></td>
+
+			<td class="pop_topright"></td>
+			</tr>
+			<tr>
+			<td class="pop_border"></td>
+			<td class="pop_content">
+			<iframe scrolling="no" frameborder="0" style="height:100%;width:100%;position:absolute;top:0;left:0;z-index:-1;"></iframe>
+			<div class="dialog_content">
+			
+				<h3 class="dialog_title">
+					豆丁提示：
+					<a class="dialog_closed" title="关闭" href="javascript:audit_close();">
+					<img alt="关闭" src="http://pics.wanlibo.com/images_cn/newDocin/popClose.gif"></a>
+					</h3>
+					<div class="dialog_body">
+							<p style="font-size: 14px; line-height: 22px; text-align: center;"><span style="display:inline-block;text-align:left"><strong >您的内容已经提交成功</strong></span></p>
+							<p style="font-size: 12px; line-height: 22px; text-align: center;padding:5px 0"><span style="display:inline-block;text-align:left">您所提交的内容需要审核后才能发布，请您等待！</span></p>
+							<div class="fcr" ><span id="audit_span">3</span>秒自动关闭窗口</div>
+					</div>
+					<div class="dialog_buttons" >
+							<input type="button" onclick="javascript:audit_close();" class="docinCubeBt" value="关闭" />
+					</div>					
+				</div>
+				</td>
+				<td class="pop_border">
+			</td></tr>
+			<tr><td class="pop_bottomleft"></td>
+			<td class="pop_border"></td>
+			<td class="pop_bottomright"></td>
+			</tr>
+
+			</tbody>		
+		</table>
+	</div>
+</div>
+
+
+<div class="edubox_footer1" id="foot">
+	<div class="fontnr">
+		<a href="http://www.docin.com/about/aboutus.jsp" target="_blank" title="关于我们">关于我们</a> <span>-</span>
+		<a href="http://blog.docin.com/" target="_blank" title="豆丁博客">豆丁博客</a> <span>-</span> 
+		<a href="http://www.docin.com/about/doc_qqcl.jsp" target="_blank" title="侵权处理">侵权处理</a> <span>-</span>
+		<a href="http://www.docin.com/about/doc_mzsm.jsp" target="_blank" title="免责声明">免责声明</a> <span>-</span> 
+		<a href="http://www.docin.com/about/doc_ysbg.jsp" target="_blank" title="隐私保护">隐私保护</a> <span>-</span>  
+		<a href="http://www.docin.com/about/doc_wzdt.jsp" target="_blank" title="网站地图">网站地图</a> <span>-</span> 
+		<a href="http://www.docin.com/app/about/mediareport" target="_blank" title="媒体关注">媒体关注</a> <span>-</span>
+		<a href="http://www.docin.com/about/guanggao.jsp" target="_blank" title="广告刊例">广告刊例</a> <span>-</span>
+		<a href="http://www.docin.com/about/doc_jrwm.jsp" target="_blank" title="加入我们">加入我们</a> <span>-</span>
+		<a href="http://www.docin.com/company/index.do" target="_blank" title="合作机构">合作机构</a> <span>-</span> 
+		<a href="http://www.docin.com/about/doc_yqlj.jsp" target="_blank" title="友情链接">友情链接</a> <span>-</span> 
+		<a href="http://www.docin.com/about/doc_lxwm.jsp" target="_blank" title="联系我们">联系我们</a> <span>-</span>
+		<a href="http://www.docin.com/helpcenter/doc_help_xssl.do" target="_blank" title="帮助中心">帮助中心</a> <span>-</span>
+		<a href="http://www.docin.com/helpcenter/toHelpCenter.do" target="_blank" title="常见问题">常见问题</a>
+	</div> 
+  	<div class="fontnr_one fontnr">
+  		<span>&copy;2007-2011 DocIn.com Inc. All Rights Reserved 豆丁网</span> 
+  		<a href="http://www.docin.com/about/doc_bqsy.jsp" target="_blank">版权所有</a>
+  	</div> 
+</div>
+
+
+
+
+
+
+
+	<script type="text/javascript" src="http://pics.wanlibo.com/js/jquery-1.3.min.js?rand=20111131"></script>
+
+
+
+<script type="text/javascript" src="http://pics.wanlibo.com/js/common.js?rand=20111131"></script>
+<style type="text/css">
+	pigBD {}
+	.bdSug_app {display:none;}
+</style>
+<script type="text/javascript">
+	/* 页面加载后执行 */
+	addEV(window,"load",function(){LoadJS("http://www.baidu.com/js/opensug.js",1);})
+</script>
+
+
+	
+
+
+<div class="docinPop login-skills" id="newlogin"
+	style="display: none">
+	<div>
+		<table class="docinPopTable">
+			<tbody>
+				<tr>
+					<td class="pop_topleft"></td>
+					<td class="pop_border"></td>
+					<td class="pop_topright"></td>
+				</tr>
+				<tr>
+					<td class="pop_border"></td>
+					<td class="pop_content">
+						<iframe style="height:100%;_height:310px;width:100%;position:absolute;top:0;left:0;z-index:-1;" scrolling="no" frameborder="0"></iframe>
+						<div class="dialog_content ">
+							<h3 class="dialog_title">
+								登录
+								<a href="javascript:closeShowMessage_first();" title="关闭" class="dialog_closed"><img src="http://pics.wanlibo.com/images_cn/newDocin/popClose.gif" alt="关闭"></a>
+							</h3>
+							<div class="dialog_body">
+								<form onSubmit="return check_login();" id="loginnew" name="loginnew"
+									method="post" action="/app/login">
+									<table>
+										<tbody>
+											<tr>
+												<th width="180">
+													<label for="username_new">
+														用户名/邮箱:
+													</label>
+												</th>
+												<th>
+													<label for="password_new">
+														登录密码:
+													</label>
+												</th>
+											</tr>
+											<tr>
+												<td>
+													<input type="text" value="" id="username_new" name="username"
+														gtbfieldid="7" class="txt" />
+												</td>
+												<td>
+													<input type="password"
+														onkeypress="if (event.keyCode==32) {event.returnvalue=false;return false;}"
+														onkeyup="if(event.keyCode==13){ document.getElementById('loginnew').submit();}" 
+														maxlength="16" id="password_new"
+														onkeydown="if(event.keyCode==32) return false" name="password"
+														class="txt" />
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<input type="submit" title="登录" value="登录" class="btn"  style="padding:0"/><label for="loginSave" class="forget" title="记住我" ><input value="1" type="checkbox" id="loginSave" name="save">记住我</label>
+												</td>
+												<td>
+												<a href="/app/forward?forward=findPsw1" title="忘记密码？" target="_blank" class="forget-link" >忘记密码？</a>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</form>
+								<div class="loginSkills-line">
+									<p>或者你也可以用以下网站登录</p>
+									<p>
+										<img src="http://pics.wanlibo.com/images_cn/registration/renren.png"
+											title="与人人连接" alt="与人人连接"
+											onclick="openrr()">
+										<img src="http://pics.wanlibo.com/images_cn/registration/qq.png" onclick="openqq()" title="QQ登录" alt="QQ登录">
+										 <img src="http://pics.wanlibo.com/images_cn/registration/sina.png"
+											onclick="openss()" title="与新浪微博连接" alt="与新浪微博连接">
+										<img src="http://pics.wanlibo.com/images_cn/registration/sdo.png"
+											 title="与盛大连接" alt="与盛大连接" onclick="showsd()" > 
+										<img src="http://pics.wanlibo.com/images_cn/registration/msn.png"  onclick="openmsn()" title="用MSN账号登录" alt="用MSN账号登录">
+										<img src="http://pics.wanlibo.com/images_cn/registration/dianxin.png" onclick="opendx()" title="用电信通行证登录" alt="用电信通行证登录">
+										<img src="http://pics.wanlibo.com/images_cn/registration/alipay.png" onclick="openalipay()" title="用支付宝账号登录" alt="用支付宝账号登录">
+									</p>
+								</div>
+								<div class="loginSkills-line">
+									新用户？
+									<a href="/app/forward?forward=register" title="" target="_blank">注册豆丁会员</a>
+								</div>
+							</div>
+						</div>
+					</td>
+					<td class="pop_border">
+					</td>
+				</tr>
+				<tr>
+					<td class="pop_bottomleft"></td>
+					<td class="pop_border"></td>
+					<td class="pop_bottomright"></td>
+				</tr>
+			</tbody>		
+		</table>
+	</div>
+</div>
+<div id="open"></div>
+<div id="after_login"></div>
+<div id="setwb"></div>
+	<script type="text/javascript" src="http://pics.wanlibo.com/js/newDocin/index_zhuce_new.js?rand=20111131"></script>
+	<script type="text/javascript" src="http://static.connect.renren.com/js/v1.0/FeatureLoader.jsp"></script>
+	<script type="text/javascript">
+	XN_RequireFeatures(["EXNML"], function() { 
+		XN.Main.init("12a8fb3f479b458d9509c48dd6a1c946", "/connect/xd_receiver_forconn.html" , {"permsToRequestOnConnect":"publish_feed,email"});
+	});
+	</script> 
+ <script type="text/javascript">
+    function useSDOLogin(){
+
+		
+		var url_sd = "https://cas.sdo.com/cas/login?gateway=true&service="+encodeURI("http://www.docin.com/app/shengda/login")+"&appId=700038700&appArea=0"
+		tologin(url_sd);
+		
+	
+		}
+function ibwSpInit() {
+ibw.appid = "700038700";
+ibw.useSDOLogin = useSDOLogin;
+
+}
+    </script>
+      <script type="text/javascript"
+src="http://x.res.ibw.staticsdo.com/connect/webwidget.js"
+charset="utf-8"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+	<script type="text/javascript">
+	var d=document,gaJsHost = (("https:" == d.location.protocol) ? "https://ssl." : "http://www.");
+	d.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+		var pageTracker = _gat._getTracker("UA-3158355-1");
+		pageTracker._setDomainName("docin.com");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		
+	} catch(err) {}
+	</script>
+	
+
+	
+
+<iframe src="" id="ifs" width="0" height="0" style="display:none"></iframe>
+</body>
+</html>
+ 
+
+<script type="text/javascript">
+flashMousewhee("DocinViewer","player");
+</script>
+<script type="text/javascript">
+	showMessageContent();
+</script>
+<script type='text/javascript'>
+	inser_cookie_ip();	
+	//是否填充评论内容
+	setMsgContent(235121322);
+	window.onunload=function(){
+		document.getElementById('player').unloadDipatchRequest();
+		jQuery("#a5").load("/jsp_cn/oper.jsp?fn=close&pageid=" + _pageId + "&pid=235121322&n=" + _st);
+	};
+</script>
+<script language="javascript" type="text/javascript" src="http://static.bshare.cn/b/buttonLite.js#uuid=74331ba5-5e96-4729-a9a5-b0e23d6d9da5&style=-1"></script>
+<script language="javascript">
+bShare.addEntry({
+     title: "基于CMS的开放式资源库系统设计与实现",
+     url: "http://www.docin.com/p-235121322.html",
+     summary: "自然科学论文",
+     content: "基于CMS的开放式资源库系统设计与实现
+【精品论文】",
+     pic: "http://img3.yimk.com/docin_235121322_110x140.jpg"
+});
+</script>
+<!--  加载速度慢代码替换  -->
+<div id="renrenPic" style="display:none">
+<iframe src="http://www.connect.renren.com/like?url=http%3A%2F%2Fwww.docin.com%2Fp-235121322.html&showfaces=false" style="width:70px;height:23px;" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+</div>
+<div id="qqPic" style="display:none">
+<iframe src="http://open.qzone.qq.com/like?url=http%3A%2F%2Fuser.qzone.qq.com%2F1391051285&type=button_num&width=115&height=21" allowtransparency="true" scrolling="no" border="0" frameborder="0" style="width:115px;height:21px;border:none;overflow:hidden;"></iframe>
+</div>
+<script type="text/javascript">
+var refresh = -1;
+divReplace("renrenPic","renrenLoad");
+divReplace("qqPic","qqLoad");
+</script>
+<script language="JavaScript" type="text/JavaScript">
+function tianyi(){
+	var sTitle=document.title;
+	var sDownUrl=document.URL;
+	sTitle=native2ascii(sTitle);
+	document.getElementById("eliveinterface").href="http://125.88.131.229:8080/EliveInterface/interface.jsp?title="+encodeURIComponent(sTitle)+"&url="+encodeURIComponent(sDownUrl);
+}
+function native2ascii(str) {   
+	regexp = /[^\x00-\xff]/g;   
+	a = str;   
+	while(m = regexp.exec(str)) {   
+	    a = a.split(m[0]).join(escape(m[0]).split('%').join('\\'));   
+	}
+	return a;
+}
+
+	
+var cburl="http://open.cb.qq.com/share/cb_share.php?";
+(function(){
+    var p = {
+        title:'基于CMS的开放式资源库系统设计与实现',          
+        url:'http://www.docin.com/p-235121322.html',
+        content:'基于CMS的开放式资源库系统设计与实现
+【精品论文】',        
+        site:'http://www.docin.com',       
+        pic:'http://img3.yimk.com/docin_235121322_110x140.jpg'   
+    };
+    var s = [];
+    for(var i in p){
+        s.push(i + '=' + encodeURIComponent(p[i]||''));
+    }
+    cburl+=s.join('&');
+})();
+function gocaibei(){
+  window.open(cburl);
+}
+</script>
+ 

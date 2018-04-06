@@ -1,0 +1,470 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="http://sta.517huwai.com/Public/Js/Lib/facebox/facebox.css?20120917" />
+<link rel="stylesheet" type="text/css" href="http://sta.517huwai.com/public/css/style.css?20140121"/>
+<link rel="stylesheet" type="text/css" href="http://sta.517huwai.com/public/css/mainStyle.css?20131129" />
+<link rel="stylesheet" type="text/css" href="http://sta.517huwai.com/public/css/note.css?20130621"/>
+<link type="text/css" rel="stylesheet" href="http://sta.517huwai.com/public/css/s-8.css"/>
+<script type="text/javascript">
+<!--
+//指定当前组模块URL地址
+var URL = '/Photo';
+var APP	 =	 '';
+var PUBLIC = '/Public';
+var ROOT = '';
+var MID = '';
+var UID = '1152';
+var XNID = '';
+var userName = '';
+var userFace = 'http://img.517huwai.com/Public/Images/default_user.png';
+var DOMAIN = '517huwai.com';
+//-->
+</script>
+<script type="text/javascript" src="http://sta.517huwai.com/public/js/jquery/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="http://sta.517huwai.com/public/js/nav_suggest.js?20130412"></script>
+<script type="text/javascript" src="http://sta.517huwai.com/Public/Js/Common/Common.js?20130620"></script>
+<script type="text/javascript" src="http://sta.517huwai.com/Public/Js/Common/Comment.js?20131028"></script>
+<script type="text/javascript" src="http://sta.517huwai.com/Public/Js/Model/Photo.js?20131128"></script>
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="http://sta.517huwai.com/public/css/ForIE6.css?20120924" />
+<![endif]--> 
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="http://sta.517huwai.com/public/css/ForIE7.css?20130313" />
+<![endif]--> 
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="http://sta.517huwai.com/public/css/ForIE8.css" />
+<![endif]--> 
+
+<script type="text/javascript" src="http://sta.517huwai.com/Public/Js/Lib/facebox/facemybox.js"></script>
+<link type="text/css" rel="stylesheet" href="http://sta.517huwai.com/public/css/s-8.css"/>
+<script type="text/javascript" src="http://sta.517huwai.com/public/js/friend_suggest.js"></script>
+<title>红螺三险 - 谢谢的相册 - 517旅行</title>
+<style>
+.photo-view img { width: expression(this.width > 720 ? 720 : true); max-width: 720px; }
+</style>
+</head>
+
+<body>
+<!-- 圈人时选择好友用的 -->
+	 <div id="getFriends" style="display:none">
+		 <div class="hylbBox" style="margin:0;">
+			 <h1>输入好友名字或昵称</h1>
+			 <input id="quanUserName" type="text" value="" />
+			 <input id="quanUserId" type="hidden" value="0" />
+			 <h1>或者从下面列表中选择</h1>
+			 <ul id="fl" class="hylbBoxul gray3" style="height:240px;overflow:auto;margin-bottom:5px;">
+				 <li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="BJ咖啡" uid="12104">BJ咖啡</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="暗夜Knight" uid="54439">暗夜Knight</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="昌哥" uid="51407">昌哥</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="当兵的人" uid="57935">当兵的人</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="低调行者" uid="10152">低调行者</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="古月圣" uid="10370">古月圣</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="火木昆" uid="10094">火木昆</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="机器猫" uid="24181">机器猫</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="嫁人就嫁灰太狼" uid="14213">嫁人就嫁灰太狼</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="老江" uid="24909">老江</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="量天尺" uid="4468872">量天尺</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="晚风" uid="53178">晚风</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="王光荣" uid="51802">王光荣</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="夏木青青" uid="51379">夏木青青</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="熊猫" uid="14876">熊猫</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="徐小徐" uid="51012">徐小徐</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="牙痛要人命" uid="12420">牙痛要人命</a>
+				 </li><li>
+				 <a href="javascript:void(0);" onclick="select_quanren(this)" rel="云中漫步" uid="52474">云中漫步</a>
+				 </li>			 </ul>
+			 <input type="button" class="f-btn" uid=0 onclick="finish_quanren(this);" value="确认" /> <input type="button" class="f-alt" onclick="cancel_quan();" value="取消" />
+		 </div>
+	</div>
+<div id="wrap">
+	<!-- header -->
+	<!-- header Begin -->
+<div class="header">
+	<div class="headerBOX">
+		<div class="logo"><a href="/"><img src="http://sta.517huwai.com/public/images/webtaps/logo.png?20120913" /></a></div>
+		<div class="navigation">
+			<span class="navigation_l"></span><span class="navigation_r"></span>
+			<dl class="navigationl">
+				<dt class="dropDown_navi_dt"><em class="xs"></em><a class="dropDown_navi_a yh" href="/Discover">发现</a>
+				<div class="drop_DIV_faxian">
+					<a href="/Discover/travel"><span>纪念册</span></a>
+					<a href="/Discover/photos"><span>照片</span></a>
+					<a href="/Discover/blogs"><span>游记</span></a>
+					<a href="/Forum"><span>话题</span></a>
+				</div>
+				</dt>
+				<dt class="noBack"><a href="/Experience" class="yh_hover">计划</a></dt>
+								<dt class="noBack"><a href="/Activity" class="yh_hover">约伴</a></dt>
+				<dt class="noBack"><a href="/Space" class="yh_hover">记录</a></dt>				<dt><div class="nav_app_down"><a href="/App"><i class="app_down_tip"></i>App</a></div></dt>
+			</dl>
+			<div class="searchBOX">
+	<form action="/Discover/search" method="get">
+		<input type="text" class="searchText" id="fnav_input" name="kw" autocomplete="off" onfocus="fnav_inputOnfocus(event,this);" onblur="fnav_inputOnblur();" onkeyup="fnav_inputOnkeyup(event,this);event.cancelBubble = true;" onkeydown="var ret = fnav_inputOnkeydown(event ,this);event.cancelBubble = true;return ret;" value="" style="float: left;">
+		<input type="submit" value="" class="searchBn">
+		<div style="z-index: 99999; display: none; text-align:left;" id="fnav_suggest" class="fsg_drop_list"></div>
+		<div style="z-index: 99999; display: none;" class="fsg_drop" id="fnav_emptysuggest"></div>
+	</form>
+</div>
+
+
+						<div class="AloginTop">
+				<ul>
+					<li><a href="/Public/sinalogin" class="icon_sino" title="新浪微博"></a></li>
+					<li><a href="/Public/qqlogin" class="icon_qq" title="QQ"></a></li>
+					<li><a href="/Public/renrenlogin" class="icon_renren" title="人人网"></a></li>
+					<li><a href="javascript:void(0);" onclick="checkLogin();">登录</a></li>
+					<li><a href="javascript:;" >|</a></li>
+					<li><a href="/Public/reg" >注册</a></li>
+				</ul>
+			</div>		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+<!--  header End  -->
+
+	<!-- /header -->
+	<div id="mainHomeBox">
+		<div class="nl">
+			<div class="bloguser">
+				<div class="user_man" style="margin:15px 0 0 0;"><a href="/xiexie" target='_blank' class="namecard" uid="1152"><img src="http://img.517huwai.com/Public/Uploads/User/52/1152/face_o.jpg@!sface" alt="谢谢" width="50" /></a></div>
+			</div>
+			<div class="blogcontent">
+				<div class="Anti blog_text">
+					<h1 class="blog_text_tit">谢谢的相册-红螺三险</h1>
+					<span class="size12">11-07												拍摄					</span>
+					<h2 class="ll mr6"></h2>
+				</div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div class="nl">
+			<h1 class="Anti margin10v" style="text-align:center;height:16px;line-height:16px;">
+				<p class="rr">
+				<a id="prev" href="/photo/66766#m">上一张</a>
+				<span class="pipe">|</span>
+				<a id="next" name="m" href="/photo/66768#m">下一张</a>				</p>
+				<span class="ll">
+					<font class="gray2">第<span id="nowId">5</span>张/共36张</font>
+				</span>
+				<a id="albumurl" href="/album/1896/?&pa=1">返回相册</a>
+				<span class="pipe">|</span>
+				<a href="/Photo/photo/uid/1152" target='_blank'>查看她的照片墙</a>
+											</h1>
+			<div class="clear"></div>
+			<div class="box gray" style="line-height:22px;">
+								<div id="photo-tagcaption" class="msg-tip" style="display: none">
+					<p>用鼠标框出照片里出现的人，把认识的人标出来。</p>
+					<input type="button" value="完成标注" class="send_btn" id="photo-finishtag" onclick="cancel_quanren()"/>
+				</div>
+				<div class="photo-view" style="position:relative;width:720px;">
+					<div style="padding-top: 200px; z-index: 9999; height:200px; text-align: center; display: none;" id="loadingdiv"><img src="http://sta.517huwai.com/public/images/web/loading_1.gif"></div>
+					<div><img id="photonow" onclick="imageonclick(event)" onmousemove="imageonmousemove(event)" src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a6064c7a5.jpg@720w_1000h" /></div>
+					<div style="position: absolute; z-index: 1000;display:none;" id="tagborder">
+						<div style="">
+							<div style="border: 2px solid #EF800A;"/></div>
+							<center><div style="border: 1px solid #FFF; padding: 2px; background: #EF800A; z-index: 1000; margin-top: 5px; color:#FFF; text-align: center; width: 4em;"><b></b></div></center>
+						</div>
+					</div>
+					<div id="quanren_pic" pid="66767" rel="66767" style="display:none;position:absolute;left:0;top:0;">
+						<img id="photoquan" src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a6064c7a5.jpg@720w_1000h" />
+					</div>
+				</div>
+				<input type="hidden" id="photoPath" value="/Public/Uploads/Photo/1896/4af5a6064c7a5.jpg">
+				<a  rel="/Photo/getFriends"  onclick="$.facemybox.click(this);" title="选择要标注的人" id="showFriends"></a>
+
+				<div class="">
+					<div class="" style="text-align:center;background:#EEE repeat 0;padding:0;margin-bottom:3px;">
+						<p><span id="photoInfo"></span>
+												</p>
+						<form id="addinfodiv" action="/Photo/editPhoto" style="display:none;">
+							<input type="hidden" id="photoId" value="66767" />
+							<p><textarea id="info" name="info" cols="" rows="" class="lyb lyb3"></textarea></p>
+							<p><input id="submitinfo" type="button" value="保存编辑" class="send_btn"/> <input id="canceledit" type="button" value="取消" class="send_btn2" />
+							<label for="coverPhotoId"><input type="checkbox" name="coverPhotoId" value="66767" id="coverPhotoId"/> 设置为封面</label>
+							</p>
+						</form>
+					</div>
+										<div id="photo-tlist-wrapper" class="gray3"  style="display:none;"  >
+						照片中有：
+							<span id="list_quanren">
+								 
+							</span>
+					</div>
+										<div class="clear"></div>
+					<div class="photoaction">
+						<div>
+							<a id="insertcollect" onclick="if(checkLogin()) $.facebox.click(this);" rel="/Collect/insert/photoId/66767" href="javascript:void(0)" title="将照片添加到珍藏集"><img alt="添加到珍藏集" src="http://sta.517huwai.com/public/img/icons/ico_collect.gif" class="icon"/>添加到珍藏集</a>
+							<a id="vieworigin1" href="http://file.517huwai.com/Public/Uploads/Photo/1896/4af5a6064c7a5.jpg" target='_blank'><img alt="查看原图" src="http://sta.517huwai.com/public/img/icons/ico_fullSize.gif" class="icon"/>查看原图</a>
+														<a href="javascript:void(0)" onclick="start_quanren()" id="start-quanren" title="照片上有自己认识的人？可以拉一个框标注上好友的大名，让更多的好友认识。"><img alt="标注人名" src="http://sta.517huwai.com/public/img/icons/ico_quanren.gif" class="icon"/>标注人名</a>
+							<!--  <a href="javascript:void(0)" onclick="cancel_quanren()" id="finish-quanren" style="display:none;color:red">完成圈人</a>-->
+							<span id="finish-quanren"  style="display:none;background:#FFFBCC none repeat scroll 0 0;border:1px solid #FFEC19;">
+								把认识的朋友圈出来!&nbsp;&nbsp;
+								<a href="javascript:void(0)" onclick="cancel_quanren()">点击完成圈人</a>
+							</span>
+							  
+							<a rel="/Board/spam" href="javascript:void(0)" onclick="if(checkLogin()) $.facebox.click(this);" title="举报照片">举报</a>
+																				</div>
+					</div>
+
+					<!-- Fantasy修改-->
+
+					<p class="stat">
+					<span id="usertime" class="time"><a href="/xiexie">谢谢</a>上传于11-08 00:53</span>
+					<span id="readnum">104</span>次浏览 | <span id="plnum">0</span>个评论 | <span id="recommendnum">0</span>人赞过 
+					</p>
+
+				</div>
+				<div class="clear"></div>
+				<div style="float:right;margin-top:3px;line-height:18px;">
+					<div class="socialshare">
+						<span class="ll">分享到&nbsp;</span>
+						<a id="sharekaixin" class="kaixin" title="分享到开心" href="http://www.kaixin001.com/repaste/share.php?rurl=http%3A%2F%2Fwww.517huwai.com%2Fphoto%2F66767&rcontent=&rtitle=%E7%BA%A2%E8%9E%BA%E4%B8%89%E9%99%A9" target="_blank"></a>
+						<a id="sharerenren" class="renren" title="分享到人人" href="http://share.renren.com/share/buttonshare.do?link=http%3A%2F%2Fwww.517huwai.com%2Fphoto%2F66767&title=%E7%BA%A2%E8%9E%BA%E4%B8%89%E9%99%A9" target="_blank"><img src="http://s.xnimg.cn/favicon-rr.ico" /></a>
+						<a id="sharedouban" class="douban" title="分享到豆瓣" href="http://www.douban.com/recommend/?url=http%3A%2F%2Fwww.517huwai.com%2Fphoto%2F66767&title=%E7%BA%A2%E8%9E%BA%E4%B8%89%E9%99%A9" target="_blank"></a>
+						<a id="sharesina" class="sina" title="分享到新浪微博" href="http://v.t.sina.com.cn/share/share.php?appkey=509632565&url=http%3A%2F%2Fwww.517huwai.com%2Fphoto%2F66767&title=%E7%BA%A2%E8%9E%BA%E4%B8%89%E9%99%A9&pic=http%3A%2F%2Fwww.517huwai.com%2F%2FPublic%2FUploads%2FPhoto%2F1896%2F4af5a6064c7a5.jpg" target="_blank"></a>
+						<a id="shareqqt" class="qqt" title="分享到腾讯微博" href="http://v.t.qq.com/share/share.php?title=%E7%BA%A2%E8%9E%BA%E4%B8%89%E9%99%A9&url=http%3A%2F%2Fwww.517huwai.com%2Fphoto%2F66767&appkey=3d5b21bc47e347daae858261d3dece36&site=&pic=http%3A%2F%2Fwww.517huwai.com%2F%2FPublic%2FUploads%2FPhoto%2F1896%2F4af5a6064c7a5.jpg" target="_blank"></a>
+					</div>
+										<!--div class="g_fx"><a id="favourlink" title="收藏照片" href="javascript:void(0);" rel="/Favour/photo/id/66767">收藏</a></div-->
+				</div>
+				<div class="div_zan">
+					<span id="list_zan"></span>
+					<span id="photo-zan-wrapper" class="gray3"></span>
+										<span id="photo-zaned-wrapper" style="display:none;">你已赞过</span>
+					<a id="recommendlink" class="recommend_icon" href="javascript:void(0);" rel="/Recommend/item" tid="66767" onclick="if(checkLogin()){recommend('Photo',this);}" title="赞一下">赞</a>				</div>
+				<div id="comment-list" style="clear:both">
+	<input name="button2" type="button" class="send_btn" value="发表评论" onclick="checkLogin();" />
+		<div class="clear"></div>
+	<input type="hidden" id="hf_userId">	<ol id="threadlist">
+		</ol>
+	<div class="onext onext_m"></div>
+</div>
+
+							</div>
+		</div>
+		<div class="nr">
+			<div class="gray">
+				<div style="margin-top:10px;height:16px;line-height:16px;">
+										<a href="/photo/66778#m">下一页</a>					&nbsp;
+				</div>
+				<div class="photoThumb">
+					<div class="link">
+						<a href="/photo/66762#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a5cc10b4b.jpg@60w_60h_1e_1c" /></a><a href="/photo/66764#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a5e0e35e4.jpg@60w_60h_1e_1c" /></a><a href="/photo/66765#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a5ee7f89d.jpg@60w_60h_1e_1c" /></a><a href="/photo/66766#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a5f9219cb.jpg@60w_60h_1e_1c" /></a><a href="/photo/66767#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a6064c7a5.jpg@60w_60h_1e_1c" /></a><a href="/photo/66768#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a60d8d616.jpg@60w_60h_1e_1c" /></a><a href="/photo/66769#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a619065de.jpg@60w_60h_1e_1c" /></a><a href="/photo/66770#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a626e29c4.jpg@60w_60h_1e_1c" /></a><a href="/photo/66771#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a62e1925f.jpg@60w_60h_1e_1c" /></a><a href="/photo/66772#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a63be8434.jpg@60w_60h_1e_1c" /></a><a href="/photo/66773#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a64303dab.jpg@60w_60h_1e_1c" /></a><a href="/photo/66774#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a6e71f621.jpg@60w_60h_1e_1c" /></a><a href="/photo/66775#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a6ed0f03e.jpg@60w_60h_1e_1c" /></a><a href="/photo/66776#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a6f9058a0.jpg@60w_60h_1e_1c" /></a><a href="/photo/66777#m"><img src="http://img.517huwai.com/Public/Uploads/Photo/1896/4af5a702b440c.jpg@60w_60h_1e_1c" /></a>					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+<a id="recommendplacelink" rel='' onclick="$.facebox.click(this);" title="推荐照片为目的地封面照片"></a>
+	<script type="text/javascript" src="http://sta.517huwai.com/public/js/photo.js?20121031"></script>
+	<script>
+	var cur = '4';
+	var albumPhotos = eval([{"id":"66762","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612748","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"121","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a5cc10b4b.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66764","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612768","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"118","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a5e0e35e4.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66765","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612782","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"115","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a5ee7f89d.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66766","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612793","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"110","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a5f9219cb.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66767","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612806","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"105","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a6064c7a5.jpg","lat":"0","lng":"0","width":null,"height":null,"votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0","quan":false},{"id":"66768","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612813","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"114","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a60d8d616.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66769","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612825","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"100","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a619065de.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66770","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612838","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"111","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a626e29c4.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66771","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612846","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"101","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a62e1925f.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66772","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612859","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"102","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a63be8434.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66773","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257612867","oTime":null,"aTime":"0","info":"","commentCount":"4","readCount":"152","recommendCount":"1","favourCount":"0","lastReplyTime":"1259896413","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a64303dab.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66774","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613031","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"113","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a6e71f621.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66775","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613037","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"109","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a6ed0f03e.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66776","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613049","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"110","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a6f9058a0.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66777","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613058","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"123","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a702b440c.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66778","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613069","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"114","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a70d09390.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66779","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613081","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"105","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a719095c3.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66780","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613092","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"112","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a72416b75.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66781","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613103","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"103","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a72fa0bfc.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66782","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613110","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"112","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a736c825a.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66783","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613117","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"95","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a73d5b81e.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66784","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613628","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"89","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a93c3c15a.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66785","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613639","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"87","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a9472be8c.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66786","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613650","oTime":null,"aTime":"0","info":"","commentCount":"5","readCount":"126","recommendCount":"0","favourCount":"0","lastReplyTime":"1259646599","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a952c3821.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66787","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613662","oTime":null,"aTime":"0","info":"","commentCount":"2","readCount":"97","recommendCount":"0","favourCount":"0","lastReplyTime":"1260709666","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a95e3196c.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66788","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613673","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"98","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a969ea5d6.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66789","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613683","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"98","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a973a7c81.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66790","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613693","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"163","recommendCount":"1","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a97d57068.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66791","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613700","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"99","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a984b19b7.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66792","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613714","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"95","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a992551ce.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66793","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613723","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"93","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a99b43902.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66794","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613728","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"94","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a9a07e263.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66795","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613737","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"93","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a9a92d1a0.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66796","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613744","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"87","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a9b0176f2.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66797","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613751","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"97","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a9b784eb4.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"},{"id":"66798","albumId":"1896","userId":"1152","placeId":"0","status":"1","cTime":"1257613760","oTime":null,"aTime":"0","info":"","commentCount":"0","readCount":"92","recommendCount":"0","favourCount":"0","lastReplyTime":"0","imageId":"0","imagePath":".\/Public\/Uploads\/Photo\/1896\/4af5a9c0642dd.jpg","lat":"0","lng":"0","width":"0","height":"0","votes":"0","voteUserIds":"","seq":"0","type":"0","level":"0"}]);
+	var place = eval();
+	var username = '谢谢';
+	function setPos(pos){
+		window.location.href='/photo/'+albumPhotos[cur]['id']+'#m';
+		//cur = pos;
+		//setPhoto(cur);
+	}
+	function setPhoto(cur){
+		window.location.href='/photo/'+albumPhotos[cur]['id']+'#m';
+		/*
+		updateInfo();
+		if(albumPhotos[cur]['userId'] == MID){
+			$("#editId").show().attr('href','/Photo/editPhotos/albumId/1896/photoIds/'+albumPhotos[cur]['id']);
+			$("#deleteId").show().attr('href','/Photo/deletePhoto/id/'+albumPhotos[cur]['id']);
+			$("#editId1").show().attr('href','/Photo/editPhotos/albumId/1896/photoIds/'+albumPhotos[cur]['id']);
+			$("#deleteId1").show().attr('href','/Photo/deletePhoto/id/'+albumPhotos[cur]['id']);
+		}else{
+			$("#editId").hide();
+			$("#deleteId").hide();
+			$("#editId1").hide();
+			$("#deleteId1").hide();
+		}
+		$("#favourlink").attr('rel','/Favour/photo/id/'+albumPhotos[cur]['id']);
+		$("#recommendlink").attr('tid',albumPhotos[cur]['id']);
+		$("#comment-list").load('/Comment/item/module/Photo',{id:albumPhotos[cur]['id']});
+		$("#copytoActivity").attr('rel','/Photo/copytoActivity/photoId/'+albumPhotos[cur]['id']);
+		$("#copytoGroup").attr('rel','/Photo/copytoGroup/photoId/'+albumPhotos[cur]['id']);
+		*/
+	}
+	function addplacecover(type){
+		if(!checkLogin())
+		return;
+		$("#recommendplacelink").attr('rel','/Experience/recommendCover/id/'+albumPhotos[cur]['id']).click();
+		return;
+		if(!confirm("确定要推荐到对应目的地参加封面pk吗？"))
+		return;
+		$.post('/Experience/addCover',{id:albumPhotos[cur]['id'],ajax:1},function(a){
+			if(a!='success'){
+				alert(a);
+				}else{
+				var tip;
+				if(type=='2'){
+					tip = '你成功推荐了'+username+'的照片参与'+place['title']+'的封面照片PK。<a href="/Experience/album/id/'+place['id']+'" target="_blank">这就去看看</a>。';
+					}else{
+					tip = '你成功参与了'+place['title']+'的封面照片PK。<a href="/Experience/album/id/'+place['id']+'" target="_blank">这就去看看</a>。';
+				}
+				$("#tipbox .content").html('<center class="Anti"><font size=2>'+tip+'</font></center>');
+				$("#tipbox").show();
+			}   
+		})  
+	}
+	function addplacecalender(){
+		if(!checkLogin())
+		return;
+		$.post('/Experience/addCalender',{id:albumPhotos[cur]['id'],ajax:1},function(a){
+			if(a!='success'){
+				alert(a);
+				}else{
+				$("#tipbox .content").html('<center class="Anti"><font size=2>添加成功，可到后台查看编辑</font></center>');
+				$("#tipbox").show();
+			}   
+		})  
+	}
+	function rotateown(d){
+		if(!confirm("确定要旋转图片吗？"))
+		return;
+		$('#photonow').hide();
+		$('#loadingdiv').show();
+		$.post('/Photo/rotate',{id:albumPhotos[cur]['id'],direction:d},function(a){
+			if(a){
+				$('#photonow').attr('src',formatImgUrl(a)+'@720w_1000h');
+				window.location.href='#m';
+				//window.location.reload();
+			}else{
+				alert('旋转失败，请重试');
+			}
+			$('#loadingdiv').hide();
+			$('#photonow').show();
+		})
+	}
+	</script>
+
+<!--*****主体内容 end******* -->
+</div>
+<!-- footer Begin -->
+<div class="footer">
+	<dl class="footNV">
+	    <dt><a href="/Public/archive">网站地图</a></dt>
+		<dt>|</dt>
+		<dt><a href="/Public/links">友情链接</a></dt>
+		<dt>|</dt>
+		<dt><a href="/Board">意见反馈</a></dt>
+		<dt>|</dt>
+		<dt><a href="/Public/contact">联系方式</a></dt>
+		<dt>|</dt>
+		<dt><a href="/Public/joinus">加入我们</a></dt>
+		<dt>|</dt>
+		<dt><a href="/Public/about">关于我们</a></dt>
+		<!--dt><script src="http://s23.cnzz.com/stat.php?id=3690237&web_id=3690237&show=pic" language="JavaScript"></script></dt-->
+	</dl>
+	
+	<div class="footBottom">
+		<div>
+			<span><a href="http://www.miibeian.gov.cn" target="_blank">京ICP备13026212号</a> 京公网安备11010802015499</span>
+			<em>&copy;2014 www.517huwai.com, all rights reserved</em>
+		</div>
+	</div>
+</div>
+</div></div></div>
+<div id="loginbox" class="proposal_forfull" frameborder="0" style='position: fixed; top: 250px; left: 237px; position: fixed; _position:absolute; _margin-top:expression(eval(document.documentElement.scrollTop)); display:none;'>
+	<div class="proBOX">
+		<h6><a href="javascript:;" class="closeFR" onclick="$('#loginbox').fadeOut();$('.overloy').hide();"></a><span class="title">登录517</span></h6>
+		<div class="content proBOX">
+			<div class="Loginpage">
+				<div class="l">
+					<form action="/Public/checklogin" method="post" >
+						<input id="account" tabindex='1' name="account" type="text" class="Login_name" value=""/>
+						<input tabindex='2' name="password" type="password" class="Login_password"/>
+						<div class="login_remember Anti"><input type="checkbox" name="autologin" id="" /><label>记住登录状态</label><a href="/Public/findpassword">忘记密码？</a></div>
+						<div class="LoginsubDIV">
+							<input type="submit" class="bn_submit_green" value="登录" />
+						</div>
+					</form>
+
+				</div>
+				<div class="r">
+					<h5>还没有账号？</h5>
+					<a class="Register_now" href="/Public/reg"><span>立即注册</span></a>
+					<p>或者用以下网站账号登录517</p>
+					<dl class="Anti">
+						<dt><a href="/Public/sinalogin"><span class="icon_sino"></span>新浪微博</a></dt>
+						<dt><a href="/Public/qqlogin"><span class="icon_qq"></span>QQ</a></dt>
+						<dt><a href="/Public/qqtlogin"><span class="icon_qqt"></span>腾讯微博</a></dt>
+						<dt><a href="/Public/dblogin"><span class="icon_douban"></span>豆瓣</a></dt>
+						<dt><a href="/Public/renrenlogin"><span class="icon_renren"></span>人人网</a></dt>
+						<dt><a href="/Public/kxlogin"><span class="icon_kaixin"></span>开心</a></dt>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="overloy" style="display:none;"></div><div id="tipbox" class="proposal" frameborder="0" style='position: fixed; top: 250px; left: 260px; position: fixed; _position:absolute; _margin-top:expression(eval(document.documentElement.scrollTop)); display:none;z-index:1001; '>
+	<div class="proBOX">
+		<h6><a href="javascript:;" class="closeFR" onclick="$('#tipbox').fadeOut()"></a><span class="title"></span></h6>
+		<div class="content proBOX" style="width:500px;max-height:400px;overflow-y:auto;">
+		</div>
+	</div>
+</div>
+<div id="name_card_div" class="proposal_forface" style="position: absolute; clear: both; display:none; z-index: 780; left: 287px; top: 159px;"></div>
+<div class="clear"></div>
+<!--JQ库及插件-->
+<script type="text/javascript" src="http://sta.517huwai.com/Public/Js/Lib/facebox/faceboxnew.js?20121030"></script>
+<script type="text/javascript" src="http://sta.517huwai.com/Public/Js/Lib/facebox/blackbox.js?20121030"></script>
+<script type="text/javascript" src="http://sta.517huwai.com/Public/Js/Lib/Qlib.js" ></script>
+<!--常用JS和相应Model的JS-->
+<script type="text/javascript" src="http://sta.517huwai.com/public/js/cookie.js"></script>
+<script type="text/javascript" src="http://sta.517huwai.com/public/js/location.js"></script>
+<script type="text/javascript" src="http://sta.517huwai.com/Public/Js/Lib/jquery_tagto.js"></script>
+<a class="feedback_tip" href="/Board" target="_blank"><span></span></a>
+<div style="z-index: 920000; display: none;" id="backTop">
+	<a href="javascript:void(0);" class="backTopLink" title="返回顶部" onclick="window.scrollTo(0,0);return false;"></a>
+</div>
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?1e1eb4768a4199ba41be718dd87ed2f3";
+		var s = document.getElementsByTagName("script")[0]; 
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+<script type="text/javascript">
+	$(function(){
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			var gScript=unescape(gaJsHost + "google-analytics.com/ga.js");
+			$.ajaxSetup({cache:true});
+			$.getScript(gScript,
+				function(){
+				try {
+				var pageTracker = _gat._getTracker("UA-8356145-2");pageTracker._trackPageview();
+				} catch(err) {}});});
+</script>
+
+
+</body>
+</html>

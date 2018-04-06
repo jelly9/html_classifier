@@ -1,0 +1,365 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>金融融资产品</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-1.9.1.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/templates/green/js/base.js"></script>
+    <script type="text/javascript">
+        function search(id, url) {
+            var moy = $("#" + id).val();
+            if (moy == "") {
+                window.location.href = url;
+                return;
+            }
+            if (moy != "" && !isNaN(moy))
+                window.location.href = url + "&moy=" + moy;
+            else
+                alert("请输入融资金额（万）！！");
+        }
+    </script>
+</head>
+<body style="background: #f6f6f6">
+    
+<div class="header">
+    <div class="top">
+        <div class="bd">
+            <span class="fl">客服热线：0577-55566665 (8:30-17:00)&nbsp;&nbsp;0577-55586160 (7 x 24) &nbsp;&nbsp;<a target="_blank" href="http://weibo.com/u/5295667897"
+                class="weibo"></a><a href="javascript:void(0);" class="weixin" id="weixinhd" style="position:relative"><span style="width:130px; height:130px; position:absolute; left:0px; top:25px; display:none; z-index:9999"><img alt="微信二维码" src="http://www.wzfsp.com/images/weixin.jpg" width="130" /></span></a></span><span
+                    class="fr">欢迎来到温金网！</span>
+        </div>
+    </div>
+    <div class="top2 clearfix">
+        <div class="fl">
+            <a href="/">
+                <img src="/images/logo.png" /></a></div>
+        <div class="fr">
+            <a href="/register.aspx" class="blue">注册</a> / <a href="/login.aspx">登录</a> <em>|</em> <a href="/adetail.aspx?id=3">关于我们</a>
+            <em>|</em> <a href="/bdetail.aspx?id=359">帮助中心</a></div>
+    </div>
+    <div class="clear">
+    </div>
+    <div class="menu">
+        <ul id="nav">
+            <li><a href="/" style="border-left: 1px solid #fff;width: 198px;">首页</a> </li>
+            <li class="Level1"><a href="javascript:void(0);">分中心<img alt="" src="/images/arrow.png" /></a>
+                <ul class="Level2" style="display: none">
+                    <li><a href="http://cn.wzfsp.com" target="_blank">苍南中心</a></li>
+                    <li><a href="http://www.lcjrfw.com/" target="_blank">鹿城中心</a></li>
+                    <li><a href="http://lw.wzfsp.com" target="_blank">龙湾中心</a></li>
+                </ul>
+            </li>
+            <li><a href="/member/">个人中心</a> </li>
+            <li class="Level1"><a href="/productlist.aspx">金融产品库<em id="menu_cpcount">0</em><img alt="" src="/images/arrow.png" /></a>
+            <ul class="Level2" style="display: none">
+                    <li><a href="/productlist.aspx">融资产品<em id="menu_rzcpcount">0</em></a></li>
+                    <li><a href="/licailist.aspx">理财产品<em id="menu_tzcpcount">0</em></a></li>
+                    <li><a href="/xycardlist.aspx">信用卡产品<em id="menu_xykcpcount">0</em></a></li>
+                </ul>
+            </li>
+            <li><a href="/demand.aspx">需求库<em id="menu_xqcount">0</em></a> </li>
+        </ul>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $(".tabnav li").mouseover(
+			function () {
+			    $(this).addClass("active").siblings().removeClass();
+			    $(".tablist").css("display", "none");
+			    $(".tablist").eq($(".tabnav li").index(this)).css("display", "block");
+
+			});
+        $(".menu li").hover(function () {
+            $(this).find("ul").show();
+        }, function () {
+            $(this).find("ul").hide();
+        });
+        var _url = window.location.href.toLowerCase();
+        var _lasturl = _url.substring(_url.lastIndexOf("/") + 1);
+        var _urlbox = _lasturl.split("?");
+        _lasturl = _urlbox[0];
+        if (_lasturl == "" && _url.indexOf("member") < 0)
+            _lasturl = "";
+        if (_lasturl == "adetail.aspx" || _lasturl == "alist.aspx" || _lasturl == "articlelist.aspx" || _lasturl == "detail.aspx" || _lasturl == "policydata.aspx") {
+            _lasturl = "";
+        }
+        if (_lasturl == "" && _url.indexOf("member") >= 0) {
+            _lasturl = "member/";
+        }
+        if (_lasturl != "" && _url.indexOf("member") >= 0) {
+            _lasturl = "member/";
+        }
+        $("#nav").find("a[href='/" + _lasturl + "']").addClass("active");
+
+        if (_lasturl == "licailist.aspx" || _lasturl == "showproduct.aspx" || _lasturl == "showbank.aspx") {
+            $("#cplist").addClass("active");
+        }
+    });
+</script>
+    <div class="contain">
+        <div class="location">
+            当前位置：<a href="/">首页</a> > 我要融资</div>
+        <div class="searchbox">
+            <div class="searchitem">
+                <span>融资金额</span><input title="单位：万元" type="text" id="moy" size="25" class="inputtext"
+                    value="" style="width: 80px;" />
+                <input type="button" value="搜索" class="uk-button uk-button-primary" onclick="search('moy','?')" /></div>
+            
+            <div class="searchitem">
+                <span>贷款类型</span><a  href="?&kc=0&zq=4&lx=&nx=2&lv=0-5">全部</a><a
+                     href="?&kc=0&zq=4&lx=1&nx=2&lv=0-5">抵押</a><a
+                     href="?&kc=0&zq=4&lx=2&nx=2&lv=0-5">质押</a><a
+                     href="?&kc=0&zq=4&lx=3&nx=2&lv=0-5">保证</a><a
+                     href="?&kc=0&zq=4&lx=4&nx=2&lv=0-5">信用类</a><a
+                    class="select" href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5">票据贴现</a><a
+                     href="?&kc=0&zq=4&lx=6&nx=2&lv=0-5">其他</a></div>
+            <div class="searchitem">
+                <span>实地考察</span><a  href="?&kc=&zq=4&lx=5&nx=2&lv=0-5">全部</a><a
+                     href="?&kc=1&zq=4&lx=5&nx=2&lv=0-5">是</a><a class="select"
+                        href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5">否</a></div>
+            <div class="searchitem">
+                <span>贷款利率</span><a  href="?&kc=0&zq=4&lx=5&nx=2&lv=">全部</a><a class="select" href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5">0-5%</a><a  href="?&kc=0&zq=4&lx=5&nx=2&lv=5-7.5">5-7.5%</a><a  href="?&kc=0&zq=4&lx=5&nx=2&lv=7.5-9.5">7.5-9.5%</a><a  href="?&kc=0&zq=4&lx=5&nx=2&lv=9.5-13">9.5-13%</a><a  href="?&kc=0&zq=4&lx=5&nx=2&lv=13-0">13%以上</a></div>
+            <div class="searchitem">
+                <span>适用对象</span><a class="select" href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&sd=">全部</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&sd=1">个人</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&sd=2">个体工商户</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&sd=3">企业</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&sd=4">其他</a></div>
+            <div class="searchitem">
+                <span>贷款期限</span><a  href="?&kc=0&zq=&lx=5&nx=2&lv=0-5">全部</a><a
+                     href="?&kc=0&zq=1&lx=5&nx=2&lv=0-5">6个月内</a><a
+                     href="?&kc=0&zq=2&lx=5&nx=2&lv=0-5">6个月至1年</a><a
+                     href="?&kc=0&zq=3&lx=5&nx=2&lv=0-5">1至3年</a><a
+                    class="select" href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5">3至5年</a><a
+                     href="?&kc=0&zq=5&lx=5&nx=2&lv=0-5">5年以上</a><a
+                     href="?&kc=0&zq=6&lx=5&nx=2&lv=0-5">其他</a></div>
+            <div class="searchitem">
+                <span>还款方式</span><a class="select" href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&hk=">全部</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&hk=1">先息后本</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&hk=2">等额本金</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&hk=3">等额本息</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5&hk=4">其他</a></div>
+            <div class="searchitem">
+                <span>经营年限</span><a  href="?&kc=0&zq=4&lx=5&nx=&lv=0-5">全部</a><a  href="?&kc=0&zq=4&lx=5&nx=0&lv=0-5">不限</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=1&lv=0-5">一年以上</a><a
+                    class="select" href="?&kc=0&zq=4&lx=5&nx=2&lv=0-5">二年以上</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=3&lv=0-5">三年以上</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=4&lv=0-5">四年以上</a><a
+                     href="?&kc=0&zq=4&lx=5&nx=5&lv=0-5">五年以上</a></div>
+            <div class="btn1">
+                    <input onclick="location.href='/outpatient.aspx'" type="button" value="个性化服务" class="btns"/>
+                    </div>
+        
+            <div class="tixing">温馨提示：<a href="/login.aspx" target="_blank">登录</a> 可以查看更多融资、理财产品 &nbsp;<a href="/register.aspx" target="_blank">还未注册？</a></div>
+
+        </div>
+        <div class="product">
+            <div class="title"><a name="cplist"></a>
+                融资产品列表</div>
+            <div class="prolist">
+                <table width="100%" border="0">
+                    
+                            <tr>
+                                <th  valign="top" height="30">
+                                    产品编号
+                                </th>
+                                <th valign="top" class="name">
+                                    产品名称
+                                </th>
+                                <th valign="top">
+                                    <div class="despri">产品描述</div>
+                                </th>
+                                <th valign="top" class="way">
+                                    最低年化利率
+                                </th>
+                                <th valign="top" class="zged">
+                                    融资金额
+                                </th>
+                                <th valign="top">
+                                    操作
+                                </th>
+                            </tr>
+                        
+                    <tr><td align="center" colspan="6" style="padding-top: 20px;font-size: 16px;">无合适产品？ <a class="btns" style="line-height:30px;margin-left: 10px;padding: 10px 20px;font-weight: normal;" href="/outpatient.aspx?action=savefangan">请专家提供融资方案</a></td></tr>
+                </table>
+            </div>
+            <div class="page">
+                </div>
+        </div>
+    </div>
+    
+<div class="clear">
+</div>
+<div class="footer clearfix">
+    <div class="bd">
+        <div class="text2 clearfix">
+            <div class="fl ui-footer-links">
+                <p class="text1">
+                    <a href="/adetail.aspx?id=3">网站简介
+</a><a href="/adetail.aspx?id=4">联系我们</a><a href="/xszhina.aspx">新手指引</a><a href="/xieyi.aspx">网站协议</a><a href="/adetail.aspx?id=129">服务流程</a><a href="/policydata.aspx">政策数据</a><a href="/articlelist.aspx">新闻资讯</a><a href="/banklist.aspx">服务评价</a>
+                    </p>
+                <ul class="fn-clear icons">
+                    <li class="fn-left"><a class="ui-footer-img-link weibo" target="_blank" href="http://weibo.com/u/5295667897">新浪微博</a></li>
+                    
+                    <li id="weixinfot" class="fn-left" style="position:relative"><a class="ui-footer-img-link we-chat" target="_blank" href="#" title="">微信</a><span style="width:160px; height:160px; position:absolute; right:-150px; top:0px; display:none;"><img alt="微信二维码" src="http://www.wzfsp.com/images/weixin.jpg" width="160" /></span></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $("#weixinfot").hover(function () { $(this).find("span").show(); }, function () { $(this).find("span").hide(); });
+                $("#weixinhd").hover(function () { $(this).find("span").show(); }, function () { $(this).find("span").hide(); });
+            </script>
+            <p class="fr" style="padding-top: 20px; font-size: 16px; text-align: left">
+                <span style="float: left; padding-right: 10px">
+                    <img src="/images/bottom_99.jpg" /></span> <span style="font-size: 14px">客服电话：</span><br />
+                <span>
+                    0577-55566665 (8:30-17:00)<br/>0577-55586160 (7 x 24)</span>
+            </p>
+        </div>
+        <div class="clear">
+        </div>
+        <div style="font-size: 14px; padding: 5px 0">
+           指导单位：<a href="http://www.wzjrb.gov.cn/" target="_blank">温州市人民政府金融工作办公室</a> &nbsp;&nbsp; 牵头单位：<a href="http://www.wzjrtzjt.com/" target="_blank">温州市金融投资集团有限公司</a><br /> 
+承办单位：温州产权交易市场有限公司&nbsp;&nbsp; 运营单位：温州产权交易市场有限公司&nbsp;&nbsp; <a href="http://www.wzbjbs.com/" target="_blank">温州市滨江创业服务社</a><br />
+            版权所有 &nbsp;&nbsp; 温州产权交易市场有限公司 
+           &nbsp;&nbsp;&nbsp;&nbsp;您是第 <em style="color:#FADF1B;">1832747</em> 位访客 <script type="text/javascript">                                                                                                                       var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cspan id='cnzz_stat_icon_1253518314'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D1253518314%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+        <div class="ui-footer-verification ui-footer-narrow-hide fn-clear" style="width:600px">
+            <a class="ui-footer-verification-item fn-left credibility" title="" href="#" target="_blank">
+            </a><a class="ui-footer-verification-item fn-left trust" title="" href="#" target="_blank">
+            </a><a class="ui-footer-verification-item fn-left itrust" title="" href="#" target="_blank">
+            </a><a class="ui-footer-verification-item fn-left norton" title="" href="#" target="_blank">
+            </a><a class="ui-footer-verification-item fn-left police" title="" href="#" target="_blank">
+            </a><a class="ui-footer-verification-item fn-left gongshang" title="" href="#" target="_blank">
+            </a>
+            <a href="#"><img  style="width:97PX;margin-left:10PX; margin-top:8px" border="0" src="http://img.webscan.360.cn/status/pai/hash/57d0cdebd87e7ed65b6a15349b1cecd8"/></a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">	
+    $(function () {
+        $.ajax({
+            type: "get",
+            url: "/tools/ajaxgettotal.ashx",
+            data: "action=getcount&dt=" + new Date(),
+            async: false,
+            success: function (data) {
+                $data = data.split('|');
+                $("#menu_xqcount").html($data[0]);
+                $("#menu_rzcpcount").html($data[4]);
+                $("#menu_tzcpcount").html($data[5]);
+                $("#menu_xykcpcount").html($data[7]);
+                $("#menu_cpcount").html(parseInt($data[4]) + parseInt($data[5]) + parseInt($data[7]));
+            }
+        });
+    });
+</script>
+<style type="text/css">
+    #msgDiv
+    {
+        border-bottom: #fff 8px solid;
+        border-left: #fff 8px solid;
+        display: none;
+        background: #fff;
+        margin-left: auto;
+        border-top: #fff 8px solid;
+        margin-right: auto;
+        border-right: #fff 8px solid;
+    }
+    #msgDiv H1
+    {
+        padding-bottom: 0px;
+        margin: 0px;
+        padding-left: 3px;
+        padding-right: 3px;
+        background: #f4faff;
+        height: 20px;
+        font-size: 12px;
+        font-weight: normal;
+        padding-top: 5px;
+    }
+    #msgDiv H1 SPAN
+    {
+        float: right;
+    }
+</style>
+<!-- 网站底部 -->
+<div style="display: none" class="weixin_cont">
+    <div class="filter_cover">
+    </div>
+    <div class="weixin_cont_infos">
+        <div class="Titles">
+            <span class="fl">关注信用本官方微信</span>
+            <div class="fr">
+                <i id="close_weixing">
+                    <img src="/images/alert_close.gif" width="19" height="19"/></i></div>
+        </div>
+        <div class="tc">
+            <img src="/images/weixin.jpg" width="258" height="258"/>
+        </div>
+        <div class="h30 clear:both; lh30">
+            打开微信，使用″扫一扫″即可关注信用本官方微信。
+        </div>
+    </div>
+</div>
+<!--联系我们浮板-->
+<div style="width: 100%; display: none; height: 100%; opacity: 0" id="xybmask">
+</div>
+<div style="right: -230px" class="contactusxyb">
+    <div class="hoverbtn">
+        <span>联</span><span>系</span><span>我</span><span>们</span>
+        <img src="/images/hoverbtnbg.png" width="16" height="16"/>
+    </div>
+    <div class="conter">
+        <div class="con1">
+            <dl class="clearfx">
+                <dt>
+                    <img src="/images/phoneCall_ico.png" width="31" height="31"/></dt>
+                <dd class="f1">
+                    服务热线：</dd>
+                <dd style="text-align:right; width:120px; float:left">
+                    0577-55566665 (8:30-17:00)<br/>0577-55586160 (7 x 24)</dd>
+            </dl>
+        </div>
+        <p class="con2 clearfx">
+            <a class="a1" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=162090071&site=qq&menu=yes">
+                <img src="/images/online.png" width="31" height="31"/></a> <span>在线客服：</span>
+            <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=162090071&site=qq&menu=yes">
+                点击交流</a>
+        </p>
+        <p class="con2 clearfx">
+            <a class="a1" href="http://e.weibo.com/" target="_blank">
+                <img src="/images/weibo_ico.png" width="31" height="31"/></a> <span>新浪微博：</span>
+            <a target="_blank" href="http://weibo.com/u/5295667897">点击关注</a>
+        </p>
+        <p class="con2 clearfx">
+            <a class="a1" href="/outpatient.aspx" target="_blank">
+                <img src="/images/rongzitb.jpg" width="31" height="31"/></a> <span>融资门诊：</span>
+            <a href="/outpatient.aspx" target="_blank">点击进入</a>
+        </p>
+        <div class="weixincall">
+            <dl class="clearfx">
+                <dt>
+                    <img src="/images/weixin_ico.png" width="31" height="31"/></dt>
+                <dd class="f1">
+                    微信公众号：</dd>
+                <dd>
+                    wzfsp</dd>
+                <dd class="f3">
+                    <img src="/images/weixin.jpg" width="80" height="80"/></dd>
+            </dl>
+        </div>
+        <div class="yktimer">
+            <span style="font-weight: bold">服务时间：</span> <span>7 x 24</span>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

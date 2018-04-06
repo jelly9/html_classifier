@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>邮购网-雅虎代拍-乐天代购-日本代购（www.ugojp.com/）</title>
+    <meta name="keywords" content="邮购网,日本代购,代购网,海外购,雅虎代拍,雅虎代购,乐天代购">
+    <meta name="description" content="邮购网是国内提供最专业的日本代购类服务平台!平台提供 日本代购-海外购-雅虎代拍-雅虎代购-乐天代购相关服务。联系电话：4000－117－955!">
+                             
+<script>
+var islogin=0;
+var qian = 4180.00;
+var xian = -1;
+var zhi = 4180.00;
+</script>
+<link href="/statics/yahoo_auctions/page/css/style.css" rel="stylesheet" type="text/css">
+<script src="/statics/yahoo_auctions/page/js/style.js" type="text/javascript"></script>
+<script src="/statics/yahoo_auctions/page/js/time.js" type="text/javascript"></script>
+</head>
+<script>
+var end_time= "2015/02/12 20:59:31";
+function show_time(){
+
+new getSeverTime();
+
+time_end=new Date(end_time);//截至时间
+time_end=time_end.getTime();
+
+time_now=new Date(time_now1);
+//var end_time = 1397855600;
+time_now=time_now.getTime()+1;
+//alert(time_end-time_now);
+var time_distance = time_end-time_now;	
+if(time_distance>0){
+int_day=Math.floor(time_distance/86400000);
+time_distance-=int_day*86400000;
+int_hour=Math.floor(time_distance/3600000);
+time_distance-=int_hour*3600000;
+int_minute=Math.floor(time_distance/60000);
+time_distance-=int_minute*60000;
+int_second=Math.floor(time_distance/1000);
+var html = int_day+"天"+int_hour+"小时"+int_minute+"分"+int_second+"秒";}
+else{
+html="over";}
+lastli.innerHTML=html;
+setTimeout("show_time()",1000);
+}
+setTimeout("show_time()",1000);
+</script>
+<body>
+
+
+<script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey=21683278"></script>
+<script>
+
+    $(function(){
+
+        $("#zwss").click(function(){
+
+            var category = $(".selecthead ").val();
+            //var txt=$("#zzjs").val();
+            var txt = $("#zzjs").val();
+            $.post("yahoo_auctions.php",{name:"so",keyword:txt,fen:1},function(data){
+                location.href="/yahoo_auctions/yahoo_auctions.php?name=list&keyword="+txt+"&category="+category;
+            });
+        })
+    })
+    $(function(){
+
+        $("#rwss").click(function(){
+
+            var category = $(".selecthead ").val();
+            //var txt=$("#zzjs").val();
+            var txt = $("#zzjs").val();
+            $.post("/fanyi1.php",{q:txt},function(result){
+                $.post("yahoo_auctions.php",{name:"so",keyword:txt,fen:1},function(data){
+                    location.href="/yahoo_auctions/yahoo_auctions.php?name=list&keyword="+result+"&category="+category;
+                });
+            });
+        })
+
+    })
+    function BindEnter(obj) {
+
+        //使用document.getElementById获取到按钮对象
+
+        var button = document.getElementById('rwss');
+
+        if(obj.keyCode == 13)
+
+        {             button.click();
+
+            obj.returnValue = false;
+
+        }
+
+    }
+
+</script>
+
+<div class="welcom">
+    <div class="welcombody">
+        <div class="welcom-left">
+            <li>欢迎来到日本邮购网!!</li>
+
+        </div>
+        <div class="welcom-right">
+                        <li><a href="/user.php?action=loginandreg">登录</a></li>
+            <li><a href="/user.php?action=register">注册</a></li>
+                        <li><a href="/user/?name=gwc" target="_blank">购物车</a></li>
+            <li><a href="/user/" target="_blank">会员中心</a></li>
+            <li class="lastli"><a href="/user/?name=dd" target="_blank">我的订单</a></li>
+        </div>
+    </div>
+</div>
+<div class="sharptop color2" onkeydown="BindEnter(event)">
+    <div class="top">
+        <div class="logo">
+            <a href="http://www.ugojp.com"> <img alt="邮购网" title="邮购网" src="/statics/common/images/index_02.png"></a>
+        </div>
+        <div class="topfont">
+            <div class="fen">
+                <span><img src="/statics/common/images/qq.jpg" alt="QQ" title="QQ"><a target="_blank"  href="http://wpa.qq.com/msgrd?v=3&uin=1918223181&site=qq&menu=yes">在线咨询</a></span>
+                <span><img src="/statics/common/images/xinlang.gif" alt="点" title="点"/><a target="_blank"  href="http://weibo.com/ugojp" rel="nofollow">新浪微博</a></span>
+                <span><img src="/statics/common/images/tengxunwb.gif" alt="点" title="点"/><a target="_blank"  href="http://t.qq.com/ugojpcn?preview" rel="nofollow">腾讯微博</a></span>
+                <span><img src="/statics/common/images/header04.png" alt="点" title="点"><a target="_blank"  href="/txt/jisuan.php">费用计算</a></span>
+            </div>
+        </div>
+
+        <div class="down" id="down">
+            <ul class="biaoti">
+                <a href="/yahoo_auctions/yahoo_auctions.php" ><li><img src="/statics/common/images/1.png" alt="雅虎竞拍"></li></a>
+                <a href="/yahoo_shopping/yahoo_shopping.php"><li class="firstli"><img src="/statics/common/images/3.png" alt="雅虎直购"></li></a>
+                <a href="/rakuten_shopping/rakuten_shopping.php" ><li><img src="/statics/common/images/7.png" alt="乐天直购"></li></a>
+            </ul>
+                    <span class="spansel">
+                        <select class="selecthead" name="category">
+                            <option value="">全部商品</option>
+                        	                            <option value="20000">收藏品，艺术品</option>
+                                                        <option value="24698">运动,休闲</option>
+                                                        <option value="23632">相机,家电设备</option>
+                                                        <option value="23000">流行服饰,包包</option>
+                                                        <option value="23140">男女饰品,钟表</option>
+                                                        <option value="24242">兴趣,个人喜好</option>
+                                                        <option value="24202">婴儿用品</option>
+                                                        <option value="21600">书本,杂志</option>
+                                                        <option value="25464">玩具,模型游戏</option>
+                                                        <option value="23336">电脑周边</option>
+                                                        <option value="20060">动画</option>
+                                                        <option value="26318">汽车,机动车</option>
+                                                        <option value="22152">音乐</option>
+                                                        <option value="21964">电影商品,VIDEO</option>
+                                                        <option value="2084032594">明星周边</option>
+                                                        <option value="22896">办公,店铺用品</option>
+                                                        <option value="24198">居家用品</option>
+                                                        <option value="2084055844">生物,宠物用品</option>
+                             
+                        </select>
+<input class="search" type="text" id="zzjs" name="zu" value="请输入搜索内容"
+       onFocus="if(value==defaultValue){value='';this.style.color='#000'}"
+       onBlur="if(!value){value=defaultValue;this.style.color='#999'}" style="color:#999999">
+                        <input type="submit" id="zwss" value="日文搜索" class="submit">
+                        <input type="submit" id="rwss" value="中文搜索" class="submit">
+                    </span>
+        </div>
+    </div>
+    <b class="b5"></b><b class="b6"></b><b class="b7"></b><b class="b8"></b>
+</div>   <div class="weizhi"><div class="fontspan">YAHOO代拍>オークション > 自動車、オートバイ > オートバイ > パーツ > チェーン、ベルト<span class="lastspan">DIDバイク用 ドライブチェーン（ゴールド加工）520V 120L O-RING</span></div></div>
+    <div class="sharptop color2">
+        <b class="b1"></b><b class="b2"></b><b class="b3"></b><b class="b4"></b>
+        <div class="detailstop">
+            <div class="detailstop-left">
+                <div class="datu">
+                	                     	<img id="datu1"  src="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x487-2014110500001-3.jpg" class="jqzoom">
+                                        	<img id="datu2"  style="display: none" src="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x472-2014110300002-3.jpg" class="jqzoom">
+                                        	<img id="datu3"  style="display: none" src="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x422-2014110300003-3.jpg" class="jqzoom">
+                                        
+                </div>
+                <div class="xiaotu" id="xiaotu">                    
+                                        	<span><a><img id="xiaotu1" src="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x487-2014110500001-3.jpg"></a></span>
+                                        	<span><a><img id="xiaotu2" src="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x472-2014110300002-3.jpg"></a></span>
+                                        	<span><a><img id="xiaotu3" src="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x422-2014110300003-3.jpg"></a></span>
+                                      </div>
+            </div>
+            <div class="detailstop-right">
+                    <span class="shangping">
+                        DIDバイク用 ドライブチェーン（ゴールド加工）520V 120L O-RING                    </span>
+                    <span class="xiangxi">
+                        <div class="firstli">交易编号：</div>
+                        <div class="lastli">p458684847</div>
+                    </span>
+                    <span class="xiangxi">
+                        <div class="firstli blue">现在价格：</div>
+                        <div class="lastli">4180日元(折合人民币226元) 		&nbsp;&nbsp;<span style="color:#03F;">直购价格：</span>4180日元(合计人民币：<span class="reb">226</span>)
+                     	</div>
+                    </span>
+                    <span class="xiangxi">
+                        <div class="firstli">加价单位：</div>
+                        <div class="lastli">                        
+                       100                      
+                        日元</div>
+                    </span>
+                    <span class="xiangxi">
+                        <div class="firstli">剩余时间：</div>
+                        <div class="lastli big" id="lastli"></div>
+                    </span>
+                    <span class="xiangxi">
+                        <div class="firstli">下标次数：</div>
+                        <div class="lastli">0次</div>
+                    </span>
+                    <span class="xiangxi">
+                        <div class="firstli">商品成色：</div>
+                        <div class="lastli"> 新品</div>
+                    </span>
+                    <span class="xiangxi">
+                        <div class="firstli">最高出价者：</div>
+                        <div class="lastli"> 
+                        	                        	 无
+                                                  </div>
+                    </span>
+                <div class="anniu">
+                    <div class=" img"><div class="but" id="openpopup" name="openpopup" >出价竞拍>></div></div>
+                                        <div class=" img"><div class="but" id="openbuy" name="openbuy">直接购买>></div></div>     
+                                        <div class=" img"><div class="but" id="openbid" name="openbid" >预约出价>></div></div>
+                    <div class="img"><a href="/txt/jisuan.php?qian=4180.00" target="_blank"><div class="but">试算运费>></div></a></div>
+                </div>
+
+            </div>
+            <div class="popup" id="popup" style="display: none">
+                <form id="form5"  method="post" action="/daipai.php?name=queren&action=pai">
+                    <div class="popuphead head">
+                        <div class="img"><div class="font">出价竞拍</div><img id="closepopup" src="/statics/yahoo_auctions/page/images/but3.jpg"></div>
+                    </div>
+                    <div class="body">
+                        <p class="p"><b>4180</b>日元以上可以下标,您的日元账户当前余额<b>-1</b>日元,减800日元（预付款），
+                            最高出价金额为<b>-801</b>日元</p>
+                        <div class="shuju">
+                            <span>最高代拍额:</span><input id="jpjg" type="text" class="input" name="bid_price" value=""><span class="riyuan">日元</span>
+                        </div>
+                        <input name="quantity" type="hidden" class="input" id="quantity" size="6" style="width:90px;" value="1" readonly="">
+                        <input name="googdsname" type="hidden" value="DIDバイク用 ドライブチェーン（ゴールド加工）520V 120L O-RING"/>
+                        <input name="googdsid" type="hidden" value="p458684847"/>
+                        <input name="hao" type="hidden" value="1768"/>
+                        <input name="cha" type="hidden" value="19"/>
+                        <input name="xianjia" type="hidden" value="4180.00"/>
+                        <input name="maining" type="hidden" value="je3355ltd"/>
+                        <input type="hidden" name="goodsurl" value="http://page12.auctions.yahoo.co.jp/jp/auction/p458684847" />
+                        <input type="hidden" name="goodsimg" value="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x487-2014110500001-3.jpg" />
+                        <input type="hidden" name="endtime" value="2015-02-12T21:59:31+09:00" />
+                        <div class="shuju">
+                            <span>个数:</span><div class="geshu"><span class="rightspan">1</span></div>
+                        </div>
+                        <div class="shuju">
+                            <span>备注:</span><input type="text" class="input" name="beiz">
+                        </div>
+                        <div class="anniu">
+                            <input id="btnBid1" type="submit" class="tijiao" value="确定" name="btnBid">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="popup" id="buy" style="display: none">
+                <form name="BuyNowForm" id="BuyNowForm" action="/daipai.php?name=queren&action=zhi" method="post">
+    			<input name="ajax" type="hidden" id="ajax" value="1">
+                    <div class="buyhead head">
+                        <div class="img"><div class="font">直接购买</div><img id="closebuy" src="/statics/yahoo_auctions/page/images/but3.jpg"></div>
+                    </div>
+                    <div class="body">
+                        <p class="p"><b>4180</b>日元可以直接购买,您的日元账户当前余额<b>-1</b>日元,减800日元（预付款），
+                            最高出价金额为<b>-801</b>日元</p>
+                        <div class="shuju">
+                            <span>最高代拍额:</span><span class="rightspan"><span id="zjgm" style="min-width:60px;width:auto;">4180.00</span>日元</span>
+                            <input name="bid_price" type="hidden" class="input" id="bidbuy_price" size="10" value="4180.00" style="width:90px;" onblur="bijiao(this.value)" >
+                        </div>
+                        <div class="shuju">
+                            <span>个数:</span><div class="geshu"><span class="rightspan">1</span></div>
+                            <input type="hidden" id="quantity" name="quantity" value="1"> 
+                        </div>
+                        <div class="shuju">
+                            <span>备注:</span>
+                            <input type="text" name="beiz" style="width:90px;" class="input" value="" />
+                            <input name="googdsname" type="hidden" value="DIDバイク用 ドライブチェーン（ゴールド加工）520V 120L O-RING"/>
+                            <input name="googdsid" type="hidden" value="p458684847"/>
+                            <input name="hao" type="hidden" value="1768"/>
+                            <input name="cha" type="hidden" value="19"/>
+                            <input name="xianjia" type="hidden" value="4180.00"/>
+                            <input name="maining" type="hidden" value="je3355ltd"/>
+                            <input type="hidden" name="goodsurl" value="http://page12.auctions.yahoo.co.jp/jp/auction/p458684847" />
+                            <input type="hidden" name="goodsimg" value="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x487-2014110500001-3.jpg" />
+                            <input type="hidden" name="endtime" value="2015-02-12T21:59:31+09:00" />
+         
+                        </div>
+                        <div class="anniu">
+                            <input id="btnBid2" type="submit" class="tijiao" value="确定" name="btnBid">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="popup" id="bid" style="display: none">
+                <form id="form7"  method="post" action="/daipai.php?name=queren&action=yu">
+                    <div class="bidhead head">
+                        <div class="img"><div class="font">预约出价</div><img id="closebid" src="/statics/yahoo_auctions/page/images/but3.jpg"></div>
+                    </div>
+                    <div class="body">
+                        <p class="p"><b>4180</b>日元以上可以下标,您的日元账户当前余额<b>-1</b>日元,减800日元（预付款），
+                            最高出价金额为<b>-801</b>日元</p>
+                        <div class="shuju">
+                            <span>最高代拍额:</span><input type="text" class="input" name="bid_price" id="yyjg">
+                            <span class="riyuan">日元</span>
+                        </div>
+                        <div class="shuju">
+                            <span>个数:</span><div class="geshu"><span class="rightspan">1</span></div>
+                        </div>
+                        <div class="shuju">
+                        <input type="hidden" id="quantity" name="quantity" value="1"> 
+                        <input name="googdsname" type="hidden" value="DIDバイク用 ドライブチェーン（ゴールド加工）520V 120L O-RING"/>
+                        <input name="googdsid" type="hidden" value="p458684847"/>
+                        <input name="hao" type="hidden" value="1768"/>
+                        <input name="cha" type="hidden" value="19"/>
+                        <input name="xianjia" type="hidden" value="4180.00"/>
+                        <input name="maining" type="hidden" value="je3355ltd"/>
+                        <input type="hidden" name="goodsurl" value="http://page12.auctions.yahoo.co.jp/jp/auction/p458684847" />
+                        <input type="hidden" name="goodsimg" value="http://auctions.c.yimg.jp/f80batchimg.auctions.yahoo.co.jp/users/5/1/6/7/je3355ltd-imgbatch_1423123953/600x487-2014110500001-3.jpg" />
+                        <input type="hidden" name="endtime" value="2015-02-12T21:59:31+09:00" />
+                            <span>备注:</span><input type="text" class="input" name="beiz">
+                        </div>
+                        <div class="anniu">
+                            <input id="btnBid3" type="submit" class="tijiao" value="确定" name="btnBid">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <b class="b5"></b><b class="b6"></b><b class="b7"></b><b class="b8"></b>
+    </div>
+    <div class="dianpu">
+        <div class="dianpu-left">
+            <div class="anniu">
+                <div class=" img"><a href="yahoo_auctions.php?name=list&sellerID=je3355ltd" target="_blank"><div class="but">进入店铺>></div></a></div>
+                <div class=" img"><a href="http://page12.auctions.yahoo.co.jp/jp/auction/p458684847" target="_blank"><div class="but">原始页面>></div></a></div>
+            </div>
+        </div>
+        <div class="dianpu-center">
+            <span class="xinxi">卖家信息</span>
+            <div class="xiangqing">
+                <span class="firstspan">卖家账号:</span><span class="lastspan">je3355ltd</span>
+            </div>
+            <div class="xiangqing">
+                <span class="firstspan">卖家评价:</span>
+                <div class="pingjia">
+                    <span class="lastspan">好评:</span><span class="lastspan">1768</span><br/>
+                    <span class="lastspan">差评:</span><span class="lastspan">19</span>
+                </div>
+            </div>
+            <div class="xiangqing">
+                <span class="firstspan">商品所在地:</span><span class="lastspan">大阪府 大阪市大正区</span>
+            </div>
+        </div>
+        <div class="dianpu-right">
+            <span class="topspan">
+                <img src="/statics/yahoo_auctions/page/images/details_52.jpg"><span>拍卖商品详细</span>
+            </span>
+            <span class="neirong">
+                <div class="hang"><span>数量:</span><span>3</span></div>
+                <div class="hang"><span>退货可否:</span><span>
+                	不可以
+                
+                </span></div>
+                <div class="hang"><span>开始价格:</span><span>4180.00日元</span></div>
+                <div class="hang"><span>商品成色:</span><span>新品</span></div>
+                <div class="hang"><span>最高出价者:</span><span>
+                	                        	 无
+                                         </span></div>
+                <div class="hang"><span>日本邮费:</span><span> 买家承担</span></div>
+                <div class="hang"><span>开始时间:</span><span>2015-02-05 16:12:57</span></div>
+                <div class="hang"><span>自动延长:</span><span> 有   </span></div>
+                <div class="hang"><span>结束时间:</span><span>2015-02-12 20:59:31</span></div>
+                <div class="hang"><span>提早结束:</span><span> 有可能   </span></div>
+            </span>
+        </div>
+    </div>
+    <div class="xiangxijieshao">
+        <div class="nav-wrap">
+            <ul id="tab">
+                <li><a id="tab1" onmouseover="changtab(1)" ><span class="font" id="font1">商品详情(日文)</span></a></li>
+                <li><a id="tab2" href="http://fanyi.baidu.com/transpage?query=http://www.ugojp.com/yahoo_auctions/fanyi.php?q=p458684847&source=url&ie=utf8&from=jp&to=zh&render=1" target="_blank"><span class="font" id="font2">参考翻译(中文)</span></a></li>               
+                <li><a id="tab4" onmouseover="changtab(4)" ><span class="font" id="font4">下标记录</span></a></li>
+            </ul>
+        </div>
+
+
+        <div class="first" id="first1">
+             <CENTER><B>DIDバイク用 ドライブチェーン（ゴールド加工）520V 120L O-RING</B><BR><BR><TABLE WIDTH=640 BGCOLOR=#000088 CELLPADDING=0 CELLSPACING=1><TD><TABLE WIDTH=100% CELLSPACING=0 CELLPADDING=5><TR BGCOLOR=#3399cc><TD ALIGN=center> <B>商品説明</B> </TD></TR><TR><TD BGCOLOR=#ffffff>【商品説明】<BR><BR>O-リングを採用し、2ケ所のシールポイントを設けることによって従来のノンシールチェーンに比べ耐摩耗性能が向上し優れたコストパフォーマンスと安定した性能を発揮するスタンダード相当のシールチェーンです。<BR></TD></TR></TABLE></TD></TABLE><BR><TABLE WIDTH=640 BGCOLOR=#000088 CELLPADDING=0 CELLSPACING=1><TD><TABLE WIDTH=100% CELLSPACING=0 CELLPADDING=5><TR BGCOLOR=#3399cc><TD ALIGN=center> <B>注意事項</B> </TD></TR><TR><TD BGCOLOR=#ffffff>★海外品により取り扱い説明書は付属はしておりません。<BR><BR>★商品は新品未使用品ですが、パッケージが輸送や保管の関係上で多少キズ・汚れがある場合がありますのでご了承下さい<BR><BR>★ロットにより、写真と色合いが異なる場合がありますのでご了承下さい。<BR><BR>★商品についてはご注文いただいた場合、常にお届けできるよう万全を期していますが、他店舗と並行しての商品になりますので、稀に品切れ等により1週間～10日間ほど発送が遅れる場合やご注文に応じられない場合がございますのであらかじめご了承ください。<BR><BR>3日間連絡が無い場合は、キャンセルとさせて頂きます。<BR>土・日・祝はお問合せ、ご質問などの回答が遅れる場合がありますのでご了承下さい。<BR><BR>【保証方法】<BR>初期不良（商品説明に記載していない汚れ等）については商品到着後、早急に御確認下さい、万が一初期不良が御座いましたら商品到着後7日以内に御連絡いただければ商品先送りにて対応させて頂きます、その際に発生する送料は原則　当方にて全額負担致します。（早期対応の為郵送方法が変わる場合もございます予め御了承下さい。）<BR>※万が一、交換品が在庫切れの場合など諸事情で御返金対応となる場合も御座います予め御了承ください。<BR>※お客様の御都合（イメージ違い等）による返品交換は受け付ける事ができません尚、御不明な点がございましたら<BR>御連絡いただければ迅速に対応させていただきます（お客様からいただいたメールは基本的に24時間以内にご返答致しますが、土曜日・日曜日、祝日、営業時間外の問合せに関しては連休明け順次ご返信となります。）</TD></TR></TABLE></TD></TABLE><BR><TABLE WIDTH=640 BGCOLOR=#000088 CELLPADDING=0 CELLSPACING=1><TD><TABLE WIDTH=100% CELLSPACING=0 CELLPADDING=5><TR BGCOLOR=#3399cc><TD ALIGN=center> <B>発送詳細</B> </TD></TR><TR><TD BGCOLOR=#ffffff>佐川急便：本州・四国・九州は972円　北海道1,300円・沖縄2,800円(追跡及び保障あり）<BR>※複数落札による同封は1個につき972円増しになります。<BR>★離島の方は着払いにて発送いたします。<BR><BR>発送後、お問合せ番号をご連絡いたします。<BR><BR>■落札後のお取引でトラブルを未然に防ぎスムーズにさせて頂くために、<BR>　　下記の内容を必ずお読みになりご入札願いします。<BR><BR>※発送作業（梱包・出荷）を第三者にて任せておりますので、送料が多くなっております。<BR>　　送料につきましては、確認されて納得頂きましたらご入札下さい。<BR>　　梱包箱は、資源保護の為再利用箱を使用させて頂く場合が有ります。<BR>　　商品の発送は平日（月～金）になります。<BR><BR>※土曜・日曜・祝日の落札は週明け（祝日は休み明け）の発送になる場合があります。<BR><BR>※対応にお時間を頂く場合があります。又即日発送できない場合がありますのでご了承ください。<BR><BR>※ご入金の時間帯や土・日・祝日などでご入金の確認が遅れる場合は発送が遅れる場合があります。</TD></TR></TABLE></TD></TABLE></CENTER><BR>         </div>
+        <div class="first" id="first2" style="display: none">
+              <CENTER><B>DIDバイク用 ドライブチェーン（ゴールド加工）520V 120L O-RING</B><BR><BR><TABLE WIDTH=640 BGCOLOR=#000088 CELLPADDING=0 CELLSPACING=1><TD><TABLE WIDTH=100% CELLSPACING=0 CELLPADDING=5><TR BGCOLOR=#3399cc><TD ALIGN=center> <B>商品説明</B> </TD></TR><TR><TD BGCOLOR=#ffffff>【商品説明】<BR><BR>O-リングを採用し、2ケ所のシールポイントを設けることによって従来のノンシールチェーンに比べ耐摩耗性能が向上し優れたコストパフォーマンスと安定した性能を発揮するスタンダード相当のシールチェーンです。<BR></TD></TR></TABLE></TD></TABLE><BR><TABLE WIDTH=640 BGCOLOR=#000088 CELLPADDING=0 CELLSPACING=1><TD><TABLE WIDTH=100% CELLSPACING=0 CELLPADDING=5><TR BGCOLOR=#3399cc><TD ALIGN=center> <B>注意事項</B> </TD></TR><TR><TD BGCOLOR=#ffffff>★海外品により取り扱い説明書は付属はしておりません。<BR><BR>★商品は新品未使用品ですが、パッケージが輸送や保管の関係上で多少キズ・汚れがある場合がありますのでご了承下さい<BR><BR>★ロットにより、写真と色合いが異なる場合がありますのでご了承下さい。<BR><BR>★商品についてはご注文いただいた場合、常にお届けできるよう万全を期していますが、他店舗と並行しての商品になりますので、稀に品切れ等により1週間～10日間ほど発送が遅れる場合やご注文に応じられない場合がございますのであらかじめご了承ください。<BR><BR>3日間連絡が無い場合は、キャンセルとさせて頂きます。<BR>土・日・祝はお問合せ、ご質問などの回答が遅れる場合がありますのでご了承下さい。<BR><BR>【保証方法】<BR>初期不良（商品説明に記載していない汚れ等）については商品到着後、早急に御確認下さい、万が一初期不良が御座いましたら商品到着後7日以内に御連絡いただければ商品先送りにて対応させて頂きます、その際に発生する送料は原則　当方にて全額負担致します。（早期対応の為郵送方法が変わる場合もございます予め御了承下さい。）<BR>※万が一、交換品が在庫切れの場合など諸事情で御返金対応となる場合も御座います予め御了承ください。<BR>※お客様の御都合（イメージ違い等）による返品交換は受け付ける事ができません尚、御不明な点がございましたら<BR>御連絡いただければ迅速に対応させていただきます（お客様からいただいたメールは基本的に24時間以内にご返答致しますが、土曜日・日曜日、祝日、営業時間外の問合せに関しては連休明け順次ご返信となります。）</TD></TR></TABLE></TD></TABLE><BR><TABLE WIDTH=640 BGCOLOR=#000088 CELLPADDING=0 CELLSPACING=1><TD><TABLE WIDTH=100% CELLSPACING=0 CELLPADDING=5><TR BGCOLOR=#3399cc><TD ALIGN=center> <B>発送詳細</B> </TD></TR><TR><TD BGCOLOR=#ffffff>佐川急便：本州・四国・九州は972円　北海道1,300円・沖縄2,800円(追跡及び保障あり）<BR>※複数落札による同封は1個につき972円増しになります。<BR>★離島の方は着払いにて発送いたします。<BR><BR>発送後、お問合せ番号をご連絡いたします。<BR><BR>■落札後のお取引でトラブルを未然に防ぎスムーズにさせて頂くために、<BR>　　下記の内容を必ずお読みになりご入札願いします。<BR><BR>※発送作業（梱包・出荷）を第三者にて任せておりますので、送料が多くなっております。<BR>　　送料につきましては、確認されて納得頂きましたらご入札下さい。<BR>　　梱包箱は、資源保護の為再利用箱を使用させて頂く場合が有ります。<BR>　　商品の発送は平日（月～金）になります。<BR><BR>※土曜・日曜・祝日の落札は週明け（祝日は休み明け）の発送になる場合があります。<BR><BR>※対応にお時間を頂く場合があります。又即日発送できない場合がありますのでご了承ください。<BR><BR>※ご入金の時間帯や土・日・祝日などでご入金の確認が遅れる場合は発送が遅れる場合があります。</TD></TR></TABLE></TD></TABLE></CENTER><BR>         </div>
+        <div class="first" id="first3" style="display: none">
+            bbbbb
+        </div>
+        <div class="first" id="first4" style="display: none">
+                    </div>
+    </div>
+<div class="foot">
+    <div class="erweima">
+        <img src="/statics/common/images/erweima.png" alt="线" title="线">
+    </div>
+    <div class="foottop">
+        <ul>
+            <li class="firstli">关于我们<img src="/statics/common/images/dayinji.jpg" alt="关于我们" title="关于我们"></li>
+            <li><a href="/txt/user.php?name=tel" target="_blank">联系我们</a></li>
+            <li><a href="/txt/user.php?name=aboutus" target="_blank">公司简介</a></li>
+        </ul>
+        <ul>
+            <li class="firstli">常见问题<img src="/statics/common/images/book.jpg" alt="常见问题" title="常见问题"></li>
+            <li><a href="/txt/user.php?name=fynx" target="_blank">代拍\代购费用</a></li>
+            <li><a href="/txt/user.php?name=mcjs" target="_blank">名词解释</a></li>
+            <li><a href="/sitemap.html" target="_blank">网站地图</a></li>
+            <li><a href="http://www.ugojp.com/news/news/" target="_blank">新闻中心</a></li>
+        </ul>
+        <ul>
+            <li class="firstli">顾客中心<img src="/statics/common/images/erji.jpg" alt="顾客中心" title="顾客中心"></li>
+            <li><a href="/txt/user.php?name=huiyuan" target="_blank">会员必读</a></li>
+            <li><a href="/txt/user.php?name=fuwu" target="_blank">服务协议</a></li>
+            <li><a href="/txt/user.php?name=mianze" target="_blank">免责声明</a></li>
+        </ul>
+    </div>
+    <div id="copyright" class="wrap" >
+        <div class="footer_beian" style="font-size:12px;">
+            <p>苏ICP备13036217号 <script type="text/javascript" src="/statics/common/js/footer.js"></script></p>
+            <p> Copyright日本邮购网 2013,All Rights Reserved，邮购网版权所有，并保留所有权利</p>
+        </div>
+    </div>
+</div>
+
+<div id="top">
+    <p id="back-to-top"><a href="#top"><span><img src="/statics/common/images/gotop.jpg" alt="返回" title="返回"></span>返回顶部</a></p>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"1","bdPos":"right","bdTop":"250"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</body>
+</html>
+

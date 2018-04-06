@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>网校通特供下载专区</title>
+<link href="http://www.zxxk.com/wxt/school/css2.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://www.zxxk.com/js/jquery.js"></script>
+<script type="text/javascript" src="http://www.zxxk.com/js/comm.js"></script>
+<script type="text/javascript" src="http://www.zxxk.com/skins/js/dropdowncontent.js"></script>
+<script>
+function checkSearch(id){
+  if(document.getElementById(id).value == "" || document.getElementById(id).value == "请输入搜索关键字"){
+     alert("请输入关键字再搜索!");
+     document.getElementById(id).value="";
+     document.getElementById(id).focus();
+     return false;
+  }else{
+    var keyword = document.getElementById(id).value;
+	var url="";
+	     if ($.browser.msie) {
+                        keyword = encodeURIComponent(keyword);
+                    } else if ($.browser.mozilla) {
+                        keyword = escape(keyword);
+                    } else if ($.browser.safari) {
+                        keyword = escape(keyword);
+                    }
+        url = "http://search.zxxk.com/search1.aspx?keyword=" + keyword + "&issupply=1";
+	window.open(url);
+  }
+}
+
+$(function () {
+    //搜索按钮
+    $("#SearchKey").keypress(function (e) {
+        var key = window.event ? e.keyCode : e.which;
+        if (key.toString() == "13") {
+            checkSearch('SearchKey');
+            return false;
+        }
+    });
+});
+</script>
+</head>
+
+<body>
+<!--top_class --->
+<div id="top_cls">
+ <div class="top_w">
+  <div class="logo"></div>
+  <div class="cls"><a href="http://www.zxxk.com" target="_blank">首页</a> - <a href="http://www.zxxk.com/soft/" target="_blank">资源下载</a> - <a href="http://www.zxxk.com/wxt/" target="_blank">网校通</a> - <a href="http://ewt.zxxk.com" target="_blank">e网通</a> - <a href="http://www.zxxk.com/guestbook" target="_blank">留言反馈</a> - <a href="http://bbs.zxxk.com" target="_blank">交流论坛</a></div>
+  <div style="float:left; padding-left:20px; padding-top:8px">兰老师 <a href="http://wpa.qq.com/msgrd?V=1&uin=537008968&Site=初中学科网&Menu=yes"><img src="http://www.zxxk.com/skins/newdefault/images/online.gif" border="0" /></a>  杜老师 <a href="http://wpa.qq.com/msgrd?V=1&uin=537008966&Site=初中学科网&Menu=yes"><img src="http://www.zxxk.com/skins/newdefault/images/online.gif" border="0" /></a>  李老师 <a href="http://wpa.qq.com/msgrd?V=1&uin=537008970&Site=初中学科网&Menu=yes"><img src="http://www.zxxk.com/skins/newdefault/images/online.gif" border="0" /></a><a href="http://www.zxxk.com/feature/wqzl/" target="_blank" style="color:#FF0000; font-size:14px;">   维权专栏</a></div>
+  <div class="wxt"><a href="http://www.zxxk.com/wxt/" target="_blank">网校通官方首页</a></div>
+ </div>
+</div>
+<!--top_flash-->
+<div id="top_flash">
+  <div class="flash">
+    <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="960" height="282">
+      <param name="movie" value="http://www.zxxk.com/wxt/school/images/top.swf" />
+      <param name="quality" value="high" />
+      <param name="wmode" value="transparent" />
+      <embed src="http://www.zxxk.com/wxt/school/images/top.swf" width="960" height="282" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed>
+    </object>
+  </div>
+</div>
+<!--main-->
+<div id="main">
+  <div class="main_cls">
+    <div class="cls_le"></div>
+	<div class="cls_mid">
+	  <ul>
+		<li class="click"><a href="/schoolSupply/">特供首页</a><li>
+		<li id="ChannelID13"><a href="/schoolSupply/SupplyList.aspx?ChannelID=13">语文特供</a><li>
+		<li id="ChannelID12"><a href="/schoolSupply/SupplyList.aspx?ChannelID=12">数学特供</a><li>
+		<li id="ChannelID14"><a href="/schoolSupply/SupplyList.aspx?ChannelID=14">英语特供</a><li>
+		<li id="ChannelID11"><a href="/schoolSupply/SupplyList.aspx?ChannelID=11">物理特供</a><li>
+		<li id="ChannelID17"><a href="/schoolSupply/SupplyList.aspx?ChannelID=17">政治特供</a><li>
+		<li id="ChannelID10"><a href="/schoolSupply/SupplyList.aspx?ChannelID=10">化学特供</a><li>
+		<li id="ChannelID15"><a href="/schoolSupply/SupplyList.aspx?ChannelID=15">历史特供</a><li>
+		<li id="ChannelID16"><a href="/schoolSupply/SupplyList.aspx?ChannelID=16">地理特供</a><li>
+		<li id="ChannelID18"><a href="/schoolSupply/SupplyList.aspx?ChannelID=18">生物特供</a><li>
+		<li id="ChannelID19"><a href="/schoolSupply/SupplyList.aspx?ChannelID=19">综合特供</a><li>
+	  </ul>
+
+<script type="text/javascript">
+			var ClassID = "15";
+        	$("#ChannelID"+ClassID).addClass("click").siblings("li").removeClass("click");
+        </script>
+	</div>
+	<div class="cls_ri"></div>
+  </div>
+  <div id="Schoolsearch">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="60%">
+	        您现在的位置：<a href="/Default.aspx">首页</a> &gt;&gt; <a href="http://www.zxxk.com/SchoolSupply/SupplyList.aspx?ChannelID=15">历史</a> &gt;&gt; <a href="http://www.zxxk.com/SchoolSupply/SupplyList.aspx?ClassID=914">中考</a> &gt;&gt; <a href="http://www.zxxk.com/SchoolSupply/SupplyList.aspx?ClassID=919">各类备考试题</a>  &gt;&gt; 资料列表</td>
+        <td width="40%" align="right">
+			<input type="hidden" name="spec" value="1">
+			<input name="keyword" id="SearchKey" onblur="if(value ==''){value='输入标题关键字'}" onclick="if(this.value=='输入标题关键字')this.value=''" onmouseover="this.focus()" value="输入标题关键字" size="25">
+			<input name="提交" type="button" value="搜索特供"  onclick="checkSearch('SearchKey');">
+		</td>
+      </tr>
+    </table>
+  </div>
+	<div id="list">
+	  <div class="listlr">
+		<div class="listl" id="listbody_right">
+				<dl id="ChildList">
+					<dt class="lm">分类导航</dt>
+					<dd class="lm2">
+						<ul>
+						 
+					  </ul>
+					</dd>
+				</dl>
+				<dl>
+					<dt class="lm">下载排行</dt>
+					<dd>
+					 <!-- Loop Cache -->·<a href="http://yy.zxxk.com/SoftInfo.aspx?InfoID=3817919" target="_blank">2014新目标九年级英语Unit 9 I .</a><br />·<a href="http://yy.zxxk.com/SoftInfo.aspx?InfoID=3816950" target="_blank">2014秋人教版九年级 Unit 9 I l.</a><br />·<a href="http://yy.zxxk.com/SoftInfo.aspx?InfoID=3816949" target="_blank">2014秋人教版九年级 Unit 9 I l.</a><br />·<a href="http://sx.zxxk.com/SoftInfo.aspx?InfoID=3816671" target="_blank">2014-2015学年点拨高中数学必修.</a><br />·<a href="http://yy.zxxk.com/SoftInfo.aspx?InfoID=3816063" target="_blank">2014版(秋)新目标九年级Unit8短.</a><br />·<a href="http://wl.zxxk.com/SoftInfo.aspx?InfoID=3815940" target="_blank">欧姆定律简单计算（无答案）</a><br />·<a href="http://yy.zxxk.com/SoftInfo.aspx?InfoID=3815901" target="_blank">2014九年级英语Unit 8 It must .</a><br />·<a href="http://yy.zxxk.com/SoftInfo.aspx?InfoID=3812514" target="_blank">人教新目标九年级英语unit10全.</a><br />·<a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=3812324" target="_blank">人教版七上第四单元第18课三国.</a><br />·<a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=3812322" target="_blank">人教版七上第四单元第18课三国.</a><br />
+					</dd>
+				</dl>
+				<dl>
+					<dt class="lm" >推荐下载</dt>
+					<dd>
+					 <!-- Loop Cache -->·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3827174" target="_blank">浙江省杭州市余杭区初中联盟学.</a><br />·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3827172" target="_blank">云南省昆明三中、滇池中学2015.</a><br />·<a href="http://yw.zxxk.com/SoftInfo.aspx?InfoID=3826712" target="_blank">2014年济南市初三年级学业水平.</a><br />·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3826626" target="_blank">上海市格致中学2015届高三上学.</a><br />·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3826623" target="_blank">陕西省西安市五校联考2015届九.</a><br />·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3826621" target="_blank">江苏省江阴市长泾片2015届九年.</a><br />·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3826591" target="_blank">江苏省江阴市要塞片2015届九年.</a><br />·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3826590" target="_blank">河南省平顶山市三校2015届九年.</a><br />·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3826589" target="_blank">湖北省赤壁市2015届九年级上学.</a><br />·<a href="http://hx.zxxk.com/SoftInfo.aspx?InfoID=3826588" target="_blank">江苏省南京市溧水区2015届九年.</a><br />
+					</dd>
+				</dl>
+				<dl>
+					<dt class="lm">侵权公告</dt>
+					<dd>
+					<!-- Loop Cache -->·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389793" target="_blank"  title="12月4日“学优高考网”侵权资料名单公告">12月4日“学优高考网”侵权资料.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389477" target="_blank"  title="12月3日“学优高考网”侵权资料名单公告">12月3日“学优高考网”侵权资料.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389476" target="_blank"  title="12月3日“第二教育网”侵权资料名单公告">12月3日“第二教育网”侵权资料.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389406" target="_blank"  title="12月03日“金太阳 资源网”侵权资料名单公告">12月03日“金太阳 资源网”侵权.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389401" target="_blank"  title="12月03日“高考 资源网”侵权资料名单公告">12月03日“高考 资源网”侵权资.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389394" target="_blank"  title="12月03日“21世纪教育网”侵权资料名单公示">12月03日“21世纪教育网”侵权.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389393" target="_blank"  title="12月03日“高考 学习网”侵权资料名单公示">12月03日“高考 学习网”侵权资.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389148" target="_blank"  title="12月02日“21世纪教育网”侵权资料名单公示">12月02日“21世纪教育网”侵权.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389147" target="_blank"  title="12月02日“高考 学习网”侵权资料名单公示">12月02日“高考 学习网”侵权资.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389146" target="_blank"  title="12月02日“金太阳 资源网”侵权资料名单公告">12月02日“金太阳 资源网”侵权.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389145" target="_blank"  title="12月02日“高考 资源网”侵权资料名单公告">12月02日“高考 资源网”侵权资.</a><br />·<a href="http://www.zxxk.com/feature/wqzl/Info.aspx?InfoID=389120" target="_blank"  title="12月2日“学优高考网”侵权资料名单公告">12月2日“学优高考网”侵权资料.</a><br />
+					</dd>
+				</dl>
+				
+	</div>
+			<div class="listr">
+				<div class="listdh">
+					<ul>
+						<li class="h1"><a>资料列表</a></li>
+						<!--
+						<li class="f2"><a href="/SoftList_SJ.aspx?Classid=919">试卷</a></li>
+						<li class="f2"><a href="/SoftList_ja.aspx?Classid=919">教案</a></li>
+						<li class="f2"><a href="/SoftList_KJ.aspx?Classid=919">课件</a></li>
+						<li class="f2"><a href="/SoftList_Sc.aspx?Classid=919">素材</a></li>
+						<li class="f2"><a href="/SoftList_Lw.aspx?Classid=919">论文</a></li>
+						<li class="f2"><a href="/SoftList_Sp.aspx?Classid=919">视频</a></li>
+						<li class="f2"><a href="/SoftList_Elite.aspx?Classid=919">推荐</a></li>
+						<li class="f2"><a href="/SoftList_Hot.aspx?Classid=919">热门</a></li>
+						<li class="f2"><a href="/SoftList_Free.aspx?Classid=919">免点</a></li>
+						<li class="h2"><a href="/SoftList_School.aspx?Classid=919">网 校 通</a></li>
+						-->
+					</ul>
+				</div>
+			  <div class="listlb">
+			  <div class="showpage"><form name="PageForm" style="margin: 0px; padding: 0px;" onsubmit="return false;"> <a class="page" href="/SchoolSupply/SupplyList.aspx?page=1&amp;ClassID=919"><li>1..</li></a> <a class="prepage" href="/SchoolSupply/SupplyList.aspx?page=52&amp;ClassID=919"><li>上页</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=48&amp;ClassID=919"><li>48</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=49&amp;ClassID=919"><li>49</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=50&amp;ClassID=919"><li>50</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=51&amp;ClassID=919"><li>51</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=52&amp;ClassID=919"><li>52</li></a>  <span class="page_on"><li>53</li></span>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=54&amp;ClassID=919"><li>54</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=55&amp;ClassID=919"><li>55</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=56&amp;ClassID=919"><li>56</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=57&amp;ClassID=919"><li>57</li></a>  <a class="nextpage" href="/SchoolSupply/SupplyList.aspx?page=54&amp;ClassID=919"><li>下页</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=71&amp;ClassID=919"><li>..71</li></a></form></div>
+					<div class="showsoft">
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2318780】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2318780" target="_blank"><font color="#00000">江苏省苏州市立达中学2012届九年级中考二模历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=格萨花开' target="_blank" style="color:#FF6600;">格萨花开</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=格萨花开' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2318780' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/6/1 10:12:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">54</font> 次 文件大小：<font color="red">308</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2318780" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317953】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317953" target="_blank"><font color="#00000">贵州省黔东南苗族侗族自治州正钰中学2012届九年级下学期第二次模拟考试历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=椰风海韵7358' target="_blank" style="color:#FF6600;">椰风海韵7358</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=椰风海韵7358' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317953' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/6/1 10:09:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">12</font> 次 文件大小：<font color="red">1679</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317953" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2319159】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2319159" target="_blank"><font color="#00000">[名校联盟]重庆市巴蜀中学2012届九年级下学期第二次模拟考试历史试题（无答案）</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=zudongzhou' target="_blank" style="color:#FF6600;">zudongzhou</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=zudongzhou' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2319159' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/6/1 6:06:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">96</font> 次 文件大小：<font color="red">471</font> K  需要点数：<font color="red">0</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2319159" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317379】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317379" target="_blank"><font color="#00000">江苏省苏州市草桥中学2012届九年级中考二模历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=椰风海韵7358' target="_blank" style="color:#FF6600;">椰风海韵7358</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=椰风海韵7358' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317379' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 15:38:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">19</font> 次 文件大小：<font color="red">1066</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317379" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317714】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317714" target="_blank"><font color="#00000">江苏省苏州市高新区2012届九年级初中毕业暨升学考试模拟测试（二）历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=椰风海韵7358' target="_blank" style="color:#FF6600;">椰风海韵7358</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=椰风海韵7358' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317714' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 15:28:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">26</font> 次 文件大小：<font color="red">298</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317714" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2318443】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2318443" target="_blank"><font color="#00000">江苏省南京市各区县2012年中考一模历史试题（9份打包）</font></a> <span style="color:#339900;">超大</span></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=lihuan0206' target="_blank" style="color:#FF6600;">lihuan0206</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=lihuan0206' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2318443' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 14:41:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">92</font> 次 文件大小：<font color="red">9351</font> K  需要点数：<font color="red">4</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2318443" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317950】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317950" target="_blank"><font color="#00000">贵州省黔东南苗族侗族自治州正钰中学2012届九年级下学期第三次模拟考试历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=椰风海韵7358' target="_blank" style="color:#FF6600;">椰风海韵7358</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=椰风海韵7358' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317950' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 14:39:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">69</font> 次 文件大小：<font color="red">652</font> K  需要点数：<font color="red">0</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317950" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2318298】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2318298" target="_blank"><font color="#00000">江苏省南京市联合体（秦淮下关浦口沿江）2012年中考一模历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=专题汇编' target="_blank">专题汇编</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=xkwzh168' target="_blank" style="color:#FF6600;">xkwzh168</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=xkwzh168' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2318298' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 14:14:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">37</font> 次 文件大小：<font color="red">221</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2318298" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2252826】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2252826" target="_blank"><font color="#00000">江苏省南京市六合区2012年中考一模历史试题</font></a> <span style="color:#ff0033;">热门</span></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=椰风海韵7358' target="_blank" style="color:#FF6600;">椰风海韵7358</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=椰风海韵7358' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2252826' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 14:13:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">183</font> 次 文件大小：<font color="red">2300</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2252826" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317414】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317414" target="_blank"><font color="#00000">江苏省苏州市吴中区2012届九年级教学质量调研测试（三）历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=调研' target="_blank">调研</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=椰风海韵7358' target="_blank" style="color:#FF6600;">椰风海韵7358</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=椰风海韵7358' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317414' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 13:57:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">14</font> 次 文件大小：<font color="red">454</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317414" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317991】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317991" target="_blank"><font color="#00000">江苏省泰州市靖江外国语学校2012年中考二模历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=周一' target="_blank" style="color:#FF6600;">周一</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=周一' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317991' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 11:02:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">57</font> 次 文件大小：<font color="red">491</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317991" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317779】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317779" target="_blank"><font color="#00000">江西省高安市2012届九年级第二次模拟考试历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=谌海清' target="_blank" style="color:#FF6600;">谌海清</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=谌海清' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317779' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 9:28:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">83</font> 次 文件大小：<font color="red">252</font> K  需要点数：<font color="red">0</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317779" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2308476】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2308476" target="_blank"><font color="#00000">江苏省南京市高淳县2012年中考二模历史试题</font></a> <span style="color:#ff0033;">热门</span></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=mekin39' target="_blank" style="color:#FF6600;">mekin39</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=mekin39' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2308476' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 9:17:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">341</font> 次 文件大小：<font color="red">530</font> K  需要点数：<font color="red">0</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2308476" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2262581】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2262581" target="_blank"><font color="#00000">江苏省南京市白下区2012年中考一模历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=njqianmao' target="_blank" style="color:#FF6600;">njqianmao</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=njqianmao' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2262581' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/31 9:07:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">126</font> 次 文件大小：<font color="red">1926</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2262581" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317528】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317528" target="_blank"><font color="#00000">河南省郑州市2012届九年级考前测试（五）历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=椰风海韵7358' target="_blank" style="color:#FF6600;">椰风海韵7358</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=椰风海韵7358' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317528' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/30 23:30:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">77</font> 次 文件大小：<font color="red">423</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317528" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2317375】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317375" target="_blank"><font color="#00000">江苏省南京市玄武区2012年中考一模历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=xkwzh168' target="_blank" style="color:#FF6600;">xkwzh168</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=xkwzh168' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2317375' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/30 21:56:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">82</font> 次 文件大小：<font color="red">502</font> K  需要点数：<font color="red">1</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2317375" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2316315】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2316315" target="_blank"><font color="#00000">[名校联盟]江苏省盐都县郭猛中学2012届九年级毕业班学情调研历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=调研' target="_blank">调研</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=ziliaoliulili' target="_blank" style="color:#FF6600;">ziliaoliulili</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=ziliaoliulili' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2316315' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/30 15:08:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">26</font> 次 文件大小：<font color="red">1349</font> K  需要点数：<font color="red">0</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2316315" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2316294】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2316294" target="_blank"><font color="#00000">江苏省南京市溧水县2012年中考二模历史试题</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=mekin39' target="_blank" style="color:#FF6600;">mekin39</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=mekin39' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2316294' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/30 15:06:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">103</font> 次 文件大小：<font color="red">767</font> K  需要点数：<font color="red">2</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2316294" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2316525】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2316525" target="_blank"><font color="#00000">[名校联盟]福建省厦门外国语学校2012届九年级中考模拟历史试题（无答案）</font></a></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=liamei2008' target="_blank" style="color:#FF6600;">liamei2008</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=liamei2008' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2316525' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/30 15:00:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">22</font> 次 文件大小：<font color="red">329</font> K  需要点数：<font color="red">0</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2316525" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+                  <div class="p1">
+                  <h4><font color="red">【编号:2313459】</font><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2313459" target="_blank"><font color="#00000">江苏省苏州工业园区星海中学2012届九年级中考二模历史试题</font></a> <span style="color:#ff0033;">热门</span></h4>
+				        <div class="softAttribute" style="height:20px;">
+                            <span class="softts" style="float:left;" >年份：2012&nbsp;<a href="http://ls.zxxk.com/SoftList.aspx?ClassID=919" target="_blank">各类备考试题</a>-&gt;<a href ='http://ls.zxxk.com/VersionList.aspx?Version=全国通用' target="_blank">全国通用</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?SoftType=试题试卷' target="_blank">试题试卷</a>-&gt;<a href ='http://ls.zxxk.com/TypeList.aspx?DownType=模拟预测' target="_blank">模拟预测</a>&nbsp;&nbsp;上传会员：<a href='http://bbs.zxxk.com/dispuser.asp?name=格萨花开' target="_blank" style="color:#FF6600;">格萨花开</a>-&gt;<a href='http://www.zxxk.com/user/info.asp?username=格萨花开' target="_blank">文集</a>&nbsp;<a href='http://www.zxxk.com/Comment.asp?ChannelID=15&amp;Action=Write&amp;InfoID=2313459' target="_blank">评论</a></span>
+						    <span style="float:right; color:#cccccc;">2012/5/30 14:23:00</span>						</div>
+                        
+						<div class="softdo">
+						<span class="down_attribute">下载次数：<font color="red">182</font> 次 文件大小：<font color="red">535</font> K  需要点数：<font color="red">0</font> 点  需要储值：<font color="red">0</font> 元</span> <span class="down_url"><a href="http://ls.zxxk.com/SoftInfo.aspx?InfoID=2313459" style="color:blue;" target="_blank">点击下载</a></span>						</div>               
+					</div>
+                  
+				  </div>
+			  <div class="showpage"><form name="PageForm" style="margin: 0px; padding: 0px;" onsubmit="return false;"> <a class="page" href="/SchoolSupply/SupplyList.aspx?page=1&amp;ClassID=919"><li>1..</li></a> <a class="prepage" href="/SchoolSupply/SupplyList.aspx?page=52&amp;ClassID=919"><li>上页</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=48&amp;ClassID=919"><li>48</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=49&amp;ClassID=919"><li>49</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=50&amp;ClassID=919"><li>50</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=51&amp;ClassID=919"><li>51</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=52&amp;ClassID=919"><li>52</li></a>  <span class="page_on"><li>53</li></span>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=54&amp;ClassID=919"><li>54</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=55&amp;ClassID=919"><li>55</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=56&amp;ClassID=919"><li>56</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=57&amp;ClassID=919"><li>57</li></a>  <a class="nextpage" href="/SchoolSupply/SupplyList.aspx?page=54&amp;ClassID=919"><li>下页</li></a>  <a class="page" href="/SchoolSupply/SupplyList.aspx?page=71&amp;ClassID=919"><li>..71</li></a></form></div>
+			  </div>
+		</div>
+	  </div>
+	</div>
+  <div class="bot_bg"></div>
+</div>
+<div id="bottom">
+
+
+
+<!--版权信息开始-->
+<div id="bq">
+
+    <div class="all">
+    <div class="jiao">
+      <div class="biaoti"><span style="float:left; padding-top:2px;"><strong>网校通服务热线：    </strong></span></div>
+	    <div class="neirongbg">
+		<div class="neirong">
+		  <table width="900" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="150" class="y1">东北地区</td>
+              <td width="150" class="y2" >华北地区</td>
+              <td width="150" class="y3">华东地区</td>
+              <td width="150" class="y4">中南地区</td>
+              <td width="150" class="y5">西南地区</td>
+              <td width="150" class="y6">西北地区</td>
+            </tr>
+            <tr>
+              <td><div align="center">吉  林：010-58461577</div></td>
+              <td><div align="center">北京：010-58461576 </div></td>
+              <td><div align="center">山东：010-51727493</div></td>
+              <td><div align="center">河南：010-57172722</div></td>
+              <td><div align="center">四川：010-58461579</div></td>
+              <td><div align="center">甘肃：010-58461580</div></td>
+            </tr>
+            <tr>
+              <td><div align="center">黑龙江：010-58431708</div></td>
+              <td><div align="center">天津：010-57172722</div></td>
+              <td><div align="center">江苏：010-57172722</div></td>
+              <td><div align="center">湖北：010-58431705</div></td>
+              <td><div align="center">重庆：010-58461582</div></td>
+              <td><div align="center">陕西：010-58461581</div></td>
+            </tr>
+            <tr>
+              <td><div align="center">辽 宁：010-58461583</div></td>
+              <td><div align="center">河北：010-89318505</div></td>
+              <td><div align="center">浙江：010-58461580</div></td>
+              <td><div align="center">湖南：010-89317715</div></td>
+              <td><div align="center">贵州：010-58431702</div></td>
+              <td><div align="center">宁厦：010-57172722</div></td>
+            </tr>
+            <tr>
+              <td><div align="center"></div></td>
+              <td><div align="center">山西：010-58431703</div></td>
+              <td><div align="center">上海：010-89318505 </div></td>
+              <td><div align="center">广东：010-57172722</div></td>
+              <td><div align="center">云南：010-58431706</div></td>
+              <td><div align="center">新疆：010-57172722</div></td>
+            </tr>
+            <tr>
+              <td><div align="center"></div></td>
+              <td><div align="center">内蒙：010-58425261</div></td>
+              <td><div align="center">江西：010-58461578</div></td>
+              <td><div align="center">广西：010-51626495</div></td>
+              <td><div align="center">西藏：010-89313635</div></td>
+              <td><div align="center">青海：010-89313626</div></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td><div align="center">安徽：010-58431707</div></td>
+              <td><div align="center">海南：010-57172722</div></td>
+              <td><div align="center"></div></td>
+              <td><div align="center"></div></td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td align="center">福建：010-89313626</td>
+              <td colspan="3"><div align="center">江苏分公司：0527-83248669 </div></td>
+            </tr>
+          </table>
+		</div>
+</div>
+	</div>
+	<div class="jiaodi">
+
+
+	</div>
+	<div class="jiaoyu">Copyright &copy; 2004-2014 Phoenix E-Learning Star Corporation, All Rights Reserved  京ICP证080135号<br />本网大部分资源来源于会员上传，除本网组织的资源外，版权归原作者所有，如有侵犯版权，请立刻和本网联系并提供证据，本网将在三个工作日内改正。<br />客服邮箱：czfw@zxxk.com </div>
+	</div>
+</div>
+<!--版权信息结束-->
+<script type="text/javascript">
+var IsShowChild=0;
+if (IsShowChild==0)
+{
+    listbody_right.removeChild(ChildList);
+}
+formatIntro();
+</script>
+<div style="visibility:hidden;"><script type="text/javascript" src="http://s87.cnzz.com/stat.php?id=1759807&web_id=1759807&show=pic" charset="gb2312"></script></div>
+</div>
+</body>
+</html>
+

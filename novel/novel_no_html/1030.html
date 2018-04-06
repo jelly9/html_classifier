@@ -1,0 +1,618 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>厦门唯你家教网-家教教师综合搜索平台</title>
+<link href='images/school.css'  rel='stylesheet' type='text/css'>
+<link href="/skin/jiajiao/common.css" rel="stylesheet" type="text/css" />
+<link href="/skin/jiajiao/teacher_list.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+#filter-tools .multi-block .v span {
+	width:94px;
+}
+#filter-tools .multi-block .v a {
+	width:94px;
+}
+</style>
+
+</head>
+
+<body>
+<div id="div960">
+<!-- 头部导航 -->
+<div class="header lan">
+  <div class="wid940 top">
+    <div class="topl">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="10px" ></td>
+          
+		  
+          <td align="left">您好，欢迎来到厦门唯你家教网！<a href="login.asp">[请登录]</a> <a href="Reg.asp">[免费注册]</a></td>
+                    
+          <td width="30"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="topr"><a href="help.asp">帮助</a> <a href="News_View.asp?NewsId=2076">加盟代理</a> <a href="weibo.asp">官方微博</a> <a href='#' onclick="window.external.addFavorite('http://www.xmwnjjw.com/','厦门唯你家教网')" target="_top">收藏</a>  </div>
+  </div>
+  <div class="header_c wid940">
+    <div class="header_c_l "><a href="index.asp"><img src="allphotos/logo/logo.gif" /></a></div>
+    <div class="header_c_r">
+      <div class="header_c_r_a"><a href="student_reg.asp"><img src="skin/jiajiao/header_a.jpg" border="0" /></a></div>
+      <div class="header_c_r_b"><a href="teacher_reg.asp"><img src="skin/jiajiao/header_ab.jpg" border="0" /></a></div>
+      <div class="header_c_r_c"><script language="javascript" src="ad.asp?AdId=160"></script></div>
+    </div>
+  </div>
+  <div class="nav fff">
+  
+    <script type="text/javascript">
+      $(document).ready(function(){
+	    $("#nav_jq li").each(function(index){
+		  if(index == 2 || index == 4 || index == 6|| index == 10|| index == 16){
+		  	$(this).hover(function(){
+			  $(this).addClass("nav_a_bga");
+			},function(){
+			  $(this).removeClass("nav_a_bga");
+			});
+		  }else if(index == 8 || index == 12 || index == 18){
+		  	$(this).hover(function(){
+			  $(this).addClass("nav_a_bgb");
+			},function(){
+			  $(this).removeClass("nav_a_bgb");
+			});
+		  }else if(index == 14){
+		  	$(this).hover(function(){
+			  $(this).addClass("nav_a_bgc");
+			},function(){
+			  $(this).removeClass("nav_a_bgc");
+			});
+		  }
+		});
+	  })
+    
+    </script>
+      
+    <UL id="nav_jq">
+      <LI class=nav_a_bg><A href="index.asp">首页</A></LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>
+      <LI class=nav_a><A href="student_reg.asp">请老师</A> </LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>
+      <LI class=nav_a><A href="teacher_reg.asp">当老师</A> </LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>
+
+      <LI class=nav_a><A href="netff.asp">网络家教</A> </LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>
+      <LI class=nav_a><A href="teacher_Indexmx.asp">网络教员</A> </LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>      
+<LI class=nav_a><A href="t_search.asp">教员库</A> </LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>
+      <LI class=nav_a><A href="student_Index.asp">学员库</A> </LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>
+      <LI class=nav_a><A href="school_list.asp">培训机构</A></LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>
+      <LI class=nav_a><A href="article.asp">资讯中心</A> </LI>
+      <LI class=nav_x><IMG src="skin/jiajiao/nav_bgb.jpg"> </LI>
+      <LI class=nav_a><A href="charge.asp">资费标准</A> </LI>
+    </UL>
+  </div>
+</div>
+<table width="950" height="35" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="64" align="center">寻找教师:</td>
+    <td width="886" align="center"><form id="SearchForm" name="SearchForm" method="get" action="so.asp" style="margin:0">
+	  <!--选择学科-->
+	    <select name="Position_b" class="input" id="Position_b">
+<option value="">辅导科目</option>
+<option value="">不限</option>
+<option value="语文">语文</option>
+<option value="数学">数学</option>
+<option value="奥数">奥数</option>
+<option value="英语">英语</option>
+<option value="物理">物理</option>
+<option value="化学">化学</option>
+<option value="政治">政治</option>
+<option value="历史">历史</option>
+<option value="生物">生物</option>
+<option value="地理">地理</option>
+<option value="">------</option>
+<option value="数理化">数理化</option>
+<option value="语数英">语数英</option>
+<option value="理科综合">理科综合</option>
+<option value="文科综合">文科综合</option>
+<option value="">------</option>
+<option value="钢琴">钢琴</option>
+<option value="舞蹈">舞蹈</option>
+<option value="钢琴">钢琴</option>
+<option value="音乐">音乐</option>
+<option value="绘画">绘画</option>
+<option value="陪读">陪读</option>
+</select>&nbsp;
+<select name="nianji" class="input">
+        <option value="">辅导年级</option>
+		<option value="">不限</option>
+		<option value="小学">小学</option>
+		<option value="初中">初中</option>
+		<option value="初一">初一</option>
+		<option value="初二">初二</option>
+		<option value="初三">初三</option>
+		<option value="高中">高中</option>
+		<option value="高一">高一</option>
+		<option value="高二">高二</option>
+		<option value="高三">高三</option>
+		<option value="大学">大学</option>
+		<option value="成人">成人</option>		
+      </select>&nbsp;
+	  <select name="CompanyNature" id="CompanyNature"  class="input">       
+		<option value="" selected>教员身份</option>
+		<option value="">不限</option>
+        <option value="本科生">本科生</option><option value="研究生">研究生</option><option value="在职教师">在职教师</option><option value="退休教师">退休教师</option><option value="专职教员">专职教员</option><option value="海归/外籍">海归/外籍</option>
+      </select>&nbsp;
+	  <select name="EmployeeNum" class="input">
+        <option value="">教员性别</option>
+		<option value="">不限</option>
+        <option value="男"> 男 </option>
+        <option value="女"> 女 </option>
+      </select>&nbsp;
+	  <select name="leibie" class="input">
+        <option value="">教员级别</option>
+		<option value="">普通</option>
+        <option value="1"> 明星</option>
+      </select>&nbsp;
+	  <select name="CompanyAddr" class="input">
+		<option value="">所在城区</option>
+		<option value="">不限</option>
+
+
+        <option value="思明区">思明区</option><option value="湖里区">湖里区</option><option value="集美区">集美区</option><option value="海沧区">海沧区</option><option value="同安区">同安区</option><option value="翔安区">翔安区</option>
+      </select>&nbsp;
+	  <select name="zhaopian" class="input">
+		<option value="">教员照片</option>
+		<option value="">不限</option>
+		<option value=1>有</option>
+		<option value=2>无</option>
+      </select>&nbsp;
+	  <!--<INPUT class="textinput" onFocus="javascript:if(this.value='输入您要找的关键字'){this.value='';}" 
+ name="keyword">-->
+ <INPUT class="textinput" style="width:100px" onFocus="javascript:if(this.value=''){this.value='';}" 
+ name="keyword" value="请输入老师姓名">&nbsp;&nbsp;
+ 
+  <input name="sumbit" type="image" style="cursor:hand; " value="搜索老师" src="skin/jiajiao/search_t.gif" align="middle">
+	  
+	  
+    </FORM></td>
+    
+  </tr>
+</table>
+
+  <div class="inner">
+    <div id="crumb"><img src="images/dqwz.gif" align="absmiddle"/><A class=a1 href="index.asp" >首页</A> > 教员列表</div>
+    <div id="statistics"> 联系本站：18060910899 &nbsp;&nbsp;&nbsp;&nbsp;QQ群：240134230&nbsp;&nbsp;<a href="contactus.asp" target="_blank"><img border="0" SRC="images/qqonline.bmp" alt="进入在线联系中心" align="absmiddle" algin="absmiddle"></a></div>
+    <div id="filter-tools">
+	
+<!--{start: 常规显示的筛选类别 -->
+			
+		<!--{start: 已选项 -->
+
+	  <div class="selected-filters cls" style="height:auto;">
+		<!-- 单选 -->
+		<span class="key">教师身份：</span>
+		<span class="value-single">
+		
+			不限
+			
+			</span>
+			
+		<!-- 分隔符 -->
+		<span class="separator">|</span>
+		<!-- 多选 -->
+		<span class="key">擅长学科：</span>
+		<span class="value-multi">
+	  初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,
+		</span>
+			
+			
+		<span class="separator">|</span>
+			<!-- 区域 -->
+		<span class="key">教员性别：</span>
+		<span class="value-single">
+				
+				不限
+				
+		</span>
+		<!-- 分隔符 -->
+		<span class="separator">|</span>
+		<!-- 多选 -->
+		<span class="key">教员类别：</span>
+		<span class="value-single">
+				
+				不限
+				
+		</span>
+		
+		<span class="separator">|</span>
+		<span class="key">城区：</span>
+		<span class="value-single">
+	  湖里区<a class="btn-del" href="t_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&leibie=&companyaddr="></a>
+			
+		</span>
+		
+</div>
+	<!--}end: 已选项 -->
+	
+			<div class="block single-block">
+			<div class="k">教师身份：</div>
+			<div class="v" style="width:800px;">
+			
+				   <em>不限</em><a href="t_search.asp?leibie=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&companyaddr=湖里区&CompanyNature=本科生">本科生</a><a href="t_search.asp?leibie=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&companyaddr=湖里区&CompanyNature=研究生">研究生</a><a href="t_search.asp?leibie=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&companyaddr=湖里区&CompanyNature=在职教师">在职教师</a><a href="t_search.asp?leibie=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&companyaddr=湖里区&CompanyNature=退休教师">退休教师</a><a href="t_search.asp?leibie=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&companyaddr=湖里区&CompanyNature=专职教员">专职教员</a><a href="t_search.asp?leibie=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&companyaddr=湖里区&CompanyNature=海归/外籍">海归/外籍</a>
+															
+				</div>
+			</div>
+
+					
+					
+	<div class="multi-wrapper multi-wrapper-active">
+		
+												<!--{start: 多选项 -->
+		<div class="block multi-block" key="%BF%C6%C4%BF" style="height:auto;">
+
+			<div class="k">擅长学科：</div>
+			<div class="v" style="width:850px;height:auto;">
+				<div >
+								
+								
+				   <a class="fake-checkbox " href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=">不限</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,小学全科">小学全科</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,小学语文">小学语文</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,小学数学">小学数学</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,小学英语">小学英语</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,小学奥数">小学奥数</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,小学陪读">小学陪读</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初中全科">初中全科</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初一初二语文">初一初二语文</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初一初二数学">初一初二数学</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初一初二英语">初一初二英语</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初一初二地理">初一初二地理</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初一初二历史">初一初二历史</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初一初二生物">初一初二生物</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初二物理">初二物理</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初三语文">初三语文</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,高一高二物理,高三生物">初三数学</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初三英语">初三英语</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初三物理">初三物理</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初三化学">初三化学</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初三政治">初三政治</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初三生物">初三生物</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初三地理">初三地理</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初中奥数">初中奥数</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物">初中数理化</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,初中语数外">初中语数外</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高三政治,成人教学,初三数学,高一高二物理,高三生物">高中全科</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物">高一高二语文</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高一高二数学">高一高二数学</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高一高二英语">高一高二英语</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高三生物">高一高二物理</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高一高二化学">高一高二化学</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高一高二政治">高一高二政治</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高一高二历史">高一高二历史</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高一高二地理">高一高二地理</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高三语文">高三语文</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高三数学">高三数学</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高三英语">高三英语</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高三物理">高三物理</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高三化学">高三化学</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,成人教学,初三数学,高一高二物理,高三生物">高三政治</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高三历史">高三历史</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理">高三生物</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高三地理">高三地理</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高中奥数">高中奥数</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高中理科综合">高中理科综合</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,高中文科综合">高中文科综合</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物">钢琴 小提琴</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,电子琴">电子琴</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,葫芦丝">葫芦丝</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,视唱/歌唱">视唱/歌唱</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,美术(水彩/国画)">美术(水彩/国画)</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,体育类">体育类</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,其它">其它</a><a class="fake-checkbox" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物,幼儿教育">幼儿教育</a><a class="fake-checkbox fake-checkbox-selected" href="t_search.asp?leibie=&EmployeeNum=&CompanyNature=&companyaddr=湖里区&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,初三数学,高一高二物理,高三生物">成人教学</a>
+								
+	
+
+							
+				</div>
+			</div>
+			<div class="btn-bg" style="display:none;"><div></div></div>
+		</div>
+		<!--}end: 多选项 -->
+		
+	</div>
+
+			<div class="block single-block" style="height:auto">
+		    <div class="k">教员性别：</div>
+				<div class="v" style="width:800px;">
+				
+	   <em>不限</em><a href = 't_search.asp?leibie=&CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&companyaddr=湖里区&EmployeeNum=男'>男性教员</a><a href = 't_search.asp?leibie=&CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&companyaddr=湖里区&EmployeeNum=女'>女性教员</a>			
+				</div>
+			</div>
+			
+			
+			
+			<div class="block single-block" style="height:auto">
+		    <div class="k">教员类别：</div>
+				<div class="v" style="width:800px;">
+				
+	   <em>不限</em><a href = 't_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&companyaddr=湖里区&leibie=0'>上门教员</a><a href = 't_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&companyaddr=湖里区&leibie=1'>网络教员</a>			
+				</div>
+			</div>
+
+			<div class="block single-block" style="height:auto">
+				<div class="k">区域：</div>
+				<div class="v" style="width:800px;">
+				<a href="t_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&leibie=&companyaddr=">不限</a><a href="t_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&leibie=&companyaddr=思明区">思明区</a><em>湖里区</em><a href="t_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&leibie=&companyaddr=集美区">集美区</a><a href="t_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&leibie=&companyaddr=海沧区">海沧区</a><a href="t_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&leibie=&companyaddr=同安区">同安区</a><a href="t_search.asp?CompanyNature=&Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&EmployeeNum=&leibie=&companyaddr=翔安区">翔安区</a>
+</div>
+			</div>
+							
+
+</div>
+<!--}end: 筛选条件区 -->			
+
+</div> 
+  <!-- 教员列表页 -->
+  <div class="teacher_list">
+    <ul class="list_th">
+      <li class="th_1">教员/性别</li>
+      <li class="th_2">身份/单位</li>
+      <li class="th_3">可授课课程</li>
+      <li class="th_4">可授课区域</li>
+      <li class="th_5">教学经历/自我描述</li>
+      <li class="th_6">详情/预约</li>
+    </ul>
+    <table id="t_list" cellpadding="2" cellspacing="2" width="100%">
+    
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">杨教员</font>
+	（女）</div>
+        <div class="pic"><img src="images/nophoto.gif" /></div>
+        <div class="id">T17257</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">本科生</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">小学全科、 小学陪读、 初一初二数学、 初一初二地理、 初三数学、 初三地理、 高一高二地理</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">教员上门区域：思明区, 湖里区</div>     
+      </td>
+      <td class="tr_5"><div class="con">性格开朗，平易近人。认真负责，帮助孩子的进一步提升自我，引导孩子的学习思维方式，这些就是我的最大目标。</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17257" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17257"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-12-13
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">曹教员</font>
+	（男）</div>
+        <div class="pic"><img src="images/nophoto.gif" /></div>
+        <div class="id">T17255</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">本科生</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">小学全科、 小学语文、 小学数学、 小学英语、 小学陪读、 初一初二语文、 初一初二数学、 初一初二生物、 初二物理、 初三语文、 初三数学、 初三英语、 初三物理、 初三化学</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">无教员上门区域：思明区, 湖里区, 集美区, 同安区</div>     
+      </td>
+      <td class="tr_5"><div class="con">掌握良好的教学方法，有耐心，辅导过的学生成绩提高很大。</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17255" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17255"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-12-2
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">黄老师</font> （女）</div>
+        <div class="pic"><img src="allphotos/teacherpic/1044533313.jpg" /></div>
+        <div class="id">T17254</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">在职教师</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">小学数学、 初一初二数学、 初三数学、 高一高二数学、 高三数学</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">教员上门区域：思明区, 湖里区, 集美区, 海沧区, 同安区, 翔安区</div>     
+      </td>
+      <td class="tr_5"><div class="con">本人毕业于福州大学，已经有10年教龄，经过我辅导的学生成绩都得到显著的提高！我的教学方法与别人很不一样，欢迎您的来电！本人在中学时多次获得数学竞赛一等奖，尤其擅长数学。在大学时多次获得一等奖学金，二等</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17254" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17254"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-11-27
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">林教员</font>
+	（女）</div>
+        <div class="pic"><img src="allphotos/teacherpic/205900753.jpg" /></div>
+        <div class="id">T17251</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">本科生</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">初一初二数学、 初三数学、 高一高二数学</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">教员上门区域：思明区, 湖里区</div>     
+      </td>
+      <td class="tr_5"><div class="con">我是厦门大学数学系的学生，我擅长数学，有过数次的家教经验，授课方式围绕耐心和有技巧性的重点讲解，目前已接到同济大学数学系直博生的录取函。</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17251" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17251"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-11-12
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">廖教员</font>
+	（女）</div>
+        <div class="pic"><img src="images/nophoto.gif" /></div>
+        <div class="id">T17250</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">本科生</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">小学全科、 初一初二数学、 初一初二英语、 初二物理、 初三数学、 初三英语、 高一高二数学、 高一高二物理</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">教员上门区域：思明区, 湖里区</div>     
+      </td>
+      <td class="tr_5"><div class="con">本人较擅长理科，极具耐心，责任心强，善于与学生沟通找到适合学生的个人方法，性格乐观开朗。</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17250" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17250"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-11-10
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">邓老师</font> （女）</div>
+        <div class="pic"><img src="images/nophoto.gif" /></div>
+        <div class="id">T17239</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">专职教员</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">小学全科、 初中全科、 高一高二数学、 高一高二英语、 高一高二物理、 高一高二化学、 高三数学、 高三英语、 高三生物</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">教员上门区域：思明区, 湖里区</div>     
+      </td>
+      <td class="tr_5"><div class="con">一本重点大学毕业，成绩优异。多年家教经验，为人有耐心，有责任心，多次成功家教经历</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17239" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17239"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-10-10
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">王教员</font>
+	（男）</div>
+        <div class="pic"><img src="images/nophoto.gif" /></div>
+        <div class="id">T17237</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">本科生</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">小学全科、 小学语文、 小学数学、 小学英语、 初一初二数学、 初一初二英语、 初一初二地理、 初一初二历史、 初一初二生物、 初二物理、 初三数学、 初三英语、 初三物理、 初三化学、 初三生物、 </div>
+      </td>
+      <td class="tr_4">
+        <div class="con">无教员上门区域：思明区, 湖里区, 集美区</div>     
+      </td>
+      <td class="tr_5"><div class="con">本人性格开朗乐观。擅长理科，如 物理  数学 化学 和地理。在学校成绩良好。喜欢体育运动。</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17237" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17237"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-10-7
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">林教员</font>
+	（男）</div>
+        <div class="pic"><img src="images/nophoto.gif" /></div>
+        <div class="id">T17236</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">本科生</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">小学全科、 小学语文、 小学数学、 小学英语、 小学奥数、 小学陪读、 初中全科、 初一初二语文、 初一初二数学、 初一初二英语、 初三语文、 初三数学、 初中数理化、 初中语数外、 高一高二语文</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">教员上门区域：思明区, 湖里区, 集美区</div>     
+      </td>
+      <td class="tr_5"><div class="con">本人性格温和，擅长中小学语数英，具有较丰富的辅导经验，家长反映良好。</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17236" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17236"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-10-5
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">杨教员</font>
+	（男）</div>
+        <div class="pic"><img src="images/nophoto.gif" /></div>
+        <div class="id">T17234</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">研究生</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">小学全科、 小学陪读、 初一初二生物、 初二物理、 初三英语、 初三物理、 初三化学、 初三生物、 高一高二英语、 高三英语、 高三生物</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">教员上门区域：思明区, 湖里区, 集美区, 海沧区, 同安区, 翔安区</div>     
+      </td>
+      <td class="tr_5"><div class="con">本人毕业于师范学院，有半年的教育实习经验，有较强的讲解知识的能力；从事过多次家教工作，对中小学语文，英语，数理化知识较熟悉，了解学生的心思，善于与学生沟通，有较强的洞察学生学习心里的能力，从而开导学生</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=17234" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=17234"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-9-29
+        </div>         
+      </td>
+    </tr>
+	
+    <tr>
+      <td class="tr_1">
+        <div class="xm"><font color="#FF0000">林教员</font>
+	（女）</div>
+        <div class="pic"><img src="allphotos/teacherpic/050111719.jpg" /></div>
+        <div class="id">T15427</div>      
+      </td>
+      <td class="tr_2">
+        <div class="con">本科生</div>
+      </td>
+      <td class="tr_3">
+        <div class="con">高中理科综合、高一高二物理、高一高二化学、高三物理、初中数理化</div>
+      </td>
+      <td class="tr_4">
+        <div class="con">学员上门地点：<1>①湖里区枋湖</1>；教员上门区域：思明区, 湖里区</div>     
+      </td>
+      <td class="tr_5"><div class="con">本人待人亲切友好，热情开朗。
+高中毕业于厦门外国语学校，在校期间成绩优秀，高二高三基本保持在年段前百内，理科普通班（5个班）前10名。数理化基础较好，尤其对物理、化学有自己独特的学习和教学方法。
+</div>
+      </td>
+      <td class="tr_6">
+        <div class="con2"><a href="teacher.asp?ComId=15427" target="_blank" title="点击可查看教师详细资料">查看详情</a><br /><a href="teacherorder.asp?comid=15427"><img src="/skin/jiajiao/yuyue.gif" /></a><br />
+		2014-9-22
+        </div>         
+      </td>
+    </tr>
+	
+    </table>
+	<div class="page"><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=1'>第一页</a>&nbsp;<a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=1'>上一页</a>&nbsp;<span class="current">1</span><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=2'>2</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=3'>3</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=4'>4</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=5'>5</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=6'>6</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=7'>7</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=8'>8</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=9'>9</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=10'>10</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=11'>11</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=12'>12</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=13'>13</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=14'>14</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=15'>15</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=16'>16</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=17'>17</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=18'>18</a>…<a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=32'>32</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=33'>33</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=2'>下一页</a><a href='t_search.asp?Position_b=初中数理化,高一高二语文,钢琴 小提琴,高中全科,高三政治,成人教学,初三数学,高一高二物理,高三生物&Qualification=&CompanyNature=&EmployeeNum=&CompanyAddr=湖里区&keyword=&page=33'>最后页</a>&nbsp;</div>
+	
+    </div>
+
+<div id="foot">
+  <div class="about"><a href="/aboutus.asp">网站简介</a><a href="/help.asp">帮助中心</a><a href="/reg_xy.asp">服务条款</a><a href="/contactus.asp">联系方式</a><a href="/weibo.asp">官方微博</a><a href="News_View.asp?NewsId=2076">诚邀代理</a><a href="/feedback.asp">留言反馈</a><a href="/article.asp">资讯中心</a></div>
+
+
+  <p>QQ：2194568757&nbsp;<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2194568757&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2194568757:41" alt="厦门唯你家教网QQ在线客服1" title="厦门唯你家教网QQ在线客服1" align="absmiddle"></a>
+    
+    &nbsp;QQ：2194568757&nbsp;<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2194568757&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2194568757:41" alt="厦门唯你家教网QQ在线客服2" title="厦门唯你家教网QQ在线客服2" align="absmiddle"></a>
+    
+    &nbsp;
+    
+    &nbsp;QQ群：240134230
+  </p>
+  <p>联系电话：18060910899
+    &nbsp;邮箱:2194568757@qq.com&nbsp;地址：厦门大学(思明南路422号)<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2194568757&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:2194568757:53" alt="您好，请问有什么可以帮助您？" title="您好，请问有什么可以帮助您？"/></a>
+    <script language="JavaScript" src="http://s15.cnzz.com/stat.php?id=3877490&web_id=3877490&show=pic"></script>
+  </p>
+</div>
+
+<script type="text/javascript" src="/serviceshow.asp"></script>
+<center><SPAN></SPAN></center>
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+
+<a class="bds_renren"></a>
+<a class="bds_tsohu"></a>
+<span class="bds_more">更多</span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=0" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+  </div>
+</body>
+</html>
+<script src="/skin/jiajiao/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="/skin/jiajiao/jquery-use.js" type="text/javascript"></script>

@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dropEffect="none" class="no-js no-auth">
+<head>
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+
+<title>知乎上发出去的邀请是否应该具备撤消功能？ - LeToN.j1Y 的回答 - 知乎</title>
+
+<meta name="apple-itunes-app" content="app-id=432274380, app-argument=zhihu://answers/12322450">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="mobile-agent" content="format=html5;url=http://www.zhihu.com/question/19595227/answer/12322450">
+<meta id="znonce" name="znonce" content="fd04de46379e457f98bb3044f37482ac">
+<link rel="apple-touch-icon-precomposed" href="http://static.zhihu.com/static/img/ios/zhihu(57px).png" />
+<link rel="apple-touch-icon-precomposed" href="http://static.zhihu.com/static/img/ios/zhihu(72px).png" sizes="72x72" />
+<link rel="apple-touch-icon-precomposed" href="http://static.zhihu.com/static/img/ios/zhihu(76px).png" sizes="76x76" />
+<link rel="apple-touch-icon-precomposed" href="http://static.zhihu.com/static/img/ios/zhihu(114px).png" sizes="114x114" />
+<link rel="apple-touch-icon-precomposed" href="http://static.zhihu.com/static/img/ios/zhihu(120px).png" sizes="120x120" />
+<link rel="apple-touch-icon-precomposed" href="http://static.zhihu.com/static/img/ios/zhihu(152px).png" sizes="152x152" />
+
+
+<link rel="shortcut icon" href="http://static.zhihu.com/static/favicon.ico" type="image/x-icon">
+
+<link rel="search" type="application/opensearchdescription+xml" href="http://static.zhihu.com/static/search.xml" title="知乎" />
+<link rel="stylesheet" href="http://static.zhihu.com/static/ver/60b4abfa6af1917a04aa4c51d64ae98c.z.css">
+
+<meta name="google-site-verification" content="FTeR0c8arOPKh8c5DYh_9uu98_zJbaWw53J-Sch9MTg" />
+<meta property="qc:admins" content="14414345146201056375" />
+
+
+
+<!--[if lt IE 9]>
+<script src="http://static.zhihu.com/static/components/respond/dest/respond.min.js"></script>
+<link href="http://static.zhihu.com/static/components/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/static/components/respond/cross-domain/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/static/components/respond/cross-domain/respond.proxy.js"></script>
+<![endif]-->
+
+<script src="http://static.zhihu.com/static/ver/c9815c35381b57c0fdc44e8d89dc4327.instant.min.js"></script>
+
+<link rel="canonical" href="http://www.zhihu.com/question/19595227" />
+
+</head>
+
+<body class="zhi">
+<div role="navigation" class="zu-top">
+<div class="zg-wrap" id="zh-top-inner">
+<a href="/" class="zu-top-link-logo" id="zh-top-link-logo">知乎</a>
+
+
+<div role="search" id="zh-top-search" class="zu-top-search">
+<form method="GET" action="/search" id="zh-top-search-form" class="zu-top-search-form form-with-magnify">
+
+<input type="text" class="zu-top-search-input" id="q" name="q" autocomplete="off" value="" placeholder="搜索话题、问题或人…" />
+<input type="hidden" name="type" value="question" />
+<label for="q" class="hide-text">知乎搜索</label>
+<button type="submit" class="magnify-button"><i class="icon icon-magnify-q"></i><span class="hide-text">搜索</span></button>
+</form>
+<button class="zu-top-add-question" id="zu-top-add-question">提问</button>
+</div>
+
+
+
+<div id="zg-top-nav" class="zu-top-nav">
+<ul class="zu-top-nav-ul zg-clear">
+
+<li class="zu-top-nav-li " id="zh-top-home-link">
+<a class="zu-top-nav-link" href="/" id="zh-top-link-home">首页</a>
+</li>
+<li class="top-nav-topic-selector zu-top-nav-li " id="zh-top-nav-item-topic">
+<a class="zu-top-nav-link" href="/topic" id="top-nav-dd-topic">话题</a>
+
+</li>
+<li class="zu-top-nav-li ">
+<a class="zu-top-nav-link" href="/explore">发现</a>
+</li>
+
+
+</ul>
+<div class="zu-top-nav-live zu-noti7-popup zg-r5px no-hovercard" id="zh-top-nav-live-new" role="popup" tabindex="0">
+<div class="zu-top-nav-live-inner zg-r5px">
+<div class="zu-top-live-icon">&nbsp;</div>
+<div class="zu-home-noti-inner" id="zh-top-nav-live-new-inner">
+<div class="zm-noti7-popup-tab-container clearfix" tabindex="0">
+<button class="zm-noti7-popup-tab-item message">
+<span class="icon">消息</span>
+<span class="new-noti" style="display:none;">0</span>
+</button>
+<button class="zm-noti7-popup-tab-item user">
+<span class="icon">用户</span>
+<span class="new-noti" style="display:none;">0</span>
+</button>
+<button class="zm-noti7-popup-tab-item thanks">
+<span class="icon">赞同和感谢</span>
+<span class="new-noti" style="display:none;">0</span>
+</button>
+</div>
+</div>
+<div class="zm-noti7-frame-border top"></div>
+<div class="zm-noti7-frame">
+<div class="zm-noti7-content">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-popup-refresh" style="display:none;">
+<img class="noti-spinner" src="/static/img/spinner2.gif" />
+</div>
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<img class="noti-spinner" src="/static/img/noti-loading.gif" />
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-popup-refresh" style="display:none;">
+<img class="noti-spinner" src="/static/img/spinner2.gif" />
+</div>
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<img class="noti-spinner" src="/static/img/noti-loading.gif" />
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-popup-refresh" style="display:none;">
+<img class="noti-spinner" src="/static/img/spinner2.gif" />
+</div>
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<img class="noti-spinner" src="/static/img/noti-loading.gif" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-frame-border bottom"></div>
+<div class="zm-noti7-popup-footer">
+<a href="/notifications" class="zm-noti7-popup-footer-all zg-right">查看全部 &raquo;</a>
+<a href="/settings/notification" class="zm-noti7-popup-footer-set" title="通知设置" ><i class="zg-icon zg-icon-settings"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+<ul class="topnav-noauth clearfix">
+<li>
+<a href="javascript:;" class="js-signup-noauth"><i class="zg-icon zg-icon-dd-home"></i>注册知乎</a>
+</li>
+<li>
+<a href="javascript:;" class="js-signin-noauth">登录</a>
+</li>
+</ul>
+
+
+</div>
+</div>
+
+<div class="zu-global-notify" id="zh-global-message" style="display:none">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<a class="zu-global-notify-close" href="javascript:;" title="关闭" name="close">x</a>
+<span class="zu-global-notify-icon"></span>
+<span class="zu-global-notify-msg"></span>
+</div>
+</div>
+</div>
+
+<div class="zg-warn-message" id="zh-question-redirect-info" style="display:none"></div>
+<div class="zg-wrap zu-main" id="zh-single-answer-page">
+<div class="zu-main-content">
+<div class="zu-main-content-inner with-indention-votebar">
+
+
+
+
+<div class="zm-tag-editor zg-section">
+<div class="zm-tag-editor-labels zg-clear">
+
+<a class="zm-item-tag"
+href="/topic/19550512"
+data-tip="t$b$19550512" data-token="19550512" data-topicid="96">
+知乎产品改进
+</a>
+
+</div>
+</div>
+<div id="zh-question-title" data-editable="false">
+
+<h2 class="zm-item-title zm-editable-content">
+
+<a href="/question/19595227">知乎上发出去的邀请是否应该具备撤消功能？</a>
+
+</h2>
+</div>
+<div id="zh-question-detail" class="zm-item-rich-text" data-resourceid="18045" data-action="/question/detail">
+
+<div class="zm-editable-content"> 比如长时间邀请没有使用，是否可以撤消呢？（邀请过期） </div>
+
+
+</div>
+<div class="zm-item-meta zm-item-comment-el clearfix" id="zh-question-meta-wrap">
+<div class="zm-meta-panel">
+
+<a href="#" name="addcomment" class="toggle-comment meta-item">
+<i class="z-icon-comment"></i>添加评论
+</a>
+<a href="#" name="share" class="share meta-item">
+<i class="z-icon-share"></i>分享
+</a>
+
+</div>
+<div class="panel-container">
+
+</div>
+</div>
+<div class="zh-question-answer-summary-wrap zm-item-rich-text" id="zh-question-answer-summary-wrap" style="">
+<h3>
+<a href="http://www.zhihu.com/question/20014415" target="_blank" class="zg-right zg-link-litblue" style="font-weight:normal">什么是答案总结？</a>
+答案总结</h3>
+<div id="zh-question-answer-summary" class="zg-section"
+data-resourceid="18045" data-action="/question/summary">
+
+<div class="zm-editable-content"> 否。1、为保证高质量，邀请需慎重，宁缺毋滥；2、对于非活跃用户要包容，知乎目的在与交流学习，只要不捣乱，允许他人围观、学习。<br><br>补充：建立过期回收制，或者邀请时间有效制，比如72小时，重新激活邀请机制，这样能补充新鲜血液 </div>
+
+</div>
+</div>
+
+<div class="zh-answers-title">
+<h3><a href="/question/19595227" class="zg-link-litblue">查看全部 16 个回答</a></h3>
+</div>
+
+<div id="zh-question-answer-wrap" class="zh-question-answer-wrapper autohide-false"
+data-widget="navigable" data-navigable-options="{&quot;items&quot;:&quot;&gt;.zm-item-answer&quot;}"
+style="border-bottom:none;">
+<div tabindex="-1" class="zm-item-answer "
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="47971"
+data-atoken="12322450"
+data-collapsed="0"
+data-created="1302502363"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-score="0.143113953261"
+
+
+>
+<a class="zg-anchor-hidden" name="answer-47971"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="label">赞同</span>
+<span class="count">0</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+<h3 class="zm-item-answer-author-wrap">
+
+
+<a data-tip="p$t$letonode"
+class="zm-item-link-avatar"
+href="/people/letonode">
+<img src="http://pic3.zhimg.com/cadc0c2c2_s.jpg"
+class="zm-list-avatar"
+data-source="http://pic3.zhimg.com/cadc0c2c2_s.jpg" />
+</a>
+
+
+
+<a data-tip="p$t$letonode" href="/people/letonode">LeToN.j1Y</a>，<strong title="会翻墙的人" class="zu-question-my-bio">会翻墙的人</strong>
+
+</h3>
+<a href="javascript:;" name="collapse" class="collapse meta-item zg-right"><i class="z-icon-fold"></i>收起</a>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text" data-resourceid="18045" data-action="/answer/content">
+
+<div class=" zm-editable-content clearfix"> 应该具备该功能。 
+
+
+</div>
+
+</div>
+<a class="zg-anchor-hidden ac" name="47971-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/19595227/answer/12322450">发布于 2011-04-11</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="copyright zu-autohide"></span>
+
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="more-awesome"><span>更多回答</span></div>
+<div class="awesome-answer-list" data-fixed-summary="1">
+
+<div class="feed-item">
+<div class="content">
+<div class="entry-body "
+data-aid="47832"
+data-atoken="12322095"
+data-collapsed="False"
+data-created="1302498266"
+data-deleted="0"
+data-isowner="0"
+data-helpful="1"
+data-score="0"
+>
+
+<div class="zm-item-vote">
+<a name="expand" class="zm-item-vote-count" href="javascript:;" data-votecount="4">4</a>
+</div>
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="label">赞同</span>
+<span class="count">4</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label">反对</span>
+</button>
+</div>
+
+<div class="zm-item-answer-detail">
+<div class="zm-item-answer-author-info">
+<h3 class="zm-item-answer-author-wrap">
+
+
+<a data-tip="p$t$zhengle" href="/people/zhengle">Bowen</a>，<strong title="杂学" class="zu-question-my-bio">杂学</strong>
+
+</h3>
+<a href="javascript:;" name="collapse" class="collapse meta-item zg-right"><i class="z-icon-fold"></i>收起</a>
+</div>
+<div class="zm-item-vote-info " data-votecount="4">
+
+<span class="voters">
+<span class="user-block"><a data-tip="p$t$chenjiankang" href="http://www.zhihu.com/people/chenjiankang" class="zg-link" title="陈建康">陈建康</a>、</span><span class="user-block"><a data-tip="p$t$shek" href="http://www.zhihu.com/people/shek" class="zg-link" title="向若珲">向若珲</a>、</span><span class="user-block"><a data-tip="p$t$Yonah27" href="http://www.zhihu.com/people/Yonah27" class="zg-link" title="王瑞">王瑞</a></span>
+</span>
+
+
+<a href="javascript:;" class="more"> 等人赞同</a>
+
+
+</div>
+<div class="zm-item-rich-text" data-resourceid="18045" data-action="/answer/content">
+
+<div class="fixed-summary zm-editable-content clearfix"> 我觉得没必要那么复杂，简单点挺好。<br>至于被邀请人是不是及时注册或者是不是乐于发言，更多需要靠邀请人的人为判断，不必在程序上处处设防。 
+
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<a class="zg-anchor-hidden ac" name="47832-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link meta-item" target="_blank" href="/question/19595227/answer/12322095">发布于 2011-04-11</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="copyright zu-autohide"></span>
+
+
+</div>
+</div>
+</div>
+
+<div class="feed-item">
+<div class="content">
+<div class="entry-body "
+data-aid="47893"
+data-atoken="12322255"
+data-collapsed="False"
+data-created="1302500311"
+data-deleted="0"
+data-isowner="0"
+data-helpful="1"
+data-score="0"
+>
+
+<div class="zm-item-vote">
+<a name="expand" class="zm-item-vote-count" href="javascript:;" data-votecount="1">1</a>
+</div>
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="label">赞同</span>
+<span class="count">1</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label">反对</span>
+</button>
+</div>
+
+<div class="zm-item-answer-detail">
+<div class="zm-item-answer-author-info">
+<h3 class="zm-item-answer-author-wrap">
+
+
+知乎用户，<strong title="由于严重违反知乎社区规范，该用户帐号已被停用。" class="zu-question-my-bio">由于严重违反知乎社区规范，该用户帐号已…</strong>
+
+</h3>
+<a href="javascript:;" name="collapse" class="collapse meta-item zg-right"><i class="z-icon-fold"></i>收起</a>
+</div>
+<div class="zm-item-vote-info " data-votecount="1">
+
+<span class="voters">
+<span class="user-block"><a data-tip="p$t$dengqiang" href="http://www.zhihu.com/people/dengqiang" class="zg-link" title="邓强">邓强</a></span>
+</span>
+
+
+<span>赞同</span>
+
+
+</div>
+<div class="zm-item-rich-text" data-resourceid="18045" data-action="/answer/content">
+
+<div class="fixed-summary zm-editable-content clearfix"><ul><li>技术上肯定没问题。</li><li>取消已发邀请邮件的邀请，对收到邀请邮件的人是种很大的伤害。</li><li>我喜欢现在的模式，感觉刺激，不可预料性也更大。</li></ul>
+
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<a class="zg-anchor-hidden ac" name="47893-comment"></a>
+<div class="zm-item-meta zm-item-comment-el answer-actions clearfix">
+<div class="zm-meta-panel">
+
+<span class="answer-date-link-wrap">
+<a class="answer-date-link last_updated meta-item" data-tip="s$t$发布于 2011-04-11" target="_blank" href="/question/19595227/answer/12322255">编辑于 2011-04-11</a>
+</span>
+
+<a href="#" name="addcomment" class=" meta-item toggle-comment">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide" name="thanks"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide" name="share">
+<i class="z-icon-share"></i>分享</a>
+<a href="#" class="meta-item zu-autohide" name="favo">
+<i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" name="nohelp" class="meta-item zu-autohide">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" name="report" class="meta-item zu-autohide">举报</a>
+
+
+
+<span class="copyright zu-autohide"></span>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="zh-answers-title">
+<h3><a href="/question/19595227" class="zg-link-litblue">查看全部 16 个回答</a></h3>
+</div>
+<div class="zu-answer-form-disabled-wrap" id="zh-single-answer-disable-wrap" style="display:none"></div>
+
+</div>
+</div>
+<div class="zu-main-sidebar">
+
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div class="well login-reg-box">
+<span>知乎是一个真实的问答社区，在这里分享知识、经验和见解，发现更大的世界。<br>
+<a id="js-reg-with-mail-in-top" href="javascript:;">使用邮箱注册 &raquo;</a>
+</span>
+<div class="clearfix">
+<a id="js-reg-with-sina-in-top" target="_blank" class="zg-btn-red"><span class="icon-big-white-sina"></span>使用微博登录</a>
+<a id="js-reg-with-qq-in-top" target="_blank" class="zg-btn-blue"><span class="icon-big-white-qq" style="margin-right: 10px;"></span>使用 QQ 登录</a>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner zg-gray-normal" id="zh-question-side-header-wrap">
+<button data-follow="q:m:button" class="follow-button zg-follow zg-btn-green" data-id="18045">关注问题</button>
+
+26
+人关注该问题
+
+</div>
+</div>
+
+<div class="zm-side-section sidebar-author-info clearfix">
+<div class="zm-side-section-inner" id="js-sidebar-author-info">
+<h3>关于作者</h3>
+<div class="zm-profile-card zm-profile-section-item zg-clear no-hovercard">
+<div class="zg-right">
+<button data-follow="m:button" data-id="9e88a7f4f65e5d8017955fe70ba68374" class="zg-btn zg-btn-follow zm-rich-follow-btn small nth-0">关注他</button>
+</div>
+<a title="LeToN.j1Y"
+data-tip="p$t$letonode"
+class="zm-item-link-avatar"
+href="/people/letonode">
+<img src="http://pic3.zhimg.com/cadc0c2c2_m.jpg" class="zm-item-img-avatar">
+</a>
+<div class="zm-list-content-medium">
+<h2 class="zm-list-content-title"><a data-tip="p$t$letonode" href="http://www.zhihu.com/people/letonode" class="zg-link" title="LeToN.j1Y">LeToN.j1Y</a></h2>
+
+<div class="zg-big-gray">会翻墙的人</div>
+<div class="details zg-gray">
+<a target="_blank" href="/people/letonode/followers" class="zg-link-gray-normal">78 关注者</a>
+/
+<a target="_blank" href="/people/letonode/asks" class="zg-link-gray-normal">5 提问</a>
+/
+<a target="_blank" href="/people/letonode/answers" class="zg-link-gray-normal">20 回答</a>
+/
+<a target="_blank" href="/people/letonode" class="zg-link-gray-normal">1 赞同</a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div id="zh-question-related-questions" class="zh-question-related-questions clearfix">
+
+<a class="zg-right next">换一换</a>
+
+<h3>相关问题</h3>
+<ul itemprop="relatedQuestion" itemscope itemtype="http://schema.org/ItemList">
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/19833291">知乎的站内邀请是什么功能？</a> <span class="num">0 个回答</span><meta itemprop="followerCount" content="0" /></li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/20743072">如何评价知乎新版邀请？</a> <span class="num">13 个回答</span><meta itemprop="followerCount" content="32" /></li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/19787478">你最希望知乎增加的功能是什么？</a> <span class="num">138 个回答</span><meta itemprop="followerCount" content="275" /></li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/19869142">你认为知乎最紧迫需要添加的功能是什么？</a> <span class="num">86 个回答</span><meta itemprop="followerCount" content="200" /></li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/19590034">推出私信功能对知乎有什么影响？</a> <span class="num">15 个回答</span><meta itemprop="followerCount" content="54" /></li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/20087908">你希望在「知乎阅读」里看到什么新功能？</a> <span class="num">24 个回答</span><meta itemprop="followerCount" content="121" /></li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/19560370">除了“关注”，知乎能不能增加一个问题的“收藏”功能？</a> <span class="num">7 个回答</span><meta itemprop="followerCount" content="21" /></li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/20807001">如何使用知乎的「禁止转载」功能？</a> <span class="num">1 个回答</span><meta itemprop="followerCount" content="125" /></li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question"><a class="question_link" href="/question/20093028">知乎的收藏功能有哪些需要改进的？</a> <span class="num">9 个回答</span><meta itemprop="followerCount" content="30" /></li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="zm-side-section zh-answer-status">
+<div class="zm-side-section-inner">
+<h3>回答状态</h3>
+<p>
+
+发布于
+
+<span class="time">2011-04-11</span>
+</p>
+<p>
+所属问题被浏览 <strong>1281</strong> 次
+</p>
+<p class="copyright">
+
+<a href="/terms#sec-licence"><i class="icon icon-copyable"></i>作者保留所有权利</a>
+
+</p>
+</div>
+</div>
+
+</div>
+<div class="zg-clear"></div>
+</div>
+
+<div id="zh-footer" class="zh-footer">
+<div class="zg-wrap clearfix">
+<ul>
+
+<li><a href="/app" target='_blank'>移动应用</a></li>
+<li><a href="/careers">加入知乎</a></li>
+<li><a href="/terms" target="_blank">知乎协议</a></li>
+<li><a href="mailto:bd@zhihu.com">商务合作</a></li>
+</ul>
+<span class="copy">&copy; 2015 知乎</span>
+</div>
+</div>
+
+<script type="template/text" id="sign-flow-template">
+<div id="js-sign-flow" class="sign-flow">
+<div class="view view-signin">
+<form method="post" action="/login" class="zu-side-login-box">
+<div class="input-wrap">
+<input required class="zg-form-text-input" name="email" type="email" placeholder="邮箱">
+</div>
+<div class="input-wrap password-wrap">
+<input required class="zg-form-text-input" maxlength="128" name="password" type="password" placeholder="密码">
+<div class="z-ico-show-password"></div>
+</div>
+<div class="input-wrap js-captcha captcha-wrap" style="display:none;">
+<input id="captcha" class="zg-form-text-input" autocomplete="off" name="captcha" placeholder="验证码" required>
+<div class="captcha js-refresh-captcha" data-tip="s$b$看不清楚？换一张">
+<img class="js-captcha-img"/>
+</div>
+</div>
+<div class="captcha-holder"></div>
+<div class="command">
+<div class="zg-left actions">
+<label class="remember_me"><input type="checkbox" name="rememberme" checked value="y"> 记住我</label>
+<span class="middot">·</span>
+<a class="js-resetpassword" href="#">忘记密码?</a>
+</div>
+<input type="submit" class="zg-right zg-btn-blue" value="登录">
+</div>
+<div class="sns">
+<a class="js-bindweibo" href="#">
+<span class="icon z-ico-sina-weibo"></span>微博登录
+</a>
+<a class="js-bindqq" href="#">
+<span class="icon z-ico-qq"></span>QQ 登录
+</a>
+</div>
+</form>
+</div>
+<div class="view view-signup">
+<form action="/register/account" method="post" class="zu-side-login-box" id="sign-form-1" >
+<div class="input-wrap realname-wrap js-weibo-bind-name-transfer">
+<span>
+<input required class="zg-form-text-input first" aria-label="姓" name="last_name" placeholder="姓" type="text">
+</span>
+<span>
+<input required class="zg-form-text-input" aria-label="名" name="first_name" placeholder="名" type="text">
+</span>
+</div>
+<div class="input-wrap">
+<input required class="zg-form-text-input" name="email" type="email" placeholder="邮箱">
+</div>
+<div class="input-wrap password-wrap">
+<input data-rule-strongpassword="true" required class="zg-form-text-input" maxlength="128" name="password" type="password" placeholder="密码">
+<div class="z-ico-show-password"></div>
+</div>
+<div class="captcha-holder"></div>
+<div class="command">
+<a class="js-signin signin-switch" href="#">已有账号？</i></a>
+<input type="submit" class="zg-btn-blue zg-right" value="注册">
+</div>
+<div class="sns">
+<a class="js-bindweibo" href="#">
+<span class="icon z-ico-sina-weibo"></span>微博登录
+</a>
+<a class="js-bindqq" href="#">
+<span class="icon z-ico-qq"></span>QQ 登录
+</a>
+</div>
+</form>
+</div>
+<div class="view view-info">
+<form class="login" method="post" action="/register/account">
+<div class="input-wrap realname-wrap">
+<span>
+<input required class="zg-form-text-input first" aria-label="姓" name="last_name" placeholder="姓" type="text">
+</span>
+<span>
+<input required class="zg-form-text-input" aria-label="名" name="first_name" placeholder="名" type="text">
+</span>
+</div>
+<div class="input-wrap">
+<input required class="zg-form-text-input" aria-label="邮箱" name="email" placeholder="邮 箱" spellcheck="false" type="email" value="">
+</div>
+<div class="command">
+<input class="zg-btn-blue" type="submit" value="完成注册">
+</div>
+</form>
+</div>
+<div class="view view-resetpassword">
+<form class="resetpassword" method="post" action="/resetpassword">
+<div class="input-wrap">
+<input required class="zg-form-text-input" aria-label="邮箱" name="email" placeholder="邮 箱" spellcheck="false" type="email" value="">
+</div>
+<div class="command">
+<input class="zg-btn-blue" type="submit" value="重设密码">
+<span class="reset-success" style="display:none">邮件发送成功</span>
+</div>
+</form>
+</div>
+</div>
+</script>
+<script type="text/json" class="json-inline" data-name="current_user">["","","","-1","",0,0]</script>
+<script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null]</script>
+<script type="text/json" class="json-inline" data-name="permissions">[]</script>
+
+
+<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1425510896000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
+
+<script type="text/json" class="json-inline" data-name="current_question">{"status":"normal","isLocked":0,"detailEditReasonRequired":true,"editPermission":false,"isAnon":0,"qid":18045,"urlToken":19595227,"askAboutMember":0}</script>
+<script type="text/json" class="json-inline" data-name="draft">[]</script>
+
+<script src="http://static.zhihu.com/static/ver/82cfd3bf774281811fa8287dc189988f.extern_src.min.js"></script>
+<script src="http://static.zhihu.com/static/ver/cce7d9bed817534fb54a22ce29af98a2.app_core.js"></script>
+<script src="http://static.zhihu.com/static/ver/f6ddbf3143053a0abe68322eb5e83c1a.sign.js"></script>
+<script src="http://static.zhihu.com/static/ver/d2fb1462aa6e361fd3ff8690c3c26a8e.app.js"></script>
+<script src="http://static.zhihu.com/static/ver/c7816b050106b6f7c304e27b09f0e43a.rich_text_editor.js"></script>
+
+<script type="text/zscript" znonce="fd04de46379e457f98bb3044f37482ac">
+ZH.entrySA();
+</script>
+
+<input type="hidden" name="_xsrf" value="e1dd32b9f0c2f67630c407d72e75b4c7"/>
+</body>
+</html>

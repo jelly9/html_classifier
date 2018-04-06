@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+  <TITLE> 手机跳转 </TITLE>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta property="qc:admins" content="3475257443070516375636" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta content="telephone=no" name="format-detection" />
+ </HEAD>
+ <BODY>
+  <p style="text-align:center; font-size:18px; line-height:28px; font-weight:bold; padding-top:50px; padding-bottom:30px;">即将转入手机页</p>
+  <p style="text-align:center;padding-bottom:30px;">系统将在<span id="countDownSec" style="color: blue; font-weight: bold"></span>秒后自动跳转</p>
+  <p style="text-align:center;padding-bottom:30px;">如果不想等待,直接<a id="alocurl"  style="color: #069;">点击这里</a></p>
+<script language="javascript" type="text/javascript">
+var locurl = window.location.pathname;
+locurl = locurl.replace("wap/","");
+var countDown = function(timer,eleId,interType){
+	document.getElementById(eleId).innerHTML = timer;
+	var interval = interType=='s'?1000:(interType=='m'?1000*60:1000*60*60);
+	window.setInterval(function(){
+		timer--;
+		if (timer > 0) {
+			document.getElementById(eleId).innerHTML = timer;
+			document.getElementById('alocurl').href = locurl;
+		}else{
+			window.location=locurl;
+		}
+	},interval);
+};
+
+countDown(1,'countDownSec','s');
+
+</script>
+ </BODY>
+</HTML>
+

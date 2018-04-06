@@ -1,0 +1,770 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link rel="stylesheet" type="text/css" href="http://misc.360buyimg.com/lib/skin/2013/base.css" media="all">
+<link rel="stylesheet" type="text/css" href="http://misc.360buyimg.com/book/skin/df/book.base20120321.css?t=20120531">
+<link media="all" href="http://misc.360buyimg.com/book/skin/df/book.reply.css" type="text/css" rel="stylesheet" />
+<link type="text/css" rel="stylesheet" href="http://misc.360buyimg.com/skin/jquery.validate.1.4.0.css" />
+<script type="text/javascript" src="http://misc.360buyimg.com/lib/js/e/jquery-1.2.6.pack.js"></script>
+    <script type="text/javascript" src="http://i.360buy.com/js/jdconnect/feed.publish.js"></script> 
+
+    <script type="text/javascript">
+	    (function(jQuery){ jQuery.each(['backgroundColor','borderBottomColor','borderLeftColor','borderRightColor','borderTopColor','color','outlineColor'],function(i,attr){ jQuery.fx.step[attr]=function(fx){ if(fx.state==0){ fx.start=getColor(fx.elem,attr);fx.end=getRGB(fx.end)}fx.elem.style[attr]="rgb("+[Math.max(Math.min(parseInt((fx.pos*(fx.end[0]-fx.start[0]))+fx.start[0]),255),0),Math.max(Math.min(parseInt((fx.pos*(fx.end[1]-fx.start[1]))+fx.start[1]),255),0),Math.max(Math.min(parseInt((fx.pos*(fx.end[2]-fx.start[2]))+fx.start[2]),255),0)].join(",")+")"}});function getRGB(color){ var result;if(color&&color.constructor==Array&&color.length==3)return color;if(result=/rgb\(\s*([0-9]{ 1,3})\s*,\s*([0-9]{ 1,3})\s*,\s*([0-9]{ 1,3})\s*\)/.exec(color))return[parseInt(result[1]),parseInt(result[2]),parseInt(result[3])];if(result=/rgb\(\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*\)/.exec(color))return[parseFloat(result[1])*2.55,parseFloat(result[2])*2.55,parseFloat(result[3])*2.55];if(result=/#([a-fA-F0-9]{ 2})([a-fA-F0-9]{ 2})([a-fA-F0-9]{ 2})/.exec(color))return[parseInt(result[1],16),parseInt(result[2],16),parseInt(result[3],16)];if(result=/#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])/.exec(color))return[parseInt(result[1]+result[1],16),parseInt(result[2]+result[2],16),parseInt(result[3]+result[3],16)];if(result=/rgba\(0, 0, 0, 0\)/.exec(color))return colors['transparent'];return colors[jQuery.trim(color).toLowerCase()]}function getColor(elem,attr){ var color;do{ color=jQuery.curCSS(elem,attr);if(color!=''&&color!='transparent'||jQuery.nodeName(elem,"body"))break;attr="backgroundColor"}while(elem=elem.parentNode);return getRGB(color)};var colors={ pink:[205,250,250],white:[255,255,255],transparent:[255,255,255]}})(jQuery);
+	</script>
+
+    <script type="text/javascript">
+        $(
+		function() {
+		    $("#form1").validate(
+				{
+				    rules:
+					{
+					    replyContent:
+							{
+							    required: true,
+							    rangelength: [5, 300],
+							    specialWord: true,
+							    badWord: true
+							},
+						seccode_t:
+							{
+						   		required: true,
+						   	 	rangelength: [3, 3]
+							}
+					},
+				    messages:
+					{
+					    replyContent:
+							{
+							    required: "请填写回复内容，长度在5-300位字符之间",
+							    rangelength: "请填写回复内容，长度在5-300位字符之间",
+							    specialWord: "不能含有特殊字符",
+							    badWord: "内容中含有敏感词，请重新填写"
+							},
+						seccode_t:
+							{
+						   		required: '请输入下方字符',
+						   	 	rangelength: "验证码错误，请重试"
+							}
+					},
+				    onkeyup: false,
+				    onclick: false,
+				    showErrors: function(errorMap, errorList) {
+				        $("#replyContenterror").html("&nbsp;");
+				        $("#replyContenterror").attr("class", "");
+				        $("#replyContent").attr("class", "text textarea");
+				        $("#secCodeerror").html("&nbsp;");
+					    $("#secCodeerror").attr("class", "");
+					    $("#seccode_t").attr("class", "text");
+				        for (var i = 0; i < errorList.length; i++) {
+				            var elementid = errorList[i].element.id;
+				            if (elementid == "replyContent") {
+				                $("#replyContenterror").text(errorList[i].message);
+				                $("#replyContenterror").attr("class", "error");
+				                $("#replyContent").attr("class", "text textarea highlight2");
+				            }
+				            if (elementid == "seccode_t") { 
+				                $("#secCodeerror").html(errorList[i].message);
+				                $("#secCodeerror").attr("class", "error");
+				                $("#seccode_t").attr("class", "text highlight2");
+				            }
+				        }
+				    }
+				});
+
+		    $("#replyContent").focus(function() {
+		        $("#replyContenterror").text("请填写回复内容，长度在5-300位字符之间");
+		        $("#replyContenterror").attr("class", "");
+		        $(this).attr("class", "text textarea");
+		    });
+		    $("#seccode_t").focus(function() {
+		        $("#secCodeerror").html("请输入下方字符");
+		        $("#secCodeerror").attr("class", "");
+		        $(this).attr("class", "text");
+		    });
+		    /*20100914*/
+
+		   /*usefulComment#20101111*/
+            $.extend(jdModelCallCenter,{
+                method:function(para)
+                {},
+	            usefulComment:function(object){				    
+		            $.login({
+			            modal:true,
+			            complete: function(result) {
+			            	if (result.IsAuthenticated) { 
+			            		if( $(".isL").is(":hidden")){
+				            		refreshCode();
+				            	}
+				            	$('.isL').show(1000);
+				            	$('.isnL').hide(1000);
+				                jdModelCallCenter.method(object);
+				                
+				            }else{
+				            	$('.isnL').show(1000);
+				            	$('.isL').hide(1000);
+				            }
+			            }
+		            });
+		            mark(location.href.match(/(\d+).html/)[1], 5);
+	            }
+            });
+
+		    $("#agree[enabled!=true],#oppose[enabled!=true]").click(
+				function() {
+	            var current = $(this);
+	            $.extend(jdModelCallCenter.settings,{
+		            object:current,
+		            fn:function(){
+		                jdModelCallCenter.method = SetVoteForComment;
+			            jdModelCallCenter.usefulComment(this.object);
+		            }
+	            });
+	            jdModelCallCenter.settings.fn();	
+            });
+            $(":input[name=repay]").click(function(){
+	            var current = $(this);
+	            $.extend(jdModelCallCenter.settings,{
+		            object:current,
+		            fn:function(){
+		                jdModelCallCenter.method = SetRepay;
+			            jdModelCallCenter.usefulComment(this.object);
+		            }
+	            });
+	            jdModelCallCenter.settings.fn();	            
+            });
+		    /*end*/
+
+		    $("#replyContent").click(
+				    function() {
+	                var current = $(this);
+	                $.extend(jdModelCallCenter.settings,{
+		                object:current,
+		                fn:function(){
+		                    jdModelCallCenter.method = SetLogin;
+			                jdModelCallCenter.usefulComment(this.object);
+		                }
+	                });
+	                jdModelCallCenter.settings.fn();	
+				});
+
+		    $(".btn-reply,#loginBut,#seccode_t,#replyContent").click(function(){
+	            var current = $(this);
+	            $.extend(jdModelCallCenter.settings,{
+		            object:current,
+		            fn:function(){
+		                jdModelCallCenter.method = SetLogin;
+			            jdModelCallCenter.usefulComment(this.object);
+		            }
+	            });
+	            jdModelCallCenter.settings.fn();	            
+            });
+		    $("#saveCommentReply").click(
+				function() {
+	            var current = $(this);
+	            $.extend(jdModelCallCenter.settings,{
+		            object:current,
+		            fn:function(){
+		                jdModelCallCenter.method = saveCommentReply;
+			            jdModelCallCenter.usefulComment(this.object);
+		            }
+	            });
+	            jdModelCallCenter.settings.fn();	
+		    });
+		    $("#seccode img,#seccode a").click(
+					function() {
+		            var current = $(this);
+		            $.extend(jdModelCallCenter.settings,{
+			            object:current,
+			            fn:function(){
+			                jdModelCallCenter.method = refreshCode;
+				            jdModelCallCenter.usefulComment(this.object);
+			            }
+		            });
+		            jdModelCallCenter.settings.fn();	
+			});
+	});
+	function SetLogin(object)
+	{
+	}
+	function refreshCode(object){
+		$('#seccode_t').val('');
+		$('#seccode').children('img').attr('src','http://club.jd.com/index.php?mod=ProductComment&action=secImg&r='+Math.random());		
+	
+	}
+	function showMyJdBox(content) {
+		 if(content){
+		 				
+				$.jdThickBox({
+	        		width:250,
+	        		height:130,
+	        		title:"提示",
+	        		type:"text",
+	        		source:"<div style=\"margin:10px 10px 10px 10px\">"+content+"<div style=\"text-align:right;margin:20px 0px 0px 0px\"><input   style=\"cursor:pointer;border:0px;line-height:30px;font-size:12px;text-align:center;width:80px;height:30px;background:url(http://club.jd.com/Static/img/bg_rel.jpg) repeat-y  ;\" onclick=\"javascript:jdThickBoxclose();\" value=\"关闭\" /></div></div>"					            	      
+	        	}); 
+			 
+		}	    		 
+	}
+    function SetVoteForComment(object){
+        var commentId = object.parent().attr("id");
+        var isUseful = object.attr("id") == "agree";
+        if(object.attr("enabled")!="true"){
+        	
+            $.ajax({
+            	type : "GET",
+            	url:"http://club.jd.com/index.php",
+            	data:{
+            		mod:"ProductComment",
+        			action:"saveCommentUserfulVote",
+               	 	commentId: commentId,
+               	 	isUseful: isUseful
+            	},
+            	dataType:"jsonp",
+            	success:function(data) {
+            	object.attr("enabled", "true"); 
+                if (data.status==1) {
+	                var count = parseInt(object.attr("title")) + 1;
+	                object.attr("title", count);
+	               
+	                if (isUseful) {
+		                object.html("有用("+count+")");
+	                } else {
+		                object.html("没用("+count+")");
+	                }
+                }
+              
+            }
+           });
+    }
+   }
+    
+    var publishReplyFlag = false;   
+    function saveCommentReply(object){
+    	
+    	if (publishReplyFlag) {
+			return;
+		}
+		//publishReplyFlag = true;
+	
+        var referenceId = $.query.get("id");
+        var commentId = $.query.get("gid");
+        if (referenceId == "" || commentId == "") {
+            var result = location.href.match(/(\d+)(_)(.+)(_)(\d+)(.html)/);
+            if (result != null) {
+                referenceId = result[1];
+                commentId = result[3];
+            }
+        }
+        var content = $.trim($("#replyContent").val());
+        var seccode = $.trim($("#seccode_t").val());
+        if (referenceId != "" && commentId != "") {
+            $("#form1").validate();
+            if ($("#form1").valid()) {
+                $("#saveCommentReply").hide();
+                $("#savingComment").show();
+                $.ajax({
+                		type : "POST",
+					    url: "http://club.jd.com/index.php", 
+					    data:
+					    {
+		            		mod:"ProductCommentReply",
+		        			action:"saveProductCommentReply",
+						    commentId: commentId,
+						    content:  encodeURIComponent(encodeURIComponent(content)),
+						    seccode:encodeURIComponent(encodeURIComponent(seccode))
+						},
+						dataType : "jsonp",
+					    success: function(data) {
+					    	publishReplyFlag = false;
+					    	var result = eval(data);
+					    	var reply = result.data;
+
+					    	if (result.status == 1) {
+					            var newContent = "<div class=\"item-reply\"><strong></strong><dl><dt><span class=\"u-name\"><a href=\"http://club.jd.com/userdiscuss/" + reply.uid + "-1-1.html\">" + reply.uniChen + "</a>回复说：</span><span class=\"date-comment\">" + reply.creationTime + "</span></dt><dd>" + reply.content + "</dd></dl></div>";
+					            $(".item .i-item .btns").after(newContent);  
+					            $("#replyContent").val("");
+					        }else if (result.status == -1 || result.status == -2 || result.status == -3 || result.status == -4) {
+					        	showMyJdBox(result.info);
+					        }
+					        refreshCode(); 
+					        $("#saveCommentReply").show();
+					        $("#savingComment").hide();
+					    },
+					    error :function(data){
+					    	publishReplyFlag = false;
+    						$("#savingComment").hide();
+    						$("#saveCommentReply").show();
+    						showMyJdBox('网络繁忙，请稍后重试！');
+    					}
+					});
+            }
+        }
+
+    }
+    
+function showUserHead2(thePins, callback) {
+    $.ajax({
+        type: "GET",
+        url: "http://i.360buy.com/user/upload/img/show/" + encodeURI(escape(thePins)) + ".html",
+        dataType: "jsonp",
+        success: function(data) {
+            if (data) {
+                callback(data);
+            }
+        }
+    });
+}
+
+function showUserHeadCallback2(data) {
+    for (var j = 0; j < data.info.length; j++) {
+        if (data.info[j].imgurl.indexOf('no-img') <= 0) {
+            $("#divitem img[upin=" + data.info[j].pin + "]").attr("src", data.info[j].imgurl + "_sma_.jpg");
+        }
+    }
+}
+    </script>
+
+        <title>青木和子的唯美刺绣：玫瑰花园商品评价："我喜欢这本书~" - 京东 </title>
+        <script>var jdpts=new Object();jdpts._st=new Date().getTime();</script>
+		<meta name="description" content='青木和子的唯美刺绣：玫瑰花园商品评价：我喜欢这本书~ 我喜欢这本书~这天女友打电话问我借本书，说她写作需要参考，我说我家没有，但我可以帮你找。我一边接电话...' />
+		<meta name="keywords" content="青木和子的唯美刺绣：玫瑰花园，青木和子的唯美刺绣：玫瑰花园商品评价，青木和子的唯美刺绣：玫瑰花园手工DIY商品评价" />
+	 
+</head>
+<body>
+<input type="hidden" id="hidSessessUrl" />
+    <form name="form1" method="post" action="" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4MzI2Nzg5MTFkZN8C4HZdv1eZD7tY0QiKBk0AAAAA" />
+</div>
+
+  	
+  	<script type="text/javascript" src="http://misc.360buyimg.com/lib/js/2012/base-v1.js" charset="gb2312"></script>
+<div id="shortcut-2013">
+	<div class="w">
+		<ul class="fl lh">
+			<li class="fore1 ld"><b></b><a href="javascript:addToFavorite()" rel="nofollow">收藏京东</a></li>
+		</ul>
+		<ul class="fr lh">
+			<li class="fore1" id="loginbar">您好！欢迎来到京东！<a href="javascript:login()">[登录]</a>&nbsp;<a href="javascript:regist()">[免费注册]</a></li>
+			<li class="fore2 ld">
+				<s></s>
+				<a href="http://jd2008.jd.com/JdHome/OrderList.aspx" rel="nofollow">我的订单</a>
+			</li>
+			<li class="fore2-1 ld" id="jd-vip">
+				<s></s>
+				<a target="_blank" rel="nofollow" clstag="homepage|keycount|home2013|huiyuanjulebu" href="http://vip.jd.com">会员俱乐部</a>
+			</li>
+			<li class="fore3 ld menu" id="app-jd" data-widget="dropdown" clstag="homepage|keycount|home2013|01d">
+				<s></s><i></i><span class="outline"></span><span class="blank"></span>
+				<a href="http://app.jd.com/" target="_blank">手机京东</a><b></b>
+				<div class="dd lh">
+					<div class="qr-code">
+						<img id="app-qrcode-img" data-img="1" trigger-lazy-img="done" class="err-product" width="76" height="76" alt="手机京东" src="http://misc.360buyimg.com/lib/skin/2013/i/app_QRcode.png"><i></i>
+						<div class="details"><em>扫描我，即刻下载</em><strong>京东客户端</strong></div>
+					</div>
+					<div class="app-btn">
+						<a href="http://itunes.apple.com/cn/app/id414245413" target="_blank" class="btn-app-apple"></a>
+						<a href="http://app.jd.com/download/android/360buy.apk" target="_blank" class="btn-app-android"></a>
+					</div>
+				</div>
+			</li>
+			<li class="fore4 ld menu" id="biz-service" data-widget="dropdown">
+				<s></s>
+				<span class="outline"></span>
+				<span class="blank"></span>
+				客户服务
+				<b></b>
+				<div class="dd">
+					<div><a href="http://help.jd.com/index.html" target="_blank">帮助中心</a></div>
+					<div><a href="http://myjd.jd.com/repair/orderlist.action" target="_blank" rel="nofollow">售后服务</a></div>
+					<div><a href="http://chat.jd.com/jdchat/custom.action" target="_blank" rel="nofollow">在线客服</a></div>
+					<div><a href="http://myjd.jd.com/opinion/list.action" target="_blank" rel="nofollow">投诉中心</a></div>
+					<div><a href="http://www.jd.com/contact/service.html" target="_blank">客服邮箱</a></div>
+				</div>
+			</li>
+			<li class="fore5 ld menu" id="site-nav" data-widget="dropdown">
+				<s></s>
+				<span class="outline"></span>
+				<span class="blank"></span>
+				网站导航
+				<b></b>
+				<div class="dd lh">
+					<dl class="item fore1">
+						<dt>特色栏目</dt>
+						<dd>
+							<div><a target="_blank" href="http://my.jd.com/personal/guess.html">为我推荐</a></div>
+							<div><a target="_blank" href="http://shipingou.jd.com/">视频购物</a></div>
+							<div><a target="_blank" href="http://club.jd.com/">京东社区</a></div>
+							<div><a target="_blank" href="http://xiaoyuan.jd.com/">校园频道</a></div>
+							<div><a target="_blank" href="http://read.jd.com/">在线读书</a></div>
+							<div><a target="_blank" href="http://diy.jd.com/">装机大师</a></div>
+							<div><a target="_blank" href="http://market.jd.com/giftcard/">京东卡</a></div>
+							<div><a target="_blank" href="http://channel.jd.com/jiazhuang.html">家装城</a></div>
+							<div><a target="_blank" href="http://dapeigou.jd.com/">搭配购</a></div>
+							<div><a target="_blank" href="http://xihuan.jd.com/">我喜欢</a></div>
+						</dd>
+					</dl>
+					<dl class="item fore2">
+						<dt>企业服务</dt>
+						<dd>
+							<div><a target="_blank" href="http://giftcard.jd.com/company/index">企业客户</a></div>
+							<div><a target="_blank" href="http://sale.jd.com/p10997.html">办公直通车</a></div>
+						</dd>
+					</dl>
+					<dl class="item fore3">
+						<dt>旗下网站</dt>
+						<dd>
+							<div><a target="_blank" href="http://www.360top.com/">360TOP</a></div>
+							<div><a target="_blank" href="http://en.jd.com/">English Site</a></div>
+						</dd>
+					</dl>
+				</div>
+			</li>
+		</ul>
+		<span class="clr"></span>
+	</div>
+</div><!--shortcut end-->    <div id="o-header-2013">
+	<div class="w" id="header-2013">
+		<div id="logo-2013" class="ld"><a href="http://www.jd.com/" hidefocus="true"><b></b><img src="http://misc.360buyimg.com/lib/img/e/logo-201305.png" width="270" height="60" alt="京东"></a></div>
+		<!--logo end-->
+		<div id="search-2013">
+			<div class="i-search ld">
+				<ul id="shelper" class="hide">
+				</ul>
+				<div class="form">
+					<input type="text" class="text" accesskey="s" id="key" autocomplete="off" onkeydown="javascript:if(event.keyCode==13) search('key');">
+					<input type="button" value="搜索" class="button" onclick="search('key');return false;">
+				</div>
+			</div>
+            <div id="advancesearch"><a href="http://search.jd.com/bookadv.html" target="_blank">高级搜索</a></div>
+			<div id="hotwords"></div>
+		</div>
+		<!--search end-->
+		<div id="my360buy-2013">
+			<dl>
+				<dt class="ld"><s></s><a href="http://home.jd.com/">我的京东</a><b></b></dt>
+				<dd>
+					<div class="loading-style1"><b></b>加载中，请稍候...</div>
+				</dd>
+			</dl>
+		</div>
+		<!--my360buy end-->
+		<div id="settleup-2013">
+			<dl>
+				<dt class="ld"><s></s><span class="shopping"><span id="shopping-amount"></span></span><a href="http://cart.jd.com/cart/cart.html" id="settleup-url">去购物车结算</a> <b></b> </dt>
+				<dd>
+					<div class="prompt">
+						<div class="loading-style1"><b></b>加载中，请稍候...</div>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!--settleup end-->
+	</div>
+	<!--header end-->
+	<div class="w">
+		<div id="nav-2013">
+			<div id="categorys-2013">
+				<div class="mt ld">
+					<h2><a href="http://www.jd.com/allSort.aspx">全部商品分类<b></b></a></h2>
+				</div>
+				<div id="_JD_ALLSORT" class="mc"></div>
+			</div>
+			<div id="treasure"></div>
+			<ul id="navitems-2013">
+                <li class="fore1" id="nav-home"><a href="http://www.jd.com/">首页</a></li>
+                <li class="fore2" id="nav-fashion"><a href="http://fashion.jd.com/">服装城</a></li>
+                <li class="fore3" id="nav-chaoshi"><a href="http://channel.jd.com/chaoshi.html" target="_blank">京东超市</a></li>
+                <li class="fore4" id="nav-tuan"><a href="http://tuan.jd.com/" target="_blank">团购</a></li>
+                <li class="fore5" id="nav-auction"><a href="http://auction.jd.com/">夺宝岛</a></li>
+                <li class="fore6" id="nav-wan"><a href="http://wan.jd.com/">在线游戏</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+(function(){ if(pageConfig.navId){ var object=document.getElementById("nav-"+pageConfig.navId);if(object)object.className+=" curr";}})();
+</script>
+<!-- header end -->
+    
+    <div class="w">
+	    <div id="Position" class="crumb">
+	    	 <a href="http://www.jd.com">首页</a>
+&gt;&nbsp;<a href="http://book.jd.com/">图书</a>&gt;&nbsp;<a href="http://www.jd.com/products/1713-9314-000.html">娱乐/休闲</a>&gt;&nbsp;<a href="http://www.jd.com/products/1713-9314-9315.html">手工DIY</a>&gt;&nbsp;<a href="http://book.jd.com/10890432.html">青木和子的唯美刺绣：玫瑰花园</a>			&nbsp;&gt;&nbsp;<a href="http://club.jd.com/review/10890432-1-1.html">商品评价</a>
+			
+			</div>
+    </div>
+    <div class="w main">
+        <div class="left">
+         
+			<!--pinfo start-->
+				<div class="m m0" id="pinfo">
+                <div class="mt">
+                    <h2>
+                        商品信息</h2>
+                </div>
+                <div class="mc">
+					<div class="p-img"><a href="http://book.jd.com/10890432.html"><img alt="" onerror="this.src='http://www.jd.com/images/none/none_150.gif'" src="http://img10.360buyimg.com/N3/13876/d7d4170f-bb27-4dfd-b356-25293ed1ec67.jpg"></a></div>
+					<div class="p-name">商品名称：<a class="link_1" href="http://book.jd.com/10890432.html">青木和子的唯美刺绣：玫瑰花园</a></div>
+					<div class="p-grade clearfix">
+						<span class="fl">评价得分：</span>
+						<div class="fl">
+							<div class="star sa5"></div>(<span></span>分)						
+						</div>
+					</div>
+					<div class="num-comment">评论数：<span>0</span>条</div>
+					<div class="btn"><a class="btn-append" href="http://jd2008.jd.com/purchase/InitCart.aspx?pid=10890432&amp;pcount=1&amp;ptype=1">添加到购物车</a></div>
+					 
+				</div>
+</div>
+            
+            
+<script type="text/javascript">
+$.ajax({
+	type:"GET",
+	url:"http://club.jd.com/ProductPageService.aspx?method=GetCommentSummaryBySkuId&referenceId=10890432",
+	data:{},
+	dataType:'jsonp',
+	success:function(data){
+	
+		$('#product_star').removeClass().addClass('star sa'+data.AverageScore);
+		$('.fl').children('span').html(data.AverageScore);
+		if(!isNaN(data.CommentCount) && data.CommentCount>0){
+			$('.num-comment').children('span').html(data.CommentCount);
+		}
+		
+	}
+});
+
+
+$.ajax({
+	type:"GET",
+	url:"http://club.jd.com/index.php?mod=ProductComment&action=getEbookId&bid=10890432",
+	data:{},
+	dataType:'jsonp',
+	success:function(ed){
+		if(ed.hasOwnProperty('eid')) {
+			if($('#pinfo').find('.t-c').length==0) {
+				var html = '<div class="btn t-c ac">'+
+                        			'<a class="btn-buy" target="_blank" href="http://e.jd.com/'+ed.eid+'.html">'+
+                        			'购买电子书'+
+                        			'<b class="c-J_'+ed.eid+'">暂无报价</b>'+
+                        			'</a>'+
+                    			'</div>';
+				$('#pinfo').find('.btn').after(html);
+				$.ajax({
+    				type:"GET",
+    				url:"http://p.3.cn/prices/mgets",
+    				data:{ skuids:'J_'+ed.eid , 
+            			type:1        
+        			},
+    				dataType:'jsonp',
+    				success:function(data){  
+    				for( var key in data){   
+         	   			if(data[key]['p'] && parseFloat(data[key]['p'])>=0) {  
+			        	        $('.c-'+data[key]['id']).html('￥'+data[key]['p']);             
+        	   			} 		
+    					}
+    				}
+    				});
+			} 
+		}		
+	}
+});
+
+  
+
+</script>			<!--pinfo end-->   
+        </div>
+        <!--left end-->
+        <div class="right-extra">
+            <div id="comment" class="m">
+                <div class="mt">
+                    <h2>
+                        商品评价</h2>
+                    <span>(共0条回复)</span>
+                </div>
+                <div class="mc">
+                    <div id="divitem" class="item">
+	                    <div class="user">
+                            		                    <div class="u-icon">
+			                    <a href="http://club.jd.com/userreview/115480784-1-1.html" target="_blank">
+												                    		<img height="50" width="50" src="http://misc.360buyimg.com/lib/img/u/b105.gif" />
+			                    				                    </a>
+		                    </div>
+		                    <div class="u-name">
+		                    <a href="http://club.jd.com/userreview/115480784-1-1.html" target="_blank">春山醉舞风 </a>
+		                    </div>
+		                    <div class="u-address">北京</div>
+		                    <div class="date-buy">购买日期<br/>2014-01-03</div>
+	                                                </div>
+	                    <div class="i-item">
+		                    <div class="o-topic">
+			                    <strong class="topic">
+			                   	 <a href="http://club.jd.com/repay/10890432_a3c2b15f-907f-412f-bc64-943964f04cb5_1.html" target="_blank">我喜欢这本书~</a>
+			                    </strong>
+			                    <span class="star sa5"></span>
+			                    <span class="date-comment">2014-01-15 01:53:24</span>
+		                    </div>
+		                    <div class="comment-content">
+			                    我喜欢这本书~这天女友打电话问我借本书，说她写作需要参考，我说我家没有，但我可以帮你找。我一边接电话一边就上网搜索，很快找到，立马告诉她网上京东有。她说我不会在网上买书啊。我嘲笑她一番，然后表示帮她买。很快就写好订单写好她的地址发出去了。果然第二天，书就送到她那儿了。她很高兴，我很得意。过了些日子，我自己又上网购书，但下订单后，左等右等不来。以前从来不超过一星期的。我正奇怪呢，刘静打电话来笑嘻嘻地说，哎，也不知道是谁，心眼儿那么好，又帮我订了好几本书，全是我想要的，太好了。我一听，连忙问她是哪几本？她一一说出书名，晕，那是我买的书啊。原来我下订单的时候，忘了把地址改过来，送到她那儿去了。这下可把她乐死了，把我先前对她的嘲笑全还给我了。不过京东送货确实很快。我和女友都很满意。好了，废话不说。|发货真是出乎意料的快，昨天下午订的货，第二天一早就收到了，赞一个，书质量很好，正版。独立包装，每一本有购物清单，让人放心。帮人家买的书，周五买的书，周天就收到了，快递很好也很快，包装很完整，跟同学一起买的两本，我们都很喜欢，谢谢！好了，我现在来说说这本书的观感吧，一个人重要的是找到自己的腔调，不论说话还是写字。腔调一旦确立，就好比打架有了块趁手的板砖，怎么使怎么顺手，怎么拍怎么有劲，顺带着身体姿态也挥洒自如，打架简直成了舞蹈，兼有了美感和韵味。要论到写字，腔调甚至先于主题，它是一个人特有的形式，或者工具；不这么说，不这么写，就会别扭；工欲善其事，必先利其器，腔调有时候就是&ldquo;器&rdquo;，有时候又是&ldquo;事&rdquo;，对一篇文章或者一本书来说，器就是事，事就是器。这本书，的确是用他特有的腔调表达了对&ldquo;腔调&rdquo;本身的赞美。|现在，京东域名正式更换为JDCOM。其中的&ldquo;JD&rdquo;是京东汉语拼音（JING DON|G）首字母组合。从此，您不用再特意记忆京东的域名，也无需先搜索再点击，只要在浏览器输入JD.COM，即可方便快捷地访问京东，实现轻松购物。名为&ldquo;Joy&rdquo;的京东吉祥物我很喜欢，TA承载着京东对我们的承诺和努力。狗以对主人忠诚而著称，同时也拥有正直的品行，和快捷的奔跑速度。太喜爱京东了。|好了，现在给大家介绍两本好书：《婚姻是女人一辈子的事》简介：最实用剩女出嫁实战手册、婚女幸福宝典；婚姻不是最终归宿，幸福的婚姻才是真正的目的；内地首席励志作家陆琪 首部情感励志力作；研究男女情感问题数年，陆琪首本情感婚姻励志作品。作者作为怀揣女权主义的男人，毫无保留地剖析男人的弱点，告诉女人应该如何分辨男人的爱情，如何掌控男人，如何获得婚姻的幸福。事实上，男人和女人是两种完全不同的动物，用女人的思考方式，永远也了解不透男人。所以陆琪以男性背叛者的角度，深刻地挖掘男人最深层的情感态度和婚姻方式，让女人能够有的放矢、知己知彼，不再成为情感掌控的弱者。二、《正能量（实践版）》&mdash;&mdash;将&ldquo;正能量&rdquo;真正实践应用的第一本书！心理自助全球第一品牌书！销量突破600万册！&ldquo;世界级的演讲家和激励大师&rdquo;韦恩·戴尔，为我们带来了这本世界级的心理学巨作！他在韦恩州立大学获得过教育咨询博士学位，曾任纽约圣约翰大学教授，是自我实现领域的国际知名作家和演讲家。他出版过28本畅销书，制作了许多广播节目和电视录像，而且在数千个电视和广播节目中做过嘉宾访谈。本书跻身《纽约时报》畅销书榜数十周之久，在全球取得了极高的赞誉，曾激励数百万人走上追逐幸福之途。《正能量（实践版）》&mdash;&mdash;内容最实用、案例最详实，10周改善你的人生！这本书是作者联合数十位科学家、心理学家，耗费十余年心力的研究结晶。通过一系列行之有效的方法，以帮助所有身处人生低谷、长期焦虑、沮丧、消沉、自我怀疑的人，过上幸福喜乐的生活。每一章都像一次心理咨询，详细论述了各种自我挫败行为，分析我们之所以不愉快、消极应对生活的原因，把人们日常生活中所暴露的性格缺陷（如自暴自弃、崇拜、依赖）和不良情绪（如悔恨、忧虑、抱怨、愤怒）逐条分析，揭开你最想知道的心理学真相，每章结尾都提供了简易的方法，使得你即刻改变恶行，拥抱新生。
+		                    </div>
+		                    <div class="btns">
+			                    <div class="useful" id="a3c2b15f-907f-412f-bc64-943964f04cb5">
+				                    <span>此评价对我</span>
+				                    <a class="btn-agree" id="agree" href="#none" title="0">有用(0)</a>
+				                    <a class="btn-oppose" id="oppose" href="#none" title="0" >没用(0)</a>
+			                    </div>
+			                    <a class="btn-reply"  href="#replyform">回复</a>
+		                    </div>
+		                    
+		                 <!-- replies begin-->   
+						 
+		                <!-- replies end-->   
+		                 
+	                    </div>
+	                    <div class="corner tl"></div>
+	                    <div class="corner tr"></div>
+	                    <div class="corner b"></div>
+	                    <div class="corner bl"></div>
+	                    <div class="corner br"></div>
+                    
+                    </div>
+                    <div class="clearfix m">
+	                    <div class="pagin fr">
+	                    
+	                    </div>
+                    </div>
+                    <!--item end-->
+                    <div id="replyform" class="item">
+                        <dl class="i-item">
+                            <dt>发表回复</dt>
+                            <dd>
+                                <textarea id="replyContent" name="replyContent" class="text textarea"></textarea><br />
+                                <label id="replyContenterror">
+                                 </label></dd>
+                            <dd class="isL hide" ><span>验证码：</span><input name="seccode_t" id="seccode_t" class="text" type="text" autocomplete="off" style="width:72px;" maxlength="9" value="" />&nbsp;<label id="secCodeerror">&nbsp;</label></dd>
+							<dd id="seccode"  class="isL hide"><img class="text" width="240" height="160" 
+								src="http://club.jd.com/index.php?mod=ProductComment&action=secImg" />
+								(<a href="#none">换一张</a>)
+							</dd> 
+							<dd class="isL hide"><input id="saveCommentReply" type="button" value="提交"
+								class="btn-submit" /><img id="savingComment"
+								src="http://club.jd.com/Static/img/uploading.jpg"
+								style="display: none" /></dd>
+						   
+							<dd class="isnL">
+								登录后才能发表回复，请<a href="#none" id="loginBut">登录</a>
+							</dd> 
+                        </dl>
+                        <div class="corner tl">
+                        </div>
+                        <div class="corner tr">
+                        </div>
+                        <div class="corner b">
+                        </div>
+                        <div class="corner bl">
+                        </div>
+                        <div class="corner br">
+                        </div>
+                    </div>
+                    <!--item end-->
+                    <div id="desgoods"></div>
+                    <!--relative end-->
+                </div>
+            </div>
+            <!--comment end-->
+        </div>
+        <!--right-extra end-->
+        <span class="clr"></span>
+    </div>
+
+ <div class="w">
+	<div id="service-2013">
+		<dl class="fore1">
+			<dt><b></b><strong>购物指南</strong></dt>
+			<dd>
+				<div><a href="http://help.jd.com/help/question-56.html" target="_blank" rel="nofollow">购物流程</a></div>
+				<div><a href="http://help.jd.com/help/question-57.html" target="_blank" rel="nofollow">会员介绍</a></div>
+				<div><a href="http://help.jd.com/help/question-181.html" target="_blank" rel="nofollow">团购/机票</a></div>
+				<div><a href="http://help.jd.com/help/question-61.html" target="_blank" rel="nofollow">常见问题</a></div>
+				<div><a href="http://help.jd.com/help/question-63.html" target="_blank" rel="nofollow">大家电</a></div>
+				<div><a href="http://help.jd.com/index.html" target="_blank" rel="nofollow">联系客服</a></div>
+			</dd>
+		</dl>
+		<dl class="fore2">		
+			<dt><b></b><strong>配送方式</strong></dt>
+			<dd>
+				<div><a href="http://help.jd.com/help/question-64.html" target="_blank" rel="nofollow">上门自提</a></div>
+				<div><a href="http://help.jd.com/help/question-360.html" target="_blank" rel="nofollow">211限时达</a></div>
+				<div><a href="http://help.jd.com/help/distribution-768.html" target="_blank" rel="nofollow">配送服务查询</a></div>
+				<div><a href="http://help.jd.com/help/question-892.html#help2215" target="_blank" rel="nofollow">配送费收取标准</a></div>
+				<div><a href="http://market.jd.com/giftcard/index.html#one5" target="_blank" rel="nofollow">如何送礼</a></div>
+				<div><a href="http://help.en.360buy.com/help/question-2.html" target="_blank">Global Shipping</a></div>
+			</dd>
+		</dl>
+		<dl class="fore3">
+			<dt><b></b><strong>支付方式</strong></dt>
+			<dd>
+				<div><a href="http://help.jd.com/help/question-67.html" target="_blank" rel="nofollow">货到付款</a></div>
+				<div><a href="http://help.jd.com/help/question-68.html" target="_blank" rel="nofollow">在线支付</a></div>
+				<div><a href="http://help.jd.com/help/question-71.html" target="_blank" rel="nofollow">分期付款</a></div>
+				<div><a href="http://help.jd.com/help/question-69.html" target="_blank" rel="nofollow">邮局汇款</a></div>
+				<div><a href="http://help.jd.com/help/question-70.html" target="_blank" rel="nofollow">公司转账</a></div>
+			</dd>
+		</dl>
+		<dl class="fore4">		
+			<dt><b></b><strong>售后服务</strong></dt>
+			<dd>
+				<div><a href="http://myjd.jd.com/afs/help/afshelp.action" target="_blank" rel="nofollow">售后政策</a></div>
+				<div><a href="http://help.jd.com/help/question-99.html" target="_blank" rel="nofollow">价格保护</a></div>
+				<div><a href="http://help.jd.com/help/question-100.html" target="_blank" rel="nofollow">退款说明</a></div>
+				<div><a href="http://myjd.jd.com/repair/repairs.action" target="_blank" rel="nofollow">返修/退换货</a></div>
+				<div><a href="http://help.jd.com/help/question-881.html" target="_blank" rel="nofollow">取消订单</a></div>
+			</dd>
+		</dl>
+		<dl class="fore5">
+			<dt><b></b><strong>特色服务</strong></dt>
+			<dd>			
+				<div><a href="http://help.jd.com/help/question-79.html" target="_blank">夺宝岛</a></div>
+				<div><a href="http://help.jd.com/help/question-86.html" target="_blank">DIY装机</a></div>
+				<div><a href="http://fuwu.jd.com/" target="_blank" rel="nofollow">延保服务</a></div>
+				<div><a href="http://market.jd.com/giftcard/index.html" target="_blank" rel="nofollow">京东卡</a></div>
+				<div><a href="http://help.jd.com/help/question-91.html" target="_blank" rel="nofollow">节能补贴</a></div>
+			</dd>
+		</dl>
+		<span class="clr"></span>
+	</div>
+</div><!-- service end -->  	<div class="w">
+	<div id="footer-2013">
+		<div class="links"><a href="http://www.jd.com/intro/about.aspx" target="_blank" rel="nofollow">关于我们</a>|<a href="http://www.jd.com/contact/" target="_blank" rel="nofollow">联系我们</a>|<a href="http://zhaopin.jd.com/" target="_blank" rel="nofollow">人才招聘</a>|<a href="http://www.jd.com/contact/joinin.aspx" target="_blank" rel="nofollow">商家入驻</a>|<a href="http://sale.jd.com/act/y3surX7qpM.html" target="_blank" rel="nofollow">广告服务</a>|<a href="http://app.jd.com/" target="_blank" rel="nofollow">手机京东</a>|<a href="http://club.jd.com/links.aspx" target="_blank">友情链接</a>|<a href="http://cps.jd.com/" target="_blank">销售联盟</a>|<a target="_blank" href="http://club.jd.com/">京东社区</a>|<a target="_blank" href="http://gongyi.jd.com">京东公益</a></div>
+		<div class="copyright">北京市公安局朝阳分局备案编号110105014669&nbsp;&nbsp;|&nbsp;&nbsp;京ICP证070359号&nbsp;&nbsp;|&nbsp;&nbsp;互联网药品信息服务资格证编号(京)-非经营性-2011-0034<br><a target="_blank" href="http://misc.360buyimg.com/skin/df/i/com/f_music.jpg" rel="nofollow">音像制品经营许可证苏宿批005号</a>&nbsp;&nbsp;|&nbsp;&nbsp;出版物经营许可证编号新出发(苏)批字第N-012号&nbsp;&nbsp;|&nbsp;&nbsp;互联网出版许可证编号新出网证(京)字150号<br><a target="_blank" href="http://misc.360buyimg.com/wz/wlwhjyxkz.jpg">网络文化经营许可证京网文[2011]0168-061号</a>&nbsp;&nbsp;Copyright&nbsp;&copy;&nbsp;2004-2014&nbsp;&nbsp;京东JD.com&nbsp;版权所有<br />京东旗下网站：<a href="http://www.360top.com/" target="_blank">360TOP</a>&nbsp;&nbsp;<a target="_blank" href="http://en.jd.com/">English Site</a></div>
+		<div class="authentication"><a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202007080200026" target="_blank" rel="nofollow"><img data-lazyload="http://img10.360buyimg.com/da/20110329/108_40_zZOKnl.gif" width="108" height="40" alt="经营性网站备案中心"></a><script type="text/JavaScript">function CNNIC_change(eleId){ var str= document.getElementById(eleId).href;var str1 =str.substring(0,(str.length-6));str1+=CNNIC_RndNum(6); document.getElementById(eleId).href=str1;}function CNNIC_RndNum(k){ var rnd=""; for (var i=0;i < k;i++) rnd+=Math.floor(Math.random()*10); return rnd;}</script><a href="https://ss.cnnic.cn/verifyseal.dll?sn=2008070300100000031&ct=df&pa=294005" tabindex="-1" id="urlknet" target="_blank" rel="nofollow"><img alt="&#x53EF;&#x4FE1;&#x7F51;&#x7AD9;" name="CNNIC_seal" border="true" data-lazyload="http://img11.360buyimg.com/da/g8/M03/0C/0E/rBEHaFCFC5QIAAAAAAASVQX9RAYAACb2wHUV1kAABJt760.gif" width="108" height="40" oncontextmenu="return false;" onclick="CNNIC_change('urlknet')" /></a><a href="http://www.bj.cyberpolice.cn/index.do" target="_blank" rel="nofollow"><img data-lazyload="http://img12.360buyimg.com/da/g5/M02/0D/17/rBEIDE_nzcIIAAAAAAB30mYXo5QAACrhACj22IAAHfq378.png" width="108" height="40" alt="朝阳网络警察"></a><a href="https://search.szfw.org/cert/l/CX20120111001803001836" target="_blank" rel="nofollow"><img data-lazyload="http://img13.360buyimg.com/da/20120221/112_40_WvArIl.png" width="112" height="40"></a></div>
+	</div>
+</div><!-- footer end -->    <script src="http://misc.360buyimg.com/lib/js/2012/lib-v1.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://simigoods.360buy.com/js/ClubRec2.js"></script>
+
+        <script type="text/javascript">
+            ClubSingle(1713,"Sgl",10890432);
+        </script>
+    <script type="text/javascript" src="http://www.jd.com/script/jquery-plugins-vs2.js"></script>
+    <script type="text/javascript" src="http://www.jd.com/hotwords.aspx?Position=mvd-05"></script> 
+ 
+<script type="text/javascript" src="http://wl.jd.com/wl.js"></script>
+<script type="text/javascript">
+var _mvq = _mvq || [];
+_mvq.push(['$setAccount', 'm-9-1']);
+_mvq.push(['$logConversion']);
+(function() {
+    var mvl = document.createElement('script');
+    mvl.type = 'text/javascript'; mvl.async = true;
+    mvl.src = 'http://misc.360buyimg.com/lib/js/2012/mvl.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(mvl, s);
+})();
+</script> 
+
+</form>
+</body>
+</html>

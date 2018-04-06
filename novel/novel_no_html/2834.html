@@ -1,0 +1,171 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=GBK" />
+	<title> 供应重轨 - 中国制造交易网</title>
+	<link rel="stylesheet" type="text/css" href="/css/pic.css" />
+	<script type="text/javascript" src="/js/jQuery.js"></script>
+	<script type="text/javascript" src="/js/c-c.js"></script>
+    <script type="text/javascript" src="/js/Move.js"></script>
+</head>
+<body>
+	<div class="picBg">
+		<div class="fl ml picFd">
+			<a href="javascript:PicZoomIn()" title="放大"><span class="picFd1 mr"></span></a>
+			<a href="javascript:PicZoomOut()" title="缩小"><span class="picFd2 mr"></span></a>
+			<a href="javascript:PicLoad()" title="刷新"><span class="picFd3"></span></a>
+		</div>
+		<div class="fl white2 ml"><a href="/sale/View-9689350.html" title="供应重轨">供应重轨</a>　共 <b class="hs">1</b> 张图片　当前第 <b class="hs">1</b> 张</div>
+		<div class="fr picFy">
+			<a href="javascript:PicTurn(0)" onmouseover="PicMouse()" class="mr preButton"><span></span></a>
+			<a href="javascript:PicTurn(1)" onmouseover="PicMouse()" class="mr nextButton"><span></span></a>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="picM">
+		<table border="0" cellpadding="0" cellspacing="0" style="width:100%;height:100%">
+			<tr>
+				<td><img id="iPic" src="http://img.c-c.com/MImg/2008/08/14/21/lvyesteelhz2145070921.jpg" alt="供应重轨" onmousedown="Move.create(this)" style="position:absolute" /></td>
+			</tr>
+		</table>
+		
+	</div>
+<div style="display:none">
+<script type="text/javascript">
+	var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2c398ecf351b909e03747463a6682767' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript" charset='gb2312' src="http://s16.cnzz.com/stat.php?id=3760797&web_id=3760797"></script>
+<script type="text/javascript" charset='gb2312' src='http://s9.cnzz.com/stat.php?id=775815&web_id=775815'></script>
+<script type="text/javascript" charset='gb2312' src='http://als.c-c.com/js.ashx?id=1999'></script>
+</div>
+</body>
+<script type="text/javascript" src="/js/c-c.foot.js"></script>
+<script type="text/javascript">
+    var imgIndex, imgSrc;
+    $('img').error(function () {
+        imgSrc = $(this).attr('src');
+        imgIndex = imgSrc.toLowerCase().lastIndexOf('_s.');
+        if (imgIndex > 0 && imgIndex > imgSrc.length - 8)
+            $(this).attr('src', imgSrc.substr(0, imgIndex) + imgSrc.substr(imgIndex + 2));
+        else $(this).attr('src', '/image/noImg/100.jpg');
+    });
+    var imgI, imgS;
+    $('img').error(function () {
+        imgS = $(this).attr('src');
+        imgI = imgS.toLowerCase().lastIndexOf('_s.');
+        if (imgI > 0 && imgI > imgS.length - 8)
+            $(this).attr('src', '/image/noImg/100.jpg');
+        else {
+            imgI = imgS.lastIndexOf('.');
+            if (imgI > 0 && imgI > imgS.length - 6)
+                $(this).attr('src', imgS.substr(0, imgI) + '_s' + imgS.substr(imgI));
+            else $(this).attr('src', '/image/noImg/100.jpg');
+        }
+    });
+    function PicLoad() {
+        var iPic = document.getElementById('iPic');
+        $('#iPic').css('width', '').css('height', '');
+        iPic.focus();
+        PicZoom('iPic', iPic.width, iPic.height);
+        var Li = $('.picLb > ul:eq(0) > li');
+        if (Li.length > 1) {
+            $('.white2 > .hs:eq(0)').html(Li.length);
+            for (var i = 0; i < Li.length; i++)
+                if (Li.eq(i).attr('class') == 'li1') {
+                    iPic.src = $('.picLb > ul:eq(0) > li:eq(' + i + ') > img:eq(0)').attr('src');
+                    $('.white2 > .hs:eq(1)').html(i + 1);
+                    break;
+                }
+        }
+    }
+    $().ready(function () { PicLoad(); });
+    function PicZoomIn() {
+        var iPic = document.getElementById('iPic');
+        var W = parseInt(iPic.style.width) + 100;
+        var H = parseInt(iPic.style.height) + 100 * iPic.height / iPic.width;
+        PicZoom('iPic', W, H);
+    }
+    function PicZoomOut() {
+        var iPic = document.getElementById('iPic');
+        if (parseInt(iPic.style.width) > 100) {
+            var W = parseInt(iPic.style.width) - 100;
+            var H = parseInt(iPic.style.height) - 100 * iPic.height / iPic.width;
+            PicZoom('iPic', W, H);
+        }
+    }
+    function PicZoom(PicId, Width, Height) {
+        var Pic = document.getElementById(PicId);
+        var Body = (document.compatMode.toLowerCase() == 'css1compat') ? document.documentElement : document.body;
+        Pic.style.left = (Body.clientWidth - Width) / 2 + 'px';
+        var Top = (Body.clientHeight - Height) / 2;
+        if (Top < 0)
+            Top = 0;
+        Pic.style.top = Top + 'px';
+        Pic.style.width = Width + 'px';
+        Pic.style.height = Height + 'px';
+    }
+    function PicSelect(Index) {
+        var Li = $('.picLb > ul:eq(0) > li');
+        if (Li != null && Li.length > 1) {
+            for (var i = 0; i < Li.length; i++)
+                if (i == Index) {
+                    if (Li.eq(i).attr('class') == 'li2') {
+                        Li.eq(i).removeClass('li2').addClass('li1');
+                        PicLoad();
+                    }
+                } else {
+                    if (Li.eq(i).attr('class') == 'li1')
+                        Li.eq(i).removeClass('li1').addClass('li2');
+                }
+        }
+    }
+    function PicTurn(Flag) {
+        var Li = $('.picLb > ul:eq(0) > li');
+        if (Li != null && Li.length > 1) {
+            var Index = null;
+            for (var i = 0; i < Li.length; i++)
+                if (Li.eq(i).attr('class') == 'li1') {
+                    Index = i;
+                    break;
+                }
+            if (Index != null) {
+                if (Flag == 0) {
+                    if (Index > 0) {
+                        Li.eq(Index).removeClass('li1').addClass('li2');
+                        Li.eq(Index - 1).removeClass('li2').addClass('li1');
+                    }
+                } else {
+                    if (Index < Li.length - 1) {
+                        Li.eq(Index).removeClass('li1').addClass('li2');
+                        Li.eq(Index + 1).removeClass('li2').addClass('li1');
+                    }
+                }
+                PicLoad();
+            }
+        }
+    }
+    function PicMouse() {
+        var Li = $('.picLb > ul:eq(0) > li');
+        if (Li != null && Li.length > 1) {
+            var A = $('.picFy > a');
+            var Index = null;
+            for (var i = 0; i < Li.length; i++)
+                if (Li.eq(i).attr('class') == 'li1') {
+                    Index = i;
+                    break;
+                }
+            if (Index != null) {
+                if (Index > 0)
+                    A.eq(0).removeClass('preButton').addClass('prebutton');
+                else A.eq(0).removeClass('prebutton').addClass('preButton');
+                if (Index < Li.length - 1)
+                    A.eq(1).removeClass('nextButton').addClass('nextbutton');
+                else A.eq(1).removeClass('nextbutton').addClass('nextButton');
+            }
+        }
+    }
+</script>
+</html>
+

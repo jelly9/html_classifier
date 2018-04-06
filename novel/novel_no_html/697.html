@@ -1,0 +1,1959 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>在华夏二手车网，总能找到您想要的二手车</title>
+<meta http-equiv="X-UA-Compatible" content="IE=100,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<META name=description content="初步审核二手车 二手车列表 华夏二手车网,在华夏二手车网，总能找到您想要的二手车">
+<META name=keywords content="二手车，二手旧车，交易市场，二手货车">
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/common/js/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/common/js/areacode.js"></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/page/js/page.js" ></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/user/js/jquery.overlay.js" ></script>
+<script type="text/javascript"  src="http://www.hx2car.com/resource/web/common/js/md5.js"></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/common/js/jquery/jquery.cookie.js" ></script>
+<script type="text/javascript" src="http://www.hx2car.com/resource/web/advert/js/CarAll.js"> </script>
+<script type="text/javascript" src="http://www.hx2car.com/upload/ads/js/CarAll/11/2015/0224.js"> </script>
+<link href="http://www.hx2car.com/resource/web/page/common.css" rel="stylesheet" type="text/css" />
+<link href="http://www.hx2car.com/resource/web/car/css/newcarList.css" rel="stylesheet" type="text/css" />
+<link href="http://www.hx2car.com/resource/web/page/trade/whole_login.css" rel="stylesheet" type="text/css" />
+<script>
+ var car_flag=""; var carprice=""; var year="";var country=""; var kind=""; var bigtype=""; var mile="";var gear=""; var  areaCode="";var standard=""; var color=""; var Textt="";var tbrand="";
+$(function(){
+ car_flag=$("#carflag").val();carprice=$("#price").val(); year=$("#caryear").val();
+ country=$("#carcountry").val();kind=$("#carkind").val();bigtype=$("#carbigtype").val();
+ mile=$("#carmile").val();gear=$("#cargear").val();areaCode=$("#carareacode").val();standard=$("#carstandard").val();color=$("#carcolor").val();Textt=$("#carText").val();	
+ tbrand="11470";
+	//$(".carlist_search .search_result .result span").ShowTab("","result_on");
+	//$(".carlist_search .search_condition .condition_con ul.else_con li a").ShowTabChange("hover","condition_con_on");
+	//$(".carlist_search .search_condition .condition_con ul.carstyle_con li").ShowTabChange("hover","condition_con_on");
+	$("#hotArea .letter a").ShowTabCity("letter","letterOn");
+	$("#hotArea dl dd").ShowTabCity("province","provinceOn");
+	$(".carlist_car .carlist_classify ul li").ShowTabChange("click","classify_on");
+	$(".carlist_search .search_condition .condition_con ul.else_con li#see_all").ShowTabChange("click","allcity_on");
+	$(".carlist_search .search_result .result .historys .glance_history").ShowTab("#history_box","");
+	$(".carlist_search #now_search_result .result .historys .glance_history").ShowTab("#history_boxs","");
+	$(".carlist_car .carlist_pageturn ul li.pageturn_page a").ShowTabChange("click","pageturn_on");
+	$(".carlist_allcar .carlist_bpiccar li").ShowTab("","bpiccar_on");
+	$(".service_back .back").ShowTab("","font_show");
+	$(".service_back .compare a").ShowTab("","font_show");
+	$(".service_back .compare").ShowTabChange("click","font_show_on");
+	$("#toScroll").gotoTop(150,50,100);
+    $(".service_back .compare_info .compare_all ul li").ShowTab("","carcompare_on");
+    jQuery.fn.SearchFloat=function(Height){
+		var Result=$(this);
+		$(window).scroll(function(){
+			if($(document).scrollTop()>Height){
+				Result.show();}else{
+					Result.hide();}})}
+	$(".float_result").SearchFloat(268);
+	$(".cartype_navOn").SearchFloat(268);
+	
+	jQuery.fn.ShowPaged=function(Height){
+		$(window).scroll(function(){
+			if($(document).scrollTop()>Height){
+			$(".cartype_all").css("position","fixed");
+			$(".cartype_all").css("top",52);
+			}else{
+				$(".cartype_all").css("position","absolute");
+				$(".cartype_all").css("top",214);
+				}
+		})}
+	$(".cartype_all").ShowPaged(268);
+	var url_height=$("#brands").height();
+	if(url_height>26){
+		$("#brands li").css("margin-bottom","5px");
+    	$("#brandLogo").css("margin-bottom",url_height+5);
+	}
+		$("#condition_title").css("height",$("#condition_title").height()-20);
+		var con_height=$("#condition_title").height();
+	jQuery.fn.brandS=function(){
+		var brandLogo=$(this);
+		var brandHeight=brandLogo.find("#brands");
+        var i=0;
+		var i0show=function(){
+			if(brandHeight.height()!=26){brandHeight.find("li").css("marginBottom","5px");
+		}else{brandHeight.find("li").css("marginBottom","0px");}
+		$("#brandLogo").css("marginBottom",brandHeight.height()-5);
+		$(".condition_title").css("height",brandHeight.height()+329);}
+		var moreCon=function(){
+			if(i==0){i0show();
+				$(".show1").hide();
+				$(".hide2").show();
+				$("#brandlogo_other").show();
+				$("#showOther").show();
+				i=1;}else{
+				$("#condition_title").css("height",con_height);
+				if(brandHeight.height()!=26){
+					brandHeight.find("li").css("marginBottom","5px");
+				}else{brandHeight.find("li").css("marginBottom","0px");
+				}   $("#brandLogo").css("marginBottom",brandHeight.height()-5);
+					$(".show1").show();
+					$(".hide2").hide();
+					$("#brandlogo_other").hide();
+				    $("#showOther").hide();i=0;}}
+			$(".show1").bind("click",moreCon);
+			$(".hide2").bind("click",moreCon);}
+	$(".search_condition").brandS();
+	
+	jQuery.fn.ShowPage=function(Height){
+		$(window).scroll(function(){
+			if($(document).scrollTop()>Height){
+			$(".cartype_nav").hide();}else{$(".cartype_nav").show();}
+		})}
+	$(".cartype_nav").ShowPage(268);
+	
+jQuery.fn.FloatShow=function(todd){
+		var tty=$(this);
+		tty.hover(
+		  function(){
+			  $(this).addClass(todd);
+			  if(todd=="result_special_on")
+			  $(this).find("em").css("width",$(this).width()+25);
+			  else
+			  $(this).find("em").css("width",$(this).width()+10);
+			  },function(){
+				  $(this).removeClass(todd);})
+		}
+	$(".carlist_search .search_result .result p.result_on").FloatShow("result_special_on");
+	$(".carlist_search .search_result .result p.result_ont").FloatShow("result_special_ont");
+
+    jQuery.fn.orderBtn=function(eo,po){
+	    var listcars=$(this);
+		listcars.hover(
+		function(){
+			$(this).find(eo).stop(true,false).animate({"bottom":"5"},200);
+			$(this).find(po).stop(true,false).animate({"left":"-26"},200);
+			},function(){
+				$(this).find(eo).stop(true,false).animate({"bottom":"-28"},200);
+				$(this).find(po).stop(true,false).animate({"left":"0"},200);
+				}
+		);
+	}
+	$(".carlist_cars").orderBtn(".order_btnsall",".nearyear_car");
+	jQuery.fn.showSdiv=function(){
+	    var listcars=$(this);
+		listcars.hover(
+		function(){
+			$(this).find("div").slideDown("fast");
+			},function(){
+				$(this).find("div").hide();
+			}
+		);
+		}
+	$(".sx_it").showSdiv();
+	$("#fdpx").showSdiv();
+	
+	var i="1";var p="";var j="";
+	var clop=function(){
+	    j=i;
+		if(j=="1"){
+			$("#hotArea").show();
+			i="2";
+			$("#no_all").html("隐藏全部省市");
+		}else{
+			$("#hotArea").hide();
+			i="1";
+			$("#no_all").html("查看全部省市");
+		}
+	}
+	$("#no_all").bind("click",clop);
+	var changeList=function(){
+		if(this.id=="change_bpic"){
+			p="pic";
+		}else{
+			p="list";
+		}
+		$.cookie("web_listOrPic",p,{expires:365,path:'/',domain:'hx2car.com'});
+		window.location.reload();
+	}
+	$("#change_bpic").bind("click",changeList);
+	$("#change_list").bind("click",changeList);
+	
+	var CarId=""; var str="";
+	var shopDuibi=function(){
+	   if(this.id=="carcompare_hide"){
+	   	$("#service_info").hide();
+	   	$("#hideclass").removeClass("font_show");
+	   	$("#serviceMessage").removeClass("compare font_show_on");
+	   	$("#serviceMessage").addClass("compare");
+	   }else{
+		$("#service_info").show();
+		$("#hideclass").addClass("font_show");
+	   }
+	   var carId=this.lang;
+	   var picstr=$(this).attr("piclang");
+	   if(picstr==null || picstr==""){
+	   		picstr="http://img.hx2car.com/upload/resource/web/car/images/car.jpg";
+	   }
+	   if(picstr!=null && picstr!="" && picstr.indexOf("300_200")!=-1){
+	   	picstr = picstr.replace("300_200","90_60");
+	   }
+	   var car_deta=$(this).attr("car_lang");
+	   var car_title=$(this).attr("cars_title");
+	   var strpic=getpic(picstr);
+	   var len=$("#listcar_compa li").length;
+	   CarId=$.cookie("carid"+carId);
+	   if(carId!=null && carId!="" ){
+	   	if(CarId!=carId && len<4){
+	   	$.cookie("carid"+carId,carId,{expires: 365,path:'/',domain:'hx2car.com'});
+	   	str='<li id="car_'+carId+'"><p class="compare_carpic">'
+	   	    +'<a target="blank_" href="/details/'+carId+'" title="'+car_title+'">'
+	   	    +'<img src="'+strpic+'" width="39" height="26" /></a></p>'
+	   	    +'<p class="compare_carname">'
+	   	    +'<a target="blank_" href="/details/'+carId+'" title="'+car_title+'">'
+	   	    +car_deta
+	   	    +'</a></p>'
+	   	    +'<p car_idlang="'+carId+'" class="compare_cardelete"></p></li>';
+	   	    $("#listcar_compa").append(str);
+	   	    $(".service_back .compare_info .compare_all ul li").ShowTab("","carcompare_on");
+	   	    $(".compare_cardelete").bind("click",Delcar);
+	   	}else{
+	   		$.cookie("carid"+carId,"",{expires: -1,path:'/',domain:'hx2car.com'});
+	   		$("#car_"+carId).remove();
+	   		$("#listcar_compa").html();
+	   	}
+	   }
+	}
+	$(".duibi_pic").bind("click",shopDuibi);
+	$(".duibi_list").bind("click",shopDuibi);
+	$("#carcompare_hide").bind("click",shopDuibi);
+	
+	var Delcar=function(){
+		var id_car=$(this).attr("car_idlang");
+		$.cookie("carid"+id_car,"",{expires: -1,path:'/',domain:'hx2car.com'});
+		$("#car_"+id_car).remove();
+		$("#listcar_compa").html();
+	}
+	$(".compare_cardelete").bind("click",Delcar);
+	
+	var DelAll=function(){
+		var carid_cookie=document.cookie.split(";");
+		for(var op=0;op<carid_cookie.length;op++){
+			if(carid_cookie[op].indexOf("carid")!=-1){
+				var sco=carid_cookie[op];
+				var arr=sco.split("=");
+				$.cookie(arr[0],"",{expires: -1,path:'/',domain:'hx2car.com'});
+			}
+		}
+		$("#listcar_compa").html("");
+	}
+	$("#car_deleteall").bind("click",DelAll);
+	
+	var GoCompare=function(){
+		var len=$("#listcar_compa li").length;
+		if(len<2){
+			alert("比较需要两辆以上的车");
+		}else{
+			window.open("/car/compares.htm");
+		}
+	}
+	$("#carcompare_btn").bind("click",GoCompare);
+
+	var price_more=function(){
+	 var fprice=$("#begin_price").val(); var sprice=$("#end_price").val(); 
+		if(fprice!="" || sprice!=""){
+			if(fprice==""){
+				fprice="0";
+			}
+			if(sprice==""){
+				sprice="999"; 
+			}
+			window.location.href="/car/"+car_flag+"/j"+fprice+"-"+sprice+"y"+year+"c"+country+"t"+tbrand+"k"+kind+"b"
+			                                             +bigtype+"m"+mile+"g"+gear+"l"+areaCode+Textt+"#now_search_result" ;
+		}
+	}
+	$("#to_search").bind("click",price_more);
+	
+	var year_more=function(){
+	 var fyear=$("#begin_year").val(); var syear=$("#end_year").val();
+		 if(fyear!="" || syear!=""){
+			if(fyear==""){
+				fyear="0";
+			}
+			if(syear==""){
+				syear="30";
+			}
+			window.location.href="/car/"+car_flag+"/j"+carprice+"y"+fyear+"-"+syear+"c"+country+"k"+kind+"b"
+			                                             +bigtype+"m"+mile+"t"+tbrand+"g"+gear+"l"+areaCode+Textt+"#now_search_result" ;
+		}
+	}
+	$("#go_search").bind("click",year_more);
+	
+	var checkNo=function(){
+		var check=/^[0-9]+$/;
+		if(!check.test(this.value)){
+			$(this).val("");
+		}
+	}
+	$("#begin_price").bind("keyup",checkNo);
+	$("#end_price").bind("keyup",checkNo);
+	$("#begin_year").bind("keyup",checkNo);
+	$("#end_year").bind("keyup",checkNo);
+	
+		$(".wait_pic  img").lazyload({
+			  effect:"fadeIn"
+			});
+});
+	
+function searchAll(){
+	var seaVal=$("#doSearch").val();
+	window.location.href="/car/"+car_flag+"/j"+carprice+"y"+year+"c"+country+"k"+kind+"b"
+			                                             +bigtype+"m"+mile+"g"+gear+"e"+standard+"s"+color+"l"+areaCode+"?keyword="+seaVal+"#now_search_result";
+}
+$(document).keydown(function(e){
+	var seaVal=$("#doSearch").val();
+	if(e.keyCode==13 && seaVal!=null && seaVal!=""){
+	searchAll();}
+});
+function getpic(pic){
+	var Rpic="";
+	if(pic.indexOf("http://") !=-1){
+		Rpic = pic;
+	}else{
+		Rpic = "http://img.hx2car.com/upload"+pic;
+	}
+	return Rpic;
+}
+</script>
+</head>
+
+<body>
+<div class="nbj_topr"></div>
+<div class="Dbg"></div>
+<div class="top_ad" id = "topad"></div>
+<div class="top_floats">
+<div class="top" id="FTOP">
+  <div class="top_all">
+    <p>欢迎来到华夏二手车网！[<a ref="nofollow" href="/sys/login.htm" target="_blank" class="orange12">登录</a>] [<a ref="nofollow" href="/user/register.htm" target="_self" class="orange12">注册</a>]</p>
+    <div class="top_nav">
+      <a ref="nofollow" href="/car/addcar.htm" target="_blank" class="gray12_f60">我要卖</a>|
+      <a ref="nofollow" href="/car/search.htm" target="_blank" class="gray12_f60">我要买</a>|
+      <a ref="nofollow" href="http://auto.hx2car.com" target="_blank" class="gray12_f60">资讯中心</a>|
+      <a ref="nofollow" href="/help/nbenefit.htm" target="_blank" class="gray12_f60">推荐宝</a>|
+      <a ref="nofollow" href="/help/nbenefit.htm#product1" target="_blank" class="gray12_f60">网上门店</a>|
+      <a class="gray12" ref="nofollow" href="http://www.hx2car.com/resource/android/hx2car.apk" target="_blank">安卓APP</a> |
+	  <a class="gray12" ref="nofollow" href="https://itunes.apple.com/cn/app/hua-xia-er-shou-che/id629583556?l=en&mt=8"  target="_blank">苹果APP</a>
+    </div>
+  </div>
+</div>
+<div class="LOGO" id="FLOGO">
+<a href="http://www.hx2car.com" class="nbj_logo"></a>
+   <a href="http://www.hx2car.com" class="nbj_logoflo" style="display:none;"></a>
+    <a title="华夏二手车网"  href="http://www.hx2car.com"> <div class="LOGO_logo" id="bigLOGO"></div>
+    <div class="LOGO_logos" id="smallLOGO"></div></a>
+     <div class="LOGO_diqu"><span class="dingwei">总站</span><span class="qiehuan"  id="qiehuan">[切换城市]</span>
+          <div class="change_city" style="display:none;">
+               <p class="change_city_hot"><span class="orange">热门：</span><a href="http://www.hx2car.com?marked=zzmarked">总站</a>
+               <a href="http://zj.hx2car.com">浙江</a>
+               <a href="http://beijing.hx2car.com">北京</a>
+               <a href="http://shanghai.hx2car.com">上海</a>
+               <a href="http://jiangsu.hx2car.com">江苏</a>
+               <a href="http://liaoning.hx2car.com">辽宁</a></p>
+               <div class="change_city_all">
+                    <div class="change_city_allL">
+                         <p><a href="http://www.hx2car.com?marked=zzmarked">总站</a></p>
+                         <p><a href="http://nf.hx2car.com">南方</a></p>
+                         <p><a href="http://xb.hx2car.com">西部</a></p>
+                         <p><a href="http://hz.hx2car.com">华中</a></p>
+                         <p><a href="http://hn.hx2car.com">华南</a></p>
+                         <p><a href="http://hd.hx2car.com">华东</a></p>
+                         <p><a href="http://db.hx2car.com">东北</a></p>
+                         <p><a href="http://nmg.hx2car.com">内蒙古</a></p>
+                         <p><a href="http://nx.hx2car.com">宁夏</a></p>
+                         <p><a href="http://qh.hx2car.com">青海</a></p>
+                    </div>
+                    <div class="change_city_allR">
+                         <p><span class="letter">A</span><a href="http://anhui.hx2car.com">安徽</a></p>
+                         <p><span class="letter">B</span><a href="http://beijing.hx2car.com">北京</a></p>
+                         <p><span class="letter">C</span><a href="http://cq.hx2car.com">重庆</a></p>
+                         <p><span class="letter">F</span><a href="http://fj.hx2car.com">福建</a></p>
+                         <p><span class="letter">G</span><a href="http://gs.hx2car.com">甘肃</a><a href="http://gz.hx2car.com">贵州</a><a href="http://guangdong.hx2car.com">广东</a><a href="http://gx.hx2car.com">广西</a></p>
+                         <p><span class="letter">H</span><a href="http://hlj.hx2car.com">黑龙江</a><a href="http://henan.hx2car.com">河南</a><a href="http://hebei.hx2car.com">河北</a><a href="http://hunan.hx2car.com">湖南</a><a href="http://hubei.hx2car.com">湖北</a><a href="http://hainan.hx2car.com">海南</a></p>
+                         <p><span class="letter">J</span><a href="http://jl.hx2car.com">吉林</a><a href="http://jiangsu.hx2car.com">江苏</a><a href="http://jiangxi.hx2car.com">江西</a></p>
+                         <p><span class="letter">L</span><a href="http://liaoning.hx2car.com">辽宁</a></p>
+                         <p><span class="letter">S</span><a href="http://shanghai.hx2car.com">上海</a><a href="http://sd.hx2car.com">山东</a><a href="http://sx.hx2car.com">山西</a><a href="http://shanxi.hx2car.com">陕西</a><a href="http://sc.hx2car.com">四川</a></p>
+                         <p><span class="letter">T</span><a href="http://tianjin.hx2car.com">天津</a><a href="http://taiwan.hx2car.com"台湾></a></p>
+                         <p><span class="letter">X</span><a href="http://xz.hx2car.com">西藏</a><a href="http://xj.hx2car.com">新疆</a></p>
+                         <p><span class="letter">Y</span><a href="http://yn.hx2car.com">云南</a></p>
+                         <p><span class="letter">Z</span><a href="http://zj.hx2car.com">浙江</a></p>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <div class="LOGO_Search">
+          <div class="LOGO_SearchL ">
+              <div class="Searchbox">
+                   <input id="secVal" value="" placeholder="搜”浙江 suv“试试，您可能喜欢"></input>
+                   <a class="Searchbox_button">搜 索</a>
+              </div>
+	      <!--搜索框开始处  XF-->
+	      <div class="Search_hidden">
+               	   <div class="Search_hiddenL">
+                    	<h3></h3>
+                    	<ul>
+			</ul>     
+               	   </div>
+               	   <div class="Search_hiddenR">
+                    	<h3>热门搜素</h3>
+                    	<ul>
+                    	<li >
+                    		<a href="/car/verify/f0000001ytdzsejckbmgl100000">担保车</a>
+                    	</li>
+                    	<li >
+                    		<a href="/car/verify/y0-3tdzsejckbmgl100000">准新车</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e9%80%9f%e8%85%be" target='_blank'>速腾</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e9%9b%85%e9%98%81" target='_blank'>雅阁</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e5%ae%9d%e9%a9%ac" target='_blank'>宝马</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e5%a5%94%e9%a9%b0" target='_blank'>奔驰</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e5%a5%a5%e8%bf%aa" target='_blank'>奥迪</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e9%80%94%e8%a7%82" target='_blank'>途观</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e5%88%ab%e5%85%8b" target='_blank'>别克</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e7%a6%8f%e5%85%8b%e6%96%af" target='_blank'>福克斯</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e8%bf%88%e8%85%be" target='_blank'>迈腾</a>
+                    	</li>
+                    	<li >
+                    		<a href="/search/index.htm?keyword=%e5%90%9b%e5%a8%81" target='_blank'>君威</a>
+                    	</li>
+					</ul>    
+              	   </div>
+             </div>
+		
+              <p class="hotsearch" id="hotsearch"><a href="/daquan/p196/" target="_blank">君威</a>
+              <a href="/daquan/p149/" target="_blank">奥迪A6L</a><a href="/daquan/p508/" target="_blank">朗逸</a>
+              <a href="/daquan/p515/" target="_blank">途观</a><a href="/daquan/p1639/" target="_blank">帕萨特</a>
+              <a href="/daquan/p517/" target="_blank">宝来</a><a href="/daquan/p574/" target="_blank">凯美瑞</a>
+              <a href="/daquan/p4054/" target="_blank">福克斯</a><a href="/daquan/p736/" target="_blank">牧马人</a>
+              <a href="/daquan/p410/" target="_blank">奔驰SLK</a><a href="/daquan/p186/" target="_blank">雅阁</a>
+              <a href="/daquan/p232/" target="_blank">宝马X5</a><a href="/daquan/p447/" target="_blank">卡宴Cayenne</a></p>
+          </div>
+<div class="buy_icon"></div> 
+     </div>
+</div>
+</div>
+<div class="nav" style=" line-height:33px;">
+  <b class="nbj_navbg"></b>
+  <div class="wrap_nav">
+    <b class="nbj_l"></b>
+    <b class="nbj_r"></b>
+    <b class="nbj_snow"></b>
+    <a href="/car/daquan.htm" class="all_car" target="_blank" style=" background-color: height:33px; line-height:33px; font-size:14px;">二手车大全</a>
+    <ul id="navlabel">
+      <li><a href="/" >首页<i class="nbj_navl" style="display:block;"></i><i class="nbj_navr" style="display:block;"></i></a></li>
+      <li><a href="/car/search.htm" class="nav_on" style="color:#ff9400;">二手车信息<i class="nbj_navl"></i><i class="nbj_navr"></i></a></li>
+      <li><a href="/trade/tradeallcar.htm" >二手车批发<i class="nbj_navl"></i><i class="nbj_navr"></i></a></li>
+	  <li><a href="/union/index.htm">峰会专区<i class="nbj_navl"></i><i class="nbj_navr"></i></a></li>
+      <li><a href="/car/transaction.htm" >担保交易<i class="nbj_navl"></i><i class="nbj_navr"></i></a></li>
+      <li><a href="/car/luxury.htm"  >豪华车<i class="nbj_navl"></i><i class="nbj_navr"></i></a></li>
+      <li><a href="/car/sportscar.htm" >跑车<i class="nbj_navl"></i><i class="nbj_navr"></i></a></li>
+      <li><a href="/car/suv.htm" >SUV<i class="nbj_navl"></i><i class="nbj_navr"></i></a></li>
+      <li><a href="/car/truck.htm" >货车<i class="nbj_navl"></i><i class="nbj_navr"></i></a></li>
+    </ul>
+  </div>
+</div>
+<div class="Service" id="singleService">
+     <p class="Service_title"><span>求购登记</span><span class="closed" id="closenewbuy">x</span></p>
+     <div class="BUY_search">
+              <ul class="content">
+                   <li><span>选择车型</span>
+                   <div class="box"><div id="FirstCarBrand">请选择品牌<i class="down"></i></div>
+						<div class="Brand_frame2" id="SelectCarbrand1" style="display:none;">
+                                 <div class="num" id="CarSelect">
+                                                      <a>A</a>
+										              <a>B</a>
+										              <a>C</a>
+										              <a>D</a>
+										              <a>F</a>
+										              <a>G</a>
+										              <a>H</a>
+										              <a>J</a>
+										              <a>K</a>
+										              <a>L</a>
+										              <a>M</a>
+										              <a>N</a>
+										              <a>O</a>
+										              <a>P</a>
+										              <a>Q</a>
+										              <a>R</a>
+										              <a>S</a>
+										              <a>T</a>
+										              <a>W</a>
+										              <a>X</a>
+										              <a>Y</a>
+										              <a>Z</a>
+                                  </div>
+                                  <div class="brand_frame"  id="brand_frame">
+                                                  <ul class="brand">
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">A</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title11307" onclick="selectTitle('title11307','Alpina');">Alpina</li>
+                                                        <li id="title29" onclick="selectTitle('title29','阿尔法-罗密欧');">阿尔法-罗密</li>
+                                                        <li id="title27" onclick="selectTitle('title27','阿斯顿马丁');">阿斯顿马丁</li>
+                                                        <li id="title28" onclick="selectTitle('title28','安驰');">安驰</li>
+                                                        <li id="title26" onclick="selectTitle('title26','奥迪');">奥迪</li>
+                                                        <li id="title1591" onclick="selectTitle('title1591','奥克斯');">奥克斯</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">B</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title11273" onclick="selectTitle('title11273','巴博斯');">巴博斯</li>
+                                                        <li id="title1531" onclick="selectTitle('title1531','宝骏');">宝骏</li>
+                                                        <li id="title41" onclick="selectTitle('title41','宝龙');">宝龙</li>
+                                                        <li id="title33" onclick="selectTitle('title33','宝马');">宝马</li>
+                                                        <li id="title3006" onclick="selectTitle('title3006','保斐利');">保斐利</li>
+                                                        <li id="title38" onclick="selectTitle('title38','保时捷');">保时捷</li>
+                                                        <li id="title37" onclick="selectTitle('title37','北汽');">北汽</li>
+                                                        <li id="title34" onclick="selectTitle('title34','奔驰');">奔驰</li>
+                                                        <li id="title36" onclick="selectTitle('title36','奔腾');">奔腾</li>
+                                                        <li id="title30" onclick="selectTitle('title30','本田');">本田</li>
+                                                        <li id="title32" onclick="selectTitle('title32','比亚迪');">比亚迪</li>
+                                                        <li id="title35" onclick="selectTitle('title35','标致');">标致</li>
+                                                        <li id="title31" onclick="selectTitle('title31','别克');">别克</li>
+                                                        <li id="title39" onclick="selectTitle('title39','宾利');">宾利</li>
+                                                        <li id="title40" onclick="selectTitle('title40','布加迪');">布加迪</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">C</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title46" onclick="selectTitle('title46','昌河');">昌河</li>
+                                                        <li id="title43" onclick="selectTitle('title43','长安');">长安</li>
+                                                        <li id="title44" onclick="selectTitle('title44','长安(微车)');">长安(微车)</li>
+                                                        <li id="title4014" onclick="selectTitle('title4014','长安商用');">长安商用</li>
+                                                        <li id="title42" onclick="selectTitle('title42','长城');">长城</li>
+                                                        <li id="title45" onclick="selectTitle('title45','长丰');">长丰</li>
+                                                        <li id="title1534" onclick="selectTitle('title1534','传祺');">传祺</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">D</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title3004" onclick="selectTitle('title3004','DS');">DS</li>
+                                                        <li id="title53" onclick="selectTitle('title53','大迪');">大迪</li>
+                                                        <li id="title2839" onclick="selectTitle('title2839','大通');">大通</li>
+                                                        <li id="title1655" onclick="selectTitle('title1655','大宇');">大宇</li>
+                                                        <li id="title47" onclick="selectTitle('title47','大众');">大众</li>
+                                                        <li id="title52" onclick="selectTitle('title52','道奇');">道奇</li>
+                                                        <li id="title49" onclick="selectTitle('title49','帝豪');">帝豪</li>
+                                                        <li id="title50" onclick="selectTitle('title50','东风');">东风</li>
+                                                        <li id="title48" onclick="selectTitle('title48','东南');">东南</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">F</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title56" onclick="selectTitle('title56','法拉利');">法拉利</li>
+                                                        <li id="title59" onclick="selectTitle('title59','菲亚特');">菲亚特</li>
+                                                        <li id="title54" onclick="selectTitle('title54','丰田');">丰田</li>
+                                                        <li id="title51" onclick="selectTitle('title51','风神');">风神</li>
+                                                        <li id="title57" onclick="selectTitle('title57','风行');">风行</li>
+                                                        <li id="title60" onclick="selectTitle('title60','福迪');">福迪</li>
+                                                        <li id="title55" onclick="selectTitle('title55','福特');">福特</li>
+                                                        <li id="title58" onclick="selectTitle('title58','福田');">福田</li>
+                                                        <li id="title61" onclick="selectTitle('title61','富奇');">富奇</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">G</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title62" onclick="selectTitle('title62','GMC');">GMC</li>
+                                                        <li id="title11233" onclick="selectTitle('title11233','观致');">观致</li>
+                                                        <li id="title63" onclick="selectTitle('title63','光冈');">光冈</li>
+                                                        <li id="title64" onclick="selectTitle('title64','广汽日野');">广汽日野</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">H</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title66" onclick="selectTitle('title66','哈飞');">哈飞</li>
+                                                        <li id="title2935" onclick="selectTitle('title2935','哈弗');">哈弗</li>
+                                                        <li id="title2937" onclick="selectTitle('title2937','海格');">海格</li>
+                                                        <li id="title65" onclick="selectTitle('title65','海马');">海马</li>
+                                                        <li id="title2926" onclick="selectTitle('title2926','海马');">海马</li>
+                                                        <li id="title68" onclick="selectTitle('title68','海马(商用车)');">海马(商用车</li>
+                                                        <li id="title72" onclick="selectTitle('title72','汉江');">汉江</li>
+                                                        <li id="title67" onclick="selectTitle('title67','悍马');">悍马</li>
+                                                        <li id="title73" onclick="selectTitle('title73','航天圆通');">航天圆通</li>
+                                                        <li id="title1791" onclick="selectTitle('title1791','黑豹');">黑豹</li>
+                                                        <li id="title2936" onclick="selectTitle('title2936','恒天');">恒天</li>
+                                                        <li id="title70" onclick="selectTitle('title70','红旗');">红旗</li>
+                                                        <li id="title144" onclick="selectTitle('title144','华北');">华北</li>
+                                                        <li id="title69" onclick="selectTitle('title69','华普');">华普</li>
+                                                        <li id="title76" onclick="selectTitle('title76','华泰');">华泰</li>
+                                                        <li id="title2938" onclick="selectTitle('title2938','华阳');">华阳</li>
+                                                        <li id="title2953" onclick="selectTitle('title2953','幻速');">幻速</li>
+                                                        <li id="title1537" onclick="selectTitle('title1537','黄海');">黄海</li>
+                                                        <li id="title71" onclick="selectTitle('title71','汇众');">汇众</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">J</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title77" onclick="selectTitle('title77','Jeep');">Jeep</li>
+                                                        <li id="title82" onclick="selectTitle('title82','吉奥');">吉奥</li>
+                                                        <li id="title75" onclick="selectTitle('title75','吉利');">吉利</li>
+                                                        <li id="title74" onclick="selectTitle('title74','江淮');">江淮</li>
+                                                        <li id="title79" onclick="selectTitle('title79','江铃');">江铃</li>
+                                                        <li id="title81" onclick="selectTitle('title81','江南');">江南</li>
+                                                        <li id="title80" onclick="selectTitle('title80','捷豹');">捷豹</li>
+                                                        <li id="title78" onclick="selectTitle('title78','金杯');">金杯</li>
+                                                        <li id="title1722" onclick="selectTitle('title1722','金程');">金程</li>
+                                                        <li id="title84" onclick="selectTitle('title84','金龙');">金龙</li>
+                                                        <li id="title83" onclick="selectTitle('title83','精灵');">精灵</li>
+                                                        <li id="title2941" onclick="selectTitle('title2941','九龙');">九龙</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">K</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title3002" onclick="selectTitle('title3002','卡尔森');">卡尔森</li>
+                                                        <li id="title2954" onclick="selectTitle('title2954','卡威');">卡威</li>
+                                                        <li id="title1555" onclick="selectTitle('title1555','开瑞');">开瑞</li>
+                                                        <li id="title85" onclick="selectTitle('title85','凯迪拉克');">凯迪拉克</li>
+                                                        <li id="title87" onclick="selectTitle('title87','科尼赛克');">科尼赛克</li>
+                                                        <li id="title88" onclick="selectTitle('title88','克莱斯勒');">克莱斯勒</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">L</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title92" onclick="selectTitle('title92','兰博基尼');">兰博基尼</li>
+                                                        <li id="title99" onclick="selectTitle('title99','蓝旗亚');">蓝旗亚</li>
+                                                        <li id="title4090" onclick="selectTitle('title4090','劳伦士');">劳伦士</li>
+                                                        <li id="title95" onclick="selectTitle('title95','劳斯莱斯');">劳斯莱斯</li>
+                                                        <li id="title91" onclick="selectTitle('title91','雷克萨斯');">雷克萨斯</li>
+                                                        <li id="title97" onclick="selectTitle('title97','雷诺');">雷诺</li>
+                                                        <li id="title2861" onclick="selectTitle('title2861','理念');">理念</li>
+                                                        <li id="title93" onclick="selectTitle('title93','力帆');">力帆</li>
+                                                        <li id="title96" onclick="selectTitle('title96','莲花');">莲花</li>
+                                                        <li id="title98" onclick="selectTitle('title98','林肯');">林肯</li>
+                                                        <li id="title89" onclick="selectTitle('title89','铃木');">铃木</li>
+                                                        <li id="title94" onclick="selectTitle('title94','陆风');">陆风</li>
+                                                        <li id="title90" onclick="selectTitle('title90','路虎');">路虎</li>
+                                                        <li id="title866" onclick="selectTitle('title866','路特斯');">路特斯</li>
+                                                        <li id="title1750" onclick="selectTitle('title1750','罗孚');">罗孚</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">M</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title101" onclick="selectTitle('title101','MG');">MG</li>
+                                                        <li id="title102" onclick="selectTitle('title102','MINI');">MINI</li>
+                                                        <li id="title100" onclick="selectTitle('title100','马自达');">马自达</li>
+                                                        <li id="title104" onclick="selectTitle('title104','玛莎拉蒂');">玛莎拉蒂</li>
+                                                        <li id="title103" onclick="selectTitle('title103','迈巴赫');">迈巴赫</li>
+                                                        <li id="title11116" onclick="selectTitle('title11116','迈凯伦');">迈凯伦</li>
+                                                        <li id="title105" onclick="selectTitle('title105','美亚');">美亚</li>
+                                                        <li id="title1761" onclick="selectTitle('title1761','牡丹汽车');">牡丹汽车</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">N</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title106" onclick="selectTitle('title106','纳智捷');">纳智捷</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">O</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title107" onclick="selectTitle('title107','讴歌');">讴歌</li>
+                                                        <li id="title108" onclick="selectTitle('title108','欧宝');">欧宝</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">P</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title3003" onclick="selectTitle('title3003','帕加尼');">帕加尼</li>
+                                                        <li id="title1769" onclick="selectTitle('title1769','庞蒂克');">庞蒂克</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">Q</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title109" onclick="selectTitle('title109','奇瑞');">奇瑞</li>
+                                                        <li id="title11108" onclick="selectTitle('title11108','启辰');">启辰</li>
+                                                        <li id="title2952" onclick="selectTitle('title2952','启腾');">启腾</li>
+                                                        <li id="title110" onclick="selectTitle('title110','起亚');">起亚</li>
+                                                        <li id="title112" onclick="selectTitle('title112','庆铃');">庆铃</li>
+                                                        <li id="title111" onclick="selectTitle('title111','全球鹰');">全球鹰</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">R</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title3007" onclick="selectTitle('title3007','RUF');">RUF</li>
+                                                        <li id="title113" onclick="selectTitle('title113','日产');">日产</li>
+                                                        <li id="title114" onclick="selectTitle('title114','荣威');">荣威</li>
+                                                        <li id="title115" onclick="selectTitle('title115','瑞麒');">瑞麒</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">S</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title3005" onclick="selectTitle('title3005','Scion');">Scion</li>
+                                                        <li id="title1556" onclick="selectTitle('title1556','Smart');">Smart</li>
+                                                        <li id="title4013" onclick="selectTitle('title4013','SPIRRA');">SPIRRA</li>
+                                                        <li id="title2864" onclick="selectTitle('title2864','SPRINGO');">SPRING</li>
+                                                        <li id="title122" onclick="selectTitle('title122','萨博');">萨博</li>
+                                                        <li id="title117" onclick="selectTitle('title117','三菱');">三菱</li>
+                                                        <li id="title1800" onclick="selectTitle('title1800','三星');">三星</li>
+                                                        <li id="title2951" onclick="selectTitle('title2951','陕汽通家');">陕汽通家</li>
+                                                        <li id="title2931" onclick="selectTitle('title2931','绅宝');">绅宝</li>
+                                                        <li id="title123" onclick="selectTitle('title123','世爵');">世爵</li>
+                                                        <li id="title120" onclick="selectTitle('title120','双环');">双环</li>
+                                                        <li id="title119" onclick="selectTitle('title119','双龙');">双龙</li>
+                                                        <li id="title1804" onclick="selectTitle('title1804','顺旅');">顺旅</li>
+                                                        <li id="title2838" onclick="selectTitle('title2838','思铭');">思铭</li>
+                                                        <li id="title118" onclick="selectTitle('title118','斯巴鲁');">斯巴鲁</li>
+                                                        <li id="title116" onclick="selectTitle('title116','斯柯达');">斯柯达</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">T</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title11287" onclick="selectTitle('title11287','特斯拉');">特斯拉</li>
+                                                        <li id="title2955" onclick="selectTitle('title2955','腾势');">腾势</li>
+                                                        <li id="title124" onclick="selectTitle('title124','天马');">天马</li>
+                                                        <li id="title1811" onclick="selectTitle('title1811','通田');">通田</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">W</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title1816" onclick="selectTitle('title1816','万丰');">万丰</li>
+                                                        <li id="title1822" onclick="selectTitle('title1822','万通');">万通</li>
+                                                        <li id="title127" onclick="selectTitle('title127','威麟');">威麟</li>
+                                                        <li id="title2822" onclick="selectTitle('title2822','威旺');">威旺</li>
+                                                        <li id="title4087" onclick="selectTitle('title4087','威兹曼');">威兹曼</li>
+                                                        <li id="title126" onclick="selectTitle('title126','沃尔沃');">沃尔沃</li>
+                                                        <li id="title125" onclick="selectTitle('title125','五菱');">五菱</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">X</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title24" onclick="selectTitle('title24','西雅特');">西雅特</li>
+                                                        <li id="title2913" onclick="selectTitle('title2913','夏利');">夏利</li>
+                                                        <li id="title128" onclick="selectTitle('title128','现代');">现代</li>
+                                                        <li id="title132" onclick="selectTitle('title132','新大地');">新大地</li>
+                                                        <li id="title131" onclick="selectTitle('title131','新凯');">新凯</li>
+                                                        <li id="title133" onclick="selectTitle('title133','新雅途');">新雅途</li>
+                                                        <li id="title129" onclick="selectTitle('title129','雪佛兰');">雪佛兰</li>
+                                                        <li id="title130" onclick="selectTitle('title130','雪铁龙');">雪铁龙</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">Y</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title138" onclick="selectTitle('title138','野马');">野马</li>
+                                                        <li id="title134" onclick="selectTitle('title134','一汽');">一汽</li>
+                                                        <li id="title1238" onclick="selectTitle('title1238','依维柯');">依维柯</li>
+                                                        <li id="title1852" onclick="selectTitle('title1852','仪征');">仪征</li>
+                                                        <li id="title136" onclick="selectTitle('title136','英菲尼迪');">英菲尼迪</li>
+                                                        <li id="title137" onclick="selectTitle('title137','英伦');">英伦</li>
+                                                        <li id="title135" onclick="selectTitle('title135','永源');">永源</li>
+                                                        <li id="title1846" onclick="selectTitle('title1846','云豹');">云豹</li>
+                                                        <li id="title1849" onclick="selectTitle('title1849','云雀');">云雀</li>
+                                                        </div>
+                                                    </div>
+                                                   <div class="srcoll_height" style="overflow: hidden;">
+                                                        <li class="title">Z</li>
+                                                        <div class="srcoll_heightli">
+                                                        <li id="title1239" onclick="selectTitle('title1239','中华');">中华</li>
+                                                        <li id="title2949" onclick="selectTitle('title2949','中欧');">中欧</li>
+                                                        <li id="title145" onclick="selectTitle('title145','中顺');">中顺</li>
+                                                        <li id="title143" onclick="selectTitle('title143','中兴');">中兴</li>
+                                                        <li id="title142" onclick="selectTitle('title142','众泰');">众泰</li>
+                                                        </div>
+                                                    </div>
+                                                  </ul>
+                                   </div>
+                            </div>
+                   </div>
+                   <div class="box"><div id="SecondCarBrand">请选择车型<i class="down"></i></div>
+                    <div class="Brand_frame2"  id="SelectSecondCarbrand" style="display:none;">
+                           <div class="model" >
+                                  <ul class="brand" id="Secondbrand">
+                                 </ul>
+                              </div>
+                             </div>
+                   </div>
+                  </li>
+                   <li><span>选择年份</span>
+                   <div class="box2">
+                   <div id ="selectYear">起始年份<i class="down"></i></div>
+                   <div class="Brand_frame2" id="yearSelect" style="display:none;width:128px; height:180px;">
+                                 <div class="model" style="width:130px;  height:180px;">
+                                      <ul class="brand" id="whichyear"><li>2015 年</li>
+                                      <li>2014 年</li> <li>2013 年</li><li>2012 年</li><li>2011 年</li><li>2010 年</li><li>2009 年</li><li>2008 年</li><li>2007 年</li>
+                                      <li>2006 年</li><li>2005 年</li><li>2004 年</li><li>2003 年</li><li>2002 年</li><li>2001 年</li><li>2000 年</li><li>1999 年</li>
+                                      <li>1998 年</li><li>1997 年</li><li>1996 年</li><li>1995 年</li><li>1994 年</li><li>1993 年</li><li>1992 年</li><li>1991 年</li>
+                                      </ul>
+                                   </div>
+                             </div>
+                   </div>
+                    <span style="margin-left:10px;"> —</span>
+                    <div class="box2">
+                   <div id ="selectYear2">结束年份<i class="down"></i></div>
+                   <div class="Brand_frame2" id="yearSelect2" style="display:none;width:128px; height:180px;">
+                                 <div class="model" style="width:130px;height:180px;">
+                                      <ul class="brand" id="whichyear2"><li>2015 年</li>
+                                      <li>2014 年</li> <li>2013 年</li><li>2012 年</li><li>2011 年</li><li>2010 年</li><li>2009 年</li><li>2008 年</li><li>2007 年</li>
+                                      <li>2006 年</li><li>2005 年</li><li>2004 年</li><li>2003 年</li><li>2002 年</li><li>2001 年</li><li>2000 年</li><li>1999 年</li>
+                                      <li>1998 年</li><li>1997 年</li><li>1996 年</li><li>1995 年</li><li>1994 年</li><li>1993 年</li><li>1992 年</li><li>1991 年</li>
+                                      </ul>
+                                   </div>
+                             </div>
+                   </div>
+                   <span style="margin-left:10px;"> &nbsp;</span>
+                   <div id="moreselyear">
+                   <div class="box4"><p></p>1 年内</div>
+                   <div class="box4"><p></p>3 年内</div>
+                   <div class="box4"><p></p>5 年内</div>
+                   </div>
+                   </li>
+                   <li style="margin-bottom:5px;">
+                       <span>选择颜色</span><div id="selectColor">
+                       <div class="box3"><p></p><i class="box3_black"></i>黑色</div>
+                       <div class="box3"><p></p><i class="box3_darkgray"></i>深灰</div>
+                       <div class="box3"><p></p><i class="box3_lightgray"></i>浅灰</div>
+                       <div class="box3"><p></p><i class="box3_white"></i>白色</div>
+                       <div class="box3"><p></p><i class="box3_red"></i>红色</div>
+                       <div class="box3"><p></p><i class="box3_yellow"></i>黄色</div>
+                       <div class="box3" style="margin-left:66px;"><p></p><i class="box3_champagne"></i>香槟</div>
+                       <div class="box3"><p></p><i class="box3_green"></i>绿色</div>
+                       <div class="box3"><p></p><i class="box3_blue"></i>蓝色</div>
+                       <div class="box3"><p></p><i class="box3_purple"></i>紫色</div></div>
+                   </li>
+                   <li>
+                   <span>手机号码</span><input id="phoNum" value=""></input>
+                   <span style="margin-left: 25px;">验 证 码</span><input id="checkcodes" style="width:85px; margin-left:16px;"><a class="YZM" id="waitsecond">获取验证码</a>
+                   <a class="YZM" id="showwait" style="display:none;"></a>
+                   </li>
+              </ul>
+           <div class="confirm" style="cursor:pointer;" id="confirm">确 定</div>
+     </div>
+     <div class="tishi" id="newbuytishi">预约一对一服务已成功，我们会在24小时内和您联系。</div>
+</div>
+<script type="text/javascript">
+var carbrand1="";var carbrand2=""; var scolor="";var rukucolor="";
+var searchCarbrandkeyword="";var requires="";var selectyears="";var year1="";var year2="";
+$(function(){
+$(".buy_icon").click(function(){$("input#phoNum").val(getCookie('phoneNum'));$("#singleService").show();$(".Dbg").show();$("#newbuytishi").hide();$(".BUY_search").show();$("#checkcodes").val("");});
+$("#qiehuan").hover(function(){$(".change_city").show();},function(){$(".change_city").hide();});
+$(".change_city").hover(function(){$(".change_city").show();},function(){$(".change_city").hide();});
+$("#closenewbuy").click(function(){$("#singleService").hide();$(".Dbg").hide();});
+$("#moreselyear div").click(function(){
+var  index=$(this).index();
+$("#moreselyear div p").removeClass();
+$("#moreselyear div").eq(index).find("p").addClass("box4_on");
+var speyear="2015 年";year1=speyear;$("#selectYear").html(speyear+ '<i class="down"></i>');
+if(index==0){speyear="2014 年";}else if(index==1){speyear="2012 年";}else if(index==2){speyear="2010 年";}
+$("#selectYear2").html(speyear+ '<i class="down"></i>');
+selectyears="2015年，"+speyear;
+year2=speyear;
+});
+$("#CarSelect a").click(function(){
+	var Height=0;
+	var index=$(this).index();
+	for(var i=0;i<index;i++){
+	Height+=$(".srcoll_height").eq(i).height();}
+	var e=document.getElementById("brand_frame");
+	e.scrollTop=Height;
+});var ys=function(){
+	var index=$(this).index();
+	var thisid=$(this).parent("ul").attr("id");
+	$("#"+thisid+" li").removeClass();
+	$("#"+thisid+" li").eq(index).addClass("selecton");
+	var yearselect=$("#"+thisid+" li").eq(index).html()+'<i class="down"></i>';
+	var Years=parseInt($("#"+thisid+" li").eq(index).html());
+	if(thisid=="whichyear"){
+	$("#selectYear").html(yearselect);year1=Years+"年";}else if(thisid=="whichyear2"){
+	$("#selectYear2").html(yearselect);year2=Years+"年";}
+	selectyears=year1+"， "+year2;
+	$("#yearSelect2").hide();$("#yearSelect").hide();}
+$("#whichyear").find("li").click(ys);
+$("#whichyear2").find("li").click(ys);
+var checkinput=function(){
+	var check=/^[0-9]+$/;
+	if(!check.test(this.value)){
+	$(this).val("");}}
+$("#checkcodes").keyup(checkinput);
+$("#phoNum").keyup(checkinput);
+$("#waitsecond").click(function(){
+		var pho=$("#phoNum").val();
+		if(pho!=null && pho!="" && checkUserPhoneNum(pho)){
+			if(pho!=getCookie('phoneNum')){setCookie('phoneNum',pho);}
+			jQuery.post('/car/getphocode.json',{phoNum:pho},function(data){
+				if(data){alert(data.returnmsg);getWaitsecond();}
+			});
+		}else{
+			$("#phoNum").val("请输入您正确的手机号码");
+			$("#phoNum").css("color","red");
+		}
+	});
+	$("#phoNum").click(function(){
+		if($("#phoNum").val() == "请输入您正确的手机号码"){
+			$("#phoNum").val("");
+			$("#phoNum").css("color","black");
+		}
+	});
+$("#selectColor div").click(function(){
+	var index=$(this).index();
+	var sindex=$("#selectColor div p").index($("#selectColor div p.box3_on"));$("#selectColor div p").removeClass();
+	$("#selectColor div").eq(index).find("p").addClass("box3_on");
+	if(index==sindex){$("#selectColor div p").removeClass();scolor="";}else{scolor=index;}
+	if(scolor==0){rukucolor="黑色";}else if(scolor==1){rukucolor="深灰";}else if(scolor==2){rukucolor="浅灰";}else if(scolor==3){rukucolor="白色";}
+	else if(scolor==4){rukucolor="红色";}else if(scolor==5){rukucolor="黄色";}else if(scolor==6){rukucolor="香槟";}else if(scolor==7){rukucolor="绿色";}
+	else if(scolor==8){rukucolor="蓝色";}else if(scolor==9){rukucolor="紫色";}
+});
+$("#confirm").click(function(){
+	if(rukucolor=="" && searchCarbrandkeyword=="" && year1=="" && year2==""){
+	alert("请选择您的求购需求");}else{var phos=$("#phoNum").val();var checkscode=$("#checkcodes").val();
+	requires=searchCarbrandkeyword+"; "+rukucolor+"; "+selectyears;
+	if(phos!=null && phos!="" && checkscode!=null && checkscode!=""){
+	jQuery.post('/car/saveNewbuy.json',{phonum: phos,requirement: requires,token:checkscode},function(data){
+		if(data){if(data.message=="短信验证失败"){alert("短信验证失败");}else{
+		$("#newbuytishi").show();$(".BUY_search").hide();}}});}}
+});
+$("#FirstCarBrand").click(function(){$("#SelectCarbrand1").toggle();$("#SelectSecondCarbrand").hide();$("#yearSelect").hide();$("#yearSelect2").hide();});
+$("#SecondCarBrand").click(function(){if($("#FirstCarBrand").html().indexOf("请选择品牌")==-1){$("#SelectSecondCarbrand").toggle();$("#yearSelect").hide();$("#yearSelect2").hide();$("#SelectCarbrand1").hide();}else{alert("请选择品牌")}});
+$("#selectYear").click(function(){$("#SelectCarbrand1").hide();$("#SelectSecondCarbrand").hide();$("#yearSelect").toggle();$("#yearSelect2").hide();});
+$("#selectYear2").click(function(){$("#SelectCarbrand1").hide();$("#SelectSecondCarbrand").hide();$("#yearSelect2").toggle();$("#yearSelect").hide();});
+});
+function selectTitle(op,oname){
+$("#FirstCarBrand").html(oname+"<i class='down'></i>");
+  $('.srcoll_heightli li').removeClass();
+  $('#'+op).addClass("selecton");
+  op = op.replace('title','');
+  carbrand1=oname;
+  carbrand2="";
+  searchCarbrandkeyword=carbrand1+carbrand2
+  $("#Secondbrand").html("");
+  $.post('/car/getCarSerialByParentIdJson.json',{parentId:op},function(data){
+		if(data) { var obj=data.sonCarSerials;
+				    for(var elem in obj){
+				    $("#Secondbrand").append('<li class="title">'+elem+'</li>');
+				    var objL=obj[elem];
+				    for(var j=0;j<objL.length;j++){
+				    var objLJ=objL[j];
+				    $("#Secondbrand").append('<div class="seSeccar"><li style="overflow:hidden;" id="secbrand'+objLJ.id+'" onclick = "selectThird('+objLJ.id+','+"'"+objLJ.title+"'"+');">'+objLJ.title+'</li></div>');} }}});
+	$("#SelectCarbrand1").hide();$("#SelectSecondCarbrand").hide();
+}
+function selectThird(ip,iname){
+carbrand2=" "+iname; 
+$(".seSeccar li").removeClass();
+$("#secbrand"+ip).addClass("selecton"); searchCarbrandkeyword=carbrand1+carbrand2;
+$("#SecondCarBrand").html(iname+"<i class='down'></i>");
+$("#SelectCarbrand1").hide();$("#SelectSecondCarbrand").hide();
+}
+var i=10;
+function getWaitsecond(){
+$("#waitsecond").hide();
+$("#showwait").show();
+$("#showwait").html(''+i+'秒后再发');
+i=i-1;
+if(i==-1){$("#waitsecond").show();
+$("#showwait").hide();i=10;}else{
+setTimeout(getWaitsecond,1000);}
+}
+</script>
+<input id="carflag" type="hidden" value="verify">
+<input id="price" type="hidden" value="">
+<input id="caryear" type="hidden" value="">
+<input id="carcountry" type="hidden" value="">
+<input id="carkind" type="hidden" value="">
+<input id="carbigtype" type="hidden" value="">
+<input id="carmile" type="hidden" value="">
+<input id="cargear" type="hidden" value="">
+<input id="carareacode" type="hidden" value="320500">
+<input id="carstandard" type="hidden" value="6">
+<input id="carcolor" type="hidden" value="">
+<input id="carText" type="hidden" value="">
+<input id="carList_size" type="hidden" value="0">
+<div class="carlist">
+    <div class="carlist_l">
+      <div class="carlist_search">
+         <div  class="search_result float_result" style="position:fixed;top:0px;margin-top:0;background-color:#fff;border-bottom:2px solid #ff9400;z-index:99999999;">
+          <div class="float_search_result">
+          <p>当前搜索条件：</p>
+          <div class="result">
+
+
+
+
+
+            
+             <p class="result_on"><a style="color:#333" href="/car/verify/et11470kdzsjyckbmgl320500#now_search_result">国五<i></i></a>
+			<b class="result_conall">
+              <a href="/car/verify/e1t11470kdzsjyckbmgl320500#now_search_result">国一</a>
+              <a href="/car/verify/e2t11470kdzsjyckbmgl320500#now_search_result">国二</a>
+              <a href="/car/verify/e3t11470kdzsjyckbmgl320500#now_search_result">国三</a>
+              <a href="/car/verify/e4t11470kdzsjyckbmgl320500#now_search_result">国三+OBD</a>
+              <a href="/car/verify/e5t11470kdzsjyckbmgl320500#now_search_result">国四</a>
+              <a href="/car/verify/e6t11470kdzsjyckbmgl320500#now_search_result">国五</a>
+            </ul>
+			</b><em></em></p>
+            
+
+
+
+
+			
+
+
+			
+             <p class="result_on"><a style="color:#333" href="/car/verify/t11470bdzse6jyckmgl100000#now_search_result">苏州市<i></i></a>
+                <b class="result_conall">
+                  <a href="/car/verify/l110000dzse6jyckbt11470mg#now_search_result">北京</a>
+                  <a href="/car/verify/l110100dzse6jyckbt11470mg#now_search_result">北京</a>
+                  <a href="/car/verify/l110100dzse6jyckbt11470mg#now_search_result">北京</a>
+                  <a href="/car/verify/l330000dzse6jyckbt11470mg#now_search_result">浙江</a>
+                  <a href="/car/verify/l320000dzse6jyckbt11470mg#now_search_result">江苏</a>
+                  <a href="/car/verify/l340000dzse6jyckbt11470mg#now_search_result">安徽</a>
+                  <a href="/car/verify/l440000dzse6jyckbt11470mg#now_search_result">广东</a>
+                  <a href="/car/verify/l310100dzse6jyckbt11470mg#now_search_result">上海</a>
+                  <a href="/car/verify/l440300dzse6jyckbt11470mg#now_search_result">深圳</a>
+                  <a href="/car/verify/l210100dzse6jyckbt11470mg#now_search_result">沈阳</a>
+                  <a href="/car/verify/l320500dzse6jyckbt11470mg#now_search_result">苏州</a>
+                </b>
+                <em></em>
+            </p>
+            <p class="result_ont"><a>年份</a>
+            <b class="result_conall">
+             <a  href="/car/verify/y0-1t11470dzse6jckbmgl320500#now_search_result">1年以内</a>
+             <a href="/car/verify/y0-2t11470dzse6jckbmgl320500#now_search_result">2年以内</a>
+             <a href="/car/verify/y0-3t11470dzse6jckbmgl320500#now_search_result">3年以内</a>
+             <a href="/car/verify/y0-4t11470dzse6jckbmgl320500#now_search_result">4年以内</a>
+             <a href="/car/verify/y0-5t11470dzse6jckbmgl320500#now_search_result">5年以内</a>
+             <a href="/car/verify/y1-3t11470dzse6jckbmgl320500#now_search_result">1-3年</a>
+             <a href="/car/verify/y3-5t11470dzse6jckbmgl320500#now_search_result">3-5年</a>
+             <a href="/car/verify/y5-10t11470dzse6jckbmgl320500#now_search_result">5-10年</a>
+             <a href="/car/verify/y10-30t11470dzse6jckbmgl320500#now_search_result">10年以上</a>
+             </b><em></em></p>
+            <p class="result_ont"><a>国别</a>
+            <b class="result_conall">
+             <a href="/car/verify/c348dzse6jykbmgl320500#now_search_result">国产</a>
+              <a href="/car/verify/c349dzse6jykbmgl320500#now_search_result">德国</a>
+              <a href="/car/verify/c350dzse6jykbmgl320500#now_search_result">日本</a>
+              <a href="/car/verify/c352dzse6jykbmgl320500#now_search_result">韩国</a>
+              <a href="/car/verify/c351dzse6jykbmgl320500#now_search_result">美国</a>
+              <a href="/car/verify/c354dzse6jykbmgl320500#now_search_result">英国</a>
+              <a href="/car/verify/c353dzse6jykbmgl320500#now_search_result">法国</a>
+              <a href="/car/verify/c355dzse6jykbmgl320500#now_search_result">意大利</a>
+              <a href="/car/verify/c357dzse6jykbmgl320500#now_search_result">瑞典</a>
+            </b><em></em>
+            </p>
+            <p class="result_ont"><a>价格</a>
+            <b class="result_conall">
+              <a href="/car/verify/j0-3dzse6yckbmgl320500#now_search_result">3万以下</a>
+              <a href="/car/verify/j3-5dzse6yckbmgl320500#now_search_result">3-5万</a>
+              <a href="/car/verify/j5-8dzse6yckbmgl320500#now_search_result">5-8万</a>
+              <a href="/car/verify/j8-12dzse6yckbmgl320500#now_search_result">8-12万</a>
+              <a href="/car/verify/j12-24dzse6yckbmgl320500#now_search_result">12-24万</a>
+              <a href="/car/verify/j24-30dzse6yckbmgl320500#now_search_result">24-30万</a>
+              <a href="/car/verify/j30-40dzse6yckbmgl320500#now_search_result">30-40万</a>
+              <a href="/car/verify/j40-100dzse6yckbmgl320500#now_search_result">40-100万</a>
+              <a href="/car/verify/j100-999dzse6yckbmgl320500#now_search_result">100万以上</a>
+            </b><em></em>
+            </p>
+            <p class="result_ont">
+            <a>车型</a>
+            <b class="result_conall">
+              <a href="/car/verify/k365se6jyckmgl320500#now_search_result">微型</a>
+              <a href="/car/verify/k366se6jyckmgl320500#now_search_result">小型</a>
+              <a href="/car/verify/k367se6jyckmgl320500#now_search_result">紧凑型</a>
+              <a href="/car/verify/k368se6jyckmgl320500#now_search_result">中型</a>
+              <a href="/car/verify/k369se6jyckmgl320500#now_search_result">中大型</a>
+              <a href="/car/verify/k370se6jyckmgl320500#now_search_result">豪华</a>
+              <a  href="/car/verify/b1se6jyckmgl320500#now_search_result">轿车</a>
+              <a  href="/car/verify/b8se6jyckmgl320500#now_search_result">跑车</a>
+              <a  href="/car/verify/b7se6jyckmgl320500#now_search_result">SUV</a>
+              <a  href="/car/verify/b9se6jyckmgl320500#now_search_result">MPV</a>
+              <a  href="/car/verify/b2se6jyckmgl320500#now_search_result">客车</a>
+              <a  href="/car/verify/b4se6jyckmgl320500#now_search_result">皮卡</a>
+              <a  href="/car/verify/b10se6jyckmgl320500#now_search_result">面包车</a>
+              <a  href="/car/verify/b3se6jyckmgl320500#now_search_result">货车</a>
+              <a  href="/car/verify/b6se6jyckmgl320500#now_search_result">工程车</a></b>
+            <em></em>
+            </p>
+            
+
+
+            
+            <p class="result_ont">
+            <a>里程</a>
+			<b class="result_conall">
+			<a  href="/car/verify/m0-1t11470dzse6jyckbgl320500#now_search_result">0-1万公里</a>
+             <a href="/car/verify/m1-2t11470dzse6jyckbgl320500#now_search_result">1-2万公里</a>
+             <a href="/car/verify/m2-3t11470dzse6jyckbgl320500#now_search_result">2-3万公里</a>
+              <a href="/car/verify/m3-5t11470dzse6jyckbgl320500#now_search_result">3-5万公里</a>
+              <a href="/car/verify/m5-10t11470dzse6jyckbgl320500#now_search_result">5-10万公里</a>
+              <a href="/car/verify/m10-100t11470dzse6jyckbgl320500#now_search_result">10万公里以上</a>
+              </b><em></em>
+              </p>
+             <p class="result_ont"><a>档位</a>
+			<b class="result_conall">
+			<a  href="/car/verify/g2t11470dzse6jyckbml320500#now_search_result">手动档</a>
+             <a  href="/car/verify/g1t11470dzse6jyckbml320500#now_search_result">自动档</a>
+             <a  href="/car/verify/g3t11470dzse6jyckbml320500#now_search_result">手自一体</a>
+			</b><em></em></p>
+			
+             <p class="result_ont"><a>颜色</a>
+			<b class="result_conall">
+                <a href="/car/verify/s1gt11470dze6jyckbml320500#now_search_result">黑色</a>
+                <a href="/car/verify/s2gt11470dze6jyckbml320500#now_search_result">红色</a>
+                <a href="/car/verify/s3gt11470dze6jyckbml320500#now_search_result">蓝色</a>
+                <a href="/car/verify/s4gt11470dze6jyckbml320500#now_search_result">白色</a>
+                <a href="/car/verify/s5gt11470dze6jyckbml320500#now_search_result">绿色</a>
+                <a href="/car/verify/s6gt11470dze6jyckbml320500#now_search_result">黄色</a>
+                <a href="/car/verify/s7gt11470dze6jyckbml320500#now_search_result">银灰</a>
+                <a href="/car/verify/s8gt11470dze6jyckbml320500#now_search_result">灰色</a>
+                <a href="/car/verify/s9gt11470dze6jyckbml320500#now_search_result">橙色</a>
+                <a href="/car/verify/s10gt11470dze6jyckbml320500#now_search_result">香槟</a>
+              </ul>
+			</b><em></em></p>
+			
+
+
+        	<span class="clean_all">
+        	<a href="/car/search.htm?area_flag=1?keyword=#now_search_result" style="color:#ff9400">清空搜索条件</a>
+        	</span>
+            <div class="historys">
+              <div id='fdpx' class="glance_history" lang="#history_box">排序
+                <div class="all_pxes" style="display: none;">
+                  <a href="/car/verify/x1-1f0000000yt11470dzse6jckbmgl320500#now_search_result">车龄从高到低</a>
+             	  <a href="/car/verify/x1-0f0000000yt11470dzse6jckbmgl320500#now_search_result">车龄从低到高</a>
+                  <a href="/car/verify/x2-1f0000000yt11470dzse6jckbmgl320500#now_search_result">价格从高到低</a>
+             	  <a href="/car/verify/x2-0f0000000yt11470dzse6jckbmgl320500#now_search_result">价格从低到高</a>
+                  <a href="/car/verify/x3-1f0000000yt11470dzse6jckbmgl320500#now_search_result">信誉从高到低</a>
+             	  <a href="/car/verify/x3-0f0000000yt11470dzse6jckbmgl320500#now_search_result">信誉从低到高</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float_result_shadow"></div>
+          </div>
+        </div>
+        <div id="now_search_result" class="search_result">
+          <p>当前搜索条件：</p>
+          <div class="result">
+            <span class="result_on"><a style="color:#333" href="/car/verify/t11470dzsebjyckmgl320500#now_search_result">国五<i></i></a></span>
+            <span class="result_on"><a style="color:#333" href="/car/verify/tdzse6bjyckmgl320500#now_search_result">西拉<i></i></a></span>
+            <span class="result_on"><a  style="color:#333" href="/car/verify/t11470dzse6bjyckmgl100000#now_search_result">苏州市<i></i></a></span>
+            <span class="clean_all"><a href="/car/search.htm?area_flag=1?keyword=#now_search_result" style="color:#ff9400">清空搜索条件</a></span>
+            <div class="historys">
+              <div class="glance_history" lang="#history_boxs">搜索历史(<b>0</b>)
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="search_condition">
+          <div class="condition_title" id="condition_title">
+            <p class="price_title">车型</p>
+            <p class="price_title">价格</p>
+            <p class="price_title">车龄</p>
+            <p class="price_title">排放</p>
+            <p class="price_title" id="brandLogo">品牌</p>
+            <p class="price_title">地区</p>
+
+
+
+            <div id="brandlogo_other">
+               <p class="price_title">国别</p>
+               <p class="price_title">里程</p>
+               <p class="price_title">档位</p>
+            </div>
+          </div>
+          <div class="condition_con">
+              <ul class="else_con">
+              <li><a  class="condition_con_on" href="/car/verify/kjycbmgl320500#now_search_result" >全部</a></li>
+              <li><a href="/car/verify/k365se6jyckmgl320500#now_search_result">微型</a></li>
+              <li><a href="/car/verify/k366se6jyckmgl320500#now_search_result">小型</a></li>
+              <li><a href="/car/verify/k367se6jyckmgl320500#now_search_result">紧凑型</a></li>
+              <li><a href="/car/verify/k368se6jyckmgl320500#now_search_result">中型</a></li>
+              <li><a href="/car/verify/k369se6jyckmgl320500#now_search_result">中大型</a></li>
+              <li><a href="/car/verify/k370se6jyckmgl320500#now_search_result">豪华</a></li>
+              <li><a  href="/car/verify/b1se6jyckmgl320500#now_search_result">轿车</a>
+              <li><a  href="/car/verify/b8se6jyckmgl320500#now_search_result">跑车</a>
+              <li><a  href="/car/verify/b7se6jyckmgl320500#now_search_result">SUV</a></li>
+              <li><a  href="/car/verify/b9se6jyckmgl320500#now_search_result">MPV</a></li>
+              <li><a  href="/car/verify/b2se6jyckmgl320500#now_search_result">客车</a></li> 
+              <li><a  href="/car/verify/b4se6jyckmgl320500#now_search_result">皮卡</a></li>
+              <li><a  href="/car/verify/b10se6jyckmgl320500#now_search_result">面包车</a></li>
+              <li><a  href="/car/verify/b3se6jyckmgl320500#now_search_result">货车</a></li>
+              <li><a  href="/car/verify/b6se6jyckmgl320500#now_search_result">工程车</a></li>
+              <div class="clear"></div>
+            </ul>
+            
+            <ul class="else_con">
+              <li><a class="condition_con_on"href="/car/verify/jt11470dzse6yckbmgl320500#now_search_result">全部</a></li>
+              <li><a href="/car/verify/j0-3t11470dzse6yckbmgl320500#now_search_result">3万以下</a></li>
+              <li><a href="/car/verify/j3-5t11470dzse6yckbmgl320500#now_search_result">3-5万</a></li>
+              <li><a href="/car/verify/j5-8t11470dzse6yckbmgl320500#now_search_result">5-8万</a></li>
+              <li><a href="/car/verify/j8-12t11470dzse6yckbmgl320500#now_search_result">8-12万</a></li>
+              <li><a href="/car/verify/j12-24t11470dzse6yckbmgl320500#now_search_result">12-24万</a></li>
+              <li><a href="/car/verify/j24-30t11470dzse6yckbmgl320500#now_search_result">24-30万</a></li>
+              <li><a href="/car/verify/j30-40t11470dzse6yckbmgl320500#now_search_result">30-40万</a></li>
+              <li><a href="/car/verify/j40-100t11470dzse6yckbmgl320500#now_search_result">40-100万</a></li>
+              <li><a href="/car/verify/j100-999t11470dzse6yckbmgl320500#now_search_result">100万以上</a></li>
+              <li>
+                <p><input type="text" id="begin_price" name="" value="" /></p>
+                <span>-</span>
+                <p><input type="text" id="end_price" name="" value="" /></p>
+                <span class="unit">万</span>
+                <span><a id="to_search">确定</a></span>
+              </li>
+              <div class="clear"></div>
+            </ul>
+            <ul class="else_con">
+              <li><a  class="condition_con_on"href="/car/verify/yt11470dzse6jckbmgl320500#now_search_result">全部</a></li>
+              <li><a  href="/car/verify/y0-1t11470dzse6jckbmgl320500#now_search_result">1年以内</a></li>
+              <li><a href="/car/verify/y0-2t11470dzse6jckbmgl320500#now_search_result">2年以内</a></li>
+              <li><a href="/car/verify/y0-3t11470dzse6jckbmgl320500#now_search_result">3年以内</a></li>
+              <li><a href="/car/verify/y0-4t11470dzse6jckbmgl320500#now_search_result">4年以内</a></li>
+              <li><a href="/car/verify/y0-5t11470dzse6jckbmgl320500#now_search_result">5年以内</a></li>
+              <li><a href="/car/verify/y1-3t11470dzse6jckbmgl320500#now_search_result">1-3年</a></li>
+              <li><a href="/car/verify/y3-5t11470dzse6jckbmgl320500#now_search_result">3-5年</a></li>
+              <li><a href="/car/verify/y5-10t11470dzse6jckbmgl320500#now_search_result">5-10年</a></li>
+              <li><a href="/car/verify/y10-30t11470dzse6jckbmgl320500#now_search_result">10年以上</a></li>
+              <li>
+                <p><input type="text" id="begin_year" name="" value="" /></p>
+                <span>-</span>
+                <p><input type="text" id="end_year" name="" value="" /></p>
+                <span class="unit">年</span>
+                <span class="ensure_btn"><a id="go_search">确定</a></span>
+              </li>
+              <div class="clear"></div>
+            </ul>
+            <ul class="else_con">
+              <li><a  href="/car/verify/et11470dzsjyckbmgl320500#now_search_result" >全部</a></li>
+              <li><a href="/car/verify/e1t11470dzsjyckbmgl320500#now_search_result">国一</a></li>
+              <li><a href="/car/verify/e2t11470dzsjyckbmgl320500#now_search_result">国二</a></li>
+              <li><a href="/car/verify/e3t11470dzsjyckbmgl320500#now_search_result">国三</a></li>
+              <li><a href="/car/verify/e4t11470dzsjyckbmgl320500#now_search_result">国三+OBD</a></li>
+              <li><a href="/car/verify/e5t11470dzsjyckbmgl320500#now_search_result">国四</a></li>
+              <li><a class="condition_con_on " href="/car/verify/e6t11470dzsjyckbmgl320500#now_search_result">国五</a></li>
+              <div class="clear"></div>
+            </ul>
+            
+            <ul class="else_con" id="brands">
+              <li><a  href="/car/verify/tkdzse6jycbmgl320500#now_search_result" >全部</a></li>
+              <li><a href="/car/verify/t196kdzse6jyckmgl320500#now_search_result">君威</a></li>
+              <li><a href="/car/verify/t523kdzse6jyckmgl320500#now_search_result">速腾</a></li>
+              <li><a href="/car/verify/t1830kdzse6jyckmgl320500#now_search_result">索纳塔</a></li>
+              <li><a href="/car/verify/t515kdzse6jyckmgl320500#now_search_result">途观</a></li>
+              <li><a href="/car/verify/t522kdzse6jyckmgl320500#now_search_result">迈腾</a></li>
+              <li><a href="/car/verify/t574kdzse6jyckmgl320500#now_search_result">凯美瑞</a></li>
+              <li><a href="/car/verify/t4054kdzse6jyckmgl320500#now_search_result">福克斯</a></li>
+              <li><a href="/car/verify/t26kdzse6jyckmgl320500#now_search_result">奥迪</a></li>
+              <li><a href="/car/verify/t680kdzse6jyckmgl320500#now_search_result">锐意</a></li>
+              <li><a href="/car/verify/t186kdzse6jyckmgl320500#now_search_result">雅阁</a></li>
+             <li class="see_all" id="see_more"><a href="/car/daquan.htm" target="_blank">查看更多品牌</a></li>
+              <div class="clear"></div>
+            </ul>
+            <ul class="else_con" style="z-index:8;position:relative;">
+              <li><a  href="/car/verify/l100000dzse6jt11470yckbmg#now_search_result">全部</a></li>
+              <li><a  href="/car/verify/l110000dzse6jt11470yckbmg#now_search_result">北京</a></li>
+              <li><a  href="/car/verify/l110100dzse6jt11470yckbmg#now_search_result">北京</a></li>
+              <li><a  href="/car/verify/l110100dzse6jt11470yckbmg#now_search_result">北京</a></li>
+              <li><a  href="/car/verify/l330000dzse6jt11470yckbmg#now_search_result">浙江</a></li>
+              <li><a  href="/car/verify/l320000dzse6jt11470yckbmg#now_search_result">江苏</a></li>
+              <li><a  href="/car/verify/l340000dzse6jt11470yckbmg#now_search_result">安徽</a></li>
+              <li><a  href="/car/verify/l440000dzse6jt11470yckbmg#now_search_result">广东</a></li>
+              <li><a  href="/car/verify/l310100dzse6jt11470yckbmg#now_search_result">上海</a></li>
+              <li><a  href="/car/verify/l440300dzse6jt11470yckbmg#now_search_result">深圳</a></li>
+              <li><a  href="/car/verify/l210100dzse6jt11470yckbmg#now_search_result">沈阳</a></li>
+              <li><a class="condition_con_on" href="/car/verify/l320500dzse6jt11470yckbmg#now_search_result">苏州</a></li>
+              <li class="see_all" id="see_all"><a href="javascript:void(0)" id="no_all">查看全部省市</a>
+              <div class="hot_area" id="hotArea">
+          <div class="letter">
+   			  <a onclick="sc(0)">A</a>
+	          <a onclick="sc(65)">F</a>
+	          <a onclick="sc(107)">G</a>
+	          <a onclick="sc(349)">H</a>
+			  <a onclick="sc(676)">J</a>
+			  <a onclick="sc(820)">L</a>
+			  <a onclick="sc(882)">N</a>
+			  <a onclick="sc(985)">Q</a>
+			  <a onclick="sc(1045)">S</a>
+			  <a onclick="sc(1267)">X</a>
+			  <a onclick="sc(1450)">Y</a>
+			  <a onclick="sc(1510)" class="last_letter">Z</a>
+            <span class="specialcity_title">热门城市：</span>
+            <a class="special_city" href="/car/verify/l110100jyckbmg#now_search_result">北京</a>
+            <a class="special_city" href="/car/verify/l500000jyckbmg#now_search_result">重庆</a>
+            <a class="special_city" href="/car/verify/l120000jyckbmg#now_search_result">天津</a>
+            <a class="special_city" href="/car/verify/l310000jyckbmg#now_search_result">上海</a>
+            <a class="special_city" href="/car/search.htm?more=jyckbmgl300001#now_search_result">华东</a>
+            <a class="special_city" href="/car/search.htm?more=jyckbmgl100001#now_search_result">华北</a>
+            <a class="special_city" href="/car/search.htm?more=jyckbmgl200001#now_search_result">东北</a>
+            <a class="special_city" href="/car/search.htm?more=jyckbmgl600001#now_search_result">西北</a>
+            <a class="special_city" href="/car/search.htm?more=jyckbmgl400001#now_search_result">中南</a>
+            <a class="special_city" href="/car/search.htm?more=jyckbmgl500001#now_search_result">西南</a>
+          </div>
+          <div class="all_city" id ="all_city">
+            <div class="city_A"  id="pro12">
+              <p><span class="cityLetter">A</span>
+              <span class="Province" lang="340000">
+              <a href="/car/verify/l340000jyckbmg#now_search_result" target="_blank">安徽省</a></span></p>
+              <ul>
+              </ul>
+            </div>
+            
+              <div class="city_A"  id="pro13">
+              <p><span class="cityLetter">F</span>
+              <span class="Province" lang="350000">
+              <a href="/car/verify/l350000jyckbmg#now_search_result">福建省</a></span></p>
+              <ul>
+              </ul>
+            </div>
+            
+              <div class="city_A" id="pro28">
+              <p><span class="cityLetter">G</span>
+              <span class="Province" lang="620000"><a href="/car/verify/l620000jyckbmg#now_search_result">甘肃省</a></span></p>
+              <ul>
+              </ul>
+              </div>
+              <div  class="city_A" id="pro24">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="520000"><a href="/car/verify/l520000jyckbmg#now_search_result">贵州省</a></span></p>
+              <ul>
+              </ul>
+              </div>
+               <div class="city_A"  id="pro19">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="440000"><a href="/car/verify/l440000jyckbmg#now_search_result">广东省</a></span></p>
+              <ul>
+              </ul>
+              </div> <div  class="city_A" id="pro20">
+              <p><span class="cityLetter" ></span>
+              <span class="Province" lang="450000"><a href="/car/verify/l450000jyckbmg#now_search_result">广西省</a></span></p>
+              <ul>
+              </ul>
+            </div>
+            
+              <div  class="city_A" id="pro8">
+              <p><span class="cityLetter">H</span>
+              <span class="Province" lang="230000"><a href="/car/verify/l230000jyckbmg#now_search_result">黑龙江省</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro3">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="130000"><a href="/car/verify/l130000jyckbmg#now_search_result">河北省</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro16">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="410000"><a href="/car/verify/l410000jyckbmg#now_search_result">河南省</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro17">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="420000"><a href="/car/verify/l420000jyckbmg#now_search_result">湖北省</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro18">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="430000"><a href="/car/verify/l430000jyckbmg#now_search_result">湖南省</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro21">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="460000"><a href="/car/verify/l460000jyckbmg#now_search_result">海南省</a></span></p>
+              <ul>
+              </ul>
+            </div>
+            
+               <div class="city_A" id="pro7">
+              <p><span class="cityLetter">J</span>
+              <span class="Province" lang="220000">
+              <a href="/car/verify/l220000jyckbmg#now_search_result">吉林省</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro10">
+               <p><span class="cityLetter"></span>
+              <span class="Province" lang="320000">
+              <a href="/car/verify/l320000jyckbmg#now_search_result">江苏省</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro14">
+               <p><span class="cityLetter"></span>
+              <span class="Province" lang="360000">
+              <a href="/car/verify/l360000jyckbmg#now_search_result">江西省</a></span></p>
+              <ul>
+              </ul>
+            </div>
+            
+            <div class="city_A" id="pro6">
+            <p><span class="cityLetter">L</span>
+              <span class="Province" lang="210000">
+              <a href="/car/verify/l210000jyckbmg#now_search_result">辽宁省</a></span></p>
+              <ul>
+              </ul>
+            </div>
+            
+            <div class="city_A" id="pro5">
+            <p><span class="cityLetter">N</span>
+              <span class="Province" lang="150000">
+              <a href="/car/verify/l150000jyckbmg#now_search_result">内蒙古</a></span></p>
+              <ul>
+              </ul></div><div  class="city_A" id="pro30">
+            <p><span class="cityLetter"></span>
+              <span class="Province" lang="640000">
+              <a href="/car/verify/l640000jyckbmg#now_search_result">宁夏</a></span></p>
+              <ul>
+              </ul>
+            </div>
+ 
+             <div class="city_A" id="pro29">
+            <p><span class="cityLetter">Q</span>
+              <span class="Province" lang="630000">
+              <a href="/car/verify/l630000jyckbmg#now_search_result">青海</a></span></p>
+              <ul>
+              </ul>
+            </div> 
+
+              <div  class="city_A" id="pro15">
+              <p><span class="cityLetter">S</span>
+              <span class="Province" lang="370000">
+              <a href="/car/verify/l370000jyckbmg#now_search_result">山东</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro4">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="140000">
+              <a href="/car/verify/l140000jyckbmg#now_search_result">山西</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro27">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="610000">
+              <a href="/car/verify/l610000jyckbmg#now_search_result">陕西</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro23">
+              <p><span class="cityLetter"></span>
+              <span class="Province" lang="510000">
+              <a href="/car/verify/l510000jyckbmg#now_search_result">四川</a></span></p>
+              <ul>
+              </ul>
+            </div> 
+                
+               <div class="city_A" id="pro26">
+             <p><span class="cityLetter">X</span>
+              <span class="Province" lang="540000">
+              <a href="/car/verify/l540000jyckbmg#now_search_result">西藏</a></span></p>
+              <ul>
+              </ul></div>
+              <div  class="city_A" id="pro31">
+               <p><span class="cityLetter"></span>
+              <span class="Province" lang="650000">
+              <a href="/car/verify/l650000jyckbmg#now_search_result">新疆</a></span></p>
+              <ul>
+              </ul>
+            </div>
+            
+             <div class="city_A" id="pro25">
+             <p><span class="cityLetter">Y</span>
+              <span class="Province" lang="530000">
+              <a href="/car/verify/l530000jyckbmg#now_search_result">云南</a></span></p>
+              <ul>
+              </ul>
+            </div>
+             <div class="city_A" id="pro11">
+             <p><span class="cityLetter">Z</span>
+              <span class="Province" lang="330000">
+              <a href="/car/verify/l330000jyckbmg#now_search_result">浙江</a></span></p>
+              <ul>
+              </ul>
+            </div>
+          </div>
+        </div>
+              </li>
+              <div class="clear"></div>
+            </ul>
+
+
+
+            
+            <div id="showOther">
+            <ul class="else_con">
+              <li><a class="condition_con_on" href="/car/verify/cdzse6jykbmgl320500#now_search_result">全部</a></li>
+              <li><a href="/car/verify/c348dzse6jykbmgl320500#now_search_result">国产</a></li>
+              <li><a href="/car/verify/c349dzse6jykbmgl320500#now_search_result">德国</a></li>
+              <li><a href="/car/verify/c350dzse6jykbmgl320500#now_search_result">日本</a></li>
+              <li><a href="/car/verify/c352dzse6jykbmgl320500#now_search_result">韩国</a></li>
+              <li><a href="/car/verify/c351dzse6jykbmgl320500#now_search_result">美国</a></li>
+              <li><a href="/car/verify/c354dzse6jykbmgl320500#now_search_result">英国</a></li>
+              <li><a href="/car/verify/c353dzse6jykbmgl320500#now_search_result">法国</a></li>
+              <li><a href="/car/verify/c355dzse6jykbmgl320500#now_search_result">意大利</a></li>
+              <li><a href="/car/verify/c357dzse6jykbmgl320500#now_search_result">瑞典</a></li>
+              <div class="clear"></div>
+            </ul>
+            <ul class="else_con">
+              <li><a class="condition_con_on" href="/car/verify/mt11470dzse6jyckbgl320500#now_search_result">全部</a></li>
+              <li><a  href="/car/verify/m0-1t11470dzse6jyckbgl320500#now_search_result">0-1万公里</a></li>
+              <li><a href="/car/verify/m1-2t11470dzse6jyckbgl320500#now_search_result">1-2万公里</a></li>
+              <li><a href="/car/verify/m2-3t11470dzse6jyckbgl320500#now_search_result">2-3万公里</a></li>
+              <li><a href="/car/verify/m3-5t11470dzse6jyckbgl320500#now_search_result">3-5万公里</a></li>
+              <li><a href="/car/verify/m5-10t11470dzse6jyckbgl320500#now_search_result">5-10万公里</a></li>
+              <li><a href="/car/verify/m10-100t11470dzse6jyckbgl320500#now_search_result">10万公里以上</a></li>
+              <div class="clear"></div>
+            </ul>
+            <ul style="position:relative;" class="else_con"> 
+              <li><a class="condition_con_on" href="/car/verify/gt11470dzse6jyckbml320500#now_search_result">全部</a></li>
+              <li><a  href="/car/verify/g2t11470dzse6jyckbml320500#now_search_result">手动档</a></li>
+              <li><a  href="/car/verify/g1t11470dzse6jyckbml320500#now_search_result">自动档</a></li>
+              <li><a  href="/car/verify/g3t11470dzse6jyckbml320500#now_search_result">手自一体</a></li>
+              <div class="clear"></div>
+              <div class="color_car">
+              <p>颜色</p>
+              <ul>
+                <li><a class="condition_con_on" href="/car/verify/sgt11470dze6jyckbml320500#now_search_result">全部</a></li>
+                <li><a  href="/car/verify/s1gt11470dze6jyckbml320500#now_search_result">黑色</a></li>
+                <li><a  href="/car/verify/s2gt11470dze6jyckbml320500#now_search_result">红色</a></li>
+                <li><a  href="/car/verify/s3gt11470dze6jyckbml320500#now_search_result">蓝色</a></li>
+                <li><a  href="/car/verify/s4gt11470dze6jyckbml320500#now_search_result">白色</a></li>
+                <li><a  href="/car/verify/s5gt11470dze6jyckbml320500#now_search_result">绿色</a></li>
+                <li><a  href="/car/verify/s6gt11470dze6jyckbml320500#now_search_result">黄色</a></li>
+                <li><a  href="/car/verify/s7gt11470dze6jyckbml320500#now_search_result">银灰</a></li>
+                <li><a  href="/car/verify/s8gt11470dze6jyckbml320500#now_search_result">灰色</a></li>
+                <li><a  href="/car/verify/s9gt11470dze6jyckbml320500#now_search_result">橙色</a></li>
+                <li><a  href="/car/verify/s11gt11470dze6jyckbml320500#now_search_result">香槟</a></li>
+              </ul>
+            </div>
+            </ul>
+           
+            
+            </div>
+            <p class="more_condition">
+              <span class="show1">查看更多筛选条件</span>
+              <span class="hide2">隐藏多余筛选条件</span>
+            </p>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="carlist_car">
+        <div class="carlist_classify">
+          <ul class="carlist_special_on">
+            <li class="classify_on"><a href="/car/search.htm?carFlag=verify#now_search_result">初审车辆</a></li>
+            
+            <li ><a href="/car/search.htm?carFlag=essence#now_search_result">精品二手车</a></li>
+            <li ><a href="/car/search.htm?carFlag=personal#now_search_result">个人二手车</a></li>
+<li ><a href="/car/search.htm?carFlag=stores#now_search_result">商家二手车</a></li>
+            <li id="toTradecar" class="classify_special"><a href="/car/search.htm?carFlag=tradeallcar#now_search_result">批发二手车</a></li>
+          </ul>
+          <div class="keyfont">
+            <span class="keyfont_title">关键字：</span>
+            <p><input type="text" id="doSearch" value="" name="doSearch"/></p>
+            <span><a onclick="searchAll();">搜索</a></span>
+          </div>
+          <div class="change_style">
+            <a  class="change_bpic" id="change_bpic" style="display:block">切换到大图</a>
+          </div>
+        </div>
+        
+		<div class="filter">
+          <input type="checkbox" onclick="location='/car/verify/f1000000yt11470dzse6jckbmgl320500#now_search_result'"/>
+          <span onclick="location='/car/verify/f1000000yt11470dzse6jckbmgl320500#now_search_result'">可过户</span>
+          <input type="checkbox"  onclick="location='/car/verify/f0100000yt11470dzse6jckbmgl320500#now_search_result'"/>
+          <span  onclick="location='/car/verify/f0100000yt11470dzse6jckbmgl320500#now_search_result'">非营运</span>
+          <input type="checkbox"  onclick="location='/car/verify/f0010000yt11470dzse6jckbmgl320500#now_search_result'"/>
+          <span  onclick="location='/car/verify/f0010000yt11470dzse6jckbmgl320500#now_search_result'">在售</span>
+          <input type="checkbox"  onclick="location='/car/verify/f0001000yt11470dzse6jckbmgl320500#now_search_result'"/>
+          <span  onclick="location='/car/verify/f0001000yt11470dzse6jckbmgl320500#now_search_result'">7天包退 15天包换</span>
+          <input type="checkbox"  onclick="location='/car/verify/f0000100yt11470dzse6jckbmgl320500#now_search_result'"/>
+          <span  onclick="location='/car/verify/f0000100yt11470dzse6jckbmgl320500#now_search_result'">一手车</span>
+          <input type="checkbox"  onclick="location='/car/verify/f0000010yt11470dzse6jckbmgl320500#now_search_result'"/>
+          <span  onclick="location='/car/verify/f0000010yt11470dzse6jckbmgl320500#now_search_result'">峰会车辆</span>
+          <input type="checkbox"  onclick="location='/car/verify/f0000001yt11470dzse6jckbmgl320500#now_search_result'"/>
+          <span  onclick="location='/car/verify/f0000001yt11470dzse6jckbmgl320500#now_search_result'">担保车辆</span>
+          <div class="sx_it"><b>信誉值</b><em>排序</em><strong>从低到高</strong>
+            <div class="how_tosx" style="width: 96px;">
+              <a href="/car/verify/x3-1f0000000yt11470dzse6jckbmgl320500#now_search_result">从高到低</a>
+              <a href="/car/verify/x3-0f0000000yt11470dzse6jckbmgl320500#now_search_result">从低到高</a>
+            </div>
+          </div>
+          <div class="sx_it"><b>价格</b><em>排序</em><strong>从低到高</strong>
+            <div class="how_tosx" style="width: 84px;">
+              <a href="/car/verify/x2-1f0000000yt11470dzse6jckbmgl320500#now_search_result">从高到低</a>
+              <a href="/car/verify/x2-0f0000000yt11470dzse6jckbmgl320500#now_search_result">从低到高</a>
+            </div>
+          </div>
+          <div class="sx_it"><b>车龄</b><em>排序</em><strong>从低到高</strong>
+            <div class="how_tosx" style="width: 84px;">
+              <a href="/car/verify/x1-1f0000000yt11470dzse6jckbmgl320500#now_search_result">从高到低</a>
+              <a href="/car/verify/x1-0f0000000yt11470dzse6jckbmgl320500#now_search_result">从低到高</a>
+            </div>
+          </div>
+        </div>
+	        <div class="carlist_allcar">
+	   			 <p class="no_listcar"><img src="http://www.hx2car.com/resource/web/car/images/nocar.jpg"/><span class="icon"></span></p>
+			</div>
+			<script type="text/javascript">
+				$(function(){
+		$(".no_listcar .icon").click(function(){
+		$("input#phoNum").val(getCookie('phoneNum'));$("#singleService").show();
+		$(".Dbg").show();$("#newbuytishi").hide();$(".BUY_search").show();
+		$("#checkcodes").val("");
+		});
+	});
+			</script>
+        <div class="carlist_pageturn">
+
+	 
+
+ <ul>
+	<!-- 总页数 -->
+	<!-- 当前页数 -->
+	
+</ul>
+          </div>
+      </div>
+    </div>
+    <div class="carlist_r"  id="ad_carlist">
+      <div class="carlist_rad" id="afterAreaTarget">
+      </div>
+      <div id="jsonad1"></div>
+      <div id="jsonad2"></div>
+      <div id="jsonad3"></div>
+          
+      
+      <div class="carlist_recommend" id="carlist_recommend">
+        <p class="recommend_title"><span>推荐车辆</span></p>
+        <div class="recommend_car">
+        <ul>
+        <li>
+          <p class="carpics"><a href="/details/141487692" target="_blank"><img src="http://img.hx2car.com/upload/car/2015/1/26/03/23/76/86/30/small/300_200.jpg" width="171" height="114" alt="[浙江省金华市义乌市]2011年6月 保时捷 帕纳美拉  Turbo S 4.8TTurbo S 4.8T&nbsp; 88.0万"/></a></p>
+          <p class="carnames"><a href="/details/141487692" target="_blank" title="[浙江省金华市义乌市]2011年6月 保时捷 帕纳美拉  Turbo S 4.8TTurbo S 4.8T&nbsp; 88.0万">2011年6月 保时捷 帕纳美拉  Turbo S 4.8TTurbo S 4.8T&nbsp; 88.0万</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江金华义乌</span><span class="carprices">88.0万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/140665713" target="_blank"><img src="http://img.hx2car.com/upload/car/2014/11/20/02/10/36/89/26/small/300_200.jpg" width="171" height="114" alt="[浙江省台州市]2012年7月 英菲尼迪 EX EX25 2.5L 尊雅版&nbsp; 33.98万"/></a></p>
+          <p class="carnames"><a href="/details/140665713" target="_blank" title="[浙江省台州市]2012年7月 英菲尼迪 EX EX25 2.5L 尊雅版&nbsp; 33.98万">2012年7月 英菲尼迪 EX EX25 2.5L 尊雅版&nbsp; 33.98万</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江台州</span><span class="carprices">33.98万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/141269981" target="_blank"><img src="http://img.hx2car.com/upload/car/2015/1/8/08/28/58/88/35/small/300_200.jpg" width="171" height="114" alt="[浙江省台州市]2013年11月 日产 GT-R 3.8T Premium Edition&nbsp; 100.8万"/></a></p>
+          <p class="carnames"><a href="/details/141269981" target="_blank" title="[浙江省台州市]2013年11月 日产 GT-R 3.8T Premium Edition&nbsp; 100.8万">2013年11月 日产 GT-R 3.8T Premium Edition&nbsp; 100.8万</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江台州</span><span class="carprices">100.8万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/141678191" target="_blank"><img src="http://img.hx2car.com/upload/car/2015/2/14/14/68/39/93/98/small/300_200.jpg" width="171" height="114" alt="[陕西省西安市灞桥区]2012年11月 宝马 宝马7系  740Li 3.0T 领先型740Li 3.0T 领先型&nbsp; 66.2万"/></a></p>
+          <p class="carnames"><a href="/details/141678191" target="_blank" title="[陕西省西安市灞桥区]2012年11月 宝马 宝马7系  740Li 3.0T 领先型740Li 3.0T 领先型&nbsp; 66.2万">2012年11月 宝马 宝马7系  740Li 3.0T 领先型740Li 3.0T 领先型&nbsp; 66.2万</a></p>
+          <p class="carareas_prices"><span class="carareas">陕西西安灞桥区</span><span class="carprices">66.2万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/141693076" target="_blank"><img src="http://img.hx2car.com/upload/car/2015/2/17/05/05/73/28/73/small/300_200.jpg" width="171" height="114" alt="[安徽省合肥市庐江县]2013年11月 奔驰 E级  E260L 2.0T 运动型E260L 2.0T 运动型&nbsp; 面议"/></a></p>
+          <p class="carnames"><a href="/details/141693076" target="_blank" title="[安徽省合肥市庐江县]2013年11月 奔驰 E级  E260L 2.0T 运动型E260L 2.0T 运动型&nbsp; 面议">2013年11月 奔驰 E级  E260L 2.0T 运动型E260L 2.0T 运动型&nbsp; 面议</a></p>
+          <p class="carareas_prices"><span class="carareas">安徽合肥庐江</span><span class="carprices">面议</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/141701365" target="_blank"><img src="http://img.hx2car.com/upload/car/2015/2/23/07/44/23/78/90/small/300_200.jpg" width="171" height="114" alt="[江西省宜春市高安市]2013年12月 欧曼前四后八自卸车&nbsp; 22万"/></a></p>
+          <p class="carnames"><a href="/details/141701365" target="_blank" title="[江西省宜春市高安市]2013年12月 欧曼前四后八自卸车&nbsp; 22万">2013年12月 欧曼前四后八自卸车&nbsp; 22万</a></p>
+          <p class="carareas_prices"><span class="carareas">江西宜春高安</span><span class="carprices">22万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/141594466" target="_blank"><img src="http://img.hx2car.com/upload/car/2015/2/16/06/14/51/20/52/small/300_200.jpg" width="171" height="114" alt="[浙江省金华市义乌市]2005年7月 别克 凯越 2005款1.6LE-AT&nbsp; 3.28万"/></a></p>
+          <p class="carnames"><a href="/details/141594466" target="_blank" title="[浙江省金华市义乌市]2005年7月 别克 凯越 2005款1.6LE-AT&nbsp; 3.28万">2005年7月 别克 凯越 2005款1.6LE-AT&nbsp; 3.28万</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江金华义乌</span><span class="carprices">3.28万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/141591637" target="_blank"><img src="http://img.hx2car.com/upload/car/2015/2/5/00/19/54/14/13/small/300_200.jpg" width="171" height="114" alt="[浙江省宁波市江东区]2014年4月 福特 蒙迪欧 2.0L GTDi240 旗舰型&nbsp; 23.5万"/></a></p>
+          <p class="carnames"><a href="/details/141591637" target="_blank" title="[浙江省宁波市江东区]2014年4月 福特 蒙迪欧 2.0L GTDi240 旗舰型&nbsp; 23.5万">2014年4月 福特 蒙迪欧 2.0L GTDi240 旗舰型&nbsp; 23.5万</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江宁波江东区</span><span class="carprices">23.5万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/141677827" target="_blank"><img src="http://img.hx2car.com/upload/car/2014/12/22/07/56/21/66/26/small/300_200.jpg" width="171" height="114" alt="[浙江省杭州市江干区]2010年3月 荣威 550  1.8 DVVT 世博风尚版1.8 DVVT 世博风尚版&nbsp; 6.6万"/></a></p>
+          <p class="carnames"><a href="/details/141677827" target="_blank" title="[浙江省杭州市江干区]2010年3月 荣威 550  1.8 DVVT 世博风尚版1.8 DVVT 世博风尚版&nbsp; 6.6万">2010年3月 荣威 550  1.8 DVVT 世博风尚版1.8 DVVT 世博风尚版&nbsp; 6.6万</a></p>
+          <p class="carareas_prices"><span class="carareas">浙江杭州江干区</span><span class="carprices">6.6万</span></p>
+        </li>
+        <li>
+          <p class="carpics"><a href="/details/141523436" target="_blank"><img src="http://img.hx2car.com/upload/car/2015/1/30/08/15/11/68/97/small/300_200.jpg" width="171" height="114" alt="[湖南省岳阳市岳阳楼区]2011年10月 大众 途锐  3.0TDI V6柴油基本型3.0TDI V6柴油基本型&nbsp; 36.8万"/></a></p>
+          <p class="carnames"><a href="/details/141523436" target="_blank" title="[湖南省岳阳市岳阳楼区]2011年10月 大众 途锐  3.0TDI V6柴油基本型3.0TDI V6柴油基本型&nbsp; 36.8万">2011年10月 大众 途锐  3.0TDI V6柴油基本型3.0TDI V6柴油基本型&nbsp; 36.8万</a></p>
+          <p class="carareas_prices"><span class="carareas">湖南岳阳岳阳楼区</span><span class="carprices">36.8万</span></p>
+        </li>
+          </ul>
+         </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="service_back" id="toScroll">
+  <div class="compare" id="serviceMessage" lang="#service_info">
+    <a href="javascript:void(0)" id="hideclass"><span>车辆对比</span></a>
+  </div>
+  <div class="back" id="toTop"><a href="javascritp:void(0);"><span>返回顶部</span></a></div>
+  <div class="compare_info" id="service_info">
+    <div class="compare_all">
+      <ul id="listcar_compa">
+      </ul>
+      <p class="carcompare_divide"></p>
+      <p class="carcompare_btn"><a id="carcompare_btn">开始对比</a></p>
+      <p class="carcompare_deleteall"><a id="car_deleteall"></a></p>
+      <p class="carcompare_hide"><a id="carcompare_hide"></a></p>
+    </div>
+  </div>
+</div>
+<div class="cartype_nav">
+  <div class="logo_nav" id="f_"><a></a>
+  </div>
+</div>
+
+<div class="cartype_navOn">
+  <div class="logo_nav" id="s_"><a></a>
+  </div>
+</div>
+
+<div class="cartype_all"> 
+      <p class="cartypenav_title">
+        <span class="cartype_on" id="left">国内品牌</span>
+        <span class="outcountry_car" id="right">国外品牌</span>
+      </p>
+      <div id="s_brand"></div>
+   </div>
+    
+<div class="bottom_ad">
+  <p>
+  </p>
+</div>
+<div class="bottom" style = "height:100px">
+  <div class="bottom_al">
+    
+    <div class="bottom_nav">
+      <p class="net_nav">
+		<a class="gray12s6" href="/help/nabout.htm" target="_blank">关于我们</a> |
+		<a class="gray12s6" href="/help/link.htm" target="_blank">友情链接</a> |
+		<a class="gray12s6" href="/help/nad.htm" target="_blank">广告指南</a> |
+		<a class="gray12s6" href="/help/nbenefit.htm" target="_blank">服务指南</a> |
+		<a class="gray12s6" href="/help/findcar.htm" target="_blank">帮助中心</a> |
+		<a class="gray12s6" href="/topgradecar/citynavigation.htm" target="_blank">地区导航</a> |
+		<a class="gray12s6" href="http://auto.hx2car.com/" target="_blank">资讯中心</a> | 
+		<a class="gray12s6" href="/help/npay.htm" target="_blank">联系我们</a>
+      </p>
+      <p>服务信箱：kf@hx2car.cn 联系电话：0571-88212994 QQ群：41281177</p>
+      <p>Copyright ? 2003-2013 版权所有<a href="http://www.hx2car.com" target="_blank">hx2car.com</a> 浙ICP备05000595号</p>
+      <p>增值电信业务经营许可证: 浙B2-20120219</p>
+     
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+   var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setDomainName', 'hx2car.com']);
+  _gaq.push(['_setAccount', 'UA-2057722-1']);
+  _gaq.push(['_addOrganic', 'sogou', 'query']);
+  _gaq.push(['_addOrganic', 'baidu', 'word']);
+  _gaq.push(['_addOrganic', 'soso', 'w']);
+  _gaq.push(['_addOrganic', 'youdao', 'q']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script src="http://www.hx2car.com/resource/web/car/js/newlist_brandtree.js" type="text/javascript"></script>
+</body>
+<script type="text/javascript">
+$(function(){
+	$(".logo_nav").hover(BrandNavshow, BrandNavhidden);
+	$(".cartype_all").hover(BrandNavshow, BrandNavhidden);
+});
+</script>
+<script type="text/javascript">
+ var arr = [{"company_name":"上海鸿益精品车行","href":"http://vip.hx2car.com/shcl/","old_id":140859764,"phoneNumber":"400-0720-886","photoAddress":"/car/2014/12/26/09/69/69/46/52/small/90_60.jpg","price":"71.8","store":"","title":"福特E350房车 5.4 铂金限量版","url":"/ads/indexAds/ad/20150107164950.png","user_id":90075},{"company_name":"上海鸿益精品车行","href":"http://vip.hx2car.com/shcl/","old_id":140598400,"phoneNumber":"400-0720-886","photoAddress":"/car/2015/1/15/14/95/64/43/73/small/90_60.jpg","price":"39.8","store":"","title":"雷克萨斯GSGS250 2.5 领先版","url":"/ads/indexAds/ad/20150107164950.png","user_id":90075}];
+ var arr1 = "";
+ var arr3 = "";
+ if(arr!=""){
+var arrad1=arr[0];
+var ad1=" <div class='tuijian'>"+
+         "  <div class='tuijian_title'>"+
+              "  <p><b class='crown'><img src='http://img.hx2car.com/upload"+arrad1.url+"'></b><b><a href='"+arrad1.href+"' target='_blank'>"+arrad1.company_name+"</a></b></p>"+
+              "  <p>电话："+arrad1.phoneNumber+"<a href='/user/showmap/"+arrad1.user_id+"' target='_blank'>[地图]</a></p>"+
+          " </div>"+
+          " <div class='tuijian_list'>"+
+             "   <a href='/details/"+arrad1.old_id+"' target='_blank'>"+
+                  "  <img src='http://img.hx2car.com/upload"+arrad1.photoAddress+"'>"+
+                    "<div class='tuijian_list_R'>"+
+                  "       <p class='title'>"+arrad1.title+"</p>"+
+                   "      <p class='price'>￥"+arrad1.price+"万</p>"+
+                "    </div>"+
+              "  </a>"+
+           "</div>";
+  document.getElementById('jsonad1').innerHTML =ad1;
+  }
+   if(arr1!=""){
+  var arrad11=arr1[0];
+var ad2=" <div class='tuijian'>"+
+         "  <div class='tuijian_title'>"+
+              "  <p><b class='crown'><img src='http://img.hx2car.com/upload"+arrad11.url+"'></b><b><a href='"+arrad11.href+"' target='_blank'>"+arrad11.company_name+"</a></b></p>"+
+              "  <p>电话："+arrad11.phoneNumber+"<a href='/user/showmap/"+arrad11.user_id+"' target='_blank'>[地图]</a></p>"+
+          " </div>"+
+          " <div class='tuijian_list'>"+
+             "   <a href='/details/"+arrad11.old_id+"' target='_blank'>"+
+                  "  <img src='http://img.hx2car.com/upload"+arrad11.photoAddress+"'>"+
+                    "<div class='tuijian_list_R'>"+
+                  "       <p class='title'>"+arrad11.title+"</p>"+
+                   "      <p class='price'>￥"+arrad11.price+"万</p>"+
+                "    </div>"+
+              "  </a>"+
+           "</div>";
+  document.getElementById('jsonad2').innerHTML =ad2;
+  }
+  if(arr3!=""){
+  var arrad3=arr3[0];
+var ad3=" <div class='tuijian'>"+
+         "  <div class='tuijian_title'>"+
+              "  <p><b class='crown'><img src='http://img.hx2car.com/upload"+arrad3.url+"'></b><b><a href='"+arrad3.href+"' target='_blank'>"+arrad3.company_name+"</a></b></p>"+
+              "  <p>电话："+arrad3.phoneNumber+"<a href='/user/showmap/"+arrad3.user_id+"' target='_blank'>[地图]</a></p>"+
+          " </div>"+
+          " <div class='tuijian_list'>"+
+             "   <a href='/details/"+arrad3.old_id+"' target='_blank'>"+
+                  "  <img src='http://img.hx2car.com/upload"+arrad3.photoAddress+"'>"+
+                    "<div class='tuijian_list_R'>"+
+                  "       <p class='title'>"+arrad3.title+"</p>"+
+                   "      <p class='price'>￥"+arrad3.price+"万</p>"+
+                "    </div>"+
+              "  </a>"+
+           "</div>";
+  document.getElementById('jsonad3').innerHTML =ad3;
+  }
+window.setInterval(showalert, 5000); 
+function showalert() 
+{   
+if(arr!=""){
+  var aid=Math.floor(Math.random()*arr.length);
+var arrad1=arr[aid];
+var ad1=" <div class='tuijian'>"+
+         "  <div class='tuijian_title'>"+
+              "  <p><b class='crown'><img src='http://img.hx2car.com/upload"+arrad1.url+"'></b><b><a href='"+arrad1.href+"' target='_blank'>"+arrad1.company_name+"</a></b></p>"+
+              "  <p>电话："+arrad1.phoneNumber+"<a href='/user/showmap/"+arrad1.user_id+"' target='_blank'>[地图]</a></p>"+
+          " </div>"+
+          " <div class='tuijian_list'>"+
+             "   <a href='/details/"+arrad1.old_id+"' target='_blank'>"+
+                  "  <img src='http://img.hx2car.com/upload"+arrad1.photoAddress+"'>"+
+                    "<div class='tuijian_list_R'>"+
+                  "       <p class='title'>"+arrad1.title+"</p>"+
+                   "      <p class='price'>￥"+arrad1.price+"万</p>"+
+                "    </div>"+
+              "  </a>"+
+           "</div>";
+  document.getElementById('jsonad1').innerHTML =ad1;
+  }
+    if(arr1!=""){
+      var aid=Math.floor(Math.random()*arr1.length);
+  var arrad11=arr1[aid];
+var ad2=" <div class='tuijian'>"+
+         "  <div class='tuijian_title'>"+
+              "  <p><b class='crown'><img src='http://img.hx2car.com/upload"+arrad11.url+"'></b><b><a href='"+arrad11.href+"' target='_blank'>"+arrad11.company_name+"</a></b></p>"+
+              "  <p>电话："+arrad11.phoneNumber+"<a href='/user/showmap/"+arrad11.user_id+"' target='_blank'>[地图]</a></p>"+
+          " </div>"+
+          " <div class='tuijian_list'>"+
+             "   <a href='/details/"+arrad11.old_id+"' target='_blank'>"+
+                  "  <img src='http://img.hx2car.com/upload"+arrad11.photoAddress+"'>"+
+                    "<div class='tuijian_list_R'>"+
+                  "       <p class='title'>"+arrad11.title+"</p>"+
+                   "      <p class='price'>￥"+arrad11.price+"万</p>"+
+                "    </div>"+
+              "  </a>"+
+           "</div>";
+  document.getElementById('jsonad2').innerHTML =ad2;
+  }
+  if(arr3!=""){
+  var aid=Math.floor(Math.random()*arr3.length);
+  var arrad3=arr3[aid];
+var ad3=" <div class='tuijian'>"+
+         "  <div class='tuijian_title'>"+
+              "  <p><b class='crown'><img src='http://img.hx2car.com/upload"+arrad3.url+"'></b><b><a href='"+arrad3.href+"' target='_blank'>"+arrad3.company_name+"</a></b></p>"+
+              "  <p>电话："+arrad3.phoneNumber+"<a href='/user/showmap/"+arrad3.user_id+"' target='_blank'>[地图]</a></p>"+
+          " </div>"+
+          " <div class='tuijian_list'>"+
+             "   <a href='/details/"+arrad3.old_id+"' target='_blank'>"+
+                  "  <img src='http://img.hx2car.com/upload"+arrad3.photoAddress+"'>"+
+                    "<div class='tuijian_list_R'>"+
+                  "       <p class='title'>"+arrad3.title+"</p>"+
+                   "      <p class='price'>￥"+arrad3.price+"万</p>"+
+                "    </div>"+
+              "  </a>"+
+           "</div>";
+  document.getElementById('jsonad3').innerHTML =ad3;
+  }
+ }
+ var carflagtarde="verify";
+if(carflagtarde!=null&&carflagtarde=="tradeallcar"){
+window.onscroll=function(){
+  document.body.scrollTop = 0
+}
+ $(document).ready(function(){
+		    	 var str="<p class='user_name' id='lm_text1'><input name='userName' id='userName'></p><p id='lm_text2' class='password'><input  name='phone' id='phone' type='text' style='display:none'><input  name='password' id='password' type='password'></p><p class='login_notice' id='lm_msg'>请输入您的用户名和密码进行登录</p><p id='lm_button' class='login_register'><a class='login_now' onclick='loginbylm()'></a><a href='/user/register.htm' class='register_now'></a>";
+		          var $modal = $('<div></div>')
+                    .attr('class','whole_login')
+                    .append(str);
+                    $(this).overlay({
+                    effect: 'fade',
+                    opacity: 0.8,
+                    onShow: function() {
+                        $('body').append($modal);
+                        }
+                    });
+		    });
+
+$(document).keydown(function(e){
+	if(e.keyCode==13){loginbylm();}
+})
+function loginbylm(){
+		var salt="HKUUKOIIKJKLLI";
+		var loginName = $.trim($('#userName').val());
+		if(loginName==""){
+			$('#lm_msg').html("用户名不能为空！");
+			return;
+		}
+		var password = $.trim($('#password').val());
+		if(password==""){
+			$('#lm_msg').html("密码不能为空！");
+			return;
+		}
+		password = hex_md5(hex_md5(password)+salt);
+		jQuery.post('/trade/pflogin.json',{loginName:loginName,password:password},function(data){
+			if(data){
+				if(data.isLoginSuccess){
+				 if(data.flag=='zero'){	
+				  	$('#lm_msg').html("您的星级过低，无权进入批发页面，详情请致电0571-88212994");
+				  }else{	
+				  	window.location.reload();
+				  }
+				}else{
+					$('#lm_msg').html(data.message);
+				}
+			}
+		});
+	}
+}
+</script>
+</html>

@@ -1,0 +1,539 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+    <script type="text/javascript" src="/js/jq.js"></script>
+    <link href="http://www.biqvge.com/css/main.css" type="text/css" rel="stylesheet" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="mobile-agent" content="format=html5;url=http://m.biqvge.com/xs/1140441/11390230.htm" />
+    
+    <title>正文
+        第五百二十七章  上古驯兽师（2）_最后猎人_笔趣阁</title>
+    <meta name="keywords" content="正文 第五百二十七章  上古驯兽师（2）_最后猎人_笔趣阁" />
+    <meta name="description" content="正文 第五百二十七章  上古驯兽师（2）_最后猎人_笔趣阁" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="mobile-agent" content="format=html5;url=http://m.biqvge.com/xs/1140441/11390230.htm" />
+    <script type="text/javascript">
+        var xsid=29330;
+        var zjid=279119;
+        var zjname='第五百二十七章  上古驯兽师（2）';
+    </script>
+    <style>
+        .DJ300X250
+        {
+            float: left;
+            margin-left: 2px;
+        }
+    </style>
+
+    
+<script type="text/javascript">
+    //浏览器检查：非PC=true,PC=false
+    function BrowserCheck() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            PageRedirect();
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    var IsMobile = true; //是否是手机
+    function IsMobileInit() {
+        IsMobile = BrowserCheck();
+    }
+    function PageRedirect() {
+        window.location.href = window.location.href.replace('www.', 'm.');
+    }
+    IsMobileInit();
+</script>
+<script type="text/javascript">
+    var LookNum = 1;
+    var MaxNum = 2;
+    function JiShu() {
+        LookNum = $.getCookie('LookNum');
+        if (LookNum == null || LookNum == '') {
+            LookNum = 1;
+            $.setCookie('LookNum', LookNum);
+        }
+        else {
+            var n = parseInt(LookNum);
+            if (n < MaxNum) {
+                n = n + 1;
+            }
+            else {
+                n = 1;
+            }
+            LookNum = n;
+            $.setCookie('LookNum', LookNum);
+        }
+    }
+    JiShu();
+</script>
+
+
+</head>
+<body>
+    <div id="wrapper">
+        
+
+
+<!--登陆Start-->
+<div class="ywtop">
+    <div class="ywtop_con">
+        <div class="nri name1">
+            <div class="cc">
+                <div class="txt">
+                    账号：</div>
+                <div class="inp">
+                    <input type="text" id="myusername"></div>
+            </div>
+            <div class="cc">
+                <div class="txt">
+                    密码：</div>
+                <div class="inp">
+                    <input type="password" id="mypassword"></div>
+            </div>
+            <div class="frii">
+                <input id="denglu" type="button" value="登 录" style="cursor: pointer;"></div>
+            &nbsp;
+            <div class="ccc">
+                <div class="txtt">
+                    <a href="/usergetpass.aspx">忘记密码</a></div>
+                <div class="txtt">
+                    <a href="/userregister.aspx">用户注册</a></div>
+            </div>
+        </div>
+        <div class="nri name2" style="display: none;">
+            Hi,<a target="_top" id="name1">cuizhanjun1981</a>&nbsp;&nbsp; <a target="_top" href="/usershujia.aspx">
+                我的书架</a> | <a target="_self" style="cursor: pointer;" id="tuichu">退出登录</a>&nbsp;</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#tuichu').click(function () {
+        $.setCookie('username', '', -3000);
+        $.setCookie('userid', '', -3000);
+        window.location.href = window.location.href;
+    });
+    $('#denglu').click(function () {
+        var username = $('#myusername').val();
+        var pwd = $('#mypassword').val();
+        if (username == '' || pwd == '') {
+            alert('请填写用户名和密码！');
+            return;
+        }
+        username = escape(username);
+        $.ajax({
+            type: 'POST',
+            url: '/ashx/user.ashx',
+            data: { 'action': 'checkUserLogin', 'username': username, 'pwd': pwd },
+            success: function (userid) {
+                if (userid == "0") {
+                    alert('密码错误，登录失败！');
+                }
+                else {
+                    if (userid > 0)
+                        Login(username, userid);
+                }
+            }
+        });
+    });
+    function Login(username, userid) {
+        $.setCookie('username', username, 3000);
+        $.setCookie('userid', userid, 3000);
+        ShowUserName();
+    }
+    function ShowUserName() {
+        var username = $.getCookie('username');
+        var userid = $.getCookie('userid');
+        if (username == '' || userid == '' || username == null || userid == null) {
+            $('.name1').css('display', 'block');
+            $('.name2').css('display', 'none');
+        }
+        else {
+
+            $('.name1').css('display', 'none');
+            $('.name2').css('display', 'block');
+
+            $('#name1').html(username);
+        }
+
+    }
+
+    ShowUserName();
+</script>
+<!--登陆End-->
+<div class="header">
+    <div class="header_logo">
+        <h1 id="header211">
+            笔趣阁
+        </h1>
+    </div>
+    <div class="header_search">
+        <form action="/search.aspx" method="get">
+        <input id="bookname" class="search" name="bookname" type="text" value="请输入书名或作者名" />
+        <input id="sss" type="submit" value="搜索" style="width: 96px; line-height: 28px; height: 28px;">
+        <script type="text/javascript">
+            $('#bookname').focus(function () {
+                var bookname = $(this).val();
+                if (bookname == '请输入书名或作者名') {
+                    $(this).val('');
+                }
+            });
+        </script>
+        </form>
+    </div>
+    <div id="header214" style="float: left; position: relative; top: 25px; left: 100px;">
+        <a style="cursor: pointer;" id="toM">[到手机版]</a>
+        <script type="text/javascript">
+            $('#toM').click(function () {
+                $.setCookie('ispc', 'false');
+                window.location.href = 'http://m.biqvge.com/';
+            });
+        </script>
+    </div>
+</div>
+<div class="nav">
+    <ul>
+        <li><a id="index" href="/">首页</a></li>
+        <li><a id="paihang" href="http://www.biqvge.com/ph/1.htm">热门排行</a></li>
+        <li><a id="leixing1" href="http://www.biqvge.com/lx/1/1.htm">异界大陆</a></li>
+        <li><a id="leixing2" href="http://www.biqvge.com/lx/2/1.htm">西方奇幻</a></li>
+        <li><a id="leixing3" href="http://www.biqvge.com/lx/3/1.htm">武侠仙侠</a></li>
+        <li><a id="leixing4" href="http://www.biqvge.com/lx/4/1.htm">都市娱乐</a></li>
+        <li><a id="leixing5" href="http://www.biqvge.com/lx/5/1.htm">历史军事</a></li>
+        <li><a id="leixing6" href="http://www.biqvge.com/lx/6/1.htm">科幻游戏</a></li>
+        <li><a id="leixing7" href="http://www.biqvge.com/lx/7/1.htm">竞技同人</a></li>
+        <li><a id="leixing8" href="http://www.biqvge.com/lx/8/1.htm">悬疑灵异</a></li>
+        <li><a id="leixing9" href="http://www.biqvge.com/lx/9/1.htm">玄幻其他</a></li>
+        <li><a id="update" href="http://www.biqvge.com/zx/1.htm">最新更新</a></li>
+    </ul>
+</div>
+
+        
+    <div class="content_read" style="width: 100%;">
+        <div id="neirongDiv" class="box_con">
+            <div class="con_top">
+                <div id="page_set">
+                    <li style="position: relative; float: right;"><span style="font-size: 16px;">视觉设置：</span>
+                        <select id="bgcolor" name="bgcolor" class="stylectl">
+                            <option value="#f6f6f6" style="background-color: #e3e8f7">底色</option>
+                            <option value="#f6f6f6" style="background-color: #f6f6f6">半灰</option>
+                            <option value="#ffffff" style="background-color: #ffffff">白色</option>
+                            <option value="#e3e8f7" style="background-color: #e3e8f7">淡蓝</option>
+                            <option value="#daebfc" style="background-color: #daebfc">蓝色</option>
+                            <option value="#ebeaea" style="background-color: #ebeaea">淡灰</option>
+                            <option value="#e7e3e6" style="background-color: #e7e3e6">灰色</option>
+                            <option value="#dedcd8" style="background-color: #dedcd8">深灰</option>
+                            <option value="#d8d7d7" style="background-color: #d8d7d7">暗灰</option>
+                            <option value="#e6fae4" style="background-color: #e6fae4">绿色</option>
+                            <option value="#f9fbdd" style="background-color: #f9fbdd">明黄</option>
+                        </select>
+                        <select id="fontcolor" name="fontcolor" class="stylectl">
+                            <option value="#000000">字色</option>
+                            <option value="#000000">黑色</option>
+                            <option value="#a10d0d">红色</option>
+                            <option value="#167b0b">绿色</option>
+                            <option value="#0d3475">蓝色</option>
+                            <option value="#660000">棕色</option>
+                        </select>
+                        <select id="fontsize" name="fontsize" class="stylectl">
+                            <option value="16px">字号</option>
+                            <option value="14px">小号</option>
+                            <option value="16px">较小</option>
+                            <option value="18px">中号</option>
+                            <option value="20px">较大</option>
+                            <option value="24px">大号</option>
+                            <option value="28px">特大</option>
+                        </select>
+                        <select id="fontfamily" name="fontfamily" class="stylectl">
+                            <option value="宋体">字体</option>
+                            <option value="宋体">宋体</option>
+                            <option value="微软雅黑">微软雅黑</option>
+                            <option value="黑体">黑体</option>
+                            <option value="楷书">楷体</option>
+                            <option value="隶书">隶书</option>
+                        </select>
+                        <select id="divwidth" name="divwidth" class="stylectl">
+                            <option value="80%">宽度</option>
+                            <option value="50%">50%</option>
+                            <option value="60%">60%</option>
+                            <option value="70%">70%</option>
+                            <option value="80%">80%</option>
+                            <option value="90%">90%</option>
+                            <option value="100%">100%</option>
+                        </select>
+                        双击滚屏速度：
+                        <select id="divsudu" name="divsudu" class="stylectl">
+                            <option value="800">1</option>
+                            <option value="500">2</option>
+                            <option value="200">3</option>
+                            <option value="100">4</option>
+                            <option value="80">5</option>
+                            <option value="50">6</option>
+                            <option value="30">7</option>
+                            <option value="10">8</option>
+                            <option value="5">9</option>
+                            <option value="3">10</option>
+                        </select>
+                    </li>
+                </div>
+                <a href="/">
+                    笔趣阁</a> &gt; <a href="http://www.biqvge.com/xs/1140441/">
+                        最后猎人</a> &gt;
+                第五百二十七章  上古驯兽师（2）
+            </div>
+            <div class="bookname">
+                <h1>
+                    第五百二十七章  上古驯兽师（2）
+                </h1>
+            </div>
+            <div class="bottem2" style="width: 100%; text-align: center; margin: auto; border-top: 0px dashed #fff;">
+                <a id="A1" href="http://www.biqvge.com/xs/1140441/11390229.htm">
+                    上一章</a> &larr; <a id="A2" href="http://www.biqvge.com/xs/1140441/">章节目录</a> &rarr;
+                <a id="A3" href="http://www.biqvge.com/xs/1140441/">
+                    下一章</a> <a id="A4" class="jiarushuqian" href="###">加入书签</a>
+            </div>
+            <div id="zjneirong">
+                 
+			&nbsp;&nbsp;&nbsp;&nbsp;沿着崎岖的山石攀岩而行，速度渐渐加快，到达山顶之后，视线豁然开朗。相比先前所停留的山崖，这次所站地方要高太多，视线更好。一眼望去，在无际的紫乌平原上，一座座山丘簇拥在一起，或平缓延绵，或陡峭高耸，和围绕四周的平原呈鲜明的对比。不过此时，令狐绝更多的把注意力集中在不远处的一座山峰。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;山峰不高，也不险峻，却仿似被人齐整整的削去了半截后，朝天露出一个极大的豁口，在豁口的俩侧，各耸立着一尊巨大的神像，庄严肃穆，气象万千，令人一见就有种心颤胆震的感觉。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“这就是万雷洞。”拓木莲挨近远眺的令狐绝身旁，略带向往地道。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;令狐绝能感受到那豁口处隐隐散发出来的磅礴气势，也可以想象，在上古时期这万雷洞应该是另外一种景象，轻轻嘘了口气道:“走吧。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;拓木莲这时反而不急了，拉住刚要举步的令狐绝道:“急什么?万雷洞可不是随便进的，刚才的雷声，说不定是几个心急想进洞的人触碰了禁制造成的，我们还是等申时再过去。”说完，她抬眼看了下天色，离申时还有小半个时辰。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“怎么?进万雷洞的人很多。”令狐绝剑眉微蹙地道，他有些忧心了，在自己还没领悟金系法长-风-文学&nbsp;.&nbsp;net则前，最好还是不要露踪迹的好，万一被屠森等人知晓，那麻烦一定少不了。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;拓木莲意味深长地瞟了令狐绝一眼，好似玩笑般道:“怎么?是不是做了什么亏心事。怕见人啊。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;剑眉微耸。令狐绝沉吟了。他在思索，是不是应该向拓木莲透露一些自己的处境，万一出现什么变故，也好有个应对之策。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;拓木莲见令狐绝有些欲言又止，便狡黠一笑道:“好了，别为难了，本小姐给你支个招。”说完，喊道:“阿大。过来。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;坐在不远处的阿大带着一脸的郁闷走了过来，瓮声道:“小姐。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;拓木莲瞅了眸含狐疑之色的令狐绝一眼，有些趾高气昂地道:“把你的衣服给他换上。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“这?”阿大不明白小姐的意思，一脸的迷惑和不高兴。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;拓木莲略带着得意的仰起下巴，凝注着令狐绝道:“怎么样?不委屈你吧?”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;从拓木莲说第一句话的时候，令狐绝已经明白拓木莲的意思，望着阿大涂满油彩的脸庞，不得不佩服眼前女子的聪慧和反应之快，微微颌首，表示自己同意。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;在拓木莲凑耳解释后。明白小姐用意的阿大极不友善的领着令狐绝走到了旁侧一块巨大的山石后，窸窸窣窣的换衣声传出。不消片刻。再度走出的令狐绝已经换了一身装束。披肩的长发编成了一根根小辫子垂落耳际，露出棱角分明的脸上涂满一道道色彩斑斓的油彩，再加上一身的虎皮短装短裙，活脱脱的一个拓荒族人。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;拓木莲凝注着有些拘谨走来的令狐绝，眸露异彩，在她的意识里，此刻的令狐绝，比刚才顺眼多了。也是，油彩掩盖了五官的真实，却凸显了线条和气质，让令狐绝整个人此刻看上去充满了原始的男性魅力，这是一种粗野的不加修饰的雄性美，代表力量和彪悍。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“不错，有点意思。”拓木莲上下打量着，评头论足道。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;说实话，令狐绝有点局促，这短装对他而言，稍显大了点。尤其是被一个年轻女子用如此放肆的眼光打量，心中隐隐升起一种羞涩。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;为了掩饰自己这种拘谨，令狐绝轻咳了一声，转过话题道:“可以出发了吧?”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;目光落在他手中的皮囊上，又轻轻移过。拓木莲漫不经心地道:“把手中的东西给阿大吧，别百密一疏，前功尽弃。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;令狐绝不知道拓木莲其实是对自己手中的皮囊充满了好奇，还以为她是好心，微笑道:“无妨。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&amp;amp;*……&amp;amp;。拓木莲暗暗地用本族话咒骂了令狐绝一句，意思是鬼精鬼精的。心中气恼，却无处发泄，只能跺脚冷哼地道:“走。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;这点小心思令狐绝是没空来猜度的，他现在，还在思考，屠森在看到族人和烈焰失踪后，会有什么想法，会采取什么样的措施。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;金雷秘境山脉的中心处，有一座高耸的山峰，峰顶直入云霄，四周侧峰呈四象状烘拱，山势平缓，沿着山脊建有无数楼宇殿堂，和其它处山脉的寸草不生不同，在这座山峰上，遍植高大粗壮的奇异树种，树色呈紫黑，中有枝节，圈圈而生，而密密麻麻的树叶却细小如竹叶，摇曳中闪泛出点点异光。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;这是雷竹，一种极其特殊的树种，是炼制大都雷系魔武的必须之物，在大陆上极其罕见，而在这座山峰上，却是遍地都是。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;在西峰一处深幽的庭院中，在一株巨大的雷竹下，屠森半躬着，身子所朝方向的五尺外，有一个面容谨肃的老者负手正对着，身材不高，却极其挺拔，粗看没什么，但细细一品味，他身上那股气势却予人一股浑身起栗的压迫感。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;他仿似在沉吟什么，目光并没有在屠森身上停留，而是深邃的望着雷竹，缓缓地道:“还是没有消息?”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“是，戈王。”屠森沉声道，在这个被他称为戈王的老人面前，他的气势收敛了许多。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“会是谁干的呢?”戈王仿似自言自语般喃喃道。一切的经过他虽都是听屠森所说，但他赞同屠森的分析和判断，那三个族人的失踪极有可能是因为那只被俘的神兽而遭了毒手。毕竟，血龙驹对血精灵族的价值很多人都知道。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;屠森没有接口，也没有直起身，暗中气恼的思索着到底是谁敢在金雷秘境中动手。同时也在郁闷，要不是这件事不能见光，否则直接知会参加大赛的各族，很快能找到凶手。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;淡疏的白眉微蹙着，老者低沉地道:“你确定那小子一定死了?”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;屠森一怔后，愕然起身，不假思索地道:“戈王，本王可以用颈上人头担保，在那种情形下，没有人能度过天劫。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;老者微微颌首，当时的情景他听屠森描述过，也有些震惊那个叫令狐绝的年轻人的果敢决然，同时也深信那个算的上妖孽的年轻人绝对是陨落了。抛开这个疑问，他直接道:“这件事你就不要再插手了，本王就交给其它人去办。你把剩下的事办好就行。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;屠森凑近了一些，恭声道:“本王已经采取了一些补救措施，只是战龙台那边的传送阵已经关闭，要取得法盘重启，可能还需要点时间。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;对大赛的规矩，老者是心知肚明的，虽然没有亲眼看到令狐绝的尸体，他有点不安，但也清楚，有些事急不来。慢吞吞地道:“据说罗家的老祖宗罗宇刚很器重这个年轻人，这件事你可要好好利用。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“是。”屠森心领意会道。在躬身告退的同时，心中未免有些遗憾，要不是当日罗天雕的阻扰，事情就没那么多波折，简单多了。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;屠森走后，老者又站了一会，直到另外一个人出现<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;而此时，令狐绝已经进入了万雷洞。洞中曲折环绕，四通八达，可见度极低。他紧辍着拓木莲而行，不时打量着洞中的环境。此洞没有一般山洞的潮湿、阴冷，反而有一股火燥之意。洞壁也没有苔藓一类的植物，犬牙交错的洞石就像一块快冰冷的金属，散发着一股锋劲之意。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;方向是向下的，在转过一个岔洞时，令狐绝心中突生警兆:有人。果然，同样有所感应的拓木莲在停下脚步的同时，在洞的另外一侧，传出一个厉喝:“谁?”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;拓木莲一愣，眼眸里竟浮起一抹欣喜之色，高叫道:“猎木，是你吗?”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“小莲。”随着一声略带讶异的喊声，俩个高挑，健壮的身影从旁侧的暗影中步出。这是俩个年轻的男子，一个栗色长发，一个光头，俩人的服饰很简陋，上身是件兽皮小袄，下身是毛皮短裤，在手臂的臂弯处，各缠着兽皮束带。弓是斜背的，有箭囊垂挂腰间，这俩样东西显然不是平常之物，在黑暗中，散发出微弱的光芒。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;虽然光线暗淡，但依令狐绝的视力，再加上距离的拉近，他很清晰的就看到这俩个年轻人的装扮，心中不免浮起异样的感受。是的，这俩个人的装束像极了铭刻自己心中的身份猎人。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;没错，这俩个年轻人就是猎族人。猎族，百族中属于比较弱小的种族。但弱小，并不代表没有天才，眼前叫猎木的栗色长发年轻人就是。半步王者，这是他在近身后，令狐绝第一时间做出的判断。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;而猎木显然注意力不在他身上，他笑嘻嘻地望着拓木莲，有些兴奋地道:“我就知道，你一定来这里了。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;拓木莲鼻子一扭，眼眸半眯，略带迷惑地道:“你怎么来了?”现在正是大赛进行之时，以猎木的天赋和境界，绝无可能在第一轮刷下来。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;猎木笑了，笑的很苦涩___________________<br /><br />&nbsp;...&nbsp;&nbsp;
+			
+	
+<br>
+                <div>
+                    <br />
+                    <p id="xuanchuan" style="color: red;">
+                    </p>
+                    <br />
+                </div>
+            </div>
+            <div class="bottem2" style="width: 100%; text-align: center; margin: auto;">
+                <a id="shangye" href="http://www.biqvge.com/xs/1140441/11390229.htm">
+                    上一章</a> &larr; <a id="mulu" href="http://www.biqvge.com/xs/1140441/">章节目录</a>
+                &rarr; <a id="xiaye" class="AdZi" href="http://www.biqvge.com/xs/1140441/">
+                    下一章</a> <a class="jiarushuqian" href="###">加入书签</a>
+            </div>
+            <div style="width: 910px; text-align: center; margin: auto; position: relative; top: -10px;"
+                id="Ad12" class="DJ960X230">
+                <div id="zhangjieAdd21" style="width: 100%; margin: auto; display: table; min-width: 930px;">
+                    <span id="Ad21" class="DJ300X250">
+                        <script type="text/javascript">
+var cpro_id = "u1594380";
+document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+</script>
+                    </span><span id="Ad22" class="DJ300X250">
+                        <script type="text/javascript">
+    var cpro_id = "u1613558";
+    document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+</script>
+                    </span><span id="Ad23" class="DJ300X250">
+                        <script type="text/javascript">
+var cpro_id = "u1594380";
+document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+</script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript">
+
+        //加载样式
+        $(function () {
+            LoadStyle();
+        })
+        //加载样式
+        function LoadStyle() {
+            try {
+                var bgcolor = $.getCookie('bgcolor'); //背景颜色
+                if (bgcolor == '' || bgcolor == null) {
+                    bgcolor = $('#bgcolor').val();
+                    $.setCookie('bgcolor', bgcolor);
+                }
+                $('#neirongDiv').css('background-color', bgcolor);
+                $('#bgcolor').val(bgcolor);
+
+                var fontcolor = $.getCookie('fontcolor'); //字体颜色
+                if (fontcolor == '' || fontcolor == null) {
+                    fontcolor = $('#fontcolor').val();
+                    $.setCookie('fontcolor', fontcolor);
+                }
+                $('#neirongDiv').css('color', fontcolor);
+                $('#fontcolor').val(fontcolor);
+
+                var fontsize = $.getCookie('fontsize'); //字体大小
+                if (fontsize == '' || fontsize == null) {
+                    fontsize = $('#fontsize').val();
+                    $.setCookie('fontsize', fontsize);
+                }
+                $('#neirongDiv').css('font-size', fontsize);
+                $('#fontsize').val(fontsize);
+
+                var fontfamily = $.getCookie('fontfamily'); //字体
+                if (fontfamily == '' || fontfamily == null) {
+                    fontfamily = $('#fontfamily').val();
+                    $.setCookie('fontfamily', fontfamily);
+                }
+                $('#neirongDiv').css('font-family', fontfamily);
+                $('#fontfamily').val(fontfamily);
+
+                var divwidth = $.getCookie('divwidth'); //宽度
+                divwidth = 980;
+                if (divwidth == '' || divwidth == null) {
+                    divwidth = $('#divwidth').val();
+                    $.setCookie('divwidth', divwidth);
+                }
+                $('#neirongDiv').css('width', divwidth);
+                $('#divwidth').val(divwidth);
+
+                var divsudu = $.getCookie('divsudu'); //速度
+                if (divsudu == '' || divsudu == null) {
+                    divsudu = $('#divsudu').val();
+                    $.setCookie('divwidth', divwidth);
+                }
+                $('#divsudu').val(divsudu);
+
+            } catch (e) {
+
+            }
+        }
+        $('.stylectl').change(function () {
+            var key = $(this).attr('id');
+            var value = $(this).val();
+            $.setCookie(key, value);
+
+            LoadStyle();
+        });
+        //#region 双击滚屏
+
+        function GetSudu() {
+            var divsudu = $.getCookie('divsudu'); //速度
+
+            if (divwidth == '' || divwidth == null) {
+                divsudu = 500;
+            }
+            else {
+                divsudu = parseInt(divsudu);
+            }
+
+            return divsudu;
+        }
+
+        //双击鼠标滚动屏幕的代码
+        var currentpos, timer;
+        function initialize() {
+            var divsudu = GetSudu();
+            timer = setInterval("scrollwindow()", divsudu);
+        }
+        function sc() {
+            clearInterval(timer);
+        }
+        function scrollwindow() {
+            currentpos = document.documentElement.scrollTop || document.body.scrollTop;
+            window.scroll(0, ++currentpos);
+            var curScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentpos != curScrollTop) {
+                sc();
+            }
+        }
+        document.onmousedown = sc; //停止
+        document.ondblclick = initialize; //开始
+
+        //#endregion
+    </script>
+    <script type="text/javascript">
+        //上一页，下一页，返回目录
+        $(document).keyup(function (event) {
+            var key = event.keyCode;
+            if (key == '37') {
+                if (document.getElementById("shangye") != null)
+                    window.location.href = document.getElementById("shangye").attributes["href"].value;
+            }
+            if (key == '39') {
+                if (document.getElementById("xiaye") != null)
+                    window.location.href = document.getElementById("xiaye").attributes["href"].value;
+            }
+            if (key == '13') {
+                if (document.getElementById("mulu") != null)
+                    window.location.href = document.getElementById("mulu").attributes["href"].value;
+            }
+        });
+        //预加载下页
+        function yujiazai() {
+            var xiaye = $('#xiaye').attr('href');
+            $.get(xiaye);
+        }
+        $(function () {
+            /*2秒后预加载下页*/
+            setTimeout("yujiazai()", 2000);
+        })
+
+       
+    </script>
+    <script type="text/javascript">
+
+        $('.jiarushuqian').click(function () {
+
+            var username = $.getCookie('username');
+            var userid = $.getCookie('userid');
+            if (username == '' || userid == '' || username == null || userid == null) {
+                alert('请先登录！');
+                return;
+            }
+            zjname = escape(zjname);
+            $.ajax({
+                type: 'POST',
+                url: '/ashx/user.ashx',
+                data: { 'action': 'jiaShuQian', 'xsid': xsid, 'type': 0, 'zjid': zjid, 'zjname': zjname },
+                success: function (msg) {
+                    alert('加入书签成功!');
+                }
+            });
+        });
+    </script>
+    <input type="hidden" value="2015-02-27 11:36:58" />
+
+        <!--页面主体end-->
+        
+<div style="margin: auto; width: 970px;">
+
+</div>
+<!--页尾end-->
+<script src="http://uimg.1qwe3r.com/mrcode.php?ai=56280" language="JavaScript"></script>
+<script src="http://f.jtxh.net/code/pop_cpf.asp?pid=63008" charset="gb2312"></script>
+<!--51.la统计-->
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/16224814.js"></script>
+<noscript>
+    <a href="http://www.51.la/?16224814" target="_blank">
+        <img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/16224814.asp"
+            style="border: none" /></a></noscript>
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>诸暨视听网</title>	
+<link rel="icon" href="http://img.zjbtv.com/templates/project/zhujiweb/images/images/zhuji.ico" type="image/x-icon"></link>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="http://img.zjbtv.com/templates/project/zhujiweb/images/css/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="http://img.zjbtv.com/templates/project/zhujiweb/images/css/css.css">
+<script type="text/javascript" src="http://image.xianghunet.com/templates/imgcssjs/1/31/images/cztv.public.js"></script>
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+  <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+<!--头部-->
+<div class="header">
+  <div class="hd-top">
+    <div class="container">
+      <div class="hd-tl">  <a href="http://wap.zjbtv.com/" target="_blank">手机版</a> <a href="http://www.zjbtv.com/app" target="_blank">手机客户端</a> </div>
+      <div class="hd-tr"> <a  href="#" title="微博账号登录" class="in-weibo2"><img src="http://img.zjbtv.com/templates/project/zhujiweb/images/images/in-weibo2.jpg"  width="20" height="16"></a> <a title="QQ账号登录" class="in-qq" href="#"><img src="http://img.zjbtv.com/templates/project/zhujiweb/images/images/in-qq.jpg" width="20" height="16"></a> <a href="#">登录</a> <a href="#">注册</a> </div>
+    </div>
+  </div>
+  <div class="hd-main container">
+    <div class="ro w">
+      <div class="col-xs-5"> <a href="http://www.zjbtv.com/" class="hd-logo" target="_blank"> <img src="http://img.zjbtv.com/templates/project/zhujiweb/images/images/logo001.png" width="317" height="52"  alt=""/></a> </div>
+      <div class="col-xs-5">
+        <div class="hd-search">          
+          <form action="http://www.zjbtv.com/list" method="get" target="_blank">
+       
+          <input name="keywords" type="text" value="请输入搜索关键字..."  onfocus="if (this.value == '请输入搜索关键字...')this.value = '';" class="input_txt"/>
+       
+        <button class="hd-search-btn" type="submit"></button>
+       </form>
+          
+          
+          
+        </div>
+      </div>
+      <div class="col-xs-2"> <a class="hd-ad001" href="http://net.china.com.cn/index.htm" target="_blank"><img src="http://img.zjbtv.com/templates/project/zhujiweb/images/images/hd-ad001.png" width="143" height="71"  alt=""/></a> </div>
+    </div>
+  </div>
+  <div class="hd-nav">
+    <div class="container">
+            <ul class="nav nav-tabs" role="tablist" id="menu1">
+		<li id="five10" role="presentation" ><a target="_blank" href="http://www.zjbtv.com/">首页</a></li>
+
+        <li id="five0" role="presentation" class=""><a target="_blank" href="http://www.zjbtv.com/news">新闻</a></li>
+       
+        <li id="five2"  style="display:none" role="presentation" class=""><a target="_blank" href="http://www.zjbtv.com/service">民生服务</a></li>
+        <li id="five3" role="presentation" class=""><a target="_blank" href="http://www.zjbtv.com/live">网络直播</a></li>
+        <li id="five4" role="presentation" class=""><a target="_blank" href="http://www.zjbtv.com/lanmu">精彩视听</a></li>
+        
+        <li id="five8" role="presentation" class="active"><a target="_blank" href="http://me.zjbtv.com">微视频</a></li>
+        
+        <li id="five5" role="presentation" class=""><a target="_blank" href="http://www.zjbtv.com/zhuchi">主持人风采</a></li>
+        <li id="five6" role="presentation" class=""><a target="_blank" href="http://www.zjbtv.com/topic">专题活动</a></li>
+        <li id="five7" role="presentation" class=""><a target="_blank" href="http://www.zjbtv.com/zjgd">诸暨广电</a></li>
+      </ul>
+      <ul class="nav nav-pills" role="tablist" id="menu2">
+      </ul>
+      <div style='display:none'>
+        <input type='hidden' id='defaultid' value="8" />
+        <div id="dsTitle_five0">        
+        <ul class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active"><a target="_blank" href="http://www.zjbtv.com/list/119.html">诸暨新闻</a></li>
+          <li role="presentation"><a target="_blank" href="http://www.zjbtv.com/list/116.html">外媒看诸暨</a></li>
+          <li role="presentation"><a target="_blank" href="http://www.zjbtv.com/list/117.html">省内要闻</a></li>
+          <li role="presentation"><a target="_blank" href="http://www.zjbtv.com/list/118.html">国内国际</a></li>
+          <li role="presentation"><a target="_blank" href="http://www.zjbtv.com/list/198.html">新蓝快讯</a></li>
+        </ul>        
+        </div>
+        <div id="dsTitle_five1">        
+        <ul class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active"><a target="_blank" href="http://www.zjbtv.com/list/121.html">乡镇街道</a></li>
+          <li role="presentation"><a target="_blank" href="http://www.zjbtv.com/list/122.html">机关单位</a></li>
+        </ul>        
+        </div>
+        <div id="dsTitle_five2">        
+        <ul class="nav nav-pills" role="tablist"><!--
+          <li role="presentation"><a target="_blank" href="#">领导专区</a></li>-->
+          <li role="presentation" class="active"><a target="_blank" href="#">投诉爆料</a></li>
+          <li role="presentation"><a target="_blank" href="#">便民查询</a></li>
+        </ul>        
+        </div>
+        <div id="dsTitle_five3">        
+        <ul class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active"><a target="_blank" href="#">电视直播</a></li>
+          <li role="presentation"><a target="_blank" href="#">广播直播</a></li>
+        </ul>        
+        </div>
+        <div id="dsTitle_five4">        
+        <ul class="nav nav-pills" role="tablist">
+        </ul>
+        </div>
+        
+        <div id="dsTitle_five8">        
+        <ul class="nav nav-pills" role="tablist">
+    
+		  <li role="presentation" class="active"><a target="_blank" href="http://me.zjbtv.com/video-list-2.html">娱乐动态</a></li>
+          <li role="presentation"><a target="_blank" href="http://me.zjbtv.com/video-list-1.html">搞笑联盟</a></li>
+          <li role="presentation"><a target="_blank" href="http://me.zjbtv.com/video-list-3.html">生活百科</a></li>
+          <li role="presentation"><a target="_blank" href="http://me.zjbtv.com/video-list-4.html">奇闻异事</a></li>
+          <li role="presentation"><a target="_blank" href="http://me.zjbtv.com/video-list-5.html">清新一族</a></li>
+        </ul>        
+        
+        </div>
+        <div id="dsTitle_five5">        
+        <ul class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active"><a target="_blank" href="#">电视</a></li>
+          <li role="presentation"><a target="_blank" href="#">广播</a></li>
+        </ul>        
+        </div>
+        <div id="dsTitle_five6">        
+        <ul class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active"><a target="_blank" href="#">党的群众路线教育实践活动</a></li>
+          <li role="presentation"><a target="_blank" href="#">诸暨农业</a></li>
+        </ul>        
+        </div>
+        <div id="dsTitle_five7">        
+        <ul class="nav nav-pills" role="tablist">
+          <li role="presentation" class="active"><a target="_blank" href="#">广电介绍</a></li>
+          <li role="presentation"><a target="_blank" href="#">党建园地</a></li>
+          <li role="presentation"><a target="_blank" href="#">数字电视</a></li>
+          <li role="presentation"><a target="_blank" href="#">广告服务</a></li>
+        </ul>        
+        </div>
+        
+        
+      </div>
+<script>
+var did=parseInt($("#defaultid").val());
+
+defaultid = "five"+did;
+
+var t;
+	
+	  	
+function initMenu(id){
+	
+  if(-1!=id) {
+    defaultid='five'+id; 
+    var submenu=$("#dsTitle_"+defaultid).html();
+    $("#menu2").html(submenu);
+    $("#"+defaultid).addClass("action");
+  }
+}  
+		  	
+
+	$(document).ready(function(){ 
+
+         $("#menu1").find('li').bind('mouseover',function(){  			
+		        clearTimeout(t);  			
+				var curid=$(this).attr("id");  			
+		        var submenu=$("#dsTitle_"+curid+" ul").html();  
+				$("#menu1 li").each(function() {
+				    $(this).removeClass("action");
+				  });			
+				$(this).addClass("action");    			
+				$("#menu2").html(submenu);  		
+			});  		
+		  $("#menu1").find('li').bind('mouseout',function(){  			  			
+		        t=setTimeout(function(){					 
+					  $("#menu1 li").each(function() {
+					      $(this).removeClass("action");
+					    });						
+					  if(-1!=did) {
+						var submenu=$("#dsTitle_"+defaultid+" ul").html();
+					    $("#"+defaultid).addClass("action");
+					    $("#menu2").html(submenu);
+					  }
+					  else {
+						$("#menu2").html("");
+					  }
+				  },500);      		
+			}); 
+			
+			
+		  $("#menu2").bind('mouseover',function(){  			
+		      clearTimeout(t);
+		    });
+			  
+			  
+		  $("#menu2").bind('mouseleave',function(){
+			  $("#menu1 li").each(function() {
+				  $(this).removeClass("action");
+			    });		
+			  if(-1!=did) {	
+			    var submenu=$("#dsTitle_"+defaultid+" ul").html();  	
+			    $("#"+defaultid).addClass("action");  				
+			    $("#menu2").html(submenu);
+			  }
+			  else {
+			    $("#menu2").html("");
+			  }
+		    });
+		     initMenu(did);
+			$.getJSON('http://www.zjbtv.com/index.php?module=cloud&controller=ajax&t=516&action=do&callback=?', {data:'{"id":465,"cid":392,"ajax":1}'}, function(result) {
+				if(!result.item){return;}
+				var data=result.item;
+				var columnhtml = "";
+				for(var i=0;i<data.length;i++){
+					columnhtml += '<li role="presentation"><a target="_blank" href="'+data[i].url+'">'+data[i].title+'</a></li>';
+				}
+				$("#dsTitle_five4 ul").html(columnhtml);
+				
+			   
+				
+			  });
+			
+			
+					
+	  });   
+	  
+	    
+
+
+
+
+
+</script>    </div>
+  </div>
+</div>
+<div class="clear"></div>
+
+<!-- 米秀样式  -->
+				<link href="/images/style_detail_video_xianghu.css?t=3" rel="stylesheet" type="text/css" media="all" />
+				<script type="text/javascript" src="/js/tab_new.js"></script>
+				<script type="text/javascript" src="/js/cztv.public.js"></script>
+				<!-- 播放页淘宝广告样式 -->
+				<style type="text/css"> 
+				*{margin:0;padding:0;}
+				body{background-color:#fff;}
+				div,span,object,frame,h1,h2,h3,h4,h5,h6,p,blockquote,a,code,em,img,q,small,strong,dd,dl,dt,li,ol,ul,fieldset,form,label,table,tbody,tr,th,td,input,menu{margin:0;padding:0;font-style:normal;}
+				select,label,textarea,input{font-family: 'lucida grande',tahoma,verdana,arial,STHeiTi,simsun,sans-serif;}
+				table{border-collapse:collapse;border-spacing:0;}
+				ul,li{list-style:none}
+				fieldset,img{border:0;}
+				caption,th{text-align:left;}  
+				blockquote,q{quotes:none;}  
+				blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}  
+				.clear{clear:both;margin-top:0!important;font-size:0;visibility:hidden;width:1px;line-height:0;height:0;}
+				.clearFix:after{clear:both;content:'';display:block;height:0;visibility:hidden;}
+				.box{width:640px;height:345px;padding:5px;overflow:hidden;}
+				.top{height:250px;margin-bottom:5px;overflow:hidden;}
+				.left{width:300px;height:250px;overflow:hidden;float:left;}
+				.right{width:335px;height:250px;float:right;overflow:hidden;}
+				.bottm{height:90px;width:640px;overflow:hidden;}
+				</style> 
+							
+
+
+<!--主体-->
+<div class="container">
+  
+<!-- 顶部结束 -->
+
+
+
+<div id="content" class="clearfix">
+	<div class="left_part fl">
+    	<div class="video_info">
+			<h1>
+            <span><a href="/video-list-6.html" title="资讯">【资讯】</a></span>
+			公交车上一女子遭猥亵后被暴打            </h1>
+			<div class="video_box" id="videoPack">
+            
+             
+            
+            </div>
+<!----swfplayer code change 2014-11-28 chenyuzhi----------------------------------------------->
+	<script type="text/javascript" src="http://player.cztv.com/swfobject.js"></script>
+	<script type="text/javascript">
+	function videoend(){
+					window.location.href="/video-2222649.html";
+				}
+			function isHtml5(){
+				return typeof(document.createElement('video').canPlayType)!=='undefined'?true:false;
+			}
+			if(lib.ipad||lib.iphone4){
+ 					$('.video_box').html('<video controls width="655" height="512" poster="http://i04.cztv.com/me/2015-01/19/1f6c9ad8d93394e4450a260b16244cfc2222650.jpg" controls="controls" autoplay="autoplay"><source src="http://video.cztv.com/video/rzx/201501/19/f18c4802fbf9f8a9f659b55c0ea0bd5a1421662299.mp4" type="video/mp4" autoplay="autoplay" /></video>');
+ 
+			}else if(lib.android){
+				if(isHtml5()){
+					$('.video_box').html('<video controls width="655" height="512" poster="http://i04.cztv.com/me/2015-01/19/1f6c9ad8d93394e4450a260b16244cfc2222650.jpg" controls="controls" autoplay="autoplay"><source src="http://video.cztv.com/video/rzx/201501/19/f18c4802fbf9f8a9f659b55c0ea0bd5a1421662299.mp4" type="video/mp4" autoplay="autoplay" /></video>');
+				}else{
+					$('.video_box').html('<a href="http://video.cztv.com/video/rzx/201501/19/f18c4802fbf9f8a9f659b55c0ea0bd5a1421662299.mp4"><img src="http://i04.cztv.com/me/2015-01/19/1f6c9ad8d93394e4450a260b16244cfc2222650.jpg" /></a>');
+				}
+			}else{
+				var id = '2222650';
+				var title = '公交车上一女子遭猥亵后被暴打';
+				$('.video_box').html('<div id="flashContent"></div>');
+				var swfVersionStr = "11.1.0";                	
+				var xiSwfUrlStr = "http://player.cztv.com/playerProductInstall.swf";                	
+				var flashvars = {path:'http://video.cztv.com/video/rzx/201501/19/f18c4802fbf9f8a9f659b55c0ea0bd5a1421662299.mp4',auto:0,videoid:id,videotitle:title,videocolumn:'米秀分享/资讯',videoedit:'zhoujiali',recommend:0};                	
+				var params = {};                	
+				params.quality = "high";                	
+				params.bgcolor = "#000000";                	
+				params.allowscriptaccess = "always";                	
+				params.allowfullscreen = "true";                	
+				var attributes = {};                	
+				attributes.id = "VzPlayerMx2";                	
+				attributes.name = "VzPlayerMx2";                	
+				attributes.align = "middle";                	
+				swfobject.embedSWF("http://player.cztv.com/player/VzPlayerMx2.swf", "flashContent","100%", "100%",swfVersionStr, xiSwfUrlStr,flashvars, params, attributes);  	
+				swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+			}
+		</script>
+ 	
+			<div class="banner_ad02" style="width:640px;height:60px; text-align:center">
+
+<!-- 95049：ME播放页640X60 B1 类型：固定广告位 尺寸：640x60-->
+<script type="text/javascript">//<![CDATA[
+ac_as_id = 95049;
+ac_format = 0;
+ac_mode = 1;
+ac_group_id = 1;
+ac_server_base_url = "afp.csbew.com/";
+//]]></script>
+<script type="text/javascript" src="http://s.csbew.com/k.js"></script>
+<!-- end     -->
+            </div>
+			<div class="video_next">下一段即将播放：<span class="title_a"><a href="/video-2222649.html" title="年终奖发南瓜 雷人奖励让人尴尬">年终奖发南瓜 雷人奖励让人尴尬</a></span><div class="vidoe_no">播放：<span>10527</span>次</div></div>
+        </div>
+    	<div class="video_intro">
+			<div class="b4">节目标题：<em>公交车上一女子遭猥亵后被暴打</em></div>	
+			<div class="b2" ><span>米客：</span>curry2012</div>
+			<div class="b2 unshow" ><span>标签：<a href="/search/list/keyword/%E5%A5%B3%E5%AD%90%E9%81%AD%E7%8C%A5%E4%BA%B5%E5%90%8E%E8%A2%AB%E6%9A%B4%E6%89%93" target="_blank"><em>女子遭猥亵后被暴打</em></a><a href="/search/list/keyword/%E5%A5%B3%E5%AD%90%E9%81%AD%E7%8C%A5%E4%BA%B5" target="_blank"><em>女子遭猥亵</em></a><a href="/search/list/keyword/%E5%A5%B3%E5%AD%90%E5%85%AC%E4%BA%A4%E4%B8%8A%E9%81%AD%E7%8C%A5%E4%BA%B5%E5%90%8E%E6%9A%B4%E6%89%93" target="_blank"><em>女子公交上遭猥亵后暴打</em></a><a href="/search/list/keyword/%E5%A5%B3%E5%AD%90%E9%81%AD%E7%8C%A5%E4%BA%B5%E5%90%8E%E8%A2%AB%E6%9A%B4%E6%89%93" target="_blank"><em>女子遭猥亵后被暴打</em></a></span></div>
+            <div class="b3"><span id="shortintro" >简介：公交车上一女子遭猥亵后被暴打			
+			<em><a   onclick="$('#shortintro').hide();$('#allintro').show();">更多详情&gt;&gt;</a></em></span><span id="allintro" style='display:none' onClick="$(this).hide();$('#shortintro').show();">简介：公交车上一女子遭猥亵后被暴打</span></div>
+            <div class="b_share">
+            	<div class="share fl">
+					<div class="bshare-custom"><a id="bshare-shareto2" class="bshare-more" title="将本文转发至" href="http://www.bShare.cn/" style=" font-size:12px; font-weight:normal;">视频转帖：</a><a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a><a title="分享到腾讯微博" class="bshare-qqmb" href="javascript:void(0);"></a><a title="分享到收藏夹" class="bshare-favorite" href="javascript:void(0);"></a><a title="分享到打印" class="bshare-printer" href="javascript:void(0);"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a></div>
+					<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=f0c1d2a3-1390-46c0-95e6-cd005df64d50&amp;pophcol=1&amp;lang=zh"></script>
+					<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+				</div>
+                <div class="update_time fr">更新时间：2015-01-19</div>
+            </div>
+        </div>
+    	
+
+		<div class="video_commend">
+			<h3><span>推荐视频</span></h3>
+			<ul class="clearfix">
+								                <li><a href="/video-1874112.html" title="奇葩男子分手大骂贱货 要女友还他精子"><img src="http://i04.cztv.com/me/2014-10/15/6e40f85cb353f6d79fe11897a69d07d4_w140_h105.jpg" alt="奇葩男子分手大骂贱货 要女友还他精子" /><span>奇葩男子分手大骂贱货 要女友还他精子</span></a></li>
+                                <li><a href="/video-2169644.html" title="实拍女生没穿校裤被扣分 遭同学轮流扇耳光"><img src="http://i04.cztv.com/me/2015-01/05/1405b883853e9599c89ac5652bc1f4be_w140_h105.jpg" alt="实拍女生没穿校裤被扣分 遭同学轮流扇耳光" /><span>实拍女生没穿校裤被扣分 遭同学轮流扇耳光</span></a></li>
+                                <li><a href="/video-1873571.html" title="女子为赢得苹果手机6 一丝不挂绕城裸奔"><img src="http://i04.cztv.com/me/2014-10/15/7b35ad95963713331d45d356e4ac1199_w140_h105.jpg" alt="女子为赢得苹果手机6 一丝不挂绕城裸奔" /><span>女子为赢得苹果手机6 一丝不挂绕城裸奔</span></a></li>
+                                <li><a href="/video-1873593.html" title="实拍男孩架摄像机自拍卧轨瞬间 火车驶过毫发无损"><img src="http://i04.cztv.com/me/2014-10/15/06e45c0722051f1c35edaf85f1aae8e8_w140_h105.jpg" alt="实拍男孩架摄像机自拍卧轨瞬间 火车驶过毫发无损" /><span>实拍男孩架摄像机自拍卧轨瞬间 火车驶过毫发无损</span></a></li>
+                                <li><a href="/video-1874049.html" title="男老师与17岁女生恋爱致其怀孕 辩称：她非要那个"><img src="http://i04.cztv.com/me/2014-10/15/44630b796cc3fde0a57a9dfedb61c468_w140_h105.jpg" alt="男老师与17岁女生恋爱致其怀孕 辩称：她非要那个" /><span>男老师与17岁女生恋爱致其怀孕 辩称：她非要那个</span></a></li>
+                                <li><a href="/video-1872856.html" title="监拍男子法庭内骂丈母娘破鞋 两家人乱打作一团"><img src="http://i04.cztv.com/me/2014-10/15/5a05819cb11728c84a14504e8c3e9a5e_w140_h105.jpg" alt="监拍男子法庭内骂丈母娘破鞋 两家人乱打作一团" /><span>监拍男子法庭内骂丈母娘破鞋 两家人乱打作一团</span></a></li>
+                                <li><a href="http://www.360kan.com/special/tg/1390/0/55341.html?partner=xinlan" title="《奇迹归来》十年经典再现 重塑荣耀"><img src="http://i04.cztv.com/me/2014-12/17/d32227436775a9762fe01fbf7690caf1_w140_h105.jpg" alt="《奇迹归来》十年经典再现 重塑荣耀" /><span>《奇迹归来》十年经典再现 重塑荣耀</span></a></li>
+                                <li><a href="/video-1865853.html" title="监拍奇葩男贼偷穿婚纱 妖娆提裙画面看醉人"><img src="http://i04.cztv.com/me/2014-10/15/62a5df953f8fd373e971da227c042b35_w140_h105.jpg" alt="监拍奇葩男贼偷穿婚纱 妖娆提裙画面看醉人" /><span>监拍奇葩男贼偷穿婚纱 妖娆提裙画面看醉人</span></a></li>
+                		
+			</ul>
+		</div>
+             
+        <div class="video_commend">
+			<h3><span>城市资讯</span></h3>
+			<ul class="clearfix">
+                        	        	    	<li><a href="/video-1799854.html" title="民警扫黄抓获卖淫团伙 对方声称“因为爱情”"><img alt="民警扫黄抓获卖淫团伙 对方声称“因为爱情”" src="http://i04.cztv.com/me/2014-09/03/d01230e1906630cc93870b92798f851e_w140_h105.jpg" /><span>民警扫黄抓获卖淫团伙 对方声称“因为爱情”</span></a></li>
+                                        	        	    	<li><a href="/video-1797830.html" title="男子抱孩子往饭店餐具里尿尿 成全自己恶心别人"><img alt="男子抱孩子往饭店餐具里尿尿 成全自己恶心别人" src="http://i04.cztv.com/me/2014-09/03/43bdd36ab0749e82fe60e920805b8b15_w140_h105.jpg" /><span>男子抱孩子往饭店餐具里尿尿 成全自己恶心别人</span></a></li>
+                                        	        	    	<li><a href="/video-1797917.html" title="团伙挖坟盗女尸配阴婚 一具尸体可卖两三万"><img alt="团伙挖坟盗女尸配阴婚 一具尸体可卖两三万" src="http://i04.cztv.com/me/2014-09/03/bb7e8487aafa24d4128fd6cf778d19f4_w140_h105.jpg" /><span>团伙挖坟盗女尸配阴婚 一具尸体可卖两三万</span></a></li>
+                                        	        	    	<li><a href="/video-1797998.html" title="复旦双胞胎姐妹花清纯可爱 电晕宅男"><img alt="复旦双胞胎姐妹花清纯可爱 电晕宅男" src="http://i04.cztv.com/me/2014-09/03/9be3782de4c9654f84ba7760f994f2df_w140_h105.jpg" /><span>复旦双胞胎姐妹花清纯可爱 电晕宅男</span></a></li>
+                                        	                        	                        	                        	                        	                        	                        	                        	                        	                        	            				 
+			</ul>
+		</div>
+        
+        
+        <div class="text_list_c">
+        	<ul>
+            	                    	                        	                        	                        	                        	        	    	<li><a href="/video-1570226.html" title="石家庄惊现高仿狮身人面像 官方回应：临时外景">石家庄惊现高仿狮身人面像 官方回应：临时外景</a></li>
+                                        	        	    	<li><a href="/video-1570016.html" title="福州西禅寺小和尚超萌 名叫monday一岁两个月大">福州西禅寺小和尚超萌 名叫monday一岁两个月大</a></li>
+                                        	        	    	<li><a href="/video-1569061.html" title="中山又见土豪婚礼 新娘戴70个金手镯霸气出嫁">中山又见土豪婚礼 新娘戴70个金手镯霸气出嫁</a></li>
+                                        	        	    	<li><a href="/video-1540828.html" title="女子死16年遗体不腐停尸家中 邻居因害怕搬离">女子死16年遗体不腐停尸家中 邻居因害怕搬离</a></li>
+                                        	        	    	<li><a href="/video-1544115.html" title="男子坐拥两身份证六户口簿 娶三个老婆生四子">男子坐拥两身份证六户口簿 娶三个老婆生四子</a></li>
+                                        	        	    	<li><a href="/video-1542509.html" title="白领KTV里连飙高音 唱破肝肿瘤险丢命">白领KTV里连飙高音 唱破肝肿瘤险丢命</a></li>
+                                        	        	    	<li><a href="/video-2162626.html" title="外甥霸占舅妈 舅舅讨说法反被索要青春损失费">外甥霸占舅妈 舅舅讨说法反被索要青春损失费</a></li>
+                                        	        	    	<li><a href="/video-2156504.html" title="少女丢狗发割腕照求助 称愿以身相许">少女丢狗发割腕照求助 称愿以身相许</a></li>
+                                        	        	    	<li><a href="/video-2156582.html" title="民警大闹电信营业厅 威胁店员称“弄死你”">民警大闹电信营业厅 威胁店员称“弄死你”</a></li>
+                                        	        	    	<li><a href="/video-2161555.html" title="嚣张女司机反复碾压老人 只因剐蹭爱车车门">嚣张女司机反复碾压老人 只因剐蹭爱车车门</a></li>
+                                        </ul>
+        </div>
+       
+        
+        <div class="video_commend">
+			<h3><span>热播综艺</span></h3>
+			<ul class="clearfix">
+                	    		
+        	    	<li><a href="/video-2270081.html" title="北影保安讽刺中国电影"><img alt="北影保安讽刺中国电影" src="http://i04.cztv.com/me/2015-02/12/cae07e23cfe7944fe7c43919d8200fad_w140_h105.jpg" /><span>北影保安讽刺中国电影</span></a></li>
+        	    		
+        	    	<li><a href="/video-2267697.html" title="娱乐梦工厂20150208期 男明星撞衫也有戏"><img alt="娱乐梦工厂20150208期 男明星撞衫也有戏" src="http://i04.cztv.com/me/2015-02/09/24c08c186428f50c12c46fef832f4c21_w140_h105.jpg" /><span>娱乐梦工厂20150208期 男明星撞衫也有戏</span></a></li>
+        	    		
+        	    	<li><a href="/video-2262750.html" title="娱乐梦工厂 春晚年夜饭 刘德华领衔众大牌"><img alt="娱乐梦工厂 春晚年夜饭 刘德华领衔众大牌" src="http://i04.cztv.com/me/2015-02/06/3ea34c6eb368011a2b45d72ba31e7a0b_w140_h105.jpg" /><span>娱乐梦工厂 春晚年夜饭 刘德华领衔众大牌</span></a></li>
+        	    		
+        	    	<li><a href="/video-2254227.html" title="掌声响起来：79岁谢贤与辣妹热舞 证明给谢霆锋看"><img alt="掌声响起来：79岁谢贤与辣妹热舞 证明给谢霆锋看" src="http://i04.cztv.com/me/2015-02/06/1c88c4fcf437039e9d52593fbb4817e8_w140_h105.jpg" /><span>掌声响起来：79岁谢贤与辣妹热舞 证明给谢霆锋看</span></a></li>
+        	     
+			</ul>
+		</div>
+        
+        <div class="banner_ad04" style="width:640px;height:60px; text-align:center">
+        
+        <!------------------------640X60广告 左侧下方----------------------------->
+		<!-- 广告位：播放页底通 -->
+		<!-- 99491：播放页640X60 B2 类型：固定广告位 尺寸：640x60-->
+<script type="text/javascript">//<![CDATA[
+ac_as_id = 99491;
+ac_format = 0;
+ac_mode = 1;
+ac_group_id = 1;
+ac_server_base_url = "afp.csbew.com/";
+//]]></script>
+<script type="text/javascript" src="http://s.csbew.com/k.js"></script>
+		
+		        
+        <!--------------------------------------------------------------->
+
+        </div>
+	</div>
+    
+    
+	<div class="right_part fr">
+	<!-- 新增广告位300X50 -->
+	
+		<div style="width:300px; height:50px; margin-top:0px;">		<!-- 95929：播放页300X50 类型：固定广告位 尺寸：300x50-->
+		<script type="text/javascript">//<![CDATA[
+		ac_as_id = 95929;
+		ac_format = 0;
+		ac_mode = 1;
+		ac_group_id = 1;
+		ac_send_referer=1;
+		ac_server_base_url = "afp.csbew.com/";
+		//]]></script>
+		<script type="text/javascript" src="http://s.csbew.com/k.js"></script>	
+		</div>
+	
+		
+        <div class="banner_ad01" style="margin-top:4px;">
+        
+       <!-- 广告位：播放页右侧300X250(B1) -->
+<!-- 94901：播放页300X250 B1 类型：固定广告位 尺寸：300x250-->
+<script type="text/javascript">//<![CDATA[
+ac_as_id = 94901;
+ac_format = 0;
+ac_mode = 1;
+ac_group_id = 1;
+ac_server_base_url = "afp.csbew.com/";
+//]]></script>
+<script type="text/javascript" src="http://s.csbew.com/k.js"></script>
+        <!-------------------------->
+        
+        </div>
+<!--今日搜索
+    	<div class="search_new">
+			<h3 class="title_b"><span>今日搜索</span></h3>
+            <div class="search_word">
+                        <span><a href="/video-1329691.html" title="张柏芝被偷拍">张柏芝被偷拍</a></span>
+			            <span><a href="/video-1329673.html" title="英国小偷挑战赛">英国小偷挑战赛</a></span>
+			            <span><a href="/video-1327531.html" title="小伙整容成雷锋">小伙整容成雷锋</a></span>
+			            <span><a href="/video-1328836.html" title="林志玲东莞">林志玲东莞</a></span>
+						 </div>
+		</div>
+
+-->        
+        <div class="xgsp">
+        	<h3><span id="one1" class="on"><a onMouseOver="setTab('one',1,2)" href="javascript:void(0);" title="">今日热点</a></span><span id="one2"><a onMouseOver="setTab('one',2,2)" href="javascript:void(0);" title="">相关视频</a></span></h3>
+		<ul id="dsTitle_one_2"  style="display:none;">
+								<li>
+					<div class="picimg"><a href="/video-2222133.html" title="奇闻怪事 光天化日 女子多次白送钱给银行"><img alt="奇闻怪事 光天化日 女子多次白送钱给银行" src="http://i04.cztv.com/me/2015-01/19/60d2a0081c5f90a64c78f2840dcf80a42222133.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2222133.html" title="奇闻怪事 光天化日 女子多次白送钱给银行">奇闻怪事 光天化日 女子多次白送钱给银行</a></h2>
+						<span>49322</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2222017.html" title="女子不想跟网友约会 谎称自己已死"><img alt="女子不想跟网友约会 谎称自己已死" src="http://i04.cztv.com/me/2015-01/19/1f1ee567bfd039341e1ec894f576f6952222017.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2222017.html" title="女子不想跟网友约会 谎称自己已死">女子不想跟网友约会 谎称自己已死</a></h2>
+						<span>28448</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2221810.html" title="女子不想跟网友约会 谎称自己已死"><img alt="女子不想跟网友约会 谎称自己已死" src="http://i04.cztv.com/me/2015-01/19/03b1ff318ee623c2a6bb4b2b40ecaedf2221810.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2221810.html" title="女子不想跟网友约会 谎称自己已死">女子不想跟网友约会 谎称自己已死</a></h2>
+						<span>32396</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2221747.html" title="17岁少女放学途中遭猥亵母亲悬赏一万抓色狼"><img alt="17岁少女放学途中遭猥亵母亲悬赏一万抓色狼" src="http://i04.cztv.com/me/2015-01/19/80ee20525dbb6bd7241f7fe0733ded752221747.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2221747.html" title="17岁少女放学途中遭猥亵母亲悬赏一万抓色狼">17岁少女放学途中遭猥亵母亲悬赏一万抓色狼</a></h2>
+						<span>45253</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2221498.html" title="河南桐柏一小学教师杨士付涉嫌猥亵学生被刑事拘留"><img alt="河南桐柏一小学教师杨士付涉嫌猥亵学生被刑事拘留" src="http://i04.cztv.com/me/2015-01/19/5962d8080ba322ab670c719e3412acf82221498.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2221498.html" title="河南桐柏一小学教师杨士付涉嫌猥亵学生被刑事拘留">河南桐柏一小学教师杨士付涉嫌猥亵学生被刑事拘留</a></h2>
+						<span>12610</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2221309.html" title="女子超市偷舔冰淇淋后淡定放回冰柜"><img alt="女子超市偷舔冰淇淋后淡定放回冰柜" src="http://i04.cztv.com/me/2015-01/19/d7d4b33fa178511bf70a6d812c951bcf2221309.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2221309.html" title="女子超市偷舔冰淇淋后淡定放回冰柜">女子超市偷舔冰淇淋后淡定放回冰柜</a></h2>
+						<span>29719</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2221162.html" title="女子裙下藏电视机偷窃"><img alt="女子裙下藏电视机偷窃" src="http://i04.cztv.com/me/2015-01/19/52222c5db7556b685126e28e5662ad622221162.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2221162.html" title="女子裙下藏电视机偷窃">女子裙下藏电视机偷窃</a></h2>
+						<span>22141</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2220986.html" title="监控实拍 贪婪女子超市偷窃现场"><img alt="监控实拍 贪婪女子超市偷窃现场" src="http://i04.cztv.com/me/2015-01/19/668097fc162e7f5354746f7887eacaa82220986.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2220986.html" title="监控实拍 贪婪女子超市偷窃现场">监控实拍 贪婪女子超市偷窃现场</a></h2>
+						<span>16308</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2220879.html" title="战斗民族搞笑视频 战斗民族彪悍女子清障车上大跳 脱衣舞"><img alt="战斗民族搞笑视频 战斗民族彪悍女子清障车上大跳 脱衣舞" src="http://i04.cztv.com/me/2015-01/19/8744e0189338c1f3e42053fe5e7d0ae22220879.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2220879.html" title="战斗民族搞笑视频 战斗民族彪悍女子清障车上大跳 脱衣舞">战斗民族搞笑视频 战斗民族彪悍女子清障车上大跳 脱衣舞</a></h2>
+						<span>20505</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2220759.html" title="女子不想跟网友约会 谎称自己已死"><img alt="女子不想跟网友约会 谎称自己已死" src="http://i04.cztv.com/me/2015-01/19/a4ae9966d45fa8d5f35e9e467308d57a2220759.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2220759.html" title="女子不想跟网友约会 谎称自己已死">女子不想跟网友约会 谎称自己已死</a></h2>
+						<span>18035</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2220058.html" title="醉酒男搭公交 又丢垃圾又刷牙"><img alt="醉酒男搭公交 又丢垃圾又刷牙" src="http://i04.cztv.com/me/2015-01/19/9a490826757d954bcea5a25509f434c7.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2220058.html" title="醉酒男搭公交 又丢垃圾又刷牙">醉酒男搭公交 又丢垃圾又刷牙</a></h2>
+						<span>38904</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2220054.html" title="长沙：醉酒男公交上刷牙 乘客下车抗议"><img alt="长沙：醉酒男公交上刷牙 乘客下车抗议" src="http://i04.cztv.com/me/2015-01/19/b151df18579947355a33d4a69b9d31712220054.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2220054.html" title="长沙：醉酒男公交上刷牙 乘客下车抗议">长沙：醉酒男公交上刷牙 乘客下车抗议</a></h2>
+						<span>43502</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2220053.html" title="监拍醉酒男公交上刷牙 乘客集体下车抗议"><img alt="监拍醉酒男公交上刷牙 乘客集体下车抗议" src="http://i04.cztv.com/me/2015-01/19/e7b998d76efe42c0424fb46eb6368473.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2220053.html" title="监拍醉酒男公交上刷牙 乘客集体下车抗议">监拍醉酒男公交上刷牙 乘客集体下车抗议</a></h2>
+						<span>24486</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2220025.html" title="奇葩女子偷电视 塞长裙下淡定离开"><img alt="奇葩女子偷电视 塞长裙下淡定离开" src="http://i04.cztv.com/me/2015-01/19/dbfd0a0922fd8792830aa0371a2401b72220025.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2220025.html" title="奇葩女子偷电视 塞长裙下淡定离开">奇葩女子偷电视 塞长裙下淡定离开</a></h2>
+						<span>13479</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2219979.html" title="最新监控实拍视频 电梯猥琐偷情"><img alt="最新监控实拍视频 电梯猥琐偷情" src="http://i04.cztv.com/me/2015-01/19/a881d775b53865b68182bcd875e8ac862219979.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2219979.html" title="最新监控实拍视频 电梯猥琐偷情">最新监控实拍视频 电梯猥琐偷情</a></h2>
+						<span>26550</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2219978.html" title="最新监控实拍视频 印度无良劫匪自助银行刀砍七旬老太"><img alt="最新监控实拍视频 印度无良劫匪自助银行刀砍七旬老太" src="http://i04.cztv.com/me/2015-01/19/0c1287fc6a956b805aba6a7734396f532219978.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2219978.html" title="最新监控实拍视频 印度无良劫匪自助银行刀砍七旬老太">最新监控实拍视频 印度无良劫匪自助银行刀砍七旬老太</a></h2>
+						<span>18518</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2219976.html" title="最新监控实拍视频 这货是在砸店吧 俄罗斯笨贼偷取电脑"><img alt="最新监控实拍视频 这货是在砸店吧 俄罗斯笨贼偷取电脑" src="http://i04.cztv.com/me/2015-01/19/325485b5a83332a26a9a0b32af4377a62219976.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2219976.html" title="最新监控实拍视频 这货是在砸店吧 俄罗斯笨贼偷取电脑">最新监控实拍视频 这货是在砸店吧 俄罗斯笨贼偷取电脑</a></h2>
+						<span>26853</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2219973.html" title="最新监控实拍视频 印度无良劫匪自助银行刀砍七旬老太"><img alt="最新监控实拍视频 印度无良劫匪自助银行刀砍七旬老太" src="http://i04.cztv.com/me/2015-01/19/a115048f1325381ef8fbe5364427aee52219973.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2219973.html" title="最新监控实拍视频 印度无良劫匪自助银行刀砍七旬老太">最新监控实拍视频 印度无良劫匪自助银行刀砍七旬老太</a></h2>
+						<span>31601</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2219972.html" title="最新监控实拍视频 色狼偷女人内衣被抓"><img alt="最新监控实拍视频 色狼偷女人内衣被抓" src="http://i04.cztv.com/me/2015-01/21/5cfa3584b0fea2465ccf726d67054bc7.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2219972.html" title="最新监控实拍视频 色狼偷女人内衣被抓">最新监控实拍视频 色狼偷女人内衣被抓</a></h2>
+						<span>23530</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2219970.html" title="最新监控实拍视频 男子KTV内摸女子臀部 被围殴捅死"><img alt="最新监控实拍视频 男子KTV内摸女子臀部 被围殴捅死" src="http://i04.cztv.com/me/2015-01/19/9db53a558cda92cf61fadc5dd74c78e62219970.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2219970.html" title="最新监控实拍视频 男子KTV内摸女子臀部 被围殴捅死">最新监控实拍视频 男子KTV内摸女子臀部 被围殴捅死</a></h2>
+						<span>34291</span>
+					</div>
+				</li>
+							
+			</ul>
+             <ul id="dsTitle_one_1">
+             				<li>
+					<div class="picimg"><a href="/video-2262161.html" title="监拍：功夫少女餐厅大战三恶男 美女好身手"><img alt="监拍：功夫少女餐厅大战三恶男 美女好身手" src="http://i04.cztv.com/me/2015-02/05/ef1fe79279103ae0d93f383155f12611_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2262161.html" title="监拍：功夫少女餐厅大战三恶男 美女好身手">监拍：功夫少女餐厅大战三恶男 美女好身手</a></h2>
+						<span>11982</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2233874.html" title="丈夫偷拍妻子不雅照 传给朋友称好东西要分享"><img alt="丈夫偷拍妻子不雅照 传给朋友称好东西要分享" src="http://i04.cztv.com/me/2015-01/23/0c20daa060e0a1349a599e735a96db85_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2233874.html" title="丈夫偷拍妻子不雅照 传给朋友称好东西要分享">丈夫偷拍妻子不雅照 传给朋友称好东西要分享</a></h2>
+						<span>19630</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2270014.html" title="15岁女孩与表哥偷恋6年 两人私奔自残威胁家人"><img alt="15岁女孩与表哥偷恋6年 两人私奔自残威胁家人" src="http://i04.cztv.com/me/2015-02/11/7294026982d67c8433c8a8bf2d90fa54_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2270014.html" title="15岁女孩与表哥偷恋6年 两人私奔自残威胁家人">15岁女孩与表哥偷恋6年 两人私奔自残威胁家人</a></h2>
+						<span>17990</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2270053.html" title="实拍：母女抢男人大打出手 只为微信聊上同一人"><img alt="实拍：母女抢男人大打出手 只为微信聊上同一人" src="http://i04.cztv.com/me/2015-02/11/ddd2cd3dee4ffec5ac7e857d9f510df4_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2270053.html" title="实拍：母女抢男人大打出手 只为微信聊上同一人">实拍：母女抢男人大打出手 只为微信聊上同一人</a></h2>
+						<span>14894</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2260501.html" title="实拍恐怖一幕 少年河中戏耍瞬间被吸走"><img alt="实拍恐怖一幕 少年河中戏耍瞬间被吸走" src="http://i04.cztv.com/me/2015-02/05/6f4ce8cdd810e2704f0bc9bb92cde308_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2260501.html" title="实拍恐怖一幕 少年河中戏耍瞬间被吸走">实拍恐怖一幕 少年河中戏耍瞬间被吸走</a></h2>
+						<span>13020</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2232701.html" title="少女雌雄同体日日转性 今天穿裙子明日留胡子"><img alt="少女雌雄同体日日转性 今天穿裙子明日留胡子" src="http://i04.cztv.com/me/2015-01/23/7b9a79d9f266a4b101e200ed947cbd5a_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2232701.html" title="少女雌雄同体日日转性 今天穿裙子明日留胡子">少女雌雄同体日日转性 今天穿裙子明日留胡子</a></h2>
+						<span>19971</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2186442.html" title="女子高校当裸模遭解聘 瞒着家人十几年没签合同"><img alt="女子高校当裸模遭解聘 瞒着家人十几年没签合同" src="http://i04.cztv.com/me/2015-01/08/bfc5cf451de96b9d4df856076eff825b_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2186442.html" title="女子高校当裸模遭解聘 瞒着家人十几年没签合同">女子高校当裸模遭解聘 瞒着家人十几年没签合同</a></h2>
+						<span>13901</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2175774.html" title="孕妇吃肥肠吃出一团水银 饭店称从未发生过"><img alt="孕妇吃肥肠吃出一团水银 饭店称从未发生过" src="http://i04.cztv.com/me/2015-01/06/112958c02758b17f7acb2e730fb83cbf_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2175774.html" title="孕妇吃肥肠吃出一团水银 饭店称从未发生过">孕妇吃肥肠吃出一团水银 饭店称从未发生过</a></h2>
+						<span>19283</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-2156498.html" title="土豪包养小三生双胞胎 鉴定发现大儿子非亲生"><img alt="土豪包养小三生双胞胎 鉴定发现大儿子非亲生" src="http://i04.cztv.com/me/2015-01/05/a2517dee2af87927f21d5da24c2e0ae7_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-2156498.html" title="土豪包养小三生双胞胎 鉴定发现大儿子非亲生">土豪包养小三生双胞胎 鉴定发现大儿子非亲生</a></h2>
+						<span>15634</span>
+					</div>
+				</li>
+								<li>
+					<div class="picimg"><a href="/video-1866056.html" title="女大生开房遇害前监控曝光 被捅40刀裸身惨死"><img alt="女大生开房遇害前监控曝光 被捅40刀裸身惨死" src="http://i04.cztv.com/me/2014-10/15/3c244b9e56f1a414ab0105d8c7267877_w140_h105.jpg" /></a></div>
+					<div class="txtinfo">
+						<h2><a href="/video-1866056.html" title="女大生开房遇害前监控曝光 被捅40刀裸身惨死">女大生开房遇害前监控曝光 被捅40刀裸身惨死</a></h2>
+						<span>13306</span>
+					</div>
+				</li>
+							
+			</ul>
+        </div>
+    
+     
+
+<!-- 2014年4月23日隐藏广告（美女频道与直播）  -->      
+        <div class="rmzy"> 
+         	<h3 class="title_c">
+<!--          	class="title_c p_360" -->
+         	
+         	<span style="border-top:0px solid #2288d1;">搞笑频道</span>
+<!--          	<span  id="one2">  id="one1"-->
+<!--          	<a href="http://x.kuwo.cn/KuwoLive/jsp/huodong/landingpage.jsp?from=4005001002" target="_blank"  rel="nofollow"> -->
+<!--          	直&nbsp;&nbsp;播&nbsp;&nbsp;&nbsp;&nbsp;</a> -->
+<!--          	</span> -->
+         	</h3>
+<!--  			<iframe src="http://x.kuwo.cn/KuwoLive/jsp/huodong/xinlanCoop.jsp" height=500 frameborder=0></iframe>  -->
+        	<ul>
+            			
+        	    	<li><a href="http://runningman.cztv.com/runningman/740625.html" title="权志龙和极品“妖男”大闹《跑男2》"><img alt="权志龙和极品“妖男”大闹《跑男2》" src="http://i04.cztv.com/me/2015-02/06/2c6a1add56dba9ac718f704f9eacf1b5_w140_h105.jpg" /><span>权志龙和极品“妖男”大闹《跑男2》</span></a></li>
+        	    		
+        	    	<li><a href="/video-2243873.html" title="不自由毋宁死！实拍胖猪跳车寻找自由"><img alt="不自由毋宁死！实拍胖猪跳车寻找自由" src="http://i04.cztv.com/me/2015-01/29/7b235c2107521d7e27e2ae08adba6055_w140_h105.jpg" /><span>不自由毋宁死！实拍胖猪跳车寻找自由</span></a></li>
+        	    		
+        	    	<li><a href="/video-2208271.html" title="男子光天化日之下竟敢拉女子拉链"><img alt="男子光天化日之下竟敢拉女子拉链" src="http://i04.cztv.com/me/2015-01/14/f49a0f307bb588523a4cdb80a9eff544_w140_h105.jpg" /><span>男子光天化日之下竟敢拉女子拉链</span></a></li>
+        	    		
+        	    	<li><a href="/video-2200860.html" title="最性感的修车美女 火辣程度完全Hold不住"><img alt="最性感的修车美女 火辣程度完全Hold不住" src="http://i04.cztv.com/me/2015-01/12/a69221de0382c123e830faa2f130f979_w140_h105.jpg" /><span>最性感的修车美女 火辣程度完全Hold不住</span></a></li>
+        	    		
+        	    	<li><a href="/video-2200861.html" title="性感美女乳此迷人 你把持住了么"><img alt="性感美女乳此迷人 你把持住了么" src="http://i04.cztv.com/me/2015-01/14/5cfb78e2e5f7413326994022ed65a7a7_w140_h105.jpg" /><span>性感美女乳此迷人 你把持住了么</span></a></li>
+        	    		
+        	    	<li><a href="/video-2176443.html" title="投胎是门技术活胸大任性遭停播 - 有钱就是任性的极致解释"><img alt="投胎是门技术活胸大任性遭停播 - 有钱就是任性的极致解释" src="http://i04.cztv.com/me/2015-01/14/16523ebdd93f24723aa8f3525a82c7d3_w140_h105.jpg" /><span>投胎是门技术活胸大任性遭停播 - 有钱就是任性的极致解释</span></a></li>
+        	      
+            </ul>
+        </div> 
+        
+		<div class="mod_a">
+        	<h3 class="title_c"><span>娱乐推荐</span></h3>
+            <div class="pic_list_a">
+            	<ul>
+                 		
+        	    	<li><a href="/video-2264477.html" title="鹿晗被起诉 SM声明全文曝光"><img alt="鹿晗被起诉 SM声明全文曝光" src="http://i04.cztv.com/me/2015-02/06/2daa9ae581f0ca7137659106a0503d00_w140_h105.jpg" /><span>鹿晗被起诉 SM声明全文曝光</span></a></li>
+        	    		
+        	    	<li><a href="/video-2264612.html" title="太拼了！李冰冰陈坤吻吻吻不停"><img alt="太拼了！李冰冰陈坤吻吻吻不停" src="http://i04.cztv.com/me/2015-02/06/f7ac904dc931a02ebf30f2ff72888c11_w140_h105.jpg" /><span>太拼了！李冰冰陈坤吻吻吻不停</span></a></li>
+        	      
+                    
+                </ul>
+            </div>
+            <ul class="text_list_a">
+               		
+        	    	<li><a href="/video-2256954.html" title="李晨向范冰冰求婚成功 微博神呼应隔空示爱">李晨向范冰冰求婚成功 微博神呼应隔空示爱</a></li>
+        	    		
+        	    	<li><a href="/video-2260516.html" title="《钟馗伏魔》首映玩很大 李冰冰陈坤激情热吻">《钟馗伏魔》首映玩很大 李冰冰陈坤激情热吻</a></li>
+        	    		
+        	    	<li><a href="/video-2246831.html" title="周董加盟《中国好声音4》 成第8位导师">周董加盟《中国好声音4》 成第8位导师</a></li>
+        	    		
+        	    	<li><a href="/video-2233867.html" title="刘涛《芈月传》片场与孙俪亲吻 向邓超“挑衅”">刘涛《芈月传》片场与孙俪亲吻 向邓超“挑衅”</a></li>
+        	    		
+        	    	<li><a href="/video-2226085.html" title="范玮琪首度见宝宝 眼泪掉不停">范玮琪首度见宝宝 眼泪掉不停</a></li>
+        	      
+            </ul>
+        </div>  
+        
+        </div>
+</div>
+<!-- 98215：米秀播放页底部悬浮搜索框 类型：浮层广告位 尺寸：--->
+<script type="text/javascript">//<![CDATA[
+ac_as_id = 98215;
+ac_format = 0;
+ac_mode = 1;
+ac_group_id = 1;
+ac_server_base_url = "afp.csbew.com/";
+//]]></script>
+<script type="text/javascript" src="http://s.csbew.com/k.js"></script>
+</div>
+<!--脚部-->
+<div class="footer">
+  <div class="footer_menu"><a href="#"  target="_blank">关于本站</a>|<a href="#"  target="_blank">免责声明</a>|<a href="" target="_blank">联系我们</a>|<a href="" target="_blank">版权隐私</a>|<a href="" target="_blank">友情链接</a>|<a href=""  target="_blank">法律顾问</a>|<a href="" target="_blank">网站地图</a>|<a href="" target="_blank">投诉爆料</a></div>
+  <div xmlns="" id="footer">
+    <div class="copyright">
+      <p>增值电信业务经营许可证:浙B2-20080242 | 广告经营许可证号:3300008000006 | 浙ICP备05002140号 | 文网文[2008]090号</p>
+      <p>信息网络传播视听节目许可证:1105110 | 互联网出版许可证:新出网证(浙)字21号</p>
+      <p>© 诸暨广电网 版权所有，保留所有权利</p>
+    </div>
+  </div>
+</div>
+<!--脚部结束-->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://img.zjbtv.com/templates/project/zhujiweb/images/js/bootstrap.min.js"></script>
+</body>
+</html>

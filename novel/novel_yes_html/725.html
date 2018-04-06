@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>第一章 做个大人怎么这么难（8）--时光里</title>
+	<meta name="keywords" content="我们为何如此不安:哈佛教授给迷茫者的心灵地图">
+	<meta name="description" content="我们为何如此不安:哈佛教授给迷茫者的心灵地图--时光里">
+		<!--<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7/jquery.min.js"></script>
+	<script type="text/javascript" src="http://lib.sinaapp.com/js/bootstrap/2.0.2/js/bootstrap.min.js"></script>
+	-->
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/js/bootstrap.min.js"></script>	
+	<link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="/js/bootstrap/css/bootstrap.min.css"  />
+	<link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="/js/bootstrap/css/bootstrap-responsive.min.css"  />
+	<link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="/css/common.css"  />	<script type="text/javascript" src="/js/wmd-editor/prettify.js"></script>
+	<link rel="stylesheet" rev="stylesheet" type="text/css" media="all" href="/book/css/chapter.css"  />
+	
+	<script type="text/javascript" src="/book/js/chapter.js"></script>
+	<script type="text/javascript">
+		var bid = '9431';
+	</script>
+	<!--[if IE 6]><![endif]-->
+</head>
+<body>
+<div class="nav-container">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span> 
+				</a> 
+				<h1><a class="brand" href="/">时光里</a></h1>
+				<div class="nav-collapse">
+					<ul class="nav">
+						<li><a href="/"><i class="icon-home icon-white"></i>首页</a></li>
+						<li><a href="/news"><i class="icon-eye-open icon-white"></i>资讯</a></li>
+						<li><a href="/book"><i class="icon-book icon-white"></i>图书</a></li>
+
+												<!--  
+						<li><a href="/verycd">VeryCD</a></li>
+						-->
+						<li><a href="/apidoc"><i class="icon-th icon-white"></i>文档</a></li>
+						<!--
+						<li><a href="/article">时光倒流</a></li>
+						-->
+					</ul>
+					<ul class="nav pull-right">
+						<form id="search-form" class="navbar-search pull-left" action="/search">
+							<input type="text"  name="keywords" class="span2" placeholder="输入关键字" value="">
+						</form>
+						<li>
+							<a href="#" class="search-url" ><i class="icon-search icon-white"></i>搜索</a>
+							<script type="text/javascript">
+								$(function(){
+									$('#search-form').submit(function(){
+										if($('input[name="keywords"]').val() == ''){
+											return false;
+										}
+									});
+									$('.search-url').click(function(){
+										$('#search-form').submit();
+									});
+								});
+							</script>
+		            	</li>
+		            	
+												<li><a class="nav_auth" href="?"><i class="icon-user icon-white"></i>登录</a></li>
+						<li><a href="/register"><i class="icon-cog icon-white"></i>注册</a></li>
+				        					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="margin-clear"></div>
+<div id="loginWin" class="modal hide fade" style="display: none;">
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>用户登录</h3>
+	</div>
+	<div class="modal-body">
+		<div class="alert alert-error alert-msg" style="display: none;">
+		</div>
+		<form id="loginForm" class="form-horizontal">
+			<div class="control-group">
+				<label class="control-label">邮箱：</label>
+				<div class="controls">
+					<input id="email" name="email" placeholder="注册邮箱" type="email" value="" />
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label">密码：</label>
+				<div class="controls">
+					<input id="password" name="password" placeholder="请输入密码" type="password" />
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<a class="btn btn-primary btn-login-submit" name="button" type="button">登录</button>
+		<a href="#" class="btn btn-login-close" data-dismiss="modal">关闭</a>
+	</div>
+</div>
+<script type="text/javascript">
+function shake(){
+	var a = $('#loginWin');
+	var left = $('#loginWin').css('left');
+    var p = ['50.5%', '51%', '50.5%', '50%', '49.5%', '49%', '49.5%', '50%'],
+    fx = function () {
+        a.css('left',p.shift());
+        if (p.length <= 0) {
+        	a.css('left',left);
+            clearInterval(timerId);
+        };
+    };
+	p = p.concat(p.concat(p));
+	timerId = setInterval(fx, 13);
+}
+$(function(){
+	var dest;
+	$('.nav_auth').click(function(){
+		dest = $(this).attr('href');
+		$('#loginWin').modal();
+		return false;
+	});
+	$('#loginForm').keypress(function(e){
+    	if(e.charCode == 13){
+    		$('.btn-login-submit').click();
+        }
+    });
+	$('.btn-login-submit').click(function(){
+		if($('#email').val() == ''){
+			$('#email').focus();
+			$('.alert-msg').html('请输入邮箱!');
+			$('.alert-msg').show();
+			shake();
+		}else if($('#password').val() == ''){
+			$('#password').focus();
+			$('.alert-msg').html('请输入密码!');
+			$('.alert-msg').show();
+			shake();
+		}else{
+			$.ajax({
+				url:'/action.php?oper=login',
+				type:'POST',
+				data:$('#loginForm').serialize(),
+				dataType:'json',
+				success:function(rs){
+					if(rs.success == true){
+						location.replace(dest);
+					}else{
+						$('.alert-msg').html(rs.msg);
+						$('.alert-msg').show();
+						shake();
+					}
+				}
+			});			
+		}
+	});
+	$('.btn-login-close').click(function(){
+		$('#loginForm')[0].reset();
+	});	
+});
+</script>
+<div class="container">
+	<div class="row">
+		<div class="span9" style="float:right;">
+			<div style="margin: 10px;">
+				<div>
+					<h2>第一章 做个大人怎么这么难（8）</h2>
+				</div>
+				<hr />
+				<div class="sub_chapters">
+								</div>
+				<div class="post-text">
+				<p>倦怠是人生最危险的征兆</p>
+
+<p>无聊的时候被允许感到无聊，人是能够得救的。</p>
+
+<p>虽然感到无聊，但这感受与你最重要的人的期待相违背，就不能感到无聊，甚至害怕感到无聊，害怕得要死。尽管如此害怕，这种恐惧感却也是被禁止的。作为人的基本感受几乎都是被禁止的。</p>
+
+<p>实际上感到无聊，简直无聊透顶，但因为害怕，在意识层面上，告诉自己要感到很开心，很有意思。</p>
+
+<p>实际所感受到的内容与有意识的感受如此背道而驰的话，人的内心世界必然会崩塌。普通人看到这些人的时候，都会觉得“好累啊”。</p>
+
+<p>这些人总是战战兢兢的，他们内心中的恐惧多少会被他人发现。因此，就算他们的决定是对的，别人也很难和他们一起行动。</p>
+
+<p>在重要的人的面前，他们总会牺牲真实的自己，扮演对方所期待的那种出色的人。即便自己在肉体上、经济上已经不需要对方的保护了，仍会继续扮演那种“被爱着的自己”。他们在心理上，没有对方的支持就活不下去。</p>
+
+<p>总在扮演着“被爱着的出色的自己”的人，不单单感觉不到恐惧，也感觉不到寂寞。实际上，这些必须按照别人的期待去感受世界的人，心底深处都寂寞得不得了。</p>
+
+<p>不允许孩子自然地去感受的父母，既不理解孩子，也不爱孩子，无法与孩子做心与心的交流。</p>
+
+<p>和任何人都无法达成心灵的交流，孩子会在内心深处发出寂寞的悲鸣，好寂寞，好寂寞，寂寞得不得了，寂寞到身体都出现问题。然而，感到寂寞的自己却与父母的期待不符。孩子会禁止自己感到寂寞，进而按照父母所期待的方式去感受。自己“不应该”寂寞，因为有这么“和蔼亲切的人”围绕在自己身边。我是多么幸福啊！这世上再没有如此温暖的父母了，这世上再没有如此亲切的人了！</p>
+				</div>
+				<div>
+				<div class="pre-next"></div>
+								</div>
+				<div class="copyright-announce">
+					本书版权属于出版社和作者所有。除非另有声明，没有书面许可任何人不得转载或使用整体或任何部分的内容。                    
+				</div>
+			</div>
+        </div>
+		<div class="span3" style="float: left;">
+			<div class="well" style="padding: 2px 0;">
+				<ul class="nav nav-list nav-chapter">
+								<li class="nav-header">
+									<a href="../book/9431">
+					                    我们为何如此不安:哈佛教授给迷茫者的心灵地图
+					                </a>
+					            </li>
+					            <li class="divider"></li><li data-id="557967"><a href="../chapter/9431_557967">《我们为何如此不安》：相关资料</a><ul class="nav nav-list"><li data-id="533773"><a href="../chapter/9431_533773">编辑推荐</a></li><li data-id="533774"><a href="../chapter/9431_533774">作者介绍</a></li><li data-id="533775"><a href="../chapter/9431_533775">内容简介</a></li><li data-id="533776"><a href="../chapter/9431_533776">读者评论</a></li><li data-id="533777"><a href="../chapter/9431_533777">目录（1）</a></li><li data-id="533778"><a href="../chapter/9431_533778">目录（2）</a></li><li data-id="533779"><a href="../chapter/9431_533779">书评一</a></li><li data-id="533780"><a href="../chapter/9431_533780">书评二（1）</a></li><li data-id="533781"><a href="../chapter/9431_533781">书评二（2）</a></li><li data-id="533782"><a href="../chapter/9431_533782">书评三</a></li><li data-id="533783"><a href="../chapter/9431_533783">编者序 揭开伪成熟的假面（1）</a></li><li data-id="533784"><a href="../chapter/9431_533784">编者序 揭开伪成熟的假面（2）</a></li></ul></li><li data-id="557968"><a href="../chapter/9431_557968">《我们为何如此不安》：第一部分</a><ul class="nav nav-list"><li data-id="533785"><a href="../chapter/9431_533785">第一章 做个大人怎么这么难（1）</a></li><li data-id="533786"><a href="../chapter/9431_533786">第一章 做个大人怎么这么难（2）</a></li><li data-id="533787"><a href="../chapter/9431_533787">第一章 做个大人怎么这么难（3）</a></li><li data-id="533788"><a href="../chapter/9431_533788">第一章 做个大人怎么这么难（4）</a></li><li data-id="533789"><a href="../chapter/9431_533789">第一章 做个大人怎么这么难（5）</a></li><li data-id="533790"><a href="../chapter/9431_533790">第一章 做个大人怎么这么难（6）</a></li><li data-id="533791"><a href="../chapter/9431_533791">第一章 做个大人怎么这么难（7）</a></li><li data-id="533792" class="active"><a href="../chapter/9431_533792">第一章 做个大人怎么这么难（8）</a></li><li data-id="533793"><a href="../chapter/9431_533793">第一章 做个大人怎么这么难（9）</a></li><li data-id="533794"><a href="../chapter/9431_533794">第一章 做个大人怎么这么难（10）</a></li><li data-id="533795"><a href="../chapter/9431_533795">第一章 做个大人怎么这么难（11）</a></li><li data-id="533796"><a href="../chapter/9431_533796">第二章 其实大家都幼稚（1）</a></li><li data-id="533797"><a href="../chapter/9431_533797">第二章 其实大家都幼稚（2）</a></li><li data-id="533798"><a href="../chapter/9431_533798">第二章 其实大家都幼稚（3）</a></li><li data-id="533799"><a href="../chapter/9431_533799">第二章 其实大家都幼稚（4）</a></li><li data-id="533800"><a href="../chapter/9431_533800">第二章 其实大家都幼稚（5）</a></li><li data-id="533801"><a href="../chapter/9431_533801">第二章 其实大家都幼稚（6）</a></li><li data-id="533802"><a href="../chapter/9431_533802">第二章 其实大家都幼稚（7）</a></li></ul></li><li data-id="557969"><a href="../chapter/9431_557969">《我们为何如此不安》：第二部分</a><ul class="nav nav-list"><li data-id="533803"><a href="../chapter/9431_533803">第三章 不安，是因为压抑了真实的自己（1）..</a></li><li data-id="533804"><a href="../chapter/9431_533804">第三章 不安，是因为压抑了真实的自己（2）..</a></li><li data-id="533805"><a href="../chapter/9431_533805">第三章 不安，是因为压抑了真实的自己（3）..</a></li><li data-id="533806"><a href="../chapter/9431_533806">第三章 不安，是因为压抑了真实的自己（4）..</a></li><li data-id="533807"><a href="../chapter/9431_533807">第三章 不安，是因为压抑了真实的自己（5）..</a></li><li data-id="533808"><a href="../chapter/9431_533808">第三章 不安，是因为压抑了真实的自己（6）..</a></li><li data-id="533809"><a href="../chapter/9431_533809">第三章 不安，是因为压抑了真实的自己（7）..</a></li><li data-id="533810"><a href="../chapter/9431_533810">第三章 不安，是因为压抑了真实的自己（8）..</a></li><li data-id="533811"><a href="../chapter/9431_533811">第四章 烦躁，是因为迷失了人生的方向（1）..</a></li><li data-id="533812"><a href="../chapter/9431_533812">第四章 烦躁，是因为迷失了人生的方向（2）..</a></li><li data-id="533813"><a href="../chapter/9431_533813">第四章 烦躁，是因为迷失了人生的方向（3）..</a></li><li data-id="533814"><a href="../chapter/9431_533814">第四章 烦躁，是因为迷失了人生的方向（4）..</a></li><li data-id="533815"><a href="../chapter/9431_533815">第四章 烦躁，是因为迷失了人生的方向（5）..</a></li><li data-id="533816"><a href="../chapter/9431_533816">第四章 烦躁，是因为迷失了人生的方向（6）..</a></li><li data-id="533817"><a href="../chapter/9431_533817">第四章 烦躁，是因为迷失了人生的方向（7）..</a></li><li data-id="533818"><a href="../chapter/9431_533818">第四章 烦躁，是因为迷失了人生的方向（8）..</a></li></ul></li></ul>			</div>
+		</div>
+	</div>
+</div>
+<div class="footer" style="margin: 40px 0 0 0;">
+	<div class="row">
+		<div class="copyright">时光里  © 2013 &nbsp;<a href=".">timezi.com</a> &nbsp;All Rights Reserved. &nbsp; 浙ICP备13012196号</div>
+		<script type="text/javascript">
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6795563f18135f20af72b74dd0176e91' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+</div></body>
+</html>

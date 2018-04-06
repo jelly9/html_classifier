@@ -1,0 +1,2123 @@
+
+
+
+
+
+
+
+ 
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>网眼,网眼批发,网眼供应-全球内衣交易网</title>
+<meta name="keywords" content="网眼,网眼批发,网眼供应-全球内衣交易网">
+<meta name="description" content="通用分类/情趣内衣/网眼, 全球内衣交易网">
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<link type="text/css" rel="stylesheet" rev="stylesheet" href="/newPage/css/nyglobal.css" />
+<script type="text/javascript" src="/fg/js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="/newPage/js/iepngfix_tilebg.js"></script>
+<!--首页面导航栏目切换特效-->				
+<script type="text/javascript">
+ $(function(){
+		$.ajaxSetup({
+  			async: false
+  		});
+		var navcon=$(".nav_menu");
+		navcon.children(".menu_ul").hide();
+		navcon.hover(function(){
+			$(this).children(".menu_ul").show();
+				var nav_menu=$(".menu_ul li");
+				nav_menu.hover(function(){
+					$(this).children(".menucon").show().css("background","#eee");
+					$(this).focus().addClass("focusa");	
+					},function(){
+						$(this).children(".menucon").hide();	
+						$(this).focus().removeClass("focusa");
+					});
+		},function(){
+			$(this).children(".menu_ul").hide();
+		});
+	
+		if(document.getElementById('loadweltop')){
+			$('#loadweltop').load("/fg/user/user.do?actionType=loadwel&way=index&ranNum="+Math.random());
+			initCart();
+		}
+ });       
+</script>
+<link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon">
+<script>
+var CONT = '';   
+var CART = '/fg/order/cart.do';
+</script>
+	
+<!--zkmall公用-->
+<SCRIPT LANGUAGE='JavaScript'> 
+<!-- 
+//屏蔽js错误 
+function ResumeError() { 
+return true; 
+} 
+window.onerror = ResumeError; 
+// --> 
+</SCRIPT>
+<link href="/css_new/global.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all"/>
+<!--
+<script type="text/javascript" src="/js/jquery.soChange.js"></script>
+-->	
+<script language="javascript" src="/fg/js/pub.js"></script>
+<SCRIPT language=JavaScript src="/fg/js/ajax.js"></SCRIPT>
+<SCRIPT language=JavaScript src="/fg/js/buyProduct.js"></SCRIPT>
+<SCRIPT language=JavaScript src="/fg/js/addCart.js"></SCRIPT>
+<SCRIPT language=JavaScript src="/fg/js/ajaxObject.js"></SCRIPT>
+<SCRIPT language=JavaScript src="/fg/js/checkThis.js"></SCRIPT>
+<SCRIPT language=JavaScript src="/fg/js/check.js"></SCRIPT>
+<SCRIPT language=JavaScript src="/fg/js/ajaxSendForm.js"></SCRIPT>
+
+<script type="text/javascript" language="javascript" src="/fg/js/scrollpic/event.js"></script>
+<script language=JavaScript src="/fg/js/soChange.js" type="text/javascript"></script>
+<!--滚动-->
+<script language=JavaScript src="/fg/js/ScrollPic.js" type="text/javascript"></script>
+<!--放大镜-->
+<form name="cart" action="/fg/order/cart.do" method="post">
+	<input type="hidden" name="channelId"
+		value="index" />
+	<input type="hidden" name="actionType" value="addproduct" />
+	<input type="hidden" name="productId" />
+</form>
+
+<script>
+
+</script>
+<script>
+	function logout1() {
+		window.location.href="/fg/user/user.do?actionType=logout" ;
+		//document.userloginForm.requestPageUrl.value=window.top.location;
+		//document.userloginForm.actionType.value = "logout";
+		//document.userloginForm.submit();
+	}
+	function userLoginSubmitForm() {
+		if(document.getElementsByName('bean.id')[0].value == "") {
+			alert("请输入用户名");
+			document.getElementsByName('bean.id')[0].focus();
+			return;
+		}	
+		if(document.getElementsByName('bean.password')[0].value == "") {
+			alert("请输入密码");
+			document.getElementsByName('bean.password')[0].focus();
+			return;
+		}
+		document.fguserForm.submit();
+	}
+	
+	function clearUserForm() {
+		document.getElementsByName('bean.id')[0].value ="";
+		document.getElementsByName('bean.password')[0].value="";
+	}
+	
+</script>
+<script>
+	//会员登陆
+	function gologin() {
+		document.userloginForm.requestPageUrl.value = encodeURIComponent(window.top.location);			
+		//document.userloginForm.target="_blank";
+		document.userloginForm.actionType.value = "gologin";
+		document.userloginForm.submit();
+	}
+
+	//商户登陆
+	function goslogin() {
+		document.userloginForm.requestPageUrl.value = encodeURIComponent(window.top.location);			
+		document.userloginForm.userType.value="store" ;
+		document.userloginForm.actionType.value = "gologin";
+		document.userloginForm.submit();
+	}
+	
+	function login() {
+		if(document.getElementById("topuserid").value == ''){
+	  	alert("请输入登录账号。");
+	  	document.getElementById("topuserid").focus();
+		  return false;
+	  }
+	  
+	  if(!isEmail(trim(document.getElementById("topuserid").value),true)
+	  	&&  !isMobile(trim(document.getElementById("topuserid").value),true)){
+	  	alert("请输入正确账号！");
+	  	document.getElementById("topuserid").value ='';
+	  	document.getElementById("topuserpwd").value = '';
+	  	document.getElementById("topuserid").focus();
+		  return false;
+	  }
+		
+		if(document.getElementById("topuserpwd").value == ''){
+		  alert("请输入您的密码！");
+		  document.getElementById("topuserpwd").focus();
+	    return false;
+	  }
+		//document.userloginForm.requestPageUrl.value=encodeURIComponent(window.top.location);	
+	  document.userloginForm.actionType.value = "login";	
+		//document.userloginForm.submit();
+		return true;
+	}
+	function logout() {
+		document.userloginForm.requestPageUrl.value=encodeURIComponent(window.top.location);
+		document.userloginForm.actionType.value = "logout";
+		document.userloginForm.submit();
+	}
+	
+	function logout2() {
+		document.userloginForm.requestPageUrl.value=encodeURIComponent(window.top.location);
+		document.userloginForm.actionType.value = "outlogin";
+		document.userloginForm.submit();
+	}
+	
+	function regedit() {
+		document.userloginForm.requestPageUrl.value=encodeURIComponent(window.top.location);
+		document.userloginForm.actionType.value = "regedit";
+		document.userloginForm.submit();
+	}          		
+</script>
+<script>
+	function changeTopCss(position){
+	  
+		document.getElementById("topLeft"+position).className="topTitleLeft"+position;
+		document.getElementById("topCenter"+position).className="topTitleCenter"+position;
+		document.getElementById("topRight"+position).className="topTitleRight"+position;
+		document.getElementById("topTextId").className="Row"+position;
+	}
+	
+	function removeConfig(removeurl){
+		if(confirm("您确定清空该配置吗？")) {
+			window.open(removeurl, "", 'left=2000,top=0,scrollbars=no,width=1,height=1');
+		}
+	}
+	
+	function openConfig(configUrl) { 
+		var leftn=screen.width/2-390; var topn=50;
+		window.open(configUrl, "",'left=' + leftn+',top='+topn+',scrollbars=yes,width=780,height=590');
+	}
+	
+	function refresh(){
+		this.location = this.location;
+	}
+	
+	function unkey(){
+	  var ahrefs = document.getElementsByTagName('a');
+		if(ahrefs.length > 0){
+		  for(var i=0; i < ahrefs.length; i++){
+			  if(ahrefs[i].className != "putKey"){
+				  ahrefs[i].href="javascript:void(0)";
+					ahrefs[i].target="_top";
+					ahrefs[i].style.cursor="point";
+				}
+			}
+		}
+	}
+	
+	function fHideFocus(tName){
+	  var aTag=document.getElementsByTagName(tName);
+	  if(aTag.length > 0){
+			for(var i=0;i<aTag.length;i++){
+			  aTag[i].hideFocus=true;
+			}
+	  }
+	}
+	
+	//初始化购物车的方法
+	function initCart(){
+	  var thisUrl="/fg/order/cart.do?actionType=ajaxgetcart";
+	  //if(navigator.userAgent.indexOf("MSIE")>0) {   
+	     
+	  //}
+	  
+	  if(navigator.userAgent.indexOf("Firefox")>0){   
+	      send_request(cartInfo,"POST",thisUrl,true,null);
+
+	  }else{
+	  	 send_request(cartInfo,"POST",thisUrl,false,null);
+	  }
+	}
+	
+	function cartInfo() {
+	  if (http_request.readyState == 4) {
+	    if (http_request.status == 200) { 
+	      var returnXML = http_request.responseXML;
+	      var count=0;
+	      var tototal=0;
+	      if(returnXML && returnXML.getElementsByTagName("count") && returnXML.getElementsByTagName("count").item(0) != null) {
+		      count = returnXML.getElementsByTagName("count").item(0).firstChild.nodeValue;
+		    }
+	      if(returnXML && returnXML.getElementsByTagName("tototal") && returnXML.getElementsByTagName("tototal").item(0) != null) {	    
+	        tototal = returnXML.getElementsByTagName("tototal").item(0).firstChild.nodeValue;
+	      } 
+			  document.getElementById("productCountsAndTotoalId").innerHTML="" + count;
+		  }else { 
+		    //alert("您所请求的页面有异常。");
+		  }
+		}
+	}
+</script>
+
+	<script type="text/javascript">
+		// 【经典】弹出层菜单
+		$(document).ready(function(){
+		var objStr1 = "div.wst_flBtBg span a.show";
+		$(objStr1).click(function(){
+		$(objStr1).addClass("cur");
+		$("div.wst_flBox").show();
+		});
+		$("div.wst_flBtBg").hover(function(){},function(){
+		$("div.wst_flBox").hide();
+		$(objStr1).removeClass("cur");
+		});
+		var objStr = "div.wst_fl ul li";
+		$(objStr).each(function(i){
+		$(this).mouseover(function(){
+		$($("div.wst_fl_sub")[i]).show();
+		$($(objStr)[i]).addClass("cur");
+		});
+		$(this).hover(function(){},function(){
+		$($("div.wst_fl_sub")[i]).hide();
+		$($(objStr)[i]).removeClass("cur");
+		});
+		});
+		});
+	</script>
+</head>
+<body>
+<!--最头部工具条开始-->
+<div class="ny_toolbar" id="loadweltop"></div>
+<!--最头部工具条结束-->
+<script>
+	//初始化购物车
+	//initCart();
+</script>
+<form name="userloginForm" method="POST" action="/fg/user/user.do" onsubmit="return login()" target="_top">
+ <input type="hidden" name="channelId" value="index">
+ <input type="hidden" name="actionType" value="gologin">
+ <input type="hidden" name="requestPageUrl" value="%2Fpage%2FproductList.jsp%3Forder%3D8%26fieldNames%3DextField2%26tag%3D%26extField2%3D">
+ <input type="hidden" name="noValidateCode" value="noValidateCode"/>
+ <input type="hidden" name="userType"/>
+ </form>
+<!--搜索栏开始-->
+
+
+ 
+<script>
+function hasSpecSymbol2(str,bEmpty){
+		if(str==null||trim(str)=="")
+			return bEmpty;		//alert(name+"项：您尚未填写。");
+			
+		var str	= trim(str);
+		
+		for (var i = 0; i < str.length; i++) { 
+			var ch = str.charAt(i); 
+			/**if ((ch == "`" )|| (ch == "~" )||(ch == "!" )||(ch == "@" )||
+				(ch == "#" )||(ch == "%" )||(ch == "^" )||(ch == "&" )||
+				(ch == "*" )||(ch == "(" )||(ch == ")" )||(ch == "-" )||
+				(ch == "+" )||(ch == "=" )||(ch == "|" )||(ch == "{" )||
+				(ch == "}" )||(ch == "[" )||(ch == "]" )||(ch == ":" )||
+				(ch == ";" )||(ch == "'" )||(ch == '"' )||(ch == "<" )||
+				(ch == ">" )||(ch == "," )||(ch == "." )||(ch == "?" )||
+				(ch == "/" )||(ch == "？")) {
+				**/ 
+				if ((ch == "`" )|| (ch == "~" )||(ch == "!" )||(ch == "^" )||(ch == "&" )
+				||(ch == "+" )||(ch == "=" )
+				||(ch == "'" )||(ch == "," )||(ch == "." )||(ch == "?" )||(ch == "？")) {
+				return true; 
+			}
+		}	
+	    return false; 		
+	}
+
+var searchUrl = "/fg/product/fgproductSearch.do?actionType=qiantailist&type=p&key=";
+function searchSubmitForm(curkey,searchKey){
+	if(curkey=='curZixunkey'){
+		searchUrl = "/fg/contentlist.do?actionType=list&types=contentsearch&xz=content&key="	;
+	}else if(curkey=='curStorekey'){
+	  searchUrl = "/fg/store/fgStoreSearch.do?actionType=list&types=byAll&xz=store&key="	;
+  }else if(curkey=='curBrandkey'){
+	  searchUrl = "/fg/product/fgproductSearch.do?actionType=qiantailist&type=brand&xz=brand&key="	;
+  }else{
+  	searchUrl = "/fg/product/fgproductSearch.do?actionType=qiantailist&type=p&xz=product&key="	;
+  }
+  
+	if(document.getElementsByName(curkey)[0].value=="请输入搜索关键字"  || trim(document.getElementsByName(curkey)[0].value)==""){
+		alert("请输入搜索关键字");
+		document.getElementById(searchKey).value="";
+		document.getElementById(searchKey).focus();
+		return;
+	}
+	
+	if(trim(document.getElementsByName(curkey)[0].value).length >50) {
+		alert("您输入的关键字过长，请控制在50个字以内.");
+		document.getElementById(searchKey).focus();
+		return;
+	}
+	
+	if(hasSpecSymbol(trim(document.getElementsByName(curkey)[0].value))){
+	   alert("不能包含特殊字符");
+	   document.getElementById(searchKey).value="";
+		 document.getElementById(searchKey).focus();
+		 return;
+	}
+	var keys =document.getElementsByName(curkey)[0].value;
+	this.location =searchUrl + keys;
+	 
+}	 
+
+  
+function searchSubmitForm2(){
+	var type = $('#divselect cite').text();
+	if(type=="产品"){
+		searchUrl = "/fg/product/fgproductSearch.do?actionType=qiantailist&type=p&xz="+type+"&key="	;
+	}else if(type=="店铺"){
+		searchUrl = "/fg/store/fgStoreSearch.do?actionType=list&types=byAll&xz="+type+"&key="	;
+	}else{
+		searchUrl = "/fg/product/fgproductSearch.do?actionType=qiantailist&type=brand&xz="+type+"&key="	;
+	}
+	var keys = $('#searchKey').val();
+	if(trim(keys)==""){
+		alert("请输入搜索关键字");
+		$('#searchKey').val("");
+		$('#searchKey').focus();
+		return;
+	}
+
+	if(trim(keys).length>50){
+		alert("您输入的关键字过长，请控制在50个字以内");
+		$('#searchKey').focus();
+		return;
+	}
+
+	if(hasSpecSymbol(trim(keys))){
+		alert("不能包含特殊字符");
+		$('#searchKey').val("");
+		$('#searchKey').focus();
+		return;
+	}
+	this.location =searchUrl + keys;
+} 
+//var w=window.open(); 
+//setTimeout(w.location=searchUrl + keys, 1000); 
+//return false; 
+//  this.location =searchUrl + keys;
+//}
+function advancedSearch(act){
+	if('product' == act){
+		location.href = "/fg/product/advancedSearch.jsp";	
+	}else if('store' == act){
+		alert(act)
+		location.href = "";
+	}else if('specialty' == act){
+		alert(act)
+		location.href = "";
+	}
+}
+</script>
+<!--搜索栏开始-->
+<div class="nyheader">
+	<div class="grid_header">
+		<div class="ny_logo">
+			<h1><a href="http://www.ny.cn/"><img src="/newPage/nyimages/nylogo.png"  alt="全球内衣交易网"/></a></h1>
+		</div>	
+		<div class="ny_search">
+			<div class="search_con">
+					<div id="divselect">
+					  <cite id="searchTypeId">产品</cite>
+					  <ul>
+						 <li><a href="javascript:;" selectid="1">产品</a></li>
+						 <li><a href="javascript:;" selectid="2">品牌</a></li>
+						 <li><a href="javascript:;" selectid="3">店铺</a></li>
+					  </ul>
+				  </div>
+					<input class="inp_text" style="color:#666666" type="text" id="searchKey" autocomplete="off" placeholder="请输入搜索关键字" 
+					
+					onkeydown="javascript:if(event.keyCode==13) return searchSubmitForm2();"  />
+					<input class="inp_button" type="button"  onclick="searchSubmitForm2();" value="搜索"/>
+				
+				<div class="clear"></div>
+			</div>
+			
+
+
+ 
+	
+		
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+ 
+  <a href="http://n.ny.cn/pc_2v7f2674.htm"  target="_blank"><font color=#999999>文胸</font></a>
+  &nbsp;<span>|</span>&nbsp;
+  
+  <a href="http://n.ny.cn/pc_9rmb2676.htm"  target="_blank"><font color=#999999>睡衣</font></a>
+  &nbsp;<span>|</span>&nbsp;
+  
+  <a href="http://n.ny.cn/pc_ugdc2683.htm"  target="_blank"><font color=#999999>丝袜批发</font></a>
+  &nbsp;<span>|</span>&nbsp;
+  
+  <a href="http://n.ny.cn/pc_grp64669.htm"  target="_blank"><font color=#999999>儿童套装</font></a>
+  &nbsp;<span>|</span>&nbsp;
+  
+  <a href="http://n.ny.cn/pc_wrs32675.htm"  target="_blank"><font color=#E22C37>内裤批发</font></a>
+  &nbsp;<span>|</span>&nbsp;
+  
+  <a href="http://n.ny.cn/pc_uw8y3578.htm"  target="_blank"><font color=#999999>丁字裤</font></a>
+  &nbsp;<span>|</span>&nbsp;
+  
+  <a href="http://n.ny.cn/pc_5wlr3561.htm"  target="_blank"><font color=#999999>秋冬打底</font></a>
+  
+  			
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!--
+			<ul>
+				<li><a href="#">内衣</a><span>|</span></li>
+				<li><a href="#">内衣</a><span>|</span></li>
+				<li><a href="#">内衣</a><span>|</span></li>
+				<li><a href="#">内衣</a><span>|</span></li>
+				<li><a href="#">内衣</a><span>|</span></li>
+				<li><a href="#">内衣</a><span>|</span></li>
+				<li><a href="#">内衣</a><span>|</span></li>
+			</ul>
+			-->
+		</div>
+		<div class="con_text">
+			<a href="http://n.ny.cn/html/con_wndw5992.html" class="nyicon deal01">担保交易</a><a href="http://n.ny.cn/html/con_09h15991.html" class="nyicon deal02">安全支付</a><a href="http://n.ny.cn/con_2xcq17574.htm" class="nyicon deal03">实体认证</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<!--搜索栏结束-->
+<script type="text/javascript" src="/newPage/js/divselect.js"></script>
+<!--首页面导航栏目切换特效-->				
+<script type="text/javascript">
+	$.divselect("#divselect","#inputselect");
+</script>
+<script>
+ var timeoutid;     
+ $(function() {     
+     $("#searchTit li").each(function(index) {     
+     		 $(this).mouseover(function() {     
+             var liNode = $(this);     
+             timeoutid = setTimeout(function() {     
+						$("div.first").removeClass("first");     
+						$("#searchTit li.cur").removeClass("cur");     
+              		$("div.search_nr").eq(index).addClass("first");     
+                 liNode.addClass("cur");     
+             }, 300);     
+         }).mouseout(function() {     
+             clearTimeout(timeoutid);     
+         });     
+     });   
+ });
+</script>
+<!--搜索栏结束-->
+<!--导航开始-->
+<script>
+	$(function(){
+		var nav=$(".navfa").text();
+		if(typeof String.prototype.trim !== 'function') {
+            String.prototype.trim = function() {
+                return this.replace(/^\s+|\s+$/g, ''); 
+            }
+        }
+ 		
+			var navcon=$(".nav_menu");
+			navcon.children(".menu_ul").hide();
+			navcon.hover(function(){
+				$(this).children(".menu_ul").show();
+					var nav_menu=$(".menu_ul li");
+					nav_menu.hover(function(){
+						$(this).children(".menucon").show().css("background","#eee");
+						$(this).focus().addClass("focusa");	
+						},function(){
+							$(this).children(".menucon").hide();	
+							$(this).focus().removeClass("focusa");
+						});
+			},function(){
+				$(this).children(".menu_ul").hide();
+				});
+
+				$.getJSON("http://factory.ny.cn/factory/product!getJsonPNum.action?callback=?",
+				function(data){
+					$('#productSum').html(data.num);
+					}  
+				);
+
+	});
+
+	
+</script>
+<div class="nav"id="cons"><div class="navbox"><div class="nav_menu"id="menus"><a href="http://product.ny.cn/"class="navcon">全部商品(<i id="productSum">加载中...</i>)<i class="navcon_i">3</i></a><ul class="menu_ul"style="display: none;"><li class=""><a target="_blank"href="http://n.ny.cn/pc_2v7f2674.htm"><p>文胸</p></a><a target="_blank"href="http://n.ny.cn/pc_lct62948.htm">文胸套装</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_ky3z4175.htm">抹胸</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_8w733002.htm">情趣类</a><div class="menucon"style="display: none; background-color: rgb(238, 238, 238); background-position: initial initial; background-repeat: initial initial;"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_2v7f2674.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">文胸</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_lct62948.htm">文胸套装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_ky3z4175.htm">抹胸</a></p><p><a target="_blank"href="http://n.ny.cn/pc_8w733002.htm">情趣类</a></p><p><a target="_blank"href="http://n.ny.cn/pc_qpa63051.htm">调整聚拢</a></p><p><a target="_blank"href="http://n.ny.cn/pc_i6ef3008.htm">哺乳型</a></p><p><a target="_blank"href="http://n.ny.cn/pc_6aco2950.htm">少女文胸</a></p><p><a target="_blank"href="http://n.ny.cn/pc_rfp93006.htm">无痕式文胸</a></p><p><a target="_blank"href="http://n.ny.cn/pc_rhtm3052.htm">磁疗按摩</a></p><p><a target="_blank"href="http://n.ny.cn/pc_zgh72689.htm">抹胸式</a></p><p><a target="_blank"href="http://n.ny.cn/pc_gtpz5821.htm">无钢圈文胸</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_wrs32675.htm"><p>内裤</p></a><a target="_blank"href="http://n.ny.cn/pc_uw8y3578.htm">丁字裤</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_ve2s3566.htm">三角裤</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_9ezc3588.htm">平角裤</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_wrs32675.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">内裤</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_uw8y3578.htm">丁字裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_ve2s3566.htm">三角裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_9ezc3588.htm">平角裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_6nc43709.htm">无痕裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_h0iy3572.htm">安全裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_lg073569.htm">生理裤</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_9rmb2676.htm"><p>家居服</p></a><a target="_blank"href="http://n.ny.cn/pc_11gt3536.htm">家居服套装</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_k3tg3516.htm">家居裙</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_vsxg3513.htm">睡衣</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_9rmb2676.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">家居服</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_11gt3536.htm">家居服套装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_k3tg3516.htm">家居裙</a></p><p><a target="_blank"href="http://n.ny.cn/pc_vsxg3513.htm">睡衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_fr9i4593.htm">T恤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_fvkz3546.htm">孩童睡衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_1ohs3517.htm">家居裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_cx193562.htm">情趣睡衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_ehgh3541.htm">家居上衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_py0n3535.htm">睡袍/浴袍</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_57ef3018.htm"><p>美体塑身</p></a><a target="_blank"href="http://n.ny.cn/pc_8gh83524.htm">塑身裤</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_ypl63514.htm">塑身连体衣</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_57ef3018.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">美体塑身</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_8gh83524.htm">塑身裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_ypl63514.htm">塑身连体衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_fu3e3532.htm">塑身衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_nr953534.htm">塑身腰封/腰夹</a></p><p><a target="_blank"href="http://n.ny.cn/pc_hq3y3520.htm">塑身分体套装</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_cb8o2678.htm"><p>保暖内衣</p></a><a target="_blank"href="http://n.ny.cn/pc_mcrg3518.htm">保暖衣</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_2gea3521.htm">保暖裤</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_qdgu4676.htm">保暖衬衫</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_cb8o2678.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">保暖内衣</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_mcrg3518.htm">保暖衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_2gea3521.htm">保暖裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_qdgu4676.htm">保暖衬衫</a></p><p><a target="_blank"href="http://n.ny.cn/pc_rspv4668.htm">男款套装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_grp64669.htm">儿童套装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_8lpn3525.htm">保暖套装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_a2n73946.htm">保暖背心</a></p><p><a target="_blank"href="http://n.ny.cn/pc_pchn3647.htm">打底衫</a></p><p><a target="_blank"href="http://n.ny.cn/pc_zguw4667.htm">女款套装</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_ugdc2683.htm"><p>袜品</p></a><a target="_blank"href="http://n.ny.cn/pc_a5gv3509.htm">连裤袜</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_47c13817.htm">护膝</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_88622894.htm">船袜</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_ugdc2683.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">袜品</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_a5gv3509.htm">连裤袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_47c13817.htm">护膝</a></p><p><a target="_blank"href="http://n.ny.cn/pc_88622894.htm">船袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_dnkp2897.htm">商务袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_h9212888.htm">运动袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_5wlr3561.htm">打底裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_i4og3510.htm">瘦腿袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_g3w72895.htm">五指袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_c5892891.htm">卡通袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_4f8c2896.htm">筒袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_ddgf2844.htm">丝袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_aav73512.htm">童袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_f7hu2889.htm">棉袜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_gkms3835.htm">袜套</a></p><p><a target="_blank"href="http://n.ny.cn/pc_p29g5246.htm">羊毛袜</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_24ix2680.htm"><p>情趣内衣</p></a><a target="_blank"href="http://n.ny.cn/pc_2bml3976.htm">性感礼服</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_f3ve3973.htm">情侣装</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_u1fz3975.htm">和服</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_24ix2680.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">情趣内衣</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_2bml3976.htm">性感礼服</a></p><p><a target="_blank"href="http://n.ny.cn/pc_f3ve3973.htm">情侣装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_u1fz3975.htm">和服</a></p><p><a target="_blank"href="http://n.ny.cn/pc_1bgn3677.htm">透视三点式</a></p><p><a target="_blank"href="http://n.ny.cn/pc_mu9z3971.htm">连体装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_5dt82867.htm">长裙</a></p><p><a target="_blank"href="http://n.ny.cn/pc_9amg2865.htm">紧身衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_wt0h2863.htm">情趣内裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_24ku2903.htm">肚兜</a></p><p><a target="_blank"href="http://n.ny.cn/pc_f4g42869.htm">网眼</a></p><p><a target="_blank"href="http://n.ny.cn/pc_8vbf2866.htm">短裙</a></p><p><a target="_blank"href="http://n.ny.cn/pc_1uh62868.htm">吊袜带</a></p><p><a target="_blank"href="http://n.ny.cn/pc_hq2f2862.htm">角色扮演</a></p><p><a target="_blank"href="http://n.ny.cn/pc_1qsb3974.htm">情趣配饰</a></p><p><a target="_blank"href="http://n.ny.cn/pc_f5kg3977.htm">性感套装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_mtop2864.htm">吊带裙</a></p><p><a target="_blank"href="http://n.ny.cn/pc_4vx73972.htm">男士套装</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_d2cp3608.htm"><p>吊裙泳装</p></a><a target="_blank"href="http://n.ny.cn/pc_5o0b4590.htm">背心系列</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_edk54064.htm">披肩</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_efe13629.htm">沙滩裤</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_d2cp3608.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">吊裙泳装</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_5o0b4590.htm">背心系列</a></p><p><a target="_blank"href="http://n.ny.cn/pc_edk54064.htm">披肩</a></p><p><a target="_blank"href="http://n.ny.cn/pc_efe13629.htm">沙滩裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_4pe83626.htm">儿童泳衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_ffzr3624.htm">比基尼</a></p><p><a target="_blank"href="http://n.ny.cn/pc_un2g3628.htm">沙滩裙</a></p><p><a target="_blank"href="http://n.ny.cn/pc_3cgx3630.htm">外罩衫</a></p><p><a target="_blank"href="http://n.ny.cn/pc_5t7v3625.htm">泳裤</a></p><p><a target="_blank"href="http://n.ny.cn/pc_out13631.htm">泳帽</a></p><p><a target="_blank"href="http://n.ny.cn/pc_vuyh4334.htm">防晒</a></p><p><a target="_blank"href="http://n.ny.cn/pc_npss362.htm">情侣泳衣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_rbfg3611.htm">吊带</a></p><p><a target="_blank"href="http://n.ny.cn/pc_oemb3623.htm">分体泳装</a></p><p><a target="_blank"href="http://n.ny.cn/pc_g6953612.htm">连体泳装</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_n46r3609.htm"><p>围巾手套</p></a><a target="_blank"href="http://n.ny.cn/pc_2ye53613.htm">围巾</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_rzzd3617.htm">口罩</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_2b8v3615.htm">帽子</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_n46r3609.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">围巾手套</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_2ye53613.htm">围巾</a></p><p><a target="_blank"href="http://n.ny.cn/pc_rzzd3617.htm">口罩</a></p><p><a target="_blank"href="http://n.ny.cn/pc_2b8v3615.htm">帽子</a></p><p><a target="_blank"href="http://n.ny.cn/pc_dx9g3616.htm">毛巾</a></p><p><a target="_blank"href="http://n.ny.cn/pc_0vec3614.htm">手套</a></p><p><a target="_blank"href="http://n.ny.cn/pc_h6z43833.htm">袖套</a></p></div></li><li><a target="_blank"href="http://n.ny.cn/pc_p3hx3610.htm"><p>内衣饰品</p></a><a target="_blank"href="http://n.ny.cn/pc_8i9n4933.htm">内衣包</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_w3qw3620.htm">肩带/饰带</a><i>|</i><a target="_blank"href="http://n.ny.cn/pc_qtri3621.htm">背扣</a><div class="menucon"><h2 class="navbigsort"><a target="_blank"href="http://n.ny.cn/pc_p3hx3610.htm"style="font-size: 20px;color:#D80C18;font-weight: 600;">内衣饰品</a></h2><p><a target="_blank"href="http://n.ny.cn/pc_8i9n4933.htm">内衣包</a></p><p><a target="_blank"href="http://n.ny.cn/pc_w3qw3620.htm">肩带/饰带</a></p><p><a target="_blank"href="http://n.ny.cn/pc_qtri3621.htm">背扣</a></p><p><a target="_blank"href="http://n.ny.cn/pc_rgn13619.htm">乳贴/胸贴</a></p><p><a target="_blank"href="http://n.ny.cn/pc_v4is3618.htm">插片/胸垫</a></p><p><a target="_blank"href="http://n.ny.cn/pc_dhdt3622.htm">内衣护理</a></p></div></li></ul></div><div class="navcon01"><ul><li class="navfa"><a href="http://www.ny.cn/">首页</a></li><li><a href="http://product.ny.cn/">产品大全</a></li><li><a href="http://brand.ny.cn/">品牌专区</a></li><li><a href="http://factory.ny.cn/">厂家直供</a></li><li><a href="http://stock.ny.cn/">库存清销</a></li></ul></div><div class="navcon02"><ul><li><a href="http://www.ny.cn/nylm.html">内衣联盟</a></li><li><a href="http://mall.ny.cn">实体市场</a></li><li><a href="http://zs.ny.cn/">招商加盟</a></li><li><a href="http://n.ny.cn/information.htm">内衣时讯</a></li></ul></div></div><div class="clear"></div></div>
+<!--导航结束-->
+<script type="text/javascript" src="/newPage/js/globalJquery.js"></script>
+<link href="/js/base.css" rel="stylesheet" type="text/css"/>
+<script language="javascript" src="/js/g.base.js"></script>
+<script type="text/javascript" src="/fg/js/subModal.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/subModal.css" />
+<link href="/css_new/master.css" rel="stylesheet" rev="stylesheet" type="text/css" media="all"/>
+<script>
+	function submitForm(){
+			var query = "/pc_f4g42869.htm?order="+document.getElementsByName('orderby1')[0].value+"&tag=";
+			if(document.getElementsByName('strPrice')[0].value != ''){
+					query = query + "&startPrice="+document.getElementsByName('strPrice')[0].value;	
+			}
+			if(document.getElementsByName('endPrice')[0].value != ''){
+				query = query + "&endPrice="+document.getElementsByName('endPrice')[0].value;
+			}	
+			this.location=query;
+	}
+	function orderby(orderbyType) {
+		if(orderbyType == '' || orderbyType == null) {
+			return;
+		}
+		
+	  document.getElementsByName('orderby1')[0].value=orderbyType;
+		this.location="/pc_f4g42869.htm?order=" + orderbyType + "&areaId=null&tag=&startPrice=&endPrice=";
+  }
+
+	function submitByArea(act){
+		this.location="/pc_f4g42869.htm?areaId=" + act + "&orderbyType=8&tag=&startPrice=&endPrice=";
+	}	
+	
+	function goPager(pager,totalpager) {
+			if(pager == '' || pager == null) {
+				return;
+			}
+			if(parseInt(pager) <=0  || parseInt(pager)>parseInt(totalpager)){
+				alert("请输入1-"+totalpager+"之间的数字");
+				document.getElementsByName('gotopager')[0].focus();
+				return;
+			}
+		  	document.getElementsByName('page')[0].value=pager;
+			this.location="/pc_f4g42869-order_0-"+pager+".htm?tag=&startPrice=&endPrice=&areaId=null";
+											
+  }	
+  
+  function submitByIsbatch(){
+  	var isbatch = document.getElementsByName('isbatch')[0];
+  	if(isbatch.checked){
+		isbatch.value ="1";
+  	}else{
+  		isbatch.value ="";
+  	}
+  	this.location="/pc_f4g42869.htm?isBatch="+isbatch.value+"&orderbyType=8&tag=&startPrice=&endPrice=";
+  } 
+
+</script>
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	$("ul#topnav li").hover(function() { 
+		$(this).css({ 'background' : 'url(images/list_pxBg2.gif) repeat-x'}); //Add background color + image on hovered list item
+		$(this).find("span").show(); //Show the subnav
+	} , function() { //on hover out...
+		$(this).css({ 'background' : 'none'}); //Ditch the background
+		$(this).find("span").hide(); //Hide the subnav
+	});
+	});
+</script>
+<style>
+	a:hover{ text-decoration:none}
+	.clear{ clear:both;}
+	.nyl_MX_shai{ background:#fff; border:1px solid #dedede; padding:0; margin-bottom:22px;}
+	.nyl_MX_top{ background:none; border:0; padding-bottom:6px;}
+	.nyl_MX_top span{ padding:0 10px;}
+	.nyl_MX_top a{ background:none; padding-left:0}
+	.nyl_MX_bt{ margin:0; padding:0; background:#eee;}
+	
+	.nyl_MX_xgs{ width:150px; float:right; margin:0;color:#333; height:42px; line-height:42px; background:none; font-size:12px;}
+	.nyl_MX_xgs span{ padding:0 5px; color:#D12E55}
+	.nyl_MX_tit{ background:#f9f9f9;border:1px solid #DEDEDE; border-top:0; padding-top:10px;}
+	.nyl_MX_tit p{ padding-top:8px;}
+	.nyl_MX_tit li{margin:0; margin-left:-1px;}
+	.nyl_MX_tit li a{ color:#777s;}
+	.nyl_MX_tit li a:hover{ color:#D12E56;}
+	.nyl_MX_tit li.titbgx-sorup{ margin-left:16px!important;}
+	.nyl_MX_tit li.lis{ padding-left:10px; padding-top:8px;}
+	.nyl_MX_zsfs{border:1px solid #DEDEDE; padding:8px 10px 5px 15px;}
+	.nyl_MX_box li{border:1px solid #eee;height:300px;*height:310px;}
+	.nyl_MX_box li:hover{border:1px solid #D80C18;}
+	.nyl_MX_box li label a{ color:#333;}
+	.nyl_MX_box li label a:hover{ color:#FF000F;}
+	.nyl_MX_box li p a{ color:#999}
+	.nyl_MX_box li p a:hover{ color:#D12E55}
+	.nyl_MX_bt{ border-bottom:1px solid #DEDEDE;}
+	.nyl_MX_shai .box ul{ margin-top:-2px; padding:10px 0 8px}
+	.nyl_MX_shai .box .li_1{ color:#999}
+	.nyl_MX_shai .box .li_2 a.xz,.nyl_MX_shai .box .li_2 a:hover{background:#E22C37}
+	.nyl_MX_zsfs div input{ width:50px; height:16px; border:1px solid #DEDEDE; color:#999}
+	.nyl_MX_zsfs span{ float:right; margin:0; width:60px; height:26px; line-height:26px; font-size:12px; padding:0;background:url("../../images/nyl_MXzs.gif") repeat-x scroll 0 -26px rgba(0, 0, 0, 0)}
+	.nyl_MX_zsfs span a{ padding-left:0; color:#5E5E5E}
+	.nyl_MX_shai .box .li_1{ width:60px}
+	
+	
+	
+	.nyl_MX_zsfs div{ float:none;}
+	.nysearch{ background:#fff; border:1px solid #ddd;height:24px; line-height:24px; padding:14px; padding-right:9px;}
+	.searchdivleft{ width:50%; float:left!important;}
+	.searchdivleft span{ display:block;  float:left; height:42px; line-height:42px;padding:0 10px;}
+	.searchspan01{ border:1px dashed #E22C37; color:#E22C37;}
+	.searchdivleft .searchspan02{ padding-left:12px; color:#666666}
+	.searchdivleft .span01{ background:#E22C37; color:#fff;}
+	.searchdivleft .span02{ color:#444;}
+	.searchdivleft .span02 i{ padding:0 5px;}
+	.searchdivleft .span02 em{ font-weight:700; color:#E22C37}
+	.searchspan02 i{ font-weight:700; padding:0 2px; color:#E22C37}
+	.searchdivright{ float:right!important}
+	.searchdivright span{ display:block; float:left; width:55px; text-align:right; height:24px; line-height:24px; background:#fafafa url("../../images/nyl_MXzs.gif") repeat-x scroll 0 -25px; padding-right:5px; border:1px solid #ccc; margin-left:-1px;}
+	.searchdivright span a{ display:block; width:55px; height:24px; line-height:24px;}
+	.searchdivright span.cur{ background:#F8DABF url("../../images/nyl_MXzs.gif") repeat-x; color:#7A2C30}
+	.searchdivright span.nyl_MXzsls2{ background:#FAFAFA url("../../images/nyl_MXzsls2.gif") repeat-x; color:#532C2F}
+	.searchdivright span.nyl_MXzsls2.cur{ background:#F8DABF url("../../images/nyl_MXzsls1.gif") repeat-x;color:#7A2C30}
+	.nyl_MX_tit li.titbgx{ background:#fff; border:1px solid #ddd; margin-left:-1px; height:30px; line-height:30px; width:70px;}
+	.nyl_MX_tit li.huidown{}
+	.nyl_MX_tit{ background:#f2f2f2; border:0; padding-top:10px; height:43px;}
+	.nyl_MX_tit li.huiup a{height:30px; background:#fff url("../../images/nyl_MXzs.gif") no-repeat scroll right -120px; color:#806F66; margin:0;}
+	.nyl_MX_tit li.huiup a:hover,.nyl_MX_tit li.huidown a{height:30px; background:#d80c18 url("../../images/nyl_MXzs.gif") no-repeat scroll right -92px!important; color:#fff!important; margin-left:0}
+	.nyl_MX_tit li.reddown a{height:30px; background:#d80c18 url("../../images/nyl_MXzs.gif") no-repeat scroll right -140px!important; color:#fff!important; margin-left:0}
+	.nyl_MX_tit li .firstaa{height:30px; background:#AF1C24 url("../../images/nyl_MXzs.gif") no-repeat scroll right -92px; color:#fff;}
+	.titbgx-sorup span.tx{ background:url("../../images/nysor_up01.gif") no-repeat right 0}
+	.titbgx-openli,.titbgx-cityli{ top:30px;}
+	.nyl_MX_box li span em{ font-size:18px; font-weight:700;}
+	.nyl_MX_zsfs span.cur a{ color:#5E5E5E;}
+	.nyl_RG_box li{ background:none; border-bottom:1px solid #eee; margin-bottom:-1px}
+	.nyl_RG_box li div{ height:auto;}
+	.nyl_RG_box li label a{ color:#333}
+	.nyl_RG_box li p{ color:#666;}
+	.nyl_sjrm .tit{ background:#FCFAFC!important}
+</style>
+<div class="nyl_mainx">
+  <div class="nyl_MX_left">
+  	
+    <div class="nyl_MX_top">您所在的位置<span>></span><a href="/index.htm">首页</a>  <span>></span><a href="/pc_24ix2680.htm">情趣内衣</a><span>></span><a>网眼</a></div>
+    
+		<div class="nyl_MX_shai">
+
+<div class="nyl_MX_bt">
+	<div class="searchdivleft"><span class="span01">商品筛选</span><span class="span02">全部<i>></i><em>网眼</em></span></div>
+	<div class="nyl_MX_xgs">找到相关宝贝<span>  9 </span>件</div>
+	<div class="clear"></div>
+</div>
+
+<div class="box">
+
+	
+		<ul>
+			<li class="li_1">品牌：</li>
+			<li class="li_2">
+					
+		     <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=" class="xz">全部</a>
+		      
+			
+			
+				<a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.brand&order=8&extField2=&brand=5a9c10a53d120193013dba20e8ba4842&fieldName=key&searchType=b&tag=以比赞">以比赞</a>
+				 
+				<a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.brand&order=8&extField2=&brand=4028880b408017270140f74f71ee4a54&fieldName=key&searchType=b&tag=耶妮娅">耶妮娅</a>
+				 
+				<a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.brand&order=8&extField2=&brand=ff808081398b24cb013990111e3e0b07&fieldName=key&searchType=b&tag=苏泽尔">苏泽尔</a>
+				   
+				  </li>
+			</ul>
+	 
+
+ 
+	
+	
+	
+	
+
+	  <ul>
+	    <li class="li_1">价格：</li>
+	    <li class="li_2">
+	    	
+			 
+			  
+			  		<a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=" class="xz">全部</a>
+			  
+			     	
+			  
+	      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=&startPrice=1.0&endPrice=15.0">1.00—15.00</a>
+	      
+	      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=&startPrice=15.0&endPrice=30.0">15.00—30.00</a>
+	      
+	      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=&startPrice=30.0&endPrice=50.0">30.00—50.00</a>
+	      
+	      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=&startPrice=50.0&endPrice=100.0">50.00—100.00</a>
+	      
+	      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=&startPrice=200.0&endPrice=300.0">200.00—300.00</a>
+	      
+	      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=&startPrice=100.0&endPrice=200.0">100.00—200.00</a>
+	      
+	   </li>
+	  </ul>
+
+	
+	
+ <ul id="hideID0" style="">
+    <li class="li_1">颜色：</li>
+    <li class="li_2">  
+	    
+	    <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=" class="xz">全部</a>
+	   
+			 
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=白色">白色</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=黄色">黄色</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=红色">红色</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=紫色">紫色</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=灰色">灰色</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=绿色">绿色</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=黑色">黑色</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extField1&order=8&extField2=&extField1=蓝色">蓝色</a>
+		   	
+		  		
+    </li>
+  </ul>
+
+
+	
+ <ul id="hideID1" style="">
+    <li class="li_1">面料：</li>
+    <li class="li_2">  
+	    
+	    <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=" class="xz">全部</a>
+	   
+			 
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=网纱">网纱</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=夹棉">夹棉</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=蕾丝">蕾丝</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=针织">针织</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=真丝">真丝</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=雪纺">雪纺</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2= Laica/莱卡"> Laica/莱卡</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=梭织">梭织</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=复合">复合</a>
+		   	
+		  		
+    </li>
+  </ul>
+
+
+	
+ <ul id="hideID2" style="display:block;">
+    <li class="li_1">款式：</li>
+    <li class="li_2">  
+	    
+	    <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=" class="xz">全部</a>
+	   
+			 
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=露乳开裆式">露乳开裆式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=紧身包衣式">紧身包衣式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=塑身式">塑身式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=透视三点式">透视三点式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=短裙式">短裙式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=束带链环套式">束带链环套式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=马甲式">马甲式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=长裙式">长裙式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=透明式">透明式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=开裆式">开裆式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=丁字裤型">丁字裤型</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=T型">T型</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=半身连裤式">半身连裤式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=高筒">高筒</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=长筒式">长筒式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=绳衣套装">绳衣套装</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=多件套式">多件套式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=C字型">C字型</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=半身连裤式">半身连裤式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=束胸式">束胸式</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld3&order=8&extField2=&extFileld3=其他">其他</a>
+		   	
+		  		
+    </li>
+  </ul>
+
+
+	
+ <ul id="hideID3" style="display:block;">
+    <li class="li_1">风格：</li>
+    <li class="li_2">  
+	    
+	    <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=" class="xz">全部</a>
+	   
+			 
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=空姐服">空姐服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=OL职业装">OL职业装</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=女佣服">女佣服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=游戏制服">游戏制服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=豹纹装">豹纹装</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=旗袍风">旗袍风</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=钢管舞热舞服">钢管舞热舞服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=护士服">护士服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=女王装/女巫服">女王装/女巫服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=赛车">赛车</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=拉拉队服">拉拉队服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=学生服">学生服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=公主服">公主服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=女警服">女警服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=和服风">和服风</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=水手服">水手服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=猫女/兔女服">猫女/兔女服</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld4&order=8&extField2=&extFileld4=其他">其他</a>
+		   	
+		  		
+    </li>
+  </ul>
+
+
+	
+ <ul id="hideID5" style="border:0px;display:block;">
+    <li class="li_1">是否外贸：</li>
+    <li class="li_2">  
+	    
+	    <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld6&order=8&extField2=&extFileld6=" class="xz">全部</a>
+	   
+			 
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld6&order=8&extField2=&extFileld6=是">是</a>
+		   	
+		   
+			  
+		      <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2.extFileld6&order=8&extField2=&extFileld6=否">否</a>
+		   	
+		  		
+    </li>
+  </ul>
+
+
+
+
+	</div>
+</div>
+<!--<div class="nyl_MXcklist"><a href="#">显示更多</a></div> -->
+		    	
+    <div class="nyl_MX_zsfs">
+			<div class="searchdivleft">    			
+				￥<input type="text" name="strPrice" value="" title="价格过滤最低价格" onkeypress="floatOnly();"> - <input type="text" name="endPrice" value="" title="价格过滤最高价格" onkeypress="floatOnly();"> 
+								<img src="/images/jj_ss.jpg" align="absmiddle" style="cursor:pointer;" onClick="submitForm();">
+			</div>
+    		
+    		<div class="searchdivright">
+    		<span class="nyl_MXzsls1 cur ">
+    			
+    			<a href="/pc_f4g42869-order_8.htm?t=pictext&categoryId=24ix2680&fieldNames=brand&brand=&fieldName=key&searchType=b&tag=" >大图</a>
+    		</span>
+			<span class="nyl_MXzsls2 " >
+    			
+    			<a href="/pc_f4g42869-order_8.htm?t=pic&categoryId=24ix2680&fieldNames=brand&brand=&fieldName=key&searchType=b&tag=" >列表</a>
+    		</span>
+			</div>
+
+    		
+    </div> 
+    
+    <form  name="fgProductSearchForm" method="get" action="">
+			<input type="hidden" name="page" value='1'>
+			<input type="hidden" name="order" value='8'>
+			<input type="hidden" name="key" value='null'>
+			<input type="hidden" name="iscompare" value='false'>
+			<input type="hidden" name="orderby1">
+     
+    <div class="nyl_MX_tit">
+      <ul>
+        
+        	<li class="titbgx huidown" style="width:60px;"><a class="firstaa" href="/pc_f4g42869.htm?order=7&tag=&startPrice=null&endPrice=null">销量</a></li>
+        
+        
+        
+        	<li class="titbgx huiup" style="width:60px;"><a href="/pc_f4g42869.htm?order=2&tag=&startPrice=null&endPrice=null">价格</a></li>
+        
+        
+        
+        	<li class="titbgx huiup" style="width:70px;"><a href="/pc_f4g42869.htm?order=10&tag=&startPrice=null&endPrice=null">好评度</a></li>
+        
+        
+        
+        	<li class="titbgx huiup" style="width:80px;"><a href="/pc_f4g42869.htm?order=4&tag=&startPrice=null&endPrice=null">上架时间</a></li>
+        
+       
+				<li  style="width:110px;" class="titbgx titbgx-sorup"  onmouseout="$(this).removeClass('titbgx-sorupcur');" onmouseover="$(this).addClass('titbgx-sorupcur');" onclick="$(this).addClass('titbgx-sorupcur');">
+					<span class="tx">最近更新时间</span>
+					<div class="titbgx-openli"><a href="javascript:orderby('0');">最近更新时间</a></div>
+				</li>
+              
+              
+         
+        
+        <li class="titbgx titbgx-sorup"   onmouseout="$(this).removeClass('titbgx-sorupcur');" onmouseover="$(this).addClass('titbgx-sorupcur');" onclick="$(this).addClass('titbgx-sorupcur');">
+        	<span class="tx">所在地</span>
+        	<div class="titbgx-cityli">
+            <span><a href="javascript:submitByArea('');">所有地区</a></span>
+          	<a class="link" href="javascript:submitByArea('100340000000000');">安徽</a><a class="link" href="javascript:submitByArea('100820000000000');">澳门</a><a class="link" href="javascript:submitByArea('100110000000000');">北京</a><a class="link" href="javascript:submitByArea('100500000000000');">重庆</a><a class="link" href="javascript:submitByArea('100350000000000');">福建</a><a class="link" href="javascript:submitByArea('100620000000000');">甘肃</a><a class="link" href="javascript:submitByArea('100440000000000');">广东</a><a class="link" href="javascript:submitByArea('100450000000000');">广西</a><a class="link" href="javascript:submitByArea('100520000000000');">贵州</a><a class="link" href="javascript:submitByArea('100460000000000');">海南</a><a class="link" href="javascript:submitByArea('100130000000000');">河北</a><a class="link" href="javascript:submitByArea('100410000000000');">河南</a><a class="link" href="javascript:submitByArea('100230000000000');">黑龙江</a><a class="link" href="javascript:submitByArea('100420000000000');">湖北</a><a class="link" href="javascript:submitByArea('100430000000000');">湖南</a><a class="link" href="javascript:submitByArea('100220000000000');">吉林</a><a class="link" href="javascript:submitByArea('100320000000000');">江苏</a><a class="link" href="javascript:submitByArea('100360000000000');">江西</a><a class="link" href="javascript:submitByArea('100210000000000');">辽宁</a><a class="link" href="javascript:submitByArea('100150000000000');">内蒙古</a><a class="link" href="javascript:submitByArea('100640000000000');">宁夏</a><a class="link" href="javascript:submitByArea('100630000000000');">青海</a><a class="link" href="javascript:submitByArea('100370000000000');">山东</a><a class="link" href="javascript:submitByArea('100140000000000');">山西</a><a class="link" href="javascript:submitByArea('100610000000000');">陕西</a><a class="link" href="javascript:submitByArea('100310000000000');">上海</a><a class="link" href="javascript:submitByArea('100510000000000');">四川</a><a class="link" href="javascript:submitByArea('100710000000000');">台湾</a><a class="link" href="javascript:submitByArea('100120000000000');">天津</a><a class="link" href="javascript:submitByArea('100540000000000');">西藏</a><a class="link" href="javascript:submitByArea('100810000000000');">香港</a><a class="link" href="javascript:submitByArea('100650000000000');">新疆</a><a class="link" href="javascript:submitByArea('100530000000000');">云南</a><a class="link" href="javascript:submitByArea('100330000000000');">浙江</a>
+					</div>
+					
+        </li>  	
+           
+	        </select>
+       </li>
+       
+       		
+		
+        <li class="lis">是否一件起批：<input type="checkbox" name="isbatch" value="" onclick="submitByIsbatch();" /></li>
+       
+      </ul>
+      
+      <p><span>1</span>/1
+      		
+      	<a class="le"></a>
+      	
+      	
+    		<a class="rig" ></a></p>
+      	</p>
+    		
+    </div> 
+    	
+    <div class="nyl_MX_box">
+        <ul>
+					
+									
+          <li>
+          
+            <div>
+            	<a href="/p_ztkz20354.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20130927/pop/4/pop41380252296846_13802522960784.jpg" alt='狂野天使网眼连体开裆衣正丽3564' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							    68.00 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_ztkz20354.htm" target="_blank" title="[新款]狂野天使网眼连体开裆衣正丽3564">[新款]狂野天使网眼连体开裆衣正丽3564</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="http://yidianyuan.ny.cn/"  title="">伊甸园商城</a>
+            </p>
+            
+            	
+            	
+            
+          </li>
+         	
+									
+          <li>
+          
+            <div>
+            	<a href="/p_evp622585.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20131106/pop/4/pop41383722605135_big_13837226035314.jpg" alt='耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑W9051' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							  24.00 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_evp622585.htm" target="_blank" title="[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑W9051">[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑W9051</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="http://yeniya.ny.cn/"  title="">武汉耶妮娅服装有限公司</a>
+            </p>
+            
+            	
+            	
+            
+          </li>
+         	
+									
+          <li>
+          
+            <div>
+            	<a href="/p_psez22586.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20131106/pop/4/pop41383722843636_big_13837228420434.jpg" alt='耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9052' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							  24.00 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_psez22586.htm" target="_blank" title="[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9052">[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9052</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="http://yeniya.ny.cn/"  title="">武汉耶妮娅服装有限公司</a>
+            </p>
+            
+            	
+            	
+            
+          </li>
+         	
+						
+          <li class="li_01">
+          
+            <div>
+            	<a href="/p_80yg22588.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20131106/pop/4/pop41383723141686_big_13837231401294.jpg" alt='耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 w9053' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							  24.00 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_80yg22588.htm" target="_blank" title="[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 w9053">[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 w9053</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="http://yeniya.ny.cn/"  title="">武汉耶妮娅服装有限公司</a>
+            </p>
+            
+            	
+            	
+            
+          </li>
+         	
+									
+          <li>
+          
+            <div>
+            	<a href="/p_2k7t22589.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20131106/pop/4/pop41383723319442_big_13837233177524.jpg" alt='耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9054' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							  24.00 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_2k7t22589.htm" target="_blank" title="[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9054">[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9054</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="http://yeniya.ny.cn/"  title="">武汉耶妮娅服装有限公司</a>
+            </p>
+            
+            	
+            	
+            
+          </li>
+         	
+									
+          <li>
+          
+            <div>
+            	<a href="/p_zzt522590.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20131106/pop/zzt5225904/pop41383724099500_big_13837240977714.jpg" alt='耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑W9055' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							  30.00 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_zzt522590.htm" target="_blank" title="[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑W9055">[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑W9055</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="http://yeniya.ny.cn/"  title="">武汉耶妮娅服装有限公司</a>
+            </p>
+            
+            	
+            	
+            
+          </li>
+         	
+									
+          <li>
+          
+            <div>
+            	<a href="/p_1uaf22591.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20131106/pop/4/pop41383723862196_big_13837238605324.jpg" alt='耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9056' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							  28.00 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_1uaf22591.htm" target="_blank" title="[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9056">[新款]耶妮娅情趣内衣 性感内衣 丝袜连体袜诱惑 W9056</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="http://yeniya.ny.cn/"  title="">武汉耶妮娅服装有限公司</a>
+            </p>
+            
+            	
+            	
+            
+          </li>
+         	
+						
+          <li class="li_01">
+          
+            <div>
+            	<a href="/p_zrig27794.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20140529/pop/4/pop41401306305766_big_1401306304492.jpg" alt='无缝情趣' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							  18.50 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_zrig27794.htm" target="_blank" title="[新款]无缝情趣">[新款]无缝情趣</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="/store_11111114720.htm"  title="">鹏發情趣内衣</a>
+            </p>
+            
+            	
+            	<span>
+	          	
+									 	<a title="换货保障" href=""><img src="http://images.ny.cn/userfiles/content/img/20120810/specialService/1344579348113.jpg" border="0" width="18" height="18"/></a>
+	            
+	            	</span>
+	            
+            	
+            
+          </li>
+         	
+									
+          <li>
+          
+            <div>
+            	<a href="/p_nugk27795.htm" target="_blank"><img src="http://images.ny.cn/userfiles/product/img/20140529/pop/4/pop41401308406897_big_1401308405958.jpg" alt='无缝情趣' /></a>
+            </div>
+            
+            	<span style='color:red;'>
+							 ￥<em>
+							  17.00 
+							  </em>
+							    
+							  </span> 
+            
+            <label><a href="/p_nugk27795.htm" target="_blank" title="[新款]无缝情趣">[新款]无缝情趣</a></label>
+            
+
+            <p>
+            	<a target="_blank" style="color:#2953A6" href="/store_11111114720.htm"  title="">鹏發情趣内衣</a>
+            </p>
+            
+            	
+            	<span>
+	          	
+									 	<a title="换货保障" href=""><img src="http://images.ny.cn/userfiles/content/img/20120810/specialService/1344579348113.jpg" border="0" width="18" height="18"/></a>
+	            
+	            	</span>
+	            
+            	
+            
+          </li>
+         	
+         </ul>
+   		 </div> 
+       
+    
+    	
+				<div style=" clear:both;"></div>
+				<div class="ttq_page" >
+					
+					  <a class="top" href="javascript:void(0)">首页</a>
+					
+					
+					  <a class="top" href="javascript:void(0)">上一页</a>
+					
+					
+						 <a href="/pc_f4g42869-order_8.htm?tag=&fieldNames=extField2&order=8&extField2=" class="cur"><b>1</b></a>
+							
+					
+					  <a class="bot" href="javascript:void(0)">下一页</a>
+					
+					
+					  <a class="bot" href="javascript:void(0)">尾页</a>
+						
+						<span>共1页</span>
+						转到 <input type="text" value="1" name="gotopager"  class="sign_l_next_input" onkeypress="intOnly();"/> 页
+				<a class="button" href="javascript:goPager(document.getElementsByName('gotopager')[0].value,1)">确定</a>	
+						
+				</div>
+			
+		</form>
+     </div>
+  <div class="nyl_MX_right"> 
+  	<!-- 猜你喜欢start --> 
+     <div class="nyl_RG_box" id="hotProductList"></div>
+ 		 
+ 		 <div class="nyl_RG_box">
+        
+
+
+
+ 
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+	<div class="tit"><img src="/images/nyl_RG_tit.gif" /></div>
+		
+			<ul>
+				
+							<li>     
+                 <div><a href='http://n.ny.cn/p_9peq11978.htm'><img src="http://images.ny.cn/userfiles/product/img/20130611/small/small_1370944531175.jpg"/></a></div>
+                 
+													 <b>￥
+								
+							    60.00 
+							  </b>
+								
+										<label><a href='http://n.ny.cn/p_9peq11978.htm'>[新款]克莱缇 13239 夏季时尚新款 性感V领圆点印花泳装</a></label>
+										<p>最近成交：5笔</p>
+							</li>
+				
+			</ul>
+			
+	                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+ 		 </div>
+ 		 <!-- 猜你喜欢end -->
+
+ 		 
+ 		 <!-- 商家热卖end -->
+ 		 <!-- 商家精选start -->
+     <div class="nyl_RG_box">
+        
+
+
+
+ 
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+								
+	<div class="tit"><img src="/images/nyl_RG_tit02.gif" /></div>
+		
+			<ul>
+				
+							<li>     
+                 <div><a href='http://n.ny.cn/p_0ha98635.htm'><img src="http://images.ny.cn/userfiles/product/img/20130413/pop/5/pop51365835229743_13658352285685.jpg"/></a></div>
+                 
+							  <b>￥
+								
+							    54.18 
+							  </b>
+								
+										<label><a href='http://n.ny.cn/p_0ha98635.htm'>[新款]靓芬  3469  印花靓丽家居睡衣   清凉   时尚  小清新</a></label>
+										<p>最近成交：0笔</p>
+							</li>
+				 
+							<li class="line">     
+                 <div><a href='http://n.ny.cn/p_v6qs10471.htm'><img src="http://images.ny.cn/userfiles/product/img/20130517/pop/5/pop51368754142561_13687541412345.jpg"/></a></div>
+                 	
+							 <b>￥  
+							    1.50 
+							  </b>
+									
+										<label><a href='http://n.ny.cn/p_v6qs10471.htm'>[新款]宏宇 006 女士拼色 卡通可爱 纯棉舒适船袜</a></label>
+										<p>最近成交：0笔</p>
+							</li>
+						
+			</ul>
+			
+	                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+ 		 </div>
+ 		 <!-- 商家精选end -->
+ 		 <!-- 右部广告start -->
+     <div class="ny_gg">
+     		
+
+
+ 
+	
+		
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <tr>
+  
+ <td width="100%" align="center">
+  
+  	<a href="http://stock.ny.cn/stock.htm" target="_blank" ><IMG src="http://images.ny.cn/userfiles/adcontent/img/0/1413886828722.jpg" width='190'  height='243' alt="ny.cn库存清销"+i border="0"/></a>
+  		</td></tr>
+</table>
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </div>
+     <!-- 右部广告start -->
+  </div>
+</div>
+<!-- 商家热卖start -->
+<div class="nyl_sjrm">
+	
+
+
+
+ 
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+								
+			<div class="tit"><img src="/images/zhsh-tit01.gif" /></div>
+				
+						<div class="box">
+							<ul>
+								 
+										<li>     
+                    						<div><a href='http://n.ny.cn/p_ggys17221.htm'><img src="http://images.ny.cn/userfiles/product/img/20130823/small/small_1377229132967.jpg"/></a></div>
+                 		
+												<strong>￥
+								
+							    43.75 
+							  </strong>
+										
+											<label><a href='http://n.ny.cn/p_ggys17221.htm'>[新款]澳淇芬8260  女士文胸套装收副乳聚拢调整型舒适透气内衣</a></label>
+											
+									  </li>
+								 
+										<li>     
+                    						<div><a href='http://n.ny.cn/p_kb7g17073.htm'><img src="http://images.ny.cn/userfiles/product/img/20130822/small/small_1377153819147.jpg"/></a></div>
+                 		
+												<strong>￥
+								
+							    47.70 
+							  </strong>
+										
+											<label><a href='http://n.ny.cn/p_kb7g17073.htm'>[新款]妮可雅251218  女士新品睡衣春秋针织纯棉中长袖时尚印花家居服</a></label>
+											
+									  </li>
+								 
+										<li>     
+                    						<div><a href='http://n.ny.cn/p_2hwg16001.htm'><img src="http://images.ny.cn/userfiles/product/img/20130812/small/small_1376287267286.jpg"/></a></div>
+                 		
+												<strong>￥
+								
+							    131.20 
+							  </strong>
+										
+											<label><a href='http://n.ny.cn/p_2hwg16001.htm'>[新款]秀界奢华性感蕾丝背夹收腰聚拢丰胸美体塑身衣5004</a></label>
+											
+									  </li>
+								 
+										<li>     
+                    						<div><a href='http://n.ny.cn/p_05qf14232.htm'><img src="http://images.ny.cn/userfiles/product/img/20130724/small/small_1374628677833.jpg"/></a></div>
+                 		
+												<strong>￥
+								
+							    24.00 
+							  </strong>
+										
+											<label><a href='http://n.ny.cn/p_05qf14232.htm'>[新款]丹利针织 可乐米 莱卡儿童内衣13374</a></label>
+											
+									  </li>
+								 
+										<li>     
+                    						<div><a href='http://n.ny.cn/p_z64g13639.htm'><img src="http://images.ny.cn/userfiles/product/img/20130714/small/small_1373793995830.jpg"/></a></div>
+                 		
+												<strong>￥
+								
+							    28.00 
+							  </strong>
+										
+											<label><a href='http://n.ny.cn/p_z64g13639.htm'>[新款]秋兔女装莫代尔时尚吊带</a></label>
+											
+									  </li>
+								 
+										<li>     
+                    						<div><a href='http://n.ny.cn/p_d7r59465.htm'><img src="http://images.ny.cn/userfiles/product/img/20130425/small/small_1366881412617.jpg"/></a></div>
+                 		
+												<strong>￥
+								
+							    6.50 
+							  </strong>
+										
+											<label><a href='http://n.ny.cn/p_d7r59465.htm'>[新款]盼盼针织 8808超性感比基尼连裤袜</a></label>
+											
+									  </li>
+								
+							</ul>
+						</div>
+				                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+</div>
+<!-- 商家热卖end -->
+<!--底部开始-->
+<div style="clear:both"></div>
+<div class="nyfooter">
+	<p class="nyxian"></p>
+	<div class="nysortBox">
+		<div class="nysort">
+			<p><a href="/pc_2v7f2674.htm">文胸</a></p>
+			<a href="/pc_2v7f2674.htm"><img src="/newPage/nyimages/ny01.png" /></a>
+			<ul>
+				<li><a href="/pc_qpa63051.htm">聚拢</a></li>
+				<li><a href="/pc_6aco2950.htm">少女</a></li>
+				<li><a href="/pc_rfp93006.htm">无痕</a></li>
+				<li><a href="/pc_ky3z4175.htm">抹胸</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort">
+			<p><a href="/pc_wrs32675.htm">内裤</a></p>
+			<a href="/pc_wrs32675.htm"><img src="/newPage/nyimages/ny02.png" /></a>
+			<ul>
+				<li><a href="/pc_uw8y3578.htm">丁字</a></li>
+				<li><a href="/pc_h0iy3572.htm">安全</a></li>
+				<li><a href="/pc_6nc43709.htm">无痕</a></li>
+				<li><a href="/pc_9ezc3588.htm">平角</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort">
+			<p><a href="/pc_9rmb2676.htm">家居服</a></p>
+			<a href="/pc_9rmb2676.htm"><img src="/newPage/nyimages/ny03.png" /></a>
+			<ul>
+				<li><a href="/pc_vsxg3513.htm">睡衣</a></li>
+				<li><a href="/pc_11gt3536.htm">套装</a></li>
+				<li><a href="/pc_fvkz3546.htm">孩童</a></li>
+				<li><a href="/pc_cx193562.htm">情趣</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort">
+			<p><a href="/pc_57ef3018.htm">美体塑身</a></p>
+			<a href="/pc_57ef3018.htm"><img src="/newPage/nyimages/ny04.png" /></a>
+			<ul>
+				<li><a href="/pc_ypl63514.htm">连体衣</a></li>
+				<li><a href="/pc_hq3y3520.htm">分体套装</a></li>
+				<li><a href="/pc_8gh83524.htm">塑身裤</a></li>
+				<li><a href="/pc_fu3e3532.htm">塑身衣</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort">
+			<p><a href="/pc_cb8o2678.htm">保暖内衣</a></p>
+			<a href="/pc_cb8o2678.htm"><img src="/newPage/nyimages/ny05.png" /></a>
+			<ul>
+				<li><a href="/pc_pchn3647.htm">打底衫</a></li>
+				<li><a href="/pc_8lpn3525.htm">套装</a></li>
+				<li><a href="/pc_mcrg3518.htm">保暖衣</a></li>
+				<li><a href="/pc_2gea3521.htm">保暖裤</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort">
+			<p><a href="/pc_ugdc2683.htm">袜品</a></p>
+			<a href="/pc_ugdc2683.htm"><img src="/newPage/nyimages/ny06.png" /></a>
+			<ul>
+				<li><a href="/pc_ddgf2844.htm">丝袜</a></li>
+				<li><a href="/pc_a5gv3509.htm">连裤袜</a></li>
+				<li><a href="/pc_f7hu2889.htm">棉袜</a></li>
+				<li><a href="/pc_88622894.htm">船袜</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort">
+			<p><a href="/pc_24ix2680.htm">情趣内衣</a></p>
+			<a href="/pc_24ix2680.htm"><img src="/newPage/nyimages/ny07.png" /></a>
+			<ul>
+				<li><a href="/pc_f4g42869.htm">网眼</a></li>
+				<li><a href="/pc_1bgn3677.htm">三点式</a></li>
+				<li><a href="/pc_hq2f2862.htm">制服</a></li>
+				<li><a href="/pc_mtop2864.htm">吊带</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort">
+			<p><a href="/pc_d2cp3608.htm">吊裙泳装</a></p>
+			<a href="/pc_d2cp3608.htm"><img src="/newPage/nyimages/ny08.png" /></a>
+			<ul>
+				<li><a href="/pc_ffzr3624.htm">比基尼</a></li>
+				<li><a href="/pc_rbfg3611.htm">吊带</a></li>
+				<li><a href="/pc_un2g3628.htm">沙滩裙</a></li>
+				<li><a href="/pc_efe13629.htm">沙滩裤</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort">
+			<p><a href="/pc_n46r3609.htm">围巾手套</a></p>
+			<a href="/pc_n46r3609.htm"><img src="/newPage/nyimages/ny09.png" /></a>
+			<ul>
+				<li><a href="/pc_2ye53613.htm">围巾</a></li>
+				<li><a href="/pc_0vec3614.htm">手套</a></li>
+				<li><a href="/pc_2b8v3615.htm">帽子</a></li>
+				<li><a href="/pc_dx9g3616.htm">毛巾</a></li>
+			</ul>
+		</div>
+		
+		<div class="nysort sortli">
+			<p style="border-right:1px dashed #e4e4e4"><a href="/pc_p3hx3610.htm">内衣饰品</a></p>
+			<a href="/pc_p3hx3610.htm"><img src="/newPage/nyimages/ny10.png" /></a>
+			<ul>
+				<li><a href="/pc_w3qw3620.htm">肩带</a></li>
+				<li><a href="/pc_8i9n4933.htm">内衣包</a></li>
+				<li><a href="/pc_qtri3621.htm">背扣</a></li>
+				<li><a href="/pc_rgn13619.htm">乳贴</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+		<div class="clear"></div>
+		<div style="width: 980px;margin: 0 auto;padding: 30px 0; color:#666;font-size: 13px;">
+			<p style="line-height:30px;">
+			<span style="font-weight: 700;">友情链接：</span>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://b2b.pop136.com/">服饰贸易网</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://www.chcan.com/">中国服装联盟网</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://www.shanglaiya.com/">尚莱雅竹纺</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://photo.moonbasa.com/">梦芭莎</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://www.taoniupin.com/ ">陶牛品</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://www.xbiao.com/montblanc/">万宝龙手表</a>
+			<a href="http://www.triumph-shop.org/" target="_blank" style="padding: 0  10px;color:#666">黛安芬</a>
+            <a href="http://www.lirenneiyi.com/" target="_blank" style="padding: 0  10px;color:#666">都市丽人</a>
+			</p>
+			<p style="height:30px;line-height:30px;">
+			<span style="font-weight: 700;">合作伙伴：</span>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://www.analysys.com.cn/">易观国际</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://www.cucn.org.cn/">中纺协内衣委员会</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://www.99114.com/">中国网库</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://cn.unionpay.com/">中国银联</a>
+			<a style="padding: 0 10px;color:#666" target="_blank" href="http://www.foundertech.com/">方正科技</a>
+			</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div class="footerTrade">
+		<div class="tradediv">
+			<div class="tradecon">
+				<p class="tradep">批发/交易指南</p>
+				<p><a href="/con_qak2623.htm?viewPage=service&view=all">买家入口</a></p>
+				<p><a href="/con_d903624.htm?viewPage=service&view=all">卖家入口</a></p>
+				<p><a href="/con_4tf7738.htm?viewPage=service&view=all">买家批发流程</a></p>
+				<p><a href="/con_h20t739.htm?viewPage=service&view=all">卖家批发流程</a></p>
+			</div>
+			<div class="tradecon">
+				<p class="tradep">物流配送</p>
+				<p><a href="/con_edg1742.htm?viewPage=service&view=all">配送说明</a></p>
+				<p><a href="/con_6g4x743.htm?viewPage=service&view=all">订单状态说明</a></p>
+			</div>
+			<div class="tradecon">
+				<p class="tradep">支付方式</p>
+				<p><a href="/con_gio3747.htm?viewPage=service&view=all">银联支付</a></p>
+				<p><a href="/html/con_09h15991.html">支付担保</a></p>
+				<p><a href="/con_m0s918457.htm?viewPage=service&view=all">支付宝</a></p>
+			</div>
+			<div class="tradecon">
+				<p class="tradep">售后服务</p>
+				<p><a href="/con_2b73748.htm?viewPage=service&view=all">退款流程</a></p>
+				<p><a href="/con_oxyc744.htm?viewPage=service&view=all">纠纷处理</a></p>
+				<p><a href="/con_we8u746.htm?viewPage=service&view=all">退换货服务</a></p>
+				<p><a href="/con_55pa741.htm?viewPage=service&view=all">售后政策</a></p>
+			</div>
+			<div class="tradecon">
+				<p class="tradep">特色服务</p>
+				<p><a href="/con_3z2z11814.htm?viewPage=service&view=all">渠道开拓</a></p>
+				<p><a href="/con_vmaf751.htm?viewPage=service&view=all">销量直达</a></p>
+				<p><a href="/con_9a2t753.htm?viewPage=service&view=all">技术支持</a></p>
+				<p><a href="/con_lvaa754.htm?viewPage=service&view=all">专业线下服务</a></p>
+			</div>
+			<a href="/html/con_wndw5992.html"><img class="tradeImg" src="/newPage/nyimages/ny12.png" /></a>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<!--
+	<p class="footinfo infop01"><span class="infocolor">河南中升华商业股份有限公司版权所有 2008-2014</span><a href="/con_wf5618469.htm?viewPage=service&view=all">著作权与商标声明</a><span class="infocolor">|</span><a href="/con_g58z18468.htm?viewPage=service&view=all">法律声明</a><span class="infocolor">|</span><a href="/con_v1s018472.htm?viewPage=service&view=all">服务条款</a><span class="infocolor">|</span><a href="/con_h4xq18470.htm?viewPage=service&view=all">隐私声明</a><span class="infocolor">|</span><a href="http://job.ny.cn/about.htm">关于全球内衣交易网</a><span class="infocolor">|</span><a href="/con_96og1392.htm?viewPage=service">联系我们</a><span class="infocolor">|</span><a href="http://job.ny.cn/job.htm">人才招聘</a><span class="infocolor">|</span><a href="#">网站导航</a>
+	</p>
+	-->
+	<p class="footinfo infop01"><span class="infocolor">河南中升华网络科技有限公司版权所有 2008-2015</span><a href="http://job.ny.cn/copyright.htm">著作权与商标声明</a><span class="infocolor">|</span><a href="http://job.ny.cn/legal.htm">法律声明</a><span class="infocolor">|</span><a href="http://job.ny.cn/service.htm">服务条款</a><span class="infocolor">|</span><a href="http://job.ny.cn/privacy.htm">隐私声明</a><span class="infocolor">|</span><a href="http://job.ny.cn/about.htm">关于全球内衣交易网</a><span class="infocolor">|</span><a href="http://job.ny.cn/contactUs.htm">联系我们</a><span class="infocolor">|</span><a  href="http://job.ny.cn/job.htm">人才招聘</a><span class="infocolor">|</span><a  href="http://app.ny.cn/neiyiwang.apk">手机客户端</a><span class="infocolor">|</span><a href="#">网站导航</a>
+	<input type="hidden" id="orderUserId"/>
+	</p>
+
+	<p class="footinfo infop02"><span class="infocolor">Copyright&copy;2008-2014 河南中升华网络科技有限公司 版权所有 豫ICP备14021353号  &nbsp;&nbsp;&nbsp;增值电信业务经营许可证:&nbsp;<a href="http://hcainfo.miitbeian.gov.cn/" style="text-decoration: none;" target="_blank">豫B2-20140097</a> </span></p>
+	<p class="footinfo infop03"><!--<a href="http://www.szfw.org/"><img src="/newPage/nyimages/bot1.gif" /></a> <a href="http://www.hd315.gov.cn/"><img src="/newPage/nyimages/bot2.gif" /></a> --> <a href="https://ss.cnnic.cn/"><img src="/newPage/nyimages/bot3.gif" /></a><a href="http://uwgd.com.cn/"><img src="/newPage/nyimages/bot4.gif" /></a><a href="http://www.chinapay.com/"><img src="/newPage/nyimages/bot5.gif" /></a></p>
+</div>
+<div style="display:none" width="0" height="0">
+<script src="http://s22.cnzz.com/stat.php?id=5862827&web_id=5862827" language="JavaScript"></script>
+</div>
+
+
+<script type="text/javascript" src="/js/jquery.autocomplete.js"></script>
+<script type="text/javascript">
+ $(function() {
+	$("#searchKey").focus().autocomplete("http://search.ny.cn/sug?callback=?&charset=gbk", {
+					    delay:20,//延迟10秒  
+                        max:10,//最多5条记录  
+                        minChars:1,  
+                        matchSubset:1,  
+                        matchContains:1,  
+                        cacheLength:10,  
+                        matchContains: true, 
+                        matchSubset:false,
+                        mustMatch:true,
+                        extraParams: {  
+                        	type: function(){
+								var searchType=$('#searchTypeId').text();
+								if(searchType=='产品'){
+									return encodeURIComponent(encodeURIComponent("productSearch"))  
+								}else if(searchType=='店铺'){
+									return encodeURIComponent(encodeURIComponent("storeSearch"))  
+								}else if(searchType=='品牌'){
+									return encodeURIComponent(encodeURIComponent("productbrandSearch"))  
+								}
+							}  
+                    	}, 
+                    	
+                        scrollHeight:400,   
+                        width:228, 
+                        dataType:'json',//返回的数据类型为JSON类型  
+                        parse:function(data) {//解释返回的数据，把其存在数组里  
+                            var parsed = [];  
+                            for (var i = 0; i < data.length; i++) {  
+                                parsed[parsed.length] = {  
+                                data: data[i],  
+                                value: data[i],  
+                                result: data[i] //返回的结果显示内容  
+                                };  
+                            }
+                            
+                            return parsed;  
+                        }, 
+                        formatItem: function(item) {//显示下拉列表的内容  
+							return "<div style='color:#444;'>"+item +"</div>";  
+						},  
+						formatMatch: function(item) {  
+							return item;  
+						},
+						formatResult: function(item) {  
+							return item;  
+						}
+				}).result(function(event, item, formatted) {//把返回的结果内容显示在其他文本框上              
+                                        $("#ortherid").val(item);  
+                                    });
+	 
+ });
+	
+</script>
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7fd7ff37c9120488a0863552a5786b9c' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</body>
+</html>
+
+
+<script>
+	$("#hotProductList").load("/fg/product/fgproductSearch.do?actionType=hotlist&categoryId=f4g42869");
+</script>

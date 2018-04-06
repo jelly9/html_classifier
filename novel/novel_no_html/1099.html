@@ -1,0 +1,1053 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn" lang="zh-cn"><!-- InstanceBegin template="/Templates/guest_CHS_2010.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-Language" content="zh-cn" />
+	<meta http-equiv="Content-Style-Type" content="text/css" />
+	<meta http-equiv="Content-Script-Type" content="text/javascript" />
+  	<meta http-equiv="Set-Cookie" content="JntoPhotoDefaultSet=true; expires=Thu, 1-Jan-2030 00:00:00 GMT; path=/" />
+	<meta name="Keywords" content="摄影,图片,免费下载图片,摄影图片,JNTO,旅游,日本" />
+	<meta name="Description" content="《Photo library》是由日本国家旅游局(JNTO)运营的摄影图片库可免费下载有关日本的摄影图片。" />
+  	
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-store" />
+	<meta http-equiv="Cache-Control" content="max-age=0" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	
+	<link rel="stylesheet" type="text/css" href="../js/jquery.treeview.css" />
+	<link rel="stylesheet" href="../css/guest_root.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="../css/guest_chs.css" type="text/css" media="all" />
+	<link rel="alternate" type="application/atom+xml" title="Japan Photo Library 最新图像" href="http://japan-photo.jnto.go.jp/feed/atom.php?lang=chs" />
+	<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="../css/fontsize_ie.css" /><![endif]-->
+	<![if !IE ]>
+  	<link rel="stylesheet" type="text/css" href="../css/fontsize.css" /><![endif]>
+	
+	<link rel="stylesheet" href="../css/guest_liquid.css" type="text/css" media="all" />
+	
+	<!-- InstanceBeginEditable name="doctitle" -->
+    <title>选择地点的周边图像 - Japan Photo Library</title>
+	<!-- InstanceEndEditable -->
+	<script type="text/javascript">var langCode = 'CHS';</script>
+	<script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/jquery.treeview.js"></script>
+	<script type="text/javascript" src="../js/common_guest.js"></script>
+	<script type="text/javascript" src="../js/jnto_category.php?lang=CHS"></script>
+	<!-- InstanceBeginEditable name="head" -->
+	<script type="text/javascript" src="http://maps.google.co.jp
+/maps/api/js?sensor=false&language=en"></script>
+	<script type="text/javascript">
+// 観光地周辺画像ページ用JS
+var map;
+var rect;
+var marker = new Array();
+
+//区切る区画の数
+split_x=10;
+split_y=10;
+
+//初期処理（地図の読み込み等）
+$(function(){
+	
+	x 		= $("#x_point").val();
+	y 		= $("#y_point").val();
+	zoom 	= $("#zoom").val() - 0; //初期表示の地図の縮尺
+	
+	// Gmapの表示
+	map = new google.maps.Map(document.getElementById("gmap"), {
+						"zoom": zoom,
+						"center": new google.maps.LatLng(x,y),
+						mapTypeId: google.maps.MapTypeId.ROADMAP,
+						streetViewControl:false,
+						scrollwheel: false
+					});
+	
+	google.maps.event.addListenerOnce(map, "bounds_changed", function() {
+		main(x,y,true);
+	});
+	
+	// ズーム変更時
+	google.maps.event.addListener(map, 'zoom_changed', function(){
+		$("#zoom").val(map.getZoom());
+		show_photo();
+	});
+	
+	// 地図クリック時
+	google.maps.event.addListener(map, 'click', function(e){
+		$("#init").val(1);
+	});
+	
+	// 地図移動時
+	google.maps.event.addListener(map, 'idle', function(){
+		var point 	= map.getCenter();
+		var rect 	= map.getBounds();
+		span_x		= rect.toSpan().lat()/4;
+		span_y		= rect.toSpan().lng()/4;
+		if( span_x + ($("#x_prepoint").val()-0) < point.lat() || -span_x+($("#x_prepoint").val()-0) > point.lat() ||
+			span_y + ($("#y_prepoint").val()-0) < point.lng() || -span_y+($("#y_prepoint").val()-0) > point.lng() ){
+				$("#x_prepoint").val(point.lat());
+				$("#y_prepoint").val(point.lng());
+				show_photo();
+		}
+	});
+	
+});
+
+//中心座標より、周辺画像を取得する関数
+function main(x,y,flg){
+	rect = map.getBounds();
+
+	// マーカを削除
+	if(marker && $.isArray(marker)){
+		marker.forEach(function(m, idx) {
+			m.setMap(null);
+   		});
+	}
+	span_x			= rect.toSpan().lat()/split_x;
+	span_y			= rect.toSpan().lng()/split_y;
+	start_x			= x-rect.toSpan().lat()/2;
+	start_y			= y-rect.toSpan().lng()/2;
+	var point_x 	= new Array(split_x+1);
+	var point_y 	= new Array(split_y+1);
+	for(i=0;i<=split_x;i++){
+		point_x[i]	= (start_x+span_x*i);
+	}
+	for(j=0;j<=split_y;j++){
+		point_y[j]	= (start_y+span_y*j);
+	}
+	var rs			= getphoto(point_x, point_y, $("#zoom").val(), x, y);
+	marker			= new Array(rs.length);
+	var marker2		= new Array(rs.length);
+	var div1 		= $("#resort_other_img");
+	div1.empty();
+	
+	for(i=0;i<rs.length;i++){ 
+		//地図外のその他周辺画像の場合
+		if(rs[i].type=="aroundphoto"){
+			div1.append("<a href='" + "resort_around.php?PI=" + rs[i].photo_id + "'>" + 
+						"<img alt='" + rs[i].photo_title + "' " +
+							"title='" + rs[i].photo_title+"("+rs[i].photo_id+")" + "' " +
+							"src='" + "../photo/"+rs[i].file + "'></a>");
+		//画像の場合
+		}else if(rs[i]._photo_id>0){
+			point 			= new google.maps.LatLng(rs[i]._geo_wgs_x, rs[i]._geo_wgs_y);
+			imgSize 		= getImageSize("../photo/"+rs[i].file,56,56); // 画像のサイズ取得
+			marker[i] 		= new google.maps.Marker({
+								position : point,
+								map: 	map,
+								title:	rs[i]._photo_title,
+								//zIndex:	getindex,
+								icon: new google.maps.MarkerImage(
+									"../photo/"+rs[i].file,
+									new google.maps.Size(imgSize.width,imgSize.height),
+									new google.maps.Point(0,0), 
+									new google.maps.Point(imgSize.width/2, imgSize.height))
+								});
+								
+			if( marker[i]){ 
+				//marker[i].mem_zIndex=-i;
+				var photo_id = rs[i]._photo_id;
+				setmark(marker[i],photo_id);
+				marker[i].setMap(map);
+			}
+		//観光地の場合
+		}else if(rs[i].resort_code>0){
+			point 			= new google.maps.LatLng(rs[i]._geo_wgs_x,rs[i]._geo_wgs_y);
+			marker[i] 		= new google.maps.Marker({
+								position : point,
+								map: 	map,
+								title:	rs[i].resort_name,
+								//zIndex:	getindex,
+								icon: new google.maps.MarkerImage(
+									"../img/resort/blue-dot_24.png",
+									new google.maps.Size(24,24),
+									new google.maps.Point(0,0), 
+									new google.maps.Point(12,24))
+								});
+						
+			if(marker[i]){;
+				marker[i].mem_zIndex=-i;
+				var resort_code=rs[i].resort_code;
+				setmark2(marker[i],resort_code);
+				marker[i].setMap(map);
+			}
+		}
+	}
+	var point = new google.maps.LatLng(35.7056396,139.7518913);
+	if( 106072 <0){
+		var markera = new google.maps.Marker({
+								position: 	point,
+								map: 		map,
+								title:		"东京半圆形屋顶",
+								//zIndex:		getindex,
+								clickable:	false});
+	}else{
+		var markera = new google.maps.Marker({
+								position: 	point,
+								map: 		map,
+								title:		"东京半圆形屋顶",
+								//zIndex:		getindex,
+								clickable:	false});
+		setmark3(markera);
+	}
+	markera.mem_zIndex=0;
+	markera.setMap(map);
+	if( flg || $("#init").val()==0 ){
+		google.maps.event.trigger(markera,"click");
+	}
+}
+
+function getindex(marker){
+	return marker.mem_zIndex;
+}
+
+function setmark(marker,photo_id){
+	google.maps.event.addListener(marker, 'click', function(e){
+		$("#x_point").val(map.getCenter().lat());
+		$("#y_point").val(map.getCenter().lng());
+		location.href="photo_detail.php?PI="+photo_id;
+	});
+}
+
+function setmark2(marker,resort_code){
+	google.maps.event.addListener(marker, "click", function(e){
+		$("#x_point").val(map.getCenter().lat());
+		$("#y_point").val(map.getCenter().lng());
+		location.href="resort_around.php?resort_code="+resort_code;
+	} );
+}
+
+// 吹き出しを表示
+function setmark3(markera){
+	var content		= "<table width='250' style='margin:5px 0;'><tr><td style='width:160px;'><a href='photo_detail.php?PI=106072'><img src='../photo/s_106/106072.jpg'/></a></td><td style='padding-left:5px;vertical-align:top;'><a href='photo_detail.php?PI=106072'>东京半圆形屋顶</td></tr></table>";
+	var tabinfoopt 	= new google.maps.InfoWindow({content: content});
+	google.maps.event.addListener(markera, "click", function(e){
+		tabinfoopt.open(map, markera);
+	});
+}
+
+//周辺画像取得ajax呼び出し部分
+function getphoto(point_x ,point_y,zoom,center_x,center_y) {
+	 var rs; var x; var y;
+	 for(i=1;i<point_x.length;i++){
+	 	if(i==1){
+	 		x=point_x[i]
+	 	}else{
+	 		x=x+","+point_x[i]
+	 	}
+	 }
+	 for(i=1;i<point_y.length;i++){
+	 	if(i==1){
+	 		y=point_y[i]
+	 	}else{
+	 		y=y+","+point_y[i]
+	 	}
+	 }
+	 new jQuery.ajax({
+			url: "../feed/ajax_receiver.php",
+			data: { 
+				type: "resort_around",
+				lang: langCode,
+				x: x, y: y, 
+				zoom: zoom, 
+				center_x: center_x, 
+				center_y: center_y, 
+				resort_code: -1,
+				pref_code: -1,
+				photo_id: 106072,
+				is_authed: false				},
+			async :false,
+			dataType: 'json',
+			success: function(msg){ rs=msg; }
+	 });
+	 return rs;
+}
+
+//元位置の近辺の画像を取得する。
+function org_point(){
+	x = "35.7056396";
+	y = "139.7518913";
+	map.setCenter(new google.maps.LatLng(x,y),$("#zoom").val());
+	main(x,y,true);
+}
+
+//近辺の画像を取得する。
+function show_photo(){
+	map.setCenter(map.getCenter(), $("#zoom").val() );
+	x = map.getCenter().lat();
+	y = map.getCenter().lng();	
+	main(x,y,false);
+}
+
+// 画像のサイズを取得する関数
+function getImageSize(path,default_height,default_width){
+	var image = new Image();
+	image.src = path;
+	var w = image.width ,h = image.height ;
+
+	if ( typeof image.naturalWidth !== 'undefined' ) {	// for Firefox, Safari, Chrome
+		w = image.naturalWidth;
+		h = image.naturalHeight;
+
+	} else if ( typeof image.runtimeStyle !== 'undefined' ) {	 // for IE
+		var run = image.runtimeStyle;
+		var mem = { w: run.width, h: run.height };	// keep runtimeStyle
+		run.width  = "auto";
+		run.height = "auto";
+		w = image.width;
+		h = image.height;
+		run.width  = mem.w;
+		run.height = mem.h;
+
+	} else {		 // for Opera
+		var mem = { w: image.width, h: image.height };	// keep original style
+		image.removeAttribute("width");
+		image.removeAttribute("height");
+		w = image.width;
+		h = image.height;
+		image.width  = mem.w;
+		image.height = mem.h;
+	}
+	w = (w==0||w=='undefined'? default_width: w);
+	h = (h==0||h=='undefined'? default_height: h);
+	//console.log(path + " width:" + w + " height:" + h);
+	return {width:w, height:h};
+}</script>
+	<!-- InstanceEndEditable -->
+</head>
+
+<body id="chs">
+<!-- WRAPPER -->
+<div id="wrapper">
+
+ <!-- MAINCOL -->
+ <div id="maincol">
+ <div id="maincol_inner">
+ 
+   <!-- HEADER -->
+   <div id="header">
+   
+     <a href="http://www.jnto.go.jp/">&raquo;&nbsp;JNTO 全球网页</a>
+     <a href="contact.php">&raquo;&nbsp;联系我们</a>
+     <form name="form2" action="">
+      <select name="menu2" id="lstLanguage">
+      <option>Select Language</option>
+      <option value="eng">English</option>
+	  <option value="chs">Chinese (Simplified)</option>
+	  <option value="chc">Chinese (Traditional)</option>
+	  <option value="kor">Korean</option>
+	  <option value="jpn">Japanese</option>
+     </select>
+     </form>
+
+   </div>
+   <!-- //HEADER -->
+   
+   <!-- MY_ACCOUNT -->
+   <div id="my_account" class="cl">
+   
+   <dl>
+        <dt>欢迎！来访客人</dt>
+      
+   </dl>
+   
+   <div id="my_account_child" class="cl">   
+   
+    <!-- DOWNLOAD LIST -->
+    <div id="my_account_download" class="box">
+
+      <dl>
+      <dt>下载一览</dt>
+      <dd><a href="download_list.php"><span id="cntDownloadList">0</span> 张</a></dd>
+      </dl>
+      
+      <table id="tblDownloadList" class="cl table_img"><tr>
+				
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+					<td>&nbsp;</td>
+		      </tr></table>
+
+    </div>
+    <!-- //DOWNLOAD LIST -->
+    
+    <div id="my_account_member" class="box">
+    
+      	  
+	  <dl>
+      <dt>用户认证</dt>
+      <dd><a href="user_entry.php">用户注册</a></dd>
+      </dl>
+      
+		<div class="cl" id="login_box">
+		<form  action="https://japan-photo.jnto.go.jp/chs/login.php" method="post" name="formLogin" id="formLogin">
+		
+		<input type="hidden" name="RFN" value="resort_around.php" />
+		<input type="hidden" name="QS" value="PI=106072" />
+		<table>
+			<tr><th>邮件地址:</th>
+			<td><input maxlength="255" size="25" style="ime-mode:inactive" id="idEmail" name="txtEmail" type="text" /></td></tr>
+			<tr><th>密码:</th>
+			<td><input maxlength="16" size="25" style="ime-mode:inactive" id="idPassword" name="txtPassword" type="password" /></td></tr>
+			<tr>
+			<td>&nbsp;</td><td><input class="btn_login" name="btnLogin" value=" 注册 " type="submit" /></td>
+			</tr>
+		</table>
+		
+		</form>
+		</div>
+      
+          </div>
+
+    </div>
+    
+   </div>
+   <!-- //MY_ACCOUNT -->
+   
+   <!-- CONTENTS -->
+   <div id="contents">
+   <!-- InstanceBeginEditable name="CONTENTS" -->
+   
+	<div id="topicpath">
+		<a href="index.php">HOME</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+		<a href="resort_list.php">旅游地・都道府县的选择</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;
+		选择地点的周边图像
+	</div>
+	
+	<h2>选择地点的周边图像</h2>
+
+	<form>
+	
+		<!-- 地点名と操作ボタン -->
+		
+		<div id="resort_map_title">
+			<strong><img src="../img/icon_2010/asterisk_orange.png" alt="" />&nbsp;东京半圆形屋顶</strong>
+			
+			<div id="resort_operation_btn">
+				<a id="btnAddDLList" class="gray_button" href="javascript:org_point();">
+					<span><img src="../img/icon_2010/action_back.gif" alt="" />&nbsp; 返回原来的位置</span></a>
+				<a id="btnAddDLList" class="gray_button" href="javascript:show_photo();">
+					<span><img src="../img/icon_2010/pictures.png" alt="" />&nbsp; 显示就近的图像</span></a>
+				<span style="margin-left:40px;"><img src="../img/resort/blue-dot_24.png" alt="" style="vertical-align:middle;" />:&nbsp;其他旅游地</span>
+			</div>
+		</div>
+		
+		<!-- 地図表示部分 -->
+		
+		<div id="gmap" style="margin-top:10px;height: 550px; border:solid 1px #CCC; margin-right:10px;"></div>
+		<div id="mapWH"></div>
+		
+		<!-- その他周辺画像表示 -->
+		
+		<div style="margin-top:15px; background-color:#EFEFEF; padding:10px; margin-right:10px;">
+			其他周边图像一览：<br />
+			<span id="resort_other_img"></span>
+		</div><!-- //その他周辺画像表示 -->
+		
+		<input type="hidden" id="zoom" name="zoom" value="10"/>
+		<input type="hidden" id="x_point" name="x_point" value="35.7056396"/>
+		<input type="hidden" id="y_point" name="y_point" value="139.7518913"/>
+		<input type="hidden" id="x_prepoint" name="x_prepoint" value="35.7056396"/>
+		<input type="hidden" id="y_prepoint" name="y_prepoint" value="35.7056396"/>
+		<input type="hidden" id="init" name="init" value="0"/>
+	</form>
+
+	<!-- InstanceEndEditable -->
+   </div>
+   <!-- //CONTENTS -->
+   
+   <!-- FOOTER -->
+   <div class="gotop"><a href="#"><img src="../img/tmpl_2010/gotop.jpg" alt="ページの先頭へ" /></a></div>
+   
+   <div id="footer">
+   <a href="http://www.jnto.go.jp/" target="_blank">&raquo;&nbsp;JNTO 全球网页</a>
+	 <a href="contact.php">&raquo;&nbsp;联系我们</a>
+	 <a href="http://www.welcome2japan.cn/terms/index.html" target="_blank">&raquo;&nbsp;网站声明</a>
+	 <a href="http://www.welcome2japan.cn/about/index.html" target="_blank">&raquo;&nbsp;JNTO是什么？</a>
+   <p>Copyright&copy;2010&nbsp;Japan&nbsp;National&nbsp;Tourism&nbsp;Organization.&nbsp;All&nbsp;Rights&nbsp;Reserved.</p>
+   </div>
+   <!-- //FOOTER -->
+ 
+ </div>  
+ </div>
+ <!-- //MAINCOL -->
+ 
+ <!-- SUBCOL -->
+ <div id="subcol">
+
+  <div id="siteid">
+  <h1><a href="index.php">Japan&nbsp;National&nbsp;Tourism&nbsp;Organization<strong>Japan Photo Library</strong></a></h1>
+  </div>
+
+  <!-- SEARCH -->
+  <form action="photo_list.php" method="get">
+  
+  <dl id="search">
+		<dt id="dt_search">常规搜索<div style="float:right;">
+			<a id="btnDispAll" href="photo_list.php">全部显示</a></div>
+		</dt>
+		<dd><input type="text" id="idKeyword" name="txtKeyword" value="" /></dd>
+		<dt style="display:none;">分类</dt>
+		<dd style="display:none;">
+			<input type="hidden" name="lstCategory" id="lstCategory" value="0" />
+			<table class="pdg2">
+				<tr class="t">
+					<th>大</th>
+					<td>
+					<select id="lstCategoryL" name="lstCategoryL">
+							<option value="0">---------------</option>
+					</select>
+					</td>
+				</tr>
+				<tr class="m">
+					<th>中</th>
+					<td>
+					<select id="lstCategoryM" name="lstCategoryM">
+							<option value="0">---------------</option>
+					</select>
+					</td>
+				</tr>
+				<tr class="b">
+					<th>小</th>
+					<td>
+					<select id="lstCategoryS" name="lstCategoryS">
+							<option value="0">---------------</option>
+					</select>
+					</td>
+				</tr>
+			</table>
+		</dd>
+		<dt style="display:none;">色彩</dt>
+		<dd style="display:none;">
+			<select multiple="multiple" size="3" name="lstKeywordColor[]" class="search_same_width">
+				<option value="0">（未指定）</option>
+				<option value="1">黑色</option>
+				<option value="2">白色</option>
+				<option value="3">红色</option>
+				<option value="4">蓝色</option>
+				<option value="5">绿色</option>
+				<option value="6">黄色</option>
+				<option value="7">粉色</option>
+				<option value="8">紫色</option>
+				<option value="9">橙色</option>
+			</select>
+		</dd>
+		<dt style="display:none;">形状</dt>
+		<dd style="display:none;">
+			<select multiple="multiple" size="3" name="lstKeywordShape[]" class="search_same_width">
+				<option value="0">（未指定）</option>
+				<option value="10">正方形</option>
+				<option value="11">纵长</option>
+				<option value="12">横长</option>
+				<option value="13">彩色</option>
+				<option value="14">单色</option>
+				<option value="15">黑白</option>
+			</select>
+		</dd>
+		<dt style="display:none;">季节</dt>
+		<dd style="display:none;">
+			<select multiple="multiple" size="3" name="lstKeywordSeason[]" class="search_same_width">
+				<option value="0">（未指定）</option>
+				<option value="16">春</option>
+				<option value="17">夏</option>
+				<option value="18">秋</option>
+				<option value="19">冬</option>
+				<option value="20">红叶</option>
+				<option value="21">新年</option>
+			</select>
+		</dd>
+		<dt style="display:none;">都道府县</dt>
+		<dd style="display:none;">
+			<select name="lstPref[]" multiple="multiple" size="5" id="lstPref" class="search_same_width">
+<option label="---------------" value="0">---------------</option>
+<option label="北海道" value="1">北海道</option>
+<option label="青森" value="2">青森</option>
+<option label="岩手" value="3">岩手</option>
+<option label="宫城" value="4">宫城</option>
+<option label="秋田" value="5">秋田</option>
+<option label="山形" value="6">山形</option>
+<option label="福岛" value="7">福岛</option>
+<option label="茨城" value="8">茨城</option>
+<option label="栃木" value="9">栃木</option>
+<option label="群马" value="10">群马</option>
+<option label="埼玉" value="11">埼玉</option>
+<option label="千叶" value="12">千叶</option>
+<option label="东京" value="13">东京</option>
+<option label="神奈川" value="14">神奈川</option>
+<option label="新潟" value="15">新潟</option>
+<option label="富山" value="16">富山</option>
+<option label="石川" value="17">石川</option>
+<option label="福井" value="18">福井</option>
+<option label="山梨" value="19">山梨</option>
+<option label="长野" value="20">长野</option>
+<option label="岐阜" value="21">岐阜</option>
+<option label="静冈" value="22">静冈</option>
+<option label="爱知" value="23">爱知</option>
+<option label="三重" value="24">三重</option>
+<option label="滋贺" value="25">滋贺</option>
+<option label="京都" value="26">京都</option>
+<option label="大阪" value="27">大阪</option>
+<option label="兵库" value="28">兵库</option>
+<option label="奈良" value="29">奈良</option>
+<option label="和歌山" value="30">和歌山</option>
+<option label="鸟取" value="31">鸟取</option>
+<option label="岛根" value="32">岛根</option>
+<option label="冈山" value="33">冈山</option>
+<option label="广岛" value="34">广岛</option>
+<option label="山口" value="35">山口</option>
+<option label="德岛" value="36">德岛</option>
+<option label="香川" value="37">香川</option>
+<option label="爱媛" value="38">爱媛</option>
+<option label="高知" value="39">高知</option>
+<option label="福冈" value="40">福冈</option>
+<option label="佐贺" value="41">佐贺</option>
+<option label="长崎" value="42">长崎</option>
+<option label="熊本" value="43">熊本</option>
+<option label="大分" value="44">大分</option>
+<option label="宫崎" value="45">宫崎</option>
+<option label="鹿儿岛" value="46">鹿儿岛</option>
+<option label="冲绳" value="47">冲绳</option>
+</select>
+
+				<input id="btnSearchMap" class="btn_search_map" name="btnSearchMap" value="根据地图搜索" type="button" />
+			<div id="divMap" style="position:absolute; border:1px solid gray; display:none;">   
+				<img src="../img/tmpl_2010/map_choose_pref_chs.gif" id="imgMap" border="0" usemap="#m_map_choose_pref" alt="Search From a Map" /></div> 
+			</dd>
+		<dd class="outer">
+			<input id="btn_advanced" type="button" value="详细条件" alt="    关闭    "  title="closed" />
+			<input id="btn_search" name="btn_search" value=" 搜索 " type="submit" /></dd>
+  </dl>
+  </form>
+
+  <!-- //SEARCH -->
+  
+  <!-- CATEGORY -->
+  <dl id="category">
+  <dt id="dt_category">分类搜索</dt>
+  <dd>
+    <a href="photo_list.php"><strong>显示所有分类图像</strong></a>
+	<ul id="category_tree" class="treeview">
+	<li><a href="./photo_list.php?lstCategory=100000">地区</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=100100">东京</a>
+			<ul>
+			<li><a href="./photo_list.php?lstCategory=100109">秋叶原地区</a></li>
+			<li><a href="./photo_list.php?lstCategory=100107">浅草地区</a></li>
+			<li><a href="./photo_list.php?lstCategory=100113">台场・海湾地区</a></li>
+			<li><a href="./photo_list.php?lstCategory=100104">银座・筑地・日本桥地...</a></li>
+			<li><a href="./photo_list.php?lstCategory=100103">六本木地区</a></li>
+			<li><a href="./photo_list.php?lstCategory=100101">涩谷・原宿地区</a></li>
+			<li><a href="./photo_list.php?lstCategory=100105">新宿地区</a></li>
+			<li><a href="./photo_list.php?lstCategory=100106">东京站・皇宫地区</a></li>
+			<li><a href="./photo_list.php?lstCategory=100110">上野地区</a></li>
+			<li><a href="./photo_list.php?lstCategory=100108">岛屿</a></li>
+			<li><a href="./photo_list.php?lstCategory=100111">其他地区</a></li>
+			</ul>
+		</li>
+		<li><a href="./photo_list.php?lstCategory=100200">京都・奈良</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=100300">北海道</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=100400">东北</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=100600">关东</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=100700">中部</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=100800">近畿</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=100900">中国</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=101000">四国</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=101100">九州・冲绳</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=20000">名胜・古迹</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=21200">世界遗产</a>
+			<ul>
+			<li><a href="./photo_list.php?lstCategory=21201">知床</a></li>
+			<li><a href="./photo_list.php?lstCategory=21202">白神山地</a></li>
+			<li><a href="./photo_list.php?lstCategory=21203">日光</a></li>
+			<li><a href="./photo_list.php?lstCategory=21213">小笠原诸岛</a></li>
+			<li><a href="./photo_list.php?lstCategory=21214">富士山</a></li>
+			<li><a href="./photo_list.php?lstCategory=21204">白川乡，五个山</a></li>
+			<li><a href="./photo_list.php?lstCategory=21205">京都</a></li>
+			<li><a href="./photo_list.php?lstCategory=21206">奈良</a></li>
+			<li><a href="./photo_list.php?lstCategory=21207">纪伊山地</a></li>
+			<li><a href="./photo_list.php?lstCategory=21208">姬路城</a></li>
+			<li><a href="./photo_list.php?lstCategory=21209">石见银山</a></li>
+			<li><a href="./photo_list.php?lstCategory=21210">广岛・宫岛</a></li>
+			<li><a href="./photo_list.php?lstCategory=21211">屋久岛</a></li>
+			<li><a href="./photo_list.php?lstCategory=21212">冲绳</a></li>
+			</ul>
+		</li>
+		<li><a href="./photo_list.php?lstCategory=21300">神社・佛阁</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=21400">城</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=21600">史迹</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=21500">温泉</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=21700">庭园</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=21800">古镇</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=22000">其他</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=50000">观光设施</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=50100">博物馆・美术馆</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=50200">动物园・水族馆</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=50300">主题公园</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=50400">公园</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=50500">购物</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=50600">产业游览</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=50700">体育・娱乐</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=50800">其他</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=10000">自然</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=10100">山</a>
+			<ul>
+			<li><a href="./photo_list.php?lstCategory=10101">富士山</a></li>
+			<li><a href="./photo_list.php?lstCategory=10104">日本阿尔卑斯</a></li>
+			<li><a href="./photo_list.php?lstCategory=10103">北海道・东北</a></li>
+			<li><a href="./photo_list.php?lstCategory=10107">关东・北信越</a></li>
+			<li><a href="./photo_list.php?lstCategory=10113">近畿・中国・四国</a></li>
+			<li><a href="./photo_list.php?lstCategory=10111">九州・冲绳</a></li>
+			</ul>
+		</li>
+		<li><a href="./photo_list.php?lstCategory=10600">草木・花</a>
+			<ul>
+			<li><a href="./photo_list.php?lstCategory=10601">樱花</a></li>
+			<li><a href="./photo_list.php?lstCategory=10602">梅</a></li>
+			<li><a href="./photo_list.php?lstCategory=10603">高山植物</a></li>
+			<li><a href="./photo_list.php?lstCategory=10605">红叶</a></li>
+			<li><a href="./photo_list.php?lstCategory=10604">其他</a></li>
+			</ul>
+		</li>
+		<li><a href="./photo_list.php?lstCategory=10200">海</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=10300">川</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=10400">湖・池</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=11000">瀑布</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=10500">高原・湿原</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=11100">田园</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=10700">公园</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=10800">动物</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=10900">其他</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=11200">户外活动</a>
+			<ul>
+			<li><a href="./photo_list.php?lstCategory=11201">夏季运动</a></li>
+			<li><a href="./photo_list.php?lstCategory=11202">冬季运动</a></li>
+			<li><a href="./photo_list.php?lstCategory=11203">其他</a></li>
+			</ul>
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=40000">城市景观</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=40300">楼群</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=40400">现代建筑</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=40100">街道</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=40600">其他</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=30000">传统・风俗</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=30100">活动及庆典</a>
+			<ul>
+			<li><a href="./photo_list.php?lstCategory=30101">1月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30102">2月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30103">3月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30104">4月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30105">5月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30106">6月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30107">7月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30108">8月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30109">9月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30110">10月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30111">11月</a></li>
+			<li><a href="./photo_list.php?lstCategory=30112">12月</a></li>
+			</ul>
+		</li>
+		<li><a href="./photo_list.php?lstCategory=30300">文化・艺能</a>
+			<ul>
+			<li><a href="./photo_list.php?lstCategory=30305">传统艺能</a></li>
+			<li><a href="./photo_list.php?lstCategory=30301">花道</a></li>
+			<li><a href="./photo_list.php?lstCategory=30302">茶道</a></li>
+			<li><a href="./photo_list.php?lstCategory=30306">盆景</a></li>
+			<li><a href="./photo_list.php?lstCategory=30303">书道</a></li>
+			<li><a href="./photo_list.php?lstCategory=30307">结婚典礼</a></li>
+			<li><a href="./photo_list.php?lstCategory=30304">其他</a></li>
+			</ul>
+		</li>
+		<li><a href="./photo_list.php?lstCategory=30200">传统工艺</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=60000">食品</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=60100">传统的日式食品</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=60200">乡土料理</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=60300">快餐</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=60400">酒</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=60500">食品素材</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=60600">糕点</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=60700">水果</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=60800">市场</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=60900">餐饮设施</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=61000">其他</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=70000">投宿・交通</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=70100">交通</a>
+			<ul>
+			<li><a href="./photo_list.php?lstCategory=70101">车站</a></li>
+			<li><a href="./photo_list.php?lstCategory=70102">铁路</a></li>
+			<li><a href="./photo_list.php?lstCategory=70103">机场</a></li>
+			<li><a href="./photo_list.php?lstCategory=70104">公共汽车</a></li>
+			<li><a href="./photo_list.php?lstCategory=70105">其他</a></li>
+			</ul>
+		</li>
+		<li><a href="./photo_list.php?lstCategory=70300">旅馆</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=70200">向导・导游处</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=70400">其他</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=80000">图像</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=80100">日式</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=80200">人・和服</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=80300">其他</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=90000">酷的日本</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=90200">都市景</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=90300">购物</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=90400">技术</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=90500">流行文化</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=90600">夜景</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=90700">其他</a>
+			
+	</li>
+		</ul>
+	</li>
+	<li><a href="./photo_list.php?lstCategory=110000">会议</a>
+		<ul>
+		<li><a href="./photo_list.php?lstCategory=110200">会议厅</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=110300">大饭店</a>
+			
+		</li>
+		<li><a href="./photo_list.php?lstCategory=110400">特殊场所</a>
+			
+		</li>
+</ul></li></ul>   </dd>
+   </dl><!-- //CATEGORY -->
+  
+  <!-- 地図から検索 -->
+  
+  <dl id="resort_search">
+  	<dt><a href="resort_list.php">在地图中搜索图片</a></dt>
+  </dl><!-- //地図から検索 -->
+  
+  <!-- LINKS -->
+  <div id="links">
+  <a href="http://www.jnto.go.jp/eng/" target="_blank"><img src="../photo/bnr/jnto.gif" alt="Japan National Tourism Organization" /></a>
+  <!--<a href="http://www.visitjapan.jp/" target="_blank"><img src="../photo/bnr/yokoso.gif" alt="Yokoso!JAPAN"/></a>-->
+  <a><img src="../photo/bnr/vjc2010.gif" width="160" height="45" alt="Japan. Endless Discovery" /></a>
+  </div>
+  <!-- //LINKS -->
+
+ </div>
+ <!-- //SUBCOL -->
+
+</div>
+<!-- //WRAPPER -->
+
+<!-- 全国地図用のMAP -->
+	
+<map name="m_map_choose_pref" id="m_map_choose_pref">		
+	<area shape="rect" coords="6,5,67,24" href="javascript:;" title="CLOSE" alt="CLOSE" id="mapClose" />
+	<area shape="rect" coords="268,3,336,53" href="javascript:;" title="北海道" alt="北海道" id="area_1" />
+	<area shape="rect" coords="268,57,336,77" href="javascript:;" title="青森" alt="青森" id="area_2" />
+	<area shape="rect" coords="303,78,336,98" href="javascript:;" title="岩手" alt="岩手" id="area_3" />
+	<area shape="rect" coords="303,99,336,119" href="javascript:;" title="宫城" alt="宫城" id="area_4" />
+	<area shape="rect" coords="268,78,302,98" href="javascript:;" title="秋田" alt="秋田" id="area_5" />
+	<area shape="rect" coords="268,99,302,119" href="javascript:;" title="山形" alt="山形" id="area_6" />
+	<area shape="rect" coords="268,120,336,140" href="javascript:;" title="福岛" alt="福岛" id="area_7" />
+	<area shape="rect" coords="314,141,336,166" href="javascript:;" title="茨城" alt="茨城" id="area_8" />
+	<area shape="rect" coords="291,141,313,163" href="javascript:;" title="栃木" alt="栃木" id="area_9" />
+	<area shape="rect" coords="268,141,290,163" href="javascript:;" title="群马" alt="群马" id="area_10" />
+	<area shape="rect" coords="268,164,313,182" href="javascript:;" title="埼玉" alt="埼玉" id="area_11" />
+	<area shape="rect" coords="314,167,336,207" href="javascript:;" title="千叶" alt="千叶" id="area_12" />
+	<area shape="rect" coords="273,183,313,201" href="javascript:;" title="东京" alt="东京" id="area_13" />
+	<area shape="rect" coords="267,202,307,220" href="javascript:;" title="神奈川" alt="神奈川" id="area_14" />
+	<area shape="rect" coords="241,120,267,140" href="javascript:;" title="新潟" alt="新潟" id="area_15" />
+	<area shape="rect" coords="217,120,240,140" href="javascript:;" title="富山" alt="富山" id="area_16" />
+	<area shape="poly" coords="189,120,195,120,195,109,216,109,216,140,189,140,189,120" href="javascript:;" title="石川" alt="石川" id="area_17" />
+	<area shape="rect" coords="181,141,216,162" href="javascript:;" title="福井" alt="福井" id="area_18" />
+	<area shape="rect" coords="241,183,272,201" href="javascript:;" title="山梨" alt="山梨" id="area_19" />
+	<area shape="rect" coords="241,141,267,182" href="javascript:;" title="长野" alt="长野" id="area_20" />
+	<area shape="rect" coords="217,141,240,201" href="javascript:;" title="岐阜" alt="岐阜" id="area_21" />
+	<area shape="rect" coords="241,202,266,230" href="javascript:;" title="静冈" alt="静冈" id="area_22" />
+	<area shape="rect" coords="217,202,240,237" href="javascript:;" title="爱知" alt="爱知" id="area_23" />
+	<area shape="poly" coords="181,202,216,202,216,237,193,237,193,217,181,217,181,202" href="javascript:;" title="三重" alt="三重" id="area_24" />
+	<area shape="rect" coords="181,163,216,181" href="javascript:;" title="滋贺" alt="滋贺" id="area_25" />
+	<area shape="rect" coords="149,144,180,162" href="javascript:;" title="京都" alt="京都" id="area_26" />
+	<area shape="rect" coords="153,182,180,209" href="javascript:;" title="大阪" alt="大阪" id="area_27" />
+	<area shape="rect" coords="149,163,179,181" href="javascript:;" title="兵库" alt="兵库" id="area_28" />
+	<area shape="rect" coords="181,182,216,201" href="javascript:;" title="奈良" alt="奈良" id="area_29" />
+	<area shape="poly" coords="153,210,180,210,180,218,192,218,192,237,153,237,153,210" href="javascript:;" title="和歌山" alt="和歌山" id="area_30" />
+	<area shape="rect" coords="121,144,148,164" href="javascript:;" title="鸟取" alt="鸟取" id="area_31" />
+	<area shape="rect" coords="93,144,120,164" href="javascript:;" title="岛根" alt="岛根" id="area_32" />
+	<area shape="rect" coords="121,165,148,185" href="javascript:;" title="冈山" alt="冈山" id="area_33" />
+	<area shape="rect" coords="93,165,120,185" href="javascript:;" title="广岛" alt="广岛" id="area_34" />
+	<area shape="rect" coords="71,144,92,185" href="javascript:;" title="山口" alt="山口" id="area_35" />
+	<area shape="rect" coords="117,204,148,220" href="javascript:;" title="德岛" alt="德岛" id="area_36" />
+	<area shape="rect" coords="117,187,148,203" href="javascript:;" title="香川" alt="香川" id="area_37" />
+	<area shape="rect" coords="85,187,116,203" href="javascript:;" title="爱媛" alt="爱媛" id="area_38" />
+	<area shape="rect" coords="85,204,116,220" href="javascript:;" title="高知" alt="高知" id="area_39" />
+	<area shape="rect" coords="27,144,48,174" href="javascript:;" title="福冈" alt="福冈" id="area_40" />
+	<area shape="rect" coords="3,144,26,169" href="javascript:;" title="佐贺" alt="佐贺" id="area_41" />
+	<area shape="rect" coords="3,171,26,197" href="javascript:;" title="长崎" alt="长崎" id="area_42" />
+	<area shape="rect" coords="27,175,48,205" href="javascript:;" title="熊本" alt="熊本" id="area_43" />
+	<area shape="rect" coords="49,144,70,174" href="javascript:;" title="大分" alt="大分" id="area_44" />
+	<area shape="rect" coords="49,175,70,205" href="javascript:;" title="宫崎" alt="宫崎" id="area_45" />
+	<area shape="rect" coords="27,206,69,231" href="javascript:;" title="鹿儿岛" alt="鹿儿岛" id="area_46" />
+	<area shape="rect" coords="3,205,24,231" href="javascript:;" title="冲绳" alt="冲绳" id="area_47" />
+</map>
+
+<!-- Google Analytics -->
+
+<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	var pageTracker = _gat._getTracker("UA-761127-23");
+	pageTracker._initData();
+	pageTracker._trackPageview();
+</script>
+
+<!-- Google Analytics -->
+
+<!-- InstanceParam name="IsCachable" type="boolean" value="false" -->
+<!-- InstanceParam name="IsLiquidLayout" type="boolean" value="true" -->
+<!-- InstanceParam name="PageID" type="text" value="" -->
+
+</body>
+<!-- InstanceEnd --></html>

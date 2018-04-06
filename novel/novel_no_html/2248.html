@@ -1,0 +1,302 @@
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="西北政法大学井盖变身萌版"兵马俑" （组图）, 西北政法大学 井盖 变身 "/>
+<meta name="description" content="近日,陕西西安,西北政法大学校园内,法学专业和新闻传播专业的学生用彩笔在井盖上作画,井盖变身为卡通人物。..."/>
+<title>西北政法大学井盖变身萌版"兵马俑" （组图）_中搜资讯搜索</title>
+<link href="http://zixun.zhongsou.com/css/reset.css" rel="stylesheet" type="text/css" />
+<link href="http://zixun.zhongsou.com/css/zx72_ksyd.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="http://zixun.zhongsou.com/images/favicon.ico" type="image/x-icon"/>
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=35471328" charset="UTF-8"></script> 
+<script src="http://zixun.zhongsou.com/js/jquery-1.8.2.min.js"></script>
+<script src="http://zixun.zhongsou.com/js/clickCount.js"></script>
+<script type="text/javascript">
+	window.zhsouShare = {
+		text : document.title,
+		url : window.location.href,
+		pic : '',
+		//按钮数据，变量：[$text],[$url],[$pic]
+		btns : [{
+			title : '新浪微博',
+			className : 'icon_sina',
+			url : 'http://service.weibo.com/share/share.php?url=[$url]&title=[$text]&source=中搜网&sourceUrl=[$url]&content=gb2312&pic=[$pic]&searchPic=false',
+			width : 650,
+			height : 500
+		},
+		{
+			title : '腾讯微博',
+			className : 'icon_qq',
+			url : 'http://share.v.t.qq.com/index.php?c=share&a=index&url=[$url]&title=[$text]&pic=[$pic]',
+			width : 612,
+			height : 350
+		},
+		{
+			title : 'QQ空间',
+			className : 'icon_qzone',
+			url : 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=[$url]&desc=[$text]&pics=[$pic]',
+			width : 612,
+			height : 500
+		},
+		{
+			title:'QQ好友',
+			className : 'icon_friends',
+			url:'http://connect.qq.com/widget/shareqq/index.html?url=[$url]&title=[$text]&pics=[$pic]',
+			width : 612,
+			height : 500
+		},
+		{
+			title:'人人网',
+			className : 'icon_renren',
+			url:'http://widget.renren.com/dialog/share?url=[$url]&title=[$text]&description=&pic=[$pic]',
+			width : 612,
+			height : 500
+		},
+		{
+			title:'豆瓣',
+			className : 'icon_douban',
+			url:'http://www.douban.com/share/service?source=中搜网&image=[$pic]&href=[$url]&name=[$text]',
+			width : 612,
+			height : 500
+		}
+		],
+		share : function(className){
+			var title = '【西北政法大学井盖变身萌版"兵马俑" （组图）】';
+			var desc = $("p.content_main").text().replace(/^\s+|\s+$/g,'');
+			var shuoming = "（分享自@中搜资讯）";
+			
+			this.text = title + desc.substring(0,100-title.length-shuoming.length) + '...'+shuoming;
+			if($(".souyue-image img").length > 0){
+				this.pic = $(".souyue-image img").attr("src");
+			}
+			
+			for (var i = 0; i < this.btns.length; i++) {
+				if(this.btns[i].className == className){
+					url = this.btns[i].url;
+					url = url.replace(/\[\$text\]/g, encodeURIComponent(this.text));
+					url = url.replace(/\[\$pic\]/g, encodeURIComponent(this.pic));
+					url = url.replace(/\[\$url\]/g, encodeURIComponent(this.url));
+					window.open(url, 'rmwbShare', 'toolbar=0,status=0,resizable=1,width='+this.btns[i].width+',height='+this.btns[i].height+',left='+Math.round(screen.width/2 - this.btns[i].width/2)+',top='+Math.round(screen.height/2 - this.btns[i].height/2));
+					//hideShare();
+					break;
+				};
+			};
+		}
+	};
+	$(function(){
+		/*导航更多显示隐藏*/
+	   $(".more_li").hover(function(){
+		  $(".more_list").show();
+	   },function(){
+		  $(".more_list").hide();
+	   });
+
+	   /*正文切换到14号字体*/
+	   $(".zh_small a").click(function(){
+		  if(!$(this).hasClass("active")){
+			  $(".zh_big a").removeClass("active");
+			  $(this).addClass("active");
+			  $(".content_main").addClass("content_f14").removeClass("content_f18");
+		  }
+	   });
+
+		/*正文切换到18号字体*/
+		$(".zh_big a").click(function(){
+			if(!$(this).hasClass("active")){
+				$(".zh_small a").removeClass("active");
+				$(this).addClass("active");
+				$(".content_main").addClass("content_f18").removeClass("content_f14");
+			}
+		});
+
+		$(".bg").hover(function(){
+			$(".bg_color").show();
+		},function(){
+			$(".bg_color").hide();
+		});
+
+		$(".bg_color li").click(function(){
+			$(".zx72_fastread_content").css("background-color",$(this).attr("colorval"))
+		});
+
+		$(".posi_share2 a").click(function(){
+			$("html,body").scrollTop(0);
+		});
+		
+		$(".posi_share").hover(function(){
+			$(".sp34_share_box").show();
+		},function(){
+			$(".sp34_share_box").hide();
+		});
+	});
+</script>
+</head>
+<body>
+<div class="zx72_fastread">
+	<div class="zx72_fastread_head clearfix">
+		<div class="zx72_fastread_headbox">
+		<div class="head_l"><a href="http://zixun.zhongsou.com/" target="_blank"><img src="http://zixun.zhongsou.com/images/faster/fast_reader_04.png" /></a></div>
+		<div class="head_m">
+			<ul class="clearfix">
+				<li><a href="http://zixun.zhongsou.com/">首页</a></li>
+				<li><a href="http://zixun.zhongsou.com/internet.html">互联网</a></li>
+				<li><a href="http://zixun.zhongsou.com/china.html">国内</a></li>
+				<li><a href="http://zixun.zhongsou.com/world.html">国际</a></li>
+				<li><a href="http://zixun.zhongsou.com/mil.html">军事</a></li>
+				<li><a href="http://zixun.zhongsou.com/ent.html">娱乐</a></li>
+				<li><a href="http://zixun.zhongsou.com/sports.html">体育</a></li>
+				<li><a href="http://zixun.zhongsou.com/tech.html">科技</a></li>
+				<li><a href="http://zixun.zhongsou.com/auto.html">汽车</a></li>
+				<li><a href="http://zixun.zhongsou.com/finance.html">财经</a></li>
+				<li><a href="http://zixun.zhongsou.com/house.html">房产</a></li>
+				<li><a href="http://zixun.zhongsou.com/edut.html">教育</a></li>
+				<!-- 
+				<li><a href="society.html">社会</a></li>
+				<li><a href="lady.html">女人</a></li>
+				<li><a href="image.html">图片</a></li>
+				<li><a href="media.html">媒体</a></li>
+				<li><a href="WeMedia.html">自媒体</a></li>
+				<li><a href="event.html">热门事件</a></li>
+				 -->
+				<li class="more_li"><a href="#">》</a><div class="more_list"><a href="http://zixun.zhongsou.com/society.html"><span>社会</span></a><a href="http://zixun.zhongsou.com/lady.html"><span>女人</span></a><a href="http://zixun.zhongsou.com/image.html"><span>图片</span></a><a href="http://zixun.zhongsou.com/media.html"><span>媒体</span></a><a href="http://zixun.zhongsou.com/WeMedia.html"><span>自媒体</span></a><a href="http://zixun.zhongsou.com/event_h24_1.html"><span>热门事件</span></a></div></li>
+				
+			</ul>
+		</div>
+		<div class="head_r">
+		<form id="frmTop"  method="get" name="frmTop" action="http://zixun.zhongsou.com/n">
+        	<input type="text" class="input_box" id="textfield" autocomplete="off" onkeydown="if(event.keyCode==13) frmSubmit(this.form);"/ value="" name="w">
+            <input value="4" type="hidden" name="y">
+			<input value="1" type="hidden" name="utf">
+            <input type="submit" value="" class="zx72_submit" blockType="0" blockId="zixun_home_104" />
+        </form>
+		</div>
+		</div>
+	</div>
+	
+	<div class="zx72_fastread_content">
+		<div class='jyew'>
+		<div class="zx72_fastread_contentbox">
+			<div class="contentbox72_top clearfix">
+				<div class="contentbox72_topl" blockid="zixun_faster_001">
+				<a target="_blank" href='http://zixun.zhongsou.com/'>中搜资讯</a> > 
+				 
+				西北政法大学井盖变身萌版"兵马俑" （组图） </div>
+				<div class="contentbox72_topr clearfix" blockid="zixun_faster_002"><div class="zh_big"><a href="javascript:void(0);"></a></div><div class="zh_small"><a href="javascript:void(0);" class="active"></a></div><div class="bg"><a class="backg">背景</a><div class="bg_color" style="display:none;"><ul class="clearfix"><li class="color1" colorval="#FFFFFF"></li><li class="color2" colorval="#EAF6F8"></li><li class="color3" colorval="#EAEFF7"></li><li class="color4" colorval="#F6F6F6"></li><li class="color5" colorval="#EEEEEE"></li><li class="color6" colorval="#FAF9F1"></li><li class="color7" colorval="#FAEAEB"></li><li class="color8" colorval="#F5E6F5"></li></ul></div></div> <div class="pr"><a class="print" href="javascript:void(0);" onclick="print();">打印</a></div> </div>
+			</div>
+		</div>
+        <div class="content_title">西北政法大学井盖变身萌版"兵马俑" （组图）</div>
+        <div class="ly_sj clearfix">
+        	<div class="ly_sj_l"></div>
+        	<div class="ly_sj_m">扬子晚报 &nbsp;&nbsp;2014-08-30 15:40</div>
+        	<div class="ly_sj_r"></div>
+        </div>
+        <div class="cyyq">
+        <div class="souyue-image">
+<img src="http://www.yangtse.com/d/file/yangtse/guonei/3d90c7fd4fc0c5c82908d6d34b590c0f.jpg" >
+</div>
+<p class="content_main" ><span ><span >2014年8月30日消息，近日，陕西西安，西北政法大学校园内，法学专业和新闻传播专业的学生用彩笔在井盖上作画，井盖变身为卡通人物。</span></span></p>		</div>
+	  <div class="ckyw" blockid="zixun_faster_004"><a target="_blank" href="http://www.yangtse.com/guonei/2014-08-30/261298.html">查看原文</a></div>
+    
+    <div class="jctj"  blockid="zixun_faster_005">
+    	<div class="jctj_top">精彩推荐</div>
+        <div class="jctj_bg"><img src="http://zixun.zhongsou.com/images/faster/fast_reader_13.png" /></div>
+        <ul class="clearfix">
+                	<li>
+        	        	<a title="承诺不强制入会不强行服务" href="http://zixun.zhongsou.com/faster/24/cffa23f5e99f14eba502004c32c44cf7.html" >        	承诺不强制入会不强行服务        	</a>
+        	</li>
+                	<li>
+        	        	<a title="李小鹏高空遇危机妻子嚎哭跳飞机前大喊 奥莉我爱你" href="http://zixun.zhongsou.com/faster/24/125ab8e9af17f33c9ea262524fcf61f7.html" >        	李小鹏高空遇危机妻子嚎哭跳飞机前大喊 奥莉我        	</a>
+        	</li>
+                	<li>
+        	        	<a title="湖南一公职人员打猎射杀村妇被刑拘" href="http://zixun.zhongsou.com/faster/24/14ea252d1568ba62892fcaed14786d7a.html" >        	湖南一公职人员打猎射杀村妇被刑拘        	</a>
+        	</li>
+                	<li>
+        	        	<a title="恒大与广东共建青训基地" href="http://zixun.zhongsou.com/faster/24/988ed6634971feac60d291423099eeeb.html" >        	恒大与广东共建青训基地        	</a>
+        	</li>
+                	<li>
+        	        	<a title="我省两机场入选国际紧急迫降机场" href="http://zixun.zhongsou.com/faster/24/3e41edd55974c4f07ecf238111abf7e6.html" >        	我省两机场入选国际紧急迫降机场        	</a>
+        	</li>
+                	<li>
+        	        	<a title="日外相再称钓鱼岛无领土问题" href="http://zixun.zhongsou.com/faster/24/74bc336529991b2d93da0923f23d5c7d.html" >        	日外相再称钓鱼岛无领土问题        	</a>
+        	</li>
+                	<li>
+        	        	<a title="五月天演绎“黄飞鸿”主题曲《将军令》MV首播(1)" href="http://zixun.zhongsou.com/faster/24/9e49d73f73b2b0a7db90965e489028c7.html" >        	五月天演绎“黄飞鸿”主题曲《将军令》MV首播(1)        	</a>
+        	</li>
+                	<li>
+        	        	<a title="李克强:加强10+3务实合作 朝东亚共同体目标稳步迈进" href="http://zixun.zhongsou.com/faster/24/f407e52361ae35e60b7684df810713a3.html" >        	李克强:加强10+3务实合作 朝东亚共同体目标稳步        	</a>
+        	</li>
+                </ul>
+    </div>
+    </div>
+    <!--底部-->
+    <div class="foot_fjx"></div>
+    
+    <div class="footer_box">
+		<div class="footer">
+  			<ul>
+    			<li><a href="http://www.zhongsou.cn/about.html">关于中搜</a></li>
+   				<li class="bgnone"><a href="http://suggest.zhongsou.com/">意见反馈</a></li>
+  			</ul>
+  			<ul class="copyright">
+   			 	<li><span>&#169;2014ZhongSou</span></li>
+    			<li><a href="http://www.miibeian.gov.cn/">京ICP证100943号</a></li>
+    			<li class="bgnone"><span style="float:left;">京公安备110108006300号</span></li>
+  			</ul>
+  		<p class="alarm">*中搜资讯搜索源于互联网新闻网站和频道，系自动分类排列，中搜资讯不转载任何网站内容。</p>
+		</div>
+	</div>
+   <!--浮窗-->
+    <div class="video34_floatr"  blockid="zixun_faster_003">
+    	<ul>
+        	<li class="posi_share">
+				<a href="javascript:void(0);" class="posi_share1"></a>
+				<div class="sp34_share_box" style="display:none;">
+					<div class="sp34_share_box1 clearfix">
+						<a href="javascript:void(0);" onclick="zhsouShare.share('icon_sina');return false;">
+							<img src="http://zixun.zhongsou.com/images/faster/share_logo_03.png">
+							<span>新浪微博</span>
+						</a>
+					</div>
+					<div class="sp34_share_box1 clearfix">
+						<a href="javascript:void(0);" onclick="zhsouShare.share('icon_qq');return false;">
+							<img src="http://zixun.zhongsou.com/images/faster/share_logo_06.png">
+							<span>腾讯微博</span>
+						</a>
+					</div>
+					<div class="sp34_share_box1 clearfix">
+						<a href="javascript:void(0);" onclick="zhsouShare.share('icon_qzone');return false;">
+							<img src="http://zixun.zhongsou.com/images/faster/share_logo_12.png">
+							<span>QQ空间</span>
+						</a>
+					</div>
+					<div class="sp34_share_box1 clearfix">
+						<a href="javascript:void(0);" onclick="zhsouShare.share('icon_friends');return false;">
+							<img src="http://zixun.zhongsou.com/images/faster/share_logo_14.png">
+							<span>QQ好友</span>
+						</a>
+					</div>
+				</div>
+			</li>
+        	<li class="posi_share2"><a href="#"></a></li>
+        </ul>
+   </div>
+	</div>
+	
+</div>
+</body>
+</html>
+<script type="text/javascript" src="/js/md5.js"></script>
+<script>
+function fastread(url,source,time){
+	//将url存cookie
+	var md5Url = hex_md5(url);
+	document.cookie=md5Url+"="+url + ";path=/";
+	document.cookie=md5Url+"_source="+source + ";path=/";
+	document.cookie=md5Url+"_time="+time + ";path=/";
+	url="http://zixun.zhongsou.com/faster/24/"+md5Url+".html";
+	window.open(url);
+	return;
+}
+</script>
+

@@ -1,0 +1,734 @@
+<!DOCTYPE HTML>
+<html>
+<title>唐梦 瓷砖电视背景墙 玄关背景墙瓷砖 仿古砖雕刻拼  玖玖有鱼 - 豆当网</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="applicable-device"content="pc,mobile">
+<meta charset="utf-8"><meta name="keywords" content="墙地面材;瓷砖,唐梦 瓷砖电视背景墙 玄关背景墙瓷砖 仿古砖雕刻拼  玖玖有鱼" /><meta name="description" content="唐梦 瓷砖电视背景墙 玄关背景墙瓷砖 仿古砖雕刻拼  玖玖有鱼" /><meta name="mobile-agent" content="format=html5;url=http://www.doudang.com/view/link/122894186" /><meta name="mobile-agent" content="format=xhtml;url=http://www.doudang.com/view/link/122894186" /><link href="http://img.mychemy.com/js/bootstrap-3.3.0-dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://img.mychemy.com/css/pc.css?201411165" rel="stylesheet">
+<link href="http://img.mychemy.com/js/artDialog/css/ui-dialog.css" rel="stylesheet" />
+<link href="http://img.mychemy.com/css/jqpagination.css" rel="stylesheet">
+<link href="http://img.mychemy.com/js/lightbox/css/lightbox.css" rel="stylesheet">
+<script>
+function showOtherPic(obj){
+    obj.src="";
+    obj.width="1px";
+}
+</script>
+<body>
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.doudang.com"><img src="http://img.doudang.com/images/logo.jpg" alt="豆当"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="http://www.doudang.com">首页</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+                        <li><a href="http://www.doudang.com/member/login/login-view-form">登录</a></li>
+            <li><a href="http://www.doudang.com/member/register/view-form">注册</a></li>
+                    </ul>
+                <p class="navbar-text navbar-right">Guest</p>
+            </div>
+</div>
+
+<script id="topicsTemplate" type="text/html">
+{{each topics as topic index}}
+<table width="100%" class="table">
+<tr valign="top">
+    <td width="60px">
+        <a href="{{topic.home.url}}"><img style="width:50px;" src="{{topic.home.avatar}}" alt="{{topic.home.homeName}}" /></a>
+    </td>
+    <td>
+        <p>
+            <div class="pull-left">
+                 <a href="{{topic.home.url}}">{{topic.home.homeName}}</a>
+            </div>
+            <div class="pull-right">{{topic.date}}</div>
+        </p>
+        <div class="clearfix"></div>
+
+        <p>
+            {{if topic.type == 'item'}}
+            <p class="lead">{{#topic.typeItem.content}}</p>
+            <p>来自：<a href="{{topic.typeItem.comeFrom.url}}" target="_blank">{{topic.typeItem.comeFrom.title}}</a></p>
+            </div>
+            <footer><a href="{{topic.pcUrl}}" target="_blank">详情...</a></footer>
+            {{else if topic.type == 'reply'}}
+            <p class="lead">{{#topic.typeReply.content}}</p>
+            <blockquote>
+                {{if topic.typeReply.toTopic.type == 'item'}}
+                <p>{{#topic.typeReply.toTopic.typeItem.content}}</p>
+                <p>来自：<a href="{{topic.typeReply.toTopic.typeItem.comeFrom.url}}" target="_blank">{{topic.typeReply.toTopic.typeItem.comeFrom.title}}</a></p>
+                <footer><a href="{{topic.typeReply.toTopic.pcUrl}}" target="_blank">详情</a></footer>
+                {{else if topic.typeReply.toTopic.type == 'simpleText'}}
+                <p>{{#topic.typeReply.toTopic.typeSimpleText.content}}</p>
+                <footer><a href="{{topic.typeReply.toTopic.pcUrl}}" target="_blank">详情</a></footer>
+                {{else if topic.typeReply.toTopic.type == 'pictureText'}}
+                <h4>{{#topic.typeReply.toTopic.typePictureText.title}}</h4>
+                <footer><a href="{{topic.typeReply.toTopic.pcUrl}}" target="_blank">详情</a></footer>
+                {{else if topic.typeReply.toTopic.type == 'link'}}
+                <h4>{{#topic.typeReply.toTopic.typeLink.title}}</h4>
+                <footer><a href="{{topic.typeReply.toTopic.pcUrl}}" target="_blank">详情</a></footer>
+                {{/if}}
+            </blockquote>
+            {{else if topic.type == 'link'}}
+            <h3>{{#topic.typeLink.title}}</h3>
+            <footer><a href="{{topic.pcUrl}}" target="_blank">详情...</a></footer>
+            {{else if topic.type == 'simpleText'}}
+            <p class="lead">{{#topic.typeSimpleText.content}}</p>
+            <!-- 图片 start -->
+    		<p><div id="topicImagea" class="image-row">
+    <div class="image-set">
+        {{each topic.content.imagea as image index}}
+        <a href="{{image.source}}" data-lightbox="roadtrip-{{topic.topicId}}" data-title="{{index+1}}"><img src="{{image.thumb}}" alt="" /></a>
+        {{/each}}
+    </div>
+</div></p>
+    		<!-- 图片 end -->
+            <footer><a href="{{topic.pcUrl}}" target="_blank">详情...</a></footer>
+            {{else if topic.type == 'pictureText'}}
+            <h3>{{#topic.typePictureText.title}}</h3>
+            <!-- 图片 start -->
+    		<p><div id="topicImagea" class="image-row">
+    <div class="image-set">
+        {{each topic.content.imagea as image index}}
+        <a href="{{image.source}}" data-lightbox="roadtrip-{{topic.topicId}}" data-title="{{index+1}}"><img src="{{image.thumb}}" alt="" /></a>
+        {{/each}}
+    </div>
+</div></p>
+    		<!-- 图片 end -->
+            <footer><a href="{{topic.pcUrl}}" target="_blank">详情...</a></footer>
+            {{/if}}
+        </p>
+        <div class="clearfix"></div>
+
+        <p>
+            <div class="pull-left">
+                <div class="btn-group">
+                    <input type="hidden" name="topic_id" value="{{topic.topicId}}">
+                    <button type="button" class="btn btn-default btn-lg topic_vote" data-vote="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">{{topic.ups}}</span></button>
+                    <button type="button" class="btn btn-default btn-lg topic_vote" data-vote="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">{{topic.downs}}</span></button>
+                </div>
+            </div>
+            <div class="pull-right">
+                {{if topic.editAccess == '1'}}
+                <a href="http://www.doudang.com/office/topic/edit-topic/?topic_id={{topic.topicId}}">修改</a>
+                {{/if}}
+                {{if topic.deleteAccess == '1'}}
+                <a href="javascript:void 0;" onclick="confirm_delete_topic('{{topic.topicId}}')">删除</a>
+                {{/if}}
+                {{if topic.type != 'reply'}}
+                <a href="javascript:void 0;" onclick="show_reply_topic('{{topic.topicId}}')">评论 ({{topic.replys}})</a>
+                {{/if}}
+            </div>
+        </p>
+        <div class="clearfix"></div>
+
+        <div class="hidden" id="show_reply_topic_{{topic.topicId}}">
+            <p>
+                <p>发表评论...</p>
+                <form role="form" name="post_topic_form" id="post_reply_topic_form_{{topic.topicId}}" method="post" action="http://www.doudang.com/office/topic-json/post-topic-reply">
+                    <input type="hidden" name="to_topic_id" value="{{topic.topicId}}">
+                    <div class="form-group">
+                        <textarea cols="80" name="content" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" class="btn btn-primary btn-lg" onClick="post_reply_topic_form('{{topic.topicId}}')">提交</button>
+                    </div>
+                </form>            
+                <div id="jishigou_div_reply_topics_{{topic.topicId}}">内容正在加载中，请稍候……</div>
+                <div class="gigantic pagination" id="pagination_reply_topics_{{topic.topicId}}">
+                    <a href="#" class="first" data-action="first">&laquo;</a>
+                    <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+                    <input type="text" readonly="readonly" />
+                    <a href="#" class="next" data-action="next">&rsaquo;</a>
+                    <a href="#" class="last" data-action="last">&raquo;</a>
+                </div>
+            </p>
+            <div class="clearfix"></div>
+        </div>
+    </td>
+</tr>   
+</table>
+{{/each}}
+</script>
+
+            <script id="replyTopicsTemplate" type="text/html">
+{{each topics as topic index}}
+<table width="100%" class="table">
+<tr valign="top">
+	<td width="60px">
+		<a href="{{topic.home.url}}"><img style="width:50px;" src="{{topic.home.avatar}}" alt="{{topic.home.homeName}}" /></a>
+	</td>
+	<td>
+		<p>
+            <div class="pull-left">
+	             <a href="{{topic.home.url}}">{{topic.home.homeName}}</a>
+            </div>
+			<div class="pull-right">{{topic.date}}</div>
+		</p>
+		<div class="clearfix"></div>
+
+		<p>{{#topic.typeReply.content}}</p>
+		
+		<p>
+			<div class="btn-group btn-group-sm">
+				<input type="hidden" name="topic_id" value="{{topic.topicId}}">
+				<button type="button" class="btn btn-default topic_vote" data-vote="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">{{topic.ups}}</span></button> 
+	            <button type="button" class="btn btn-default topic_vote" data-vote="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">{{topic.downs}}</span></button>
+			</div>
+		</p>
+	</td>
+</tr>
+</table>
+{{/each}}
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8"><form class="form-inline" role="form" action="/www/searcher/link/?">
+<div class="input-group">
+  <input type="text" name="words" value="" class="form-control" placeholder="请输入关键词">
+  <span class="input-group-btn">
+    <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span>搜索</button>
+  </span>
+</div><!-- /input-group -->
+</form>
+</div>
+            </div>
+            
+            <div class="page-header">
+                <h1>唐梦 瓷砖电视背景墙 玄关背景墙瓷砖 仿古砖雕刻拼  玖玖有鱼</h1>
+                <p></p>
+            </div>
+            <p>
+            	<!-- JiaThis Button BEGIN -->
+				<div class="jiathis_style">
+    				<span class="jiathis_txt">分享到：</span>
+    				<a class="jiathis_button_weixin">微信</a>
+    				<a class="jiathis_button_tsina">新浪微博</a>
+    				<a class="jiathis_button_tieba">百度贴吧</a>
+    				<a class="jiathis_button_qzone">QQ空间</a>
+    				<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+    				<a class="jiathis_counter_style"></a>
+				</div>
+				<script type="text/javascript" >
+				var jiathis_config={
+					summary:"",
+					shortUrl:false,
+					hideMore:false
+				}
+				</script>
+				<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+				<!-- JiaThis Button END -->
+            </p>
+            <div class="clearfix"></div>
+            <hr>
+            <p>
+                <div class="row">
+                    <div class="col-md-7">
+                                                <a href="http://wb.doudang.com/www/link/link/?link_id=122894186" target="_blank"><img alt="唐梦 瓷砖电视背景墙 玄关背景墙瓷砖 仿古砖雕刻拼  玖玖有鱼" src="http://linkimage.b0.upaiyun.com/06c/738/de0/9eb/e58/6ce/289/d7b/06c738de09ebe586ce289d7b4716e0d8_medium.jpg"></a>
+                                            </div>
+                    <div class="col-md-5">
+                                                <p>
+                            <div class="btn-group">
+                        		<input type="hidden" name="link_id" value="122894186">
+                        		<button type="button" class="btn btn-default btn-lg link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+                        		<button type="button" class="btn btn-default btn-lg pull-right link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+                        	</div>
+                        </p>
+                        <p>价格：58.8元</p>
+                        <p>最后更新：2014-07-04 01:32</p>
+                        <p>来自：当当网</p>
+                        <p><a class="btn btn-primary btn-lg active" role="button" href="http://wb.doudang.com/www/link/link/?link_id=122894186" target="_blank">去 当当网 购买 &raquo;</a></p>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </p>
+            
+            <div class="page-header">分类标签...</div>
+            <p class="btn-tags">
+                                                <a class="btn btn-default" role="button" href="http://www.doudang.com/searcher/link/tags:%E5%A2%99%E5%9C%B0%E9%9D%A2%E6%9D%90/">墙地面材</a>
+                                                <a class="btn btn-default" role="button" href="http://www.doudang.com/searcher/link/tags:%E7%93%B7%E7%A0%96/">瓷砖</a>
+                            </p>
+            
+            <div class="page-header">精彩评论...</div>
+            <form role="form" name="post_topic_form" id="post_topic_form" method="post" action="http://www.doudang.com/office/topic-json/post-topic-item">
+            	<input type="hidden" name="item" value="link">
+            	<input type="hidden" name="item_id" value="122894186">
+            	<div class="form-group">
+            		<textarea cols="80" name="content" class="form-control" rows="5"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg">提交</button>
+                </div>
+            </form>
+            <div id="jishigou_div">内容正在加载中，请稍候……</div>
+      		<div class="gigantic pagination" id="pagination_topic">
+			    <a href="#" class="first" data-action="first">&laquo;</a>
+			    <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+			    <input type="text" readonly="readonly" />
+			    <a href="#" class="next" data-action="next">&rsaquo;</a>
+			    <a href="#" class="last" data-action="last">&raquo;</a>
+			</div>
+			
+			<div class="page-header">相似单品...</div>
+			<div class="row" id="masonry-container">
+                                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120451180" target="_blank">唐梦 瓷砖背景墙 电视背景墙瓷砖 简约 全抛釉瓷砖  曼姿</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120451180">
+            <img src="http://linkimage.b0.upaiyun.com/01f/ba3/da4/03a/567/c69/435/b06/01fba3da403a567c69435b06ff764c11_thumb.jpg" alt="唐梦 瓷砖背景墙 电视背景墙瓷砖 简约 全抛釉瓷砖  曼姿" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120451180">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：75元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/166127354" target="_blank">高恩 仿古砖 FG8101 客厅瓷砖800x800mm 防滑地砖 阳台户外瓷砖 餐厅瓷砖</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/166127354">
+            <img src="http://linkimage.b0.upaiyun.com/3e0/8c4/c12/745/6b8/8a6/0c3/413/3e08c4c127456b88a60c3413d95d6328_thumb.jpg" alt="高恩 仿古砖 FG8101 客厅瓷砖800x800mm 防滑地砖 阳台户外瓷砖 餐厅瓷砖" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="166127354">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：69元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120456996" target="_blank">唐梦新品 客厅电视背景墙瓷砖 艺术瓷砖电视背景墙中式 海纳百川</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120456996">
+            <img src="http://linkimage.b0.upaiyun.com/7f1/a11/3b4/a8a/5bf/bf4/0bc/28b/7f1a113b4a8a5bfbf40bc28b4b02c866_thumb.jpg" alt="唐梦新品 客厅电视背景墙瓷砖 艺术瓷砖电视背景墙中式 海纳百川" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120456996">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：54元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/89827523" target="_blank">高恩 木纹地砖 卧室客厅厨房防滑瓷砖150*600 木地板瓷砖 地砖</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/89827523">
+            <img src="http://linkimage.b0.upaiyun.com/874/d27/8b4/35f/97f/eff/13d/4e1/874d278b435f97feff13d4e1e7a11c02_thumb.jpg" alt="高恩 木纹地砖 卧室客厅厨房防滑瓷砖150*600 木地板瓷砖 地砖" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="89827523">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：9.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120456980" target="_blank">唐梦 瓷砖背景墙 电视背景墙瓷砖  二十四孝</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120456980">
+            <img src="http://linkimage.b0.upaiyun.com/a81/71f/87b/dc4/8d8/227/561/657/a8171f87bdc48d8227561657f43e9f29_thumb.jpg" alt="唐梦 瓷砖背景墙 电视背景墙瓷砖  二十四孝" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120456980">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：58.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120451372" target="_blank">唐梦 瓷砖背景墙 电视背景墙瓷砖 中式艺术客厅 竹韵</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120451372">
+            <img src="http://linkimage.b0.upaiyun.com/576/9d6/480/815/177/cdc/d8e/500/5769d6480815177cdcd8e5003a22b501_thumb.jpg" alt="唐梦 瓷砖背景墙 电视背景墙瓷砖 中式艺术客厅 竹韵" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120451372">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：58.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120451396" target="_blank">唐梦 瓷砖背景墙 电视背景墙 瓷砖简约 雅阁</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120451396">
+            <img src="http://linkimage.b0.upaiyun.com/d9c/5f5/353/916/fa5/e50/bce/e3f/d9c5f5353916fa5e50bcee3fc7b7be16_thumb.jpg" alt="唐梦 瓷砖背景墙 电视背景墙 瓷砖简约 雅阁" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120451396">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：49元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120451404" target="_blank">唐梦 瓷砖背景墙 电视背景墙瓷砖 客厅中式  富贵有余</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120451404">
+            <img src="http://linkimage.b0.upaiyun.com/53d/f01/6c6/bf7/f85/f05/714/7d7/53df016c6bf7f85f057147d7d19fca99_thumb.jpg" alt="唐梦 瓷砖背景墙 电视背景墙瓷砖 客厅中式  富贵有余" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120451404">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：42元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/122894207" target="_blank">唐梦 客厅电视背景墙瓷砖 白色仿古砖墙砖 瓷砖拼花雕刻 致橡树</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/122894207">
+            <img src="http://linkimage.b0.upaiyun.com/1ee/e3e/e88/654/ad0/230/08c/b62/1eee3ee88654ad023008cb62d6d7bc94_thumb.jpg" alt="唐梦 客厅电视背景墙瓷砖 白色仿古砖墙砖 瓷砖拼花雕刻 致橡树" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="122894207">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：58.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/111515556" target="_blank">唐梦 瓷砖背景墙 现代客厅电视背景墙瓷砖 简约仿古砖 兰蔻</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/111515556">
+            <img src="http://linkimage.b0.upaiyun.com/8aa/66c/772/2b6/696/ddf/3ec/f2b/8aa66c7722b6696ddf3ecf2bc8b7eb27_thumb.jpg" alt="唐梦 瓷砖背景墙 现代客厅电视背景墙瓷砖 简约仿古砖 兰蔻" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="111515556">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：42元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/112283515" target="_blank">唐梦 瓷砖背景墙 电视背景墙瓷砖 现代中式艺 映日荷花</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/112283515">
+            <img src="http://linkimage.b0.upaiyun.com/4c1/b75/517/241/6c6/90f/75f/5f0/4c1b755172416c690f75f5f095266c5b_thumb.jpg" alt="唐梦 瓷砖背景墙 电视背景墙瓷砖 现代中式艺 映日荷花" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="112283515">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：49元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120451332" target="_blank">唐梦 瓷砖背景墙 电视背景墙瓷砖  雅舍兰香</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120451332">
+            <img src="http://linkimage.b0.upaiyun.com/9d5/8f2/e10/c9c/b3c/d02/52a/135/9d58f2e10c9cb3cd0252a1351915c6f8_thumb.jpg" alt="唐梦 瓷砖背景墙 电视背景墙瓷砖  雅舍兰香" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120451332">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：58.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120457044" target="_blank">唐梦 餐厅瓷砖背景墙 背景墙砖 玄关背景墙瓷砖画 五谷丰登</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120457044">
+            <img src="http://linkimage.b0.upaiyun.com/427/b52/fb1/83b/454/4ad/2b9/063/427b52fb183b4544ad2b90635a4f1b42_thumb.jpg" alt="唐梦 餐厅瓷砖背景墙 背景墙砖 玄关背景墙瓷砖画 五谷丰登" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120457044">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：88.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/122894165" target="_blank">唐梦 瓷砖背景墙 玄关艺术瓷砖雕刻 中式客厅 家和富贵</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/122894165">
+            <img src="http://linkimage.b0.upaiyun.com/91d/4a7/fab/17c/e96/a5c/608/8a0/91d4a7fab17ce96a5c6088a012949f0e_thumb.jpg" alt="唐梦 瓷砖背景墙 玄关艺术瓷砖雕刻 中式客厅 家和富贵" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="122894165">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：58.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/89827795" target="_blank">高恩 厨卫瓷砖 浴室瓷砖 客厅卧室 防滑地板砖 300*300抛晶地砖</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/89827795">
+            <img src="http://linkimage.b0.upaiyun.com/c8b/c21/591/856/098/d60/971/011/c8bc21591856098d6097101154b7fd11_thumb.jpg" alt="高恩 厨卫瓷砖 浴室瓷砖 客厅卧室 防滑地板砖 300*300抛晶地砖" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="89827795">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：4.99元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120451172" target="_blank">唐梦 客厅电视背景墙瓷砖 艺术瓷砖电视背景墙中式 秋韵</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120451172">
+            <img src="http://linkimage.b0.upaiyun.com/8d0/baa/4aa/443/d56/078/e0c/5da/8d0baa4aa443d56078e0c5da4b5c48ab_thumb.jpg" alt="唐梦 客厅电视背景墙瓷砖 艺术瓷砖电视背景墙中式 秋韵" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120451172">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：54元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120451300" target="_blank">唐梦 瓷砖背景墙 客厅瓷砖 墙砖 全抛釉+幻彩 青松迎客</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120451300">
+            <img src="http://linkimage.b0.upaiyun.com/ef4/f8a/07d/1a1/2e1/4b8/317/6b8/ef4f8a07d1a12e14b83176b8879c51bf_thumb.jpg" alt="唐梦 瓷砖背景墙 客厅瓷砖 墙砖 全抛釉+幻彩 青松迎客" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120451300">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：103.6元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120451348" target="_blank">唐梦 瓷砖背景墙 装修电视背景墙瓷砖  吉祥有余</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120451348">
+            <img src="http://linkimage.b0.upaiyun.com/c15/dcd/a07/884/820/560/381/796/c15dcda07884820560381796dccb9457_thumb.jpg" alt="唐梦 瓷砖背景墙 装修电视背景墙瓷砖  吉祥有余" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120451348">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：58.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/120457036" target="_blank">唐梦 玄关瓷砖背景墙 艺术瓷砖 中式客厅  五福临门</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/120457036">
+            <img src="http://linkimage.b0.upaiyun.com/3da/583/a59/c7e/a00/bcc/be0/6ef/3da583a59c7ea00bccbe06efe9163190_thumb.jpg" alt="唐梦 玄关瓷砖背景墙 艺术瓷砖 中式客厅  五福临门" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="120457036">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：58.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                <div class="masonry-item col-md-6">
+                    <p>
+    <div class="media">
+        <h4 class="media-heading"><a href="http://www.doudang.com/view/link/122894123" target="_blank">唐梦 瓷砖背景墙 客厅电视背景墙瓷砖 现代风格 蝶恋花</a></h4>
+                <a class="media-left" href="http://www.doudang.com/view/link/122894123">
+            <img src="http://linkimage.b0.upaiyun.com/fb8/946/6c1/977/8cc/410/a62/38a/fb89466c19778cc410a6238a81b0f0e5_thumb.jpg" alt="唐梦 瓷砖背景墙 客厅电视背景墙瓷砖 现代风格 蝶恋花" onerror="this.width='100'" />
+        </a>
+                <div class="media-body">
+            <p>
+        		<input type="hidden" name="link_id" value="122894123">
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="up"><span class="glyphicon glyphicon-chevron-up"></span>赞 <span class="ups">0</span></button>
+        		<button type="button" class="btn btn-default link_vote" data-vote_direction="down"><span class="glyphicon glyphicon-chevron-down"></span>踩 <span class="downs">0</span></button>
+        	</p>
+        	<p>价格：58.8元</p>
+            <p>来自：当当网</p>
+        </div>
+    </div>
+</p>
+<hr>                </div>
+                                            </div>
+        </div>
+        <div class="col-md-4">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- pc link 详情页右侧上方 -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:300px;height:600px"
+                 data-ad-client="ca-pub-2833263972271125"
+                 data-ad-slot="4149294002"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="footer">
+        <p>&copy; 2013. Doudang.com All rights reserved. </p>
+        <p><a href="http://www.doudang.com/view/topic/4854">联系我们</a> <a href="http://qb.doudang.com">豆当轻博客</a></p>
+        <p><p><a href="http://www.miitbeian.gov.cn/">京ICP备13049911号-1</a> 京公网安备110114002137号</p></p>
+            </div>
+</div>
+<script type="text/javascript" src="http://img.mychemy.com/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/bootstrap-3.3.0-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/bootbox.min.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/jquery.form.min.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/jquery.jqpagination.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/template.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/base.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/ajaxSubmit.js"></script>
+<script type="text/javascript" src="http://img.doudang.com/js/vote.js?201411161"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/topic.js?2014112302"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/artDialog/dist/dialog-plus.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/lightbox/js/lightbox.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/plupload/plupload.full.min.js"></script>
+<script type="text/javascript" src="http://img.mychemy.com/js/uploader.js?201411301"></script>
+<script language='javascript' type='text/javascript' src='http://img.mychemy.com/js/masonry.pkgd.min.js'></script><script language='javascript' type='text/javascript' src='http://img.mychemy.com/js/imagesloaded.pkgd.js'></script><script type="text/javascript">
+
+var callbackFunction = function()
+{
+    ajaxGetTopics.getTopics("122894186", 1);
+    return true;
+}
+
+$(document).ready(function() {
+	$('#masonry-container').imagesLoaded(function(){
+        $('#masonry-container').masonry({
+            itemSelector: '.masonry-item'
+        });
+    });
+
+    ajaxGetTopics.getTopics("122894186", 1);
+
+    $('#pagination_topic').jqPagination({
+		link_string	: '/?page={page_number}',
+		max_page	: ajaxGetTopics.totalPage,
+		paged		: function(page) {
+			ajaxGetTopics.getTopics("122894186", page);
+			console.log('<li>Requested page ' + page + '</li>')
+		}
+	});
+	
+	ajaxSubmitForm.init();
+	ajaxSubmitForm.callbackFunction = callbackFunction;
+    ajaxSubmitForm.submit("post_topic_form");
+    
+});
+</script><div style="display:none;">
+    <script language="javascript" type="text/javascript" src="http://js.users.51.la/3593381.js"></script>
+    <noscript><a href="http://www.51.la/?3593381" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/3593381.asp" style="border:none" /></a></noscript>
+</div>
+</body>
+</html>

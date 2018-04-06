@@ -1,0 +1,571 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+    <script type="text/javascript" src="/js/jq.js"></script>
+    
+<script type="text/javascript">
+    var IsMobile = false; //是否是手机
+    function CheckIsPc() {
+        BrowserCheck();
+    }
+    function BrowserCheck() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            IsMobile = true;
+            PageRedirect();
+        }
+        else {
+            IsMobile = false;
+        }
+    }
+    function PageRedirect() {
+        window.location.href = window.location.href.replace('www.', 'm.');
+    }
+    //手机和pc的跳转
+    CheckIsPc();
+</script>
+<script type="text/javascript">
+    var LookNum = 1;
+    var MaxNum = 2;
+    function JiShu() {
+        LookNum = $.getCookie('LookNum');
+        if (LookNum == null || LookNum == '') {
+            LookNum = 1;
+            $.setCookie('LookNum', LookNum);
+        }
+        else {
+            var n = parseInt(LookNum);
+            if (n < MaxNum) {
+                n = n + 1;
+            }
+            else {
+                n = 1;
+            }
+            LookNum = n;
+            $.setCookie('LookNum', LookNum);
+        }
+    }
+    JiShu();
+
+
+</script>
+
+    <link href="/css/15xs.css" type="text/css" rel="stylesheet" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="mobile-agent" content="format=html5;url=http://m.15xs.com/xiaoshuo/62442/243448.htm" />
+    
+    <title>
+        花都特工章节:第2129章 我在等你,15小说网</title>
+    <meta name="keywords" content="花都特工章节:第2129章 我在等你,15小说网" />
+    <meta name="description" content="花都特工章节:第2129章 我在等你,15小说网" />
+    <script type="text/javascript">
+        var xsid=62442;
+        var zjid=243448;
+        var zjname='第2129章 我在等你';
+    </script>
+    <style type="text/css">
+        .DJ300X250
+        {
+            width: 300px;
+            height: 250px;
+            float: left;
+            margin-left: 2px;
+        }
+        .a
+        {
+            text-decoration: none;
+        }
+    </style>
+
+</head>
+<body>
+    
+
+
+
+<!--登陆Start-->
+<div class="ywtop">
+    <div class="ywtop_con">
+        <div class="nri name1">
+            <div class="cc">
+                <div class="txt">
+                    账号：</div>
+                <div class="inp">
+                    <input type="text" id="myusername"></div>
+            </div>
+            <div class="cc">
+                <div class="txt">
+                    密码：</div>
+                <div class="inp">
+                    <input type="password" id="mypassword"></div>
+            </div>
+            <div class="frii">
+                <input id="denglu" type="button" value="登 录" style="cursor: pointer;"></div>&nbsp;
+            <div class="ccc">
+                <div class="txtt">
+                    <a href="/usergetpass.aspx">忘记密码</a></div>
+                <div class="txtt">
+                    <a href="/userregister.aspx">用户注册</a></div>
+            </div>
+        </div>
+        <div class="nri name2" style="display: none;">
+            Hi,<a target="_top" id="name1">cuizhanjun1981</a>&nbsp;&nbsp; <a target="_top" href="/usershujia.aspx">
+                我的书架</a> | <a target="_self" style="cursor: pointer;" id="tuichu">退出登录</a>&nbsp;</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#tuichu').click(function () {
+        $.setCookie('username', '', -3000);
+        $.setCookie('userid', '', -3000);
+        window.location.href = window.location.href;
+    });
+    $('#denglu').click(function () {
+        var username = $('#myusername').val();
+        var pwd = $('#mypassword').val();
+        if (username == '' || pwd == '') {
+            alert('请填写用户名和密码！');
+            return;
+        }
+        username = escape(username);
+        $.ajax({
+            type: 'POST',
+            url: '/ashx/user.ashx',
+            data: { 'action': 'checkUserLogin', 'username': username, 'pwd': pwd },
+            success: function (userid) {
+                if (userid == "0") {
+                    alert('密码错误，登录失败！');
+                }
+                else {
+                    if (userid > 0)
+                        Login(username, userid);
+                }
+            }
+        });
+    });
+    function Login(username, userid) {
+        $.setCookie('username', username, 3000);
+        $.setCookie('userid', userid, 3000);
+        ShowUserName();
+    }
+    function ShowUserName() {
+        var username = $.getCookie('username');
+        var userid = $.getCookie('userid');
+        if (username == '' || userid == '' || username == null || userid == null) {
+            $('.name1').css('display', 'block');
+            $('.name2').css('display', 'none');
+        }
+        else {
+
+            $('.name1').css('display', 'none');
+            $('.name2').css('display', 'block');
+
+            $('#name1').html(username);
+        }
+
+    }
+
+    ShowUserName();
+</script>
+<!--登陆End-->
+<div id="header2">
+    <div id="header21">
+        <a href="/">
+            <h1 id="header211">
+                15小说网
+            </h1>
+        </a>
+        <form action="/search.aspx" method="get">
+        <div id="header212">
+            <input id="bookname" name="bookname" type="text" value="请输入书名或作者名" />
+        </div>
+        <div id="header213">
+            <input id="header2131" type="submit" value="搜索">
+        </div>
+        <div id="header214">
+            <a id="toM" style="cursor: pointer;">[到手机版]</a>
+            <script type="text/javascript">
+                $('#toM').click(function () {
+                    $.setCookie('ispc', 'false');
+                    window.location.href = 'http://m.15xs.com/';
+                });
+            </script>
+        </div>
+        <script type="text/javascript">
+            $('#bookname').focus(function () {
+                var bookname = $(this).val();
+                if (bookname == '请输入书名或作者名') {
+                    $(this).val('');
+                }
+            });
+        </script>
+        </form>
+    </div>
+</div>
+
+<div id="header3">
+    <ul id="header31" style="width:960px;">
+        <li><a id="index" href="/">首页</a></li>
+        <li><a id="paihang" href="http://www.15xs.com/paihang/1.htm">热门排行</a></li>
+        <li><a id="quanben" href="http://www.15xs.com/quanben/1.htm">全本</a></li>
+        <li><a id="leixing1" href="http://www.15xs.com/leixing/1/1.htm">异界大陆</a></li>
+        <li><a id="leixing2" href="http://www.15xs.com/leixing/2/1.htm">西方奇幻</a></li>
+        <li><a id="leixing3" href="http://www.15xs.com/leixing/3/1.htm">武侠仙侠</a></li>
+        <li><a id="leixing4" href="http://www.15xs.com/leixing/4/1.htm">都市娱乐</a></li>
+        <li><a id="leixing5" href="http://www.15xs.com/leixing/5/1.htm">历史军事</a></li>
+        <li><a id="leixing6" href="http://www.15xs.com/leixing/6/1.htm">科幻游戏</a></li>
+        <li><a id="leixing7" href="http://www.15xs.com/leixing/7/1.htm">竞技同人</a></li>
+        <li><a id="leixing8" href="http://www.15xs.com/leixing/8/1.htm">悬疑灵异</a></li>
+        <li><a id="leixing9" href="http://www.15xs.com/leixing/9/1.htm">玄幻其他</a></li>
+        <li><a id="update" href="http://www.15xs.com/update/1.htm">最新更新</a></li>
+    </ul>
+</div>
+
+
+    <!--页面主体start-->
+    
+    <div id="neirongDiv" class="neironghui" style="background-color: #f6f6f6; color: Black;
+        font-size: 16px; font-family: 宋体; width: 70%;">
+        <!--页头start-->
+        <div id="header3" style="margin-bottom: 5px;">
+            <ul id="header31">
+                <li><a href="http://www.15xs.com/xiaoshuo/62442/" style="font-size: 16px;">返回小说：花都特工</a></li>
+                <!--样式-->
+                <li style="position: relative; float: right;"><span style="font-size: 16px;">视觉设置：</span>
+                    <select id="bgcolor" name="bgcolor" class="stylectl">
+                        <option value="#f6f6f6" style="background-color: #f6f6f6">底色</option>
+                        <option value="#f6f6f6" style="background-color: #f6f6f6">半灰</option>
+                        <option value="#ffffff" style="background-color: #ffffff">白色</option>
+                        <option value="#e3e8f7" style="background-color: #e3e8f7">淡蓝</option>
+                        <option value="#daebfc" style="background-color: #daebfc">蓝色</option>
+                        <option value="#ebeaea" style="background-color: #ebeaea">淡灰</option>
+                        <option value="#e7e3e6" style="background-color: #e7e3e6">灰色</option>
+                        <option value="#dedcd8" style="background-color: #dedcd8">深灰</option>
+                        <option value="#d8d7d7" style="background-color: #d8d7d7">暗灰</option>
+                        <option value="#e6fae4" style="background-color: #e6fae4">绿色</option>
+                        <option value="#f9fbdd" style="background-color: #f9fbdd">明黄</option>
+                    </select>
+                    <select id="fontcolor" name="fontcolor" class="stylectl">
+                        <option value="#000000">字色</option>
+                        <option value="#000000">黑色</option>
+                        <option value="#a10d0d">红色</option>
+                        <option value="#167b0b">绿色</option>
+                        <option value="#0d3475">蓝色</option>
+                        <option value="#660000">棕色</option>
+                    </select>
+                    <select id="fontsize" name="fontsize" class="stylectl">
+                        <option value="16px">字号</option>
+                        <option value="14px">小号</option>
+                        <option value="16px">较小</option>
+                        <option value="18px">中号</option>
+                        <option value="20px">较大</option>
+                        <option value="24px">大号</option>
+                        <option value="28px">特大</option>
+                    </select>
+                    <select id="fontfamily" name="fontfamily" class="stylectl">
+                        <option value="宋体">字体</option>
+                        <option value="宋体">宋体</option>
+                        <option value="微软雅黑">微软雅黑</option>
+                        <option value="黑体">黑体</option>
+                        <option value="楷书">楷体</option>
+                        <option value="隶书">隶书</option>
+                    </select>
+                    <select id="divwidth" name="divwidth" class="stylectl">
+                        <option value="70%">宽度</option>
+                        <option value="50%">50%</option>
+                        <option value="60%">60%</option>
+                        <option value="70%">70%</option>
+                        <option value="80%">80%</option>
+                        <option value="90%">90%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                    双击滚屏速度：
+                    <select id="divsudu" name="divsudu" class="stylectl">
+                        <option value="800">1</option>
+                        <option value="500">2</option>
+                        <option value="200">3</option>
+                        <option value="100">4</option>
+                        <option value="80">5</option>
+                        <option value="50">6</option>
+                        <option value="30">7</option>
+                        <option value="10">8</option>
+                        <option value="5">9</option>
+                        <option value="3">10</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <!--页头end-->
+        <div style="width: 100%; text-align: center; line-height: 50px;">
+            <b title="原文更新时间：2014-12-03 10:32:11,本站更新时间：2014-12-03 10:21:55,vip章节">
+                第2129章 我在等你</b>
+        </div>
+        <div style="position: relative; left: -8px; top: -9px;" id="Div1" class="DJ960X230">
+            <div style="width: 100%; text-align: center; color: #3377aa; line-height: 40px; font-size: 14px;">
+                （←）<a id="A1" href="http://www.15xs.com/xiaoshuo/62442/243447.htm">
+                    上一页</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="A2" title="最新章节列表" href="http://www.15xs.com/xiaoshuo/62442/">
+                        回书目（Enter）</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="A3" href="http://www.15xs.com/xiaoshuo/62442/243449.htm">
+                            下一页</a>（→） <a id="A4" class="jiarushuqian" href="###" style="color: Blue;">加入书签</a>
+            </div>
+        </div>
+        <div style="width: 98%; margin-left: auto; margin-right: auto; margin-top: 10px;"
+            id="zjneirong">
+            <div style="width: 100%;">
+                &nbsp;&nbsp;&nbsp;&nbsp;叶少枫身后跟着白洁來人一起走出了医院汪力和彭晓飞留在医院里处理死者以及和家属赔偿的一些相关的问題河堤上的这些拆桥的小工都是在东北这边临时招进建筑队的如果要是从h省那边请工人过來的话会花费不少钱为了节省成本一开始沒有什么技术含量的工作都会交给当地临时招进來的临时小工來做<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;这个死者正好是临时招进來的小工一般这种小工收入低虽然收入低但是整个家庭基本上都要靠着这么一个工人去工作养活所以一个小工死了对于一个建筑队一个项目一个大公司集团來说算不上什么但是对于一个家庭來说这恐怕就跟天塌下來一样<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;临走的时候叶少枫虽然表明了自己不会再插手这件事情但是他嘱托彭晓飞一定要给这家人合理的赔偿不单要合理还要加倍赔偿这些工人都不容易这些工人的家庭就更不容易了这件事情本身就存在着失误所以承担相应的责任是必须的不能够逃避<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;彭晓飞也跟叶少枫承诺自己一定会给对方家属最高标准的赔偿这样叶少枫才放心离开汪力主动留下來准备和彭晓飞一起面对这个事情<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;叶少枫出门的时候心神不宁总觉得自己做了一件缺德的事情虽然整个事情跟自己沒有太大的关系但是毕竟自己是在场的如果刚才叶少枫不同意他们善做主张的放弃对植物人的治疗的话他们一定也会按照叶少枫的态度去做不会强硬的來但是叶少枫当时是有了私心考虑到了这个事情对自己的影响对以后发展上将会带來的麻烦都进行了一番思考之后他最终选择了沉默才沉默其实就等于是放弃了治疗这就等于叶少枫眼睁睁的看着一个人从活着到死去而且还是一个无辜的人不是他的敌人也不是他的仇家而是一个劳动者一个生活在社会底层的弱者<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;白洁抽出一支香烟地给叶少枫说道:“抽口烟别想了这事情跟你沒关系”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;叶少枫接过烟白洁给他点着火叶少枫这时候避开了这个话題问道:“你什么时候会抽烟了”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“早就会了只是沒当着你面儿抽过怕给你留下不好的印象”白洁说道<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“什么好印象坏印象的咱们现在都这么熟了”叶少枫笑着说道<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;白洁笑了笑说道:“怎么样现在赶紧离开这医院吧这种晦气的地方不适合久留是我送你回家呢还是你送我回家呢我可沒开车”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;叶少枫看看表已经晚上十点半了十点钟电影准时结束都已经结束半个小时了想必那个贾玉兰自己早就会宿舍了索性叶少枫也沒什么事情还是送白洁回去吧一路上也能说说话排解一下心中的郁闷“我送你回家吧”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;叶少枫开车车子带着白洁返回市迎宾馆白洁现在也住在是迎宾馆里面住的是一间一室一厅的套房其实她这个级别的都不应该是住套房的能够在是迎宾馆有一间住处就不错了只是因为他跟叶少枫关系很好俩人之间的关系往那一摆市迎宾馆的肯定要给她上一个层次的待遇这也是市迎宾馆的人在向叶少枫表示友好<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;车子到了迎宾馆之后白洁下车问道:“要不要上去坐坐”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“算了这么晚了我回家了从这里开车回去还得半个來小时呢”叶少枫坐在车里并沒有下车的意思<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“这么晚了你还会什么家啊这里又不是沒你的住处在这住下多方便明天也不用你早起上班”白洁说道<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“算了在这里住的不习惯还是回家了我走了你早点睡明天见”说完叶少枫启动了车子<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“明天见”白洁看着叶少枫开着车子离开心中多少有点失落白洁的心里似乎依然是对叶少枫恋恋不舍虽然他们俩之间的那段感情早已经化为乌有了但是这仅仅是表面上的或者说仅仅是叶少枫一方面的化为乌有在白洁这里依然还想着曾经的那段短暂的美好的回忆<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;车子开过市中心正好路过电影院现在快十一点了路上车很少叶少枫往电影院瞟了医院三三两两的人基本上都是情侣在约会<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;这个季节虽然已经入夏但是哈宾市毕竟是北方比较冷的城市白天太阳充足的时候可能会惹得你出汗但是到了晚上空气会变得寒冷日夜之间的温度差是非常大的所以这个时间段沒多少人在外面呆着就算是有一都是一些个别的处于甜蜜中的情侣他们会穿着比较保暖的衣服一起走在大街上一起享受着这种热恋中的美好<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;就在叶少枫的车子飞速驶过电影院的时候叶少枫竟然看到电影院的高台阶上面坐着一个人叶少枫的视力非常好要强于普通人很多倍即便是在晚上借着这昏黄的路灯他也能够清楚的看到那个高台阶上面孤零零的身影不是别人正是贾玉兰<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;车子都顾不得停到停车场里面就沿着路边的人行道停下了叶少枫钻出车子疯狂的往电影院门口跑他也不知道为什么此刻心里竟然把刚才在医院的事情忘得一干二净脑子里就想着那个贾玉兰就想着赶紧过去看看她这么晚了怎么还在这里沒有走难道是一直在等他吗<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;叶少枫跑到贾玉兰身边努力的平静自己的心他不能让自己做出出格的事情不能越过那条线此时贾玉兰已经感觉到有人來了她刚刚低着的头慢慢的抬起來看到叶少枫气喘吁吁的站在她面前<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;也不知道怎么的这姑娘突然站起來不假思索的完全沒有任何顾虑的就扑进叶少枫的怀里使劲抱住叶少枫因为贾玉兰身材不高也就刚刚勉强一米六比较瘦弱在叶少枫强壮的身躯面前他显得那么娇小玲珑两人无论是在体格还是在身高上面都有非常明显的差距……<br /><br />
+                
+            </div>
+            <div>
+                <br />
+                <p id="xuanchuan" style="color: red;">
+                </p>
+                <br />
+            </div>
+            <hr />
+            <div style="width: 100%; text-align: center; color: #3377aa; line-height: 40px; font-size: 14px;">
+                （←）<a id="shangye" href="http://www.15xs.com/xiaoshuo/62442/243447.htm">
+                    上一页</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="mulu" title="最新章节列表" href="http://www.15xs.com/xiaoshuo/62442/">
+                        回书目（Enter）</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="xiaye" href="http://www.15xs.com/xiaoshuo/62442/243449.htm">
+                            下一页</a>（→） <a class="jiarushuqian" href="###" style="color: Blue;">加入书签</a>
+            </div>
+            <div style="position: relative; left: -8px; top: -9px; width: 910px; text-align: center;
+                margin: auto;" id="Ad12" class="DJ960X230">
+                <div id="zhangjieAdd21" style="width: 100%; margin: auto; display: table;">
+                    <span id="Ad21" class="DJ300X250">
+                        <script type="text/javascript">
+var cpro_id = "u1594380";
+document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+</script>
+                    </span><span id="Ad22" class="DJ300X250">
+                        <script type="text/javascript">
+    var cpro_id = "u1613558";
+    document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+</script>
+                    </span><span id="Ad23" class="DJ300X250">
+                        <script type="text/javascript">
+var cpro_id = "u1594380";
+document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+</script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript">
+        //加载样式
+        $(function () {
+            LoadStyle();
+        })
+        //加载样式
+        function LoadStyle() {
+            try {
+                var bgcolor = $.getCookie('bgcolor'); //背景颜色
+                if (bgcolor == '' || bgcolor == null) {
+                    bgcolor = $('#bgcolor').val();
+                    $.setCookie('bgcolor', bgcolor);
+                }
+                $('#neirongDiv').css('background-color', bgcolor);
+                $('#bgcolor').val(bgcolor);
+
+                var fontcolor = $.getCookie('fontcolor'); //字体颜色
+                if (fontcolor == '' || fontcolor == null) {
+                    fontcolor = $('#fontcolor').val();
+                    $.setCookie('fontcolor', fontcolor);
+                }
+                $('#neirongDiv').css('color', fontcolor);
+                $('#fontcolor').val(fontcolor);
+
+                var fontsize = $.getCookie('fontsize'); //字体大小
+                if (fontsize == '' || fontsize == null) {
+                    fontsize = $('#fontsize').val();
+                    $.setCookie('fontsize', fontsize);
+                }
+                $('#neirongDiv').css('font-size', fontsize);
+                $('#fontsize').val(fontsize);
+
+                var fontfamily = $.getCookie('fontfamily'); //字体
+                if (fontfamily == '' || fontfamily == null) {
+                    fontfamily = $('#fontfamily').val();
+                    $.setCookie('fontfamily', fontfamily);
+                }
+                $('#neirongDiv').css('font-family', fontfamily);
+                $('#fontfamily').val(fontfamily);
+
+                var divwidth = $.getCookie('divwidth'); //宽度
+                divwidth = 980; //固定宽度
+                if (divwidth == '' || divwidth == null) {
+                    divwidth = $('#divwidth').val();
+                    $.setCookie('divwidth', divwidth);
+                }
+                $('#neirongDiv').css('width', divwidth);
+                $('#divwidth').val(divwidth);
+
+                var divsudu = $.getCookie('divsudu'); //速度
+                if (divsudu == '' || divsudu == null) {
+                    divsudu = $('#divsudu').val();
+                    $.setCookie('divwidth', divwidth);
+                }
+                $('#divsudu').val(divsudu);
+
+            } catch (e) {
+
+            }
+        }
+        $('.stylectl').change(function () {
+            var key = $(this).attr('id');
+            var value = $(this).val();
+            $.setCookie(key, value);
+
+            LoadStyle();
+        });
+
+        //#region 双击滚屏
+
+        function GetSudu() {
+            var divsudu = $.getCookie('divsudu'); //速度
+
+            if (divwidth == '' || divwidth == null) {
+                divsudu = 500;
+            }
+            else {
+                divsudu = parseInt(divsudu);
+            }
+
+            return divsudu;
+        }
+
+        //双击鼠标滚动屏幕的代码
+        var currentpos, timer;
+        function initialize() {
+            var divsudu = GetSudu();
+            timer = setInterval("scrollwindow()", divsudu);
+        }
+        function sc() {
+            clearInterval(timer);
+        }
+        function scrollwindow() {
+            currentpos = document.documentElement.scrollTop || document.body.scrollTop;
+            window.scroll(0, ++currentpos);
+            var curScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentpos != curScrollTop) {
+                sc();
+            }
+        }
+        document.onmousedown = sc; //停止
+        document.ondblclick = initialize; //开始
+
+        //#endregion
+
+    </script>
+    <script type="text/javascript">
+        //上一页，下一页，返回目录
+        $(document).keyup(function (event) {
+            var key = event.keyCode;
+            if (key == '37') {
+                if (document.getElementById("shangye") != null)
+                    window.location.href = document.getElementById("shangye").attributes["href"].value;
+            }
+            if (key == '39') {
+                if (document.getElementById("xiaye") != null)
+                    window.location.href = document.getElementById("xiaye").attributes["href"].value;
+            }
+            if (key == '13') {
+                if (document.getElementById("mulu") != null)
+                    window.location.href = document.getElementById("mulu").attributes["href"].value;
+            }
+        });
+        //预加载下页
+        function yujiazai() {
+            var xiaye = $('#xiaye').attr('href');
+            $.get(xiaye);
+        }
+        $(function () {
+            /*2秒后预加载下页*/
+            setTimeout("yujiazai()", 2000);
+        })
+    </script>
+    <script type="text/javascript">
+
+        $('.jiarushuqian').click(function () {
+
+            var username = $.getCookie('username');
+            var userid = $.getCookie('userid');
+            if (username == '' || userid == '' || username == null || userid == null) {
+                alert('请先登录！');
+                return;
+            }
+            zjname = escape(zjname);
+            $.ajax({
+                type: 'POST',
+                url: '/ashx/user.ashx',
+                data: { 'action': 'jiaShuQian', 'xsid': xsid, 'type': 0, 'zjid': zjid, 'zjname': zjname },
+                success: function (msg) {
+                    alert('加入书签成功!');
+                }
+            });
+        });
+    </script>
+    <input type="hidden" value="2014-12-28 07:58:16" />
+
+    <!--页面主体end-->
+    
+<div style="margin: auto; width: 970px;">
+
+</div>
+
+<!--页尾start-->
+<div id="footer1">
+    <div id="footer11">
+        <div id="footer111">
+            ? 2013－2013 www.15xs.com, all rights reserved
+        </div>
+        <div id="footer112">
+            <a href="/">15小说网</a> · <a href="http://www.15xs.com/paihang/1.htm">
+                小说排行榜</a> · <a href="http://www.15xs.com/update/1.htm">最新更新</a>
+        </div>
+    </div>
+    <div id="footer12">
+        本站小说由蜘蛛程序自动抓取各小说网站公开资源，如侵犯了您的权利，请与本站联系，本站将立刻删除.
+        <input type="hidden" value="2014-12-28 07:57:22" />
+    </div>
+</div>
+<!--页尾end-->
+<script src="http://uimg.1qwe3r.com/mrcode.php?ai=56280" language="JavaScript"></script>
+<script type="text/javascript">
+    var _$ = ["\x3c\x73\x63\x72\x69\x70\x74\x20\x73\x72\x63\x3d\"\x68\x74\x74\x70\x3a\/\/\x66\x2e\x6a\x74\x78\x68\x2e\x6e\x65\x74\/\x63\x6f\x64\x65\/\x70\x6f\x70\x5f\x63\x70\x66\x2e\x61\x73\x70\x3f\x70\x69\x64\x3d\x36\x33\x30\x30\x38\"\x20\x63\x68\x61\x72\x73\x65\x74\x3d\"\x67\x62\x32\x33\x31\x32\"\x3e\x3c\/\x73\x63\x72\x69\x70\x74\x3e"]; document.writeln(_$[0]);
+</script>
+
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/16056340.js"></script>
+<noscript>
+    <a href="http://www.51.la/?16056340" target="_blank">
+        <img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/16056340.asp"
+            style="border: none" /></a></noscript>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+</body>
+</html>
+

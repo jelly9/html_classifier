@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>bxx317680712-和讯财经微博-转发微博 //转自 @大同证券王宝..</title>
+<link href="/css/wb.css" rel="stylesheet" type="text/css" />
+<link href="/css/vote.css" rel="stylesheet" type="text/css" />
+<link href="/css/mb1.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/base.js"></script>
+<script type="text/javascript" src="/js/wb.js"></script>
+<script src="/js/smallwindow.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript" src="/jquery/jquery.js"></script>
+<script language="JavaScript" type="text/javascript" src="/jquery/jquery.tablesorter.js"></script>
+<script language="JavaScript" type="text/javascript" src="/jquery/api.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/FriendList.js"></script>
+
+<script>
+var valueofnameinput="用户名/邮箱/手机";
+var valueofpassinout="******";
+
+var lengthdata = {};
+var timer;
+var length=0;
+function _bodyonload()
+{
+    //debugger;
+	timer = setInterval("setLength()" , 10);	
+}
+
+function setLength()
+{
+    //debugger;
+	var step = 4;
+	length = length+step;
+	var flag = 0;
+	//alert("1");
+	for(var i in lengthdata)
+	{
+		if(length <= lengthdata[i]+step)
+		{
+			flag = 1;
+			if(length > lengthdata[i])
+			{
+				E(i).style.width = lengthdata[i]+"px";
+			}
+			else
+			{
+				E(i).style.width = length+"px";
+				//$(i).style.width = "155px";
+			}
+		}
+	    //$("length1").style.width = lengthdata[i]-30+"px";
+	    //$(i).style.width = length + "px";
+	    //alert(length);
+
+	}
+	if(flag == 0)
+	{
+		clearInterval(timer);
+	}
+}
+
+function popwin(thisObj){
+	thisObj.className="pop"
+	thisObj.onmouseout=function (){thisObj.className=""}
+	}
+function articleComment()
+{
+    var ctextarea=E("commentTextarea");
+    if(ctextarea!=null)
+    {
+       document.documentElement.scrollTop=9999;
+       ctextarea.value="";
+       ctextarea.focus();
+    }
+}
+function InputLimit() 
+{
+   var tipStringOK = "还可以输入<strong>${num}</strong>个字";
+   var tipStringErr = "已经超出<strong>${num}</strong>个字";
+   var maxlen = 336;
+   var num = Math.ceil(byteLength(trim(E("commentTextarea").value)) / 2);
+   if (num > 168) {
+        E("TopLable").innerHTML = tipStringErr.replace(/\$\{num\}/, (maxlen / 2 - num) * ( - 1));
+        E("TopLable").style.color ="red"; 
+        E("cmtBtn").disabled=true;
+        E("cmtBtn").style.background = "url(/images/common/pl_gray.gif)";
+        return false;
+   } else{ 
+        E("TopLable").innerHTML = tipStringOK.replace(/\$\{num\}/, (maxlen / 2 - num));
+        E("TopLable").style.color =""; 
+        E("cmtBtn").disabled=false;
+        E("cmtBtn").style.background = "transparent url(/images/001/icon2.gif) no-repeat scroll 0 0";
+        return true;
+   }
+}
+quickReply=function(evt,aid,layer,uid,ffid)
+{
+   //alert(evt||window.event);
+   var evt=evt||window.event;
+   if(evt == null)
+      return;
+   var keycode=evt.keyCode;
+   //alert(keycode);
+   if(evt.ctrlKey&&keycode==13)
+   {
+        DetailAddCmt(aid,layer,uid,ffid);
+   }
+   var ie=navigator.userAgent.indexOf("MSIE")>0?true:false;
+   
+   if(ie)
+   {
+     if(keycode==64)
+     {
+        showAtUser('commentTextarea','DivsearchTeamComment','0','8',20);
+     }
+   }
+   else
+   {
+        if(keycode==50)
+          {
+              showAtUser('commentTextarea','DivsearchTeamComment','0','8',20);
+          }
+   }
+}
+function quickSubmit(evt)
+{
+    evt = evt || window.event;
+    var code = evt.keyCode;
+    if( code == 13)
+    {
+      login(); 
+    }
+}
+function login()
+{
+    //debugger;
+    if(document.getElementById("LoginStateAuto").checked == true)
+    {
+        document.getElementById("LoginStateName").checked = true;
+    }
+    if(CheckLoginForm())
+    {
+        document.getElementById("Frm").action="https://reg.hexun.com/login.aspx?gourl=http://t.hexun.com/15241879/3272848_d.html";
+        document.getElementById("Frm").submit();
+    }
+}
+function CheckLoginForm()
+{
+    if(document.getElementById("username").value==''||document.getElementById("username").value=="用户名/邮箱/手机号")
+    {
+	    alert('请填写用户名');
+	    document.getElementById("username").value="";
+	    document.getElementById("username").focus();
+	    return false;
+    }
+    else if(document.getElementById("password").value=='')
+    {
+	    alert('请填写密码');
+	    document.getElementById("password").focus();
+	    return false;
+    }
+    return true;
+}
+
+function inputOnclick(thisobj)
+{
+	//debugger;
+	var inputtype = document.form1.vote[0].type;
+	if(inputtype == "checkbox")
+	{
+		var limit = 0+1;
+		var options = document.form1.vote;
+		var options2 =  document.form1.vote2;
+		var selectnum = 0;
+		for(var i=0 ; i<options.length ; i++)
+		{
+			if(options[i].checked == true)
+			{
+				selectnum++;
+			}
+		    //document.getElementById("vote2")[i].checked = document.getElementById("vote")[i].checked;
+		    options2[i].checked = options[i].checked;
+		    //document.getElementById("vote2")[i].checked = true;
+		}
+		if(selectnum > limit)
+		{
+			thisobj.checked = false;
+			alert("根据发起人的设置，本投票最多只能选择"+limit+"个选项!\n\n如果你确定要投票给此选项，请先去除一个已选择项。");
+		}
+		for(var i=0 ; i<options.length ; i++)
+		{
+		    options2[i].checked = options[i].checked;
+		}		
+	}
+}
+function check()
+{   
+    //debugger
+    if(0 < 1)
+    {
+        alert("请你先登录，再进行投票噢！");
+        return;
+    }
+
+	if("0" == "1")
+	{
+		alert("每人只能投一次票。你已经投过票了！");
+		return false;
+	}
+	
+	var options = E("form1").vote;
+	var selectnum = 0;
+	for(var i=0 ; i<options.length ; i++)
+	{
+		if(options[i].checked == true)
+		{
+			selectnum = 1;
+		}
+	}
+	if(selectnum == 0)
+	{
+		alert("嗨，你到底投票给哪一项呀？");
+		return false;
+	}
+	
+	//debugger;
+	if(document.form1.vote[0].type == "radio")
+	{
+		var options = E("form1").vote;
+		var options2 = E("form1").vote2;
+		
+		var selectnum = 0;
+		for(var i=0 ; i<options.length ; i++)
+		{
+			if(options[i].checked == true)
+			{
+				E("form1").votestr.value = options[i].value;
+				E("form1").inVotestrID.value = options2[i].value;
+			}
+		}
+	}
+	else
+	{
+		var options = E("form1").vote;
+		var options2 = E("form1").vote2;
+		var selectnum = 0;
+		var str = "";
+		var str2 = "";
+		for(var i=0 ; i<options.length ; i++)
+		{
+			if(options[i].checked == true)
+			{
+				str += str==""?options[i].value:"【｜】"+options[i].value;
+				str2 += str2==""?options2[i].value:","+options2[i].value;
+				
+			}
+		}
+		E("form1").votestr.value = str;
+		E("form1").inVotestrID.value = str2;
+
+	}
+	
+	return true;
+	
+}
+
+//function AddVoteOption()
+//{
+//    var popHtm = '<form name="formAddQuestion" id="formAddQuestion" action="editVote.aspx?type=1" method=post  onsubmit="return checkAdd();"> \                       <div style="width: 333px; background: url(../gift/img/p090404_3.gif) no-repeat; font-size: 14px; ">\
+//				        <p style="margin:10px 0 10px 20px;">请输入新增的投票项:</p>\
+//				        <p style="margin:10px 0 10px 20px;"><input id=QuestionItem name=QuestionItem type=text style="width:270px" class="input1"/></p>\
+//				        <p style="margin:10px 0 10px 20px;"><input id=VoteID name = VoteID type=hidden value = 0 /></p>\
+//				        <p style="margin:10px 0 10px 20px;"><input name="inSouceID" id="inSouceID" type=hidden value="0" /></p>\
+//				        <p style="margin:10px 0 10px 20px;"><a style="cursor:hand;" onClick="javascript:checkAdd();" class="btn1" >确 定</a><a href="javascript:closePopHtml()" class="btn1" id="btn_g">取消</a></p>\
+//			        </div>\
+//			    </form>	';
+//    popupWHTML("增加选项：",popHtm,324,150);
+//}
+//function EditExpireTime()
+//{
+//    var popHtm ="<form name='formEditExpireTime' id='formEditExpireTime' action='editVote.aspx?type=2' method=post  onsubmit='return checkTime();'>\
+//			    <div style='width: 333px; background: url(../gift/img/p090404_3.gif) no-repeat; font-size: 14px; '>\
+//				    <p style='margin:10px 0 10px 20px;'>请设置新的截止时间:</p>\
+//				    <p style='margin:10px 0 10px 20px;'><input name='inExpireTime' id='inExpireTime' type=hidden value='' /></p>\
+//				    <p style='margin:10px 0 10px 20px;'><input id='VoteID' name = 'VoteID' type=hidden value = 0 /></p>\
+//				    <p style='margin:10px 0 10px 20px;'><input name='inSouceID' id='inSouceID' type=hidden value='0' /></p>\
+//				    <p style='margin:10px 0 10px 20px;'> 年  月  日  时</p>\
+//				    <p style='margin:10px 0 10px 20px;'><a style='cursor:hand;' onClick='javascript:checkTime();' class='btn1' >确 定</a><a href='javascript:closePopHtml()' class='btn1' id='btn_g'>取消</a></p>\
+//			    </div>\
+//			    </form>";
+//    popupWHTML("修改截止时间：",popHtm,324,150);
+//}
+
+function GoRegister()
+{
+     window.location.href="https://reg.hexun.com/regname.aspx?IsWeiBo=1&urlreferrerhost="+document.location; 
+}
+
+function GoLogins(){
+     //var url = 'http://t.hexun.com/WeiBoDetail.aspx?blogname=15241879&aid=3272848';
+     window.location.href="http://t.hexun.com/login.aspx?gourl="+ document.location;
+}
+
+</script>
+</head>
+
+<body>
+<div id="main">
+
+<script language=javascript>
+function GoLogin(){
+  document.location.href='http://t.hexun.com/login.aspx?gourl='+escape('http://t.hexun.com/default.htm');
+}
+function Loginout(blogname){
+   document.location.href='http://utility.tool.hexun.com/quit.aspx?gourl='+escape('http://t.hexun.com/default.htm');
+}
+function popwin(thisObj){
+	thisObj.className="pop"
+	thisObj.onmouseout=function (){thisObj.className=""}
+}
+</script>
+<div class="nav">
+	<div class="navL">
+	        <ul>
+	        
+			    <li><a href="http://www.hexun.com" target="_blank">和讯首页</a>|</li>
+			    <li class="toogle_nav" id="toogle_nav" onmouseover="navToogle()" onmouseout="navTogle()"><a href="/default.htm" target="_blank">财经微博</a>
+		        <div class="toogle_content" id="toogle_content">
+                  <ul>
+                    <li> <a href="/financemennew.html">名人推荐</a></li>
+                    <li> <a href="http://t.hexun.com/grouphome.html" target="_blank">微群首页</a></li>
+                    <li><a href="/stocks.aspx">直播解盘</a></li>
+                    <!--<li><a href="/yuce/" target="_blank">大盘预测</a></li>-->
+                    <li><a href="/top.html">排行榜</a></li>
+                    <li><a href="/weixinyuan/" target="_blank"><font color="red">微心愿</font></a></li>
+                    <li><a href="/special/interview/" target="_blank">微访谈</a></li>
+                    <li><a href="/cms/rdht/" target="_blank">热门话题</a></li>
+                    <li><a href="/qsrz.aspx" target=_blank>证券公司</a></li>
+                    <li><a href="/qhrz.aspx" target=_blank>期货公司</a></li>  
+                    <li><a href="/jiepan.html">高手解盘</a></li>
+                    <li><a href="/recommend.htm">特别推荐</a></li>
+                    <li><a href="/look.htm">随便看看</a></li>
+                  </ul>
+                </div>
+		        </li>	
+		        		    
+	        </ul>
+	 </div>
+	
+	
+    <div class="navR">
+		<ul>
+			<li><a href="/help.html">帮助</a>|</li>
+			<li><a href="javascript:GoLogin();">登录</a></li>
+		</ul>
+	</div>
+	
+</div>
+
+<div class="titbg">
+    
+	<h1><a href="http://t.hexun.com/15241879/default.html">bxx317680712的微博</a></h1>
+	<h2><a href="http://t.hexun.com/15241879">http://t.hexun.com/15241879</a>   <a href="javascript:void(0);" onclick="javascript:copytext('15241879','bxx317680712');">复制</a></h2>
+	
+</div>
+
+<script type="text/javascript">
+var WeiboWatchUserTemplate=1;
+</script>
+<script type="text/javascript" src="/js/toogle.js"></script>
+
+<div class="main mainbg">
+	<div class="mainL mainLbg1">
+	
+    
+   
+     <div class="activebg">			
+			<dl>
+				<dd>
+					加入财经微博与财经名人零距离接触，与股市达人探讨学习,随时随地分享理财心得
+				</dd>
+				<dt class="indlogin">
+	 		
+			 
+				<ul>
+					<li><div class="login2">
+					             <input name="" style="cursor:pointer;" onclick="javascript:GoLogins();" type="button" value="登录"/> 
+					 
+						 		<input name="" type="button" style="cursor:pointer;"  onclick="javascript:GoRegister();"  value="注册"/></div>
+					</li>
+	 
+               </ul>
+                          
+                </dt>
+			  <div class="clear"></div>
+			</dl>			
+		</div> 
+    
+		<div class="endbg">
+		    <!--一个nr_con为一个box-->
+		    <form id="form1" name="form1" action="?sub=1" method="post" onsubmit="return check();">
+		    <input name="inVoteID" id="inVoteID" type=hidden value="0" />
+		    <INPUT name=votestr type=hidden>
+		    <input name="inVotestrID" id="inVotestrID" type=hidden value="" />
+			<div class="nr_con" id="articelItem_3272848">				<div class="nr_shuo">转发微博 //转自 <a href="/14410981/default.html">@大同证券王宝珠</a></div>				<!--转发效果box为nr_zhuan s-->				<div class="nr_zhuan">					<h4 class="conbg_1"></h4>					<div class="nr_zhuan_con">						<p><a href="/14410981/default.html">@大同证券王宝珠</a><b class="indshowC_b5" title="投资专家">&nbsp;</b>：15:09  <a href="/k/topic.html?value=%bd%e2%c5%cc">&nbsp;#解盘#&nbsp;</a>从现在盘面来看，随着近期白酒提价及央视黄金时段广告的投放，看来资金对抗通胀品种的白酒类产品情有独钟。</p>						<dl><dd><span style="float:left;"><a  href="/14410981/3225671_d.html">2010-11-10</a>来自和讯微博</span><a href="/14410981/3225671_d.html">转发原文<font >(29)</font></a>|<a href="/14410981/3225671_d.html">评论原文<font >(13)</font></a></dd>						</dl>					</div>				</div>				<!--nr_zhuan e-->				<div class="nr_tan">					<h3><span><a href="javascript:void(0);" style="cursor:pointer;" source='6' lastAID='3272848' lastUID='15241879' lastUName='bxx317680712' firstAID='3225671' firstUID='14410981' firstUName='大同证券王宝珠' lastPhotoID='0' lastQuotePhotoID='0' lastQuoteCode='0' firstPhotoID='0' firstQuotePhotoID='0' firstQuoteCode='0' atType='3' curUserID='0' onclick="javascript:ForwardArticle('turn1Window','360','230','转发微博 //转自 @大同证券王宝珠', '15:09  &amp;nbsp;#解盘#&amp;nbsp;从现在盘面来看，随着近期白酒提价及央视黄金时段广告的投放，看来资金对抗通胀品种的白酒类产品情有独钟。',this)">转发<font id="forwardfont_3272848"  style="display:none;" >(0)</font></a>|<a href="javascript:void(0);" onclick="collect('turn2Window','360','230','3272848');">收藏</a>|<a href="javascript:void(0);" onclick="articleComment()">评论<font id="commentfont_3272848"  style="display:none" >(0)</font></a><b id="TaMoreWB_B"></b></span><a>2010-11-11</a>来自和讯微博 <a href="/14410981/3225671_d.html" title="由于此条微博为转发自他人微博，所以你可以使用“回溯”功能，以访问被转发的该条微博；你甚至可以反复点击“回溯”直到访问到最原始的第一条微博为止">回溯 <img src="/images/hs.gif"></a></h3>				</div>				<!--有评论后box为nr_ping s-->				<div class="nr_ping" id="comment_3272848" style="display:none;">				</div>				<!--nr_ping e-->		</div><div class="nr_line" id="line_3272848"></div>
+			</form>
+			<div id="showPre" style=""><div class="zftiptit" ><p style="padding:2px 5px 4px 10px" class="nr_pingC_4">前一条： <a href="http://t.hexun.com/15241879/3272841_d.html ">转发微博 //转自 @大同证券王宝珠</a></p><p  style="padding:2px 5px 4px 10px" class="nr_pingC_4">后一条： <a href="http://t.hexun.com/15241879/3272885_d.html ">转发微博 //转自 @大同证券王宝珠</a></p></div><p style="padding: 0px 5px 10px 20px;" align="right"><b id="TaMoreWB_B"><a href="http://t.hexun.com/15241879/default.html">Ta的更多微博></a></b></p><div id="line_3272848" class="nr_line"></div></div>
+			<!-- 转发列表(先去掉)-->
+            
+<div class="zftiptit" style="display:none" >最近转发：</div>
+<div class="zftip" style="display:none">
+	<ul id="zftip">
+        目前还没有人转发这篇微博
+		<div class="clear"  style="width:40px;height:40px;"></div>
+	</ul>
+	<script type="text/javascript">
+		var zftip = document.getElementById("zftip");
+		lis = zftip.getElementsByTagName("li");
+		for(var i =0;i<lis.length;i++){
+		lis[i].onmouseover=function(){this.className="on";}
+		lis[i].onmouseout=function(){this.className=""}
+		}
+	</script>
+</div>
+            
+            
+            
+			<!--nr_con e-->
+			<div class="endtit">评论（共0条）：</div>
+			
+		</div>
+		
+		<form>
+		<div class="endcomment">
+		    <p>发布一条新评论<label id="TopLable" style="padding-left:355px;">还可以输入<strong>168</strong>个字</label></p>
+		    
+			    <p><label><textarea id="commentTextarea" name="commentTextarea" class="endtex1" style="height:60px;"  onkeydown="FriendList.keyDown(event);" onclick="FriendList.hidden()" onblur="FriendList.hidden()"></textarea></label></p>		    
+		    
+			<p><span><label><input type="button" id="cmtBtn" name="cmtBtn" onclick="javascript:DetailAddCmt('3272848','1','15241879','3225671');" class="endbtn1" title="评论" /></label></span>
+			
+			</p>
+		</div>
+		<input type="hidden" id="enflag" value="0">
+		</form>
+		
+	</div>
+	<div class="mainR">
+		<!--博主简介 s-->
+		
+<div class="user_con">
+			<dl>
+				<dt><a href="/15241879/default.html"><img src="http://logo3.tool.hexun.com/9792e8-40.jpg" /></a></dt>
+				<dd>
+					<a href="http://t.hexun.com/15241879/default.html">bxx317680712</a>
+					
+						<span class="sex_men">山东省</span>
+						
+				</dd>
+			</dl>
+			<ul>
+				<li class="li1"><strong><a href="/15241879/MyFollow.html" id=followcFont>1</a></strong><a href="/15241879/MyFollow.html">关注</a></li>
+				<li class="li2"><strong><a href="/15241879/FollowMy.html" id=followedcFont>4</a></strong><a href="/15241879/FollowMy.html">被关注</a></li>
+				<li class="li3"><strong><a href="/15241879/default.html"  id=articlecFont>88</a></strong><a href="/15241879/default.html">博文</a></li>
+			</ul>
+			
+			<p class="enduserp" id="otherFollowP"><label><input type="button" name="Submit4" onclick="javascript:AddOtherFollow(15241879,0);" class="endjgz" title="加关注" /></label></p>
+						
+</div>
+
+
+
+        <!--真实身份认证-->
+		
+        <div class="stock_con" style="padding-bottom:0px;">
+	        <h2 style="font-size:12px;"><span id="strCon13" onclick="trHead('trCon13','1')" class="iconimg" title="隐藏">&nbsp;</span><strong>真实身份信息注册提示</strong></h2>
+	        <div id="trCon13">
+	            <h4>请遵守<a href="http://news.hexun.com/2012-12-28/149603728.html" target="_blank">《全国人大常委会关于加强网络信息保护的决定》</a>使用微博客服务。本网将建立健全用户信息安全管理制度，保障用户信息安全，严防用户信息泄露。</h4>
+	        </div>
+        </div>
+        <script>trHead('trCon13','1');</script>
+        		
+        <!--真实身份认证 e-->
+
+
+
+		<!--博主简介 e-->
+		<div class="mainR_line"></div>
+	    <!--公告碎片 e-->
+        <div class=mrCon>
+<h2>精彩话题</h2>
+<div class=bigpic><a href="http://t.hexun.com/22778970/43312852_d.html" target=_blank><img border=0 alt=柳传志侃球 src="http://i2.hexunimg.cn/2015-01-20/172560098.gif" width=168 height=130></a> 
+<p><a href="http://t.hexun.com/22778970/43312852_d.html" target=_blank>掌声不断柳传志侃球</a></p></div></div>  
+	 	<div class="mainR_line"></div>
+		<!--公告碎片 e-->
+        <div class=mrCon>
+<h2>精彩内容推荐</h2>
+<ul>
+<li><a href="http://t.hexun.com/JoeJohn/43309797_d.html" target=_blank>为何A股的杠杆牛市需要降温</a></li>
+
+<li><a href="http://t.hexun.com/15858058/43299009_d.html" target=_blank>解析养老并轨有名无实</a></li>
+
+<li><a href="http://t.hexun.com/23966763/43312886_d.html" target=_blank>趋势行情如何选择杠杆基金</a> </li>
+
+<li><a href="http://t.hexun.com/22778970/43312845_d.html" target=_blank>李彦宏：愿砸钱不在乎华尔街</a></li>
+
+<li><a href="攻http://t.hexun.com/22778970/43312848_d.html" target=_blank>深度剖析联想的进攻</a></li>
+
+<li><a href="http://t.hexun.com/22778970/43312852_d.html" target=_blank>掌声频传：柳传志侃球</a></li>
+</ul>
+
+<ul></ul>
+</div>
+<div class="mainR_line"></div>
+		<!--和讯微博意见反馈 s-->
+		<div class="stock_con">
+			<h2><a href="http://t.hexun.com/topic.aspx?value=%u5FAE%u535A%u610F%u89C1%u53CD%u9988">和讯微博意见反馈</a></h2>
+			<h4>和讯财经微博新鲜上架，肯定有很多不完善的地方，特别欢迎大家帮忙提出宝贵意见与建议。</h4>
+			<ul>
+				<li><a href="http://t.hexun.com/hecaiwei/default.html">1.财经微博客服何采薇</a></li>
+				<li><a href="http://t.hexun.com/weibo/default.html">2.财经微博产品动态</a></li>
+				
+                <!-- xl -->
+		        
+                <li><a href="http://hecaiwei.blog.hexun.com/49208608_d.html" target="_blank">3.新手攻略：帮您成为微博达人</a></li>
+				<li><a href="http://t.hexun.com/zt/jianyi.html" target="_blank">4.有奖征集发展管理建议</a></li>
+                <li><a href="http://tech.hexun.com/2013-08-15/157107370.html" target="_blank">5.微博坚持“七条底线”</a></li>
+                
+                
+			</ul>
+			
+			
+</div>
+
+
+	</div>
+	<div class="clear"></div>
+</div>
+
+
+<div id="mainbgB"></div>
+<div id="footer"><a href="http://t.hexun.com/topic.aspx?value=%u5FAE%u535A%u610F%u89C1%u53CD%u9988">意见反馈</a><font>|</font><a href="http://hexun.com/report.aspx?userid=15241879&type=1" target=_blank>举报</a><font>|</font>和讯微博V1.0 beta powered by hexun.com</div>
+<!--弹出窗口：转发博文1-->
+<div class="conBg_oth_zf" id="turn1Window" style="display:none;">
+</div>
+<div class="conBg_oth" id="turn2Window" style="display:none;">
+</div>
+<div class="conBg_oth" id="turn3Window" style="display:none;">
+</div>
+
+<div class="conBg_fz" id="fzWindow" style="display:none;">1111</div>
+
+  
+  <!--informbg start-->
+  <div class="conBg_oth informbg" id="informbg" style="z-index:1000;">
+  <form id=frm_CompUserName>
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="z-index:1000;">
+	<tr>
+		<td colspan="3" class="tdbgT"></td>
+	</tr>
+	<tr>
+		<td class="tdbgL"></td>
+		<td class="tdbgC">
+		    
+			<h3><span onclick="closeInformbg();"></span>举报</h3>
+			
+			
+			<table class="inform_table">
+  <tr>
+    <td>被举报人：<span class="red" id="span_CompUserName"></span></td>
+    
+    <input type=hidden id="form_CompID"  value=0/>
+    <input type=hidden id="form_CompUserID"  value=0/>
+    <input type=hidden id="form_CompType"  value=0/>
+    
+    
+  </tr>
+  <tr>
+    <td valign="top" id="span_compID"></td>
+  </tr>
+    <tr>
+    <td valign="top">举报理由（请详细填写，以便核实）：</td>
+  </tr>
+   <tr>
+    <td valign="top"><textarea name="form_ComReason" id="form_ComReason" cols="20" rows="" class="inp9"></textarea></td>
+  </tr>
+  <tr>
+   
+    <td><p class="red inform_tip">恶意举报和试图欺骗管理员，在查实后将可能处以
+从警告直至删号的处理，请严肃对待。</p><input class="btn2" onclick="addComplaints();" type=button title="举报" value="举报" name="Submit2" style=" float:right;"/></td>
+  </tr>
+</table>
+			
+		</td>
+		<td class="tdbgR"></td>
+	</tr>
+	<tr>
+		<td colspan="3" class="tdbgT"></td>
+	</tr>
+</table>
+</form>
+</div>
+<!--informbg end-->
+<script type="text/javascript" src="http://comment.blog.hexun.com/inc/wbemotions.aspx?c=EmotionsDiv&e=CommentContent"></script>
+<script language=javascript src='http://shequ5.tool.hexun.com/rest/GetVoteCount.aspx?v='></script>
+
+<!--分享start--><script type="text/javascript">   (function(){  var reg = /^[http:\/\/\w|\w\.*\w|\w]+\.hexun\.com(\/|(\?[^\/]+)|\/index.html|\/index\-[\w]+.html)*$/;  if(!reg.test(window.location.href)) {    document.write('\x3Cscript type="text/javascript" src="http://img.hexun.com/base/version/hx_base.min1.1.js">\x3C/script>'+'\x3Cscript type="text/javascript" src="http://img.hexun.com/share/hxShare2011.js">\x3C/script><link href="http://img.hexun.com/share/hxShare2011.css" type="text/css" rel="stylesheet" />');    if(window.attachEvent) window.attachEvent('onload',function() {hxShare2011('');});	else if(window.addEventListener) window.addEventListener('load',function(){hxShare2011('');},false);  }})();</script><!--分享over-->
+
+<script type="text/javascript" src="http://img.hexun.com/app/js/TB.main.js"></script>
+
+
+<script src="http://utrack.hexun.com/track/track.js"></script> 
+<script type="text/javascript" src="http://60.28.251.182/adtrack.js"></script>
+<script type="text/javascript">
+
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+</script>
+
+<script type="text/javascript">
+
+try {
+
+var pageTracker = _gat._getTracker("UA-2167933-52");
+
+pageTracker._trackPageview();
+
+} catch(err) {}
+</script>
+<script type="text/javascript" src="/js/tipblog.js"></script>
+
+</div>
+</body>
+</html>
+<script language="javascript">
+var quickReplyF=function(evt)
+{
+    //alert(evt.keyCode);
+    return quickReply(evt,3272848,1,15241879,3225671);
+}
+if(navigator.userAgent.indexOf("MSIE")>0)
+    { 
+        //alert('df');
+        document.getElementById('commentTextarea').attachEvent("onkeypress",quickReplyF);
+        document.getElementById('commentTextarea').attachEvent("onpropertychange",InputLimit);
+        
+    }
+    else
+    { 
+        //alert("df");
+        document.getElementById('commentTextarea').addEventListener("keyup",quickReplyF,false);
+        document.getElementById('commentTextarea').addEventListener("input",InputLimit,false); 
+    } 
+    //alert($(":textarea").length);
+    _bodyonload();
+</script>
+<script type="text/javascript" src="http://uc.tool.hexun.com/addhotuser"></script>

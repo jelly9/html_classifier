@@ -1,0 +1,1890 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- GA代码开始 -->
+<script type="text/javascript" src="/js/Google/ga.js"></script>
+<!-- GA代码结束 -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="baidu-site-verification" content="aHXqRmepEC" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- bootstrap ie8兼容模式处理 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<!-- bootstrap兼容国产高速模式 -->
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="pragma" content="no-cache"/> 
+<meta http-equiv="Cache-Control" content="no-store, must-revalidate"/> 
+<meta http-equiv="expires" content="0"/>
+<title>CHINAMERGER.COM中资跨境并购投资一站式服务互联网平台</title>
+<link rel="stylesheet" href="/website/css/fonts.css"  type="text/css" />
+<link href="/website/css/idangerous.swiper.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/website/css/reset.css"  type="text/css" />
+<link href="/website/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="/website/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+<link href="/website/css/zh_CN.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/website/js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="/website/js/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="/website/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/website/js/jquery.innerfade.js"></script>
+<script type="text/javascript" src="/website/js/jquery.cookie.js"></script>
+
+<!--[if lt IE 10]>
+    <script src="/website/bootstrap/js/respond.min.js"></script>
+	<style type="text/css">
+	.jzwdyhm input{ margin-top:-6px!important;margin-left: -8px!important;}
+	.jzwdyhm label{ margin-top:4px}
+	.dlljzc{margin-top:-15px!important;}
+	.jzwdyhm{height: 35px;}
+	.ourEvent{height:100%;overflow-y:auto;}
+	.dlchinamerger .input-group input{padding: 5px 0 0 8px;height: 28px;font-size: 12px;}
+	.dlchinamerger .form-group input{padding: 5px 0 0 12px;height: 28px;font-size: 12px;}
+	</style>
+<![endif] -->
+	<style type="text/css">
+	.ourEvent{width:10em;}
+	</style>
+<script type="text/javascript">
+function yuyan(val){
+	$.ajax({
+		type: "POST",
+		url: "/website/setLanguageAction!addLanguage.action",
+		data:{"request_locale":val},
+	    dataType: "text",
+	    success: function(obj){
+	    	window.location.reload();
+	    },
+	    error:function(){
+	    }
+	});
+};
+function changeimg(){			
+	$("#yzm").attr("src","/inc/yzm.jsp?code="+new Date().getTime());
+	$("#register_yzm").select();
+}    
+function login(){
+	var username = $("#register_userName").val();
+	var pwd = $("#register_password").val();
+	var yzm = $("#register_yzm").val();
+	var jzw = $("#jzw").is(":checked");
+	if(!username){
+		alert("账号或者邮箱不能为空");
+	}else if(pwd == ''){
+		alert("密码不能为空");
+	}else if(yzm == ''){
+		alert("验证码不能为空");
+	}else{
+		$.ajax({
+			type: "POST",
+			url: "/website/loginAction!userLogin.action",
+			data:{"register.userName":username,"register.password":pwd,"register.yzm":yzm,"jzw":jzw},
+			dataType: "text",
+			success: function(obj){
+				if(obj == 'BackUrl'){
+					location.reload();
+				}else if(obj.indexOf('/website/') !=-1){
+					location.href=''+obj;						
+				}else{						
+					alert(obj);
+					changeimg();
+				}
+			}
+		});
+	}
+}
+function registerNow(){
+	window.open("/website/loginAction!toRegisterJsp.action");
+}
+$(document).ready(function(){
+	var mySwiper = new Swiper('.swiper-container',{
+	    pagination: '.pagination',
+	    paginationClickable: true,
+        speed : 500, //Set animation duration to 500ms
+        autoplay:3000,
+        autoplayDisableOnInteraction:false,
+        loop : true
+	});
+	$('#salebusinessList').innerfade({
+		speed: 'slow',
+		timeout: 5000,
+	});
+	$('#buybusinessList').innerfade({
+		speed: 'slow',
+		timeout: 5000,
+	});
+	$('#buybusinessList').show();
+	$('#salebusinessList').show();
+	$("a[href*='baidu.com']").hide();
+	var sprad = 'PCGGSS';
+	if(sprad && sprad != "null"){
+		$.cookie('sprad', sprad,{expires:1});
+	}
+	var reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
+	if(location.hostname!="www.chinamerger.com"&&(!reg.test(location.hostname))&&location.hostname!="localhost"){
+		location.href="http://www.chinamerger.com";
+	}
+});
+$(document).keydown(function(event){
+	//回车键提交form
+	if (event.keyCode == 13) {
+		var isLogin = '';
+		if(isLogin){
+			_AllSearch();
+		}else{
+			login();
+		}
+	}
+});
+function toChinaMerger(){
+	location.href="/website/registerAction!toUserCenter.action"
+}
+function _AllSearch(){
+	var str = encodeURI(encodeURI($("#allSearch").val()));
+	window.location.href = "/website/searchAction!searchIndex.action?searchStr="+str;
+}
+</script>
+</head>
+
+<body>
+
+<!--头部LOGO区开始-->
+<div id="all">
+	<div id="content">
+    	<div class="chinamerger_logo">
+        	<img src="/website/images/chinamerger01.gif" />
+        	<p>中资跨境并购一站式服务平台</p>
+        </div>
+    	<div class="zywjg" style="width:51%">
+    		
+    		
+		      <ul class="outlogin">
+			    <li><a href="/website/loginAction!loginJsp.action">登录</a></li>
+		      	<li><a id="registerlink" href="/website/loginAction!toRegisterJsp.action">注册</a></li>
+		        <li class="login_v"><a href="javascript:void(0);" onclick="yuyan('zh_CN');" >中</a>|<a href="javascript:void(0);" onclick="yuyan('en_US');">En</a></li>
+		      </ul>
+    		
+        </div>
+    </div>
+</div>
+<!--头部LOGO区结束-->
+
+<!--图片区开始-->
+<div class="tpqdk">
+	<div class="tpqzk">
+		<div class="logindiv">
+	    <div class="swiper-container ystpa" style="height: 333px;">
+	      <div class="swiper-wrapper">
+			
+		        <div class="swiper-slide"><img onclick="window.open('/website/loginAction!userZiNan.action','_blank')" src="/website/image/zw01-ChinaMerger.png"/></div>
+		        <div class="swiper-slide"><img onclick="window.open('/website/loginAction!typicalUsers.action','_blank');" src="/website/image/zw02-ChinaMerger.png"/></div>
+			
+			
+	      </div>
+		  <div class="pagination"></div>
+	    </div>
+<!--登录区开始-->
+	
+	<!-- 登录之前 -->
+    <form  class="form-horizontal" role="form">
+        <div class="dlchinamerger" style="z-index: 9">
+            <strong>登录 <img src="/website/image/dllogo.png" /></strong>
+            <p>用户名 / 邮箱 / 手机号</p>
+        
+            <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                  <input id="register_userName" type="text" tabindex="1" class="form-control" placeholder="用户名 / 邮箱 / 手机号" value=""/>
+            </div>
+            <p class="dlmm">密码：<span><a href="/website/loginAction!resetPWDJsp.action">忘记密码</a></span></p>
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+              <input id="register_password" type="password" class="form-control" tabindex="2" placeholder="密码" value=""/>
+            </div>
+            <p class="dlmm">验证码：</p>
+            
+        <div class="form-group">
+            <div class="col-sm-6 ">
+                <input class="form-control" tabindex="3" id="register_yzm" placeholder="验证码"/>
+            </div>
+            <label for="register_yzm" class=" control-label">
+                <span><img id="yzm" onclick="changeimg();" src="/inc/yzm.jsp" /></span>
+            </label>
+        </div>
+        
+        <div class="form-group ">
+            <div class=" col-sm-10 jzwdyhm">
+              <div class="checkbox">
+                <input id="jzw" name="jzw" type="checkbox" value="1" tabindex="4" />
+                <label for="jzw">记住账号</label>
+              </div>
+            </div>
+        </div>    
+        
+        <div class="row dlljzc">
+            <div class="col-sm-12 wzsj_b">
+                <div class="col-sm-6"><button type="button" class="btn btn-primary col-sm-12" tabindex="5" onclick="login()">登录</button></div>
+                <div class="col-sm-6"><button id="registerbtn" type="button" class="btn btn-warning col-sm-12" onclick="registerNow()">免费注册</button></div>
+            </div>
+        </div>
+        <div class="yhzndk">
+            <ul>
+                <li class="yszn"><a href="/website/loginAction!userZiNan.action" target="_blank">使用指南</a></li>
+                <li class="yhqy"><a href="/website/loginAction!usersBenefits.action" target="_blank">用户权益</a></li>
+            </ul>
+        </div>
+      </div>
+    </form>  
+    
+    
+	<!--登录区结束-->
+    </div>
+	</div>
+</div>
+<!--图片区结束-->
+
+
+<!--项目介绍开始-->
+<div id="xmjsdksk">
+	<!--推荐出售项目区开始-->
+	<div class="tjxmcs_dk">
+    	<div class="bgdkso_xm">
+        	<strong>推荐出售项目</strong>
+            <a href="/website/loginAction!seemoresale.action" target="_blank">更多 >></a>
+        	<span>推荐并购需求</span>
+            <a href="/website/loginAction!seemorebuy.action" target="_blank">更多 >></a>
+        </div>
+        <div class="ozjh">
+        	<!-- saleBusiness 开始 -->
+        	<div id="salebusinessList" class="dgwpl_z">
+				
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1843&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1004.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1843&saleBusinese.isSaveViewLog=2">
+								光学镜头制造商
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='100万~300万(含)&nbsp;欧元'>
+	                        	100万~300万(含)
+								
+									&nbsp;欧元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2558.jpg" />
+			                    		<!-- 国家名 -->
+			                    		西班牙
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										耐用消费品
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+											卖方代理
+										
+										
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								在光学领域有着超过50年的市场经验，这个市场领先的镜头制造商拥有广泛的矿物质和有机镜头供应源。
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1776&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1007.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1776&saleBusinese.isSaveViewLog=2">
+								利润可观的芯片和组件公司
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='1000万~3000万(含)&nbsp;美元'>
+	                        	1000万~3000万(含)
+								
+									&nbsp;美元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2854.jpg" />
+			                    		<!-- 国家名 -->
+			                    		韩国
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										计算机硬件
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+											卖方代理
+										
+										
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								该公司是 HID 技术和产品领域无可争议的行业领导者。
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1697&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1011.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1697&saleBusinese.isSaveViewLog=2">
+								英国三大城市之一市中心黄金地段全新办公楼出售项目 
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='3000万~5000万(含)&nbsp;英镑'>
+	                        	3000万~5000万(含)
+								
+									&nbsp;英镑
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2356.jpg" />
+			                    		<!-- 国家名 -->
+			                    		英国
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										商业地产
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+										
+											寻找联合投资
+										
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								2015年初刚竣工的现代化建筑；整租给一家全球性企业，租期15年；位于英国三大主要城市之一的市中心黄金地段；初始回报率5%，报价3000万英镑。适合低风险投资人。 
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1645&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1003.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1645&saleBusinese.isSaveViewLog=2">
+								法国已建成大型机场私有化项目
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='5亿~10亿(含)&nbsp;欧元'>
+	                        	5亿~10亿(含)
+								
+									&nbsp;欧元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2315.jpg" />
+			                    		<!-- 国家名 -->
+			                    		法国
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										交通运输
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+										
+										
+											其他
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								标的机场于1944年落成。标的物为法国第三繁忙机场，每年客流量为1150万。目标机场拥有两根跑道和两座航站楼。
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1714&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1011.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1714&saleBusinese.isSaveViewLog=2">
+								土耳其有机 FarmCity (绿地)项目
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='5亿~10亿(含)&nbsp;美元'>
+	                        	5亿~10亿(含)
+								
+									&nbsp;美元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2471.jpg" />
+			                    		<!-- 国家名 -->
+			                    		土耳其
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										综合商业
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+											卖方代理
+										
+										
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								该团队正试图为 FarmCity 开发项目寻求投资者。FarmCity在土耳其日益发展的市场经济中将房地产与生命科学相结合。
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1547&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1006.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1547&saleBusinese.isSaveViewLog=2">
+								收益丰厚的快餐订餐聚合网站
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='1000万~3000万(含)&nbsp;美元'>
+	                        	1000万~3000万(含)
+								
+									&nbsp;美元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2018.jpg" />
+			                    		<!-- 国家名 -->
+			                    		美国
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										食品
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+											卖方代理
+										
+										
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								这家风格独特、举足轻重的快餐聚合网站有自己独特的卖点。
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1693&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1006.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1693&saleBusinese.isSaveViewLog=2">
+								出售佛罗里达州迈阿密的（EB5签证）肉类包装厂
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='300万~500万(含)&nbsp;美元'>
+	                        	300万~500万(含)
+								
+									&nbsp;美元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2018.jpg" />
+			                    		<!-- 国家名 -->
+			                    		美国
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										食品
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+											卖方代理
+										
+										
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								统计数据
+年处理肉量大约为3871000磅。
+我们拥有价值210万美元的制造工厂
+员工人数：50
+送货卡车数量：8
+年营收800万美元。
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1667&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1011.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1667&saleBusinese.isSaveViewLog=2">
+								美国加州洛杉矶郡好学区空地投资机会 
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='5000万~8000万(含)&nbsp;美元'>
+	                        	5000万~8000万(含)
+								
+									&nbsp;美元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2018.jpg" />
+			                    		<!-- 国家名 -->
+			                    		美国
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										土地
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+											卖方代理
+										
+										
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								项目位于洛杉矶郡的大城市，周围有高速公路通勤，离开洛杉矶市中心约有30 分钟的车程。市政府已经批准了初步规划。 
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1526&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1011.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1526&saleBusinese.isSaveViewLog=2">
+								戛纳的奢华别墅
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='3000万~5000万(含)&nbsp;欧元'>
+	                        	3000万~5000万(含)
+								
+									&nbsp;欧元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2315.jpg" />
+			                    		<!-- 国家名 -->
+			                    		法国
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										住宅
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+											卖方代理
+										
+										
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								戛纳久负盛名的奢华别墅
+							
+		                </div>
+		            </div>
+	            
+		        	<div>
+		        		<div class="zbtpqy">
+							<a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1724&saleBusinese.isSaveViewLog=2">
+							
+							
+								<img src="/website/sysimg/salebusiness/1009.png" />
+							
+							</a>
+		        		</div>
+		                <div class="kggq">
+		                	<div class="title">
+			                <a target="_blank" href="/website/saleBusineseAction!seeSaleToOther.action?saleBusinese.id=1724&saleBusinese.isSaveViewLog=2">
+								欧洲汽车弹簧和液压减震器公司 
+							</a>
+							</div>
+							<div class="oneline fistline">
+								<ul><!-- 要价 -->
+
+		                        <li class="oneline"><img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='1亿~5亿(含)&nbsp;欧元'>
+	                        	1亿~5亿(含)
+								
+									&nbsp;欧元
+								
+								</span>
+		                        </li>
+		                    	<li class="oneline">
+		                    		<!-- 国旗图片 -->
+		                    		
+		                    		
+		                    		
+			                    		<img width="32px" src="/website/images/flag/2298.jpg" />
+			                    		<!-- 国家名 -->
+			                    		德国
+		                    		
+		                    	</li>
+		                    	</ul>
+							</div>
+							<div class="oneline">
+								<ul>
+			                        <li style="width:320px;" class="oneline">
+			                        	<!-- 行业 -->
+										汽车零部件
+									</li>
+								</ul>
+							</div>
+							<div class="oneline">
+			                    <ul>
+			                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+										
+										
+										
+										
+											其他
+										
+									</li>
+			                    </ul>
+		                    </div>
+		                </div>
+		                <div class="xmld"><!-- 项目亮点 -->
+		                   <span class="title">项目亮点：</span>
+							
+							
+							
+								目标是一家欧洲公司，为汽车行业和商用车辆，如公共汽车和卡车、生产气弹
+簧、液压减震器。该公司的销售额约为5 亿欧元，有大约4000 名员工。 
+							
+		                </div>
+		            </div>
+	            
+            </div>
+            <!-- saleBusiness 结束 -->
+            <div id="buybusinessList" class="jndmgdm_y">
+			
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=944&buyBusinese.registerId=2031">
+					
+					
+						<img src="/website/sysimg/buybusiness/1002.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=944&buyBusinese.registerId=2031">
+						寻找海外矿业 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&nbsp;(人民币)'>
+	                        	
+								
+									未披露
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+		                    		
+		                    		
+		                    		
+		                    			<!-- 国旗图片 -->
+			                    		<img width="32px" src="/website/images/flag/2963.jpg" />
+			                    		<!-- 国家名 -->
+			                    		<span title="马来西亚,">马来西亚</span>
+	                    			
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								金属矿
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+									直接买方
+								
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						国内某矿业公司
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=942&buyBusinese.registerId=2031">
+					
+					
+						<img src="/website/sysimg/buybusiness/1008.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=942&buyBusinese.registerId=2031">
+						寻找香港医疗民生服务类上市公司 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&nbsp;'>
+	                        	
+								
+									未披露
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+		                    		
+		                    			
+		                    			
+		                    			
+		                    			
+		                    				<img width="32px" src="/website/images/flag/2920.jpg" />
+				                    		<!-- 中国-->
+			                    			<span title="中国,">中国</span>
+		                    			
+		                    		
+		                    		
+		                    		
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								医药研发与制造
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+								
+									买方代理
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						国内投资基金
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=881&buyBusinese.registerId=2031">
+					
+					
+						<img src="/website/sysimg/buybusiness/1011.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=881&buyBusinese.registerId=2031">
+						寻找北美不动产 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&nbsp;'>
+	                        	
+								
+									未披露
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+		                    		
+		                    		
+		                    		
+		                    			<!-- 国旗图片 -->
+			                    		<img width="32px" src="/website/images/flag/2018.jpg" />
+			                    		<!-- 国家名 -->
+			                    		<span title="美国,">美国</span>
+	                    			
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								住宅
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+								
+									买方代理
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						国内某集团公司，已经在美国投资了酒店和公寓
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=879&buyBusinese.registerId=2031">
+					
+					
+						<img src="/website/sysimg/buybusiness/1011.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=879&buyBusinese.registerId=2031">
+						寻找海外不动产项目 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&nbsp;'>
+	                        	
+								
+									未披露
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+								
+									买方代理
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						国内金融机构
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=878&buyBusinese.registerId=2031">
+					
+					
+						<img src="/website/sysimg/buybusiness/1011.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=878&buyBusinese.registerId=2031">
+						寻找海外地产 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&nbsp;'>
+	                        	
+								
+									未披露
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								住宅
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+									直接买方
+								
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						国内地产开发公司
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=876&buyBusinese.registerId=2031">
+					
+					
+						<img src="/website/sysimg/buybusiness/1008.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=876&buyBusinese.registerId=2031">
+						寻找海外医院 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&nbsp;'>
+	                        	
+								
+									未披露
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								医疗保健机构
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+								
+									买方代理
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						国内上市房地产开发公司
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=841&buyBusinese.registerId=2825">
+					
+					
+						<img src="/website/sysimg/buybusiness/1012.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=841&buyBusinese.registerId=2825">
+						寻美国钢结构公司合作 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&gt;1百万 &lt;=5百万&nbsp;'>
+	                        	
+	                        		&gt;1百万 &lt;=5百万
+									
+										&nbsp;
+									
+								
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+		                    		
+		                    		
+		                    		
+		                    			<!-- 国旗图片 -->
+			                    		<img width="32px" src="/website/images/flag/2018.jpg" />
+			                    		<!-- 国家名 -->
+			                    		<span title="美国,">美国</span>
+	                    			
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								建筑建材
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+								
+									买方代理
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						中国有钢结构公司，从事结构行业20多年，有生产车间和项目运作能力，力求能获得海外市场突破
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=803&buyBusinese.registerId=2385">
+					
+					
+						<img src="/website/sysimg/buybusiness/1010.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=803&buyBusinese.registerId=2385">
+						国际教育产品平台 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&gt;5百万 &lt;=1千万&nbsp;(人民币)'>
+	                        	
+	                        		&gt;5百万 &lt;=1千万
+									
+										&nbsp;(人民币)
+									
+								
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+		                    		
+		                    		
+		                    		
+		                    			<!-- 国旗图片 -->
+			                    		<img width="32px" src="/website/images/flag/2853.jpg" />
+			                    		<!-- 国家名 -->
+			                    		<span title="朝鲜,韩国,日本,中国,蒙古,越南,东帝汶,菲律宾,格鲁吉亚,柬埔寨,老挝...">朝鲜...</span>
+	                    			
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								影视制作
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+									直接买方
+								
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						10年互联网教育经验，积累了大量学员和教师资源。
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=807&buyBusinese.registerId=953">
+					
+					
+						<img src="/website/sysimg/buybusiness/1008.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=807&buyBusinese.registerId=953">
+						某上市公司拟收购医疗器械公司 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&nbsp;(人民币)'>
+	                        	
+								
+									未披露
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+		                    		
+		                    			
+		                    			
+		                    			
+		                    			
+		                    				<img width="32px" src="/website/images/flag/2920.jpg" />
+				                    		<!-- 中国-->
+			                    			<span title="中国,">中国</span>
+		                    			
+		                    		
+		                    		
+		                    		
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								医药及医疗器械销售
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+								
+									买方代理
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						目前公司具有较高的市场覆盖率，稳定的销售网络及研发及技术优势。
+目标企业管理团队执行能力强、财务相对规范、业绩能够持续增长
+					
+				</div>
+                
+            </div>
+            
+        	<div>
+            	<div class="gjzmgc_dp">
+					<a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=804&buyBusinese.registerId=2625">
+					
+					
+						<img src="/website/sysimg/buybusiness/1008.png" />
+					
+					</a>
+				</div>
+                
+                <div class="syysk">
+                	<div class="title">
+	                <a target="_blank" href="/website/buyBusineseAction!seeBuyToOther.action?buyBusinese.id=804&buyBusinese.registerId=2625">
+						糖尿病的新型器械及中医药新型保健品和小副作用药品 
+					</a>
+					</div>
+					<div class="oneline fistline">
+						<ul>
+	                        <li  class="oneline">
+	                        	<img src="/website/image/ChinaMerger_38.png" />
+	                        	<span title='&nbsp;'>
+	                        	
+								
+									未披露
+								
+								</span>
+							</li>
+	                        <li  class="oneline">
+	                
+	                    		
+		                    		
+		                    		
+		                    		
+		                    			<!-- 国旗图片 -->
+			                    		<img width="32px" src="/website/images/flag/2004.jpg" />
+			                    		<!-- 国家名 -->
+			                    		<span title="加拿大,美国,英属维尔京群岛,百慕大,开曼群岛,加拿大,美国,墨西哥,墨西哥,伯利兹,尼加拉瓜...">加拿大...</span>
+	                    			
+	                    		
+	                        </li>
+                    	</ul>
+					</div>
+					<div class="oneline">
+						<ul>
+	                    	<li style="width:100%;" class="oneline">
+	                        	<!-- 行业 -->
+								医药研发与制造
+	                    	</li>
+						</ul>
+					</div>
+					<div class="oneline">
+	                    <ul>
+	                        <li style="width: 100%" class="oneline"><strong>发布方:</strong> 
+								
+								
+									买方代理
+								
+								
+							</li>
+	                    </ul>
+                    </div>
+                </div>
+                
+                <div class="xqld"><!-- 需求亮点 -->
+                    <span class="title">买方亮点：</span>
+					
+					
+					
+						大健康产业需求
+					
+				</div>
+                
+            </div>
+            
+            </div>
+        </div>
+    </div>
+	<!--推荐出售项目区结束-->
+    
+	<!--项目需求总数开始-->
+    <div id="xmxqzs">
+		<div class="bjxqzs">项目/需求总数</div>
+        <div class="dtzbk">
+        	<img src="/website/images/map_bg01.gif" width="535px" height="271px" />
+			<div class="dtzbk_global">
+				<h4>全球</h4>
+				1300
+				个卖方
+				<br/>
+				来自
+				53<!--  数据库项目所属国家统计数字-->
+				<!-- 18 18为王总指定手输统计数字 -->
+				个国家
+			</div>
+			<div class="dtzbk_china">
+				<h4>中国</h4>
+				1427
+				个买方
+			</div>
+        </div>
+        <div class="szfgxg">
+        	<h1>卖方项目</h1>
+        	<div class="donwg">
+				<ul>
+				
+					<li><img src="/website/sysimg/salebusiness/5.png"/></li>
+				
+					<li><img src="/website/sysimg/salebusiness/9.png"/></li>
+				
+					<li><img src="/website/sysimg/salebusiness/9.png"/></li>
+				
+			    </ul>
+			</div>
+        	<p>买方需求</p>
+        	<div class="donwg">
+				<ul>
+				
+					<li><img src="/website/sysimg/buybusiness/1.png"/></li>
+				
+					<li><img src="/website/sysimg/buybusiness/0.png"/></li>
+				
+					<li><img src="/website/sysimg/buybusiness/3.png"/></li>
+				
+			    </ul>
+			</div>
+        </div>
+    </div>
+	<!--项目需求总数结束-->
+    
+	<!--我们的活动开始-->
+    <div id="wmssdk">
+    	<div class="bgwms">
+        	<ul>
+            	<li><span class="bgtp_1" style="margin-left:15px;"onclick="window.open('/website/loginAction!aboutUS.action','_blank');">我们是谁？</span></li>
+            	<li><span class="bgtp_2" onclick="window.open('/website/loginAction!ourUsers.action','_blank');">我们能帮你做什么？</span></li>
+            	<li><span class="bgtp_3" onclick="window.open('/website/loginAction!typicalUsers.action','_blank');">我们的用户</span></li>
+            	<li><span class="bgtp_4" onclick="window.open('/website/loginAction!seeMarketList.action','_blank')">我们的活动</span><span onclick="window.open('/website/loginAction!seeMarketList.action','_blank')" class="more">更多 >></span></li>
+            </ul>
+           
+        </div>
+        <div class="nrwmsyg">
+        	<ul>
+            	<li onclick="window.open('/website/loginAction!aboutUS.action','_blank');">我们是一个全球可交易资产信息的发布和撮合平台。它由诸多资深媒体、法律、投行人士共同创建，在专业性的基础上，探索用互联网思维，提供具有革命性的投行前期服务。</li>
+            	<li onclick="window.open('/website/loginAction!ourUsers.action','_blank');">我们旨在系统化地收集、管理全球可交易资产信息，专注于100万——1亿美金区间的标的物。我们为全球的卖方提供与中国优质买家直接、高效率的沟通渠道，并为中国买家走出去提供一站式解决方案。</li>
+            	<li onclick="window.open('/website/loginAction!typicalUsers.action','_blank');">全球卖家及其代理人都是我们的目标用户。比如，各国的投资发展署、投行、律所、咨询公司、行业协会等。中国买家及其代理人同样是我们的服务对象。比如，各行业的领先企业、跨境并购基金、投行、律所等。</li>
+                <li class="ourEvent" style="border:none; padding:5px 15px 15px 15px;cursor: auto;">
+	                
+						
+						
+							<p  onclick="window.open('/website/loginAction!seeMarketInfo.action?news.id=40066','_blank');">
+							中国汽车企业海外并购闭门沙龙</p>
+						
+	                    <span>2015-01-23</span>
+	                
+						
+						
+							<p  onclick="window.open('/website/loginAction!seeMarketInfo.action?news.id=40065','_blank');">
+							晨哨助力2015融资中国资本...</p>
+						
+	                    <span>2015-01-23</span>
+	                
+						
+						
+							<p  onclick="window.open('/website/loginAction!seeMarketInfo.action?news.id=40064','_blank');">
+							晨哨2014海外地产私密项目...</p>
+						
+	                    <span>2015-01-23</span>
+	                
+						
+						
+							<p  onclick="window.open('/website/loginAction!seeMarketInfo.action?news.id=40063','_blank');">
+							中关村国际化大讲堂</p>
+						
+	                    <span>2015-01-23</span>
+	                
+                </li>
+            </ul>
+        </div>
+    </div>
+	<!--我们的活动结束-->
+    
+	<!--关于我们开始-->
+	<div id="gywmdk">
+    	<div class="bggywm">
+        	<ul>
+            	<li><span class="bggywm_1">关于我们</span></li>
+            	<li><span class="bggywm_2">联系我们</span></li>
+            	<li><span class="bggywm_3">关注我们</span></li>
+            </ul>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </div>
+        <div class="mncsjt">
+			<ul>
+            	<li>
+                	<img src="/website/image/01-1202-ChinaMerger03.png" />
+                	
+				<p>
+					<strong>晨哨集团</strong>（Morning Whistle Group）是目前唯一一家针对中国资本跨境投资并购的大型数据库型互联网平台，旨在面对中国买家需求汇聚全球可交易资产的信息，同时为中等规模的中国资本跨境投资并购提供一站式服务管理。
+					
+				</p>
+				<p>集团官网:<a href="http://www.morningwhistlegroup.com" target="_balnk">www.morningwhistlegroup.com</a><br/>
+					资讯门户:<a href="http://www.morningwhistle.com" target="_balnk">www.morningwhistle.com</a></p>
+                </li>
+            	<li>
+                	<p class="lxfsys">
+					电 话: +86-21-52769720<br/>
+					地 址 : 上海市仙霞路369号KB现代广场1906室<br/><br/>
+					海外项目合作：project@chinamerger.com<br/>
+					国内买方合作：buyer@chinamerger.com<br/>
+					市场合作：market@morningwhistle.com<br/><br/>
+
+					投 稿：contribute@morningwhistle.com<br/>
+					技术咨询：webmaster@morningwhistle.com<br/>
+					加入我们 : hr@morningwhistle.com<br/>
+                    </p>
+                </li>
+            	<li style="width:290px; border:none;">
+                	<div class="lgtpc">
+                    	<ul>
+                        	<li class="tb_1"></li>
+                            <li class="tb_2" onclick="window.open('http://weibo.com/chenshaowang','_blank');"></li>
+                        	<li class="tb_3" onclick="window.open('https://www.facebook.com/chinabusinesswatch','_blank');"></li>
+                        	<li class="tb_4" onclick="window.open('https://twitter.com/morning_whistle','_blank');"></li>
+                        	<li class="tb_5" onclick="window.open('https://www.linkedin.com/company/morning-whistle-group','_blank');"></li>
+                        </ul>
+                    </div>
+		    		<div class="rwmqy">
+                    	<ul>
+                        	<li class="rwmqy_z">扫一扫<br/>关注晨哨网</li>
+                        	<li class="rwmqy_y">扫一扫<br/>ChinaMerger手机版</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>        
+        </div>
+    </div>
+	<!--关于我们结束-->
+<!--项目介绍结束-->
+</div>
+
+<!-- Google 再营销代码(开始) -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 956051167;
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/956051167/?value=0&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<!-- Google 再营销代码(结束) -->
+
+<!--底部-->
+<div class="rzbh">二十一世纪晨哨数据(上海)有限公司 Copyright © 2014 增值电信业务经营许可证(沪)B2-20140158<br/>推荐使用IE 10以上、Chrome浏览器、火狐浏览器
+<script type="text/javascript"> 
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); 
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F2388b08945a2eded2488be4ca9873173' type='text/javascript'%3E%3C/script%3E")); 
+</script>
+</div>
+
+</body>
+</html>
+

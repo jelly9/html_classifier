@@ -1,0 +1,875 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+	<HEAD>
+		
+<TITLE>	健康咨询_深圳医疗网健康咨询频道(为你提供健康在线咨询,心理咨询,男性健康等信息）</TITLE>
+<meta name="keywords" content="健康在线咨询,健康咨询网,心理健康咨询,女性健康咨询">
+<meta name="description" content="深圳医疗网健康咨询频道是深圳专业的健康在线咨询平台，有来自深圳福华中西医结合医院几十名的专家团队为广大市民提供心理健康咨询,女性健康咨询,男性健康咨询，性健康咨询，婴儿健康咨询等服务。">
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+		<meta name="GENERATOR" Content="Microsoft Visual Studio .NET 7.1">
+		<meta name="CODE_LANGUAGE" Content="C#">
+		<meta name="vs_defaultClientScript" content="JavaScript">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+		<LINK href="/vote.css" type="text/css" rel="stylesheet">
+		<script language="javascript">
+			
+		//加入收藏夹
+		function AddCol(){
+			str = SZ16.sz16new.ask.answerOver.addCollection('','3651').value;
+			alert(str);
+		
+		}
+		
+		//举报
+		function PutAnswerImpeach(userID,answerID,qID){
+		
+			if (confirm("确定举报该条记录？")){
+				str = SZ16.sz16new.ask.answerOver.putImpeach(userID,answerID,qID).value;
+			
+			if (str == "1"){
+					
+					alert("您还没登录,请先登录");
+					var s= location.href;
+					location.href = "http://comment.sz16.cn/login.html?url="+escape(s);
+				}
+				if(str == "2"){
+					alert("举报成功");										
+					location.href = "/"+1658+"/answerOVer_"+3651+".html";
+				}
+				if(str == "3"){
+					alert("举报失败");
+				}
+				
+			}
+		}
+		
+		</script>
+	</HEAD>
+	<body MS_POSITIONING="GridLayout">
+		<form name="Form1" method="post" action="/1658/answerOver_3651.html" id="Form1">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+
+<script type="text/javascript">
+<!--
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+// -->
+</script>
+
+
+
+<script type="text/javascript" src="/ajaxpro/prototype.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/core.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/converter.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/SZ16.sz16new.ask.answerOver,wen.sz16.cn.ashx"></script>
+<script type="text/javascript" src="/ajaxpro/SZ16.sz16new.ask.inc.askInfo,wen.sz16.cn.ashx"></script>
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CC309333" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWBAKXt/z5CgLy/szyAQKD/6jBAwKVmMemDQOTjkuOrrAiAeRuO1d6JNK+VVGf" />
+			<!-- 登陆栏 -->
+<LINK href="/inc/top.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+A.hong { COLOR: #ff0000! important; TEXT-DECORATION: none }
+A.hong:hover { COLOR: #ff0000! important; TEXT-DECORATION: underline }
+A.huang { COLOR: #f60! important; TEXT-DECORATION: none }
+A.huang:hover { COLOR: #f60! important; TEXT-DECORATION: underline }
+A.lan { COLOR: #314473! important; TEXT-DECORATION: none }
+A.lan:hover { COLOR: #314473! important; TEXT-DECORATION: underline }
+A.jin { FONT-WEIGHT: bold; COLOR: #ff6500! important; TEXT-DECORATION: none }
+A.jin:hover { COLOR: #ff6500! important; TEXT-DECORATION: underline }
+</style>
+<!-- 登陆栏 -->
+<script language="javascript">
+function usercheck()
+{
+if(document.getElementById("Head1_uid").value.length==0)
+	  {
+	  	alert('用户名不能为空');
+	  	document.getElementById("Head1_uid").focus();
+	  	return false;
+	  }
+	if(document.getElementById("Head1_upwd").value.length==0)
+	{
+		alert('密码不能为空');
+		document.getElementById("Head1_upwd").focus();
+		return false;
+	}  
+		
+		//document.forms("userlogin").action="http://bbs.sz16.cn/login/checkuser.asp";
+		//document.forms.item("userlogin").submit();
+		
+		return true;
+	
+	
+}
+</script>
+<div id="top">
+	<ul>
+		<li class="denglu">
+			用户名：<input name="Head1:uid" type="text" id="Head1_uid" class="iptSch" />  密码：<input name="Head1:upwd" type="password" id="Head1_upwd" class="iptSch" accesskey="S" maxlength="16" />
+				<input onclick="if (!usercheck()) return false; __doPostBack('Head1$_ctl0','')" name="Head1:_ctl0" type="button" value="登录" class="btnSch" />
+			<A style="COLOR: #ff0000" href="http://comment.sz16.cn/Reg.html" target="_blank">免费注册</A> | <A href="http://comment.sz16.cn/ForgetPassword.html" target="_blank">
+				忘记密码</A> | <a href="http://comment.sz16.cn/UserInfo.html" target="_blank">进入个人中心</a> | <a href="http://comment.sz16.cn/Logout.html">安全退出</a>
+		</li>
+		<li class="rtxt">
+			<A onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.sz16.com/');return false;"
+				href="#">设为首页</A> | <A href="javascript:bookmark()">加入收藏</A> | <a href="http://www.sz16.cn/index_old.htm" target="_blank">
+				旧版</a>
+		</li>
+	</ul>
+</div>
+<!-- !! -->
+<!-- !! -->
+<div id="nav">
+	<div class="logo"><a href="http://www.sz16.cn"><IMG src="/img/logo.gif"></a></div>
+	<div class="NavCon">
+		<div class="navtop"><SPAN class="top1"><A href="#" class="tlan">健康资讯</A></SPAN> <SPAN class="top2">
+				<A href="#" class="tlan">人群健康</A></SPAN> <SPAN class="top3"><A href="#" class="tlan">
+					大众健康</A></SPAN> <SPAN class="top4"><A href="#" class="tlan">疾病新闻</A></SPAN>
+			<SPAN class="top5"><A href="#" class="tlan">互动中心</A></SPAN></div>
+		<UL>
+			<a href="http://www.sz16.cn/index.html">首页</a> <a style="COLOR: #ff0000" href="http://www.sz16.cn/visit/index.html" target="_blank">
+				直播</a><br>
+			<a href="http://www.sz16.cn/news/index.html">新闻</a> <a href="http://www.sz16.cn/1533/9396.html" target="_blank">专题</a>
+		</UL>
+		<UL>
+			<a href="http://www.sz16.cn/men/index.html">男性</a> <A href="http://www.sz16.cn/older/index.html">老人</A> <a href="http://www.sz16.cn/pregnant/index.html">
+				母婴</a><br>
+			<a href="http://www.sz16.cn/women/index.html">女性</a> <A href="http://www.sz16.cn/children/index.html">儿童</A> <a href="http://www.sz16.cn/students/index.html">
+				学生</a>
+		</UL>
+		<UL>
+			<a href="http://www.sz16.cn/subHealth/index.html">亚健康</a> <a href="http://www.sz16.cn/fashion/index.html">时尚美容</a> <a href="http://www.sz16.cn/doctors/index.html">
+				家庭医生</a> <a href="http://www.sz16.cn/regimen/index.html">中医养生</a><br>
+			<a style="COLOR: #ff0000" href="http://www.sz16.cn/sex/index.html">性健康</a> <a href="http://www.sz16.cn/fitness/index.html">
+				运动健身</a> <a href="http://www.sz16.cn/nursing/index.html">护理保健</a> <a href="http://www.sz16.cn/diet/index.html">饮食营养</a>
+		</UL>
+		<UL>
+			<a style="COLOR: #ff0000" href="http://ill.sz16.cn">疾病</a> <A href="http://www.sz16.cn/test/index.html">测试</A>
+			<a href="http://www.sz16.cn/psychological/index.html">心理</a><br>
+			<a href="http://www.sz16.cn/ambulance/index.html">急救</a> <A href="http://www.sz16.cn/check/index.html">体检</A> <a href="http://www.sz16.cn/photo/index.html">
+				图谱</a>
+		</UL>
+		<UL>
+			<a href="http://www.sz16.cn/expert/index.html">专 家 库</a> <a href="http://ask.sz16.cn" target="_blank">咨询</a>
+			<a href="/1533/9393.html" target="_blank">短信</a> <a href="http://www.sz16.cn//1533/9391.html" target="_blank">
+				博客</a><br>
+			<a href="http://www.sz16.cn/hospital/index.html">医院点评</a> <a href="http://www.sz16.cn/1533/9394.html" target="_blank">社区</a>
+			<a href="http://www.sz16.cn/1533/9392.html" target="_blank">视频</a> <A href="http://www.sz16.cn/1533/9390.html" target="_blank">
+				人才</A>
+		</UL>
+	</div>
+</div>
+<!-- !! -->
+<div class="info" style="COLOR: #dbdce3"><A href="http://fk.fh16.cn/" target="_blank">妇 
+		科</A> | <A href="http://nk.fh16.cn/" target="_blank">男 科</A> | <A href="http://www.fh16.cn/buyunbuyu/" target="_blank">
+		不孕不育</A> | <A href="http://kq.fh16.cn/" target="_blank">口腔科</A> 
+	| <A href="http://www.fh16.cn/ganbing/" target="_blank">肝病科</A> | <A href="http://www.fh16.cn/erbihou/" target="_blank">
+		耳鼻咽喉</A> | <A href="http://mr.fh16.cn/" target="_blank">美容科</A> 
+	| <A href="http://www.fh16.cn/ruxian/" target="_blank">乳腺科</A> | <A href="http://www.fh16.cn/pifu/" target="_blank">皮肤科</A> |
+	<A href="http://www.fh16.cn/shimianyiyu/" target="_blank">失眠抑郁</A> | <A href="http://www.fh16.cn/tengtong/" target="_blank">
+		疼痛康复</A> | <A href="http://www.fh16.cn/weichang/f" target="_blank">胃肠科</A> 
+	| <A href="http://www.fh16.cn/gangchang/" target="_blank">肛肠科</A> | <A href="http://www.fh16.cn/rl/" target="_blank">
+		无痛人流</A> | <A href="http://www.fh16.cn/tijian/" target="_blank">体检科</A>
+</div>
+			<!-- flash广告 -->
+<style type="text/css">
+#ad1 {  width:950px; height:90px; CLEAR: both; MARGIN:0px auto; padding-top:5px; TEXT-ALIGN: left}
+#ad1 .list{ float:right; width:270px; border:1px solid #CADDE4; height:83px; padding-top:5px;}
+#ad1 .list li{ padding-left:9px; width:121px; float:left; line-height:20px; DISPLAY: inline;}
+#ad1 span{ float:left; width:669px;}
+#ad1 A { COLOR: #555555}
+#ad1 A:link{ COLOR: #555555}
+#ad1 A:hover{ COLOR: #555555}
+</style>
+<div id="ad1">
+	<span id="topAdr1_adrImg"><a href=http://www.fh16.cn/meitbd/kqk/77359.html target='_blank'><img src=http://www.sz16.cn//upload/adr/20149261224021.jpg width=669 height=90 border='0'></a></span>
+	<div class="list">
+		
+				<li>
+					<a href='http://www.fhkqyy.com/special/20130106kcy/' target=_blank style='color:'>烤瓷牙全线8.5折</a></li>
+			
+				<li>
+					<a href='http://fh16.cn/Item/Show.asp?m=1&d=62146' target=_blank style='color:#FF0000'>进口种植体仅4980元</a></li>
+			
+				<li>
+					<a href='http://www.fhkqyy.com/special/20130809ad/' target=_blank style='color:#FF0000'>美国隐形正畸9折优</a></li>
+			
+				<li>
+					<a href='http://www.fh16.cn/activity/20110523ad/' target=_blank style='color:#07519A'>包皮包茎手术仅880</a></li>
+			
+				<li>
+					<a href='http://www.fh16.cn/fhjyyh/21169.html' target=_blank style='color:'>60元男性健康公益排</a></li>
+			
+				<li>
+					<a href='http://www.sz16.cn/activity/20091225ad/index.asp' target=_blank style='color:'>会诊专家预约申请表</a></li>
+			
+				<li>
+					<a href='http://mr.fh16.cn/mrdt/mrdt126820402.html' target=_blank style='color:'>进口假体隆胸8800元</a></li>
+			
+				<li>
+					<a href='http://mr.fh16.cn/mtbd/mtbd126720307.html' target=_blank style='color:'>韩式隆鼻特价3800元</a></li>
+			
+	</div>
+</div>
+
+			<!-- !! -->
+			<!-- 搜索 -->
+<div id="content" style="margin:5px auto 0px auto;"><span><A href="/index.html"><IMG src="/images/zixun.gif"></A></span>
+	<ul class="tbcon">
+		<li>
+			<IMG src="/images/zixun_tw.gif">
+			<h1><A class="lanse" href="/ask.html">我要提问</A></h1>
+		向专家请教问题
+		<li>
+			<IMG src="/images/zixun_hd.gif">
+			<h1><A class="lanse" href="/askList_1.html">我来回答</A></h1>
+		解决他人疑问
+		<li>
+			<IMG src="/images/zixun_zf.gif">
+			<h1><A class="lanse" href="/giftList.html">积分换礼</A></h1>
+			了解详细信息
+		</li>
+	</ul>
+	<div id="Top2_panNo" style="width:211px;">
+	
+		<UL class="tbxx">
+			<SPAN><IMG src="/images/zixun_xx1.gif"></SPAN>
+			<LI>
+				<H1><A class="lanse" href="http://comment.sz16.cn/reg.html">免费注册</A></H1>
+				<A style="COLOR: #4a9b10; TEXT-DECORATION: underline" href="http://comment.sz16.cn/ExpertNotice.html">申请医生会员</A>
+			<LI>
+				<A style="COLOR: #ff0000" href="javascript:void(0);" onmouseover="var s = 'http://comment.sz16.cn/login.html?URL=' + location.href;this.href = s;">登陆</A>后在此查看个人信息
+			</LI>
+		</UL>
+	
+</div></div>
+
+			<!-- !! -->
+			<!-- 01 -->
+			<div id="main">
+				<div id="left">
+					<!-- 搜索 -->
+<ul class="Search">
+   <h1>请输入您的问题:</h1>
+   <li><INPUT class="f1" title=健康搜索 accessKey=S onclick=this.select() maxLength=20 size=20 value=健康搜索 name="serKeyWord"  id="serKeyWord">
+   <BUTTON type=button onClick="serClick();"></BUTTON>
+   </li>
+   </ul>
+   
+   <script language="javascript">
+	function serClick(){
+		
+		if (document.getElementById("serKeyWord").value == "") {
+			alert("请输入搜索关键字");
+			document.getElementById("serKeyWord").focus();
+			return false;
+						
+		}
+		window.location.href="/askList_"+ escape(document.getElementById("serKeyWord").value) +".html";
+		return true;
+	}
+</script>
+
+					<!-- 左边 -->
+<ul class="navzx" style="PADDING-BOTTOM:6px">
+	<h2 class="title03"><a href="#" class="lanse">咨询导航</a></h2>
+	<h3 class="text" style="MARGIN-BOTTOM:5px">共提问问题数：<font color="#0066cc"><span id="left1_lbAskNum">34698</span></font><br>
+		已解决问题数：<font color="#4a9b10"><span id="left1_lbAnswerNum">17562</span></font></h3>
+	
+			<li>
+				<span><a href="#">
+						女性类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/3322/askList.html'>妇科</a>
+							
+						
+							
+								<a href='/1636/askList.html'>妇科炎症</a>
+							
+						
+							
+								<a href='/1718/askList.html'>妇科肿瘤</a>
+							
+						
+							
+								<a href='/1719/askList.html'>月经不调</a>
+							
+						
+							
+								<a href='/1720/askList.html'>痛经</a>
+							
+						
+							
+								<a href='/1637/askList.html'>早产</a>
+							
+						
+							
+								<a href='/1744/askList.html'>怀孕</a>
+							
+						
+							
+								<a href='/1721/askList.html'>宫外孕</a>
+							
+						
+							
+								<a href='/1638/askList.html'>避孕/意外怀孕</a>
+							
+						
+							
+								<a href='/1723/askList.html'>流产</a>
+							
+						
+							
+								<a href='/1722/askList.html'>产后出血</a>
+							
+						
+							
+								<a href='/1639/askList.html'>乳腺增生</a>
+							
+						
+							
+								<a href='/1725/askList.html'>乳腺癌</a>
+							
+						
+							
+								<a href='/1724/askList.html'>其它乳腺疾病</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						男性类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1640/askList.html'>前列腺疾病</a>
+							
+						
+							
+								<a href='/1641/askList.html'>性功能障碍</a>
+							
+						
+							
+								<a href='/1714/askList.html'>泌尿系疾病</a>
+							
+						
+							
+								<a href='/1715/askList.html'>生殖器感染</a>
+							
+						
+							
+								<a href='/1716/askList.html'>包皮包茎</a>
+							
+						
+							
+								<a href='/1717/askList.html'>生殖器整形</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						儿科类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1736/askList.html'>小儿呕吐</a>
+							
+						
+							
+								<a href='/1737/askList.html'>小儿心理</a>
+							
+						
+							
+								<a href='/1738/askList.html'>锌缺乏病</a>
+							
+						
+							
+								<a href='/1739/askList.html'>小儿厌食症</a>
+							
+						
+							
+								<a href='/1740/askList.html'>小儿营养不良</a>
+							
+						
+							
+								<a href='/1743/askList.html'>小儿疫苗接种</a>
+							
+						
+							
+								<a href='/1741/askList.html'>新生儿皮肤病</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						不孕不育类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1642/askList.html'>女性不孕</a>
+							
+						
+							
+								<a href='/1643/askList.html'>男性不育</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						内科类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1645/askList.html'>肾内科</a>
+							
+						
+							
+								<a href='/1646/askList.html'>消化内科</a>
+							
+						
+							
+								<a href='/1647/askList.html'>内分泌科</a>
+							
+						
+							
+								<a href='/1644/askList.html'>神经内科</a>
+							
+						
+							
+								<a href='/1648/askList.html'>心血管内科</a>
+							
+						
+							
+								<a href='/1742/askList.html'>呼吸内科</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						外科类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1649/askList.html'>普外科</a>
+							
+						
+							
+								<a href='/1650/askList.html'>肛肠科</a>
+							
+						
+							
+								<a href='/1651/askList.html'>肿瘤科</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						五官科类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1652/askList.html'>口腔科</a>
+							
+						
+							
+								<a href='/1653/askList.html'>眼科</a>
+							
+						
+							
+								<a href='/1654/askList.html'>耳鼻喉科</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						传染病类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1655/askList.html'>皮肤科</a>
+							
+						
+							
+								<a href='/1656/askList.html'>性病科</a>
+							
+						
+							
+								<a href='/1657/askList.html'>肝病科</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						美容整形类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1658/askList.html'>生活美容</a>
+							
+						
+							
+								<a href='/1659/askList.html'>整形美容</a>
+							
+						
+							
+								<a href='/1713/askList.html'>中医美容</a>
+							
+						
+							
+								<a href='/1726/askList.html'>激光美容</a>
+							
+						
+							
+								<a href='/1727/askList.html'>脱毛除皱</a>
+							
+						
+							
+								<a href='/1728/askList.html'>祛斑美白</a>
+							
+						
+							
+								<a href='/1800/askList.html'>减肥塑身</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						心理失眠类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1661/askList.html'>失眠抑郁</a>
+							
+						
+							
+								<a href='/1660/askList.html'>情感障碍</a>
+							
+						
+							
+								<a href='/1729/askList.html'>性障碍</a>
+							
+						
+							
+								<a href='/1730/askList.html'>性欲减退</a>
+							
+						
+				</p>
+			</li>
+		
+			<li>
+				<span><a href="#">
+						中医康复类
+					</a></span>
+			</li>
+			<li class="no">
+				<p>
+					
+							
+								<a href='/1662/askList.html'>骨质增生</a>
+							
+						
+							
+								<a href='/1663/askList.html'>风湿痛</a>
+							
+						
+							
+								<a href='/1732/askList.html'>肩周炎</a>
+							
+						
+							
+								<a href='/1733/askList.html'>颈椎病</a>
+							
+						
+							
+								<a href='/1734/askList.html'>腰椎病</a>
+							
+						
+							
+								<a href='/1735/askList.html'>其它疼痛</a>
+							
+						
+				</p>
+			</li>
+		
+</ul>
+</div>
+				<div id="right">
+					
+<h1 class="rightnav"><A href="/">咨询频道</A>  
+		<span id="askNav1_lbNav">&gt; <a href='/1658/askList.html'>生活美容</a></span></h1>
+
+					<div class="contnews" style="MARGIN-TOP: 6px">
+						<h2 class="title02"><IMG height="20" src="/images/tit_04.gif" width="16"><A class="lanse" href="/askList_2.html">已解决问题</A>
+							<span><IMG class="img" src="/images/tit_08.gif"><a href="#" onclick="AddCol()">添加到“问题收藏”</a></span></h2>
+						<!-- 问题信息-->
+						
+<script language="javascript">
+
+		//举报
+		function PutImpeach(){
+		
+			if (confirm("确定举报该条记录？")){
+				str = SZ16.sz16new.ask.inc.askInfo.putImpeach('','3651').value;
+				
+				if (str == "1"){
+					
+					alert("您还没登录,请先登录");
+					var s= location.href;
+					location.href = "http://comment.sz16.cn/login.html?url="+escape(s);
+				}
+				if(str == "2"){
+					alert("举报成功");										
+					location.href = "http://wen.sz16.cn";
+				}
+				if(str == "3"){
+					alert("举报失败");
+				}
+				
+			}
+		}
+		
+		
+</script>
+
+		
+		
+		<div class="problem">
+			<h1>标题：做面膜后脸上长斑</h1>
+			<div class="price">悬赏分：10</div>
+			<p>昨天脸上缚片状面膜取下来后左脸留下一个方形(1CM*2CM)的斑,类似于皮肤碰伤好了之后的样子,今日颜色稍浅一些.使用面膜过程中没有其他不舒服的感觉,因为之前有用过没什么问题.请问这是什么原因呢?不知道会不会消掉?
+				<br>
+				<br>
+				<b>关键词：</b>
+				<span id="askInfo1_repAsk__ctl0_lbKeyWord"><a href='/askList_%b3%a4%b0%df.html'>长斑</a></span>
+			</p>
+			<div class="info01">
+				<a href="#" onclick="PutImpeach()"><font color="#ff0000">我要举报</font></a> &nbsp;<!--提问者：<a href='/otherUserInfo_cathy.html' class="lanse01" target=_blank>cathy</a>
+				等级：
+				<span id="askInfo1_repAsk__ctl0_lbUserHonor"></span>-->
+				<span>提问时间：2009-4-27 17:05:22
+				</span>
+			</div>
+		</div>
+	
+
+					</div>
+					
+							
+							<div class="contnews02" style="MARGIN-TOP:12px">
+								<h2 class="title05"><img src="/images/tit_12.gif" width="16" height="20">最佳答案</h2>
+								<div class="problem">
+									<h3>&nbsp;&nbsp;&nbsp;&nbsp;　　你好,一般是没有问题的,考虑暂时的色素,一般会自己逐渐恢复的.
+										<br>
+										<div class="info01">
+											<a href="#" onclick="PutAnswerImpeach('','3969','3651')"><font color=#ff0000>我要举报</font></a> <!--回答者：<a href='/otherUserInfo_waiwai.html' target=_blank style="FONT-WEIGHT:bold; COLOR:#ff0000">waiwai</a>
+												等级：<span id="repGood__ctl0_userHonor"></span>--><span>
+												回答时间：2009-4-27 17:13:00
+											</span>
+										</div>
+									</h3>
+								</div>
+							</div>
+						
+					
+					<!--相关问题-->
+					<div id="askLink1_panShow">
+	
+	<DIV class="contnews01" style="MARGIN-TOP: 10px">
+		<H2 class="title04"><IMG src="/images/tit_11.gif"><A style="COLOR: #4a9b10" href="#">相关问题</A></FONT></H2>
+		<UL class="relate">
+			
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38727.html" id="askLink1_repList__ctl0_linkHref" target="_blank" class="lanse">
+							蜂蜜敷脸淡化黄褐斑吗？
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38678.html" id="askLink1_repList__ctl1_linkHref" target="_blank" class="lanse">
+							为什么长斑的女人比男人多?
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38585.html" id="askLink1_repList__ctl2_linkHref" target="_blank" class="lanse">
+							为什么长斑的女人比男人多?
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38580.html" id="askLink1_repList__ctl3_linkHref" target="_blank" class="lanse">
+							盘点激光美白祛斑常见问题
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38511.html" id="askLink1_repList__ctl4_linkHref" target="_blank" class="lanse">
+							妮蔻美白祛斑片去色斑 轻松转
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38467.html" id="askLink1_repList__ctl5_linkHref" target="_blank" class="lanse">
+							妮蔻美白祛斑片打败妊娠斑
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38466.html" id="askLink1_repList__ctl6_linkHref" target="_blank" class="lanse">
+							怎么去除妊娠斑？
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38449.html" id="askLink1_repList__ctl7_linkHref" target="_blank" class="lanse">
+							怎么去除妊娠斑？
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38404.html" id="askLink1_repList__ctl8_linkHref" target="_blank" class="lanse">
+							妮蔻美白祛斑片去色斑 轻松转
+						</a><span>回答：0</span>
+					</li>
+				
+					
+					
+					
+					
+					<li>
+						<a href="/1728/answer_38343.html" id="askLink1_repList__ctl9_linkHref" target="_blank" class="lanse">
+							妮蔻美白祛斑片祛斑效果怎么样
+						</a><span>回答：0</span>
+					</li>
+				</UL>
+	</DIV>
+
+</div>
+
+				</div>
+			</div>
+			
+<base href="http://www.sz16.cn/" />
+<style type="text/css"> 
+#bottominfo { width:950px; text-align:center; padding:10px 0 20px 0; line-height:22px; font-family:Verdana; CLEAR: both;
+ margin:0px auto;}
+#bottominfo .xinxi{ PADDING-BOTTOM: 6px; MARGIN: 0px 0px 5px; PADDING-TOP: 3px; BORDER-BOTTOM: #D6D7D6 1px solid; TEXT-ALIGN: center;} 
+</style>
+<div id=bottominfo>
+<DIV class=xinxi><a href='/link/linkPage.aspx?infoID=10192' target=_blank>网站简介</a> | <a href="http://www.sz16.cn/link/linkPage.aspx?infoID=10192">关于我们</a> | <a href="http://www.sz16.cn/link/linkPage.aspx?infoID=10193">广告服务</a> | <a href="http://www.sz16.cn/link/linkPage.aspx?infoID=10198">广告资源</a> | <a href="/link/index.aspx">友情链接</a> | <a href="/1533/9390.html">招聘信息</a> | <a href="/link/linkPage.aspx?infoID=10194">联系方式</a> | <a href="#">网站地图</a> | <a href="http://www.sz16.cn/link/linkPage.aspx?infoID=10195">申请链接</a> | <a href="http://www.sz16.cn/link/linkPage.aspx?infoID=10197">法律声明</a> | <a href="http://www.sz16.cn/link/linkPage.aspx?infoID=10194">联系我们</a></DIV>
+咨询电话：0755-88297667 / 83337088 QQ在线咨询：130016163 
+<br>免费短信咨询：075588297899（移动、联通、电信）<br>地址：深圳市福田区福华路3号 邮编：518033 EMail：sz16e@126.com <br>Copyright 2000 - 2009 www.sz16.cn 版权所有  <br>医疗广告证明文号：（粤）（中）医广[2009] 第 04-20-09 号 
+备案号:<a href="http://www.miibeian.gov.cn" target="_blank">粤ICP备05039249</a> <br></DIV>
+
+<!--请将以下码嵌入到您网页源代码的最后面，通常是</body></HTML>之后,这样在服务器升级维护的时候也不会影响您的网页打开呈现速度。-->
+
+<script src=" http://s10.cnzz.com/stat.php?id=1958971&web_id=1958971" language="JavaScript"></script>
+<script type="text/javascript" src="http://sz16.zoosnet.net/JS/LSJS.aspx?siteid=LAL31671888&lng=cn"></script>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/sz16_script.js"></script>
+</div>
+
+		</form>
+	</body>
+</HTML>
+

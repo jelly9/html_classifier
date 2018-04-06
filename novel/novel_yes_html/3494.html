@@ -1,0 +1,493 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+    <script type="text/javascript" src="/js/jq.js"></script>
+    <link href="http://www.bxwx2.org/css/main.css" type="text/css"
+        rel="stylesheet" />
+    
+<script type="text/javascript">
+
+    //浏览器检查：非PC=true,PC=false
+    function BrowserCheck() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    var IsMobile = true; //是否是手机
+    function IsMobileInit() {
+        IsMobile = BrowserCheck();
+    }
+    IsMobileInit();
+</script>
+<script type="text/javascript">
+    var LookNum = 1;
+    function JiShu() {
+        LookNum = $.getCookie('LookNum');
+        if (LookNum == null || LookNum == '') {
+            LookNum = 1;
+            $.setCookie('LookNum', LookNum);
+        }
+        else {
+            var n = parseInt(LookNum);
+            if (n < 3) {
+                n = n + 1;
+            }
+            else {
+                n = 1;
+            }
+            LookNum = n;
+            $.setCookie('LookNum', LookNum);
+        }
+    }
+    JiShu();
+</script>
+
+    
+    <title>
+        逆天神魂txt单章:第十七章 再见朱朱,笔下文学</title>
+    <meta name="keywords" content="逆天神魂txt单章:第十七章 再见朱朱" />
+    <meta name="description" content="逆天神魂txt单章:第十七章 再见朱朱" />
+    <script type="text/javascript">
+        var xsid=49444;
+        var zjid=33219;
+        var zjname='第十七章 再见朱朱';
+    </script>
+    <style>
+        .DJ300X250
+        {
+            float: left;
+            margin-left: 2px;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="wrapper">
+        
+
+<!--登陆Start-->
+<div class="ywtop">
+    <div class="ywtop_con">
+        <div class="nri name1">
+            <div class="cc">
+                <div class="txt">
+                    账号：</div>
+                <div class="inp">
+                    <input type="text" id="myusername"></div>
+            </div>
+            <div class="cc">
+                <div class="txt">
+                    密码：</div>
+                <div class="inp">
+                    <input type="password" id="mypassword"></div>
+            </div>
+            <div class="frii">
+                <input id="denglu" type="button" value="登 录" style="cursor: pointer;"></div>&nbsp;
+            <div class="ccc">
+                <div class="txtt">
+                    <a href="/usergetpass.aspx">忘记密码</a></div>
+                <div class="txtt">
+                    <a href="/userregister.aspx">用户注册</a></div>
+            </div>
+        </div>
+        <div class="nri name2" style="display: none;">
+            Hi,<a target="_top" id="name1">cuizhanjun1981</a>&nbsp;&nbsp; <a target="_top" href="/usershujia.aspx">
+                我的书架</a> | <a target="_self" style="cursor: pointer;" id="tuichu">退出登录</a>&nbsp;</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#tuichu').click(function () {
+        $.setCookie('username', '', -3000);
+        $.setCookie('userid', '', -3000);
+        window.location.href = window.location.href;
+    });
+    $('#denglu').click(function () {
+        var username = $('#myusername').val();
+        
+        var pwd = $('#mypassword').val();
+        if (username == '' || pwd == '') {
+            alert('请填写用户名和密码！');
+            return;
+        }
+        username = escape(username);
+        $.ajax({
+            type: 'POST',
+            url: '/ashx/user.ashx',
+            data: { 'action': 'checkUserLogin', 'username': username, 'pwd': pwd },
+            success: function (userid) {
+                if (userid == "0") {
+                    alert('密码错误，登录失败！');
+                }
+                else {
+                    if (userid > 0)
+                        Login(username, userid);
+                }
+            }
+        });
+    });
+    function Login(username, userid) {
+        $.setCookie('username', username, 3000);
+        $.setCookie('userid', userid, 3000);
+        ShowUserName();
+    }
+    function ShowUserName() {
+        var username = $.getCookie('username');
+        var userid = $.getCookie('userid');
+        if (username == '' || userid == '' || username == null || userid == null) {
+            $('.name1').css('display', 'block');
+            $('.name2').css('display', 'none');
+        }
+        else {
+
+            $('.name1').css('display', 'none');
+            $('.name2').css('display', 'block');
+
+            $('#name1').html(username);
+        }
+
+    }
+
+    ShowUserName();
+</script>
+<!--登陆End-->
+
+<div class="header">
+    <div class="header_logo">
+        <h1 id="header211">
+            笔下文学
+        </h1>
+    </div>
+    <div class="header_search">
+        <form action="/search.aspx" method="get">
+        <input id="bookname" class="search" name="bookname" type="text" value="请输入书名或作者名" />
+        <input id="sss" type="submit" value="搜索" style="width: 96px; line-height: 28px; height: 28px;">
+        <script type="text/javascript">
+            $('#bookname').focus(function () {
+                var bookname = $(this).val();
+                if (bookname == '请输入书名或作者名') {
+                    $(this).val('');
+                }
+            });
+        </script>
+        </form>
+    </div>
+</div>
+<div class="nav">
+    <ul>
+        <li><a id="index" href="/">首页</a></li>
+        <li><a id="paihang" href="http://www.bxwx2.org/ph/1.htm">热门排行</a></li>
+        <li><a id="leixing1" href="http://www.bxwx2.org/type/1/1.htm">异界大陆</a></li>
+        <li><a id="leixing2" href="http://www.bxwx2.org/type/2/1.htm">西方奇幻</a></li>
+        <li><a id="leixing3" href="http://www.bxwx2.org/type/3/1.htm">武侠仙侠</a></li>
+        <li><a id="leixing4" href="http://www.bxwx2.org/type/4/1.htm">都市娱乐</a></li>
+        <li><a id="leixing5" href="http://www.bxwx2.org/type/5/1.htm">历史军事</a></li>
+        <li><a id="leixing6" href="http://www.bxwx2.org/type/6/1.htm">科幻游戏</a></li>
+        <li><a id="leixing7" href="http://www.bxwx2.org/type/7/1.htm">竞技同人</a></li>
+        <li><a id="leixing8" href="http://www.bxwx2.org/type/8/1.htm">悬疑灵异</a></li>
+        <li><a id="leixing9" href="http://www.bxwx2.org/type/9/1.htm">玄幻其他</a></li>
+        <li><a id="update" href="http://www.bxwx2.org/zx/1.htm">最新更新</a></li>
+    </ul>
+</div>
+
+        
+    <div class="content_read" style="width: 100%;">
+        <div id="neirongDiv" class="box_con">
+            <div class="con_top">
+                <div id="page_set">
+                    <li style="position: relative; float: right;"><span style="font-size: 16px;">视觉设置：</span>
+                        <select id="bgcolor" name="bgcolor" class="stylectl">
+                            <option value="#f6f6f6" style="background-color: #e3e8f7">底色</option>
+                            <option value="#f6f6f6" style="background-color: #f6f6f6">半灰</option>
+                            <option value="#ffffff" style="background-color: #ffffff">白色</option>
+                            <option value="#e3e8f7" style="background-color: #e3e8f7">淡蓝</option>
+                            <option value="#daebfc" style="background-color: #daebfc">蓝色</option>
+                            <option value="#ebeaea" style="background-color: #ebeaea">淡灰</option>
+                            <option value="#e7e3e6" style="background-color: #e7e3e6">灰色</option>
+                            <option value="#dedcd8" style="background-color: #dedcd8">深灰</option>
+                            <option value="#d8d7d7" style="background-color: #d8d7d7">暗灰</option>
+                            <option value="#e6fae4" style="background-color: #e6fae4">绿色</option>
+                            <option value="#f9fbdd" style="background-color: #f9fbdd">明黄</option>
+                        </select>
+                        <select id="fontcolor" name="fontcolor" class="stylectl">
+                            <option value="#000000">字色</option>
+                            <option value="#000000">黑色</option>
+                            <option value="#a10d0d">红色</option>
+                            <option value="#167b0b">绿色</option>
+                            <option value="#0d3475">蓝色</option>
+                            <option value="#660000">棕色</option>
+                        </select>
+                        <select id="fontsize" name="fontsize" class="stylectl">
+                            <option value="16px">字号</option>
+                            <option value="14px">小号</option>
+                            <option value="16px">较小</option>
+                            <option value="18px">中号</option>
+                            <option value="20px">较大</option>
+                            <option value="24px">大号</option>
+                            <option value="28px">特大</option>
+                        </select>
+                        <select id="fontfamily" name="fontfamily" class="stylectl">
+                            <option value="宋体">字体</option>
+                            <option value="宋体">宋体</option>
+                            <option value="微软雅黑">微软雅黑</option>
+                            <option value="黑体">黑体</option>
+                            <option value="楷书">楷体</option>
+                            <option value="隶书">隶书</option>
+                        </select>
+                        <select id="divwidth" name="divwidth" class="stylectl">
+                            <option value="80%">宽度</option>
+                            <option value="50%">50%</option>
+                            <option value="60%">60%</option>
+                            <option value="70%">70%</option>
+                            <option value="80%">80%</option>
+                            <option value="90%">90%</option>
+                            <option value="100%">100%</option>
+                        </select>
+                    </li>
+                </div>
+                <a href="/">
+                    笔下文学</a> &gt; <a href="http://www.bxwx2.org/txt/49444/">
+                        逆天神魂</a> &gt;
+                第十七章 再见朱朱
+            </div>
+            <div class="bookname">
+                <h1>
+                    第十七章 再见朱朱
+                </h1>
+            </div>
+            <div class="bottem2" style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
+                <a id="A1" href="http://www.bxwx2.org/txt/49444/33218.htm">
+                    上一章</a> &larr; <a id="A2" href="http://www.bxwx2.org/txt/49444/">章节目录</a> &rarr;
+                <a id="A3" href="http://www.bxwx2.org/txt/49444/33220.htm">
+                    下一章</a> <a class="jiarushuqian" href="###">加入书签</a>
+            </div>
+            <div id="zjneirong">
+                <p>仙田虽然如同吞噬兽的巨嘴一样不断地吞噬着云凡的极品晶石，但它的回报无疑也是巨大的，此时云凡种植于仙田之中的各种灵粹可以说已经到了收获的季节，当然，有一珠仙草除外，那就是云凡最为期待看重六株荷莲，其中五株分别为五行，另外一株则为混沌，它们虽然没有像九龙果树以及圣元草等等灵草灵树结出果实，相对几个月之前，六珠荷莲全数拔苗，而且还能看到它们独有色彩以及魂力萦绕的荷叶。</p><p>照顾仙田的任务自然被蓝凤凰所占据，而这里似乎也成了她第二居所，不过云凡并没有反对，因为有蓝凤凰的倾心照顾，云凡也少了一桩心事，而且令云凡兴奋的是，蓝凤凰给予云凡的回报可以说远远超出了云凡的想象。</p><p>那些数量相对稀少的灵粹就不用说了，有蓝凤凰以及仙田在，可以说就算数量再少的灵粹，云凡现在也可以成批培植，不过令云凡最兴奋的是，是蓝凤凰送上来的仙果，凤鸣果、圣元果、昙花果、九龙果，可以说每一种其数量都不下于十个，其中九龙果数量更是多达五十余枚，见此云凡整个人都笑得合不拢嘴，有这些灵粹在手，云凡现在可以说大批量培养高阶魂尊甚至初级魂帝，到那个时候，云凡便可以组建更加强大乃至数量更多的天元乾坤阵，对于天元乾坤阵的强悍云凡可是一直铭记于心。</p><p>不过云凡还没从当初的兴奋之中缓过神来，蓝凤凰笑着又从须弥戒之中又拿出了两个完全透明的玉瓶，透过玉瓶云凡可以看到玉瓶之中如梦似幻颇为诱人的液体，一瓶是紫蓝色如胶冻状一样的液体，而另外一瓶则是蓝宝石一样颜色的液体，不过蓝宝石液体比紫蓝色液体明显少很多，甚至只有对方的五分之一，见此云凡和其他人不禁疑惑地看着蓝凤凰。</p><p>“少爷，这一瓶是蜂皇之语”蓝凤凰指了指盛有紫蓝色液体的玉瓶说道，对于独角蜂皇独有的蜂皇之语云凡在百花谷就听说过，随即哦了一声，不过他还是对这瓶蜂皇之语的量感觉到那么一丝丝惊讶，因为这个量绝对有一升以上，也就是说这么一瓶蜂皇之语就堪比10枚以上的九龙丹，因此云凡不禁异样地看了一眼蓝凤凰。</p><p>“这一瓶是我亲自采摘灵园之中数百种的灵花和蜂皇之语精心，按照我们独角蜂独门配方酿制的灵酒”蓝凤凰笑着说道，脸色洋溢着一丝丝得意，因为这是她第一次酿制这种灵酒，以前没有那个实力，也没有那个资本，可以说现在她想要多少天蓝蜜就有多少，甚至蜂皇之语都有大量剩余，也正是如此，她才会酿制独角蜂独有的灵酒，其实她没有告诉云凡，酿制这么一瓶灵酒，消耗的蜂皇之语是她手中。</p><p>云凡虽然不清楚这种灵酒的功效，但是听到蓝凤凰口中的原料时，云凡随即可以肯定，其功效绝对不弱于云凡在失落之城得到的灵酒，从其色泽来看，甚至还远远超越了对方。</p><p>“这灵酒叫什么名字？”云凡好奇地问道。</p><p>“我们独角蜂称它为风之玉液”蓝凤凰盈盈一笑，极为优雅地说道。</p><p>“风之玉液？”云凡疑惑地看着对方，对于取这个名字云凡颇为不解，难道这还和风有关？不过也许这个风跟蜂同意吧。</p><p>“我也不清楚，祖辈这么叫，所以我也就这么叫了”蓝凤凰笑了笑说道，说着就要上前连同那些仙果一起拿给云凡，蓝凤凰现在可以说她已经成为灵园名副其实的管家，至于蓝傅那也是求之不得。</p><p>云凡除了蜂皇之语以及风之玉液接了过来之外，其他都没有接过来，现在有蓝凤凰这名管家，云凡又何尝想多此一举，自己以后有需要的话，通过与蓝凤凰的精神连接就可让蓝凤凰送来，而且云凡也相信，蓝凤凰保管这一切肯定能像照顾灵园一样。</p><p>对于云凡的信任，蓝凤凰自然感激涕零，云凡接过去之后，蓝凤凰随即将一枚记录风之玉液玉有关信息以及功效的玉简递给了云凡，当云凡的神识扫过玉简时，云凡突然有一种捡了一件次神器的感觉，不过这比次神器更加恐怖。</p><p>风之玉液准确的来说并不是灵酒，而是一种灵液，一种可以短时间提高云凡数倍实力而且没有任何副作用的灵液，云凡虽然不清楚风之玉液能提高自己多大程度的力量，这种力量又持续多长时间，但云凡对此还是尤为期待，云凡自从尝试化神丹的滋味之后，云凡就一直恋恋不忘，现在得到风之玉液，那也算是一个安慰吧。</p><p>云凡随后看了看一片欣欣向荣的灵园，不过当云凡看到灵园可以说数之不清的各种材料时，云凡随即暗忖，也许该回六贤海一趟了，自己的蓝波殿毕竟需要更多的人手，当然云凡也得尽快培养更多的丹师，只有这样，云凡才可以专心致志地准备接下来的战斗以及突破丹圣两件事情，不过突破丹圣一事恐怕为时甚远。</p><p>云凡随后又在白虎那里溜达了一圈，看了看二十余名化为人形的九阶魂兽之后，云凡和冷若心便回到了魂武境外院，当然跟他们一起出来的还有莫千秋和风剑。</p><p>当风剑再次出现在须弥境时，他的眼神突然变了，豪迈、勇气、自信，还有那种给人想一雪前耻重新崛起问鼎霸主之位的气概，当然还有比以前更甚更为犀利的锋芒，不过当云凡想到风剑刚炼化他的次神器时随即释然，如果自己，云凡恐怕也会是这样吧。</p><p>男人的魅力就在于他身体散发出来的正能量以及豪迈的气质，而作为风剑女朋友的莫千秋见此，看向风剑的眼神一失往日的大姐大形象，竟然表现出一副极其花痴的摸样，就好像一夜之间她就变成了一个小女人一样。</p><p>看到这一切的冷若心和云凡不禁相互吐了吐舌头，也许这就是女人的天性吧，不管她们再怎么强势，但是她们的内心还是愿意做一个小女人，而此时的风剑却无疑让莫千秋找到了那种感觉，哪怕自己的实力强风剑两阶。</p><p>当然风剑对于云凡突破三阶魂帝一事，除了感觉无奈之外，只能感叹云凡的妖孽，用莫千秋的话说，云凡就是一个怪胎，不能跟他比，对此，云凡只能笑着摇了摇头，冷若心亦是挽着云凡的胳膊莞尔一笑，不过从她的笑脸可以明显感觉到她的骄傲与自豪，她的男人能如此不俗，无疑是一件能让冷若心极大满足虚荣心的一件事情。</p><p>其实来到魂武境外院，云凡还是打算去看一下阳阳的，但是想到自己现在的身份以及婚宴，云凡便迟疑了，如果说云凡在刻意逃避，那也是事实，云凡是清楚阳阳对他的感情的，但云凡却真不知道该如何面对阳阳，当然除了阳阳之外，还有言行颇为大胆的罗佩佩。</p><p>不过就在云凡纠结这么一个问题的时候，天火通过传讯石命令云凡回魂境，而且直接前往魂境长老院，对于天火有事找自己云凡是很清楚的，但天火从来没有用命令的语气跟他这样说过话，因此云凡还是显得颇为好奇，也许是为了逃避阳阳一事，所以云凡直接借这个理由返回了魂境，随着云凡离开后，风剑和莫千秋似乎想享受一下迟来的二人世界，因此也借口返回了魂境。</p><p>看着三人离去的背影，冷若心并没有任何惆怅，只是对于云凡的心思略有困扰，可以说在这个世界上是最为了解云凡的心思的人，当云凡在纠结见不见阳阳的时候，冷若心已经洞察到了云凡的想法，但是她没有点破，也没表现出任何异样，直到云凡离开的时候，才重重地叹了口气，不过她似乎做了一个决定，因此当三人的身影消失之后，冷若心也走出了小楼，直奔魂武境外院的凝天洞，冷若心可以肯定，阳阳此时此刻肯定在凝天洞。</p><p>“阳阳！”冷若心拍了拍盘膝坐在石壁前，却双目呆滞无精打采的一个身着浅色一副显得有点落寞的女孩，而此人冷若心来此地的目的——阳阳。</p><p>“是你啊！”阳阳惊愕地看了冷若心一眼，对于冷若心的到来还是感觉到一些惊讶，但似乎又是预料之中，而眼睛也闪过一丝复杂的眼神，嫉妒、羡慕、叹息、伤感都有之。</p><p>“我有些话想跟你说”冷若心在阳阳身边坐了下来，笑了笑，对于冷若心亲切的笑容，阳阳没有任何拒绝，随即点了点头。</p><p>…………</p><p>当云凡进入魂境长老院时，云凡本以为除了天火以外会看到秩序会众长老，就算没有，那至少也应该可以看到他的两位师父，但让云凡惊讶的是，除了天火以及似笑非笑看着云凡走进来的，年约十六七岁的一名妙龄女子以外，云凡再也没有看到其他长老的任何身影。</p><p>不过当云凡看到天火身边那名身着火红色极为艳丽的红衣小女孩时，却突然感觉到一种熟悉的感觉，就好像在哪里看到过一样，但云凡很快否定了这个答案，因为从来没有在哪里看到过对方，除了现在。</p><p>云凡便没有将注意力放在这名小女孩子身上，毕竟人家只是一个小毛孩，而且云凡也感受不到她体内有任何力量，当然这种情况有两种，第一就是对方没有任何力量，第二则是对方是天火一样的不灭级强者，当然云凡自然不会认为这名显得有点俏皮可爱的小女孩是不灭级强者，所以直接把她归为第一种。</p><p>“大长老，你找我”云凡疑惑地看着天火。</p><p>“不是我找你，是她找你”天火神秘一笑，突然指了指身边整个人都好像被一团火红色烈焰包围的小女孩说道。</p><p>“她？”云凡指了指对方，目瞪口呆地说道，云凡觉得这个玩笑是有生以来最无聊的玩笑，因为她跟对方根本没有任何交集，而且自己大男人一个，跟一个毛孩子有什么交集啊。</p><p>“不错，就是她”天火认真地说道。</p><p>再次得到天火肯定的回答之后，云凡不得不接受了这么一个现实，但是这么一个小女孩找自己有什么事啊，云凡百思不得其解，难道让自己做保姆？想到这里，云凡突然打了一个冷战。</p><p>“好好看我，难道你不认识我了吗？”小女孩俏皮地向云凡眨了眨眼，白里透红的脸蛋让人忍不住喜欢。</p><p>“你是……”云凡虽然有点熟悉的感觉，但还是找不到任何有关于她的印象和记忆。</p><p>“她现在是秩序会的名誉长老，朱长老”天火提醒着云凡。</p><p>“朱长老？”云凡更为疑惑了，秩序会什么时候跟其他宗门家族一样，也搞这么一出拉，不过当他听到朱这个字时，云凡突然圆睁着双眼，看向小女孩的眼神愈发不可思议起来。</p><p>“我就是朱朱，难道你不认识我拉？”朱朱咯咯笑了笑。</p><p>“朱朱？你？你……”云凡虽然想到了这个答案，但被对方确定之后，云凡顿时手足无措起来，不是惶恐不安，而是一种难以言语却不得不相信的事实，这种心情真的没法形容。</p><p>“我突破了，所以我可以化形拉，怎么样？漂亮吗？”朱朱说着还转了转，同时还抖动了一下她那犹如烈焰一样的火红色长裙，不过真如她所说的那样，确实漂亮，但云凡绝对没有恋*童癖，所以只能笑着点了点头，不过想到朱朱突破之时，云凡顿时明白感觉不到朱朱的任何力量了，不是朱朱没有，而是朱朱已经凝聚始源世界，成就不灭级强者。</p><p>“对了，你怎么会成为秩序会的名誉长老”云凡疑惑地问道。</p><p>“没什么，别人给我好处，我总不能什么都不做吧”朱朱俏皮地笑了笑，说着用眼神余光看了看一旁暗自得意的天火，云凡虽然不知道天火用什么收买了朱朱，但想到这次叫自己来，云凡突然有一种不好的预感，就感觉自己被出卖或者像一件物品一样被交易了一样。</p><p>“大……”云凡刚刚想问大长老，可是当他叫出‘大’字之时，云凡的话随即被天火打断，天火看着朱朱说道“朱朱，云凡我给你找着了，你有什么事情你跟她说吧，我就走了”，天火根本没有给予云凡说话的机会，就好像逃似的迅速逃离了现场，就好像他自己做了什么鸡鸣狗盗之事一样。</p><p>“朱朱，你告诉我这一切到底怎么回事？”云凡一脸痛苦地看着朱朱说道，对于这一切云凡百思不得其解。</p><p>“没什么啊，以前我不是说我闭关了吗？”朱朱看着云凡说道，听到这里云凡随即点了点头。</p><p>“可是我闭关出来之后，我怎么找也找不着你，所以最好他出现了”朱朱继续说道，朱朱所说的他自然是天火。</p><p>“后来呢？”云凡问道，朱朱闭关出来应该就是他闭关突破的这几个月，但是这跟天火又有什么关系。</p><p>“别打断我”朱朱嗔怒地看了云凡一眼，云凡随即紧闭上嘴巴，朱朱这才满意地继续说道“我找你，怎么都找不到你，所以我就在你以前住过的地方到处找，可是这个时候他出现了”</p><p>“他问我在找什么，我说我在找你，他就接着说他知道你在什么地方，不过他说不能无缘无故地告诉我，因为担心这样会害了你，我就继续问他：‘你到底要怎么样才能告诉’，他又接着说，只有我成为什么秩……，对了，秩序会的名誉长老才能告诉我，所以我就成为你们秩序会的名誉长老了，不过他说话倒也算话，几天就把你找来了”朱朱绘声绘色地说道，说到最后就好像自己做了一件极其聪明的事情一样。</p><p>“朱朱，那么你知道秩序会名誉长老要做什么吗？”云凡此时才明白，天火借自己拉了一名帮手，不过天火这个行为确实有那么点欺骗小孩子的感觉，这也难怪他刚才走的时候像逃跑一样了。</p><p>“知道啊，打一个，打一个坏蛋”朱朱无所谓地说道，对于这件事，她似乎根本没有想过。</p><p>当云凡听到这个答案之后，越发觉得天火有那么点无耻，这要是别人知道了，不知道会怎么想，不过这也怪不得他，谁让杨无忧实在过于强悍，如果有朱朱的加入，兵伐混乱深渊确实可以多好几成胜算，因此就算云凡知道不妥，但也不会反对天火的做法，就算其他长老知道了，恐怕也只会赞赏天火的做法。</p><p>“走吧，跟我去一个地方”朱朱见云凡发愣，随即拉了一把云凡，朱朱看似娇弱，力量却根本不是云凡所能媲美的那种，朱朱这么一拉，云凡不禁踉跄了一下。</p><p>“去哪里？”云凡问道。</p><p>“无尽火狱”朱朱笑了笑，而云凡自然没得选择，因为他是这次的交易品，同样曾经他也答应过朱朱。</p>
+                <div>
+                    <br />
+                    <p id="xuanchuan" style="color: red;">
+                    </p>
+                    <br />
+                </div>
+            </div>
+            <div class="bottem2" style="margin-left: auto; margin-right: auto; width: 100%; text-align: center;">
+                <a id="shangye" href="http://www.bxwx2.org/txt/49444/33218.htm">
+                    上一章</a> &larr; <a id="mulu" href="http://www.bxwx2.org/txt/49444/">章节目录</a>
+                &rarr; <a id="xiaye" href="http://www.bxwx2.org/txt/49444/33220.htm">
+                    下一章</a> <a class="jiarushuqian" href="###">加入书签</a>
+            </div>
+            <div style="width: 910px; text-align: center; margin: auto; position: relative; top: -10px;"
+                id="Ad12" class="DJ960X230">
+                <div id="zhangjieAdd21" style="width: 100%; margin: auto; display: table; min-width: 930px;">
+                    <span id="Ad21" class="DJ300X250">
+                        <script type="text/javascript">
+                            if (IsMobile == false) {
+                                var cpro_id = "u1597045";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+                            }
+                            else {
+                                var cpro_id = "u1595800";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/cm.js\" type=\"text\/javascript\"><\/script>");
+
+                            }
+                        </script>
+                    </span><span id="Ad22" class="DJ300X250">
+                        <script type="text/javascript">
+                            if (IsMobile == false) {
+                                var cpro_id = "u1594380";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+                            }
+                            else {
+                                var cpro_id = "u1595800";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/cm.js\" type=\"text\/javascript\"><\/script>");
+
+                            }
+                        </script>
+                    </span><span id="Ad23" class="DJ300X250">
+                        <script type="text/javascript">
+                            if (IsMobile == false) {
+                                var cpro_id = "u1613558";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/c.js\" type=\"text\/javascript\"><\/script>");
+                            }
+                            else {
+                                var cpro_id = "u1595800";
+                                document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/cm.js\" type=\"text\/javascript\"><\/script>");
+
+                            }
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript">
+        //加载样式
+        $(function () {
+            LoadStyle();
+        })
+        //加载样式
+        function LoadStyle() {
+            try {
+                var bgcolor = $.getCookie('bgcolor'); //背景颜色
+                if (bgcolor == '' || bgcolor == null) {
+                    bgcolor = $('#bgcolor').val();
+                    $.setCookie('bgcolor', bgcolor);
+                }
+                $('#neirongDiv').css('background-color', bgcolor);
+                $('#bgcolor').val(bgcolor);
+
+                var fontcolor = $.getCookie('fontcolor'); //字体颜色
+                if (fontcolor == '' || fontcolor == null) {
+                    fontcolor = $('#fontcolor').val();
+                    $.setCookie('fontcolor', fontcolor);
+                }
+                $('#neirongDiv').css('color', fontcolor);
+                $('#fontcolor').val(fontcolor);
+
+                var fontsize = $.getCookie('fontsize'); //字体大小
+                if (fontsize == '' || fontsize == null) {
+                    fontsize = $('#fontsize').val();
+                    $.setCookie('fontsize', fontsize);
+                }
+                $('#neirongDiv').css('font-size', fontsize);
+                $('#fontsize').val(fontsize);
+
+                var fontfamily = $.getCookie('fontfamily'); //字体
+                if (fontfamily == '' || fontfamily == null) {
+                    fontfamily = $('#fontfamily').val();
+                    $.setCookie('fontfamily', fontfamily);
+                }
+                $('#neirongDiv').css('font-family', fontfamily);
+                $('#fontfamily').val(fontfamily);
+
+                var divwidth = $.getCookie('divwidth'); //宽度
+		divwidth=980;
+                if (divwidth == '' || divwidth == null) {
+                    divwidth = $('#divwidth').val();
+                    $.setCookie('divwidth', divwidth);
+                }
+                $('#neirongDiv').css('width', divwidth);
+                $('#divwidth').val(divwidth);
+
+            } catch (e) {
+
+            }
+        }
+        $('.stylectl').change(function () {
+            var key = $(this).attr('id');
+            var value = $(this).val();
+            $.setCookie(key, value);
+
+            LoadStyle();
+        });
+    </script>
+    <script type="text/javascript">
+        //上一页，下一页，返回目录
+        $(document).keyup(function (event) {
+            var key = event.keyCode;
+            if (key == '37') {
+                if (document.getElementById("shangye") != null)
+                    window.location.href = document.getElementById("shangye").attributes["href"].value;
+            }
+            if (key == '39') {
+                if (document.getElementById("xiaye") != null)
+                    window.location.href = document.getElementById("xiaye").attributes["href"].value;
+            }
+            if (key == '13') {
+                if (document.getElementById("mulu") != null)
+                    window.location.href = document.getElementById("mulu").attributes["href"].value;
+            }
+        });
+        //预加载下页
+        function yujiazai() {
+            var xiaye = $('#xiaye').attr('href');
+            $.get(xiaye);
+        }
+        $(function () {
+            /*2秒后预加载下页*/
+            setTimeout("yujiazai()", 2000);
+        })
+    </script>
+    <script type="text/javascript">
+        $('.jiarushuqian').click(function () {
+
+            var username = $.getCookie('username');
+            var userid = $.getCookie('userid');
+            if (username == '' || userid == '' || username == null || userid == null) {
+                alert('请先登录！');
+                return;
+            }
+            username = escape(username);
+            zjname = escape(zjname);
+            $.ajax({
+                type: 'POST',
+                url: '/ashx/user.ashx',
+                data: { 'action': 'jiaShuQian', 'xsid': xsid, 'type': 0, 'zjid': zjid, 'zjname': zjname },
+                success: function (msg) {
+                    alert('加入书签成功!');
+                }
+            });
+        });
+    </script>
+    <input type="hidden" value="2014-08-14 15:33:52" />
+
+
+        <!--页面主体end-->
+        
+
+<!--页尾end-->
+
+<script type="text/javascript">
+    if (IsMobile == false) {
+        document.write('<script src="http://j.77power.com/adscpv/i.php?z=72156"><\/script>');
+        //document.write('<script src="http://rwq.youle55.com/r/er_14190_6288.js"><\/script>');
+    }
+</script>
+<script type="text/javascript">
+    if (IsMobile == false) {
+        var cpro_id = "u1613575";
+        document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/f.js\" type=\"text\/javascript\"><\/script>");
+    }
+    else {
+        var cpro_id = "u1613584";
+        document.writeln("<script src=\"http:\/\/cpro.baidustatic.com\/cpro\/ui\/cm.js\" type=\"text\/javascript\"><\/script>");
+
+    }
+</script>
+<!--51.la统计-->
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/16232272.js"></script>
+<noscript>
+    <a href="http://www.51.la/?16232272" target="_blank">
+        <img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/16232272.asp"
+            style="border: none" /></a></noscript>
+
+
+<div style="margin: auto; width: 970px;">
+    <script type="text/javascript">
+        if (IsMobile == false) {
+            document.write('<script src="http://j.77power.com/adscpv/i.php?z=78852"><\/script>');
+            
+        }
+    </script>
+</div>
+
+    </div>
+</body>
+</html>
+

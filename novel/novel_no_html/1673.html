@@ -1,0 +1,2304 @@
+
+
+<!DOCTYPE html>
+<html>
+<head><meta charset="gb2312" /><link href="/css/header_v1.css" type="text/css" rel="stylesheet" /><link rel="Stylesheet" type="text/css" href="/css/UsedCarListNew_V4.css?201408211057" />
+    <script type="text/javascript">
+        function setCookie(name, value, option) { var str = name + '=' + escape(value); if (option) { if (option.expireHours) { var d = new Date(); d.setTime(d.getTime() + option.expireHours * 3600 * 1000); str += '; expires=' + d.toGMTString(); } if (option.path) str += '; path=' + option.path; else str += '; path=/'; if (option.domain) str += '; domain=' + option.domain; if (option.secure) str += '; true'; } document.cookie = str; }
+        function getCookie(name, defaultValue) { var re = new RegExp(name + '=([^;]*);?', 'gi'); var v = typeof defaultValue == "undefined" ? null : defaultValue; var r = re.exec(document.cookie) || []; return (r.length > 1 ? unescape(r[1]) : v) };
+        /* 返回跳转的url链接 部分列表页面可以跳，部分不能跳 */
+        function GetJumpUrl(url) { var reg1 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\//, reg2 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([a-z0-9]+)\//, reg3 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([a-z0-9]+)\/s(\d+)\//, reg4 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([0-9.]+)_([0-9.]+)\//, reg5 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([0-9.]+)_([0-9.]+)\//, reg6 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([a-z0-9]+)\/([0-9.]+)_([0-9.]+)\//, reg7 = /\/([A-Za-z]+[_]{0,1}[A-Za-z]*)\/([a-z]+)\/([a-z0-9]+)\/s(\d+)\/([0-9.]+)_([0-9.]+)\//, reg8 = /a([0-9]*)_([0-9]*)m([0-9]{0,2})s([0-9]{0,1})d([0-9.]{0,3})g([0-9]{0,1})s([0-9]{0,1})c([0-9]{0,2})nc([0-1]{0,1})gp([0-1]{0,1})i([0-1]{0,1})lt([0-1]{0,1})o([0-9]{0,1})c([0-9]{0,})s([0-1]{0,1})p([0-9]{0,5})ex(\w*)/;var num=url.split('/').length;var isMore=reg8.test(url);if(reg1.test(url)&&num==6&&!isMore){return url;}else if(reg2.test(url)&&num==7&&!isMore){return url;}else if(reg3.test(url)&&num==8&&!isMore){return url;}else if(reg4.test(url)&&num==6&&!isMore){return url;}else if(reg5.test(url)&&num==7&&!isMore){return url;}else if(reg6.test(url)&&num==8&&!isMore){return url;}else if(reg7.test(url)&&num==9&&!isMore){return url;}else{return'';}};
+
+        /* 智能机浏览器版本信息 */
+        var browser = { versions: function () { var u = navigator.userAgent, app = navigator.appVersion; return { trident: u.indexOf('Trident') > -1, presto: u.indexOf('Presto') > -1, webKit: u.indexOf('AppleWebKit') > -1, gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, mobile: !!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/AppleWebKit/), ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, iPad: u.indexOf('iPad') > -1, webApp: u.indexOf('Safari') == -1, QQbrw: u.indexOf('MQQBrowser') > -1, ucLowEnd: u.indexOf('UCWEB7.') > -1, ucSpecial: u.indexOf('rv:1.2.3.4') > -1, ucweb: function () { try { return parseFloat(u.match(/ucweb\d+\.\d+/gi).toString().match(/\d+\.\d+/).toString()) >= 8.2 } catch (e) { if (u.indexOf('UC') > -1) { return true; } else { return false; } } }(), Symbian: u.indexOf('Symbian') > -1, ucSB: u.indexOf('Firefox/1.') > -1 }; }() }
+        var _gaq = _gaq || []; (function (win, browser, undefined) {
+            var rf = document.referrer;
+            if (rf === "" || rf.toLocaleLowerCase().indexOf(".che168.com") === -1) {
+                var defaultJumpDomain = getCookie("defaultJumpDomain", "");
+                if (browser.versions.iPad == true||defaultJumpDomain == "www") {
+                    return;
+                }
+                else if (defaultJumpDomain == "m") {
+                    var url = location.href,
+                    curUrl = GetJumpUrl(url);
+                    window.location.href = curUrl.replace('http://www', 'http://m'); return;
+                }
+                else if (screen == undefined || screen.width < 810) {
+                    if (browser.versions.webKit == true || browser.versions.mobile == true || browser.versions.ios == true || browser.versions.iPhone == true || browser.versions.ucweb == true || browser.versions.ucSpecial == true) { win.location.href = "http://m.che168.com/tzh.html?from=pc"; return; }
+                }
+            }
+        })(window, browser);
+    </script>
+<title>
+	3-5年铃木1.1-1.6L三厢车二手车_二手车之家
+</title><meta name="description" content="二手车之家3-5年二手铃木1.1-1.6L三厢车,提供3-5年二手铃木1.1-1.6L三厢车报价,众多商家入驻,二手车车辆信息完善,选车放心、便捷,买卖二手车就上二手车之家。" /></head>
+<body>
+    
+<div id="personalmini" class="minitop">
+    <div class="mini-main">
+        <div class="mini-left">
+            <ul>
+                <li><a target="_blank" href="http://www.autohome.com.cn">&lt;&lt; 汽车之家首页</a> </li>
+                <li><span>|</span></li>
+                <li><a id="buycar" target="_blank" href="http://www.che168.com/china/list/">我要买车</a></li>
+                <li><span>|</span></li>
+                <li><a target="_blank" id="aSaleCar" href="http://i.che168.com/car/add/">我要卖车</a></li>
+                <li><span>|</span></li>
+                <li><a target="_blank" href="http://www.che168.com/pinggu/">估价</a></li>
+                <li><span>|</span></li>
+                <li><a id="needcar" target="_blank" href="http://www.che168.com/china/BuyList------p.html">求购</a></li>
+            </ul>
+        </div>
+        <div class="mini-right">
+            <ul class="frs">
+                <li class="moreli">
+                    <div class="moreli-title">
+                        <a target="_blank" href="http://app.autohome.com.cn/apps/4.html"><span>移动App</span></a>
+                    </div>
+                </li>
+                <li class="vl"></li>
+            </ul>
+            <ul class="frs">
+                <li class="moreli">
+                    <div id="qrcode" class="moreli-title">
+                        <a href="javascript:;"><i class="icon16 icon16-phone"></i><span>触屏版</span><i class="icon10 icon10-down1"></i></a>
+                    </div>
+                    <!--更多切换层开始-->
+                    <div id="qrcodephone" class="topchadiv topchadiv-dw01" style="display: none;">
+                        <div class="topchadiv-top">
+                            <div class="topchadiv-top-con"></div>
+                        </div>
+                        <div class="topchadiv-box topchadiv-box-w">
+                            <div class="topchadiv-con">
+                                <p class="mt5">手机看更方便</p>
+                                <p>
+                                    <img width="100" height="100" src="http://www.autoimg.cn/2scimg/web/website/20140506/code.png">
+                                </p>
+                                <p>扫一扫找车源</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--更多切换层结束-->
+                </li>
+                <li class="vl"></li>
+            </ul>
+            <ul class="frs">
+                <li>
+                    <div class="moreli-title">
+                        <a target="_blank" href="http://www.che168.com/FeedBack.aspx"><span>意见反馈</span></a>
+                    </div>
+                </li>
+                <li class="vl"></li>
+            </ul>
+            <ul class="frs" id="usernote">
+                <li>
+                    <div id="usertip" style="display: none;" class="moreli-title"><a target="_blank" href="http://i.che168.com/notice/"><span id="spanNotice">系统通知</span><i id="icon" style="display: none;" class="icon10 icon10-down1"></i></a></div>
+                    <div id="usertip_msg" style="display: none;" class="topchadiv topchadiv-dw03">
+                        <div class="topchadiv-top">
+                            <div class="topchadiv-top-con"></div>
+                        </div>
+                        <div class="topchadiv-box topchadiv-box-w">
+                            <div class="topchadiv-con" id="divTipContent">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="vl"></li>
+            </ul>
+            <ul class="frs frs-login" id="userinfo" style="display: none">
+                <li>
+                    <div class="moreli-title">您好！&nbsp;<a class="reda" id="usename" target="_self" href="http://i.che168.com/car/manager/"></a>&nbsp;<a id="aLogout" onclick="personalLoginOff()" href="javascript:void(0);">退出</a></div>
+                </li>
+            </ul>
+            <ul class="frs" id="nologin1">
+                <li>
+                    <div class="moreli-title"><a id="dealerLogin" target="_blank" href="http://dealer.che168.com/login.html"><span>商家登录/注册</span></a></div>
+                </li>
+                <li class="vl"></li>
+            </ul>
+            <ul class="frs frs-login" id="nologin">
+                <li id="auto-header-login" class="frs-login">
+                    <div class="moreli_title">
+                        您好！个人请 
+                        <a id="personlogin" href="http://account.che168.com/login" target="_self">登录</a>
+                        或 
+                        <a id="personRegister" href="http://account.che168.com/register" target="_self">注册</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="dealermini" class="minitop" style="display: none;">
+    <div class="mini-main">
+        <div id="login" class="con_mini">
+            <div class="mini-left">
+                你好，<span style="color: #F56B20" id="dealername"></span>！ 
+                <span>
+                    <a href="javascript:;" onclick="dealerLoginOff()">退出</a> | 
+                    <a target="_blank" href="http://dealer.che168.com/car/publish/">发布二手车</a> | 
+                    <a target="_blank" href="http://dealer.che168.com/index.html">车源管理</a> | 
+                    <a target="_blank" id="dealershop" href="/dealer/0.html">我的店铺</a>
+                </span>
+            </div>
+            <div class="mini-right">
+                <ul class="frs">
+                    <li class="moreli">
+                        <div class="moreli-title">
+                            <a target="_blank" href="http://app.autohome.com.cn/apps/4.html"><span>移动App</span></a>
+                        </div>
+                    </li>
+                    <li class="vl"></li>
+                </ul>
+                <ul class="frs">
+                    <li class="moreli">
+                        <div id="qrcode2" class="moreli-title">
+                            <a href="javascript:;"><i class="icon16 icon16-phone"></i><span>触屏版</span><i class="icon10 icon10-down1"></i></a>
+                        </div>
+                        <!--更多切换层开始-->
+                        <div id="qrcodephone2" class="topchadiv topchadiv-dw01" style="display: none;">
+                            <div class="topchadiv-top">
+                                <div class="topchadiv-top-con"></div>
+                            </div>
+                            <div class="topchadiv-box topchadiv-box-w">
+                                <div class="topchadiv-con">
+                                    <p class="mt5">手机看更方便</p>
+                                    <p>
+                                        <img width="100" height="100" src="http://www.autoimg.cn/2scimg/web/website/20140506/code.png">
+                                    </p>
+                                    <p>扫一扫找车源</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--更多切换层结束-->
+                    </li>
+                    <li class="vl"></li>
+                </ul>
+                <ul class="frs">
+                    <li>
+                        <div class="moreli-title">
+                            <a target="_blank" href="http://www.che168.com/FeedBack.aspx"><span>意见反馈</span></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var C = {
+        $: function (id) {
+            return typeof (id) == 'string' ? document.getElementById(id) : null;
+        },
+        ready : (function(){
+            var isReady = false,
+            funs = [];
+            function handle (e) {
+                if ( isReady ) {
+                    return;
+                }
+                if ( e.type === 'readystatechange' && (document.readyState !== 'interactive' && document.readyState !== 'complete') ) {
+                    return;
+                }
+                for ( var i = 0; i < funs.length; i++ ) {
+                    funs[i].call(document);
+                }
+                isReady = true;
+                funs = null;
+            }
+            if ( document.addEventListener ) {
+                document.addEventListener( 'DOMContentLoaded', handle, false );
+                document.addEventListener( 'readystatechange', handle, false );
+                document.addEventListener( 'load', handle, false );
+            }
+            else if ( document.attachEvent ) {
+                document.attachEvent( 'onreadystatechange', handle );
+                document.attachEvent( 'onload', handle );
+            }
+            return function ready (callback) {
+                if ( isReady ) {
+                    callback.call(document);
+                }
+                else {
+                    funs.push(callback);
+                }
+            };
+        }()),
+        each: function (obj, func) {
+            for (var key in obj) {
+                if (obj.hasOwnProperty(key)) func(key, obj[key]);
+            }
+        },
+        getCookie: function (name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return decodeURIComponent(c.substring(nameEQ.length, c.length));
+            } return null;
+        },
+        setCookie: function (name, value, expires, path, domain) {
+            if (!expires) expires = -1;
+            if (!path) path = "/";
+            var d = "" + name + "=" + value;
+            var e;
+            if (expires < 0) {
+                e = "";
+            }
+            else if (expires == 0) {
+                var f = new Date(1970, 1, 1);
+                e = ";expires=" + f.toUTCString();
+            }
+            else {
+                var now = new Date();
+                var f = new Date(now.getTime() + expires * 1000);
+                e = ";expires=" + f.toUTCString();
+            }
+            var dm;
+            if (!domain) {
+                dm = "";
+            }
+            else {
+                dm = ";domain=" + domain;
+            }
+            document.cookie = name + "=" + value + ";path=" + path + e + dm;
+        },
+        loadJS: function (url, fn) {
+            var ss = document.getElementsByName('script'),
+                loaded = false;
+            for (var i = 0, len = ss.length; i < len; i++) {
+                if (ss[i].src && ss[i].getAttribute('src') == url) {
+                    loaded = true;
+                    break;
+                }
+            }
+            if (loaded) {
+                if (fn && typeof fn != 'undefined' && fn instanceof Function) fn();
+                return false;
+            }
+            var s = document.createElement('script'),
+                b = false;
+            s.setAttribute('type', 'text/javascript');
+            s.setAttribute('src', url);
+            s.onload = s.onreadystatechange = function () {
+                if (!b && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) {
+                    b = true;
+                    if (fn && typeof fn != 'undefined' && fn instanceof Function) {
+                        fn();
+                    }
+                }
+            };
+            document.getElementsByTagName('head')[0].appendChild(s);
+        },
+        bind: function (objId, eventType, callBack) {
+            var obj = document.getElementById(objId);
+            if (obj.addEventListener) {
+                obj.addEventListener(eventType, callBack, false);
+            }
+            else if (window.attachEvent) {
+                obj.attachEvent('on' + eventType, callBack);
+            }
+            else {
+                obj['on' + eventType] = callBack;
+            }
+        },
+        moveBind: function (objId, eventType, callBack) {
+            var obj = C.$(objId);
+            if (obj.removeEventListener) {
+                obj.removeEventListener(eventType, callBack, false);
+            }
+            else if (window.detachEvent) {
+                obj.detachEvent('on' + eventType, callBack);
+            }
+            else {
+                obj['on' + eventType] = null;
+            }
+        }
+    };
+    C.ajax = function (args) {
+        var self = this;
+        this.options = {
+            type: 'GET',
+            async: true,
+            contentType: 'application/x-www-form-urlencoded',
+            url: 'about:blank',
+            data: null,
+            success: {},
+            error: {}
+        };
+        this.getXmlHttp = function () {
+            var xmlHttp;
+            try {
+                xmlhttp = new XMLHttpRequest();
+            }
+            catch (e) {
+                try {
+                    xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            if (!xmlhttp) {
+                alert('您的浏览器不支持AJAX');
+                return false;
+            }
+            return xmlhttp;
+        };
+        this.send = function () {
+            C.each(self.options, function (key, val) {
+                self.options[key] = (args[key] == null) ? val : args[key];
+            });
+
+            var xmlHttp = new self.getXmlHttp();
+            if (self.options.type.toUpperCase() == 'GET') {
+                xmlHttp.open(self.options.type, self.options.url + (self.options.data == null ? "" : ((/[?]$/.test(self.options.url) ? '&' : '?') + self.options.data)), self.options.async);
+            }
+            else {
+                xmlHttp.open(self.options.type, self.options.url, self.options.async);
+                xmlHttp.setRequestHeader('Content-Length', self.options.data.length);
+            }
+            xmlHttp.setRequestHeader('Content-Type', self.options.contentType);
+            xmlHttp.onreadystatechange = function () {
+                if (xmlHttp.readyState == 4) {
+                    if (xmlHttp.status == 200 || xmlHttp.status == 0) {
+                        if (typeof self.options.success == 'function') self.options.success(xmlHttp.responseText);
+                        xmlHttp = null;
+                    }
+                    else {
+                        if (typeof self.options.error == 'function') self.options.error('Server Status: ' + xmlHttp.status);
+                    }
+                }
+            };
+
+            xmlHttp.send(self.options.type.toUpperCase() == 'POST' ? self.options.data.toString() : null);
+        };
+        this.send();
+    };
+    /*获取用户提示信息*/
+    function GetUserTip() {
+        C.loadJS('/Handler/index_v1/UserTip.ashx?cd=sltuser&callback=UserTipCallBack', function () { });
+    };
+    /*用户提示信息返回处理*/
+    function UserTipCallBack(callData) {
+        if (callData.error == 1) {
+            if (callData.message.allmessage > 0) {
+                C.$('spanNotice').innerHTML = '系统通知（<span class="reda">' + callData.message.allmessage + '</span> ）';
+                var content = [];
+                if (callData.message.carstatecount > 0) {
+                    content.push('<a target="_blank" href="http://i.che168.com/notice/?t=1&amp;ref=status">网站卖的车有<span id="carstatecount" class="reda">');
+                    content.push(callData.message.carstatecount);
+                    content.push('</span>个新动态</a>');
+                }
+
+                if (callData.message.pricecount > 0) {
+                    content.push('<a target="_blank" href="http://i.che168.com/notice/?t=6&amp;ref=price">网站卖的车有<span id="pricecount" class="reda">');
+                    content.push(callData.message.pricecount);
+                    content.push('</span>个新报价</a>');
+                }
+
+                if (callData.message.qacount > 0) {
+                    content.push('<a target="_blank" href="http://i.che168.com/notice/?t=9&amp;ref=qa">我的问答有<span id="qacount" class="reda">');
+                    content.push(callData.message.qacount);
+                    content.push('</span>个新回复</a>');
+                }
+
+                C.$('divTipContent').innerHTML = content.join('');
+                C.$('usernote').style.display = '';
+                C.$('icon').style.display = '';
+                var sltArea = new TipHover('usertip', 'usertip_msg');
+                sltArea.init();
+            }
+        }
+    };
+
+    /*退出登录*/
+    function loginOff() {
+        C.$('nologin').style.display = '';
+        C.$('nologin1').style.display = '';
+        C.$('usertip').style.display = 'none';
+        C.$('userinfo').style.display = 'none';
+
+        if (C.$('rightNologin')) {
+            C.$('rightNologin').style.display = '';
+            C.$('loginUserName').style.display = 'none';
+            C.$('loginUserBlock').style.display = 'none';
+            C.$('personalLogin1').parentNode.style.display = '';
+            C.$('dealerlogin1').parentNode.style.display = '';
+        }
+    }
+
+    /*个人退出*/
+    function personalLoginOff() {
+        var logoutChe168Url = "http://account.che168.com/login/LogOut?Jsonbackvar=isLogOff&amp;date=" + new Date();
+        var logoutAutoUrl = "http://account.autohome.com.cn/login/LogOutJson?backvar=isAutoLogOff&amp;date=" + new Date();
+        C.loadJS(logoutChe168Url, function () {
+            C.loadJS(logoutAutoUrl, function () {
+                loginOff();
+                C.setCookie('clubUserShow', '', -1, '/', '.che168.com');
+                C.setCookie('pcpopclub', '', -1, '/', '.che168.com');
+            });
+        });
+    };
+    /*商家退出*/
+    function dealerLoginOff() {
+        C.loadJS('http://www.che168.com//Handler/LoginOut.ashx?async=1', function () {
+            C.$('personalmini').style.display = '';
+            C.$('dealermini').style.display = 'none';
+            loginOff();
+            C.setCookie('2scDealerInfo', '', -1, '/', '.che168.com');
+            C.setCookie('2scDealerId', '', -1, '/', '.che168.com');
+        });
+    };
+
+    /*判断登录状态 loginType: 0 未登录，1 个人用户，2 商家用户登录*/
+    var che168User = { loginType: 0, memberId: 0, dealerId: 0, userName: '' };
+    function UserInfoReader() {
+        var dealerId = C.getCookie('2scDealerId');
+        if (dealerId && dealerId > 0) {
+            che168User.dealerId = dealerId;
+            che168User.userName = C.getCookie('2scDealerName');
+            che168User.loginType = 2;
+        } else {
+            var clubusershow = C.getCookie('clubUserShow');
+
+            if (clubusershow && clubusershow.length > 10) {
+                var usersplit = clubusershow.split('|');
+                if (usersplit.length < 8) { return; }
+                che168User.memberId = usersplit[0];
+                che168User.userName = usersplit[3];
+                che168User.loginType = 1;
+            } else {
+                che168User.loginType = 0;
+            }
+        }
+
+        if (che168User.loginType == 1) {
+            C.$('dealermini').style.display = 'none';
+            C.$('personalmini').style.display = '';
+            C.$('usertip').style.display = '';
+            C.$('usename').innerHTML = che168User.userName;
+            C.$('nologin').style.display = 'none';
+            C.$('nologin1').style.display = 'none';
+            C.$('userinfo').style.display = '';
+            GetUserTip();
+        }
+        else if (che168User.loginType == 2) {
+            C.$('dealermini').style.display = '';
+            C.$('personalmini').style.display = 'none';
+            C.$('dealershop').href = '/dealer/' + che168User.dealerId + '.html';
+            C.$('dealername').innerHTML = che168User.userName;
+        }
+
+        C.$('dealerLogin').href += '?backurl=' + location.href;
+        C.$('personlogin').href += '?backurl=' + location.href;
+        C.$('personRegister').href += '?backurl=' + location.href;
+    };
+    UserInfoReader();
+
+    var SetSaleCarLink = function (tagId) {
+        var curArea = C.getCookie('userarea');
+        if (curArea == 0) curArea = C.getCookie('area');
+        var saleCarLink = "http://i.che168.com/car/add/#pvareaid=100492";
+        // 北京地区则跳转到卖车渠道选择页
+        if (curArea >= 110000 && curArea <= 110199) {
+            saleCarLink = "http://www.che168.com/sell/2.html#pvareaid=100492";
+        }
+
+        C.$(tagId).href = saleCarLink;
+    };
+
+    SetSaleCarLink('aSaleCar');
+
+    /*鼠标划过事件 显示和隐藏层事件*/
+    var TipHover = function (tgerDiv, showDiv, tgerDivClass, showDivClass, timerSeconds) {
+        var curTgerDivClass = C.$(tgerDiv).className;
+        var curshowDivClas = C.$(showDiv).className;
+        this.init = function () {
+            C.bind(tgerDiv, 'mousemove', tipMove);
+            C.bind(showDiv, 'mousemove', tip_msgMove);
+            if (typeof C.$(tgerDiv).onmouseleave != 'undefined') {
+                C.bind(tgerDiv, 'mouseleave', tipOut);
+                C.bind(showDiv, 'mouseleave', tip_msgOut);
+            }
+            else {
+                C.bind(tgerDiv, 'mouseout', tipOut);
+                C.bind(showDiv, 'mouseout', tip_msgOut);
+            }
+        };
+        /*鼠标划过移出 用户信息提示*/
+        var isuserMove = true;
+        var showtimer = null;
+        var tipMove = function () {
+            if (showtimer != null) return;
+            showtimer = setTimeout(function () {
+                if (C.$(showDiv).style.display == 'none') {
+                    C.$(showDiv).style.display = 'block';
+                    if (typeof tgerDivClass != 'undefined' && tgerDivClass.length > 0) C.$(tgerDiv).className = tgerDivClass;
+                    if (typeof showDivClass != 'undefined' && showDivClass.length > 0) C.$(showDiv).className = showDivClass;
+                    showtimer = null;
+                }
+            }, 150);
+            if (timer != null) { clearTimeout(timer); timer = null; }
+        };
+        var timer = null;
+        var tipOut = function () {
+            if (C.$(showDiv).style.display == 'none') { clearTimeout(showtimer); showtimer = null; return; }
+            if (timer != null) { clearTimeout(timer); }
+            timer = setTimeout(function () {
+                if (isuserMove) {
+                    C.$(showDiv).style.display = 'none';
+                    C.$(tgerDiv).className = curTgerDivClass;
+                    C.$(showDiv).className = curshowDivClas;
+                    clearTimeout(timer);
+                    timer = null;
+                    clearTimeout(showtimer);
+                    showtimer = null;
+                }
+            }, 100);
+        };
+        var tip_msgMove = function () {
+            isuserMove = false;
+        };
+        var tip_msgOut = function () {
+            isuserMove = true;
+            tipOut();
+        };
+    };
+
+    // 商家登录
+    if (che168User.loginType === 2) {
+        var qrcodeTip = new TipHover('qrcode2', 'qrcodephone2', 'moreli-title moreli-active');
+        qrcodeTip.init();
+    } else {
+        var qrcodeTip = new TipHover('qrcode', 'qrcodephone', 'moreli-title moreli-active');
+        qrcodeTip.init();
+    }
+</script>
+
+    
+<style type="text/css">
+.search{position:relative;float:right;margin-top:25px; z-index:202;}.search .search-box{line-height:normal;float:left;border-right:none;overflow:hidden;}.search input.search-text{color:#999999;background-color:#fff;border:2px solid #e3e3e3;border-right:0px;float:left;height:36px;line-height:36px;width:528px;padding-left:10px;}.search .search-btn{float:left;width:90px;height:40px;line-height:40px; text-align:center;font-size:18px; display:inline-block; background-color:#ff9900; font-family:"Microsoft Yahei";}.search .search-btn:link,.search .search-btn:visited{color:#ffffff;}.search .search-btn:hover{background-color:#ffbb00;}.search-pop{width:538px;border: 1px solid #ccd3e4;position: absolute;top:41px;left: 0;z-index: 200;background-color: #ffffff;}.search-pop a {display: block;height: 30px;line-height: 30px;padding: 0 15px;}.search-pop a:link,.search-pop a:visited{color:#666666;text-decoration:none;}.search-pop a:hover,.search-pop li.current a{text-decoration: none;background-color: #f2f5f8;}.search-pop a .red{color:#f84949;} .search-pop .search_history{padding:10px 15px;overflow:hidden; zoom:1;}.search-pop .title{line-height:24px;font-size:14px;color:#333333;}.search-pop .search_history li{float:left;margin-right:25px;}.search-pop .search_history li a{float:left;padding:0px; }.search-pop .history li a:hover{background:none;}.search-pop .hot .title{padding:0 15px;}.fn-left {float:left;}.fn-right {float:right;}
+.btn-deal,.btn-deal:link,.btn-deal:visited{width:78px;height:28px;line-height:28px;display:inline-block; background-color:#b1bdd6;border:1px solid #ccd3e4;color:#3b5998;float:right; text-align:center;margin:5px 0 0;font-size:14px;}
+</style>
+<div class="header">
+    <div class="search" id="autocomplateTip11">
+        <form id="souform" name="soform" onkeydown="javascript:if(event.keyCode==13) return false;return true;" action="/handler/searchclick.ashx" >
+            <input type="text" class="search-text" id="search2sc" name="kw" value="" autocomplete="off" maxlength="30" />
+            <a href="javascript:;" id="btnKeyword" class="search-btn" hidefocus="true" title="搜索">搜索</a>
+            <div id="searchpop" class="search-pop" style="display:none">
+        	<div id="search_history" class="search_history"> 
+            	<div class="title">历史搜索</div>
+                <ul id="shistory_list">
+                </ul>
+            </div>
+            <div class="hot">
+                <div id="prece_hottitle" class="title">热门推荐</div>
+                <ul id="prece_list">
+                </ul>
+             </div>
+            </div>
+            <input type="hidden" id="py" name="prov" value="china" />
+        </form>
+        <div class="search-pop" style="display: none;" id="autocomplateTip">
+        </div>
+    </div>
+    <div class="logo">
+        <a href="/">
+            <img src="http://www.autoimg.cn/che168_2sc/images/logo.png" width="155" height="55" alt="二手车之家,www.che168.com" />
+        </a>
+    </div>
+    <div id="sltArea" class="header-city">
+        <span class="city-tx" style="">
+            <a href="javascript:;">
+                <span id="sltPName"></span>
+                <em></em>
+            </a>
+        </span>
+        <div id="popBottom" class="pop pop01 citypop pop-bottom fn-hide" style="display:none;">
+            <div class="pop-content">
+                <div class="title">
+                    <a id="P_0" pid="0" onclick="SetAreaCookie(this)" href="/china/">全国</a>
+                    <a pid="440000" onclick="SetAreaCookie(this)" href="/guangdong/">广东</a>
+                    <a pid="370000" onclick="SetAreaCookie(this)" href="/shandong/">山东</a>
+                    <a pid="330000" onclick="SetAreaCookie(this)" href="/zhejiang/">浙江</a>
+                    <a pid="320000" onclick="SetAreaCookie(this)" href="/jiangsu/">江苏</a>
+                    <a pid="130000" onclick="SetAreaCookie(this)" href="/hebei/">河北</a>
+                    <a pid="410000" onclick="SetAreaCookie(this)" href="/henan/">河南</a>
+                    <a pid="110000" onclick="SetAreaCookie(this)" href="/beijing/">北京</a>
+                    <a pid="210000" onclick="SetAreaCookie(this)" href="/liaoning/">辽宁</a>
+                    <a pid="340000" onclick="SetAreaCookie(this)" href="/anhui/">安徽</a>
+                    <a pid="310000" onclick="SetAreaCookie(this)" href="/shanghai/">上海</a>
+                </div>
+                <div class="city-cont">
+                    <ul>
+                        <li>
+                            <span class="en">A</span>
+                            <div class="en-tx">
+                                <a id="P_340000" pid="340000" onclick="SetAreaCookie(this)" href="/anhui/">安徽</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">B</span>
+                            <div class="en-tx">
+                                <a id="P_110000" pid="110000" onclick="SetAreaCookie(this)" href="/beijing/">北京</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">C</span>
+                            <div class="en-tx">
+                                <a id="P_500000" pid="500000" onclick="SetAreaCookie(this)" href="/chongqing/">重庆</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">F</span>
+                            <div class="en-tx">
+                                <a id="P_350000" pid="350000" onclick="SetAreaCookie(this)" href="/fujian/">福建</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">G</span>
+                            <div class="en-tx">
+                                <a id="P_440000" pid="440000" onclick="SetAreaCookie(this)" href="/guangdong/">广东</a>
+                                <a id="P_450000" pid="450000" onclick="SetAreaCookie(this)" href="/guangxi/">广西</a>
+                                <a id="P_520000" pid="520000" onclick="SetAreaCookie(this)" href="/guizhou/list/">贵州</a>
+                                <a id="P_620000" pid="620000" onclick="SetAreaCookie(this)" href="/gansu/list/">甘肃</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">H</span>
+                            <div class="en-tx">
+                                <a id="P_460000" pid="460000" onclick="SetAreaCookie(this)" href="/hainan/list/">海南</a>
+                                <a id="P_410000" pid="410000" onclick="SetAreaCookie(this)" href="/henan/">河南</a>
+                                <a id="P_420000" pid="420000" onclick="SetAreaCookie(this)" href="/hubei/">湖北</a>
+                                <a id="P_430000" pid="430000" onclick="SetAreaCookie(this)" href="/hunan/">湖南</a>
+                                <a id="P_130000" pid="130000" onclick="SetAreaCookie(this)" href="/hebei/">河北</a>
+                                <a id="P_230000" pid="230000" onclick="SetAreaCookie(this)" href="/heilongjiang/">黑龙江</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">J</span>
+                            <div class="en-tx">
+                                <a id="P_320000" pid="320000" onclick="SetAreaCookie(this)" href="/jiangsu/">江苏</a>
+                                <a id="P_360000" pid="360000" onclick="SetAreaCookie(this)" href="/jiangxi/">江西</a>
+                                <a id="P_220000" pid="220000" onclick="SetAreaCookie(this)" href="/jilin/">吉林</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">L</span>
+                            <div class="en-tx">
+                                <a id="P_210000" pid="210000" onclick="SetAreaCookie(this)" href="/liaoning/">辽宁</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="w226">
+                        <li>
+                            <span class="en">N</span>
+                            <div class="en-tx">
+                                <a id="P_150000" pid="150000" onclick="SetAreaCookie(this)" href="/namenggu/">内蒙古</a>
+                                <a id="P_640000" pid="640000" onclick="SetAreaCookie(this)" href="/ningxia/list/">宁夏</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">Q</span>
+                            <div class="en-tx">
+                                <a id="P_630000" pid="630000" onclick="SetAreaCookie(this)" href="/qinghai/list/">青海</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">S</span>
+                            <div class="en-tx">
+                                <a id="P_610000" pid="610000" onclick="SetAreaCookie(this)" href="/shan_xi/">陕西</a>
+                                <a id="P_510000" pid="510000" onclick="SetAreaCookie(this)" href="/sichuan/">四川</a>
+                                <a id="P_310000" pid="310000" onclick="SetAreaCookie(this)" href="/shanghai/">上海</a>
+                                <a id="P_140000" pid="140000" onclick="SetAreaCookie(this)" href="/shanxi/list/">山西</a>
+                                <a id="P_370000" pid="370000" onclick="SetAreaCookie(this)" href="/shandong/">山东</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">T</span>
+                            <div class="en-tx">
+                                <a id="P_120000" pid="120000" onclick="SetAreaCookie(this)" href="/tianjin/">天津</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">X</span>
+                            <div class="en-tx">
+                                <a id="P_540000" pid="540000" onclick="SetAreaCookie(this)" href="/xizang/list/">西藏</a>
+                                <a id="P_650000" pid="650000" onclick="SetAreaCookie(this)" href="/xinjiang/list/">新疆</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">Y</span>
+                            <div class="en-tx">
+                                <a id="P_530000" pid="530000" onclick="SetAreaCookie(this)" href="/yunnan/list/">云南</a>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="en">Z</span>
+                            <div class="en-tx">
+                                <a id="P_330000" pid="330000" onclick="SetAreaCookie(this)" href="/zhejiang/">浙江</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <span class="pop-bottom pop-arrow"></span>
+        </div>
+    </div>
+</div>
+<div class="nav">
+    <div class="nav-cont">
+        <a id="grtdpst" href="/bail/china.html" class="btn-deal" target="_blank" style="display:none">成交领奖</a>
+        <div class="nav-main">
+            <ul id="tagNav">
+                <li>
+                    <a id="a_home" href="/china/">首页
+                        <em></em>
+                    </a>
+                </li>
+                <li>
+                    <a id="a_sale" href="/china/list/">买车
+                        <em></em>
+                    </a>
+                </li>
+                <li>
+                    <a id="sltPubilcCar" href="/SelectRelease.aspx">卖车
+                        <em></em>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pinggu/">估价
+                        <em></em>
+                    </a>
+                </li>
+                <li>
+                    <a id="a_buy" href="/china/BuyList------p.html">求购
+                        <em></em>
+                    </a>
+                </li>
+                <li>
+                    <a href="/list/news.html">攻略
+                        <em></em>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<input id="sltType" type="hidden" value="2" />
+<input id="isshowarea" type="hidden" value="1" />
+<script type="text/javascript">
+    /*设置页头选中项*/
+    function setCurrentIndex() {
+        var curIndex = C.$('sltType').value;
+        if (curIndex > 0) {
+            var tagNavs = C.$('tagNav').getElementsByTagName('li');
+            tagNavs[curIndex - 1].className = 'current';
+        }
+        if (curIndex == 2) {
+            C.$('souform').target = '_self';
+        }
+    };
+    setCurrentIndex();
+
+    /* 
+    -----------------智能搜索 ------------------
+    */
+    /* 搜索提交 */
+    function onSearch() {
+        var form = C.$("souform");
+        var val = form.getElementsByTagName("input")[0].value;
+        val = val.replace(/(^\s*)(\s*$)/g, "");
+        val = val.replace(/(<|>)/g, "");
+        C.$('searchpop').style.display = 'none';
+        form.getElementsByTagName("input")[0].value = val;
+        form.target = C.$('sltType').value != 2 ? '_blank' : '_self';
+        if (C.$('prece_list').getElementsByTagName('li').length > 0) {
+            addSearchHistory(0, 0, val);
+        }
+        form.submit();
+    };
+    function searchSumbit() {
+        var search2scObj = document.getElementById('search2sc');
+        if (search2scObj.value == search2scObj.origval) search2scObj.value = '';
+        onSearch();
+    };
+    function searchBoxEvt(e) {
+        var search2scObj = C.$('search2sc');
+        if (search2scObj.value == search2scObj.origval)
+            search2scObj.value = '';
+
+        //处理键盘的“上”、“下”、“回车”键
+        e = window.event || e;
+        var keyCode = e.keyCode || e.which || e.charCode;
+        if (C.$('searchpop').style.display == '' && C.$('search_history').style.display == 'none' && C.$('prece_list').childNodes.length>0) {
+            var shistory_list = C.$('prece_list').childNodes;
+            var index = 0;
+            var curli = null;
+            for (; index < shistory_list.length; index++) {
+                curli = shistory_list[index];
+                if (curli.className.indexOf('current') < 0) {
+                    curli = null;
+                    continue;
+                }
+                break;
+            }
+            switch (keyCode) {
+                case 13:
+                    if (curli) {
+                        if (document.all) {
+                            curli.firstChild.click();
+                        } else if (document.createEvent) {
+                            var ev = document.createEvent('MouseEvents');
+                            ev.initEvent('click', false, true);
+                            curli.firstChild.dispatchEvent(ev);
+                        }
+                    }
+                    else {
+                        onSearch();
+                    }
+                    return;
+                case 38:
+                    if (curli != null) {
+                        index--;
+                        curli.className = curli.className.replace('current');
+                    }
+                    else {
+                        index = shistory_list.length - 1;
+                    }
+                    if (index < 0)
+                        index = shistory_list.length - 1;
+                    curli = shistory_list[index];
+                    curli.className = curli.className + ' current';
+                    C.$('search2sc').value = curli.childNodes[0].childNodes[1].nodeValue;
+                    return;//向上
+                case 40:
+                    if (curli != null) {
+                        index++;
+                        curli.className = curli.className.replace('current');
+                    }
+                    else {
+                        index = 0;
+                    }
+                    if (index >= shistory_list.length)
+                        index = 0;
+                    curli = shistory_list[index];
+                    curli.className = curli.className + ' current';
+                    C.$('search2sc').value = curli.childNodes[0].childNodes[1].nodeValue;
+                    return;//向下
+            }
+        } else if (keyCode == 13) {
+            onSearch();
+            return;//回车
+        }
+
+        C.ajax({
+            url: ['/handler/searchperception.ashx?kw=', search2scObj.value, '&prov=', C.$('py').value].join(''),
+            success: function (data) {
+                if (data) {
+                    var result = eval('(' + data + ')');
+                    showSearchList(result);
+                }
+            }
+        });
+
+    };
+
+    function showSearchList(data) {
+        C.$('searchpop').style.display = '';
+        if (data.kw != C.$('search2sc').value)
+            return;
+
+        var _blankpage = C.$('sltType').value != 2;
+
+        C.$('search_history').style.display = data.kw == '' ? '' : 'none';
+        C.$('prece_hottitle').style.display = data.kw == '' ? '' : 'none';
+
+        C.$('shistory_list').innerHTML = '';
+        C.$('prece_list').innerHTML = '';
+        if (C.$('search_history').style.display != 'none') {
+            var history = getSearchHistory();
+            if (history.length != 0) {
+                var hcontent = [];
+                for (var i = 0; i < history.length; i++) {
+                    var item = history[i].split('|');
+                    var name = item[2].split(' ');
+                    if (name.length > 1) { name[0] = ''; }
+                    name = name.join(' ');
+                    hcontent = hcontent.concat(['<li><a href="/handler/searchclick.ashx?id=', item[0], '&tag=', item[1], '&prov=', C.$('py').value, '&kw=', item[2], '" target="', (_blankpage ? '_blank' : '_self'),'">', name, '</a></li>']);
+                }
+                C.$('shistory_list').innerHTML = hcontent.join('');
+            } else {
+                C.$('search_history').style.display = 'none';
+            }
+        }
+
+        function showPrice(min, max) {
+            if (min <= 0 && max <= 0)
+                return '';
+            if (min <= 0)
+                return max + '万以内 ';
+            if (min == max)
+                return max + '万左右 ';
+            return [min, '-', max, '万 '].join('');
+        }
+        function showNumfound(num) {
+            if (num < 1)
+                return '该地区暂无在售车源';
+            return ['  （约有', num, '个车源）'].join('');
+        }
+        var content = [];
+        for (var i = 0; i < data.list.length; i++) {
+            var item = data.list[i];
+            content = content.concat(['<li><a onclick="addSearchHistory(', item.id, ',', item.typetag, ',\'', item.keyword, '\')" kw="', item.keyword, '" href="/handler/searchclick.ashx?id=', item.id, '&tag=', item.typetag, '&prov=', C.$('py').value, '&kw=', data.kw, '" target="', (_blankpage ? '_blank' : '_self'), '"><span class="fn-right"><span class="red">', showPrice(item.minprice, item.maxprice), '</span>', showNumfound(item.numfound), '</span>', item.keyword, '</a></li>']);
+        }
+        if (content.length == 0) {
+            C.$('searchpop').style.display = 'none';
+        } else {
+            C.$('prece_list').innerHTML = content.join('');
+        }
+    }
+    /* 搜索记录 */
+    function addSearchHistory(id, tag, kw) {
+        var history = getSearchHistory();
+        var item = [id, '|', tag, '|', kw].join('');
+        for (var i = 0; i < history.length; i++) {
+            if (history[i] == item)
+                history[i] = null;
+        }
+        history = [item].concat(history);
+        var newlist = [];
+        for (var i = 0; i < history.length; i++) {
+            if (history[i] != null && history[i] != '')
+                newlist.push(history[i]);
+        }
+        if (newlist.length > 7)
+            newlist.length = 7;
+        C.setCookie('searchhistory', encodeURIComponent(newlist.join(',')), 24 * 60 * 60 * 30, '/', '.che168.com');
+        return false;//避免ie6下的click事件导致href跳转失效
+    }
+    function getSearchHistory() {
+        var history = decodeURIComponent(C.getCookie('searchhistory') || '').split(',');
+        if (history == null || (history.length == 1 && history[0] == ''))
+            return [];
+        return history;
+    }
+    /* 搜索 */
+    function searchChe168() {
+        var search2scObj = document.getElementById('search2sc');
+        search2scObj.origval = '请输入车辆名称 如：' + ('速腾 或 suteng,森林人,biaozhi408 或 408,凯越 或 kaiyue,宝马5系 或 5xi,马6 或 m6'.split(',')[parseInt(Math.random() * 5)]);
+        if (search2scObj.value == '') {
+            search2scObj.value = search2scObj.origval;
+        }
+        C.bind('search2sc', 'keyup', searchBoxEvt);
+        C.bind('search2sc', 'focus', searchBoxEvt);
+
+        C.bind('search2sc', 'blur', function () {
+            if (document.activeElement.id != "btnKeyword") {
+                if (search2scObj.value == '') search2scObj.value = search2scObj.origval;
+            }
+        });
+        C.bind('btnKeyword', 'click', searchSumbit);
+
+        var getEvent = function () {
+            if (document.all) {
+                return window.event; //如果是ie
+            }
+            func = getEvent.caller;
+            while (func != null) {
+                var arg0 = func.arguments[0];
+                if (arg0) {
+                    if ((arg0.constructor == Event || arg0.constructor == MouseEvent)
+        || (typeof (arg0) == "object" && arg0.preventDefault && arg0.stopPropagation)) {
+                        return arg0;
+                    }
+                }
+                func = func.caller;
+            }
+            return null;
+        };
+        var docClick = function () {
+            var evt = getEvent();
+            if(evt){
+                var curobj = evt.srcElement || evt.target;
+                while (curobj) {
+                    if (typeof curobj.tagName == 'undefined' || curobj.tagName.toLowerCase() == 'body') {
+                        C.$('searchpop').style.display = 'none';
+                        break;
+                    }
+                    if (curobj.id == 'searchpop' || curobj.id == 'btnKeyword' || curobj.id == 'search2sc')
+                        break;
+                    curobj = curobj.parentNode;
+                }
+            }
+        }
+        var doc = document.body;
+        if (doc.addEventListener) {
+            doc.addEventListener('click', docClick, false);
+        }
+        else if (window.attachEvent) {
+            doc.attachEvent('onclick', docClick);
+        }
+        else {
+            doc['onclick'] = docClick;
+        }
+    };
+    searchChe168();
+    /*
+    --------------智能搜索end----------------
+    */
+
+    /*判断是否加载渠道选择链接,设置页头地区,更改页头地区连接*/
+    function setSltPublicCarUrl() {
+        var curArea = C.getCookie('userarea');
+        if (curArea == null) curArea = 0;
+        var a_usearea = C.$("P_" + curArea);
+        if (a_usearea != null) {
+            C.$('sltPName').innerHTML = a_usearea.innerHTML;
+            var areapinyin = a_usearea.href.replace('list/','');
+            if (areapinyin.length > 0) {
+                C.$('a_home').href = areapinyin;
+                C.$('a_sale').href = areapinyin + 'list/';
+                C.$('a_buy').href = areapinyin + 'BuyList------p.html';
+            }
+            if (C.$('buycar')!=null) {
+                C.$('buycar').href = areapinyin + 'list/';
+            }
+            if (C.$('needcar') != null) {
+                C.$('needcar').href = areapinyin + 'BuyList------p.html';
+            }
+            areapinyin = areapinyin.substring(0, areapinyin.lastIndexOf('/'));
+            C.$('py').value = areapinyin.substring(areapinyin.lastIndexOf('/')+1);
+        }
+        var dealerId = C.getCookie('2scDealerId');
+        if (dealerId==0||dealerId == '' || dealerId == null) {
+            if (curArea == 0) curArea = C.getCookie('area');
+            if (curArea >= 110000 && curArea <= 110199) {
+                document.getElementById('sltPubilcCar').href = '/sell/2.html';
+            }
+        }
+    };
+    setSltPublicCarUrl();
+
+    /*设置是否显示选择地区*/
+    function HeaderSelectArea() {
+        var sltArea = document.getElementById('isshowarea');
+        if (sltArea.value == 1) {
+            var miniUserInfo = new TipHover('sltArea', 'popBottom');
+            miniUserInfo.init();
+        }
+        else {
+            document.getElementById('sltArea').style.display = 'none';
+        }
+    };
+    HeaderSelectArea();
+
+    /*设置用户地区cookie*/
+    function SetAreaCookie(obj) {
+        var userArea = obj.getAttribute('pid');
+        C.setCookie('userarea', userArea, 24 * 60 * 60 * 365, '/', '.che168.com');
+    };
+
+    /*设置保证金链接*/
+    function setGuaranteeDeposit() {
+        C.$('grtdpst').href = '/bail/' + C.$('py').value + '.html';
+    }
+    setGuaranteeDeposit();
+
+    C.ready(function () {
+        new C.ajax({
+            url: '/handler/applyforclaims.ashx?action=getnumfound&prov=' + C.$('py').value,
+            success: function (data) { C.$('grtdpst').style.display = data && data > 0 ? '' : 'none';}
+        });
+    });
+</script>
+
+    <div class="content">
+        <div id="ad_960_01" class="ad-box" style="display: none;"></div>
+        <div class="grid-740">
+            
+
+<input id="filterInfo" value=area=china&brand=lingmu&ls=&spec=0&minPrice=0&maxPrice=0&minRegisteAge=3&maxRegisteAge=5&MileageId=0&disp=2&stru=2&gb=0&color=5&source=0&listview=0&sell=0&newCar=0&credit=0&sort=1&ex=c0t0p0w0r0u0e0s0a1o0i0 type="hidden"/>
+<input id="filterUrl" value=/china/a3_5msd2gs2c5ncgp1ilto1cspex/ type="hidden"/>
+
+<input id="mcarsmswords" value="铃木、3-5年" type="hidden" />
+<input id="mcarsmsurl" value="area=china&brand=lingmu&ls=&spec=0&minPrice=0&maxPrice=0&minRegisteAge=3&maxRegisteAge=5&MileageId=0&disp=2&stru=0&gb=0&color=0&source=0&listview=0&sell=0&newCar=0&credit=0&sort=0&ex=c0t0p0w0r0u0e0s0a0o0i0" type="hidden" />
+
+<div id="a1" class="carfliter-box">
+    <div class="carfliter-result">
+        <div id="carfilter_box" class="result-box">
+            <div class="result-fl">您已选择：</div>
+            <div class="ch-cond">
+                <a href="javascript:;" onclick="showCustomMCarMsg()" class="subscriber btn btn-org">订阅条件<em class="icon-arrow"></em></a>
+                <div id="CurConditions" class="a-list">
+                    <a href="/china/a3_5msd2gs2c5ncgp1ilto1cspex/" title="铃木"><span class="fn-left">铃木</span><span class="close"></span></a><a href="/china/lingmu/a0_0msd2gs2c5ncgp1ilto1cspex/" title="3-5年"><span class="fn-left">3-5年</span><span class="close"></span></a><a href="/china/lingmu/a3_5msdgs2c5ncgp1ilto1cspex/" title="1.1L-1.6L"><span class="fn-left">1.1L-1....</span><span class="close"></span></a><a href="/china/lingmu/a3_5msd2gsc5ncgp1ilto1cspex/" title="三厢"><span class="fn-left">三厢</span><span class="close"></span></a><a href="/china/lingmu/a3_5msd2gs2cncgp1ilto1cspex/" title="红色"><span class="fn-left">红色</span><span class="close"></span></a><a href="/china/list/" class="clearfont" onclick="C.setCookie('userarea','0',24 * 60 * 60 * 365,'/','.che168.com')">清除全部条件</a>
+                    <div class="clearfloat"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="condition">
+        <ul id="SelectedConditions" class="condition-ul">
+            
+            <li>
+                <div class="name-dt">省&nbsp;&nbsp;份</div>
+                <div class="cond-dd">
+                    <div class="select cond-select sel-index1">
+                        <div id="sh_tsltArea" class="select-selected">
+                            <span>
+                                <input id="tsltArea" class="txt-search" value="填写或选择城市" type="text" autocomplete="off" />
+                            </span>
+                            <i id="i_tsltArea" class="icon10-down1"></i>
+                        </div>
+                        <div id="keySearchArea" class="used-search-pop" style="display:none;">
+                        </div>
+                        <div id="sh_tsltArea_pop" class="pop pop01 citypop2" style="display: none;" >
+                         </div>
+                    </div>
+                    <span class="carcity">
+            
+                    <span class="name-dt-sm">经济圈</span>
+            
+                    <a href="/jingjinji/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/">京津冀</a>
+            
+                    <a href="/jiangzhehu/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/">江浙沪</a>
+            
+                    <a href="/guangshen/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/">广深</a>
+            
+                    <a href="/yunguichuan/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/">云贵川</a>
+            
+                    </span>
+                </div>
+            </li>
+            
+            <li>
+                <div class="name-dt">选&nbsp;&nbsp;车</div>
+                <div class="cond-dd">
+                <div id="cbrandlist" class="select cond-select sel-index2">
+                <div id="sh_sltBscsCar" class="select-selected">
+                        <span>
+                            <input id="sltBscsCar" name="kw" class="txt-search" type="text" origval="铃木" autocomplete="off">
+                        </span>
+                        <i id="i_sltBscsCar" class="icon10 icon10-down1"></i> 
+                </div>
+                <div id="sh_sltBscsCar_pop" class="selectpo-width" style="display:none;">
+                    <div class="selectpop ass-items ">
+                    <div id="ctlWidth" class="selectpop-box fn-clear">
+                        <div>
+                             <a id="pCarClose" class="icon16 icon16-close" href="javascript:void(0);"></a>
+                        </div>
+                        <div class="selectpop-box-prov" data-type="left"><h4 class="title-prov">请选择品牌</h4>
+                            <div id="pletters" class="selectpop-cont-btn fn-left">
+                                <a href="javascript:void(0);" btag="A">A</a>
+                                <a href="javascript:void(0);" btag="B">B</a>
+                                <a href="javascript:void(0);" btag="C">C</a>
+                                <a href="javascript:void(0);" btag="D">D</a>
+                                <a href="javascript:void(0);" btag="F">F</a>
+                                <a href="javascript:void(0);" btag="G">G</a>
+                                <a href="javascript:void(0);" btag="H">H</a>
+                                <a href="javascript:void(0);" btag="J">J</a>
+                                <a href="javascript:void(0);" btag="K">K</a>
+                                <a href="javascript:void(0);" btag="L">L</a>
+                                <a href="javascript:void(0);" btag="M">M</a>
+                                <a href="javascript:void(0);" btag="N">N</a>
+                                <a href="javascript:void(0);" btag="O">O</a>
+                                <a href="javascript:void(0);" btag="Q">Q</a>
+                                <a href="javascript:void(0);" btag="R">R</a>
+                                <a href="javascript:void(0);" btag="S">S</a>
+                                <a href="javascript:void(0);" btag="W">W</a>
+                                <a href="javascript:void(0);" btag="X">X</a>
+                                <a href="javascript:void(0);" btag="Y">Y</a>
+                                <a href="javascript:void(0);" btag="Z">Z</a>
+                            </div>
+                            <div class="selectpop-prov-cont fn-clear">
+                            <div id="pbrandlist" class="selectpop-cont-main prov-width-01">
+                               
+                            </div>
+                            </div>
+                        </div>
+                        <div id="pseriesblock" class="selectpop-box-prov" style="display: none;" data-type="right">
+                            <h4 class="title-prov">请选择车系</h4>
+                            <div class="selectpop-prov-cont fn-clear">
+                            <div id="pserieslist" class="selectpop-cont-main prov-width-01"> </div>
+                            </div>
+                            </div>
+                            <div id="pspecblock" class="selectpop-box-prov" style="display: none;" data-type="right">
+                            <h4 class="title-prov">请选择车型</h4>
+                            <div class="selectpop-prov-cont fn-clear">
+                            <div id="pspeclist" class="selectpop-cont-main prov-width-01"> </div>
+                        </div>
+</div>
+                    </div>
+                    </div>
+                </div>
+                <div id="keySearchBscs" class="used-search-pop" style="display:none;">
+
+                </div>
+                </div>
+                <span id="historysearch" class="carcity overflow">
+                    <span class="name-dt-sm">您看过</span>
+                </span>
+                </div>
+            </li>
+            
+            <li>
+                <div class="name-dt">价&nbsp;&nbsp;格</div>
+                <div class="cond-dd">
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/" class="azonic">不限</a>
+                    
+                    <span class="unclick" title="没有车源">3万以下</span>
+                    
+                    <span class="unclick" title="没有车源">3-5万</span>
+                    
+                    <a href="/china/lingmu/5_8/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100509" >5-8万</a>
+                    
+                    <a href="/china/lingmu/8_10/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100509" >8-10万</a>
+                    
+                    <span class="unclick" title="没有车源">10-15万</span>
+                    
+                    <span class="unclick" title="没有车源">15-20万</span>
+                    
+                    <span class="unclick" title="没有车源">20-30万</span>
+                    
+                    <span class="unclick" title="没有车源">30-50万</span>
+                    
+                    <span class="unclick" title="没有车源">50万以上</span>
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspexu1/#pvareaid=100508" class="morea">自选<em class="icon-triangle"></em></a>
+                    
+                </div>                
+            </li>
+            
+            <li>
+                <div class="name-dt">级&nbsp;&nbsp;别</div>
+                <div class="cond-dd">
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/" class="azonic">不限</a>
+                    
+                    <span class="unclick" title="没有车源">微型车</span>
+                    
+                    <span class="unclick" title="没有车源">小型车</span>
+                    
+                    <a href="/china/lingmu/a/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100510" >紧凑型</a>
+                    
+                    <span class="unclick" title="没有车源">中型车</span>
+                    
+                    <span class="unclick" title="没有车源">中大型</span>
+                    
+                    <span class="unclick" title="没有车源">豪华车</span>
+                    
+                    <span class="unclick" title="没有车源">MPV</span>
+                    
+                    <span class="unclick" title="没有车源">SUV</span>
+                    
+                    <span class="unclick" title="没有车源">跑车</span>
+                    
+                    <span class="unclick" title="没有车源">微面</span>
+                    
+                    <span class="unclick" title="没有车源">皮卡</span>
+                    
+                </div>
+            </li>
+            
+            <li>
+                <div class="name-dt">品&nbsp;&nbsp;牌</div>
+                <div class="cond-dd">
+                    <a href="/china/a3_5msd2gs2c5ncgp1ilto1cspex/" class="azonic">不限</a>
+                    
+                    <a href="/china/dazhong/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="大众">大众</a>
+                    
+                    <a href="/china/fengtian/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="丰田">丰田</a>
+                    
+                    <a href="/china/benchi/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="奔驰">奔驰</a>
+                    
+                    <a href="/china/bentian/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="本田">本田</a>
+                    
+                    <a href="/china/bieke/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="别克">别克</a>
+                    
+                    <a href="/china/fute/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="福特">福特</a>
+                    
+                    <a href="/china/richan/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="日产">日产</a>
+                    
+                    <a href="/china/xiandai/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="现代">现代</a>
+                    
+                    <a href="/china/xuefolan/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="雪佛兰">雪佛兰</a>
+                    
+                    <a href="/china/mazida/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="马自达">马自达</a>
+                    
+                    <a href="/china/qiya/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511"  title="起亚">起亚</a>
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100511" class="current" title="铃木">铃木</a>
+                    
+                    <span class="opmore opmore-zindex2"><a id="brandmore" href="javascript:;" class="morea">更多<em class="icon-triangle"></em></a>
+                    <div id="brandmoreexpand" class="pop pop01 brand-pop" style="display:none;">
+                        <div class="pop-content">
+                            <div class="brand-cont">
+                                <dl>
+                                </dl>
+                            </div>
+                        </div>
+                        <span class="pop-bottom pop-arrow"></span>
+                    </div>
+                    </span>
+                    <script type="text/javascript">
+                        new TipHover('brandmore', 'brandmoreexpand').init();
+                    </script>
+                    
+                </div>                
+            </li>
+            
+            <li>
+                <div class="name-dt">车&nbsp;&nbsp;系</div>
+                <div class="cond-dd">
+
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/" class="azonic">不限</a>
+            
+                        <a href="/china/lingmu/tianyusx4/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100512"  title="天语 SX4">天语 SX4</a>
+                    
+                </div>                
+            </li>
+            
+            <li>
+                <div class="name-dt">车&nbsp;&nbsp;龄</div>
+                <div class="cond-dd">
+                
+                    <a href="/china/lingmu/a0_0msd2gs2c5ncgp1ilto1cspex/#pvareaid=100513" class="azonic">不限</a>
+                
+                    <span class="unclick" title="没有车源">1年内</span>
+                
+                    <span class="unclick" title="没有车源">2年内</span>
+                
+                    <span class="unclick" title="没有车源">3年内</span>
+                
+                    <a href="/china/lingmu/a0_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100513" >5年内</a>
+                
+                    <a href="/china/lingmu/a0_8msd2gs2c5ncgp1ilto1cspex/#pvareaid=100513" >8年内</a>
+                
+                    <a href="/china/lingmu/a0_10msd2gs2c5ncgp1ilto1cspex/#pvareaid=100513" >10年内</a>
+                
+                    <span class="opmore  opmore-zindex4"><a id="sh_age" href="javascript:;" toggleClass="icon-triangle-up" onclick="listCommon.crtShowItem=this;" class="morea">自定义<em class="icon-triangle"></em></a>
+                        <div id="sh_age_pop" class="pop pop01 custom-pop" style="display:none">
+                            <div class="pop-content">
+                                <input id="minage" type="text" value="3" class="input" maxlength="2" onkeydown="return event && event.keyCode && ((event.keyCode >=48 && event.keyCode<=59)||(event.keyCode >=96 && event.keyCode<=105)||event.keyCode==8||event.keyCode==9||event.keyCode==37||event.keyCode==39||event.keyCode==46) ? true : false">
+                                <span class="cus-tx">至</span>
+                                <input id="maxage" type="text" value="5" class="input" maxlength="2" onkeydown="return event && event.keyCode && ((event.keyCode >=48 && event.keyCode<=59)||(event.keyCode >=96 && event.keyCode<=105)||event.keyCode==8||event.keyCode==9||event.keyCode==37||event.keyCode==39||event.keyCode==46) ? true : false">
+                                <span class="cus-tx">年</span><a href="##" onclick="location.href=''.replace(/a\d+\_\d+/,'a'+Math.min(parseInt($('#minage').val()||'0'),parseInt($('#maxage').val()||'0'))+'_'+Math.max(parseInt($('#minage').val()||'0'),parseInt($('#maxage').val()||'0')));" class="btn btn-gray fn-left">确定</a>  
+                            </div>
+                            <span class="pop-bottom pop-arrow"></span>
+                        </div>
+                    </span>
+                </div>                
+            </li>
+            
+            <li >
+                <div class="name-dt">排&nbsp;&nbsp;量</div>
+                <div class="cond-dd">
+                    
+                    <a href="/china/lingmu/a3_5msdgs2c5ncgp1ilto1cspex/" class="azonic">不限</a>
+                    
+                    <span class="unclick" title="没有车源">1.0L及以下</span>
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100515" class="current">1.1L-1.6L</a>
+                    
+                    <a href="/china/lingmu/a3_5msd3gs2c5ncgp1ilto1cspex/#pvareaid=100515" >1.7L-2.0L</a>
+                    
+                    <span class="unclick" title="没有车源">2.1L-2.5L</span>
+                    
+                    <span class="unclick" title="没有车源">2.6L-3.0L</span>
+                    
+                    <span class="unclick" title="没有车源">3.1L-4.0L</span>
+                    
+                    <span class="unclick" title="没有车源">4.0L以上</span>
+                    
+                </div>
+            </li>
+            
+            <li class="li-all">
+                
+                <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspexe1o21/">里程</a>
+                
+                <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspexe4o23/">变速箱</a>
+                
+                <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspexe127/" class="alla">展开全部条件<span>（驱动、结构、颜色）</span><em class="icon-triangle"></em></a>             
+            </li>
+            
+        </ul>
+    </div>
+</div>
+
+
+            <div class="clearfloat"></div>
+            
+
+
+<div id="a3" class="tab tab02">
+    <div class="tab-nav tab-navborder">
+        <span class="choice choice-sm" 
+            onclick="javascript:location.href='/china/lingmu/a3_5msd2gs2c5ncgp1ilt1o1csp1ex/'"></span>
+        <span class="morecar">共找到<span class="col-f9">3</span>辆车</span>
+        <ul id="carOwnerType">
+            
+            <li class="current">
+                <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspex/#pvareaid=100519">全部车源</a>
+            </li>
+            
+            <li >
+                <a href="/china/lingmu/a3_5ms3d2gs2c5ncgp1ilto1cspex/#pvareaid=100520">认证车源</a>
+            </li>
+            
+            <li >
+                <a href="/china/lingmu/a3_5ms2d2gs2c5ncgp1ilto1cspex/#pvareaid=100521">商家车源</a>
+            </li>
+            
+            <li >
+                <a href="/china/lingmu/a3_5ms1d2gs2c5ncgp1ilto1cspex/#pvareaid=100522">个人车源</a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div id="tab-1" class="tab-content-item current">
+            
+            <div class="all-source">
+                <div id="filter_labelbox" class="lable-box">
+                    
+                    <label class="lable ">
+                        <input type="checkbox"   
+                            onclick="javascript:location.href = '/china/lingmu/a3_5msd2gs2c5ncgpilto1cspexw1/#pvareaid=100518'">原厂质保</label>
+                    
+                    <label class="lable ">
+                        <input type="checkbox" checked="checked"  
+                            onclick="javascript:location.href = '/china/lingmu/a3_5msd2gs2c5ncgpilto1cspex/#pvareaid=100518'">延长质保</label>
+                    
+                    <label class="lable ">
+                        <input type="checkbox"   
+                            onclick="javascript:location.href = '/china/lingmu/a3_5msd2gs2c5nc1gp1ilto1cspex/#pvareaid=100518'">准新车</label>
+                    
+                    <label class="lable ">
+                        <input type="checkbox"   
+                            onclick="javascript:location.href = '/china/lingmu/a3_5msd2gs2c5ncgp1ilto1cspexp1/#pvareaid=100518'">只看有图</label>
+                    
+                    <label class="lable ">
+                        <input type="checkbox"   
+                            onclick="javascript:location.href = '/china/lingmu/a3_5msd2gs2c5ncgp1i1lto1cspex/#pvareaid=100518'">只看在售</label>
+                    
+                </div>
+
+                <div id="filter_sort" class="sorting">
+                    <span class="sorting-name"><a href="/china/lingmu/a3_5msd2gs2c5ncgp1iltocspex/"  >默认排序</a></span>
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto2cspex/#pvareaid=100523" class="current" title="价格倒序">
+                        <span class="fn-left">价格</span>
+                        <em class="icon-point "></em></a>
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto3cspex/#pvareaid=100524"  title="车龄升序">
+                        <span class="fn-left">车龄</span>
+                        <em class="icon-point "></em></a>
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto5cspex/#pvareaid=100525"  title="里程升序">
+                        <span class="fn-left">里程</span>
+                        <em class="icon-point "></em></a>
+                    
+                    <a href="/china/lingmu/a3_5msd2gs2c5ncgp1ilto8cspex/#pvareaid=100526"  title="发布日期倒序">
+                        <span class="fn-left">日期</span>
+                        <em class="icon-point "></em></a>
+                    
+                </div>
+                <script type="text/javascript">var ina=false;</script>
+                <div id="a2" class="piclist">
+                    <ul>
+                    
+                        <li onmouseover="this.className='current';$('#item1707337_1,#item1707337_2').show();if(typeof ina == undefined || !ina){$('#item1707337_3').show().parent().addClass('cur');}" onmouseout="this.className='';$(this).find('.pic-titbg,.pic-tit,.pop.pop01.icon-pop').hide().parent().removeClass('cur')">
+                            <div class="pic">
+                    
+                                <span class="pic-titbg2"></span>
+                                <span class="pic-tit2">该车已售出</span>
+                                <span class="pop-btn"><a href="/heilongjiang/lingmu/tianyusx4/a0_0msdgscncgpi1ltocspex/" class="btn btn-org">找相似</a></span>
+                    
+                                <a href="/dealer/77888/1707337.html#pvareaid=100519" target="_blank">
+                                    <img name="lazyloadImg" src="http://www.autoimg.cn/che168_2sc/images/noBorderPic120X90.gif" src2="http://www.autoimg.cn/2scimg/2013/11/26/m_5162527700532211573.jpg" width="220" height="165" title="天语 SX4 2009款 三厢 1.6L 自动豪华型" onerror="javascript:this.src='http://www.autoimg.cn/che168_2sc/images/nopic/errorPic240X180.jpg';"></a>
+                            </div>
+                            <div class="title"><a href="/dealer/77888/1707337.html#pvareaid=100519" title="天语 SX4 2009款 三厢 1.6L 自动豪华型" target="_blank">天语 SX4 2009款 三厢 1.6L 自动豪华型</a></div>
+                            <div class="detail">
+                                <div class="detail-r">
+                                    ￥<span class="colf8">6.50</span>万
+                                </div>
+                                <div class="detail-l">
+                                    <p>里程：7.8万公里</p>
+                                    <p>年份：2009年</p>
+                                </div>
+                            </div>
+                            <div class="icon-list">
+                                <span class="city">哈尔滨</span>
+                                
+                                <a href="/help.html#4" target="_blank" onmouseover="$(this).parent().find('.pop.pop01.icon-pop').hide();$('#item1707337_3').show();ina=true;" onmouseout="ina=false;$('#item1707337_3').hide()">
+                                    <i class="icon20 icon20-yscrew"></i>
+                                    <div id="item1707337_3" class="pop pop01 icon-pop" style="display:none;">
+                                        <div class="pop-content">商家提供延长质保</div>
+                                        <span class="pop-bottom pop-arrow2 "></span>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                        </li>
+                        
+                        <li onmouseover="this.className='current';$('#item1375419_1,#item1375419_2').show();if(typeof ina == undefined || !ina){$('#item1375419_3').show().parent().addClass('cur');}" onmouseout="this.className='';$(this).find('.pic-titbg,.pic-tit,.pop.pop01.icon-pop').hide().parent().removeClass('cur')">
+                            <div class="pic">
+                    
+                                <span class="pic-titbg2"></span>
+                                <span class="pic-tit2">该车已售出</span>
+                                <span class="pop-btn"><a href="/sichuan/lingmu/tianyusx4/a0_0msdgscncgpi1ltocspex/" class="btn btn-org">找相似</a></span>
+                    
+                                <a href="/dealer/119447/1375419.html#pvareaid=100519" target="_blank">
+                                    <img name="lazyloadImg" src="http://www.autoimg.cn/che168_2sc/images/noBorderPic120X90.gif" src2="http://www.autoimg.cn/2scimg/2013/9/5/m_4847738088862086763.jpg" width="220" height="165" title="天语 SX4 2009款 三厢 1.6L 自动豪华型" onerror="javascript:this.src='http://www.autoimg.cn/che168_2sc/images/nopic/errorPic240X180.jpg';"></a>
+                            </div>
+                            <div class="title"><a href="/dealer/119447/1375419.html#pvareaid=100519" title="天语 SX4 2009款 三厢 1.6L 自动豪华型" target="_blank">天语 SX4 2009款 三厢 1.6L 自动豪华型</a></div>
+                            <div class="detail">
+                                <div class="detail-r">
+                                    ￥<span class="colf8">6.90</span>万
+                                </div>
+                                <div class="detail-l">
+                                    <p>里程：3万公里</p>
+                                    <p>年份：2009年</p>
+                                </div>
+                            </div>
+                            <div class="icon-list">
+                                <span class="city">成都</span>
+                                
+                                <a href="/help.html#4" target="_blank" onmouseover="$(this).parent().find('.pop.pop01.icon-pop').hide();$('#item1375419_3').show();ina=true;" onmouseout="ina=false;$('#item1375419_3').hide()">
+                                    <i class="icon20 icon20-yscrew"></i>
+                                    <div id="item1375419_3" class="pop pop01 icon-pop" style="display:none;">
+                                        <div class="pop-content">商家提供延长质保</div>
+                                        <span class="pop-bottom pop-arrow2 "></span>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                        </li>
+                        
+                        <li onmouseover="this.className='current';$('#item293887_1,#item293887_2').show();if(typeof ina == undefined || !ina){$('#item293887_3').show().parent().addClass('cur');}" onmouseout="this.className='';$(this).find('.pic-titbg,.pic-tit,.pop.pop01.icon-pop').hide().parent().removeClass('cur')">
+                            <div class="pic">
+                    
+                                <span class="pic-titbg2"></span>
+                                <span class="pic-tit2">该车已售出</span>
+                                <span class="pop-btn"><a href="/jiangsu/lingmu/tianyusx4/a0_0msdgscncgpi1ltocspex/" class="btn btn-org">找相似</a></span>
+                    
+                                <a href="/dealer/67989/293887.html#pvareaid=100519" target="_blank">
+                                    <img name="lazyloadImg" src="http://www.autoimg.cn/che168_2sc/images/noBorderPic120X90.gif" src2="http://www.autoimg.cn/2sc/0/293/293887/m_69c6_473f2428_473f2428.jpg" width="220" height="165" title="天语 SX4 2009款 三厢 1.6L 自动豪华型" onerror="javascript:this.src='http://www.autoimg.cn/che168_2sc/images/nopic/errorPic240X180.jpg';"></a>
+                            </div>
+                            <div class="title"><a href="/dealer/67989/293887.html#pvareaid=100519" title="天语 SX4 2009款 三厢 1.6L 自动豪华型" target="_blank">天语 SX4 2009款 三厢 1.6L 自动豪华型</a></div>
+                            <div class="detail">
+                                <div class="detail-r">
+                                    ￥<span class="colf8">8.80</span>万
+                                </div>
+                                <div class="detail-l">
+                                    <p>里程：2万公里</p>
+                                    <p>年份：2009年</p>
+                                </div>
+                            </div>
+                            <div class="icon-list">
+                                <span class="city">无锡</span>
+                                
+                                <a href="/help.html#4" target="_blank" onmouseover="$(this).parent().find('.pop.pop01.icon-pop').hide();$('#item293887_3').show();ina=true;" onmouseout="ina=false;$('#item293887_3').hide()">
+                                    <i class="icon20 icon20-yscrew"></i>
+                                    <div id="item293887_3" class="pop pop01 icon-pop" style="display:none;">
+                                        <div class="pop-content">商家提供延长质保</div>
+                                        <span class="pop-bottom pop-arrow2 "></span>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                        </li>
+                        
+                        <li class="line"></li>
+                        
+                    </ul>
+                    <div class="clearfloat"></div>
+                    <div class="page">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div class="grid-240">
+            <div class="member">
+  <div id="loginUserName" class="member-name">
+    您好！<span id="username1" class="col-red"></span>
+  </div>
+  <div id="loginUserBlock" class="member-login">
+    <div id="personalLoginBlock" style="display:none;" class="login-list">
+      <a target="_blank" class="first" href="http://i.che168.com/car/manager/">
+        <strong id="ctransManage">0</strong>
+        交易管理
+      </a>
+      <a target="_blank" href="http://i.che168.com/collection/">
+        <strong id="cfavoriteAndBuy">0</strong>
+        收藏求购
+      </a>
+      <a target="_blank" href="http://i.che168.com/qa/">
+        <strong id="cquestion">0</strong>
+        我的问答
+      </a>
+    </div>
+    <div id="dealerLoginBlock" style="display:none;" class="login-list">
+      <a target="_blank" class="first" href="http://dealer.che168.com/message/noreply/">
+        <span class="icon-box">
+          <em class="icon-one"></em>
+          <div id="cleaveMessage" class="pop-num" style="display:none;">0</div>
+        </span>
+        店铺留言
+      </a>
+      <a target="_blank" href="http://dealer.che168.com/car/carlist/">
+        <span class="icon-box">
+          <em class="icon-two"></em>
+          <div id="ccarManager" class="pop-num" style="display:none;">0</div>
+        </span>
+        车源管理
+      </a>
+      <a target="_blank" href="http://dealer.che168.com/selltrail/quotedprice/">
+        <span class="icon-box">
+          <em class="icon-three"></em>
+          <div id="csalesLeads" class="pop-num" style="display:none;">0</div>
+        </span>
+        销售线索
+      </a>
+    </div>
+  </div>
+  <div class="member-login-ul" id="rightNologin">
+    <ul>
+      <li style="display: none;">
+        <a id="personalLogin1" target="_blank" href="http://account.che168.com/login#pvareaid=100490">
+          <em class="icon-person"></em>
+          个人中心
+        </a>
+      </li>
+      <li style="display: none;">
+        <a id="dealerlogin1" target="_blank" href="http://dealer.che168.com/login.html#pvareaid=100491">
+          <em class="icon-merchant"></em>
+          商家入口
+        </a>
+      </li>
+      <li>
+        <a id="isfreecar1" target="_blank" href="http://i.che168.com/car/add/?isfree=1#pvareaid=100492">
+          <em class="icon-free"></em>
+          免费卖车
+        </a>
+      </li>
+      <li>
+        <a id="modifycar1" target="_blank" href="http://i.che168.com/freecar/#pvareaid=100493">
+          <em class="icon-amend"></em>
+          我卖的车
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script type="text/javascript">
+  /*加载个人或者商家信息*/
+  var LoadUserInfo = function () {
+  /*加载个人信息*/
+  var loadPersonal = function () {
+  C.ajax({
+  url: '/Handler/index_v1/UserTip.ashx?cd=mgemsg', success: function (data) {
+  data = eval('(' + data + ')');
+  if (data && data.error == 1) {
+  if (data.message.quotecarsell > 0) {
+  C.$('ctransManage').innerHTML = data.message.quotecarsell;
+  }
+  if (data.message.buyfavorite > 0) {
+  C.$('cfavoriteAndBuy').innerHTML = data.message.buyfavorite;
+  }
+  if (data.message.qanswer > 0) {
+  C.$('cquestion').innerHTML = data.message.qanswer;
+  }
+  }
+  }
+  });
+  };
+
+  /*加载商家信息*/
+  var loadDealer = function () {
+  if (che168User.dealerId > 0) {
+  C.ajax({
+  url: '/Handler/index_v1/UserTip.ashx?cd=dlmsg', success: function (data) {
+  data = eval('(' + data + ')');
+  if (data && data.error == 1) {
+  if (data.message.carcount > 0) {
+  C.$('ccarManager').innerHTML = data.message.carcount;
+  C.$('ccarManager').style.display = 'block';
+  }
+  if (data.message.qpcount > 0) {
+  C.$('csalesLeads').innerHTML = data.message.qpcount;
+  C.$('csalesLeads').style.display = 'block';
+  }
+  if (data.message.unread.result.UnReadCount > 0) {
+  C.$('cleaveMessage').innerHTML = data.message.unread.result.UnReadCount;
+  C.$('cleaveMessage').style.display = 'block';
+  }
+  }
+  }
+  });
+  }
+  };
+
+  /*加载用户信息*/
+  this.loadUserInfo = function () {
+  if (che168User) {
+  SetSaleCarLink('isfreecar1');
+  if (che168User.loginType == 1) {
+  C.$('username1').innerHTML = che168User.userName;
+  C.$('modifycar1').href = 'http://i.che168.com/car/manager/?isalonecar=1';
+  C.$('personalLoginBlock').style.display = 'block';
+  loadPersonal();
+  }
+  else if (che168User.loginType == 2) {
+  C.$('username1').innerHTML = che168User.userName;
+  C.$('isfreecar1').href = 'http://dealer.che168.com/car/publish/';
+  C.$('modifycar1').href = 'http://dealer.che168.com/car/carlist/';
+  C.$('dealerLoginBlock').style.display = 'block';
+  loadDealer();
+  }
+  else {
+  C.$('loginUserBlock').style.display = 'none';
+  C.$('loginUserName').style.display = 'none';
+  C.$('personalLogin1').parentNode.style.display = 'block';
+  C.$('dealerlogin1').parentNode.style.display = 'block';
+  }
+  };
+  };
+  this.loadUserInfo();
+  };
+  var loadUI = new LoadUserInfo();
+</script>
+
+<div id="guess" class="sm-part1">
+    <h3>您可能感兴趣的</h3>
+    <div class="piclist interest-piclist">
+        <ul>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function loadRecommendCar() {
+        /*根据个人sessionId取关注车系*/
+        if (!C.getCookie('SessionSeries')) {
+            var sessionId = C.getCookie('sessionid');
+            if (!sessionId) {
+                sessionId = '';
+            }
+            $.ajax({
+                url: '/handler/CarList/GetSeriesBySessionId.ashx',
+                data: 'session=' + sessionId,
+                success: function (data) {
+                    C.setCookie('SessionSeries', data, 43200, null, '.che168.com');
+                    loadRecommendCar2(data);
+                }
+            });
+        }
+        else {
+            loadRecommendCar2('');
+        }
+    }
+
+    function loadRecommendCar2(sessionSeries) {
+        var session = sessionSeries;
+        if (session == '')
+            session = C.getCookie('SessionSeries');
+
+        var url = [
+            '/handler/CarList/RecommendCar.ashx?',
+            'ie=', $.ie,
+            '&session=', session,
+            '&py=china',
+            '&PId=0',
+            '&CId=0',
+            '&BId=53',
+            '&SId=0',
+            '&JBId=0',
+            '&Max=0',
+            '&Min=0'
+        ].join('');
+
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            success: function (data) {
+                if (data && data.length > 0) {
+                    var content = $('#guess ul');
+                    $(data).each(function (i, item) {
+                        item.url = item.url.replace('?pvareaid=', '#pvareaid=');
+                        var html = [
+                            '<li><div class="pic"><a href="', item.url, '" target="_blank">',
+                            '<img src="', item.pic, '" title="', brandnamefilter(item.carname), '" width="220" height="165" onerror="javascript:this.src=\'http://www.autoimg.cn/che168_2sc/images/nopic/errorPic240X180.jpg\';"></a></div>',
+                            '<div class="title"><a href="', item.url, '" title="', brandnamefilter(item.carname), '" target="_blank">', brandnamefilter(item.name), '</a></div>',
+                            '<div class="detail"><div class="detail-r">￥<span class="colf8">', item.price, '</span>万</div>',
+                            '<div class="detail-l"><p>里程：', item.mileage, '万公里</p><p>年份：', item.year, '年</p></div></div></li>',
+                            i+1!=data.length?'<li class="line"></li>':''
+                        ].join('');
+                        content.append(html);
+                    });
+                } else {
+                    var content = $('#guess').hide();
+                }
+            }
+        });
+    }
+</script>
+
+            
+
+<div id="viewHistory" class="sm-part1" style="display:none">
+    <h3>我浏览过的</h3>
+    <ul class="scan">
+    </ul>
+</div>
+
+<script type="text/javascript">
+    var historyInit = false;
+    function historyOfBrowseShow() {
+        var infoids = [];
+        var nextInfoIdx = -1;
+        var loadCarInfo = function () {
+            //一个一个加载，保证显示的先后顺序
+            nextInfoIdx++;
+            if (nextInfoIdx >= infoids.length || nextInfoIdx >= 6)
+                return;
+
+            $.ajax({
+                url: '/handler/usedcarlistv4.ashx?action=carinfo&infoids=' + infoids[nextInfoIdx],
+                dataType: 'text',
+                success: function (result) {
+                    data = eval('(' + result + ')');
+                    if (data && data.length > 0) {
+                        var content = $('#viewHistory ul');
+                        $(data).each(function (i, item) {
+                            item.url = item.url + '#pvareaid=100527';
+                            var html = [
+                                '<li><h4>',
+                                '<a href="', (item.companyid > 0 ? '/dealer/' + item.companyid + '/' : '/personal/'), item.infoid, '.html" title="', brandnamefilter(item.name), '" target="_blank">', brandnamefilter(item.name), '</a>',
+                                '</h4><p class="scan-tx"><a href="', item.url, '" class="similarity">找相似</a>￥<span class="colf8">', item.price, '</span>万</p></li>'
+                            ].join('');
+                            content.append(html);
+                        });
+                        loadCarInfo();
+                        $("#viewHistory").show();
+                    }
+                }
+            });
+        };
+        
+        if (!historyInit) {
+            historyInit = true;
+            var infoid = C.getCookie('UsedCarBrowseHistory');
+            if (infoid != "" && infoid != null) {
+                infoids = infoid.split(',');
+                loadCarInfo();
+            }
+            else {
+                $("#viewHistory").hide();
+            }
+        }
+    }
+
+</script>
+
+            
+<div class="sm-part1">
+    <h3>高关注度车系</h3>
+    <ul class="carline">
+        
+        <li><i class="num num-org">1</i><a href="/china/aodi/aodia6l/#pvareaid=100528" title="奥迪A6L" target="_blank">奥迪A6L</a></li>
+        
+        <li><i class="num num-org">2</i><a href="/china/baoma/baoma5xi/#pvareaid=100528" title="宝马5系" target="_blank">宝马5系</a></li>
+        
+        <li><i class="num num-org">3</i><a href="/china/baoma/baoma3xi/#pvareaid=100528" title="宝马3系" target="_blank">宝马3系</a></li>
+        
+        <li><i class="num ">4</i><a href="/china/bentian/yage/#pvareaid=100528" title="雅阁" target="_blank">雅阁</a></li>
+        
+        <li><i class="num ">5</i><a href="/china/fute/fukesi/#pvareaid=100528" title="福克斯" target="_blank">福克斯</a></li>
+        
+        <li><i class="num ">6</i><a href="/china/dazhong/pasate/#pvareaid=100528" title="帕萨特" target="_blank">帕萨特</a></li>
+        
+        <li><i class="num ">7</i><a href="/china/aodi/aodia4l/#pvareaid=100528" title="奥迪A4L" target="_blank">奥迪A4L</a></li>
+        
+        <li><i class="num ">8</i><a href="/china/fengtian/kaimeirui/#pvareaid=100528" title="凯美瑞" target="_blank">凯美瑞</a></li>
+        
+    </ul>
+</div>
+
+            
+<div class="sm-part1">
+    <h3>高关注车型</h3>
+    <ul class="carline">
+        
+        <li><i class="num num-org">1</i><a href="/china/baoshijie/kayan/s7697/#pvareaid=100529" title="卡宴 2011款 Cayenne 3.0T" target="_blank">卡宴 2011款 Cayenne 3...</a></li>
+        
+        <li><i class="num num-org">2</i><a href="/china/fengtian/puladuojinkou/s6066/#pvareaid=100529" title="普拉多(进口) 2010款 2.7L 自动豪华版" target="_blank">普拉多(进口) 2010款 2...</a></li>
+        
+        <li><i class="num num-org">3</i><a href="/china/aodi/aodia6l/s1878/#pvareaid=100529" title="奥迪A6L 2005款 2.0T 自动标准型" target="_blank">奥迪A6L 2005款 2.0T 自...</a></li>
+        
+        <li><i class="num ">4</i><a href="/china/baoma/baomax6/s5790/#pvareaid=100529" title="宝马X6 2009款 xDrive35i" target="_blank">宝马X6 2009款 xDrive3...</a></li>
+        
+        <li><i class="num ">5</i><a href="/china/dazhong/jieda/s7286/#pvareaid=100529" title="捷达 2010款 1.6L 伙伴" target="_blank">捷达 2010款 1.6L 伙伴</a></li>
+        
+        <li><i class="num ">6</i><a href="/china/fengtian/ruizhi/s12181/#pvareaid=100529" title="锐志 2012款 2.5V 风度菁英炫装版" target="_blank">锐志 2012款 2.5V 风度...</a></li>
+        
+        <li><i class="num ">7</i><a href="/china/baoma/baoma3xi/s3994/#pvareaid=100529" title="宝马3系 2008款 320i 进取型" target="_blank">宝马3系 2008款 320i 进...</a></li>
+        
+        <li><i class="num ">8</i><a href="/china/baoshijie/kayan/s2810/#pvareaid=100529" title="卡宴 2007款 Cayenne 3.6L" target="_blank">卡宴 2007款 Cayenne 3...</a></li>
+        
+    </ul>
+</div>
+
+            <div id="ad_170_02" class="ad-box1" style="display: none;"></div>
+        </div>
+    </div>
+
+    <div class="gotop02" id="gotop" >
+        <div id="gotopchild" class="gotop02-list">
+            <a class="gotop02-con" href="http://www.che168.com/FeedBack.aspx" target="_blank">
+                <i class="icon24 icon24-book3"></i>
+                <span>意见反馈</span>
+            </a>
+             <a data-gotop="true" data-scroll="true" class="gotop02-con" href="#" style="display: block;">
+                <i class="icon24 icon24-top"></i>
+                <span>返回顶部</span>
+             </a>
+        </div>
+    </div>
+
+    <input type="hidden" value="" id="hdIsListPic" />
+    <div id="cmpContainer" class="car-contrast" style="display: none;">
+        <h3>车型对比</h3>
+        <ul id="cmpContent">
+        </ul>
+        <div class="btn-box"><a href="javascript:;" class="btn btn-org" onclick="submitCompare()">开始对比</a><a href="javascript:;" onclick="clearAllCompare();">清空</a></div>
+    </div>
+
+    
+<style type="text/css">
+.footer{ background-color:#f3f3f3;border-top:1px solid #e3e3e3;margin-top:15px;}
+.footer-cont{margin:0 auto; width:990px;padding-bottom:10px;}
+.footer-cont a:link,.footer-cont a:visited{color:#999999;}
+.footer-cont a:hover{color:#ff9900;}
+.footer-cont .footer-hd{margin-top:20px;}
+.footer-cont .footer-hd ul{overflow:hidden;}
+.footer-cont .footer-hd li{width:165px;float:left;}
+.footer-cont .footer-hd li .ft-icon{width:24px;height:24px;display:inline-block;float:left; background:url(http://www.autoimg.cn/2scimg/web/website/20140506/footer-icon.png) no-repeat;margin-right:10px;}
+.footer-cont .footer-hd li .icon-us{ background-position:0 0;}
+.footer-cont .footer-hd li .icon-guide{ background-position:0 -26px;}
+.footer-cont .footer-hd li .icon-safe{ background-position:0 -52px;}
+.footer-cont .footer-hd li .icon-tool{ background-position:0 -78px;}
+.footer-cont .footer-hd li .icon-serve{ background-position:0 -104px;}
+.footer-cont .footer-hd li .icon-answer{ background-position:0 -130px;}
+.footer-cont .footer-hd li dl{width:130px;float:left;}
+.footer-cont .footer-hd li dl dt{height:24px;line-height:24px;color:#666666;font-weight:bold;font-size:16px;margin-bottom:5px;}
+.footer-cont .footer-hd li dl dd{height:30px;line-height:30px;}
+.footer-cont .footer-ft{padding:10px 0 0 0;line-height:30px;border-top:1px solid #e3e3e3;margin-top:10px;zoom:1;}
+.footer-cont .footer-ft .overflow{overflow:hidden;}
+.footer-cont .footer-ft .span-l{width:85px;float:left;height:30px;font-size:14px; color:#666666;}
+.footer-cont .footer-ft .span-l2{width:72px;}
+.footer-cont .footer-ft .footer-ft-list{width:905px;float:left;}
+.footer-cont .footer-ft a{display:inline-block;margin-right:10px;}
+.footer-ft .footer-ft-list a.blue:link,.footer-ft .footer-ft-list a.blue:visited{color:#3b5998;}
+.footer-ft .footer-ft-list a.blue:hover{color:#ff9900;}
+.footer-cont .footer-pic{margin-top:30px; text-align:center;}
+.copyright{ background-color:#e3e3e3;}
+.copy{color:#999999; text-align:center;margin:0 auto;width:990px;line-height:28px;padding:15px 0;}
+.copy .mt10{padding-top:10px;}
+.copy .mt10 img{margin-top:-10px;}
+.copy a{margin-right:12px;}
+.copy a:link,.copy a:visited{color:#3b5998;}
+.copy a:hover{color:#d60000;}
+.copy a.col99:link,.copy a.col99:visited{color:#999999;}
+.copy a.col99:hover{color:#d60000;}
+.copy span{margin-right:12px;}
+</style>
+<div id="abtotal" class="footer">
+    <div class="footer-cont">
+        <div id="ababout" class="footer-hd">
+            <ul>
+                <li>
+                    <span class="ft-icon icon-us"></span>
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd><a target="_blank" href="/Nindex.html#pvareaid=100505" rel="nofollow">关于二手车之家</a></dd>
+                        <dd><a target="_blank" href="/nlianxi.html#pvareaid=100505" rel="nofollow">联系我们</a></dd>
+                        <dd><a target="_blank" href="/Navigation.html#pvareaid=100505" rel="nofollow">网站地图</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <span class="ft-icon icon-guide"></span>
+                    <dl>
+                        <dt>交易指南</dt>
+                        <dd><a target="_blank" href="http://www.autohome.com.cn/use/201404/755029.html#pvareaid=100505">如何买车</a></dd>
+                        <dd><a target="_blank" href="http://www.autohome.com.cn/use/201206/349934.html#pvareaid=100505">如何卖车</a></dd>
+                        <dd><a target="_blank" href="/list/792649.html#pvareaid=100505">如何过户</a></dd>
+                        <dd><a target="_blank" href="/list/792609.html#pvareaid=100505">注意事项</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <span class="ft-icon icon-safe"></span>
+                    <dl>
+                        <dt>交易安全</dt>
+                        <dd><a target="_blank" href="/list/news.html#pvareaid=100505">新手上路</a></dd>
+                        <dd><a target="_blank" href="/list/793543.html#pvareaid=100505">合同范本</a></dd>
+                        <dd><a target="_blank" href="http://www.autohome.com.cn/market/201007/128515.html#pvareaid=100505">防止诈骗</a></dd>
+                        <dd><a target="_blank" href="/list/792616.html#pvareaid=100505">识别事故及泡水车</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <span class="ft-icon icon-tool"></span>
+                    <dl>
+                        <dt>常用工具</dt>
+                        <dd><a target="_blank" href="/pinggu/#pvareaid=100505" rel="nofollow">二手车估价</a></dd>
+                        <dd><a target="_blank" href="/norm.html#pvareaid=100505" rel="nofollow">各地排放标准</a></dd>
+                        <dd><a target="_blank" href="/2sc/whole/list-0-0-1-1-1-1-0-0-0-0-0-0-0.html#pvareaid=100505" rel="nofollow">二手车大全</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <span class="ft-icon icon-serve"></span>
+                    <dl>
+                        <dt>商家服务</dt>
+                        <dd><a target="_blank" href="http://dealer.che168.com/DealerApply.aspx#pvareaid=100505" rel="nofollow">申请商家</a></dd>
+                        <dd><a target="_blank" href="http://dealer.che168.com/Manager/SalesCar.aspx#pvareaid=100505" rel="nofollow">发布车源</a></dd>
+                    </dl>
+                </li>
+                <li>
+                    <span class="ft-icon icon-answer"></span>
+                    <dl>
+                        <dt>答疑解惑</dt>
+                        <dd><a target="_blank" href="/FeedBack.aspx#pvareaid=100505" rel="nofollow">建议与投诉</a></dd>
+                        <dd><a target="_blank" href="/FeedBack.aspx#pvareaid=100505" rel="nofollow">二手车问答</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div id="abarea" class="footer-ft">
+            <div class="overflow">
+                <span class="span-l">热 门 城 市: </span>
+                <div class="footer-ft-list">
+                    <a target="_blank" href="/beijing/list/">北京二手车交易市场</a>
+                    <a target="_blank" href="/shanghai/list/">上海二手车交易市场</a>
+                    <a target="_blank" href="/guangzhou/list/">广州二手车交易市场</a>
+                    <a target="_blank" href="/shenzhen/list/">深圳二手车交易市场</a>
+                    <a target="_blank" href="/nanjing/list/">南京二手车交易市场</a>
+                    <a target="_blank" href="/zhengzhou/list/">郑州二手车交易市场</a>
+                    <a target="_blank" href="/wuhan/list/">武汉二手车交易市场</a>
+                    <a target="_blank" href="/wenzhou/list/">温州二手车交易市场</a>
+                    <a target="_blank" href="/xian/list/">西安二手车交易市场</a>
+                    <a target="_blank" href="/hangzhou/list/">杭州二手车交易市场</a>
+                    <a target="_blank" href="/tianjin/list/">天津二手车交易市场</a>
+                    <a target="_blank" href="/chongqing/list/">重庆二手车交易市场</a>
+                    <a target="_blank" href="/kunming/list/">昆明二手车交易市场</a>
+                    <a target="_blank" href="/nanning/list/">南宁二手车交易市场</a>
+                </div>
+            </div>
+            
+            <div class="overflow"><span class="span-l">各地二手车: </span><div class="footer-ft-list"><a target="_blank" href="/beijing/lingmu/">北京二手铃木</a><a target="_blank" href="/shanghai/lingmu/">上海二手铃木</a><a target="_blank" href="/guangzhou/lingmu/">广州二手铃木</a><a target="_blank" href="/shenzhen/lingmu/">深圳二手铃木</a><a target="_blank" href="/nanjing/lingmu/">南京二手铃木</a><a target="_blank" href="/zhengzhou/lingmu/">郑州二手铃木</a><a target="_blank" href="/wuhan/lingmu/">武汉二手铃木</a><a target="_blank" href="/wenzhou/lingmu/">温州二手铃木</a><a target="_blank" href="/xian/lingmu/">西安二手铃木</a><a target="_blank" href="/hangzhou/lingmu/">杭州二手铃木</a></div></div>
+        </div>
+        <div id="abfriendship" class="footer-ft">
+             <div class="overflow"><span class="span-l span-l2">推荐网站：</span><div class="footer-ft-list"><a target="_blank" href="http://www.it168.com/">IT168</a><a target="_blank" href="http://www.pcpop.com/">泡泡网</a><a target="_blank" href="http://www.chinaunix.net/">CHINAUNIX</a><a target="_blank" href="http://www.autohome.com.cn/">汽车之家</a><a target="_blank" href="http://www.qudao168.com/">渠道168</a><a target="_blank" href="http://www.che168.com/">二手车之家</a><a target="_blank" href="http://www.jimi168.com/">安卓之家</a></div></div><div class="overflow"><span class="span-l span-l2">友情链接：</span><div class="footer-ft-list"><a target="_blank" href="http://car.autohome.com.cn/">汽车报价</a><a target="_blank" href="http://www.autohome.com.cn/">汽车</a><a target="_blank" href="http://www.autohome.com.cn/chezhan/guangzhou/">广州车展</a><a target="_blank" href="http://www.autohome.com.cn/chezhan/beijing/">北京车展</a><a target="_blank" href="http://product.auto.163.com/">汽车品牌</a><a target="_blank" href="http://www.feelcars.com/">汽车探索网</a><a target="_blank" href="http://www.autofan.com.cn/">汽车之友</a><a target="_blank" href="http://auto.ynet.com/">北青网汽车</a><a target="_blank" href="http://auto.163.com/">网易汽车</a><a target="_blank" href="http://www.che168.com">二手车</a><a target="_blank" href="http://www.hx2car.com">华夏二手车网</a><a target="_blank" href="http://www.iautos.cn/">第一车网</a><a target="_blank" href="http://www.315che.com/">中国汽车消费网</a><a target="_blank" href="http://taoche.com">淘车网</a><a target="_blank" href="http://www.cn2che.com/">中国二手车城</a><a target="_blank" href="http://www.cn2che.com/">二手车</a><a target="_blank" href="http://www.vin114.net">力洋VIN识别</a><a target="_blank" href="http://www.autohome.com.cn/chezhan/chengdu/">成都车展</a><a target="_blank" href="http://www.autohome.com.cn/chezhan/falankefu/">法兰克福车展</a><a href="http://topic.pcpop.com/game2/link/index_5_2.html" class="blue" target="_blank">申请链接</a></div></div><div class="overflow"><span class="span-l span-l2">特别鸣谢：</span><div class="footer-ft-list"><a target="_blank" href="http://www.hao123.com">hao123网址之家</a><a target="_blank" href="http://hao.360.cn/">360安全网址导航</a><a target="_blank" href="http://www.2345.com/">2345网址导航</a><a target="_blank" href="http://123.sogou.com/">搜狗网址导航</a><a target="_blank" href="http://www.duba.com">毒霸网址大全</a></div></div>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <div class="copy">
+        <p class="mt10">
+            二手车之家 版权所有 
+                <a target="_blank" href="http://www.che168.com/Nindex.html">公司介绍</a>
+            <a target="_blank" href="http://www.che168.com/nlianxi.html">联系我们</a>
+            <a target="_blank" href="http://www.che168.com/Navigation.html">网站导航</a>
+            <span>
+                <a target="_blank" href="http://www.che168.com/license3.html" class="col99">【广播电视节目制作经营许可证：（京）字第1338号】</a>
+                <a target="_blank" href="http://www.che168.com/license4.html" class="col99">【乙测资字11005061】</a>
+            </span>
+            <span>
+                <img width="112" height="40" src="http://www.autoimg.cn/che168_2sc/images/footer/Integrity.gif" />
+            </span>
+        </p>
+        <p>
+            <a href="http://www.miitbeian.gov.cn/" target="_blank" class="col99">京ICP备11003899号-1</a>
+            <span>北京市公安局海淀分局网监中心备案编号：1101082002</span>
+            <a target="_blank" href="http://www.che168.com/license2.html">中国互联网协会会员单位</a>
+            <a target="_blank" href="http://www.che168.com/license1.html">电信与信息服务业务经营许可证：京ICP证110115号</a>
+        </p>
+    </div>
+</div>
+<input id="IsShowArea" type="hidden" value="1" />
+<input id="IsShowFriendShip" type="hidden" value="1" />
+<input id="IsShowAbout" type="hidden" value="1" />
+
+<script type="text/javascript">
+    function ab_IsShowOrHide() {
+        var istotalHide = true;
+        if (document.getElementById('IsShowArea').value == 0) {
+            document.getElementById('ababout').style.display = 'none';
+        } else { istotalHide = false;}
+        if (document.getElementById('IsShowFriendShip').value == 0) {
+            document.getElementById('abarea').style.display = 'none';
+        } else { istotalHide = false; }
+        if (document.getElementById('IsShowAbout').value == 0) {
+            document.getElementById('abfriendship').style.display = 'none';
+        } else { istotalHide = false; }
+        if (istotalHide) {
+            document.getElementById('abtotal').style.display = 'none';
+        }
+    }
+    ab_IsShowOrHide();
+</script>
+
+    <div id="custommcarsend" class="layer layer-subscriber width455" style="display: none">
+        <h3>订阅找车条件<a href="javascript:;" onclick="Pop.Dialog.Hide('custommcarsend')" class="layer-close"><i class="icon16 icon16-close"></i></a></h3>
+        <div class="layer-content">
+            <div class="price-part1 font14">
+                <span class="part1-l">已选条件：</span>
+                <div id="filtershow_mcarsend" class="part1-r"></div>
+            </div>
+            <div class="price-part2">
+                <ul>
+                    <li>
+                        <span class="part2-l"><span class="red">*</span>我的手机：</span>
+                        <div class="part2-r">
+                            <input id="mobile" type="text" class="input-price1 input-price2" maxlength="11" onkeydown="return event && event.keyCode && ((event.keyCode >=48 && event.keyCode<=59)||(event.keyCode >=96 && event.keyCode<=105)||event.keyCode==8||event.keyCode==9||event.keyCode==37||event.keyCode==39||event.keyCode==46) ? true : false">
+                            <span id="t_mobile" class="ml10 col99 fn-left">11位整数</span>
+                            <span class="verify-tip" style="display:none" id="v_mobile"><i class="ic-right"></i>&nbsp;</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="part2-l"><span class="red">*</span>验 证 码：</span>
+                        <div class="part2-r">
+                            <input id="mobilecode" type="text" class="input-price1 mr10" maxlength="6"><a id="mCarSMSSend" href="javascript:;" onclick="sendMCarMsg()" class="btn btn-gray fn-left btn-disabled">免费获取</a>
+                            <span class="verify-tip" style="display:none" id="v_mobilecode"><i class="ic-right"></i>&nbsp;</span>
+                            <div class="clear"></div>
+                            <div class="mt10">
+                                <div class="col99" style="display:none">系统已向您发送验证码，<br>如未收到，请联系客服010-59874131获取。</div>
+                                <span class="col99">*填写手机号表示您愿意接受该条免费短信</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="layer-bottom"><a href="javascript:;" onclick="addCustomMCarSend()" class="btn btn-org mr10">提交</a><a href="javascript:;" onclick="Pop.Dialog.Hide('custommcarsend')" class="btn btn-gray">取消</a></div>
+    </div>
+    <div id="msgnotity" class="layer layer-subscriber" style="display:none">
+      <div class="layer-content layer-win"> <span class="icon-right"></span>
+        <div class="layer-win-tx">
+          <p>订阅成功！</p>
+          <p>如果有符合您订阅的新车源，我们将在第一时间通过短信通知您。</p>
+        </div>
+      </div>
+      <div class="layer-bottom"><a href="javascript:;" class="btn btn-org" onclick="Pop.Dialog.Hide('msgnotity')">确认</a></div>
+    </div>
+
+    <script type="text/javascript">
+        //记录当前搜索条件，用于显示最近搜索
+        var curfilterForHistorySearch = ['china',53,0,0,0];
+        var curfilterForCustomBrand={brandid:53,seriesid:0,yearid:0,specid:0};
+    </script>
+    <script src="http://x.autoimg.cn/as/static/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <script src="http://x.autoimg.cn/che168/js/Lazyload.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var dtADNow = new Date();
+        document.write('<script src="http://33.autohome.com.cn/njs/10321.js?v=' + dtADNow.getFullYear() + dtADNow.getMonth() + dtADNow.getDate() + dtADNow.getHours() + parseInt(dtADNow.getMinutes() / 10) + '"></scr' + 'ipt>');
+        function Ad_Function(name) {
+            if (C.$(name)) {
+                var obj = C.$(name);
+                /* 如果内容不为空，则把子DIV层级设置成0，否则隐藏广告显示层 */
+                if (obj.innerHTML.length > 5) {
+                    if (obj.getElementsByTagName('div').length > 0) {
+                        obj.getElementsByTagName('div')[0].style.zIndex = '0';
+                    }
+                    obj.style.zIndex = '0';
+                }
+                else
+                    obj.style.display = 'none';
+            }
+        }
+        Ad_Function('ad_960_01');
+        Ad_Function('ad_170_02');
+    </script>
+    <script src="/js/UsedCarListNew_V4.js?201408211057" type="text/javascript"></script>
+    <script src="/js/dialogNew.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var imgList = document.getElementsByName("lazyloadImg");
+        var lazyload = new Lazyload({ src2: "src2", ImgList: imgList, defaultimage: "" });
+        lazyload.loaded();
+
+        loadRecommendCar();
+        
+        var canShowBrowserHistory=true;
+
+        $('#carfilter_box').parent().height($('#carfilter_box').height() + 8);
+
+        //
+        var filtertop=$('#carfilter_box').position().top-$('#ad_960_01').height();
+        $(window).scroll(function () {
+            var vtop = $(document).scrollTop();
+
+            if(vtop>0){
+                $('#gotopchild').find('a').eq(1).show();
+            }else{
+                $('#gotopchild').find('a').eq(1).hide();
+            }
+
+            if (vtop > filtertop+$('#ad_960_01').height()) {
+                $('#carfilter_box').addClass('carfliter-fixed');
+            } else {
+                $('#carfilter_box').removeClass('carfliter-fixed');
+            }
+
+            if($.browser.msie && $.browser.version==6){
+                $('#carfilter_box').css('top',vtop);
+                $('#cmpContainer').css('top',vtop+10);
+                $('#gotop').css('top',vtop+$(window).height()-$('#gotop').height()-10);
+            }
+
+            //70表示提前一点加载
+            if(canShowBrowserHistory && vtop >= $('#guess').height()+$('#guess').position().top-$(window).height()-70){
+                canShowBrowserHistory=false;
+                historyOfBrowseShow();
+            }
+
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-26038105-1']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5a373383174a999f435969fc84eef6ec' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type='text/javascript' src='http://x.autoimg.cn/che168/pv/js/pv1_2.js'></script>
+<script type='text/javascript'>
+function sendPV(){
+var pvTrack = new PVTrack();
+pvTrack.page=2003000;pvTrack.track();}
+sendPV();
+</script>
+
+</body>
+</html>
+

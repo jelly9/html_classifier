@@ -1,0 +1,497 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>腾达（Tenda） FS395 300m安全无线路由器_万林商城</title><meta name="keywords" content="万林商城_路由器" /><meta name="description" content="万林商城的:腾达（Tenda） FS395 300m安全无线路由器_商品毛重：300.00g_商城价：75元" /> 
+    <link rel="stylesheet" type="text/css" href="/U/style/all.css" />
+    <link rel="stylesheet" type="text/css" href="/U//style/xq.css" />
+
+    <script type="text/javascript" src="/U/js/jquery.js"></script>
+
+    <script type="text/javascript" src="/U/js/jquery.watermarkinput.js"></script>
+
+    <script type="text/javascript">
+        //加入购物车
+
+        $(function() {
+            //选择属性
+            $(".sx_dl a").click(function() {
+                $(this).siblings().removeClass("a_selected");
+                $(this).addClass("a_selected");
+            });
+            //立即购买
+            $("#buyRight").click(function() {
+            var shu = $(".a_selected");
+            var num = $("#txtNum").val();
+            var no = $("#gno").val();
+                var shulist = "";
+                if ($(".sx").length > 0) {
+                    if (shu.length > 0) {
+                        if (num > 0) {
+                            //获取选中的属性
+                            shu.each(function() {
+                                shulist = shulist + $(this).attr("id") + "|";
+                            });
+                            window.location.href = '/ajax/iusers/shoppingCart.ashx?action=rightBuy&goodNo=' + no + '&shopNum=' + num + '&property=' + shulist;
+
+                        } else {
+                            alert("购买个数输入有误！");
+                            return false;
+                        }
+                    } else {
+                        alert("您还没选择属性");
+                        return false;
+                    }
+                } else {
+                    if (num > 0) {
+                        window.location.href = '/ajax/iusers/shoppingCart.ashx?action=rightBuy&goodNo=' + no + '&shopNum=' + num + '&property=' + shulist;
+                    } else {
+                        alert("购买个数输入有误！");
+                        return false;
+                    }
+                }
+            });
+            $("#addShopCart").click(function() {
+                var shu = $(".a_selected");
+                var num = $("#txtNum").val();
+                var no = $("#gno").val();
+                var shulist = "";
+                if ($(".sx").length > 0) {
+                    if (shu.length > 0) {
+                        if (num > 0) {
+                            //获取选中的属性
+                            shu.each(function() {
+                                shulist = shulist + $(this).attr("id") + "|";
+                            });
+                            window.location.href = '/ajax/iusers/shoppingCart.ashx?action=addShopCart&goodNo=' + no + '&shopNum=' + num + '&property=' + shulist;
+
+                        } else {
+                            alert("购买个数输入有误！");
+                            return false;
+                        }
+                    } else {
+                        alert("您还没选择属性");
+                        return false;
+                    }
+                } else {
+                    if (num > 0) {
+                        window.location.href = '/ajax/iusers/shoppingCart.ashx?action=addShopCart&goodNo=' + no + '&shopNum=' + num + '&property=' + 0;
+                    } else {
+                        alert("购买个数输入有误！");
+                        return false;
+                    }
+                }
+            });
+
+            //评论
+            var pCount = 0;
+            $.post('/ajax/users/ProAdvisory.ashx?action=proA', { goodsNo: $("#no").val(), pageCount: pCount }, function(data) { $("#AdvisoryList").html(data) }, 'html');
+            $("#nPage").click(function() {
+                pCount++;
+                $.post('/ajax/users/ProAdvisory.ashx?action=proA', { goodsNo: $("#no").val(), pageCount: pCount }, function(data) { $("#AdvisoryList").html(data) }, 'html');
+            });
+            $("#lPage").click(function() {
+                if (pCount > 0) {
+                    pCount--;
+                }
+                $.post('/ajax/users/ProAdvisory.ashx?action=proA', { goodsNo: $("#no").val(), pageCount: pCount }, function(data) { $("#AdvisoryList").html(data) }, 'html');
+            });
+            $("#butTijiao").click(function() {
+                if ($("#txtName").val() == "") {
+                    alert("昵称不能为空");
+                    return;
+                }
+                if ($("#tContent").val() == "") {
+                    alert("咨询内容不能为空");
+                    return;
+                }
+                $.get("/ajax/users/AddProAdvisory.ashx", { proNo: $("#no").val(), txtName: $("#txtName").val(), tContent: $("#tContent").val() }, function(data, textStatus) {
+                    if (data == "1") {
+                        $("#txtName").attr("value", "");
+                        $("#tContent").attr("value", "");
+                        $.post('/ajax/users/ProAdvisory.ashx?action=proA', { goodsNo: $("#no").val(), pageCount: pCount }, function(data) { $("#AdvisoryList").html(data) }, 'html');
+                    } else if (data == "2") {
+                        window.open("/users/login.aspx", "_blank");
+                    } else if (data == "0") {
+                        alert("您已经评论过此产品！");
+                    } else if (data == "3") {
+                        alert("购买后才能评论！");
+                    }
+                    else {
+                        alert("操作频繁，稍后再试！");
+                    }
+                });
+            });
+
+        })
+
+        $(function() {
+
+            $("#content>div:not(:first)").hide();
+            $("#menu>li:not(:last)").hover(function() {
+                $("#content").children(":eq(" + $(this).index() + ")").slideDown().siblings().hide();
+                $(this).addClass().addClass("se").siblings().removeClass("se")
+            });
+
+        })
+
+        $(function() {
+            $("#menu2 ul>li:first").addClass("se2");
+            $("#con>div:not(:first)").hide();
+            $("#menu2 ul>li").hover(function() {
+                $("#con").children(":eq(" + $(this).index() + ")").show().siblings().hide();
+                $(this).addClass().addClass("se2").siblings().removeClass("se2")
+            });
+        })
+        $(function() {
+            $(".dd>div").hide();
+            $(".dd>div:first").show();
+            $(".xx>a").mouseover(function() {
+                $(".dd>div").hide().eq($(this).index()).show();
+            });
+        })
+
+        $(function() {
+            $("#menu3>li:first").addClass("se3");
+            $("#content3>div:not(:first)").hide();
+            $("#menu3>li").click(function() {
+                $("#content3").children(":eq(" + $(this).index() + ")").show().siblings().hide();
+                $(this).addClass().addClass("se3").siblings().removeClass("se3")
+            });
+        })
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $.post('/ajax/iusers/AddClick.ashx', { goodsNo: $("#gno").val() }, function (data) { }, 'html');
+            $.post("/ajax/iusers/FsHelp.ashx?action=details", { goodsNo: $("#gno").val() }, function(data) { $("#con_one_1").html(data), 'html' });
+            $.post("/ajax/iusers/FsHelp.ashx?action=zfHelp", {}, function(data) { $("#con_one_3").html(data), 'html' });
+            $.post("/ajax/iusers/FsHelp.ashx?action=PsHelp", {}, function(data) { $("#con_one_4").html(data), 'html' });
+            $.post("/ajax/iusers/FsHelp.ashx?action=Ask", {}, function(data) { $("#con_one_5").html(data), 'html' });
+            //清除浏览过的商品
+            $("#clearView").click(function() {
+                $.post('/ajax/zonghe/Viewd.ashx?action=clear', {}, function(data) { $("#Viewd").html(data) }, 'html');
+            });
+            //加载浏览过的商品
+            $.post('/ajax/users/Viewu.ashx?action=lookView', {}, function(data) { $("#Viewd").html(data) }, 'html');
+
+            $.post('/ajax/users/Viewd.ashx?action=view', { goodsNo: $("#gno").val() }, function(data) { }, 'html');
+        });
+    </script>
+
+</head>
+<body>
+    <form name="form1" method="post" action="/U/product/GoodsDetails.aspx?goodsNo=P20140625174625560" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPBRI2MzU1ODQ0ODI5MTUyMzUwOTZk7G8iJfZRw+W+Axy6DodNjaMBHig=" />
+
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgLHm/O3CgLW4Y//BCwEPEeFj/wpkbyEEy3SLftzzfjV" />
+    <input type="hidden" id="gno" value="P20140625174625560" />
+    
+
+<script type="text/javascript">
+
+    function search() {
+        if (document.getElementById("searchWord").value != "") {
+            location.href = "/u/aspx/tlist.aspx?searchWord=" + encodeURIComponent(trim(document.getElementById("searchWord").value));
+        }
+    }
+
+
+    //添加到收藏夹   
+    function AddToFavorite() {
+        if (document.all) {
+            window.external.addFavorite(parent.document.URL, parent.document.title);
+        } else if (window.sidebar) {
+            window.sidebar.addPanel(parent.document.title, parent.document.URL, "");
+        }
+    }
+
+    //设为首页   
+    function setHomepage() {
+        if (document.all) {
+            document.body.style.behavior = 'url(#default#homepage)';
+            document.body.setHomePage(parent.document.URL);
+        } else if (window.sidebar) {
+            if (window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                } catch (e) {
+                    alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项 signed.applets.codebase_principal_support 值该为true");
+                }
+            }
+            var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+            prefs.setCharPref('browser.startup.homepage', parent.document.URL);
+        }
+    }
+
+</script>
+
+<script type="text/javascript">
+    function trim(inputString) {
+        if (typeof inputString != "string") { return inputString; }
+        var retValue = inputString;
+        var ch = retValue.substring(0, 1);
+        while (ch == " ") {
+            //检查字符串开始部分的空格
+            retValue = retValue.substring(1, retValue.length);
+            ch = retValue.substring(0, 1);
+        }
+        ch = retValue.substring(retValue.length - 1, retValue.length);
+        while (ch == " ") {
+            //检查字符串结束部分的空格
+            retValue = retValue.substring(0, retValue.length - 1);
+            ch = retValue.substring(retValue.length - 1, retValue.length);
+        }
+        return retValue;
+    }
+</script>
+
+<script type="text/javascript">
+
+    $(function() {
+        $("#main2Menu>li:first").addClass("se3");
+        $("#main2Content>div:not(:first)").hide();
+        $("#main2Menu>li").hover(function() {
+            $("#main2Content").children(":eq(" + $(this).index() + ")").show().siblings().hide();
+            $(this).addClass().addClass("se3").siblings().removeClass("se3")
+        }, function() { });
+    })
+
+    $(function() {
+
+        setInterval(function() {
+            $("#zq").animate({ "top": "-23px" }, 500, function() {
+                $("#zq>li:first").appendTo("#zq");
+                $("#zq").css("top", "0");
+            });
+        }, 1000);
+    })
+    
+</script>
+
+
+<script type="text/javascript">
+    $(function() {
+        $.get("/ajax/u/gettop.ashx", null, function(data) {
+            $("#top").html(data);
+        });
+    });
+</script>
+
+<div class="top" id="top">
+    
+</div>
+<div class="header">
+    <div class="clearfix headerList">
+        <div class="left logo">
+            <a href='http://www.cct186.com'><img src="/Upfile/Logo/p201406190952456696.jpg" alt="万林商城" /></a>
+        </div>
+        <div class="left searchBb">
+            <span>客服热线：   万林 联系电话  15208871938  </span>
+            <input onclick="this.value=''" onblur="if(this.value=='')this.value='搜索商品......';"
+                id="searchWord" class="left searchTxt" type="text" onkeydown="javascript:if(event.keyCode==13){ search();return false;}" />
+            <input class="left searchBtn" type="button" value="" onclick="search();return false;" />
+        </div>
+        <div class="right bz">
+            <a href="#2" title="">
+                <img src="/u/images/bz1.png" alt="" /></a> <a href="#2" title="">
+                    <img src="/u/images/bz2.png" alt="" /></a> <a href="#2" title="">
+                        <img src="/u/images/bz3.png" alt="" /></a>
+        </div>
+    </div>
+</div>
+<div style="width: 100%">
+    <div class="nav">
+        <div class="navList" style="margin:0 auto;"> <ul id="menu"><div class='hot_right'><dl><dd><a href='http://dg.cct186.com/' target='_blank'><div class='hot'></div></a><a href='http://dg.cct186.com/' target='_blank'>兑购</a><dd><dd><a href='http://f.cct186.com/' target='_blank'><div class='new'></div></a><a href='http://f.cct186.com/' target='_blank'>分销</a><dd><dd><a href='http://f.cct186.com/Shoping/dv' target='_blank'><div class='diy'></div></a><a href='http://f.cct186.com/Shoping/dv' target='_blank'>导航</a><dd></dl></div><li><a href="http://www.cct186.com">首页</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_17'>服饰鞋帽</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_19'>礼品箱包</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_622'>高原土特产</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_18'>个护化妆</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_12'>高原特产</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_27'>母婴用品</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_26'>玩具乐器</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_13'>家居家装</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_15'>厨具用品</a><b>|</b></li><li><a href='/U/aspx/list.aspx?typeid=F_16'>电脑办公</a><b>|</b></li></ul></div>
+    </div>
+</div>
+
+    <!--start main-->
+    <div class="clearfix main">
+        <!--start mainLeft-->
+        
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        //加载浏览过的商品
+        $.post('/ajax/users/Viewd.ashx?action=lookView', {}, function(data) { $("#Viewd").html(data) }, 'html');
+        //清除浏览过的商品
+            $("#clearView").click(function() {
+                $.post('/ajax/zonghe/Viewd.ashx?action=clear', {}, function(data) { $("#Viewd").html(data) }, 'html');
+            });
+            $("#sse").click(function(){
+                if($("#txt_search").val()!=""){
+                    location.href = "/U/aspx/list.aspx?searchWord=" + $("#txt_search").val();
+                }
+            });
+    });
+</script>
+<div class="left mainLeft">
+        	        <div class="lieBiao">
+                        
+                        <div class="mainLeftTit">选择品牌</div>
+                        <ul class="pai">
+                            <li><a href='/u/aspx/tlist.aspx?pinPaiId=1237'><img alt='茜靓' src='/Upfile/Logo/huihuangone/p201309101137525711.jpg'></a><span class='right'>茜靓</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=1133'><img alt='维斯诺尔' src='/Upfile/Logo/0516hp/p201406121715217417.jpg'></a><span class='right'>维斯诺尔</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=41'><img alt='资生堂' src='/Upfile/Logo/asj88/p201406071456435883.jpg'></a><span class='right'>资生堂</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=451'><img alt='惠氏' src='/Upfile/Logo/0599bx/p201406061544285415.jpg'></a><span class='right'>惠氏</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=1169'><img alt='贝诺依' src='/Upfile/Logo/0516hp/p201406121705013198.jpg'></a><span class='right'>贝诺依</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=1703'><img alt='格黛雅' src='/Upfile/Logo/0516hp/p201406121705224605.jpg'></a><span class='right'>格黛雅</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=1684'><img alt='心牌' src='/Upfile/Logo/cg0871/p201406271929166072.jpg'></a><span class='right'>心牌</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=1685'><img alt='玫提斯' src='/Upfile/Logo/hylt888/p201406271931411072.jpg'></a><span class='right'>玫提斯</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=29'><img alt='兰蔻' src='/Upfile/Logo/asj88/p201406071456111665.jpg'></a><span class='right'>兰蔻</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=1298'><img alt='蜜丝佛陀' src='/Upfile/Logo/duigobao/p201404011454371927.jpg'></a><span class='right'>蜜丝佛陀</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=1386'><img alt='迪奥' src='/Upfile/Logo/asj88/p201406071458208696.jpg'></a><span class='right'>迪奥</span></li><li><a href='/u/aspx/tlist.aspx?pinPaiId=1303'><img alt='香奈儿' src='/Upfile/Logo/shop0635/p201405261559524607.jpg'></a><span class='right'>香奈儿</span></li>
+                        </ul>
+                    </div>
+                    <div class="rank">
+            	        <div class="rankTit">热销排行</div>
+                        <ul>
+                         <li class='first'>
+                    	        <div class='rankImg'><a target='_blank' href='/U/product/cct186/P20131122154243656.htm'><img alt='' src='/Upfile/shopPic/min/daifa100/2013/11/minP20131122154243656.jpg'></a></div>
+                                <div class='rankPrice'>
+                        	        <h3>1<a target='_blank' href='/U/product/cct186/P20131122154243656.htm'>2013秋冬男款新品衬衫 男士时尚休闲</a></h3>
+                                        <p>
+                            	        <strong>87</strong>
+                                        <del>￥107</del>
+                                    </p>
+                                </div>
+                            </li><li><h3>2<a target="_blank" href='/U/product/cct186/P20140614182550194.htm'>夏大沿遮阳帽太阳帽户外圆点裙摆护脖防紫...</a></h3></li><li><h3>3<a target="_blank" href='/U/product/cct186/P20140110161416101.htm'>帝牌男装 风衣男休闲棉涤防风防水 男士...</a></h3></li><li><h3>4<a target="_blank" href='/U/product/cct186/P20130227112125713.htm'>皇家蒙特垒 特级初榨橄榄油250ml...</a></h3></li><li><h3>5<a target="_blank" href='/U/product/cct186/P20140214143527296.htm'>单鞋超高跟鱼嘴深口绒面铆钉内里豹纹绒D...</a></h3></li><li><h3>6<a target="_blank" href='/U/product/cct186/P20130129142952457.htm'>韩国小白熊奶瓶消毒烘干器/消毒锅HL-...</a></h3></li><li><h3>7<a target="_blank" href='/U/product/cct186/P20130129144149989.htm'>川宇（kawau）蝴蝶Micro SD...</a></h3></li><li><h3>8<a target="_blank" href='/U/product/cct186/P20130528114021633.htm'>英伦风修身千鸟格拼色短袖全棉 男士衬衫...</a></h3></li><li><h3>9<a target="_blank" href='/U/product/cct186/P20130131094936692.htm'>联想（lenovo） B660 4G录...</a></h3></li><li><h3>10<a target="_blank" href='/U/product/cct186/P20130828100749391.htm'>JackJones/杰克琼斯时尚百搭男...</a></h3></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="viewed">
+            	        <div class="viewedTit">
+                	        <h3 class="left">最近浏览</h3>
+                            <a class="right" href="#2" title="" id="clearView">清空列表</a>
+                        </div>
+                        <ul id="Viewd">
+                	       
+                        </ul>
+                    </div>
+                </div>
+
+        <!--end mainLeft-->
+        <!--start mainRight-->
+        <div class="right mainRight">
+            <div class="mainRightTit">
+                <ul>
+                    <label id="lbldqwz"><li> &gt; <a href="/k/aspx/list.aspx?typeId=F_16" target="_blank">电脑办公 </a>&gt;</li> <li><a href="/k/aspx/list.aspx?typeId=S_42" target="_blank">网络产品</a> &gt;</li> <li><a href="/k/aspx/list.aspx?typeId=T_446" target="_blank">路由器</a> &gt;</li> 腾达（Tenda） FS395 300m安全无线路由器</label>
+                </ul>
+            </div>
+            <!--start pro-->
+            <div class="clearfix pro">
+                <div class="clearfix left proLeft">
+                    <div class="dd">
+                        <div id="small_pic">
+                            
+                            <img src="/Upfile/shopPic/max/daifa100/2014/6/maxP20140625174625560.jpg" id="imgPic" />
+                            <span id="zoom"></span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="left proRight">
+                    <div class="name">
+                        <h2>
+                            <label id="lblGoodsTitle">腾达（Tenda） FS395 300m安全无线路由器</label>
+                        </h2>
+                        <p>
+                            <span>品牌：<label id="lblPinpai">腾达</label></span> <span>商品编号：<label id="lblGoodsNO">P201406251746255607572</label></span>
+                        </p>
+                    </div>
+                    <ul class="number">
+                        <li>价格：￥<strong><label id="lblIXGoodsPrice">75</label></strong> 市场价:￥<del><label id="lblGoodsPrice">105</label></del><b id="spDiscount"></b></li>
+                        <input type="hidden" id="shuxingtxt" />
+                        <input name="context" type="hidden" id="context" />
+                        <li>累计出售：<strong id="lblSales">42</strong>件</li>
+                        <li>浏 览：<strong id="clickTimes">166</strong>次 </li>
+                        
+                    </ul>
+                    <div class="chose">
+                        
+                        <dl>
+                            <dt class="left">我要买：</dt>
+                            <dd>
+                                <input name="txtNum" id="txtNum" type="text" value="1" style="width: 80px;" />
+                            </dd>
+                        </dl>
+                        
+                        <dl class="last">
+                            <dt><a id="addShopCart" class="left" href="#2" title="">
+                                <img src="/U/images/car2.png" alt="" /></a> <a id="buyRight" class="left" href="#2" title="">
+                                    <img src="/U/images/gotobuy.gif" alt=""  style="cursor:pointer"/></a> </dt>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <!--end pro-->
+            <div class="fenxiang">
+                <span class="left"><a href="http://www.jiathis.com/share/" class="jiathis jiathis_txt jtico jtico_jiathis"
+                    target="_blank">分享到：</a> </span><a class="jiathis_button_qzone">QQ空间</a> <a class="jiathis_button_tsina">
+                        新浪微博</a> <a class="jiathis_button_kaixin001">开心网</a> <a class="jiathis_button_renren">
+                            人人网</a>
+            </div>
+            <div id="mainRightMain">
+                <ul id="menu3">
+                    <li>商品信息</li>
+                    <li>购买评论</li>
+                </ul>
+                <div id="content3">
+                    <div class="content1" id="con_one_1">
+                    </div>
+                    <div class="content11" id="con_one_2">
+                     <div class="daskcon">
+                            <h1>
+                                商品评价</h1>
+                            <ul>
+                                <li><span>昵称：</span>
+                                    <input type="hidden" id="proNo" name="proNo" value="@$GoodsNo">
+                                    <input type="text" id="txtName" name="txtName"></li>
+                                <li><span>评价内容：</span><textarea rows="2" cols="20" id="tContent" name="tContent"></textarea></li>
+                                <li style="padding-left: 280px;">
+                                    <input type="button" value=" 提交 " id="butTijiao" name="butTijiao"></li>
+                            </ul>
+                            <dl id="AdvisoryList"></dl>
+                            <div style="text-align: right;">
+                                <input type="button" value="上一页" name="button" id="lPage">
+                                <input type="button" value="下一页" name="button" id="nPage">
+                            </div>
+            		</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end mainRight-->
+    </div>
+    <script type="text/javascript" src="http://v1.jiathis.com/code/jia.js" charset="utf-8"></script>
+    <!--end main-->
+    
+    <!--start us-->
+    <div class="us">
+    	<div class="usList">
+           <ul><li class="first1">售后服务</li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93678'>收货说明</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93680'>产品退换</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93683'>订单查询</a></li></ul><ul><li class="first1">配送方式</li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93679'>运费标准</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93684'>订单说明</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93687'>配送政策</a></li></ul><ul><li class="first1">支付方式</li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93681'>货到付款</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93688'>在线付款</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93689'>银行付款</a></li></ul><ul><li class="first1">关于我们</li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93675'>联系客服</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93676'>货源提供</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93682'>商城简介</a></li></ul><ul><li class="first1">购物指南</li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93677'>会员注册</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93685'>购物流程</a></li><li><a href='http://www.cct186.com/U/aspx/Help.aspx?id=93686'>常见问题</a></li></ul>>
+             <ul class="last">
+                <li class="first6">客服在线</li>
+                <li>每天:<span>9:00-21:00</span></li>
+                <li>周六日客服全天值班</li>
+            </ul>
+        </div>
+    </div>
+    <!--end us-->
+    <!--start links-->
+    <div class="links">
+    	<div class="link">
+        	<h3>友情链接</h3><p></p>
+        </div>
+    </div>
+    <!--end links-->
+    <!--start cuxiao-->
+    <div class="cuxiao">
+    	<div class="cuxiaoList">
+          <ul class='clearfix zong'><li class='left'><a href="http://www.cct186.com/U/aspx/list.aspx?typeid=F_12"><img alt='' src='/U/adimg/3feiwg/3feiwg_falsh30.gif'></a></li><li class='left wenzi'><ul><li class='left'><a href='http://www.cct186.com/U/aspx/list.aspx?typeid=F_12' title=''></a></li></ul></li></ul><ul class='clearfix zong'><li class='left'><a href="http://www.cct186.com/U/aspx/list.aspx?typeid=F_12"><img alt='' src='/U/adimg/3feiwg/3feiwg_falsh32.gif'></a></li><li class='left wenzi'><ul><li class='left'><a href='http://www.cct186.com/U/aspx/list.aspx?typeid=F_12' title=''></a></li></ul></li></ul><ul class='clearfix zong'><li class='left'><a href="http://www.cct186.com/U/aspx/list.aspx?typeid=F_12"><img alt='' src='/U/adimg/3feiwg/3feiwg_falsh33.gif'></a></li><li class='left wenzi'><ul><li class='left'><a href='http://www.cct186.com/U/aspx/list.aspx?typeid=F_12' title=''></a></li></ul></li></ul><ul class='clearfix zong'><li class='left'><a href="http://www.cct186.com/U/aspx/list.aspx?typeid=F_12"><img alt='' src='/U/adimg/3feiwg/3feiwg_falsh31.gif'></a></li><li class='left wenzi'><ul><li class='left'><a href='http://www.cct186.com/U/aspx/list.aspx?typeid=F_12' title=''></a></li></ul></li></ul>
+        </div>
+    </div>
+    <!--end cuxiao-->
+    <!--start footer-->
+<div class="footer">
+
+<script language="JavaScript" src="http://code.54kefu.net/kefu/js/158/712558.js" type="text/javascript" charset="utf-8"></script>    
+</div>
+    <!--end footer-->
+    </form>
+</body>
+</html>
+

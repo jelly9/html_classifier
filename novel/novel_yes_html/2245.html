@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<title>暧昧不是罪_正文 【310】百密一疏出状况_全书网</title>
+<meta name="keywords" content="暧昧不是罪最新章节_正文 【310】百密一疏出状况" />
+<meta name="description" content="暧昧不是罪最新章节阅读:正文 【310】百密一疏出状况" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="robots" content="all" />
+<link href="/css/common.css" rel="stylesheet" type="text/css">
+<link href="/css/board.css" rel="stylesheet" type="text/css">
+<link href="/css/readtools.Css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery-1.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="/js/jquery.tools.min1.2.5.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/tools.js"></script>
+<script type="text/javascript" src="/scripts/common.js"></script>
+<!--[if lt IE 9]>
+<script src="/js/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+
+<!--
+var preview_page = "9676311.html";
+var next_page = "9676313.html";
+var index_page = "index.html";
+var article_id = "22766";
+var chapter_id = "9676312";
+function jumpPage() {
+  var event = document.all ? window.event : arguments[0];
+  if (event.keyCode == 37) document.location = preview_page;
+  if (event.keyCode == 39) document.location = next_page;
+}
+
+$(document).ready(function(){
+	var article_content = "暧昧不是罪$$$正文 【310】百密一疏出状况$$$"+window.location.href+"$$$"+"22766";
+	var timestamp = Date.parse(new Date());
+	$.post('/ajax.php?timestamp',{timestamp:timestamp,article_content:article_content,act:'liulan',id:"22766"},function(data){
+
+	})
+});
+
+document.onkeydown=jumpPage;
+-->
+</script>
+</head>
+
+<body>
+<script>
+	function login(){
+	
+		$.post("/login.php?do=submit",
+		{username:$('#lusername').val(),password:$('#lpassword').val(),action:$('#llogin').val()},function(data)
+				{
+					if(data=='1001')
+					{
+						$('#lusermsg').html('账号或者密码错误');
+					}
+					else
+					{
+						  window.location.reload(); 
+					}
+					return false;
+				})
+		return false;
+	}
+</script>	
+<script>
+	$(document).ready(function(){
+		$('.username').blur(function(){
+			yonghu();
+		})
+		
+		$('.repassword').blur(function(){
+			repassword();
+		})
+	})
+
+	function yonghu()
+	{
+		
+		var username = $('.username').val();
+		$.post('/ajax.php',{username:username,act:'yonghu'},function(data){
+			if(data=='1001')
+			{
+				$('#usermsg').html('用户名已存在');
+				$('#userid').val('1');
+			}
+			else
+			{
+				$('#usermsg').html('');
+				$('#userid').val('0');
+			}
+		})
+		if($('#userid').val()=='1')
+		return false;
+		esle
+		return true;
+	}
+	
+	function repassword()
+	{
+		var flag1=true;
+		var repassword = $('.repassword').val();
+		var password = $('.password').val();
+		if(repassword!=password)
+		{
+			$('#repassmsg').html('密码不一致');
+			flag1=false;
+		}
+		else
+		{
+			$('#repassmsg').html('');
+			flag1=true;
+		}
+		return flag1
+	}
+	
+	function register()
+	{
+	
+		if(!yonghu())
+		{
+			return false
+		}
+		else if(!repassword())
+		{
+			return false
+		}
+		return true;
+	}
+	
+</script>
+<div id="wrapper">
+  <div class="shadow" style="height:1px;"></div>
+<header id="global-head" style="height:32px;">
+    <div>
+      <nav class="site-navigation cf">
+	  <a class="home" href="/">首页</a>
+	  <a href="/top/">排行榜单</a>
+	  <a href="/wanben/">完本小说</a>
+	  </nav>
+		<div class="hd-follow">
+        <div class="myhide"><a href="#" class="hides">浏览记录</a>
+          <div class="hideInfo"><ul></ul><p>*提示：浏览记录仅放置最近浏览的10本书籍</p><span>浏览记录是空的</span></div>
+        </div>
+         <script>
+			$(document).ready(function(){
+				$.post('/ajax.php',{act:'userlogin'},function(data){
+					if(data=='2002')
+					{
+						$(".hd-follow").width(197);
+					}
+					else
+					{
+						$('#checklogin').html(data);
+						$(".hd-follow").width(345);
+					}
+				})
+				
+			})
+		</script>
+        <span id="checklogin">
+		<a href="javascript:;" onClick="openDialog('/login.php?ajax_gets=jieqi_contents', true);" style="color:#F0F0F0">访客登录</a>&nbsp;&nbsp;
+<a href="javascript:;" onClick="openDialog('/register.php?ajax_gets=jieqi_contents', true);" style="color:#F0F0F0">免费注册</a>&nbsp;&nbsp;
+		</span>
+		</div>
+    </div>
+</header>  <link href="/css/channel-net.css" rel="stylesheet" type="text/css">
+<div id="channel-header" class="clearfix" style="margin-top:1px;">
+    <div class="channel-header-wrapper">
+      <div class="channel-logo"><a href="/" title="全书网">全书网</a></div>
+      <nav class="channel-nav">
+        <ul class="channel-nav-list">
+         <li><a href="/modules/article/articlelist.php?class=1" title="玄幻魔法">玄幻魔法</a></li>
+         <li><a href="/modules/article/articlelist.php?class=2" title="武侠修真">武侠修真</a></li>
+         <li><a href="/modules/article/articlelist.php?class=3" title="纯爱耽美">纯爱耽美</a></li>
+         <li><a href="/modules/article/articlelist.php?class=4" title="都市言情">都市言情</a></li>
+         <li><a href="/modules/article/articlelist.php?class=5" title="职场校园">职场校园</a></li>
+         <li><a href="/modules/article/articlelist.php?class=6" title="穿越重生">穿越重生</a></li>
+         <li><a href="/modules/article/articlelist.php?class=7" title="历史军事">历史军事</a></li>
+         <li><a href="/modules/article/articlelist.php?class=8" title="网游动漫">网游动漫</a></li>
+         <li><a href="/modules/article/articlelist.php?class=9" title="恐怖灵异">恐怖灵异</a></li>
+         <li><a href="/modules/article/articlelist.php?class=10" title="科幻小说">科幻小说</a></li>
+         <li><a href="/modules/article/articlelist.php?class=11" title="美文名著">美文名著</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+   <script type="text/javascript" src="/ad/style1.js"></script>
+<div id="container">
+   <script type="text/javascript" src="/ad/style2.js"></script>
+<div class="mainnav"><div class="main-index" id="direct"><span class="r mr10"> <form action="/modules/article/search.php" method="get" >搜小说：<input type="text" name="searchkey" value="" /><button type="submit" >搜</button></form></span>位置：<a href="/" class="c009900">全书网</a> > <a href="/modules/article/articlelist.php?class=4">都市言情</a>  > <a href="/book_22766.html" class="article_title">暧昧不是罪</a>  > 正文 【310】百密一疏出状况</div>
+      <section class="main b-detail" id="directs"><div class="bookInfo"><h1>
+	  <span class="r">	  </span>
+	  <em class="l">《暧昧不是罪》</em><strong class="l jieqi_title">正文 【310】百密一疏出状况</strong><a href="/modules/article/addbookcase.php?bid=22766&cid=9676312"  target="_blank" title="加入书签" class="l">加入书签</a>
+            <div class="clear"></div></h1>
+<div class="toolbar"><script language="JavaScript" src="/js/toolbar.js" type="text/javascript"></script><script type="text/javascript" src="/ad/style5.js"></script></div>
+   <script type="text/javascript" src="/ad/style3.js"></script>
+<div class="mainContenr"   id="content">&nbsp;&nbsp;&nbsp;&nbsp;回到了家里，已经是接近了晚上6点钟了。看着自己姐姐和孙妈两人吃饭，云城疑惑的拿出手机看了看，又仔细的瞅了瞅手表上的时间！没错，是6点钟啊，往常老妈老爸早该都回来了，这会儿怎么只有自己的姐姐？这个倒是有些奇怪啊！但云城却是忍住了没问，洗干净手，开始安安静静的吃饭。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“妈接了一个电话，和爸说了什么，然后小姨和小小姨也都一起离开了！”风倾雅嘟着嘴，很不高兴的开口说着话。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;云城嗯嗯了两声，继续吃着饭菜，但就在瞬间，云城的电话震动了，皱眉走到一边，接起了电话，才开口说了两句，云城不错的心情，瞬间消散的一干二净。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“我马上就到公司，你们动手吧！”说完挂了电话，直接拿上了背包，和孙妈说了声抱歉，拉上自己的姐姐，带上四只鬼獒，直接上车踩下了油门，朝着老妈的公司疾驰而去！心中的怒火却是在这一刻瞬间的迸发！<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;百密一疏！真真是百密一疏！云城完全没有料到，本来以为万无一失的事情，没想到会变的这么棘手。如今老妈和小姨居然单独两人在公司，并且有人暗中下了剧毒。目前根本不知道情况究竟如何，这让云城简直是心急如焚！一边飞快的开车，一边打了好几个电话。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;云城的神情越来越冰冷，若不是因为自己的姐姐在身边，云城身上的杀意早就肆无忌惮的散发了！阿七啊阿七，居然做了这么一件糊涂事，谁tm的让他们动手了！这简直就是打了自己一个措手不及，甚至于先前抓到的几个人，立刻失去了所有的价值！<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;唯一庆幸的是那些资料和文件袋已经被自己取走了！否则那些人恐怕早就对自己的老妈下手了！<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“土豆，地瓜，一会儿到了公司就给我往楼上冲！芋头和西红柿，你们保护好我的姐姐，不要和我姐走失了！”云城也不管这四只鬼獒到底能听懂自己的多少话语，就对着它们发号施令，同时转头看向了自己的姐姐，“姐，你一定要沉住气，保持冷静，一会儿看到爸的时候，记得跟在老爸的身边。它们会保护好你的。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;风倾雅也知道了恐怕事情非常的严重了，沉默中重重的点头：“弟，晚上你会杀人么？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“会！他们对老妈和小姨下毒，该死！”云城说着话的同时，全身的冷意陡然散发。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;风倾雅的神情一变，沉默了三秒之中，抬起头，眼神里已经完全失去了往ri的怯弱，恨恨的说道：“对！他们该死！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;车子以极其迅速的速度来到了清微科技有限公司，云城二话不说直接下车，土豆和地瓜直接朝着公司里面冲去，而在门口云城看到了徐树和高磊，正一脸着急的等待着云城的到来。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“什么都别说！小炮你保护好我姐，石头跟我一起上去，我倒要看看是哪个不要命的害我老妈和小姨！”云城看都没看电梯一眼，直接朝着楼梯的通道跑上去，而石头也紧随其后，一点儿不落的跟在云城的身后。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;18楼，云城花了三分钟，这足以突破吉尼斯记录的速度，此刻没有任何人看见，寻找着会议室，看着有人正对着自己呵斥，云城二话不说直接抽出诅咒之刃，将他的身子和头分离。现在能对自己呵斥的人，足以说明了不认识自己，这样的人等于是送死！<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;土豆嗷叫了一声的时候，云城的神情一变，几个闪步直接冲向了一个会议室里，看着一个已经被土豆咬下了一只手臂的家伙，云城杀意迸发，手中的诅咒之刃挥出，直接结果了他的xing命！<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“小城……”坐在办公座椅上的风清微看见云城的时候，虚弱无力的喊了一声。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“妈是我！”说完看着跟进来的石头，冷声说道，“石头，谁敢跑，杀了！”诅咒之刃直接插在了会议室的桌上，只是眨眼之间，整张长度超过10米的会议桌，顷刻间化成了虚无。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“快去浴室把你小姨救出来！”云城快速的抵在了老妈的身上，情急之下，体内的热流挥去，竟然让自己的老妈恢复了一些神智。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;云城立刻点头，对着土豆看了一眼，理也不理在场所有人惊愕的眼神，直接走出会议室，打开了老妈办公室的门，闯入了浴室之中。看着小姨被双手被一副镣铐给绑着，云城愤怒的心情再次上升了一个高度，拿出了血刃，直接劈开，一把抱起了昏迷的小姨，直接回到了会议室中。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“石头，打电话给我爸，告诉他带兵滚回临州市军区去！”说话的瞬间，两只手抵在了自己老妈和小姨的脖子上，体内的热流随即散发，完全不要钱似的全部输入了老妈和小姨的体内。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;半个小时一过，云城缓缓的睁开了双眼，看着已经清醒过来的老妈和小姨担忧的眼神，云城微微一笑，心中却是大呼运气。更加感激自己修炼的古文体的功法，这功法简直太神奇了，这奇怪的热流居然还可以解毒。不过貌似自己也差点的累死了！不过一切还算不错，自己老妈和小姨看来是真正的恢复了。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“小城，你没事吧？”风清素担忧的如妻子一般摸了摸云城了脸，“对不起，我没想到他们会这么yin险！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;云城微微一笑：“不过是狗急跳墙罢了，不碍事的！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“小城，你这是在用内力帮我和二姐解毒？”风清素有些不敢相信的问道。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;云城淡淡的点头，眼中含笑：“失去了，会回来的，只是帮你们逼出去了而已，等会儿你们还是要去医院，好好的检查一下，最好住个十多！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“妈听你的！”风清微的眼泪直接流了下来，抱了抱自己的乖儿子，声音颤抖中，转头看了看所有在场公司元老和股东，“你们既然要找死，就别怪我风清微心狠，哪怕你们之中有国家的人，今天也别想完好无事!”</div><script type="text/javascript" src="/ad/style6.js"></script><div class="backs"><a href="9676311.html" class="pre">上一章</a><a href="index.html" class="backfor">返回目录</a><a href="9676313.html" class="next">下一章</a><p>小提示： 按←键返回上一页，按→键进入上一页,您还可以<a href="/modules/article/addbookcase.php?bid=22766&cid=9676312" title="加入书签"  target="_blank">加入书签</a></p></div>
+<script type="text/javascript" src="/ad/style7.js"></script>
+</div><div class="sharesFor"><script language="javascript" type="text/javascript" src="/js/wangzhe.js"></script></div>
+      </section>
+    </div>
+   <script type="text/javascript" src="/js/checklogin.js"></script>
+   <script type="text/javascript" src="/ad/style4.js"></script>
+<div class="attention"><em>阅读提示：</em><br/>
+1、本站会员登录后，将免费体会到最顺畅的阅读方式[<em>最少广告</em>]。<br/>
+2、<em>注册本站会员</em>，将《<a href="/book_22766.html" class="article_title"><em>暧昧不是罪</em></a>》加入书架，可以通过书架更快的了解更新信息。<br/>
+3、免费小说《<a href="/book_22766.html" class="article_title"><em>暧昧不是罪</em></a>》 正文 【310】百密一疏出状况 所描述的内容只是作者 作者 <em>重夢</em>个人观点，与本站的立场无关，本站只为广大用户提供阅读平台。
+</div>
+</div></div>
+<script language="JavaScript" type="text/JavaScript"> 
+  window.onload = function(){ //window.onload 打开网页就运行
+
+  var str=document.getElementById("content").innerHTML;//这里是整个页面代码 ,也可以指定id
+  str=str.replace(/\<script[\s\S]+?\<\/script\>/gi,""); str=str.replace(/\<styltyp[\s\S]+?\<\/styl\>/gi,"");
+ str=str.replace(/\<style[\s\S]+?\<\/style\>/gi,"");
+ str=str.replace(/\<a[\s\S].+?\<\/a\>/gi,"");  str=str.replace(/Www.+?ggyy\.net/gi,"");
+ str=str.replace(/Www.+?Com/gi,"");
+  str=str.replace(/Www.+?net/gi,"");
+ str=str.replace(/Www.+?cc/gi,"");
+   str=str.replace(/&lt;br.+?&gt;/gi,"<br />");
+str=str.replace(/&amp;hllp;/gi,"&hellip;").replace(/&amp;ldqo;/gi,"&ldquo;").replace(/ldqo/gi,"ldquo").replace(/&amp;rdqo;/gi,"&rdquo;").replace(/&amp;dash;/gi,"&mdash;"); document.getElementById("content").innerHTML=str;
+}
+</script>
+<script type="text/javascript" src="/js/foot.js"></script>
+<script type="text/javascript" src="/js/tong.js"></script>
+<script type="text/javascript" src="/ad/tan.js"></script>
+<script type="text/javascript" src="/ad/style5.js"></script>
+</body></html>

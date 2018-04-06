@@ -1,0 +1,2048 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="cn" lang="cn" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>店铺藏品-当代艺术-艺粹</title>
+<link href="http://f.artww.com/body/css/global.css" rel="stylesheet" type="text/css" />
+<link href="http://f.artww.com/body/css/newControl.css" rel="stylesheet" type="text/css" />
+<link href="http://f.artww.com/ShopAntiques/css/list.css" rel="stylesheet" type="text/css" />
+<link href="http://f.artww.com/body/css/listcontrol.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="/body/js/jquery.js"></script>
+<script type="text/javascript" src="/body/js/Netpet.js"></script>
+<script type="text/javascript" src="/body/js/kxbdSuperMarquee.js"></script>
+<script type="text/javascript" src="/js/jquery.jqzoom1.0.1.js"></script>
+
+<script type="text/javascript" src="/ShopAntiques/ArtList.js?num=1"></script> 
+<script type="text/javascript" src="/body/js/AntiqueListCommon.js?num=1"></script> 
+
+<script type="text/javascript"> 
+//var muiti=1;//是否多选 
+var ajax=false;//是否ajax 
+//var opend=$.cookie('opened')==null?true:false; 
+</script> 
+
+<style type="text/css">
+
+
+.item_list .shops .shop_name {
+	float:left;
+}
+
+
+
+.item_list_thumb li .ico{ padding:0 0 0 5px; overflow:hidden;zoom:1; margin-top:-16px;float:left;}
+
+.last_uploads li {
+    padding: 0 0 3px;
+}
+.filter_bar .list_query .support {
+	margin-left:10px;
+}
+
+.ss {
+	float:left;
+	margin-left:8px;
+	overflow:hidden;
+	zoom:1;
+	display:inline;
+}
+.ss input {
+	float:left;
+	width:98px;
+	
+}
+.ss .ss_btn {
+	float:left;
+	background:url(http://f.artww.com/body/images/ss_btn.png) no-repeat;
+	width:33px;
+	height:23px;
+}
+
+.priceSearch {
+	margin-left:23px;
+}
+.priceSearch input {
+	width:35px;
+}
+.priceSearchPanel {
+	width:110px;
+}
+.list_query .attribute .price {
+	width:102px;
+}
+.list_query .attribute .price .priceSearch {
+	margin-left:0;
+}
+.jiage {
+	float:left;
+	margin:2px 0 0 34px;
+	display:inline;
+}
+.jiage a {
+	background:url(http://f.artww.com/body/images/jiage.png) no-repeat;
+	width:46px;
+	height:20px;
+	display:block;
+}
+.jiage a.default {
+	background-position:0 0;
+}
+.jiage a.default:hover {
+	background-position:-47px 0;
+}
+.jiage a.up {
+	background-position:-94px 0;
+}
+.jiage a.down {
+	background-position:-141px 0;
+}
+</style>
+
+</head> 
+<body>
+<div class="body_A">
+<input type="hidden" id="url" value="-" />
+<input type="hidden" id="url2" value="-1_21_67_20_209_42-----1---1-0--1--1" />
+
+<input type="hidden" id="years" value="-1" />
+  <div class="body_B">
+    
+
+
+
+
+
+<script type="text/javascript">
+<!--
+
+$(function(){
+	/* $("#recommendation").MyTitle({defaultCss:'tipsr',title:"建议被采纳奖励1-1000元不等！"}); */
+	var searchType=$.cookie("searchType");
+	if(searchType!=null&&searchType!=""){
+		$(".sosuo .hp li").removeClass("on");
+		$("#searchType"+searchType).addClass("on");
+	}
+});
+
+function setSo(id,type){
+	$(".sosuo .hp li").removeClass("on");
+	$(".sosuo .hp li").eq(id).addClass("on");
+	$("#soType").val(type);
+	
+}
+//进行搜索
+function toSearch(){
+	var values=$("#soInput").val();
+	$.cookie("searchType", $("#soType").val(),{ expires: 60000, path: '/'});
+	if(values=="请输入您要搜索的关键字" || values=="")
+	    Wrong("您还未输入需要搜索的内容！",{CloseTime:1});
+	else
+	{
+		var typeNow=$("#soType").val();
+		
+		if(typeNow==4)
+		  Redirect("/Antique--1------------"+values);//
+		else if(typeNow==3)
+			 Redirect("/evaluate/search--------"+values);//
+		else if(typeNow==8)
+			 Redirect("/helpitem/OnLine---"+values);//
+		else if(typeNow==10)
+			 Redirect("/Shop--1--"+values+"-shopname-bossname");//
+		else if(typeNow==11)
+			 Redirect("/Videos/list-0---"+values);//
+		else if(typeNow==9){
+			//搜索具体用户
+			//   user/getuserid-xuyonglongser/getuserid-xuyonglong
+			totalInajax=true;
+			  $.ajax({
+	   	   		   async:true,
+	   	   		   cache:false,
+	   	   		   type:"POST",
+	   	   		   dataType:"xml", 
+	   	   	
+	   	   		   url:"/user/getuserid-"+encodeURI(values), 
+	   	   		   error:function(xml){Wrong("查询超时!");totalInajax=false;},timeout:10000,
+	   	   		   success:function(xml){
+	   	   			     totalInajax=false; 
+	   	                 if($(xml).find("State").text()=="true")
+	   	                 {
+	   	                   	var id=$(xml).find("MainData").text();
+	   	                 show_userInfo(id,values, $("#soInput").offset().left-7, $("#soInput").offset().top-1);
+	   	                 } 
+	   	                 else
+	   	                 {Alert("您查询的用户"+values+"不存在！");}
+
+	   	   		 }  //ajax调用成功处理函数结束
+	   	   	});//ajax结束	
+		}
+	}//Alert("searching.."+$("#topSearchInput").val());
+}
+var showYCT = $.cookie("showYCT"); 
+if(!showYCT){
+	$("#top_tips").fadeIn();
+	$("#closeYCT").bind("click",function(event){
+		$("#top_tips").fadeOut();
+		$.cookie('showYCT', 'ishide', { expires: 1, path: '/'});
+       	});
+}else{
+	$("#top_tips").hide();
+}
+
+$(function(){
+	var oIntval;
+	$(".weixin_act").click(function(e) {
+		e.stopPropagation();
+		$(".weixin_box").removeClass("hide");
+		Timerun();
+	});
+	$(document).click(function() {
+		if (!$(".weixin_box").hasClass("hide")) {
+			$(".weixin_box").addClass("hide");
+		}
+	});
+	$('.close_wxact').click(function(){
+		$('..weixin_box').addClass("hide");
+	});
+	function Timerun(){
+		oIntval = setInterval(closeWx,10000);
+	}
+	function closeWx(){
+		$(".weixin_box").addClass("hide");
+	}
+});
+//-->
+</script>
+
+<div class="topAd" style="width:100%;height:80px;min-width:1000px;background:url(/body/images/com/topadbg.jpg) no-repeat center;  text-align:center;">
+<a href="/helpitem/Notice/DetailNotice-310" target="_blank"><img src="/body/images/com/topadleft.png"  height="80"></a>
+<a href="/helpitem/Notice/DetailNotice-315" target="_blank"><img src="/body/images/com/topadright.png"  height="80"></a>
+</div>
+<div class="siteWarp">
+  <div class="site_nav show_zai">
+    <div class="login_info">
+      <div id="TopLeftLogin" class="login" style="display: none;">
+        <div class="user_info">欢迎您：<a href="/Redirect/Admin/" id="userNameCookie"></a>&nbsp;&nbsp;<a id="logout" href="javascript:showLoginOut()" style="cursor:pointer;">退出</a>&nbsp;&nbsp;<a href="/Redirect/Admin/">进入我的后台</a></div>
+        <div class="yct_info" id="yct_info">
+          <div class="top_tips" id="top_tips" style="display: block;"><a href="#" id="closeYCT"></a></div>
+          <div class="yctPanel" id="yctPanel" style="top: -2px; left: -1px; display: none;">
+            <div class="yctPanelCon"><span class="line"></span>
+              <ul id="recConInfo">
+                <li id="im_flag"><img src="http://f.artww.com/images/loading.gif"><span>获取最近联系人...</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="unreadtips" class="tips">未读（<em id="unread">0</em>）</div><div style="float:left;*display:inline; line-height:30px; height:30px; overflow: hidden;padding-left: 5px;"><script type="text/javascript">/*120*30 创建于 2014-12-21*/var cpro_id = "u1871070";</script><script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></div>
+      </div>
+      <div id="TopLeft" class="login" style="display: block;">
+        <div class="user_info">您好，欢迎来到艺粹网！ 请 <a id="login" href="javascript:showLogin()">登录</a> 或 <a href="/User/register">免费注册</a></div><div style="float:left;*display:inline; line-height:30px; height:30px; overflow: hidden;padding-left: 5px;"><script type="text/javascript">/*120*30 创建于 2014-12-21*/var cpro_id = "u1871070";</script><script src="http://cpro.baidustatic.com/cpro/ui/c.js" type="text/javascript"></script></div>
+      </div>
+    </div>
+    
+    
+    <ul class="quick_menu">
+      <li class="tel"><a href="javascript:void(0);" style="text-decoration:none;">400-626-5558</a></li>
+      <li class="link"><a href="javascript:void(0);" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=800007222&eid=2188z8p8p8p8p8y8K8K8K&o=www.artww.com&q=7', '_blank', 'height=544, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');">联系客服</a></li>
+      <li class="line"></li>
+      <li> <a href="/Redirect/Admin/" class="myyc" id="myyc">我的艺粹<b></b></a>
+        <div class="myycPanel" id="myycPanel">
+          <div class="myycCon"> <em></em> <a href="/Redirect/Admin/Evaluate/Publish">我要鉴定</a><br>
+            <a href="/Redirect/Admin/Seller/Publish/Stall">我要卖</a><br>
+            <a href="/Redirect/Admin/Buyer/PublishBuy">我要求购</a><br>
+            <a href="/Redirect/Admin/order/buyer">已买到的藏品</a><br>
+            <a href="/Redirect/Admin/order/seller">已卖出的藏品</a> </div>
+        </div>
+      </li>
+      <li class="line"></li>
+      <li> <a href="/Redirect/Admin/Favourite/Antique" class="favorites" id="favorites">收藏夹</a>
+        <div class="favoritesPanel" id="favoritesPanel">
+          <div class="favoritesCon"> <em></em> <a href="/Redirect/Admin/Favourite/Antique">我收藏的藏品</a><br>
+            <a href="/Redirect/Admin/Favourite/Shop">我收藏的店铺</a><br>
+            <a href="/Redirect/Admin/Favourite/ForBuy">我收藏的求购</a> </div>
+        </div>
+      </li>
+      <li class="line"></li>
+      <li><a href="/helpitem" class="help2" id="help2">帮助中心</a>
+        <div class="helpPanel" id="helpPanel">
+          <div class="helpCon"> <em></em> <a href="http://f.artww.com/NoviceHelp/buy/step1_01.html" target="_blank">新手学堂</a><br>
+            <a href="/helpitem/OnLine">在线问答</a><br>
+            <a href="/helpitem/Service">自助服务</a><br>
+            <a href="/ArtwwRule.html">艺粹规则</a>
+             </div>
+        </div>
+      </li>
+      <li class="line"></li>
+      <li><a href="/helpitem/recommendation" id="recommendation">我要建议</a></li>
+      <li class="line"></li>
+    </ul>
+    <div class="weixin_box hide" style="position:absolute;top:0px;left:50%;margin-left:-240px;width:519px;height:283px;border: 4px solid #7d7d7d;background:url(/body/images/weixin_act_bg.jpg) center center repeat;z-index:9999999;">
+    	<a href="close_wxact" style="position:absolute;top:10px;right:15px;width:17px;height:17px;background:url(/body/images/close_wxact.png) center center repeat;z-index:100000009;cursor:pointer;pointer-events: none;"></a>
+        <dl class="first">
+        	<dt>立即添加艺粹微信</dt>
+            <dd>扫一扫左侧二维码，或搜索微信号<span>artwwcom</span></dd>
+        </dl>
+        <dl>
+        	<dt>成功收藏人士必备</dt>
+            <dd>鉴定小技巧、收藏天下事、经管养生学，尽在掌握</dd>
+        </dl>
+        <dl>
+        	<dt>免费领取5元话费</dt>
+            <dd>关注后点击左下角<span class>“领取话费”</span>按钮即可</dd>
+        </dl>
+    </div>
+  </div>
+</div>
+<div class="header">
+  <div class="search_bar clearfloat">
+    <div class="logo"><a href="/" id="Logo" alt="艺粹网"></a></div>
+    <div class="hotline"><a href="/activity/phone" title="艺粹网"></a></div>
+   <!--  <div class="wxma" onMouseOver="$('#wxMa').show();" onMouseOut="$('#wxMa').hide();"><p>微信号：artwwcom</p><div id="wxMa"></div></div> -->
+    <div class="fuwu">
+      <a class="b1" href="/Credit/index.jsp?tab=1" target="_blank" title="藏品保真">藏品保真</a>
+      <a class="b2" href="/Credit/index.jsp?tab=2" target="_blank" title="闪电发货">闪电发货</a>
+      <a class="b3" href="/Credit/index.jsp?tab=3" target="_blank" title="七天包退">七天包退</a>
+    </div>
+    <div class="sosuo">
+      <div class="hp">
+      <input type="hidden" id="soType" name="soType" value="4">
+        <ul class="clearfloat">
+          <li onclick="setSo(0,4)" class="on" id="searchType4">找藏品</li>
+          <li onclick="setSo(1,10)" id="searchType10">找店铺</li>
+          <li onclick="setSo(2,9)" id="searchType9">找用户</li>
+          <li onclick="setSo(3,3)" id="searchType3">鉴定案例</li>
+          <li onclick="setSo(4,8)" id="searchType8">帮助中心</li>
+        </ul>
+      </div>
+      <div class="bp clearfloat">
+        <div class="sobox ld"><input type="text" class="hold" onfocus="$(this).removeClass('hold');" onblur="if(this.value == ''){$(this).addClass('hold')}" id="soInput" name="soInput"></div>
+        <div class="sobtn ld"><a href="javascript:toSearch();">搜索</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="spaceWarp">
+<div class="menuWarp" id="fixTool">
+  <div class="ycMenu show_zai" id="ycMenu">
+    <div class="classMenu">
+      <a href="/evaluate/more-1-----------" target="_blank"><div class="hp"></div></a>
+      <div class="bp">
+      <div class="menuSpace"><div><!--I'm space--></div></div>
+         <ul>
+         	<li class="d1"><a href="/evaluate/more-1-18-----" class="a1" target="_blank">陶器瓷器</a></li>
+         	<li class="d3"><a href="/evaluate/more-1-21-----" class="a1" target="_blank">古币钱币</a></li>
+         	<li class="d6"><a href="/evaluate/more-1-20-----" class="a1" target="_blank">书画油画</a></li>
+         	<li class="d2"><a href="/evaluate/more-1-19-----" class="a1" target="_blank">玉器珠宝</a></li>
+         	<li class="d4"><a href="/evaluate/more-1-43-----" class="a1" target="_blank">铜器收藏</a></li>
+         	<li class="d10"><a href="/evaluate/more-1-78-----" class="a1" target="_blank">邮票邮品</a></li>
+         	<li class="d8"><a href="/evaluate/more-1-68-----" class="a1" target="_blank">古籍善本</a></li>
+         	<li class="d14"><a href="/evaluate/more-1-208-----" class="a1" target="_blank">红色收藏</a></li>
+         	<li class="d5"><a href="/evaluate/more-1-42-----" class="a1" target="_blank">木器家具</a></li>
+         	<li class="d9"><a href="/evaluate/more-1-67-----" class="a1" target="_blank">收藏杂项</a></li>
+         	<li class="d15"><a href="/evaluate/more-1-201-----" class="a1" target="_blank">竹木牙角</a></li>
+         	<li class="d16"><a href="/evaluate/more-1-199-----" class="a1" target="_blank">金石篆刻</a></li>
+         	<li class="d17"><a href="/evaluate/more-1-207-----" class="a1" target="_blank">雕品工艺</a></li>
+         </ul>
+      </div>
+    </div>
+        <div class="mainMenu" >
+      <ul class="clearfloat">
+        <li class="d1"><a href="/"  class="a1">首 页</a></li>
+        <li class="d2 " ><a href="/evaluate/more-1-----------"  class="a1">鉴定交流</a>
+            <div class="secondMenu hide">
+              <dl clearfloat>  
+              	<dd><a href="/evaluate/more-1-----------">所有鉴定</a></dd>
+                <!-- <dd><a href="/evaluate/more-1---1">真品鉴赏</a></dd>
+                <dd><a href="/evaluate/more-1---2">赝品鉴赏</a></dd>
+                <dd><a href="/evaluate/more------2">交流鉴赏</a></dd> -->
+                <dd><a href="/evaluate/more-------------1">有奖互动</a></dd>
+                <!-- <dd><a href="/evaluate/knowledge">学习知识</a></dd>
+               	<dd><a href="/videos">视频节目</a></dd> -->
+               	<dd><a href="/Redirect/Admin/Evaluate/Publish"><font color="orange">我要鉴定</font></a></dd>
+              </dl>
+            </div>
+        </li>
+        <li class="d6 "><a href="/Group"  class="a1">一元捡漏</a></li>
+        <li class="" id="li_speciallistnew"><a href="/auction/speciallist"  class="a1">专场拍卖</a>
+        	<!--<div class="secondMenu hide">
+              <dl clearfloat>
+              	<dd><a href="/auction/speciallist">会员专拍</a></dd>
+              	<dd><a href="/auction/speciallistnew">艺粹专拍</a></dd>
+              </dl>
+            </div>-->
+        </li>
+        <li class="d5 "><a href="/category.jsp"  class="a1">店铺集市</a>
+            <div class="secondMenu hide">
+              <dl clearfloat>
+              	<dd><a href="/shopantique-1-1">店铺藏品</a></dd>
+              	<dd><a href="/shop">所有店铺</a></dd>
+              	<!-- <dd><a href="/PaiMai--1">普通拍卖</a></dd> -->
+              	<dd><a href="/Stall-1-1----------------">集市藏品</a></dd>
+              	<!-- <dd><a href="/mall">艺粹商城</a></dd> -->
+              	<dd><a href="/redirect/admin/shop/publish"><font color="orange">我要开店</font></a></dd>
+              </dl>
+            </div>
+        </li>
+      </ul>
+    </div>
+    <div class="helpMenu">
+      <ul>
+        <li class="d2"><a href="/Redirect/Admin/Evaluate/Publish" target="_blank">免费鉴定</a></li>
+        <li class="d1"><a href="http://f.artww.com/NoviceHelp/sell/step5_01.html" target="_blank">如何交易</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+    <!--网站主题内容开始-->
+    <div class="content">
+    
+    
+    <div class="Stalls">
+      <div class="left_part" id="left_part">
+        <div class="crumb" id="crumb">
+          <h2>当前位置：</h2>
+          <em></em><span><a href="/">首页</a></span><em></em><span><a href="/DangDai" title="当代艺术">当代艺术</a></span><em></em><span><a href="/ArtShop" >店铺藏品</a></span></div>
+        <div class="choices"> <a href="ArtShop----1" id="reset">重置</a>
+          
+            
+             <a href="ArtShop----1--------1-----" class="current">多选</a> 
+          
+          <a href="javascript:void(0)" id="ajax" style="display:none;">无刷新</a> </div>
+        <div class="all_cates" id="allCates">
+          <div class="bd">
+            <div class="con" >
+              <div class="other">
+                <div class="cate_main" id="cate_main"> <dl class="nodotted"><dd class="multiple"><div class="all_cate"><a  id="i_18" href="ArtShop----1_21_67_20_209_42_18-----1---1-0--1--1">陶器瓷器</a><a  id="i_19" href="ArtShop----1_21_67_20_209_42_19-----1---1-0--1--1">玉器珠宝</a><a id="i_21"  class="current"  href="ArtShop----1_67_20_209_42-----1---1-0--1--1">古币钱币</a><a id="i_20"  class="current"  href="ArtShop----1_21_67_209_42-----1---1-0--1--1">书画油画</a><a id="i_42"  class="current"  href="ArtShop----1_21_67_20_209-----1---1-0--1--1">木器家具</a><a  id="i_43" href="ArtShop----1_21_67_20_209_42_43-----1---1-0--1--1">铜器收藏</a><a id="i_67"  class="current"  href="ArtShop----1_21_20_209_42-----1---1-0--1--1">收藏杂项</a><a  id="i_201" href="ArtShop----1_21_67_20_209_42_201-----1---1-0--1--1">竹木牙角</a><a  id="i_68" href="ArtShop----1_21_67_20_209_42_68-----1---1-0--1--1">古籍善本</a><a  id="i_70" href="ArtShop----1_21_67_20_209_42_70-----1---1-0--1--1">文房清玩</a><a  id="i_198" href="ArtShop----1_21_67_20_209_42_198-----1---1-0--1--1">鼻 烟 壶</a><a  id="i_199" href="ArtShop----1_21_67_20_209_42_199-----1---1-0--1--1">金石篆刻</a><a  id="i_73" href="ArtShop----1_21_67_20_209_42_73-----1---1-0--1--1">宗教收藏</a><a  id="i_200" href="ArtShop----1_21_67_20_209_42_200-----1---1-0--1--1">织锦刺绣</a><a  id="i_69" href="ArtShop----1_21_67_20_209_42_69-----1---1-0--1--1">赏石奇石</a><a  id="i_208" href="ArtShop----1_21_67_20_209_42_208-----1---1-0--1--1">红色收藏</a><a  id="i_74" href="ArtShop----1_21_67_20_209_42_74-----1---1-0--1--1">紫砂艺术</a><a  id="i_211" href="ArtShop----1_21_67_20_209_42_211-----1---1-0--1--1">电器收藏</a><a  id="i_203" href="ArtShop----1_21_67_20_209_42_203-----1---1-0--1--1">钟表收藏</a><a  id="i_78" href="ArtShop----1_21_67_20_209_42_78-----1---1-0--1--1">邮票邮品</a><a  id="i_204" href="ArtShop----1_21_67_20_209_42_204-----1---1-0--1--1">票证票据</a><a  id="i_205" href="ArtShop----1_21_67_20_209_42_205-----1---1-0--1--1">标章铭牌</a><a  id="i_206" href="ArtShop----1_21_67_20_209_42_206-----1---1-0--1--1">磁卡卡片</a><a  id="i_82" href="ArtShop----1_21_67_20_209_42_82-----1---1-0--1--1">连 环 画</a><a  id="i_207" href="ArtShop----1_21_67_20_209_42_207-----1---1-0--1--1">雕品工艺</a><a  id="i_202" href="ArtShop----1_21_67_20_209_42_202-----1---1-0--1--1">金银器饰</a><a id="i_209"  class="current"  href="ArtShop----1_21_67_20_42-----1---1-0--1--1">矿物晶体</a><a  id="i_88" href="ArtShop----1_21_67_20_209_42_88-----1---1-0--1--1">西洋收藏</a><a  id="i_89" href="ArtShop----1_21_67_20_209_42_89-----1---1-0--1--1">趣味收藏</a><a  id="i_210" href="ArtShop----1_21_67_20_209_42_210-----1---1-0--1--1">图书报刊</a><a  id="i_223" href="ArtShop----1_21_67_20_209_42_223-----1---1-0--1--1">参考资料</a><a  id="i_91" href="ArtShop----1_21_67_20_209_42_91-----1---1-0--1--1">工具用品</a></div> </dd></dl> <div id="hide_show" class="bc_top"  style="display:none;"
+                  
+                    
+                   
+                  ><dl><dt>交易方式：</dt><dd><a href="ArtShop----1_21_67_20_209_42-----1---1-0--1--1" class="current">不限</a></dd><dd class="multiple"><div class="interval"><a  id="i_5" href="ArtShop----1_21_67_20_209_42----5-1---1-0--1--1">艺粹币抵扣</a><a  id="i_1" href="ArtShop----1_21_67_20_209_42----1-1---1-0--1--1">允许议价</a><a  id="i_2" href="ArtShop----1_21_67_20_209_42----2-1---1-0--1--1">一口价格</a><a  id="i_3" href="ArtShop----1_21_67_20_209_42----3-1---1-0--1--1">允许交换</a></div> </dd></dl><dl><dt>店铺级别：</dt><dd><a href="ArtShop----1_21_67_20_209_42--------1-0--1--1" >不限</a></dd><dd class="multiple"><div class="interval"><a id="i_1"  class="current"  href="ArtShop----1_21_67_20_209_42--------1-0--1--1">普通店铺</a><a  id="i_2" href="ArtShop----1_21_67_20_209_42-----1_2---1-0--1--1">免检店铺</a><a  id="i_3" href="ArtShop----1_21_67_20_209_42-----1_3---1-0--1--1">推荐店铺</a></div> </dd></dl><dl><dt>店铺类型：</dt><dd><a href="ArtShop----1_21_67_20_209_42-----1---1-0--1---" >不限</a></dd><dd class="multiple"><div class="interval"><a id="i_1"  class="current"  href="ArtShop----1_21_67_20_209_42-----1---1-0--1---">个人店铺</a><a  id="i_2" href="ArtShop----1_21_67_20_209_42-----1---1-0--1--1_2-">商家店铺</a><a  id="i_3" href="ArtShop----1_21_67_20_209_42-----1---1-0--1--1_3-">原创店铺</a></div> </dd></dl></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ft"><a href="javascript:satShowHide();" id="t" class="hide" ></a></div>
+        <!-- 
+        <div class="more_btn"><a href="javascript:void(0);" 
+          
+            class="hide"
+            
+          
+          id="more_btn"></a></div> -->
+      </div>
+      
+      
+            
+     
+      
+   <div class="list_content" id="list_content">
+   
+        <div class="filter_bar" >
+            <ul class="tabbar">
+              <li><a id="selectAll" href="ArtShop-" class="a1_current
+                
+                
+                " hidefocus="true">所有藏品</a></li>
+                  <li><a id="recommend" href="ArtShop--1--1_21_67_20_209_42-----1---1-0--1--1" class="a2
+                
+                " hidefocus="true">最新发布</a></li>
+              <li><a id="recommend" href="ArtShop--2--1_21_67_20_209_42-----1---1-0--1--1" class="a3
+                
+                " hidefocus="true">艺粹推荐</a></li>
+                
+              <li><a id="popularity" href="ArtShop--3--1_21_67_20_209_42-----1---1-0--1--1" class="a5
+                
+                " hidefocus="true">人气藏品</a></li>
+              <li><a id="sellerrecommend" href="ArtShop--5--1_21_67_20_209_42-----1---1-0--1--1" class="a6
+                
+                " hidefocus="true">卖家推荐</a></li>                 
+            </ul>
+          <div class="list_query" id="list_query">
+            <div class="show_model">
+              
+                 <a href="ArtShop-1--10-1_21_67_20_209_42-----1---1-0--1--1" class="big_pic">切换到大图</a> 
+                
+              
+            </div>
+            <div class="support">
+              
+                
+                 <a href="ArtShop----1_21_67_20_209_42-----1--1-1-0--1--1" class="thumb_mode">假一赔三</a> 
+              
+            </div>
+            <input type="hidden" id="a_title" value=""/>
+            <div class="ss"><input type="text" id="titleSearch" name="titleSearch" value="关键字" style="color: #999999" onblur="if(this.value==''){this.value='关键字'; $(this).css('color','#999999');}" onfocus="if(this.value=='关键字') {this.value='';$(this).css('color','#333333')} "><a class="ss_btn" id="title_search" urlPre="ArtShop---10-1_21_67_20_209_42-----1---1-0--1" urlAfter="1" href="javascript:title_se()"></a></div>
+            <div class="jiage"><a position="n" href="ArtShop----1_21_67_20_209_42-----1---2-0--1--1" class="down"></a></div>
+            <div class="priceDiv" id="priceDiv" style="display:none;">
+            	<span>
+		             
+		                
+		                
+		                <div style="background:url(http://f.artww.com/body/images/form/pricepanel.png) no-repeat;background-position:0 -16px;padding-left:23px;margin-left:-1px;">价格从高到底</div>
+		                
+		             
+            	</span>
+            </div>
+              <ul id="pricePanel" class="pricePanel">
+              <li class="price_time "><a href="ArtShop----1_21_67_20_209_42-----1---3-0--1--1">发布日期排序</a></li>
+              <li class="price_asc "><a href="ArtShop----1_21_67_20_209_42-----1---2-0--1--1">价格从低到高</a></li>
+              <li class="price_desc current"><a href="ArtShop----1_21_67_20_209_42-----1---1-0--1--1">价格从高到底</a></li>
+              <li class="price_default "><a href="ArtShop----1_21_67_20_209_42-----1----0--1--1">恢复默认排序</a></li>
+             </ul>
+  <ul class="attribute">
+        <li class="price"> 
+            <div id="priceSearch" class="priceSearch"><input type="text" size="5" value="" id="lowPrice" name="lowPrice" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeydown="priceChange(event)" /><span>-</span><input type="text" size="5" value="" id="highPrice" name="highPrice" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" onkeydown="priceChange(event)" /></div>
+            <div class="priceSearchPanel" id="priceSearchPanel">
+            <div class="con"><a href="javascript:priceCancle()" id="idc" class="clear">清除</a>
+            <a href="javascript:newPrice()" id="idSearchPrice"  urlPre="ArtShop----1_21_67_20_209_42-" urlAfter="-1---1-0--1--1" class="ok">确定</a>
+            </div>
+            </div>
+        </li>
+ <li class="period">
+ 诚信保障
+         <div style="display:none;" class="commonDown" id="periodDiv"><span>
+               
+                
+                   3天包退 
+                
+                 
+                
+                
+            
+            </span></div>
+      
+            <ul style="display:none;" id="periodPanel" class="commonDownPanel">
+ 
+              <li  class="current"   ><a href="ArtShop----1_21_67_20_209_42-----1---1-0--1--1">3天包退</a></li>
+              <li  ><a href="ArtShop----1_21_67_20_209_42-----1---1-1--1--1">7天包退</a></li>
+              <li><a href="ArtShop----1_21_67_20_209_42-----1---1---1--1">全部</a></li>
+            </ul>
+            </li>
+            <li class="location">
+            <div class="commonDown" id="locationDiv" urlPre="ArtShop----1_21_67_20_209_42-----1---1-0" urlAfter="1--1"><span>
+            
+            所在地区
+              
+            </span></div> 
+              <div class="locationPanel" id="locationPanel"><span class="other"></span>
+              <p class="all"><a href="ArtShop----1_21_67_20_209_42-----1---1-0--1--1" class="a_all">所有地区</a><input type="text" name="addressInput" id="addressInput" valueDemo=""  value="" onkeydown="addressChange(event)"/><a class="ok" id="idSearch" href="javascript:searchAddress()">搜索</a></p>
+			  
+			  	
+			  
+			  
+              <p class="area"><a href="javascript:searchCity('北京')">北京</a><a href="javascript:searchCity('上海')">上海</a><a href="javascript:searchCity('杭州')">杭州</a><a href="javascript:searchCity('广州')">广州
+              	</a><a href="javascript:searchCity('西安')">西安</a><a href="javascript:searchCity('郑州')">郑州</a><a href="javascript:searchCity('天津')">天津</a><a href="javascript:searchCity('太原')">太原
+              	</a><a href="javascript:searchCity('南京')">南京</a><a href="javascript:searchCity('兰州')">兰州</a><a href="javascript:searchCity('成都')">成都</a><a href="javascript:searchCity('港澳台')">港澳台
+              	</a><a href="javascript:searchCity('海外')">海外</a>
+              </p>
+              
+              <p class="area"><a href="javascript:searchCity('苏州')">苏州</a><a href="javascript:searchCity('宁波')">宁波</a><a href="javascript:searchCity('深圳')">深圳</a><a href="javascript:searchCity('柳州')">柳州
+              	</a><a href="javascript:searchCity('开封')">开封</a><a href="javascript:searchCity('洛阳')">洛阳</a><a href="javascript:searchCity('徐州')">徐州</a><a href="javascript:searchCity('蚌埠')">蚌埠
+              	</a><a href="javascript:searchCity('厦门')">厦门</a><a href="javascript:searchCity('青岛')">青岛</a><a href="javascript:searchCity('温州')">温州</a><a href="javascript:searchCity('济南')">济南
+              	</a><a href="javascript:searchCity('青岛')">青岛</a><a href="javascript:searchCity('大连')">大连</a><a href="javascript:searchCity('无锡')">无锡</a><a href="javascript:searchCity('合肥')">合肥
+              	</a><a href="javascript:searchCity('长沙')">长沙</a><a href="javascript:searchCity('武汉')">武汉</a><a href="javascript:searchCity('重庆')">重庆</a><a href="javascript:searchCity('昆明')">昆明
+              	</a><a href="javascript:searchCity('石家庄')">石家庄</a><a href="javascript:searchCity('南宁')">南宁</a><a href="javascript:searchCity('福州')">福州</a><a href="javascript:searchCity('厦门')">厦门
+              	</a><a href="javascript:searchCity('南昌')">南昌</a><a href="javascript:searchCity('东莞')">东莞</a><a href="javascript:searchCity('沈阳')">沈阳</a><a href="javascript:searchCity('长春')">长春
+              	</a><a href="javascript:searchCity('哈尔滨')">哈尔滨</a>
+              </p>
+              
+              <p class="area"><a href="javascript:searchCity('安徽')">安徽</a><a href="javascript:searchCity('福建')">福建</a><a href="javascript:searchCity('甘肃')">甘肃</a><a href="javascript:searchCity('广东')">广东
+              	</a><a href="javascript:searchCity('广西')">广西</a><a href="javascript:searchCity('贵州')">贵州</a><a href="javascript:searchCity('海南')">海南</a><a href="javascript:searchCity('河北')">河北
+              	</a><a href="javascript:searchCity('河南')">河南</a><a href="javascript:searchCity('湖北')">湖北</a><a href="javascript:searchCity('湖南')">湖南</a><a href="javascript:searchCity('江苏')">江苏
+              	</a><a href="javascript:searchCity('黑龙江')">黑龙江</a><a href="javascript:searchCity('江西')">江西</a><a href="javascript:searchCity('吉林')">吉林</a><a href="javascript:searchCity('辽宁')">辽宁
+              	</a><a href="javascript:searchCity('内蒙古')">内蒙古</a><a href="javascript:searchCity('宁夏')">宁夏</a><a href="javascript:searchCity('青海')">青海</a><a href="javascript:searchCity('山东')">山东
+              	</a><a href="javascript:searchCity('山西')">山西</a><a href="javascript:searchCity('陕西')">陕西</a><a href="javascript:searchCity('四川')">四川</a><a href="javascript:searchCity('西藏')">西藏
+              	</a><a href="javascript:searchCity('新疆')">新疆</a><a href="javascript:searchCity('云南')">云南</a><a href="javascript:searchCity('浙江')">浙江</a><a href="javascript:searchCity('香港')">香港
+              	</a><a href="javascript:searchCity('澳门')">澳门</a><a href="javascript:searchCity('台湾')">台湾</a>
+              </p>
+			  
+            </div>
+            </li>
+            </ul>
+          </div>
+        </div>
+        <div class="list_container" id="item_list_content">
+          
+            
+             
+                
+                  
+                   <ul class="item_list" id="ListTable">
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="250472"><a href="/30521/ShopAntique-Show-250472-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/30521/2367645-7.jpg"  /></a>
+                           <div id="picContent_250472" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:30521:2367645.jpg 2367646.jpg 2367647.jpg 2367652.jpg 2367653.jpg 2367654.jpg:/30521/ShopAntique-Show-250472:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="2367645.jpg 2367646.jpg 2367647.jpg 2367652.jpg 2367653.jpg 2367654.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>980000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            <a href="/Credit/index.jsp?tab=2" class="true" position="w">假一赔三</a>
+						  </li>
+                          <li class="location">辽宁 丹东</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/30521/ShopAntique-Show-250472-1_21_67_20_209_42" target="_blank">十八k金三问万年日历月相计时码…</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">清</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(30521,'zasx', $(this).offset().left-2, $(this).offset().top-4)">zasx</a><a href="javascript:void(0)" id="yct_30521" userid="30521" status="3" typeid="1" ytitle="zasx" yid="250472"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/30521/Shop">欣欣西洋钟表行</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：1天20时34分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(250472,1,1)" class="favorites" id="shoucang_250472_1_1"></a><a href="javascript:share(250472,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="29198"><a href="/31166/ShopAntique-Show-29198-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/31166/858674-7.jpg"  /></a>
+                           <div id="picContent_29198" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:31166:858674.jpg 858675.jpg 858676.jpg 858677.jpg 858678.jpg 858679.jpg 858680.jpg 858681.jpg:/31166/ShopAntique-Show-29198:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="858674.jpg 858675.jpg 858676.jpg 858677.jpg 858678.jpg 858679.jpg 858680.jpg 858681.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>980000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">广东 广州</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/31166/ShopAntique-Show-29198-1_21_67_20_209_42" target="_blank">岭南画派宗师高奇峰双雀图立轴 </a></span></h3> 
+                          <div class="year">年代：<font color="#881414">民国</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(31166,'泰恒轩', $(this).offset().left-2, $(this).offset().top-4)">泰恒轩</a><a href="javascript:void(0)" id="yct_31166" userid="31166" status="3" typeid="1" ytitle="泰恒轩" yid="29198"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/31166/Shop">泰恒轩</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：3时26分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(29198,1,1)" class="favorites" id="shoucang_29198_1_1"></a><a href="javascript:share(29198,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="559075"><a href="/56102/ShopAntique-Show-559075-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/56102/4858750-7.jpg"  /></a>
+                           <div id="picContent_559075" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:56102:4858750.jpg 4858759.jpg 4858766.jpg 4858760.jpg 4858770.jpg 4858772.jpg 4858769.jpg 4860074.jpg 4860052.jpg 4860662.jpg 4860663.jpg:/56102/ShopAntique-Show-559075:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4858750.jpg 4858759.jpg 4858766.jpg 4858760.jpg 4858770.jpg 4858772.jpg 4858769.jpg 4860074.jpg 4860052.jpg 4860662.jpg 4860663.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>990000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">广西 玉林</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/56102/ShopAntique-Show-559075-1_21_67_20_209_42" target="_blank">李鸿章书法作品</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">清</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(56102,'jiezhid', $(this).offset().left-2, $(this).offset().top-4)">jiezhid</a><a href="javascript:void(0)" id="yct_56102" userid="56102" status="3" typeid="1" ytitle="jiezhid" yid="559075"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/56102/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：1天6时43分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(559075,1,1)" class="favorites" id="shoucang_559075_1_1"></a><a href="javascript:share(559075,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="279511"><a href="/65027/ShopAntique-Show-279511-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/65027/2588175-7.jpg"  /></a>
+                           <div id="picContent_279511" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:65027:2588175.jpg 2588174.jpg 2588190.jpg 2588210.jpg 2588191.jpg 2588186.jpg 2588200.jpg 2588188.jpg 2588177.jpg 2588180.jpg 2588181.jpg 2588199.jpg 2588189.jpg 2588187.jpg 2588192.jpg 2588205.jpg 2588203.jpg 2588204.jpg 2588206.jpg 2588207.jpg:/65027/ShopAntique-Show-279511:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="2588175.jpg 2588174.jpg 2588190.jpg 2588210.jpg 2588191.jpg 2588186.jpg 2588200.jpg 2588188.jpg 2588177.jpg 2588180.jpg 2588181.jpg 2588199.jpg 2588189.jpg 2588187.jpg 2588192.jpg 2588205.jpg 2588203.jpg 2588204.jpg 2588206.jpg 2588207.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>990000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            <a href="/Credit/index.jsp?tab=2" class="true" position="w">假一赔三</a>
+						  </li>
+                          <li class="location">河南 驻马店</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/65027/ShopAntique-Show-279511-1_21_67_20_209_42" target="_blank">最珍贵的毛主席银像章</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(65027,'wangzehui1989', $(this).offset().left-2, $(this).offset().top-4)">wangzehui1989</a><a href="javascript:void(0)" id="yct_65027" userid="65027" status="3" typeid="1" ytitle="wangzehui1989" yid="279511"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/65027/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4时31分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(279511,1,1)" class="favorites" id="shoucang_279511_1_1"></a><a href="javascript:share(279511,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="165360"><a href="/52247/ShopAntique-Show-165360-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/52247/1739880-7.jpg"  /></a>
+                           <div id="picContent_165360" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:52247:1739880.jpg 1739881.jpg 1739882.jpg 1739883.jpg 1739884.jpg 1739885.jpg 1739888.jpg 1739889.jpg 1739896.jpg 1739898.jpg 1739900.jpg 1739902.jpg 1739903.jpg 1739917.jpg 1739905.jpg 1739906.jpg 1739915.jpg 1739910.jpg 1739912.jpg 1739914.jpg:/52247/ShopAntique-Show-165360:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="1739880.jpg 1739881.jpg 1739882.jpg 1739883.jpg 1739884.jpg 1739885.jpg 1739888.jpg 1739889.jpg 1739896.jpg 1739898.jpg 1739900.jpg 1739902.jpg 1739903.jpg 1739917.jpg 1739905.jpg 1739906.jpg 1739915.jpg 1739910.jpg 1739912.jpg 1739914.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>990000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">天津</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/52247/ShopAntique-Show-165360-1_21_67_20_209_42" target="_blank">早已倒闭的福州一脱的脱胎漆器-…</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(52247,'我有漆又有财', $(this).offset().left-2, $(this).offset().top-4)">我有漆又有财</a><a href="javascript:void(0)" id="yct_52247" userid="52247" status="3" typeid="1" ytitle="我有漆又有财" yid="165360"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/52247/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：3天5时52分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(165360,1,1)" class="favorites" id="shoucang_165360_1_1"></a><a href="javascript:share(165360,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="97787"><a href="/44394/ShopAntique-Show-97787-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/44394/1299983-7.jpg"  /></a>
+                           <div id="picContent_97787" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:44394:1299983.jpg 1299984.jpg 1299985.jpg 1299986.jpg 1299988.jpg:/44394/ShopAntique-Show-97787:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="1299983.jpg 1299984.jpg 1299985.jpg 1299986.jpg 1299988.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            
+                          一口价
+                           </p> 
+                            <p class="price_info"><em>990000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            <a href="/Credit/index.jsp?tab=2" class="true" position="w">假一赔三</a>
+						  </li>
+                          <li class="location">北京</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/44394/ShopAntique-Show-97787-1_21_67_20_209_42" target="_blank">2公斤纯金银《中华千佛盘》升值…</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(44394,'jiaguibo117', $(this).offset().left-2, $(this).offset().top-4)">jiaguibo117</a><a href="javascript:void(0)" id="yct_44394" userid="44394" status="3" typeid="1" ytitle="jiaguibo117" yid="97787"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/44394/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：2天6时58分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(97787,1,1)" class="favorites" id="shoucang_97787_1_1"></a><a href="javascript:share(97787,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="79582"><a href="/40417/ShopAntique-Show-79582-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/40417/1182988-7.jpg"  /></a>
+                           <div id="picContent_79582" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:40417:1182988.jpg 1182994.jpg 1182998.jpg 1183009.jpg:/40417/ShopAntique-Show-79582:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="1182988.jpg 1182994.jpg 1182998.jpg 1183009.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>990000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">北京</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/40417/ShopAntique-Show-79582-1_21_67_20_209_42" target="_blank">张心启小楷金粉金刚经</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(40417,'心启斋', $(this).offset().left-2, $(this).offset().top-4)">心启斋</a><a href="javascript:void(0)" id="yct_40417" userid="40417" status="3" typeid="1" ytitle="心启斋" yid="79582"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/40417/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：1天5时27分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(79582,1,1)" class="favorites" id="shoucang_79582_1_1"></a><a href="javascript:share(79582,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="5204"><a href="/29169/ShopAntique-Show-5204-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/29169/732190-7.jpg"  /></a>
+                           <div id="picContent_5204" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:29169:732190.jpg 732192.jpg:/29169/ShopAntique-Show-5204:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="732190.jpg 732192.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>990000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">上海</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/29169/ShopAntique-Show-5204-1_21_67_20_209_42" target="_blank"> 壹万元牧马</a><i class="jian_ico" position="w"></i></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(29169,'富晖纸钞', $(this).offset().left-2, $(this).offset().top-4)">富晖纸钞</a><a href="javascript:void(0)" id="yct_29169" userid="29169" status="3" typeid="1" ytitle="富晖纸钞" yid="5204"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/29169/Shop">富晖纸钞</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：3天7时46分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(5204,1,1)" class="favorites" id="shoucang_5204_1_1"></a><a href="javascript:share(5204,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="496551"><a href="/85546/ShopAntique-Show-496551-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/85546/4255145-7.jpg"  /></a>
+                           <div id="picContent_496551" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:85546:4255145.jpg 4255146.jpg 4255147.jpg 4255148.jpg 4255150.jpg 4255155.jpg 4255154.jpg 4255156.jpg 4255157.jpg 4255158.jpg 4255159.jpg 4255160.jpg:/85546/ShopAntique-Show-496551:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4255145.jpg 4255146.jpg 4255147.jpg 4255148.jpg 4255150.jpg 4255155.jpg 4255154.jpg 4255156.jpg 4255157.jpg 4255158.jpg 4255159.jpg 4255160.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>999999.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">上海</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/85546/ShopAntique-Show-496551-1_21_67_20_209_42" target="_blank">【福寿双全】</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(85546,'石中福寿山石', $(this).offset().left-2, $(this).offset().top-4)">石中福寿山石</a><a href="javascript:void(0)" id="yct_85546" userid="85546" status="3" typeid="1" ytitle="石中福寿山石" yid="496551"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/85546/Shop">【石中福】寿山石</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4天0时40分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(496551,1,1)" class="favorites" id="shoucang_496551_1_1"></a><a href="javascript:share(496551,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="425846"><a href="/76721/ShopAntique-Show-425846-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/76721/3695395-7.jpg"  /></a>
+                           <div id="picContent_425846" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:76721:3695395.jpg 3695396.jpg:/76721/ShopAntique-Show-425846:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3695395.jpg 3695396.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            
+                          一口价
+                           </p> 
+                            <p class="price_info"><em>999999.00</em></p>
+                            <p style="margin-top: 7px;"><span class="yicui_dk">艺粹币抵<font color="#881414">1000</font>元</span></p>
+                            <p class="price_other"><span class="exchange">允许交换</span></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">河南 郑州</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/76721/ShopAntique-Show-425846-1_21_67_20_209_42" target="_blank">与众不同的诡异错币收藏</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(76721,'错版2005', $(this).offset().left-2, $(this).offset().top-4)">错版2005</a><a href="javascript:void(0)" id="yct_76721" userid="76721" status="3" typeid="1" ytitle="错版2005" yid="425846"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/76721/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4天6时52分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(425846,1,1)" class="favorites" id="shoucang_425846_1_1"></a><a href="javascript:share(425846,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="335678"><a href="/52726/ShopAntique-Show-335678-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/52726/3022847-7.jpg"  /></a>
+                           <div id="picContent_335678" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:52726:3022847.jpg 3022849.jpg 3022851.jpg 3022853.jpg 3022854.jpg 3022855.jpg 3022857.jpg 3022858.jpg:/52726/ShopAntique-Show-335678:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3022847.jpg 3022849.jpg 3022851.jpg 3022853.jpg 3022854.jpg 3022855.jpg 3022857.jpg 3022858.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>999999.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            <a href="/Credit/index.jsp?tab=2" class="true" position="w">假一赔三</a>
+						  </li>
+                          <li class="location">山东 济宁</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/52726/ShopAntique-Show-335678-1_21_67_20_209_42" target="_blank">印章 珍贵材料印章</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">高古</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(52726,'喜欢鸡血石', $(this).offset().left-2, $(this).offset().top-4)">喜欢鸡血石</a><a href="javascript:void(0)" id="yct_52726" userid="52726" status="3" typeid="1" ytitle="喜欢鸡血石" yid="335678"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/52726/Shop">山东泗水奇石馆</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：6天9时23分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(335678,1,1)" class="favorites" id="shoucang_335678_1_1"></a><a href="javascript:share(335678,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="325517"><a href="/44421/ShopAntique-Show-325517-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/44421/2944071-7.jpg"  /></a>
+                           <div id="picContent_325517" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:44421:2944071.jpg 2944072.jpg:/44421/ShopAntique-Show-325517:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="2944071.jpg 2944072.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            
+                          一口价
+                           </p> 
+                            <p class="price_info"><em>999999.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">北京</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/44421/ShopAntique-Show-325517-1_21_67_20_209_42" target="_blank">【郭传璋】山水小精品</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(44421,'墨古山人', $(this).offset().left-2, $(this).offset().top-4)">墨古山人</a><a href="javascript:void(0)" id="yct_44421" userid="44421" status="3" typeid="1" ytitle="墨古山人" yid="325517"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/44421/Shop">燕怡斋</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：2天9时28分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(325517,1,1)" class="favorites" id="shoucang_325517_1_1"></a><a href="javascript:share(325517,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="306281"><a href="/31205/ShopAntique-Show-306281-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/31205/2795003-7.jpg"  /></a>
+                           <div id="picContent_306281" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:31205:2795003.jpg 2795004.jpg 2795005.jpg 2795006.jpg 2795007.jpg 2795008.jpg:/31205/ShopAntique-Show-306281:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="2795003.jpg 2795004.jpg 2795005.jpg 2795006.jpg 2795007.jpg 2795008.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>999999.00</em></p>
+                            
+                            <p class="price_other"><span class="exchange">允许交换</span></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">江西 宜春</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/31205/ShopAntique-Show-306281-1_21_67_20_209_42" target="_blank">元人《起居图》</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">明</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(31205,'youminshizhe', $(this).offset().left-2, $(this).offset().top-4)">youminshizhe</a><a href="javascript:void(0)" id="yct_31205" userid="31205" status="3" typeid="1" ytitle="youminshizhe" yid="306281"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/31205/Shop">水月镜轩之濯心亭</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：6天16时39分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(306281,1,1)" class="favorites" id="shoucang_306281_1_1"></a><a href="javascript:share(306281,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="583889"><a href="/101625/ShopAntique-Show-583889-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/101625/5071151-7.jpg"  /></a>
+                           <div id="picContent_583889" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:101625:5071151.jpg 5071153.jpg 5071162.jpg 5071181.jpg 5071183.jpg 5071182.jpg 5071174.jpg 5071280.jpg 5071177.jpg 5071184.jpg 5071281.jpg:/101625/ShopAntique-Show-583889:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="5071151.jpg 5071153.jpg 5071162.jpg 5071181.jpg 5071183.jpg 5071182.jpg 5071174.jpg 5071280.jpg 5071177.jpg 5071184.jpg 5071281.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            <p style="margin-top: 7px;"><span class="yicui_dk">艺粹币抵<font color="#881414">10</font>元</span></p>
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            <a href="/Credit/index.jsp?tab=2" class="true" position="w">假一赔三</a>
+						  </li>
+                          <li class="location">新疆 阿克苏</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/101625/ShopAntique-Show-583889-1_21_67_20_209_42" target="_blank">飞来石</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">民国</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(101625,'我爱青花2', $(this).offset().left-2, $(this).offset().top-4)">我爱青花2</a><a href="javascript:void(0)" id="yct_101625" userid="101625" status="3" typeid="1" ytitle="我爱青花2" yid="583889"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/101625/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：5时30分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(583889,1,1)" class="favorites" id="shoucang_583889_1_1"></a><a href="javascript:share(583889,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="568504"><a href="/88509/ShopAntique-Show-568504-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/88509/4946493-7.jpg"  /></a>
+                           <div id="picContent_568504" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:88509:4946493.jpg 4946495.jpg 4946496.jpg 4946494.jpg 4946497.jpg 4946498.jpg:/88509/ShopAntique-Show-568504:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4946493.jpg 4946495.jpg 4946496.jpg 4946494.jpg 4946497.jpg 4946498.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location"></li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/88509/ShopAntique-Show-568504-1_21_67_20_209_42" target="_blank">绝品徽派木雕长方</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">清</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(88509,'南山古建', $(this).offset().left-2, $(this).offset().top-4)">南山古建</a><a href="javascript:void(0)" id="yct_88509" userid="88509" status="3" typeid="1" ytitle="南山古建" yid="568504"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/88509/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4天23时51分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(568504,1,1)" class="favorites" id="shoucang_568504_1_1"></a><a href="javascript:share(568504,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="513842"><a href="/48542/ShopAntique-Show-513842-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/48542/4401390-7.jpg"  /></a>
+                           <div id="picContent_513842" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:48542:4401390.jpg 4401393.jpg 4401400.jpg:/48542/ShopAntique-Show-513842:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4401390.jpg 4401393.jpg 4401400.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            
+                          一口价
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">江西 南昌</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/48542/ShopAntique-Show-513842-1_21_67_20_209_42" target="_blank">黎雄才 桂林写生山水部分</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(48542,'zj6300221', $(this).offset().left-2, $(this).offset().top-4)">zj6300221</a><a href="javascript:void(0)" id="yct_48542" userid="48542" status="3" typeid="1" ytitle="zj6300221" yid="513842"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/48542/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：6天3时37分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(513842,1,1)" class="favorites" id="shoucang_513842_1_1"></a><a href="javascript:share(513842,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="512854"><a href="/48542/ShopAntique-Show-512854-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/48542/4393452-7.jpg"  /></a>
+                           <div id="picContent_512854" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:48542:4393452.jpg 4393454.jpg 4393455.jpg 4393456.jpg 4393457.jpg 4393458.jpg 4393459.jpg 4393460.jpg 4393461.jpg 4393463.jpg 4393467.jpg 4393470.jpg 4393471.jpg:/48542/ShopAntique-Show-512854:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4393452.jpg 4393454.jpg 4393455.jpg 4393456.jpg 4393457.jpg 4393458.jpg 4393459.jpg 4393460.jpg 4393461.jpg 4393463.jpg 4393467.jpg 4393470.jpg 4393471.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            
+                          一口价
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">江西 南昌</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/48542/ShopAntique-Show-512854-1_21_67_20_209_42" target="_blank">张书旗 花鸟 19×12cm 200册</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(48542,'zj6300221', $(this).offset().left-2, $(this).offset().top-4)">zj6300221</a><a href="javascript:void(0)" id="yct_48542" userid="48542" status="3" typeid="1" ytitle="zj6300221" yid="512854"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/48542/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4天4时35分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(512854,1,1)" class="favorites" id="shoucang_512854_1_1"></a><a href="javascript:share(512854,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="509888"><a href="/86745/ShopAntique-Show-509888-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/86745/4368326-7.jpg"  /></a>
+                           <div id="picContent_509888" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:86745:4368326.jpg 4368327.jpg 4368328.jpg 4368330.jpg 4368331.jpg 4368333.jpg 4368332.jpg 4368334.jpg:/86745/ShopAntique-Show-509888:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4368326.jpg 4368327.jpg 4368328.jpg 4368330.jpg 4368331.jpg 4368333.jpg 4368332.jpg 4368334.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">江苏 苏州</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/86745/ShopAntique-Show-509888-1_21_67_20_209_42" target="_blank">紫檀方桌</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">清</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(86745,'泰伯海黄馆', $(this).offset().left-2, $(this).offset().top-4)">泰伯海黄馆</a><a href="javascript:void(0)" id="yct_86745" userid="86745" status="3" typeid="1" ytitle="泰伯海黄馆" yid="509888"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/86745/Shop">泰伯海黄馆</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：5天0时4分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(509888,1,1)" class="favorites" id="shoucang_509888_1_1"></a><a href="javascript:share(509888,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="504460"><a href="/30760/ShopAntique-Show-504460-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/30760/4322171-7.jpg"  /></a>
+                           <div id="picContent_504460" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:30760:4322171.jpg 4322172.jpg 4322173.jpg 4322175.jpg 4322176.jpg 4322177.jpg 4322178.jpg 4322179.jpg:/30760/ShopAntique-Show-504460:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4322171.jpg 4322172.jpg 4322173.jpg 4322175.jpg 4322176.jpg 4322177.jpg 4322178.jpg 4322179.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">河北 衡水</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/30760/ShopAntique-Show-504460-1_21_67_20_209_42" target="_blank">【冯其庸】----（富贵图） </a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(30760,'李荃中', $(this).offset().left-2, $(this).offset().top-4)">李荃中</a><a href="javascript:void(0)" id="yct_30760" userid="30760" status="3" typeid="1" ytitle="李荃中" yid="504460"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/30760/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：37分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(504460,1,1)" class="favorites" id="shoucang_504460_1_1"></a><a href="javascript:share(504460,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="496965"><a href="/86745/ShopAntique-Show-496965-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/86745/4258822-7.jpg"  /></a>
+                           <div id="picContent_496965" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:86745:4258822.jpg 4258823.jpg 4258825.jpg 4258824.jpg:/86745/ShopAntique-Show-496965:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4258822.jpg 4258823.jpg 4258825.jpg 4258824.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            
+                          一口价
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">江苏 苏州</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/86745/ShopAntique-Show-496965-1_21_67_20_209_42" target="_blank">明海黄椅子</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">明</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(86745,'泰伯海黄馆', $(this).offset().left-2, $(this).offset().top-4)">泰伯海黄馆</a><a href="javascript:void(0)" id="yct_86745" userid="86745" status="3" typeid="1" ytitle="泰伯海黄馆" yid="496965"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/86745/Shop">泰伯海黄馆</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4天12时51分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(496965,1,1)" class="favorites" id="shoucang_496965_1_1"></a><a href="javascript:share(496965,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="496691"><a href="/86745/ShopAntique-Show-496691-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/86745/4256341-7.jpg"  /></a>
+                           <div id="picContent_496691" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:86745:4256341.jpg 4256343.jpg 4256342.jpg 4256347.jpg 4256352.jpg 4256358.jpg:/86745/ShopAntique-Show-496691:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4256341.jpg 4256343.jpg 4256342.jpg 4256347.jpg 4256352.jpg 4256358.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">江苏 苏州</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/86745/ShopAntique-Show-496691-1_21_67_20_209_42" target="_blank">黄花梨大料，欣赏</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(86745,'泰伯海黄馆', $(this).offset().left-2, $(this).offset().top-4)">泰伯海黄馆</a><a href="javascript:void(0)" id="yct_86745" userid="86745" status="3" typeid="1" ytitle="泰伯海黄馆" yid="496691"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/86745/Shop">泰伯海黄馆</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4天6时23分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(496691,1,1)" class="favorites" id="shoucang_496691_1_1"></a><a href="javascript:share(496691,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="496687"><a href="/86745/ShopAntique-Show-496687-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/86745/4258830-7.jpg"  /></a>
+                           <div id="picContent_496687" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:86745:4258830.jpg 4256308.jpg 4256311.jpg 4256329.jpg 4256317.jpg 4256320.jpg 4256331.jpg 4256321.jpg 4256325.jpg:/86745/ShopAntique-Show-496687:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4258830.jpg 4256308.jpg 4256311.jpg 4256329.jpg 4256317.jpg 4256320.jpg 4256331.jpg 4256321.jpg 4256325.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">江苏 苏州</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/86745/ShopAntique-Show-496687-1_21_67_20_209_42" target="_blank">黄花梨太师椅下身</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">清</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(86745,'泰伯海黄馆', $(this).offset().left-2, $(this).offset().top-4)">泰伯海黄馆</a><a href="javascript:void(0)" id="yct_86745" userid="86745" status="3" typeid="1" ytitle="泰伯海黄馆" yid="496687"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/86745/Shop">泰伯海黄馆</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4天12时52分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(496687,1,1)" class="favorites" id="shoucang_496687_1_1"></a><a href="javascript:share(496687,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="492783"><a href="/78541/ShopAntique-Show-492783-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/78541/4223859-7.jpg"  /></a>
+                           <div id="picContent_492783" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:78541:4223859.jpg 4223862.jpg 4223869.jpg 4223876.jpg:/78541/ShopAntique-Show-492783:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="4223859.jpg 4223862.jpg 4223869.jpg 4223876.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            
+                          一口价
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"><span class="exchange">允许交换</span></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">四川 成都</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/78541/ShopAntique-Show-492783-1_21_67_20_209_42" target="_blank">字画一幅</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">民国</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(78541,'临风笛', $(this).offset().left-2, $(this).offset().top-4)">临风笛</a><a href="javascript:void(0)" id="yct_78541" userid="78541" status="3" typeid="1" ytitle="临风笛" yid="492783"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/78541/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：4天5时14分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(492783,1,1)" class="favorites" id="shoucang_492783_1_1"></a><a href="javascript:share(492783,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="450364"><a href="/81559/ShopAntique-Show-450364-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/81559/3879310-7.jpg"  /></a>
+                           <div id="picContent_450364" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:81559:3879310.jpg 3879311.jpg:/81559/ShopAntique-Show-450364:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3879310.jpg 3879311.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">甘肃 天水</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/81559/ShopAntique-Show-450364-1_21_67_20_209_42" target="_blank">中国艺术大师黄胄作品《驴》</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(81559,'宇一王者', $(this).offset().left-2, $(this).offset().top-4)">宇一王者</a><a href="javascript:void(0)" id="yct_81559" userid="81559" status="3" typeid="1" ytitle="宇一王者" yid="450364"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/81559/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：3天8时24分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(450364,1,1)" class="favorites" id="shoucang_450364_1_1"></a><a href="javascript:share(450364,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="449164"><a href="/81559/ShopAntique-Show-449164-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/81559/3870642-7.jpg"  /></a>
+                           <div id="picContent_449164" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:81559:3870642.jpg 3870677.jpg:/81559/ShopAntique-Show-449164:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3870642.jpg 3870677.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">甘肃 天水</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/81559/ShopAntique-Show-449164-1_21_67_20_209_42" target="_blank">清末画家，“海派四杰”之一任…</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">清</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(81559,'宇一王者', $(this).offset().left-2, $(this).offset().top-4)">宇一王者</a><a href="javascript:void(0)" id="yct_81559" userid="81559" status="3" typeid="1" ytitle="宇一王者" yid="449164"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/81559/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：11时49分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(449164,1,1)" class="favorites" id="shoucang_449164_1_1"></a><a href="javascript:share(449164,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="449042"><a href="/81559/ShopAntique-Show-449042-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/81559/3869865-7.jpg"  /></a>
+                           <div id="picContent_449042" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:81559:3869865.jpg 3869872.jpg:/81559/ShopAntique-Show-449042:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3869865.jpg 3869872.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">甘肃 天水</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/81559/ShopAntique-Show-449042-1_21_67_20_209_42" target="_blank">称誉一时，为后世楷模的画家齐…</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">民国</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(81559,'宇一王者', $(this).offset().left-2, $(this).offset().top-4)">宇一王者</a><a href="javascript:void(0)" id="yct_81559" userid="81559" status="3" typeid="1" ytitle="宇一王者" yid="449042"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/81559/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：7时22分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(449042,1,1)" class="favorites" id="shoucang_449042_1_1"></a><a href="javascript:share(449042,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="449024"><a href="/81559/ShopAntique-Show-449024-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/81559/3869762-7.jpg"  /></a>
+                           <div id="picContent_449024" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:81559:3869762.jpg 3869765.jpg 3869764.jpg:/81559/ShopAntique-Show-449024:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3869762.jpg 3869765.jpg 3869764.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">甘肃 天水</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/81559/ShopAntique-Show-449024-1_21_67_20_209_42" target="_blank">中国山水画家裴建华作品《马》</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(81559,'宇一王者', $(this).offset().left-2, $(this).offset().top-4)">宇一王者</a><a href="javascript:void(0)" id="yct_81559" userid="81559" status="3" typeid="1" ytitle="宇一王者" yid="449024"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/81559/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：7时7分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(449024,1,1)" class="favorites" id="shoucang_449024_1_1"></a><a href="javascript:share(449024,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="400002"><a href="/30563/ShopAntique-Show-400002-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/30563/3499879-7.jpg"  /></a>
+                           <div id="picContent_400002" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:30563:3499879.jpg 3499880.jpg 3499881.jpg 3499882.jpg:/30563/ShopAntique-Show-400002:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3499879.jpg 3499880.jpg 3499881.jpg 3499882.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">北京</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/30563/ShopAntique-Show-400002-1_21_67_20_209_42" target="_blank">陈大远书法</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">当代</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(30563,'宗善堂', $(this).offset().left-2, $(this).offset().top-4)">宗善堂</a><a href="javascript:void(0)" id="yct_30563" userid="30563" status="3" typeid="1" ytitle="宗善堂" yid="400002"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/30563/Shop">北京宗善堂</a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：1天3时43分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(400002,1,1)" class="favorites" id="shoucang_400002_1_1"></a><a href="javascript:share(400002,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="388882"><a href="/75788/ShopAntique-Show-388882-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/75788/3417781-7.jpg"  /></a>
+                           <div id="picContent_388882" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:75788:3417781.jpg 3423091.jpg 3423092.jpg 3423093.jpg 3423094.jpg 3423095.jpg:/75788/ShopAntique-Show-388882:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3417781.jpg 3423091.jpg 3423092.jpg 3423093.jpg 3423094.jpg 3423095.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            
+                          一口价
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">福建 福州</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/75788/ShopAntique-Show-388882-1_21_67_20_209_42" target="_blank">陶冷月作品</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">民国</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(75788,'lxdls', $(this).offset().left-2, $(this).offset().top-4)">lxdls</a><a href="javascript:void(0)" id="yct_75788" userid="75788" status="3" typeid="1" ytitle="lxdls" yid="388882"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/75788/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：2天11时23分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(388882,1,1)" class="favorites" id="shoucang_388882_1_1"></a><a href="javascript:share(388882,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      <li class="itemlist">
+                        <div class="pic" ids="361206"><a href="/69141/ShopAntique-Show-361206-1_21_67_20_209_42"  class="a_pic" target="_blank"><img src="http://img.artww.com/69141/3216093-7.jpg"  /></a>
+                           <div id="picContent_361206" class="pic-content">
+                           <div class="imageFileInfo"><input type="hidden" value="http://img.artww.com:69141:3216093.jpg 3216094.jpg:/69141/ShopAntique-Show-361206:1_21_67_20_209_42" /></div></div> 
+                        </div>
+                        <input class="values" type="hidden" value="3216093.jpg 3216094.jpg" />
+<ul class="attribute">
+                          <li class="price">
+                          <p class="price_txt">
+                            允许议价 
+                          
+                           </p> 
+                            <p class="price_info"><em>1000000.00</em></p>
+                            
+                            <p class="price_other"></p>
+                          </li>
+                          <li class="period">
+                           <a href="/Credit/index.jsp?tab=0" class="real" position="w">如实描述</a>
+                           <a href="/Credit/index.jsp?tab=1" class="days" position="w">七天包退</a>
+                            
+						  </li>
+                          <li class="location">四川 攀枝花</li>
+                        </ul>
+                         
+                        
+                          <h3 class="title"><span class="title_rel"><a href="/69141/ShopAntique-Show-361206-1_21_67_20_209_42" target="_blank">夏汉唐先秦圜钱“古”字币罕…</a></span></h3> 
+                          <div class="year">年代：<font color="#881414">先秦</font></div>
+                          <div class="seller"><span class="seller_name">卖家：<a href="javascript:void(0)" onclick="show_userInfo(69141,'xjstm', $(this).offset().left-2, $(this).offset().top-4)">xjstm</a><a href="javascript:void(0)" id="yct_69141" userid="69141" status="3" typeid="1" ytitle="xjstm" yid="361206"  class="yct autoYctStatus" position="w"></a></span></div>
+                          
+                          
+                          	
+                          		<div class="shops"><span class="shop_name">店铺：<a href="/69141/Shop"></a></span></div>
+                          	
+                          	
+                          
+                          
+                          <div class="date">
+                           
+                             
+	                         剩时：2天3时21分
+                          
+                          </div>
+                          
+                          <div class="operate"><a href="javascript:fav(361206,1,1)" class="favorites" id="shoucang_361206_1_1"></a><a href="javascript:share(361206,1)" class="share"></a></div>
+
+                        
+                      </li>
+                    
+                      </ul> 
+                       
+     <div class="page_nav" id="page_navA">
+            <div class="con"> <span class="page_num">共176678项</span>
+               <span class="stat">10/5890页</span><a class="Pbtn first"  href="ArtShop---1-1_21_67_20_209_42-----1---1-0--1--1"></a><a class="Pbtn pre"  href="ArtShop---9-1_21_67_20_209_42-----1---1-0--1--1"></a><span class="ellipsis">...</span><a href="ArtShop---8-1_21_67_20_209_42-----1---1-0--1--1" class="num" >8</a><a href="ArtShop---9-1_21_67_20_209_42-----1---1-0--1--1" class="num" >9</a><a class='num current' >10</a><a href="ArtShop---11-1_21_67_20_209_42-----1---1-0--1--1"   class="num" >11</a><a href="ArtShop---12-1_21_67_20_209_42-----1---1-0--1--1"   class="num" >12</a><span class="ellipsis">...</span><a class="Pbtn next"   href="ArtShop---11-1_21_67_20_209_42-----1---1-0--1--1"></a><div class="go_page"><span>到第</span><input type="text" position="s"　onkeydown="checkPageInput(event,5890)" id="PagerInput" size=2 maxSize="5890" mytitle="请输入跳转页码，最大5890页。" TitlePosition="Left"  pattern="num()" errmsg="请输入一个小于5890的页码！"  value="10" /><span>页</span><a href="javascript:jumpPage(5890)" id="JumpButton" class="Pbtn jump"></a></div> 
+            </div>
+          </div> 
+                  
+                   
+                
+            
+             
+            
+          
+       
+        </div>
+        <div class="ft"> </div>
+      </div>
+      
+      
+    </div>
+    <div class="sidebar">
+      <div class="guide_btn"> <a href="/Redirect/Admin/Seller/Publish-present" class="l"></a><a href="/User/register" class="r"></a></div>
+      <div class="top_collections sidebar_box">
+        <div class="hd"><a class="t" href="ArtShop--3"></a></div>
+        <div class="bd">
+          
+            
+              
+              
+                <div class="prompt_info">暂时没有符合要求的藏品</div> 
+              
+             
+          
+
+          <div class="btn"><a href="ArtShop--3--1_21_67_20_209_42-----1---1-0--1--1" class="more_btn">更多人气</a></div>
+          <div class="here"><a href="/Top/index.jsp?tab=1" target="_blank">我也要出现在这里</a></div>

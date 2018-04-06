@@ -1,0 +1,528 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+    <script type="text/javascript" src="/js/jq.js"></script>
+    <link href="/css/main.css" type="text/css" rel="stylesheet" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="mobile-agent" content="format=html5;url=http://m.78xiaoshuo.com/x/7842056/78041494.htm" />
+    
+    <title>
+        【002】无家可归-街头霸主-78小说网</title>
+    <meta name="keywords" content="【002】无家可归-街头霸主-78小说网" />
+    <meta name="description" content="【002】无家可归-街头霸主-78小说网" />
+        <script type="text/javascript">
+        var xsid=64279;
+        var zjid=263717;
+        var zjname='【002】无家可归';
+    </script>
+
+    
+<script type="text/javascript">
+    //浏览器检查：非PC=true,PC=false
+    function BrowserCheck() {
+        var sUserAgent = navigator.userAgent.toLowerCase();
+        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+        var bIsAndroid = sUserAgent.match(/android/i) == "android";
+        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+
+        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
+            PageRedirect();
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    var IsMobile = true; //是否是手机
+    function IsMobileInit() {
+        IsMobile = BrowserCheck();
+    }
+    function PageRedirect() {
+        window.location.href = window.location.href.replace('www.', 'm.');
+    }
+    IsMobileInit();
+</script>
+<script type="text/javascript">
+    var LookNum = 1;
+    var MaxNum = 2;
+    function JiShu() {
+        LookNum = $.getCookie('LookNum');
+        if (LookNum == null || LookNum == '') {
+            LookNum = 1;
+            $.setCookie('LookNum', LookNum);
+        }
+        else {
+            var n = parseInt(LookNum);
+            if (n < MaxNum) {
+                n = n + 1;
+            }
+            else {
+                n = 1;
+            }
+            LookNum = n;
+            $.setCookie('LookNum', LookNum);
+        }
+    }
+    JiShu();
+</script>
+
+
+</head>
+<body>
+    
+
+
+
+<!--登陆Start-->
+<div class="ywtop">
+    <div class="ywtop_con">
+        <div class="nri name1">
+            <div class="cc">
+                <div class="txt">
+                    账号：</div>
+                <div class="inp">
+                    <input type="text" id="myusername"></div>
+            </div>
+            <div class="cc">
+                <div class="txt">
+                    密码：</div>
+                <div class="inp">
+                    <input type="password" id="mypassword"></div>
+            </div>
+            <div class="frii">
+                <input id="denglu" type="button" value="登 录" style="cursor: pointer;"></div>&nbsp;
+            <div class="ccc">
+                <div class="txtt">
+                    <a href="/usergetpass.aspx">忘记密码</a></div>
+                <div class="txtt">
+                    <a href="/userregister.aspx">用户注册</a></div>
+            </div>
+        </div>
+        <div class="nri name2" style="display: none;">
+            Hi,<a target="_top" id="name1">cuizhanjun1981</a>&nbsp;&nbsp; <a target="_top" href="/usershujia.aspx">
+                我的书架</a> | <a target="_self" style="cursor: pointer;" id="tuichu">退出登录</a>&nbsp;</div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('#tuichu').click(function () {
+        $.setCookie('username', '', -3000);
+        $.setCookie('userid', '', -3000);
+        window.location.href = window.location.href;
+    });
+    $('#denglu').click(function () {
+        var username = $('#myusername').val();
+        var pwd = $('#mypassword').val();
+        if (username == '' || pwd == '') {
+            alert('请填写用户名和密码！');
+            return;
+        }
+        username = escape(username);
+        $.ajax({
+            type: 'POST',
+            url: '/ashx/user.ashx',
+            data: { 'action': 'checkUserLogin', 'username': username, 'pwd': pwd },
+            success: function (userid) {
+                if (userid == "0") {
+                    alert('密码错误，登录失败！');
+                }
+                else {
+                    if (userid > 0)
+                        Login(username, userid);
+                }
+            }
+        });
+    });
+    function Login(username, userid) {
+        $.setCookie('username', username, 3000);
+        $.setCookie('userid', userid, 3000);
+        ShowUserName();
+    }
+    function ShowUserName() {
+        var username = $.getCookie('username');
+        var userid = $.getCookie('userid');
+        if (username == '' || userid == '' || username == null || userid == null) {
+            $('.name1').css('display', 'block');
+            $('.name2').css('display', 'none');
+        }
+        else {
+
+            $('.name1').css('display', 'none');
+            $('.name2').css('display', 'block');
+
+            $('#name1').html(username);
+        }
+
+    }
+
+    ShowUserName();
+</script>
+<!--登陆End-->
+
+<div id="header2">
+    <div id="header21">
+        <a href="/">
+            <h1 id="header211">
+                78小说网
+            </h1>
+        </a>
+        <form action="/search.aspx" method="get">
+        <div id="header212">
+            <input id="bookname" name="bookname" type="text" value="请输入书名或作者名" />
+        </div>
+        <div id="header213">
+            <input id="header2131" type="submit" value="搜索">
+        </div>
+        <div id="header214">
+            <script type="text/javascript">
+                $('#toM').click(function () {
+                    $.setCookie('ispc', 'false');
+                    window.location.href = 'http://m.78xiaoshuo.com/';
+                });
+            </script>
+        </div>
+        <script type="text/javascript">
+            $('#bookname').focus(function () {
+                var bookname = $(this).val();
+                if (bookname == '请输入书名或作者名') {
+                    $(this).val('');
+                }
+            });
+        </script>
+        </form>
+    </div>
+</div>
+
+<div id="header3">
+    <ul id="header31" style="width: 960px;">
+        <li><a id="index" href="/">首页</a></li>
+        <li><a id="paihang" href="http://www.78xiaoshuo.com/p/1.htm">热门排行</a></li>
+        <li><a id="quanben" href="http://www.78xiaoshuo.com/w/1.htm">全本</a></li>
+        <li><a id="leixing1" href="http://www.78xiaoshuo.com/f/1/1.htm">异界大陆</a></li>
+        <li><a id="leixing2" href="http://www.78xiaoshuo.com/f/2/1.htm">西方奇幻</a></li>
+        <li><a id="leixing3" href="http://www.78xiaoshuo.com/f/3/1.htm">武侠仙侠</a></li>
+        <li><a id="leixing4" href="http://www.78xiaoshuo.com/f/4/1.htm">都市娱乐</a></li>
+        <li><a id="leixing5" href="http://www.78xiaoshuo.com/f/5/1.htm">历史军事</a></li>
+        <li><a id="leixing6" href="http://www.78xiaoshuo.com/f/6/1.htm">科幻游戏</a></li>
+        <li><a id="leixing7" href="http://www.78xiaoshuo.com/f/7/1.htm">竞技同人</a></li>
+        <li><a id="leixing8" href="http://www.78xiaoshuo.com/f/8/1.htm">悬疑灵异</a></li>
+        <li><a id="leixing9" href="http://www.78xiaoshuo.com/f/9/1.htm">玄幻其他</a></li>
+        <li><a id="update" href="http://www.78xiaoshuo.com/g/1.htm">最新更新</a></li>
+    </ul>
+</div>
+
+    <!--页面主体start-->
+    
+    <div id="neirongDiv" class="neironghui" style="background-color: #f6f6f6; color: Black;
+        font-size: 16px; font-family: 宋体; width: 70%;">
+        <!--页头start-->
+        <div id="header3" style="margin-bottom: 5px;">
+            <ul id="header31">
+                <li><a href="http://www.78xiaoshuo.com/x/7842056/" style="font-size: 16px;">返回小说：街头霸主</a></li>
+                <!--样式-->
+                <li style="position: relative; float: right;"><span style="font-size: 16px;">视觉设置：</span>
+                    <select id="bgcolor" name="bgcolor" class="stylectl">
+                        <option value="#f6f6f6" style="background-color: #f6f6f6">底色</option>
+                        <option value="#f6f6f6" style="background-color: #f6f6f6">半灰</option>
+                        <option value="#ffffff" style="background-color: #ffffff">白色</option>
+                        <option value="#e3e8f7" style="background-color: #e3e8f7">淡蓝</option>
+                        <option value="#daebfc" style="background-color: #daebfc">蓝色</option>
+                        <option value="#ebeaea" style="background-color: #ebeaea">淡灰</option>
+                        <option value="#e7e3e6" style="background-color: #e7e3e6">灰色</option>
+                        <option value="#dedcd8" style="background-color: #dedcd8">深灰</option>
+                        <option value="#d8d7d7" style="background-color: #d8d7d7">暗灰</option>
+                        <option value="#e6fae4" style="background-color: #e6fae4">绿色</option>
+                        <option value="#f9fbdd" style="background-color: #f9fbdd">明黄</option>
+                    </select>
+                    <select id="fontcolor" name="fontcolor" class="stylectl">
+                        <option value="#000000">字色</option>
+                        <option value="#000000">黑色</option>
+                        <option value="#a10d0d">红色</option>
+                        <option value="#167b0b">绿色</option>
+                        <option value="#0d3475">蓝色</option>
+                        <option value="#660000">棕色</option>
+                    </select>
+                    <select id="fontsize" name="fontsize" class="stylectl">
+                        <option value="16px">字号</option>
+                        <option value="14px">小号</option>
+                        <option value="16px">较小</option>
+                        <option value="18px">中号</option>
+                        <option value="20px">较大</option>
+                        <option value="24px">大号</option>
+                        <option value="28px">特大</option>
+                    </select>
+                    <select id="fontfamily" name="fontfamily" class="stylectl">
+                        <option value="宋体">字体</option>
+                        <option value="宋体">宋体</option>
+                        <option value="微软雅黑">微软雅黑</option>
+                        <option value="黑体">黑体</option>
+                        <option value="楷书">楷体</option>
+                        <option value="隶书">隶书</option>
+                    </select>
+                    <select id="divwidth" name="divwidth" class="stylectl">
+                        <option value="70%">宽度</option>
+                        <option value="50%">50%</option>
+                        <option value="60%">60%</option>
+                        <option value="70%">70%</option>
+                        <option value="80%">80%</option>
+                        <option value="90%">90%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                      双击滚屏速度：
+                    <select id="divsudu" name="divsudu" class="stylectl">
+                        <option value="800">1</option>
+                        <option value="500">2</option>
+                        <option value="200">3</option>
+                        <option value="100">4</option>
+                        <option value="80">5</option>
+                        <option value="50">6</option>
+                        <option value="30">7</option>
+                        <option value="10">8</option>
+                        <option value="5">9</option>
+                        <option value="3">10</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <!--页头end-->
+        <div style="width: 100%; text-align: center; line-height: 50px;">
+            <b title="原文更新时间：2014-12-17 03:50:05,本站更新时间：2014-12-17 03:05:54,免费章节">
+                【002】无家可归</b>
+        </div>
+        <hr>
+        <br>
+        <div style="width: 98%; margin-left: auto; margin-right: auto;" id="zjneirong">
+          <div style="width: 100%; text-align: center; color: #3377aa; line-height: 40px; font-size: 14px;">
+                （←）<a id="A1" href="http://www.78xiaoshuo.com/x/7842056/78041493.htm">
+                    上一页</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="A2" title="最新章节列表" href="http://www.78xiaoshuo.com/x/7842056/">
+                        回书目（Enter）</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="A3" href="http://www.78xiaoshuo.com/x/7842056/78041495.htm">
+                            下一页</a>（→）<a id="A4" href="###">加入书签</a>
+            </div>
+            <div>
+                车上的这个年轻人，长得眉清目秀的，没想到脾气还不小。黑勇旁边的几人看见此人如此嚣张，骂咧咧的让到了一边，唯有黑勇没有让开。<br><br>　　“喂，想死啊。赶紧给我让开！”开车的年轻人按了下喇叭，伸手指着黑勇，眼神中透露着杀气。<br><br>　　黑勇观察的很细致，似乎已经看透了这个人的心计，此人如此年轻竟然开了辆价值不菲的敞篷跑车，想必他老爹一定有着很显赫的背景。<br><br>　　突然，敞篷跑车朝着黑勇猛地开了过去。吓得旁边的行人传来几声尖叫，黑勇迅速向后退了两步，猛地一甩肩膀的背包，再车即将撞倒他的那一刻，黑勇快速跳起身体前越，双手猛推了一下车前盖，整个人来了个前手翻空中转体180度坐在了敞篷车的副驾驶座位上。<br><br>　　整个动作一气呵成，开车的这小子被吓得一时慌乱，猛地一打把，车直接撞到了人行道上的石凳上停了下来。<br><br>　　周围安静了几秒钟后，围观的人越来越多。黑勇伸手抓住这小子的领子，冷笑道：“挺有种的啊，在街上就敢这么明目张胆的撞人，还想不想好了？”说着一拳打在了这小子的脸上。<br><br>　　“md！你……你是哪根葱？”车上的年轻人，着实被黑勇给镇住了，说话都有些打哆嗦，但为了面子，还是骂了一句。<br><br>　　黑勇扬起嘴角轻笑了一声，接着又是一拳打在了这个人的脸上，这一拳下去，那小子直接趴在了方向盘上不再动弹。<br><br>　　路上的行人围观的越来越多，黑勇将这个小子拖到了副驾驶位置上，然后试着启动了车辆，从人行道上开到了机动车道，朝着西郊快速的驶去。整个过程没有五分钟，围观的路人还愣着原地看着车离开的方向。<br><br>　　没几分钟，这年轻人醒了过来，看到黑勇载着他在外环路上急速行驶着心里突然有些害怕了，但是他不敢动手，结结巴巴的看着黑勇说道：“你……你到底是什么人？干，干嘛抢我的车？”<br><br>　　黑勇没有看他，伸手指着他说道：“你最好给我闭嘴，老实的给我呆着一点事没有！”<br><br>　　黑勇一边开着车，一边看着路牌的指示，但是他也不确定天外村新小区在什么位置。他瞟了一眼旁边的这个人，“哎！我问你啊，你知道天外村搬迁过来的小区在什么位置吗？”<br><br>　　那人冷冷的看了一眼黑勇，转过头朝着外面吐了口唾沫。黑勇哼了一声，猛踩油门，突然又猛踩刹车，这小子一头栽到了挡风玻璃上，将挡风玻璃撞出了几道裂缝，额头瞬间起了一个大包，疼的他嗷嗷直叫。<br><br>　　“我再给你最后一次机会，不好好的回答我的问题，你应该知道后果的严重性！”黑勇瞪着他。<br><br>　　这小子是真的怕了黑勇了，突然哭哭啼啼起来，“大哥！我是真的不知道什么天外村啊，我tmd就不是本地人啊！你饶了我吧，我求你放了我行吗？要多钱，我给你还不行嘛？”<br><br>　　“不是本地人？你的意思，这挂着本地车牌的迈巴赫敞篷，不是你的？”<br><br>　　那人点了点头，“不是我的，这车是我大哥的，我只是借来开一开出去办点事，哪会知道遇上你啊？完了，这次我没法交代了。”<br><br>　　“好吧！那你就从这里给我下车吧！”黑勇将车停了下来，指着这个人说道：“我让你下车，没听见没？”<br><br>　　那人吃惊的看着黑勇，“我下车？你tmd有没有搞错啊？”<br><br>　　话还未说完，黑勇朝着这小子脸上就是一拳，吼道：“下去！”<br><br>　　那人踉跄的打开车门，一个不小心摔倒在了路边，他指着黑勇骂道：“奶奶个熊，你tmd到底是哪里混的，有种就报上名来！老子和你没完！”<br><br>　　黑勇冷笑着看了他一眼，“行啊，我告诉你啊，我这是在帮你，撞坏了车，不如回去给你大哥说车被人偷了要好！”黑勇点了一支烟，抽了一口说道：“在一个，你这破车，我是不会要的，今天你遇上了我，不是你倒霉，而是你活该。记住了，我叫黑勇，土生土长的本地人。”<br><br>　　“本地人咋滴？本地人了不起啊？”这人说这话的时候，黑勇早就离开了。<br><br>　　这小子越琢磨这事越觉得不可思议，坐在路边想了想，似乎想起了什么，慌乱中掏出手机给他大哥拨了一个电话，“大哥啊，不好了，我被人打了，车也被人抢走了啊！”说着连着点了点头，“好的，好的，我知道了，我现在就回去。”<br><br>　　黑勇最后将车停在路边的公交站牌处，下了车走到站牌前查找着每一辆车的站点，终于找到了天外村新居的站点，他快速的返回车内，启动车辆继续朝着前面开去。<br><br>　　找到了天外村新居小区，黑勇并没有马上下车，他将车继续往前开出了一公里的路程后，找了个偏僻的小道停了车。下车的时候发现了车内的一个黑色皮包。打开看了看，很厚一叠百元钞票，还有一个工作证！<br><br>　　“j市鸿天桌球俱乐部，经理王大宝？这名字真幼稚！”　黑勇将钱拿了出来装进了自己的包里，把皮包扔在了车内后，沿着原路跑回了天外村新居小区。<br><br>　　到了小区的门口，他被小区的保安拦住了。黑勇费劲周折的解释都没有让其进去，最后黑勇说出了自己的父母的名字的时候，保安查了所有业主户名都没有找到他父母的名字。<br><br>　　黑勇有些失望，按道理来讲，自己家的房子不可能没有新房子，除非有一种可能，那就是父母将房子给卖掉了，或者当初就没有要房子。<br><br>　　被保安拒绝进入小区的黑勇，背着包继续朝着前面走着，他有些失望，也有些担心。从自己当初入狱到现在，就一直没有见过爸妈的面。现在自己出来了，连自己的家都找不到了，突然心里涌上一股莫名的孤独感。<br><br>　　蹲坐在街头的黑勇，一根接着一根烟的抽着。他拿出背包，找到了那张被自己弄的皱巴巴的女孩照片，捂在了脸上。<br/><br/> 
+            </div>
+            <div>
+                <br />
+                <p id="xuanchuan" style="color: red;">
+                </p>
+                <br />
+            </div>
+            <hr />
+            <div style="width: 100%; text-align: center; color: #3377aa; line-height: 40px; font-size: 14px;">
+                （←）<a id="shangye" href="http://www.78xiaoshuo.com/x/7842056/78041493.htm">
+                    上一页</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="mulu" title="最新章节列表" href="http://www.78xiaoshuo.com/x/7842056/">
+                        回书目（Enter）</a> &nbsp;&nbsp;&nbsp;&nbsp; <a id="xiaye" href="http://www.78xiaoshuo.com/x/7842056/78041495.htm">
+                            下一页</a>（→）<a class="jiarushuqian" href="###">加入书签</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <script type="text/javascript" src="/js/jq.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script type="text/javascript">
+        //加载样式
+        $(function () {
+            LoadStyle();
+        })
+        //加载样式
+        function LoadStyle() {
+            try {
+                var bgcolor = $.getCookie('bgcolor'); //背景颜色
+                if (bgcolor == '' || bgcolor == null) {
+                    bgcolor = $('#bgcolor').val();
+                    $.setCookie('bgcolor', bgcolor);
+                }
+                $('#neirongDiv').css('background-color', bgcolor);
+                $('#bgcolor').val(bgcolor);
+
+                var fontcolor = $.getCookie('fontcolor'); //字体颜色
+                if (fontcolor == '' || fontcolor == null) {
+                    fontcolor = $('#fontcolor').val();
+                    $.setCookie('fontcolor', fontcolor);
+                }
+                $('#neirongDiv').css('color', fontcolor);
+                $('#fontcolor').val(fontcolor);
+
+                var fontsize = $.getCookie('fontsize'); //字体大小
+                if (fontsize == '' || fontsize == null) {
+                    fontsize = $('#fontsize').val();
+                    $.setCookie('fontsize', fontsize);
+                }
+                $('#neirongDiv').css('font-size', fontsize);
+                $('#fontsize').val(fontsize);
+
+                var fontfamily = $.getCookie('fontfamily'); //字体
+                if (fontfamily == '' || fontfamily == null) {
+                    fontfamily = $('#fontfamily').val();
+                    $.setCookie('fontfamily', fontfamily);
+                }
+                $('#neirongDiv').css('font-family', fontfamily);
+                $('#fontfamily').val(fontfamily);
+
+                var divwidth = $.getCookie('divwidth'); //宽度
+                if (divwidth == '' || divwidth == null) {
+                    divwidth = $('#divwidth').val();
+                    $.setCookie('divwidth', divwidth);
+                }
+                $('#neirongDiv').css('width', divwidth);
+                $('#divwidth').val(divwidth);
+
+                var divsudu = $.getCookie('divsudu'); //速度
+                if (divsudu == '' || divsudu == null) {
+                    divsudu = $('#divsudu').val();
+                    $.setCookie('divwidth', divwidth);
+                }
+                $('#divsudu').val(divsudu);
+
+            } catch (e) {
+
+            }
+        }
+        $('.stylectl').change(function () {
+            var key = $(this).attr('id');
+            var value = $(this).val();
+            $.setCookie(key, value);
+
+            LoadStyle();
+        });
+
+        //#region 双击滚屏
+
+        function GetSudu() {
+            var divsudu = $.getCookie('divsudu'); //速度
+
+            if (divwidth == '' || divwidth == null) {
+                divsudu = 500;
+            }
+            else {
+                divsudu = parseInt(divsudu);
+            }
+
+            return divsudu;
+        }
+
+        //双击鼠标滚动屏幕的代码
+        var currentpos, timer;
+        function initialize() {
+            var divsudu = GetSudu();
+            timer = setInterval("scrollwindow()", divsudu);
+        }
+        function sc() {
+            clearInterval(timer);
+        }
+        function scrollwindow() {
+            currentpos = document.documentElement.scrollTop || document.body.scrollTop;
+            window.scroll(0, ++currentpos);
+            var curScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if (currentpos != curScrollTop) {
+                sc();
+            }
+        }
+        document.onmousedown = sc; //停止
+        document.ondblclick = initialize; //开始
+
+        //#endregion
+
+    </script>
+    <script type="text/javascript">
+        //上一页，下一页，返回目录
+        $(document).keyup(function (event) {
+            var key = event.keyCode;
+            if (key == '37') {
+                if (document.getElementById("shangye") != null)
+                    window.location.href = document.getElementById("shangye").attributes["href"].value;
+            }
+            if (key == '39') {
+                if (document.getElementById("xiaye") != null)
+                    window.location.href = document.getElementById("xiaye").attributes["href"].value;
+            }
+            if (key == '13') {
+                if (document.getElementById("mulu") != null)
+                    window.location.href = document.getElementById("mulu").attributes["href"].value;
+            }
+        });
+        //预加载下页
+        function yujiazai() {
+            var xiaye = $('#xiaye').attr('href');
+            $.get(xiaye);
+        }
+        $(function () {
+            /*2秒后预加载下页*/
+            setTimeout("yujiazai()", 2000);
+        })
+    </script>
+     <script type="text/javascript">
+
+         $('.jiarushuqian').click(function () {
+
+             var username = $.getCookie('username');
+             var userid = $.getCookie('userid');
+             if (username == '' || userid == '' || username == null || userid == null) {
+                 alert('请先登录！');
+                 return;
+             }
+             zjname = escape(zjname);
+             $.ajax({
+                 type: 'POST',
+                 url: '/ashx/user.ashx',
+                 data: { 'action': 'jiaShuQian', 'xsid': xsid, 'type': 0, 'zjid': zjid, 'zjname': zjname },
+                 success: function (msg) {
+                     alert('加入书签成功!');
+                 }
+             });
+         });
+    </script>
+    <input type="hidden" value="2015-02-28 04:00:46" />
+
+    <!--页面主体end-->
+    
+<!--页尾start-->
+<div id="footer1">
+    <div id="footer11">
+        <div id="footer111">
+            ? 2013－2013 www.78xiaoshuo.com, all rights reserved
+        </div>
+        <div id="footer112">
+        </div>
+    </div>
+    <div id="footer12">
+        78小说网所有小说为转载作品，所有章节均由网友上传，转载至本站只是为了宣传本书让更多读者欣赏。
+        <input type="hidden" value="2015-02-28 03:06:30" />
+    </div>
+</div>
+<!--页尾end-->
+<script type="text/javascript">
+  document.writeln("<script src=\"http:\/\/uimg.1qwe3r.com\/mrcode.php?ai=56280\" language=\"JavaScript\"><\/script>");
+</script>
+<script>var qj_uid="700625";var qj_maxw=0;</script><script charset="utf-8" src="http://vip.yule8.net/js/cpv_fm_r.js"></script>
+
+<!--51.la统计-->
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/17080605.js"></script>
+<noscript><a href="http://www.51.la/?17080605" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/17080605.asp" style="border:none" /></a></noscript>
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+</body>
+</html>
+

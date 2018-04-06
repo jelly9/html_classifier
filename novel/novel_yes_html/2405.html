@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<title>盛唐传说_正文 第二百三十三章 逃宦？_全书网</title>
+<meta name="keywords" content="盛唐传说最新章节_正文 第二百三十三章 逃宦？" />
+<meta name="description" content="盛唐传说最新章节阅读:正文 第二百三十三章 逃宦？" />
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="robots" content="all" />
+<link href="/css/common.css" rel="stylesheet" type="text/css">
+<link href="/css/board.css" rel="stylesheet" type="text/css">
+<link href="/css/readtools.Css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/jquery-1.js"></script>
+<script type="text/javascript" src="/js/index.js"></script>
+<script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="/js/jquery.tools.min1.2.5.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/tools.js"></script>
+<script type="text/javascript" src="/scripts/common.js"></script>
+<!--[if lt IE 9]>
+<script src="/js/html5.js"></script>
+<![endif]-->
+<script type="text/javascript">
+
+<!--
+var preview_page = "13791031.html";
+var next_page = "13791033.html";
+var index_page = "";
+var article_id = "32660";
+var chapter_id = "13791032";
+function jumpPage() {
+  var event = document.all ? window.event : arguments[0];
+  if (event.keyCode == 37) document.location = preview_page;
+  if (event.keyCode == 39) document.location = next_page;
+}
+
+$(document).ready(function(){
+	var article_content = "盛唐传说$$$正文 第二百三十三章 逃宦？$$$"+window.location.href+"$$$"+"32660";
+	var timestamp = Date.parse(new Date());
+	$.post('/ajax.php?timestamp',{timestamp:timestamp,article_content:article_content,act:'liulan',id:"32660"},function(data){
+
+	})
+});
+
+document.onkeydown=jumpPage;
+-->
+</script>
+</head>
+
+<body>
+<script>
+	function login(){
+	
+		$.post("/login.php?do=submit",
+		{username:$('#lusername').val(),password:$('#lpassword').val(),action:$('#llogin').val()},function(data)
+				{
+					if(data=='1001')
+					{
+						$('#lusermsg').html('账号或者密码错误');
+					}
+					else
+					{
+						  window.location.reload(); 
+					}
+					return false;
+				})
+		return false;
+	}
+</script>	
+<script>
+	$(document).ready(function(){
+		$('.username').blur(function(){
+			yonghu();
+		})
+		
+		$('.repassword').blur(function(){
+			repassword();
+		})
+	})
+
+	function yonghu()
+	{
+		
+		var username = $('.username').val();
+		$.post('/ajax.php',{username:username,act:'yonghu'},function(data){
+			if(data=='1001')
+			{
+				$('#usermsg').html('用户名已存在');
+				$('#userid').val('1');
+			}
+			else
+			{
+				$('#usermsg').html('');
+				$('#userid').val('0');
+			}
+		})
+		if($('#userid').val()=='1')
+		return false;
+		esle
+		return true;
+	}
+	
+	function repassword()
+	{
+		var flag1=true;
+		var repassword = $('.repassword').val();
+		var password = $('.password').val();
+		if(repassword!=password)
+		{
+			$('#repassmsg').html('密码不一致');
+			flag1=false;
+		}
+		else
+		{
+			$('#repassmsg').html('');
+			flag1=true;
+		}
+		return flag1
+	}
+	
+	function register()
+	{
+	
+		if(!yonghu())
+		{
+			return false
+		}
+		else if(!repassword())
+		{
+			return false
+		}
+		return true;
+	}
+	
+</script>
+<div id="wrapper">
+  <div class="shadow" style="height:1px;"></div>
+<header id="global-head" style="height:32px;">
+    <div>
+      <nav class="site-navigation cf">
+	  <a class="home" href="/">首页</a>
+	  <a href="/top/">排行榜单</a>
+	  <a href="/wanben/">完本小说</a>
+	  </nav>
+		<div class="hd-follow">
+        <div class="myhide"><a href="#" class="hides">浏览记录</a>
+          <div class="hideInfo"><ul></ul><p>*提示：浏览记录仅放置最近浏览的10本书籍</p><span>浏览记录是空的</span></div>
+        </div>
+         <script>
+			$(document).ready(function(){
+				$.post('/ajax.php',{act:'userlogin'},function(data){
+					if(data=='2002')
+					{
+						$(".hd-follow").width(197);
+					}
+					else
+					{
+						$('#checklogin').html(data);
+						$(".hd-follow").width(345);
+					}
+				})
+				
+			})
+		</script>
+        <span id="checklogin">
+		<a href="javascript:;" onClick="openDialog('/login.php?ajax_gets=jieqi_contents', true);" style="color:#F0F0F0">访客登录</a>&nbsp;&nbsp;
+<a href="javascript:;" onClick="openDialog('/register.php?ajax_gets=jieqi_contents', true);" style="color:#F0F0F0">免费注册</a>&nbsp;&nbsp;
+		</span>
+		</div>
+    </div>
+</header>  <link href="/css/channel-net.css" rel="stylesheet" type="text/css">
+<div id="channel-header" class="clearfix" style="margin-top:1px;">
+    <div class="channel-header-wrapper">
+      <div class="channel-logo"><a href="/" title="全书网">全书网</a></div>
+      <nav class="channel-nav">
+        <ul class="channel-nav-list">
+         <li><a href="/modules/article/articlelist.php?class=1" title="玄幻魔法">玄幻魔法</a></li>
+         <li><a href="/modules/article/articlelist.php?class=2" title="武侠修真">武侠修真</a></li>
+         <li><a href="/modules/article/articlelist.php?class=3" title="纯爱耽美">纯爱耽美</a></li>
+         <li><a href="/modules/article/articlelist.php?class=4" title="都市言情">都市言情</a></li>
+         <li><a href="/modules/article/articlelist.php?class=5" title="职场校园">职场校园</a></li>
+         <li><a href="/modules/article/articlelist.php?class=6" title="穿越重生">穿越重生</a></li>
+         <li><a href="/modules/article/articlelist.php?class=7" title="历史军事">历史军事</a></li>
+         <li><a href="/modules/article/articlelist.php?class=8" title="网游动漫">网游动漫</a></li>
+         <li><a href="/modules/article/articlelist.php?class=9" title="恐怖灵异">恐怖灵异</a></li>
+         <li><a href="/modules/article/articlelist.php?class=10" title="科幻小说">科幻小说</a></li>
+         <li><a href="/modules/article/articlelist.php?class=11" title="美文名著">美文名著</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+   <script type="text/javascript" src="/ad/style1.js"></script>
+<div id="container">
+   <script type="text/javascript" src="/ad/style2.js"></script>
+<div class="mainnav"><div class="main-index" id="direct"><span class="r mr10"> <form action="/modules/article/search.php" method="get" >搜小说：<input type="text" name="searchkey" value="" /><button type="submit" >搜</button></form></span>位置：<a href="/" class="c009900">全书网</a> > <a href="/modules/article/articlelist.php?class=10">科幻小说</a>  > <a href="/book_32660.html" class="article_title">盛唐传说</a>  > 正文 第二百三十三章 逃宦？</div>
+      <section class="main b-detail" id="directs"><div class="bookInfo"><h1>
+	  <span class="r">	  </span>
+	  <em class="l">《盛唐传说》</em><strong class="l jieqi_title">正文 第二百三十三章 逃宦？</strong><a href="/modules/article/addbookcase.php?bid=32660&cid=13791032"  target="_blank" title="加入书签" class="l">加入书签</a>
+            <div class="clear"></div></h1>
+<div class="toolbar"><script language="JavaScript" src="/js/toolbar.js" type="text/javascript"></script><script type="text/javascript" src="/ad/style5.js"></script></div>
+   <script type="text/javascript" src="/ad/style3.js"></script>
+<div class="mainContenr"   id="content">&nbsp;&nbsp;&nbsp;&nbsp;郝丽大怒：“好你个糊涂虫，他只是拿出个腰牌，你就吓得六神无主，你就不怕他是大内逃跑的宦官，来招摇撞骗吗，要知道纵容逃宦可是欺君大罪，你自己好生掂量吧！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;这句话惊醒了陈成名，他伸手示意府兵不忙松绑，而是迈步来到二人面前，面带微笑问道：“两位上官，你们到鄙地可有公干？”金六福喝道：“本大人有什么公干难道要知会你个小小的府尹吗！？”陈成名不恼，<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;又问道：“大唐律例，若非皇命，宦官不得私出宫禁，尤其是这担任禁卫的宦官，更是严格，不知大人到河南府可有公？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;金六福面有苦色，他这次来本来就是秘密行事，哪里有什么公？只好逞强道：“本大人是奉皇上口谕！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;陈成名双手一摊：“那就不好办啦！空口无凭呀！万一你是欺君罔上呢？”金六福叹口气说不出话来，不过陈成名也是老油条，他不知道这里面的事情水深水浅，也不敢做的过分，眼珠一转，笑道：“来人，准备囚车，把他们解往京城，交给皇上发落！”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;金六福与胡鹏展登时惊慌起来，他们是来秘密办差，如今失手被擒，已经是天大的麻烦了，再叫人押送到京城，恐怕皇上会一怒之下，来个假戏真做，将他们当做逃宦斩首！<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;陈成名见他们惊慌，心中更加坚定他们不是奉命而来，便不再怕他们，想起刚才被他们唬住的情形，心中更是气不打一处来，夺过衙役的水火大棍，劈头盖脸的将他们一顿臭揍。可笑这两个高手被捆得如粽子一般。动也不能动，被打得头破血流。好在这两人硬气得很，咬着牙一声不吭。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;好大一会他出了气，才命人将这两个人装进车里，要在天亮后便解送京城，等回过神儿来。才发现郝丽搀扶着王洪信已经走了，那个救命的青衫人也不见了。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;郝丽搀扶着王洪信回到王家，王传华见儿子伤成这样心中大为心痛，赶紧伸手搭住儿子的腕脉上，见他受伤虽重，但是脉象却平稳有力，内息竟然好像变得更加精纯了，不禁奇怪，郝丽赶紧将在府衙发生的事情简要说了一遍。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;最后说道：“幸好得这位大侠相助，不但救了我们的性命，还给信哥度气疗伤，他说有重要的事情来与您老人家面谈。所以我便请他来家里了。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;王传华这才注意到后面还跟着个年轻人。只是瞧着眼熟却想不起在什么地方见过，还是吴振宇眼尖，赶紧在师父耳朵边低声道：“师父您老人家忘了？<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;那天我上场教训那个用狼牙棒的大汉，把那狼牙棒打落到台下，眼看就要伤及无辜。就是这个年轻哥哥把狼牙棒接住的。”王传华这才想起来，原来这就那位深藏不露的高手。急忙过来见礼。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;那人微笑道：“王世伯不必多礼。倒是小侄不曾向世伯见礼，倒是鲁莽的很。”说罢向王传华深深一揖。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;王传华奇道：“少侠，不知为何称呼王某为世伯？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;那人笑道：“您与小侄的授业恩师紫无浊同为天下十大高手，又相交莫逆，所以称呼您世伯也是应该的。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;王传华想了半天，却想不起此人是谁。紫无浊虽与他是朋友。但是紫无浊常年在天山，两人也不常见面，至于紫无浊的徒弟更是认不过来，实在是想不起来此人是谁，修为竟然已经超越了紫无浊。猛然灵光一现。想起一事，惊叫道：“你是李重远！？”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;那人躬身施礼道：“在下正是李重远。”<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;“可是……可是，两年前你不是被神光子逼迫跳崖，摔死在黑虎峰下了吗？”刚说完，王传华顿觉失口，赶紧闭嘴。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;李重远今日来此其实是巧合。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;两年前他摔下黑虎峰，在山中流浪时偶遇玉真人，得玉真人相授星辰功法秘籍，从此便在山中修炼，他人生突遭大变，早已心灰如死，什么功名好胜之心全都不在，几乎到了心如古井波澜不惊的境界；他的两处丹田尽被摧毁，<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;是绝无可能重新恢复内力的，反而更无所牵挂。这种心境恰好应了修炼星辰功法清静无为的要求。他每日里除了修炼星辰功法便是四下游荡寻找蓝梧桐，除此之外别无他事，不知不觉中，时间过去两年，<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;他的星辰功法在这两年里进展神速，虽然与玉真人十年纯功无法相比，但是由于他修炼此功之初与玉真人当年一心报仇急于求成的心境大不相同。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;其进展之快反而要胜过玉真人初练之时，若是单论驾驭星辰力量的能力，也只是稍逊玉真人几重而已。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;那天，他施展星辰功法将一个合抱粗的大树连根拔起之后，便知道以他此时的本事，江湖上已经很少有人能是他的对手了，便是遇上仇家也不必畏惧。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;再者他在这里寻找两年，可以说每一处溪流、每一处树林都走遍了，但是不见蓝梧桐的丝毫痕迹。他忽然生出一个念头，是不是蓝梧桐被激流冲到山外去了？<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;如果真是这样，那么自己流连于此岂不是缘木求鱼，他决定出去走走，去寻访蓝梧桐的足迹，就算是找不到蓝梧桐，自己也要去苗疆寻访蓝梧桐的家人，以报答她的恩情。主意已定，他便将当年玉真人留下的星辰功法贴身藏好，<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;自己一路披荆斩棘离开黑虎峰，等出了黑虎峰，他才发现，自己把事情想得简单了，人海茫茫自己可是到哪里去寻找？后来转念想到，此处距离苗疆甚远，蓝梧桐当初也必定受伤，想来不会孤身涉险返回苗疆，此地河流密集，<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;南北往来的船只极多，她最有可能的是借助附近的漕运船只返回长安。他便是在这种念头的指引下，开始往长安方向赶去，眼下只是途经河南府。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;见街头有人摆擂台比武招亲<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;，他本来不欲凑热闹，但转念想到蓝梧桐素来爱热闹，没准儿也会来，若是老天可怜，说不定便在这里能碰上，抱着这样的念头，他在擂台下驻足观瞧。这才引出此番故事。<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;听了王传华的话，李重远神色黯然，低声道：“前辈，重远实在不愿意提及旧事，就请前辈不要过问了，只是这次我重新出山，偶然路过河南府，<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;见这里比武招亲，便驻足观战，本想看场热闹就走。”王传华见他刚才称呼自己为世伯，现在却改口叫自己为前辈，便知道自己的话触及了他的伤心处，彼此情分已经有些疏远了，他心下暗悔。(。。)</div><script type="text/javascript" src="/ad/style6.js"></script><div class="backs"><a href="13791031.html" class="pre">上一章</a><a href="" class="backfor">返回目录</a><a href="13791033.html" class="next">下一章</a><p>小提示： 按←键返回上一页，按→键进入上一页,您还可以<a href="/modules/article/addbookcase.php?bid=32660&cid=13791032" title="加入书签"  target="_blank">加入书签</a></p></div>
+<script type="text/javascript" src="/ad/style7.js"></script>
+</div><div class="sharesFor"><script language="javascript" type="text/javascript" src="/js/wangzhe.js"></script></div>
+      </section>
+    </div>
+   <script type="text/javascript" src="/js/checklogin.js"></script>
+   <script type="text/javascript" src="/ad/style4.js"></script>
+<div class="attention"><em>阅读提示：</em><br/>
+1、本站会员登录后，将免费体会到最顺畅的阅读方式[<em>最少广告</em>]。<br/>
+2、<em>注册本站会员</em>，将《<a href="/book_32660.html" class="article_title"><em>盛唐传说</em></a>》加入书架，可以通过书架更快的了解更新信息。<br/>
+3、免费小说《<a href="/book_32660.html" class="article_title"><em>盛唐传说</em></a>》 正文 第二百三十三章 逃宦？ 所描述的内容只是作者 作者 <em>惊雷震天</em>个人观点，与本站的立场无关，本站只为广大用户提供阅读平台。
+</div>
+</div></div>
+<script language="JavaScript" type="text/JavaScript"> 
+  window.onload = function(){ //window.onload 打开网页就运行
+
+  var str=document.getElementById("content").innerHTML;//这里是整个页面代码 ,也可以指定id
+  str=str.replace(/\<script[\s\S]+?\<\/script\>/gi,""); str=str.replace(/\<styltyp[\s\S]+?\<\/styl\>/gi,"");
+ str=str.replace(/\<style[\s\S]+?\<\/style\>/gi,"");
+ str=str.replace(/\<a[\s\S].+?\<\/a\>/gi,"");  str=str.replace(/Www.+?ggyy\.net/gi,"");
+ str=str.replace(/Www.+?Com/gi,"");
+  str=str.replace(/Www.+?net/gi,"");
+ str=str.replace(/Www.+?cc/gi,"");
+   str=str.replace(/&lt;br.+?&gt;/gi,"<br />");
+str=str.replace(/&amp;hllp;/gi,"&hellip;").replace(/&amp;ldqo;/gi,"&ldquo;").replace(/ldqo/gi,"ldquo").replace(/&amp;rdqo;/gi,"&rdquo;").replace(/&amp;dash;/gi,"&mdash;"); document.getElementById("content").innerHTML=str;
+}
+</script>
+<script type="text/javascript" src="/js/foot.js"></script>
+<script type="text/javascript" src="/js/tong.js"></script>
+<script type="text/javascript" src="/ad/tan.js"></script>
+<script type="text/javascript" src="/ad/style5.js"></script>
+</body></html>

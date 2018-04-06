@@ -1,0 +1,1104 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>食品休闲 酒水饮料 - 搜索商品 - 乐兴商城</title>
+<meta name="description" content="食品休闲 酒水饮料 乐兴商城" />
+<meta name="keywords" content="食品休闲 酒水饮料,乐兴商城" />
+<meta name="author" content="ecmall.shopex.cn" />
+<meta name="generator" content="ECMall 2.3.0" />
+<meta name="copyright" content="ShopEx Inc. All Rights Reserved" />
+<meta property="wb:webmaster" content="d75cd4466046513e" />
+<meta property="qc:admins" content="160511342664030700167636" />
+<link rel="shortcut icon" href="favicon.ico" />
+<link type="text/css" rel="stylesheet" href="/themes/public/css/base.css">
+<link type="text/css" rel="stylesheet" href="/themes/public/css/common.css">
+<script type="text/javascript" src="/themes/public/js/jquery.js"></script>
+<script type="text/javascript" src="/themes/public/js/common.js"></script>
+<script type="text/javascript">
+var SITE_URL = "http://www.lxshopping.cn";
+var REAL_SITE_URL = "http://www.lxshopping.cn";
+var PRICE_FORMAT = '¥%s';
+</script>
+</head>
+<body>
+
+<div class="top">
+	<div class="commWrap">
+    	<ul class="left">
+    	        	<li>您好, 欢迎光临乐兴商城！</li>
+            <li><a target="_self" href="index.php?app=member&amp;act=login&amp;ret_url=">登录</a></li>
+            <li><a target="_self" href="index.php?app=member&amp;act=register&amp;ret_url=">免费注册</a></li>
+       	        </ul>
+        <ul class="right">
+        	<li><a href="index.php?app=buyer_order">订单查询</a></li>
+            <li><a href="index.php?app=member">个人中心</a></li>
+            <li class="appload">
+            	<h1>手机乐兴</h1>
+                <dl>
+                	<dd class="d1"><a href="http://itunes.apple.com">iphone</a></dd>
+                    <dd class="d2"><a href="javascript:;">Android</a></dd>                    
+                </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="header">
+	<div class="commWrap">
+    	<div class="logo">
+    		<a href="/">
+    			<img  src="data/files/mall/settings/site_logo.png">
+    		</a>
+    	</div>
+    	
+        <div class="search">
+        	<ul class="srTab">
+            	<li class="sel" type='goods'>商品</li>
+                <li type='stores'>店铺</li>
+                <li type='news'>资讯</li>
+            </ul>
+        	
+        	<form action="" method="get">
+        	    <input type="hidden" name="app" value="search"/>
+        	    <input type="hidden" name="act" value="index" class='act'/>
+            	<input id="kw" type="text" class="keyText keyvalue" name="keyword"  onKeyUp="keyup(event)" autocomplete="off">
+                <input type="submit" value="搜索" class="shSbt">
+            </form>
+            
+            <div style="DISPLAY: none" id="keyup_d" class="sokeyup" ></div>
+            <ul class="searchLinks">
+            	       	 		<li><a href="index.php?app=search&amp;keyword=生鲜">生鲜</a></li>
+           		       	 		<li><a href="index.php?app=search&amp;keyword=日化">日化</a></li>
+           		            </ul>
+        </div>
+        
+        <div class="right">
+        	<h1>电话下单:4007-888-288</h1>
+        </div>
+        
+    </div>    
+</div>
+
+<div class="nav">
+	<div class="commWrap">
+    	<ul class="navList paddingLift">
+    	                      <li >
+           <a target="__blank" href="/">首页</a>
+           </li>
+                                         <li >
+           <a target="__blank" href="/index.php?app=groups">乐兴购</a>
+           </li>
+                                         <li >
+           <a target="__blank" href="/index.php?app=preferent">特卖场</a>
+           </li>
+                                         <li >
+           <a target="__blank" href="/index.php?app=wholesale">批发行</a>
+           </li>
+                                         <li >
+           <a target="__blank" href="/index.php?app=store_recom">旗舰店</a>
+           </li>
+                                         <li >
+           <a target="__blank" href="/index.php?app=live">本地生活</a>
+           </li>
+                    
+        </ul>
+        <div class="navCart">
+        	<a href="index.php?app=cart">我的购物车</a>
+        </div>
+    </div>
+</div><script type="text/javascript" src="http://www.lxshopping.cn/includes/libraries/javascript/search_goods.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        $('.page').val("");
+    })
+    
+    //加入购物车
+	function add_to_cart(id)
+    {
+    	//alert('零售商品业务尚未开业，暂不能购买，敬请期待！');
+    	//此处暂时注释，后面开启 start
+		 var spec_id = id;
+		var quantity = parseInt($("#quantity_"+spec_id).val()); 
+		var SITE_URL = "http://"+location.hostname;
+        var url = SITE_URL + '/index.php?app=cart&act=add';
+                       //alert(spec_id);
+        $.getJSON(url, {'spec_id':spec_id, 'quantity':quantity}, function(data){
+            if (data.done){
+                       //window.location = 'index.php?app=cart';
+                Alert('<b>' + data.msg +'<img  style="float:right;padding-right:10px;" src="/themes/public/images/close.png" onclick="cl()"></b><br/><br/><a href="index.php?app=cart">返回购物车</a>&nbsp;&nbsp;<a href="index.php?app=my_favorite">查看我的收藏</a>\n\
+<br><br/><span id="t">3</span>秒后自动关闭窗口！');
+            } else{
+                 Alert('<b>' + data.msg + '<img  style="float:right;padding-right:10px;" src="/themes/public/images/close.png" onclick="cl()"></b><br/><br/><a href="index.php?app=cart">返回购物车</a>&nbsp;&nbsp;<a href="index.php?app=my_favorite">查看我的收藏</a>\n\
+<br><br/><span id="t">3</span>秒后自动关闭窗口！');
+                       //$(".mall_info_message").text(data.msg).showPop();
+                       //$("#ware_cen"+id).text(data.msg).slideDown('slow');
+            }
+        }); 
+      //此处暂时注释，后面开启 end
+      }
+       /* 收藏商品 */
+       function collect_goods(id) {
+       var SITE_URL = "http://" + location.hostname;
+               var url = SITE_URL + '/index.php?app=my_favorite&act=add&type=goods&ajax=1';
+               $.getJSON(url, {
+               'item_id' : id
+               }, function(data) {
+               Alert('<b>' + data.msg + '<img  style="float:right;padding-right:10px;" src="/themes/public/images/close.png" onclick="cl()"></b><br/><br/><a href="index.php?app=cart">返回购物车</a>&nbsp;&nbsp;<a href="index.php?app=my_favorite">查看我的收藏</a>\n\
+<br><br/><span id="t">3</span>秒后自动关闭窗口！');
+                       $("#puiblic-content").text(data.msg).showPop();
+               });
+       }
+       //弹出DIV倒计时
+       function lxfEndtime(){
+       var t = $('#t').html();
+               if (t != 0){
+       $('#t').html(t - 1);
+               setTimeout("lxfEndtime()", 1000);
+                          }
+    }
+         //自动关闭提示框  
+	function Alert(str) {  
+	    var msgw,msgh,bordercolor;  
+	    msgw=350;//提示窗口的宽度  
+	    msgh=180;//提示窗口的高度  
+	    titleheight=25 //提示窗口标题高度  
+	    bordercolor="#909090";//提示窗口的边框颜色  
+	    titlecolor="#99CCFF";//提示窗口的标题颜色  
+	    var sWidth,sHeight;  
+	    //获取当前窗口尺寸  
+	    sWidth = document.body.offsetWidth;  
+	    sHeight = document.body.offsetHeight;  
+	//    //背景div  
+	    var bgObj=document.createElement("div");  
+	    bgObj.setAttribute('id','alertbgDiv');  
+	    bgObj.style.position="absolute";  
+	    bgObj.style.top="0";  
+	    bgObj.style.background="#E8E8E8";  
+	    bgObj.style.filter="progid:DXImageTransform.Microsoft.Alpha(style=3,opacity=25,finishOpacity=75";  
+	    bgObj.style.opacity="0.6";  
+	    bgObj.style.left="0";  
+	    bgObj.style.width = sWidth + "px"; 
+	    bgObj.style.height = sHeight + "px";  
+	    bgObj.style.zIndex = "10000";  
+	    document.body.appendChild(bgObj);  
+	    //创建提示窗口的div  
+	    var msgObj = document.createElement("div")  
+	    msgObj.setAttribute("id","alertmsgDiv");  
+	    msgObj.setAttribute("align","center");  
+	    msgObj.style.background="white";  
+	    msgObj.style.border="1px solid " + bordercolor;  
+	    msgObj.style.position = "fixed";  
+	    msgObj.style.left = "50%";  
+	    msgObj.style.top = "400px"; 
+	    //msgObj.style.font="20px/1.6em Verdana, Geneva, Arial, Helvetica, sans-serif";  
+	    //窗口距离左侧和顶端的距离
+	    msgObj.style.font="20px/1.6em Helvetica Neue,Arial,Helvetica,’Liberation Sans’,FreeSans,sans-serif";
+	    msgObj.style.marginLeft = "-225px";  
+	    //窗口被卷去的高+（屏幕可用工作区高/2）-150  
+	   // msgObj.style.top = document.body.scrollTop+(window.screen.availHeight/2)-150 +"px";  
+	    msgObj.style.width = msgw + "px";  
+	    msgObj.style.height = msgh + "px";  
+	    msgObj.style.textAlign = "center";  
+	    msgObj.style.lineHeight ="25px";  
+	    msgObj.style.zIndex = "10001";  
+	    document.body.appendChild(msgObj);  
+	    //提示信息标题  
+//	    var title=document.createElement("div");  
+//	    title.setAttribute("id","alertmsgTitle");  
+//	    title.setAttribute("align","left");  
+//	    title.style.margin="0";  
+//	    title.style.padding="3px";  
+//	    title.style.background = bordercolor;  
+//	    title.style.filter="progid:DXImageTransform.Microsoft.Alpha(startX=20, startY=20, finishX=100, finishY=100,style=1,opacity=75,finishOpacity=100);";  
+//	    title.style.opacity="0.75";  
+//	    title.style.border="1px solid " + bordercolor;  
+//	    title.style.height="18px";  
+//	    title.style.font="12px Verdana, Geneva, Arial, Helvetica, sans-serif";  
+//	    title.style.color="white";  
+//	    title.innerHTML="提示信息";  
+//	    document.getElementById("alertmsgDiv").appendChild(title);  
+	    //提示信息  
+	    var txt = document.createElement("p");  
+	    txt.setAttribute("id","msgTxt");  
+	    txt.style.margin="16px 0";  
+	    txt.innerHTML = str;  
+	    document.getElementById("alertmsgDiv").appendChild(txt);  
+	    //设置关闭时间  
+	    window.setTimeout("closewin()",3000);   
+    }
+         function cl(){           
+            window.setTimeout("closewin()",100); 
+         }
+	function closewin() {  
+	    document.body.removeChild(document.getElementById("alertbgDiv"));  
+	    //document.getElementById("alertmsgDiv").removeChild(document.getElementById("alertmsgTitle"));  
+	    document.body.removeChild(document.getElementById("alertmsgDiv"));  
+	}
+
+
+</script>
+
+<div class="main defaultnone">
+	<div class="left">
+    	<div class="menu">
+        	<h1 class="allGoodsClass">全部商品分类</h1>
+        </div>
+    </div>
+    
+    <div class="currentaddress">
+            <a href="http://www.lxshopping.cn/index.php">首页</a> &gt;
+                <a href="javascript:dropParam('cate_id')">全部分类</a> &gt;
+                食品休闲 酒水饮料        </div>    
+	<div class="shr_left">        
+        <dl class="goodsClass">
+        	<!-- <dt>商品分类</dt> -->
+                	<dt class='first_cate_1728 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1728&amp;price=&amp;order=">生鲜果蔬 南北干货</a>
+            <span onclick="javascript:menu(1728);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2321&amp;price=&amp;order=">新鲜水果</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2322&amp;price=&amp;order=">新鲜蔬菜</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2320&amp;price=&amp;order=">海鲜水产</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2319&amp;price=&amp;order=">精品肉类</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2323&amp;price=&amp;order=">优选蛋品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2324&amp;price=&amp;order=">肉类熟食</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2325&amp;price=&amp;order=">冷冻冷藏</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2326&amp;price=&amp;order=">低温奶品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1728'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2360&amp;price=&amp;order=">南北干货</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_1725 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1725&amp;price=&amp;order=">食品休闲 酒水饮料</a>
+            <span onclick="javascript:menu(1725);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2358&amp;price=&amp;order=">粮油副食</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1798&amp;price=&amp;order=">精选茶叶</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2359&amp;price=&amp;order=">厨房调料</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1749&amp;price=&amp;order=">方便速食</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1750&amp;price=&amp;order=">地方特产</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1746&amp;price=&amp;order=">休闲零食</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1748&amp;price=&amp;order=">糖果巧克力</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1751&amp;price=&amp;order=">饼干糕点</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1747&amp;price=&amp;order=">坚果蜜饯</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1921&amp;price=&amp;order=">酒类饮品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1947&amp;price=&amp;order=">健康用水</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1971&amp;price=&amp;order=">牛奶乳品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1954&amp;price=&amp;order=">饮料饮品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1760&amp;price=&amp;order=">冲饮谷物</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1850&amp;price=&amp;order=">咖啡饮品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1725'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3145&amp;price=&amp;order=">进口食品</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_2304 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2304&amp;price=&amp;order=">日化百货 生活家居</a>
+            <span onclick="javascript:menu(2304);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2311&amp;price=&amp;order=">美发用品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2310&amp;price=&amp;order=">彩妆</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2312&amp;price=&amp;order=">身体护理</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2309&amp;price=&amp;order=">面部护理</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2315&amp;price=&amp;order=">口腔护理</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2104&amp;price=&amp;order=">烹饪锅具</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2313&amp;price=&amp;order=">香水香薰</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2316&amp;price=&amp;order=">女性护理</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2106&amp;price=&amp;order=">餐饮用具</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2314&amp;price=&amp;order=">男士护肤</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2107&amp;price=&amp;order=">水壶水杯</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2317&amp;price=&amp;order=">成人用品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3133&amp;price=&amp;order=">厨房清洁</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2142&amp;price=&amp;order=">床上用品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2318&amp;price=&amp;order=">个人清洁</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2146&amp;price=&amp;order=">卫浴用具</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2147&amp;price=&amp;order=">家纺日用品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2148&amp;price=&amp;order=">收纳洗晒</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2149&amp;price=&amp;order=">纸制品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2150&amp;price=&amp;order=">清洁剂</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2151&amp;price=&amp;order=">驱蚊夏凉</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2304'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2153&amp;price=&amp;order=">宠物生活</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_1726 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1726&amp;price=&amp;order=">潮流服装 鞋帽配饰</a>
+            <span onclick="javascript:menu(1726);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2083&amp;price=&amp;order=">男装上衣</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2562&amp;price=&amp;order=">男装裤子</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2008&amp;price=&amp;order=">女装上装</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2029&amp;price=&amp;order=">女装裙裤</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2073&amp;price=&amp;order=">睡衣家居服</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2056&amp;price=&amp;order=">内衣配件</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2565&amp;price=&amp;order=">精选童装</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2564&amp;price=&amp;order=">精选男鞋</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2563&amp;price=&amp;order=">精选女鞋</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2566&amp;price=&amp;order=">精选童鞋</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2567&amp;price=&amp;order=">帽子</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2568&amp;price=&amp;order=">卡通专区</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2569&amp;price=&amp;order=">特色服装</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1726'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2570&amp;price=&amp;order=">运动户外</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_3155 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3155&amp;price=&amp;order=">电脑电器 手机数码</a>
+            <span onclick="javascript:menu(3155);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2821&amp;price=&amp;order=">电脑整机</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2822&amp;price=&amp;order=">平板电脑</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2823&amp;price=&amp;order=">装机配件</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2824&amp;price=&amp;order=">整机附件</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2828&amp;price=&amp;order=">打印设备</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2825&amp;price=&amp;order=">电脑外设</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2826&amp;price=&amp;order=">网络设备</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2727&amp;price=&amp;order=">手机通讯</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2729&amp;price=&amp;order=">手机配件</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2827&amp;price=&amp;order=">音频设备</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2726&amp;price=&amp;order=">运营商</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2730&amp;price=&amp;order=">摄影摄像</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2679&amp;price=&amp;order=">影音视听</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2728&amp;price=&amp;order=">智能穿戴</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2731&amp;price=&amp;order=">镜头</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2732&amp;price=&amp;order=">相机配件</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2734&amp;price=&amp;order=">电教影音</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_3155'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2829&amp;price=&amp;order=">会议设备</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_2306 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2306&amp;price=&amp;order=">文体办公 皮具箱包</a>
+            <span onclick="javascript:menu(2306);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_2306'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2830&amp;price=&amp;order=">精品耗材</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2306'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2831&amp;price=&amp;order=">办公文具</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2306'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2832&amp;price=&amp;order=">学生文具</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2306'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2833&amp;price=&amp;order=">财务行政</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2306'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1897&amp;price=&amp;order=">功能箱包</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2306'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1890&amp;price=&amp;order=">精品男包</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2306'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1880&amp;price=&amp;order=">潮流女包</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2306'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1911&amp;price=&amp;order=">皮具配件</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_2308 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2308&amp;price=&amp;order=">母婴用品 玩具童装</a>
+            <span onclick="javascript:menu(2308);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3003&amp;price=&amp;order=">孕婴奶粉</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3004&amp;price=&amp;order=">营养辅食</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3005&amp;price=&amp;order=">尿裤湿巾</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3006&amp;price=&amp;order=">喂养用品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3007&amp;price=&amp;order=">洗护用品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3008&amp;price=&amp;order=">玩具</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3009&amp;price=&amp;order=">童车童床</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3010&amp;price=&amp;order=">妈妈专区</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2308'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3011&amp;price=&amp;order=">童装童鞋</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_2307 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2307&amp;price=&amp;order=">汽车用品 生活电器</a>
+            <span onclick="javascript:menu(2307);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_2307'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1836&amp;price=&amp;order=">生活电器</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2307'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2678&amp;price=&amp;order=">大家电器</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2307'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2879&amp;price=&amp;order=">汽车生活</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2307'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2920&amp;price=&amp;order=">车载电器</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2307'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1867&amp;price=&amp;order=">电器附件</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2307'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2733&amp;price=&amp;order=">望远镜</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2307'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2677&amp;price=&amp;order=">个护健康</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2307'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2680&amp;price=&amp;order=">饮水设备</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_2103 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2103&amp;price=&amp;order=">传统滋补 养生用品</a>
+            <span onclick="javascript:menu(2103);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1981&amp;price=&amp;order=">强健男人</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1887&amp;price=&amp;order=">养生蜂蜜</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1920&amp;price=&amp;order=">传统滋补</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1991&amp;price=&amp;order=">基础营养</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2000&amp;price=&amp;order=">儿童成长</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2005&amp;price=&amp;order=">微量元素</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2017&amp;price=&amp;order=">关爱父母</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2462&amp;price=&amp;order=">魅力女人</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_2103'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2463&amp;price=&amp;order=">母婴营养</a>
+                </dd>
+        	        	
+        	
+                	<dt class='first_cate_1757 first_cate'>
+            <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1757&amp;price=&amp;order=">厨卫用具、家具家装</a>
+            <span onclick="javascript:menu(1757);"></span>
+            </dt>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2144&amp;price=&amp;order=">家具家装</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2105&amp;price=&amp;order=">厨房用具</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2143&amp;price=&amp;order=">家居装饰</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2152&amp;price=&amp;order=">一次性用品</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1762&amp;price=&amp;order=">厨房电器</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=1818&amp;price=&amp;order=">厨卫电器</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3124&amp;price=&amp;order=">开关</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=3125&amp;price=&amp;order=">接线板/插头</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2681&amp;price=&amp;order=">五金家装</a>
+                </dd>
+        	        		<dd class='second_cate second_cate_1757'>
+                <a href="index.php?app=search&amp;act=index&amp;brand_id=201,239,294,100,315&amp;keyword=&amp;cate_id=2145&amp;price=&amp;order=">居家日用</a>
+                </dd>
+        	        	
+        	
+                </dl>
+        
+        <ul class="lxscad">
+    <li><a href="#"><img src="/themes/public/images/upload/wwwww.jpg" alt="" /></a></li>
+    <li><a href="#"><img src="/themes/public/images/upload/wwwwww.jpg" alt="" /></a></li>
+</ul>        
+        <script type="text/javascript">
+			jQuery(".borderAdd").slide({titCell:"li",triggerTime:0});
+		</script>
+        <div class="borderAdd">
+            <h1 class="lefthd">猜你喜欢</h1>
+            <ul class="detailslist">
+                	                    <li class='goods_unit'>
+                    	<a href="index.php?app=goods&amp;id=11891" target="_blank">
+                    		<img src="/data/files/store_1/goods_151/small_201503041025517142.jpg" alt="" />
+                    	</a>
+                        <h5><a href="index.php?app=goods&amp;id=11891" target="_blank">MNK-1561吹气男拖鞋</a></h5>
+                        <h4>¥13.50</h4>
+                        <p>已有<span>0</span>人购买</p>
+                    </li>
+                	                    <li class='goods_unit'>
+                    	<a href="index.php?app=goods&amp;id=11890" target="_blank">
+                    		<img src="/data/files/store_1/goods_184/small_201503041006244916.jpg" alt="" />
+                    	</a>
+                        <h5><a href="index.php?app=goods&amp;id=11890" target="_blank">同力BC-615休闲女拖鞋</a></h5>
+                        <h4>¥19.50</h4>
+                        <p>已有<span>0</span>人购买</p>
+                    </li>
+                	                    <li class='goods_unit'>
+                    	<a href="index.php?app=goods&amp;id=11889" target="_blank">
+                    		<img src="/data/files/store_1/goods_28/small_201503041000288785.jpg" alt="" />
+                    	</a>
+                        <h5><a href="index.php?app=goods&amp;id=11889" target="_blank">DHX-503磨砂人字拖男鞋</a></h5>
+                        <h4>¥14.00</h4>
+                        <p>已有<span>0</span>人购买</p>
+                    </li>
+                	            </ul>
+        </div>
+        
+    </div>
+    
+    <div class="shr_right">
+    	<div class="keybox">
+        	<dl class="keyfiltrate">
+            	<dt>您已选择：</dt>
+                <dd>                   
+                	               		<a href="index.php?app=search&amp;act=index&amp;cate_id=&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=" >
+               			食品休闲 酒水饮料                 		<image src='/admin/templates/style/images/close.gif'/>
+                  	</a>  
+                 	                 	
+                    	                    		                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,315&amp;min=&amp;max=&amp;price=&amp;order=" >
+				     			达利园<image src='/admin/templates/style/images/close.gif'/>
+		                    </a>
+		               			                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=" >
+				     			上好佳<image src='/admin/templates/style/images/close.gif'/>
+		                    </a>
+		               			                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=" >
+				     			酷儿<image src='/admin/templates/style/images/close.gif'/>
+		                    </a>
+		               			                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,100,315&amp;min=&amp;max=&amp;price=&amp;order=" >
+				     			王朝<image src='/admin/templates/style/images/close.gif'/>
+		                    </a>
+		               			                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100&amp;min=&amp;max=&amp;price=&amp;order=" >
+				     			茅台<image src='/admin/templates/style/images/close.gif'/>
+		                    </a>
+		               	                                        
+                    				   	
+                                    </dd>
+            </dl>
+
+        	<dl class="keylist">
+            	<dt>品牌：</dt>
+                <dd class="wdt">
+                	<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;price=">全部</a>
+                    	              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,91&amp;min=&amp;max=&amp;price=&amp;order=" >公仔</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,93&amp;min=&amp;max=&amp;price=&amp;order=" >好滋味</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,94&amp;min=&amp;max=&amp;price=&amp;order=" >家乡人</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,95&amp;min=&amp;max=&amp;price=&amp;order=" >康师傅</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,96&amp;min=&amp;max=&amp;price=&amp;order=" >来一桶</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,98&amp;min=&amp;max=&amp;price=&amp;order=" >康富来</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=" class="sele">达利园</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,101&amp;min=&amp;max=&amp;price=&amp;order=" >福马</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,102&amp;min=&amp;max=&amp;price=&amp;order=" >好丽友</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,103&amp;min=&amp;max=&amp;price=&amp;order=" >回头客</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,104&amp;min=&amp;max=&amp;price=&amp;order=" >嘉顿</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,105&amp;min=&amp;max=&amp;price=&amp;order=" >景峰</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,106&amp;min=&amp;max=&amp;price=&amp;order=" >乐事</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,107&amp;min=&amp;max=&amp;price=&amp;order=" >米老头</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,108&amp;min=&amp;max=&amp;price=&amp;order=" >盼盼</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,109&amp;min=&amp;max=&amp;price=&amp;order=" >洽洽</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,110&amp;min=&amp;max=&amp;price=&amp;order=" >趣多多</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,111&amp;min=&amp;max=&amp;price=&amp;order=" >雀巢</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,112&amp;min=&amp;max=&amp;price=&amp;order=" >三辉</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,114&amp;min=&amp;max=&amp;price=&amp;order=" >栗一烧</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,115&amp;min=&amp;max=&amp;price=&amp;order=" >太平</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,116&amp;min=&amp;max=&amp;price=&amp;order=" >天天旺</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,117&amp;min=&amp;max=&amp;price=&amp;order=" >万士发</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,118&amp;min=&amp;max=&amp;price=&amp;order=" >奥利奥</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,119&amp;min=&amp;max=&amp;price=&amp;order=" >翱翔</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,120&amp;min=&amp;max=&amp;price=&amp;order=" >旺旺</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,121&amp;min=&amp;max=&amp;price=&amp;order=" >旺仔</a>	            		              		<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,122&amp;min=&amp;max=&amp;price=&amp;order=" >徐福记</a>	            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            		              			            	                    
+                    <div class="selMore">
+                    	<div class="selWrap">
+                        		              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              					            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,123&amp;min=&amp;max=&amp;price=&amp;order=" >溢东</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,124&amp;min=&amp;max=&amp;price=&amp;order=" >众望</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,125&amp;min=&amp;max=&amp;price=&amp;order=" >冰锐朗姆</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,126&amp;min=&amp;max=&amp;price=&amp;order=" >娃哈哈</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,127&amp;min=&amp;max=&amp;price=&amp;order=" >蒙牛</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,128&amp;min=&amp;max=&amp;price=&amp;order=" >思朗</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,129&amp;min=&amp;max=&amp;price=&amp;order=" >统一</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,130&amp;min=&amp;max=&amp;price=&amp;order=" >王老吉</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,131&amp;min=&amp;max=&amp;price=&amp;order=" >金味</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,132&amp;min=&amp;max=&amp;price=&amp;order=" >老三届</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,133&amp;min=&amp;max=&amp;price=&amp;order=" >麦斯威尔</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,134&amp;min=&amp;max=&amp;price=&amp;order=" >南方</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,135&amp;min=&amp;max=&amp;price=&amp;order=" >太古</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,136&amp;min=&amp;max=&amp;price=&amp;order=" >维维</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,137&amp;min=&amp;max=&amp;price=&amp;order=" >香飘飘</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,138&amp;min=&amp;max=&amp;price=&amp;order=" >优乐美</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,139&amp;min=&amp;max=&amp;price=&amp;order=" >金龙鱼</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,140&amp;min=&amp;max=&amp;price=&amp;order=" >泰里拉</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,141&amp;min=&amp;max=&amp;price=&amp;order=" >香满园</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,142&amp;min=&amp;max=&amp;price=&amp;order=" >阿一波</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,143&amp;min=&amp;max=&amp;price=&amp;order=" >安琪</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,144&amp;min=&amp;max=&amp;price=&amp;order=" >家乐牌</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,145&amp;min=&amp;max=&amp;price=&amp;order=" >李锦记</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,89&amp;min=&amp;max=&amp;price=&amp;order=" >合味道</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,148&amp;min=&amp;max=&amp;price=&amp;order=" >立顿</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,149&amp;min=&amp;max=&amp;price=&amp;order=" >明丰</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,146&amp;min=&amp;max=&amp;price=&amp;order=" >天地壹号</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,147&amp;min=&amp;max=&amp;price=&amp;order=" >卡夫</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,150&amp;min=&amp;max=&amp;price=&amp;order=" >安记</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,151&amp;min=&amp;max=&amp;price=&amp;order=" >美味鲜</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,152&amp;min=&amp;max=&amp;price=&amp;order=" >神田</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,153&amp;min=&amp;max=&amp;price=&amp;order=" >双桥</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,154&amp;min=&amp;max=&amp;price=&amp;order=" >太太乐</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,155&amp;min=&amp;max=&amp;price=&amp;order=" >陶味园</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,156&amp;min=&amp;max=&amp;price=&amp;order=" >王守义</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,157&amp;min=&amp;max=&amp;price=&amp;order=" >逍遥</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,158&amp;min=&amp;max=&amp;price=&amp;order=" >豫农家</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,159&amp;min=&amp;max=&amp;price=&amp;order=" >状元</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,179&amp;min=&amp;max=&amp;price=&amp;order=" >Q趣</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,180&amp;min=&amp;max=&amp;price=&amp;order=" >川南</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,181&amp;min=&amp;max=&amp;price=&amp;order=" >凤娃</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,182&amp;min=&amp;max=&amp;price=&amp;order=" >甘竹牌</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,183&amp;min=&amp;max=&amp;price=&amp;order=" >广合</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,184&amp;min=&amp;max=&amp;price=&amp;order=" >双汇</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,185&amp;min=&amp;max=&amp;price=&amp;order=" >蓬盛</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,193&amp;min=&amp;max=&amp;price=&amp;order=" >美汁源</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,195&amp;min=&amp;max=&amp;price=&amp;order=" >可比克</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,198&amp;min=&amp;max=&amp;price=&amp;order=" >品客</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,199&amp;min=&amp;max=&amp;price=&amp;order=" >卡乐B</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,200&amp;min=&amp;max=&amp;price=&amp;order=" >好吃点</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=" class="sele">上好佳</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,202&amp;min=&amp;max=&amp;price=&amp;order=" >银鹭</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,203&amp;min=&amp;max=&amp;price=&amp;order=" >维他奶</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,204&amp;min=&amp;max=&amp;price=&amp;order=" >乐虎</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,205&amp;min=&amp;max=&amp;price=&amp;order=" >伊利</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,206&amp;min=&amp;max=&amp;price=&amp;order=" >美乐多</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,207&amp;min=&amp;max=&amp;price=&amp;order=" >露露</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,210&amp;min=&amp;max=&amp;price=&amp;order=" >山田</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,211&amp;min=&amp;max=&amp;price=&amp;order=" >阿麦多</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,212&amp;min=&amp;max=&amp;price=&amp;order=" >陈克明</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,213&amp;min=&amp;max=&amp;price=&amp;order=" >奶狗</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,214&amp;min=&amp;max=&amp;price=&amp;order=" >怡浓</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,215&amp;min=&amp;max=&amp;price=&amp;order=" >南街村</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,219&amp;min=&amp;max=&amp;price=&amp;order=" >刀唛</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,220&amp;min=&amp;max=&amp;price=&amp;order=" >福临门</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,221&amp;min=&amp;max=&amp;price=&amp;order=" >胡姬花</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,222&amp;min=&amp;max=&amp;price=&amp;order=" >花旗</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,223&amp;min=&amp;max=&amp;price=&amp;order=" >口福</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,224&amp;min=&amp;max=&amp;price=&amp;order=" >鲁花</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,225&amp;min=&amp;max=&amp;price=&amp;order=" >元宝</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,226&amp;min=&amp;max=&amp;price=&amp;order=" >秀禾</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,227&amp;min=&amp;max=&amp;price=&amp;order=" >福满多</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,228&amp;min=&amp;max=&amp;price=&amp;order=" >陈村</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,229&amp;min=&amp;max=&amp;price=&amp;order=" >晨光</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,230&amp;min=&amp;max=&amp;price=&amp;order=" >皇子</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,232&amp;min=&amp;max=&amp;price=&amp;order=" >百事</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,233&amp;min=&amp;max=&amp;price=&amp;order=" >纯果乐</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,234&amp;min=&amp;max=&amp;price=&amp;order=" >芬达</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,235&amp;min=&amp;max=&amp;price=&amp;order=" >激浪</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,236&amp;min=&amp;max=&amp;price=&amp;order=" >珠江</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,237&amp;min=&amp;max=&amp;price=&amp;order=" >佳得乐</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,238&amp;min=&amp;max=&amp;price=&amp;order=" >可口可乐</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=" class="sele">酷儿</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,240&amp;min=&amp;max=&amp;price=&amp;order=" >零度</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,241&amp;min=&amp;max=&amp;price=&amp;order=" >美年达</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,242&amp;min=&amp;max=&amp;price=&amp;order=" >七喜</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,243&amp;min=&amp;max=&amp;price=&amp;order=" >百威</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,244&amp;min=&amp;max=&amp;price=&amp;order=" >青岛</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,245&amp;min=&amp;max=&amp;price=&amp;order=" >怡泉</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,246&amp;min=&amp;max=&amp;price=&amp;order=" >金威</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,247&amp;min=&amp;max=&amp;price=&amp;order=" >蓝带</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,248&amp;min=&amp;max=&amp;price=&amp;order=" >槟知</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,249&amp;min=&amp;max=&amp;price=&amp;order=" >费列罗</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,250&amp;min=&amp;max=&amp;price=&amp;order=" >荷氏</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,251&amp;min=&amp;max=&amp;price=&amp;order=" >金帝</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,252&amp;min=&amp;max=&amp;price=&amp;order=" >大白兔</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,253&amp;min=&amp;max=&amp;price=&amp;order=" >冠生园</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,254&amp;min=&amp;max=&amp;price=&amp;order=" >益达</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,285&amp;min=&amp;max=&amp;price=&amp;order=" >生力</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,286&amp;min=&amp;max=&amp;price=&amp;order=" >喜力</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,287&amp;min=&amp;max=&amp;price=&amp;order=" >长城</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,288&amp;min=&amp;max=&amp;price=&amp;order=" >名仕</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,289&amp;min=&amp;max=&amp;price=&amp;order=" >威龙</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,291&amp;min=&amp;max=&amp;price=&amp;order=" >康日</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,292&amp;min=&amp;max=&amp;price=&amp;order=" >蜀都娇子</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,300&amp;min=&amp;max=&amp;price=&amp;order=" >三辉麦风</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=" class="sele">王朝</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,295&amp;min=&amp;max=&amp;price=&amp;order=" >九江双蒸酒</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,297&amp;min=&amp;max=&amp;price=&amp;order=" >劲牌</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,298&amp;min=&amp;max=&amp;price=&amp;order=" >皖酒王</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,301&amp;min=&amp;max=&amp;price=&amp;order=" >古绵纯</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,303&amp;min=&amp;max=&amp;price=&amp;order=" >益力多</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,308&amp;min=&amp;max=&amp;price=&amp;order=" >箭牌</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,310&amp;min=&amp;max=&amp;price=&amp;order=" >应利</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,313&amp;min=&amp;max=&amp;price=&amp;order=" >老干妈</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=" class="sele">茅台</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,320&amp;min=&amp;max=&amp;price=&amp;order=" >冰泉</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,322&amp;min=&amp;max=&amp;price=&amp;order=" >乐天</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,323&amp;min=&amp;max=&amp;price=&amp;order=" >喜之郎</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,324&amp;min=&amp;max=&amp;price=&amp;order=" >金品氏</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,325&amp;min=&amp;max=&amp;price=&amp;order=" >味丹</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,326&amp;min=&amp;max=&amp;price=&amp;order=" >金源</a>	            				              				<a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315,328&amp;min=&amp;max=&amp;price=&amp;order=" >理想</a>	            			                        </div>
+                    </div>
+                    
+                </dd>
+                                <dd class="morebtn">
+                	更多&gt;&gt;
+                </dd>
+                          	</dl>
+          	
+        	<dl class="keylist">
+            	<dt>类型：</dt>
+                <dd class="wdt">
+                	<a href="index.php?app=search&amp;act=index&amp;cate_id=&amp;brand_id=201,239,294,100,315&amp;price=&amp;keyword=">全部</a>
+                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1751&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >饼干糕点</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1750&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >地方特产</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1749&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >方便速食</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1748&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >糖果巧克力</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1746&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >休闲零食</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1747&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >坚果蜜饯</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1954&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >饮料饮品</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1947&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >健康用水</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1921&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >酒类饮品</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1971&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >牛奶乳品</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1850&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >咖啡饮品</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1798&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >精选茶叶</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=1760&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >冲饮谷物</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=3145&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >进口食品</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=2358&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >粮油副食</a>                     
+	                   	<a href="index.php?app=search&amp;act=index&amp;cate_id=2359&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;keyword=&amp;order="  >厨房调料</a>                     
+                    
+                    <div class="selMore">
+                    	<div class="selWrap">
+                        	 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		 
+	                   			                    		                        </div>
+                    </div>
+                </dd>
+                            </dl>
+
+        	<dl class="keylist">
+            	<dt>价格：</dt>
+                <dd>
+                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;price=&amp;order=">全部</a>
+                	                    	<a  href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;price=0-399&amp;order=">0-399</a>
+                   	                    	<a  href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;price=400-799&amp;order=">400-799</a>
+                   	                    	<a  href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;price=800-1999&amp;order=">800-1999</a>
+                   	                    	<a  href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;price=2000-5000&amp;order=">2000-5000</a>
+                   	                    	<a  href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;price=10000以上&amp;order=">10000以上</a>
+                   	                </dd>
+            	<!-- <dd>
+                	<a href="#">全部</a>
+                    <a href="#">0-100元</a>
+                    <a href="#">100-200元</a>
+                    <a href="#">200元以上</a>
+                </dd> -->
+                <dd>
+                	<form class="searchprice" action="" method="get">
+                	    <input type="hidden"  name="app" value="search">
+                	    <input type="hidden"  name="act" value="index">
+                	    <input type="hidden"  name="cate_id" value="1725">
+                	    <input type="hidden"  name="keyword" value="">
+                	    <input type="hidden"  name="brand_id" value="201,239,294,100,315">
+                	    <input type="hidden"  name="order" value="">    
+                    	<input type="text" class="price" name="min" value="">
+                        <span>--</span>
+                    	<input type="text" class="price" name='max' value="">
+                        <input type="submit" value="确定" class="stb" >
+                    </form>
+                </dd>
+            </dl>
+        </div>
+        
+        <table class="searchstatus">
+        	<tr>
+            	<td><a href="javascript:;">排序</a></td>
+            	
+            	            	<td class="navseles">
+                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=salescount_d">销量
+                    <img src="/themes/public/images/list_01.png" alt="" />
+                    </a>
+                </td>  
+            	                
+                                <td>
+                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=goodsprice_d">价格
+                    <img src="/themes/public/images/list_01.png" alt="" />
+                    </a>
+                </td>    
+                 
+                
+                                <td>
+                    <a href="index.php?app=search&amp;act=index&amp;cate_id=1725&amp;keyword=&amp;brand_id=201,239,294,100,315&amp;min=&amp;max=&amp;price=&amp;order=add_time_d">上架时间
+                    <img src="/themes/public/images/list_01.png" alt="" />
+                    </a>
+                </td>
+                                
+               	<td> 
+               		<span>共</span>
+                 	<span class="redColor">2</span>个商品
+              	</td>
+                
+               	<td>
+                   	<span>1</span>/<span>1</span> 页
+              	</td>          
+              	<td class="prveAndNext">   
+               			                <a  href="javascript:;">上一页</a>
+	                	                
+	                	                <a   href="javascript:;">下一页</a>
+	                 
+                </td>
+                
+            </tr>
+        </table>
+        
+        <div class="schbox">
+        	<ul class="ssgoodslist">
+                    	
+            	              		            		<li class='goods_unit'>
+                    	<div class="images"><a href="index.php?app=goods&amp;id=6998" target="_blank"><img src="data/files/store_1/goods_93/small_201408261014532319.jpg" alt="" /></a></div>
+                      	<h1 class="name"><a href="index.php?app=goods&amp;id=6998" target="_blank">上好佳薯条番茄味60g</a></h1>
+                      	<div class="price">
+	          	          	<span class="redColor">¥3.30</span>
+	                       	<span class="say">评论：0 条</span>
+                       	</div>                                           
+                                     
+	                	<div class="mycount">
+	                  	  	<span onClick="decrease_quantitys(8937)" class="unadd">-</span>
+	                        <span onclick="add_quantitys(8937);" class="add">+</span>
+	                        <input id="quantity_8937" onKeyUp="change_quantitys(8937)" type="text" value="1">
+	                    </div>
+	                    <span style="display:none" id="z2stock_8937"> 0</span>
+	                    <a class="addcart" href="javascript:add_to_cart('8937');lxfEndtime();">加入购物车</a>
+	                    <div class="collectbox">
+	                    	<span><a style="max-width:110px;overflow:hidden; "href="/index.php"title="乐兴旗舰店">乐兴旗舰店</a></span>
+	                        <a href="javascript:collect_goods('6998');lxfEndtime();"><em>+</em>加入收藏</a>
+	                    </div>
+                	</li>
+               		            		<li class='goods_unit'>
+                    	<div class="images"><a href="index.php?app=goods&amp;id=7102" target="_blank"><img src="data/files/store_1/goods_28/small_201412261027082397.jpg" alt="" /></a></div>
+                      	<h1 class="name"><a href="index.php?app=goods&amp;id=7102" target="_blank">王朝99干红750ML</a></h1>
+                      	<div class="price">
+	          	          	<span class="redColor">¥29.80</span>
+	                       	<span class="say">评论：0 条</span>
+                       	</div>                                           
+                                     
+	                	<div class="mycount">
+	                  	  	<span onClick="decrease_quantitys(9041)" class="unadd">-</span>
+	                        <span onclick="add_quantitys(9041);" class="add">+</span>
+	                        <input id="quantity_9041" onKeyUp="change_quantitys(9041)" type="text" value="1">
+	                    </div>
+	                    <span style="display:none" id="z2stock_9041"> 0</span>
+	                    <a class="addcart" href="javascript:add_to_cart('9041');lxfEndtime();">加入购物车</a>
+	                    <div class="collectbox">
+	                    	<span><a style="max-width:110px;overflow:hidden; "href="/index.php"title="乐兴旗舰店">乐兴旗舰店</a></span>
+	                        <a href="javascript:collect_goods('7102');lxfEndtime();"><em>+</em>加入收藏</a>
+	                    </div>
+                	</li>
+               		                    
+                               		</ul>
+        	</div>
+      	<br /> 
+      	  
+        <br />
+    </div>   
+    
+</div>
+
+
+
+
+
+
+<div class="footer">
+	<div class="commWrap">
+    	<div class="footList">
+            <dl>
+                <dt>
+                	<img src="/themes/public/images/public/footIcon/icon1.png">
+                	<span>购物指南</span>
+                </dt>
+                             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=82"  title="购物流程">购物流程</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=79"  title="优惠积分">优惠积分</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=80"  title="常见问题">常见问题</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=81"  title="联系客服">联系客服</a></dd>
+				 
+            </dl>
+            <dl>
+                <dt>
+                	<img src="/themes/public/images/public/footIcon/icon2.png">
+                	<span>支付方式</span>
+                </dt>
+               	             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=78"  title="货到付款">货到付款</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=83"  title="在线支付">在线支付</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=84"  title="礼品卡">礼品卡</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=85"  title="发票制度">发票制度</a></dd>
+				 
+            </dl>
+            <dl>
+                <dt>
+                	<img src="/themes/public/images/public/footIcon/icon3.png">
+                	<span>配送方式</span>
+                </dt>
+                             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=86"  title="自营物流">自营物流</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=87"  title="第三方快递">第三方快递</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=88"  title="配送运费">配送运费</a></dd>
+				 
+            </dl>
+            <dl>
+                <dt>
+                 	<img src="/themes/public/images/public/footIcon/icon4.png">
+                	<span>售后服务</span>
+                </dt>
+                             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=92"  title="关于乐兴">关于乐兴</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=89"  title="服务理念">服务理念</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=90"  title="退换货流程">退换货流程</a></dd>
+				             		<dd><a href="index.php?app=article&amp;act=view&amp;article_id=91"  title="人工客服">人工客服</a></dd>
+				 
+            </dl>
+        </div>
+        
+        <dl class="ewma">
+        	<dt style="border-left:1px solid #C6C6C6;">
+        		<img src="data/files/mall/settings/site_wechat.png">
+        	</dt>
+            <dd>扫一扫，添加乐兴商城微信</dd>
+        </dl>
+        
+        <dl class="ewma">
+        	<dt>
+        		<img src="data/files/mall/settings/site_weibo.png">
+        	</dt>
+            <dd>扫一扫，关注乐兴商城微博</dd>
+        </dl>
+        
+        <ul class="myApp">
+            <li><span>客服电话：4007-888-288</span></li>
+            <li>
+            	<p>iPhone<a href="http://itunes.apple.com">客户端下载</a></p>
+                <p id="android">Android<a href="javascript:;">客户端下载</a></p>
+            </li>
+        </ul>
+        
+    </div>
+    
+
+    
+    <div class="addresAndcopy">
+      
+        <a href="index.php?app=apply">招商加盟</a>&nbsp;|&nbsp;<a href="http://www.kuaidi100.com/" target="_blank">快递查询</a>
+    </div>
+  
+    <address>备案编号：粤ICP备14030896号 增值电信业务经营许可证：粵B2-20150008 &nbsp;&nbsp;&nbsp;Copyright©乐兴商城 2014-2019, All Rights Reserved&nbsp;&nbsp;&nbsp;深圳市乐兴电子商务有限公司版权所有</address>
+
+        <p class='partner' style="overflow:hidden;">
+        	<a href='https://www.alipay.com/'>
+        <img style="height:31px;width:91px;" src='data/files/mall/partner/9.gif' alt='支付宝特约商家' title='支付宝特约商家'/>
+        </a>
+        	<a href='https://www.95516.com/?tp=1.0.20.0.20.U53txl'>
+        <img style="height:31px;width:91px;" src='data/files/mall/partner/10.png' alt='银联特约商户' title='银联特约商户'/>
+        </a>
+        	<a href='http://www.kuaidi100.com/'>
+        <img style="height:31px;width:91px;" src='data/files/mall/partner/7.png' alt='快递查询' title='快递查询'/>
+        </a>
+        	<a href='https://cert.ebs.org.cn/5c010249-024d-4e9e-ba23-9eb584465fc1.html'>
+        <img style="height:31px;width:91px;" src='data/files/mall/partner/13.png' alt='众信认证' title='众信认证'/>
+        </a>
+        	<a href='http://gdcainfo.miitbeian.gov.cn/publish/query/indexFirst.action'>
+        <img style="height:31px;width:91px;" src='data/files/mall/partner/15.png' alt='网站备案' title='网站备案'/>
+        </a>
+        	<a href='https://cert.ebs.gov.cn/5c010249-024d-4e9e-ba23-9eb584465fc1'>
+        <img style="height:31px;width:91px;" src='data/files/mall/partner/17.png' alt='工商网监' title='工商网监'/>
+        </a>
+    
+    </p>
+        
+</div>
+
+
+
+
+<div class="asid_share" id="asid_share">
+	<div class="asid_share_box relative">
+		<a href="index.php?app=information">
+        	<img alt="乐兴资讯" title="乐兴资讯" class="adid_icon" src="/themes/public/images/public/icon_say.png">
+        </a>
+	</div>
+	<div class="asid_share_box relative">
+		<a target='_blank' href="http://wpa.qq.com/msgrd?v=3&uin=4007888288&site=qq&menu=yes">
+        	<img alt="在线帮助" title="在线帮助" class="adid_icon" src="/themes/public/images/public/icon_help.png">
+        </a>
+	</div>
+	<div class="asid_share_box relative">
+		<a href="#">
+        <img alt="扫二维码" title="扫二维码" class="adid_icon" src="/themes/public/images/public/icon_sweep.png">
+        </a>
+		<div class="asid_share_triangle" style="display:none;">
+			<em class="border_sj">&#9670;</em>
+	    <span class="con_sj">&#9670;</span>
+    </div>
+		<div class="asid_sha_layer" style="width:140px;display:none;">
+			<p class="sweep_img"><img src="data/files/mall/settings/site_wechat.png" width="120" height="120"></p>
+			<p class="pb6"><img width="120" src="themes/public/images/public/wenzi.png" /></p>
+		</div>
+	</div>
+	<div class="asid_share_box relative" style="display:none;">
+		<a href="#">
+        <img alt="返回顶部" title="返回顶部" class="adid_icon" src="/themes/public/images/public/icon_back.png">
+        </a>
+	</div>
+</div>
+
+<div class="telPop">
+    <div class="bgclr"></div>
+    <div class="telApp">
+        <div class="left">
+            <h2>Android</h2>
+            <div class="pic">扫二维码进行下载</div>
+        </div>
+        <div class="right">
+            <h2></h2> 
+            <div class="pic"><img src="/themes/public/images/lexingApp.png"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+</body>
+</html>

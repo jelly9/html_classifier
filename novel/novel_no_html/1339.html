@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>南充市人民政府网站</title>
+<link href="/UploadedFiles/css/nc_gov.css" type="text/css" rel="stylesheet"/>
+<script src="/UploadedFiles/js/RollDocuments.js" type="text/javascript"></script>
+<script type="text/javascript" src="/UploadedFiles/js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="/UploadedFiles/js/main.js"></script>
+<link href="/UploadedFiles/css/Panoramic_nc.css" rel="stylesheet" type="text/css" />
+<link href="/UploadedFiles/css/footer.css" rel="stylesheet" type="text/css" />
+<link href="/UploadedFiles/css/details.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/UploadedFiles/js/jquery-1.4.2.js"></script>
+<script language="javascript" type="text/javascript">
+ function closeWindow() {  //alert("asfasd");
+            window.open('', '_self', '');
+            window.opener = null;
+            window.close();
+            //window.setTime("window.close()",1000);
+        }
+                    function shomuen(tableid, openOff) {
+            if (openOff == "open") {
+                tableid.style.display = "";
+            }
+            else {
+                tableid.style.display = "none";
+            }
+        }
+
+        function AddFavorite(sURL, sTitle) {
+            try {
+                window.external.addFavorite(sURL, sTitle);
+            }
+            catch (e) {
+                try {
+                    window.sidebar.addPanel(sTitle, sURL, "");
+                }
+                catch (e) {
+                    alert("对不起，您的浏览器不支持“加入收藏”功能,请手动添加！");
+                }
+            }
+        }
+
+        function setHomepage(pageURL) {
+            if (document.all) {
+                document.body.style.behavior = 'url(#default#homepage)';
+                document.body.setHomePage(pageURL);
+            }
+            else if (window.sidebar) {
+                if (window.netscape) {
+                    try {
+                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                    }
+                    catch (e) {
+                        alert("该操作被浏览器拒绝，如果想启用该功能，请在地址栏内输入 about:config,然后将项signed.applets.codebase_principal_support 值该为true");
+                    }
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage', pageURL);
+            }
+        }
+
+        function shomuen(tableid, openOff) {
+            if (openOff == "open") {
+                tableid.style.display = "";
+            }
+            else {
+                tableid.style.display = "none";
+            }
+        }
+        //隐藏附件和相关链接
+        function HideTable() {
+            var tblAppendix = document.getElementById("tblAppendix");
+            if (tblAppendix != null && tblAppendix.rows.length == 1) {
+                tblAppendix.style.display = "none";
+            }
+
+
+            var tblArticleLink = document.getElementById("tblArticleLink");
+            if (tblArticleLink != null && tblArticleLink.rows.length == 1) {
+                tblArticleLink.style.display = "none";
+            }
+
+            AddVisitedCount();
+
+        }
+
+        function AddVisitedCount()
+        {
+            try
+            {
+                var hArticleID = document.getElementById("hArticleID");
+                if (hArticleID != null) {
+                var articleID = hArticleID.value;
+
+                $(document).ready(function () {
+                    $.ajax({
+                        url: "http://59.213.143.31:12780/Count/AddArticleVisitedCount.aspx?operate=Add&ArticleID=" + articleID,
+                        dataType: "jsonp",
+                        jsonp: "jsonpcallback",
+                        success: function (data) {
+                            alert(data);
+                        }
+                    });
+                });
+            }
+            }
+            catch (err) 
+            { }
+        }
+
+        window.onload = HideTable;
+
+        //-------------------------------------------
+
+        //-->
+</script>
+<style>
+
+a.xiang_g,a{color:#000}
+a.xiang_g:hover,a:hover{color:#CC0000}
+a.xiang_g{line-height:24px}
+
+</style>
+</head>
+
+
+<body>
+
+<div  class="head">
+<div class="head_box">
+    	<span class="f_l">
+       	<a href="http://www.gov.cn/" target="_blank">中央人民政府门户网站</a><a class="ju_1" href="http://www.sc.gov.cn/" target="_blank">四川省人民政府门户网站</a>
+       	<a class="ju_2" href="/10000/index.shtml" target="_blank">简体</a><a class="ju_1" href="#" target="_blank">繁体</a>
+        	<a class="ju_3 g3" href="#" target="_blank">3G无线门户</a>
+      </span>
+        <span class="f_r"><a class="ju_1" style="width:135px; height:20" ><script language="JavaScript" type="text/javascript">
+ 
+                            var today = new Date();
+                                function initArray() {
+                                    this.length = initArray.arguments.length;
+                                    for (var i = 0; i < this.length; i++) this[i + 1] = initArray.arguments[i]
+                                }
+                                var d = new initArray("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+                                document.write("<font color=\"#626262\" > ", today.getFullYear(), "年", today.getMonth() + 1, "月", today.getDate(), "日", "&nbsp;", d[today.getDay() + 1], "</font>");
+                            </script></a> <a class="ju_1"><iframe src=" http://m.weather.com.cn/m/pn6/weather.htm?id=101270501T" width="140" height="20" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="No" allowtransparency="true" style="background-color=transparent; " title="test" align="middle"></iframe></a></span>
+    </div>
+    </div>
+<div class="content">
+	<div class="cont_top" style="margin:0 auto" >
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1028" height="207">
+  <param name="movie" value="/UploadedFiles/images/banner.swf" />
+  <param name="quality" value="high" />
+  <embed src="/UploadedFiles/images/banner.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1028" height="207"></embed>
+</object>
+
+</div>
+    <input id="hArticleID" type="hidden" value="10118307" />
+       <div class="cont_middle">
+    	<div class="cm_left f_l"></div>
+        <div class="cm_middle f_l">
+       	  	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="69" height="92" align="left"><a href="/10000/index.shtml" target="_blank"><img src="/UploadedFiles/images/nc_home_11.jpg" width="69" height="92" border="0" /></a></td>
+                  <td align="left" background="/UploadedFiles/images/nc_home_12.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="220" height="92" align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="26" align="center" class="fn14lan"><a href="/10000/10003/index.shtml" target="_blank"><strong>政务公开</strong></a></td>
+                            </tr>
+                            <tr>
+                              <td height="20" align="center" class="fn12lan"><span ><a href="/10000/10003/10219/14290/index.shtml " target="_blank">领导之窗</a></span> | <span><a href="/10000/10003/10218/index.shtml" target="_blank">政府机构</a></span> | <span><a href="/10000/10003/10215/index.shtml" target="_blank">公文公报</a></span></td>
+                            </tr>
+                            <tr>
+                              <td height="20" align="center" class="fn12lan"><span><a href="/10000/10192/10196/index.shtml" target="_blank">政务动态</a></span> | <span><a href="/10000/10003/10210/10244/index.shtml" target="_blank">招标采购</a></span> | <span><a href="/10000/10003/10209/10242/index.shtml" target="_blank">计划规划</a></span></td>
+                            </tr>
+                        </table></td>
+                        <td width="8"><img src="/UploadedFiles/images/nc_home_14.jpg" width="8" height="92" /></td>
+                        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="26" align="center" class="fn14lan"><a href="/10000/10002/index.shtml" target="_blank"><strong>办事服务</strong></a></td>
+                            </tr>
+                            <tr>
+                              <td height="20" align="center" class="fn12lan"><span ><a href="/10000/10002/10070/10417/index.shtml" target="_blank">重点服务</a></span> | <span><a href="/10000/10002/10070/10151/10158/index.shtml" target="_blank">民生服务</a></span> | <span><a href="/10000/10002/10069/index.shtml" target="_blank">便民服务</a></span></td>
+                            </tr>
+                            <tr>
+                              <td height="20" align="center" class="fn12lan"><span><a href="/10000/10002/10070/10154/10184/index.shtml" target="_blank">个人服务</a></span> | <span><a href="/10000/10002/10070/10153/10174/index.shtml" target="_blank">企业服务</a></span> | <span><a href="/10000/10002/10066/10088/index.shtml" target="_blank">网上办事</a></span></td>
+                            </tr>
+                        </table></td>
+                        <td width="8"><img src="/UploadedFiles/images/nc_home_14.jpg" width="8" height="92" /></td>
+                        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="26" align="center" class="fn14lan"><a href="/10000/10001/index.shtml" target="_blank"><strong>互动交流</strong></a></td>
+                            </tr>
+                            <tr>
+                              <td height="20" align="center" class="fn12lan"><span ><a href="http://www.nanchong.gov.cn/10000/10003/10219/10269/10407/index.shtml" target="_blank">对话市长</a></span> | <span><a href="http://www.ncxf.gov.cn/wsxf.php" target="_blank">网上信访</a></span> | <span><a href="/10000/10001/10047/10330/index.shtml" target="_blank">访谈直播</a></span></td>
+                            </tr>
+                            <tr>
+                              <td height="20" align="center" class="fn12lan"><span><a href="http://172.168.10.215:8080/nchd/front/servlet/opinionfront?method=more&amp;type=2" target="_blank">民意征集</a></span> | <span><a href="http://172.168.10.215:8080/nchd/servlet/topicServlet?method=initTopic&status=2" target="_blank">咨询投诉</a></span> | <span><a href="http://bbs.cnncw.cn/forum.php?mod=forumdisplay&fid=138" target="_blank">百姓论坛</a></span></td>
+                            </tr>
+                        </table></td>
+                        <td width="8"><img src="/UploadedFiles/images/nc_home_14.jpg" width="8" height="92" /></td>
+                        <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td height="26" align="center" class="fn14lan"><a href="/10000/10004/index.shtml" target="_blank"><strong>全景南充</strong></a></td>
+                            </tr>
+                            <tr>
+                              <td height="20" align="center" class="fn12lan"><span ><a href="/10000/10004/10007/10030/index.shtml" target="_blank">市情概览</a></span> | <span><a href="/10000/10004/10005/10012/index.shtml" target="_blank">人文历史</a></span> | <span><a href="/10000/10004/10006/10020/index.shtml" target="_blank">投资环境</a></span></td>
+                            </tr>
+                            <tr>
+                              <td height="20" align="center" class="fn12lan"><span><a href="/10000/10004/10021/index.shtml" target="_blank">媒体聚焦</a></span> | <span><a href="/10000/10004/10007/10028/index.shtml" target="_blank">影像南充</a></span> | <span><a href="/10000/10003/10221/10290/2013/06/29/10000531.shtml" target="_blank">旅游南充</a></span></td>
+                            </tr>
+                        </table></td>
+                      </tr>
+                  </table></td>
+                  <td width="12" align="left"><img src="/UploadedFiles/images/nc_home_16.jpg" width="12" height="92" /></td>
+                </tr>
+              </table>
+            	<div class="nc_panor_1 details_box">
+                	<h2> 关于2015年3月5日已受理建设项目环评文件公告</h2>
+
+
+                    <div class="time_det">
+                    	<div style="width:610px; margin:0 auto; line-height:25px">
+                       		<span class="f_l"><span>时间：2015年03月05日</span><span class="ju_8">来源：市环保局</span><span class="ju_8">编辑：郑兵</span></span>
+                            <span class="f_r"><a href="javascript:void(0);print()" target="_self">打印本页</a><a href="javascript:void(0);closeWindow()" target="_self" class="ju_8">关闭窗口</a></span> 
+                       </div>
+                    </div>
+                    <div class="details_box_cont">
+                    	<dl>
+                            <dd><p><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">&nbsp;&nbsp;&nbsp; 根据建设项目环境影响评价审批程序的有关规定，</span><span style='background: white; color: black; line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>2015</span><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">年</span><span style='background: white; color: black; line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>3</span><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">月</span><span style='background: white; color: black; line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>5</span><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">日我局共受理</span><span style='background: white; color: black; line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>1</span><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">个建设项目环境影响评价文件。现将受理情况予以公告。如有建议意见，请于</span><span style='background: white; color: black; line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>2015</span><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">年</span><span style='background: white; color: black; line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>3</span><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">月</span><span style='background: white; color: black; line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>18</span><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">日前向我局提出。</span></p>
+<p style='background: white; margin: 0cm 0cm 0pt; text-align: left; line-height: 150%; text-indent: 24pt; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;' align="left"><span style="background: white; color: black; line-height: 150%; font-family: 宋体; font-size: 12pt;">联系电话兼传真：</span><span style='background: white; color: black; line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>0817-2232335</span></p>
+<p style='background: white; margin: 0cm 0cm 0pt; text-align: left; line-height: 150%; text-indent: 24pt; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;' align="left"><span style="background: white; color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">通讯地址：</span><span style="background: white; color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">南充市顺庆区万年西路南充市环境保护局环评科</span></p>
+<div align="center">
+<table style="border-collapse: collapse;" border="0" cellSpacing="0" cellPadding="0">
+  <tbody>
+    <tr style="height: 78.25pt;">
+      <td style="padding: 0cm 5.4pt; border: 1pt solid black; width: 28.25pt; height: 78.25pt;" width="38">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><b><span style="color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">序号</span></b></p>
+      </td>
+      <td style="border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black currentColor; padding: 0cm 5.4pt; width: 72.8pt; height: 78.25pt;" width="97">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><b><span style="color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">项目名称</span></b></p>
+      </td>
+      <td style="border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black currentColor; padding: 0cm 5.4pt; width: 80.2pt; height: 78.25pt;" width="107">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><b><span style="color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">建设</span></b></p>
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><b><span style="color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">地点</span></b></p>
+      </td>
+      <td style="border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black currentColor; padding: 0cm 5.4pt; width: 62.35pt; height: 78.25pt;" width="83">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><b><span style="color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">建设单位</span></b></p>
+      </td>
+      <td style="border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black currentColor; padding: 0cm 5.4pt; width: 47.05pt; height: 78.25pt;" width="63">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><b><span style="color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">环境影响评价机构</span></b></p>
+      </td>
+      <td style="border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black currentColor; padding: 0cm 5.4pt; width: 55.1pt; height: 78.25pt;" width="73">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><b><span style="color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">环评文件脱密全本</span></b></p>
+      </td>
+      <td style="border-width: 1pt 1pt 1pt medium; border-style: solid solid solid none; border-color: black black black currentColor; padding: 0cm 5.4pt; width: 72pt; height: 78.25pt;" width="96">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><b><span style="color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">受理日期</span></b></p>
+      </td>
+    </tr>
+    <tr style="height: 42.95pt;">
+      <td style="border-width: medium 1pt 1pt; border-style: none solid solid; border-color: currentColor black black; padding: 0cm 5.4pt; width: 28.25pt; height: 42.95pt;" width="38">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph; tab-stops: 21.0pt;' align="center"><span style='color: rgb(51, 51, 51); line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>1 </span></p>
+      </td>
+      <td style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor black black currentColor; padding: 0cm 5.4pt; width: 72.8pt; height: 42.95pt;" width="97">
+      <p style='background: white; margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;' align="center"><span style="background: white; color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">阆中市文成白石岩东河大桥新建工程</span></p>
+      </td>
+      <td style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor black black currentColor; padding: 0cm 5.4pt; width: 80.2pt; height: 42.95pt;" width="107">
+      <p style='background: white; margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; text-indent: 24.1pt; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;' align="center"><span style="background: white; color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">阆中市文成镇</span></p>
+      </td>
+      <td style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor black black currentColor; padding: 0cm 5.4pt; width: 62.35pt; height: 42.95pt;" width="83">
+      <p style='background: white; margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;' align="center"><span style="background: white; color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">四川省阆中交通建设有限公司</span></p>
+      </td>
+      <td style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor black black currentColor; padding: 0cm 5.4pt; width: 47.05pt; height: 42.95pt;" width="63">
+      <p style='background: white; margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;' align="center"><span style="background: white; color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">四川省国环环境工程咨询有限公司</span></p>
+      </td>
+      <td style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor black black currentColor; padding: 0cm 5.4pt; width: 55.1pt; height: 42.95pt;" width="73">
+      <p style='background: white; margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;' align="center"><span style="background: white; color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">公示本</span></p>
+      </td>
+      <td style="border-width: medium 1pt 1pt medium; border-style: none solid solid none; border-color: currentColor black black currentColor; padding: 0cm 5.4pt; width: 72pt; height: 42.95pt;" width="96">
+      <p style='margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; font-family: "Calibri","sans-serif"; font-size: 10.5pt; layout-grid-mode: char; text-justify: inter-ideograph;' align="center"><span style='color: rgb(51, 51, 51); line-height: 150%; font-family: "Times New Roman","serif"; font-size: 12pt;'>2015-3-5</span></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p style='background: white; margin: 0cm 0cm 0pt; text-align: center; line-height: 150%; text-indent: 24.1pt; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;' align="center"><span style="background: white; color: rgb(51, 51, 51); line-height: 150%; font-family: 宋体; font-size: 12pt;">注：根据《建设项目环境影响评价政府信息公开指南（试行）》的有关规定，上述环境影响报告书、表不含涉及国家秘密、商业秘密、个人隐私以及涉及国家安全、公共安全、经济安全和社会稳定的内容，并经建设单位同意公开。</span></p>
+<p style='margin: 0cm 0cm 0pt; text-align: justify; font-family: "Calibri","sans-serif"; font-size: 10.5pt; text-justify: inter-ideograph;'>&nbsp;</p>
+&nbsp;
+<p></p></dd>
+                        </dl>
+                    </div>
+                    <table id="tblAppendix" width="100%" border="0" cellpadding="0" cellspacing="0">
+                                                <tr>
+                                                    <td align="left" style="font-size: 14px;">
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;附件：
+                                                    </td>
+                                                </tr>
+                                                
+                  </table>
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                                              <tr>
+                                                <td height="5px">&nbsp;</td>
+                                              </tr>
+                                            </table>
+                                            <table id="tblArticleLink" width="96%" border="0" align="center" cellpadding="0"
+                                                cellspacing="0">
+                                                <tr>
+                                                    <td align="left">
+                                                        <table width="100" height="26" border="0" align="left" cellpadding="0" cellspacing="0"
+                                                            id="aboutLink">
+                                                            <tr>
+                                                              <td align="center" bgcolor="#d4edfb" class="Font14bai" style="font-size: 14px;">
+                                                                    <strong>相关链接&gt;&gt;</strong>
+                                                              </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                
+                                            </table>
+                </div>
+
+        </div>
+        <div class="cm_right f_l"></div>
+    </div>
+</div>
+ <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+              <td height="32" align="center" background="/UploadedFiles/images/nc_home_195.jpg"><table width="1028" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="32" align="center" class="fnbai"><a href="/10000/10192/12850/2013/11/26/10084991.shtml" target="_blank">关于我们</a>  　|　  <a href="/10000/10192/12850/2013/11/26/10084992.shtml" target="_blank">网站声明</a> 　|　  <a href="/10000/10192/12850/2013/11/26/10084993.shtml" target="_blank">隐私条款</a>  　|　  <a href="/10000/10192/12998/index.shtml" target="_blank">栏目导航</a>  　|　  <a href="http://hd.nanchong.gov.cn/nchd/front/servlet/opinionfront?method=preview&id=d62d40d53af44d609f7fe2c22490f1a4&type=2" target="_blank">网站评议</a>  　|　  <a href="/10000/10192/12850/2013/11/26/10084994.shtml" target="_blank">联系我们</a>  　|　  <a href="/10000/10192/12850/2014/09/23/10113538.shtml" target="_blank">使用帮助</a>                    <!--  　|　 <a href="http://www.nanchong.gov.cn/10000/12995/index.shtml" target="_blank">访问统计</a>-->              </td>
+            </tr>
+          </table>
+            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td height="134" align="center" valign="top" background="/UploadedFiles/images/nc_home_198.jpg"><table width="1028" border="0" align="center" cellpadding="10" cellspacing="0">
+                  <tr>
+                    <td align="center" class="line24px fn12lan">
+主办：南充市人民政府　承办：南充市人民政府办公室　联系电话：（0817）2666032<br />蜀 ICP备 05029665 号
+   			<br>
+   			Copyright@2012-2022 by www.nanchong.gov.cn All Rights Reserved
+   			<br>
+   			（浏览本网页，建议使用分辨率 1024*768，Internet Explorer 6.0或以上版本）
+
+<!-- 百度统计 -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8416e9083b448866d55ac4b9628691c4' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- 百度统计结束 -->
+
+	</td>
+                  </tr>
+		
+                </table></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+</body>
+</html>
+

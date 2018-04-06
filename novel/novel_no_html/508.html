@@ -1,0 +1,798 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="keywords" content="中华果都网" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>中华果都网</title> 
+<link rel=Shortcut Icon href="../guodu/image/guodu.ico"/>
+<link href="guodu/css/web1.css" rel="stylesheet"/>
+<link href="guodu/css/css.css" rel="stylesheet"/>
+<script type="text/javascript" src="../../manager/js/jquery1.4.2.js"></script>
+<script type="text/javascript" src="../guodu/js/tables.js"></script>
+<script type="text/javascript" src="../guodu/js/date.js"></script>
+<script src="../guodu/js/swfobject.js" language="javascript"></script>
+<style type="text/css">
+body{
+	font-size: 12px;
+	margin: 0 auto;
+}
+</style>
+<script type="text/javascript">
+var msg;
+function switchTab(tabpage,tabid){
+    var oItem = document.getElementById(tabpage);   
+	for(var i=0;i<oItem.children.length;i++){
+		var x = oItem.children(i);	
+		x.className = "";
+		var y = x.getElementsByTagName('a');
+		y[0].style.color="";
+	}	
+	document.getElementById(tabid).className = "Selected";
+	var dvs=document.getElementById("cnt").getElementsByTagName("div");
+	for (var i=0;i<dvs.length;i++){
+	  if (dvs[i].id==('d'+tabid)){
+	  msg=i;
+	    dvs[i].style.display='block';
+	  }else{
+  	  dvs[i].style.display='none';
+	  }
+	}
+}
+ function  to_submit(msg){
+    var searchinfo;
+    var aciton;
+     if(msg==0){
+     searchinfo=document.getElementById('productName').value;
+     document.searchform1.submit();
+    }
+	if(msg==1){  
+     searchinfo=document.getElementById('info_title').value;
+     document.searchform2.submit();
+    } 
+    if(msg==2){
+     searchinfo=document.getElementById('keyword').value;
+     document.searchform3.submit();
+    }
+    if(msg==3){
+     searchinfo=document.getElementById("keyword").value
+     document.searchform4.submit();
+  }        
+}
+</script>
+
+<script>
+//初始化
+var def="1";
+function mover(object){
+  //主菜单
+  var mm=document.getElementById("m_"+object);
+  mm.className="m_li_a";
+  //初始主菜单先隐藏效果
+  if(def!=0){
+    var mdef=document.getElementById("m_"+def);
+    mdef.className="m_li";
+  }
+  //子菜单
+  var ss=document.getElementById("s_"+object);
+  ss.style.display="block";
+  //初始子菜单先隐藏效果
+  if(def!=0){
+    var sdef=document.getElementById("s_"+def);
+    sdef.style.display="none";
+  }
+}
+
+function mout(object){
+  //主菜单
+  var mm=document.getElementById("m_"+object);
+  mm.className="m_li";
+  //初始主菜单还原效果
+  if(def!=0){
+    var mdef=document.getElementById("m_"+def);
+    mdef.className="m_li_a";
+  }
+  //子菜单
+  var ss=document.getElementById("s_"+object);
+  ss.style.display="none";
+  //初始子菜单还原效果
+  if(def!=0){
+    var sdef=document.getElementById("s_"+def);
+    sdef.style.display="block";
+  }
+}
+</script>
+</head>
+<body onload="gotoTop();">
+<div id="lovexin12" style='left:5px;position:absolute;top:180px;'></div>
+<div id="lovexin14" style='right:5px;position:absolute;top:180px;'></div>
+<div align="center" id="all">
+<div id="head">
+<div id="head_top" style="background:url(../guodu/image/images_1.gif)">
+<table width="990" style="height:37px; background:url(../guodu/image/images_1.gif); font-size:12px; color:#666666;" cellpadding="0" cellspacing="0" border="0" align="center">
+  <tr>
+    <td width="170px;" align="left" style="color:#666666">您好，欢迎来到中华果都网</td>
+    <td width="390px;" align="center" style="padding-left:23px;color:#666666"><span style="color:#666666">[</span><span style="color:#2E7517;"><a href="../member/forlogin.html">请登录</a></span><span style="color:#666666">]</span>　|　<span style="color:#666666">[</span>免费<a href="../member/login.html"><span style="color:#FC633B">注册</span></a><span style="color:#666666">]</span>　|　业务订购　|　贴吧　|　帮助</td>
+    <td width="430px;" align="right" style="color:#666666">企业中心　|　站点导航　|　网上商城　|　中华果都　|　返回首页</td>
+  </tr>
+</table>
+</div>
+
+<div style="width:990px; height:65px; margin:0px auto; padding-top:3px;">
+<table align="center" width="100%" height="65" border="0" cellpadding="0" cellspacing="0">
+	<tr><td width="330" align="center"><script language="javascript" src="dividers/ListDividers.html?frmwidth=325&frmheight=60&category=hf1"></script></td><td width="330" align="center"><script language="javascript" src="dividers/ListDividers.html?frmwidth=325&frmheight=60&category=hf2"></script></td><td width="330" align="center"><script language="javascript" src="dividers/ListDividers.html?frmwidth=325&frmheight=60&category=hf3"></script></td></tr>
+</table>
+</div>
+
+<div id="head_middle" style="width:990px; margin:0 auto;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+  <tr>
+    <td width="274px;" height="90px;"><img src="../guodu/image/images_3.gif"/></td>
+    <td width="400px;" align="left">
+  <table  border=0 cellSpacing=0 cellPadding=0  align="center" width="400" height="90">
+      <tr><td height="45"> <div class=left style="float:left;width:55px;padding-left:13px;"><img id="jishubuttom8" onclick="javascript:change_layers8(event)" style="CURSOR: hand" height="29"  src="../guodu/image/images_6.gif" width=50 border=0 /></div>
+     <div class=left style="float:left;width:55px;"><img id="jishubuttom9" onclick="javascript:change_layers9(event)" style="CURSOR: hand" height="29" src="../guodu/image/images_6_6.gif" width=50 border=0 /></div>
+     <div class=left style="float:left;width:55px;"><img id="jishubuttom10" onclick="javascript:change_layers10(event)" style="CURSOR: hand" height="29" src="../guodu/image/images_6_7.gif" width=50 border=0 /></div>
+     <div class=left style="float:left;width:55px;"><img id="jishubuttom11" onclick="javascript:change_layers11(event)" style="CURSOR: hand" height="29" src="../guodu/image/images_6_8.gif" width=50 border=0 /></div></td></tr>
+  <tr><td>
+           <div style="height: 40px;"  id="CNLTreeMenu8">
+           <form name="searchform1" action="../goods/GoodSearch.html" method="post"  style="font-weight: bold; font-size:14px">
+              <table align="center"><tr><td height="40" valign="top"><input  type="text" name="productName" size="45" class="in" id="productName"/></td>
+              <td align="left" height="40" valign="top"><img src="../guodu/image/images_16.gif" onclick="to_submit(0);" style="cursor:hand;" /></td></tr></table>
+              </form>
+          </div>
+
+          <div  id="CNLTreeMenu9" style="DISPLAY: none; height:40px;">
+          <form name="searchform2" action="../supplys/ListSupply.html" method="post"  style="font-weight: bold; font-size:14px">
+<table align="center"><tr><td height="40" valign="top"><input type="text" name="info_title" size="45" class="in" id="info_title"/></td>
+              <td align="left" height="40" valign="top"> <img src="../guodu/image/images_16.gif" onclick="to_submit(1);" style="cursor:hand;" />
+              </td></tr></table>
+              </form>
+          </div>
+          
+          <div style="height:40px;DISPLAY:none;" id="CNLTreeMenu10">
+          <form name="searchform3" action="../../member/MemberMoreList.html" method="post"  style="font-weight: bold; font-size:14px">
+          <table align="center"><tr><td height="40" valign="top"> <input type="text" name="keyword" size="45" class="in" id="keyword"/></td>
+              <td align="left" height="40" valign="top"> <img src="../guodu/image/images_16.gif" onclick="to_submit(2);" style="cursor:hand;" />
+              </td></tr></table>
+              </form>
+          </div>
+          
+          <div  id="CNLTreeMenu11" style="DISPLAY: none; height:40px;">
+           <form name="searchform4" id="searchform4" action="index/Search.html" method="post" style="font-weight: bold; font-size:14px">  
+           <table align="center"><tr><td height="40" valign="top"><input name="keyword" id="keyword" type="text" class="in" size="45" />
+           </td>
+          <td align="left" height="40" valign="top"> <img src="../guodu/image/images_16.gif" onclick="to_submit(3);" style="cursor:hand;" />
+          </td></tr></table>
+			</form>
+          </div>
+        </td></tr>
+    </table>
+  
+    </td>
+    <td width="285" height="90" align="center">
+    	<table width="100%" height="90" border="0" cellpadding="0" cellspacing="0">
+        	<tr><td height="50px;" style="text-align: center;"><img  src="/guodu/image/images_8.gif"/></td><td style="text-align: center;"><a href="../member/login.html"><img  src="../guodu/image/images_9.gif" border="0"/></a></td><td style="text-align: center;"><a href="../supplys/AddSupplyOut.html"><img  src="../guodu/image/images_10.gif" border="0"/></a></td></tr>
+            <tr><td height="40px;" style="text-align: center" valign="top"><img  src="../guodu/image/images_19.gif"/></td><td style="text-align: center" valign="top"><img  src="../guodu/image/images_20.gif"/></td><td style="text-align: center" valign="top"><img  src="../guodu/image/images_21.gif"/></td></tr>
+        </table>
+    </td>
+  </tr>
+</table>
+
+</div>
+
+<div id="head_bottom" style="width:100%;">
+<div id="menu" style="background:url(../guodu/image/images_22.gif); width:990px;">
+  <ul>
+    <li id="m_1" class='m_li_a'><a href="/">首&nbsp;&nbsp;页</a></li>
+    <li id="m_2" class='m_li' onmouseover='mover(2);' onmouseout='mout(2);'><a href="guodu/A_Pzx_NC10_NWC20_SH170_5189index.html">资&nbsp;&nbsp;讯</a></li>
+    <li id="m_3" class='m_li' onmouseover='mover(3);' onmouseout='mout(3);'><a href="supplys/ListSupplyGQ.html">产品供求</a></li>
+    <li id="m_4" class='m_li' onmouseover='mover(4);' onmouseout='mout(4);'><a href="guodu/A_P0002_NC10_NWC20_SH170_5686index.html">市场行情</a></li>
+    <li id="m_5" class='m_li' onmouseover='mover(5);' onmouseout='mout(5);'><a href="guodu/A_Pfw_NC10_NWC20_SH170_5123index.html">服务中心</a></li>
+    <li id="m_6" class='m_li' onmouseover='mover(6);' onmouseout='mout(6);'><a href="guodu/A_Pkj_NC10_NWC20_SH170_5195index.html">科技知识</a></li>
+    <li id="m_7" class='m_li' onmouseover='mover(7);' onmouseout='mout(7);'><a href="member/ListMember.html">企业在线</a></li>
+    <li id="m_8" class='m_li' onmouseover='mover(8);' onmouseout='mout(8);'><a href="specialty/ListSpecialty.html">特&nbsp;&nbsp;产</a></li>
+    <li id="m_9" class='m_li' onmouseover='mover(9);' onmouseout='mout(9);'><a href="video/GetListVideo.html" >视频中心</a></li>
+    <li id="m_10" class='m_li'><a href="/zhuanti/ListZhuanTi.html" ><span style="color:#FFFFFF;">专&nbsp;&nbsp;题</span></a></li>
+    <li id="m_11" class='m_li'><a href="/goods/eshop.html" ><span style="color:#FFFFFF;">果都商城</span></a></li>
+  </ul>
+</div>
+<div style="height:35px; width:990px; margin:0 auto;  background:url(../guodu/image/menu2bg.gif);">
+   <ul class="smenu">
+     <li style="padding-left:29px;" id="s_1" class='s_li_a'>
+     <div style="float:left; width:340px;"><script type="text/javascript">setCalendar();</script></div>
+     <div style="float:left;width:70px; padding-top: 1px;" align="right">天气预报：</div>
+     <div style="float:left; font-size:12px; padding-top:9px; width:550px;"><iframe width="500" scrolling="no" height="15" frameborder="0" allowtransparency="true" src="http://i.tianqi.com/index.php?c=code&id=11&icon=1"></iframe>
+     </div>
+     </li>
+     <li style="padding-left:125px;" id="s_2" class='s_li' onmouseover='mover(2);' onmouseout='mout(2);'>
+	 <a href="guodu/A_Pzx1_NC10_NWC20_SH170_5190index.html">果品资讯</a>&nbsp;|&nbsp;
+	 <a href="guodu/A_Pzx1_NC10_NWC20_SH170_5191index.html">蔬菜资讯</a>&nbsp;|&nbsp;
+     <a href="guodu/A_Pzx1_NC10_NWC20_SH170_10860index.html">推荐资讯</a>&nbsp;|&nbsp;
+	 <a href="guodu/B10859index_1_PS25.html">农业资讯</a>&nbsp;|&nbsp;
+	 <a href="guodu/B10857index_1_PS25.html">热点资讯</a>&nbsp;|&nbsp;
+	 <a href="guodu/B10856index_1_PS25.html">本地资讯</a>&nbsp;|&nbsp;
+	 <a href="guodu/B10862index_1_PS25.html">图片资讯</a>&nbsp;
+	 </li>
+     <li style="padding-left:215px;" id="s_3" class='s_li' onmouseover='mover(3);' onmouseout='mout(3);'>
+	 <a href="supplys/ListSupply.html?info_aspect=1">供应</a>&nbsp;|&nbsp;
+	 <a href="supplys/ListSupply.html?info_aspect=2">求购</a>&nbsp;
+	 </li>
+     <li style="padding-left:305px;" id="s_4" class='s_li' onmouseover='mover(4);' onmouseout='mout(4);'>
+	  <a href="guodu/B10877index_1_PS25.html">市场动态</a>&nbsp;|&nbsp;
+	 <a href="guodu/B10878index_1_PS25.html">分析预测</a>&nbsp;|&nbsp;
+	 <a href="guodu/B10879index_1_PS25.html">价格行情</a>&nbsp;|&nbsp;
+	 <a href="market/GetListMarket.html">批发市场</a>&nbsp;
+	 </li>
+     <li style="padding-left:400px;" id="s_5" class='s_li' onmouseover='mover(5);' onmouseout='mout(5);'>
+	 <a href="guodu/A_Pfw1_NC10_NWC20_SH170_5127index.html">知识</a>&nbsp;|&nbsp;
+     <a href="guodu/A_Pfw1_NC10_NWC20_SH170_5128index.html">培训</a>&nbsp;|&nbsp;
+	 <a href="member/LETList.html">物流</a>&nbsp;|&nbsp;
+	 <a href="expert/Expert.html">专家</a>&nbsp;|&nbsp;
+	 <a href="interview/interviewRichManager.html">致富</a>
+	 </li>
+     <li style="padding-left:490px;" id="s_6" class='s_li' onmouseover='mover(6);' onmouseout='mout(6);'>
+	 <a href="guodu/A_Pkjlist_NC10_NWC20_SH170_10904index.html">栽培</a>&nbsp;|&nbsp;
+	 <a href="guodu/A_Pkjlist_NC10_NWC20_SH170_10897index.html">品种</a>&nbsp;|&nbsp;
+	 <a href="guodu/A_Pkjlist_NC10_NWC20_SH170_10901index.html">防治</a>&nbsp;|&nbsp;
+	 <a href="guodu/A_Pkjlist_NC10_NWC20_SH170_10907index.html">加工</a>
+	 </li>
+     <li style="padding-left:580px;" id="s_7" class='s_li' onmouseover='mover(7);' onmouseout='mout(7);'>
+	 <a href="member/ListMember.html">名优企业</a>&nbsp;|&nbsp;
+     <a href="goods/eshopMore.html?type=new">企业产品</a>&nbsp;|&nbsp;
+     <a href="interview/interviewCompanyManager.html">企业专访</a>&nbsp;|&nbsp;
+     <a href="interview/interviewManager.html">人物访谈</a>
+	 </li>
+     <li style="padding-left:670px;" id="s_8" class='s_li' onmouseover='mover(8);' onmouseout='mout(8);'>
+	 <a href="specialty/SpecialtyMore.html?category=果品">果品</a>&nbsp;|&nbsp;
+     <a href="specialty/SpecialtyMore.html?category=蔬菜">蔬菜</a>&nbsp;|&nbsp;
+     <a href="specialty/SpecialtyMore.html?category=粮油">粮油</a>&nbsp;|&nbsp;
+     <a href="specialty/SpecialtyMore.html?category=其他">其他</a>
+	 </li>
+     <li style="padding-left:660px;" id="s_9" class='s_li' onmouseover='mover(9);' onmouseout='mout(9);'>
+	  <a href="video/GetListVideoz.html?category=1">本地视频</a>&nbsp;|&nbsp;<a href="video/GetListVideoz.html?category=5">综合视频</a>&nbsp;|&nbsp;<a href="video/GetListVideoz.html?category=6">农业科技</a>
+     </li>
+   </ul>
+</div>
+</div>
+
+<div id="dbt" style="width:990px; height:65px; margin:0px auto;">
+	<table cellpadding="0" cellspacing="0" align="center" border="0" width="100%" height="65">
+    <tr><td width="240" height="65" align="center" valign="bottom"><script language="javascript" src="dividers/ListDividers.html?frmwidth=240&frmheight=60&category=db1"></script></td><td width="240" align="center" valign="bottom"><script language="javascript" src="dividers/ListDividers.html?frmwidth=240&frmheight=60&category=db2"></script></td><td width="240" align="center" valign="bottom"><script language="javascript" src="dividers/ListDividers.html?frmwidth=240&frmheight=60&category=db3"></script></td><td width="240" align="center" valign="bottom"><script language="javascript" src="dividers/ListDividers.html?frmwidth=240&frmheight=60&category=db4"></script></td></tr>
+    <!--<tr><td width="240" height="65" align="center" valign="bottom"><script language="javascript" src="dividers/ListDividers.html?frmwidth=240&frmheight=60&category=db5"></script></td><td width="240" align="center" valign="bottom"><script language="javascript" src="dividers/ListDividers.html?frmwidth=240&frmheight=60&category=db6"></script></td><td width="240" align="center" valign="bottom"><script language="javascript" src="dividers/ListDividers.html?frmwidth=240&frmheight=60&category=db7"></script></td><td width="240" align="center" valign="bottom"><script language="javascript" src="dividers/ListDividers.html?frmwidth=240&frmheight=60&category=db8"></script></td></tr>-->
+    </table>
+</div>
+
+
+<div id="center_all"  style="margin:0 auto; width:990px;">   
+<table align="left" cellpadding="0" cellspacing="0" border="0" width="100%">
+<tr>
+<td>
+<table background="../guodu/image/images_27.gif" align="left" cellpadding="0" cellspacing="0" width="310" height="252px;">
+  <tr>
+  	<td align="center" style="padding-top:4px;">
+    <script type="text/javascript">var focus_width=290;var focus_height=210;var text_height=18;var pic_bgcolor='null';var swf_height = focus_height+text_height;var pics='/upload/news/2014_10_14/20141014094811890.jpg|/upload/news/2014_04_05/20140405142511453.jpg|/upload/news/2013_11_26/20131126214001295.jpg|/upload/news/2014_10_29/20141029154443281.jpg|/upload/news/2012_12_31/20121231152434013.jpg';var links='/portal/news/viewContent.html?id=55411|/portal/news/viewContent.html?id=53817|/portal/news/viewContent.html?id=52250|/portal/news/viewContent.html?id=55557|/portal/news/viewContent.html?id=521';var texts='丰县第25届红富士苹..|江苏丰县百年梨园景区..|丰县农委利用农闲季节..|丰县召开现代农业推介..|丰县举办“12316..';document.write('<object ID="focus_flash" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ focus_width +'" height="'+ swf_height +'">');document.write('<param name="allowScriptAccess" value="sameDomain"><param name="movie" value="guodu/images/focus1.swf"><param name="quality" value="high"><param name="bgcolor" value="'+pic_bgcolor+'">');document.write('<param name="menu" value="false"><param name=wmode value="opaque">');document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'">');document.write('<embed ID="focus_flash" src="guodu/images/focus1.swf" wmode="opaque" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&borderwidth='+focus_width+'&borderheight='+focus_height+'&textheight='+text_height+'" menu="false" bgcolor="'+pic_bgcolor+'" quality="high" width="'+ focus_width +'" height="'+ swf_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');document.write('</object>');</script>
+    </td>
+  </tr>
+</table>
+</td>
+
+<td>
+<table style="background:url(../guodu/image/images_29.gif) no-repeat center;" align="left" cellpadding="0" cellspacing="0" width="420px" height="250px">
+  <tr>
+	<td style="padding-left:10px;" height="90">
+   	<table align="center" width="380" cellpadding="0" cellspacing="0"><tr><td height="40" align="center" valign="bottom" style="color:#555;font-size:20px;font-family:'微软雅黑';font-weight:bold;line-height:25px; "><a href="/portal/news/viewContent.html?id=55411" title="丰县第25届红富士苹果节“开园迎客”" target="_blank">丰县第25届红富士苹果节“开园...</a></td></tr><tr><td height="50" align="left"  style="line-height:20px;color:#444;">金秋时节，江苏丰县水果飘香，数十里的红富士苹果园开放，迎来众多游人。政府搭台帮助果农卖苹果已成为该县..</td></tr></table>
+    </td>
+  </tr>
+  <tr>
+	<td style="padding-left:10px; height:160px;">
+    <ul class="mytitle"><li><div class="li_time1" >[2015-01-13]</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56108" title="3000多公斤红心柚成“剩斗士”急找婆家" target="_blank">3000多公斤红心柚成“剩斗士”急找婆家</a></li><li><div class="li_time1" >[2015-01-13]</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56107" title="业内预测苹果高价位或持续至节后 香蕉价大幅回落" target="_blank">业内预测苹果高价位或持续至节后 香蕉价大..</a></li><li><div class="li_time1" >[2015-01-13]</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56106" title="荆州反季节草莓上市 价格引市民关注" target="_blank">荆州反季节草莓上市 价格引市民关注</a></li><li><div class="li_time1" >[2015-01-13]</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56105" title="威海草莓采摘价下降 60元下降到每人30-40元" target="_blank">威海草莓采摘价下降 60元下降到每人30..</a></li><li><div class="li_time1" >[2015-01-13]</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56104" title="新疆库尔勒香蕉上市" target="_blank">新疆库尔勒香蕉上市</a></li><li><div class="li_time1" >[2015-01-13]</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56103" title="甘肃苹果产业在全国处于优势地位" target="_blank">甘肃苹果产业在全国处于优势地位</a></li></ul>
+    </td>
+  </tr>
+</table>
+</td>
+
+<td>
+<table align="center" cellpadding="0" cellspacing="0" border="0" width="260px;">
+	<tr>
+    	<td align="right"><img src="../guodu/image/images_30.gif" /></td>
+    </tr>
+    
+    <tr>
+    	<td  style="background:url(../guodu/image/images_28.gif) no-repeat right; text-align: center;" width="252px;" height="205px;" >
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center">
+        	<tr><td width="176" valign="top" style="text-align: right"><a href="../member/forlogin.html"><img src="../guodu/image/images_38.gif" border="0"/></a></td><td width="176" valign="top" style="text-align: center"><a href="../member/login.html"><img src="../guodu/image/images_32.gif" border="0"/></a></td></tr>
+            <tr><td valign="top" style="text-align: right"><img src="../guodu/image/images_33.gif" /></td><td valign="top" style="text-align: center"><a href="supplys/AddSupply.html"><img src="../guodu/image/images_34.gif" border="0" /></a></td></tr>
+            <tr><td valign="top" style="text-align: right"><img src="../guodu/image/images_35.gif" /></td><td valign="top" style="text-align: center"><img src="../guodu/image/images_36.gif" /></td></tr>
+            <tr><td colspan="2" style="padding-left:10px;"><img src="../guodu/image/images_37.gif" /></td></tr>
+        </table>
+        </td>
+    </tr>
+</table>
+</td>
+
+</tr>
+</table>
+</div>
+</div>
+
+<table align="center" cellpadding="0" cellspacing="0" width="990" height="66"><tr><td align="center">
+<script language="javascript" src="dividers/ListDividers.html?frmwidth=990&frmheight=66&category=fgt1"></script>
+</td></tr></table>
+
+<div id="cpzx" style="margin:0 auto">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="6"></td>
+  </tr>
+</table>
+<table width="996" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="58"><img src="../guodu/image/cpzx.gif" width="203" height="58" /></td>
+    <td background="../guodu/image/2mbg.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="300" class="14">&nbsp;</td>
+        <td class="a14"><a href="supplys/ListSupply.html?info_aspect=1"><span class="a14">供应信息</span></a>　|　<a href="supplys/ListSupply.html?info_aspect=2"><span class="a14">求购信息</span></a> | <a href="price/GetListPrice.html">价格行情</a> | <span class="a14"><a href="guodu/B10877index_1_PS25.html">市场动态</a></span></td>
+      </tr>
+    </table></td>
+    <td width="12"><img src="../guodu/image/3mbg.jpg" width="12" height="58" /></td>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="6"></td>
+  </tr>
+</table>
+<table width="994" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="../guodu/image/k1.jpg" width="994" height="2" /></td>
+  </tr>
+  
+  <tr>
+    <td background="../guodu/image/k2.jpg"><table width="990" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="left">
+         	<table align="center" cellpadding="0" cellspacing="0" width="100%">
+            	<tr>
+                <td valign="top">
+                	<table cellpadding="0" cellspacing="0" align="center" border="0">
+                    	<tr>
+                        <td align="left">
+                        <table cellpadding="0" cellspacing="0" border="0" align="left" width="305">
+                            <tr><td  height="35px;" style="padding-left:8px; padding-top:8px;"><img src="../guodu/image/gyxx.gif" width="294" height="31" border="0" usemap="#Map5"/></td></tr>
+                            <tr><td height="205" width="305" style="padding-left:15px;" valign="top">
+                            <script language="javascript" src="supplys/ListSupplyG.html"></script>
+                            </td></tr>
+                        </table>
+                        </td>
+                        <td align="left">
+                        <table cellpadding="0" cellspacing="0" border="0" align="left" width="305">
+                        <tr><td  height="35px;" style="padding-left:8px; padding-top:8px;"><img src="../guodu/image/qgxx.gif" width="294" height="31" border="0" usemap="#Map6"/></td></tr>
+                        <tr><td height="205" width="305" style="padding-left:15px;" valign="top">
+                        <script language="javascript" src="supplys/ListSupplyQ.html"></script>
+                        </td></tr>
+                        </table> 
+                        </td>
+                       </tr>
+                     <tr><td colspan="2" style="padding-left:8px;"><script language="javascript" src="supplys/ImgSupply.html"></script></td></tr>
+                    </table>
+                </td>
+                
+                <td valign="top">
+                <table cellpadding="0" cellspacing="0" border="0" align="right" width="380px;" height="280">
+                <tr><td style="padding-right:12px; padding-top:8px;" align="right">
+                <table width="355" border="0" cellspacing="0" cellpadding="0" height="210">
+                <tr>
+                  <td><img src="../guodu/image/sjghq.gif" width="355" height="35" border="0" usemap="#Map11" /></td>
+                </tr>
+                <tr>
+                  <td background="../guodu/image/s2.gif" align="center" height="175">
+                      <iframe src="price/GetList.html?pageno=1" frameborder="0" allowtransparency="true" scrolling="no" width="350" height="175px;"></iframe>     
+                  </td>
+                </tr>
+                <tr>
+                  <td><img src="../guodu/image/s3.gif" width="355" height="5" /></td>
+                </tr>
+              </table>
+        </td></tr>
+        <tr><td height="5"></td></tr>
+        <tr><td style="padding-right:12px;" align="right">
+             <table width="355" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td><img src="../guodu/image/sscdt.gif" width="355" height="35" border="0" usemap="#Map7" /></td>
+              </tr>
+              <tr>
+                <td background="../guodu/image/s2.gif" align="center" height="220" valign="top" style="padding-left:15px; padding-top:8px;">
+                <ul class="mytitle1"><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56091" title="湖北武汉：存货苹果价格下跌 销量还不错" target="_blank">湖北武汉：存货苹果价格下跌 销量还不错</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56090" title="福建漳州：未到春节 蔬菜价已高" target="_blank">福建漳州：未到春节 蔬菜价已高</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56089" title="杭州 今冬精品水果卖不动" target="_blank">杭州 今冬精品水果卖不动</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56088" title="十堰有机草莓卖出高价钱 50元/斤" target="_blank">十堰有机草莓卖出高价钱 50元/斤</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56087" title="唐山：水果销售期拉长 价格普涨" target="_blank">唐山：水果销售期拉长 价格普涨</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56086" title="山东德州鸡蛋便宜几毛钱 冬瓜身价涨三成" target="_blank">山东德州鸡蛋便宜几毛钱 冬瓜身价涨三成</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56085" title="大庆：大雪影响 西红柿、茄子等蔬菜涨价" target="_blank">大庆：大雪影响 西红柿、茄子等蔬菜涨价</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56046" title="青岛：“洋水果”带着“鲜”气走进市场" target="_blank">青岛：“洋水果”带着“鲜”气走进市场</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56045" title="河南省兰考县花青萝卜　首次进京销售" target="_blank">河南省兰考县花青萝卜　首次进京销售</a></li><li><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=56044" title="浙江：沙糖桔、脐橙批发价上涨一成多" target="_blank">浙江：沙糖桔、脐橙批发价上涨一成多</a></li></ul>
+                </td>
+              </tr>
+              <tr>
+                <td><img src="../guodu/image/s3.gif" width="355" height="5" /></td>
+              </tr>
+            </table>
+        </td></tr>
+        </table>
+                </td>
+                </tr>
+            </table>                     
+        </td> 
+      </tr>
+    </table></td>
+  </tr>
+  
+  
+  <tr>
+    <td><img src="../guodu/image/k3.jpg" width="994" height="25" /></td>
+  </tr>
+</table>
+
+<table align="center" cellpadding="0" cellspacing="0" width="990" height="66"><tr><td valign="middle">
+<script language="javascript" src="dividers/ListDividers.html?frmwidth=990&frmheight=66&category=fgt2"></script>
+</td></tr></table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="6"></td>
+  </tr>
+</table>
+<table width="996" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="58"><img src="../guodu/image/qyzx.jpg" width="203" height="58" /></td>
+    <td background="../guodu/image/2mbg.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="300" class="14">&nbsp;</td>
+        <td class="a14"><a href="interview/interviewCompanyManager.html" target="_blank">企业专访</a> | <a href="interview/interviewManager.html" target="_blank">人物访谈</a> | <a href="goods/eshop.html" target="_blank">网上商城</a> | <span class="a14"><a href="member/ListMember.html" target="_blank">企业在线</a></span></td>
+      </tr>
+    </table></td>
+    <td width="12"><img src="../guodu/image/3mbg.jpg" width="12" height="58" /></td>
+  </tr>
+</table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="6"></td>
+  </tr>
+</table>
+<table width="994" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="../guodu/image/k1.jpg" width="994" height="2" /></td>
+  </tr>
+  <tr>
+    <td background="../guodu/image/k2.jpg">
+    <table width="990" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" valign="top">      
+        <table cellpadding="0" cellspacing="0" border="0" align="left" width="305px;">
+        	<tr><td height="35px;" style="padding-left:8px; padding-top:8px;"><img src="../guodu/image/qyzf.gif" width="295" height="31" border="0" usemap="#Map3"/></td></tr>
+            <tr><td height="205" width="300" align="center">
+              <table width="100%" class="tg" cellpadding=0 cellspacing=0 border=0 style="margin-top: 0px;background:url(../guodu/image/rwzfbj.gif) no-repeat center;"><tr><td style="padding-left:5px;" align="center" width="135" height="110"><img src="photo/interview/20130807164332625.jpg" width="105" height="80"/></td><td><table><tr><td align="left" style="font-size:14px;  font-family:'宋体'; font-weight:bold">育种专家吴焕章：...</td></tr><tr><td  align=left style="color:#555555;">　　吴焕章，1964年12月出生于兰考，1987年7月毕业于华中农业大...<a href="interview/GetInterview.html?id=254" target="_top"><font color="#555555">【详细】</font></a></td></tr></table></td></tr></table><table width="100%" align="left" cellpadding=0 cellspacing=0 border=0><tr><td style="padding-left:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="85%" align="left"><a href="interview/GetInterview.html?id=256" target="_top"><font color="#444444">苍南宰文珊成功推广番茄集约化育苗新模式</font></a></td><td width="10%"><font color="#999999"></font></td></tr><tr><td style="padding-left:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="85%" align="left"><a href="interview/GetInterview.html?id=255" target="_top"><font color="#444444">向规模化科技化要效益</font></a></td><td width="10%"><font color="#999999"></font></td></tr><tr><td style="padding-left:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="85%" align="left"><a href="interview/GetInterview.html?id=253" target="_top"><font color="#444444">北京“食用菌村官”：王为华</font></a></td><td width="10%"><font color="#999999"></font></td></tr><tr><td style="padding-left:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="85%" align="left"><a href="interview/GetInterview.html?id=252" target="_top"><font color="#444444">记全国科普工作先进个人、全国番茄育种领头...</font></a></td><td width="10%"><font color="#999999"></font></td></tr></table>
+            </td></tr>
+             <tr><td height="35px;" style="padding-left:8px; padding-top:8px;"><img src="../guodu/image/rwft.gif" width="296" height="31" border="0" usemap="#Map4" /></td></tr>
+              <tr><td height="195" width="300" valign="top">
+              <table width="100%" class="tg" cellpadding=0 cellspacing=0 border=0 style="margin-top: 0px;background:url(../guodu/image/rwzfbj.gif) no-repeat center;"><tr><td style="padding-left:5px;" align="center" width="135" height="110"><img src="photo/interview/20130807153709204.jpg" width="105" height="80"/></td><td><table><tr><td align="left" style="font-size:14px;  font-family:'宋体'; font-weight:bold">温铁军：小农经济...</td></tr><tr><td  align=left style="color:#555555;">“农业安全首先应该是环境安全，以环境安全来统领数量安全和质量安全，单纯...<a href="interview/GetInterviewPerson.html?id=233" target="_top"><font color="#555555">【详细】</font></a></td></tr></table></td></tr></table><table width="100%" align="left" cellpadding=0 cellspacing=0 border=0><tr><td style="padding-left:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="85%" align="left"><a href="interview/GetInterviewPerson.html?id=272" target="_top"><font color="#555555">中国农业企业如何在美国上市?——张利庠访...</font></a></td><td width="10%"><font color="#555555"></font></td></tr><tr><td style="padding-left:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="85%" align="left"><a href="interview/GetInterviewPerson.html?id=270" target="_top"><font color="#555555">“菜大王”发迹史：风光背后辛酸几许</font></a></td><td width="10%"><font color="#555555"></font></td></tr><tr><td style="padding-left:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="85%" align="left"><a href="interview/GetInterviewPerson.html?id=235" target="_top"><font color="#555555">壹贰叁农业规划服务有限公司董事长——张好...</font></a></td><td width="10%"><font color="#555555"></font></td></tr><tr><td style="padding-left:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="85%" align="left"><a href="interview/GetInterviewPerson.html?id=234" target="_top"><font color="#555555"> 尹成杰：为“三农”提供有力法律保障</font></a></td><td width="10%"><font color="#555555"></font></td></tr></table>
+              </td></tr>  
+        </table>
+        </td>
+        
+        <td>
+        <table cellpadding="0" cellspacing="0" border="0" align="left" width="410" height="400">
+        	<tr><td height="45px;" style="padding-left:8px; padding-top:10px;"><img src="../guodu/image/qytjcp.gif" width="408" height="45" border="0" usemap="#Map9" /></td></tr>
+            <tr><td height="280" style="padding-left:15px;background:url(../guodu/image/qycptjbj.gif) repeat-y right" align="center">
+            	<iframe src="goods/TuiJianGoodsList.html?pagesize=12" frameborder="0" allowtransparency="true" scrolling="no" width="400" height="275px;"></iframe>
+            </td></tr>
+            <tr><td height="30" style="padding-left:8px;"><img src="../guodu/image/zxcpzs.gif" width="408" height="46" border="0" usemap="#Map8" /></td></tr>
+            <tr><td height="110" width="408" style="background:url(../guodu/image/qycptjbj.gif) repeat-y right; padding-left:15px;" align="left" valign="top" >
+            	<iframe src="goods/NewGoodsList.html?pagesize=4" frameborder="0" allowtransparency="true" scrolling="no" width="395" height="110px;"></iframe>
+            </td></tr> 
+            <tr><td height="3px;" style="padding-left:8px;"><img src="../guodu/image/zxcpzs_1.gif" /></td></tr> 
+        </table>  
+        </td>
+        
+        <td valign="top">
+        <table cellpadding="0" cellspacing="0" border="0" align="left" width="250" height="400">
+        	<tr><td height="32px;" style="padding-left:8px; padding-top:10px;"><img src="../guodu/image/rmqyph.gif" /></td></tr>
+            <tr><td height="313" valign="top">
+              <table align="center" cellpadding="0" cellspacing="0" width="100%">
+              <tr><td style="padding-left:8px;"><table align="left"><tr><td><a target="_blank" href="/member/showCompanySite.html?id=12963"><img style="border:1px solid #CCC;padding:4px;float:left;" src="/guodu/image/no.gif" width="65" height="50" border="0" class="imagemx" /></a></td></tr><tr><td><a target="_blank" href="/member/showCompanySite.html?id=12963"><span class="mxqy" style="color:#555555; font-weight:bold;">徐州旺达农..</span></a></td></tr></table><table align="left"><tr><td><a target="_blank" href="/member/showCompanySite.html?id=13043"><img style="border:1px solid #CCC;padding:4px;float:left;" src="/guodu/image/no.gif" width="65" height="50" border="0" class="imagemx" /></a></td></tr><tr><td><a target="_blank" href="/member/showCompanySite.html?id=13043"><span class="mxqy" style="color:#555555; font-weight:bold;">徐州华元罐..</span></a></td></tr></table><table align="left"><tr><td><a target="_blank" href="/member/showCompanySite.html?id=13023"><img style="border:1px solid #CCC;padding:4px;float:left;" src="/guodu/image/no.gif" width="65" height="50" border="0" class="imagemx" /></a></td></tr><tr><td><a target="_blank" href="/member/showCompanySite.html?id=13023"><span class="mxqy" style="color:#555555; font-weight:bold;">徐州凯宇食..</span></a></td></tr></table></td></tr>
+              <tr><td style="padding-left:8px;"><iframe src="member/PopularListMember.html?pagesize=9" frameborder="0" allowtransparency="true" scrolling="no" width="250" height="225"></iframe></td></tr>
+              </table>
+            </td></tr>
+            <tr><td height="30" style="padding-left:8px;"><img src="../guodu/image/zxjrqy.gif" width="251" height="31" border="0" usemap="#Map10" /></td></tr>
+            <tr><td height="100" style="padding-left:8px; padding-top:5px;"><iframe src="member/MemberList.html?pagesize=4" frameborder="0" allowtransparency="true" scrolling="no" width="250" height="100"></iframe></td></tr> 
+        </table> 
+      </td>
+      
+      </tr>
+    </table>
+    </td>
+  </tr>
+  <tr>
+    <td><img src="../guodu/image/k3.jpg" width="994" height="25" /></td>
+  </tr>
+</table>
+<table width="990" border="0" cellspacing="0" cellpadding="0" align="center" height="70">
+  <tr>
+   <td width="330" align="center" valign="middle"><script language="javascript" src="dividers/ListDividers.html?frmwidth=328&frmheight=60&category=hf4"></script></td><td width="330" align="center" valign="middle"><script language="javascript" src="dividers/ListDividers.html?frmwidth=328&frmheight=60&category=hf5"></script></td><td width="330" align="center" valign="middle"><script language="javascript" src="dividers/ListDividers.html?frmwidth=328&frmheight=60&category=hf6"></script></td>
+  </tr>
+</table>
+<table width="996" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="58"><img src="../guodu/image/fwzx.jpg" width="203" height="58" /></td>
+    <td background="../guodu/image/2mbg.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="300" class="14">&nbsp;</td>
+        <td class="a14">&nbsp;&nbsp;
+	 <a href="guodu/A_Pfw1_NC11_NWC20_SH170_5127index.html">知识</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+     <a href="guodu/A_Pfw1_NC11_NWC20_SH170_5128index.html">培训</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	 <a href="http://www.duice.net/html/list_622.html">物流</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	 <a href="expert/Expert.html">专家</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	 <a href="interview/interviewRichManager.html">致富</a></td>
+      </tr>
+    </table></td>
+    <td width="12"><img src="../guodu/image/3mbg.jpg" width="12" height="58" /></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="6"></td>
+  </tr>
+</table>
+<table width="994" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="../guodu/image/k1.jpg" width="994" height="2" /></td>
+  </tr>
+  <tr>
+    <td background="../guodu/image/k2.jpg">
+    	<table><tr><td>
+    	<table width="740" border="0" align="left" cellpadding="0" cellspacing="0">
+        	<tr><td align="center" valign="top">
+            		<table cellpadding="0" cellspacing="0" border="0" align="left" width="280">
+            	<tr><td style="padding-left:8px; padding-top:10px;"><img src="../guodu/image/yzjs.gif" /></td></tr>
+                 <tr><td height="95" width="270"  valign="top" style="padding-left:8px;">
+              <table border="0" cellspacing="0" cellpadding="0" class="product1_tab"><tr><td width="105" align="center" rowspan="2"><a href="/portal/news/viewContent.html?id=821" title="消暑瓜果同步旺销 宁波本地瓜逐渐上市" target="_blank"><img src="upload/news/2013_05_23/20130523182110701.jpg" width="110" heigth="80" border="0" class="product1_img1" /></a></td><td width="170" valign="top" align="left" class="product1_title1"><a href="/portal/news/viewContent.html?id=821" title="消暑瓜果同步旺销 宁波本地瓜逐渐上市" target="_blank">消暑瓜果同步旺销 ..</a></td></tr><tr><td width="170" valign="top" align="left" class="zhaiyaocls1">今年甬城提前入夏，连续炎热天气带动了消暑解渴水果的销售。记者..</td></tr></table>
+                  </td></tr>
+             <tr><td height="70" width="270" align="left" style="padding-left:8px;"> 
+                     <ul class="mytitle"><li><div class="li_time" >2014-02-11</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=53262" title="2014年水产养殖病害流行趋势" target="_blank">2014年水产养殖病害流行趋..</a></li><li><div class="li_time" >2014-02-11</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=53261" title="大棚肉鸭育成期饲养管理" target="_blank">大棚肉鸭育成期饲养管理</a></li><li><div class="li_time" >2013-12-02</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=52365" title="给羔羊灌药有妙招" target="_blank">给羔羊灌药有妙招</a></li></ul>
+                  </td></tr>
+                  <tr><td style="padding-left:8px; padding-top:10px;"><img src="../guodu/image/zzjs.gif" /></td></tr>
+                  <tr><td height="95" width="270"  valign="top"  style="padding-left:8px;">
+              <table border="0" cellspacing="0" cellpadding="0" class="product1_tab"><tr><td width="105" align="center" rowspan="2"><a href="/portal/news/viewContent.html?id=651" title="江苏丰县果都大观园 " target="_blank"><img src="upload/news/2012_12_31/20121231164012912.jpg" width="110" heigth="80" border="0" class="product1_img1" /></a></td><td width="170" valign="top" align="left" class="product1_title1"><a href="/portal/news/viewContent.html?id=651" title="江苏丰县果都大观园 " target="_blank">江苏丰县果都大观园..</a></td></tr><tr><td width="170" valign="top" align="left" class="zhaiyaocls1">果都大观园与大沙河万亩梨园、红富士高档苹果示范园、大沙河水上..</td></tr></table>
+                  </td></tr>
+             <tr><td height="60" width="270" align="left" style="padding-left:8px;"> 
+                     <ul class="mytitle"><li><div class="li_time" >2014-05-04</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=54057" title="2014年丰县果树技术指导意见第二期" target="_blank">2014年丰县果树技术指导意..</a></li><li><div class="li_time" >2014-02-11</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=53264" title="腊梅种子播种育苗技术" target="_blank">腊梅种子播种育苗技术</a></li><li><div class="li_time" >2014-02-11</div><div class="pre_img"><img src="guodu/image/dian.gif" /></div><a href="/portal/news/viewContent.html?id=53263" title="国槐种子播种育苗技术" target="_blank">国槐种子播种育苗技术</a></li></ul>
+                  </td></tr>
+            </table>
+            </td>
+            <td>
+            <table cellpadding="0" cellspacing="0" border="0" align="left">
+            	<tr><td align="center" style="padding-top:10px;"><img src="../guodu/image/zjwd.gif" width="442" height="38" border="0" usemap="#Map2" /></td></tr>
+                <tr><td style="background:url(../guodu/image/zjwdbj.gif) repeat-y center" height="175" valign="top" align="center">
+                 <iframe src="expert/GetQuestionList.html?pagesize=12" frameborder="0" allowtransparency="true" scrolling="no" width="423" height="170px;"></iframe>
+                </td></tr>
+                <tr>
+                  <td align="center"><img src="../guodu/image/zjtd.gif" width="442" height="42" border="0" usemap="#Map" /></td></tr>
+                <tr><td style="background:url(../guodu/image/zjwdbj.gif) repeat-y center; line-height:123px;" height="123" align="center">
+                 <iframe src="expert/GetListExpert.html?pagesize=5" frameborder="0" allowtransparency="true" scrolling="no" width="423" height="120px;"></iframe>
+                </td></tr>
+                <tr><td align="center"><img src="../guodu/image/zjwdtdbj.gif" /></td></tr>
+            </table>
+            </td>
+            </tr>
+            <tr><td colspan="2" align="center" height="65" valign="middle"><script language="javascript" src="dividers/ListDividers.html?frmwidth=724&frmheight=50&category=zw1"></script>
+</td></tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="0" width="245" align="left">
+            <tr><td height="10px;"></td></tr>
+            <tr><td style="background:url(../guodu/image/spzx.gif) no-repeat left; padding-left: 4px;" valign="top" align="left" width="238" height="185">
+            	<script language="javascript" src="../video/GetVideoImg.html?pageno=1"></script>
+            </td></tr>
+            <tr><td align="left" height="40"><a href="../video/GetListVideo.html" target="_blank"><img src="../guodu/image/kongbai.gif" border="0" /></a></td></tr>
+            <tr><td align="left"><img src="../guodu/image/zfns.gif" /></td></tr>
+            <tr><td style="background:url(../guodu/image/zfnsbj.gif) no-repeat left;" width="241" height="179" valign="top">
+             <table width="100%" class="tg" cellpadding=0 cellspacing=0 border=0 style="margin-top: 0px;"><tr><td style="height:75px;width:65px;padding-left:10px;"><table width="52"><tr><td width="65px" height="52px"><img src="null" width="60" height="45"  style="border:#CCC solid 1px;padding:2px;" align="center"/></td></tr><td align="center" style="color:#555555">马新存                                                                                                 </td></tr></table></td><td height="75"><table><tr><td height="15" valign="top" align="left" style="padding-left:5px;font-size:12px; color:#555555;font-family:'宋体'; font-weight:bold">大沙河畔“果品王...</td></tr><tr><td height="60" width="155" valign="top" align=left style="color:#555555;padding-left:5px;">古老的大沙河奔流不息，涓涓河水就像母...<a href="interview/GetInterviewRichMan.html?id=192" target="_top"><font color="#555555">【详细】</font></a></td></tr></table></td></tr></table><table width="100%" align="left" cellpadding=0 cellspacing=0 border=0><tr><td width="15" style="padding-left:15px;padding-top:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="195" align="left" style="padding-top:5px;"><a href="interview/GetInterviewRichMan.html?id=290" target="_top"><font color="#555555">“我的‘阿里巴巴’挂牌了”</font></a></td></tr><tr><td width="15" style="padding-left:15px;padding-top:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="195" align="left" style="padding-top:5px;"><a href="interview/GetInterviewRichMan.html?id=271" target="_top"><font color="#555555">郭红霞：致富路上的女能人</font></a></td></tr><tr><td width="15" style="padding-left:15px;padding-top:5px;" width="10%"><img src="guodu/image/dian.gif" /></td><td width="195" align="left" style="padding-top:5px;"><a href="interview/GetInterviewRichMan.html?id=240" target="_top"><font color="#555555">甘肃“洋葱大王”葸鑫规模经营拓...</font></a></td></tr></table>
+            </td></tr>
+        </table>
+     </td></tr>
+    <!-- <tr><td align="center">
+       <table align="center" cellpadding="0" cellspacing="0" border="0">
+        	<tr>
+            <td width="560" height="200">
+            	<table  border=0 cellSpacing=0 cellPadding=0  align="center" width="550" height="200" style="background:url(../guodu/image/nzbj.gif) no-repeat center;">
+                	<tr><td height="32"> <div class=left style="float:left;width:80px;padding-left:13px;"><img id="jishubuttom" onmouseover="javascript:change_layers1(event)" style="CURSOR: hand" height="32"  src="../guodu/image/nzjg.gif" width=80 border=0 /></div>
+     <div class=left style="float:left;"><img id="jishubuttom2" onmouseover="javascript:change_layers2(event)" style="CURSOR: hand" height="32" src="../guodu/image/ctpf.gif" width=80 border=0 /></div>
+     <div class=left style="float:left;"><img id="jishubuttom3" onmouseover="javascript:change_layers3(event)" style="CURSOR: hand" height="32" src="../guodu/image/zlaq.gif" width=80 border=0 /></div>
+     <div class=left style="float:left;"><img id="jishubuttom4" onmouseover="javascript:change_layers4(event)" style="CURSOR: hand" height="32" src="../guodu/image/zlrz.gif" width=80 border=0 /></div></td></tr>
+                    <tr><td>
+                     <div style="height: 150px;"  id="CNLTreeMenu1">
+                1111111111111111111
+            <p><a href="guodu/A_P0001_NC5_NWC10_SH170_4862index.html" target="_blank">更多</a>&gt;&gt;&nbsp;</p>
+          </div>
+          <div  id="CNLTreeMenu2" style="DISPLAY: none; height:150px;">
+           2222222222222222222
+            <p><a href="guodu/B4863index.html" target="_blank">更多</a>&gt;&gt;&nbsp;</p>
+          </div>
+          <div style="height: 150px;DISPLAY:none;" id="CNLTreeMenu3">
+            333333333333333333
+            <p><a href="guodu/A_P0001_NC5_NWC10_SH170_4862index.html" target="_blank">更多</a>&gt;&gt;&nbsp;</p>
+          </div>
+          <div  id="CNLTreeMenu4" style="DISPLAY: none; height:150px;">
+            44444444444444444444
+            <p><a href="guodu/B4863index.html" target="_blank">更多</a>&gt;&gt;&nbsp;</p>
+          </div>
+                    </td></tr>
+                </table>
+            </td>
+            <td width="425" height="200">
+            	<table border=0 cellSpacing=0 cellPadding=0  align="center" width="425" height="200" style="background:url(../guodu/image/whbj.gif) no-repeat center;">
+                	<tr><td height="32">
+                    <div class=left style="float:left; padding-left:20px;"><img id="jishubuttom5" onmouseover="javascript:change_layers5(event)" style="CURSOR: hand" height="32"  src="guodu/image/whkx.gif" width=80 border=0 /></div>
+         <div class=left style="float:left;"><img id="jishubuttom6" onmouseover="javascript:change_layers6(event)" 
+        style="CURSOR: hand" height="32" src="guodu/image/kpzs.gif" 
+        width=80 border=0 /></div>
+        <div class=left style="float:left;"><img id="jishubuttom7" onmouseover="javascript:change_layers7(event)" 
+        style="CURSOR: hand" height="32" src="guodu/image/ddkm.gif" 
+        width=80 border=0 /></div>
+                    </td></tr>
+                    <tr><td>
+                           <div style="height: 150px;"  id="CNLTreeMenu5">
+                1111111111111111111
+            <p><a href="guodu/A_P0001_NC5_NWC10_SH170_4862index.html" target="_blank">更多</a>&gt;&gt;&nbsp;</p>
+          </div>
+          <div  id="CNLTreeMenu6" style="DISPLAY: none; height:150px;">
+           2222222222222222222
+            <p><a href="guodu/B4863index.html" target="_blank">更多</a>&gt;&gt;&nbsp;</p>
+          </div>
+          <div style="height: 150px;DISPLAY:none;" id="CNLTreeMenu7">
+            333333333333333333
+            <p><a href="guodu/A_P0001_NC5_NWC10_SH170_4862index.html" target="_blank">更多</a>&gt;&gt;&nbsp;</p>
+          </div>
+                    </td></tr>
+                </table>
+            </td>
+            </tr>
+       </table>
+     </td></tr>-->
+     </table>    
+    </td>
+  </tr>
+ <tr>
+    <td><img src="../guodu/image/k3.jpg" width="994" height="25" /></td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td height="6"></td>
+  </tr>
+</table>
+
+
+<table width="994" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="../guodu/image/klink.jpg" width="994" height="39" /></td>
+  </tr>
+  <tr>
+    <td background="../guodu/image/k2.jpg"><table width="990" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td align="center" style="padding-top:10px; padding-left:8px;">
+          <table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.cnslly.com/" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521162140673.jpg" width="90" height="38" /></a></td></tr></table><table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.haagri.gov.cn" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521162830063.jpg" width="90" height="38" /></a></td></tr></table><table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.agri.gov.cn" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521162933845.jpg" width="90" height="38" /></a></td></tr></table><table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.hnxmy.gov.cn/egov/govmem.asp" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521163037907.jpg" width="90" height="38" /></a></td></tr></table><table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.ny3721.com/url/24161/" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521163255079.jpg" width="90" height="38" /></a></td></tr></table><table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.ny3721.com/url/2805/" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521163411423.jpg" width="90" height="38" /></a></td></tr></table><table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.hebahi.org.cn/" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521163551017.jpg" width="90" height="38" /></a></td></tr></table><table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.natesc.gov.cn/sites/MainSite/" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521163720642.jpg" width="90" height="38" /></a></td></tr></table><table style="float:left;width:108px; height:50px; display:block；"><tr><td><a href="http://www.ny3721.com/url/18008/" target="_blank"><img border="0"  align="center" style="padding: 3px; border: 1px solid #CCC;background-color: #EEE;" src="../upload/friendweb/2013_05_21/20130521163843501.jpg" width="90" height="38" /></a></td></tr></table>
+         </td>
+      </tr>
+        <tr>
+        <td align="center" width="990" height="40">
+           <table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.chinaccm.com/"  title=" 中商农副信息网"> 中商农副信息网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.zgny.com.cn/"  title=" 中国农业网"> 中国农业网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.jinnong.cn/"  title="金农网">金农网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://icgr.caas.net.cn/"  title=" 中国作物种质信息网 "> 中国作物种质信..</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.ap88.com/"  title=" 中农网 "> 中农网 </a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.jgny.net/"  title=" 金光农业网"> 金光农业网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.cahv.cn/"  title="中国畜牧兽医网">中国畜牧兽医网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.cnan.gov.cn/"  title=" 中国兴农网"> 中国兴农网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.zhnt.net/jsp/"  title="智农通">智农通</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.api.com.cn/"  title="中国农产品信息之窗">中国农产品信息之..</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.china-duck.com/"  title="中华鸭业">中华鸭业</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.xzhanbang.com/"  title="徐州汉邦工艺品有限公司">徐州汉邦工艺品有..</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.jsagri.gov.cn/"  title="江苏农业网">江苏农业网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.chinasheep.net/"  title="中国山羊网">中国山羊网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.jsy.jqw.com/index.htm"  title="江苏省丰县郭庙养殖场">江苏省丰县郭庙养..</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.chinaycw.net/"  title="中华洋葱网">中华洋葱网</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.wutongzi.com/kan/jiangsu/xvzhou_fengxian.html "  title="江苏省丰县简介">江苏省丰县简介</a></td></tr></table><table style="float:left;display:block；" width="110"><tr><td  align="center"><a href="http://www.wutongzi.com/kan/jiangsu/xvzhou_fengxian.html "  title="江苏省丰县简介">江苏省丰县简介</a></td></tr></table>
+         </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td><img src="../guodu/image/k3.jpg" width="994" height="25" /></td>
+  </tr>
+</table>
+
+</div>
+</div>
+<div id="page"></div>
+<div id="foot" style="margin:0 auto;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td background="../guodu/image/l4.jpg"><table width="990" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="10"><img src="../guodu/image/l1.jpg" width="10" height="38" /></td>
+        <td background="../guodu/image/l2.jpg" class="bai12" align="center"><a href="#" target="_blank">关于我们</a> | <a href="#" target="_blank">联系我们</a> | <a href="#" target="_blank">广告服务</a> | <a href="#" target="_blank">友情链接</a> | <a href="#" target="_blank">网站地图</a> | <a href="#" target="_blank">版权声明</a> | <a href="#" target="_blank">人才招聘</a> | <a href="#" target="_blank">帮助</a></td>
+        <td width="10"><img src="../guodu/image/l3.jpg" width="10" height="38" /></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+<table width="990" border="0" cellspacing="0" cellpadding="0" align="center"> 
+  <tr>
+    <td align="center" class="h24" height="80">ChinaDSH.com 丰县农业委员会 版权所有 　北京农信通技术支持 &nbsp;&nbsp;豫ICP备05013417号-1<br />
+    客服热线：0516-89288123   89288122　传真：0516－89222174　E-mail：manager@chinadsh.com <script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F45bd13f7420f301e3c44d55265c439a3' type='text/javascript'%3E%3C/script%3E"));
+</script></td>
+  </tr>
+</table>
+</div>
+<script type="text/javascript">
+function gotoTop(min_height){
+    //预定义返回顶部的html代码，它的css样式默认为不显示
+    var gotoTop_html = '<div id="gotoTop"><img src="../guodu/image/dingbu.gif"></div>';
+    //将返回顶部的html代码插入页面上id为page的元素的末尾 
+    $("#page").append(gotoTop_html);
+    $("#gotoTop").click(//定义返回顶部点击向上滚动的动画
+        function(){$('html,body').animate({scrollTop:0},700);
+    }).hover(//为返回顶部增加鼠标进入的反馈效果，用添加删除css类实现
+        function(){$(this).addClass("hover");},
+        function(){$(this).removeClass("hover");
+    });
+    //获取页面的最小高度，无传入值则默认为600像素
+    min_height ? min_height = min_height : min_height = 300;
+    //为窗口的scroll事件绑定处理函数
+    $(window).scroll(function(){
+        //获取窗口的滚动条的垂直位置
+        var s = $(window).scrollTop();
+        //当窗口的滚动条的垂直位置大于页面的最小高度时，让返回顶部元素渐现，否则渐隐
+        if( s > min_height){
+            $("#gotoTop").fadeIn(100);
+        }else{
+            $("#gotoTop").fadeOut(200);
+        };
+    });
+};
+</script>
+<script type="text/javascript" src="../guodu/js/guanggao.js"></script>
+<style type="text/css">
+/*默认样式，主要是position:fixed实现屏幕绝对定位*/
+#gotoTop{display:none;position:fixed;top:73%;left:50%;cursor:pointer;margin-top:-50px;margin-left:520px;width:24px;}
+/*用CSS表达式(expression)来实现ie6下position:fixed效果*/
+#gotoTop{_position:absolute;_top:expression(documentElement.scrollTop + documentElement.clientHeight * 3/4 + "px")}/*鼠标进入的反馈效果*/
+</style>
+
+
+<map name="Map" id="Map">
+  <area shape="rect" coords="376,10,429,33" href="expert/ListExpert.html" target="_blank" />
+</map>
+
+<map name="Map2" id="Map2">
+  <area shape="rect" coords="245,5,331,34" href="../expert/uquestion_add.html" target="_blank" />
+  <area shape="rect" coords="338,6,424,33" href="../expert/q_listByExpert.html" target="_blank" />
+</map>
+
+<map name="Map3" id="Map3">
+  <area shape="rect" coords="237,4,283,28" href="interview/interviewCompanyManager.html" target="_blank" />
+</map>
+
+<map name="Map4" id="Map4">
+  <area shape="rect" coords="235,4,282,28" href="interview/interviewManager.html" target="_blank" />
+</map>
+
+<map name="Map5" id="Map5">
+  <area shape="rect" coords="237,4,285,29" href="supplys/ListSupply.html?info_aspect=1" target="_blank" />
+</map>
+
+<map name="Map6" id="Map6">
+  <area shape="rect" coords="240,3,284,28" href="supplys/ListSupply.html?info_aspect=2" target="_blank" />
+</map>
+
+<map name="Map7" id="Map7">
+  <area shape="rect" coords="301,5,345,29" href="guodu/B10877index_1_PS25.html" target="_blank" />
+</map>
+
+<map name="Map8" id="Map8">
+  <area shape="rect" coords="330,8,397,36" href="goods/eshopMore.html?type=new" target="_blank" />
+</map>
+
+<map name="Map9" id="Map9">
+  <area shape="rect" coords="342,11,395,39" href="goods/eshopMore.html?type=new" target="_blank" />
+</map>
+
+<map name="Map10" id="Map10">
+  <area shape="rect" coords="183,3,245,27" href="member/MemberMoreList.html" target="_blank" />
+</map>
+
+<map name="Map11" id="Map11">
+  <area shape="rect" coords="300,7,345,30" href="/price/GetListPrice.html" target="_blank" />
+</map>
+</body>
+</html>
+

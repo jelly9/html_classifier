@@ -1,0 +1,542 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="zh-CN" />
+<meta http-equiv="mobile-agent" content="format=html5; url=http://m.gexing.com/riji/3481684.html">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.gexing.com/riji/3481684.html">
+<meta name="StandardTime" content="2015-02-24 23:25:19">
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<title>个性网-日记-正文_伤感_心情</title>
+<link rel="icon" href="http://jic.gexing.com/g/i/favicon.ico" mce_href="http://jic.gexing.com/g/i/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://jic.gexing.com/g/i/favicon.ico" mce_href="http://jic.gexing.com/g/i/favicon.ico" type="image/x-icon">
+    <link href="http://jic.gexing.com/c/??header.css,ucenter.css,dialog_1.css,master1.css?v=c1423810488" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var GXInit={"keepalive":false,"uid":0,"domain":"http:\/\/www.gexing.com\/","page":"detail.riji","detail":{"type":"riji","id":3481684,"privacy":"public"},"user_id":"1766581"};
+var $$c = {
+	jsv : 'j1423810488',
+	jic : 'http://jic.gexing.com/'
+};
+</script>
+<script type="text/javascript" src="http://i0.sinaimg.cn/dy/js/jquery/jquery-1.7.2.min.js"></script>
+<!--script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.7.2/jquery.min.js"></script-->
+<script type="text/javascript">
+    if(window.jQuery == null){
+        document.write('<script type="text/javascript" src="http:\/\/i0.sinaimg.cn\/dy\/js\/jquery\/jquery-1.7.2.min.js"><\/script>');
+    }
+</script>
+<script src='http://jic.gexing.com/g/j/??common.js,swfobject.js?v=j1423810488'></script>
+<script src='http://jic.gexing.com/j/??base.js,sso_gexing.js?v=j1423810488'></script>
+
+<script src='http://jic.gexing.com/j/??sso.js,jQuery.md5.js?v=j1423810488'></script>
+<script>
+$(document).ready(function(){
+	$.each($("div.nav a"),function(){
+		var tttext = $(this).text();
+		if($.trim(tttext) == "Tutu"){
+			$(this).attr("target","_blank");
+		}
+	})
+	if($('#topLginjs').length>0){
+		$.getJSON("http://www.gexing.com/api/index.php?callback=?",{action:'ajax_getLoginStatus'},function(R){
+			if(R.data.uid){
+				// 更新用户信息，以防静态化导致uid不可用或是成为不准确的信息
+				GXInit.uid = R.data.uid;
+                GX.afterLogin()
+            }
+            
+            // 由于页面是缓存的，要做是否登录的判断之后走什么逻辑就用这个；
+            GX.checkLoginCallback && GX.checkLoginCallback({
+            	"uid":R.data.uid
+            });
+           	
+			if(R.data.isAutoLogin){
+				$.getJSON("http://sso.gexing.com/index.php?callback=?",{action:'ajax_autoLogin'},function(json){
+					if(json.result=="ok"){
+						$.getJSON("http://www.gexing.com/api/index.php?callback=?",{action:'topLginjs',successuri:'http://www.gexing.com/riji/3481684.html'},function(jsondata){
+							if(jsondata.result=="ok"){
+								$('#topLginjs').html($.trim(jsondata.data));
+								GX.header.init();
+								GexingPassport.logout();	
+							}	
+						});
+					}
+				})
+				GXInit.uid=R.data.uid;	
+			}else{
+				$.getJSON("http://www.gexing.com/api/index.php?callback=?",{action:'topLginjs',successuri:'http://www.gexing.com/riji/3481684.html'},function(jsondata){
+					if(jsondata.result=="ok"){
+						$('#topLginjs').html($.trim(jsondata.data));
+						GX.header.init();
+						GexingPassport.logout();	
+					}	
+				});	
+				GXInit.uid=R.data.uid;	
+			}			   
+			GX.getUidInit()
+		})
+	}else{
+		GX.header.init();
+		GexingPassport.logout();
+	}
+
+	var TagSearch = "1";
+	if (TagSearch == '0') {
+		var url = window.location.href;
+		var ziduan = url.match("/s/");
+		if(ziduan=="/s/"){
+		    $(".search").hide();
+		} 
+	}
+		$("p.sj_up").find("a").attr("title","来自手机客户端");
+		
+		$.getJSON("http://www.gexing.com/api/api_get_mission_num.php",function(R){
+			if(R.result=='ok'){
+				if(R.data=='0' || R.data==0){
+					$("a.today_task span").html('').addClass("t_over");
+				}else{
+					$("a.today_task span").html(R.data);
+				}
+			}
+		})
+});
+
+</script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6349620" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	window.bds_config={"snsKey":{'tsina':'1755086068','tqq':'801261922','t163':'','tsohu':''}}
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)	
+});
+/*
+(function (){
+	if (/android/i.test(navigator.userAgent)){	
+		var urla = window.location.href;
+		var urlgx ="http://www.gexing.com"
+		var anArray = ['/shaitu/','/zipai/','/riji/','/qqtouxiang/','/qianming/','/qqwangming/','/bizhi/','/zt/','/shaitu/new/','/riji/new/','/qqtouxiang/good/','/qqtouxiang/new/','/qianming/good/','/qianming/new/','/qqwangming/good/','/qqwangming/new/','/zt/shaitu/','/zt/riji/','/zt/qqtouxiang/','/zt/qianming/','/zt/qqwangming/'];
+		$.each(anArray,function(n,value) { 
+			var umatch = urla.match(value);
+			if(urla == urlgx+value ){
+				if(GX.cookie("phone")==null || GX.cookie("phone") < 3){
+					if(confirm('个性网手机客户端，\n全免费！更方便！更快捷！\n立即下载！')){
+						GX.cookie("phone", 4, {expires:3600});
+						location.href="/3g.html";
+					}else{
+						var k = GX.cookie("phone") == null? 0 :GX.cookie("phone");
+						GX.cookie("phone", (parseInt(k)+1), {expires:3600});
+					}
+				} 
+			}
+		}); 
+	}
+})()
+*/
+</script>
+<script type="text/javascript">
+$(window).bind("scroll", function(){
+	//$('#vouch').fadeOut();
+})
+</script>   
+
+</head>
+<body>
+<script src='http://jic.gexing.com/j/??zmask.js,easing.js?v=j1423810488'></script>
+
+<div class="wrap">
+<div class="new-top">
+<div class="gexingTop">
+    <div class="w960 clearx">
+        <a href="http://www.gexing.com/renwu/" target="_blank" class="today_task"><span></span></a>   
+        <h1><a class="logo" href="http://www.gexing.com/"></a></h1>
+        <!--div class="qzonefav1"><iframe src="http://open.qzone.qq.com/like?url=http%3A%2F%2Fuser.qzone.qq.com%2F66262666&type=button_num&width=400&height=30&style=2" allowtransparency="true" scrolling="no" border="0" frameborder="0" style="width:110px;height:30px;border:none;overflow:hidden;"></iframe></div-->
+        <ul class="nav clearx">
+            <li class="jz"><a href="http://jz.gexing.com">家族</a></li>
+            <li><a href="http://z.gexing.com">空间</a></li>
+            <li class="zy"><a href="http://zuoye.qingguo.com" target="_blank">作业帮帮圈</a></li>
+            <li class="zw"><a href="http://www.qingguo.com" target="_blank">青果学院</a></li>
+            <!--<li class="qg"><a href="http://www.qingguo.com" target="_blank">青果学院</a></li> -->
+            <li class="sj"><a href="http://shouji.gexing.com/" target="_blank">手机端</a></li>
+        </ul>
+				<div id="topLginjs"></div>
+		</div>
+
+	</div>
+
+
+<div class="navB">
+    <div class="gexingSubnav">
+    	<div class="w960 clearx">
+            <div class="menu1">
+            	<a href="http://www.gexing.com/">首页</a><s></s>
+            	 <a href="/shaitu/">美图</a><s></s>
+            	<a href="/qqtouxiang/">QQ头像</a><s></s>
+            	<a href="/qianming/">个性签名</a><s></s>
+            	<a href="/qqwangming/">网名</a><s></s>
+            	<a href="/qqfenzu/">QQ分组</a><s></s>
+            	<a href="/qqpifu/">QQ皮肤</a><s></s>
+            	<a href="/pifu/">空间素材</a>
+            </div>
+            <div class="menu2">
+            <a href="/zipai/hot24/" rel="nofollow">自拍</a><s></s>
+            <a href="/tupian/">贴图</a><s></s>
+            <a href="/wenzi/" class="rj_ico">文字<em></em></a><s></s>
+            <a href="/zt/" >专题</a><s></s>
+			<a href="http://www.gexing.com/bangdan/xh/hot24/" target="_blank">达人</a><s></s>
+            </div>
+         <div class="menu3 J_MenumMore">
+                <a href="javascript:;" class="more1" style="margin-right:0">更多</a>
+                <div style="display:none;" class="data_list J_MenuCon">
+                    <div class="arrowbox"><a class="arrow"></a></div>
+                    <div class="data_list_1">
+                      
+                        <a href="/liuyan/">空间留言代码</a>
+                      
+                        
+                        <a href="/tool/" rel="nofollow">QQ号码估价</a>
+                        <a href="/tool/zhuanhuan/" rel="nofollow">字符转换</a>
+                        <a href="http://zuowen.gexing.com/" >作文</a>
+                        <!-- <a href="http://go.gexing.com/" rel="nofollow">个性购</a> -->
+                    	<a href="http://www.xinqing.com/" target="_blank">心情</a>
+                	</div>
+                </div>
+               <!-- <div class="yellowBox" id="vouch"> <span>壁纸</span>搬到了这里!</div> -->
+            </div>
+        </div>
+    </div>
+    <div class="navB_bg"><div class="navL_Bg"></div><div class="navR_Bg"></div></div>
+</div>
+
+</div>
+<style>
+.new-top{position:relative; z-index:9999}
+.new-top .gexingTop{position:relative; z-index:996}
+.new-top .navB{position: relative;z-index:995}
+</style><style>
+.commentPage a,.ttTxtTopR a{cursor:pointer;};
+</style>
+<div class="gg20131211">
+<div class="ggB footer">
+    <div class="userNav">
+        <dl style="margin-left:5px">
+            <dt><a target="_blank" href="/qqtouxiang/">QQ头像</a></dt>
+            <dd><a target="_blank" href="/qqtouxiang/t/%E7%94%B7%E7%94%9F">QQ头像男生</a><a target="_blank" href="/qqtouxiang/t/%E5%8A%A8%E6%BC%AB" class="a1">卡通动漫头像</a><br><a target="_blank" href="/qqtouxiang/t/%E5%A5%B3%E7%94%9F">QQ头像女生</a><a target="_blank" href="/qqtouxiang/t/%E6%AC%A7%E7%BE%8E" class="a1">欧美头像</a><br /><a target="_blank" href="/qqtouxiang/t/%E6%83%85%E4%BE%A3">QQ情侣头像</a><a target="_blank" href="/qqtouxiang/t/%E6%96%87%E5%AD%97" class="a1">QQ头像带字</a></dd>
+        </dl>
+        <dl style="width:172px">
+            <dt><a target="_blank" href="/qianming/">QQ个性签名</a></dt>
+            <dd><a target="_blank" href="/qianming/t/%E4%BC%A4%E6%84%9F/">伤感个性签名</a><a target="_blank" href="/qianming/t/%E8%B6%85%E6%8B%BD/" class="a1">超拽个性签名</a><br><a target="_blank" href="/qianming/t/%E6%90%9E%E7%AC%91/">搞笑个性签名</a><a target="_blank" href="/qianming/t/%E9%9D%9E%E4%B8%BB%E6%B5%81/" class="a1">非主流个性签名</a><br><a target="_blank" href="/qianming/t/%E6%83%85%E4%BE%A3/">情侣个性签名</a><a target="_blank" href="/qianming/t/%E5%8A%B1%E5%BF%97/" class="a1">励志签名</a></dd>
+        </dl>
+        <dl style="width:118px">
+            <dt><a target="_blank" href="/qqwangming/">QQ网名</a></dt>
+            <dd><a target="_blank" href="/qqwangming/t/%E7%94%B7%E7%94%9F/">男生网名</a><a target="_blank" href="/qqwangming/t/%E6%B8%B8%E6%88%8F%E5%90%8D%E5%AD%97/" class="a1">游戏网名</a><br><a target="_blank" href="/qqwangming/t/%E5%A5%B3%E7%94%9F/">女生网名</a><a target="_blank" href="/qqwangming/t/%E8%8B%B1%E6%96%87/" class="a1">英文网名</a><br><a target="_blank" href="/qqwangming/t/%E6%83%85%E4%BE%A3/">情侣网名</a><a target="_blank" href="/qqwangming/t/%E9%9D%9E%E4%B8%BB%E6%B5%81/" class="a1">非主流网名</a></dd>
+        </dl>
+        <dl style="width:130px">
+            <dt><a target="_blank" href="/qqfenzu/">QQ分组</a></dt>
+            <dd><a target="_blank" href="/qqfenzu/t/%E4%BC%A4%E6%84%9F">伤感分组</a><a target="_blank" href="/qqfenzu/t/%E9%9D%9E%E4%B8%BB%E6%B5%81" class="a1">非主流分组</a><br><a target="_blank" href="/qqfenzu/t/%E5%9B%BE%E5%BD%A2">分组图案</a><a target="_blank" href="/qqfenzu/hot7/" class="a1">QQ分组设计</a><br><a target="_blank" href="/qqfenzu/t/%E6%83%85%E4%BE%A3">情侣分组</a><a target="_blank" href="/qqfenzu/t/%E7%AC%A6%E5%8F%B7" class="a1">QQ分组符号</a></dd>
+        </dl>
+        <dl style="width:158px">
+            <dt><a target="_blank" href="http://www.gexing.com/pifu/">空间素材</a></dt>
+            <dd><a target="_blank" href="/qqpifu/t/%E5%A5%B3%E7%94%9F">QQ皮肤女生</a><a class="a1" target="_blank" href="/liuyan/">留言代码</a><br><a target="_blank" href="/qqpifu/t/%E9%80%8F%E6%98%8E">QQ皮肤透明</a><a target="_blank" class="a1" href="/qqpifu/">QQ皮肤</a><br><a target="_blank" href="/qqpifu/t/%E6%83%85%E4%BE%A3">QQ情侣皮肤</a><a target="_blank" class="a1" href="/qqpifu/t/%E5%A4%A7%E5%9B%BE">QQ皮肤大图片</a></dd>
+        </dl>
+         <dl style="width:65px;">
+            <dt><a target="_blank" href="http://z.gexing.com/">QQ空间</a></dt>
+            <dd><a target="_blank" href="/riji/">日记</a><a target="_blank" href="/wenzi/" class="a1">文字</a><br><a target="_blank" href="/shaitu/">美图</a><a target="_blank" href="/tupian/" class="a1">贴图</a><br><a target="_blank" href="http://jz.gexing.com/">家族</a><a class="a1" target="_blank" href="http://www.qingguo.com/">青果</a></dd>
+        </dl>
+    </div>
+</div><div class="w960">
+<iframe width="960" scrolling="no" height="60" frameborder="0" align="center,center" marginwidth="0" marginheight="0" allowtransparency="" src="http://biz.gexing.com/header_960x60.html?v=b1423810488"></iframe>
+</div>
+
+<div class="bag_eaf8f9">
+<div class="sub-nav">
+	<div class="sub-nav-cont w960">
+    	<h1><a href="/riji/">日记</a></h1>
+        <div class="nav">
+        	<a href="http://www.gexing.com/riji/">日记大全</a><a href="http://www.tutuim.com">Tutu</a><a href="http://www.gexing.com/riji/t/%E4%BC%A4%E6%84%9F%E5%BF%83%E6%83%85">伤感心情</a><a href="http://www.gexing.com/riji/t/%E6%83%85%E6%84%9F%E6%97%A5%E8%AE%B0">情感日记</a><a href="http://www.gexing.com/riji/t/%E7%88%B1%E6%83%85%E6%95%85%E4%BA%8B">爱情故事</a><a href="http://www.gexing.com/riji/t/%E5%BF%83%E6%83%85">心情日记</a>        <a href="/zt/riji/" class="Ablue">日记专题区</a>
+        </div>
+        <a href="/riji/add" class="right pub-btn32 wm_btn">发布日记</a>
+    </div>
+</div>
+	<div class="article960 article0829">  
+		<div class="ttTxtTop clearx">
+			<div class="ttTxtTopL">
+				<a class="avatar60" href="/u/1766581/" target="_blank"><img src="http://jic.gexing.com/i/user60.jpg" width="60" height="60"/></a>
+				<a class="nicname" href="/u/1766581/" target="_blank"><span>一场，无理取闹的，q1ng。</span></a>
+				<div class="ttTxtBtn">
+					<span id="FollowRelation" data-uid="1766581" ></span>
+    				    				<span><a class="btn pub-btn32 left" href="http://z.gexing.com/u/1766581" id="btn-leaveword">私聊</a></span>
+    								</div>
+				
+				</div>
+		</div>		 
+		<div class="ttTxtDetail clearx">
+			<span class="txtarrow"></span>	
+            <div class="left" style="width:636px">  
+			<div class="ttTxtTime clearx">	
+							    <b class="time">2009.07.11 22:46</b>
+			    			    <b id="clickcount"></b>
+				</div>
+			<div class="ttTxtMain">
+				<div class="ttTxtL ttTxtL596">
+					<div class="txt">
+																		什么什么？<br>
+你说什么？<br>
+我怎么了？<br>
+开始我的错？<br>
+我等你也有错？<br>
+打了4个多小时电话，一个都不接。<br>
+最后还关机，什么意思？<br>
+还说不说了？<br>
+说了会心疼？<br>
+我怎么了嘛我？<br>
+讲明白好么？你知道我等你有多辛苦？<br>
+你知道我现在是什么感觉？<br>
+好啦。<br>
+好啦。<br>
+如你所愿。我的错。<br>
+我的错。你满意了？<br>
+不理就不理了满。<br>
+我还要死皮赖脸的缠着你。<br>
+汗。<br>
+生疼生疼的，<br>
+					</div>
+                    					<div class="like-collect clearx" style="width:172px;">		 
+						<a class="like pAnimation pAnimation_1 likeCount_3481684 " data-cnt="" data-pid="3481684" data-type="riji" data-uid="1766581" onClick="GX.hudong.like(this)" href="javascript:;" title="送鲜花"><span id="flower_count"></span></a>
+						<a class="collect pAnimation pAnimation_1 favoriteCount_3481684 " data-cnt="" data-pid="3481684" data-type="riji" data-uid="1766581" onClick="GX.hudong.favorite(this)" href="javascript:;" title="收藏"><span id="favorite_count"></span></a>
+					</div>
+										 <!-- Baidu Button BEGIN -->
+					 <div class="detail_fx_cell clearx">
+						<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+						<span style="float:left;padding-top:5px;margin-left:0px;">喜欢就猛击分享!</span>
+						<a class="bds_qzone"></a>
+						<a class="bds_tieba"></a>
+						<a class="bds_sqq"></a>
+						<a class="bds_qq"></a>
+						<a class="bds_tsina"></a>
+						<a class="bds_renren"></a>
+						<span class="bds_more"></span>
+						<a class="shareCount"></a>
+						</div>
+					</div>
+					<!-- Baidu Button END -->
+					<!-- 签名网名热门推荐 BEGIN -->
+                                         <!-- 签名网名热门推荐 END -->		
+					<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=6349620" ></script>
+					<script type="text/javascript" id="bdshell_js"></script>
+					<script type="text/javascript">
+					document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+					</script>
+					<!-- Baidu Button END --> 
+					
+					<div class="ttTxtTag">
+						<div class="pd-Tags">
+														<span class="left tag_add"><b class="left">标签：</b><div class="left"><a title="伤感" href="/riji/t/%E4%BC%A4%E6%84%9F">伤感</a><a title="心情" href="/riji/t/%E5%BF%83%E6%83%85">心情</a></div></span> 
+
+														<span class="act" id="DelReport"></span> 
+							                    
+						</div>
+					</div>
+											<div id="Comment_Box" data-id="3481684" data-type="riji" ></div>
+					 
+                    </div>
+                    </div>
+                    </div>
+				<div class="textR textR300" style="padding-right:20px;">
+				    <div style="margin-bottom:10px;" id="J_newUserList" class="m-200" ></div>
+					<script>$(function(){$('div.width300 li').live('mouseover',function(){$(this).children('span.touxiang').show();}).live('mouseout',function(){$(this).children('span.touxiang').hide();})});</script>					<!-- <div class="wire_300r"></div> -->
+					                    <div class="wire_300r"></div>
+                    <div class="recommend300 engine">
+                        <h5>个性网内容精选</h5>
+                        <div class="recommend"><a href="/qianming/new/" target="_blank">个性签名</a><a href="/qianming/hot7/" target="_blank">qq签名</a><br /><a href="/qqwangming/new/" target="_blank">个性网名</a><a href="/qqwangming/hot7/" target="_blank">qq网名大全</a><br /><a href="/qqtouxiang/new/" target="_blank">头像大全</a><a href="/qqtouxiang/hot7/" target="_blank">头像</a><br /><a href="/qqfenzu/new/" target="_blank">qq分组大全</a><a href="/qqfenzu/hot7/" target="_blank">qq分组设计</a></div>
+                    </div>
+				</div>
+			</div>
+						   
+        
+    </div>
+	 <div class="clear"></div> 
+    <div class="footer ggB_footer"> 
+	<style>
+iframe{background:transparent;}
+.footer .userNav dl{ width:150px; margin:0 12px}
+.container{width:280px!important;}
+.ggB_footer .add468x2{display:block!important;min-height:1px;}
+</style>
+<script>
+$(function(){
+	/*var tuiguang_box_position = $(".tuiguang_box").offset();alert(tuiguang_box_position.top)
+	var ggB_position = $(".ggB").offset({top:tuiguang_box_position.top});	
+	alert($(".ggB").offset().top)*/
+	var iframe = $(".add960_margin").find("iframe");
+	var len_iframe = iframe.length;
+	if(len_iframe <= 0 || iframe.is(":hidden")){
+	//alert(len_iframe)
+		$(".add960_margin").height("auto");
+		$(".ggB").css({bottom:"147px"})	
+	}else{
+		$(".add960_margin").height(90);
+		$(".ggB").css({bottom:"237px"})	
+	}
+})
+</script>
+	 
+    	  <div class="footerBj">
+    	  		  	<div class="add468x2">
+				<div class="gg240x22"><iframe width="180" scrolling="no" height="22" frameborder="0" align="center,center" marginwidth="0" marginheight="0" allowtransparency="" _src="http://biz.gexing.com/bottom_1_240x22.html?v=b1423810488"></iframe></div>
+				<div class="gg240x22"><iframe width="180" scrolling="no" height="22" frameborder="0" align="center,center" marginwidth="0" marginheight="0" allowtransparency="" _src="http://biz.gexing.com/bottom_2_240x22.html?v=b1423810488"></iframe></div>
+				<div class="gg240x22"><iframe width="180" scrolling="no" height="22" frameborder="0" align="center,center" marginwidth="0" marginheight="0" allowtransparency="" _src="http://biz.gexing.com/bottom_3_240x22.html?v=b1423810488"></iframe></div>
+				<div class="gg240x22"><iframe width="180" scrolling="no" height="22" frameborder="0" align="center,center" marginwidth="0" marginheight="0" allowtransparency="" _src="http://biz.gexing.com/bottom_4_240x22.html?v=b1423810488"></iframe></div>
+        	</div>
+                          			<div class="add960 add960_margin"><iframe width="960" scrolling="no" height="90" frameborder="0" align="center,center" marginwidth="0" marginheight="0" allowtransparency="true" _src="http://biz.gexing.com/bottom_960x90.html?v=b1423810488"></iframe></div>
+                <div class="copyright">
+        	        	版权所有&nbsp;<a href="http://www.gexing.com/riji/">个性网-日记</a>频道&nbsp;Copyright&copy;2001-2015
+        	        </div>
+        </div>
+	 
+    </div>
+    
+    </div>
+    </div>     </div>
+</div>
+ <div class="copy-tip-box" style="display:none " id="hiddenHint">内容已成功复制到剪贴板</div>
+</div>
+<script>
+	GX.use('detail','extension','publish','user','hudong','list','cookie',"top");
+			$(document).ready(function(){
+			//GX.detail.init();
+			GX.detail.comment.showComment();
+			
+			//显示关注状态
+			if ($('#FollowRelation').length>0){
+				var authUid = $('#FollowRelation').data("uid");
+				$.getJSON(GXInit.domain+'api/index.php?callback=?',{action:"ajax_getFollowRelation",authUid:authUid}, function(R) {
+					if(R.result=='ok'){
+						$("#FollowRelation").html(R.data);
+					}
+				});
+			}
+			//显示鲜花，鸡蛋，评论数
+			$.getJSON(GXInit.domain+'api/index.php?callback=?',{action:"ajax_getPostCount",id:3481684,type:'riji'}, function(R) {
+				if(R.result=='ok'){
+					var flower_count = typeof(R.data.like) ==  'undefined' ? 0 : R.data.like,
+					favorite_count = typeof(R.data.favorite) ==  'undefined' ? 0 : R.data.favorite ;
+					$("#favorite_count").text(favorite_count);
+					$("#flower_count").text(flower_count);
+					$("#favorite_count").parent("a").attr("data-cnt",favorite_count);
+					$("#flower_count").parent("a").attr("data-cnt",flower_count);
+				}
+			});
+			//显示评论
+			if($('#Comment_Box').length>0){
+				var o = $('#Comment_Box');
+				var id = o.data('id');
+				var type = o.data('type');
+	
+				$.getJSON(GXInit.domain+'api/index.php?callback=?',{action:"ajax_showComment",id:id,type:type,t:(new Date()).getTime()}, function(R) {
+					if(R.result=='ok'){
+						o.html(R.data);
+						//发表评论
+						var lw = new GX.leaveword('publish-comment-holder','comment_list',{width:510,height:45,isComment:true,'type':GXInit.detail.type,'id':GXInit.detail.id});
+					}
+				});
+			}
+			
+			//用户名片
+			GX.actionShowNameCard(25);
+		});
+		var CountServiceUrl = 'http://www.gexing.com/count/ajax_clickcount.php?callback=?';
+		$.getJSON(CountServiceUrl,{sucaitype:"riji",postid:GXInit.detail.id}, function(data) {
+			$("#clickcount").html('点击数:'+data.data.count+'');
+		});
+		$(document).ready(function(){
+		GX.hudong.detailDelReport(2);
+	})
+</script>
+ <!-- 全站底部广告 -->
+<script type="text/javascript">
+
+// 适配跳转到3G
+(function(){
+	var ua = navigator.userAgent;
+    var isWin = /\bwin/i.test(ua);
+    var unCanIpad = !(/\bipad/i.test(ua));
+    var isMobile = unCanIpad && !isWin && (/mobile/i.test(ua) || /android/i.test(ua) || /ios/i.test(ua) || /phone/i.test(ua));
+    var url = location.pathname;
+    if(isMobile){
+    	var metas = document.getElementsByTagName('meta');
+		for(var i=0; i<metas.length;i++){
+		    var con = metas[i].getAttribute('content');
+		    if(con.indexOf('format=html5')>-1){
+		        var url = (con.replace(/format=html5;\s*url=/,''));
+		        if(/^http:\/\//.test(url)){
+		            location.href = url;
+		        }else{
+		            // 记log
+		        }
+		        break;
+		    }
+		}
+    	//pc();
+    }
+    })();
+
+(function(){
+	function hasAd(){
+		// 配置出底部广告的，前缀匹配
+		var showList = [
+			'list'
+			,'detail'
+			,'favor'
+			,'post'
+			,'zhuanti'
+		];
+		// 含有就不出广告，后缀匹配
+		var hideList = [
+			'zipai'
+		];
+		// 含有就不出广告，全匹配
+		var specifyList = [
+			//"zhuanti.list"
+		];
+		
+		var page = GXInit.page;
+		var pageArr = page.split(/\./);
+		page = pageArr[0];
+		var page2 = pageArr.length > 1 ? pageArr[1] : '';
+		if($.inArray(page, showList) != -1 && $.inArray(page2, hideList) == -1 && $.inArray(GXInit.page, specifyList) == -1 && GXInit.page && GXInit.page.indexOf('post') == -1){
+			return true;
+		}
+		return false;
+	}
+	
+	if(hasAd()){
+		$(".copyright").css("padding-bottom", (parseInt($(".copyright").css("padding-bottom","92px"))));
+	}
+	
+	$(document).ready(function(){
+		if(hasAd()){
+			GX.addAd('http://biz.gexing.com/bottom_960x60.html');
+		}
+	});
+})();
+</script>
+<!--    全站蒙版强提示  -->
+<!--    个性网  -->
+<script src='http://jic.gexing.com/j/??gxStat.js?v=j1423810488' type="text/javascript" language='JavaScript'></script> 
+<script src='http://w.cnzz.com/c.php?id=30026772' language='JavaScript'></script>
+<!--    谷歌统计代码  -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-24726516-3']);
+  _gaq.push(['_setDomainName', 'gexing.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</body>
+</html>
+
