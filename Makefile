@@ -6,7 +6,7 @@ CC=g++
 
 #export LD_LIBRARY_PATH=/home/jelly/Code/bd/lib_gumbo/lib
 
-main: main.o html_classifier.o
+main: main.o html_classifier.o common.o
 	g++ -o $@ $^ -L$(ALL_LIB) -lgumbo
 
 %.o:%.cpp
