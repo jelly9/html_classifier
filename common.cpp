@@ -1,14 +1,5 @@
 
-#include "common.hpp"
-
-void init_feature(int argc, char *argv[])
-{
-    g_feature_word.resize(argc);
-
-    for(int i = 0; i < argc; ++i){
-        g_feature_word[i] = TString(argv[i]);
-    }
-}
+#include "common.h"
 
 static void get_word_count_map_core(GumboNode *node, TMap &m)
 {
@@ -47,22 +38,22 @@ void get_word_count_map(const char *file_name, TMap &m)
     char *data;
 
     // 读取HTML文本文件 
-    if(!(fp=fopen(file_name,"rb"))) 
+#ifdef STDOUT
+    std::cout << file_name << std::endl;
+#endif
+    if((fp=fopen(file_name,"rb")) == NULL) 
         assert(false);
 
     stat(file_name,&buf);
-    //data=(char*)malloc(sizeof(char)*(buf.st_size+1));
     data = new char[buf.st_size + 1];
     fread(data,sizeof(char),buf.st_size,fp);
     fclose(fp);
     data[buf.st_size]=0;
 
-//    cout << data << endl;
 
     // 解析HTML文本文件,生成gumbo数据结构 
     output=gumbo_parse(data);
     // 获取TITLE 
-    //        cout << i << ":";
     get_word_count_map_core(output->root, m);
 
     // 销毁，释放内存
@@ -71,17 +62,19 @@ void get_word_count_map(const char *file_name, TMap &m)
 }
 
 //根据m中词-次数 映射 算出向量，保存到v中
-void get_feature_vector_core(TMap &m, TVector &v)
+void get_feature_vector_core(TStringArray &feature, TMap &m, TVector &v)
 {
-    v.resize(g_feature_word.size());
+    v.resize(feature.size());
 
-    for(size_t i = 0; i < g_feature_word.size(); ++i){
-        if(find(m.begin(), m.end(), g_feature_word[i])->second){
-            v[i] = m[g_feature_word[i]];
+#ifdef STDOUT
+    std::cout << m.size() << std::endl;
+#endif
+
+    for(size_t i = 0; i < feature.size(); ++i){
+        if(m.find(feature[i]) != m.end()){
+            v[i] = m[feature[i]];
         }else{
             v[i] = 0;
         }
     }
 }
-
-
