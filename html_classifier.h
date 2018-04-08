@@ -26,8 +26,6 @@ public:
     void parser_html(const char *dir_name);//解析html
     void get_feature_vector(TStringArray &feature);
     void get_avg_vector();
-    bool is_novel(const char *file_name);
-
     void display();
 
 protected:

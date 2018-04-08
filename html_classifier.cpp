@@ -7,6 +7,7 @@
 
 #include "common.h"
 #include "html_classifier.h"
+#include <math.h>
 
 void html_classifier::parser_html(const char *dir_name)
 {
@@ -92,35 +93,4 @@ void html_classifier::display()
 #endif
 }
 
-#if 0
-bool html_classifier::is_novel(const char *file_name)
-{
-    struct stat buf;
-    GumboOutput *output;
-    FILE *fp;
-    char *data;
 
-    // 读取HTML文本文件 
-    if(!(fp=fopen(file_name,"rb"))) 
-        assert(false);
-
-    stat(file_name,&buf);
-    data=(char*)malloc(sizeof(char)*(buf.st_size+1));
-    fread(data,sizeof(char),buf.st_size,fp);
-    fclose(fp);
-    data[buf.st_size]=0;
-
-//    cout << data << endl;
-
-    // 解析HTML文本文件,生成gumbo数据结构 
-    output=gumbo_parse(data);
-    // 获取TITLE 
-    //        cout << i << ":";
-    get_feature(output->root, i);
-    free(data);
-    // 销毁，释放内存
-    gumbo_destroy_output(&kGumboDefaultOptions,output);
-
-    return true;
-}
-#endif

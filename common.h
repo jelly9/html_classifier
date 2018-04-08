@@ -18,6 +18,7 @@
 #define COMMON_H
 
 #define MAX_PATH_LENGTH 256
+#define POW(x) ((x)*(x))
 
 typedef std::string                 TString;
 typedef std::vector<TString>        TStringArray;
