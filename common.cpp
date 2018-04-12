@@ -24,6 +24,14 @@ static void get_word_count_map_core(GumboNode *node, TMap &m)
         m["br"]++;
     }
 
+//    if(node->v.element.tag == GUMBO_TAG_TITLE){
+//        TString title = ((GumboNode *)children->data[0])->v.text.text;
+//        if(title.find("上一章")<title.length() ||
+//           title.find("下一章")<title.length()){
+//            m["chapter"]++;
+//        }
+//    }
+
     // 递归该节点下的所有子节点 
     for(i=0;i < children->length;++i)
         get_word_count_map_core((GumboNode*)children->data[i], m);
